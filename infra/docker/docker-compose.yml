@@ -1,0 +1,14 @@
+
+services:
+  claire:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+  nginx:
+    image: nginx
+    volumes:
+      - ../nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
