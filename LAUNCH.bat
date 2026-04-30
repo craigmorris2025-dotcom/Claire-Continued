@@ -1,19 +1,22 @@
-
 @echo off
 setlocal
 
 cd /d "%~dp0"
 
+REM Create venv if missing
 if not exist ".venv" (
     python -m venv .venv
 )
 
+REM Activate venv
 call .venv\Scripts\activate
 
-pip install -q -r src\backend\requirements.txt
+REM Install dependencies
+pip install -q -r requirements.txt
 
+REM Run app (correct module path)
 cd src
-python main.py
+uvicorn claire.main:app --reload
 
 pause
 endlocal
