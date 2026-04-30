@@ -1,6 +1,6 @@
 
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.22 BREAKTHROUGH SYNTHESIS)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.24 TECHNICAL FEASIBILITY)
 """
 
 from typing import Dict, Any
@@ -18,6 +18,7 @@ from claire.engines.risk_regulation_engine import RiskRegulationEngine
 from claire.engines.business_model_engine import BusinessModelEngine
 from claire.engines.opportunity_discovery_engine import OpportunityDiscoveryEngine
 from claire.engines.breakthrough_synthesis_engine import BreakthroughSynthesisEngine
+from claire.engines.technical_feasibility_engine import TechnicalFeasibilityEngine
 from claire.engines.deal_exit_modeling_engine import DealExitModelingEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.design.portal import DesignPortal
@@ -40,13 +41,14 @@ class PipelineOrchestrator:
         self.business_model_engine = BusinessModelEngine()
         self.opportunity_engine = OpportunityDiscoveryEngine()
         self.breakthrough_synthesis_engine = BreakthroughSynthesisEngine()
+        self.technical_feasibility_engine = TechnicalFeasibilityEngine()
         self.deal_exit_engine = DealExitModelingEngine()
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.21 (OPPORTUNITY DISCOVERY) <<<")
+        print(">>> RUNNING PIPELINE V5.24 (TECHNICAL FEASIBILITY) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -467,6 +469,41 @@ class PipelineOrchestrator:
         scores["novelty_score"] = novelty_score
         scores["non_obviousness_score"] = non_obviousness_score
 
+        technical_feasibility = self._safe_engine(
+            "technical_feasibility_failed",
+            lambda: self.technical_feasibility_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                scores=scores,
+                market_gap=market_gap,
+                trend_trajectory=trend_trajectory,
+                market_formation=market_formation,
+                opportunity_discovery=opportunity_discovery,
+                breakthrough_synthesis=breakthrough_synthesis,
+                moat=moat,
+                risk_regulation=risk_regulation,
+                business_model=business_model,
+                connector_sources=external,
+            ),
+        )
+        data["technical_feasibility"] = technical_feasibility
+
+        technical_feasibility_confidence = self._get(technical_feasibility, "confidence", 0.0) or 0.0
+        technical_feasibility_score = self._get(technical_feasibility, "technical_feasibility_score.score", 0.0) or 0.0
+        architecture_readiness_score = self._get(technical_feasibility, "architecture_readiness.score", 0.0) or 0.0
+        implementation_complexity_score = self._get(technical_feasibility, "implementation_complexity.score", 0.0) or 0.0
+        integration_readiness_score = self._get(technical_feasibility, "integration_readiness.score", 0.0) or 0.0
+        data_readiness_score = self._get(technical_feasibility, "data_readiness.score", 0.0) or 0.0
+        validation_burden_score = self._get(technical_feasibility, "validation_burden.score", 0.0) or 0.0
+
+        scores["technical_feasibility_score"] = technical_feasibility_score
+        scores["architecture_readiness_score"] = architecture_readiness_score
+        scores["implementation_complexity_score"] = implementation_complexity_score
+        scores["integration_readiness_score"] = integration_readiness_score
+        scores["data_readiness_score"] = data_readiness_score
+        scores["validation_burden_score"] = validation_burden_score
+
         data["signal_trace"] = {
             "analysis": analysis_signal,
             "discovery": discovery_signal,
@@ -479,6 +516,13 @@ class PipelineOrchestrator:
             "novelty_score": novelty_score,
             "non_obviousness_score": non_obviousness_score,
             "breakthrough_mechanism_score": mechanism_score,
+            "technical_feasibility_confidence": technical_feasibility_confidence,
+            "technical_feasibility_score": technical_feasibility_score,
+            "architecture_readiness_score": architecture_readiness_score,
+            "implementation_complexity_score": implementation_complexity_score,
+            "integration_readiness_score": integration_readiness_score,
+            "data_readiness_score": data_readiness_score,
+            "validation_burden_score": validation_burden_score,
             "market_gap_confidence": gap_confidence,
             "market_pressure_score": pressure_score,
             "trajectory_confidence": trajectory_confidence,
@@ -534,6 +578,14 @@ class PipelineOrchestrator:
                 "novelty_assessment": breakthrough_synthesis.get("novelty_assessment") if isinstance(breakthrough_synthesis, dict) else None,
                 "non_obviousness": breakthrough_synthesis.get("non_obviousness") if isinstance(breakthrough_synthesis, dict) else None,
                 "confidence": breakthrough_synthesis.get("confidence") if isinstance(breakthrough_synthesis, dict) else None,
+            },
+            "technical_feasibility": {
+                "technical_feasibility_score": technical_feasibility.get("technical_feasibility_score") if isinstance(technical_feasibility, dict) else None,
+                "feasibility_classification": technical_feasibility.get("feasibility_classification") if isinstance(technical_feasibility, dict) else None,
+                "architecture_readiness": technical_feasibility.get("architecture_readiness") if isinstance(technical_feasibility, dict) else None,
+                "implementation_complexity": technical_feasibility.get("implementation_complexity") if isinstance(technical_feasibility, dict) else None,
+                "diligence_readiness": technical_feasibility.get("diligence_readiness") if isinstance(technical_feasibility, dict) else None,
+                "confidence": technical_feasibility.get("confidence") if isinstance(technical_feasibility, dict) else None,
             },
             "market_gap": {
                 "sector": market_gap.get("sector") if isinstance(market_gap, dict) else None,
@@ -669,6 +721,7 @@ class PipelineOrchestrator:
                 "business_model": business_model,
                 "opportunity_discovery": opportunity_discovery,
                 "breakthrough_synthesis": breakthrough_synthesis,
+                "technical_feasibility": technical_feasibility,
                 "deal_exit_modeling": deal_exit_modeling,
                 "system_design": system_design,
                 "design_output": data.get("design_output", {}),
@@ -694,6 +747,7 @@ class PipelineOrchestrator:
                 "business_model": business_model,
                 "opportunity_discovery": opportunity_discovery,
                 "breakthrough_synthesis": breakthrough_synthesis,
+                "technical_feasibility": technical_feasibility,
                 "deal_exit_modeling": deal_exit_modeling,
                 "signal_trace": data.get("signal_trace", {}),
                 "engine_details": data.get("engine_details", {}),

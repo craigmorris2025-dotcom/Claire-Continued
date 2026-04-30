@@ -52,7 +52,7 @@ class LifecycleStageEngine:
             {"stage": 6, "name": "Needed Solutions Layer", "category": "discovery", "output_key": "market_gap"},
             {"stage": 7, "name": "Opportunity Discovery", "category": "discovery", "output_key": "opportunity_discovery"},
             {"stage": 8, "name": "Breakthrough Synthesis", "category": "breakthrough", "output_key": "breakthrough_synthesis"},
-            {"stage": 9, "name": "Technical Feasibility", "category": "validation", "output_key": "scores"},
+            {"stage": 9, "name": "Technical Feasibility", "category": "validation", "output_key": "technical_feasibility"},
             {"stage": 10, "name": "Market Formation Analysis", "category": "validation", "output_key": "market_formation"},
             {"stage": 11, "name": "Moat / Defensibility", "category": "validation", "output_key": "moat"},
             {"stage": 12, "name": "Risk / Regulation / Compliance", "category": "validation", "output_key": "risk_regulation"},
@@ -145,10 +145,20 @@ class LifecycleStageEngine:
                     evidence.append("breakthrough signal trace available")
 
         elif stage == 9:
+            technical = context.get("technical_feasibility", {})
             scores = context.get("scores", {})
-            if scores.get("feasibility_score") is not None and scores.get("buildability_score") is not None:
+            if technical.get("status") == "success":
+                status, active = "active", True
+                evidence.append("technical_feasibility generated successfully")
+                if technical.get("technical_feasibility_score"):
+                    evidence.append(f"technical feasibility score: {technical.get('technical_feasibility_score', {}).get('score')}")
+                if technical.get("feasibility_classification"):
+                    evidence.append(f"classification: {technical.get('feasibility_classification', {}).get('state')}")
+                if technical.get("deployment_controls"):
+                    evidence.append(f"deployment mode: {technical.get('deployment_controls', {}).get('deployment_mode')}")
+            elif scores.get("feasibility_score") is not None and scores.get("buildability_score") is not None:
                 status, active = "partial", True
-                evidence.append("feasibility_score and buildability_score available")
+                evidence.append("feasibility_score and buildability_score available, but dedicated technical_feasibility engine did not return success")
 
         elif stage == 10:
             formation = context.get("market_formation", {})

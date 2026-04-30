@@ -25,6 +25,7 @@ class PortfolioBinderBuilder:
         business_model = context.get("business_model", {})
         opportunity_discovery = context.get("opportunity_discovery", {})
         breakthrough_synthesis = context.get("breakthrough_synthesis", {})
+        technical_feasibility = context.get("technical_feasibility", {})
         deal_exit_modeling = context.get("deal_exit_modeling", {})
         system_design = context.get("system_design", {})
         design_output = context.get("design_output", {})
@@ -42,6 +43,7 @@ class PortfolioBinderBuilder:
             business_model=business_model,
             opportunity_discovery=opportunity_discovery,
             breakthrough_synthesis=breakthrough_synthesis,
+            technical_feasibility=technical_feasibility,
             deal_exit_modeling=deal_exit_modeling,
             scores=scores,
         )
@@ -52,6 +54,7 @@ class PortfolioBinderBuilder:
             self._section("market_formation", "Market Formation", market_formation, market_formation.get("status") == "success"),
             self._section("opportunity_discovery", "Opportunity Discovery", opportunity_discovery, opportunity_discovery.get("status") == "success"),
             self._section("breakthrough_synthesis", "Breakthrough Synthesis", breakthrough_synthesis, breakthrough_synthesis.get("status") == "success"),
+            self._section("technical_feasibility", "Technical Feasibility", technical_feasibility, technical_feasibility.get("status") == "success"),
             self._section("moat_defensibility", "Moat / Defensibility", moat, moat.get("status") == "success"),
             self._section("risk_regulation", "Risk / Regulation / Compliance", risk_regulation, risk_regulation.get("status") == "success"),
             self._section("business_model", "Business Model + Value Capture", business_model, business_model.get("status") == "success"),
@@ -86,6 +89,9 @@ class PortfolioBinderBuilder:
                 "commercial_risk": business_model.get("commercial_risk", {}).get("level"),
                 "exit_readiness": deal_exit_modeling.get("exit_readiness", {}).get("state"),
                 "strategic_fit": deal_exit_modeling.get("strategic_fit", {}).get("level"),
+                "technical_feasibility": technical_feasibility,
+                "technical_feasibility_score": technical_feasibility.get("technical_feasibility_score", {}) if isinstance(technical_feasibility, dict) else {},
+                "feasibility_classification": technical_feasibility.get("feasibility_classification", {}) if isinstance(technical_feasibility, dict) else {},
                 "risk_notes": self._risk_notes(scores, design_output, risk_regulation, business_model, deal_exit_modeling),
             }),
             self._section("strategic_positioning", "Strategic Positioning", {
@@ -152,6 +158,7 @@ class PortfolioBinderBuilder:
         business_model: Dict[str, Any],
         opportunity_discovery: Dict[str, Any],
         breakthrough_synthesis: Dict[str, Any],
+        technical_feasibility: Dict[str, Any],
         deal_exit_modeling: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> str:
@@ -186,6 +193,15 @@ class PortfolioBinderBuilder:
             parts.append(
                 f"Breakthrough synthesis classifies this as {self._pretty(classification)} "
                 f"with {synthesis_level} synthesis strength and {non_obviousness} non-obviousness."
+            )
+
+        if technical_feasibility.get("status") == "success":
+            feasibility_level = technical_feasibility.get("technical_feasibility_score", {}).get("level")
+            feasibility_state = technical_feasibility.get("feasibility_classification", {}).get("state")
+            deployment_posture = technical_feasibility.get("feasibility_classification", {}).get("deployment_posture")
+            parts.append(
+                f"Technical feasibility classifies this as {self._pretty(feasibility_state)} "
+                f"with {feasibility_level} feasibility and {self._pretty(deployment_posture)} deployment posture."
             )
 
         if direction and window:
