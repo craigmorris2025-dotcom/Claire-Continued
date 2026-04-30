@@ -1,11 +1,6 @@
 """
 Lifecycle Stage Engine — maps Claire pipeline output onto the full
 21-stage Claire Intelligence Lifecycle.
-
-Purpose:
-- Make the full lifecycle visible in every run
-- Separate "implemented", "active", "partial", and "pending" stages
-- Prevent fake completeness while giving a clear build roadmap
 """
 
 from typing import Any, Dict, List
@@ -61,7 +56,7 @@ class LifecycleStageEngine:
             {"stage": 8, "name": "Breakthrough Synthesis", "category": "breakthrough", "output_key": "scores"},
             {"stage": 9, "name": "Technical Feasibility", "category": "validation", "output_key": "scores"},
             {"stage": 10, "name": "Market Formation Analysis", "category": "validation", "output_key": "market_formation"},
-            {"stage": 11, "name": "Moat / Defensibility", "category": "validation", "output_key": "moat", "next_build": True},
+            {"stage": 11, "name": "Moat / Defensibility", "category": "validation", "output_key": "moat"},
             {"stage": 12, "name": "Risk / Regulation / Compliance", "category": "validation", "output_key": "risk_regulation", "next_build": True},
             {"stage": 13, "name": "Productization Path", "category": "design", "output_key": "design_output"},
             {"stage": 14, "name": "Design Portal Routing", "category": "design", "output_key": "design_portal"},
@@ -131,10 +126,11 @@ class LifecycleStageEngine:
             market_gap = context.get("market_gap", {})
             trend = context.get("trend_trajectory", {})
             formation = context.get("market_formation", {})
-            if market_gap.get("portfolio_relevance") and trend.get("status") == "success" and formation.get("status") == "success":
+            moat = context.get("moat", {})
+            if market_gap.get("portfolio_relevance") and trend.get("status") == "success" and formation.get("status") == "success" and moat.get("status") == "success":
                 status = "partial"
                 active = True
-                evidence.append("portfolio_relevance, trend trajectory, and market formation available, but dedicated opportunity engine pending")
+                evidence.append("portfolio_relevance, trend trajectory, market formation, and moat available, but dedicated opportunity engine pending")
             elif market_gap.get("portfolio_relevance"):
                 status = "partial"
                 active = True
@@ -173,7 +169,18 @@ class LifecycleStageEngine:
                 evidence.append("dedicated market_formation_engine not yet implemented or unavailable")
 
         elif stage == 11:
-            evidence.append("dedicated moat_defensibility_engine not yet implemented")
+            moat = context.get("moat", {})
+            if moat.get("status") == "success":
+                status = "active"
+                active = True
+                evidence.append("moat generated successfully")
+                if moat.get("moat_type"):
+                    evidence.append(f"primary moat: {moat.get('moat_type', {}).get('primary_moat')}")
+                    evidence.append(f"moat strength: {moat.get('moat_type', {}).get('strength')}")
+                if moat.get("copy_risk"):
+                    evidence.append(f"copy risk: {moat.get('copy_risk', {}).get('level')}")
+            else:
+                evidence.append("dedicated moat_defensibility_engine not yet implemented or unavailable")
 
         elif stage == 12:
             evidence.append("dedicated risk_regulation_engine not yet implemented")
@@ -274,7 +281,7 @@ class LifecycleStageEngine:
         }
 
     def _next_recommended_stage(self, stages: List[Dict[str, Any]]) -> Dict[str, Any]:
-        preferred_order = [11, 12, 17, 21]
+        preferred_order = [12, 17, 21]
 
         for preferred_stage in preferred_order:
             for stage in stages:

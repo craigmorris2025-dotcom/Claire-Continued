@@ -4,12 +4,8 @@ portfolio / binder package.
 
 Purpose:
 - Convert pipeline intelligence into a reusable strategic artifact
-- Package breakthrough, trend, market formation, market gap, design,
+- Package breakthrough, trend, market formation, moat, market gap, design,
   feasibility, and acquirer logic
-- Provide a clear structure for future PDF/docx/export generation
-
-This builder does not create files yet.
-It creates the structured binder object that later export modules can render.
 """
 
 from datetime import datetime, timezone
@@ -34,6 +30,7 @@ class PortfolioBinderBuilder:
         market_gap = context.get("market_gap", {})
         trend_trajectory = context.get("trend_trajectory", {})
         market_formation = context.get("market_formation", {})
+        moat = context.get("moat", {})
         system_design = context.get("system_design", {})
         design_output = context.get("design_output", {})
         acquirer_matches = context.get("acquirer_matches", [])
@@ -45,6 +42,7 @@ class PortfolioBinderBuilder:
             market_gap=market_gap,
             trend_trajectory=trend_trajectory,
             market_formation=market_formation,
+            moat=moat,
             scores=scores,
         )
 
@@ -52,6 +50,7 @@ class PortfolioBinderBuilder:
             self._section_executive_thesis(executive_thesis, scores),
             self._section_trend_trajectory(trend_trajectory),
             self._section_market_formation(market_formation),
+            self._section_moat_defensibility(moat),
             self._section_market_gap(market_gap),
             self._section_needed_solution(market_gap),
             self._section_breakthrough(scores, signal_trace),
@@ -59,7 +58,7 @@ class PortfolioBinderBuilder:
             self._section_technical_specs(design_output),
             self._section_implementation_plan(design_output),
             self._section_feasibility(scores, design_output),
-            self._section_strategic_positioning(market_gap, trend_trajectory, market_formation, scores),
+            self._section_strategic_positioning(market_gap, trend_trajectory, market_formation, moat, scores),
             self._section_acquirer_logic(acquirer_matches, market_gap),
             self._section_phase_log(phase_log),
         ]
@@ -78,7 +77,7 @@ class PortfolioBinderBuilder:
             "sections": sections,
             "artifact_manifest": self._artifact_manifest(sections),
             "export_targets": ["json", "markdown", "pdf", "docx"],
-            "next_actions": self._next_actions(scores, market_gap, trend_trajectory, market_formation, design_output),
+            "next_actions": self._next_actions(scores, market_gap, trend_trajectory, market_formation, moat, design_output),
         }
 
     def _title(self, domain: str, market_gap: Dict[str, Any], design_output: Dict[str, Any]) -> str:
@@ -98,6 +97,7 @@ class PortfolioBinderBuilder:
         market_gap: Dict[str, Any],
         trend_trajectory: Dict[str, Any],
         market_formation: Dict[str, Any],
+        moat: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> str:
         market_gap_text = market_gap.get("market_gap", "A meaningful market gap was identified.")
@@ -115,7 +115,7 @@ class PortfolioBinderBuilder:
             article = "an" if str(trend_direction)[0].lower() in {"a", "e", "i", "o", "u"} else "a"
             trend_sentence = (
                 f"Trajectory analysis shows {article} {trend_direction} pattern with a "
-                f"{strategic_window} strategic window. "
+                f"{self._pretty_token(strategic_window)} strategic window. "
             )
 
         formation_sentence = ""
@@ -125,8 +125,20 @@ class PortfolioBinderBuilder:
             buyer_pull = market_formation.get("buyer_pull", {}).get("strength")
             if formation_type and market_stage:
                 formation_sentence = (
-                    f"Market formation analysis classifies this as {formation_type} "
-                    f"at the {market_stage} stage with {buyer_pull} buyer pull. "
+                    f"Market formation analysis classifies this as {self._pretty_token(formation_type)} "
+                    f"at the {self._pretty_token(market_stage)} stage with {buyer_pull} buyer pull. "
+                )
+
+        moat_sentence = ""
+        if isinstance(moat, dict) and moat.get("status") == "success":
+            moat_type = moat.get("moat_type", {})
+            primary = moat_type.get("primary_moat")
+            strength = moat_type.get("strength")
+            copy_risk = moat.get("copy_risk", {}).get("level")
+            if primary and strength:
+                moat_sentence = (
+                    f"Moat analysis shows a {strength} defensibility profile led by "
+                    f"{self._pretty_token(primary)}, with {copy_risk} copy risk. "
                 )
 
         return (
@@ -135,6 +147,7 @@ class PortfolioBinderBuilder:
             f"The needed solution is: {needed_solution} "
             f"{trend_sentence}"
             f"{formation_sentence}"
+            f"{moat_sentence}"
             f"The opportunity produced a breakthrough score of {breakthrough:.4f} "
             f"and portfolio confidence of {portfolio:.4f}, indicating a candidate suitable "
             f"for blueprinting, validation, and portfolio packaging."
@@ -225,6 +238,26 @@ class PortfolioBinderBuilder:
                 "formation_risk": market_formation.get("formation_risk"),
                 "formation_thesis": market_formation.get("formation_thesis"),
                 "confidence": market_formation.get("confidence"),
+            },
+        }
+
+    def _section_moat_defensibility(self, moat: Dict[str, Any]) -> Dict[str, Any]:
+        if not isinstance(moat, dict) or moat.get("status") != "success":
+            return {"id": "moat_defensibility", "title": "Moat / Defensibility", "include": False, "content": {}}
+
+        return {
+            "id": "moat_defensibility",
+            "title": "Moat / Defensibility",
+            "include": True,
+            "content": {
+                "moat_type": moat.get("moat_type"),
+                "defensibility_dimensions": moat.get("defensibility_dimensions"),
+                "copy_risk": moat.get("copy_risk"),
+                "compounding_assets": moat.get("compounding_assets"),
+                "vulnerabilities": moat.get("vulnerabilities"),
+                "moat_strengthening_actions": moat.get("moat_strengthening_actions"),
+                "strategic_defensibility_thesis": moat.get("strategic_defensibility_thesis"),
+                "confidence": moat.get("confidence"),
             },
         }
 
@@ -322,6 +355,7 @@ class PortfolioBinderBuilder:
         market_gap: Dict[str, Any],
         trend_trajectory: Dict[str, Any],
         market_formation: Dict[str, Any],
+        moat: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> Dict[str, Any]:
         return {
@@ -329,7 +363,7 @@ class PortfolioBinderBuilder:
             "title": "Strategic Positioning",
             "include": True,
             "content": {
-                "positioning": self._positioning_statement(market_gap, trend_trajectory, market_formation),
+                "positioning": self._positioning_statement(market_gap, trend_trajectory, market_formation, moat),
                 "portfolio_score": scores.get("portfolio_score", 0.0),
                 "matching_score": scores.get("matching_score", 0.0),
                 "acquisition_score": scores.get("acquisition_score", 0.0),
@@ -363,6 +397,7 @@ class PortfolioBinderBuilder:
         inevitability = signal_trace.get("trajectory_inevitability", 0.0)
         category = signal_trace.get("category_creation_score", 0.0)
         buyer_pull = signal_trace.get("buyer_pull_score", 0.0)
+        moat_score = signal_trace.get("moat_score", 0.0)
 
         if breakthrough >= 0.9:
             level = "high-conviction breakthrough"
@@ -377,7 +412,8 @@ class PortfolioBinderBuilder:
             f"market pressure contribution was {pressure:.4f}; "
             f"trajectory inevitability was {inevitability:.4f}; "
             f"category creation was {category:.4f}; "
-            f"buyer pull was {buyer_pull:.4f}."
+            f"buyer pull was {buyer_pull:.4f}; "
+            f"moat score was {moat_score:.4f}."
         )
 
     def _risk_notes(self, scores: Dict[str, Any], design_output: Dict[str, Any]) -> List[str]:
@@ -405,11 +441,12 @@ class PortfolioBinderBuilder:
         market_gap: Dict[str, Any],
         trend_trajectory: Dict[str, Any],
         market_formation: Dict[str, Any],
+        moat: Dict[str, Any],
     ) -> str:
         if not isinstance(market_gap, dict) or market_gap.get("status") != "success":
             return "Opportunity requires additional market-gap validation."
 
-        sector = market_gap.get("sector", "target sector")
+        sector = self._pretty_token(market_gap.get("sector", "target sector"))
         needed_solution = market_gap.get("needed_solution", "needed solution")
         buyer_segments = market_gap.get("buyer_segments", [])
         buyers = ", ".join(buyer_segments[:3]) if buyer_segments else "strategic buyers"
@@ -419,14 +456,21 @@ class PortfolioBinderBuilder:
             direction = trend_trajectory.get("trend_direction", {}).get("direction")
             window = trend_trajectory.get("strategic_window", {}).get("window")
             if direction and window:
-                trend_sentence = f" The trend trajectory is {direction}, with a {window} strategic window."
+                trend_sentence = f" The trend trajectory is {direction}, with a {self._pretty_token(window)} strategic window."
 
         formation_sentence = ""
         if isinstance(market_formation, dict) and market_formation.get("status") == "success":
             formation_type = market_formation.get("formation_type", {}).get("type")
             market_stage = market_formation.get("market_stage", {}).get("stage")
             if formation_type and market_stage:
-                formation_sentence = f" Market formation profile: {formation_type} at {market_stage} stage."
+                formation_sentence = f" Market formation profile: {self._pretty_token(formation_type)} at {self._pretty_token(market_stage)} stage."
+
+        moat_sentence = ""
+        if isinstance(moat, dict) and moat.get("status") == "success":
+            primary = moat.get("moat_type", {}).get("primary_moat")
+            strength = moat.get("moat_type", {}).get("strength")
+            if primary and strength:
+                moat_sentence = f" Defensibility is {strength}, led by {self._pretty_token(primary)}."
 
         return (
             f"This opportunity is positioned in {sector}. "
@@ -434,6 +478,7 @@ class PortfolioBinderBuilder:
             f"Primary buyer segments include {buyers}."
             f"{trend_sentence}"
             f"{formation_sentence}"
+            f"{moat_sentence}"
         )
 
     def _artifact_manifest(self, sections: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -453,6 +498,7 @@ class PortfolioBinderBuilder:
         market_gap: Dict[str, Any],
         trend_trajectory: Dict[str, Any],
         market_formation: Dict[str, Any],
+        moat: Dict[str, Any],
         design_output: Dict[str, Any],
     ) -> List[str]:
         actions = [
@@ -460,6 +506,7 @@ class PortfolioBinderBuilder:
             "Validate buyer segments and strategic pressure assumptions.",
             "Review trend trajectory, timing pressure, and strategic window.",
             "Review market formation type, buyer pull, and adoption path.",
+            "Review moat, copy risk, vulnerabilities, and strengthening actions.",
             "Review technical blueprint and implementation phases.",
         ]
 
@@ -478,4 +525,10 @@ class PortfolioBinderBuilder:
         if isinstance(market_formation, dict) and market_formation.get("buyer_pull", {}).get("strength") == "strong":
             actions.append("Design anchor-customer validation around the strongest buyer-pull segment.")
 
+        if isinstance(moat, dict) and moat.get("status") == "success":
+            actions.append("Prioritize moat strengthening through proprietary data loops and workflow integration.")
+
         return actions
+
+    def _pretty_token(self, value: str) -> str:
+        return str(value or "").replace("_", " ").replace("-", " ")

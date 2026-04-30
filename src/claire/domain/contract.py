@@ -52,14 +52,6 @@ class IntentMetadata:
 class ClaireIntent:
     """
     Standard request contract.
-
-    Compatible with existing calls like:
-
-        ClaireIntent(
-            intent_id="intent-xxxx",
-            raw_input="...",
-            mode="deterministic"
-        )
     """
 
     def __init__(
@@ -177,6 +169,7 @@ class ClaireResult:
             "market_gap": self.data.get("market_gap", {}),
             "trend_trajectory": self.data.get("trend_trajectory", {}),
             "market_formation": self.data.get("market_formation", {}),
+            "moat": self.data.get("moat", {}),
 
             "engine_details": self.data.get("engine_details", {}),
             "connector_sources": connector_sources,
@@ -202,9 +195,6 @@ class ClaireResult:
 class ContractValidator:
     """
     Lightweight validator for incoming requests.
-
-    This preserves compatibility with earlier app/core code that expected
-    ContractValidator to exist.
     """
 
     def validate_intent(self, payload: Dict[str, Any]) -> ClaireIntent:

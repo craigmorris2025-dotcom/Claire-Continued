@@ -1,11 +1,12 @@
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.14 MARKET FORMATION)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.15 MOAT DEFENSIBILITY)
 
 Adds:
 - Signal trace
 - Engine details
 - TrendTrajectoryEngine timing / momentum / inevitability analysis
 - MarketFormationEngine category / buyer-pull / adoption-path analysis
+- MoatDefensibilityEngine defensibility / copy-risk / compounding-asset analysis
 - MarketGapEngine sector gap / needed solution analysis
 - Conditional Design Portal routing
 - SystemDesignEngine technical blueprint generation
@@ -24,6 +25,7 @@ from claire.engines.system_design_engine import SystemDesignEngine
 from claire.engines.market_gap_engine import MarketGapEngine
 from claire.engines.trend_trajectory_engine import TrendTrajectoryEngine
 from claire.engines.market_formation_engine import MarketFormationEngine
+from claire.engines.moat_defensibility_engine import MoatDefensibilityEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.design.portal import DesignPortal
 from claire.portfolio.binder_builder import PortfolioBinderBuilder
@@ -40,12 +42,13 @@ class PipelineOrchestrator:
         self.market_gap_engine = MarketGapEngine()
         self.trend_engine = TrendTrajectoryEngine()
         self.market_formation_engine = MarketFormationEngine()
+        self.moat_engine = MoatDefensibilityEngine()
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.14 (MARKET FORMATION) <<<")
+        print(">>> RUNNING PIPELINE V5.15 (MOAT DEFENSIBILITY) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -125,11 +128,31 @@ class PipelineOrchestrator:
                 "error": str(e),
             }
 
+        # =========================
+        # MOAT / DEFENSIBILITY
+        # =========================
+        try:
+            moat = self.moat_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                market_gap=market_gap,
+                trend_trajectory=trend_trajectory,
+                market_formation=market_formation,
+                connector_sources=external,
+            )
+        except Exception as e:
+            moat = {
+                "status": "moat_failed",
+                "error": str(e),
+            }
+
         data["domain"] = domain
         data["keywords"] = keywords
         data["market_gap"] = market_gap
         data["trend_trajectory"] = trend_trajectory
         data["market_formation"] = market_formation
+        data["moat"] = moat
 
         # =========================
         # ANALYSIS
@@ -141,7 +164,7 @@ class PipelineOrchestrator:
         phase_log.append(self._decision("analysis", analysis_signal))
 
         # =========================
-        # DISCOVERY
+        # DISCOVERY SIGNALS
         # =========================
         gap_confidence = market_gap.get("confidence", 0.0) if isinstance(market_gap, dict) else 0.0
         pressure_score = (
@@ -179,17 +202,34 @@ class PipelineOrchestrator:
             else 0.0
         )
 
+        moat_confidence = moat.get("confidence", 0.0) if isinstance(moat, dict) else 0.0
+        moat_score = (
+            moat.get("moat_type", {}).get("moat_score", 0.0)
+            if isinstance(moat, dict)
+            else 0.0
+        )
+        copy_risk_score = (
+            moat.get("copy_risk", {}).get("score", 0.0)
+            if isinstance(moat, dict)
+            else 0.0
+        )
+
+        # =========================
+        # DISCOVERY
+        # =========================
         discovery_signal = self._amplify(
-            analysis_signal * 0.44 +
-            market_growth * 0.12 +
-            gap_confidence * 0.09 +
+            analysis_signal * 0.42 +
+            market_growth * 0.11 +
+            gap_confidence * 0.08 +
             pressure_score * 0.06 +
-            trajectory_confidence * 0.07 +
+            trajectory_confidence * 0.06 +
             momentum_score * 0.06 +
             timing_score * 0.04 +
-            formation_confidence * 0.06 +
+            formation_confidence * 0.05 +
             category_score * 0.04 +
             buyer_pull_score * 0.02 +
+            moat_confidence * 0.04 +
+            moat_score * 0.02 +
             (0.05 if patent_activity > 0.6 else 0)
         )
 
@@ -199,23 +239,25 @@ class PipelineOrchestrator:
         # BREAKTHROUGH
         # =========================
         base_breakthrough = (
-            discovery_signal * 0.32 +
-            patent_novelty * 0.21 +
-            analysis_signal * 0.12 +
+            discovery_signal * 0.30 +
+            patent_novelty * 0.20 +
+            analysis_signal * 0.11 +
             gap_confidence * 0.06 +
-            inevitability_score * 0.09 +
-            momentum_score * 0.08 +
-            category_score * 0.07 +
-            buyer_pull_score * 0.05
+            inevitability_score * 0.08 +
+            momentum_score * 0.07 +
+            category_score * 0.06 +
+            buyer_pull_score * 0.04 +
+            moat_score * 0.05 +
+            moat_confidence * 0.03
         )
 
         spike = 0.0
 
         if discovery_signal > 0.5 and patent_activity > 0.6:
-            spike += 0.14
+            spike += 0.13
 
         if patent_novelty > 0.55:
-            spike += 0.09
+            spike += 0.08
 
         if "autonomous" in text or "ai" in text:
             spike += 0.05
@@ -235,6 +277,9 @@ class PipelineOrchestrator:
         if buyer_pull_score >= 0.78:
             spike += 0.03
 
+        if moat_score >= 0.70:
+            spike += 0.035
+
         breakthrough_signal = self._amplify(base_breakthrough + spike)
 
         phase_log.append(self._decision("breakthrough", breakthrough_signal))
@@ -243,14 +288,16 @@ class PipelineOrchestrator:
         # INNOVATION
         # =========================
         innovation_signal = self._amplify(
-            breakthrough_signal * 0.38 +
-            discovery_signal * 0.21 +
-            analysis_signal * 0.10 +
-            gap_confidence * 0.07 +
-            trajectory_confidence * 0.07 +
+            breakthrough_signal * 0.36 +
+            discovery_signal * 0.20 +
+            analysis_signal * 0.09 +
+            gap_confidence * 0.06 +
+            trajectory_confidence * 0.06 +
             inevitability_score * 0.05 +
-            formation_confidence * 0.07 +
-            category_score * 0.05
+            formation_confidence * 0.06 +
+            category_score * 0.04 +
+            moat_score * 0.05 +
+            moat_confidence * 0.03
         )
 
         phase_log.append(self._decision("innovation", innovation_signal))
@@ -259,13 +306,15 @@ class PipelineOrchestrator:
         # VIABILITY
         # =========================
         viability_signal = self._amplify(
-            innovation_signal * 0.40 +
-            financial_health * 0.24 +
-            (1 - financial_risk) * 0.14 +
+            innovation_signal * 0.38 +
+            financial_health * 0.22 +
+            (1 - financial_risk) * 0.13 +
             pressure_score * 0.05 +
-            timing_score * 0.07 +
-            buyer_pull_score * 0.07 +
-            formation_confidence * 0.03
+            timing_score * 0.06 +
+            buyer_pull_score * 0.06 +
+            formation_confidence * 0.03 +
+            moat_score * 0.05 +
+            (1 - copy_risk_score) * 0.02
         )
 
         phase_log.append(self._decision("viability", viability_signal))
@@ -274,12 +323,13 @@ class PipelineOrchestrator:
         # BUILDABILITY
         # =========================
         build_signal = self._amplify(
-            viability_signal * 0.55 +
-            innovation_signal * 0.21 +
-            breakthrough_signal * 0.11 +
+            viability_signal * 0.54 +
+            innovation_signal * 0.20 +
+            breakthrough_signal * 0.10 +
             gap_confidence * 0.04 +
-            trajectory_confidence * 0.05 +
-            formation_confidence * 0.04
+            trajectory_confidence * 0.04 +
+            formation_confidence * 0.03 +
+            moat_confidence * 0.05
         )
 
         phase_log.append(self._decision("buildability", build_signal))
@@ -298,12 +348,14 @@ class PipelineOrchestrator:
         # MATCHING
         # =========================
         match_signal = self._amplify(
-            feasibility_signal * 0.58 +
-            innovation_signal * 0.20 +
-            gap_confidence * 0.07 +
-            trajectory_confidence * 0.06 +
+            feasibility_signal * 0.56 +
+            innovation_signal * 0.18 +
+            gap_confidence * 0.06 +
+            trajectory_confidence * 0.05 +
             buyer_pull_score * 0.05 +
-            category_score * 0.04
+            category_score * 0.04 +
+            moat_score * 0.04 +
+            moat_confidence * 0.02
         )
 
         phase_log.append(self._decision("matching", match_signal))
@@ -312,12 +364,13 @@ class PipelineOrchestrator:
         # ACQUISITION
         # =========================
         acquisition_signal = self._amplify(
-            match_signal * 0.66 +
-            viability_signal * 0.16 +
+            match_signal * 0.64 +
+            viability_signal * 0.15 +
             pressure_score * 0.05 +
             inevitability_score * 0.05 +
-            category_score * 0.04 +
-            buyer_pull_score * 0.04
+            category_score * 0.035 +
+            buyer_pull_score * 0.035 +
+            moat_score * 0.05
         )
 
         phase_log.append(self._decision("acquisition", acquisition_signal))
@@ -326,11 +379,12 @@ class PipelineOrchestrator:
         # OPTIMIZATION
         # =========================
         optimization_signal = self._amplify(
-            acquisition_signal * 0.74 +
-            innovation_signal * 0.12 +
-            gap_confidence * 0.04 +
-            momentum_score * 0.04 +
-            formation_confidence * 0.06
+            acquisition_signal * 0.72 +
+            innovation_signal * 0.11 +
+            gap_confidence * 0.035 +
+            momentum_score * 0.035 +
+            formation_confidence * 0.05 +
+            moat_confidence * 0.05
         )
 
         phase_log.append(self._decision("optimization", optimization_signal))
@@ -341,13 +395,15 @@ class PipelineOrchestrator:
         portfolio_signal = min(
             0.94,
             self._amplify(
-                optimization_signal * 0.75 +
-                acquisition_signal * 0.09 +
-                pressure_score * 0.035 +
-                inevitability_score * 0.045 +
-                timing_score * 0.03 +
+                optimization_signal * 0.72 +
+                acquisition_signal * 0.085 +
+                pressure_score * 0.03 +
+                inevitability_score * 0.04 +
+                timing_score * 0.025 +
                 category_score * 0.03 +
-                buyer_pull_score * 0.02
+                buyer_pull_score * 0.02 +
+                moat_score * 0.04 +
+                (1 - copy_risk_score) * 0.01
             )
         )
 
@@ -386,6 +442,9 @@ class PipelineOrchestrator:
             "market_formation_confidence": formation_confidence,
             "category_creation_score": category_score,
             "buyer_pull_score": buyer_pull_score,
+            "moat_confidence": moat_confidence,
+            "moat_score": moat_score,
+            "copy_risk_score": copy_risk_score,
             "breakthrough_base": base_breakthrough,
             "breakthrough_spike": spike,
             "breakthrough_final": breakthrough_signal,
@@ -432,6 +491,11 @@ class PipelineOrchestrator:
                 "buyer_pull": market_formation.get("buyer_pull") if isinstance(market_formation, dict) else None,
                 "confidence": market_formation.get("confidence") if isinstance(market_formation, dict) else None,
             },
+            "moat": {
+                "moat_type": moat.get("moat_type") if isinstance(moat, dict) else None,
+                "copy_risk": moat.get("copy_risk") if isinstance(moat, dict) else None,
+                "confidence": moat.get("confidence") if isinstance(moat, dict) else None,
+            },
         }
 
         # =========================
@@ -463,6 +527,7 @@ class PipelineOrchestrator:
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
                 "market_formation": market_formation,
+                "moat": moat,
             })
             data["design_portal"] = design_portal
         except Exception as e:
@@ -516,6 +581,7 @@ class PipelineOrchestrator:
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
                 "market_formation": market_formation,
+                "moat": moat,
                 "system_design": system_design,
                 "design_output": data.get("design_output", {}),
                 "acquirer_matches": acquirer_matches,
@@ -541,6 +607,7 @@ class PipelineOrchestrator:
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
                 "market_formation": market_formation,
+                "moat": moat,
                 "signal_trace": data.get("signal_trace", {}),
                 "engine_details": data.get("engine_details", {}),
                 "system_design": system_design,
