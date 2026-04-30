@@ -638,27 +638,174 @@ class PipelineOrchestrator:
         return [w.strip(",.") for w in text.lower().split() if len(w) > 4][:10]
 
     def _detect_domain(self, text: str):
-        t = text.lower()
+        """
+        Conservative plain-text domain router.
 
-        if "finance" in t or "fintech" in t or "credit" in t or "liquidity" in t:
-            return "finance"
+        Hotfix:
+        - Avoids regex word-boundary issues entirely.
+        - Prevents "AI-powered" from triggering energy via "power".
+        - Routes insurance / climate insurance before finance or energy.
+        - Routes defense/autonomy before energy when defense terms are present.
+        """
+        t = self._normalize_text(text)
 
-        if "health" in t or "medical" in t or "clinical" in t or "hospital" in t:
-            return "healthcare"
+        def contains_word(word: str) -> bool:
+            return word.lower() in t.split()
 
-        if "supply chain" in t or "manufacturing" in t or "industrial" in t or "supplier" in t:
-            return "industrial"
+        def contains_phrase(phrase: str) -> bool:
+            phrase = self._normalize_text(phrase).strip()
+            return f" {phrase} " in f" {t} "
 
-        if "energy" in t or "grid" in t or "utilities" in t or "power" in t:
-            return "energy"
+        def has_any_words(words):
+            return any(contains_word(word) for word in words)
 
-        if "defense" in t or "military" in t or "battlefield" in t:
+        def has_any_phrases(phrases):
+            return any(contains_phrase(phrase) for phrase in phrases)
+
+        if has_any_phrases([
+            "climate insurance",
+            "weather losses",
+            "property risk",
+            "risk transfer",
+            "premium repricing",
+            "market withdrawal",
+            "catastrophe model",
+            "cat model",
+        ]) or has_any_words([
+            "insurance",
+            "insurer",
+            "insurers",
+            "reinsurance",
+            "reinsurer",
+            "reinsurers",
+            "underwriting",
+            "underwriter",
+            "underwriters",
+            "catastrophe",
+            "actuarial",
+            "claims",
+            "broker",
+            "brokers",
+        ]):
+            return "insurance"
+
+        if has_any_phrases([
+            "battlefield",
+            "secure command",
+            "command systems",
+            "mission risk",
+            "drone coordination",
+            "border security",
+        ]) or has_any_words([
+            "defense",
+            "military",
+            "mission",
+            "drone",
+            "drones",
+            "uav",
+            "surveillance",
+            "autonomy",
+            "autonomous",
+        ]):
             return "technology"
 
-        if "ai" in t or "machine learning" in t or "platform" in t:
+        if has_any_phrases([
+            "health system",
+            "health systems",
+            "care delivery",
+            "patient flow",
+            "staffing shortages",
+        ]) or has_any_words([
+            "healthcare",
+            "medical",
+            "clinical",
+            "hospital",
+            "hospitals",
+            "patient",
+            "patients",
+        ]):
+            return "healthcare"
+
+        if has_any_phrases([
+            "supply chain",
+            "planning system",
+            "planning systems",
+            "component shortage",
+            "component shortages",
+            "production failure",
+            "production failures",
+        ]) or has_any_words([
+            "manufacturing",
+            "industrial",
+            "supplier",
+            "suppliers",
+            "erp",
+            "procurement",
+            "factory",
+            "factories",
+            "production",
+        ]):
+            return "industrial"
+
+        if has_any_phrases([
+            "capital markets",
+            "market intelligence",
+            "institutional research",
+            "asset manager",
+            "asset managers",
+            "financial market",
+            "financial markets",
+        ]) or has_any_words([
+            "finance",
+            "fintech",
+            "financial",
+            "credit",
+            "liquidity",
+            "portfolio",
+            "portfolios",
+        ]):
+            return "finance"
+
+        if has_any_phrases([
+            "power grid",
+            "power system",
+            "power systems",
+            "power demand",
+            "electric infrastructure",
+            "grid instability",
+            "transmission bottleneck",
+            "transmission bottlenecks",
+            "utility operations",
+        ]) or has_any_words([
+            "energy",
+            "grid",
+            "utility",
+            "utilities",
+            "transmission",
+        ]):
+            return "energy"
+
+        if has_any_phrases([
+            "machine learning",
+            "ai platform",
+            "software platform",
+        ]) or has_any_words([
+            "ai",
+            "platform",
+            "software",
+        ]):
             return "technology"
 
         return "general"
+
+    def _normalize_text(self, text: str) -> str:
+        chars = []
+        for ch in (text or "").lower():
+            if ch.isalnum():
+                chars.append(ch)
+            else:
+                chars.append(" ")
+        return " ".join("".join(chars).split())
 
     def _amplify(self, value: float) -> float:
         value = max(0.0, min(value, 1.0))

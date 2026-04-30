@@ -1,12 +1,10 @@
 """
-Market Gap Engine — detects sector gaps, industry bottlenecks,
-needed solutions, buyer segments, and strategic pressure signals.
+Market Gap Engine — sector-aware gap, needed-solution, buyer, and acquirer-category mapping.
 
-Purpose:
-- Move Claire beyond keyword scoring
-- Identify what is missing in a market / sector / industry
-- Translate gaps into needed solution classes
-- Feed design, portfolio, and later acquirer discovery
+Regex sector routing hotfix:
+- Uses plain normalized word/phrase matching instead of regex word boundaries.
+- Forces upstream domain == "insurance" into climate_insurance.
+- Prevents false generic routing for climate insurance inputs.
 """
 
 from typing import Any, Dict, List, Optional
@@ -14,16 +12,7 @@ from typing import Any, Dict, List, Optional
 
 class MarketGapEngine:
     """
-    Deterministic market / sector gap analyzer.
-
-    This is not a search engine.
-    It maps input signals into:
-    - sector profile
-    - market gap
-    - needed solution
-    - buyer segment
-    - strategic pressure
-    - design implications
+    Deterministic market / sector / industry gap mapper.
     """
 
     def analyze(
@@ -33,21 +22,37 @@ class MarketGapEngine:
         keywords: Optional[List[str]] = None,
         connector_sources: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
-        text = (text or "").lower()
+        text = text or ""
         keywords = keywords or []
         connector_sources = connector_sources or {}
 
-        profile = self._detect_profile(text=text, keywords=keywords)
+        sector = self._detect_sector(text=text, domain=domain, keywords=keywords)
+        profile = self._sector_profile(sector)
+
+        market = connector_sources.get("market", {})
+        patent = connector_sources.get("patent", {})
+        financial = connector_sources.get("financial", {})
+
         pressure = self._strategic_pressure(
             text=text,
-            profile=profile,
-            connector_sources=connector_sources,
+            keywords=keywords,
+            sector=sector,
+            market=market,
+            financial=financial,
+        )
+
+        confidence = self._confidence(
+            text=text,
+            keywords=keywords,
+            sector=sector,
+            pressure_score=pressure["score"],
+            patent_activity=float(patent.get("activity", 0.0) or 0.0),
         )
 
         return {
             "status": "success",
-            "domain": domain,
-            "sector": profile["sector"],
+            "domain": self._domain_for_sector(sector, domain),
+            "sector": sector,
             "industry_context": profile["industry_context"],
             "gap_type": profile["gap_type"],
             "market_gap": profile["market_gap"],
@@ -56,122 +61,356 @@ class MarketGapEngine:
             "buyer_segments": profile["buyer_segments"],
             "strategic_pressure": pressure,
             "design_implications": profile["design_implications"],
-            "portfolio_relevance": self._portfolio_relevance(profile, pressure),
+            "portfolio_relevance": {
+                "priority": "high" if confidence >= 0.70 else "medium",
+                "why_it_matters": profile["market_gap"],
+                "portfolio_angle": profile["needed_solution"],
+            },
             "acquirer_categories": profile["acquirer_categories"],
-            "confidence": self._confidence(profile, pressure),
+            "confidence": confidence,
         }
 
     # =========================
-    # PROFILE DETECTION
+    # PLAIN-TEXT ROUTING HELPERS
     # =========================
-    def _detect_profile(self, text: str, keywords: List[str]) -> Dict[str, Any]:
-        profiles = self._profiles()
+    def _normalize_text(self, text: str) -> str:
+        chars = []
+        for ch in (text or "").lower():
+            if ch.isalnum():
+                chars.append(ch)
+            else:
+                chars.append(" ")
+        return " ".join("".join(chars).split())
 
-        best_name = "general_market_intelligence"
-        best_score = 0
+    def _routing_view(self, text: str, keywords: Optional[List[str]] = None) -> str:
+        return self._normalize_text(f"{text or ''} {' '.join(keywords or [])}")
 
-        keyword_text = " ".join(keywords).lower()
-        combined = f"{text} {keyword_text}"
+    def _contains_word(self, routing_text: str, word: str) -> bool:
+        return word.lower() in routing_text.split()
 
-        for name, profile in profiles.items():
-            score = 0
+    def _contains_phrase(self, routing_text: str, phrase: str) -> bool:
+        phrase = self._normalize_text(phrase).strip()
+        return f" {phrase} " in f" {routing_text} "
 
-            for trigger in profile["triggers"]:
-                if trigger in combined:
-                    score += 2 if " " in trigger else 1
+    def _has_any_words(self, routing_text: str, words: List[str]) -> bool:
+        return any(self._contains_word(routing_text, word) for word in words)
 
-            for strong_trigger in profile.get("strong_triggers", []):
-                if strong_trigger in combined:
-                    score += 3
+    def _has_any_phrases(self, routing_text: str, phrases: List[str]) -> bool:
+        return any(self._contains_phrase(routing_text, phrase) for phrase in phrases)
 
-            if score > best_score:
-                best_score = score
-                best_name = name
+    # =========================
+    # SECTOR DETECTION
+    # =========================
+    def _detect_sector(self, text: str, domain: str, keywords: List[str]) -> str:
+        routing = self._routing_view(text, keywords)
+        domain = (domain or "").lower()
 
-        selected = dict(profiles[best_name])
-        selected["profile"] = best_name
-        selected["match_strength"] = best_score
+        # Critical hotfix: if the upstream router already identified insurance,
+        # do not fall back to general_intelligence.
+        if domain == "insurance":
+            return "climate_insurance"
 
-        return selected
+        if self._has_any_phrases(routing, [
+            "climate insurance",
+            "weather losses",
+            "historical weather losses",
+            "climate exposure",
+            "regional climate exposure",
+            "property risk",
+            "property and infrastructure risk",
+            "risk concentration",
+            "risk transfer",
+            "risk transfer countermeasures",
+            "premium repricing",
+            "insurance repricing",
+            "market withdrawal",
+            "catastrophe model",
+            "cat model",
+            "exposure benchmark",
+            "exposure benchmarks",
+        ]) or self._has_any_words(routing, [
+            "insurance",
+            "insurer",
+            "insurers",
+            "reinsurance",
+            "reinsurer",
+            "reinsurers",
+            "underwriting",
+            "underwriter",
+            "underwriters",
+            "catastrophe",
+            "actuarial",
+            "claims",
+            "policyholder",
+            "broker",
+            "brokers",
+        ]):
+            return "climate_insurance"
 
-    def _profiles(self) -> Dict[str, Dict[str, Any]]:
-        return {
-            "industrial_supply_chain": {
-                "sector": "industrial_supply_chain",
-                "industry_context": "manufacturing, logistics, supplier networks, industrial operations",
-                "triggers": [
-                    "supply",
-                    "chain",
-                    "supply chain",
-                    "supplier",
-                    "suppliers",
-                    "manufacturing",
-                    "component",
-                    "components",
-                    "shortage",
-                    "shortages",
-                    "bottleneck",
-                    "bottlenecks",
-                    "logistics",
-                    "resilience",
-                ],
-                "strong_triggers": [
-                    "component shortages",
-                    "supplier risk",
-                    "manufacturing resilience",
-                    "supply chain intelligence",
-                ],
-                "gap_type": "visibility / resilience / bottleneck detection",
-                "market_gap": "Industrial operators lack early-warning intelligence for supplier risk, component shortages, and hidden bottlenecks.",
-                "needed_solution": "Predictive supply-chain intelligence that detects bottlenecks, maps supplier exposure, forecasts shortages, and recommends resilience actions.",
-                "solution_class": "predictive industrial intelligence platform",
+        if self._has_any_phrases(routing, [
+            "secure command",
+            "command system",
+            "command systems",
+            "battlefield sensor",
+            "battlefield sensors",
+            "mission risk",
+            "mission countermeasure",
+            "mission countermeasures",
+            "drone coordination",
+            "border security",
+        ]) or self._has_any_words(routing, [
+            "defense",
+            "military",
+            "battlefield",
+            "mission",
+            "drone",
+            "drones",
+            "uav",
+            "surveillance",
+            "autonomy",
+            "autonomous",
+        ]):
+            return "defense_autonomy"
+
+        if self._has_any_phrases(routing, [
+            "health system",
+            "health systems",
+            "patient flow",
+            "patient flow bottlenecks",
+            "care delivery",
+            "staffing shortage",
+            "staffing shortages",
+            "clinical workflow",
+            "hospital capacity",
+        ]) or self._has_any_words(routing, [
+            "healthcare",
+            "hospital",
+            "hospitals",
+            "patient",
+            "patients",
+            "clinical",
+            "medical",
+            "clinician",
+            "clinicians",
+        ]):
+            return "healthcare_operations"
+
+        if self._has_any_phrases(routing, [
+            "supply chain",
+            "component shortage",
+            "component shortages",
+            "planning system",
+            "planning systems",
+            "production failure",
+            "production failures",
+            "supplier dependency",
+            "supplier dependencies",
+        ]) or self._has_any_words(routing, [
+            "manufacturing",
+            "industrial",
+            "supplier",
+            "suppliers",
+            "erp",
+            "procurement",
+            "production",
+            "factory",
+            "factories",
+        ]):
+            return "industrial_supply_chain"
+
+        if self._has_any_phrases(routing, [
+            "power grid",
+            "power system",
+            "power systems",
+            "power demand",
+            "electric infrastructure",
+            "grid instability",
+            "transmission bottleneck",
+            "transmission bottlenecks",
+            "utility operations",
+        ]) or self._has_any_words(routing, [
+            "energy",
+            "grid",
+            "utility",
+            "utilities",
+            "transmission",
+        ]):
+            return "energy_infrastructure"
+
+        if self._has_any_phrases(routing, [
+            "capital market",
+            "capital markets",
+            "asset manager",
+            "asset managers",
+            "institutional research",
+            "financial market",
+            "financial markets",
+            "market intelligence",
+            "credit stress",
+            "liquidity deterioration",
+        ]) or self._has_any_words(routing, [
+            "finance",
+            "financial",
+            "credit",
+            "liquidity",
+            "portfolio",
+            "portfolios",
+            "asset",
+            "assets",
+            "equities",
+            "bonds",
+        ]):
+            return "financial_market_intelligence"
+
+        return "general_intelligence"
+
+    # =========================
+    # SECTOR PROFILES
+    # =========================
+    def _sector_profile(self, sector: str) -> Dict[str, Any]:
+        profiles = {
+            "climate_insurance": {
+                "industry_context": "insurance, reinsurance, underwriting, catastrophe risk, property exposure, climate risk transfer",
+                "gap_type": "climate exposure / underwriting repricing / market withdrawal",
+                "market_gap": "Insurers and reinsurers face accelerating climate exposure, property-risk concentration, pricing uncertainty, and withdrawal pressure before underwriting systems fully adapt.",
+                "needed_solution": "Climate insurance risk intelligence platform that detects exposure concentration, forecasts repricing pressure, and supports underwriting, risk-transfer, and portfolio countermeasures.",
+                "solution_class": "climate insurance risk intelligence platform",
                 "buyer_segments": [
-                    "manufacturers",
-                    "logistics networks",
-                    "industrial operators",
-                    "procurement teams",
-                    "supply chain risk teams",
+                    "insurers",
+                    "reinsurers",
+                    "underwriting teams",
+                    "catastrophe-risk teams",
+                    "property risk carriers",
+                    "insurance brokers",
+                    "public risk pools",
                 ],
                 "design_implications": [
-                    "supplier-risk graph",
-                    "shortage forecasting model",
-                    "bottleneck detection engine",
-                    "resilience recommendation layer",
-                    "operations dashboard",
+                    "weather loss ingestion",
+                    "property exposure model",
+                    "catastrophe scenario engine",
+                    "underwriting repricing detector",
+                    "market withdrawal risk map",
+                    "risk-transfer recommendation layer",
                 ],
                 "acquirer_categories": [
-                    "industrial software",
+                    "insurance analytics platforms",
+                    "catastrophe modeling companies",
+                    "reinsurers",
+                    "risk data providers",
+                    "climate risk intelligence companies",
+                    "insurance core software platforms",
+                    "insurance brokers",
+                ],
+            },
+            "defense_autonomy": {
+                "industry_context": "defense technology, autonomous systems, mission intelligence, secure command, aerospace",
+                "gap_type": "mission autonomy / low-latency decision / distributed coordination",
+                "market_gap": "Defense operators need secure, human-reviewed autonomy and mission intelligence under contested, low-latency conditions.",
+                "needed_solution": "Distributed autonomous decision platform with secure command integration, simulation data, auditability, and human override controls.",
+                "solution_class": "distributed autonomous decision platform",
+                "buyer_segments": [
+                    "defense primes",
+                    "defense technology companies",
+                    "aerospace programs",
+                    "government mission teams",
+                ],
+                "design_implications": [
+                    "secure command integration",
+                    "mission simulation datasets",
+                    "human override layer",
+                    "edge decision engine",
+                    "audit trail",
+                ],
+                "acquirer_categories": [
+                    "defense primes",
+                    "defense technology companies",
+                    "aerospace companies",
+                    "secure command platforms",
+                ],
+            },
+            "healthcare_operations": {
+                "industry_context": "health systems, hospital operations, patient flow, staffing, clinical operations",
+                "gap_type": "capacity / staffing / patient-flow bottleneck",
+                "market_gap": "Health systems struggle to predict capacity and staffing bottlenecks before they degrade patient-flow and operational performance.",
+                "needed_solution": "Healthcare operations intelligence platform that forecasts patient-flow bottlenecks, staffing gaps, and capacity risk while preserving auditability and privacy controls.",
+                "solution_class": "healthcare operations intelligence platform",
+                "buyer_segments": [
+                    "health systems",
+                    "hospital operations teams",
+                    "capacity command centers",
+                    "workforce planning teams",
+                ],
+                "design_implications": [
+                    "patient-flow model",
+                    "capacity forecast engine",
+                    "staffing-risk detector",
+                    "privacy controls",
+                    "clinical workflow review layer",
+                ],
+                "acquirer_categories": [
+                    "healthcare software platforms",
+                    "hospital operations platforms",
+                    "EHR ecosystem companies",
+                    "healthcare analytics companies",
+                ],
+            },
+            "industrial_supply_chain": {
+                "industry_context": "manufacturing, procurement, suppliers, ERP, planning systems, industrial resilience",
+                "gap_type": "component shortage / supplier dependency / production bottleneck",
+                "market_gap": "Manufacturers lack early-warning intelligence for component shortages, supplier dependency failures, and production bottlenecks.",
+                "needed_solution": "Industrial resilience intelligence platform that maps supplier dependencies, forecasts shortages, and recommends procurement and manufacturing countermeasures.",
+                "solution_class": "industrial resilience intelligence platform",
+                "buyer_segments": [
+                    "manufacturers",
+                    "procurement teams",
+                    "supply-chain leaders",
+                    "operations planning teams",
+                ],
+                "design_implications": [
+                    "supplier graph",
+                    "shortage forecast engine",
+                    "ERP integration",
+                    "procurement recommendation layer",
+                    "production risk dashboard",
+                ],
+                "acquirer_categories": [
                     "ERP platforms",
-                    "automation companies",
-                    "supply-chain platforms",
-                    "cloud data platforms",
+                    "supply-chain software companies",
+                    "industrial automation companies",
+                    "procurement platforms",
+                ],
+            },
+            "energy_infrastructure": {
+                "industry_context": "grid infrastructure, utilities, transmission, power systems, energy resilience",
+                "gap_type": "grid instability / demand pressure / infrastructure bottleneck",
+                "market_gap": "Utilities and infrastructure operators need better early-warning intelligence for grid instability, demand pressure, and transmission bottlenecks.",
+                "needed_solution": "Energy infrastructure intelligence platform that forecasts grid bottlenecks, maps utility asset risk, and recommends resilience investments.",
+                "solution_class": "energy infrastructure intelligence platform",
+                "buyer_segments": [
+                    "utilities",
+                    "grid operators",
+                    "energy infrastructure owners",
+                    "transmission planners",
+                ],
+                "design_implications": [
+                    "grid data ingestion",
+                    "asset-risk model",
+                    "demand forecast engine",
+                    "transmission bottleneck map",
+                    "resilience planning module",
+                ],
+                "acquirer_categories": [
+                    "utility software companies",
+                    "grid technology companies",
+                    "energy management platforms",
+                    "infrastructure analytics providers",
                 ],
             },
             "financial_market_intelligence": {
-                "sector": "financial_market_intelligence",
                 "industry_context": "capital markets, credit, liquidity, institutional finance, risk intelligence",
-                "triggers": [
-                    "financial",
-                    "market",
-                    "liquidity",
-                    "credit",
-                    "stress",
-                    "sector rotations",
-                    "capital",
-                    "reprices",
-                    "institutional",
-                    "risk",
-                    "opportunities",
-                ],
-                "strong_triggers": [
-                    "hidden liquidity gaps",
-                    "credit stress signals",
-                    "institutional capital",
-                    "market intelligence",
-                ],
                 "gap_type": "hidden signal / repricing opportunity",
                 "market_gap": "Financial markets contain weak signals that appear before capital reprices risk, liquidity, and sector rotation.",
-                "needed_solution": "Signal intelligence system that detects hidden liquidity gaps, credit stress, and overlooked repricing opportunities.",
+                "needed_solution": "Financial signal intelligence platform that detects hidden liquidity gaps, credit stress, and overlooked repricing opportunities.",
                 "solution_class": "financial signal intelligence platform",
                 "buyer_segments": [
                     "asset managers",
@@ -194,285 +433,212 @@ class MarketGapEngine:
                     "asset-management technology platforms",
                 ],
             },
-            "healthcare_operations": {
-                "sector": "healthcare_operations",
-                "industry_context": "hospital operations, care delivery, staffing, capacity management",
-                "triggers": [
-                    "health",
-                    "healthcare",
-                    "clinical",
-                    "hospital",
-                    "patient",
-                    "care",
-                    "staffing",
-                    "capacity",
-                    "outcomes",
-                    "operations",
-                ],
-                "strong_triggers": [
-                    "hospital capacity gaps",
-                    "care delivery bottlenecks",
-                    "staffing shortages",
-                    "patient outcomes",
-                ],
-                "gap_type": "capacity / operations / care delivery bottleneck",
-                "market_gap": "Healthcare operators often react to capacity and staffing issues after patient risk has already increased.",
-                "needed_solution": "Predictive clinical operations platform that forecasts capacity gaps, staffing shortages, and care bottlenecks before outcomes degrade.",
-                "solution_class": "healthcare operations intelligence platform",
+            "general_intelligence": {
+                "industry_context": "cross-sector intelligence, opportunity discovery, strategic analysis",
+                "gap_type": "knowledge / decision / opportunity gap",
+                "market_gap": "Organizations lack integrated systems for detecting weak signals, synthesizing opportunities, and converting them into validated designs.",
+                "needed_solution": "Cross-sector opportunity intelligence platform that maps signals, gaps, opportunities, designs, and strategic outcomes.",
+                "solution_class": "opportunity intelligence platform",
                 "buyer_segments": [
-                    "hospital systems",
-                    "clinical operations teams",
-                    "care coordination teams",
-                    "healthcare administrators",
-                ],
-                "design_implications": [
-                    "capacity forecasting model",
-                    "staffing risk detector",
-                    "care bottleneck mapper",
-                    "patient-flow intelligence layer",
-                    "operations command dashboard",
-                ],
-                "acquirer_categories": [
-                    "healthcare software platforms",
-                    "hospital IT companies",
-                    "clinical analytics providers",
-                    "healthcare operations vendors",
-                ],
-            },
-            "energy_infrastructure": {
-                "sector": "energy_infrastructure",
-                "industry_context": "utilities, grid operations, energy infrastructure, regional power demand",
-                "triggers": [
-                    "energy",
-                    "grid",
-                    "power",
-                    "utilities",
-                    "transformer",
-                    "transmission",
-                    "demand",
-                    "instability",
-                    "infrastructure",
-                    "resilience",
-                ],
-                "strong_triggers": [
-                    "grid instability patterns",
-                    "regional power demand gaps",
-                    "transmission bottlenecks",
-                    "energy infrastructure",
-                ],
-                "gap_type": "infrastructure resilience / demand forecasting / bottleneck detection",
-                "market_gap": "Utilities need earlier detection of grid instability, demand gaps, and infrastructure bottlenecks.",
-                "needed_solution": "AI-enabled infrastructure intelligence platform that forecasts demand, detects grid instability, and recommends resilience upgrades.",
-                "solution_class": "energy infrastructure resilience platform",
-                "buyer_segments": [
-                    "utilities",
-                    "grid operators",
-                    "energy infrastructure companies",
-                    "regional planning authorities",
-                ],
-                "design_implications": [
-                    "grid signal ingestion",
-                    "demand forecasting model",
-                    "infrastructure bottleneck detector",
-                    "resilience planning engine",
-                    "utility dashboard",
-                ],
-                "acquirer_categories": [
-                    "energy software companies",
-                    "industrial automation companies",
-                    "utility technology vendors",
-                    "infrastructure analytics providers",
-                ],
-            },
-            "defense_autonomy": {
-                "sector": "defense_autonomy",
-                "industry_context": "defense, autonomous systems, drones, battlefield intelligence",
-                "triggers": [
-                    "defense",
-                    "battlefield",
-                    "drone",
-                    "drones",
-                    "swarm",
-                    "autonomous",
-                    "sensor",
-                    "fusion",
-                    "edge",
-                    "mission",
-                ],
-                "strong_triggers": [
-                    "autonomous swarm",
-                    "sensor fusion",
-                    "battlefield learning",
-                    "drone defense",
-                ],
-                "gap_type": "mission autonomy / low-latency decision / distributed coordination",
-                "market_gap": "Defense operators need resilient autonomous systems capable of acting under degraded communications and fast-changing mission conditions.",
-                "needed_solution": "Distributed autonomous decision platform for drones, sensors, and battlefield intelligence systems.",
-                "solution_class": "autonomous defense intelligence platform",
-                "buyer_segments": [
-                    "defense primes",
-                    "defense technology companies",
-                    "government agencies",
-                    "military operators",
-                ],
-                "design_implications": [
-                    "edge runtime",
-                    "sensor fusion layer",
-                    "autonomous decision engine",
-                    "mission-context isolation",
-                    "human override framework",
-                ],
-                "acquirer_categories": [
-                    "defense primes",
-                    "defense technology companies",
-                    "aerospace companies",
-                    "government technology providers",
-                ],
-            },
-            "general_market_intelligence": {
-                "sector": "general_market_intelligence",
-                "industry_context": "cross-sector market intelligence and opportunity discovery",
-                "triggers": [
-                    "market",
-                    "industry",
-                    "sector",
-                    "gap",
-                    "gaps",
-                    "demand",
-                    "trend",
-                    "historical",
-                    "opportunity",
-                    "needed",
-                    "solution",
-                ],
-                "strong_triggers": [
-                    "industry gaps",
-                    "market trajectories",
-                    "unmet enterprise demand",
-                    "needed solutions",
-                ],
-                "gap_type": "cross-sector opportunity / unmet demand / inefficient market structure",
-                "market_gap": "Many industries contain unmet demand and inefficient workflows that are visible only through cross-signal trend analysis.",
-                "needed_solution": "Market intelligence engine that detects sector gaps, ranks needed solutions, and identifies timing-based opportunities.",
-                "solution_class": "cross-sector opportunity intelligence platform",
-                "buyer_segments": [
-                    "corporate strategy teams",
-                    "venture studios",
-                    "private equity teams",
+                    "strategy teams",
                     "innovation groups",
-                    "product strategy teams",
+                    "corporate development teams",
+                    "research organizations",
                 ],
                 "design_implications": [
-                    "trend ingestion",
-                    "gap detection model",
-                    "needed-solution mapper",
-                    "opportunity scoring layer",
-                    "portfolio prioritization dashboard",
+                    "signal ingestion",
+                    "gap detection",
+                    "opportunity ranking",
+                    "design synthesis",
+                    "portfolio packaging",
                 ],
                 "acquirer_categories": [
-                    "enterprise software companies",
-                    "strategy platforms",
-                    "data intelligence companies",
-                    "innovation platforms",
+                    "data intelligence platforms",
+                    "enterprise AI platforms",
+                    "research platforms",
+                    "strategy software companies",
                 ],
             },
         }
+        return profiles.get(sector, profiles["general_intelligence"])
 
     # =========================
-    # SCORING / PRESSURE
+    # SCORING
     # =========================
     def _strategic_pressure(
         self,
         text: str,
-        profile: Dict[str, Any],
-        connector_sources: Dict[str, Any],
+        keywords: List[str],
+        sector: str,
+        market: Dict[str, Any],
+        financial: Dict[str, Any],
     ) -> Dict[str, Any]:
-        market = connector_sources.get("market", {})
-        patent = connector_sources.get("patent", {})
-        financial = connector_sources.get("financial", {})
+        routing = self._routing_view(text, keywords)
 
-        pressure_score = 0.45
+        pressure_terms = {
+            "climate_insurance": [
+                "accelerating",
+                "climate exposure",
+                "weather losses",
+                "repricing",
+                "market withdrawal",
+                "losses",
+                "risk concentration",
+                "risk transfer",
+                "underwriting",
+                "catastrophe",
+            ],
+            "defense_autonomy": [
+                "contested",
+                "mission",
+                "secure",
+                "real time",
+                "human override",
+                "battlefield",
+                "drone",
+            ],
+            "healthcare_operations": [
+                "shortage",
+                "capacity",
+                "patient flow",
+                "staffing",
+                "hospital",
+            ],
+            "industrial_supply_chain": [
+                "shortage",
+                "bottleneck",
+                "supplier",
+                "production failure",
+                "procurement",
+            ],
+            "energy_infrastructure": [
+                "grid",
+                "demand",
+                "transmission",
+                "resilience",
+                "utility",
+            ],
+            "financial_market_intelligence": [
+                "credit",
+                "liquidity",
+                "repricing",
+                "risk",
+                "portfolio",
+            ],
+        }
 
-        if profile.get("match_strength", 0) >= 4:
-            pressure_score += 0.15
+        drivers = []
+        for term in pressure_terms.get(sector, []):
+            if " " in term:
+                matched = self._contains_phrase(routing, term)
+            else:
+                matched = self._contains_word(routing, term)
+            if matched:
+                drivers.append(term)
 
-        if "shortage" in text or "bottleneck" in text or "gap" in text:
-            pressure_score += 0.10
+        base = 0.34 + min(0.26, len(drivers) * 0.050)
+        base += float(market.get("volatility", 0.0) or 0.0) * 0.12
+        base += float(financial.get("risk", 0.0) or 0.0) * 0.08
 
-        if "regulatory" in text or "risk" in text or "resilience" in text:
-            pressure_score += 0.08
+        if sector == "climate_insurance":
+            base += 0.12
+        elif sector in {"defense_autonomy", "healthcare_operations"}:
+            base += 0.08
+        elif sector in {"energy_infrastructure", "financial_market_intelligence"}:
+            base += 0.06
+        elif sector == "industrial_supply_chain":
+            base += 0.05
 
-        pressure_score += min(0.10, float(market.get("growth", 0.0)) * 0.25)
-        pressure_score += min(0.10, float(patent.get("activity", 0.0)) * 0.10)
-        pressure_score += min(0.06, float(financial.get("health", 0.0)) * 0.05)
-
-        pressure_score = round(min(0.95, pressure_score), 4)
-
-        if pressure_score >= 0.75:
-            level = "high"
-        elif pressure_score >= 0.55:
-            level = "moderate"
-        else:
-            level = "emerging"
+        score = round(min(0.94, base), 4)
+        level = "high" if score >= 0.70 else "moderate" if score >= 0.48 else "low"
 
         return {
             "level": level,
-            "score": pressure_score,
-            "drivers": self._pressure_drivers(text, profile),
-        }
-
-    def _pressure_drivers(self, text: str, profile: Dict[str, Any]) -> List[str]:
-        drivers = []
-
-        if "shortage" in text or "shortages" in text:
-            drivers.append("shortage exposure")
-
-        if "bottleneck" in text or "bottlenecks" in text:
-            drivers.append("operational bottlenecks")
-
-        if "risk" in text:
-            drivers.append("risk concentration")
-
-        if "regulatory" in text:
-            drivers.append("regulatory pressure")
-
-        if "resilience" in text:
-            drivers.append("resilience requirement")
-
-        if "demand" in text:
-            drivers.append("demand pressure")
-
-        if not drivers:
-            drivers.append(profile.get("gap_type", "market pressure"))
-
-        return drivers
-
-    def _portfolio_relevance(
-        self,
-        profile: Dict[str, Any],
-        pressure: Dict[str, Any],
-    ) -> Dict[str, Any]:
-        score = pressure.get("score", 0.0)
-
-        if score >= 0.75:
-            priority = "high"
-        elif score >= 0.55:
-            priority = "medium"
-        else:
-            priority = "watchlist"
-
-        return {
-            "priority": priority,
-            "why_it_matters": profile["market_gap"],
-            "portfolio_angle": profile["needed_solution"],
+            "score": score,
+            "drivers": drivers or ["sector need", "market uncertainty"],
         }
 
     def _confidence(
         self,
-        profile: Dict[str, Any],
-        pressure: Dict[str, Any],
+        text: str,
+        keywords: List[str],
+        sector: str,
+        pressure_score: float,
+        patent_activity: float,
     ) -> float:
-        match_strength = min(1.0, profile.get("match_strength", 0) / 8.0)
-        pressure_score = pressure.get("score", 0.0)
+        routing = self._routing_view(text, keywords)
 
-        return round((match_strength * 0.55) + (pressure_score * 0.45), 4)
+        sector_terms = {
+            "climate_insurance": [
+                "insurance",
+                "climate",
+                "weather",
+                "underwriting",
+                "reinsurance",
+                "exposure",
+                "repricing",
+                "losses",
+                "catastrophe",
+                "risk transfer",
+            ],
+            "defense_autonomy": [
+                "defense",
+                "mission",
+                "drone",
+                "secure",
+                "autonomous",
+                "command",
+            ],
+            "healthcare_operations": [
+                "healthcare",
+                "hospital",
+                "patient",
+                "capacity",
+                "staffing",
+            ],
+            "industrial_supply_chain": [
+                "supply",
+                "manufacturing",
+                "supplier",
+                "procurement",
+                "erp",
+            ],
+            "energy_infrastructure": [
+                "energy",
+                "grid",
+                "utility",
+                "transmission",
+                "power grid",
+            ],
+            "financial_market_intelligence": [
+                "financial",
+                "credit",
+                "liquidity",
+                "capital",
+                "portfolio",
+            ],
+        }
+
+        hits = 0
+        for term in sector_terms.get(sector, []):
+            if " " in term:
+                hits += 1 if self._contains_phrase(routing, term) else 0
+            else:
+                hits += 1 if self._contains_word(routing, term) else 0
+
+        base = 0.32 + hits * 0.060 + pressure_score * 0.24 + patent_activity * 0.10
+
+        if sector == "climate_insurance":
+            base += 0.06
+
+        return round(min(0.94, base), 4)
+
+    def _domain_for_sector(self, sector: str, fallback: str) -> str:
+        return {
+            "climate_insurance": "insurance",
+            "defense_autonomy": "technology",
+            "healthcare_operations": "healthcare",
+            "industrial_supply_chain": "industrial",
+            "energy_infrastructure": "energy",
+            "financial_market_intelligence": "finance",
+        }.get(sector, fallback or "general")

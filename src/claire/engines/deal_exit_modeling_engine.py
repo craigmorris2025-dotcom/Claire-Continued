@@ -1,869 +1,134 @@
-"""
-Deal Exit Modeling Engine — evaluates exit readiness, acquirer fit,
-valuation logic, deal paths, diligence requirements, and negotiation levers.
-
-Purpose:
-- Activate Claire Stage 21: Deal / Exit Modeling
-- Convert the opportunity, moat, risk, business model, and acquirer outputs
-  into a structured deal-readiness and exit-strategy profile.
-
-This version is deterministic/local. Later versions can connect to M&A
-comparables, buyer acquisition history, valuation multiples, public-market
-data, private transaction datasets, and corporate-development intelligence.
-"""
-
+"""Deal Exit Modeling Engine v5.19 — sector-gated exit logic."""
 from typing import Any, Dict, List, Optional
-
-
 class DealExitModelingEngine:
-    """
-    Deterministic deal / exit modeling analyzer.
-    """
-
-    def analyze(
-        self,
-        text: str,
-        domain: str = "general",
-        keywords: Optional[List[str]] = None,
-        scores: Optional[Dict[str, Any]] = None,
-        market_gap: Optional[Dict[str, Any]] = None,
-        trend_trajectory: Optional[Dict[str, Any]] = None,
-        market_formation: Optional[Dict[str, Any]] = None,
-        moat: Optional[Dict[str, Any]] = None,
-        risk_regulation: Optional[Dict[str, Any]] = None,
-        business_model: Optional[Dict[str, Any]] = None,
-        acquirer_matches: Optional[List[Dict[str, Any]]] = None,
-        connector_sources: Optional[Dict[str, Any]] = None,
-    ) -> Dict[str, Any]:
-        text = (text or "").lower()
-        keywords = keywords or []
-        scores = scores or {}
-        market_gap = market_gap or {}
-        trend_trajectory = trend_trajectory or {}
-        market_formation = market_formation or {}
-        moat = moat or {}
-        risk_regulation = risk_regulation or {}
-        business_model = business_model or {}
-        acquirer_matches = acquirer_matches or []
-        connector_sources = connector_sources or {}
-
-        signals = self._signals(
-            text=text,
-            keywords=keywords,
-            scores=scores,
-            domain=domain,
-            market_gap=market_gap,
-            trend_trajectory=trend_trajectory,
-            market_formation=market_formation,
-            moat=moat,
-            risk_regulation=risk_regulation,
-            business_model=business_model,
-            acquirer_matches=acquirer_matches,
-            connector_sources=connector_sources,
-        )
-
-        buyer_universe = self._buyer_universe(signals, acquirer_matches, market_gap)
-        strategic_fit = self._strategic_fit(signals, buyer_universe)
-        exit_readiness = self._exit_readiness(signals, strategic_fit)
-        valuation_logic = self._valuation_logic(signals, strategic_fit)
-        deal_paths = self._deal_paths(signals, buyer_universe)
-        diligence_requirements = self._diligence_requirements(signals)
-        risk_adjustments = self._risk_adjustments(signals)
-        negotiation_levers = self._negotiation_levers(signals, buyer_universe)
-
-        return {
-            "status": "success",
-            "domain": domain,
-            "sector": signals["sector"],
-            "exit_readiness": exit_readiness,
-            "buyer_universe": buyer_universe,
-            "strategic_fit": strategic_fit,
-            "valuation_logic": valuation_logic,
-            "deal_paths": deal_paths,
-            "diligence_requirements": diligence_requirements,
-            "risk_adjustments": risk_adjustments,
-            "negotiation_levers": negotiation_levers,
-            "exit_narrative": self._exit_narrative(signals, buyer_universe, strategic_fit, valuation_logic),
-            "deal_exit_thesis": self._deal_exit_thesis(signals, exit_readiness, strategic_fit, valuation_logic),
-            "recommended_next_actions": self._recommended_next_actions(signals, exit_readiness),
-            "evidence_signals": signals,
-            "confidence": self._confidence(signals, strategic_fit, exit_readiness),
-        }
-
-    # =========================
-    # SIGNALS
-    # =========================
-    def _signals(
-        self,
-        text: str,
-        keywords: List[str],
-        scores: Dict[str, Any],
-        domain: str,
-        market_gap: Dict[str, Any],
-        trend_trajectory: Dict[str, Any],
-        market_formation: Dict[str, Any],
-        moat: Dict[str, Any],
-        risk_regulation: Dict[str, Any],
-        business_model: Dict[str, Any],
-        acquirer_matches: List[Dict[str, Any]],
-        connector_sources: Dict[str, Any],
-    ) -> Dict[str, Any]:
-        combined = f"{text} {' '.join(keywords).lower()}"
-
-        sector = market_gap.get("sector", "general") if isinstance(market_gap, dict) else "general"
-        market = connector_sources.get("market", {}) if isinstance(connector_sources, dict) else {}
-        financial = connector_sources.get("financial", {}) if isinstance(connector_sources, dict) else {}
-
-        buyer_pull_score = self._get(market_formation, "buyer_pull.score")
-        category_score = self._get(market_formation, "category_creation_score.score")
-        timing_score = self._get(trend_trajectory, "timing_pressure.score")
-        momentum_score = self._get(trend_trajectory, "market_momentum.score")
-        moat_score = self._get(moat, "moat_type.moat_score")
-        copy_risk_score = self._get(moat, "copy_risk.score")
-        primary_moat = self._get_text(moat, "moat_type.primary_moat")
-        risk_score = self._get(risk_regulation, "risk_profile.score")
-        blocker_level = self._get_text(risk_regulation, "blocker_assessment.blocker_level") or "unknown"
-        value_capture_score = self._get(business_model, "value_capture.score")
-        buyer_roi_score = self._get(business_model, "buyer_roi.score")
-        commercial_risk_score = self._get(business_model, "commercial_risk.score")
-        revenue_model = self._get_text(business_model, "revenue_model.primary_model")
-
-        match_scores = []
-        for match in acquirer_matches:
-            try:
-                match_scores.append(float(match.get("match_score", 0.0) or 0.0))
-            except Exception:
-                pass
-
-        top_acquirer_score = max(match_scores, default=0.0)
-        avg_top_5_score = sum(sorted(match_scores, reverse=True)[:5]) / max(1, min(5, len(match_scores)))
-
-        strategic_terms = [
-            "platform",
-            "enterprise",
-            "subscription",
-            "workflow",
-            "erp",
-            "procurement",
-            "integration",
-            "benchmark",
-            "module",
-            "data",
-            "risk",
-            "resilience",
-            "automation",
-            "intelligence",
-            "api",
-        ]
-
-        exit_terms = [
-            "acquirer",
-            "acquisition",
-            "exit",
-            "strategic buyer",
-            "partner",
-            "enterprise license",
-            "platform contract",
-            "corporate development",
-            "valuation",
-        ]
-
-        defensibility_terms = [
-            "proprietary",
-            "workflow",
-            "lock-in",
-            "dataset",
-            "benchmark",
-            "integration",
-            "network",
-            "moat",
-            "sticky",
-        ]
-
-        def count_terms(terms: List[str]) -> int:
-            return sum(1 for term in terms if term.lower() in combined)
-
-        return {
-            "domain": domain,
-            "sector": sector,
-            "portfolio_score": float(scores.get("portfolio_score", 0.0) or 0.0),
-            "breakthrough_score": float(scores.get("breakthrough_score", 0.0) or 0.0),
-            "viability_score": float(scores.get("viability_score", 0.0) or 0.0),
-            "feasibility_score": float(scores.get("feasibility_score", 0.0) or 0.0),
-            "acquisition_score": float(scores.get("acquisition_score", 0.0) or 0.0),
-            "market_gap_confidence": float(market_gap.get("confidence", 0.0) or 0.0),
-            "buyer_pull_score": buyer_pull_score,
-            "category_creation_score": category_score,
-            "timing_pressure": timing_score,
-            "market_momentum": momentum_score,
-            "moat_score": moat_score,
-            "copy_risk_score": copy_risk_score,
-            "primary_moat": primary_moat,
-            "risk_score": risk_score,
-            "blocker_level": blocker_level,
-            "revenue_model": revenue_model,
-            "value_capture_score": value_capture_score,
-            "buyer_roi_score": buyer_roi_score,
-            "commercial_risk_score": commercial_risk_score,
-            "acquirer_count": len(acquirer_matches),
-            "top_acquirer_score": top_acquirer_score,
-            "avg_top_5_acquirer_score": avg_top_5_score,
-            "buyer_segment_count": len(market_gap.get("buyer_segments", [])) if isinstance(market_gap, dict) else 0,
-            "acquirer_category_count": len(market_gap.get("acquirer_categories", [])) if isinstance(market_gap, dict) else 0,
-            "strategic_term_count": count_terms(strategic_terms),
-            "exit_term_count": count_terms(exit_terms),
-            "defensibility_term_count": count_terms(defensibility_terms),
-            "market_growth": float(market.get("growth", 0.0) or 0.0),
-            "market_volatility": float(market.get("volatility", 0.0) or 0.0),
-            "financial_health": float(financial.get("health", 0.0) or 0.0),
-            "financial_risk": float(financial.get("risk", 0.0) or 0.0),
-        }
-
-    # =========================
-    # OUTPUT BUILDERS
-    # =========================
-    def _buyer_universe(
-        self,
-        signals: Dict[str, Any],
-        acquirer_matches: List[Dict[str, Any]],
-        market_gap: Dict[str, Any],
-    ) -> Dict[str, Any]:
-        if signals["acquirer_count"] >= 8 and signals["top_acquirer_score"] >= 0.90:
-            depth = "deep"
-        elif signals["acquirer_count"] >= 4:
-            depth = "moderate"
-        else:
-            depth = "thin"
-
-        categories = market_gap.get("acquirer_categories", []) if isinstance(market_gap, dict) else []
-
-        return {
-            "depth": depth,
-            "acquirer_count": signals["acquirer_count"],
-            "top_match_score": round(signals["top_acquirer_score"], 4),
-            "average_top_5_score": round(signals["avg_top_5_acquirer_score"], 4),
-            "acquirer_categories": categories,
-            "buyer_types": self._buyer_types(signals, categories),
-            "top_matches": acquirer_matches[:10],
-        }
-
-    def _strategic_fit(self, signals: Dict[str, Any], buyer_universe: Dict[str, Any]) -> Dict[str, Any]:
-        score = self._bounded(
-            0.18
-            + signals["acquisition_score"] * 0.15
-            + signals["top_acquirer_score"] * 0.13
-            + signals["avg_top_5_acquirer_score"] * 0.08
-            + signals["buyer_pull_score"] * 0.11
-            + signals["category_creation_score"] * 0.10
-            + signals["value_capture_score"] * 0.10
-            + signals["buyer_roi_score"] * 0.07
-            + signals["moat_score"] * 0.08
-            + min(0.06, signals["acquirer_count"] * 0.006)
-            - signals["commercial_risk_score"] * 0.04
-        )
-
-        if score >= 0.78:
-            level = "strong"
-        elif score >= 0.60:
-            level = "moderate"
-        else:
-            level = "early"
-
-        return {
-            "level": level,
-            "score": round(score, 4),
-            "fit_drivers": self._fit_drivers(signals, buyer_universe),
-            "strategic_rationale": self._strategic_rationale(signals, buyer_universe),
-        }
-
-    def _exit_readiness(self, signals: Dict[str, Any], strategic_fit: Dict[str, Any]) -> Dict[str, Any]:
-        score = self._bounded(
-            0.16
-            + signals["portfolio_score"] * 0.14
-            + strategic_fit.get("score", 0.0) * 0.15
-            + signals["value_capture_score"] * 0.11
-            + signals["buyer_roi_score"] * 0.10
-            + signals["moat_score"] * 0.09
-            + signals["top_acquirer_score"] * 0.08
-            + (1 - signals["copy_risk_score"]) * 0.06
-            + min(0.05, signals["acquirer_count"] * 0.005)
-            - signals["risk_score"] * 0.04
-            - signals["commercial_risk_score"] * 0.04
-            - (0.06 if signals["blocker_level"] == "conditional" else 0.0)
-        )
-
-        if signals["blocker_level"] == "conditional":
-            state = "exit_candidate_with_conditions"
-        elif score >= 0.80:
-            state = "exit_ready"
-        elif score >= 0.64:
-            state = "exit_candidate"
-        else:
-            state = "needs_validation"
-
-        return {
-            "state": state,
-            "score": round(score, 4),
-            "readiness_drivers": self._readiness_drivers(signals),
-            "missing_proof": self._missing_proof(signals),
-        }
-
-    def _valuation_logic(self, signals: Dict[str, Any], strategic_fit: Dict[str, Any]) -> Dict[str, Any]:
-        score = self._bounded(
-            0.20
-            + signals["value_capture_score"] * 0.17
-            + signals["buyer_roi_score"] * 0.13
-            + signals["moat_score"] * 0.11
-            + strategic_fit.get("score", 0.0) * 0.11
-            + signals["category_creation_score"] * 0.09
-            + signals["portfolio_score"] * 0.09
-            + signals["top_acquirer_score"] * 0.07
-            - signals["risk_score"] * 0.035
-            - signals["commercial_risk_score"] * 0.035
-        )
-
-        if score >= 0.78:
-            strength = "premium_strategic"
-        elif score >= 0.62:
-            strength = "strategic_with_validation"
-        else:
-            strength = "early_option_value"
-
-        return {
-            "valuation_signal": {
-                "strength": strength,
-                "score": round(score, 4),
-            },
-            "primary_value_drivers": self._valuation_drivers(signals),
-            "valuation_methods": self._valuation_methods(signals),
-            "upside_cases": self._upside_cases(signals),
-            "discount_factors": self._discount_factors(signals),
-        }
-
-    def _deal_paths(self, signals: Dict[str, Any], buyer_universe: Dict[str, Any]) -> List[Dict[str, Any]]:
-        paths = [
-            {
-                "path": "strategic acquisition",
-                "fit": self._path_fit_score(signals, 0.18, "strategic"),
-                "best_for": "ERP, industrial software, automation, supply-chain, or data platforms seeking category expansion",
-                "trigger": "validated enterprise pilots, strong ROI proof, and defensible workflow/data position",
-                "priority": "high",
-            },
-            {
-                "path": "commercial partnership to acquisition",
-                "fit": self._path_fit_score(signals, 0.12, "partnership"),
-                "best_for": "strategic buyers who need proof before full corporate-development action",
-                "trigger": "partner integration, channel validation, and repeated buyer demand",
-                "priority": "high" if signals["blocker_level"] == "conditional" else "medium",
-            },
-            {
-                "path": "platform licensing / OEM",
-                "fit": self._path_fit_score(signals, 0.08, "licensing"),
-                "best_for": "platforms that want embedded intelligence without full acquisition first",
-                "trigger": "stable APIs, integration reliability, and defensible modules",
-                "priority": "medium",
-            },
-            {
-                "path": "growth financing before exit",
-                "fit": self._path_fit_score(signals, 0.04, "financing"),
-                "best_for": "scaling enterprise adoption before strategic exit",
-                "trigger": "validated retention, module expansion, and repeatable sales motion",
-                "priority": "medium",
-            },
-        ]
-
-        return sorted(paths, key=lambda item: item["fit"], reverse=True)
-
-    def _diligence_requirements(self, signals: Dict[str, Any]) -> List[Dict[str, Any]]:
-        requirements = [
-            {
-                "requirement": "customer ROI evidence",
-                "why": "Buyers need proof that the system reduces disruption, cost, risk, or cycle time.",
-                "priority": "high",
-            },
-            {
-                "requirement": "technical architecture and integration review",
-                "why": "Strategic buyers will review scalability, APIs, ERP/planning-system integration, and maintainability.",
-                "priority": "high",
-            },
-            {
-                "requirement": "model performance validation",
-                "why": "Forecasting and recommendation quality must be proven with backtests and pilots.",
-                "priority": "high",
-            },
-            {
-                "requirement": "data rights and governance review",
-                "why": "Data-loop defensibility depends on clear rights, lineage, permissions, and controls.",
-                "priority": "high",
-            },
-            {
-                "requirement": "commercial model validation",
-                "why": "Enterprise subscription pricing must be supported by willingness-to-pay and expansion proof.",
-                "priority": "high",
-            },
-        ]
-
-        if signals["blocker_level"] == "conditional":
-            requirements.append({
-                "requirement": "human-review and deployment-control evidence",
-                "why": "Conditional blocker must be resolved or framed as a manageable deployment requirement.",
-                "priority": "critical",
-            })
-
-        if signals["primary_moat"] in {"workflow_lock_in", "integration_depth"}:
-            requirements.append({
-                "requirement": "workflow stickiness evidence",
-                "why": "The strongest deal argument depends on embedded operational use and switching costs.",
-                "priority": "high",
-            })
-
-        if signals["copy_risk_score"] > 0.35:
-            requirements.append({
-                "requirement": "differentiation and copy-risk defense",
-                "why": "Strategic buyers will discount generic features without proprietary data or workflow depth.",
-                "priority": "medium",
-            })
-
-        return self._dedupe_dicts(requirements, "requirement")
-
-    def _risk_adjustments(self, signals: Dict[str, Any]) -> List[Dict[str, Any]]:
-        adjustments = []
-
-        if signals["blocker_level"] == "conditional":
-            adjustments.append({
-                "adjustment": "conditional deployment discount",
-                "impact": "Strategic buyers may require risk controls, advisory mode, and human-review validation before premium valuation.",
-                "severity": "medium",
-                "mitigation": "Package blocker mitigation as completed diligence evidence.",
-            })
-
-        if signals["moat_score"] < 0.78:
-            adjustments.append({
-                "adjustment": "moat maturity discount",
-                "impact": "Moderate moat may reduce premium unless data loops and workflow dependency are proven.",
-                "severity": "medium",
-                "mitigation": "Validate repeat usage, proprietary benchmarks, and integration depth.",
-            })
-
-        if signals["commercial_risk_score"] >= 0.42:
-            adjustments.append({
-                "adjustment": "commercial execution discount",
-                "impact": "Long sales cycles or procurement friction may reduce near-term deal value.",
-                "severity": "medium",
-                "mitigation": "Show paid pilot conversion and enterprise expansion path.",
-            })
-
-        if signals["acquirer_count"] < 4:
-            adjustments.append({
-                "adjustment": "thin buyer universe discount",
-                "impact": "Limited acquirer universe can weaken deal tension.",
-                "severity": "high",
-                "mitigation": "Expand buyer map across adjacent strategic categories.",
-            })
-
-        if not adjustments:
-            adjustments.append({
-                "adjustment": "no major deterministic deal discount surfaced",
-                "impact": "Maintain evidence discipline and validate with live market data.",
-                "severity": "low",
-                "mitigation": "Continue acquirer research and diligence preparation.",
-            })
-
-        return adjustments
-
-    def _negotiation_levers(self, signals: Dict[str, Any], buyer_universe: Dict[str, Any]) -> List[Dict[str, Any]]:
-        levers = [
-            {
-                "lever": "strong buyer pain and ROI",
-                "use": "Anchor valuation to avoided disruption, shortage reduction, and procurement efficiency.",
-                "priority": "high",
-            },
-            {
-                "lever": "platform-layer category formation",
-                "use": "Frame the opportunity as a category wedge rather than a feature acquisition.",
-                "priority": "high",
-            },
-            {
-                "lever": "workflow lock-in and data loops",
-                "use": "Position defensibility around embedded operational workflow and compounding data advantage.",
-                "priority": "high",
-            },
-            {
-                "lever": "multi-acquirer tension",
-                "use": "Use ERP, industrial automation, supply-chain software, and cloud data platform categories to create strategic tension.",
-                "priority": "medium" if buyer_universe.get("depth") != "deep" else "high",
-            },
-        ]
-
-        if signals["blocker_level"] == "conditional":
-            levers.append({
-                "lever": "risk-control readiness",
-                "use": "Convert the human-review blocker into diligence strength by showing advisory-mode controls.",
-                "priority": "medium",
-            })
-
-        if signals["revenue_model"] == "enterprise_subscription":
-            levers.append({
-                "lever": "recurring revenue path",
-                "use": "Emphasize annual platform subscriptions, module expansion, and account growth.",
-                "priority": "high",
-            })
-
-        return levers
-
-    # =========================
-    # TEXT HELPERS
-    # =========================
-    def _buyer_types(self, signals: Dict[str, Any], categories: List[str]) -> List[Dict[str, Any]]:
-        buyer_types = []
-        category_text = " ".join(categories).lower()
-
-        if "erp" in category_text or signals["sector"] == "industrial_supply_chain":
-            buyer_types.append({
-                "type": "ERP / enterprise application platforms",
-                "strategic_reason": "can embed predictive intelligence into planning, procurement, and operations workflows",
-                "priority": "high",
-            })
-
-        if "automation" in category_text or "industrial" in category_text:
-            buyer_types.append({
-                "type": "industrial automation and industrial software companies",
-                "strategic_reason": "can extend factory and operations intelligence into supplier and bottleneck prediction",
-                "priority": "high",
-            })
-
-        if "supply" in category_text:
-            buyer_types.append({
-                "type": "supply-chain planning and execution platforms",
-                "strategic_reason": "can add early-warning shortage and supplier-risk intelligence to existing planning suites",
-                "priority": "high",
-            })
-
-        if "cloud" in category_text or "data" in category_text:
-            buyer_types.append({
-                "type": "cloud data and AI platforms",
-                "strategic_reason": "can use the solution as a verticalized intelligence layer",
-                "priority": "medium",
-            })
-
-        if not buyer_types:
-            buyer_types.append({
-                "type": "strategic technology buyers",
-                "strategic_reason": "can acquire the opportunity for product expansion and data advantage",
-                "priority": "medium",
-            })
-
-        return buyer_types
-
-    def _fit_drivers(self, signals: Dict[str, Any], buyer_universe: Dict[str, Any]) -> List[str]:
-        drivers = []
-
-        if signals["acquirer_count"] >= 8:
-            drivers.append("large acquirer universe")
-
-        if signals["top_acquirer_score"] >= 0.90:
-            drivers.append("high top-acquirer match score")
-
-        if signals["buyer_pull_score"] >= 0.80:
-            drivers.append("strong buyer pull")
-
-        if signals["value_capture_score"] >= 0.80:
-            drivers.append("strong value capture")
-
-        if signals["buyer_roi_score"] >= 0.80:
-            drivers.append("high buyer ROI")
-
-        if signals["moat_score"] >= 0.70:
-            drivers.append("defensible workflow/data position")
-
-        if signals["category_creation_score"] >= 0.80:
-            drivers.append("platform/category creation potential")
-
-        if signals["blocker_level"] == "conditional":
-            drivers.append("deal requires deployment-control proof")
-
-        return drivers or ["strategic fit requires more validation"]
-
-    def _strategic_rationale(self, signals: Dict[str, Any], buyer_universe: Dict[str, Any]) -> str:
-        sector = signals.get("sector", "target sector").replace("_", " ")
-        return (
-            f"{sector} has {buyer_universe.get('depth')} strategic-buyer coverage, "
-            f"top acquirer score of {signals.get('top_acquirer_score'):.4f}, "
-            f"buyer pull of {signals.get('buyer_pull_score'):.4f}, and value capture of "
-            f"{signals.get('value_capture_score'):.4f}."
-        )
-
-    def _readiness_drivers(self, signals: Dict[str, Any]) -> List[str]:
-        drivers = [
-            "portfolio score available",
-            "acquirer matching available",
-            "business model available",
-            "risk/regulation profile available",
-        ]
-
-        if signals["value_capture_score"] >= 0.80:
-            drivers.append("strong value capture")
-
-        if signals["buyer_roi_score"] >= 0.80:
-            drivers.append("high buyer ROI")
-
-        if signals["top_acquirer_score"] >= 0.90:
-            drivers.append("strong top acquirer fit")
-
-        if signals["blocker_level"] == "conditional":
-            drivers.append("readiness is conditional on blocker mitigation")
-
-        return drivers
-
-    def _missing_proof(self, signals: Dict[str, Any]) -> List[str]:
-        missing = []
-
-        if signals["blocker_level"] == "conditional":
-            missing.append("documented mitigation of human-review / deployment-control blocker")
-
-        if signals["moat_score"] < 0.78:
-            missing.append("stronger evidence of proprietary data loops and workflow switching costs")
-
-        if signals["buyer_roi_score"] < 0.85:
-            missing.append("quantified buyer ROI case")
-
-        if signals["acquirer_count"] < 8:
-            missing.append("expanded acquirer universe and buyer mapping")
-
-        if not missing:
-            missing.append("live market comparables and buyer-specific acquisition rationale")
-
-        return missing
-
-    def _valuation_drivers(self, signals: Dict[str, Any]) -> List[str]:
-        drivers = [
-            "strategic buyer fit",
-            "enterprise subscription potential",
-            "strong value capture",
-            "buyer ROI",
-            "platform/category formation",
-        ]
-
-        if signals["primary_moat"]:
-            drivers.append(f"primary moat: {signals['primary_moat']}")
-
-        if signals["sector"] == "industrial_supply_chain":
-            drivers.extend([
-                "industrial resilience urgency",
-                "supplier-risk and shortage intelligence",
-                "ERP / workflow integration potential",
-            ])
-
-        return list(dict.fromkeys(drivers))
-
-    def _valuation_methods(self, signals: Dict[str, Any]) -> List[Dict[str, Any]]:
-        return [
-            {
-                "method": "strategic acquisition premium",
-                "use_case": "best when acquirer product roadmap or category gap is directly addressed",
-                "priority": "high",
-            },
-            {
-                "method": "ARR / recurring revenue multiple",
-                "use_case": "best once enterprise subscription revenue is validated",
-                "priority": "high" if signals["revenue_model"] == "enterprise_subscription" else "medium",
-            },
-            {
-                "method": "ROI-based strategic value",
-                "use_case": "best when buyer can quantify avoided disruption or operational savings",
-                "priority": "high",
-            },
-            {
-                "method": "technology and data-asset value",
-                "use_case": "best when proprietary datasets, benchmarks, and integrations are proven",
-                "priority": "medium",
-            },
-        ]
-
-    def _upside_cases(self, signals: Dict[str, Any]) -> List[str]:
-        cases = [
-            "paid pilots convert to recurring enterprise subscriptions",
-            "modules expand across procurement, supplier risk, and operations workflows",
-            "proprietary benchmarks become a premium data product",
-            "strategic buyer uses acquisition to fill category gap",
-        ]
-
-        if signals["acquirer_count"] >= 8:
-            cases.append("multiple strategic buyer categories create deal tension")
-
+    def analyze(self,text:str,domain:str='general',keywords:Optional[List[str]]=None,scores:Optional[Dict[str,Any]]=None,market_gap:Optional[Dict[str,Any]]=None,trend_trajectory:Optional[Dict[str,Any]]=None,market_formation:Optional[Dict[str,Any]]=None,moat:Optional[Dict[str,Any]]=None,risk_regulation:Optional[Dict[str,Any]]=None,business_model:Optional[Dict[str,Any]]=None,acquirer_matches:Optional[List[Dict[str,Any]]]=None,connector_sources:Optional[Dict[str,Any]]=None)->Dict[str,Any]:
+        s=self._signals(scores or {},domain,market_gap or {},trend_trajectory or {},market_formation or {},moat or {},risk_regulation or {},business_model or {},acquirer_matches or [],connector_sources or {})
+        buyers=self._buyers(s,acquirer_matches or [],market_gap or {}); fit=self._fit(s,buyers); ready=self._ready(s,fit); val=self._valuation(s,fit)
+        return {'status':'success','domain':s['domain'],'sector':s['sector'],'exit_readiness':ready,'buyer_universe':buyers,'strategic_fit':fit,'valuation_logic':val,'deal_paths':self._paths(s),'diligence_requirements':self._diligence(s),'risk_adjustments':self._adjustments(s),'negotiation_levers':self._levers(s,buyers),'exit_narrative':self._narrative(s,buyers,fit,val),'deal_exit_thesis':self._thesis(s,ready,fit,val),'recommended_next_actions':self._actions(s,ready),'evidence_signals':s,'confidence':self._confidence(s,fit,ready)}
+    def _signals(self,scores,domain,mg,tr,mf,moat,rr,bm,matches,ext):
+        top=[float(m.get('match_score',0) or 0) for m in matches]; sector=mg.get('sector','general')
+        return {'domain':self._dom(sector,domain),'sector':sector,'portfolio_score':float(scores.get('portfolio_score',0) or 0),'breakthrough_score':float(scores.get('breakthrough_score',0) or 0),'viability_score':float(scores.get('viability_score',0) or 0),'feasibility_score':float(scores.get('feasibility_score',0) or 0),'acquisition_score':float(scores.get('acquisition_score',0) or 0),'market_gap_confidence':float(mg.get('confidence',0) or 0),'buyer_pull_score':self._get(mf,'buyer_pull','score'),'category_creation_score':self._get(mf,'category_creation_score','score'),'timing_pressure':self._get(tr,'timing_pressure','score'),'market_momentum':self._get(tr,'market_momentum','score'),'moat_score':self._get(moat,'moat_type','moat_score'),'copy_risk_score':self._get(moat,'copy_risk','score'),'primary_moat':self._text(moat,'moat_type','primary_moat'),'risk_score':self._get(rr,'risk_profile','score'),'blocker_level':self._text(rr,'blocker_assessment','blocker_level') or 'unknown','revenue_model':self._text(bm,'revenue_model','primary_model'),'value_capture_score':self._get(bm,'value_capture','score'),'buyer_roi_score':self._get(bm,'buyer_roi','score'),'commercial_risk_score':self._get(bm,'commercial_risk','score'),'acquirer_count':len(matches),'top_acquirer_score':max(top,default=0),'avg_top_5_acquirer_score':sum(sorted(top,reverse=True)[:5])/max(1,min(5,len(top))),'buyer_segment_count':len(mg.get('buyer_segments',[])),'acquirer_category_count':len(mg.get('acquirer_categories',[])),'acquirer_categories':mg.get('acquirer_categories',[]),'market_growth':float(ext.get('market',{}).get('growth',0) or 0),'market_volatility':float(ext.get('market',{}).get('volatility',0) or 0),'financial_health':float(ext.get('financial',{}).get('health',0) or 0),'financial_risk':float(ext.get('financial',{}).get('risk',0) or 0)}
+    def _buyers(self,s,matches,mg):
+        depth='deep' if s['acquirer_count']>=8 and s['top_acquirer_score']>=.90 else 'moderate' if s['acquirer_count']>=4 else 'thin'
+        return {'depth':depth,'acquirer_count':s['acquirer_count'],'top_match_score':round(s['top_acquirer_score'],4),'average_top_5_score':round(s['avg_top_5_acquirer_score'],4),'acquirer_categories':mg.get('acquirer_categories',[]),'buyer_types':self._types(s),'top_matches':matches[:10]}
+    def _fit(self,s,buyers):
+        score=self._b(.18+s['acquisition_score']*.14+s['top_acquirer_score']*.13+s['avg_top_5_acquirer_score']*.08+s['buyer_pull_score']*.12+s['category_creation_score']*.11+s['value_capture_score']*.11+s['moat_score']*.09+min(.06,s['acquirer_count']*.006)-s['commercial_risk_score']*.035)
+        return {'level':'strong' if score>=.78 else 'moderate' if score>=.60 else 'early','score':round(score,4),'fit_drivers':self._fit_drivers(s),'strategic_rationale':f"{s['sector'].replace('_',' ')} has {buyers.get('depth')} strategic-buyer coverage, top acquirer score of {s['top_acquirer_score']:.4f}, buyer pull of {s['buyer_pull_score']:.4f}, and value capture of {s['value_capture_score']:.4f}."}
+    def _ready(self,s,fit):
+        score=self._b(.16+s['portfolio_score']*.15+fit.get('score',0)*.15+s['value_capture_score']*.11+s['buyer_roi_score']*.10+s['moat_score']*.10+(1-s['copy_risk_score'])*.06+min(.06,s['acquirer_count']*.006)-s['risk_score']*.04-s['commercial_risk_score']*.04-(.05 if s['blocker_level']=='conditional' else 0))
+        state='exit_candidate_with_conditions' if s['blocker_level']=='conditional' else 'exit_ready' if score>=.80 else 'exit_candidate' if score>=.64 else 'needs_validation'
+        return {'state':state,'score':round(score,4),'readiness_drivers':self._readiness_drivers(s),'missing_proof':self._missing(s)}
+    def _valuation(self,s,fit):
+        score=self._b(.20+s['value_capture_score']*.16+s['buyer_roi_score']*.13+s['moat_score']*.11+fit.get('score',0)*.12+s['category_creation_score']*.10+s['portfolio_score']*.09-s['risk_score']*.035-s['commercial_risk_score']*.035)
+        return {'valuation_signal':{'strength':'premium_strategic' if score>=.78 else 'strategic_with_validation' if score>=.62 else 'early_option_value','score':round(score,4)},'primary_value_drivers':self._value_drivers(s),'valuation_methods':self._methods(s),'upside_cases':self._upsides(s),'discount_factors':self._discounts(s)}
+    def _paths(self,s):
+        if s['sector']=='climate_insurance': raw=[('strategic acquisition by insurance analytics or cat-modeling platform',.17,'catastrophe modeling, insurance analytics, risk-data, or core insurance software platforms','validated underwriting ROI, climate exposure data moat, and workflow adoption','high'),('commercial partnership to acquisition',.13,'reinsurers, brokers, or core software platforms that want proof before acquisition','design-partner pilot, channel validation, and repeated buyer demand','high'),('risk-data licensing / embedded underwriting module',.09,'insurance platforms wanting climate-risk intelligence without immediate acquisition','stable data products, APIs, and underwriting workflow integration','medium'),('growth financing before exit',.04,'scaling carrier adoption before strategic exit','validated retention, modules, and repeatable sales motion','medium')]
+        elif s['sector']=='financial_market_intelligence': raw=[('strategic acquisition by financial data or risk analytics platform',.16,'financial data, market intelligence, risk analytics, or asset-management technology platforms','validated signal value, institutional workflow adoption, and data moat','high'),('commercial partnership to acquisition',.11,'strategic buyers who need proof before corporate-development action','partner integration and repeated buyer demand','medium'),('platform licensing / API distribution',.08,'platforms that want embedded signal intelligence','stable APIs and defensible signal modules','medium'),('growth financing before exit',.04,'scaling institutional adoption before strategic exit','validated retention and repeatable sales motion','medium')]
+        elif s['sector']=='industrial_supply_chain': raw=[('strategic acquisition',.18,'ERP, industrial software, automation, or supply-chain platforms seeking category expansion','validated enterprise pilots and ROI proof','high'),('commercial partnership to acquisition',.12,'strategic buyers who need proof','partner integration and repeated buyer demand','medium'),('platform licensing / OEM',.08,'software or industrial platforms that want embedded intelligence','stable APIs and integration reliability','medium'),('growth financing before exit',.04,'scaling enterprise adoption before strategic exit','validated retention','medium')]
+        else: raw=[('strategic acquisition',.14,'strategic platforms seeking product/category expansion','validated ROI and defensibility','high'),('commercial partnership to acquisition',.10,'strategic buyers needing proof','partner integration and repeated buyer demand','medium'),('platform licensing / OEM',.07,'platforms wanting embedded intelligence','stable APIs and modules','medium'),('growth financing before exit',.04,'scaling adoption before strategic exit','repeatable sales motion','medium')]
+        return sorted([{'path':p,'fit':self._path_score(s,b),'best_for':bf,'trigger':tr,'priority':pr} for p,b,bf,tr,pr in raw],key=lambda x:x['fit'],reverse=True)
+    def _diligence(self,s):
+        r=[{'requirement':'customer ROI evidence','why':'Buyers need proof that the system reduces cost, risk, loss, or cycle time.','priority':'high'},{'requirement':'technical architecture and integration review','why':'Strategic buyers will review scalability, APIs, integration, and maintainability.','priority':'high'},{'requirement':'model performance validation','why':'Forecasting and recommendation quality must be proven with backtests and pilots.','priority':'high'},{'requirement':'data rights and governance review','why':'Data-loop defensibility depends on clear rights, lineage, permissions, and controls.','priority':'high'},{'requirement':'commercial model validation','why':'Pricing must be supported by willingness-to-pay and expansion proof.','priority':'high'}]
+        if s['sector']=='climate_insurance': r += [{'requirement':'underwriting and loss-history validation','why':'Insurance buyers need proof against weather losses, exposure changes, and repricing outcomes.','priority':'high'},{'requirement':'catastrophe / climate model review','why':'Climate-risk intelligence must survive actuarial, underwriting, and risk-model scrutiny.','priority':'high'}]
+        if s['blocker_level']=='conditional': r.append({'requirement':'human-review and deployment-control evidence','why':'Conditional blocker must be resolved or framed as manageable.','priority':'critical'})
+        if s['moat_score']<.78: r.append({'requirement':'differentiation and copy-risk defense','why':'Strategic buyers discount generic features without proprietary data or workflow depth.','priority':'medium'})
+        return self._dedupe(r,'requirement')
+    def _adjustments(self,s):
+        a=[]
+        if s['blocker_level']=='conditional': a.append({'adjustment':'conditional deployment discount','impact':'Strategic buyers may require risk controls and human-review validation before premium valuation.','severity':'medium','mitigation':'Package blocker mitigation as diligence evidence.'})
+        if s['moat_score']<.78: a.append({'adjustment':'moat maturity discount','impact':'Moderate moat may reduce premium unless data loops and workflow dependency are proven.','severity':'medium','mitigation':'Validate repeat usage, proprietary benchmarks, and integration depth.'})
+        if s['commercial_risk_score']>=.42: a.append({'adjustment':'commercial execution discount','impact':'Long sales cycles or procurement friction may reduce near-term deal value.','severity':'medium','mitigation':'Show paid pilot conversion and expansion path.'})
+        if s['acquirer_count']<4: a.append({'adjustment':'thin buyer universe discount','impact':'Limited acquirer universe can weaken deal tension.','severity':'high','mitigation':'Expand buyer map.'})
+        return a or [{'adjustment':'no major deterministic deal discount surfaced','impact':'Maintain evidence discipline and validate with live market data.','severity':'low','mitigation':'Continue acquirer research and diligence preparation.'}]
+    def _levers(self,s,buyers):
+        if s['sector']=='climate_insurance': levers=[('underwriting ROI and avoided loss exposure','Anchor valuation to climate-risk pricing, portfolio exposure visibility, and risk-transfer planning.'),('catastrophe and climate data moat','Frame defensibility around proprietary exposure data, loss history, and scenario intelligence.'),('multi-buyer tension across insurers, reinsurers, brokers, and cat-modeling platforms','Use insurance analytics, reinsurance, risk-data, and core software buyer categories to create strategic tension.')]
+        elif s['sector']=='financial_market_intelligence': levers=[('signal value and institutional workflow adoption','Anchor valuation to earlier risk detection and market intelligence advantage.'),('data advantage','Position defensibility around proprietary signals and benchmarks.'),('multi-acquirer tension','Use financial data, risk analytics, and asset-management technology categories to create tension.')]
+        else: levers=[('buyer pain and ROI','Anchor valuation to measurable buyer value.'),('data and workflow moat','Position defensibility around proprietary data and recurring workflow use.'),('multi-acquirer tension','Create tension across strategic buyer categories.')]
+        out=[{'lever':l,'use':u,'priority':'high'} for l,u in levers]
+        if s['revenue_model']: out.append({'lever':'recurring revenue path','use':'Emphasize subscriptions, module expansion, and account growth.','priority':'high'})
+        return out
+    def _types(self,s):
+        if s['sector']=='climate_insurance': return [{'type':'insurance analytics platforms','strategic_reason':'can add climate exposure intelligence to underwriting and risk workflows','priority':'high'},{'type':'catastrophe modeling companies','strategic_reason':'can expand peril, climate, and property exposure models','priority':'high'},{'type':'reinsurers','strategic_reason':'can use climate-risk intelligence for risk transfer and portfolio steering','priority':'high'},{'type':'insurance core software platforms','strategic_reason':'can embed repricing and exposure modules into policy and underwriting systems','priority':'medium'}]
+        if s['sector']=='financial_market_intelligence': return [{'type':'financial data platforms','strategic_reason':'can add proprietary signal intelligence to terminal/data workflows','priority':'high'},{'type':'risk analytics companies','strategic_reason':'can expand credit, liquidity, and portfolio risk models','priority':'high'},{'type':'asset-management technology platforms','strategic_reason':'can embed signals into investment and risk workflows','priority':'high'}]
+        if s['sector']=='industrial_supply_chain': return [{'type':'ERP / enterprise application platforms','strategic_reason':'can embed predictive intelligence into planning and procurement workflows','priority':'high'},{'type':'industrial automation and industrial software companies','strategic_reason':'can extend operations intelligence into supplier and bottleneck prediction','priority':'high'}]
+        return [{'type':'strategic technology buyers','strategic_reason':'can acquire the opportunity for product expansion and data advantage','priority':'medium'}]
+    def _fit_drivers(self,s):
+        d=[]
+        if s['acquirer_count']>=8:d.append('large acquirer universe')
+        if s['top_acquirer_score']>=.90:d.append('high top-acquirer match score')
+        if s['buyer_pull_score']>=.80:d.append('strong buyer pull')
+        if s['value_capture_score']>=.75:d.append('strong value capture')
+        if s['moat_score']>=.70:d.append('defensible workflow/data position')
+        if s['category_creation_score']>=.80:d.append('platform/category creation potential')
+        if s['blocker_level']=='conditional':d.append('deal requires deployment-control proof')
+        return d or ['strategic fit requires more validation']
+    def _readiness_drivers(self,s):
+        d=['portfolio score available','acquirer matching available','business model available','risk/regulation profile available']
+        if s['value_capture_score']>=.75:d.append('strong value capture')
+        if s['buyer_roi_score']>=.75:d.append('high buyer ROI')
+        if s['top_acquirer_score']>=.90:d.append('strong top acquirer fit')
+        if s['blocker_level']=='conditional':d.append('readiness is conditional on blocker mitigation')
+        return d
+    def _missing(self,s):
+        m=[]
+        if s['blocker_level']=='conditional':m.append('documented mitigation of human-review / deployment-control blocker')
+        if s['moat_score']<.78:m.append('stronger evidence of proprietary data loops and workflow switching costs')
+        if s['buyer_roi_score']<.85:m.append('quantified buyer ROI case')
+        if s['sector']=='climate_insurance':m.append('underwriting, weather-loss, and exposure-model validation')
+        if s['acquirer_count']<8:m.append('expanded acquirer universe and buyer mapping')
+        return m or ['live market comparables and buyer-specific acquisition rationale']
+    def _value_drivers(self,s):
+        if s['sector']=='climate_insurance': d=['strategic buyer fit','insurance underwriting ROI','climate exposure data advantage','catastrophe model adjacency','risk-transfer intelligence','recurring platform/data revenue']
+        elif s['sector']=='financial_market_intelligence': d=['strategic buyer fit','enterprise subscription potential','signal data advantage','institutional workflow adoption','platform/category formation']
+        elif s['sector']=='industrial_supply_chain': d=['strategic buyer fit','enterprise subscription potential','strong value capture','buyer ROI','platform/category formation','industrial resilience urgency']
+        else: d=['strategic buyer fit','recurring revenue potential','buyer ROI','data advantage','platform/category formation']
+        if s['primary_moat']: d.append(f"primary moat: {s['primary_moat']}")
+        return list(dict.fromkeys(d))
+    def _methods(self,s):
+        m=[{'method':'strategic acquisition premium','use_case':'best when acquirer product roadmap or category gap is directly addressed','priority':'high'},{'method':'ARR / recurring revenue multiple','use_case':'best once subscription revenue is validated','priority':'high' if s['revenue_model'] else 'medium'},{'method':'ROI-based strategic value','use_case':'best when buyer can quantify avoided loss, disruption, risk, or cost','priority':'high'},{'method':'technology and data-asset value','use_case':'best when proprietary datasets, benchmarks, and integrations are proven','priority':'medium'}]
+        if s['sector']=='climate_insurance': m.append({'method':'risk-data product value','use_case':'best when climate exposure benchmarks become reusable premium data products','priority':'high'})
+        return m
+    def _upsides(self,s):
+        if s['sector']=='climate_insurance': cases=['underwriting pilots convert to recurring enterprise subscriptions','climate exposure benchmarks become premium data products','risk-transfer and catastrophe modules expand account value','strategic buyer uses acquisition to fill climate-risk intelligence gap']
+        elif s['sector']=='financial_market_intelligence': cases=['paid pilots convert to institutional platform subscriptions','signal modules expand across portfolio and risk workflows','proprietary signal benchmarks become premium data products','strategic buyer uses acquisition to fill market-intelligence gap']
+        else: cases=['paid pilots convert to recurring enterprise subscriptions','modules expand across buyer workflows','proprietary benchmarks become premium data products','strategic buyer uses acquisition to fill category gap']
+        if s['acquirer_count']>=8: cases.append('multiple strategic buyer categories create deal tension')
         return cases
-
-    def _discount_factors(self, signals: Dict[str, Any]) -> List[str]:
-        factors = []
-
-        if signals["blocker_level"] == "conditional":
-            factors.append("conditional deployment blocker")
-
-        if signals["moat_score"] < 0.78:
-            factors.append("moat still moderate rather than strong")
-
-        if signals["commercial_risk_score"] >= 0.30:
-            factors.append("enterprise sales and implementation burden")
-
-        if signals["risk_score"] >= 0.45:
-            factors.append("operational risk review required")
-
-        return factors or ["no major deterministic valuation discount surfaced"]
-
-    def _path_fit_score(self, signals: Dict[str, Any], base_bonus: float, path_type: str) -> float:
-        score = self._bounded(
-            0.18
-            + base_bonus
-            + signals["acquisition_score"] * 0.13
-            + signals["top_acquirer_score"] * 0.11
-            + signals["value_capture_score"] * 0.09
-            + signals["buyer_roi_score"] * 0.08
-            + signals["moat_score"] * 0.08
-            - signals["commercial_risk_score"] * 0.04
-        )
-
-        if path_type == "partnership" and signals["blocker_level"] == "conditional":
-            score = self._bounded(score + 0.05)
-
-        if path_type == "strategic" and signals["blocker_level"] == "conditional":
-            score = self._bounded(score - 0.03)
-
-        if path_type == "licensing" and signals["revenue_model"] == "enterprise_subscription":
-            score = self._bounded(score + 0.02)
-
-        return round(score, 4)
-
-    def _exit_narrative(
-        self,
-        signals: Dict[str, Any],
-        buyer_universe: Dict[str, Any],
-        strategic_fit: Dict[str, Any],
-        valuation_logic: Dict[str, Any],
-    ) -> Dict[str, Any]:
-        return {
-            "one_liner": (
-                f"A {signals.get('sector', 'target sector').replace('_', ' ')} opportunity with "
-                f"{strategic_fit.get('level')} strategic fit, {buyer_universe.get('depth')} buyer coverage, "
-                f"and {valuation_logic.get('valuation_signal', {}).get('strength')} valuation signal."
-            ),
-            "acquirer_pitch": (
-                "Acquire or partner to own a predictive intelligence layer that can extend enterprise workflows, "
-                "reduce operational risk, deepen data advantage, and create platform/module expansion."
-            ),
-            "deal_story": (
-                "The deal story should lead with validated buyer pain, measurable ROI, workflow embedding, "
-                "proprietary data loops, and a clear path from advisory pilots to enterprise platform expansion."
-            ),
-        }
-
-    def _recommended_next_actions(
-        self,
-        signals: Dict[str, Any],
-        exit_readiness: Dict[str, Any],
-    ) -> List[Dict[str, Any]]:
-        actions = [
-            {
-                "action": "build acquirer-specific strategic rationale",
-                "purpose": "translate Claire output into buyer-specific deal logic",
-                "priority": "high",
-            },
-            {
-                "action": "prepare diligence evidence pack",
-                "purpose": "organize ROI proof, technical architecture, data rights, model validation, and risk controls",
-                "priority": "high",
-            },
-            {
-                "action": "model pilot-to-enterprise conversion economics",
-                "purpose": "support valuation and commercial readiness with concrete revenue milestones",
-                "priority": "high",
-            },
-            {
-                "action": "map deal path options",
-                "purpose": "compare acquisition, commercial partnership, OEM/licensing, and growth-financing paths",
-                "priority": "medium",
-            },
-        ]
-
-        if signals["blocker_level"] == "conditional":
-            actions.append({
-                "action": "resolve deployment-control blocker before outreach",
-                "purpose": "prevent human-review and operational-risk questions from weakening deal leverage",
-                "priority": "critical",
-            })
-
-        if exit_readiness.get("state") != "exit_ready":
-            actions.append({
-                "action": "close missing proof points",
-                "purpose": "move from candidate-with-conditions to exit-ready package",
-                "priority": "high",
-            })
-
-        return actions
-
-    def _deal_exit_thesis(
-        self,
-        signals: Dict[str, Any],
-        exit_readiness: Dict[str, Any],
-        strategic_fit: Dict[str, Any],
-        valuation_logic: Dict[str, Any],
-    ) -> str:
-        sector = signals.get("sector", "target sector").replace("_", " ")
-        return (
-            f"{sector} is a {exit_readiness.get('state')} with {strategic_fit.get('level')} strategic fit "
-            f"and {valuation_logic.get('valuation_signal', {}).get('strength')} valuation signal. "
-            f"The strongest route is strategic acquisition or partnership-to-acquisition, supported by enterprise subscription potential, "
-            f"strong value capture, buyer ROI, and workflow/data defensibility."
-        )
-
-    # =========================
-    # HELPERS
-    # =========================
-    def _bounded(self, value: float, low: float = 0.0, high: float = 0.96) -> float:
-        return max(low, min(high, value))
-
-    def _confidence(
-        self,
-        signals: Dict[str, Any],
-        strategic_fit: Dict[str, Any],
-        exit_readiness: Dict[str, Any],
-    ) -> float:
-        return round(
-            self._bounded(
-                0.22
-                + signals["portfolio_score"] * 0.11
-                + strategic_fit.get("score", 0.0) * 0.13
-                + exit_readiness.get("score", 0.0) * 0.11
-                + signals["top_acquirer_score"] * 0.09
-                + signals["value_capture_score"] * 0.10
-                + signals["buyer_roi_score"] * 0.08
-                + signals["moat_score"] * 0.07
-                - signals["risk_score"] * 0.03
-                - signals["commercial_risk_score"] * 0.03
-            ),
-            4,
-        )
-
-    def _get(self, obj: Dict[str, Any], path: str, default: float = 0.0) -> float:
-        cur = obj if isinstance(obj, dict) else {}
-        for part in path.split("."):
-            if not isinstance(cur, dict):
-                return default
-            cur = cur.get(part)
-        try:
-            return float(cur or default)
-        except Exception:
-            return default
-
-    def _get_text(self, obj: Dict[str, Any], path: str, default: str = "") -> str:
-        cur = obj if isinstance(obj, dict) else {}
-        for part in path.split("."):
-            if not isinstance(cur, dict):
-                return default
-            cur = cur.get(part)
-        return str(cur or default)
-
-    def _dedupe_dicts(self, items: List[Dict[str, Any]], key: str) -> List[Dict[str, Any]]:
-        deduped = {}
-        for item in items:
-            deduped[item.get(key, "")] = item
-        return list(deduped.values())
+    def _discounts(self,s):
+        f=[]
+        if s['blocker_level']=='conditional':f.append('conditional deployment blocker')
+        if s['moat_score']<.78:f.append('moat still moderate rather than strong')
+        if s['commercial_risk_score']>=.30:f.append('enterprise sales and implementation burden')
+        if s['risk_score']>=.45:f.append('operational risk review required')
+        return f or ['no major deterministic valuation discount surfaced']
+    def _path_score(self,s,bonus): return round(self._b(.18+bonus+s['acquisition_score']*.13+s['top_acquirer_score']*.11+s['avg_top_5_acquirer_score']*.06+s['value_capture_score']*.10+s['buyer_roi_score']*.08+s['moat_score']*.08-s['commercial_risk_score']*.035),4)
+    def _narrative(self,s,buyers,fit,val): return {'one_liner':f"A {s['sector'].replace('_',' ')} opportunity with {fit.get('level')} strategic fit, {buyers.get('depth')} buyer coverage, and {val.get('valuation_signal',{}).get('strength')} valuation signal.",'acquirer_pitch':self._pitch(s),'deal_story':self._story(s)}
+    def _pitch(self,s): return 'Acquire or partner to own a climate-risk intelligence layer for underwriting, exposure management, repricing, and risk-transfer workflows.' if s['sector']=='climate_insurance' else 'Acquire or partner to own a proprietary signal-intelligence layer for institutional research, risk detection, and market workflow expansion.' if s['sector']=='financial_market_intelligence' else 'Acquire or partner to own a predictive intelligence layer with workflow, data, and module expansion potential.'
+    def _story(self,s): return 'The deal story should lead with climate exposure urgency, underwriting ROI, weather-loss backtesting, proprietary risk data, and risk-transfer modules.' if s['sector']=='climate_insurance' else 'The deal story should lead with validated buyer pain, measurable ROI, workflow embedding, proprietary data loops, and a clear path from pilots to platform expansion.'
+    def _thesis(self,s,ready,fit,val): return f"{s['sector'].replace('_',' ')} is a {ready.get('state')} with {fit.get('level')} strategic fit and {val.get('valuation_signal',{}).get('strength')} valuation signal."
+    def _actions(self,s,ready):
+        a=[{'action':'build acquirer-specific strategic rationale','purpose':'translate Claire output into buyer-specific deal logic','priority':'high'},{'action':'prepare diligence evidence pack','purpose':'organize ROI proof, technical architecture, data rights, model validation, and risk controls','priority':'high'},{'action':'model pilot-to-enterprise conversion economics','purpose':'support valuation and commercial readiness with concrete revenue milestones','priority':'high'},{'action':'map deal path options','purpose':'compare acquisition, commercial partnership, licensing, and growth-financing paths','priority':'medium'}]
+        if s['sector']=='climate_insurance': a.insert(1,{'action':'prepare underwriting and climate-loss validation pack','purpose':'prove model value to insurers, reinsurers, and catastrophe-risk buyers','priority':'high'})
+        if s['blocker_level']=='conditional': a.append({'action':'resolve deployment-control blocker before outreach','purpose':'prevent risk-control questions from weakening deal leverage','priority':'critical'})
+        if ready.get('state')!='exit_ready': a.append({'action':'close missing proof points','purpose':'move from candidate to exit-ready package','priority':'high'})
+        return a
+    def _b(self,v): return max(0,min(.96,v))
+    def _confidence(self,s,fit,ready): return round(self._b(.22+s['portfolio_score']*.11+fit.get('score',0)*.13+ready.get('score',0)*.11+s['top_acquirer_score']*.09+s['avg_top_5_acquirer_score']*.06+s['value_capture_score']*.09+s['buyer_roi_score']*.08+s['moat_score']*.07-s['risk_score']*.025-s['commercial_risk_score']*.025),4)
+    def _dom(self,sector,fallback): return {'climate_insurance':'insurance','defense_autonomy':'technology','healthcare_operations':'healthcare','industrial_supply_chain':'industrial','energy_infrastructure':'energy','financial_market_intelligence':'finance'}.get(sector,fallback or 'general')
+    def _get(self,obj,*path):
+        cur=obj
+        for k in path:
+            if not isinstance(cur,dict): return 0.0
+            cur=cur.get(k,0.0)
+        try:return float(cur or 0.0)
+        except Exception:return 0.0
+    def _text(self,obj,*path):
+        cur=obj
+        for k in path:
+            if not isinstance(cur,dict): return ''
+            cur=cur.get(k,'')
+        return str(cur or '')
+    def _dedupe(self,items,key):
+        d={}
+        for item in items:d[item.get(key,'')]=item
+        return list(d.values())
