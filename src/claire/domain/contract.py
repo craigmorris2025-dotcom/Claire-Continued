@@ -121,8 +121,6 @@ class ClaireResult:
     Important:
     - This serializer intentionally lifts important nested `data` fields
       to the API response top level.
-    - That is why fields like market_gap, system_design, design_portal,
-      design_output, signal_trace, and engine_details show up in /pipeline/evaluate.
     """
 
     def __init__(
@@ -186,6 +184,11 @@ class ClaireResult:
             "system_design": self.data.get("system_design", {}),
             "design_portal": self.data.get("design_portal", {}),
             "design_output": self.data.get("design_output", {}),
+            "portfolio_binder": self.data.get("portfolio_binder", {}),
+
+            "lifecycle": self.data.get("lifecycle", {}),
+            "lifecycle_stages": self.data.get("lifecycle_stages", []),
+            "lifecycle_summary": self.data.get("lifecycle_summary", {}),
 
             "phase_log": self.data.get("phase_log", []),
 

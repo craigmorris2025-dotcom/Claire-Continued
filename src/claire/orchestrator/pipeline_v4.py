@@ -1,5 +1,5 @@
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.10 MARKET-GAP ACQUIRERS)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.12 LIFECYCLE STAGES)
 
 Adds:
 - Signal trace
@@ -8,6 +8,8 @@ Adds:
 - Conditional Design Portal routing
 - SystemDesignEngine technical blueprint generation
 - Market-gap-aware AcquirerMatchingEngine
+- PortfolioBinderBuilder structured binder output
+- LifecycleStageEngine 21-stage lifecycle visibility
 """
 
 from typing import Dict, Any
@@ -18,7 +20,9 @@ from claire.engines.auto_design import AutoDesignEngine
 from claire.engines.acquirer_matching import AcquirerMatchingEngine
 from claire.engines.system_design_engine import SystemDesignEngine
 from claire.engines.market_gap_engine import MarketGapEngine
+from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.design.portal import DesignPortal
+from claire.portfolio.binder_builder import PortfolioBinderBuilder
 
 
 class PipelineOrchestrator:
@@ -30,10 +34,12 @@ class PipelineOrchestrator:
         self.design_portal = DesignPortal()
         self.system_designer = SystemDesignEngine()
         self.market_gap_engine = MarketGapEngine()
+        self.binder_builder = PortfolioBinderBuilder()
+        self.lifecycle_engine = LifecycleStageEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.10 (MARKET-GAP ACQUIRERS) <<<")
+        print(">>> RUNNING PIPELINE V5.12 (LIFECYCLE STAGES) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -359,6 +365,58 @@ class PipelineOrchestrator:
             )
         except Exception:
             acquirer_matches = []
+
+        # =========================
+        # PORTFOLIO BINDER
+        # =========================
+        try:
+            portfolio_binder = self.binder_builder.build({
+                "scores": scores,
+                "domain": domain,
+                "keywords": keywords,
+                "market_gap": market_gap,
+                "system_design": system_design,
+                "design_output": data.get("design_output", {}),
+                "acquirer_matches": acquirer_matches,
+                "signal_trace": data.get("signal_trace", {}),
+                "phase_log": phase_log,
+            })
+            data["portfolio_binder"] = portfolio_binder
+        except Exception as e:
+            data["portfolio_binder"] = {
+                "status": "binder_failed",
+                "error": str(e),
+            }
+
+        # =========================
+        # LIFECYCLE STAGES
+        # =========================
+        try:
+            lifecycle = self.lifecycle_engine.evaluate({
+                "scores": scores,
+                "domain": domain,
+                "keywords": keywords,
+                "connector_sources": external,
+                "market_gap": market_gap,
+                "signal_trace": data.get("signal_trace", {}),
+                "engine_details": data.get("engine_details", {}),
+                "system_design": system_design,
+                "design_portal": design_portal,
+                "design_output": data.get("design_output", {}),
+                "acquirer_matches": acquirer_matches,
+                "portfolio_binder": data.get("portfolio_binder", {}),
+                "phase_log": phase_log,
+            })
+            data["lifecycle"] = lifecycle
+            data["lifecycle_stages"] = lifecycle.get("stages", [])
+            data["lifecycle_summary"] = lifecycle.get("summary", {})
+        except Exception as e:
+            data["lifecycle"] = {
+                "status": "lifecycle_failed",
+                "error": str(e),
+            }
+            data["lifecycle_stages"] = []
+            data["lifecycle_summary"] = {}
 
         # =========================
         # FINAL DECISION
