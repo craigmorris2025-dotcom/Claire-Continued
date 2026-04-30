@@ -51,7 +51,7 @@ class LifecycleStageEngine:
             {"stage": 5, "name": "Gap Detection", "category": "discovery", "output_key": "market_gap"},
             {"stage": 6, "name": "Needed Solutions Layer", "category": "discovery", "output_key": "market_gap"},
             {"stage": 7, "name": "Opportunity Discovery", "category": "discovery", "output_key": "opportunity_discovery"},
-            {"stage": 8, "name": "Breakthrough Synthesis", "category": "breakthrough", "output_key": "scores"},
+            {"stage": 8, "name": "Breakthrough Synthesis", "category": "breakthrough", "output_key": "breakthrough_synthesis"},
             {"stage": 9, "name": "Technical Feasibility", "category": "validation", "output_key": "scores"},
             {"stage": 10, "name": "Market Formation Analysis", "category": "validation", "output_key": "market_formation"},
             {"stage": 11, "name": "Moat / Defensibility", "category": "validation", "output_key": "moat"},

@@ -248,6 +248,40 @@ class SystemDesignEngine:
                 },
             ])
 
+        elif sector == "defense_autonomy":
+            flows.extend([
+                {
+                    "from": "mission_context_ingestion",
+                    "to": "mission_simulation_engine",
+                    "payload": "mission_context_sensor_inputs_operational_constraints",
+                    "validation": "allowed_use_and_source_authorization_checked",
+                },
+                {
+                    "from": "mission_simulation_engine",
+                    "to": "coordination_risk_model",
+                    "payload": "scenario_outputs_coordination_risks_decision_options",
+                    "validation": "simulation_confidence_and_scenario_version_checked",
+                },
+                {
+                    "from": "coordination_risk_model",
+                    "to": "secure_command_adapter",
+                    "payload": "ranked_advisory_recommendations_and_evidence_trace",
+                    "validation": "secure_command_policy_checked",
+                },
+                {
+                    "from": "secure_command_adapter",
+                    "to": "human_override_layer",
+                    "payload": "review_queue_authorization_state_and_required_controls",
+                    "validation": "human_authorization_required",
+                },
+                {
+                    "from": "human_override_layer",
+                    "to": "mission_audit_service",
+                    "payload": "approval_state_override_log_allowed_use_trace",
+                    "validation": "audit_trail_retained",
+                },
+            ])
+
         elif sector == "financial_market_intelligence":
             flows.extend([
                 {
@@ -890,11 +924,15 @@ class SystemDesignEngine:
                 ],
                 "core_requirements": [
                     "secure command integration",
+                    "mission context ingestion",
                     "mission simulation dataset",
+                    "coordination risk model",
                     "human override layer",
                     "edge decision engine",
                     "mission audit trail",
                     "allowed-use policy controls",
+                    "secure command policy checks",
+                    "authorization-state tracking",
                 ],
                 "sector_controls": [
                     "human authorization gate",
@@ -904,15 +942,29 @@ class SystemDesignEngine:
                 ],
                 "validation_targets": [
                     "mission simulation validation",
+                    "coordination-risk model validation",
                     "human override review",
                     "secure command integration test",
                     "allowed-use review",
+                    "mission audit trace replay",
                 ],
                 "modules": [
+                    {
+                        "component": "mission_context_ingestion",
+                        "role": "ingests authorized mission context, sensor inputs, operational constraints, and allowed-use metadata",
+                        "interfaces": ["mission_context", "sensor_inputs", "allowed_use_metadata"],
+                        "priority": "high",
+                    },
                     {
                         "component": "mission_simulation_engine",
                         "role": "runs authorized mission scenarios and coordination simulations",
                         "interfaces": ["mission_context", "simulation_parameters", "scenario_outputs"],
+                        "priority": "high",
+                    },
+                    {
+                        "component": "coordination_risk_model",
+                        "role": "scores coordination risk, mission uncertainty, and decision-option confidence for advisory review",
+                        "interfaces": ["scenario_outputs", "risk_scores", "decision_options"],
                         "priority": "high",
                     },
                     {
@@ -927,9 +979,17 @@ class SystemDesignEngine:
                         "interfaces": ["recommendations", "approval_state", "override_log"],
                         "priority": "critical",
                     },
+                    {
+                        "component": "mission_audit_service",
+                        "role": "records allowed-use decisions, authorization state, override events, evidence traces, and deployment constraints",
+                        "interfaces": ["allowed_use_trace", "override_log", "audit_evidence"],
+                        "priority": "critical",
+                    },
                 ],
                 "recommended_services": [
+                    "mission_context_ingestion_service",
                     "mission_simulation_service",
+                    "coordination_risk_model_service",
                     "secure_command_adapter_service",
                     "human_override_service",
                     "mission_audit_service",

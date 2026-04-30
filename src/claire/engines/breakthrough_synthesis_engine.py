@@ -212,8 +212,13 @@ class BreakthroughSynthesisEngine:
         else:
             classification, confidence_band = "opportunity_candidate", "early"
 
-        if signals["blocker_level"] == "conditional" and classification == "breakthrough":
-            readiness_modifier = "conditional_breakthrough"
+        if signals["blocker_level"] == "conditional":
+            if classification == "breakthrough":
+                readiness_modifier = "conditional_breakthrough"
+            elif classification == "breakthrough_candidate":
+                readiness_modifier = "conditional_breakthrough_candidate"
+            else:
+                readiness_modifier = "advancable_with_controls"
         elif signals["risk_score"] >= 0.70:
             readiness_modifier = "risk_constrained"
         elif signals["feasibility_score"] < 0.62:
@@ -348,7 +353,7 @@ class BreakthroughSynthesisEngine:
             {"step": 5, "name": "Prove economic unlock", "objective": profile["validate_economic_objective"], "evidence_required": profile["validate_economic_evidence"], "priority": "high"},
         ]
 
-        if classification.get("readiness_modifier") == "conditional_breakthrough":
+        if classification.get("readiness_modifier") in {"conditional_breakthrough", "conditional_breakthrough_candidate", "advancable_with_controls"}:
             path.insert(3, {"step": 4, "name": "Resolve conditional blocker", "objective": "Prove the opportunity can be deployed with acceptable controls, governance, and human review.", "evidence_required": ["control plan", "human-review workflow", "deployment policy", "audit evidence"], "priority": "critical"})
             for idx, item in enumerate(path, start=1):
                 item["step"] = idx
@@ -392,7 +397,7 @@ class BreakthroughSynthesisEngine:
             {"action": "build breakthrough falsification memo", "purpose": "explicitly define what evidence would kill or downgrade the thesis", "priority": "high"},
             {"action": "prepare binder-ready breakthrough thesis", "purpose": "convert synthesis into a portfolio, design, acquirer, and deal artifact", "priority": "high"},
         ]
-        if classification.get("readiness_modifier") == "conditional_breakthrough":
+        if classification.get("readiness_modifier") in {"conditional_breakthrough", "conditional_breakthrough_candidate", "advancable_with_controls"}:
             actions.insert(2, {"action": "burn down conditional deployment blocker", "purpose": "protect the breakthrough from being discounted by compliance, safety, or governance concerns", "priority": "critical"})
         return actions
 
@@ -699,7 +704,7 @@ class BreakthroughSynthesisEngine:
 
     def _commercial_risk_note(self, signals: Dict[str, Any]) -> str:
         if signals["blocker_level"] == "conditional":
-            return "Commercialization should start as controlled advisory validation until blocker mitigation is documented."
+            return "Commercialization should start as controlled advisory validation until blocker mitigation, allowed-use boundaries, and human-review controls are documented."
         if signals["commercial_risk_score"] >= 0.42:
             return "Commercialization should explicitly test procurement, implementation, and budget-owner friction."
         return "Commercialization can proceed through focused validation and paid pilot packaging."
