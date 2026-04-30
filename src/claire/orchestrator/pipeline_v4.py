@@ -1,6 +1,6 @@
 
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.17 BUSINESS MODEL)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.18 DEAL EXIT MODELING)
 """
 
 from typing import Dict, Any
@@ -16,6 +16,7 @@ from claire.engines.market_formation_engine import MarketFormationEngine
 from claire.engines.moat_defensibility_engine import MoatDefensibilityEngine
 from claire.engines.risk_regulation_engine import RiskRegulationEngine
 from claire.engines.business_model_engine import BusinessModelEngine
+from claire.engines.deal_exit_modeling_engine import DealExitModelingEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.design.portal import DesignPortal
 from claire.portfolio.binder_builder import PortfolioBinderBuilder
@@ -35,12 +36,13 @@ class PipelineOrchestrator:
         self.moat_engine = MoatDefensibilityEngine()
         self.risk_engine = RiskRegulationEngine()
         self.business_model_engine = BusinessModelEngine()
+        self.deal_exit_engine = DealExitModelingEngine()
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.17 (BUSINESS MODEL) <<<")
+        print(">>> RUNNING PIPELINE V5.18 (DEAL EXIT MODELING) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -511,6 +513,44 @@ class PipelineOrchestrator:
         except Exception:
             acquirer_matches = []
 
+        deal_exit_modeling = self._safe_engine(
+            "deal_exit_modeling_failed",
+            lambda: self.deal_exit_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                scores=scores,
+                market_gap=market_gap,
+                trend_trajectory=trend_trajectory,
+                market_formation=market_formation,
+                moat=moat,
+                risk_regulation=risk_regulation,
+                business_model=business_model,
+                acquirer_matches=acquirer_matches,
+                connector_sources=external,
+            ),
+        )
+        data["deal_exit_modeling"] = deal_exit_modeling
+
+        deal_confidence = self._get(deal_exit_modeling, "confidence", 0.0) or 0.0
+        exit_readiness_score = self._get(deal_exit_modeling, "exit_readiness.score", 0.0) or 0.0
+        strategic_fit_score = self._get(deal_exit_modeling, "strategic_fit.score", 0.0) or 0.0
+        valuation_signal_score = self._get(deal_exit_modeling, "valuation_logic.valuation_signal.score", 0.0) or 0.0
+
+        data["signal_trace"].update({
+            "deal_exit_confidence": deal_confidence,
+            "exit_readiness_score": exit_readiness_score,
+            "strategic_fit_score": strategic_fit_score,
+            "valuation_signal_score": valuation_signal_score,
+        })
+
+        data["engine_details"]["deal_exit_modeling"] = {
+            "exit_readiness": deal_exit_modeling.get("exit_readiness") if isinstance(deal_exit_modeling, dict) else None,
+            "strategic_fit": deal_exit_modeling.get("strategic_fit") if isinstance(deal_exit_modeling, dict) else None,
+            "valuation_logic": deal_exit_modeling.get("valuation_logic") if isinstance(deal_exit_modeling, dict) else None,
+            "confidence": deal_exit_modeling.get("confidence") if isinstance(deal_exit_modeling, dict) else None,
+        }
+
         portfolio_binder = self._safe_engine(
             "binder_failed",
             lambda: self.binder_builder.build({
@@ -523,6 +563,7 @@ class PipelineOrchestrator:
                 "moat": moat,
                 "risk_regulation": risk_regulation,
                 "business_model": business_model,
+                "deal_exit_modeling": deal_exit_modeling,
                 "system_design": system_design,
                 "design_output": data.get("design_output", {}),
                 "acquirer_matches": acquirer_matches,
@@ -545,6 +586,7 @@ class PipelineOrchestrator:
                 "moat": moat,
                 "risk_regulation": risk_regulation,
                 "business_model": business_model,
+                "deal_exit_modeling": deal_exit_modeling,
                 "signal_trace": data.get("signal_trace", {}),
                 "engine_details": data.get("engine_details", {}),
                 "system_design": system_design,

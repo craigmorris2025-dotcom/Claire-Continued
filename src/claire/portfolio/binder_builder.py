@@ -23,6 +23,7 @@ class PortfolioBinderBuilder:
         moat = context.get("moat", {})
         risk_regulation = context.get("risk_regulation", {})
         business_model = context.get("business_model", {})
+        deal_exit_modeling = context.get("deal_exit_modeling", {})
         system_design = context.get("system_design", {})
         design_output = context.get("design_output", {})
         acquirer_matches = context.get("acquirer_matches", [])
@@ -37,6 +38,7 @@ class PortfolioBinderBuilder:
             moat=moat,
             risk_regulation=risk_regulation,
             business_model=business_model,
+            deal_exit_modeling=deal_exit_modeling,
             scores=scores,
         )
 
@@ -47,6 +49,7 @@ class PortfolioBinderBuilder:
             self._section("moat_defensibility", "Moat / Defensibility", moat, moat.get("status") == "success"),
             self._section("risk_regulation", "Risk / Regulation / Compliance", risk_regulation, risk_regulation.get("status") == "success"),
             self._section("business_model", "Business Model + Value Capture", business_model, business_model.get("status") == "success"),
+            self._section("deal_exit_modeling", "Deal / Exit Modeling", deal_exit_modeling, deal_exit_modeling.get("status") == "success"),
             self._section("market_gap", "Detected Market / Sector Gap", market_gap, market_gap.get("status") == "success"),
             self._section("needed_solution", "Needed Solution", {
                 "needed_solution": market_gap.get("needed_solution"),
@@ -75,7 +78,9 @@ class PortfolioBinderBuilder:
                 "readiness": design_output.get("readiness", {}) if isinstance(design_output, dict) else {},
                 "risk_blocker_level": risk_regulation.get("blocker_assessment", {}).get("blocker_level"),
                 "commercial_risk": business_model.get("commercial_risk", {}).get("level"),
-                "risk_notes": self._risk_notes(scores, design_output, risk_regulation, business_model),
+                "exit_readiness": deal_exit_modeling.get("exit_readiness", {}).get("state"),
+                "strategic_fit": deal_exit_modeling.get("strategic_fit", {}).get("level"),
+                "risk_notes": self._risk_notes(scores, design_output, risk_regulation, business_model, deal_exit_modeling),
             }),
             self._section("strategic_positioning", "Strategic Positioning", {
                 "positioning": self._positioning_statement(
@@ -85,6 +90,7 @@ class PortfolioBinderBuilder:
                     moat,
                     risk_regulation,
                     business_model,
+                    deal_exit_modeling,
                 ),
                 "portfolio_score": scores.get("portfolio_score", 0.0),
                 "matching_score": scores.get("matching_score", 0.0),
@@ -108,11 +114,11 @@ class PortfolioBinderBuilder:
             "domain": domain,
             "keywords": keywords,
             "executive_thesis": executive_thesis,
-            "readiness": self._readiness(scores, design_output, risk_regulation, business_model),
+            "readiness": self._readiness(scores, design_output, risk_regulation, business_model, deal_exit_modeling),
             "sections": sections,
             "artifact_manifest": self._artifact_manifest(sections),
             "export_targets": ["json", "markdown", "pdf", "docx"],
-            "next_actions": self._next_actions(scores, market_gap, trend_trajectory, market_formation, moat, risk_regulation, business_model, design_output),
+            "next_actions": self._next_actions(scores, market_gap, trend_trajectory, market_formation, moat, risk_regulation, business_model, deal_exit_modeling, design_output),
         }
 
     def _section(self, section_id: str, title: str, content: Dict[str, Any], include: bool = True) -> Dict[str, Any]:
@@ -138,6 +144,7 @@ class PortfolioBinderBuilder:
         moat: Dict[str, Any],
         risk_regulation: Dict[str, Any],
         business_model: Dict[str, Any],
+        deal_exit_modeling: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> str:
         market_gap_text = market_gap.get("market_gap", "A meaningful market gap was identified.")
@@ -183,9 +190,18 @@ class PortfolioBinderBuilder:
         if revenue:
             parts.append(f"Business model analysis supports {self._pretty(revenue)} with {value_capture} value capture, {buyer_roi} buyer ROI, and {commercial_risk} commercial risk.")
 
+        exit_state = deal_exit_modeling.get("exit_readiness", {}).get("state")
+        strategic_fit = deal_exit_modeling.get("strategic_fit", {}).get("level")
+        valuation_signal = deal_exit_modeling.get("valuation_logic", {}).get("valuation_signal", {}).get("strength")
+        if exit_state:
+            parts.append(
+                f"Deal/exit modeling classifies this as {self._pretty(exit_state)} with "
+                f"{strategic_fit} strategic fit and a {self._pretty(valuation_signal)} valuation signal."
+            )
+
         parts.append(
             f"The opportunity produced a breakthrough score of {breakthrough:.4f} and portfolio confidence of {portfolio:.4f}, "
-            "indicating a candidate suitable for blueprinting, validation, and portfolio packaging."
+            "indicating a candidate suitable for blueprinting, validation, portfolio packaging, and deal-readiness preparation."
         )
 
         return " ".join(parts)
@@ -196,6 +212,7 @@ class PortfolioBinderBuilder:
         design_output: Dict[str, Any],
         risk_regulation: Dict[str, Any],
         business_model: Dict[str, Any],
+        deal_exit_modeling: Dict[str, Any],
     ) -> Dict[str, Any]:
         breakthrough = scores.get("breakthrough_score", 0.0)
         feasibility = scores.get("feasibility_score", 0.0)
@@ -211,8 +228,14 @@ class PortfolioBinderBuilder:
         blocker_level = risk_regulation.get("blocker_assessment", {}).get("blocker_level") if isinstance(risk_regulation, dict) else None
         value_capture = business_model.get("value_capture", {}).get("strength") if isinstance(business_model, dict) else None
         commercial_risk = business_model.get("commercial_risk", {}).get("level") if isinstance(business_model, dict) else None
+        exit_state = deal_exit_modeling.get("exit_readiness", {}).get("state") if isinstance(deal_exit_modeling, dict) else None
+        strategic_fit = deal_exit_modeling.get("strategic_fit", {}).get("level") if isinstance(deal_exit_modeling, dict) else None
 
-        if blocker_level == "conditional":
+        if exit_state == "exit_ready" and blocker_level != "conditional":
+            state = "deal_ready_binder"
+        elif exit_state:
+            state = "deal_candidate_with_conditions"
+        elif blocker_level == "conditional":
             state = "binder_candidate_with_conditions"
         elif commercial_risk == "high":
             state = "commercial_validation_needed"
@@ -230,6 +253,8 @@ class PortfolioBinderBuilder:
             "risk_blocker_level": blocker_level,
             "value_capture": value_capture,
             "commercial_risk": commercial_risk,
+            "exit_state": exit_state,
+            "strategic_fit": strategic_fit,
             "breakthrough_score": breakthrough,
             "feasibility_score": feasibility,
             "portfolio_score": portfolio,
@@ -266,6 +291,7 @@ class PortfolioBinderBuilder:
         design_output: Dict[str, Any],
         risk_regulation: Dict[str, Any],
         business_model: Dict[str, Any],
+        deal_exit_modeling: Dict[str, Any],
     ) -> List[str]:
         notes = []
         if scores.get("feasibility_score", 0.0) < 0.7:
@@ -287,6 +313,11 @@ class PortfolioBinderBuilder:
             value_capture = business_model.get("value_capture", {}).get("strength")
             notes.append(f"Business model profile shows {value_capture} value capture and {commercial_risk} commercial risk.")
 
+        if isinstance(deal_exit_modeling, dict) and deal_exit_modeling.get("status") == "success":
+            exit_state = deal_exit_modeling.get("exit_readiness", {}).get("state")
+            strategic_fit = deal_exit_modeling.get("strategic_fit", {}).get("level")
+            notes.append(f"Deal/exit model shows {exit_state} with {strategic_fit} strategic fit.")
+
         if not notes:
             notes.append("No major feasibility blockers surfaced in this deterministic run.")
 
@@ -300,6 +331,7 @@ class PortfolioBinderBuilder:
         moat: Dict[str, Any],
         risk_regulation: Dict[str, Any],
         business_model: Dict[str, Any],
+        deal_exit_modeling: Dict[str, Any],
     ) -> str:
         if not isinstance(market_gap, dict) or market_gap.get("status") != "success":
             return "Opportunity requires additional market-gap validation."
@@ -341,6 +373,15 @@ class PortfolioBinderBuilder:
         if revenue:
             parts.append(f"Business model fit is {self._pretty(revenue)} with {value} value capture.")
 
+        exit_state = deal_exit_modeling.get("exit_readiness", {}).get("state")
+        strategic_fit = deal_exit_modeling.get("strategic_fit", {}).get("level")
+        valuation_signal = deal_exit_modeling.get("valuation_logic", {}).get("valuation_signal", {}).get("strength")
+        if exit_state:
+            parts.append(
+                f"Deal/exit position is {self._pretty(exit_state)} with {strategic_fit} strategic fit "
+                f"and {self._pretty(valuation_signal)} valuation signal."
+            )
+
         return " ".join(parts)
 
     def _artifact_manifest(self, sections: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -358,6 +399,7 @@ class PortfolioBinderBuilder:
         moat: Dict[str, Any],
         risk_regulation: Dict[str, Any],
         business_model: Dict[str, Any],
+        deal_exit_modeling: Dict[str, Any],
         design_output: Dict[str, Any],
     ) -> List[str]:
         actions = [
@@ -368,6 +410,7 @@ class PortfolioBinderBuilder:
             "Review moat, copy risk, vulnerabilities, and strengthening actions.",
             "Review risk/regulation profile, deployment constraints, blockers, and mitigation actions.",
             "Review business model, pricing, buyer ROI, value capture, and commercial risk.",
+            "Review deal/exit readiness, strategic fit, valuation logic, and diligence requirements.",
             "Review technical blueprint and implementation phases.",
         ]
 
@@ -400,6 +443,11 @@ class PortfolioBinderBuilder:
             actions.append("Package a paid advisory pilot with ROI metrics and enterprise conversion path.")
             if business_model.get("commercial_risk", {}).get("level") != "low":
                 actions.append("Map procurement friction and commercial-risk burn-down before scaling.")
+
+        if isinstance(deal_exit_modeling, dict) and deal_exit_modeling.get("status") == "success":
+            actions.append("Build acquirer-specific strategic rationale and diligence evidence pack.")
+            if deal_exit_modeling.get("exit_readiness", {}).get("state") != "exit_ready":
+                actions.append("Close deal-readiness proof gaps before outreach.")
 
         return actions
 

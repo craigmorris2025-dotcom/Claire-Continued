@@ -64,7 +64,7 @@ class LifecycleStageEngine:
             {"stage": 18, "name": "Strategic Positioning", "category": "strategy", "output_key": "portfolio_binder"},
             {"stage": 19, "name": "Portfolio / Binder Assembly", "category": "portfolio", "output_key": "portfolio_binder"},
             {"stage": 20, "name": "Acquirer Discovery", "category": "outcome", "output_key": "acquirer_matches"},
-            {"stage": 21, "name": "Deal / Exit Modeling", "category": "outcome", "output_key": "deal_modeling", "next_build": True},
+            {"stage": 21, "name": "Deal / Exit Modeling", "category": "outcome", "output_key": "deal_exit_modeling"},
         ]
 
     def _stage_status(self, stage_def: Dict[str, Any], context: Dict[str, Any]) -> Dict[str, Any]:
@@ -225,7 +225,19 @@ class LifecycleStageEngine:
                 evidence.append(f"{len(matches)} acquirer matches generated")
 
         elif stage == 21:
-            evidence.append("dedicated deal_exit_modeling_engine not yet implemented")
+            deal = context.get("deal_exit_modeling", {})
+            if deal.get("status") == "success":
+                status = "active"
+                active = True
+                evidence.append("deal_exit_modeling generated successfully")
+                if deal.get("exit_readiness"):
+                    evidence.append(f"exit readiness: {deal.get('exit_readiness', {}).get('state')}")
+                if deal.get("strategic_fit"):
+                    evidence.append(f"strategic fit: {deal.get('strategic_fit', {}).get('level')}")
+                if deal.get("valuation_logic"):
+                    evidence.append(f"valuation signal: {deal.get('valuation_logic', {}).get('valuation_signal', {}).get('strength')}")
+            else:
+                evidence.append("dedicated deal_exit_modeling_engine not yet implemented or unavailable")
 
         if status == "pending" and not evidence:
             evidence.append(f"{stage_def.get('output_key') or 'stage output'} not available")
@@ -268,19 +280,12 @@ class LifecycleStageEngine:
         }
 
     def _next_recommended_stage(self, stages: List[Dict[str, Any]]) -> Dict[str, Any]:
-        preferred_order = [21]
-
-        for preferred_stage in preferred_order:
-            for stage in stages:
-                if stage["stage"] == preferred_stage and stage["status"] == "pending":
-                    return {
-                        "stage": stage["stage"],
-                        "name": stage["name"],
-                        "reason": "Highest-priority missing lifecycle engine.",
-                    }
-
         for stage in stages:
             if stage["status"] == "pending":
                 return {"stage": stage["stage"], "name": stage["name"], "reason": "Next pending lifecycle stage."}
 
-        return {"stage": None, "name": "Lifecycle complete", "reason": "No pending lifecycle stages detected."}
+        return {
+            "stage": None,
+            "name": "Lifecycle complete",
+            "reason": "All 21 lifecycle stages are implemented or partially implemented.",
+        }
