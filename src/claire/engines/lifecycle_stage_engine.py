@@ -57,7 +57,7 @@ class LifecycleStageEngine:
             {"stage": 9, "name": "Technical Feasibility", "category": "validation", "output_key": "scores"},
             {"stage": 10, "name": "Market Formation Analysis", "category": "validation", "output_key": "market_formation"},
             {"stage": 11, "name": "Moat / Defensibility", "category": "validation", "output_key": "moat"},
-            {"stage": 12, "name": "Risk / Regulation / Compliance", "category": "validation", "output_key": "risk_regulation", "next_build": True},
+            {"stage": 12, "name": "Risk / Regulation / Compliance", "category": "validation", "output_key": "risk_regulation"},
             {"stage": 13, "name": "Productization Path", "category": "design", "output_key": "design_output"},
             {"stage": 14, "name": "Design Portal Routing", "category": "design", "output_key": "design_portal"},
             {"stage": 15, "name": "System / Technology Design Engine", "category": "design", "output_key": "design_output"},
@@ -127,10 +127,17 @@ class LifecycleStageEngine:
             trend = context.get("trend_trajectory", {})
             formation = context.get("market_formation", {})
             moat = context.get("moat", {})
-            if market_gap.get("portfolio_relevance") and trend.get("status") == "success" and formation.get("status") == "success" and moat.get("status") == "success":
+            risk = context.get("risk_regulation", {})
+            if (
+                market_gap.get("portfolio_relevance")
+                and trend.get("status") == "success"
+                and formation.get("status") == "success"
+                and moat.get("status") == "success"
+                and risk.get("status") == "success"
+            ):
                 status = "partial"
                 active = True
-                evidence.append("portfolio_relevance, trend trajectory, market formation, and moat available, but dedicated opportunity engine pending")
+                evidence.append("portfolio_relevance, trend, formation, moat, and risk context available, but dedicated opportunity engine pending")
             elif market_gap.get("portfolio_relevance"):
                 status = "partial"
                 active = True
@@ -166,7 +173,7 @@ class LifecycleStageEngine:
                 if formation.get("market_stage"):
                     evidence.append(f"market stage: {formation.get('market_stage', {}).get('stage')}")
             else:
-                evidence.append("dedicated market_formation_engine not yet implemented or unavailable")
+                evidence.append("dedicated market_formation_engine unavailable")
 
         elif stage == 11:
             moat = context.get("moat", {})
@@ -180,10 +187,22 @@ class LifecycleStageEngine:
                 if moat.get("copy_risk"):
                     evidence.append(f"copy risk: {moat.get('copy_risk', {}).get('level')}")
             else:
-                evidence.append("dedicated moat_defensibility_engine not yet implemented or unavailable")
+                evidence.append("dedicated moat_defensibility_engine unavailable")
 
         elif stage == 12:
-            evidence.append("dedicated risk_regulation_engine not yet implemented")
+            risk = context.get("risk_regulation", {})
+            if risk.get("status") == "success":
+                status = "active"
+                active = True
+                evidence.append("risk_regulation generated successfully")
+                if risk.get("risk_profile"):
+                    evidence.append(f"risk level: {risk.get('risk_profile', {}).get('level')}")
+                if risk.get("regulation_profile"):
+                    evidence.append(f"regulatory exposure: {risk.get('regulation_profile', {}).get('exposure')}")
+                if risk.get("blocker_assessment"):
+                    evidence.append(f"blocker level: {risk.get('blocker_assessment', {}).get('blocker_level')}")
+            else:
+                evidence.append("dedicated risk_regulation_engine not yet implemented or unavailable")
 
         elif stage == 13:
             design_output = context.get("design_output", {})
@@ -281,7 +300,7 @@ class LifecycleStageEngine:
         }
 
     def _next_recommended_stage(self, stages: List[Dict[str, Any]]) -> Dict[str, Any]:
-        preferred_order = [12, 17, 21]
+        preferred_order = [17, 21]
 
         for preferred_stage in preferred_order:
             for stage in stages:

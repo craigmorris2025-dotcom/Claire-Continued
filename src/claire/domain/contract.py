@@ -170,6 +170,7 @@ class ClaireResult:
             "trend_trajectory": self.data.get("trend_trajectory", {}),
             "market_formation": self.data.get("market_formation", {}),
             "moat": self.data.get("moat", {}),
+            "risk_regulation": self.data.get("risk_regulation", {}),
 
             "engine_details": self.data.get("engine_details", {}),
             "connector_sources": connector_sources,

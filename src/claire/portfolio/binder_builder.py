@@ -4,8 +4,8 @@ portfolio / binder package.
 
 Purpose:
 - Convert pipeline intelligence into a reusable strategic artifact
-- Package breakthrough, trend, market formation, moat, market gap, design,
-  feasibility, and acquirer logic
+- Package breakthrough, trend, market formation, moat, risk/regulation,
+  market gap, design, feasibility, and acquirer logic
 """
 
 from datetime import datetime, timezone
@@ -31,6 +31,7 @@ class PortfolioBinderBuilder:
         trend_trajectory = context.get("trend_trajectory", {})
         market_formation = context.get("market_formation", {})
         moat = context.get("moat", {})
+        risk_regulation = context.get("risk_regulation", {})
         system_design = context.get("system_design", {})
         design_output = context.get("design_output", {})
         acquirer_matches = context.get("acquirer_matches", [])
@@ -43,6 +44,7 @@ class PortfolioBinderBuilder:
             trend_trajectory=trend_trajectory,
             market_formation=market_formation,
             moat=moat,
+            risk_regulation=risk_regulation,
             scores=scores,
         )
 
@@ -51,14 +53,15 @@ class PortfolioBinderBuilder:
             self._section_trend_trajectory(trend_trajectory),
             self._section_market_formation(market_formation),
             self._section_moat_defensibility(moat),
+            self._section_risk_regulation(risk_regulation),
             self._section_market_gap(market_gap),
             self._section_needed_solution(market_gap),
             self._section_breakthrough(scores, signal_trace),
             self._section_design_blueprint(system_design, design_output),
             self._section_technical_specs(design_output),
             self._section_implementation_plan(design_output),
-            self._section_feasibility(scores, design_output),
-            self._section_strategic_positioning(market_gap, trend_trajectory, market_formation, moat, scores),
+            self._section_feasibility(scores, design_output, risk_regulation),
+            self._section_strategic_positioning(market_gap, trend_trajectory, market_formation, moat, risk_regulation, scores),
             self._section_acquirer_logic(acquirer_matches, market_gap),
             self._section_phase_log(phase_log),
         ]
@@ -73,11 +76,11 @@ class PortfolioBinderBuilder:
             "domain": domain,
             "keywords": keywords,
             "executive_thesis": executive_thesis,
-            "readiness": self._readiness(scores=scores, design_output=design_output),
+            "readiness": self._readiness(scores=scores, design_output=design_output, risk_regulation=risk_regulation),
             "sections": sections,
             "artifact_manifest": self._artifact_manifest(sections),
             "export_targets": ["json", "markdown", "pdf", "docx"],
-            "next_actions": self._next_actions(scores, market_gap, trend_trajectory, market_formation, moat, design_output),
+            "next_actions": self._next_actions(scores, market_gap, trend_trajectory, market_formation, moat, risk_regulation, design_output),
         }
 
     def _title(self, domain: str, market_gap: Dict[str, Any], design_output: Dict[str, Any]) -> str:
@@ -98,6 +101,7 @@ class PortfolioBinderBuilder:
         trend_trajectory: Dict[str, Any],
         market_formation: Dict[str, Any],
         moat: Dict[str, Any],
+        risk_regulation: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> str:
         market_gap_text = market_gap.get("market_gap", "A meaningful market gap was identified.")
@@ -114,7 +118,7 @@ class PortfolioBinderBuilder:
         if trend_direction and strategic_window:
             article = "an" if str(trend_direction)[0].lower() in {"a", "e", "i", "o", "u"} else "a"
             trend_sentence = (
-                f"Trajectory analysis shows {article} {trend_direction} pattern with a "
+                f"Trajectory analysis shows {article} {self._pretty_token(trend_direction)} pattern with a "
                 f"{self._pretty_token(strategic_window)} strategic window. "
             )
 
@@ -141,6 +145,17 @@ class PortfolioBinderBuilder:
                     f"{self._pretty_token(primary)}, with {copy_risk} copy risk. "
                 )
 
+        risk_sentence = ""
+        if isinstance(risk_regulation, dict) and risk_regulation.get("status") == "success":
+            risk_level = risk_regulation.get("risk_profile", {}).get("level")
+            exposure = risk_regulation.get("regulation_profile", {}).get("exposure")
+            blocker = risk_regulation.get("blocker_assessment", {}).get("blocker_level")
+            if risk_level and exposure:
+                risk_sentence = (
+                    f"Risk/regulation analysis shows {risk_level} operational/compliance risk, "
+                    f"{exposure} regulatory exposure, and a {blocker} blocker profile. "
+                )
+
         return (
             f"Claire identified a {solution_class} opportunity. "
             f"{market_gap_text} "
@@ -148,12 +163,18 @@ class PortfolioBinderBuilder:
             f"{trend_sentence}"
             f"{formation_sentence}"
             f"{moat_sentence}"
+            f"{risk_sentence}"
             f"The opportunity produced a breakthrough score of {breakthrough:.4f} "
             f"and portfolio confidence of {portfolio:.4f}, indicating a candidate suitable "
             f"for blueprinting, validation, and portfolio packaging."
         )
 
-    def _readiness(self, scores: Dict[str, Any], design_output: Dict[str, Any]) -> Dict[str, Any]:
+    def _readiness(
+        self,
+        scores: Dict[str, Any],
+        design_output: Dict[str, Any],
+        risk_regulation: Dict[str, Any],
+    ) -> Dict[str, Any]:
         breakthrough = scores.get("breakthrough_score", 0.0)
         feasibility = scores.get("feasibility_score", 0.0)
         portfolio = scores.get("portfolio_score", 0.0)
@@ -165,7 +186,15 @@ class PortfolioBinderBuilder:
             else None
         )
 
-        if design_ready and breakthrough >= 0.85 and feasibility >= 0.75 and portfolio >= 0.80:
+        blocker_level = (
+            risk_regulation.get("blocker_assessment", {}).get("blocker_level")
+            if isinstance(risk_regulation, dict)
+            else None
+        )
+
+        if blocker_level == "conditional":
+            state = "binder_candidate_with_conditions"
+        elif design_ready and breakthrough >= 0.85 and feasibility >= 0.75 and portfolio >= 0.80:
             state = "binder_ready"
         elif design_ready and portfolio >= 0.70:
             state = "binder_candidate"
@@ -176,6 +205,7 @@ class PortfolioBinderBuilder:
             "state": state,
             "design_ready": design_ready,
             "artifact_status": artifact_status,
+            "risk_blocker_level": blocker_level,
             "breakthrough_score": breakthrough,
             "feasibility_score": feasibility,
             "portfolio_score": portfolio,
@@ -261,6 +291,29 @@ class PortfolioBinderBuilder:
             },
         }
 
+    def _section_risk_regulation(self, risk_regulation: Dict[str, Any]) -> Dict[str, Any]:
+        if not isinstance(risk_regulation, dict) or risk_regulation.get("status") != "success":
+            return {"id": "risk_regulation", "title": "Risk / Regulation / Compliance", "include": False, "content": {}}
+
+        return {
+            "id": "risk_regulation",
+            "title": "Risk / Regulation / Compliance",
+            "include": True,
+            "content": {
+                "risk_profile": risk_regulation.get("risk_profile"),
+                "regulation_profile": risk_regulation.get("regulation_profile"),
+                "compliance_requirements": risk_regulation.get("compliance_requirements"),
+                "operational_risks": risk_regulation.get("operational_risks"),
+                "data_security_privacy": risk_regulation.get("data_security_privacy"),
+                "deployment_constraints": risk_regulation.get("deployment_constraints"),
+                "blocker_assessment": risk_regulation.get("blocker_assessment"),
+                "mitigation_actions": risk_regulation.get("mitigation_actions"),
+                "validation_requirements": risk_regulation.get("validation_requirements"),
+                "risk_regulation_thesis": risk_regulation.get("risk_regulation_thesis"),
+                "confidence": risk_regulation.get("confidence"),
+            },
+        }
+
     def _section_market_gap(self, market_gap: Dict[str, Any]) -> Dict[str, Any]:
         if not isinstance(market_gap, dict) or market_gap.get("status") != "success":
             return {"id": "market_gap", "title": "Detected Market / Sector Gap", "include": False, "content": {}}
@@ -336,7 +389,12 @@ class PortfolioBinderBuilder:
 
         return {"id": "implementation_plan", "title": "Implementation Plan", "include": True, "content": {"phases": design_output.get("implementation_phases", [])}}
 
-    def _section_feasibility(self, scores: Dict[str, Any], design_output: Dict[str, Any]) -> Dict[str, Any]:
+    def _section_feasibility(
+        self,
+        scores: Dict[str, Any],
+        design_output: Dict[str, Any],
+        risk_regulation: Dict[str, Any],
+    ) -> Dict[str, Any]:
         return {
             "id": "feasibility_and_risk",
             "title": "Feasibility and Risk",
@@ -346,7 +404,12 @@ class PortfolioBinderBuilder:
                 "buildability_score": scores.get("buildability_score", 0.0),
                 "viability_score": scores.get("viability_score", 0.0),
                 "readiness": design_output.get("readiness", {}) if isinstance(design_output, dict) else {},
-                "risk_notes": self._risk_notes(scores=scores, design_output=design_output),
+                "risk_blocker_level": (
+                    risk_regulation.get("blocker_assessment", {}).get("blocker_level")
+                    if isinstance(risk_regulation, dict)
+                    else None
+                ),
+                "risk_notes": self._risk_notes(scores=scores, design_output=design_output, risk_regulation=risk_regulation),
             },
         }
 
@@ -356,6 +419,7 @@ class PortfolioBinderBuilder:
         trend_trajectory: Dict[str, Any],
         market_formation: Dict[str, Any],
         moat: Dict[str, Any],
+        risk_regulation: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> Dict[str, Any]:
         return {
@@ -363,7 +427,7 @@ class PortfolioBinderBuilder:
             "title": "Strategic Positioning",
             "include": True,
             "content": {
-                "positioning": self._positioning_statement(market_gap, trend_trajectory, market_formation, moat),
+                "positioning": self._positioning_statement(market_gap, trend_trajectory, market_formation, moat, risk_regulation),
                 "portfolio_score": scores.get("portfolio_score", 0.0),
                 "matching_score": scores.get("matching_score", 0.0),
                 "acquisition_score": scores.get("acquisition_score", 0.0),
@@ -398,6 +462,8 @@ class PortfolioBinderBuilder:
         category = signal_trace.get("category_creation_score", 0.0)
         buyer_pull = signal_trace.get("buyer_pull_score", 0.0)
         moat_score = signal_trace.get("moat_score", 0.0)
+        risk_score = signal_trace.get("risk_score", 0.0)
+        blocker = signal_trace.get("blocker_level", "unknown")
 
         if breakthrough >= 0.9:
             level = "high-conviction breakthrough"
@@ -413,10 +479,17 @@ class PortfolioBinderBuilder:
             f"trajectory inevitability was {inevitability:.4f}; "
             f"category creation was {category:.4f}; "
             f"buyer pull was {buyer_pull:.4f}; "
-            f"moat score was {moat_score:.4f}."
+            f"moat score was {moat_score:.4f}; "
+            f"risk score was {risk_score:.4f}; "
+            f"blocker level was {blocker}."
         )
 
-    def _risk_notes(self, scores: Dict[str, Any], design_output: Dict[str, Any]) -> List[str]:
+    def _risk_notes(
+        self,
+        scores: Dict[str, Any],
+        design_output: Dict[str, Any],
+        risk_regulation: Dict[str, Any],
+    ) -> List[str]:
         notes = []
         feasibility = scores.get("feasibility_score", 0.0)
         buildability = scores.get("buildability_score", 0.0)
@@ -431,6 +504,11 @@ class PortfolioBinderBuilder:
         if readiness.get("state") == "ready_for_blueprint":
             notes.append("Technical blueprint readiness is strong.")
 
+        if isinstance(risk_regulation, dict) and risk_regulation.get("status") == "success":
+            risk_level = risk_regulation.get("risk_profile", {}).get("level")
+            blocker = risk_regulation.get("blocker_assessment", {}).get("blocker_level")
+            notes.append(f"Risk/regulation profile is {risk_level}; blocker level is {blocker}.")
+
         if not notes:
             notes.append("No major feasibility blockers surfaced in this deterministic run.")
 
@@ -442,6 +520,7 @@ class PortfolioBinderBuilder:
         trend_trajectory: Dict[str, Any],
         market_formation: Dict[str, Any],
         moat: Dict[str, Any],
+        risk_regulation: Dict[str, Any],
     ) -> str:
         if not isinstance(market_gap, dict) or market_gap.get("status") != "success":
             return "Opportunity requires additional market-gap validation."
@@ -456,7 +535,7 @@ class PortfolioBinderBuilder:
             direction = trend_trajectory.get("trend_direction", {}).get("direction")
             window = trend_trajectory.get("strategic_window", {}).get("window")
             if direction and window:
-                trend_sentence = f" The trend trajectory is {direction}, with a {self._pretty_token(window)} strategic window."
+                trend_sentence = f" The trend trajectory is {self._pretty_token(direction)}, with a {self._pretty_token(window)} strategic window."
 
         formation_sentence = ""
         if isinstance(market_formation, dict) and market_formation.get("status") == "success":
@@ -472,6 +551,13 @@ class PortfolioBinderBuilder:
             if primary and strength:
                 moat_sentence = f" Defensibility is {strength}, led by {self._pretty_token(primary)}."
 
+        risk_sentence = ""
+        if isinstance(risk_regulation, dict) and risk_regulation.get("status") == "success":
+            risk = risk_regulation.get("risk_profile", {}).get("level")
+            exposure = risk_regulation.get("regulation_profile", {}).get("exposure")
+            blocker = risk_regulation.get("blocker_assessment", {}).get("blocker_level")
+            risk_sentence = f" Risk profile is {risk}, regulatory exposure is {exposure}, and blocker level is {blocker}."
+
         return (
             f"This opportunity is positioned in {sector}. "
             f"It addresses the needed solution: {needed_solution} "
@@ -479,6 +565,7 @@ class PortfolioBinderBuilder:
             f"{trend_sentence}"
             f"{formation_sentence}"
             f"{moat_sentence}"
+            f"{risk_sentence}"
         )
 
     def _artifact_manifest(self, sections: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -499,6 +586,7 @@ class PortfolioBinderBuilder:
         trend_trajectory: Dict[str, Any],
         market_formation: Dict[str, Any],
         moat: Dict[str, Any],
+        risk_regulation: Dict[str, Any],
         design_output: Dict[str, Any],
     ) -> List[str]:
         actions = [
@@ -507,6 +595,7 @@ class PortfolioBinderBuilder:
             "Review trend trajectory, timing pressure, and strategic window.",
             "Review market formation type, buyer pull, and adoption path.",
             "Review moat, copy risk, vulnerabilities, and strengthening actions.",
+            "Review risk/regulation profile, deployment constraints, blockers, and mitigation actions.",
             "Review technical blueprint and implementation phases.",
         ]
 
@@ -527,6 +616,13 @@ class PortfolioBinderBuilder:
 
         if isinstance(moat, dict) and moat.get("status") == "success":
             actions.append("Prioritize moat strengthening through proprietary data loops and workflow integration.")
+
+        if isinstance(risk_regulation, dict) and risk_regulation.get("status") == "success":
+            blocker = risk_regulation.get("blocker_assessment", {}).get("blocker_level")
+            if blocker == "conditional":
+                actions.append("Resolve risk/regulation blockers before go-to-market packaging.")
+            else:
+                actions.append("Proceed with advisory-mode validation, auditability, and sector-specific compliance review.")
 
         return actions
 
