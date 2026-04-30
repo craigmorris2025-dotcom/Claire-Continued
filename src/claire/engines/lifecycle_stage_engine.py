@@ -45,7 +45,7 @@ class LifecycleStageEngine:
     def _stage_definitions(self) -> List[Dict[str, Any]]:
         return [
             {"stage": 1, "name": "Knowledge Ingestion", "category": "knowledge", "output_key": "connector_sources"},
-            {"stage": 2, "name": "Signal Extraction", "category": "knowledge", "output_key": "signal_trace"},
+            {"stage": 2, "name": "Signal Extraction", "category": "knowledge", "output_key": "signal_extraction"},
             {"stage": 3, "name": "Trend + Trajectory Modeling", "category": "discovery", "output_key": "trend_trajectory"},
             {"stage": 4, "name": "Market / Sector / Industry Mapping", "category": "discovery", "output_key": "market_gap"},
             {"stage": 5, "name": "Gap Detection", "category": "discovery", "output_key": "market_gap"},
@@ -79,9 +79,19 @@ class LifecycleStageEngine:
                 evidence.append("connector_sources available")
 
         elif stage == 2:
-            if context.get("signal_trace") and context.get("engine_details"):
+            signal_extraction = context.get("signal_extraction", {})
+            if signal_extraction.get("status") == "success":
+                status, active = "active", True
+                evidence.append("signal_extraction generated successfully")
+                if signal_extraction.get("signal_quality_score"):
+                    evidence.append(f"signal quality: {signal_extraction.get('signal_quality_score', {}).get('score')}")
+                if signal_extraction.get("dominant_sector"):
+                    evidence.append(f"dominant sector: {signal_extraction.get('dominant_sector')}")
+                if signal_extraction.get("routing_evidence"):
+                    evidence.append(f"routing confidence: {signal_extraction.get('routing_evidence', {}).get('routing_confidence_score')}")
+            elif context.get("signal_trace") and context.get("engine_details"):
                 status, active = "partial", True
-                evidence.append("signal_trace and engine_details available")
+                evidence.append("signal_trace and engine_details available, but dedicated signal_extraction engine did not return success")
 
         elif stage == 3:
             trend = context.get("trend_trajectory", {})

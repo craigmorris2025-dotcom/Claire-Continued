@@ -1,6 +1,6 @@
 
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.26 STRATEGIC POSITIONING)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.27 SIGNAL EXTRACTION)
 """
 
 from typing import Dict, Any
@@ -11,6 +11,7 @@ from claire.engines.auto_design import AutoDesignEngine
 from claire.engines.acquirer_matching import AcquirerMatchingEngine
 from claire.engines.system_design_engine import SystemDesignEngine
 from claire.engines.market_gap_engine import MarketGapEngine
+from claire.engines.signal_extraction_engine import SignalExtractionEngine
 from claire.engines.trend_trajectory_engine import TrendTrajectoryEngine
 from claire.engines.market_formation_engine import MarketFormationEngine
 from claire.engines.moat_defensibility_engine import MoatDefensibilityEngine
@@ -35,6 +36,7 @@ class PipelineOrchestrator:
         self.matcher = AcquirerMatchingEngine()
         self.design_portal = DesignPortal()
         self.system_designer = SystemDesignEngine()
+        self.signal_extraction_engine = SignalExtractionEngine()
         self.market_gap_engine = MarketGapEngine()
         self.trend_engine = TrendTrajectoryEngine()
         self.market_formation_engine = MarketFormationEngine()
@@ -52,7 +54,7 @@ class PipelineOrchestrator:
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.26 (STRATEGIC POSITIONING) <<<")
+        print(">>> RUNNING PIPELINE V5.27 (SIGNAL EXTRACTION) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -66,6 +68,23 @@ class PipelineOrchestrator:
             "domain": domain,
             "keywords": keywords
         })
+
+        signal_extraction = self._safe_engine(
+            "signal_extraction_failed",
+            lambda: self.signal_extraction_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                connector_sources=external,
+            ),
+        )
+
+        signal_extraction_confidence = self._get(signal_extraction, "confidence", 0.0) or 0.0
+        signal_quality_score = self._get(signal_extraction, "signal_quality_score.score", 0.0) or 0.0
+        semantic_density_score = self._get(signal_extraction, "semantic_profile.semantic_density_score", 0.0) or 0.0
+        routing_confidence_score = self._get(signal_extraction, "routing_evidence.routing_confidence_score", 0.0) or 0.0
+        evidence_signal_score = self._get(signal_extraction, "evidence_signals.score", 0.0) or 0.0
+        control_signal_score = self._get(signal_extraction, "control_signals.score", 0.0) or 0.0
 
         market = external.get("market", {})
         patent = external.get("patent", {})
@@ -160,6 +179,7 @@ class PipelineOrchestrator:
         data.update({
             "domain": domain,
             "keywords": keywords,
+            "signal_extraction": signal_extraction,
             "market_gap": market_gap,
             "trend_trajectory": trend_trajectory,
             "market_formation": market_formation,
@@ -442,6 +462,11 @@ class PipelineOrchestrator:
             "optimization_score": optimization_signal,
             "portfolio_score": portfolio_signal,
             "_confidence": portfolio_signal,
+            "signal_quality_score": signal_quality_score,
+            "semantic_density_score": semantic_density_score,
+            "routing_confidence_score": routing_confidence_score,
+            "evidence_signal_score": evidence_signal_score,
+            "control_signal_score": control_signal_score,
         }
 
         breakthrough_synthesis = self._safe_engine(
@@ -509,6 +534,12 @@ class PipelineOrchestrator:
         scores["validation_burden_score"] = validation_burden_score
 
         data["signal_trace"] = {
+            "signal_extraction_confidence": signal_extraction_confidence,
+            "signal_quality_score": signal_quality_score,
+            "semantic_density_score": semantic_density_score,
+            "routing_confidence_score": routing_confidence_score,
+            "evidence_signal_score": evidence_signal_score,
+            "control_signal_score": control_signal_score,
             "analysis": analysis_signal,
             "discovery": discovery_signal,
             "opportunity_confidence": opportunity_confidence,
@@ -554,6 +585,7 @@ class PipelineOrchestrator:
 
         data["engine_details"] = {
             "signals": {
+                "signal_extraction": signal_quality_score,
                 "analysis": analysis_signal,
                 "discovery": discovery_signal,
                 "breakthrough": breakthrough_signal,
@@ -561,6 +593,13 @@ class PipelineOrchestrator:
                 "innovation": innovation_signal,
                 "viability": viability_signal,
                 "portfolio": portfolio_signal,
+            },
+            "signal_extraction": {
+                "signal_quality_score": signal_extraction.get("signal_quality_score") if isinstance(signal_extraction, dict) else None,
+                "semantic_profile": signal_extraction.get("semantic_profile") if isinstance(signal_extraction, dict) else None,
+                "dominant_sector": signal_extraction.get("dominant_sector") if isinstance(signal_extraction, dict) else None,
+                "routing_evidence": signal_extraction.get("routing_evidence") if isinstance(signal_extraction, dict) else None,
+                "confidence": signal_extraction.get("confidence") if isinstance(signal_extraction, dict) else None,
             },
             "connectors": {
                 "market_growth": market_growth,
@@ -648,6 +687,8 @@ class PipelineOrchestrator:
                 "domain": domain,
                 "keywords": keywords,
                 "system_design": system_design,
+                "signal_extraction": signal_extraction,
+                "signal_extraction": signal_extraction,
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
                 "market_formation": market_formation,
@@ -823,6 +864,7 @@ class PipelineOrchestrator:
                 "scores": scores,
                 "domain": domain,
                 "keywords": keywords,
+                "signal_extraction": signal_extraction,
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
                 "market_formation": market_formation,
@@ -850,6 +892,7 @@ class PipelineOrchestrator:
                 "scores": scores,
                 "domain": domain,
                 "keywords": keywords,
+                "signal_extraction": signal_extraction,
                 "connector_sources": external,
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,

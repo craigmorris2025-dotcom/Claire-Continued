@@ -17,6 +17,7 @@ class PortfolioBinderBuilder:
         scores = context.get("scores", {})
         domain = context.get("domain", "general")
         keywords = context.get("keywords", [])
+        signal_extraction = context.get("signal_extraction", {})
         market_gap = context.get("market_gap", {})
         trend_trajectory = context.get("trend_trajectory", {})
         market_formation = context.get("market_formation", {})
@@ -37,6 +38,7 @@ class PortfolioBinderBuilder:
 
         title = self._title(domain=domain, market_gap=market_gap, design_output=design_output)
         executive_thesis = self._executive_thesis(
+            signal_extraction=signal_extraction,
             market_gap=market_gap,
             trend_trajectory=trend_trajectory,
             market_formation=market_formation,
@@ -54,6 +56,7 @@ class PortfolioBinderBuilder:
 
         sections = [
             self._section("executive_thesis", "Executive Thesis", {"summary": executive_thesis, "key_scores": self._key_scores(scores)}),
+            self._section("signal_extraction", "Signal Extraction", signal_extraction, signal_extraction.get("status") == "success"),
             self._section("trend_trajectory", "Trend + Trajectory", trend_trajectory, trend_trajectory.get("status") == "success"),
             self._section("market_formation", "Market Formation", market_formation, market_formation.get("status") == "success"),
             self._section("opportunity_discovery", "Opportunity Discovery", opportunity_discovery, opportunity_discovery.get("status") == "success"),
@@ -156,6 +159,7 @@ class PortfolioBinderBuilder:
 
     def _executive_thesis(
         self,
+        signal_extraction: Dict[str, Any],
         market_gap: Dict[str, Any],
         trend_trajectory: Dict[str, Any],
         market_formation: Dict[str, Any],
@@ -181,6 +185,15 @@ class PortfolioBinderBuilder:
             market_gap_text,
             f"The needed solution is: {needed_solution}",
         ]
+
+        if signal_extraction.get("status") == "success":
+            signal_quality = signal_extraction.get("signal_quality_score", {}).get("level")
+            dominant_sector = signal_extraction.get("dominant_sector")
+            routing_confidence = signal_extraction.get("routing_evidence", {}).get("routing_confidence_score")
+            parts.append(
+                f"Signal extraction identifies {self._pretty(dominant_sector)} with {signal_quality} signal quality "
+                f"and routing confidence of {routing_confidence}."
+            )
 
         direction = trend_trajectory.get("trend_direction", {}).get("direction")
         window = trend_trajectory.get("strategic_window", {}).get("window")
@@ -349,6 +362,7 @@ class PortfolioBinderBuilder:
 
     def _key_scores(self, scores: Dict[str, Any]) -> Dict[str, Any]:
         return {
+            "signal_quality": scores.get("signal_quality_score", 0.0),
             "breakthrough": scores.get("breakthrough_score", 0.0),
             "feasibility": scores.get("feasibility_score", 0.0),
             "portfolio": scores.get("portfolio_score", 0.0),
