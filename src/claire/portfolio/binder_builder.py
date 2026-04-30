@@ -24,6 +24,7 @@ class PortfolioBinderBuilder:
         risk_regulation = context.get("risk_regulation", {})
         business_model = context.get("business_model", {})
         opportunity_discovery = context.get("opportunity_discovery", {})
+        breakthrough_synthesis = context.get("breakthrough_synthesis", {})
         deal_exit_modeling = context.get("deal_exit_modeling", {})
         system_design = context.get("system_design", {})
         design_output = context.get("design_output", {})
@@ -40,6 +41,7 @@ class PortfolioBinderBuilder:
             risk_regulation=risk_regulation,
             business_model=business_model,
             opportunity_discovery=opportunity_discovery,
+            breakthrough_synthesis=breakthrough_synthesis,
             deal_exit_modeling=deal_exit_modeling,
             scores=scores,
         )
@@ -49,6 +51,7 @@ class PortfolioBinderBuilder:
             self._section("trend_trajectory", "Trend + Trajectory", trend_trajectory, trend_trajectory.get("status") == "success"),
             self._section("market_formation", "Market Formation", market_formation, market_formation.get("status") == "success"),
             self._section("opportunity_discovery", "Opportunity Discovery", opportunity_discovery, opportunity_discovery.get("status") == "success"),
+            self._section("breakthrough_synthesis", "Breakthrough Synthesis", breakthrough_synthesis, breakthrough_synthesis.get("status") == "success"),
             self._section("moat_defensibility", "Moat / Defensibility", moat, moat.get("status") == "success"),
             self._section("risk_regulation", "Risk / Regulation / Compliance", risk_regulation, risk_regulation.get("status") == "success"),
             self._section("business_model", "Business Model + Value Capture", business_model, business_model.get("status") == "success"),
@@ -148,6 +151,7 @@ class PortfolioBinderBuilder:
         risk_regulation: Dict[str, Any],
         business_model: Dict[str, Any],
         opportunity_discovery: Dict[str, Any],
+        breakthrough_synthesis: Dict[str, Any],
         deal_exit_modeling: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> str:
@@ -173,6 +177,15 @@ class PortfolioBinderBuilder:
             parts.append(
                 f"Opportunity discovery classifies this as a {opportunity_level} {self._pretty(opportunity_type)} "
                 f"with {opportunity_priority} priority and {validation_urgency} validation urgency."
+            )
+
+        if breakthrough_synthesis.get("status") == "success":
+            synthesis_level = breakthrough_synthesis.get("breakthrough_synthesis_score", {}).get("level")
+            classification = breakthrough_synthesis.get("breakthrough_classification", {}).get("classification")
+            non_obviousness = breakthrough_synthesis.get("non_obviousness", {}).get("level")
+            parts.append(
+                f"Breakthrough synthesis classifies this as {self._pretty(classification)} "
+                f"with {synthesis_level} synthesis strength and {non_obviousness} non-obviousness."
             )
 
         if direction and window:

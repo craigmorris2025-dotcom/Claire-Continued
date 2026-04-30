@@ -1,6 +1,6 @@
 
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.18 DEAL EXIT MODELING)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.22 BREAKTHROUGH SYNTHESIS)
 """
 
 from typing import Dict, Any
@@ -17,6 +17,7 @@ from claire.engines.moat_defensibility_engine import MoatDefensibilityEngine
 from claire.engines.risk_regulation_engine import RiskRegulationEngine
 from claire.engines.business_model_engine import BusinessModelEngine
 from claire.engines.opportunity_discovery_engine import OpportunityDiscoveryEngine
+from claire.engines.breakthrough_synthesis_engine import BreakthroughSynthesisEngine
 from claire.engines.deal_exit_modeling_engine import DealExitModelingEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.design.portal import DesignPortal
@@ -38,6 +39,7 @@ class PipelineOrchestrator:
         self.risk_engine = RiskRegulationEngine()
         self.business_model_engine = BusinessModelEngine()
         self.opportunity_engine = OpportunityDiscoveryEngine()
+        self.breakthrough_synthesis_engine = BreakthroughSynthesisEngine()
         self.deal_exit_engine = DealExitModelingEngine()
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
@@ -436,6 +438,35 @@ class PipelineOrchestrator:
             "_confidence": portfolio_signal,
         }
 
+        breakthrough_synthesis = self._safe_engine(
+            "breakthrough_synthesis_failed",
+            lambda: self.breakthrough_synthesis_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                scores=scores,
+                market_gap=market_gap,
+                trend_trajectory=trend_trajectory,
+                market_formation=market_formation,
+                opportunity_discovery=opportunity_discovery,
+                moat=moat,
+                risk_regulation=risk_regulation,
+                business_model=business_model,
+                connector_sources=external,
+            ),
+        )
+        data["breakthrough_synthesis"] = breakthrough_synthesis
+
+        synthesis_confidence = self._get(breakthrough_synthesis, "confidence", 0.0) or 0.0
+        synthesis_score = self._get(breakthrough_synthesis, "breakthrough_synthesis_score.score", 0.0) or 0.0
+        novelty_score = self._get(breakthrough_synthesis, "novelty_assessment.score", 0.0) or 0.0
+        non_obviousness_score = self._get(breakthrough_synthesis, "non_obviousness.score", 0.0) or 0.0
+        mechanism_score = self._get(breakthrough_synthesis, "breakthrough_mechanism.mechanism_score", 0.0) or 0.0
+
+        scores["breakthrough_synthesis_score"] = synthesis_score
+        scores["novelty_score"] = novelty_score
+        scores["non_obviousness_score"] = non_obviousness_score
+
         data["signal_trace"] = {
             "analysis": analysis_signal,
             "discovery": discovery_signal,
@@ -443,6 +474,11 @@ class PipelineOrchestrator:
             "opportunity_score": opportunity_score,
             "opportunity_priority_score": opportunity_priority_score,
             "validation_urgency_score": validation_urgency_score,
+            "breakthrough_synthesis_confidence": synthesis_confidence,
+            "breakthrough_synthesis_score": synthesis_score,
+            "novelty_score": novelty_score,
+            "non_obviousness_score": non_obviousness_score,
+            "breakthrough_mechanism_score": mechanism_score,
             "market_gap_confidence": gap_confidence,
             "market_pressure_score": pressure_score,
             "trajectory_confidence": trajectory_confidence,
@@ -491,6 +527,13 @@ class PipelineOrchestrator:
                 "priority_assessment": opportunity_discovery.get("priority_assessment") if isinstance(opportunity_discovery, dict) else None,
                 "validation_urgency": opportunity_discovery.get("validation_urgency") if isinstance(opportunity_discovery, dict) else None,
                 "confidence": opportunity_discovery.get("confidence") if isinstance(opportunity_discovery, dict) else None,
+            },
+            "breakthrough_synthesis": {
+                "breakthrough_synthesis_score": breakthrough_synthesis.get("breakthrough_synthesis_score") if isinstance(breakthrough_synthesis, dict) else None,
+                "breakthrough_classification": breakthrough_synthesis.get("breakthrough_classification") if isinstance(breakthrough_synthesis, dict) else None,
+                "novelty_assessment": breakthrough_synthesis.get("novelty_assessment") if isinstance(breakthrough_synthesis, dict) else None,
+                "non_obviousness": breakthrough_synthesis.get("non_obviousness") if isinstance(breakthrough_synthesis, dict) else None,
+                "confidence": breakthrough_synthesis.get("confidence") if isinstance(breakthrough_synthesis, dict) else None,
             },
             "market_gap": {
                 "sector": market_gap.get("sector") if isinstance(market_gap, dict) else None,
@@ -625,6 +668,7 @@ class PipelineOrchestrator:
                 "risk_regulation": risk_regulation,
                 "business_model": business_model,
                 "opportunity_discovery": opportunity_discovery,
+                "breakthrough_synthesis": breakthrough_synthesis,
                 "deal_exit_modeling": deal_exit_modeling,
                 "system_design": system_design,
                 "design_output": data.get("design_output", {}),
@@ -649,6 +693,7 @@ class PipelineOrchestrator:
                 "risk_regulation": risk_regulation,
                 "business_model": business_model,
                 "opportunity_discovery": opportunity_discovery,
+                "breakthrough_synthesis": breakthrough_synthesis,
                 "deal_exit_modeling": deal_exit_modeling,
                 "signal_trace": data.get("signal_trace", {}),
                 "engine_details": data.get("engine_details", {}),

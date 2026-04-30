@@ -126,11 +126,21 @@ class LifecycleStageEngine:
                 evidence.append("opportunity_discovery_engine output unavailable")
 
         elif stage == 8:
+            breakthrough = context.get("breakthrough_synthesis", {})
             scores = context.get("scores", {})
             signal_trace = context.get("signal_trace", {})
-            if scores.get("breakthrough_score") is not None:
+            if breakthrough.get("status") == "success":
+                status, active = "active", True
+                evidence.append("breakthrough_synthesis generated successfully")
+                if breakthrough.get("breakthrough_synthesis_score"):
+                    evidence.append(f"synthesis score: {breakthrough.get('breakthrough_synthesis_score', {}).get('score')}")
+                if breakthrough.get("breakthrough_classification"):
+                    evidence.append(f"classification: {breakthrough.get('breakthrough_classification', {}).get('classification')}")
+                if breakthrough.get("non_obviousness"):
+                    evidence.append(f"non-obviousness: {breakthrough.get('non_obviousness', {}).get('level')}")
+            elif scores.get("breakthrough_score") is not None:
                 status, active = "partial", True
-                evidence.append("breakthrough_score available")
+                evidence.append("breakthrough_score available, but dedicated breakthrough_synthesis engine did not return success")
                 if signal_trace.get("breakthrough_final") is not None:
                     evidence.append("breakthrough signal trace available")
 

@@ -153,6 +153,7 @@ class ClaireResult:
 
             "market_gap": self.data.get("market_gap", {}),
             "opportunity_discovery": self.data.get("opportunity_discovery", {}),
+            "breakthrough_synthesis": self.data.get("breakthrough_synthesis", {}),
             "trend_trajectory": self.data.get("trend_trajectory", {}),
             "market_formation": self.data.get("market_formation", {}),
             "moat": self.data.get("moat", {}),
