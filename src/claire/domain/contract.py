@@ -176,6 +176,7 @@ class ClaireResult:
 
             "market_gap": self.data.get("market_gap", {}),
             "trend_trajectory": self.data.get("trend_trajectory", {}),
+            "market_formation": self.data.get("market_formation", {}),
 
             "engine_details": self.data.get("engine_details", {}),
             "connector_sources": connector_sources,

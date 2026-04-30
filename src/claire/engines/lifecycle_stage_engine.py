@@ -60,7 +60,7 @@ class LifecycleStageEngine:
             {"stage": 7, "name": "Opportunity Discovery", "category": "discovery", "output_key": "opportunity_discovery", "next_build": True},
             {"stage": 8, "name": "Breakthrough Synthesis", "category": "breakthrough", "output_key": "scores"},
             {"stage": 9, "name": "Technical Feasibility", "category": "validation", "output_key": "scores"},
-            {"stage": 10, "name": "Market Formation Analysis", "category": "validation", "output_key": "market_formation", "next_build": True},
+            {"stage": 10, "name": "Market Formation Analysis", "category": "validation", "output_key": "market_formation"},
             {"stage": 11, "name": "Moat / Defensibility", "category": "validation", "output_key": "moat", "next_build": True},
             {"stage": 12, "name": "Risk / Regulation / Compliance", "category": "validation", "output_key": "risk_regulation", "next_build": True},
             {"stage": 13, "name": "Productization Path", "category": "design", "output_key": "design_output"},
@@ -104,8 +104,7 @@ class LifecycleStageEngine:
                 if trend.get("strategic_window"):
                     evidence.append(f"strategic window: {trend.get('strategic_window', {}).get('window')}")
             else:
-                status = "pending"
-                evidence.append("dedicated trend_trajectory_engine not yet implemented or unavailable")
+                evidence.append("dedicated trend_trajectory_engine unavailable")
 
         elif stage == 4:
             market_gap = context.get("market_gap", {})
@@ -131,16 +130,16 @@ class LifecycleStageEngine:
         elif stage == 7:
             market_gap = context.get("market_gap", {})
             trend = context.get("trend_trajectory", {})
-            if market_gap.get("portfolio_relevance") and trend.get("status") == "success":
+            formation = context.get("market_formation", {})
+            if market_gap.get("portfolio_relevance") and trend.get("status") == "success" and formation.get("status") == "success":
                 status = "partial"
                 active = True
-                evidence.append("portfolio_relevance and trend trajectory available, but dedicated opportunity engine pending")
+                evidence.append("portfolio_relevance, trend trajectory, and market formation available, but dedicated opportunity engine pending")
             elif market_gap.get("portfolio_relevance"):
                 status = "partial"
                 active = True
                 evidence.append("portfolio_relevance available, but dedicated opportunity engine pending")
             else:
-                status = "pending"
                 evidence.append("dedicated opportunity_discovery_engine not yet implemented")
 
         elif stage == 8:
@@ -161,15 +160,22 @@ class LifecycleStageEngine:
                 evidence.append("feasibility_score and buildability_score available")
 
         elif stage == 10:
-            status = "pending"
-            evidence.append("dedicated market_formation_engine not yet implemented")
+            formation = context.get("market_formation", {})
+            if formation.get("status") == "success":
+                status = "active"
+                active = True
+                evidence.append("market_formation generated successfully")
+                if formation.get("formation_type"):
+                    evidence.append(f"formation type: {formation.get('formation_type', {}).get('type')}")
+                if formation.get("market_stage"):
+                    evidence.append(f"market stage: {formation.get('market_stage', {}).get('stage')}")
+            else:
+                evidence.append("dedicated market_formation_engine not yet implemented or unavailable")
 
         elif stage == 11:
-            status = "pending"
             evidence.append("dedicated moat_defensibility_engine not yet implemented")
 
         elif stage == 12:
-            status = "pending"
             evidence.append("dedicated risk_regulation_engine not yet implemented")
 
         elif stage == 13:
@@ -201,7 +207,6 @@ class LifecycleStageEngine:
                 evidence.append("technical_specs and architecture_blueprint generated")
 
         elif stage == 17:
-            status = "pending"
             evidence.append("dedicated business_model_engine not yet implemented")
 
         elif stage == 18:
@@ -226,7 +231,6 @@ class LifecycleStageEngine:
                 evidence.append(f"{len(matches)} acquirer matches generated")
 
         elif stage == 21:
-            status = "pending"
             evidence.append("dedicated deal_exit_modeling_engine not yet implemented")
 
         if status == "pending" and not evidence:
@@ -270,7 +274,7 @@ class LifecycleStageEngine:
         }
 
     def _next_recommended_stage(self, stages: List[Dict[str, Any]]) -> Dict[str, Any]:
-        preferred_order = [7, 10, 11, 12, 17, 21]
+        preferred_order = [11, 12, 17, 21]
 
         for preferred_stage in preferred_order:
             for stage in stages:

@@ -1,10 +1,11 @@
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.13 TREND TRAJECTORY)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.14 MARKET FORMATION)
 
 Adds:
 - Signal trace
 - Engine details
 - TrendTrajectoryEngine timing / momentum / inevitability analysis
+- MarketFormationEngine category / buyer-pull / adoption-path analysis
 - MarketGapEngine sector gap / needed solution analysis
 - Conditional Design Portal routing
 - SystemDesignEngine technical blueprint generation
@@ -22,6 +23,7 @@ from claire.engines.acquirer_matching import AcquirerMatchingEngine
 from claire.engines.system_design_engine import SystemDesignEngine
 from claire.engines.market_gap_engine import MarketGapEngine
 from claire.engines.trend_trajectory_engine import TrendTrajectoryEngine
+from claire.engines.market_formation_engine import MarketFormationEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.design.portal import DesignPortal
 from claire.portfolio.binder_builder import PortfolioBinderBuilder
@@ -37,12 +39,13 @@ class PipelineOrchestrator:
         self.system_designer = SystemDesignEngine()
         self.market_gap_engine = MarketGapEngine()
         self.trend_engine = TrendTrajectoryEngine()
+        self.market_formation_engine = MarketFormationEngine()
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.13 (TREND TRAJECTORY) <<<")
+        print(">>> RUNNING PIPELINE V5.14 (MARKET FORMATION) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -104,10 +107,29 @@ class PipelineOrchestrator:
                 "error": str(e),
             }
 
+        # =========================
+        # MARKET FORMATION
+        # =========================
+        try:
+            market_formation = self.market_formation_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                market_gap=market_gap,
+                trend_trajectory=trend_trajectory,
+                connector_sources=external,
+            )
+        except Exception as e:
+            market_formation = {
+                "status": "market_formation_failed",
+                "error": str(e),
+            }
+
         data["domain"] = domain
         data["keywords"] = keywords
         data["market_gap"] = market_gap
         data["trend_trajectory"] = trend_trajectory
+        data["market_formation"] = market_formation
 
         # =========================
         # ANALYSIS
@@ -145,14 +167,29 @@ class PipelineOrchestrator:
             else 0.0
         )
 
+        formation_confidence = market_formation.get("confidence", 0.0) if isinstance(market_formation, dict) else 0.0
+        category_score = (
+            market_formation.get("category_creation_score", {}).get("score", 0.0)
+            if isinstance(market_formation, dict)
+            else 0.0
+        )
+        buyer_pull_score = (
+            market_formation.get("buyer_pull", {}).get("score", 0.0)
+            if isinstance(market_formation, dict)
+            else 0.0
+        )
+
         discovery_signal = self._amplify(
-            analysis_signal * 0.50 +
-            market_growth * 0.14 +
-            gap_confidence * 0.10 +
-            pressure_score * 0.07 +
-            trajectory_confidence * 0.08 +
-            momentum_score * 0.07 +
+            analysis_signal * 0.44 +
+            market_growth * 0.12 +
+            gap_confidence * 0.09 +
+            pressure_score * 0.06 +
+            trajectory_confidence * 0.07 +
+            momentum_score * 0.06 +
             timing_score * 0.04 +
+            formation_confidence * 0.06 +
+            category_score * 0.04 +
+            buyer_pull_score * 0.02 +
             (0.05 if patent_activity > 0.6 else 0)
         )
 
@@ -162,21 +199,23 @@ class PipelineOrchestrator:
         # BREAKTHROUGH
         # =========================
         base_breakthrough = (
-            discovery_signal * 0.36 +
-            patent_novelty * 0.24 +
-            analysis_signal * 0.14 +
-            gap_confidence * 0.07 +
-            inevitability_score * 0.10 +
-            momentum_score * 0.09
+            discovery_signal * 0.32 +
+            patent_novelty * 0.21 +
+            analysis_signal * 0.12 +
+            gap_confidence * 0.06 +
+            inevitability_score * 0.09 +
+            momentum_score * 0.08 +
+            category_score * 0.07 +
+            buyer_pull_score * 0.05
         )
 
         spike = 0.0
 
         if discovery_signal > 0.5 and patent_activity > 0.6:
-            spike += 0.16
+            spike += 0.14
 
         if patent_novelty > 0.55:
-            spike += 0.10
+            spike += 0.09
 
         if "autonomous" in text or "ai" in text:
             spike += 0.05
@@ -185,10 +224,16 @@ class PipelineOrchestrator:
             spike += 0.05
 
         if inevitability_score >= 0.75:
-            spike += 0.06
+            spike += 0.05
 
         if momentum_score >= 0.72:
             spike += 0.04
+
+        if category_score >= 0.78:
+            spike += 0.04
+
+        if buyer_pull_score >= 0.78:
+            spike += 0.03
 
         breakthrough_signal = self._amplify(base_breakthrough + spike)
 
@@ -198,12 +243,14 @@ class PipelineOrchestrator:
         # INNOVATION
         # =========================
         innovation_signal = self._amplify(
-            breakthrough_signal * 0.42 +
-            discovery_signal * 0.24 +
-            analysis_signal * 0.12 +
-            gap_confidence * 0.08 +
-            trajectory_confidence * 0.08 +
-            inevitability_score * 0.06
+            breakthrough_signal * 0.38 +
+            discovery_signal * 0.21 +
+            analysis_signal * 0.10 +
+            gap_confidence * 0.07 +
+            trajectory_confidence * 0.07 +
+            inevitability_score * 0.05 +
+            formation_confidence * 0.07 +
+            category_score * 0.05
         )
 
         phase_log.append(self._decision("innovation", innovation_signal))
@@ -212,11 +259,13 @@ class PipelineOrchestrator:
         # VIABILITY
         # =========================
         viability_signal = self._amplify(
-            innovation_signal * 0.44 +
-            financial_health * 0.26 +
-            (1 - financial_risk) * 0.16 +
-            pressure_score * 0.06 +
-            timing_score * 0.08
+            innovation_signal * 0.40 +
+            financial_health * 0.24 +
+            (1 - financial_risk) * 0.14 +
+            pressure_score * 0.05 +
+            timing_score * 0.07 +
+            buyer_pull_score * 0.07 +
+            formation_confidence * 0.03
         )
 
         phase_log.append(self._decision("viability", viability_signal))
@@ -225,11 +274,12 @@ class PipelineOrchestrator:
         # BUILDABILITY
         # =========================
         build_signal = self._amplify(
-            viability_signal * 0.56 +
-            innovation_signal * 0.22 +
-            breakthrough_signal * 0.12 +
+            viability_signal * 0.55 +
+            innovation_signal * 0.21 +
+            breakthrough_signal * 0.11 +
             gap_confidence * 0.04 +
-            trajectory_confidence * 0.06
+            trajectory_confidence * 0.05 +
+            formation_confidence * 0.04
         )
 
         phase_log.append(self._decision("buildability", build_signal))
@@ -248,10 +298,12 @@ class PipelineOrchestrator:
         # MATCHING
         # =========================
         match_signal = self._amplify(
-            feasibility_signal * 0.62 +
-            innovation_signal * 0.22 +
-            gap_confidence * 0.08 +
-            trajectory_confidence * 0.08
+            feasibility_signal * 0.58 +
+            innovation_signal * 0.20 +
+            gap_confidence * 0.07 +
+            trajectory_confidence * 0.06 +
+            buyer_pull_score * 0.05 +
+            category_score * 0.04
         )
 
         phase_log.append(self._decision("matching", match_signal))
@@ -260,10 +312,12 @@ class PipelineOrchestrator:
         # ACQUISITION
         # =========================
         acquisition_signal = self._amplify(
-            match_signal * 0.70 +
-            viability_signal * 0.18 +
-            pressure_score * 0.06 +
-            inevitability_score * 0.06
+            match_signal * 0.66 +
+            viability_signal * 0.16 +
+            pressure_score * 0.05 +
+            inevitability_score * 0.05 +
+            category_score * 0.04 +
+            buyer_pull_score * 0.04
         )
 
         phase_log.append(self._decision("acquisition", acquisition_signal))
@@ -272,10 +326,11 @@ class PipelineOrchestrator:
         # OPTIMIZATION
         # =========================
         optimization_signal = self._amplify(
-            acquisition_signal * 0.76 +
-            innovation_signal * 0.14 +
-            gap_confidence * 0.05 +
-            momentum_score * 0.05
+            acquisition_signal * 0.74 +
+            innovation_signal * 0.12 +
+            gap_confidence * 0.04 +
+            momentum_score * 0.04 +
+            formation_confidence * 0.06
         )
 
         phase_log.append(self._decision("optimization", optimization_signal))
@@ -286,11 +341,13 @@ class PipelineOrchestrator:
         portfolio_signal = min(
             0.94,
             self._amplify(
-                optimization_signal * 0.78 +
-                acquisition_signal * 0.10 +
-                pressure_score * 0.04 +
-                inevitability_score * 0.05 +
-                timing_score * 0.03
+                optimization_signal * 0.75 +
+                acquisition_signal * 0.09 +
+                pressure_score * 0.035 +
+                inevitability_score * 0.045 +
+                timing_score * 0.03 +
+                category_score * 0.03 +
+                buyer_pull_score * 0.02
             )
         )
 
@@ -326,6 +383,9 @@ class PipelineOrchestrator:
             "trajectory_momentum": momentum_score,
             "trajectory_inevitability": inevitability_score,
             "trajectory_timing_pressure": timing_score,
+            "market_formation_confidence": formation_confidence,
+            "category_creation_score": category_score,
+            "buyer_pull_score": buyer_pull_score,
             "breakthrough_base": base_breakthrough,
             "breakthrough_spike": spike,
             "breakthrough_final": breakthrough_signal,
@@ -365,6 +425,13 @@ class PipelineOrchestrator:
                 "strategic_window": trend_trajectory.get("strategic_window") if isinstance(trend_trajectory, dict) else None,
                 "confidence": trend_trajectory.get("confidence") if isinstance(trend_trajectory, dict) else None,
             },
+            "market_formation": {
+                "formation_type": market_formation.get("formation_type") if isinstance(market_formation, dict) else None,
+                "market_stage": market_formation.get("market_stage") if isinstance(market_formation, dict) else None,
+                "category_creation_score": market_formation.get("category_creation_score") if isinstance(market_formation, dict) else None,
+                "buyer_pull": market_formation.get("buyer_pull") if isinstance(market_formation, dict) else None,
+                "confidence": market_formation.get("confidence") if isinstance(market_formation, dict) else None,
+            },
         }
 
         # =========================
@@ -395,6 +462,7 @@ class PipelineOrchestrator:
                 "system_design": system_design,
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
+                "market_formation": market_formation,
             })
             data["design_portal"] = design_portal
         except Exception as e:
@@ -447,6 +515,7 @@ class PipelineOrchestrator:
                 "keywords": keywords,
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
+                "market_formation": market_formation,
                 "system_design": system_design,
                 "design_output": data.get("design_output", {}),
                 "acquirer_matches": acquirer_matches,
@@ -471,6 +540,7 @@ class PipelineOrchestrator:
                 "connector_sources": external,
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
+                "market_formation": market_formation,
                 "signal_trace": data.get("signal_trace", {}),
                 "engine_details": data.get("engine_details", {}),
                 "system_design": system_design,

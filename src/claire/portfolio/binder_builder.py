@@ -4,7 +4,8 @@ portfolio / binder package.
 
 Purpose:
 - Convert pipeline intelligence into a reusable strategic artifact
-- Package breakthrough, trend, market gap, design, feasibility, and acquirer logic
+- Package breakthrough, trend, market formation, market gap, design,
+  feasibility, and acquirer logic
 - Provide a clear structure for future PDF/docx/export generation
 
 This builder does not create files yet.
@@ -32,6 +33,7 @@ class PortfolioBinderBuilder:
         keywords = context.get("keywords", [])
         market_gap = context.get("market_gap", {})
         trend_trajectory = context.get("trend_trajectory", {})
+        market_formation = context.get("market_formation", {})
         system_design = context.get("system_design", {})
         design_output = context.get("design_output", {})
         acquirer_matches = context.get("acquirer_matches", [])
@@ -42,12 +44,14 @@ class PortfolioBinderBuilder:
         executive_thesis = self._executive_thesis(
             market_gap=market_gap,
             trend_trajectory=trend_trajectory,
+            market_formation=market_formation,
             scores=scores,
         )
 
         sections = [
             self._section_executive_thesis(executive_thesis, scores),
             self._section_trend_trajectory(trend_trajectory),
+            self._section_market_formation(market_formation),
             self._section_market_gap(market_gap),
             self._section_needed_solution(market_gap),
             self._section_breakthrough(scores, signal_trace),
@@ -55,7 +59,7 @@ class PortfolioBinderBuilder:
             self._section_technical_specs(design_output),
             self._section_implementation_plan(design_output),
             self._section_feasibility(scores, design_output),
-            self._section_strategic_positioning(market_gap, trend_trajectory, scores),
+            self._section_strategic_positioning(market_gap, trend_trajectory, market_formation, scores),
             self._section_acquirer_logic(acquirer_matches, market_gap),
             self._section_phase_log(phase_log),
         ]
@@ -74,7 +78,7 @@ class PortfolioBinderBuilder:
             "sections": sections,
             "artifact_manifest": self._artifact_manifest(sections),
             "export_targets": ["json", "markdown", "pdf", "docx"],
-            "next_actions": self._next_actions(scores, market_gap, trend_trajectory, design_output),
+            "next_actions": self._next_actions(scores, market_gap, trend_trajectory, market_formation, design_output),
         }
 
     def _title(self, domain: str, market_gap: Dict[str, Any], design_output: Dict[str, Any]) -> str:
@@ -93,6 +97,7 @@ class PortfolioBinderBuilder:
         self,
         market_gap: Dict[str, Any],
         trend_trajectory: Dict[str, Any],
+        market_formation: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> str:
         market_gap_text = market_gap.get("market_gap", "A meaningful market gap was identified.")
@@ -107,16 +112,29 @@ class PortfolioBinderBuilder:
 
         trend_sentence = ""
         if trend_direction and strategic_window:
+            article = "an" if str(trend_direction)[0].lower() in {"a", "e", "i", "o", "u"} else "a"
             trend_sentence = (
-                f"Trajectory analysis shows a {trend_direction} pattern with a "
+                f"Trajectory analysis shows {article} {trend_direction} pattern with a "
                 f"{strategic_window} strategic window. "
             )
+
+        formation_sentence = ""
+        if isinstance(market_formation, dict) and market_formation.get("status") == "success":
+            formation_type = market_formation.get("formation_type", {}).get("type")
+            market_stage = market_formation.get("market_stage", {}).get("stage")
+            buyer_pull = market_formation.get("buyer_pull", {}).get("strength")
+            if formation_type and market_stage:
+                formation_sentence = (
+                    f"Market formation analysis classifies this as {formation_type} "
+                    f"at the {market_stage} stage with {buyer_pull} buyer pull. "
+                )
 
         return (
             f"Claire identified a {solution_class} opportunity. "
             f"{market_gap_text} "
             f"The needed solution is: {needed_solution} "
             f"{trend_sentence}"
+            f"{formation_sentence}"
             f"The opportunity produced a breakthrough score of {breakthrough:.4f} "
             f"and portfolio confidence of {portfolio:.4f}, indicating a candidate suitable "
             f"for blueprinting, validation, and portfolio packaging."
@@ -185,6 +203,28 @@ class PortfolioBinderBuilder:
                 "strategic_window": trend_trajectory.get("strategic_window"),
                 "trajectory_risk": trend_trajectory.get("trajectory_risk"),
                 "confidence": trend_trajectory.get("confidence"),
+            },
+        }
+
+    def _section_market_formation(self, market_formation: Dict[str, Any]) -> Dict[str, Any]:
+        if not isinstance(market_formation, dict) or market_formation.get("status") != "success":
+            return {"id": "market_formation", "title": "Market Formation", "include": False, "content": {}}
+
+        return {
+            "id": "market_formation",
+            "title": "Market Formation",
+            "include": True,
+            "content": {
+                "formation_type": market_formation.get("formation_type"),
+                "market_stage": market_formation.get("market_stage"),
+                "category_creation_score": market_formation.get("category_creation_score"),
+                "buyer_pull": market_formation.get("buyer_pull"),
+                "adoption_path": market_formation.get("adoption_path"),
+                "ecosystem_requirements": market_formation.get("ecosystem_requirements"),
+                "market_entry_strategy": market_formation.get("market_entry_strategy"),
+                "formation_risk": market_formation.get("formation_risk"),
+                "formation_thesis": market_formation.get("formation_thesis"),
+                "confidence": market_formation.get("confidence"),
             },
         }
 
@@ -281,6 +321,7 @@ class PortfolioBinderBuilder:
         self,
         market_gap: Dict[str, Any],
         trend_trajectory: Dict[str, Any],
+        market_formation: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> Dict[str, Any]:
         return {
@@ -288,7 +329,7 @@ class PortfolioBinderBuilder:
             "title": "Strategic Positioning",
             "include": True,
             "content": {
-                "positioning": self._positioning_statement(market_gap, trend_trajectory),
+                "positioning": self._positioning_statement(market_gap, trend_trajectory, market_formation),
                 "portfolio_score": scores.get("portfolio_score", 0.0),
                 "matching_score": scores.get("matching_score", 0.0),
                 "acquisition_score": scores.get("acquisition_score", 0.0),
@@ -320,6 +361,8 @@ class PortfolioBinderBuilder:
         spike = signal_trace.get("breakthrough_spike", 0.0)
         pressure = signal_trace.get("market_pressure_score", 0.0)
         inevitability = signal_trace.get("trajectory_inevitability", 0.0)
+        category = signal_trace.get("category_creation_score", 0.0)
+        buyer_pull = signal_trace.get("buyer_pull_score", 0.0)
 
         if breakthrough >= 0.9:
             level = "high-conviction breakthrough"
@@ -332,7 +375,9 @@ class PortfolioBinderBuilder:
             f"This run is classified as a {level}. "
             f"Breakthrough spike contribution was {spike:.4f}; "
             f"market pressure contribution was {pressure:.4f}; "
-            f"trajectory inevitability was {inevitability:.4f}."
+            f"trajectory inevitability was {inevitability:.4f}; "
+            f"category creation was {category:.4f}; "
+            f"buyer pull was {buyer_pull:.4f}."
         )
 
     def _risk_notes(self, scores: Dict[str, Any], design_output: Dict[str, Any]) -> List[str]:
@@ -355,7 +400,12 @@ class PortfolioBinderBuilder:
 
         return notes
 
-    def _positioning_statement(self, market_gap: Dict[str, Any], trend_trajectory: Dict[str, Any]) -> str:
+    def _positioning_statement(
+        self,
+        market_gap: Dict[str, Any],
+        trend_trajectory: Dict[str, Any],
+        market_formation: Dict[str, Any],
+    ) -> str:
         if not isinstance(market_gap, dict) or market_gap.get("status") != "success":
             return "Opportunity requires additional market-gap validation."
 
@@ -371,11 +421,19 @@ class PortfolioBinderBuilder:
             if direction and window:
                 trend_sentence = f" The trend trajectory is {direction}, with a {window} strategic window."
 
+        formation_sentence = ""
+        if isinstance(market_formation, dict) and market_formation.get("status") == "success":
+            formation_type = market_formation.get("formation_type", {}).get("type")
+            market_stage = market_formation.get("market_stage", {}).get("stage")
+            if formation_type and market_stage:
+                formation_sentence = f" Market formation profile: {formation_type} at {market_stage} stage."
+
         return (
             f"This opportunity is positioned in {sector}. "
             f"It addresses the needed solution: {needed_solution} "
             f"Primary buyer segments include {buyers}."
             f"{trend_sentence}"
+            f"{formation_sentence}"
         )
 
     def _artifact_manifest(self, sections: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -394,12 +452,14 @@ class PortfolioBinderBuilder:
         scores: Dict[str, Any],
         market_gap: Dict[str, Any],
         trend_trajectory: Dict[str, Any],
+        market_formation: Dict[str, Any],
         design_output: Dict[str, Any],
     ) -> List[str]:
         actions = [
             "Review market gap and needed solution thesis.",
             "Validate buyer segments and strategic pressure assumptions.",
             "Review trend trajectory, timing pressure, and strategic window.",
+            "Review market formation type, buyer pull, and adoption path.",
             "Review technical blueprint and implementation phases.",
         ]
 
@@ -414,5 +474,8 @@ class PortfolioBinderBuilder:
 
         if isinstance(trend_trajectory, dict) and trend_trajectory.get("strategic_window", {}).get("window") in {"now", "near_term"}:
             actions.append("Prioritize validation while the strategic timing window is active.")
+
+        if isinstance(market_formation, dict) and market_formation.get("buyer_pull", {}).get("strength") == "strong":
+            actions.append("Design anchor-customer validation around the strongest buyer-pull segment.")
 
         return actions
