@@ -1,43 +1,77 @@
 """
-Acquirer Matching Engine — ensures matches are always produced.
+Acquirer Matching Engine — ranks likely strategic acquirers.
 """
-from typing import Dict, Any, List
-from claire.engines.base import BaseEngine
+
+from typing import Dict, List, Any
 
 
-class AcquirermatchingEngine(BaseEngine):
+class AcquirerMatchingEngine:
+    """Simple deterministic acquirer matcher."""
 
-    def get_key(self) -> str:
-        return "acquirer_matching"
+    DEFAULT_ACQUIRERS = [
+        {
+            "name": "Lockheed Martin",
+            "ticker": "LMT",
+            "sector": "defense",
+            "focus": ["autonomous systems", "drones", "sensor fusion", "battlefield intelligence"],
+            "base_fit": 0.86,
+        },
+        {
+            "name": "Northrop Grumman",
+            "ticker": "NOC",
+            "sector": "defense",
+            "focus": ["aerospace", "autonomous platforms", "surveillance", "command systems"],
+            "base_fit": 0.84,
+        },
+        {
+            "name": "RTX",
+            "ticker": "RTX",
+            "sector": "defense",
+            "focus": ["sensors", "missiles", "defense systems", "edge computing"],
+            "base_fit": 0.80,
+        },
+        {
+            "name": "Anduril",
+            "ticker": "PRIVATE",
+            "sector": "defense technology",
+            "focus": ["autonomous defense", "drones", "ai", "border security"],
+            "base_fit": 0.90,
+        },
+        {
+            "name": "Palantir",
+            "ticker": "PLTR",
+            "sector": "data / defense software",
+            "focus": ["battlefield intelligence", "ai", "data fusion", "decision systems"],
+            "base_fit": 0.82,
+        },
+    ]
 
-    def get_phase(self) -> str:
-        return "deal_construction"
+    def match(self, keywords: List[str], domain: str = "technology") -> List[Dict[str, Any]]:
+        keywords_lower = [k.lower() for k in keywords]
+        results = []
 
-    def process(self, context: Dict[str, Any]) -> Dict[str, Any]:
-        from claire.core.data_engine import DataEngine
+        for acquirer in self.DEFAULT_ACQUIRERS:
+            focus_terms = [f.lower() for f in acquirer.get("focus", [])]
 
-        de = DataEngine()
-        acquirers = de.load_acquirers()
+            matched = []
+            for kw in keywords_lower:
+                for focus in focus_terms:
+                    if kw in focus or focus in kw:
+                        matched.append(kw)
 
-        matches: List[Dict] = []
+            domain_boost = 0.08 if domain.lower() in acquirer.get("sector", "").lower() else 0.0
+            keyword_boost = min(0.12, len(set(matched)) * 0.03)
 
-        for acq in acquirers:
-            score = (
-                acq.get("fit", 0.5) * 0.4 +
-                acq.get("strategy_alignment", 0.5) * 0.3 +
-                acq.get("tech_alignment", 0.5) * 0.2 +
-                acq.get("capacity", 0.5) * 0.1
-            )
+            score = min(0.98, acquirer["base_fit"] + domain_boost + keyword_boost)
 
-            entry = dict(acq)
-            entry["match_score"] = round(score, 4)
-            matches.append(entry)
+            results.append({
+                "name": acquirer["name"],
+                "ticker": acquirer["ticker"],
+                "sector": acquirer["sector"],
+                "match_score": round(score, 4),
+                "matched_keywords": sorted(list(set(matched))),
+                "focus": acquirer["focus"],
+            })
 
-        matches.sort(key=lambda x: x["match_score"], reverse=True)
-
-        context["acquirer_matches"] = matches[:5]
-
-        return self._score_with_detail(context, matches[0]["match_score"], {
-            "top_match": matches[0]["ticker"],
-            "total": len(matches)
-        })
+        results.sort(key=lambda x: x["match_score"], reverse=True)
+        return results

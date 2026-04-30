@@ -1,12 +1,22 @@
-
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.6 STABLE + SPIKE FIXED)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.8 SYSTEM DESIGN ENGINE)
+
+Adds:
+- Signal trace
+- Engine details
+- Acquirer matching
+- Conditional Design Portal routing
+- SystemDesignEngine technical blueprint generation
 """
 
 from typing import Dict, Any
+
 from claire.domain.contract import ClaireIntent, ClaireResult
 from claire.connectors.connector_manager import ConnectorManager
 from claire.engines.auto_design import AutoDesignEngine
+from claire.engines.acquirer_matching import AcquirerMatchingEngine
+from claire.engines.system_design_engine import SystemDesignEngine
+from claire.design.portal import DesignPortal
 
 
 class PipelineOrchestrator:
@@ -14,10 +24,13 @@ class PipelineOrchestrator:
     def __init__(self):
         self.connector_manager = ConnectorManager()
         self.auto_designer = AutoDesignEngine()
+        self.matcher = AcquirerMatchingEngine()
+        self.design_portal = DesignPortal()
+        self.system_designer = SystemDesignEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.6 <<<")
+        print(">>> RUNNING PIPELINE V5.8 (SYSTEM DESIGN ENGINE) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -70,7 +83,7 @@ class PipelineOrchestrator:
         phase_log.append(self._decision("discovery", discovery_signal))
 
         # =========================
-        # BREAKTHROUGH (SPIKE WORKING)
+        # BREAKTHROUGH
         # =========================
         base_breakthrough = (
             discovery_signal * 0.45 +
@@ -80,7 +93,6 @@ class PipelineOrchestrator:
 
         spike = 0.0
 
-        # ACTIVATION (aligned with real signal range)
         if discovery_signal > 0.5 and patent_activity > 0.6:
             spike += 0.20
 
@@ -103,9 +115,7 @@ class PipelineOrchestrator:
             analysis_signal * 0.2
         )
 
-        phase_log.append(self._decision("innovation", innovation_signal))
-
-        # =========================
+        phase_log.append(self._decision("innovation", innovation_signal)) # =========================
         # VIABILITY
         # =========================
         viability_signal = self._amplify(
@@ -195,26 +205,108 @@ class PipelineOrchestrator:
             "acquisition_score": acquisition_signal,
             "optimization_score": optimization_signal,
             "portfolio_score": portfolio_signal,
-            "_confidence": portfolio_signal
+            "_confidence": portfolio_signal,
         }
 
         # =========================
+        # SIGNAL TRACE
+        # =========================
+        data["signal_trace"] = {
+            "analysis": analysis_signal,
+            "discovery": discovery_signal,
+            "breakthrough_base": base_breakthrough,
+            "breakthrough_spike": spike,
+            "breakthrough_final": breakthrough_signal,
+        }
+
+        # =========================
+        # ENGINE DETAILS
+        # =========================
+        data["engine_details"] = {
+            "signals": {
+                "analysis": analysis_signal,
+                "discovery": discovery_signal,
+                "breakthrough": breakthrough_signal,
+                "innovation": innovation_signal,
+                "viability": viability_signal,
+                "portfolio": portfolio_signal,
+            },
+            "connectors": {
+                "market_growth": market_growth,
+                "patent_activity": patent_activity,
+                "patent_novelty": patent_novelty,
+                "financial_health": financial_health,
+                "financial_risk": financial_risk,
+            },
+        }# =========================
         # AUTO DESIGN
         # =========================
         try:
             system_design = self.auto_designer.generate(
                 intent=intent,
-                context={**data, "scores": scores}
+                context={**data, "scores": scores},
             )
             data["system_design"] = system_design
         except Exception as e:
-            data["system_design"] = {
+            system_design = {
                 "status": "design_failed",
-                "error": str(e)
+                "error": str(e),
+            }
+            data["system_design"] = system_design
+
+        # =========================
+        # DESIGN PORTAL
+        # =========================
+        try:
+            design_portal = self.design_portal.evaluate({
+                **data,
+                "scores": scores,
+                "domain": domain,
+                "keywords": keywords,
+                "system_design": system_design,
+            })
+            data["design_portal"] = design_portal
+        except Exception as e:
+            design_portal = {
+                "status": "portal_failed",
+                "route_to_design": False,
+                "error": str(e),
+            }
+            data["design_portal"] = design_portal
+
+        # =========================
+        # SYSTEM DESIGN ENGINE
+        # =========================
+        try:
+            if design_portal.get("route_to_design", False):
+                design_output = self.system_designer.generate(design_portal)
+            else:
+                design_output = {
+                    "status": "not_routed",
+                    "message": "Design portal did not activate.",
+                }
+
+            data["design_output"] = design_output
+
+        except Exception as e:
+            data["design_output"] = {
+                "status": "design_engine_failed",
+                "error": str(e),
             }
 
         # =========================
-        # FINAL
+        # ACQUIRER MATCHING
+        # =========================
+        try:
+            acquirer_matches = self.matcher.match(
+                keywords=keywords,
+                domain=domain,
+            )
+        except Exception:
+            acquirer_matches = []
+
+       # =========================
+        # FINAL DECISION
         # =========================
         final_score = portfolio_signal
 
@@ -234,24 +326,29 @@ class PipelineOrchestrator:
             breakthrough_classification="HIGH" if breakthrough_signal > 0.65 else "LOW",
             scores=scores,
             data=data,
-            acquirer_matches=[],
-            ready_for_syntalion=final_score > 0.65
+            acquirer_matches=acquirer_matches,
+            ready_for_syntalion=final_score > 0.65,
         )
 
-    # =========================
-    # HELPERS
-    # =========================
+ 
     def _extract_keywords(self, text: str):
         return [w.strip(",.") for w in text.lower().split() if len(w) > 4][:10]
 
     def _detect_domain(self, text: str):
         t = text.lower()
+
         if "ai" in t or "machine learning" in t:
             return "technology"
-        if "finance" in t:
+
+        if "finance" in t or "fintech" in t:
             return "finance"
-        if "health" in t:
+
+        if "health" in t or "medical" in t or "clinical" in t:
             return "healthcare"
+
+        if "defense" in t or "military" in t or "battlefield" in t:
+            return "technology"
+
         return "general"
 
     def _amplify(self, value: float) -> float:
@@ -274,5 +371,5 @@ class PipelineOrchestrator:
         return {
             "phase": phase,
             "score": round(score, 3),
-            "decision": label
+            "decision": label,
         }
