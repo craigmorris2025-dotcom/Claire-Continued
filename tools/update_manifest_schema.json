@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claire Update Manifest",
+  "type": "object",
+  "required": ["update_name", "version", "files"],
+  "properties": {
+    "update_name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["target"],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string",
+            "description": "Project-relative target path or target alias path such as @engine/name.py"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["python", "json", "text", "yaml", "file"]
+          },
+          "action": {
+            "type": "string",
+            "enum": ["replace", "create", "create_if_missing", "delete"],
+            "default": "replace"
+          },
+          "required": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      }
+    },
+    "post_install": {
+      "type": "object",
+      "properties": {
+        "run_compile_check": {
+          "type": "boolean"
+        },
+        "run_regression_tests": {
+          "type": "boolean"
+        },
+        "run_pytest": {
+          "type": "boolean"
+        },
+        "run_smoke_test": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

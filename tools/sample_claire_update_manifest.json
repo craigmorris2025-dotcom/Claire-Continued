@@ -1,0 +1,32 @@
+{
+  "update_name": "sample_manifest_driven_update",
+  "version": "v5.xx",
+  "description": "Example manifest-driven Claire update.",
+  "files": [
+    {
+      "source": "files/example_engine.py",
+      "target": "@engine/example_engine.py",
+      "type": "python",
+      "action": "replace",
+      "required": true
+    },
+    {
+      "source": "files/pipeline_v4.py",
+      "target": "@orchestrator/pipeline_v4.py",
+      "type": "python",
+      "action": "replace",
+      "required": true
+    },
+    {
+      "source": "files/binder_builder.py",
+      "target": "@portfolio/binder_builder.py",
+      "type": "python",
+      "action": "replace",
+      "required": true
+    }
+  ],
+  "post_install": {
+    "run_compile_check": true,
+    "run_regression_tests": true
+  }
+}

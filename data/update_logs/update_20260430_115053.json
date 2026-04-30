@@ -1,0 +1,88 @@
+{
+  "created_at": "2026-04-30T11:50:53.048339",
+  "dry_run": true,
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "update_zip": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire_manifest_driven_updater_package.zip",
+  "update_zip_sha256": "d6669fbbb17971900da3ef06083099bb5bc1d8efaa6ccea9b0ce7a4a81efdd15",
+  "update_mode": "path_preserving",
+  "update_manifest": null,
+  "backup_path": null,
+  "files": [
+    {
+      "source": "tools/claire_update.py",
+      "target": "tools/claire_update.py",
+      "size": 26592,
+      "sha256": "6e79ef0536fdd11d09df95579132adf28d818896879753f2a5f88ac171d7a709",
+      "exists": true,
+      "action": "replace",
+      "file_type": "python",
+      "required": true
+    },
+    {
+      "source": "tools/update_manifest.py",
+      "target": "tools/update_manifest.py",
+      "size": 4911,
+      "sha256": "032a59dee715b6f29427b1773fdf4b2ea5e86e9845f3c8b68305733bc6763e86",
+      "exists": true,
+      "action": "replace",
+      "file_type": "python",
+      "required": true
+    },
+    {
+      "source": "tools/README_UPDATER.md",
+      "target": "tools/README_UPDATER.md",
+      "size": 2543,
+      "sha256": "91ebbe29065f55b683e1c5815876df59972037d8d260139040333f3fdd6b0950",
+      "exists": true,
+      "action": "replace",
+      "file_type": "text",
+      "required": true
+    },
+    {
+      "source": "tools/update_manifest_schema.json",
+      "target": "tools/update_manifest_schema.json",
+      "size": 1506,
+      "sha256": "2f8a32d157ec472ed21b0761f8b210c7f3f32e7210e6dbf56a2b19dd70dfa4b8",
+      "exists": true,
+      "action": "replace",
+      "file_type": "json",
+      "required": true
+    },
+    {
+      "source": "tools/sample_claire_update_manifest.json",
+      "target": "tools/sample_claire_update_manifest.json",
+      "size": 767,
+      "sha256": "4a0998b4788a8e59853b4b8623f2c33666a073fe95f62235a22eb8afc43423e7",
+      "exists": true,
+      "action": "replace",
+      "file_type": "json",
+      "required": true
+    },
+    {
+      "source": "data/backups/.gitkeep",
+      "target": "data/backups/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exists": true,
+      "action": "replace",
+      "file_type": "file",
+      "required": true
+    },
+    {
+      "source": "data/update_logs/.gitkeep",
+      "target": "data/update_logs/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exists": true,
+      "action": "replace",
+      "file_type": "file",
+      "required": true
+    }
+  ],
+  "compile_results": [],
+  "json_results": [],
+  "verify_results": [],
+  "test_result": {
+    "ran": false
+  }
+}

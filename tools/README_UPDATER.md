@@ -1,75 +1,104 @@
-# Claire Local Updater Package
+# Claire Manifest-Driven Updater
 
-This package adds a local update installer so future Claire update zips can be applied faster and more safely.
+This package upgrades the local updater so future update zips can automatically target Claire system folders.
 
-## Files included
+## What changed
 
-```text
-tools/claire_update.py
-tools/update_manifest.py
-data/backups/.gitkeep
-data/update_logs/.gitkeep
-tools/README_UPDATER.md
-```
-
-## Install location
-
-Extract this zip into the project root, the same folder that contains:
+The updater now supports two formats:
 
 ```text
-main.py
-src/
-backend/
-frontend/
-data/
+1. Path-preserving zips
+2. Manifest-driven zips
 ```
 
-## Basic usage
-
-From the Claire project root:
-
-```powershell
-python tools/claire_update.py .\claire_export_package_engine_update.zip --run-tests
-```
-
-This will:
+The old style still works:
 
 ```text
-1. detect the project root
-2. inspect the update zip
-3. show files to be created/replaced
-4. create a timestamped backup
-5. install the files
-6. run Python compile checks
-7. optionally run regression tests
-8. write an update log
+src/claire/engines/example.py
+src/claire/orchestrator/pipeline_v4.py
 ```
 
-## Faster non-interactive usage
+The new style uses a manifest:
+
+```text
+claire_update_manifest.json
+files/
+  example_engine.py
+  pipeline_v4.py
+```
+
+The manifest tells the updater where each file belongs.
+
+## Primary command
 
 ```powershell
-python tools/claire_update.py .\some_update.zip --run-tests --yes --commit-message "v5.xx apply update"
+python tools/claire_update.py .\next_update.zip --run-tests
 ```
 
-## Dry run
+Non-interactive:
 
 ```powershell
-python tools/claire_update.py .\some_update.zip --dry-run
+python tools/claire_update.py .\next_update.zip --run-tests --yes --commit-message "v5.xx apply update"
 ```
 
-## Inspect a zip manifest
+Dry run:
 
 ```powershell
-python tools/update_manifest.py .\some_update.zip
+python tools/claire_update.py .\next_update.zip --dry-run
 ```
 
-Full JSON manifest:
+Inspect manifest:
 
 ```powershell
-python tools/update_manifest.py .\some_update.zip --json
+python tools/update_manifest.py .\next_update.zip
+python tools/update_manifest.py .\next_update.zip --json
 ```
 
-## Restore from backup
+## Manifest example
+
+```json
+{
+  "update_name": "export_writer_package",
+  "version": "v5.32",
+  "files": [
+    {
+      "source": "files/export_writer.py",
+      "target": "@export/export_writer.py",
+      "type": "python",
+      "action": "replace"
+    },
+    {
+      "source": "files/pipeline_v4.py",
+      "target": "@orchestrator/pipeline_v4.py",
+      "type": "python",
+      "action": "replace"
+    }
+  ],
+  "post_install": {
+    "run_compile_check": true,
+    "run_regression_tests": true
+  }
+}
+```
+
+## Target aliases
+
+```text
+@engine/name.py        -> src/claire/engines/name.py
+@engines/name.py       -> src/claire/engines/name.py
+@orchestrator/name.py  -> src/claire/orchestrator/name.py
+@domain/name.py        -> src/claire/domain/name.py
+@portfolio/name.py     -> src/claire/portfolio/name.py
+@export/name.py        -> src/claire/export/name.py
+@backend/path          -> backend/path
+@frontend/path         -> frontend/path
+@tests/path            -> tests/path
+@tools/path            -> tools/path
+@data/path             -> data/path
+@root/path             -> path
+```
+
+## Backup and restore
 
 List backups:
 
@@ -77,17 +106,29 @@ List backups:
 python tools/claire_update.py --list-backups
 ```
 
-Restore one:
+Restore:
 
 ```powershell
 python tools/claire_update.py --restore .\data\backups\claire_backup_YYYYMMDD_HHMMSS.zip
 ```
 
-## Recommended commit
+## Logs
 
-After this package is installed:
+Updater logs are written to:
+
+```text
+data/update_logs/
+```
+
+Backups are written to:
+
+```text
+data/backups/
+```
+
+## Recommended commit
 
 ```powershell
 git add .
-git commit -m "v5.31 add local updater package"
+git commit -m "v5.32 add manifest driven updater"
 ```
