@@ -16,6 +16,7 @@ from claire.engines.market_formation_engine import MarketFormationEngine
 from claire.engines.moat_defensibility_engine import MoatDefensibilityEngine
 from claire.engines.risk_regulation_engine import RiskRegulationEngine
 from claire.engines.business_model_engine import BusinessModelEngine
+from claire.engines.opportunity_discovery_engine import OpportunityDiscoveryEngine
 from claire.engines.deal_exit_modeling_engine import DealExitModelingEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.design.portal import DesignPortal
@@ -36,13 +37,14 @@ class PipelineOrchestrator:
         self.moat_engine = MoatDefensibilityEngine()
         self.risk_engine = RiskRegulationEngine()
         self.business_model_engine = BusinessModelEngine()
+        self.opportunity_engine = OpportunityDiscoveryEngine()
         self.deal_exit_engine = DealExitModelingEngine()
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.18 (DEAL EXIT MODELING) <<<")
+        print(">>> RUNNING PIPELINE V5.21 (OPPORTUNITY DISCOVERY) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -131,6 +133,22 @@ class PipelineOrchestrator:
             ),
         )
 
+        opportunity_discovery = self._safe_engine(
+            "opportunity_discovery_failed",
+            lambda: self.opportunity_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                market_gap=market_gap,
+                trend_trajectory=trend_trajectory,
+                market_formation=market_formation,
+                moat=moat,
+                risk_regulation=risk_regulation,
+                business_model=business_model,
+                connector_sources=external,
+            ),
+        )
+
         data.update({
             "domain": domain,
             "keywords": keywords,
@@ -140,6 +158,7 @@ class PipelineOrchestrator:
             "moat": moat,
             "risk_regulation": risk_regulation,
             "business_model": business_model,
+            "opportunity_discovery": opportunity_discovery,
         })
 
         analysis_signal = self._amplify(0.3 + (len(keywords) * 0.025))
@@ -172,6 +191,11 @@ class PipelineOrchestrator:
         buyer_roi_score = self._get(business_model, "buyer_roi.score", 0.0)
         commercial_risk_score = self._get(business_model, "commercial_risk.score", 0.0)
 
+        opportunity_confidence = self._get(opportunity_discovery, "confidence", 0.0)
+        opportunity_score = self._get(opportunity_discovery, "opportunity_score.score", 0.0)
+        opportunity_priority_score = self._get(opportunity_discovery, "priority_assessment.score", 0.0)
+        validation_urgency_score = self._get(opportunity_discovery, "validation_urgency.score", 0.0)
+
         blocker_penalty = 0.030 if blocker_level == "conditional" else 0.010 if blocker_level == "manageable" else 0.0
 
         discovery_signal = self._amplify(
@@ -190,6 +214,9 @@ class PipelineOrchestrator:
             risk_confidence * 0.018 +
             business_confidence * 0.030 +
             value_capture_score * 0.025 +
+            opportunity_confidence * 0.030 +
+            opportunity_score * 0.035 +
+            opportunity_priority_score * 0.020 +
             (0.05 if patent_activity > 0.6 else 0)
         )
         phase_log.append(self._decision("discovery", discovery_signal))
@@ -208,7 +235,10 @@ class PipelineOrchestrator:
             risk_confidence * 0.018 +
             business_confidence * 0.030 +
             value_capture_score * 0.030 +
-            buyer_roi_score * 0.024 -
+            buyer_roi_score * 0.024 +
+            opportunity_score * 0.040 +
+            opportunity_priority_score * 0.030 +
+            validation_urgency_score * 0.012 -
             blocker_penalty
         )
 
@@ -237,6 +267,12 @@ class PipelineOrchestrator:
             spike += 0.020
         if risk_score <= 0.55 and blocker_level != "conditional":
             spike += 0.012
+        if opportunity_score >= 0.78:
+            spike += 0.030
+        if opportunity_priority_score >= 0.78:
+            spike += 0.020
+        if validation_urgency_score >= 0.72:
+            spike += 0.012
 
         breakthrough_signal = self._amplify(base_breakthrough + spike)
         phase_log.append(self._decision("breakthrough", breakthrough_signal))
@@ -254,7 +290,9 @@ class PipelineOrchestrator:
             moat_confidence * 0.025 +
             risk_confidence * 0.018 +
             business_confidence * 0.035 +
-            value_capture_score * 0.030 -
+            value_capture_score * 0.030 +
+            opportunity_confidence * 0.025 +
+            opportunity_score * 0.030 -
             blocker_penalty
         )
         phase_log.append(self._decision("innovation", innovation_signal))
@@ -272,7 +310,9 @@ class PipelineOrchestrator:
             risk_confidence * 0.025 +
             business_confidence * 0.055 +
             value_capture_score * 0.055 +
-            buyer_roi_score * 0.040 -
+            buyer_roi_score * 0.040 +
+            opportunity_score * 0.025 +
+            opportunity_priority_score * 0.018 -
             risk_score * 0.028 -
             regulatory_score * 0.014 -
             commercial_risk_score * 0.025 -
@@ -315,7 +355,8 @@ class PipelineOrchestrator:
             moat_confidence * 0.018 +
             risk_confidence * 0.020 +
             business_confidence * 0.040 +
-            value_capture_score * 0.030 -
+            value_capture_score * 0.030 +
+            opportunity_score * 0.024 -
             blocker_penalty
         )
         phase_log.append(self._decision("matching", match_signal))
@@ -330,7 +371,8 @@ class PipelineOrchestrator:
             moat_score * 0.040 +
             risk_confidence * 0.020 +
             business_confidence * 0.045 +
-            value_capture_score * 0.035 -
+            value_capture_score * 0.035 +
+            opportunity_score * 0.020 -
             blocker_penalty
         )
         phase_log.append(self._decision("acquisition", acquisition_signal))
@@ -344,7 +386,9 @@ class PipelineOrchestrator:
             moat_confidence * 0.040 +
             risk_confidence * 0.025 +
             business_confidence * 0.055 +
-            value_capture_score * 0.035 -
+            value_capture_score * 0.035 +
+            opportunity_confidence * 0.020 +
+            opportunity_score * 0.020 -
             blocker_penalty
         )
         phase_log.append(self._decision("optimization", optimization_signal))
@@ -364,7 +408,9 @@ class PipelineOrchestrator:
                 risk_confidence * 0.020 +
                 business_confidence * 0.055 +
                 value_capture_score * 0.040 +
-                buyer_roi_score * 0.030 -
+                buyer_roi_score * 0.030 +
+                opportunity_score * 0.030 +
+                opportunity_priority_score * 0.018 -
                 risk_score * 0.010 -
                 regulatory_score * 0.006 -
                 commercial_risk_score * 0.018 -
@@ -376,6 +422,8 @@ class PipelineOrchestrator:
         scores = {
             "analysis_score": analysis_signal,
             "discovery_score": discovery_signal,
+            "opportunity_score": opportunity_score,
+            "opportunity_priority_score": opportunity_priority_score,
             "breakthrough_score": breakthrough_signal,
             "innovation_score": innovation_signal,
             "viability_score": viability_signal,
@@ -391,6 +439,10 @@ class PipelineOrchestrator:
         data["signal_trace"] = {
             "analysis": analysis_signal,
             "discovery": discovery_signal,
+            "opportunity_confidence": opportunity_confidence,
+            "opportunity_score": opportunity_score,
+            "opportunity_priority_score": opportunity_priority_score,
+            "validation_urgency_score": validation_urgency_score,
             "market_gap_confidence": gap_confidence,
             "market_pressure_score": pressure_score,
             "trajectory_confidence": trajectory_confidence,
@@ -421,6 +473,7 @@ class PipelineOrchestrator:
                 "analysis": analysis_signal,
                 "discovery": discovery_signal,
                 "breakthrough": breakthrough_signal,
+            "opportunity": opportunity_score,
                 "innovation": innovation_signal,
                 "viability": viability_signal,
                 "portfolio": portfolio_signal,
@@ -431,6 +484,13 @@ class PipelineOrchestrator:
                 "patent_novelty": patent_novelty,
                 "financial_health": financial_health,
                 "financial_risk": financial_risk,
+            },
+            "opportunity_discovery": {
+                "opportunity_score": opportunity_discovery.get("opportunity_score") if isinstance(opportunity_discovery, dict) else None,
+                "opportunity_type": opportunity_discovery.get("opportunity_type") if isinstance(opportunity_discovery, dict) else None,
+                "priority_assessment": opportunity_discovery.get("priority_assessment") if isinstance(opportunity_discovery, dict) else None,
+                "validation_urgency": opportunity_discovery.get("validation_urgency") if isinstance(opportunity_discovery, dict) else None,
+                "confidence": opportunity_discovery.get("confidence") if isinstance(opportunity_discovery, dict) else None,
             },
             "market_gap": {
                 "sector": market_gap.get("sector") if isinstance(market_gap, dict) else None,
@@ -495,6 +555,7 @@ class PipelineOrchestrator:
                 "moat": moat,
                 "risk_regulation": risk_regulation,
                 "business_model": business_model,
+                "opportunity_discovery": opportunity_discovery,
             }),
             fallback={"status": "portal_failed", "route_to_design": False},
         )
@@ -563,6 +624,7 @@ class PipelineOrchestrator:
                 "moat": moat,
                 "risk_regulation": risk_regulation,
                 "business_model": business_model,
+                "opportunity_discovery": opportunity_discovery,
                 "deal_exit_modeling": deal_exit_modeling,
                 "system_design": system_design,
                 "design_output": data.get("design_output", {}),
@@ -586,6 +648,7 @@ class PipelineOrchestrator:
                 "moat": moat,
                 "risk_regulation": risk_regulation,
                 "business_model": business_model,
+                "opportunity_discovery": opportunity_discovery,
                 "deal_exit_modeling": deal_exit_modeling,
                 "signal_trace": data.get("signal_trace", {}),
                 "engine_details": data.get("engine_details", {}),

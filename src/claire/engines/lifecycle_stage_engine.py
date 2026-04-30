@@ -50,7 +50,7 @@ class LifecycleStageEngine:
             {"stage": 4, "name": "Market / Sector / Industry Mapping", "category": "discovery", "output_key": "market_gap"},
             {"stage": 5, "name": "Gap Detection", "category": "discovery", "output_key": "market_gap"},
             {"stage": 6, "name": "Needed Solutions Layer", "category": "discovery", "output_key": "market_gap"},
-            {"stage": 7, "name": "Opportunity Discovery", "category": "discovery", "output_key": "opportunity_discovery", "next_build": True},
+            {"stage": 7, "name": "Opportunity Discovery", "category": "discovery", "output_key": "opportunity_discovery"},
             {"stage": 8, "name": "Breakthrough Synthesis", "category": "breakthrough", "output_key": "scores"},
             {"stage": 9, "name": "Technical Feasibility", "category": "validation", "output_key": "scores"},
             {"stage": 10, "name": "Market Formation Analysis", "category": "validation", "output_key": "market_formation"},
@@ -108,12 +108,22 @@ class LifecycleStageEngine:
                 evidence.append("needed_solution and solution_class generated")
 
         elif stage == 7:
+            opportunity = context.get("opportunity_discovery", {})
             market_gap = context.get("market_gap", {})
-            if market_gap.get("portfolio_relevance"):
+            if opportunity.get("status") == "success":
+                status, active = "active", True
+                evidence.append("opportunity_discovery generated successfully")
+                if opportunity.get("opportunity_score"):
+                    evidence.append(f"opportunity score: {opportunity.get('opportunity_score', {}).get('score')}")
+                if opportunity.get("opportunity_type"):
+                    evidence.append(f"opportunity type: {opportunity.get('opportunity_type', {}).get('type')}")
+                if opportunity.get("priority_assessment"):
+                    evidence.append(f"priority: {opportunity.get('priority_assessment', {}).get('priority')}")
+            elif market_gap.get("portfolio_relevance"):
                 status, active = "partial", True
-                evidence.append("portfolio_relevance and downstream intelligence available, but dedicated opportunity engine pending")
+                evidence.append("portfolio_relevance and downstream intelligence available, but dedicated opportunity engine did not return success")
             else:
-                evidence.append("dedicated opportunity_discovery_engine not yet implemented")
+                evidence.append("opportunity_discovery_engine output unavailable")
 
         elif stage == 8:
             scores = context.get("scores", {})

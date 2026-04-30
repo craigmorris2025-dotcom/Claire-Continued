@@ -152,6 +152,7 @@ class ClaireResult:
             "domain_scores": self.data.get("domain_scores", {}),
 
             "market_gap": self.data.get("market_gap", {}),
+            "opportunity_discovery": self.data.get("opportunity_discovery", {}),
             "trend_trajectory": self.data.get("trend_trajectory", {}),
             "market_formation": self.data.get("market_formation", {}),
             "moat": self.data.get("moat", {}),

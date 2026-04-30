@@ -23,6 +23,7 @@ class PortfolioBinderBuilder:
         moat = context.get("moat", {})
         risk_regulation = context.get("risk_regulation", {})
         business_model = context.get("business_model", {})
+        opportunity_discovery = context.get("opportunity_discovery", {})
         deal_exit_modeling = context.get("deal_exit_modeling", {})
         system_design = context.get("system_design", {})
         design_output = context.get("design_output", {})
@@ -38,6 +39,7 @@ class PortfolioBinderBuilder:
             moat=moat,
             risk_regulation=risk_regulation,
             business_model=business_model,
+            opportunity_discovery=opportunity_discovery,
             deal_exit_modeling=deal_exit_modeling,
             scores=scores,
         )
@@ -46,6 +48,7 @@ class PortfolioBinderBuilder:
             self._section("executive_thesis", "Executive Thesis", {"summary": executive_thesis, "key_scores": self._key_scores(scores)}),
             self._section("trend_trajectory", "Trend + Trajectory", trend_trajectory, trend_trajectory.get("status") == "success"),
             self._section("market_formation", "Market Formation", market_formation, market_formation.get("status") == "success"),
+            self._section("opportunity_discovery", "Opportunity Discovery", opportunity_discovery, opportunity_discovery.get("status") == "success"),
             self._section("moat_defensibility", "Moat / Defensibility", moat, moat.get("status") == "success"),
             self._section("risk_regulation", "Risk / Regulation / Compliance", risk_regulation, risk_regulation.get("status") == "success"),
             self._section("business_model", "Business Model + Value Capture", business_model, business_model.get("status") == "success"),
@@ -144,6 +147,7 @@ class PortfolioBinderBuilder:
         moat: Dict[str, Any],
         risk_regulation: Dict[str, Any],
         business_model: Dict[str, Any],
+        opportunity_discovery: Dict[str, Any],
         deal_exit_modeling: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> str:
@@ -161,6 +165,16 @@ class PortfolioBinderBuilder:
 
         direction = trend_trajectory.get("trend_direction", {}).get("direction")
         window = trend_trajectory.get("strategic_window", {}).get("window")
+        opportunity_level = opportunity_discovery.get("opportunity_score", {}).get("level")
+        opportunity_type = opportunity_discovery.get("opportunity_type", {}).get("label")
+        opportunity_priority = opportunity_discovery.get("priority_assessment", {}).get("priority")
+        validation_urgency = opportunity_discovery.get("validation_urgency", {}).get("level")
+        if opportunity_discovery.get("status") == "success":
+            parts.append(
+                f"Opportunity discovery classifies this as a {opportunity_level} {self._pretty(opportunity_type)} "
+                f"with {opportunity_priority} priority and {validation_urgency} validation urgency."
+            )
+
         if direction and window:
             article = "an" if str(direction)[0].lower() in {"a", "e", "i", "o", "u"} else "a"
             parts.append(f"Trajectory analysis shows {article} {self._pretty(direction)} pattern with a {self._pretty(window)} strategic window.")
