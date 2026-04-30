@@ -1,6 +1,6 @@
 
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.25 PRODUCTIZATION PATH)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.26 STRATEGIC POSITIONING)
 """
 
 from typing import Dict, Any
@@ -20,6 +20,7 @@ from claire.engines.opportunity_discovery_engine import OpportunityDiscoveryEngi
 from claire.engines.breakthrough_synthesis_engine import BreakthroughSynthesisEngine
 from claire.engines.technical_feasibility_engine import TechnicalFeasibilityEngine
 from claire.engines.productization_path_engine import ProductizationPathEngine
+from claire.engines.strategic_positioning_engine import StrategicPositioningEngine
 from claire.engines.deal_exit_modeling_engine import DealExitModelingEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.design.portal import DesignPortal
@@ -44,13 +45,14 @@ class PipelineOrchestrator:
         self.breakthrough_synthesis_engine = BreakthroughSynthesisEngine()
         self.technical_feasibility_engine = TechnicalFeasibilityEngine()
         self.productization_engine = ProductizationPathEngine()
+        self.strategic_positioning_engine = StrategicPositioningEngine()
         self.deal_exit_engine = DealExitModelingEngine()
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.25 (PRODUCTIZATION PATH) <<<")
+        print(">>> RUNNING PIPELINE V5.26 (STRATEGIC POSITIONING) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -760,6 +762,61 @@ class PipelineOrchestrator:
             "confidence": deal_exit_modeling.get("confidence") if isinstance(deal_exit_modeling, dict) else None,
         }
 
+        strategic_positioning = self._safe_engine(
+            "strategic_positioning_failed",
+            lambda: self.strategic_positioning_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                scores=scores,
+                market_gap=market_gap,
+                trend_trajectory=trend_trajectory,
+                market_formation=market_formation,
+                opportunity_discovery=opportunity_discovery,
+                breakthrough_synthesis=breakthrough_synthesis,
+                technical_feasibility=technical_feasibility,
+                productization_path=productization_path,
+                moat=moat,
+                risk_regulation=risk_regulation,
+                business_model=business_model,
+                deal_exit_modeling=deal_exit_modeling,
+                design_output=design_output,
+                acquirer_matches=acquirer_matches,
+                connector_sources=external,
+            ),
+        )
+        data["strategic_positioning"] = strategic_positioning
+
+        strategic_positioning_confidence = self._get(strategic_positioning, "confidence", 0.0) or 0.0
+        strategic_positioning_score = self._get(strategic_positioning, "strategic_positioning_score.score", 0.0) or 0.0
+        narrative_strength_score = strategic_positioning_score
+        acquirer_positioning_score = self._get(strategic_positioning, "acquirer_positioning.top_acquirer_score", 0.0) or 0.0
+        positioning_state = self._get(strategic_positioning, "positioning_classification.state", "")
+        narrative_posture = self._get(strategic_positioning, "positioning_classification.narrative_posture", "")
+
+        scores["strategic_positioning_score"] = strategic_positioning_score
+        scores["narrative_strength_score"] = narrative_strength_score
+        scores["acquirer_positioning_score"] = acquirer_positioning_score
+
+        data["signal_trace"].update({
+            "strategic_positioning_confidence": strategic_positioning_confidence,
+            "strategic_positioning_score": strategic_positioning_score,
+            "narrative_strength_score": narrative_strength_score,
+            "acquirer_positioning_score": acquirer_positioning_score,
+            "positioning_state": positioning_state,
+            "narrative_posture": narrative_posture,
+        })
+
+        data["engine_details"]["signals"]["strategic_positioning"] = strategic_positioning_score
+        data["engine_details"]["strategic_positioning"] = {
+            "strategic_positioning_score": strategic_positioning.get("strategic_positioning_score") if isinstance(strategic_positioning, dict) else None,
+            "positioning_classification": strategic_positioning.get("positioning_classification") if isinstance(strategic_positioning, dict) else None,
+            "category_positioning": strategic_positioning.get("category_positioning") if isinstance(strategic_positioning, dict) else None,
+            "buyer_positioning": strategic_positioning.get("buyer_positioning") if isinstance(strategic_positioning, dict) else None,
+            "acquirer_positioning": strategic_positioning.get("acquirer_positioning") if isinstance(strategic_positioning, dict) else None,
+            "confidence": strategic_positioning.get("confidence") if isinstance(strategic_positioning, dict) else None,
+        }
+
         portfolio_binder = self._safe_engine(
             "binder_failed",
             lambda: self.binder_builder.build({
@@ -777,6 +834,7 @@ class PipelineOrchestrator:
                 "technical_feasibility": technical_feasibility,
                 "productization_path": productization_path,
                 "deal_exit_modeling": deal_exit_modeling,
+                "strategic_positioning": strategic_positioning,
                 "system_design": system_design,
                 "design_output": data.get("design_output", {}),
                 "acquirer_matches": acquirer_matches,
@@ -804,6 +862,7 @@ class PipelineOrchestrator:
                 "technical_feasibility": technical_feasibility,
                 "productization_path": productization_path,
                 "deal_exit_modeling": deal_exit_modeling,
+                "strategic_positioning": strategic_positioning,
                 "signal_trace": data.get("signal_trace", {}),
                 "engine_details": data.get("engine_details", {}),
                 "system_design": system_design,

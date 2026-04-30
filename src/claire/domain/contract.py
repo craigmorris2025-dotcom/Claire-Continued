@@ -162,6 +162,7 @@ class ClaireResult:
             "risk_regulation": self.data.get("risk_regulation", {}),
             "business_model": self.data.get("business_model", {}),
             "deal_exit_modeling": self.data.get("deal_exit_modeling", {}),
+            "strategic_positioning": self.data.get("strategic_positioning", {}),
 
             "engine_details": self.data.get("engine_details", {}),
             "connector_sources": connector_sources,

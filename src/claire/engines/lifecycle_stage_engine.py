@@ -61,7 +61,7 @@ class LifecycleStageEngine:
             {"stage": 15, "name": "System / Technology Design Engine", "category": "design", "output_key": "design_output"},
             {"stage": 16, "name": "Technical Specs + Build Blueprint Generation", "category": "design", "output_key": "design_output"},
             {"stage": 17, "name": "Business Model + Value Capture", "category": "strategy", "output_key": "business_model"},
-            {"stage": 18, "name": "Strategic Positioning", "category": "strategy", "output_key": "portfolio_binder"},
+            {"stage": 18, "name": "Strategic Positioning", "category": "strategy", "output_key": "strategic_positioning"},
             {"stage": 19, "name": "Portfolio / Binder Assembly", "category": "portfolio", "output_key": "portfolio_binder"},
             {"stage": 20, "name": "Acquirer Discovery", "category": "outcome", "output_key": "acquirer_matches"},
             {"stage": 21, "name": "Deal / Exit Modeling", "category": "outcome", "output_key": "deal_exit_modeling"},
@@ -248,10 +248,21 @@ class LifecycleStageEngine:
                 evidence.append("dedicated business_model_engine unavailable")
 
         elif stage == 18:
+            strategic = context.get("strategic_positioning", {})
             binder = context.get("portfolio_binder", {})
-            if self._binder_has_section(binder, "strategic_positioning"):
+            if strategic.get("status") == "success":
+                status, active = "active", True
+                evidence.append("strategic_positioning generated successfully")
+                if strategic.get("strategic_positioning_score"):
+                    evidence.append(f"strategic positioning score: {strategic.get('strategic_positioning_score', {}).get('score')}")
+                if strategic.get("positioning_classification"):
+                    evidence.append(f"state: {strategic.get('positioning_classification', {}).get('state')}")
+                    evidence.append(f"narrative posture: {strategic.get('positioning_classification', {}).get('narrative_posture')}")
+                if strategic.get("category_positioning"):
+                    evidence.append(f"category: {strategic.get('category_positioning', {}).get('category_name')}")
+            elif self._binder_has_section(binder, "strategic_positioning"):
                 status, active = "partial", True
-                evidence.append("strategic positioning section available in binder")
+                evidence.append("strategic positioning section available in binder, but dedicated strategic_positioning engine did not return success")
 
         elif stage == 19:
             binder = context.get("portfolio_binder", {})

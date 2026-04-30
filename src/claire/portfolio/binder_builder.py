@@ -28,6 +28,7 @@ class PortfolioBinderBuilder:
         technical_feasibility = context.get("technical_feasibility", {})
         productization_path = context.get("productization_path", {})
         deal_exit_modeling = context.get("deal_exit_modeling", {})
+        strategic_positioning = context.get("strategic_positioning", {})
         system_design = context.get("system_design", {})
         design_output = context.get("design_output", {})
         acquirer_matches = context.get("acquirer_matches", [])
@@ -47,6 +48,7 @@ class PortfolioBinderBuilder:
             technical_feasibility=technical_feasibility,
             productization_path=productization_path,
             deal_exit_modeling=deal_exit_modeling,
+            strategic_positioning=strategic_positioning,
             scores=scores,
         )
 
@@ -58,6 +60,7 @@ class PortfolioBinderBuilder:
             self._section("breakthrough_synthesis", "Breakthrough Synthesis", breakthrough_synthesis, breakthrough_synthesis.get("status") == "success"),
             self._section("technical_feasibility", "Technical Feasibility", technical_feasibility, technical_feasibility.get("status") == "success"),
             self._section("productization_path", "Productization Path", productization_path, productization_path.get("status") == "success"),
+            self._section("strategic_positioning", "Strategic Positioning", strategic_positioning, strategic_positioning.get("status") == "success"),
             self._section("moat_defensibility", "Moat / Defensibility", moat, moat.get("status") == "success"),
             self._section("risk_regulation", "Risk / Regulation / Compliance", risk_regulation, risk_regulation.get("status") == "success"),
             self._section("business_model", "Business Model + Value Capture", business_model, business_model.get("status") == "success"),
@@ -95,9 +98,9 @@ class PortfolioBinderBuilder:
                 "technical_feasibility": technical_feasibility,
                 "technical_feasibility_score": technical_feasibility.get("technical_feasibility_score", {}) if isinstance(technical_feasibility, dict) else {},
                 "feasibility_classification": technical_feasibility.get("feasibility_classification", {}) if isinstance(technical_feasibility, dict) else {},
-                "risk_notes": self._risk_notes(scores, design_output, risk_regulation, business_model, deal_exit_modeling),
+                "risk_notes": self._risk_notes(scores, design_output, risk_regulation, business_model, deal_exit_modeling, strategic_positioning),
             }),
-            self._section("strategic_positioning", "Strategic Positioning", {
+            self._section("strategic_positioning_summary", "Strategic Positioning Summary", {
                 "positioning": self._positioning_statement(
                     market_gap,
                     trend_trajectory,
@@ -129,11 +132,11 @@ class PortfolioBinderBuilder:
             "domain": domain,
             "keywords": keywords,
             "executive_thesis": executive_thesis,
-            "readiness": self._readiness(scores, design_output, risk_regulation, business_model, deal_exit_modeling, productization_path),
+            "readiness": self._readiness(scores, design_output, risk_regulation, business_model, deal_exit_modeling, productization_path, strategic_positioning),
             "sections": sections,
             "artifact_manifest": self._artifact_manifest(sections),
             "export_targets": ["json", "markdown", "pdf", "docx"],
-            "next_actions": self._next_actions(scores, market_gap, trend_trajectory, market_formation, moat, risk_regulation, business_model, deal_exit_modeling, design_output),
+            "next_actions": self._next_actions(scores, market_gap, trend_trajectory, market_formation, moat, risk_regulation, business_model, deal_exit_modeling, design_output, strategic_positioning),
         }
 
     def _section(self, section_id: str, title: str, content: Dict[str, Any], include: bool = True) -> Dict[str, Any]:
@@ -164,6 +167,7 @@ class PortfolioBinderBuilder:
         technical_feasibility: Dict[str, Any],
         productization_path: Dict[str, Any],
         deal_exit_modeling: Dict[str, Any],
+        strategic_positioning: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> str:
         market_gap_text = market_gap.get("market_gap", "A meaningful market gap was identified.")
@@ -219,6 +223,17 @@ class PortfolioBinderBuilder:
                 f"and a {pilot_type}."
             )
 
+        if strategic_positioning.get("status") == "success":
+            positioning_state = strategic_positioning.get("positioning_classification", {}).get("state")
+            positioning_level = strategic_positioning.get("strategic_positioning_score", {}).get("level")
+            narrative_posture = strategic_positioning.get("positioning_classification", {}).get("narrative_posture")
+            category_name = strategic_positioning.get("category_positioning", {}).get("category_name")
+            parts.append(
+                f"Strategic positioning frames this as {self._pretty(positioning_state)} "
+                f"with {positioning_level} positioning strength, {self._pretty(narrative_posture)} narrative posture, "
+                f"and category language around {category_name}."
+            )
+
         if direction and window:
             article = "an" if str(direction)[0].lower() in {"a", "e", "i", "o", "u"} else "a"
             parts.append(f"Trajectory analysis shows {article} {self._pretty(direction)} pattern with a {self._pretty(window)} strategic window.")
@@ -272,6 +287,7 @@ class PortfolioBinderBuilder:
         business_model: Dict[str, Any],
         deal_exit_modeling: Dict[str, Any],
         productization_path: Dict[str, Any] = None,
+        strategic_positioning: Dict[str, Any] = None,
     ) -> Dict[str, Any]:
         breakthrough = scores.get("breakthrough_score", 0.0)
         feasibility = scores.get("feasibility_score", 0.0)
@@ -292,6 +308,9 @@ class PortfolioBinderBuilder:
         productization_path = productization_path or {}
         productization_state = productization_path.get("productization_classification", {}).get("state") if isinstance(productization_path, dict) else None
         launch_posture = productization_path.get("productization_classification", {}).get("launch_posture") if isinstance(productization_path, dict) else None
+        strategic_positioning = strategic_positioning or {}
+        strategic_positioning_state = strategic_positioning.get("positioning_classification", {}).get("state") if isinstance(strategic_positioning, dict) else None
+        narrative_posture = strategic_positioning.get("positioning_classification", {}).get("narrative_posture") if isinstance(strategic_positioning, dict) else None
 
         if exit_state == "exit_ready" and blocker_level != "conditional":
             state = "deal_ready_binder"
@@ -320,6 +339,9 @@ class PortfolioBinderBuilder:
             "productization_state": productization_state,
             "launch_posture": launch_posture,
             "productization_score": scores.get("productization_score", 0.0),
+            "strategic_positioning_state": strategic_positioning_state,
+            "narrative_posture": narrative_posture,
+            "strategic_positioning_score": scores.get("strategic_positioning_score", 0.0),
             "breakthrough_score": breakthrough,
             "feasibility_score": feasibility,
             "portfolio_score": portfolio,
@@ -331,6 +353,7 @@ class PortfolioBinderBuilder:
             "feasibility": scores.get("feasibility_score", 0.0),
             "portfolio": scores.get("portfolio_score", 0.0),
             "productization": scores.get("productization_score", 0.0),
+            "strategic_positioning": scores.get("strategic_positioning_score", 0.0),
             "confidence": scores.get("_confidence", 0.0),
         }
 
@@ -358,6 +381,7 @@ class PortfolioBinderBuilder:
         risk_regulation: Dict[str, Any],
         business_model: Dict[str, Any],
         deal_exit_modeling: Dict[str, Any],
+        strategic_positioning: Dict[str, Any] = None,
     ) -> List[str]:
         notes = []
         if scores.get("feasibility_score", 0.0) < 0.7:
@@ -378,6 +402,16 @@ class PortfolioBinderBuilder:
             commercial_risk = business_model.get("commercial_risk", {}).get("level")
             value_capture = business_model.get("value_capture", {}).get("strength")
             notes.append(f"Business model profile shows {value_capture} value capture and {commercial_risk} commercial risk.")
+
+        strategic_positioning = strategic_positioning or {}
+        if isinstance(strategic_positioning, dict) and strategic_positioning.get("status") == "success":
+            positioning_state = strategic_positioning.get("positioning_classification", {}).get("state")
+            narrative_posture = strategic_positioning.get("positioning_classification", {}).get("narrative_posture")
+            notes.append(
+                f"Strategic positioning is {positioning_state}; narrative posture is {narrative_posture}."
+            )
+            if strategic_positioning.get("positioning_classification", {}).get("readiness_modifier") == "control_gated_positioning":
+                notes.append("Control-gated positioning should frame governance, human review, and auditability as trust advantages rather than blockers.")
 
         if isinstance(deal_exit_modeling, dict) and deal_exit_modeling.get("status") == "success":
             exit_state = deal_exit_modeling.get("exit_readiness", {}).get("state")
@@ -467,6 +501,7 @@ class PortfolioBinderBuilder:
         business_model: Dict[str, Any],
         deal_exit_modeling: Dict[str, Any],
         design_output: Dict[str, Any],
+        strategic_positioning: Dict[str, Any] = None,
     ) -> List[str]:
         actions = [
             "Review market gap and needed solution thesis.",
@@ -477,6 +512,7 @@ class PortfolioBinderBuilder:
             "Review risk/regulation profile, deployment constraints, blockers, and mitigation actions.",
             "Review business model, pricing, buyer ROI, value capture, and commercial risk.",
             "Review deal/exit readiness, strategic fit, valuation logic, and diligence requirements.",
+            "Review strategic positioning, category narrative, buyer message, and acquirer narrative.",
             "Review technical blueprint and implementation phases.",
         ]
 
