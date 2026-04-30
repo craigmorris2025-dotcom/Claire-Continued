@@ -1,3 +1,4 @@
+
 """
 Lifecycle Stage Engine — maps Claire pipeline output onto the full
 21-stage Claire Intelligence Lifecycle.
@@ -7,10 +8,7 @@ from typing import Any, Dict, List
 
 
 class LifecycleStageEngine:
-    """
-    Evaluates which of Claire's 21 lifecycle stages are active,
-    partially implemented, implemented, or pending for a given run.
-    """
+    """Evaluates Claire's 21 lifecycle stages for a given run."""
 
     def evaluate(self, context: Dict[str, Any]) -> Dict[str, Any]:
         context = context or {}
@@ -62,7 +60,7 @@ class LifecycleStageEngine:
             {"stage": 14, "name": "Design Portal Routing", "category": "design", "output_key": "design_portal"},
             {"stage": 15, "name": "System / Technology Design Engine", "category": "design", "output_key": "design_output"},
             {"stage": 16, "name": "Technical Specs + Build Blueprint Generation", "category": "design", "output_key": "design_output"},
-            {"stage": 17, "name": "Business Model + Value Capture", "category": "strategy", "output_key": "business_model", "next_build": True},
+            {"stage": 17, "name": "Business Model + Value Capture", "category": "strategy", "output_key": "business_model"},
             {"stage": 18, "name": "Strategic Positioning", "category": "strategy", "output_key": "portfolio_binder"},
             {"stage": 19, "name": "Portfolio / Binder Assembly", "category": "portfolio", "output_key": "portfolio_binder"},
             {"stage": 20, "name": "Acquirer Discovery", "category": "outcome", "output_key": "acquirer_matches"},
@@ -76,23 +74,19 @@ class LifecycleStageEngine:
         active = False
 
         if stage == 1:
-            connector_sources = context.get("connector_sources") or context.get("external_signals") or {}
-            if connector_sources:
-                status = "partial"
-                active = True
+            if context.get("connector_sources") or context.get("external_signals"):
+                status, active = "partial", True
                 evidence.append("connector_sources available")
 
         elif stage == 2:
             if context.get("signal_trace") and context.get("engine_details"):
-                status = "partial"
-                active = True
+                status, active = "partial", True
                 evidence.append("signal_trace and engine_details available")
 
         elif stage == 3:
             trend = context.get("trend_trajectory", {})
             if trend.get("status") == "success":
-                status = "active"
-                active = True
+                status, active = "active", True
                 evidence.append("trend_trajectory generated successfully")
                 if trend.get("trend_direction"):
                     evidence.append(f"trend direction: {trend.get('trend_direction', {}).get('direction')}")
@@ -101,47 +95,23 @@ class LifecycleStageEngine:
             else:
                 evidence.append("dedicated trend_trajectory_engine unavailable")
 
-        elif stage == 4:
+        elif stage in {4, 5, 6}:
             market_gap = context.get("market_gap", {})
-            if market_gap.get("status") == "success" and market_gap.get("sector"):
-                status = "active"
-                active = True
+            if stage == 4 and market_gap.get("status") == "success" and market_gap.get("sector"):
+                status, active = "active", True
                 evidence.append(f"sector mapped: {market_gap.get('sector')}")
-
-        elif stage == 5:
-            market_gap = context.get("market_gap", {})
-            if market_gap.get("market_gap"):
-                status = "active"
-                active = True
+            elif stage == 5 and market_gap.get("market_gap"):
+                status, active = "active", True
                 evidence.append("market_gap generated")
-
-        elif stage == 6:
-            market_gap = context.get("market_gap", {})
-            if market_gap.get("needed_solution") and market_gap.get("solution_class"):
-                status = "active"
-                active = True
+            elif stage == 6 and market_gap.get("needed_solution") and market_gap.get("solution_class"):
+                status, active = "active", True
                 evidence.append("needed_solution and solution_class generated")
 
         elif stage == 7:
             market_gap = context.get("market_gap", {})
-            trend = context.get("trend_trajectory", {})
-            formation = context.get("market_formation", {})
-            moat = context.get("moat", {})
-            risk = context.get("risk_regulation", {})
-            if (
-                market_gap.get("portfolio_relevance")
-                and trend.get("status") == "success"
-                and formation.get("status") == "success"
-                and moat.get("status") == "success"
-                and risk.get("status") == "success"
-            ):
-                status = "partial"
-                active = True
-                evidence.append("portfolio_relevance, trend, formation, moat, and risk context available, but dedicated opportunity engine pending")
-            elif market_gap.get("portfolio_relevance"):
-                status = "partial"
-                active = True
-                evidence.append("portfolio_relevance available, but dedicated opportunity engine pending")
+            if market_gap.get("portfolio_relevance"):
+                status, active = "partial", True
+                evidence.append("portfolio_relevance and downstream intelligence available, but dedicated opportunity engine pending")
             else:
                 evidence.append("dedicated opportunity_discovery_engine not yet implemented")
 
@@ -149,8 +119,7 @@ class LifecycleStageEngine:
             scores = context.get("scores", {})
             signal_trace = context.get("signal_trace", {})
             if scores.get("breakthrough_score") is not None:
-                status = "partial"
-                active = True
+                status, active = "partial", True
                 evidence.append("breakthrough_score available")
                 if signal_trace.get("breakthrough_final") is not None:
                     evidence.append("breakthrough signal trace available")
@@ -158,15 +127,13 @@ class LifecycleStageEngine:
         elif stage == 9:
             scores = context.get("scores", {})
             if scores.get("feasibility_score") is not None and scores.get("buildability_score") is not None:
-                status = "partial"
-                active = True
+                status, active = "partial", True
                 evidence.append("feasibility_score and buildability_score available")
 
         elif stage == 10:
             formation = context.get("market_formation", {})
             if formation.get("status") == "success":
-                status = "active"
-                active = True
+                status, active = "active", True
                 evidence.append("market_formation generated successfully")
                 if formation.get("formation_type"):
                     evidence.append(f"formation type: {formation.get('formation_type', {}).get('type')}")
@@ -178,8 +145,7 @@ class LifecycleStageEngine:
         elif stage == 11:
             moat = context.get("moat", {})
             if moat.get("status") == "success":
-                status = "active"
-                active = True
+                status, active = "active", True
                 evidence.append("moat generated successfully")
                 if moat.get("moat_type"):
                     evidence.append(f"primary moat: {moat.get('moat_type', {}).get('primary_moat')}")
@@ -192,8 +158,7 @@ class LifecycleStageEngine:
         elif stage == 12:
             risk = context.get("risk_regulation", {})
             if risk.get("status") == "success":
-                status = "active"
-                active = True
+                status, active = "active", True
                 evidence.append("risk_regulation generated successfully")
                 if risk.get("risk_profile"):
                     evidence.append(f"risk level: {risk.get('risk_profile', {}).get('level')}")
@@ -202,13 +167,11 @@ class LifecycleStageEngine:
                 if risk.get("blocker_assessment"):
                     evidence.append(f"blocker level: {risk.get('blocker_assessment', {}).get('blocker_level')}")
             else:
-                evidence.append("dedicated risk_regulation_engine not yet implemented or unavailable")
+                evidence.append("dedicated risk_regulation_engine unavailable")
 
         elif stage == 13:
-            design_output = context.get("design_output", {})
-            if design_output.get("implementation_phases"):
-                status = "partial"
-                active = True
+            if context.get("design_output", {}).get("implementation_phases"):
+                status, active = "partial", True
                 evidence.append("implementation phases available from design_output")
 
         elif stage == 14:
@@ -219,41 +182,46 @@ class LifecycleStageEngine:
                 evidence.append(f"design_portal status: {design_portal.get('status')}")
 
         elif stage == 15:
-            design_output = context.get("design_output", {})
-            if design_output.get("status") == "success":
-                status = "active"
-                active = True
+            if context.get("design_output", {}).get("status") == "success":
+                status, active = "active", True
                 evidence.append("system design engine returned success")
 
         elif stage == 16:
             design_output = context.get("design_output", {})
             if design_output.get("technical_specs") and design_output.get("architecture_blueprint"):
-                status = "active"
-                active = True
+                status, active = "active", True
                 evidence.append("technical_specs and architecture_blueprint generated")
 
         elif stage == 17:
-            evidence.append("dedicated business_model_engine not yet implemented")
+            business = context.get("business_model", {})
+            if business.get("status") == "success":
+                status, active = "active", True
+                evidence.append("business_model generated successfully")
+                if business.get("revenue_model"):
+                    evidence.append(f"primary revenue model: {business.get('revenue_model', {}).get('primary_model')}")
+                if business.get("value_capture"):
+                    evidence.append(f"value capture: {business.get('value_capture', {}).get('strength')}")
+                if business.get("buyer_roi"):
+                    evidence.append(f"buyer ROI: {business.get('buyer_roi', {}).get('roi_strength')}")
+            else:
+                evidence.append("dedicated business_model_engine unavailable")
 
         elif stage == 18:
             binder = context.get("portfolio_binder", {})
             if self._binder_has_section(binder, "strategic_positioning"):
-                status = "partial"
-                active = True
+                status, active = "partial", True
                 evidence.append("strategic positioning section available in binder")
 
         elif stage == 19:
             binder = context.get("portfolio_binder", {})
             if binder.get("status") == "success":
-                status = "active"
-                active = True
+                status, active = "active", True
                 evidence.append("portfolio_binder generated successfully")
 
         elif stage == 20:
             matches = context.get("acquirer_matches", [])
             if matches:
-                status = "active"
-                active = True
+                status, active = "active", True
                 evidence.append(f"{len(matches)} acquirer matches generated")
 
         elif stage == 21:
@@ -300,7 +268,7 @@ class LifecycleStageEngine:
         }
 
     def _next_recommended_stage(self, stages: List[Dict[str, Any]]) -> Dict[str, Any]:
-        preferred_order = [17, 21]
+        preferred_order = [21]
 
         for preferred_stage in preferred_order:
             for stage in stages:

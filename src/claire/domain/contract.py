@@ -1,12 +1,6 @@
+
 """
 Claire Domain Contract — shared data structures for intents, results, and semantic output.
-
-This file is the stable boundary between:
-- API layer
-- Orchestrator
-- Core routing
-- Engines
-- Response serialization
 """
 
 from dataclasses import dataclass, field
@@ -50,9 +44,7 @@ class IntentMetadata:
 
 
 class ClaireIntent:
-    """
-    Standard request contract.
-    """
+    """Standard request contract."""
 
     def __init__(
         self,
@@ -107,13 +99,7 @@ class SemanticRepresentation:
 
 
 class ClaireResult:
-    """
-    Standard pipeline result contract.
-
-    Important:
-    - This serializer intentionally lifts important nested `data` fields
-      to the API response top level.
-    """
+    """Standard pipeline result contract."""
 
     def __init__(
         self,
@@ -159,7 +145,6 @@ class ClaireResult:
             "breakthrough_classification": self.breakthrough_classification,
 
             "scores": self.scores,
-
             "acquirer_matches": self.acquirer_matches,
 
             "domain": self.data.get("domain", "general"),
@@ -171,10 +156,10 @@ class ClaireResult:
             "market_formation": self.data.get("market_formation", {}),
             "moat": self.data.get("moat", {}),
             "risk_regulation": self.data.get("risk_regulation", {}),
+            "business_model": self.data.get("business_model", {}),
 
             "engine_details": self.data.get("engine_details", {}),
             "connector_sources": connector_sources,
-
             "signal_trace": self.data.get("signal_trace", {}),
 
             "system_design": self.data.get("system_design", {}),
@@ -194,9 +179,7 @@ class ClaireResult:
 
 
 class ContractValidator:
-    """
-    Lightweight validator for incoming requests.
-    """
+    """Lightweight validator for incoming requests."""
 
     def validate_intent(self, payload: Dict[str, Any]) -> ClaireIntent:
         raw_input = (
