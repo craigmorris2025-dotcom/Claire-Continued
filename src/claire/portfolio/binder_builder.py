@@ -17,6 +17,7 @@ class PortfolioBinderBuilder:
         scores = context.get("scores", {})
         domain = context.get("domain", "general")
         keywords = context.get("keywords", [])
+        knowledge_ingestion = context.get("knowledge_ingestion", {})
         signal_extraction = context.get("signal_extraction", {})
         market_gap = context.get("market_gap", {})
         trend_trajectory = context.get("trend_trajectory", {})
@@ -38,6 +39,7 @@ class PortfolioBinderBuilder:
 
         title = self._title(domain=domain, market_gap=market_gap, design_output=design_output)
         executive_thesis = self._executive_thesis(
+            knowledge_ingestion=knowledge_ingestion,
             signal_extraction=signal_extraction,
             market_gap=market_gap,
             trend_trajectory=trend_trajectory,
@@ -56,6 +58,7 @@ class PortfolioBinderBuilder:
 
         sections = [
             self._section("executive_thesis", "Executive Thesis", {"summary": executive_thesis, "key_scores": self._key_scores(scores)}),
+            self._section("knowledge_ingestion", "Knowledge Ingestion", knowledge_ingestion, knowledge_ingestion.get("status") == "success"),
             self._section("signal_extraction", "Signal Extraction", signal_extraction, signal_extraction.get("status") == "success"),
             self._section("trend_trajectory", "Trend + Trajectory", trend_trajectory, trend_trajectory.get("status") == "success"),
             self._section("market_formation", "Market Formation", market_formation, market_formation.get("status") == "success"),
@@ -159,6 +162,7 @@ class PortfolioBinderBuilder:
 
     def _executive_thesis(
         self,
+        knowledge_ingestion: Dict[str, Any],
         signal_extraction: Dict[str, Any],
         market_gap: Dict[str, Any],
         trend_trajectory: Dict[str, Any],
@@ -185,6 +189,16 @@ class PortfolioBinderBuilder:
             market_gap_text,
             f"The needed solution is: {needed_solution}",
         ]
+
+        if knowledge_ingestion.get("status") == "success":
+            knowledge_level = knowledge_ingestion.get("knowledge_quality_score", {}).get("level")
+            knowledge_score = knowledge_ingestion.get("knowledge_quality_score", {}).get("score")
+            source_count = knowledge_ingestion.get("source_inventory", {}).get("source_count")
+            coverage = knowledge_ingestion.get("coverage_assessment", {}).get("level")
+            parts.append(
+                f"Knowledge ingestion is {knowledge_level} with score {knowledge_score}, "
+                f"{source_count} source(s), and {coverage} coverage."
+            )
 
         if signal_extraction.get("status") == "success":
             signal_quality = signal_extraction.get("signal_quality_score", {}).get("level")
@@ -362,6 +376,7 @@ class PortfolioBinderBuilder:
 
     def _key_scores(self, scores: Dict[str, Any]) -> Dict[str, Any]:
         return {
+            "knowledge_quality": scores.get("knowledge_quality_score", 0.0),
             "signal_quality": scores.get("signal_quality_score", 0.0),
             "breakthrough": scores.get("breakthrough_score", 0.0),
             "feasibility": scores.get("feasibility_score", 0.0),

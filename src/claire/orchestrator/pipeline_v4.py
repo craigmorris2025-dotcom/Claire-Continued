@@ -1,6 +1,6 @@
 
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.27 SIGNAL EXTRACTION)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.28 KNOWLEDGE INGESTION)
 """
 
 from typing import Dict, Any
@@ -11,6 +11,7 @@ from claire.engines.auto_design import AutoDesignEngine
 from claire.engines.acquirer_matching import AcquirerMatchingEngine
 from claire.engines.system_design_engine import SystemDesignEngine
 from claire.engines.market_gap_engine import MarketGapEngine
+from claire.engines.knowledge_ingestion_engine import KnowledgeIngestionEngine
 from claire.engines.signal_extraction_engine import SignalExtractionEngine
 from claire.engines.trend_trajectory_engine import TrendTrajectoryEngine
 from claire.engines.market_formation_engine import MarketFormationEngine
@@ -36,6 +37,7 @@ class PipelineOrchestrator:
         self.matcher = AcquirerMatchingEngine()
         self.design_portal = DesignPortal()
         self.system_designer = SystemDesignEngine()
+        self.knowledge_ingestion_engine = KnowledgeIngestionEngine()
         self.signal_extraction_engine = SignalExtractionEngine()
         self.market_gap_engine = MarketGapEngine()
         self.trend_engine = TrendTrajectoryEngine()
@@ -54,7 +56,7 @@ class PipelineOrchestrator:
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.27 (SIGNAL EXTRACTION) <<<")
+        print(">>> RUNNING PIPELINE V5.28 (KNOWLEDGE INGESTION) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -68,6 +70,25 @@ class PipelineOrchestrator:
             "domain": domain,
             "keywords": keywords
         })
+
+        intent_metadata = intent.metadata.to_dict() if hasattr(intent, "metadata") and hasattr(intent.metadata, "to_dict") else {}
+
+        knowledge_ingestion = self._safe_engine(
+            "knowledge_ingestion_failed",
+            lambda: self.knowledge_ingestion_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                connector_sources=external,
+                metadata=intent_metadata,
+            ),
+        )
+
+        knowledge_ingestion_confidence = self._get(knowledge_ingestion, "confidence", 0.0) or 0.0
+        knowledge_quality_score = self._get(knowledge_ingestion, "knowledge_quality_score.score", 0.0) or 0.0
+        source_quality_score = self._get(knowledge_ingestion, "source_quality.score", 0.0) or 0.0
+        coverage_score = self._get(knowledge_ingestion, "coverage_assessment.score", 0.0) or 0.0
+        source_count = self._get(knowledge_ingestion, "source_inventory.source_count", 0) or 0
 
         signal_extraction = self._safe_engine(
             "signal_extraction_failed",
@@ -179,6 +200,8 @@ class PipelineOrchestrator:
         data.update({
             "domain": domain,
             "keywords": keywords,
+            "knowledge_ingestion": knowledge_ingestion,
+            "connector_sources": external,
             "signal_extraction": signal_extraction,
             "market_gap": market_gap,
             "trend_trajectory": trend_trajectory,
@@ -462,6 +485,10 @@ class PipelineOrchestrator:
             "optimization_score": optimization_signal,
             "portfolio_score": portfolio_signal,
             "_confidence": portfolio_signal,
+            "knowledge_quality_score": knowledge_quality_score,
+            "source_quality_score": source_quality_score,
+            "coverage_score": coverage_score,
+            "source_count": source_count,
             "signal_quality_score": signal_quality_score,
             "semantic_density_score": semantic_density_score,
             "routing_confidence_score": routing_confidence_score,
@@ -534,6 +561,11 @@ class PipelineOrchestrator:
         scores["validation_burden_score"] = validation_burden_score
 
         data["signal_trace"] = {
+            "knowledge_ingestion_confidence": knowledge_ingestion_confidence,
+            "knowledge_quality_score": knowledge_quality_score,
+            "source_quality_score": source_quality_score,
+            "coverage_score": coverage_score,
+            "source_count": source_count,
             "signal_extraction_confidence": signal_extraction_confidence,
             "signal_quality_score": signal_quality_score,
             "semantic_density_score": semantic_density_score,
@@ -585,6 +617,7 @@ class PipelineOrchestrator:
 
         data["engine_details"] = {
             "signals": {
+                "knowledge_ingestion": knowledge_quality_score,
                 "signal_extraction": signal_quality_score,
                 "analysis": analysis_signal,
                 "discovery": discovery_signal,
@@ -593,6 +626,13 @@ class PipelineOrchestrator:
                 "innovation": innovation_signal,
                 "viability": viability_signal,
                 "portfolio": portfolio_signal,
+            },
+            "knowledge_ingestion": {
+                "knowledge_quality_score": knowledge_ingestion.get("knowledge_quality_score") if isinstance(knowledge_ingestion, dict) else None,
+                "source_quality": knowledge_ingestion.get("source_quality") if isinstance(knowledge_ingestion, dict) else None,
+                "coverage_assessment": knowledge_ingestion.get("coverage_assessment") if isinstance(knowledge_ingestion, dict) else None,
+                "source_inventory": knowledge_ingestion.get("source_inventory") if isinstance(knowledge_ingestion, dict) else None,
+                "confidence": knowledge_ingestion.get("confidence") if isinstance(knowledge_ingestion, dict) else None,
             },
             "signal_extraction": {
                 "signal_quality_score": signal_extraction.get("signal_quality_score") if isinstance(signal_extraction, dict) else None,
@@ -864,6 +904,7 @@ class PipelineOrchestrator:
                 "scores": scores,
                 "domain": domain,
                 "keywords": keywords,
+                "knowledge_ingestion": knowledge_ingestion,
                 "signal_extraction": signal_extraction,
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
@@ -892,6 +933,7 @@ class PipelineOrchestrator:
                 "scores": scores,
                 "domain": domain,
                 "keywords": keywords,
+                "knowledge_ingestion": knowledge_ingestion,
                 "signal_extraction": signal_extraction,
                 "connector_sources": external,
                 "market_gap": market_gap,
@@ -924,6 +966,7 @@ class PipelineOrchestrator:
         decision = "GO" if final_score > 0.7 else "CONSIDER" if final_score > 0.5 else "NO-GO"
 
         data["phase_log"] = phase_log
+        data["connector_sources"] = external
         data["external_signals"] = external
 
         return ClaireResult(

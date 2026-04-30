@@ -151,6 +151,7 @@ class ClaireResult:
             "keywords": self.data.get("keywords", []),
             "domain_scores": self.data.get("domain_scores", {}),
 
+            "knowledge_ingestion": self.data.get("knowledge_ingestion", {}),
             "signal_extraction": self.data.get("signal_extraction", {}),
             "market_gap": self.data.get("market_gap", {}),
             "opportunity_discovery": self.data.get("opportunity_discovery", {}),
