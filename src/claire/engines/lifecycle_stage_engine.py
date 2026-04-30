@@ -56,7 +56,7 @@ class LifecycleStageEngine:
             {"stage": 10, "name": "Market Formation Analysis", "category": "validation", "output_key": "market_formation"},
             {"stage": 11, "name": "Moat / Defensibility", "category": "validation", "output_key": "moat"},
             {"stage": 12, "name": "Risk / Regulation / Compliance", "category": "validation", "output_key": "risk_regulation"},
-            {"stage": 13, "name": "Productization Path", "category": "design", "output_key": "design_output"},
+            {"stage": 13, "name": "Productization Path", "category": "design", "output_key": "productization_path"},
             {"stage": 14, "name": "Design Portal Routing", "category": "design", "output_key": "design_portal"},
             {"stage": 15, "name": "System / Technology Design Engine", "category": "design", "output_key": "design_output"},
             {"stage": 16, "name": "Technical Specs + Build Blueprint Generation", "category": "design", "output_key": "design_output"},
@@ -200,9 +200,20 @@ class LifecycleStageEngine:
                 evidence.append("dedicated risk_regulation_engine unavailable")
 
         elif stage == 13:
-            if context.get("design_output", {}).get("implementation_phases"):
+            productization = context.get("productization_path", {})
+            if productization.get("status") == "success":
+                status, active = "active", True
+                evidence.append("productization_path generated successfully")
+                if productization.get("productization_score"):
+                    evidence.append(f"productization score: {productization.get('productization_score', {}).get('score')}")
+                if productization.get("productization_classification"):
+                    evidence.append(f"state: {productization.get('productization_classification', {}).get('state')}")
+                    evidence.append(f"launch posture: {productization.get('productization_classification', {}).get('launch_posture')}")
+                if productization.get("pilot_strategy"):
+                    evidence.append(f"pilot type: {productization.get('pilot_strategy', {}).get('pilot_type')}")
+            elif context.get("design_output", {}).get("implementation_phases"):
                 status, active = "partial", True
-                evidence.append("implementation phases available from design_output")
+                evidence.append("implementation phases available from design_output, but dedicated productization_path engine did not return success")
 
         elif stage == 14:
             design_portal = context.get("design_portal", {})

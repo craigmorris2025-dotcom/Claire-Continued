@@ -26,6 +26,7 @@ class PortfolioBinderBuilder:
         opportunity_discovery = context.get("opportunity_discovery", {})
         breakthrough_synthesis = context.get("breakthrough_synthesis", {})
         technical_feasibility = context.get("technical_feasibility", {})
+        productization_path = context.get("productization_path", {})
         deal_exit_modeling = context.get("deal_exit_modeling", {})
         system_design = context.get("system_design", {})
         design_output = context.get("design_output", {})
@@ -44,6 +45,7 @@ class PortfolioBinderBuilder:
             opportunity_discovery=opportunity_discovery,
             breakthrough_synthesis=breakthrough_synthesis,
             technical_feasibility=technical_feasibility,
+            productization_path=productization_path,
             deal_exit_modeling=deal_exit_modeling,
             scores=scores,
         )
@@ -55,6 +57,7 @@ class PortfolioBinderBuilder:
             self._section("opportunity_discovery", "Opportunity Discovery", opportunity_discovery, opportunity_discovery.get("status") == "success"),
             self._section("breakthrough_synthesis", "Breakthrough Synthesis", breakthrough_synthesis, breakthrough_synthesis.get("status") == "success"),
             self._section("technical_feasibility", "Technical Feasibility", technical_feasibility, technical_feasibility.get("status") == "success"),
+            self._section("productization_path", "Productization Path", productization_path, productization_path.get("status") == "success"),
             self._section("moat_defensibility", "Moat / Defensibility", moat, moat.get("status") == "success"),
             self._section("risk_regulation", "Risk / Regulation / Compliance", risk_regulation, risk_regulation.get("status") == "success"),
             self._section("business_model", "Business Model + Value Capture", business_model, business_model.get("status") == "success"),
@@ -126,7 +129,7 @@ class PortfolioBinderBuilder:
             "domain": domain,
             "keywords": keywords,
             "executive_thesis": executive_thesis,
-            "readiness": self._readiness(scores, design_output, risk_regulation, business_model, deal_exit_modeling),
+            "readiness": self._readiness(scores, design_output, risk_regulation, business_model, deal_exit_modeling, productization_path),
             "sections": sections,
             "artifact_manifest": self._artifact_manifest(sections),
             "export_targets": ["json", "markdown", "pdf", "docx"],
@@ -159,6 +162,7 @@ class PortfolioBinderBuilder:
         opportunity_discovery: Dict[str, Any],
         breakthrough_synthesis: Dict[str, Any],
         technical_feasibility: Dict[str, Any],
+        productization_path: Dict[str, Any],
         deal_exit_modeling: Dict[str, Any],
         scores: Dict[str, Any],
     ) -> str:
@@ -202,6 +206,17 @@ class PortfolioBinderBuilder:
             parts.append(
                 f"Technical feasibility classifies this as {self._pretty(feasibility_state)} "
                 f"with {feasibility_level} feasibility and {self._pretty(deployment_posture)} deployment posture."
+            )
+
+        if productization_path.get("status") == "success":
+            product_state = productization_path.get("productization_classification", {}).get("state")
+            product_level = productization_path.get("productization_score", {}).get("level")
+            launch_posture = productization_path.get("productization_classification", {}).get("launch_posture")
+            pilot_type = productization_path.get("pilot_strategy", {}).get("pilot_type")
+            parts.append(
+                f"Productization path classifies this as {self._pretty(product_state)} "
+                f"with {product_level} productization strength, {self._pretty(launch_posture)} launch posture, "
+                f"and a {pilot_type}."
             )
 
         if direction and window:
@@ -256,6 +271,7 @@ class PortfolioBinderBuilder:
         risk_regulation: Dict[str, Any],
         business_model: Dict[str, Any],
         deal_exit_modeling: Dict[str, Any],
+        productization_path: Dict[str, Any] = None,
     ) -> Dict[str, Any]:
         breakthrough = scores.get("breakthrough_score", 0.0)
         feasibility = scores.get("feasibility_score", 0.0)
@@ -273,6 +289,9 @@ class PortfolioBinderBuilder:
         commercial_risk = business_model.get("commercial_risk", {}).get("level") if isinstance(business_model, dict) else None
         exit_state = deal_exit_modeling.get("exit_readiness", {}).get("state") if isinstance(deal_exit_modeling, dict) else None
         strategic_fit = deal_exit_modeling.get("strategic_fit", {}).get("level") if isinstance(deal_exit_modeling, dict) else None
+        productization_path = productization_path or {}
+        productization_state = productization_path.get("productization_classification", {}).get("state") if isinstance(productization_path, dict) else None
+        launch_posture = productization_path.get("productization_classification", {}).get("launch_posture") if isinstance(productization_path, dict) else None
 
         if exit_state == "exit_ready" and blocker_level != "conditional":
             state = "deal_ready_binder"
@@ -298,6 +317,9 @@ class PortfolioBinderBuilder:
             "commercial_risk": commercial_risk,
             "exit_state": exit_state,
             "strategic_fit": strategic_fit,
+            "productization_state": productization_state,
+            "launch_posture": launch_posture,
+            "productization_score": scores.get("productization_score", 0.0),
             "breakthrough_score": breakthrough,
             "feasibility_score": feasibility,
             "portfolio_score": portfolio,
@@ -308,6 +330,7 @@ class PortfolioBinderBuilder:
             "breakthrough": scores.get("breakthrough_score", 0.0),
             "feasibility": scores.get("feasibility_score", 0.0),
             "portfolio": scores.get("portfolio_score", 0.0),
+            "productization": scores.get("productization_score", 0.0),
             "confidence": scores.get("_confidence", 0.0),
         }
 

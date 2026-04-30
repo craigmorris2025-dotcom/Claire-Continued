@@ -1,6 +1,6 @@
 
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.24 TECHNICAL FEASIBILITY)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.25 PRODUCTIZATION PATH)
 """
 
 from typing import Dict, Any
@@ -19,6 +19,7 @@ from claire.engines.business_model_engine import BusinessModelEngine
 from claire.engines.opportunity_discovery_engine import OpportunityDiscoveryEngine
 from claire.engines.breakthrough_synthesis_engine import BreakthroughSynthesisEngine
 from claire.engines.technical_feasibility_engine import TechnicalFeasibilityEngine
+from claire.engines.productization_path_engine import ProductizationPathEngine
 from claire.engines.deal_exit_modeling_engine import DealExitModelingEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.design.portal import DesignPortal
@@ -42,13 +43,14 @@ class PipelineOrchestrator:
         self.opportunity_engine = OpportunityDiscoveryEngine()
         self.breakthrough_synthesis_engine = BreakthroughSynthesisEngine()
         self.technical_feasibility_engine = TechnicalFeasibilityEngine()
+        self.productization_engine = ProductizationPathEngine()
         self.deal_exit_engine = DealExitModelingEngine()
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.24 (TECHNICAL FEASIBILITY) <<<")
+        print(">>> RUNNING PIPELINE V5.25 (PRODUCTIZATION PATH) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -664,6 +666,57 @@ class PipelineOrchestrator:
         )
         data["design_output"] = design_output
 
+        productization_path = self._safe_engine(
+            "productization_path_failed",
+            lambda: self.productization_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                scores=scores,
+                market_gap=market_gap,
+                trend_trajectory=trend_trajectory,
+                market_formation=market_formation,
+                opportunity_discovery=opportunity_discovery,
+                breakthrough_synthesis=breakthrough_synthesis,
+                technical_feasibility=technical_feasibility,
+                moat=moat,
+                risk_regulation=risk_regulation,
+                business_model=business_model,
+                design_output=design_output,
+                connector_sources=external,
+            ),
+        )
+        data["productization_path"] = productization_path
+
+        productization_path_confidence = self._get(productization_path, "confidence", 0.0) or 0.0
+        productization_score = self._get(productization_path, "productization_score.score", 0.0) or 0.0
+        pilot_readiness_score = self._get(productization_path, "go_to_market_readiness.score", 0.0) or 0.0
+        packaging_readiness_score = productization_score
+        launch_control_level = self._get(productization_path, "launch_controls.control_level", "")
+        productization_state = self._get(productization_path, "productization_classification.state", "")
+
+        scores["productization_score"] = productization_score
+        scores["pilot_readiness_score"] = pilot_readiness_score
+        scores["packaging_readiness_score"] = packaging_readiness_score
+
+        data["signal_trace"].update({
+            "productization_path_confidence": productization_path_confidence,
+            "productization_score": productization_score,
+            "pilot_readiness_score": pilot_readiness_score,
+            "packaging_readiness_score": packaging_readiness_score,
+            "launch_control_level": launch_control_level,
+            "productization_state": productization_state,
+        })
+
+        data["engine_details"]["signals"]["productization"] = productization_score
+        data["engine_details"]["productization_path"] = {
+            "productization_score": productization_path.get("productization_score") if isinstance(productization_path, dict) else None,
+            "productization_classification": productization_path.get("productization_classification") if isinstance(productization_path, dict) else None,
+            "pilot_strategy": productization_path.get("pilot_strategy") if isinstance(productization_path, dict) else None,
+            "go_to_market_readiness": productization_path.get("go_to_market_readiness") if isinstance(productization_path, dict) else None,
+            "confidence": productization_path.get("confidence") if isinstance(productization_path, dict) else None,
+        }
+
         try:
             acquirer_matches = self.matcher.match(keywords=keywords, domain=domain, market_gap=market_gap)
         except Exception:
@@ -722,6 +775,7 @@ class PipelineOrchestrator:
                 "opportunity_discovery": opportunity_discovery,
                 "breakthrough_synthesis": breakthrough_synthesis,
                 "technical_feasibility": technical_feasibility,
+                "productization_path": productization_path,
                 "deal_exit_modeling": deal_exit_modeling,
                 "system_design": system_design,
                 "design_output": data.get("design_output", {}),
@@ -748,6 +802,7 @@ class PipelineOrchestrator:
                 "opportunity_discovery": opportunity_discovery,
                 "breakthrough_synthesis": breakthrough_synthesis,
                 "technical_feasibility": technical_feasibility,
+                "productization_path": productization_path,
                 "deal_exit_modeling": deal_exit_modeling,
                 "signal_trace": data.get("signal_trace", {}),
                 "engine_details": data.get("engine_details", {}),
