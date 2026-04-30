@@ -1,12 +1,13 @@
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.8 SYSTEM DESIGN ENGINE)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.10 MARKET-GAP ACQUIRERS)
 
 Adds:
 - Signal trace
 - Engine details
-- Acquirer matching
+- MarketGapEngine sector gap / needed solution analysis
 - Conditional Design Portal routing
 - SystemDesignEngine technical blueprint generation
+- Market-gap-aware AcquirerMatchingEngine
 """
 
 from typing import Dict, Any
@@ -16,6 +17,7 @@ from claire.connectors.connector_manager import ConnectorManager
 from claire.engines.auto_design import AutoDesignEngine
 from claire.engines.acquirer_matching import AcquirerMatchingEngine
 from claire.engines.system_design_engine import SystemDesignEngine
+from claire.engines.market_gap_engine import MarketGapEngine
 from claire.design.portal import DesignPortal
 
 
@@ -27,10 +29,11 @@ class PipelineOrchestrator:
         self.matcher = AcquirerMatchingEngine()
         self.design_portal = DesignPortal()
         self.system_designer = SystemDesignEngine()
+        self.market_gap_engine = MarketGapEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.8 (SYSTEM DESIGN ENGINE) <<<")
+        print(">>> RUNNING PIPELINE V5.10 (MARKET-GAP ACQUIRERS) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -60,23 +63,49 @@ class PipelineOrchestrator:
         financial_risk = financial.get("risk", 0.5)
 
         # =========================
+        # MARKET / SECTOR GAP
+        # =========================
+        try:
+            market_gap = self.market_gap_engine.analyze(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                connector_sources=external,
+            )
+        except Exception as e:
+            market_gap = {
+                "status": "market_gap_failed",
+                "error": str(e),
+            }
+
+        data["domain"] = domain
+        data["keywords"] = keywords
+        data["market_gap"] = market_gap
+
+        # =========================
         # ANALYSIS
         # =========================
         analysis_signal = self._amplify(
             0.3 + (len(keywords) * 0.025)
         )
 
-        data["domain"] = domain
-        data["keywords"] = keywords
-
         phase_log.append(self._decision("analysis", analysis_signal))
 
         # =========================
         # DISCOVERY
         # =========================
+        gap_confidence = market_gap.get("confidence", 0.0) if isinstance(market_gap, dict) else 0.0
+        pressure_score = (
+            market_gap.get("strategic_pressure", {}).get("score", 0.0)
+            if isinstance(market_gap, dict)
+            else 0.0
+        )
+
         discovery_signal = self._amplify(
-            analysis_signal * 0.7 +
-            market_growth * 0.25 +
+            analysis_signal * 0.62 +
+            market_growth * 0.18 +
+            gap_confidence * 0.12 +
+            pressure_score * 0.08 +
             (0.05 if patent_activity > 0.6 else 0)
         )
 
@@ -86,9 +115,10 @@ class PipelineOrchestrator:
         # BREAKTHROUGH
         # =========================
         base_breakthrough = (
-            discovery_signal * 0.45 +
-            patent_novelty * 0.35 +
-            analysis_signal * 0.20
+            discovery_signal * 0.42 +
+            patent_novelty * 0.32 +
+            analysis_signal * 0.18 +
+            gap_confidence * 0.08
         )
 
         spike = 0.0
@@ -102,6 +132,9 @@ class PipelineOrchestrator:
         if "autonomous" in text or "ai" in text:
             spike += 0.06
 
+        if pressure_score >= 0.65:
+            spike += 0.06
+
         breakthrough_signal = self._amplify(base_breakthrough + spike)
 
         phase_log.append(self._decision("breakthrough", breakthrough_signal))
@@ -110,18 +143,22 @@ class PipelineOrchestrator:
         # INNOVATION
         # =========================
         innovation_signal = self._amplify(
-            breakthrough_signal * 0.5 +
-            discovery_signal * 0.3 +
-            analysis_signal * 0.2
+            breakthrough_signal * 0.48 +
+            discovery_signal * 0.28 +
+            analysis_signal * 0.14 +
+            gap_confidence * 0.10
         )
 
-        phase_log.append(self._decision("innovation", innovation_signal)) # =========================
+        phase_log.append(self._decision("innovation", innovation_signal))
+
+        # =========================
         # VIABILITY
         # =========================
         viability_signal = self._amplify(
-            innovation_signal * 0.5 +
-            financial_health * 0.3 +
-            (1 - financial_risk) * 0.2
+            innovation_signal * 0.48 +
+            financial_health * 0.28 +
+            (1 - financial_risk) * 0.18 +
+            pressure_score * 0.06
         )
 
         phase_log.append(self._decision("viability", viability_signal))
@@ -130,9 +167,10 @@ class PipelineOrchestrator:
         # BUILDABILITY
         # =========================
         build_signal = self._amplify(
-            viability_signal * 0.6 +
-            innovation_signal * 0.25 +
-            breakthrough_signal * 0.15
+            viability_signal * 0.58 +
+            innovation_signal * 0.24 +
+            breakthrough_signal * 0.14 +
+            gap_confidence * 0.04
         )
 
         phase_log.append(self._decision("buildability", build_signal))
@@ -151,8 +189,9 @@ class PipelineOrchestrator:
         # MATCHING
         # =========================
         match_signal = self._amplify(
-            feasibility_signal * 0.7 +
-            innovation_signal * 0.3
+            feasibility_signal * 0.65 +
+            innovation_signal * 0.25 +
+            gap_confidence * 0.10
         )
 
         phase_log.append(self._decision("matching", match_signal))
@@ -161,8 +200,9 @@ class PipelineOrchestrator:
         # ACQUISITION
         # =========================
         acquisition_signal = self._amplify(
-            match_signal * 0.75 +
-            viability_signal * 0.25
+            match_signal * 0.72 +
+            viability_signal * 0.20 +
+            pressure_score * 0.08
         )
 
         phase_log.append(self._decision("acquisition", acquisition_signal))
@@ -171,8 +211,9 @@ class PipelineOrchestrator:
         # OPTIMIZATION
         # =========================
         optimization_signal = self._amplify(
-            acquisition_signal * 0.8 +
-            innovation_signal * 0.2
+            acquisition_signal * 0.78 +
+            innovation_signal * 0.16 +
+            gap_confidence * 0.06
         )
 
         phase_log.append(self._decision("optimization", optimization_signal))
@@ -183,8 +224,9 @@ class PipelineOrchestrator:
         portfolio_signal = min(
             0.94,
             self._amplify(
-                optimization_signal * 0.85 +
-                acquisition_signal * 0.15
+                optimization_signal * 0.82 +
+                acquisition_signal * 0.13 +
+                pressure_score * 0.05
             )
         )
 
@@ -214,6 +256,8 @@ class PipelineOrchestrator:
         data["signal_trace"] = {
             "analysis": analysis_signal,
             "discovery": discovery_signal,
+            "market_gap_confidence": gap_confidence,
+            "market_pressure_score": pressure_score,
             "breakthrough_base": base_breakthrough,
             "breakthrough_spike": spike,
             "breakthrough_final": breakthrough_signal,
@@ -238,7 +282,16 @@ class PipelineOrchestrator:
                 "financial_health": financial_health,
                 "financial_risk": financial_risk,
             },
-        }# =========================
+            "market_gap": {
+                "sector": market_gap.get("sector") if isinstance(market_gap, dict) else None,
+                "gap_type": market_gap.get("gap_type") if isinstance(market_gap, dict) else None,
+                "solution_class": market_gap.get("solution_class") if isinstance(market_gap, dict) else None,
+                "confidence": market_gap.get("confidence") if isinstance(market_gap, dict) else None,
+                "pressure": market_gap.get("strategic_pressure") if isinstance(market_gap, dict) else None,
+            },
+        }
+
+        # =========================
         # AUTO DESIGN
         # =========================
         try:
@@ -264,6 +317,7 @@ class PipelineOrchestrator:
                 "domain": domain,
                 "keywords": keywords,
                 "system_design": system_design,
+                "market_gap": market_gap,
             })
             data["design_portal"] = design_portal
         except Exception as e:
@@ -301,11 +355,12 @@ class PipelineOrchestrator:
             acquirer_matches = self.matcher.match(
                 keywords=keywords,
                 domain=domain,
+                market_gap=market_gap,
             )
         except Exception:
             acquirer_matches = []
 
-       # =========================
+        # =========================
         # FINAL DECISION
         # =========================
         final_score = portfolio_signal
@@ -330,23 +385,25 @@ class PipelineOrchestrator:
             ready_for_syntalion=final_score > 0.65,
         )
 
- 
     def _extract_keywords(self, text: str):
         return [w.strip(",.") for w in text.lower().split() if len(w) > 4][:10]
 
     def _detect_domain(self, text: str):
         t = text.lower()
 
-        if "ai" in t or "machine learning" in t:
-            return "technology"
-
-        if "finance" in t or "fintech" in t:
+        if "finance" in t or "fintech" in t or "credit" in t or "liquidity" in t:
             return "finance"
 
-        if "health" in t or "medical" in t or "clinical" in t:
+        if "health" in t or "medical" in t or "clinical" in t or "hospital" in t:
             return "healthcare"
 
+        if "energy" in t or "grid" in t or "utilities" in t or "power" in t:
+            return "energy"
+
         if "defense" in t or "military" in t or "battlefield" in t:
+            return "technology"
+
+        if "ai" in t or "machine learning" in t or "platform" in t:
             return "technology"
 
         return "general"

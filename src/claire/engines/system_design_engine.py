@@ -39,6 +39,7 @@ class SystemDesignEngine:
         inputs = design_context.get("inputs", {})
         scores = inputs.get("scores", {})
         system_design = inputs.get("system_design", {})
+        market_gap = inputs.get("market_gap", {})
         domain = inputs.get("domain", "general")
         keywords = inputs.get("keywords", [])
 
@@ -53,6 +54,7 @@ class SystemDesignEngine:
             keywords=keywords,
             system_type=system_type,
             scores=scores,
+            market_gap=market_gap,
         )
 
         architecture_blueprint = self._architecture_blueprint(
@@ -60,18 +62,21 @@ class SystemDesignEngine:
             components=components,
             domain=domain,
             keywords=keywords,
+            market_gap=market_gap,
         )
 
         data_flows = self._data_flows(components=components)
 
         implementation_phases = self._implementation_phases(
             scores=scores,
+            market_gap=market_gap,
         )
 
         portfolio_artifacts = self._portfolio_artifacts(
             domain=domain,
             system_type=system_type,
             scores=scores,
+            market_gap=market_gap,
         )
 
         return {
@@ -80,6 +85,7 @@ class SystemDesignEngine:
             "domain": domain,
             "system_type": system_type,
             "architecture": architecture,
+            "market_gap": market_gap,
             "technical_specs": technical_specs,
             "architecture_blueprint": architecture_blueprint,
             "data_flows": data_flows,
@@ -94,31 +100,22 @@ class SystemDesignEngine:
         keywords: List[str],
         system_type: str,
         scores: Dict[str, Any],
+        market_gap: Dict[str, Any],
     ) -> Dict[str, Any]:
         breakthrough = scores.get("breakthrough_score", 0.0)
         feasibility = scores.get("feasibility_score", 0.0)
         portfolio = scores.get("portfolio_score", 0.0)
 
-        specs = {
-            "primary_domain": domain,
-            "system_type": system_type,
-            "capability_targets": self._capability_targets(keywords),
-            "performance_targets": {
-                "breakthrough_intensity": round(breakthrough, 4),
-                "feasibility_threshold": round(feasibility, 4),
-                "portfolio_confidence": round(portfolio, 4),
-            },
-            "core_requirements": [
-                "modular service architecture",
-                "traceable decision pipeline",
-                "structured input-output contracts",
-                "explainable scoring and design rationale",
-                "portfolio-ready artifact generation",
-            ],
-        }
+        core_requirements = [
+            "modular service architecture",
+            "traceable decision pipeline",
+            "structured input-output contracts",
+            "explainable scoring and design rationale",
+            "portfolio-ready artifact generation",
+        ]
 
         if self._has_any(keywords, ["autonomous", "ai-driven", "ai-powered", "ai"]):
-            specs["core_requirements"].extend([
+            core_requirements.extend([
                 "autonomous decision layer",
                 "human override controls",
                 "model monitoring and audit trail",
@@ -126,7 +123,7 @@ class SystemDesignEngine:
             ])
 
         if self._has_any(keywords, ["defense", "battlefield", "drone", "swarm"]):
-            specs["core_requirements"].extend([
+            core_requirements.extend([
                 "secure communications model",
                 "edge-deployable architecture",
                 "fault-tolerant distributed operations",
@@ -134,13 +131,30 @@ class SystemDesignEngine:
             ])
 
         if self._has_any(keywords, ["real-time", "multi-sensor", "sensor", "fusion"]):
-            specs["core_requirements"].extend([
+            core_requirements.extend([
                 "low-latency processing layer",
                 "multi-source sensor fusion pipeline",
                 "event-driven data routing",
             ])
 
-        return specs
+        if isinstance(market_gap, dict):
+            for implication in market_gap.get("design_implications", []):
+                core_requirements.append(implication)
+
+        return {
+            "primary_domain": domain,
+            "system_type": system_type,
+            "market_gap_sector": market_gap.get("sector") if isinstance(market_gap, dict) else None,
+            "needed_solution": market_gap.get("needed_solution") if isinstance(market_gap, dict) else None,
+            "solution_class": market_gap.get("solution_class") if isinstance(market_gap, dict) else None,
+            "capability_targets": self._capability_targets(keywords, market_gap),
+            "performance_targets": {
+                "breakthrough_intensity": round(breakthrough, 4),
+                "feasibility_threshold": round(feasibility, 4),
+                "portfolio_confidence": round(portfolio, 4),
+            },
+            "core_requirements": sorted(list(dict.fromkeys(core_requirements))),
+        }
 
     def _architecture_blueprint(
         self,
@@ -148,6 +162,7 @@ class SystemDesignEngine:
         components: List[str],
         domain: str,
         keywords: List[str],
+        market_gap: Dict[str, Any],
     ) -> Dict[str, Any]:
         modules = []
 
@@ -159,11 +174,21 @@ class SystemDesignEngine:
                 "priority": self._component_priority(component),
             })
 
+        if isinstance(market_gap, dict):
+            for implication in market_gap.get("design_implications", []):
+                modules.append({
+                    "component": implication.replace(" ", "_").replace("-", "_"),
+                    "role": f"implements market-gap requirement: {implication}",
+                    "interfaces": ["market_gap_context", "design_output"],
+                    "priority": "high",
+                })
+
         return {
             "architecture_style": architecture,
             "domain_context": domain,
+            "market_gap_context": market_gap.get("sector") if isinstance(market_gap, dict) else None,
             "modules": modules,
-            "recommended_services": self._recommended_services(keywords),
+            "recommended_services": self._recommended_services(keywords, market_gap),
             "security_model": self._security_model(keywords),
             "operational_model": self._operational_model(keywords),
         }
@@ -187,9 +212,11 @@ class SystemDesignEngine:
     def _implementation_phases(
         self,
         scores: Dict[str, Any],
+        market_gap: Dict[str, Any],
     ) -> List[Dict[str, Any]]:
         breakthrough = scores.get("breakthrough_score", 0.0)
         feasibility = scores.get("feasibility_score", 0.0)
+        solution_class = market_gap.get("solution_class", "validated opportunity platform") if isinstance(market_gap, dict) else "validated opportunity platform"
 
         phases = [
             {
@@ -206,6 +233,17 @@ class SystemDesignEngine:
             },
             {
                 "phase": 2,
+                "name": "Market Gap Intelligence",
+                "objective": f"Validate the needed solution class: {solution_class}.",
+                "deliverables": [
+                    "market gap profile",
+                    "needed solution statement",
+                    "buyer segment map",
+                    "strategic pressure analysis",
+                ],
+            },
+            {
+                "phase": 3,
                 "name": "Core Intelligence",
                 "objective": "Implement analysis engines and signal propagation.",
                 "deliverables": [
@@ -217,7 +255,7 @@ class SystemDesignEngine:
                 ],
             },
             {
-                "phase": 3,
+                "phase": 4,
                 "name": "System Design",
                 "objective": "Generate technical blueprint and design artifacts.",
                 "deliverables": [
@@ -229,7 +267,7 @@ class SystemDesignEngine:
                 ],
             },
             {
-                "phase": 4,
+                "phase": 5,
                 "name": "Validation",
                 "objective": "De-risk feasibility, value, and implementation assumptions.",
                 "deliverables": [
@@ -240,7 +278,7 @@ class SystemDesignEngine:
                 ],
             },
             {
-                "phase": 5,
+                "phase": 6,
                 "name": "Portfolio Packaging",
                 "objective": "Prepare artifacts for portfolio, binder, and strategic review.",
                 "deliverables": [
@@ -255,7 +293,7 @@ class SystemDesignEngine:
 
         if breakthrough >= 0.9:
             phases.append({
-                "phase": 6,
+                "phase": 7,
                 "name": "Breakthrough Acceleration",
                 "objective": "Prioritize advanced validation for high-breakthrough concepts.",
                 "deliverables": [
@@ -268,7 +306,7 @@ class SystemDesignEngine:
 
         if feasibility < 0.65:
             phases.append({
-                "phase": 7,
+                "phase": 8,
                 "name": "Feasibility De-risking",
                 "objective": "Resolve technical uncertainty before execution.",
                 "deliverables": [
@@ -286,6 +324,7 @@ class SystemDesignEngine:
         domain: str,
         system_type: str,
         scores: Dict[str, Any],
+        market_gap: Dict[str, Any],
     ) -> Dict[str, Any]:
         return {
             "binder_sections": [
@@ -302,6 +341,8 @@ class SystemDesignEngine:
             "summary": {
                 "domain": domain,
                 "system_type": system_type,
+                "market_gap_sector": market_gap.get("sector") if isinstance(market_gap, dict) else None,
+                "needed_solution": market_gap.get("needed_solution") if isinstance(market_gap, dict) else None,
                 "breakthrough_score": scores.get("breakthrough_score", 0.0),
                 "feasibility_score": scores.get("feasibility_score", 0.0),
                 "portfolio_score": scores.get("portfolio_score", 0.0),
@@ -309,7 +350,7 @@ class SystemDesignEngine:
             "artifact_status": "ready_for_binder_generation",
         }
 
-    def _capability_targets(self, keywords: List[str]) -> List[str]:
+    def _capability_targets(self, keywords: List[str], market_gap: Dict[str, Any]) -> List[str]:
         targets = []
 
         keyword_map = {
@@ -331,6 +372,11 @@ class SystemDesignEngine:
         for keyword in keywords:
             if keyword in keyword_map:
                 targets.append(keyword_map[keyword])
+
+        if isinstance(market_gap, dict):
+            solution_class = market_gap.get("solution_class")
+            if solution_class:
+                targets.append(solution_class)
 
         if not targets:
             targets.append("validated system capability")
@@ -368,7 +414,7 @@ class SystemDesignEngine:
 
         return "medium"
 
-    def _recommended_services(self, keywords: List[str]) -> List[str]:
+    def _recommended_services(self, keywords: List[str], market_gap: Dict[str, Any]) -> List[str]:
         services = [
             "orchestration_service",
             "contract_validation_service",
@@ -390,6 +436,11 @@ class SystemDesignEngine:
 
         if self._has_any(keywords, ["autonomous", "ai-driven", "ai-powered"]):
             services.append("autonomous_decision_service")
+
+        if isinstance(market_gap, dict):
+            sector = market_gap.get("sector")
+            if sector:
+                services.append(f"{sector}_gap_service")
 
         return sorted(list(set(services)))
 

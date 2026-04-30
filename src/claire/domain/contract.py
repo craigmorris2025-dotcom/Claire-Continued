@@ -111,7 +111,8 @@ class SemanticRepresentation:
             "domain": self.domain,
             "entities": self.entities,
             "confidence": self.confidence,
-         }
+        }
+
 
 class ClaireResult:
     """
@@ -120,8 +121,8 @@ class ClaireResult:
     Important:
     - This serializer intentionally lifts important nested `data` fields
       to the API response top level.
-    - That is why fields like system_design, design_portal, design_output,
-      signal_trace, and engine_details show up in /pipeline/evaluate.
+    - That is why fields like market_gap, system_design, design_portal,
+      design_output, signal_trace, and engine_details show up in /pipeline/evaluate.
     """
 
     def __init__(
@@ -175,6 +176,8 @@ class ClaireResult:
             "keywords": self.data.get("keywords", []),
             "domain_scores": self.data.get("domain_scores", {}),
 
+            "market_gap": self.data.get("market_gap", {}),
+
             "engine_details": self.data.get("engine_details", {}),
             "connector_sources": connector_sources,
 
@@ -188,7 +191,8 @@ class ClaireResult:
 
             "syntalion_ready": self.ready_for_syntalion,
             "confidence": self.confidence,
-                }
+        }
+
 
 class ContractValidator:
     """

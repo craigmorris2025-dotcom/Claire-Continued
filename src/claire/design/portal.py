@@ -19,15 +19,21 @@ class DesignPortal:
         domain = context.get("domain", "general")
         keywords = context.get("keywords", [])
         system_design = context.get("system_design", {})
+        market_gap = context.get("market_gap", {})
 
         breakthrough = scores.get("breakthrough_score", 0.0)
         portfolio = scores.get("portfolio_score", 0.0)
         confidence = scores.get("_confidence", portfolio)
 
+        market_gap_ok = True
+        if isinstance(market_gap, dict) and market_gap.get("status") == "market_gap_failed":
+            market_gap_ok = False
+
         should_route = (
             breakthrough >= 0.75
             and confidence >= 0.70
             and system_design.get("status") == "success"
+            and market_gap_ok
         )
 
         reason = self._reason(
@@ -35,6 +41,7 @@ class DesignPortal:
             confidence=confidence,
             system_design=system_design,
             should_route=should_route,
+            market_gap_ok=market_gap_ok,
         )
 
         return {
@@ -42,10 +49,12 @@ class DesignPortal:
             "route_to_design": should_route,
             "domain": domain,
             "keywords": keywords,
+            "market_gap": market_gap,
             "reason": reason,
             "inputs": {
                 "scores": scores,
                 "system_design": system_design,
+                "market_gap": market_gap,
                 "domain": domain,
                 "keywords": keywords,
             },
@@ -57,9 +66,10 @@ class DesignPortal:
         confidence: float,
         system_design: Dict[str, Any],
         should_route: bool,
+        market_gap_ok: bool = True,
     ) -> str:
         if should_route:
-            return "Breakthrough and confidence thresholds met; design pathway activated."
+            return "Breakthrough, confidence, system design, and market gap thresholds met; design pathway activated."
 
         if breakthrough < 0.75:
             return "Breakthrough score below design threshold."
@@ -69,5 +79,8 @@ class DesignPortal:
 
         if system_design.get("status") != "success":
             return "System design unavailable or failed."
+
+        if not market_gap_ok:
+            return "Market gap analysis failed or unavailable."
 
         return "Design pathway not activated."
