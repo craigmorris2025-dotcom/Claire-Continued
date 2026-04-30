@@ -174,6 +174,7 @@ class ClaireResult:
             "design_portal": self.data.get("design_portal", {}),
             "design_output": self.data.get("design_output", {}),
             "portfolio_binder": self.data.get("portfolio_binder", {}),
+            "export_package": self.data.get("export_package", {}),
 
             "lifecycle": self.data.get("lifecycle", {}),
             "lifecycle_stages": self.data.get("lifecycle_stages", []),

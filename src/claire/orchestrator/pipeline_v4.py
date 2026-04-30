@@ -1,6 +1,6 @@
 
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.28 KNOWLEDGE INGESTION)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.29 EXPORT PACKAGE)
 """
 
 from typing import Dict, Any
@@ -25,6 +25,7 @@ from claire.engines.productization_path_engine import ProductizationPathEngine
 from claire.engines.strategic_positioning_engine import StrategicPositioningEngine
 from claire.engines.deal_exit_modeling_engine import DealExitModelingEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
+from claire.engines.export_package_engine import ExportPackageEngine
 from claire.design.portal import DesignPortal
 from claire.portfolio.binder_builder import PortfolioBinderBuilder
 
@@ -53,10 +54,11 @@ class PipelineOrchestrator:
         self.deal_exit_engine = DealExitModelingEngine()
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
+        self.export_package_engine = ExportPackageEngine()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.28 (KNOWLEDGE INGESTION) <<<")
+        print(">>> RUNNING PIPELINE V5.29 (EXPORT PACKAGE) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -968,6 +970,41 @@ class PipelineOrchestrator:
         data["phase_log"] = phase_log
         data["connector_sources"] = external
         data["external_signals"] = external
+
+        export_package = self._safe_engine(
+            "export_package_failed",
+            lambda: self.export_package_engine.build({
+                "scores": scores,
+                "data": data,
+                "domain": domain,
+                "keywords": keywords,
+                "decision_classification": "GO" if portfolio_signal > 0.7 else "CONSIDER" if portfolio_signal > 0.5 else "NO-GO",
+                "breakthrough_classification": "HIGH" if breakthrough_signal > 0.65 else "LOW",
+                "acquirer_matches": acquirer_matches,
+            }),
+        )
+        data["export_package"] = export_package
+
+        export_package_confidence = self._get(export_package, "confidence", 0.0) or 0.0
+        export_package_score = self._get(export_package, "export_package_score.score", 0.0) or 0.0
+        export_package_level = self._get(export_package, "export_package_score.level", "")
+
+        scores["export_package_score"] = export_package_score
+
+        data["signal_trace"].update({
+            "export_package_confidence": export_package_confidence,
+            "export_package_score": export_package_score,
+            "export_package_level": export_package_level,
+        })
+
+        data["engine_details"]["signals"]["export_package"] = export_package_score
+        data["engine_details"]["export_package"] = {
+            "export_package_score": export_package.get("export_package_score") if isinstance(export_package, dict) else None,
+            "package_profile": export_package.get("package_profile") if isinstance(export_package, dict) else None,
+            "package_manifest": export_package.get("package_manifest") if isinstance(export_package, dict) else None,
+            "quality_checks": export_package.get("quality_checks") if isinstance(export_package, dict) else None,
+            "confidence": export_package.get("confidence") if isinstance(export_package, dict) else None,
+        }
 
         return ClaireResult(
             status="success",
