@@ -1,19 +1,24 @@
 """
 Opportunity Command Catalog — workflow prompts and launch guidance for Claire.
 
-v5.38:
-- Defines Claire workflow modes above execution/intelligence modes.
+v5.39:
+- Uses industry-standard launcher terminology.
+- Separates market universe, industry/domain, buyer segment, and objective.
 - Preserves execution modes: deterministic, connected intelligence, hybrid.
-- Provides command templates for evaluate, discover, expand/optimize, and competitor-beating workflows.
 """
 
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
+from claire.runtime.market_universe_taxonomy import MarketUniverseTaxonomy
+
 
 class OpportunityCommandCatalog:
-    """Deterministic catalog of Claire opportunity commands and search directions."""
+    """Deterministic catalog of Claire opportunity commands and market-universe controls."""
+
+    def __init__(self) -> None:
+        self.taxonomy = MarketUniverseTaxonomy()
 
     def execution_modes(self) -> List[Dict[str, str]]:
         return [
@@ -43,27 +48,14 @@ class OpportunityCommandCatalog:
             },
             {
                 "id": "discover",
-                "name": "Discover opportunities",
-                "description": "Use when the user provides a domain, buyer group, sector, weak signal, or market direction."
+                "name": "Discover opportunities from market universe",
+                "description": "Use when the user provides a market universe, industry/domain, buyer group, or weak signal."
             },
             {
                 "id": "expand_optimize",
                 "name": "Expand / optimize / beat competitors",
                 "description": "Use when the user wants stronger wedges, adjacent opportunities, competitor-beating strategy, or upgraded positioning."
             },
-        ]
-
-    def sectors(self) -> List[Dict[str, str]]:
-        return [
-            {"id": "defense_autonomy", "name": "Defense Autonomy"},
-            {"id": "climate_insurance", "name": "Climate Insurance"},
-            {"id": "healthcare_operations", "name": "Healthcare Operations"},
-            {"id": "industrial_supply_chain", "name": "Industrial Supply Chain"},
-            {"id": "energy_infrastructure", "name": "Energy Infrastructure"},
-            {"id": "financial_intelligence", "name": "Financial Intelligence"},
-            {"id": "regulatory_technology", "name": "Regulatory Technology"},
-            {"id": "ai_infrastructure", "name": "AI Infrastructure"},
-            {"id": "cross_sector", "name": "Cross-Sector"},
         ]
 
     def commands(self) -> List[Dict[str, Any]]:
@@ -80,28 +72,20 @@ class OpportunityCommandCatalog:
                 "id": "optimize_project",
                 "workflow": "evaluate",
                 "name": "Optimize this project into a stronger opportunity",
-                "description": "Find the stronger market wedge, stronger buyer pain, stronger moat, and better productization path.",
+                "description": "Find the stronger market wedge, buyer pain, moat, proof path, and productization strategy.",
                 "prompt_goal": "improve the project into a more differentiated, defensible, commercially attractive version",
                 "default_output_count": 1,
             },
             {
-                "id": "discover_non_obvious",
+                "id": "discover_market_gaps",
                 "workflow": "discover",
-                "name": "Discover non-obvious opportunities",
-                "description": "Generate opportunity candidates from a domain, buyer group, weak signal, or strategic direction.",
+                "name": "Discover market gaps",
+                "description": "Generate opportunity candidates from a market universe, industry/domain, buyer segment, and weak signal.",
                 "prompt_goal": "discover underexploited market gaps and productizable strategic opportunities",
                 "default_output_count": 5,
             },
             {
-                "id": "discover_regulatory_openings",
-                "workflow": "discover",
-                "name": "Find regulatory openings",
-                "description": "Look for compliance pressure, policy shifts, reporting burdens, or regulated workflow pain that can become a product wedge.",
-                "prompt_goal": "surface product opportunities created by regulatory pressure and compliance friction",
-                "default_output_count": 5,
-            },
-            {
-                "id": "discover_acquirer_gaps",
+                "id": "find_acquirer_gaps",
                 "workflow": "discover",
                 "name": "Find acquirer capability gaps",
                 "description": "Generate opportunities likely to interest strategic acquirers due to capability gaps or portfolio pressure.",
@@ -109,10 +93,26 @@ class OpportunityCommandCatalog:
                 "default_output_count": 5,
             },
             {
-                "id": "expand_adjacent",
+                "id": "find_regulatory_openings",
+                "workflow": "discover",
+                "name": "Find regulatory openings",
+                "description": "Look for compliance pressure, policy shifts, reporting burdens, or regulated workflow pain that can become a product wedge.",
+                "prompt_goal": "surface product opportunities created by regulatory pressure and compliance friction",
+                "default_output_count": 5,
+            },
+            {
+                "id": "find_workflow_bottlenecks",
+                "workflow": "discover",
+                "name": "Find workflow bottlenecks",
+                "description": "Find expensive, repeated, measurable operational bottlenecks that can be converted into software, intelligence, or automation products.",
+                "prompt_goal": "identify urgent workflow bottlenecks with budget, ownership, and measurable ROI",
+                "default_output_count": 5,
+            },
+            {
+                "id": "generate_adjacent_opportunities",
                 "workflow": "expand_optimize",
                 "name": "Generate adjacent opportunities",
-                "description": "Create adjacent versions of a prior idea or run across buyers, sectors, or product packaging.",
+                "description": "Create adjacent versions of a prior idea or run across buyers, industries, or product packaging.",
                 "prompt_goal": "expand one thesis into multiple adjacent opportunity candidates",
                 "default_output_count": 5,
             },
@@ -124,14 +124,6 @@ class OpportunityCommandCatalog:
                 "prompt_goal": "reframe the opportunity into a competitor-beating strategy",
                 "default_output_count": 3,
             },
-            {
-                "id": "find_stronger_wedge",
-                "workflow": "expand_optimize",
-                "name": "Find the stronger wedge",
-                "description": "Identify a sharper initial buyer pain, deployment beachhead, or wedge product.",
-                "prompt_goal": "convert a broad opportunity into a narrow, high-conviction beachhead wedge",
-                "default_output_count": 3,
-            },
         ]
 
     def get_command(self, command_id: str) -> Optional[Dict[str, Any]]:
@@ -141,10 +133,15 @@ class OpportunityCommandCatalog:
         return None
 
     def catalog(self) -> Dict[str, Any]:
+        taxonomy = self.taxonomy.catalog()
         return {
             "status": "success",
             "execution_modes": self.execution_modes(),
             "workflow_modes": self.workflow_modes(),
-            "sectors": self.sectors(),
             "commands": self.commands(),
+            "market_universes": taxonomy["market_universes"],
+            "industry_domains": taxonomy["industry_domains"],
+            "buyer_segments": taxonomy["buyer_segments"],
+            "opportunity_objectives": taxonomy["opportunity_objectives"],
+            "internal_routing_hints": taxonomy["internal_routing_hints"],
         }
