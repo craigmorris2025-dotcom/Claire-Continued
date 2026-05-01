@@ -1,9 +1,9 @@
 """
-Opportunity Search Suggestions — deterministic search/query guidance for Claire.
+Market-Wide Needed Solution Search — public-facing opportunity discovery directions.
 
-v5.39:
-- Generates market-universe-specific opportunity suggestions.
-- Keeps suggestions local and deterministic; connected/hybrid modes can later use them as live-feed query seeds.
+v5.40:
+- Replaces exposed internal search phrasing with safe, user-facing discovery directions.
+- Output is phrased as market needs and solution areas, not Claire's internal reasoning.
 """
 
 from __future__ import annotations
@@ -12,32 +12,74 @@ from typing import Any, Dict, List
 
 
 class OpportunitySearchSuggestions:
-    """Generate market-universe and industry-specific search suggestions."""
+    """Generate public-facing market-wide needed-solution directions."""
 
-    UNIVERSE_TERMS = {
-        "sp500_public": ["large-cap capability gap", "public-company margin pressure", "enterprise workflow bottleneck", "strategic acquirer gap", "industry modernization pressure"],
-        "djia_public": ["blue-chip transformation gap", "legacy workflow pressure", "enterprise operating constraint", "resilience investment need", "strategic modernization gap"],
-        "nasdaq_composite": ["growth-company disruption signal", "AI infrastructure pressure", "software platform gap", "biotech or data workflow friction", "technology adoption timing"],
-        "private_sector_establishments": ["underserved private operator pain", "local/regional workflow bottleneck", "compliance burden", "labor productivity gap", "vertical software wedge"],
-        "federal_government": ["agency mission bottleneck", "procurement modernization need", "compliance reporting burden", "public-sector workflow gap", "auditability requirement"],
-        "defense_industrial_base": ["mission support gap", "control-gated autonomy need", "secure coordination bottleneck", "supplier readiness risk", "critical infrastructure exposure"],
-        "custom_universe": ["user-defined buyer pain", "custom portfolio gap", "strategic wedge", "competitor weakness", "market timing signal"],
+    UNIVERSE_NEEDS = {
+        "sp500_public": [
+            "enterprise governance infrastructure",
+            "margin-pressure automation",
+            "resilience and risk intelligence",
+            "operational command-center modernization",
+            "strategic capability-gap detection",
+        ],
+        "djia_public": [
+            "blue-chip workflow modernization",
+            "legacy-system replacement",
+            "enterprise resilience tooling",
+            "executive risk visibility",
+            "operational performance intelligence",
+        ],
+        "nasdaq_composite": [
+            "AI infrastructure governance",
+            "software platform efficiency",
+            "data lineage and evaluation",
+            "growth-company operating leverage",
+            "technology adoption intelligence",
+        ],
+        "private_sector_establishments": [
+            "vertical workflow automation",
+            "local/regional compliance simplification",
+            "labor productivity tooling",
+            "operator-grade decision support",
+            "private-market risk visibility",
+        ],
+        "federal_government": [
+            "audit-ready mission workflow",
+            "procurement modernization",
+            "compliance reporting automation",
+            "secure review and approval tooling",
+            "public-sector operations intelligence",
+        ],
+        "defense_industrial_base": [
+            "control-gated mission support",
+            "supplier readiness intelligence",
+            "secure coordination infrastructure",
+            "critical infrastructure exposure monitoring",
+            "program risk visibility",
+        ],
+        "custom_universe": [
+            "workflow bottleneck reduction",
+            "buyer pain discovery",
+            "competitive differentiation",
+            "market-timing intelligence",
+            "strategic operating leverage",
+        ],
     }
 
-    DOMAIN_TERMS = {
-        "energy": ["grid resilience", "asset monitoring", "interconnection backlog", "demand response"],
-        "materials": ["supply substitution", "quality traceability", "production yield", "raw material risk"],
-        "industrials": ["maintenance bottleneck", "supplier fragility", "factory throughput", "quality escape"],
-        "consumer_discretionary": ["demand forecasting", "consumer journey friction", "inventory mismatch", "marketplace pressure"],
-        "consumer_staples": ["margin pressure", "supply assurance", "retail execution", "compliance labeling"],
-        "health_care": ["patient flow", "clinical operations", "capacity constraints", "payer-provider friction"],
-        "financials": ["risk signal", "counterparty stress", "compliance surveillance", "portfolio exposure"],
-        "information_technology": ["agent governance", "model evaluation", "inference cost", "data lineage"],
-        "communication_services": ["content operations", "network economics", "audience signal", "platform risk"],
+    DOMAIN_NEEDS = {
+        "energy": ["grid reliability", "asset monitoring", "interconnection management", "load and demand operations"],
+        "materials": ["traceability", "quality consistency", "supplier substitution", "production yield"],
+        "industrials": ["maintenance planning", "supplier fragility", "factory throughput", "quality control"],
+        "consumer_discretionary": ["demand forecasting", "inventory alignment", "customer journey optimization", "marketplace pressure"],
+        "consumer_staples": ["retail execution", "supply assurance", "margin protection", "labeling compliance"],
+        "health_care": ["patient flow", "capacity operations", "staffing coordination", "payer-provider workflow"],
+        "financials": ["risk surveillance", "counterparty monitoring", "compliance operations", "portfolio exposure intelligence"],
+        "information_technology": ["AI governance", "model evaluation", "inference cost management", "data lineage"],
+        "communication_services": ["platform risk", "content operations", "audience signal intelligence", "network economics"],
         "utilities": ["asset reliability", "storm response", "grid operations", "regulatory reporting"],
-        "real_estate": ["property exposure", "tenant operations", "portfolio risk", "insurance pressure"],
-        "government_defense": ["mission readiness", "secure review", "auditability", "compliance boundary"],
-        "cross_sector": ["workflow bottleneck", "buyer pain", "market gap", "strategic acquirer"],
+        "real_estate": ["portfolio exposure", "tenant operations", "insurance pressure", "property risk visibility"],
+        "government_defense": ["mission readiness", "secure review", "auditability", "compliance boundaries"],
+        "cross_sector": ["workflow bottlenecks", "market gaps", "buyer pain", "strategic acquirer fit"],
     }
 
     def suggest(
@@ -50,47 +92,31 @@ class OpportunitySearchSuggestions:
         signal: str = "",
         count: int = 10,
     ) -> Dict[str, Any]:
-        universe_terms = self.UNIVERSE_TERMS.get(market_universe, self.UNIVERSE_TERMS["custom_universe"])
-        domain_terms = self.DOMAIN_TERMS.get(industry_domain, self.DOMAIN_TERMS["cross_sector"])
+        universe_needs = self.UNIVERSE_NEEDS.get(market_universe, self.UNIVERSE_NEEDS["custom_universe"])
+        domain_needs = self.DOMAIN_NEEDS.get(industry_domain, self.DOMAIN_NEEDS["cross_sector"])
         signal = (signal or "").strip()
 
-        patterns = [
-            "find {objective} in {universe} around {domain_term} for {buyer_segment}",
-            "identify urgent buyer pain where {universe_term} intersects with {domain_term}",
-            "discover productizable gaps caused by {domain_term} and {universe_term}",
-            "find acquirer-attractive capability gaps involving {domain_term}",
-            "map regulatory, technical, and adoption blockers around {domain_term}",
-            "generate a competitor-beating product wedge for {domain_term}",
-            "find under-served buyers with budget and urgency around {universe_term}",
-            "identify proof paths and pilot designs for {domain_term}",
-            "find market timing signals that make {domain_term} urgent now",
-            "generate adjacent opportunity spaces related to {domain_term}",
-        ]
-
-        suggestions: List[Dict[str, str]] = []
-        for index, pattern in enumerate(patterns):
-            domain_term = domain_terms[index % len(domain_terms)]
-            universe_term = universe_terms[index % len(universe_terms)]
-            query = pattern.format(
-                objective=objective.replace("_", " "),
-                universe=market_universe.replace("_", " "),
-                industry=industry_domain.replace("_", " "),
-                buyer_segment=buyer_segment.replace("_", " "),
-                domain_term=domain_term,
-                universe_term=universe_term,
-            )
+        directions: List[Dict[str, str]] = []
+        for index in range(max(1, min(count, 10))):
+            universe_need = universe_needs[index % len(universe_needs)]
+            domain_need = domain_needs[index % len(domain_needs)]
+            title = f"{domain_need.title()} for {market_universe.replace('_', ' ').title()}"
+            needed_solution = f"A productized solution addressing {domain_need} and {universe_need} for {buyer_segment.replace('_', ' ')}."
+            market_gap = f"Current workflows often lack integrated visibility, reviewability, and measurable ROI around {domain_need}."
             if signal:
-                query = f"{query}; user signal: {signal}"
-            suggestions.append({
-                "id": f"suggest_{index + 1}",
-                "query": query,
-                "workflow": workflow,
+                market_gap = f"{market_gap} User signal: {signal}"
+            directions.append({
+                "id": f"direction_{index + 1}",
+                "title": title,
                 "market_universe": market_universe,
                 "industry_domain": industry_domain,
                 "buyer_segment": buyer_segment,
                 "objective": objective,
-                "domain_term": domain_term,
-                "universe_term": universe_term,
+                "opportunity_direction": universe_need,
+                "market_gap": market_gap,
+                "needed_solution": needed_solution,
+                "why_now": "Increasing operational complexity, compliance pressure, and competitive pressure create a timely opening.",
+                "confidence_label": "directional",
             })
 
         return {
@@ -100,6 +126,6 @@ class OpportunitySearchSuggestions:
             "buyer_segment": buyer_segment,
             "objective": objective,
             "workflow": workflow,
-            "signal": signal,
-            "suggestions": suggestions[:max(1, min(count, len(suggestions)))],
+            "direction_count": len(directions),
+            "directions": directions,
         }

@@ -24,6 +24,7 @@ from claire.runtime.command_catalog import OpportunityCommandCatalog
 from claire.runtime.market_universe_taxonomy import MarketUniverseTaxonomy
 from claire.runtime.search_suggestions import OpportunitySearchSuggestions
 from claire.runtime.opportunity_seed_generator import OpportunitySeedGenerator
+from claire.runtime.opportunity_candidate_store import OPPORTUNITY_CANDIDATES
 
 DASHBOARD_DIR=PROJECT_ROOT/"src"/"frontend"/"export_dashboard"
 CATALOG=OpportunityCommandCatalog()
@@ -54,12 +55,13 @@ class Handler(BaseHTTPRequestHandler):
             if parsed.path=="/api/rescan": return self.json(RunHistory().rescan_exports("exports"))
             if parsed.path=="/api/evaluate": return self.json(self.eval_sync(self.body()))
             if parsed.path=="/api/evaluate/async": return self.json(self.eval_async(self.body()))
-            if parsed.path=="/api/commands/suggest": return self.json(self.suggest(self.body()))
-            if parsed.path=="/api/opportunities/generate": return self.json(self.generate(self.body()))
+            if parsed.path=="/api/opportunities/search-needed-solutions": return self.json(self.search_needed_solutions(self.body()))
+            if parsed.path=="/api/opportunities/generate": return self.json(self.generate_public_opportunities(self.body()))
+            if parsed.path=="/api/opportunities/run-candidate": return self.json(self.run_candidate(self.body()))
             self.send_error(404,"Not found")
         except Exception as e:
             self.json({"status":"error","error":str(e),"traceback":traceback.format_exc()},500)
-    def suggest(self,payload):
+    def search_needed_solutions(self,payload):
         return SUGGESTIONS.suggest(
             market_universe=payload.get("market_universe","custom_universe"),
             industry_domain=payload.get("industry_domain","cross_sector"),
@@ -69,8 +71,8 @@ class Handler(BaseHTTPRequestHandler):
             signal=payload.get("signal",""),
             count=int(payload.get("count",10) or 10),
         )
-    def generate(self,payload):
-        return SEEDS.generate(
+    def generate_public_opportunities(self,payload):
+        generated = SEEDS.generate(
             workflow=payload.get("workflow","discover"),
             execution_mode=payload.get("execution_mode","deterministic"),
             market_universe=payload.get("market_universe","custom_universe"),
@@ -81,6 +83,36 @@ class Handler(BaseHTTPRequestHandler):
             signal=payload.get("signal",""),
             count=int(payload.get("count",5) or 5),
         )
+        public_cards=[]
+        for candidate in generated.get("candidates", []):
+            candidate_id=OPPORTUNITY_CANDIDATES.put(candidate)
+            stored=OPPORTUNITY_CANDIDATES.get(candidate_id) or {}
+            public_cards.append(OPPORTUNITY_CANDIDATES.public_card(stored))
+        return {
+            "status":"success",
+            "candidate_count":len(public_cards),
+            "candidates":public_cards,
+            "workflow":generated.get("workflow"),
+            "execution_mode":generated.get("execution_mode"),
+            "market_universe":generated.get("market_universe"),
+            "industry_domain":generated.get("industry_domain"),
+            "buyer_segment":generated.get("buyer_segment"),
+            "objective":generated.get("objective"),
+        }
+    def run_candidate(self,payload):
+        candidate_id=payload.get("candidate_id")
+        candidate=OPPORTUNITY_CANDIDATES.get(candidate_id or "")
+        if not candidate: return {"status":"not_found","error":"candidate not found or expired"}
+        launch_payload={
+            "raw_input":candidate.get("raw_input",""),
+            "workflow":candidate.get("workflow"),
+            "execution_mode":candidate.get("execution_mode"),
+            "market_universe":candidate.get("market_universe"),
+            "industry_domain":candidate.get("industry_domain"),
+            "buyer_segment":candidate.get("buyer_segment"),
+            "objective":candidate.get("objective"),
+        }
+        return self.eval_async(launch_payload)
     def events(self,path,query):
         parts=[unquote(p) for p in path.split("/") if p]
         since=query.get("since",[None])[0]

@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claire Dashboard</title><link rel="stylesheet" href="./dashboard.css"></head>
-<body><header><div><div class="eyebrow">Claire Syntalion</div><h1>Market Universe Command Dashboard</h1><p>Discover, expand, optimize, launch, and browse Claire opportunity packages using industry-standard market-universe terminology.</p></div><div><button id="refreshBtn">Refresh</button><button id="rescanBtn">Rescan</button></div></header>
+<body><header><div><div class="eyebrow">Claire Syntalion</div><h1>Protected Opportunity Discovery Dashboard</h1><p>Search needed solutions market-wide, generate opportunity selections, run Claire, and browse export artifacts.</p></div><div><button id="refreshBtn">Refresh</button><button id="rescanBtn">Rescan</button></div></header>
 <main><aside>
-<section class="panel"><div class="row"><h2>Opportunity Launcher</h2><span id="liveBadge" class="badge">idle</span></div>
+<section class="panel"><div class="row"><h2>Opportunity Discovery</h2><span id="liveBadge" class="badge">idle</span></div>
 <label>Workflow Mode</label><select id="workflowSelect"></select>
 <label>Execution / Intelligence Mode</label><select id="executionModeSelect"></select>
 <label>Market Universe</label><select id="marketUniverseSelect"></select>
@@ -11,12 +11,12 @@
 <label>Opportunity Objective</label><select id="objectiveSelect"></select>
 <label>Command</label><select id="commandSelect"></select>
 <label>Signal / project description</label><textarea id="rawInput" placeholder="Describe a domain, market signal, buyer pain, competitor, product idea, or strategic opportunity..."></textarea>
-<p><button id="generateBtn">Generate Candidates</button><button id="suggestBtn">Search Suggestions</button></p>
+<p><button id="neededBtn">Search Needed Solutions Market-Wide</button><button id="generateBtn">Generate Opportunities Selection</button></p>
 <div id="candidateList" class="candidateList"></div>
-<p><button id="runBtn" class="primary">Run Claire</button><button id="clearBtn">Clear</button></p><div id="launchStatus" class="status">Ready.</div></section>
+<p><button id="runBtn" class="primary">Run Claire From Description</button><button id="clearBtn">Clear</button></p><div id="launchStatus" class="status">Ready. Internal discovery construction is protected and not displayed.</div></section>
 <section class="panel"><h2>Live Run Events</h2><div class="progress"><div id="progressBar"></div></div><div id="eventList" class="eventList"><div class="event muted">No active run.</div></div></section>
 <section class="panel history"><div class="row"><h2>Run History</h2><span id="runCount" class="badge">0</span></div><div id="statusBox" class="status">Loading...</div><div id="runList"></div></section></aside>
 <section class="panel detail"><div id="emptyState" class="empty"><h2>Select, generate, or launch a run</h2><p>Completed exports will appear here.</p></div><div id="detailState" class="hidden"><div class="detailHead"><div><div id="selectedSector" class="eyebrow"></div><h2 id="selectedTitle"></h2><p id="selectedMeta" class="muted"></p></div><div class="metrics"><div><span>Decision</span><b id="decisionValue">—</b></div><div><span>Export</span><b id="exportValue">—</b></div><div><span>Files</span><b id="filesValue">—</b></div></div></div>
 <nav class="tabs"><button class="tab active" data-tab="summary">Summary</button><button class="tab" data-tab="files">Files</button><button class="tab" data-tab="preview">Preview</button><button class="tab" data-tab="raw">Run JSON</button></nav>
 <div id="summaryTab"><div id="summaryCards" class="cards"></div></div><div id="filesTab" class="hidden"><div id="fileList"></div></div><div id="previewTab" class="hidden"><p><select id="fileSelect"></select><button id="loadPreviewBtn">Load Preview</button></p><pre id="previewBox">Choose a file.</pre></div><div id="rawTab" class="hidden"><pre id="rawBox">Select a run.</pre></div></div></section></main>
-<footer>Market universe and industry/domain are launcher terms. Claire still routes internally to deterministic, connected, or hybrid execution modes.</footer><script src="./dashboard.js"></script></body></html>
+<footer>Protected mode: the dashboard shows opportunity cards and market needs, not Claire's internal discovery construction.</footer><script src="./dashboard.js"></script></body></html>
