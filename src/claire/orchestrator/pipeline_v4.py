@@ -1,6 +1,6 @@
 
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.29 EXPORT PACKAGE)
+Claire Orchestrator — Deterministic Intelligence Engine (v5.33 EXPORT WRITER)
 """
 
 from typing import Dict, Any
@@ -26,6 +26,7 @@ from claire.engines.strategic_positioning_engine import StrategicPositioningEngi
 from claire.engines.deal_exit_modeling_engine import DealExitModelingEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.engines.export_package_engine import ExportPackageEngine
+from claire.export.export_writer import ExportWriter
 from claire.design.portal import DesignPortal
 from claire.portfolio.binder_builder import PortfolioBinderBuilder
 
@@ -55,10 +56,11 @@ class PipelineOrchestrator:
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
         self.export_package_engine = ExportPackageEngine()
+        self.export_writer = ExportWriter()
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.29 (EXPORT PACKAGE) <<<")
+        print(">>> RUNNING PIPELINE V5.33 (EXPORT WRITER) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
@@ -1004,6 +1006,43 @@ class PipelineOrchestrator:
             "package_manifest": export_package.get("package_manifest") if isinstance(export_package, dict) else None,
             "quality_checks": export_package.get("quality_checks") if isinstance(export_package, dict) else None,
             "confidence": export_package.get("confidence") if isinstance(export_package, dict) else None,
+        }
+
+        export_writer = self._safe_engine(
+            "export_writer_failed",
+            lambda: self.export_writer.write(
+                export_package=export_package,
+                output_root="exports",
+                run_id=getattr(intent, "run_id", None) or "unknown",
+                context={
+                    "decision_classification": decision,
+                    "breakthrough_classification": "HIGH" if breakthrough_signal > 0.65 else "LOW",
+                    "domain": domain,
+                    "keywords": keywords,
+                },
+            ),
+        )
+        data["export_writer"] = export_writer
+
+        export_writer_score = self._get(export_writer, "export_writer_score.score", 0.0) or 0.0
+        export_writer_level = self._get(export_writer, "export_writer_score.level", "")
+
+        scores["export_writer_score"] = export_writer_score
+
+        data["signal_trace"].update({
+            "export_writer_score": export_writer_score,
+            "export_writer_level": export_writer_level,
+            "export_output_dir": export_writer.get("output_dir") if isinstance(export_writer, dict) else None,
+        })
+
+        data["engine_details"]["signals"]["export_writer"] = export_writer_score
+        data["engine_details"]["export_writer"] = {
+            "export_writer_score": export_writer.get("export_writer_score") if isinstance(export_writer, dict) else None,
+            "output_dir": export_writer.get("output_dir") if isinstance(export_writer, dict) else None,
+            "written_file_count": export_writer.get("written_file_count") if isinstance(export_writer, dict) else None,
+            "manifest_path": export_writer.get("manifest_path") if isinstance(export_writer, dict) else None,
+            "index_path": export_writer.get("index_path") if isinstance(export_writer, dict) else None,
+            "confidence": export_writer.get("confidence") if isinstance(export_writer, dict) else None,
         }
 
         return ClaireResult(

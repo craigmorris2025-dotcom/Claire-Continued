@@ -1,0 +1,114 @@
+{
+  "created_at": "2026-04-30T17:58:33.924462",
+  "dry_run": true,
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "update_zip": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire_export_writer_package.zip",
+  "update_zip_sha256": "5e1b1669a643cc85cea6108eb671549126ff34072e23107619723b2951d580b6",
+  "update_mode": "manifest",
+  "update_manifest": {
+    "update_name": "export_writer_package",
+    "version": "v5.33",
+    "description": "Adds filesystem persistence for Claire export_package.documents under exports/claire_run_<timestamp>_*.",
+    "files": [
+      {
+        "source": "files/export_writer.py",
+        "target": "@export/export_writer.py",
+        "type": "python",
+        "action": "replace",
+        "required": true
+      },
+      {
+        "source": "files/export_init.py",
+        "target": "@export/__init__.py",
+        "type": "python",
+        "action": "replace",
+        "required": true
+      },
+      {
+        "source": "files/pipeline_v4.py",
+        "target": "@orchestrator/pipeline_v4.py",
+        "type": "python",
+        "action": "replace",
+        "required": true
+      },
+      {
+        "source": "files/contract.py",
+        "target": "@domain/contract.py",
+        "type": "python",
+        "action": "replace",
+        "required": true
+      },
+      {
+        "source": "files/exports_gitkeep",
+        "target": "@root/exports/.gitkeep",
+        "type": "text",
+        "action": "create_if_missing",
+        "required": true
+      }
+    ],
+    "post_install": {
+      "run_compile_check": true,
+      "run_regression_tests": true
+    },
+    "_manifest_member": "claire_update_manifest.json"
+  },
+  "backup_path": null,
+  "files": [
+    {
+      "source": "files/export_writer.py",
+      "target": "src/claire/export/export_writer.py",
+      "size": 8857,
+      "sha256": "6a1ed0ff8820cfb330c1ffa6076c8686603da04ef2dab784bf397a7ef821d154",
+      "exists": false,
+      "action": "create",
+      "file_type": "python",
+      "required": true
+    },
+    {
+      "source": "files/export_init.py",
+      "target": "src/claire/export/__init__.py",
+      "size": 98,
+      "sha256": "eff8333d32fdfceb7c23608eccbf689a029f065204a27c8859e3e8e31936b565",
+      "exists": false,
+      "action": "create",
+      "file_type": "python",
+      "required": true
+    },
+    {
+      "source": "files/pipeline_v4.py",
+      "target": "src/claire/orchestrator/pipeline_v4.py",
+      "size": 59169,
+      "sha256": "7fe9beb190c057f430b8a72ce3a0c287d8517092b245861b9b8f266ec140af3c",
+      "exists": true,
+      "action": "replace",
+      "file_type": "python",
+      "required": true
+    },
+    {
+      "source": "files/contract.py",
+      "target": "src/claire/domain/contract.py",
+      "size": 7577,
+      "sha256": "b81aaf530ae32a97a0ea5452bc71c5cf3b61ff023be2cc68a87d3c0bcbdb4cb8",
+      "exists": true,
+      "action": "replace",
+      "file_type": "python",
+      "required": true
+    },
+    {
+      "source": "files/exports_gitkeep",
+      "target": "exports/.gitkeep",
+      "size": 0,
+      "sha256": "",
+      "exists": false,
+      "action": "create_if_missing",
+      "file_type": "text",
+      "required": true
+    }
+  ],
+  "compile_results": [],
+  "json_results": [],
+  "verify_results": [],
+  "test_result": {
+    "ran": false
+  }
+}
