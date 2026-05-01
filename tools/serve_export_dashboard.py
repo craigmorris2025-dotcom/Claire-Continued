@@ -26,6 +26,8 @@ from claire.runtime.search_suggestions import OpportunitySearchSuggestions
 from claire.runtime.opportunity_seed_generator import OpportunitySeedGenerator
 from claire.runtime.opportunity_candidate_store import OPPORTUNITY_CANDIDATES
 from claire.feeds.feed_registry import FeedRegistry
+from claire.feeds.source_catalogs.public_company_sources import PublicCompanySourceCatalog
+from claire.feeds.source_catalogs.index_universe_registry import IndexUniverseRegistry
 from claire.governance.redline_classifier import RedlineClassifier
 from claire.governance.legal_audit_log import LegalAuditLog
 from claire.governance.feed_activation_policy import FeedActivationPolicy
@@ -37,6 +39,8 @@ TAXONOMY=MarketUniverseTaxonomy()
 SUGGESTIONS=OpportunitySearchSuggestions()
 SEEDS=OpportunitySeedGenerator()
 FEEDS=FeedRegistry()
+PUBLIC_COMPANY_SOURCES=PublicCompanySourceCatalog()
+INDEX_UNIVERSES=IndexUniverseRegistry()
 GOVERNANCE=RedlineClassifier()
 LEGAL_AUDIT=LegalAuditLog()
 FEED_POLICY=FeedActivationPolicy()
@@ -52,6 +56,8 @@ class Handler(BaseHTTPRequestHandler):
             if path=="/api/commands": return self.json(CATALOG.catalog())
             if path=="/api/market-universe": return self.json(TAXONOMY.catalog())
             if path=="/api/feeds/status": return self.json(FEEDS.status())
+            if path=="/api/feeds/public-company-sources": return self.json(PUBLIC_COMPANY_SOURCES.catalog())
+            if path=="/api/feeds/index-universes": return self.json(INDEX_UNIVERSES.all())
             if path=="/api/feeds/activation-status": return self.json(FEED_POLICY.status())
             if path=="/api/feeds/audit": return self.json(FEED_AUDIT.recent())
             if path=="/api/governance/audit": return self.json(LEGAL_AUDIT.recent())

@@ -113,4 +113,21 @@ async function loadFeedAudit(){
   }catch(e){}
 }
 
-document.addEventListener('DOMContentLoaded',()=>{loadCatalog();loadFeedStatus();loadFeedActivationStatus();loadRuns();el('refreshBtn').onclick=()=>loadRuns();el('rescanBtn').onclick=rescan;el('neededBtn').onclick=needed;el('generateBtn').onclick=generate;el('runBtn').onclick=launch;el('clearBtn').onclick=()=>{el('rawInput').value='';el('candidateList').innerHTML='';stat('launchStatus','Ready.')};el('loadPreviewBtn').onclick=()=>preview(el('fileSelect').value);document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab))});
+
+async function loadPublicCompanySourceCatalog(){
+  try{
+    const x=await api('/api/feeds/public-company-sources');
+    el('sourceCatalogBadge').textContent='cataloged';
+    el('sourceCatalogStatusBox').textContent=`Public-company catalog ready.\nSources: ${x.source_count}\nUniverses: ${x.universe_count}\nLive ingestion: not enabled`;
+    const list=el('sourceCatalogList'); list.innerHTML='';
+    (x.universes||[]).forEach(u=>{
+      const d=document.createElement('div'); d.className='sourceItem';
+      d.innerHTML=`<strong>${fmt(u.name)}</strong><div class="coverage">${fmt(u.coverage_target)}</div><div class="statusLine">Source category: ${fmt(u.source_category)} · Connected scan: ${fmt(u.connected_scan_status)}</div>`;
+      list.appendChild(d);
+    });
+  }catch(e){
+    if(el('sourceCatalogStatusBox')) el('sourceCatalogStatusBox').textContent='Source catalog unavailable: '+e.message;
+  }
+}
+
+document.addEventListener('DOMContentLoaded',()=>{loadCatalog();loadPublicCompanySourceCatalog();loadFeedStatus();loadFeedActivationStatus();loadRuns();el('refreshBtn').onclick=()=>loadRuns();el('rescanBtn').onclick=rescan;el('neededBtn').onclick=needed;el('generateBtn').onclick=generate;el('runBtn').onclick=launch;el('clearBtn').onclick=()=>{el('rawInput').value='';el('candidateList').innerHTML='';stat('launchStatus','Ready.')};el('loadPreviewBtn').onclick=()=>preview(el('fileSelect').value);document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab))});
