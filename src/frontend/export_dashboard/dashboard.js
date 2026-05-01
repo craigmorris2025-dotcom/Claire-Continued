@@ -130,4 +130,24 @@ async function loadPublicCompanySourceCatalog(){
   }
 }
 
-document.addEventListener('DOMContentLoaded',()=>{loadCatalog();loadPublicCompanySourceCatalog();loadFeedStatus();loadFeedActivationStatus();loadRuns();el('refreshBtn').onclick=()=>loadRuns();el('rescanBtn').onclick=rescan;el('neededBtn').onclick=needed;el('generateBtn').onclick=generate;el('runBtn').onclick=launch;el('clearBtn').onclick=()=>{el('rawInput').value='';el('candidateList').innerHTML='';stat('launchStatus','Ready.')};el('loadPreviewBtn').onclick=()=>preview(el('fileSelect').value);document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab))});
+
+async function loadOfflineUniverseResolver(){
+  try{
+    const status=await api('/api/feeds/offline-universe/status');
+    const p=payload();
+    const x=await api('/api/feeds/offline-universe/resolve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
+    const r=x.resolution||{};
+    el('offlineResolverBadge').textContent=status.live_ingestion_enabled?'live':'offline';
+    el('offlineResolverStatusBox').textContent=`Universe: ${fmt(r.name)}\nCoverage Target: ${fmt(r.coverage_target)}\nResolution: ${fmt(r.resolution_status)}\nConnected Scan: ${fmt(r.connected_scan_status)}\nDeterministic Fallback: ${r.deterministic_fallback?'ready':'unavailable'}`;
+    const list=el('offlineResolverList'); list.innerHTML='';
+    (r.coverage_buckets||[]).forEach(bucket=>{
+      const d=document.createElement('div'); d.className='offlineBucket';
+      d.innerHTML=`<strong>${fmt(bucket.name)}</strong><div>${fmt(bucket.purpose)}</div><div class="lens">${fmt(bucket.opportunity_lens)}</div>`;
+      list.appendChild(d);
+    });
+  }catch(e){
+    if(el('offlineResolverStatusBox')) el('offlineResolverStatusBox').textContent='Offline resolver unavailable: '+e.message;
+  }
+}
+
+document.addEventListener('DOMContentLoaded',()=>{loadCatalog();loadPublicCompanySourceCatalog();loadOfflineUniverseResolver();loadFeedStatus();loadFeedActivationStatus();loadRuns();el('refreshBtn').onclick=()=>loadRuns();el('rescanBtn').onclick=rescan;el('neededBtn').onclick=needed;el('generateBtn').onclick=generate;el('runBtn').onclick=launch;el('clearBtn').onclick=()=>{el('rawInput').value='';el('candidateList').innerHTML='';stat('launchStatus','Ready.')};el('loadPreviewBtn').onclick=()=>preview(el('fileSelect').value);document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab));['marketUniverseSelect','industryDomainSelect','buyerSegmentSelect','objectiveSelect'].forEach(id=>{const node=el(id); if(node) node.addEventListener('change',()=>loadOfflineUniverseResolver())})});

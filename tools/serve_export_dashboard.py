@@ -28,6 +28,7 @@ from claire.runtime.opportunity_candidate_store import OPPORTUNITY_CANDIDATES
 from claire.feeds.feed_registry import FeedRegistry
 from claire.feeds.source_catalogs.public_company_sources import PublicCompanySourceCatalog
 from claire.feeds.source_catalogs.index_universe_registry import IndexUniverseRegistry
+from claire.feeds.source_catalogs.offline_universe_resolver import OfflinePublicCompanyUniverseResolver
 from claire.governance.redline_classifier import RedlineClassifier
 from claire.governance.legal_audit_log import LegalAuditLog
 from claire.governance.feed_activation_policy import FeedActivationPolicy
@@ -41,6 +42,7 @@ SEEDS=OpportunitySeedGenerator()
 FEEDS=FeedRegistry()
 PUBLIC_COMPANY_SOURCES=PublicCompanySourceCatalog()
 INDEX_UNIVERSES=IndexUniverseRegistry()
+OFFLINE_UNIVERSE_RESOLVER=OfflinePublicCompanyUniverseResolver()
 GOVERNANCE=RedlineClassifier()
 LEGAL_AUDIT=LegalAuditLog()
 FEED_POLICY=FeedActivationPolicy()
@@ -58,6 +60,7 @@ class Handler(BaseHTTPRequestHandler):
             if path=="/api/feeds/status": return self.json(FEEDS.status())
             if path=="/api/feeds/public-company-sources": return self.json(PUBLIC_COMPANY_SOURCES.catalog())
             if path=="/api/feeds/index-universes": return self.json(INDEX_UNIVERSES.all())
+            if path=="/api/feeds/offline-universe/status": return self.json(OFFLINE_UNIVERSE_RESOLVER.status())
             if path=="/api/feeds/activation-status": return self.json(FEED_POLICY.status())
             if path=="/api/feeds/audit": return self.json(FEED_AUDIT.recent())
             if path=="/api/governance/audit": return self.json(LEGAL_AUDIT.recent())
@@ -74,6 +77,7 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if parsed.path=="/api/governance/evaluate": return self.json(self.governance_evaluate(self.body()))
             if parsed.path=="/api/feeds/activation-check": return self.json(self.feed_activation_check(self.body()))
+            if parsed.path=="/api/feeds/offline-universe/resolve": return self.json(self.resolve_offline_universe(self.body()))
             if parsed.path=="/api/feeds/scan": return self.json(self.scan_feed(self.body()))
             if parsed.path=="/api/rescan": return self.json(RunHistory().rescan_exports("exports"))
             if parsed.path=="/api/evaluate": return self.json(self.eval_sync(self.body()))
@@ -97,6 +101,13 @@ class Handler(BaseHTTPRequestHandler):
         decision=GOVERNANCE.classify(text,context)
         audit=LEGAL_AUDIT.log("governance_evaluation",decision,context)
         return {"status":"success","decision":decision,"audit_event":audit}
+    def resolve_offline_universe(self,payload):
+        return OFFLINE_UNIVERSE_RESOLVER.resolve(
+            market_universe=payload.get("market_universe","sp500_public"),
+            industry_domain=payload.get("industry_domain","cross_sector"),
+            buyer_segment=payload.get("buyer_segment","enterprise_c_suite"),
+            objective=payload.get("objective","discover_market_gaps"),
+        )
     def feed_activation_check(self,payload):
         decision=FEED_POLICY.evaluate(payload)
         audit=FEED_AUDIT.log("feed_activation_check",decision,payload)
