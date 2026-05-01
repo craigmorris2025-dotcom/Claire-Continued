@@ -20,8 +20,15 @@ from claire.orchestrator.pipeline_v4 import PipelineOrchestrator
 from claire.runtime.export_browser import ExportBrowser
 from claire.runtime.run_history import RunHistory
 from claire.runtime.run_events import RUN_EVENTS
+from claire.runtime.command_catalog import OpportunityCommandCatalog
+from claire.runtime.search_suggestions import OpportunitySearchSuggestions
+from claire.runtime.opportunity_seed_generator import OpportunitySeedGenerator
 
 DASHBOARD_DIR=PROJECT_ROOT/"src"/"frontend"/"export_dashboard"
+CATALOG=OpportunityCommandCatalog()
+SUGGESTIONS=OpportunitySearchSuggestions()
+SEEDS=OpportunitySeedGenerator()
+
 TEMPLATES=[
  {"id":"defense_control_gated","name":"Defense autonomy / control-gated","raw_input":"A secure mission intelligence platform that ingests authorized mission context, sensor summaries, operator constraints, and simulation results to recommend advisory coordination options for human review. The system does not automate operational decisions. It runs mission simulations, scores coordination risk, routes recommendations through a secure command review console, requires human authorization, records override decisions, and preserves a mission-use audit log. The buyer pain is that defense teams need reviewable autonomy support in contested environments, but deployment must remain control-gated with allowed-use boundaries, operator trust, and auditability."},
  {"id":"climate_insurance","name":"Climate insurance / underwriting","raw_input":"A climate insurance risk intelligence platform for insurers, reinsurers, and underwriting teams that combines historical weather losses, property exposure data, catastrophe scenarios, regional climate concentration, premium adequacy signals, and market withdrawal patterns. The system detects repricing pressure before legacy underwriting workflows react, generates exposure benchmarks, recommends risk-transfer countermeasures, and routes all pricing-impact outputs through underwriter review controls with scenario versioning and audit logs."}
@@ -35,6 +42,7 @@ class Handler(BaseHTTPRequestHandler):
             if path in {"/","/index.html"}: return self.file(DASHBOARD_DIR/"index.html")
             if path in {"/dashboard.css","/dashboard.js"}: return self.file(DASHBOARD_DIR/path.lstrip("/"))
             if path=="/api/templates": return self.json({"status":"success","templates":TEMPLATES})
+            if path=="/api/commands": return self.json(CATALOG.catalog())
             if path=="/api/runs": return self.json(ExportBrowser().list_runs(limit=200,rescan_if_empty=True))
             if path=="/api/summary": return self.json(ExportBrowser().summary())
             if path=="/api/events": return self.json(RUN_EVENTS.list())
@@ -49,9 +57,15 @@ class Handler(BaseHTTPRequestHandler):
             if parsed.path=="/api/rescan": return self.json(RunHistory().rescan_exports("exports"))
             if parsed.path=="/api/evaluate": return self.json(self.eval_sync(self.body()))
             if parsed.path=="/api/evaluate/async": return self.json(self.eval_async(self.body()))
+            if parsed.path=="/api/commands/suggest": return self.json(self.suggest(self.body()))
+            if parsed.path=="/api/opportunities/generate": return self.json(self.generate(self.body()))
             self.send_error(404,"Not found")
         except Exception as e:
             self.json({"status":"error","error":str(e),"traceback":traceback.format_exc()},500)
+    def suggest(self,payload):
+        return SUGGESTIONS.suggest(sector=payload.get("sector","cross_sector"),workflow=payload.get("workflow","discover"),signal=payload.get("signal",""),count=int(payload.get("count",10) or 10))
+    def generate(self,payload):
+        return SEEDS.generate(workflow=payload.get("workflow","discover"),execution_mode=payload.get("execution_mode","deterministic"),sector=payload.get("sector","cross_sector"),command_id=payload.get("command_id","discover_non_obvious"),signal=payload.get("signal",""),count=int(payload.get("count",5) or 5))
     def events(self,path,query):
         parts=[unquote(p) for p in path.split("/") if p]
         since=query.get("since",[None])[0]
@@ -60,15 +74,18 @@ class Handler(BaseHTTPRequestHandler):
     def eval_async(self,payload):
         raw=(payload.get("raw_input") or payload.get("text") or "").strip()
         if not raw: return {"status":"validation_failed","error":"raw_input is required"}
-        run_id=RUN_EVENTS.create_run(raw[:80]+("..." if len(raw)>80 else ""),{"source":"dashboard"})
-        threading.Thread(target=self.worker,args=(run_id,raw),daemon=True).start()
+        run_id=RUN_EVENTS.create_run(raw[:80]+("..." if len(raw)>80 else ""),{"source":"dashboard","workflow":payload.get("workflow"),"execution_mode":payload.get("execution_mode")})
+        threading.Thread(target=self.worker,args=(run_id,raw,payload),daemon=True).start()
         RUN_EVENTS.add(run_id,"started","Background Claire evaluation started.","launcher",3)
         return {"status":"started","event_run_id":run_id}
-    def worker(self,run_id,raw):
+    def worker(self,run_id,raw,payload):
         try:
             RUN_EVENTS.add(run_id,"stage_started","Validating request.","contract",6)
-            intent=ContractValidator().validate_intent({"raw_input":raw,"metadata":{"source":"dashboard","priority":"high"}})
-            RUN_EVENTS.add(run_id,"stage_complete","Contract validation complete.","contract",10)
+            mode=payload.get("execution_mode") or "deterministic"
+            if mode == "connected_intelligence": mode = "connected"
+            if mode not in {"deterministic","connected","hybrid"}: mode="deterministic"
+            intent=ContractValidator().validate_intent({"raw_input":raw,"mode":mode,"metadata":{"source":"dashboard","priority":"high","workflow":payload.get("workflow")}})
+            RUN_EVENTS.add(run_id,"stage_complete",f"Contract validation complete. Execution mode: {mode}.","contract",10)
             RUN_EVENTS.add(run_id,"stage_started","Running Claire pipeline.","pipeline",15)
             result=PipelineOrchestrator().execute(intent)
             data=result.to_dict() if hasattr(result,"to_dict") else result
@@ -86,7 +103,10 @@ class Handler(BaseHTTPRequestHandler):
     def eval_sync(self,payload):
         raw=(payload.get("raw_input") or payload.get("text") or "").strip()
         if not raw: return {"status":"validation_failed","error":"raw_input is required"}
-        intent=ContractValidator().validate_intent({"raw_input":raw,"metadata":{"source":"dashboard","priority":"high"}})
+        mode=payload.get("execution_mode") or "deterministic"
+        if mode=="connected_intelligence": mode="connected"
+        if mode not in {"deterministic","connected","hybrid"}: mode="deterministic"
+        intent=ContractValidator().validate_intent({"raw_input":raw,"mode":mode,"metadata":{"source":"dashboard","priority":"high","workflow":payload.get("workflow")}})
         result=PipelineOrchestrator().execute(intent)
         data=result.to_dict() if hasattr(result,"to_dict") else result
         RunHistory().rescan_exports("exports")
