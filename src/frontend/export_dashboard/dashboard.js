@@ -8,7 +8,7 @@ function payload(){return {workflow:el('workflowSelect').value,execution_mode:el
 function cardHtml(c, isCandidate=true){return `<div class="candidate"><strong>${fmt(c.title)}</strong><div class="field"><b>Market Gap:</b> ${fmt(c.market_gap)}</div><div class="field"><b>Needed Solution:</b> ${fmt(c.needed_solution)}</div><div class="field"><b>Opportunity Direction:</b> ${fmt(c.opportunity_direction)}</div><div class="field"><b>Why Now:</b> ${fmt(c.why_now)}</div>${isCandidate?`<div class="field"><b>Selection Score:</b> ${fmt(c.selection_score)} · ${fmt(c.confidence_label)}</div><button data-run="${c.candidate_id}">Run This Opportunity</button>`:''}</div>`}
 async function needed(){stat('launchStatus','Searching market-wide needed solution areas...');const x=await api('/api/opportunities/search-needed-solutions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload())});const box=el('candidateList');box.innerHTML='';(x.directions||[]).forEach(c=>{const wrap=document.createElement('div');wrap.innerHTML=cardHtml(c,false);box.appendChild(wrap.firstChild)});stat('launchStatus',`Found ${(x.directions||[]).length} needed solution direction(s).`)}
 async function generate(){stat('launchStatus','Generating protected opportunity selection...');const x=await api('/api/opportunities/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload())});const box=el('candidateList');box.innerHTML='';(x.candidates||[]).forEach(c=>{const wrap=document.createElement('div');wrap.innerHTML=cardHtml(c,true);const node=wrap.firstChild;node.querySelector('button').onclick=()=>runCandidate(c.candidate_id);box.appendChild(node)});stat('launchStatus',`Generated ${(x.candidates||[]).length} opportunity candidate(s). Internal construction protected.`)}
-async function runCandidate(id){resetEvents();stat('launchStatus','Launching selected opportunity...');const x=await api('/api/opportunities/run-candidate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({candidate_id:id})});state.active=x.event_run_id;watch()}
+async function runCandidate(id){resetEvents();stat('launchStatus','Launching selected opportunity...');const x=await api('/api/opportunities/run-candidate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({candidate_id:id})});if(x.status==='blocked'){stat('launchStatus','Blocked by governance hard stop. See audit panel.',true);loadAuditLog();return}state.active=x.event_run_id;watch()}
 function title(r){return r.category_name||r.sector||r.folder_name||r.run_id||'Claire run'}
 function renderRuns(){const list=el('runList');list.innerHTML='';el('runCount').textContent=state.runs.length;if(!state.runs.length){list.innerHTML='<div class="status">No runs found.</div>';return} state.runs.forEach(r=>{const d=document.createElement('div');d.className='runCard'+(state.selected&&state.selected.run_id===r.run_id?' active':'');d.innerHTML=`<strong>${fmt(title(r))}</strong><div class="meta">${fmt(r.created_at)}<br>Sector: ${fmt(r.sector)}<br>Decision: ${fmt(r.decision_classification)} · Files: ${fmt(r.written_file_count)}</div>`;d.onclick=()=>selectRun(r);list.appendChild(d)})}
 function renderCards(r){const c=[['Run ID',r.run_id],['Output Folder',r.output_dir],['Domain',r.domain],['Sector',r.sector],['Category',r.category_name],['Decision',r.decision_classification],['Breakthrough',r.breakthrough_classification],['Portfolio Score',r.portfolio_score],['Export Level',r.export_package_level],['Export Score',r.export_package_score],['Documents',r.document_count],['Written Files',r.written_file_count]];el('summaryCards').innerHTML=c.map(([a,b])=>`<div class="card"><h3>${a}</h3><p>${fmt(b)}</p></div>`).join('')}
@@ -22,7 +22,7 @@ function resetEvents(){state.cursor=0;el('eventList').innerHTML='';el('progressB
 function addEvents(events){for(const ev of events){const d=document.createElement('div');d.className='event '+(ev.event_type==='complete'?'complete':ev.level==='error'?'error':'');d.innerHTML=`<strong>${fmt(ev.stage)} · ${fmt(ev.event_type)}</strong><div>${fmt(ev.message)}</div><div class="muted">${fmt(ev.timestamp)}</div>`;el('eventList').prepend(d);if(ev.progress!==undefined&&ev.progress!==null)el('progressBar').style.width=Math.max(0,Math.min(100,ev.progress))+'%'}}
 async function poll(){if(!state.active)return;try{const x=await api(`/api/events/${state.active}?since=${state.cursor}`);addEvents(x.events||[]);state.cursor=x.event_count||state.cursor;if(x.status==='complete'||x.status==='error'){clearInterval(state.timer);state.timer=null;el('liveBadge').textContent=x.status;if(x.result){await loadRuns(x.result.run_id||x.result.folder_name)}stat('launchStatus',x.status==='complete'?'Run complete.':'Run failed: '+fmt(x.error),x.status==='error')}}catch(e){}}
 function watch(){stat('launchStatus','Run started. Watching live events...');if(state.timer)clearInterval(state.timer);state.timer=setInterval(poll,900);poll()}
-async function launch(){const raw=el('rawInput').value.trim();if(!raw){stat('launchStatus','Add raw input before launching.',true);return}el('runBtn').disabled=true;resetEvents();try{const p=payload();p.raw_input=raw;const x=await api('/api/evaluate/async',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});state.active=x.event_run_id;watch()}catch(e){stat('launchStatus','Run failed to start: '+e.message,true)}finally{setTimeout(()=>{el('runBtn').disabled=false},1200)}}
+async function launch(){const raw=el('rawInput').value.trim();if(!raw){stat('launchStatus','Add raw input before launching.',true);return}const gov=await governanceCheck();if(gov.decision==='block'){stat('launchStatus','Blocked by governance hard stop. See audit panel.',true);return}el('runBtn').disabled=true;resetEvents();try{const p=payload();p.raw_input=raw;const x=await api('/api/evaluate/async',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});state.active=x.event_run_id;watch()}catch(e){stat('launchStatus','Run failed to start: '+e.message,true)}finally{setTimeout(()=>{el('runBtn').disabled=false},1200)}}
 
 async function loadFeedStatus(){
   try{
@@ -38,6 +38,37 @@ async function loadFeedStatus(){
   }catch(e){
     if(el('feedStatusBox')) el('feedStatusBox').textContent='Feed status unavailable: '+e.message;
   }
+}
+
+
+async function governanceCheck(){
+  const p=payload();
+  p.raw_input=el('rawInput').value;
+  try{
+    const x=await api('/api/governance/evaluate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
+    const d=x.decision||{};
+    el('governanceBadge').textContent=d.decision||'allow';
+    el('governanceStatusBox').textContent=`Decision: ${fmt(d.decision)}\nDefense Classification: ${fmt(d.defense_classification)}\nLegal Status: ${fmt(d.legal_status)}\nSeverity: ${fmt(d.severity)}\nAction: ${fmt(d.recommended_action)}\nReason: ${fmt(d.reason_summary)}`;
+    loadAuditLog();
+    return d;
+  }catch(e){
+    el('governanceStatusBox').textContent='Governance check unavailable: '+e.message;
+    return {decision:'allow'};
+  }
+}
+async function loadAuditLog(){
+  try{
+    const x=await api('/api/governance/audit');
+    const list=el('auditList'); if(!list) return;
+    list.innerHTML='';
+    (x.events||[]).slice(0,8).forEach(ev=>{
+      const d=document.createElement('div');
+      const decision=ev.decision||'allow';
+      d.className='auditItem '+(decision==='block'?'block':decision==='review'?'review':'allow');
+      d.innerHTML=`<strong>${fmt(ev.event_type)} · ${fmt(decision)}</strong><div>${fmt(ev.defense_classification)} · ${fmt(ev.legal_status)}</div><div class="muted">${fmt(ev.timestamp)}</div>`;
+      list.appendChild(d);
+    });
+  }catch(e){}
 }
 
 document.addEventListener('DOMContentLoaded',()=>{loadCatalog();loadFeedStatus();loadRuns();el('refreshBtn').onclick=()=>loadRuns();el('rescanBtn').onclick=rescan;el('neededBtn').onclick=needed;el('generateBtn').onclick=generate;el('runBtn').onclick=launch;el('clearBtn').onclick=()=>{el('rawInput').value='';el('candidateList').innerHTML='';stat('launchStatus','Ready.')};el('loadPreviewBtn').onclick=()=>preview(el('fileSelect').value);document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab))});

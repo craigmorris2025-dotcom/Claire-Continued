@@ -26,6 +26,8 @@ from claire.runtime.search_suggestions import OpportunitySearchSuggestions
 from claire.runtime.opportunity_seed_generator import OpportunitySeedGenerator
 from claire.runtime.opportunity_candidate_store import OPPORTUNITY_CANDIDATES
 from claire.feeds.feed_registry import FeedRegistry
+from claire.governance.redline_classifier import RedlineClassifier
+from claire.governance.legal_audit_log import LegalAuditLog
 
 DASHBOARD_DIR=PROJECT_ROOT/"src"/"frontend"/"export_dashboard"
 CATALOG=OpportunityCommandCatalog()
@@ -33,6 +35,8 @@ TAXONOMY=MarketUniverseTaxonomy()
 SUGGESTIONS=OpportunitySearchSuggestions()
 SEEDS=OpportunitySeedGenerator()
 FEEDS=FeedRegistry()
+GOVERNANCE=RedlineClassifier()
+LEGAL_AUDIT=LegalAuditLog()
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args): print("[dashboard]", fmt % args)
@@ -44,6 +48,7 @@ class Handler(BaseHTTPRequestHandler):
             if path=="/api/commands": return self.json(CATALOG.catalog())
             if path=="/api/market-universe": return self.json(TAXONOMY.catalog())
             if path=="/api/feeds/status": return self.json(FEEDS.status())
+            if path=="/api/governance/audit": return self.json(LEGAL_AUDIT.recent())
             if path=="/api/runs": return self.json(ExportBrowser().list_runs(limit=200,rescan_if_empty=True))
             if path=="/api/summary": return self.json(ExportBrowser().summary())
             if path=="/api/events": return self.json(RUN_EVENTS.list())
@@ -55,6 +60,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         parsed=urlparse(self.path)
         try:
+            if parsed.path=="/api/governance/evaluate": return self.json(self.governance_evaluate(self.body()))
             if parsed.path=="/api/feeds/scan": return self.json(self.scan_feed(self.body()))
             if parsed.path=="/api/rescan": return self.json(RunHistory().rescan_exports("exports"))
             if parsed.path=="/api/evaluate": return self.json(self.eval_sync(self.body()))
@@ -65,12 +71,31 @@ class Handler(BaseHTTPRequestHandler):
             self.send_error(404,"Not found")
         except Exception as e:
             self.json({"status":"error","error":str(e),"traceback":traceback.format_exc()},500)
+    def governance_evaluate(self,payload):
+        text=(payload.get("raw_input") or payload.get("signal") or payload.get("text") or "")
+        context={
+            "workflow":payload.get("workflow"),
+            "execution_mode":payload.get("execution_mode"),
+            "market_universe":payload.get("market_universe"),
+            "industry_domain":payload.get("industry_domain"),
+            "buyer_segment":payload.get("buyer_segment"),
+            "objective":payload.get("objective"),
+        }
+        decision=GOVERNANCE.classify(text,context)
+        audit=LEGAL_AUDIT.log("governance_evaluation",decision,context)
+        return {"status":"success","decision":decision,"audit_event":audit}
     def scan_feed(self,payload):
-        return FEEDS.scan(
+        decision=GOVERNANCE.classify(payload.get("signal",""),payload)
+        LEGAL_AUDIT.log("feed_scan_precheck",decision,payload)
+        if decision.get("decision")=="block":
+            return {"status":"blocked","decision":decision}
+        result=FEEDS.scan(
             market_universe=payload.get("market_universe","custom_universe"),
             mode=payload.get("execution_mode","deterministic"),
             filters=payload,
         )
+        result["governance_decision"]=decision
+        return result
     def search_needed_solutions(self,payload):
         return SUGGESTIONS.suggest(
             market_universe=payload.get("market_universe","custom_universe"),
@@ -138,8 +163,14 @@ class Handler(BaseHTTPRequestHandler):
             "industry_domain":payload.get("industry_domain"),
             "buyer_segment":payload.get("buyer_segment"),
             "objective":payload.get("objective"),
+            "execution_mode":payload.get("execution_mode"),
         }
+        governance_decision=GOVERNANCE.classify(raw,metadata)
+        LEGAL_AUDIT.log("dashboard_launch_precheck",governance_decision,metadata)
+        if governance_decision.get("decision")=="block":
+            return {"status":"blocked","decision":governance_decision}
         run_id=RUN_EVENTS.create_run(raw[:80]+("..." if len(raw)>80 else ""),metadata)
+        RUN_EVENTS.add(run_id,"stage_complete","Governance precheck: "+governance_decision.get("decision","allow"),"governance",4,governance_decision)
         threading.Thread(target=self.worker,args=(run_id,raw,payload),daemon=True).start()
         RUN_EVENTS.add(run_id,"started","Background Claire evaluation started.","launcher",3)
         return {"status":"started","event_run_id":run_id}
