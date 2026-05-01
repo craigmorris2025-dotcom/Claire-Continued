@@ -1,85 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Claire Dashboard</title>
-<link rel="stylesheet" href="./dashboard.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claire Dashboard</title><link rel="stylesheet" href="./dashboard.css">
 </head>
 <body>
-<header>
-  <div>
-    <div class="eyebrow">Claire Syntalion</div>
-    <h1>Run Launcher + Export Dashboard</h1>
-    <p>Launch deterministic evaluations and browse generated export artifacts.</p>
-  </div>
-  <div class="actions">
-    <button id="refreshBtn">Refresh</button>
-    <button id="rescanBtn">Rescan</button>
-  </div>
-</header>
-
+<header><div><div class="eyebrow">Claire Syntalion</div><h1>Live Run Launcher + Export Dashboard</h1><p>Launch evaluations, watch live events, and browse export artifacts.</p></div><div><button id="refreshBtn">Refresh</button><button id="rescanBtn">Rescan</button></div></header>
 <main>
-  <aside>
-    <section class="panel">
-      <div class="row"><h2>Launch Run</h2><span class="badge">local</span></div>
-      <label>Template</label>
-      <select id="templateSelect"><option value="">Custom input</option></select>
-      <label>Raw input</label>
-      <textarea id="rawInput" placeholder="Describe the market, system, buyer, product, risks, controls, or strategic opportunity..."></textarea>
-      <div class="actions">
-        <button id="runBtn" class="primary">Run Claire</button>
-        <button id="clearBtn">Clear</button>
-      </div>
-      <div id="launchStatus" class="status">Ready.</div>
-    </section>
-
-    <section class="panel history">
-      <div class="row"><h2>Run History</h2><span id="runCount" class="badge">0</span></div>
-      <div id="statusBox" class="status">Loading...</div>
-      <div id="runList"></div>
-    </section>
-  </aside>
-
-  <section class="panel detail">
-    <div id="emptyState" class="empty">
-      <h2>Select or launch a run</h2>
-      <p>Completed Claire export packages will appear here.</p>
-    </div>
-
-    <div id="detailState" class="hidden">
-      <div class="detailHead">
-        <div>
-          <div id="selectedSector" class="eyebrow"></div>
-          <h2 id="selectedTitle"></h2>
-          <p id="selectedMeta" class="muted"></p>
-        </div>
-        <div class="metrics">
-          <div><span>Decision</span><strong id="decisionValue">—</strong></div>
-          <div><span>Export</span><strong id="exportValue">—</strong></div>
-          <div><span>Files</span><strong id="filesValue">—</strong></div>
-        </div>
-      </div>
-
-      <nav class="tabs">
-        <button class="tab active" data-tab="summary">Summary</button>
-        <button class="tab" data-tab="files">Files</button>
-        <button class="tab" data-tab="preview">Preview</button>
-        <button class="tab" data-tab="raw">Run JSON</button>
-      </nav>
-
-      <div id="summaryTab" class="tabPane"><div id="summaryCards" class="cards"></div></div>
-      <div id="filesTab" class="tabPane hidden"><div id="fileList"></div></div>
-      <div id="previewTab" class="tabPane hidden">
-        <div class="actions"><select id="fileSelect"></select><button id="loadPreviewBtn">Load Preview</button></div>
-        <pre id="previewBox">Choose a file to preview.</pre>
-      </div>
-      <div id="rawTab" class="tabPane hidden"><pre id="rawBox">Select a run.</pre></div>
-    </div>
-  </section>
+<aside>
+<section class="panel"><div class="row"><h2>Launch Run</h2><span id="liveBadge" class="badge">idle</span></div><label>Template</label><select id="templateSelect"><option value="">Custom input</option></select><label>Raw input</label><textarea id="rawInput" placeholder="Describe the opportunity, product, market, buyer, risks, controls, or strategy..."></textarea><p><button id="runBtn" class="primary">Run Claire</button><button id="clearBtn">Clear</button></p><div id="launchStatus" class="status">Ready.</div></section>
+<section class="panel"><h2>Live Run Events</h2><div class="progress"><div id="progressBar"></div></div><div id="eventList" class="eventList"><div class="event muted">No active run.</div></div></section>
+<section class="panel history"><div class="row"><h2>Run History</h2><span id="runCount" class="badge">0</span></div><div id="statusBox" class="status">Loading...</div><div id="runList"></div></section>
+</aside>
+<section class="panel detail"><div id="emptyState" class="empty"><h2>Select or launch a run</h2><p>Completed exports will appear here.</p></div><div id="detailState" class="hidden"><div class="detailHead"><div><div id="selectedSector" class="eyebrow"></div><h2 id="selectedTitle"></h2><p id="selectedMeta" class="muted"></p></div><div class="metrics"><div><span>Decision</span><b id="decisionValue">—</b></div><div><span>Export</span><b id="exportValue">—</b></div><div><span>Files</span><b id="filesValue">—</b></div></div></div>
+<nav class="tabs"><button class="tab active" data-tab="summary">Summary</button><button class="tab" data-tab="files">Files</button><button class="tab" data-tab="preview">Preview</button><button class="tab" data-tab="raw">Run JSON</button></nav>
+<div id="summaryTab"><div id="summaryCards" class="cards"></div></div><div id="filesTab" class="hidden"><div id="fileList"></div></div><div id="previewTab" class="hidden"><p><select id="fileSelect"></select><button id="loadPreviewBtn">Load Preview</button></p><pre id="previewBox">Choose a file.</pre></div><div id="rawTab" class="hidden"><pre id="rawBox">Select a run.</pre></div></div></section>
 </main>
-
-<footer>Data source: <code>data/runs/run_history.json</code>, <code>exports/index.json</code>, and <code>exports/claire_run_*/</code>.</footer>
-<script src="./dashboard.js"></script>
-</body>
-</html>
+<footer>Live events are in-memory for the active server. Completed artifacts persist in <code>exports/</code>.</footer><script src="./dashboard.js"></script>
+</body></html>
