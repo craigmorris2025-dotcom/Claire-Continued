@@ -25,12 +25,14 @@ from claire.runtime.market_universe_taxonomy import MarketUniverseTaxonomy
 from claire.runtime.search_suggestions import OpportunitySearchSuggestions
 from claire.runtime.opportunity_seed_generator import OpportunitySeedGenerator
 from claire.runtime.opportunity_candidate_store import OPPORTUNITY_CANDIDATES
+from claire.feeds.feed_registry import FeedRegistry
 
 DASHBOARD_DIR=PROJECT_ROOT/"src"/"frontend"/"export_dashboard"
 CATALOG=OpportunityCommandCatalog()
 TAXONOMY=MarketUniverseTaxonomy()
 SUGGESTIONS=OpportunitySearchSuggestions()
 SEEDS=OpportunitySeedGenerator()
+FEEDS=FeedRegistry()
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args): print("[dashboard]", fmt % args)
@@ -41,6 +43,7 @@ class Handler(BaseHTTPRequestHandler):
             if path in {"/dashboard.css","/dashboard.js"}: return self.file(DASHBOARD_DIR/path.lstrip("/"))
             if path=="/api/commands": return self.json(CATALOG.catalog())
             if path=="/api/market-universe": return self.json(TAXONOMY.catalog())
+            if path=="/api/feeds/status": return self.json(FEEDS.status())
             if path=="/api/runs": return self.json(ExportBrowser().list_runs(limit=200,rescan_if_empty=True))
             if path=="/api/summary": return self.json(ExportBrowser().summary())
             if path=="/api/events": return self.json(RUN_EVENTS.list())
@@ -52,6 +55,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         parsed=urlparse(self.path)
         try:
+            if parsed.path=="/api/feeds/scan": return self.json(self.scan_feed(self.body()))
             if parsed.path=="/api/rescan": return self.json(RunHistory().rescan_exports("exports"))
             if parsed.path=="/api/evaluate": return self.json(self.eval_sync(self.body()))
             if parsed.path=="/api/evaluate/async": return self.json(self.eval_async(self.body()))
@@ -61,6 +65,12 @@ class Handler(BaseHTTPRequestHandler):
             self.send_error(404,"Not found")
         except Exception as e:
             self.json({"status":"error","error":str(e),"traceback":traceback.format_exc()},500)
+    def scan_feed(self,payload):
+        return FEEDS.scan(
+            market_universe=payload.get("market_universe","custom_universe"),
+            mode=payload.get("execution_mode","deterministic"),
+            filters=payload,
+        )
     def search_needed_solutions(self,payload):
         return SUGGESTIONS.suggest(
             market_universe=payload.get("market_universe","custom_universe"),

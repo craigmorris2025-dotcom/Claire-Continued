@@ -23,4 +23,21 @@ function addEvents(events){for(const ev of events){const d=document.createElemen
 async function poll(){if(!state.active)return;try{const x=await api(`/api/events/${state.active}?since=${state.cursor}`);addEvents(x.events||[]);state.cursor=x.event_count||state.cursor;if(x.status==='complete'||x.status==='error'){clearInterval(state.timer);state.timer=null;el('liveBadge').textContent=x.status;if(x.result){await loadRuns(x.result.run_id||x.result.folder_name)}stat('launchStatus',x.status==='complete'?'Run complete.':'Run failed: '+fmt(x.error),x.status==='error')}}catch(e){}}
 function watch(){stat('launchStatus','Run started. Watching live events...');if(state.timer)clearInterval(state.timer);state.timer=setInterval(poll,900);poll()}
 async function launch(){const raw=el('rawInput').value.trim();if(!raw){stat('launchStatus','Add raw input before launching.',true);return}el('runBtn').disabled=true;resetEvents();try{const p=payload();p.raw_input=raw;const x=await api('/api/evaluate/async',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});state.active=x.event_run_id;watch()}catch(e){stat('launchStatus','Run failed to start: '+e.message,true)}finally{setTimeout(()=>{el('runBtn').disabled=false},1200)}}
-document.addEventListener('DOMContentLoaded',()=>{loadCatalog();loadRuns();el('refreshBtn').onclick=()=>loadRuns();el('rescanBtn').onclick=rescan;el('neededBtn').onclick=needed;el('generateBtn').onclick=generate;el('runBtn').onclick=launch;el('clearBtn').onclick=()=>{el('rawInput').value='';el('candidateList').innerHTML='';stat('launchStatus','Ready.')};el('loadPreviewBtn').onclick=()=>preview(el('fileSelect').value);document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab))});
+
+async function loadFeedStatus(){
+  try{
+    const x=await api('/api/feeds/status');
+    el('feedBadge').textContent=x.feed_layer||'scaffold';
+    el('feedStatusBox').textContent=`Connected ingestion: ${x.connected_ingestion_enabled?'enabled':'not enabled'} · Deterministic fallback: ${x.deterministic_fallback_enabled?'ready':'unavailable'} · Coverage universes: ${x.coverage_count}`;
+    const list=el('feedCoverageList'); list.innerHTML='';
+    (x.coverage||[]).forEach(item=>{
+      const d=document.createElement('div'); d.className='feedItem';
+      d.innerHTML=`<strong>${item.display_name}</strong><div class="coverage">${item.coverage_target}</div><div class="offline">Connected feed: ${item.connected_feed_enabled?'enabled':'offline scaffold'} · Fallback: ${item.deterministic_fallback?'ready':'unavailable'}</div>`;
+      list.appendChild(d);
+    });
+  }catch(e){
+    if(el('feedStatusBox')) el('feedStatusBox').textContent='Feed status unavailable: '+e.message;
+  }
+}
+
+document.addEventListener('DOMContentLoaded',()=>{loadCatalog();loadFeedStatus();loadRuns();el('refreshBtn').onclick=()=>loadRuns();el('rescanBtn').onclick=rescan;el('neededBtn').onclick=needed;el('generateBtn').onclick=generate;el('runBtn').onclick=launch;el('clearBtn').onclick=()=>{el('rawInput').value='';el('candidateList').innerHTML='';stat('launchStatus','Ready.')};el('loadPreviewBtn').onclick=()=>preview(el('fileSelect').value);document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab))});
