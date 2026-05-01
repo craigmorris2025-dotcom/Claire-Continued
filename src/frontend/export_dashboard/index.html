@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire Export Dashboard</title>
+  <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Claire Syntalion</p>
+      <h1>Export Dashboard</h1>
+      <p>Browse completed runs, generated artifacts, markdown summaries, and full JSON output.</p>
+    </div>
+    <div class="actions">
+      <button id="refreshBtn">Refresh</button>
+      <button id="rescanBtn">Rescan Exports</button>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <div class="panel-title">
+        <h2>Runs</h2>
+        <span id="runCount">0</span>
+      </div>
+      <div id="statusBox" class="status">Loading...</div>
+      <div id="runList"></div>
+    </aside>
+
+    <section>
+      <div id="emptyState" class="empty">
+        <h2>Select a run</h2>
+        <p>Completed Claire exports will appear here.</p>
+      </div>
+
+      <div id="detailState" class="hidden">
+        <div class="detail-head">
+          <div>
+            <p id="selectedSector" class="eyebrow"></p>
+            <h2 id="selectedTitle"></h2>
+            <p id="selectedMeta" class="muted"></p>
+          </div>
+          <div class="metrics">
+            <div><span>Decision</span><strong id="decisionValue">—</strong></div>
+            <div><span>Export</span><strong id="exportValue">—</strong></div>
+            <div><span>Files</span><strong id="filesValue">—</strong></div>
+          </div>
+        </div>
+
+        <nav class="tabs">
+          <button class="tab active" data-tab="summary">Summary</button>
+          <button class="tab" data-tab="files">Files</button>
+          <button class="tab" data-tab="preview">Preview</button>
+        </nav>
+
+        <div id="summaryTab" class="tab-content"><div id="summaryCards" class="cards"></div></div>
+        <div id="filesTab" class="tab-content hidden"><div id="fileList"></div></div>
+        <div id="previewTab" class="tab-content hidden">
+          <div class="preview-tools">
+            <select id="fileSelect"></select>
+            <button id="loadPreviewBtn">Load Preview</button>
+          </div>
+          <pre id="previewBox">Choose a file to preview.</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Data source: <code>data/runs/run_history.json</code> and <code>exports/index.json</code>
+  </footer>
+
+  <script src="./dashboard.js"></script>
+</body>
+</html>
