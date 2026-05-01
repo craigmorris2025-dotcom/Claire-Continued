@@ -28,6 +28,8 @@ from claire.runtime.opportunity_candidate_store import OPPORTUNITY_CANDIDATES
 from claire.feeds.feed_registry import FeedRegistry
 from claire.governance.redline_classifier import RedlineClassifier
 from claire.governance.legal_audit_log import LegalAuditLog
+from claire.governance.feed_activation_policy import FeedActivationPolicy
+from claire.governance.feed_audit_log import FeedAuditLog
 
 DASHBOARD_DIR=PROJECT_ROOT/"src"/"frontend"/"export_dashboard"
 CATALOG=OpportunityCommandCatalog()
@@ -37,6 +39,8 @@ SEEDS=OpportunitySeedGenerator()
 FEEDS=FeedRegistry()
 GOVERNANCE=RedlineClassifier()
 LEGAL_AUDIT=LegalAuditLog()
+FEED_POLICY=FeedActivationPolicy()
+FEED_AUDIT=FeedAuditLog()
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args): print("[dashboard]", fmt % args)
@@ -48,6 +52,8 @@ class Handler(BaseHTTPRequestHandler):
             if path=="/api/commands": return self.json(CATALOG.catalog())
             if path=="/api/market-universe": return self.json(TAXONOMY.catalog())
             if path=="/api/feeds/status": return self.json(FEEDS.status())
+            if path=="/api/feeds/activation-status": return self.json(FEED_POLICY.status())
+            if path=="/api/feeds/audit": return self.json(FEED_AUDIT.recent())
             if path=="/api/governance/audit": return self.json(LEGAL_AUDIT.recent())
             if path=="/api/runs": return self.json(ExportBrowser().list_runs(limit=200,rescan_if_empty=True))
             if path=="/api/summary": return self.json(ExportBrowser().summary())
@@ -61,6 +67,7 @@ class Handler(BaseHTTPRequestHandler):
         parsed=urlparse(self.path)
         try:
             if parsed.path=="/api/governance/evaluate": return self.json(self.governance_evaluate(self.body()))
+            if parsed.path=="/api/feeds/activation-check": return self.json(self.feed_activation_check(self.body()))
             if parsed.path=="/api/feeds/scan": return self.json(self.scan_feed(self.body()))
             if parsed.path=="/api/rescan": return self.json(RunHistory().rescan_exports("exports"))
             if parsed.path=="/api/evaluate": return self.json(self.eval_sync(self.body()))
@@ -84,17 +91,32 @@ class Handler(BaseHTTPRequestHandler):
         decision=GOVERNANCE.classify(text,context)
         audit=LEGAL_AUDIT.log("governance_evaluation",decision,context)
         return {"status":"success","decision":decision,"audit_event":audit}
+    def feed_activation_check(self,payload):
+        decision=FEED_POLICY.evaluate(payload)
+        audit=FEED_AUDIT.log("feed_activation_check",decision,payload)
+        return {"status":"success","activation_decision":decision,"audit_event":audit}
     def scan_feed(self,payload):
-        decision=GOVERNANCE.classify(payload.get("signal",""),payload)
-        LEGAL_AUDIT.log("feed_scan_precheck",decision,payload)
-        if decision.get("decision")=="block":
-            return {"status":"blocked","decision":decision}
+        activation=FEED_POLICY.evaluate(payload)
+        FEED_AUDIT.log("feed_scan_activation",activation,payload)
+        if activation.get("decision")=="block":
+            return {"status":"blocked","activation_decision":activation}
+        if not activation.get("connected_ingestion_allowed"):
+            result=FEEDS.scan(
+                market_universe=payload.get("market_universe","custom_universe"),
+                mode="deterministic",
+                filters=payload,
+            )
+            result["activation_decision"]=activation
+            result["connected_ingestion_performed"]=False
+            return result
         result=FEEDS.scan(
             market_universe=payload.get("market_universe","custom_universe"),
             mode=payload.get("execution_mode","deterministic"),
             filters=payload,
         )
-        result["governance_decision"]=decision
+        result["activation_decision"]=activation
+        result["connected_ingestion_performed"]=False
+        result["note"]="Connector scaffold approved activation, but live ingestion is not implemented in this package."
         return result
     def search_needed_solutions(self,payload):
         return SUGGESTIONS.suggest(
@@ -169,6 +191,8 @@ class Handler(BaseHTTPRequestHandler):
         LEGAL_AUDIT.log("dashboard_launch_precheck",governance_decision,metadata)
         if governance_decision.get("decision")=="block":
             return {"status":"blocked","decision":governance_decision}
+        feed_activation=FEED_POLICY.evaluate(payload)
+        FEED_AUDIT.log("dashboard_launch_feed_activation",feed_activation,payload)
         run_id=RUN_EVENTS.create_run(raw[:80]+("..." if len(raw)>80 else ""),metadata)
         RUN_EVENTS.add(run_id,"stage_complete","Governance precheck: "+governance_decision.get("decision","allow"),"governance",4,governance_decision)
         threading.Thread(target=self.worker,args=(run_id,raw,payload),daemon=True).start()
