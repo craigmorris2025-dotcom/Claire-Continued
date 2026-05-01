@@ -29,6 +29,7 @@ from claire.feeds.feed_registry import FeedRegistry
 from claire.feeds.source_catalogs.public_company_sources import PublicCompanySourceCatalog
 from claire.feeds.source_catalogs.index_universe_registry import IndexUniverseRegistry
 from claire.feeds.source_catalogs.offline_universe_resolver import OfflinePublicCompanyUniverseResolver
+from claire.feeds.public_company_live_scan import PublicCompanyLiveScan
 from claire.governance.redline_classifier import RedlineClassifier
 from claire.governance.legal_audit_log import LegalAuditLog
 from claire.governance.feed_activation_policy import FeedActivationPolicy
@@ -43,6 +44,7 @@ FEEDS=FeedRegistry()
 PUBLIC_COMPANY_SOURCES=PublicCompanySourceCatalog()
 INDEX_UNIVERSES=IndexUniverseRegistry()
 OFFLINE_UNIVERSE_RESOLVER=OfflinePublicCompanyUniverseResolver()
+PUBLIC_COMPANY_LIVE_SCAN=PublicCompanyLiveScan()
 GOVERNANCE=RedlineClassifier()
 LEGAL_AUDIT=LegalAuditLog()
 FEED_POLICY=FeedActivationPolicy()
@@ -59,6 +61,7 @@ class Handler(BaseHTTPRequestHandler):
             if path=="/api/market-universe": return self.json(TAXONOMY.catalog())
             if path=="/api/feeds/status": return self.json(FEEDS.status())
             if path=="/api/feeds/public-company-sources": return self.json(PUBLIC_COMPANY_SOURCES.catalog())
+            if path=="/api/feeds/public-company-live/status": return self.json(PUBLIC_COMPANY_LIVE_SCAN.status())
             if path=="/api/feeds/index-universes": return self.json(INDEX_UNIVERSES.all())
             if path=="/api/feeds/offline-universe/status": return self.json(OFFLINE_UNIVERSE_RESOLVER.status())
             if path=="/api/feeds/activation-status": return self.json(FEED_POLICY.status())
@@ -78,6 +81,7 @@ class Handler(BaseHTTPRequestHandler):
             if parsed.path=="/api/governance/evaluate": return self.json(self.governance_evaluate(self.body()))
             if parsed.path=="/api/feeds/activation-check": return self.json(self.feed_activation_check(self.body()))
             if parsed.path=="/api/feeds/offline-universe/resolve": return self.json(self.resolve_offline_universe(self.body()))
+            if parsed.path=="/api/feeds/public-company-live/scan": return self.json(self.public_company_live_scan(self.body()))
             if parsed.path=="/api/feeds/scan": return self.json(self.scan_feed(self.body()))
             if parsed.path=="/api/rescan": return self.json(RunHistory().rescan_exports("exports"))
             if parsed.path=="/api/evaluate": return self.json(self.eval_sync(self.body()))
@@ -101,6 +105,21 @@ class Handler(BaseHTTPRequestHandler):
         decision=GOVERNANCE.classify(text,context)
         audit=LEGAL_AUDIT.log("governance_evaluation",decision,context)
         return {"status":"success","decision":decision,"audit_event":audit}
+    def public_company_live_scan(self,payload):
+        activation=FEED_POLICY.evaluate(payload)
+        FEED_AUDIT.log("public_company_live_scan_v1",activation,payload)
+        if activation.get("decision")=="block":
+            return {"status":"blocked","activation_decision":activation}
+        return PUBLIC_COMPANY_LIVE_SCAN.scan(
+            market_universe=payload.get("market_universe","sp500_public"),
+            execution_mode=payload.get("execution_mode","connected"),
+            activation_decision=activation,
+            source_urls=payload.get("source_urls",[]),
+            industry_domain=payload.get("industry_domain","cross_sector"),
+            buyer_segment=payload.get("buyer_segment","enterprise_c_suite"),
+            objective=payload.get("objective","discover_market_gaps"),
+            signal=payload.get("signal",""),
+        )
     def resolve_offline_universe(self,payload):
         return OFFLINE_UNIVERSE_RESOLVER.resolve(
             market_universe=payload.get("market_universe","sp500_public"),
@@ -126,14 +145,17 @@ class Handler(BaseHTTPRequestHandler):
             result["activation_decision"]=activation
             result["connected_ingestion_performed"]=False
             return result
+        scan_payload=dict(payload)
+        scan_payload["_connected_ingestion_allowed"]=True
+        scan_payload["_activation_decision"]=activation
         result=FEEDS.scan(
             market_universe=payload.get("market_universe","custom_universe"),
             mode=payload.get("execution_mode","deterministic"),
-            filters=payload,
+            filters=scan_payload,
         )
         result["activation_decision"]=activation
-        result["connected_ingestion_performed"]=False
-        result["note"]="Connector scaffold approved activation, but live ingestion is not implemented in this package."
+        result["connected_ingestion_performed"]=result.get("status")=="success" and bool(result.get("signals"))
+        result["note"]="Public-company live scan v1 is metadata-only and environment-gated."
         return result
     def search_needed_solutions(self,payload):
         return SUGGESTIONS.suggest(

@@ -150,4 +150,40 @@ async function loadOfflineUniverseResolver(){
   }
 }
 
-document.addEventListener('DOMContentLoaded',()=>{loadCatalog();loadPublicCompanySourceCatalog();loadOfflineUniverseResolver();loadFeedStatus();loadFeedActivationStatus();loadRuns();el('refreshBtn').onclick=()=>loadRuns();el('rescanBtn').onclick=rescan;el('neededBtn').onclick=needed;el('generateBtn').onclick=generate;el('runBtn').onclick=launch;el('clearBtn').onclick=()=>{el('rawInput').value='';el('candidateList').innerHTML='';stat('launchStatus','Ready.')};el('loadPreviewBtn').onclick=()=>preview(el('fileSelect').value);document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab));['marketUniverseSelect','industryDomainSelect','buyerSegmentSelect','objectiveSelect'].forEach(id=>{const node=el(id); if(node) node.addEventListener('change',()=>loadOfflineUniverseResolver())})});
+
+async function loadPublicCompanyLiveScanStatus(){
+  try{
+    const x=await api('/api/feeds/public-company-live/status');
+    el('publicLiveScanBadge').textContent=x.live_enabled?'enabled':'disabled';
+    el('publicLiveScanStatusBox').textContent=`Scanner: ${fmt(x.scanner)}\nLive Enabled: ${x.live_enabled?'yes':'no'}\nSafe Metadata Only: ${x.safe_metadata_only?'yes':'no'}\nRequires Feed Activation: ${x.requires_feed_activation?'yes':'no'}\nEnable: CLAIRE_ENABLE_LIVE_FEEDS=1 before starting dashboard`;
+  }catch(e){
+    if(el('publicLiveScanStatusBox')) el('publicLiveScanStatusBox').textContent='Live scan status unavailable: '+e.message;
+  }
+}
+async function runPublicCompanyLiveScan(){
+  stat('launchStatus','Running public-company metadata scan readiness check...');
+  const p=payload();
+  p.signal=el('rawInput').value;
+  p.source_urls=(el('publicSourceUrls').value||'').split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+  try{
+    const x=await api('/api/feeds/public-company-live/scan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
+    const list=el('publicLiveScanList'); list.innerHTML='';
+    el('publicLiveScanBadge').textContent=x.status||'checked';
+    if(x.status!=='success'){
+      const d=document.createElement('div'); d.className='publicSignal '+(x.status||'disabled');
+      d.innerHTML=`<strong>${fmt(x.status)}</strong><div>${(x.warnings||[]).join(' ') || fmt((x.activation_decision||{}).reason)}</div>`;
+      list.appendChild(d);
+    }
+    (x.signals||[]).forEach(sig=>{
+      const d=document.createElement('div'); d.className='publicSignal '+(sig.status||'success');
+      d.innerHTML=`<strong>${fmt(sig.title)}</strong><div>${fmt(sig.snippet)}</div><div class="url">${fmt(sig.source_url)}</div>`;
+      list.appendChild(d);
+    });
+    el('publicLiveScanStatusBox').textContent=`Status: ${fmt(x.status)}\nRecords: ${fmt(x.record_count || (x.signals||[]).length,0)}\nConnected Allowed: ${((x.activation_decision||{}).connected_ingestion_allowed)?'yes':'no'}\nWarnings: ${(x.warnings||[]).join(' ')}`;
+    loadFeedAudit();
+  }catch(e){
+    el('publicLiveScanStatusBox').textContent='Live scan failed: '+e.message;
+  }
+}
+
+document.addEventListener('DOMContentLoaded',()=>{loadCatalog();loadPublicCompanySourceCatalog();loadPublicCompanyLiveScanStatus();loadOfflineUniverseResolver();loadFeedStatus();loadFeedActivationStatus();loadRuns();el('refreshBtn').onclick=()=>loadRuns();if(el('publicLiveScanBtn')) el('publicLiveScanBtn').onclick=runPublicCompanyLiveScan;el('rescanBtn').onclick=rescan;el('neededBtn').onclick=needed;el('generateBtn').onclick=generate;el('runBtn').onclick=launch;el('clearBtn').onclick=()=>{el('rawInput').value='';el('candidateList').innerHTML='';stat('launchStatus','Ready.')};el('loadPreviewBtn').onclick=()=>preview(el('fileSelect').value);document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab));['marketUniverseSelect','industryDomainSelect','buyerSegmentSelect','objectiveSelect'].forEach(id=>{const node=el(id); if(node) node.addEventListener('change',()=>loadOfflineUniverseResolver())})});
