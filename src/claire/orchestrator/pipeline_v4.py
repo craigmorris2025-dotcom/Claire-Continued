@@ -4,6 +4,7 @@ Claire Orchestrator — Deterministic Intelligence Engine (v5.33 EXPORT WRITER)
 """
 
 from typing import Dict, Any
+import json
 
 from claire.domain.contract import ClaireIntent, ClaireResult
 from claire.connectors.connector_manager import ConnectorManager
@@ -14,6 +15,7 @@ from claire.engines.market_gap_engine import MarketGapEngine
 from claire.engines.knowledge_ingestion_engine import KnowledgeIngestionEngine
 from claire.engines.signal_extraction_engine import SignalExtractionEngine
 from claire.engines.trend_trajectory_engine import TrendTrajectoryEngine
+from claire.engines.trend_thesis_engine import TrendThesisEngine
 from claire.engines.market_formation_engine import MarketFormationEngine
 from claire.engines.moat_defensibility_engine import MoatDefensibilityEngine
 from claire.engines.risk_regulation_engine import RiskRegulationEngine
@@ -27,8 +29,10 @@ from claire.engines.deal_exit_modeling_engine import DealExitModelingEngine
 from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.engines.export_package_engine import ExportPackageEngine
 from claire.export.export_writer import ExportWriter
+from claire.lifecycle.lifecycle_runner import CoreLifecycleRunner
 from claire.design.portal import DesignPortal
 from claire.portfolio.binder_builder import PortfolioBinderBuilder
+from claire.signals.signal_governance import SignalGovernance
 
 
 class PipelineOrchestrator:
@@ -43,6 +47,7 @@ class PipelineOrchestrator:
         self.signal_extraction_engine = SignalExtractionEngine()
         self.market_gap_engine = MarketGapEngine()
         self.trend_engine = TrendTrajectoryEngine()
+        self.trend_thesis_engine = TrendThesisEngine()
         self.market_formation_engine = MarketFormationEngine()
         self.moat_engine = MoatDefensibilityEngine()
         self.risk_engine = RiskRegulationEngine()
@@ -55,6 +60,8 @@ class PipelineOrchestrator:
         self.deal_exit_engine = DealExitModelingEngine()
         self.binder_builder = PortfolioBinderBuilder()
         self.lifecycle_engine = LifecycleStageEngine()
+        self.core_lifecycle_runner = CoreLifecycleRunner()
+        self.signal_governance = SignalGovernance()
         self.export_package_engine = ExportPackageEngine()
         self.export_writer = ExportWriter()
 
@@ -69,6 +76,14 @@ class PipelineOrchestrator:
 
         domain = self._detect_domain(text)
         keywords = self._extract_keywords(text)
+        governed_signals = self.signal_governance.govern(
+            [{
+                "raw_input": text,
+                "source_type": "user_input",
+                "metadata": {"intent_id": getattr(intent, "intent_id", None)},
+            }],
+            context={"domain": domain, "keywords": keywords},
+        )
 
         external = self.connector_manager.fetch_all({
             "domain": domain,
@@ -201,15 +216,34 @@ class PipelineOrchestrator:
             ),
         )
 
+        trend_thesis = self._safe_engine(
+            "trend_thesis_failed",
+            lambda: self.trend_thesis_engine.synthesize(
+                text=text,
+                domain=domain,
+                keywords=keywords,
+                governed_signals=governed_signals,
+                trend_trajectory=trend_trajectory,
+                market_gap=market_gap,
+                market_formation=market_formation,
+                opportunity_discovery=opportunity_discovery,
+            ),
+        )
+        trend_discovery = trend_thesis.get("trend_discovery", {}) if isinstance(trend_thesis, dict) else {}
+        thesis_formation = trend_thesis.get("thesis_formation", {}) if isinstance(trend_thesis, dict) else {}
+
         data.update({
             "domain": domain,
             "keywords": keywords,
+            "governed_signals": governed_signals,
             "knowledge_ingestion": knowledge_ingestion,
             "connector_sources": external,
             "signal_extraction": signal_extraction,
             "market_gap": market_gap,
             "trend_trajectory": trend_trajectory,
             "market_formation": market_formation,
+            "trend_discovery": trend_discovery,
+            "thesis_formation": thesis_formation,
             "moat": moat,
             "risk_regulation": risk_regulation,
             "business_model": business_model,
@@ -250,6 +284,8 @@ class PipelineOrchestrator:
         opportunity_score = self._get(opportunity_discovery, "opportunity_score.score", 0.0)
         opportunity_priority_score = self._get(opportunity_discovery, "priority_assessment.score", 0.0)
         validation_urgency_score = self._get(opportunity_discovery, "validation_urgency.score", 0.0)
+        trend_discovery_score = self._get(trend_discovery, "discovery_score.score", 0.0)
+        thesis_score = self._get(thesis_formation, "thesis_score.score", 0.0)
 
         blocker_penalty = 0.030 if blocker_level == "conditional" else 0.010 if blocker_level == "manageable" else 0.0
 
@@ -479,6 +515,8 @@ class PipelineOrchestrator:
             "discovery_score": discovery_signal,
             "opportunity_score": opportunity_score,
             "opportunity_priority_score": opportunity_priority_score,
+            "trend_discovery_score": trend_discovery_score,
+            "thesis_score": thesis_score,
             "breakthrough_score": breakthrough_signal,
             "innovation_score": innovation_signal,
             "viability_score": viability_signal,
@@ -582,6 +620,8 @@ class PipelineOrchestrator:
             "opportunity_score": opportunity_score,
             "opportunity_priority_score": opportunity_priority_score,
             "validation_urgency_score": validation_urgency_score,
+            "trend_discovery_score": trend_discovery_score,
+            "thesis_score": thesis_score,
             "breakthrough_synthesis_confidence": synthesis_confidence,
             "breakthrough_synthesis_score": synthesis_score,
             "novelty_score": novelty_score,
@@ -689,6 +729,18 @@ class PipelineOrchestrator:
                 "strategic_window": trend_trajectory.get("strategic_window") if isinstance(trend_trajectory, dict) else None,
                 "confidence": trend_trajectory.get("confidence") if isinstance(trend_trajectory, dict) else None,
             },
+            "trend_discovery": {
+                "discovery_score": trend_discovery.get("discovery_score") if isinstance(trend_discovery, dict) else None,
+                "discovered_trends": trend_discovery.get("discovered_trends") if isinstance(trend_discovery, dict) else None,
+                "cluster_formation": trend_discovery.get("cluster_formation") if isinstance(trend_discovery, dict) else None,
+                "confidence": trend_discovery.get("confidence") if isinstance(trend_discovery, dict) else None,
+            },
+            "thesis_formation": {
+                "thesis_score": thesis_formation.get("thesis_score") if isinstance(thesis_formation, dict) else None,
+                "route_recommendation": thesis_formation.get("route_recommendation") if isinstance(thesis_formation, dict) else None,
+                "thesis_statement": thesis_formation.get("thesis_statement") if isinstance(thesis_formation, dict) else None,
+                "confidence": thesis_formation.get("confidence") if isinstance(thesis_formation, dict) else None,
+            },
             "market_formation": {
                 "formation_type": market_formation.get("formation_type") if isinstance(market_formation, dict) else None,
                 "market_stage": market_formation.get("market_stage") if isinstance(market_formation, dict) else None,
@@ -735,6 +787,8 @@ class PipelineOrchestrator:
                 "signal_extraction": signal_extraction,
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
+                "trend_discovery": trend_discovery,
+                "thesis_formation": thesis_formation,
                 "market_formation": market_formation,
                 "moat": moat,
                 "risk_regulation": risk_regulation,
@@ -912,6 +966,8 @@ class PipelineOrchestrator:
                 "signal_extraction": signal_extraction,
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
+                "trend_discovery": trend_discovery,
+                "thesis_formation": thesis_formation,
                 "market_formation": market_formation,
                 "moat": moat,
                 "risk_regulation": risk_regulation,
@@ -942,6 +998,8 @@ class PipelineOrchestrator:
                 "connector_sources": external,
                 "market_gap": market_gap,
                 "trend_trajectory": trend_trajectory,
+                "trend_discovery": trend_discovery,
+                "thesis_formation": thesis_formation,
                 "market_formation": market_formation,
                 "moat": moat,
                 "risk_regulation": risk_regulation,
@@ -986,6 +1044,24 @@ class PipelineOrchestrator:
             }),
         )
         data["export_package"] = export_package
+
+        core_lifecycle = self._safe_engine(
+            "core_lifecycle_failed",
+            lambda: self.core_lifecycle_runner.run({
+                **data,
+                "scores": scores,
+                "domain": domain,
+                "keywords": keywords,
+                "connector_sources": external,
+                "acquirer_matches": acquirer_matches,
+                "export_package": export_package,
+            }, run_id=getattr(intent, "run_id", None) or getattr(intent, "intent_id", None) or "unknown"),
+        )
+        data["core_lifecycle"] = core_lifecycle
+        data["core_lifecycle_stages"] = core_lifecycle.get("stages", []) if isinstance(core_lifecycle, dict) else []
+        data["core_lifecycle_summary"] = core_lifecycle.get("summary", {}) if isinstance(core_lifecycle, dict) else {}
+        data["core_completion_gate"] = core_lifecycle.get("completion_gate", {}) if isinstance(core_lifecycle, dict) else {}
+        self._attach_core_lifecycle_to_export(export_package, core_lifecycle)
 
         export_package_confidence = self._get(export_package, "confidence", 0.0) or 0.0
         export_package_score = self._get(export_package, "export_package_score.score", 0.0) or 0.0
@@ -1063,6 +1139,31 @@ class PipelineOrchestrator:
             base = fallback.copy() if isinstance(fallback, dict) else {}
             base.update({"status": failure_status, "error": str(e)})
             return base
+
+    def _attach_core_lifecycle_to_export(self, export_package: Dict[str, Any], core_lifecycle: Dict[str, Any]) -> None:
+        documents = export_package.get("documents") if isinstance(export_package, dict) else None
+        if not isinstance(documents, dict) or not isinstance(core_lifecycle, dict):
+            return
+
+        documents["core_lifecycle_summary.json"] = {
+            "core_lifecycle_summary": core_lifecycle.get("summary", {}),
+            "core_completion_gate": core_lifecycle.get("completion_gate", {}),
+            "stage_count": core_lifecycle.get("stage_count"),
+            "route": core_lifecycle.get("route"),
+            "stages": core_lifecycle.get("stages", []),
+        }
+
+        raw = documents.get("full_pipeline_output.json")
+        if isinstance(raw, str):
+            try:
+                payload = json.loads(raw)
+            except Exception:
+                return
+            payload["core_lifecycle"] = core_lifecycle
+            payload["core_lifecycle_summary"] = core_lifecycle.get("summary", {})
+            payload["core_lifecycle_stages"] = core_lifecycle.get("stages", [])
+            payload["core_completion_gate"] = core_lifecycle.get("completion_gate", {})
+            documents["full_pipeline_output.json"] = json.dumps(payload, indent=2, sort_keys=True, default=str)
 
     def _get(self, obj: Dict[str, Any], path: str, default=None):
         cur = obj if isinstance(obj, dict) else {}

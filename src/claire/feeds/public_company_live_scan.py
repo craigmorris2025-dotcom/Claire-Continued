@@ -17,6 +17,7 @@ from typing import Any, Dict, List
 
 from claire.feeds.live_fetcher import SafePublicMetadataFetcher
 from claire.feeds.public_signal_contracts import PublicCompanySignal
+from claire.feeds.source_catalogs.live_source_catalog import LiveSourceCatalog
 from claire.feeds.source_catalogs.offline_universe_resolver import OfflinePublicCompanyUniverseResolver
 
 
@@ -28,6 +29,7 @@ class PublicCompanyLiveScan:
     def __init__(self) -> None:
         self.fetcher = SafePublicMetadataFetcher()
         self.resolver = OfflinePublicCompanyUniverseResolver()
+        self.live_catalog = LiveSourceCatalog()
 
     def status(self) -> Dict[str, Any]:
         fetcher_status = self.fetcher.status()
@@ -39,7 +41,8 @@ class PublicCompanyLiveScan:
             "fetcher": fetcher_status,
             "safe_metadata_only": True,
             "requires_feed_activation": True,
-            "requires_user_or_catalog_urls": True,
+            "requires_user_or_catalog_urls": False,
+            "catalog_resolver": self.live_catalog.status(),
         }
 
     def scan(
@@ -48,6 +51,7 @@ class PublicCompanyLiveScan:
         execution_mode: str = "connected",
         activation_decision: Dict[str, Any] | None = None,
         source_urls: List[str] | None = None,
+        catalog_limit: int = 5,
         industry_domain: str = "cross_sector",
         buyer_segment: str = "enterprise_c_suite",
         objective: str = "discover_market_gaps",
@@ -94,6 +98,14 @@ class PublicCompanyLiveScan:
                 ],
             }
 
+        catalog_resolution: Dict[str, Any] | None = None
+        if not source_urls:
+            catalog_resolution = self.live_catalog.resolve(
+                market_universe=market_universe,
+                limit=catalog_limit,
+            )
+            source_urls = catalog_resolution.get("source_urls", [])
+
         if not source_urls:
             return {
                 "status": "ready_needs_sources",
@@ -101,15 +113,16 @@ class PublicCompanyLiveScan:
                 "signals": [],
                 "offline_universe_resolution": offline.get("resolution", {}),
                 "activation_decision": activation_decision,
+                "catalog_resolution": catalog_resolution,
                 "warnings": [
                     "Live scanner is enabled and governance allowed, but no public source URLs were provided.",
-                    "Future packages may attach official source catalogs automatically.",
+                    "The live source catalog did not resolve scan-ready URLs for this selection.",
                 ],
             }
 
         signals: List[Dict[str, Any]] = []
         warnings: List[str] = []
-        for url in source_urls[:5]:
+        for url in source_urls[:catalog_limit]:
             metadata = self.fetcher.fetch_metadata(url)
             if metadata.get("status") != "success":
                 warnings.append(f"{url}: {metadata.get('warning', metadata.get('status'))}")
@@ -142,6 +155,8 @@ class PublicCompanyLiveScan:
             "signals": signals,
             "offline_universe_resolution": offline.get("resolution", {}),
             "activation_decision": activation_decision,
+            "catalog_resolution": catalog_resolution,
+            "catalog_sources_used": bool(catalog_resolution and catalog_resolution.get("source_urls")),
             "warnings": warnings,
             "safe_metadata_only": True,
         }

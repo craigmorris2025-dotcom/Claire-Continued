@@ -1,0 +1,77 @@
+{
+  "event_id": "upd_cfafb4421f52",
+  "event_type": "web_update_dry_run",
+  "created_at": "2026-05-01T10:07:46.035738+00:00",
+  "payload": {
+    "download": {
+      "status": "success",
+      "url": "output\\updater_smoke_package.zip",
+      "package_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\update_downloads\\20260501_050746_updater_smoke_package.zip",
+      "size_bytes": 590,
+      "sha256": "2cb55199b34aedb191082a21d6314747a2c41f882e374481d0a8dd75c9e876be"
+    },
+    "verification": {
+      "status": "success",
+      "package_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\update_downloads\\20260501_050746_updater_smoke_package.zip",
+      "package_sha256": "2cb55199b34aedb191082a21d6314747a2c41f882e374481d0a8dd75c9e876be",
+      "manifest_member": "claire_update_manifest.json",
+      "manifest": {
+        "update_name": "updater_bootstrap_smoke",
+        "version": "v5.48-smoke",
+        "description": "Disposable dry-run package for updater bootstrap validation.",
+        "package_sha256": "",
+        "trusted_source": "",
+        "files": [
+          {
+            "source": "files/SMOKE_UPDATE.txt",
+            "target": "@root/output/SMOKE_UPDATE.txt",
+            "action": "create",
+            "type": "text",
+            "required": true,
+            "sha256": ""
+          }
+        ],
+        "post_install": {
+          "run_compile_check": false,
+          "run_regression_tests": false
+        }
+      },
+      "file_count": 1
+    },
+    "plan": {
+      "status": "dry_run",
+      "manifest": {
+        "update_name": "updater_bootstrap_smoke",
+        "version": "v5.48-smoke",
+        "description": "Disposable dry-run package for updater bootstrap validation.",
+        "package_sha256": "",
+        "trusted_source": "",
+        "files": [
+          {
+            "source": "files/SMOKE_UPDATE.txt",
+            "target": "@root/output/SMOKE_UPDATE.txt",
+            "action": "create",
+            "type": "text",
+            "required": true,
+            "sha256": ""
+          }
+        ],
+        "post_install": {
+          "run_compile_check": false,
+          "run_regression_tests": false
+        }
+      },
+      "plan": [
+        {
+          "source": "files/SMOKE_UPDATE.txt",
+          "target": "output/SMOKE_UPDATE.txt",
+          "action": "create",
+          "type": "text",
+          "sha256": "",
+          "exists": false
+        }
+      ],
+      "installed_files": []
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "registry_version": "v5.72",
+  "registry_name": "claire_live_source_entity_registry",
+  "created_for": "Claire live intelligence engine",
+  "entities": [
+    {
+      "entity_id": "msft",
+      "name": "Microsoft",
+      "ticker": "MSFT",
+      "market_universe": "sp500_public",
+      "industry_domain": "information_technology",
+      "sector": "Technology",
+      "source_urls": [
+        "https://www.microsoft.com/en-us/investor",
+        "https://www.sec.gov/edgar/search/"
+      ],
+      "tags": ["cloud", "ai", "enterprise", "security"]
+    },
+    {
+      "entity_id": "aapl",
+      "name": "Apple",
+      "ticker": "AAPL",
+      "market_universe": "sp500_public",
+      "industry_domain": "information_technology",
+      "sector": "Technology",
+      "source_urls": [
+        "https://www.apple.com/investor-relations/",
+        "https://www.sec.gov/edgar/search/"
+      ],
+      "tags": ["hardware", "services", "privacy", "supply_chain"]
+    },
+    {
+      "entity_id": "nvda",
+      "name": "NVIDIA",
+      "ticker": "NVDA",
+      "market_universe": "sp500_public",
+      "industry_domain": "information_technology",
+      "sector": "Semiconductors",
+      "source_urls": [
+        "https://investor.nvidia.com/",
+        "https://www.sec.gov/edgar/search/"
+      ],
+      "tags": ["ai_infrastructure", "compute", "semiconductors", "data_center"]
+    },
+    {
+      "entity_id": "amzn",
+      "name": "Amazon",
+      "ticker": "AMZN",
+      "market_universe": "sp500_public",
+      "industry_domain": "information_technology",
+      "sector": "Consumer / Cloud",
+      "source_urls": [
+        "https://ir.aboutamazon.com/",
+        "https://www.sec.gov/edgar/search/"
+      ],
+      "tags": ["cloud", "commerce", "logistics", "ai"]
+    }
+  ],
+  "source_families": [
+    {
+      "family_id": "sec_public_filings",
+      "name": "SEC public filing references",
+      "connector": "sec_public_filing_connector_v1",
+      "source_category": "public_company_market_data",
+      "status": "starter_ready",
+      "freshness_days": 30
+    },
+    {
+      "family_id": "investor_relations",
+      "name": "Official investor relations",
+      "connector": "investor_relations_connector_v1",
+      "source_category": "public_company_market_data",
+      "status": "starter_ready",
+      "freshness_days": 30
+    },
+    {
+      "family_id": "public_news_metadata",
+      "name": "Public market news metadata",
+      "connector": "public_news_metadata_connector_v1",
+      "source_category": "public_company_market_data",
+      "status": "starter_ready",
+      "freshness_days": 7
+    },
+    {
+      "family_id": "public_patent_metadata",
+      "name": "USPTO public patent metadata",
+      "connector": "uspto_patent_metadata_connector_v1",
+      "source_category": "public_innovation_metadata",
+      "status": "starter_ready",
+      "freshness_days": 30
+    }
+  ]
+}

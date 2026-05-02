@@ -1,0 +1,13 @@
+{
+  "allowed_schemes": [
+    "file",
+    "https"
+  ],
+  "allowed_domains": [],
+  "allow_file_urls": true,
+  "notes": [
+    "Local file packages are enabled for bootstrap updates.",
+    "Add approved release domains before using HTTPS downloads.",
+    "Do not allow secrets, credentials, private keys, or restricted data in update packages."
+  ]
+}

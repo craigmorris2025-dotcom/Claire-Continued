@@ -154,6 +154,8 @@ class ClaireResult:
             "knowledge_ingestion": self.data.get("knowledge_ingestion", {}),
             "signal_extraction": self.data.get("signal_extraction", {}),
             "market_gap": self.data.get("market_gap", {}),
+            "trend_discovery": self.data.get("trend_discovery", {}),
+            "thesis_formation": self.data.get("thesis_formation", {}),
             "opportunity_discovery": self.data.get("opportunity_discovery", {}),
             "breakthrough_synthesis": self.data.get("breakthrough_synthesis", {}),
             "technical_feasibility": self.data.get("technical_feasibility", {}),
@@ -169,6 +171,7 @@ class ClaireResult:
             "engine_details": self.data.get("engine_details", {}),
             "connector_sources": connector_sources,
             "signal_trace": self.data.get("signal_trace", {}),
+            "governed_signals": self.data.get("governed_signals", {}),
 
             "system_design": self.data.get("system_design", {}),
             "design_portal": self.data.get("design_portal", {}),
@@ -180,6 +183,10 @@ class ClaireResult:
             "lifecycle": self.data.get("lifecycle", {}),
             "lifecycle_stages": self.data.get("lifecycle_stages", []),
             "lifecycle_summary": self.data.get("lifecycle_summary", {}),
+            "core_lifecycle": self.data.get("core_lifecycle", {}),
+            "core_lifecycle_stages": self.data.get("core_lifecycle_stages", []),
+            "core_lifecycle_summary": self.data.get("core_lifecycle_summary", {}),
+            "core_completion_gate": self.data.get("core_completion_gate", {}),
 
             "phase_log": self.data.get("phase_log", []),
 

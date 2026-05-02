@@ -51,6 +51,8 @@ class OpportunityCandidateStore:
             "why_now": candidate.get("why_now"),
             "selection_score": candidate.get("selection_score"),
             "confidence_label": candidate.get("confidence_label"),
+            "connected_enrichment": candidate.get("connected_enrichment"),
+            "hybrid_fusion": candidate.get("hybrid_fusion"),
         }
 
 

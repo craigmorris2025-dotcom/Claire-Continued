@@ -1,0 +1,82 @@
+{
+  "status": "success",
+  "checker": "live_source_health_checker_v1",
+  "market_universe": "sp500_public",
+  "source_count": 3,
+  "healthy_count": 3,
+  "warning_count": 0,
+  "live_fetch_requested": false,
+  "live_fetch_performed": false,
+  "fetcher_status": {
+    "status": "success",
+    "fetcher": "safe_public_metadata_fetcher",
+    "live_enabled": false,
+    "enable_variable": "CLAIRE_ENABLE_LIVE_FEEDS=1",
+    "limits": {
+      "max_bytes": 200000,
+      "timeout_seconds": 8,
+      "allowed_schemes": [
+        "http",
+        "https"
+      ],
+      "private_network_blocked": true,
+      "auth_required": false
+    }
+  },
+  "checked_at": "2026-05-02T09:56:24.509936+00:00",
+  "sources": [
+    {
+      "source_entry_id": "sec_company_search",
+      "name": "SEC EDGAR company search",
+      "url": "https://www.sec.gov/edgar/search/",
+      "domain": "sec.gov",
+      "source_id": "public_sec_filings",
+      "source_type": "public_regulatory",
+      "freshness_days": 30,
+      "catalog_validation": {
+        "allowed": true,
+        "reason": "catalog_url_valid"
+      },
+      "health_status": "catalog_valid",
+      "checked_live": false,
+      "checked_at": "2026-05-02T09:56:24.509919+00:00"
+    },
+    {
+      "source_entry_id": "sec_company_tickers",
+      "name": "SEC company tickers reference",
+      "url": "https://www.sec.gov/files/company_tickers.json",
+      "domain": "sec.gov",
+      "source_id": "public_index_membership_reference",
+      "source_type": "public_reference",
+      "freshness_days": 30,
+      "catalog_validation": {
+        "allowed": true,
+        "reason": "catalog_url_valid"
+      },
+      "health_status": "catalog_valid",
+      "checked_live": false,
+      "checked_at": "2026-05-02T09:56:24.509921+00:00"
+    },
+    {
+      "source_entry_id": "spglobal_sp500_index",
+      "name": "S&P 500 index reference",
+      "url": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
+      "domain": "spglobal.com",
+      "source_id": "public_index_membership_reference",
+      "source_type": "public_reference",
+      "freshness_days": 30,
+      "catalog_validation": {
+        "allowed": true,
+        "reason": "catalog_url_valid"
+      },
+      "health_status": "catalog_valid",
+      "checked_live": false,
+      "checked_at": "2026-05-02T09:56:24.509923+00:00"
+    }
+  ],
+  "resolver": {
+    "status": "success",
+    "catalog_version": "v5.65",
+    "warnings": []
+  }
+}

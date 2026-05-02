@@ -1,28 +1,164 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claire Dashboard</title><link rel="stylesheet" href="./dashboard.css"></head>
-<body><header><div><div class="eyebrow">Claire Syntalion</div><h1>Protected Opportunity Discovery Dashboard</h1><p>Search needed solutions market-wide, generate opportunity selections, run Claire, and browse export artifacts.</p></div><div><button id="refreshBtn">Refresh</button><button id="rescanBtn">Rescan</button></div></header>
-<main><aside>
-<section class="panel"><div class="row"><h2>Opportunity Discovery</h2><span id="liveBadge" class="badge">idle</span></div>
-<label>Workflow Mode</label><select id="workflowSelect"></select>
-<label>Execution / Intelligence Mode</label><select id="executionModeSelect"></select>
-<label>Market Universe</label><select id="marketUniverseSelect"></select>
-<label>Industry / Domain</label><select id="industryDomainSelect"></select>
-<label>Buyer Segment</label><select id="buyerSegmentSelect"></select>
-<label>Opportunity Objective</label><select id="objectiveSelect"></select>
-<label>Command</label><select id="commandSelect"></select>
-<label>Signal / project description</label><textarea id="rawInput" placeholder="Describe a domain, market signal, buyer pain, competitor, product idea, or strategic opportunity..."></textarea>
-<p><button id="neededBtn">Search Needed Solutions Market-Wide</button><button id="generateBtn">Generate Opportunities Selection</button></p>
-<div id="candidateList" class="candidateList"></div>
-<p><button id="runBtn" class="primary">Run Claire From Description</button><button id="clearBtn">Clear</button></p><div id="launchStatus" class="status">Ready. Internal discovery construction is protected and not displayed.</div></section>
-<section class="panel"><h2>Live Run Events</h2><div class="progress"><div id="progressBar"></div></div><div id="eventList" class="eventList"><div class="event muted">No active run.</div></div></section>
-<section class="panel governancePanel"><div class="row"><h2>Governance / Legal Audit</h2><span id="governanceBadge" class="badge">ready</span></div><div id="governanceStatusBox" class="status">No governance check yet.</div><div id="auditList" class="auditList"></div></section>
-<section class="panel publicLiveScanPanel"><div class="row"><h2>Public Company Live Scan v1</h2><span id="publicLiveScanBadge" class="badge">metadata</span></div><div id="publicLiveScanStatusBox" class="status">Loading live scan status...</div><label>Optional public source URLs</label><textarea id="publicSourceUrls" placeholder="Optional: paste public URLs, one per line. Live fetch is disabled unless CLAIRE_ENABLE_LIVE_FEEDS=1."></textarea><p><button id="publicLiveScanBtn">Run Safe Metadata Scan</button></p><div id="publicLiveScanList" class="publicLiveScanList"></div></section>
-<section class="panel offlineResolverPanel"><div class="row"><h2>Offline Universe Resolver</h2><span id="offlineResolverBadge" class="badge">offline</span></div><div id="offlineResolverStatusBox" class="status">Loading offline universe resolver...</div><div id="offlineResolverList" class="offlineResolverList"></div></section>
-<section class="panel sourceCatalogPanel"><div class="row"><h2>Public Company Source Catalog</h2><span id="sourceCatalogBadge" class="badge">catalog</span></div><div id="sourceCatalogStatusBox" class="status">Loading public-company source catalog...</div><div id="sourceCatalogList" class="sourceCatalogList"></div></section>
-<section class="panel feedActivationPanel"><div class="row"><h2>Feed Activation Governance</h2><span id="activationBadge" class="badge">ready</span></div><div id="activationStatusBox" class="status">Connected feed activation is governed and currently offline by default.</div><div id="activationAuditList" class="auditList"></div></section>
-<section class="panel feedPanel"><div class="row"><h2>Feed Status</h2><span id="feedBadge" class="badge">scaffold</span></div><div id="feedStatusBox" class="status">Loading feed coverage...</div><div id="feedCoverageList" class="feedCoverageList"></div></section>
-<section class="panel history"><div class="row"><h2>Run History</h2><span id="runCount" class="badge">0</span></div><div id="statusBox" class="status">Loading...</div><div id="runList"></div></section></aside>
-<section class="panel detail"><div id="emptyState" class="empty"><h2>Select, generate, or launch a run</h2><p>Completed exports will appear here.</p></div><div id="detailState" class="hidden"><div class="detailHead"><div><div id="selectedSector" class="eyebrow"></div><h2 id="selectedTitle"></h2><p id="selectedMeta" class="muted"></p></div><div class="metrics"><div><span>Decision</span><b id="decisionValue">—</b></div><div><span>Export</span><b id="exportValue">—</b></div><div><span>Files</span><b id="filesValue">—</b></div></div></div>
-<nav class="tabs"><button class="tab active" data-tab="summary">Summary</button><button class="tab" data-tab="files">Files</button><button class="tab" data-tab="preview">Preview</button><button class="tab" data-tab="raw">Run JSON</button></nav>
-<div id="summaryTab"><div id="summaryCards" class="cards"></div></div><div id="filesTab" class="hidden"><div id="fileList"></div></div><div id="previewTab" class="hidden"><p><select id="fileSelect"></select><button id="loadPreviewBtn">Load Preview</button></p><pre id="previewBox">Choose a file.</pre></div><div id="rawTab" class="hidden"><pre id="rawBox">Select a run.</pre></div></div></section></main>
-<footer>Protected mode: the dashboard shows opportunity cards and market needs, not Claire's internal discovery construction.</footer><script src="./dashboard.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Claire Syntalion Dashboard</title>
+  <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+  <header class="appHeader">
+    <div class="brandBlock">
+      <div class="brandMark">C</div>
+      <div>
+        <div class="eyebrow">Claire Syntalion</div>
+        <h1>Multi-Mode Intelligence Platform</h1>
+      </div>
+    </div>
+    <nav class="modeNav" aria-label="Claire workspace modes">
+      <button class="modeTab active" data-mode="evaluate">Evaluate</button>
+      <button class="modeTab" data-mode="discover">Discover</button>
+      <button class="modeTab" data-mode="monitor">Monitor</button>
+    </nav>
+    <div class="headerActions">
+      <span id="liveBadge" class="badge">idle</span>
+      <button id="refreshBtn">Refresh</button>
+      <button id="rescanBtn">Rescan</button>
+    </div>
+  </header>
+
+  <main class="modeShell" data-active-mode="evaluate">
+    <section class="modeView active" data-view="evaluate">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Evaluate Mode</div>
+          <h2>Decision Engine</h2>
+        </div>
+        <span class="viewRoute">/evaluate</span>
+      </div>
+      <div class="evaluateGrid">
+        <section class="panel discoveryPanel">
+          <div class="row">
+            <h2>Intent</h2>
+            <span class="badge">pipeline</span>
+          </div>
+          <div class="intentGrid">
+            <label>Mode</label><select id="executionModeSelect"></select>
+            <label>Market Universe</label><select id="marketUniverseSelect"></select>
+            <label>Industry / Domain</label><select id="industryDomainSelect"></select>
+            <label>Buyer Segment</label><select id="buyerSegmentSelect"></select>
+          </div>
+          <details class="secondaryIntent">
+            <summary>Secondary Controls</summary>
+            <div class="formGrid">
+              <label>Workflow</label><select id="workflowSelect"></select>
+              <label>Objective</label><select id="objectiveSelect"></select>
+              <label>Command</label><select id="commandSelect"></select>
+            </div>
+          </details>
+          <label>Signal or project description</label>
+          <textarea id="rawInput" placeholder="Describe the market signal, buyer pain, opportunity, product idea, or strategic question."></textarea>
+          <div class="buttonRow">
+            <button id="runBtn" class="primary">Run Claire</button>
+            <button id="clearBtn">Clear</button>
+          </div>
+          <div id="launchStatus" class="status">Ready.</div>
+        </section>
+
+        <section class="panel pipelinePanel">
+          <div class="row"><h2>Pipeline</h2><span id="pipelineBadge" class="badge">idle</span></div>
+          <div class="pipelineFlow" id="pipelineFlow">
+            <button class="pipelineStage idle active" data-stage="ingestion"><span>Ingestion</span><b>-</b></button>
+            <button class="pipelineStage idle" data-stage="semantic"><span>Semantic</span><b>-</b></button>
+            <button class="pipelineStage idle" data-stage="fusion"><span>Fusion</span><b>-</b></button>
+            <button class="pipelineStage idle" data-stage="engines"><span>Domain Engines</span><b>-</b></button>
+            <button class="pipelineStage idle" data-stage="decision"><span>Decision</span><b>-</b></button>
+          </div>
+          <div id="pipelineDetail" class="pipelineDetail">
+            <strong>Ingestion</strong>
+            <div class="muted">Run Claire or select a completed run to inspect grouped pipeline detail.</div>
+          </div>
+          <details class="eventDrawer">
+            <summary>Run Events</summary>
+            <div class="progress"><div id="progressBar"></div></div>
+            <div id="eventList" class="eventList"><div class="event muted">No active run.</div></div>
+          </details>
+        </section>
+
+        <section class="panel decisionPanel detail">
+          <div id="emptyState" class="empty">
+            <h2>Decision Pending</h2>
+            <p>Run or select an evaluation to see the decision immediately.</p>
+          </div>
+          <div id="detailState" class="hidden">
+            <div class="decisionHead">
+              <div id="decisionHero" class="decisionHero">-</div>
+              <span id="decisionConfidence" class="badge">pending</span>
+            </div>
+            <div class="detailHead decisionMeta">
+              <div>
+                <div id="selectedSector" class="eyebrow"></div>
+                <h2 id="selectedTitle"></h2>
+                <p id="selectedMeta" class="muted"></p>
+              </div>
+              <div class="metrics">
+                <div><span>Decision</span><b id="decisionValue">-</b></div>
+                <div><span>Breakthrough</span><b id="exportValue">-</b></div>
+                <div><span>Domain</span><b id="filesValue">-</b></div>
+              </div>
+            </div>
+            <section class="decisionSignals">
+              <h3>Top Signals</h3>
+              <div id="topSignalList" class="topSignalList">
+                <div class="muted">No signal summary yet.</div>
+              </div>
+            </section>
+            <div id="summaryTab" class="hidden"><div id="summaryCards" class="cards"></div></div>
+            <div id="filesTab" class="hidden"><div id="fileList"></div></div>
+            <div id="previewTab" class="hidden"><p><select id="fileSelect"></select><button id="loadPreviewBtn">Load Preview</button></p><pre id="previewBox">Choose a file.</pre></div>
+            <div id="rawTab" class="hidden"><pre id="rawBox">Raw JSON hidden until dev mode.</pre></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="discover">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Discover Mode</div>
+          <h2>Signals To Solutions</h2>
+        </div>
+        <span class="viewRoute">signals -> clusters -> gaps -> solutions</span>
+      </div>
+      <div id="discoverPipelineRoot" class="discoverPipelineMount">
+        <div class="status">Loading Discover pipeline...</div>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="monitor">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Monitor Mode</div>
+          <h2>Live Intelligence And System State</h2>
+        </div>
+        <span class="viewRoute">monitor + history + system</span>
+      </div>
+      <div id="monitorSurfaceRoot" class="monitorSurfaceMount">
+        <div class="status">Loading Monitor timeline...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Protected mode: opportunity cards and export artifacts are visible; internal construction remains server-side.</footer>
+  <script src="./discover/DiscoverPipeline.js"></script>
+  <script src="./discover/SignalPanel.js"></script>
+  <script src="./discover/ClusterPanel.js"></script>
+  <script src="./discover/GapPanel.js"></script>
+  <script src="./discover/SolutionPanel.js"></script>
+  <script src="./monitor/MonitorSurface.js"></script>
+  <script src="./monitor/MonitorStatusBar.js"></script>
+  <script src="./monitor/MonitorTimeline.js"></script>
+  <script src="./monitor/MonitorDetailPanel.js"></script>
+  <script src="./dashboard.js"></script>
+</body>
+</html>

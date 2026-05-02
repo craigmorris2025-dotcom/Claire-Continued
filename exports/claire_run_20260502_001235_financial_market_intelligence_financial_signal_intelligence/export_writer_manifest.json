@@ -1,0 +1,235 @@
+{
+  "acquisition_artifacts": {
+    "file_count": 4,
+    "files": [
+      "acquisition_readiness_summary.md",
+      "acquirer_discovery_summary.md",
+      "value_capture_summary.md",
+      "diligence_checklist.json"
+    ],
+    "generated_at": "2026-05-02T00:12:35.744929+00:00",
+    "readiness": {
+      "level": "acquisition_grade",
+      "score": 0.807
+    },
+    "status": "available"
+  },
+  "connected_hybrid_artifacts": {
+    "file_count": 5,
+    "files": [
+      "source_manifest.json",
+      "normalized_signals.json",
+      "connected_context.json",
+      "hybrid_fusion_summary.md",
+      "governance_connected_summary.md"
+    ],
+    "generated_at": "2026-05-02T00:12:35.732422+00:00",
+    "status": "available"
+  },
+  "context": {
+    "breakthrough_classification": "HIGH",
+    "category_name": "financial signal intelligence",
+    "decision_classification": "GO",
+    "domain": "finance",
+    "sector": "financial_market_intelligence"
+  },
+  "export_package_score": {
+    "blocking_issues": [
+      "lifecycle is not fully complete"
+    ],
+    "level": "export_ready",
+    "ready_document_count": 8,
+    "score": 0.7954,
+    "total_document_count": 8
+  },
+  "files": [
+    {
+      "filename": "run_summary.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\run_summary.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/run_summary.md",
+      "sha256": "da082ca37f86846392587beea103e766f4611adc2dcdc569a30686ed6beda8c0",
+      "size_bytes": 3148
+    },
+    {
+      "filename": "portfolio_binder.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\portfolio_binder.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/portfolio_binder.md",
+      "sha256": "3861e43c48d7cf78d72d769c4b624ab48c4fae5fd958d8d47730f44146978d57",
+      "size_bytes": 29798
+    },
+    {
+      "filename": "technical_feasibility.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\technical_feasibility.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/technical_feasibility.md",
+      "sha256": "3021d6a54146b0930c5c12f79386d63e1b8a53c7e1c4824f42b8badf9455bdb0",
+      "size_bytes": 6545
+    },
+    {
+      "filename": "productization_path.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\productization_path.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/productization_path.md",
+      "sha256": "7915a9fde19ff298440035e233419ebee296bf1e2ef545002d34a66777de9781",
+      "size_bytes": 10369
+    },
+    {
+      "filename": "strategic_positioning.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\strategic_positioning.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/strategic_positioning.md",
+      "sha256": "2ceef4f228e66837d578ae29cb4967f2ba32e80c6b294a4b21b9cdfc7de6e457",
+      "size_bytes": 9024
+    },
+    {
+      "filename": "deal_exit_model.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\deal_exit_model.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/deal_exit_model.md",
+      "sha256": "a214f507e9e90437967c050df2daf092edc1bf9b382f37347e5bb6c7e1fb910d",
+      "size_bytes": 8257
+    },
+    {
+      "filename": "opportunity_discovery.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\opportunity_discovery.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/opportunity_discovery.md",
+      "sha256": "5e8accbc6af503a17c399df3695199e67edf9a986ef9afe754c0da80ad6ba921",
+      "size_bytes": 3885
+    },
+    {
+      "filename": "full_pipeline_output.json",
+      "format": "json",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\full_pipeline_output.json",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/full_pipeline_output.json",
+      "sha256": "f53cac6b62150c231caa360202d0273a7a30a2cb6409dbfcdf16000e95179586",
+      "size_bytes": 288995
+    },
+    {
+      "filename": "source_manifest.json",
+      "format": "json",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\source_manifest.json",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/source_manifest.json",
+      "sha256": "eb581b9296a5a7cd56e3040537e68289e48e6302b63db68d6be55183e7fce480",
+      "size_bytes": 288
+    },
+    {
+      "filename": "normalized_signals.json",
+      "format": "json",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\normalized_signals.json",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/normalized_signals.json",
+      "sha256": "00757fd7f35bfd52adbcf8e2e4773aa6c3b07c98d0ef53377ac97a472e8b295d",
+      "size_bytes": 122
+    },
+    {
+      "filename": "connected_context.json",
+      "format": "json",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\connected_context.json",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/connected_context.json",
+      "sha256": "5fa0d7bf9fd5b3b2e23e1082495572aed4ae58e36dedb93259c6131bdeabadf1",
+      "size_bytes": 3694
+    },
+    {
+      "filename": "hybrid_fusion_summary.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\hybrid_fusion_summary.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/hybrid_fusion_summary.md",
+      "sha256": "d1c1d81a2756317c07cfa54ee6c0fffd99e624753428165f4b034fd1005013b5",
+      "size_bytes": 720
+    },
+    {
+      "filename": "governance_connected_summary.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\governance_connected_summary.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/governance_connected_summary.md",
+      "sha256": "52add0e2f946bd89b697e8d5db21e52e70581c64719cde5cf925fb4d54f867b6",
+      "size_bytes": 405
+    },
+    {
+      "filename": "acquisition_readiness_summary.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\acquisition_readiness_summary.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/acquisition_readiness_summary.md",
+      "sha256": "019a330f4569c28edffd80624ab72d54e369a9af0f224c475c62d760320c318e",
+      "size_bytes": 802
+    },
+    {
+      "filename": "acquirer_discovery_summary.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\acquirer_discovery_summary.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/acquirer_discovery_summary.md",
+      "sha256": "16930cedb310a52f8b76a4d98a8d263e511c8649811d022e97a22598c1f1a185",
+      "size_bytes": 1671
+    },
+    {
+      "filename": "value_capture_summary.md",
+      "format": "markdown",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\value_capture_summary.md",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/value_capture_summary.md",
+      "sha256": "e7713378ce1985e268d69b8cb5b6270c522395f7c0b679a7df2d0755c30db6c1",
+      "size_bytes": 300
+    },
+    {
+      "filename": "diligence_checklist.json",
+      "format": "json",
+      "path": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence\\diligence_checklist.json",
+      "relative_path": "exports/claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence/diligence_checklist.json",
+      "sha256": "1ee13806d386a7e08b1ed297f57eedaa7b574ff84a5fdc4eb19a62148e09c287",
+      "size_bytes": 827
+    }
+  ],
+  "generated_at": "2026-05-02T00:12:35.713585+00:00",
+  "output_dir": "exports\\claire_run_20260502_001235_financial_market_intelligence_financial_signal_intelligence",
+  "package_profile": {
+    "binder_status": "success",
+    "breakthrough_classification": "innovation_candidate",
+    "category_name": "financial signal intelligence",
+    "decision_classification": "GO",
+    "domain": "finance",
+    "export_audience": [
+      "strategy team",
+      "innovation team",
+      "corporate development",
+      "design partner"
+    ],
+    "lifecycle_active_count": 18,
+    "lifecycle_partial_count": 1,
+    "lifecycle_pending_count": 2,
+    "package_type": "claire_pipeline_export",
+    "portfolio_score": 0.7543648104697974,
+    "productization_state": "validation_ready",
+    "sector": "financial_market_intelligence",
+    "technical_state": "early_feasibility",
+    "version": "v5.29"
+  },
+  "quality_checks": {
+    "binder_success": true,
+    "documents_have_content": true,
+    "failed_count": 1,
+    "has_acquirer_matches": true,
+    "has_scores": true,
+    "lifecycle_complete": false,
+    "missing_documents": [],
+    "passed_count": 5,
+    "required_documents_present": true,
+    "weak_documents": []
+  },
+  "sharing_guidance": {
+    "audience_note": "Share as a strategy, product, or investment-readiness package.",
+    "external_sharing_level": "standard_review",
+    "launch_posture": "data_foundation_before_pilot",
+    "recommended_order": [
+      "run_summary.md",
+      "portfolio_binder.md",
+      "strategic_positioning.md",
+      "productization_path.md",
+      "technical_feasibility.md",
+      "deal_exit_model.md",
+      "full_pipeline_output.json"
+    ],
+    "redaction_note": "Review proprietary assumptions and customer-specific examples before external sharing."
+  },
+  "status": "success"
+}

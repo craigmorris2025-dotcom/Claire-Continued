@@ -1,0 +1,34 @@
+{
+  "readiness_version": "v5.61",
+  "target_state": "desktop-local hybrid platform ready for plateau optimization",
+  "required_capabilities": [
+    "dashboard launcher",
+    "baseline runner",
+    "mode governance",
+    "feed activation governance",
+    "normalized signals",
+    "connected enrichment",
+    "hybrid fusion",
+    "export writer",
+    "connected/hybrid export sidecars",
+    "acquisition export sidecars",
+    "updater health",
+    "rollback inspection",
+    "stale path audit"
+    ,"portable launcher"
+    ,"dashboard health endpoint"
+  ],
+  "production_blockers": [
+    "desktop app packaging wrapper not finalized beyond portable batch launcher",
+    "remote signing/release infrastructure not selected",
+    "live feed environment remains opt-in",
+    "hard restructuring deferred until plateau candidate"
+  ],
+  "safe_to_plateau_when": [
+    "baseline runner passes",
+    "focused pytest passes",
+    "updater health is success or partial with valid rollback path",
+    "dashboard status reports plateau_candidate",
+    "stale path audit is reviewed"
+  ]
+}

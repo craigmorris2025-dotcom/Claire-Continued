@@ -1,0 +1,206 @@
+{
+  "catalog_version": "v5.65",
+  "catalog_name": "public_company_live_source_catalog",
+  "created_for": "Claire governed desktop live source activation",
+  "safe_metadata_only": true,
+  "default_limit": 5,
+  "notes": [
+    "Starter sources are public pages intended for metadata-only signal discovery.",
+    "Live fetching remains gated by CLAIRE_ENABLE_LIVE_FEEDS=1 and feed activation governance.",
+    "This pack is a bridge from catalog definitions to automatic resolver-ready source URLs; it is not a full market data feed."
+  ],
+  "source_packs": [
+    {
+      "pack_id": "public_company_market_core_v1",
+      "name": "Public company market core starter pack",
+      "status": "active",
+      "source_category": "public_company_market_data",
+      "supported_universes": ["sp500_public", "djia_public", "nasdaq_composite"],
+      "refresh_cadence": "manual_or_on_demand",
+      "governance_status": "allow_public_metadata",
+      "description": "Public index, regulatory, and market reference pages for safe metadata-only live scanning.",
+      "sources": [
+        {
+          "source_entry_id": "sec_company_search",
+          "source_id": "public_sec_filings",
+          "name": "SEC EDGAR company search",
+          "url": "https://www.sec.gov/edgar/search/",
+          "domain": "sec.gov",
+          "source_type": "public_regulatory",
+          "priority": 1,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 30,
+          "tags": ["sec", "filings", "public_companies", "regulatory"]
+        },
+        {
+          "source_entry_id": "sec_company_tickers",
+          "source_id": "public_index_membership_reference",
+          "name": "SEC company tickers reference",
+          "url": "https://www.sec.gov/files/company_tickers.json",
+          "domain": "sec.gov",
+          "source_type": "public_reference",
+          "priority": 2,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 30,
+          "tags": ["sec", "ticker_reference", "public_companies"]
+        },
+        {
+          "source_entry_id": "spglobal_sp500_index",
+          "source_id": "public_index_membership_reference",
+          "name": "S&P 500 index reference",
+          "url": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
+          "domain": "spglobal.com",
+          "source_type": "public_reference",
+          "priority": 3,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 30,
+          "tags": ["sp500", "index_reference", "large_cap"]
+        },
+        {
+          "source_entry_id": "nasdaq_stock_screener",
+          "source_id": "public_index_membership_reference",
+          "name": "NASDAQ public stock screener",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener",
+          "domain": "nasdaq.com",
+          "source_type": "public_reference",
+          "priority": 4,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 14,
+          "tags": ["nasdaq", "public_companies", "listed_issuers"]
+        },
+        {
+          "source_entry_id": "nyse_listings_directory",
+          "source_id": "public_index_membership_reference",
+          "name": "NYSE listings directory",
+          "url": "https://www.nyse.com/listings_directory/stock",
+          "domain": "nyse.com",
+          "source_type": "public_reference",
+          "priority": 5,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 14,
+          "tags": ["nyse", "public_companies", "listed_issuers"]
+        }
+      ]
+    },
+    {
+      "pack_id": "mega_cap_ir_starter_v1",
+      "name": "Mega-cap investor relations starter pack",
+      "status": "active",
+      "source_category": "public_company_market_data",
+      "supported_universes": ["sp500_public", "djia_public", "nasdaq_composite"],
+      "refresh_cadence": "manual_or_on_demand",
+      "governance_status": "allow_public_metadata",
+      "description": "Representative official investor relations pages for governed metadata-only opportunity signals.",
+      "sources": [
+        {
+          "source_entry_id": "microsoft_investor_relations",
+          "source_id": "official_company_investor_relations",
+          "name": "Microsoft investor relations",
+          "url": "https://www.microsoft.com/en-us/investor",
+          "domain": "microsoft.com",
+          "source_type": "public_web",
+          "priority": 10,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 30,
+          "tags": ["investor_relations", "technology", "enterprise"]
+        },
+        {
+          "source_entry_id": "apple_investor_relations",
+          "source_id": "official_company_investor_relations",
+          "name": "Apple investor relations",
+          "url": "https://www.apple.com/investor-relations/",
+          "domain": "apple.com",
+          "source_type": "public_web",
+          "priority": 11,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 30,
+          "tags": ["investor_relations", "technology", "hardware"]
+        },
+        {
+          "source_entry_id": "alphabet_investor_relations",
+          "source_id": "official_company_investor_relations",
+          "name": "Alphabet investor relations",
+          "url": "https://abc.xyz/investor/",
+          "domain": "abc.xyz",
+          "source_type": "public_web",
+          "priority": 12,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 30,
+          "tags": ["investor_relations", "technology", "ai"]
+        },
+        {
+          "source_entry_id": "nvidia_investor_relations",
+          "source_id": "official_company_investor_relations",
+          "name": "NVIDIA investor relations",
+          "url": "https://investor.nvidia.com/",
+          "domain": "nvidia.com",
+          "source_type": "public_web",
+          "priority": 13,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 30,
+          "tags": ["investor_relations", "semiconductors", "ai_infrastructure"]
+        },
+        {
+          "source_entry_id": "amazon_investor_relations",
+          "source_id": "official_company_investor_relations",
+          "name": "Amazon investor relations",
+          "url": "https://ir.aboutamazon.com/",
+          "domain": "aboutamazon.com",
+          "source_type": "public_web",
+          "priority": 14,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 30,
+          "tags": ["investor_relations", "cloud", "commerce"]
+        }
+      ]
+    },
+    {
+      "pack_id": "public_market_news_starter_v1",
+      "name": "Public market news metadata starter pack",
+      "status": "active",
+      "source_category": "public_company_market_data",
+      "supported_universes": ["sp500_public", "djia_public", "nasdaq_composite"],
+      "refresh_cadence": "manual_or_on_demand",
+      "governance_status": "allow_public_metadata",
+      "description": "Public market news landing pages used only for title/description-level signal context.",
+      "sources": [
+        {
+          "source_entry_id": "reuters_markets",
+          "source_id": "public_market_news",
+          "name": "Reuters markets",
+          "url": "https://www.reuters.com/markets/",
+          "domain": "reuters.com",
+          "source_type": "public_news",
+          "priority": 20,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 7,
+          "tags": ["markets", "news_metadata", "public_news"]
+        },
+        {
+          "source_entry_id": "cnbc_markets",
+          "source_id": "public_market_news",
+          "name": "CNBC markets",
+          "url": "https://www.cnbc.com/markets/",
+          "domain": "cnbc.com",
+          "source_type": "public_news",
+          "priority": 21,
+          "active": true,
+          "governance_status": "allow_public_metadata",
+          "freshness_days": 7,
+          "tags": ["markets", "news_metadata", "public_news"]
+        }
+      ]
+    }
+  ]
+}

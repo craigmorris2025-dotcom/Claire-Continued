@@ -1,0 +1,18 @@
+﻿{
+    "files":  [
+                  {
+                      "target":  "@root/output/SMOKE_UPDATE.txt",
+                      "required":  true,
+                      "source":  "files/SMOKE_UPDATE.txt",
+                      "type":  "text",
+                      "action":  "create"
+                  }
+              ],
+    "description":  "Disposable dry-run package for updater bootstrap validation.",
+    "post_install":  {
+                         "run_compile_check":  false,
+                         "run_regression_tests":  false
+                     },
+    "update_name":  "updater_bootstrap_smoke",
+    "version":  "v5.48-smoke"
+}

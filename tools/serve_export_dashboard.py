@@ -25,30 +25,97 @@ from claire.runtime.market_universe_taxonomy import MarketUniverseTaxonomy
 from claire.runtime.search_suggestions import OpportunitySearchSuggestions
 from claire.runtime.opportunity_seed_generator import OpportunitySeedGenerator
 from claire.runtime.opportunity_candidate_store import OPPORTUNITY_CANDIDATES
+from claire.runtime.dashboard_system_status import DashboardSystemStatus
+from claire.runtime.dashboard_layout_registry import DashboardLayoutRegistry
+from claire.runtime.stale_path_audit import StalePathAudit
+from claire.runtime.production_readiness import ProductionReadiness
+from claire.runtime.plateau_candidate import PlateauCandidateReport
+from claire.runtime.desktop_service_status import DesktopServiceStatus
+from claire.runtime.portable_desktop_readiness import PortableDesktopReadiness
+from claire.runtime.desktop_app_shell import DesktopAppShell
+from claire.runtime.enhanced_interface_bridge import EnhancedInterfaceBridge
+from claire.enrichment.connected_opportunity_enricher import ConnectedOpportunityEnricher
+from claire.fusion.hybrid_opportunity_fusion import HybridOpportunityFusionEngine
+from claire.export.connected_export_artifacts import ConnectedExportArtifactWriter
+from claire.export.acquisition_export_artifacts import AcquisitionExportArtifactWriter
+from claire.lifecycle.stage_registry import ClaireStageRegistry
+from claire.lifecycle.threshold_provenance import ThresholdProvenance
+from claire.mode.switch_controller import ModeSwitchController
+from claire.mode.state_manager import ModeStateManager
+from claire.mode.isolation_layer import ModeIsolationLayer
 from claire.feeds.feed_registry import FeedRegistry
 from claire.feeds.source_catalogs.public_company_sources import PublicCompanySourceCatalog
 from claire.feeds.source_catalogs.index_universe_registry import IndexUniverseRegistry
 from claire.feeds.source_catalogs.offline_universe_resolver import OfflinePublicCompanyUniverseResolver
+from claire.feeds.source_catalogs.live_source_catalog import LiveSourceCatalog
+from claire.feeds.source_catalogs.source_health import LiveSourceHealthChecker
 from claire.feeds.public_company_live_scan import PublicCompanyLiveScan
+from claire.feeds.live_source_orchestrator import LiveSourceOrchestrator
+from claire.feeds.governed_feed_activation import GovernedFeedActivation
+from claire.feeds.signal_normalizer import FeedSignalNormalizer
+from claire.feeds.signal_registry import SIGNAL_REGISTRY
 from claire.governance.redline_classifier import RedlineClassifier
 from claire.governance.legal_audit_log import LegalAuditLog
 from claire.governance.feed_activation_policy import FeedActivationPolicy
 from claire.governance.feed_audit_log import FeedAuditLog
+from claire.updater.update_health import UpdaterHealth
+from claire.updater.dashboard_update_workflow import DashboardUpdateWorkflow
+from claire.live_intelligence.entity_registry import SourceEntityRegistry
+from claire.live_intelligence.connectors import ConnectorRunner
+from claire.live_intelligence.signal_extraction import SignalExtractionWorker
+from claire.live_intelligence.trend_clustering import TrendClusterer
+from claire.live_intelligence.gap_detection import GapDetectionEngine
+from claire.live_intelligence.solution_synthesis import SolutionSynthesisEngine
+from claire.live_intelligence.live_opportunity_monitor import LiveOpportunityMonitor
+from claire.live_intelligence.history_store import LiveIntelligenceHistoryStore
+from claire.live_intelligence.source_scan_planner import SourceScanPlanner
+from claire.live_intelligence.monitor_candidate_bridge import MonitorCandidateBridge
 
 DASHBOARD_DIR=PROJECT_ROOT/"src"/"frontend"/"export_dashboard"
 CATALOG=OpportunityCommandCatalog()
 TAXONOMY=MarketUniverseTaxonomy()
 SUGGESTIONS=OpportunitySearchSuggestions()
 SEEDS=OpportunitySeedGenerator()
+DASHBOARD_STATUS=DashboardSystemStatus()
+DASHBOARD_LAYOUT=DashboardLayoutRegistry()
+DESKTOP_SERVICES=DesktopServiceStatus(PROJECT_ROOT)
+PORTABLE_READINESS=PortableDesktopReadiness(PROJECT_ROOT)
+DESKTOP_APP_SHELL=DesktopAppShell(PROJECT_ROOT)
+ENHANCED_INTERFACE=EnhancedInterfaceBridge(PROJECT_ROOT)
+ENRICHER=ConnectedOpportunityEnricher()
+HYBRID_FUSION=HybridOpportunityFusionEngine()
+CONNECTED_EXPORTS=ConnectedExportArtifactWriter()
+ACQUISITION_EXPORTS=AcquisitionExportArtifactWriter()
+STAGE_REGISTRY=ClaireStageRegistry()
+THRESHOLD_PROVENANCE=ThresholdProvenance()
+MODE_SWITCH=ModeSwitchController()
+MODE_STATE=ModeStateManager()
+MODE_ISOLATION=ModeIsolationLayer()
 FEEDS=FeedRegistry()
 PUBLIC_COMPANY_SOURCES=PublicCompanySourceCatalog()
 INDEX_UNIVERSES=IndexUniverseRegistry()
 OFFLINE_UNIVERSE_RESOLVER=OfflinePublicCompanyUniverseResolver()
+LIVE_SOURCE_CATALOG=LiveSourceCatalog(PROJECT_ROOT)
+LIVE_SOURCE_HEALTH=LiveSourceHealthChecker(PROJECT_ROOT)
 PUBLIC_COMPANY_LIVE_SCAN=PublicCompanyLiveScan()
+LIVE_SOURCE_ORCHESTRATOR=LiveSourceOrchestrator(PROJECT_ROOT)
+GOVERNED_FEED_ACTIVATION=GovernedFeedActivation(PROJECT_ROOT)
+SIGNAL_NORMALIZER=FeedSignalNormalizer()
 GOVERNANCE=RedlineClassifier()
 LEGAL_AUDIT=LegalAuditLog()
 FEED_POLICY=FeedActivationPolicy()
 FEED_AUDIT=FeedAuditLog()
+UPDATE_WORKFLOW=DashboardUpdateWorkflow(PROJECT_ROOT)
+SOURCE_ENTITY_REGISTRY=SourceEntityRegistry(PROJECT_ROOT)
+LIVE_CONNECTORS=ConnectorRunner(PROJECT_ROOT)
+SIGNAL_EXTRACTOR=SignalExtractionWorker()
+TREND_CLUSTERER=TrendClusterer()
+GAP_DETECTOR=GapDetectionEngine()
+SOLUTION_SYNTHESIZER=SolutionSynthesisEngine()
+LIVE_OPPORTUNITY_MONITOR=LiveOpportunityMonitor(PROJECT_ROOT)
+LIVE_HISTORY=LiveIntelligenceHistoryStore(PROJECT_ROOT)
+SOURCE_SCAN_PLANNER=SourceScanPlanner(PROJECT_ROOT)
+MONITOR_CANDIDATE_BRIDGE=MonitorCandidateBridge()
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args): print("[dashboard]", fmt % args)
@@ -57,11 +124,54 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if path in {"/","/index.html"}: return self.file(DASHBOARD_DIR/"index.html")
             if path in {"/dashboard.css","/dashboard.js"}: return self.file(DASHBOARD_DIR/path.lstrip("/"))
+            if path.startswith("/discover/"):
+                filename=Path(unquote(path)).name
+                allowed={"DiscoverPipeline.js","SignalPanel.js","ClusterPanel.js","GapPanel.js","SolutionPanel.js"}
+                if filename in allowed: return self.file(PROJECT_ROOT/"src"/"frontend"/"discover"/filename)
+                return self.send_error(404,"Unsupported Discover component")
+            if path.startswith("/monitor/"):
+                filename=Path(unquote(path)).name
+                allowed={"MonitorSurface.js","MonitorStatusBar.js","MonitorTimeline.js","MonitorDetailPanel.js"}
+                if filename in allowed: return self.file(PROJECT_ROOT/"src"/"frontend"/"monitor"/filename)
+                return self.send_error(404,"Unsupported Monitor component")
+            if path=="/api/health": return self.json(self.health())
             if path=="/api/commands": return self.json(CATALOG.catalog())
             if path=="/api/market-universe": return self.json(TAXONOMY.catalog())
             if path=="/api/feeds/status": return self.json(FEEDS.status())
             if path=="/api/feeds/public-company-sources": return self.json(PUBLIC_COMPANY_SOURCES.catalog())
+            if path=="/api/feeds/live-source-catalog/status": return self.json(LIVE_SOURCE_CATALOG.status())
+            if path=="/api/feeds/live-source-catalog/packs": return self.json(LIVE_SOURCE_CATALOG.packs())
+            if path=="/api/feeds/live-source-catalog/health": return self.json(LIVE_SOURCE_HEALTH.snapshot())
+            if path=="/api/feeds/live-orchestration/status": return self.json(LIVE_SOURCE_ORCHESTRATOR.status())
             if path=="/api/feeds/public-company-live/status": return self.json(PUBLIC_COMPANY_LIVE_SCAN.status())
+            if path=="/api/signals/status": return self.json(SIGNAL_REGISTRY.status())
+            if path=="/api/signals/normalized": return self.json(SIGNAL_REGISTRY.list())
+            if path=="/api/opportunities/enrichment-status": return self.json(self.enrichment_status())
+            if path=="/api/opportunities/fusion-status": return self.json(self.fusion_status())
+            if path=="/api/lifecycle/stage-registry": return self.json(STAGE_REGISTRY.as_payload())
+            if path=="/api/lifecycle/threshold-provenance": return self.json(THRESHOLD_PROVENANCE.as_payload())
+            if path=="/api/modes/status": return self.json(self.mode_status())
+            if path=="/api/modes/recent": return self.json(MODE_STATE.recent())
+            if path=="/api/dashboard/system-status": return self.json(self.dashboard_system_status())
+            if path=="/api/services/status": return self.json(self.services_status())
+            if path=="/api/dashboard/layout": return self.json(DASHBOARD_LAYOUT.payload())
+            if path=="/api/system/stale-path-audit": return self.json(StalePathAudit(PROJECT_ROOT).run())
+            if path=="/api/system/production-readiness": return self.json(ProductionReadiness(PROJECT_ROOT).status())
+            if path=="/api/system/plateau-candidate": return self.json(PlateauCandidateReport(PROJECT_ROOT).build())
+            if path=="/api/updater/status": return self.json(UpdaterHealth(PROJECT_ROOT).status())
+            if path=="/api/updater/dashboard-status": return self.json(UPDATE_WORKFLOW.status())
+            if path=="/api/updater/rollbacks": return self.json(UPDATE_WORKFLOW.rollbacks())
+            if path=="/api/portable/status": return self.json(PORTABLE_READINESS.status())
+            if path=="/api/desktop-app/status": return self.json(DESKTOP_APP_SHELL.status())
+            if path=="/api/enhanced-interface/status": return self.json(ENHANCED_INTERFACE.status())
+            if path=="/api/live-intelligence/status": return self.json(self.live_intelligence_status())
+            if path=="/api/live-intelligence/entities": return self.json(SOURCE_ENTITY_REGISTRY.status())
+            if path=="/api/live-intelligence/connectors/status": return self.json(LIVE_CONNECTORS.status())
+            if path=="/api/live-intelligence/monitor/status": return self.json(LIVE_OPPORTUNITY_MONITOR.status())
+            if path=="/api/live-intelligence/history": return self.json(LIVE_HISTORY.list())
+            if path=="/api/live-intelligence/latest": return self.json(LIVE_HISTORY.latest())
+            if path=="/api/live-intelligence/scan-plan": return self.json(SOURCE_SCAN_PLANNER.plan())
+            if path=="/api/feeds/governed-activation/status": return self.json(GOVERNED_FEED_ACTIVATION.status())
             if path=="/api/feeds/index-universes": return self.json(INDEX_UNIVERSES.all())
             if path=="/api/feeds/offline-universe/status": return self.json(OFFLINE_UNIVERSE_RESOLVER.status())
             if path=="/api/feeds/activation-status": return self.json(FEED_POLICY.status())
@@ -79,15 +189,35 @@ class Handler(BaseHTTPRequestHandler):
         parsed=urlparse(self.path)
         try:
             if parsed.path=="/api/governance/evaluate": return self.json(self.governance_evaluate(self.body()))
+            if parsed.path=="/api/modes/evaluate": return self.json(self.mode_evaluate(self.body()))
             if parsed.path=="/api/feeds/activation-check": return self.json(self.feed_activation_check(self.body()))
+            if parsed.path=="/api/feeds/governed-activation/prepare": return self.json(GOVERNED_FEED_ACTIVATION.prepare(self.body()))
             if parsed.path=="/api/feeds/offline-universe/resolve": return self.json(self.resolve_offline_universe(self.body()))
+            if parsed.path=="/api/feeds/live-source-catalog/resolve": return self.json(self.resolve_live_source_catalog(self.body()))
+            if parsed.path=="/api/feeds/live-source-catalog/health-check": return self.json(self.check_live_source_health(self.body()))
+            if parsed.path=="/api/feeds/live-orchestration/run": return self.json(self.run_live_orchestration(self.body()))
             if parsed.path=="/api/feeds/public-company-live/scan": return self.json(self.public_company_live_scan(self.body()))
+            if parsed.path=="/api/signals/normalize": return self.json(self.normalize_signals(self.body()))
             if parsed.path=="/api/feeds/scan": return self.json(self.scan_feed(self.body()))
             if parsed.path=="/api/rescan": return self.json(RunHistory().rescan_exports("exports"))
             if parsed.path=="/api/evaluate": return self.json(self.eval_sync(self.body()))
             if parsed.path=="/api/evaluate/async": return self.json(self.eval_async(self.body()))
             if parsed.path=="/api/opportunities/search-needed-solutions": return self.json(self.search_needed_solutions(self.body()))
             if parsed.path=="/api/opportunities/generate": return self.json(self.generate_public_opportunities(self.body()))
+            if parsed.path=="/api/opportunities/enrich-preview": return self.json(self.enrich_preview(self.body()))
+            if parsed.path=="/api/opportunities/fusion-preview": return self.json(self.fusion_preview(self.body()))
+            if parsed.path=="/api/exports/acquisition-preview": return self.json(ACQUISITION_EXPORTS.preview(self.body()))
+            if parsed.path=="/api/updater/preview": return self.json(self.updater_preview(self.body()))
+            if parsed.path=="/api/updater/install": return self.json(self.updater_install(self.body()))
+            if parsed.path=="/api/enhanced-interface/action": return self.json(self.enhanced_interface_action(self.body()))
+            if parsed.path=="/api/live-intelligence/connectors/run": return self.json(LIVE_CONNECTORS.run(self.body()))
+            if parsed.path=="/api/live-intelligence/extract": return self.json(self.live_extract(self.body()))
+            if parsed.path=="/api/live-intelligence/cluster": return self.json(TREND_CLUSTERER.cluster(self.body()))
+            if parsed.path=="/api/live-intelligence/detect-gaps": return self.json(GAP_DETECTOR.detect(self.body()))
+            if parsed.path=="/api/live-intelligence/synthesize": return self.json(SOLUTION_SYNTHESIZER.synthesize(self.body(), self.body()))
+            if parsed.path=="/api/live-intelligence/monitor/run": return self.json(self.live_monitor_run(self.body()))
+            if parsed.path=="/api/live-intelligence/scan-plan": return self.json(SOURCE_SCAN_PLANNER.plan(self.body()))
+            if parsed.path=="/api/live-intelligence/activate-candidates": return self.json(self.activate_live_candidates(self.body()))
             if parsed.path=="/api/opportunities/run-candidate": return self.json(self.run_candidate(self.body()))
             self.send_error(404,"Not found")
         except Exception as e:
@@ -105,21 +235,92 @@ class Handler(BaseHTTPRequestHandler):
         decision=GOVERNANCE.classify(text,context)
         audit=LEGAL_AUDIT.log("governance_evaluation",decision,context)
         return {"status":"success","decision":decision,"audit_event":audit}
+    def health(self):
+        return {
+            "status":"success",
+            "service":"claire_export_dashboard",
+            "project_root":str(PROJECT_ROOT),
+            "dashboard_dir":str(DASHBOARD_DIR),
+            "portable":True,
+            "desktop_live":bool(__import__("os").environ.get("CLAIRE_DESKTOP_LIVE","").strip()=="1"),
+            "app_shell":bool(__import__("os").environ.get("CLAIRE_APP_SHELL","").strip()=="1"),
+            "live_connected_enabled":bool(__import__("os").environ.get("CLAIRE_ENABLE_LIVE_FEEDS","").strip()=="1"),
+            "baseline_runner":(PROJECT_ROOT/"tools"/"run_claire_baseline.py").exists(),
+            "updater_status":UpdaterHealth(PROJECT_ROOT).status().get("readiness"),
+        }
+    def mode_status(self):
+        status=MODE_SWITCH.status()
+        status["recent"]=MODE_STATE.recent(limit=5)
+        return status
+    def mode_evaluate(self,payload):
+        decision=MODE_SWITCH.evaluate(payload)
+        event=MODE_STATE.record("mode_evaluation",decision,{
+            "workflow":payload.get("workflow"),
+            "market_universe":payload.get("market_universe"),
+            "industry_domain":payload.get("industry_domain"),
+        })
+        return {"status":decision.get("status","success"),"mode_decision":decision,"mode_event":event}
+    def dashboard_system_status(self):
+        return DASHBOARD_STATUS.build(
+            mode_status=MODE_SWITCH.status(),
+            feed_status=FEED_POLICY.status(),
+            signal_status=SIGNAL_REGISTRY.status(),
+            enrichment_status=self.enrichment_status(),
+            fusion_status=self.fusion_status(),
+            lifecycle_status=STAGE_REGISTRY.summary(),
+            export_summary=ExportBrowser().summary(),
+            updater_status=UpdaterHealth(PROJECT_ROOT).status(),
+        )
+    def services_status(self):
+        return DESKTOP_SERVICES.status(
+            mode_status=MODE_SWITCH.status(),
+            feed_status=FEEDS.status(),
+            live_scan_status=PUBLIC_COMPANY_LIVE_SCAN.status(),
+            live_source_catalog_status=LIVE_SOURCE_CATALOG.status(),
+            updater_status=UpdaterHealth(PROJECT_ROOT).status(),
+            baseline_available=(PROJECT_ROOT/"tools"/"run_claire_baseline.py").exists(),
+        )
     def public_company_live_scan(self,payload):
-        activation=FEED_POLICY.evaluate(payload)
+        mode_decision=MODE_SWITCH.evaluate(payload)
+        MODE_STATE.record("public_company_live_scan",mode_decision,{"market_universe":payload.get("market_universe")})
+        if mode_decision.get("status")=="blocked":
+            return {"status":"blocked","mode_decision":mode_decision,"activation_decision":mode_decision.get("feed_activation")}
+        payload=MODE_ISOLATION.isolate(payload,mode_decision)
+        activation=mode_decision.get("feed_activation") or FEED_POLICY.evaluate(payload)
         FEED_AUDIT.log("public_company_live_scan_v1",activation,payload)
         if activation.get("decision")=="block":
             return {"status":"blocked","activation_decision":activation}
-        return PUBLIC_COMPANY_LIVE_SCAN.scan(
+        result = PUBLIC_COMPANY_LIVE_SCAN.scan(
             market_universe=payload.get("market_universe","sp500_public"),
             execution_mode=payload.get("execution_mode","connected"),
             activation_decision=activation,
             source_urls=payload.get("source_urls",[]),
+            catalog_limit=int(payload.get("catalog_limit",5) or 5),
             industry_domain=payload.get("industry_domain","cross_sector"),
             buyer_segment=payload.get("buyer_segment","enterprise_c_suite"),
             objective=payload.get("objective","discover_market_gaps"),
             signal=payload.get("signal",""),
         )
+        normalized = SIGNAL_NORMALIZER.normalize_many(
+            result.get("signals", []),
+            context=payload,
+            activation_decision=activation,
+        )
+        SIGNAL_REGISTRY.put_many(normalized.get("signals", []))
+        result["normalized_signals"] = normalized.get("signals", [])
+        result["normalized_summary"] = normalized.get("summary", {})
+        result["normalization_status"] = normalized.get("status")
+        result["mode_decision"] = mode_decision
+        return result
+    def normalize_signals(self,payload):
+        activation=payload.get("activation_decision") or FEED_POLICY.evaluate(payload)
+        normalized=SIGNAL_NORMALIZER.normalize_many(
+            payload.get("signals", []),
+            context=payload,
+            activation_decision=activation,
+        )
+        SIGNAL_REGISTRY.put_many(normalized.get("signals", []))
+        return normalized
     def resolve_offline_universe(self,payload):
         return OFFLINE_UNIVERSE_RESOLVER.resolve(
             market_universe=payload.get("market_universe","sp500_public"),
@@ -127,12 +328,149 @@ class Handler(BaseHTTPRequestHandler):
             buyer_segment=payload.get("buyer_segment","enterprise_c_suite"),
             objective=payload.get("objective","discover_market_gaps"),
         )
+    def resolve_live_source_catalog(self,payload):
+        return LIVE_SOURCE_CATALOG.resolve(
+            market_universe=payload.get("market_universe","sp500_public"),
+            source_ids=payload.get("source_ids") or [],
+            source_types=payload.get("source_types") or [],
+            limit=int(payload.get("limit",5) or 5),
+        )
+    def check_live_source_health(self,payload):
+        return LIVE_SOURCE_HEALTH.check(
+            market_universe=payload.get("market_universe","sp500_public"),
+            limit=int(payload.get("limit",5) or 5),
+            fetch_live=bool(payload.get("fetch_live",False)),
+        )
+    def run_live_orchestration(self,payload):
+        mode_decision=MODE_SWITCH.evaluate(payload)
+        MODE_STATE.record("live_source_orchestration",mode_decision,{"market_universe":payload.get("market_universe")})
+        if mode_decision.get("status")=="blocked":
+            return {"status":"blocked","mode_decision":mode_decision,"activation_decision":mode_decision.get("feed_activation")}
+        payload=MODE_ISOLATION.isolate(payload,mode_decision)
+        activation=mode_decision.get("feed_activation") or FEED_POLICY.evaluate(payload)
+        FEED_AUDIT.log("live_source_orchestration_v1",activation,payload)
+        if activation.get("decision")=="block":
+            return {"status":"blocked","activation_decision":activation,"mode_decision":mode_decision}
+        result=LIVE_SOURCE_ORCHESTRATOR.run(payload,activation)
+        scan=result.get("scan",{})
+        normalized = SIGNAL_NORMALIZER.normalize_many(
+            scan.get("signals", []),
+            context=payload,
+            activation_decision=activation,
+        )
+        SIGNAL_REGISTRY.put_many(normalized.get("signals", []))
+        result["normalized_signals"]=normalized.get("signals", [])
+        result["normalized_summary"]=normalized.get("summary", {})
+        result["normalization_status"]=normalized.get("status")
+        result["activation_decision"]=activation
+        result["mode_decision"]=mode_decision
+        return result
+    def updater_preview(self,payload):
+        return UPDATE_WORKFLOW.preview(
+            url=payload.get("url",""),
+            expected_sha256=payload.get("expected_sha256",""),
+        )
+    def updater_install(self,payload):
+        return UPDATE_WORKFLOW.install(
+            url=payload.get("url",""),
+            expected_sha256=payload.get("expected_sha256",""),
+            confirm=bool(payload.get("confirm",False)),
+            run_baseline=bool(payload.get("run_baseline",False)),
+        )
+    def enhanced_interface_action(self,payload):
+        action=ENHANCED_INTERFACE.action(payload)
+        action_id=payload.get("action_id","")
+        if action_id=="claire_search":
+            query=payload.get("query") or payload.get("signal") or payload.get("raw_input") or ""
+            search_payload=dict(payload)
+            search_payload["signal"]=query
+            action["needed_solutions"]=self.search_needed_solutions(search_payload)
+        elif action_id=="mode_switching":
+            action["mode_decision"]=MODE_SWITCH.evaluate(payload)
+        elif action_id=="live_discoveries":
+            activation=FEED_POLICY.evaluate(payload)
+            action["live_orchestration"]=LIVE_SOURCE_ORCHESTRATOR.run(payload,activation)
+        return action
+    def live_intelligence_status(self):
+        registry=SOURCE_ENTITY_REGISTRY.status()
+        connectors=LIVE_CONNECTORS.status()
+        monitor=LIVE_OPPORTUNITY_MONITOR.status()
+        return {
+            "status":"success",
+            "live_intelligence_version":"v5.81",
+            "registry":registry,
+            "connectors":connectors,
+            "monitor":monitor,
+            "completion_chain":[
+                "v5.72 source_entity_registry",
+                "v5.73 sec_public_filing_connector",
+                "v5.74 investor_relations_connector",
+                "v5.75 public_news_metadata_connector",
+                "v5.76 patent_uspto_connector",
+                "v5.77 signal_extraction_workers",
+                "v5.78 signal_clustering_trend_formation",
+                "v5.79 gap_detection_engine",
+                "v5.80 solution_synthesis_engine",
+                "v5.81 live_opportunity_monitor",
+                "v5.82 monitor_history_store",
+                "v5.83 source_freshness_scan_planner",
+                "v5.84 live_solution_candidate_activation",
+            ],
+        }
+    def live_extract(self,payload):
+        connector_payload=payload.get("connector_payload") or LIVE_CONNECTORS.run(payload)
+        return SIGNAL_EXTRACTOR.extract(connector_payload,context=payload)
+    def live_monitor_run(self,payload):
+        mode_decision=MODE_SWITCH.evaluate(payload)
+        MODE_STATE.record("live_opportunity_monitor",mode_decision,{"market_universe":payload.get("market_universe")})
+        if mode_decision.get("status")=="blocked":
+            return {"status":"blocked","mode_decision":mode_decision}
+        isolated=MODE_ISOLATION.isolate(payload,mode_decision)
+        activation=mode_decision.get("feed_activation") or FEED_POLICY.evaluate(isolated)
+        FEED_AUDIT.log("live_opportunity_monitor_v1",activation,isolated)
+        if activation.get("decision")=="block":
+            return {"status":"blocked","activation_decision":activation,"mode_decision":mode_decision}
+        result=LIVE_OPPORTUNITY_MONITOR.run(isolated)
+        history=LIVE_HISTORY.record(result,context=isolated)
+        bridge=MONITOR_CANDIDATE_BRIDGE.build_candidates(result,context=isolated)
+        public_cards=[]
+        for candidate in bridge.get("candidates", [])[:5]:
+            candidate_id=OPPORTUNITY_CANDIDATES.put(candidate)
+            stored=OPPORTUNITY_CANDIDATES.get(candidate_id) or {}
+            public_cards.append(OPPORTUNITY_CANDIDATES.public_card(stored))
+        result["activation_decision"]=activation
+        result["mode_decision"]=mode_decision
+        result["history_record"]=history
+        result["activated_candidates"]=public_cards
+        return result
+    def activate_live_candidates(self,payload):
+        latest=LIVE_HISTORY.latest()
+        result=payload.get("monitor_result") or latest.get("result") or {}
+        if not result:
+            return {"status":"not_found","activated_candidates":[]}
+        bridge=MONITOR_CANDIDATE_BRIDGE.build_candidates(result,context=payload)
+        public_cards=[]
+        for candidate in bridge.get("candidates", [])[: int(payload.get("limit",5) or 5)]:
+            candidate_id=OPPORTUNITY_CANDIDATES.put(candidate)
+            stored=OPPORTUNITY_CANDIDATES.get(candidate_id) or {}
+            public_cards.append(OPPORTUNITY_CANDIDATES.public_card(stored))
+        return {
+            "status":"success",
+            "candidate_count":len(public_cards),
+            "candidates":public_cards,
+            "source_monitor_run_id":latest.get("monitor_run_id"),
+        }
     def feed_activation_check(self,payload):
         decision=FEED_POLICY.evaluate(payload)
         audit=FEED_AUDIT.log("feed_activation_check",decision,payload)
         return {"status":"success","activation_decision":decision,"audit_event":audit}
     def scan_feed(self,payload):
-        activation=FEED_POLICY.evaluate(payload)
+        mode_decision=MODE_SWITCH.evaluate(payload)
+        MODE_STATE.record("feed_scan",mode_decision,{"market_universe":payload.get("market_universe")})
+        if mode_decision.get("status")=="blocked":
+            return {"status":"blocked","mode_decision":mode_decision,"activation_decision":mode_decision.get("feed_activation")}
+        payload=MODE_ISOLATION.isolate(payload,mode_decision)
+        activation=mode_decision.get("feed_activation") or FEED_POLICY.evaluate(payload)
         FEED_AUDIT.log("feed_scan_activation",activation,payload)
         if activation.get("decision")=="block":
             return {"status":"blocked","activation_decision":activation}
@@ -143,6 +481,7 @@ class Handler(BaseHTTPRequestHandler):
                 filters=payload,
             )
             result["activation_decision"]=activation
+            result["mode_decision"]=mode_decision
             result["connected_ingestion_performed"]=False
             return result
         scan_payload=dict(payload)
@@ -154,6 +493,7 @@ class Handler(BaseHTTPRequestHandler):
             filters=scan_payload,
         )
         result["activation_decision"]=activation
+        result["mode_decision"]=mode_decision
         result["connected_ingestion_performed"]=result.get("status")=="success" and bool(result.get("signals"))
         result["note"]="Public-company live scan v1 is metadata-only and environment-gated."
         return result
@@ -168,6 +508,11 @@ class Handler(BaseHTTPRequestHandler):
             count=int(payload.get("count",10) or 10),
         )
     def generate_public_opportunities(self,payload):
+        mode_decision=MODE_SWITCH.evaluate(payload)
+        MODE_STATE.record("opportunity_generation",mode_decision,{"workflow":payload.get("workflow"),"market_universe":payload.get("market_universe")})
+        if mode_decision.get("status")=="blocked":
+            return {"status":"blocked","mode_decision":mode_decision}
+        payload=MODE_ISOLATION.isolate(payload,mode_decision)
         generated = SEEDS.generate(
             workflow=payload.get("workflow","discover"),
             execution_mode=payload.get("execution_mode","deterministic"),
@@ -179,8 +524,11 @@ class Handler(BaseHTTPRequestHandler):
             signal=payload.get("signal",""),
             count=int(payload.get("count",5) or 5),
         )
+        normalized_signals = SIGNAL_REGISTRY.list(limit=100).get("signals", [])
         public_cards=[]
         for candidate in generated.get("candidates", []):
+            candidate = ENRICHER.enrich_candidate(candidate, normalized_signals, payload)
+            candidate = HYBRID_FUSION.fuse_candidate(candidate, payload)
             candidate_id=OPPORTUNITY_CANDIDATES.put(candidate)
             stored=OPPORTUNITY_CANDIDATES.get(candidate_id) or {}
             public_cards.append(OPPORTUNITY_CANDIDATES.public_card(stored))
@@ -188,12 +536,66 @@ class Handler(BaseHTTPRequestHandler):
             "status":"success",
             "candidate_count":len(public_cards),
             "candidates":public_cards,
+            "connected_enrichment": {
+                "status": "available" if normalized_signals else "no_normalized_signals",
+                "normalized_signal_count": len(normalized_signals),
+                "enriched_candidate_count": len([c for c in public_cards if (c.get("connected_enrichment") or {}).get("safe_to_enrich")]),
+            },
+            "hybrid_fusion": {
+                "status": "available",
+                "hybrid_candidate_count": len([c for c in public_cards if (c.get("hybrid_fusion") or {}).get("status") == "hybrid_ready"]),
+                "recommended_hybrid_count": len([c for c in public_cards if (c.get("hybrid_fusion") or {}).get("recommended_mode") in {"hybrid", "hybrid_candidate"}]),
+            },
             "workflow":generated.get("workflow"),
             "execution_mode":generated.get("execution_mode"),
             "market_universe":generated.get("market_universe"),
             "industry_domain":generated.get("industry_domain"),
             "buyer_segment":generated.get("buyer_segment"),
             "objective":generated.get("objective"),
+            "mode_decision":mode_decision,
+        }
+    def enrichment_status(self):
+        signals = SIGNAL_REGISTRY.list(limit=100).get("signals", [])
+        return {
+            "status":"success",
+            "enricher":"connected_opportunity_enricher_v1",
+            "normalized_signal_count":len(signals),
+            "safe_to_enrich_count":len([s for s in signals if s.get("safe_to_enrich")]),
+            "supported_outputs":["public_opportunity_card","protected_launch_prompt"],
+        }
+    def fusion_status(self):
+        signals = SIGNAL_REGISTRY.list(limit=100).get("signals", [])
+        return {
+            "status":"success",
+            "fusion_engine":"hybrid_opportunity_fusion_v1",
+            "normalized_signal_count":len(signals),
+            "purpose":"Fuse deterministic opportunity selection with safe connected enrichment.",
+            "supported_outputs":["hybrid_readiness","recommended_mode","fusion_summary","protected_launch_prompt"],
+        }
+    def enrich_preview(self,payload):
+        generated = SEEDS.generate(
+            workflow=payload.get("workflow","discover"),
+            execution_mode=payload.get("execution_mode","deterministic"),
+            market_universe=payload.get("market_universe","custom_universe"),
+            industry_domain=payload.get("industry_domain","cross_sector"),
+            buyer_segment=payload.get("buyer_segment","enterprise_c_suite"),
+            objective=payload.get("objective","discover_market_gaps"),
+            command_id=payload.get("command_id","discover_market_gaps"),
+            signal=payload.get("signal",""),
+            count=1,
+        )
+        candidate = (generated.get("candidates") or [{}])[0]
+        signals = payload.get("normalized_signals") or SIGNAL_REGISTRY.list(limit=100).get("signals", [])
+        enriched = ENRICHER.enrich_candidate(candidate, signals, payload)
+        enriched = HYBRID_FUSION.fuse_candidate(enriched, payload)
+        public = OPPORTUNITY_CANDIDATES.public_card(enriched)
+        return {"status":"success","candidate":public,"connected_enrichment":public.get("connected_enrichment",{})}
+    def fusion_preview(self,payload):
+        preview = self.enrich_preview(payload)
+        return {
+            "status":"success",
+            "candidate":preview.get("candidate"),
+            "hybrid_fusion":(preview.get("candidate") or {}).get("hybrid_fusion",{}),
         }
     def run_candidate(self,payload):
         candidate_id=payload.get("candidate_id")
@@ -207,6 +609,8 @@ class Handler(BaseHTTPRequestHandler):
             "industry_domain":candidate.get("industry_domain"),
             "buyer_segment":candidate.get("buyer_segment"),
             "objective":candidate.get("objective"),
+            "connected_enrichment":candidate.get("connected_enrichment"),
+            "hybrid_fusion":candidate.get("hybrid_fusion"),
         }
         return self.eval_async(launch_payload)
     def events(self,path,query):
@@ -217,6 +621,11 @@ class Handler(BaseHTTPRequestHandler):
     def eval_async(self,payload):
         raw=(payload.get("raw_input") or payload.get("text") or "").strip()
         if not raw: return {"status":"validation_failed","error":"raw_input is required"}
+        mode_decision=MODE_SWITCH.evaluate({**payload,"raw_input":raw})
+        MODE_STATE.record("dashboard_launch",mode_decision,{"workflow":payload.get("workflow"),"market_universe":payload.get("market_universe")})
+        if mode_decision.get("status")=="blocked":
+            return {"status":"blocked","mode_decision":mode_decision,"decision":mode_decision.get("governance_decision")}
+        payload=MODE_ISOLATION.isolate(payload,mode_decision)
         metadata={
             "source":"dashboard",
             "workflow":payload.get("workflow"),
@@ -225,15 +634,19 @@ class Handler(BaseHTTPRequestHandler):
             "buyer_segment":payload.get("buyer_segment"),
             "objective":payload.get("objective"),
             "execution_mode":payload.get("execution_mode"),
+            "mode_decision":mode_decision,
+            "connected_enrichment":payload.get("connected_enrichment"),
+            "hybrid_fusion":payload.get("hybrid_fusion"),
         }
         governance_decision=GOVERNANCE.classify(raw,metadata)
         LEGAL_AUDIT.log("dashboard_launch_precheck",governance_decision,metadata)
         if governance_decision.get("decision")=="block":
             return {"status":"blocked","decision":governance_decision}
-        feed_activation=FEED_POLICY.evaluate(payload)
+        feed_activation=mode_decision.get("feed_activation") or FEED_POLICY.evaluate(payload)
         FEED_AUDIT.log("dashboard_launch_feed_activation",feed_activation,payload)
         run_id=RUN_EVENTS.create_run(raw[:80]+("..." if len(raw)>80 else ""),metadata)
         RUN_EVENTS.add(run_id,"stage_complete","Governance precheck: "+governance_decision.get("decision","allow"),"governance",4,governance_decision)
+        RUN_EVENTS.add(run_id,"stage_complete",f"Mode decision: {mode_decision.get('requested_mode')} -> {mode_decision.get('effective_mode')}.","mode",5,mode_decision)
         threading.Thread(target=self.worker,args=(run_id,raw,payload),daemon=True).start()
         RUN_EVENTS.add(run_id,"started","Background Claire evaluation started.","launcher",3)
         return {"status":"started","event_run_id":run_id}
@@ -251,8 +664,16 @@ class Handler(BaseHTTPRequestHandler):
             if summary: RUN_EVENTS.add(run_id,"stage_complete",f"Lifecycle: {summary.get('active_stage_count')}/{summary.get('implemented_stage_count')} active.","lifecycle",80,summary)
             ew=data.get("export_writer") or {}
             if ew: RUN_EVENTS.add(run_id,"stage_complete",f"Export writer: {ew.get('status')}","export_writer",88,{"output_dir":ew.get("output_dir")})
+            connected_artifacts = self.write_connected_artifacts(payload, data)
+            if connected_artifacts.get("status")=="success":
+                RUN_EVENTS.add(run_id,"stage_complete",f"Connected/hybrid artifacts: {connected_artifacts.get('written_file_count')} file(s).","connected_exports",92,connected_artifacts)
+            acquisition_artifacts = self.write_acquisition_artifacts(payload, data)
+            if acquisition_artifacts.get("status")=="success":
+                RUN_EVENTS.add(run_id,"stage_complete",f"Acquisition artifacts: {acquisition_artifacts.get('written_file_count')} file(s).","acquisition_exports",94,acquisition_artifacts)
             RunHistory().rescan_exports("exports")
             compact=self.compact(data)
+            compact["connected_export_artifacts"] = connected_artifacts
+            compact["acquisition_export_artifacts"] = acquisition_artifacts
             RUN_EVENTS.set_result(run_id,compact)
             RUN_EVENTS.add(run_id,"complete","Claire run complete. Export artifacts are ready.","complete",100,compact)
         except Exception as e:
@@ -260,16 +681,41 @@ class Handler(BaseHTTPRequestHandler):
     def eval_sync(self,payload):
         raw=(payload.get("raw_input") or payload.get("text") or "").strip()
         if not raw: return {"status":"validation_failed","error":"raw_input is required"}
+        mode_decision=MODE_SWITCH.evaluate({**payload,"raw_input":raw})
+        MODE_STATE.record("dashboard_sync_launch",mode_decision,{"workflow":payload.get("workflow")})
+        if mode_decision.get("status")=="blocked":
+            return {"status":"blocked","mode_decision":mode_decision}
+        payload=MODE_ISOLATION.isolate(payload,mode_decision)
         mode=self.normalize_mode(payload.get("execution_mode"))
         intent=ContractValidator().validate_intent({"raw_input":raw,"mode":mode,"metadata":{"source":"dashboard","priority":"high","workflow":payload.get("workflow")}})
         result=PipelineOrchestrator().execute(intent)
         data=result.to_dict() if hasattr(result,"to_dict") else result
+        self.write_connected_artifacts(payload, data)
+        self.write_acquisition_artifacts(payload, data)
         RunHistory().rescan_exports("exports")
-        return self.compact(data)
+        compact=self.compact(data)
+        compact["mode_decision"]=mode_decision
+        return compact
+    def write_connected_artifacts(self,payload,data):
+        ew=data.get("export_writer") or {}
+        output_dir=ew.get("output_dir")
+        signals=SIGNAL_REGISTRY.list(limit=100).get("signals", [])
+        if not output_dir:
+            return {"status":"skipped","reason":"export_writer output_dir unavailable"}
+        return CONNECTED_EXPORTS.write(
+            output_dir=output_dir,
+            payload=payload,
+            normalized_signals=signals,
+            run_result=data,
+        )
+    def write_acquisition_artifacts(self,payload,data):
+        ew=data.get("export_writer") or {}
+        output_dir=ew.get("output_dir")
+        if not output_dir:
+            return {"status":"skipped","reason":"export_writer output_dir unavailable"}
+        return ACQUISITION_EXPORTS.write(output_dir=output_dir,run_result=data,payload=payload)
     def normalize_mode(self, mode):
-        mode=mode or "deterministic"
-        if mode=="connected_intelligence": mode="connected"
-        return mode if mode in {"deterministic","connected","hybrid"} else "deterministic"
+        return MODE_SWITCH.normalize(mode)
     def compact(self,data):
         ew=data.get("export_writer") or {}; hr=ew.get("history_record") or {}; ep=data.get("export_package") or {}
         return {"status":data.get("status","success"),"run_id":hr.get("run_id") or ew.get("folder_name"),"folder_name":ew.get("folder_name"),"decision_classification":data.get("decision_classification"),"breakthrough_classification":data.get("breakthrough_classification"),"export_level":(ep.get("export_package_score") or {}).get("level"),"export_writer":{"status":ew.get("status"),"output_dir":ew.get("output_dir"),"folder_name":ew.get("folder_name"),"written_file_count":ew.get("written_file_count"),"history_record":hr},"lifecycle_summary":data.get("lifecycle_summary"),"scores":data.get("scores")}

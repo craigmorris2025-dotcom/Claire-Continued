@@ -1,0 +1,32 @@
+{
+  "baseline_version": "v5.84",
+  "created_for": "Claire local dashboard platform",
+  "purpose": "Single-command validation of the stable project spine before additional build packages.",
+  "expected": {
+    "lifecycle_stage_count": 21,
+    "threshold_rule_minimum": 10,
+    "calibration_input_minimum": 4,
+    "supported_modes": ["deterministic", "connected", "hybrid"],
+    "mode_controller": "mode_switch_controller_v1",
+    "dashboard_rollup": "v5.54"
+  },
+  "checks": [
+    "imports",
+    "stage_registry",
+    "threshold_provenance",
+    "mode_governance",
+    "signal_normalization",
+    "connected_enrichment",
+    "hybrid_fusion",
+    "dashboard_status",
+    "update_sources",
+    "live_source_catalog",
+    "live_source_orchestration",
+    "portable_desktop_readiness",
+    "dashboard_update_workflow",
+    "desktop_app_shell",
+    "enhanced_interface_bridge",
+    "live_intelligence_spine",
+    "live_intelligence_activation"
+  ]
+}
