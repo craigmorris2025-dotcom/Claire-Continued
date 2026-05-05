@@ -1,0 +1,9 @@
+{
+  "approved_ambiguities": [
+    {
+      "source": "src/claire/signals/ingestion.py",
+      "dest": "src/claire/signals/ingestion.py",
+      "reason": "v5.92.0 adds dedicated signal-governance ingestion module; existing src/claire/engines/ingestion.py is a separate active engine module."
+    }
+  ]
+}

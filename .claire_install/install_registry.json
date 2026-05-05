@@ -63,6 +63,86 @@
       "sha256": "428d47b146ab3774f001bf9e140f219ab3b6eec9464d4067e4ec62f9ef7be2fc",
       "status": "active",
       "updated_at": "2026-05-05T00:17:13"
+    },
+    "src/claire/signals/ingestion.py": {
+      "installed_to": "src/claire/signals/ingestion.py",
+      "version_added": "5.92.0",
+      "last_updated": "5.92.0",
+      "sha256": "6ad159448c85ecf0e059f86a9f647b01ff8797d28f90650b1571ad781ab1ef70",
+      "status": "active",
+      "updated_at": "2026-05-05T01:29:31"
+    },
+    "src/claire/signals/normalization.py": {
+      "installed_to": "src/claire/signals/normalization.py",
+      "version_added": "5.92.0",
+      "last_updated": "5.92.0",
+      "sha256": "004dd4d91a83d77357fe46b20629d91f28162f073bd558bcc761dca073649047",
+      "status": "active",
+      "updated_at": "2026-05-05T01:29:31"
+    },
+    "src/claire/signals/source_validation.py": {
+      "installed_to": "src/claire/signals/source_validation.py",
+      "version_added": "5.92.0",
+      "last_updated": "5.92.0",
+      "sha256": "beb7e7fabf8f967bfc154355d06258b8c2bc288abc9bfba1514e9fde62e6b6ab",
+      "status": "active",
+      "updated_at": "2026-05-05T01:29:31"
+    },
+    "src/claire/signals/context_expansion.py": {
+      "installed_to": "src/claire/signals/context_expansion.py",
+      "version_added": "5.92.0",
+      "last_updated": "5.92.0",
+      "sha256": "305a9574f068960d2e9af639de45d2f98bfc8e6ce186b70901d395f1d5d5e27b",
+      "status": "active",
+      "updated_at": "2026-05-05T01:29:31"
+    },
+    "src/claire/signals/consolidation.py": {
+      "installed_to": "src/claire/signals/consolidation.py",
+      "version_added": "5.92.0",
+      "last_updated": "5.92.0",
+      "sha256": "1d6b6d05b19a6874ad6ade8d498310f1274b888abe4d8b0b1bf9539b33abb2b6",
+      "status": "active",
+      "updated_at": "2026-05-05T01:29:31"
+    },
+    "src/claire/signals/adapters/__init__.py": {
+      "installed_to": "src/claire/signals/adapters/__init__.py",
+      "version_added": "5.92.0",
+      "last_updated": "5.92.0",
+      "sha256": "3f64ee8dff8754da1d80d51748cc38196d86271a9e1981f7b1ed3ef586c4a3d1",
+      "status": "active",
+      "updated_at": "2026-05-05T01:29:31"
+    },
+    "src/claire/signals/adapters/live_feed.py": {
+      "installed_to": "src/claire/signals/adapters/live_feed.py",
+      "version_added": "5.92.0",
+      "last_updated": "5.92.0",
+      "sha256": "647935170f20591077152cc4f9eb4fe4a4bde96f5580c533aec3fdcc3a84c70f",
+      "status": "active",
+      "updated_at": "2026-05-05T01:29:31"
+    },
+    "src/claire/signals/adapters/structured.py": {
+      "installed_to": "src/claire/signals/adapters/structured.py",
+      "version_added": "5.92.0",
+      "last_updated": "5.92.0",
+      "sha256": "72ed4434e0e2f11db363d0a1fe53989b2c5bd6470cfda69ef886011335185886",
+      "status": "active",
+      "updated_at": "2026-05-05T01:29:31"
+    },
+    "tests/test_signal_stages.py": {
+      "installed_to": "tests/test_signal_stages.py",
+      "version_added": "5.92.0",
+      "last_updated": "5.92.0",
+      "sha256": "61ef8f3933a3c8cf2d4b5b2271830a4f3aa01912461e8a80a1deb9a27887438a",
+      "status": "active",
+      "updated_at": "2026-05-05T01:29:31"
+    },
+    "config/signals.yaml": {
+      "installed_to": "config/signals.yaml",
+      "version_added": "5.92.0",
+      "last_updated": "5.92.0",
+      "sha256": "b9bffcf02cd61219365d7abe6f4b40b8c9ce2e44ca65c5dce1a04fe196b8391c",
+      "status": "active",
+      "updated_at": "2026-05-05T01:29:31"
     }
   },
   "known_families": {
@@ -73,7 +153,17 @@
     },
     "tests": {
       "first_seen_version": "5.91.0",
-      "last_seen_version": "5.91.0",
+      "last_seen_version": "5.92.0",
+      "status": "active"
+    },
+    "src/claire/signals": {
+      "first_seen_version": "5.92.0",
+      "last_seen_version": "5.92.0",
+      "status": "active"
+    },
+    "config": {
+      "first_seen_version": "5.92.0",
+      "last_seen_version": "5.92.0",
       "status": "active"
     }
   },
@@ -89,6 +179,21 @@
         "src/claire/runtime/memory_guard.py",
         "src/claire/runtime/failure_handler.py",
         "tests/test_runtime_rules.py"
+      ]
+    },
+    "5.92.0": {
+      "installed_at": "2026-05-05T01:29:31",
+      "files_installed": [
+        "src/claire/signals/ingestion.py",
+        "src/claire/signals/normalization.py",
+        "src/claire/signals/source_validation.py",
+        "src/claire/signals/context_expansion.py",
+        "src/claire/signals/consolidation.py",
+        "src/claire/signals/adapters/__init__.py",
+        "src/claire/signals/adapters/live_feed.py",
+        "src/claire/signals/adapters/structured.py",
+        "tests/test_signal_stages.py",
+        "config/signals.yaml"
       ]
     }
   }
