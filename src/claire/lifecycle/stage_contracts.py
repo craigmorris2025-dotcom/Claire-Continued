@@ -50,7 +50,7 @@ def stage_contracts() -> Dict[str, StageContract]:
         "moat_differentiation": StageContract("moat_differentiation", ["moat"]),
         "business_model_value_capture": StageContract("business_model_value_capture", ["business_model"]),
         "competitor_analysis": StageContract("competitor_analysis", ["market_formation"], optional=True),
-        "portfolio_creation_optimization": StageContract("portfolio_creation_optimization", ["portfolio_binder"]),
+        "portfolio_creation_optimization": StageContract("portfolio_creation_optimization", ["portfolio_binder", "portfolio_optimization"]),
         "acquirer_identification": StageContract("acquirer_identification", ["acquirer_matches"]),
         "acquisition_fit_rationale": StageContract("acquisition_fit_rationale", ["deal_exit_modeling"]),
         "final_package_construction": StageContract("final_package_construction", ["export_package"]),

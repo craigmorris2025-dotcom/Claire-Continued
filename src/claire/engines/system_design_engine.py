@@ -35,6 +35,11 @@ class SystemDesignEngine:
             or design_portal.get("system_design")
             or {}
         )
+        technology_intelligence = (
+            design_portal.get("technology_intelligence")
+            or inputs.get("technology_intelligence")
+            or {}
+        )
 
         system_design_inner = system_design.get("design", {}) if isinstance(system_design, dict) else {}
 
@@ -91,6 +96,10 @@ class SystemDesignEngine:
             "market_gap": market_gap,
             "technical_specs": technical_specs,
             "architecture_blueprint": architecture_blueprint,
+            "technology_stack": technology_intelligence.get("selected_stack", {}),
+            "component_matches": technology_intelligence.get("component_matches", []),
+            "compatibility_notes": technology_intelligence.get("compatibility_notes", []),
+            "dependency_notes": technology_intelligence.get("dependency_notes", []),
             "data_flows": self._data_flows(sector),
             "implementation_phases": implementation_phases,
             "portfolio_artifacts": portfolio_artifacts,

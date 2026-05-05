@@ -176,7 +176,9 @@ class ClaireResult:
             "system_design": self.data.get("system_design", {}),
             "design_portal": self.data.get("design_portal", {}),
             "design_output": self.data.get("design_output", {}),
+            "technology_intelligence": self.data.get("technology_intelligence", {}),
             "portfolio_binder": self.data.get("portfolio_binder", {}),
+            "portfolio_optimization": self.data.get("portfolio_optimization", {}),
             "export_package": self.data.get("export_package", {}),
             "export_writer": self.data.get("export_writer", {}),
 
@@ -187,6 +189,7 @@ class ClaireResult:
             "core_lifecycle_stages": self.data.get("core_lifecycle_stages", []),
             "core_lifecycle_summary": self.data.get("core_lifecycle_summary", {}),
             "core_completion_gate": self.data.get("core_completion_gate", {}),
+            "core_output": self.data.get("core_output", {}),
 
             "phase_log": self.data.get("phase_log", []),
 
@@ -212,6 +215,10 @@ class ContractValidator:
             mode=payload.get("mode", "deterministic"),
             request_type=payload.get("request_type", "evaluate"),
             metadata=payload.get("metadata"),
+            scan_iterations=payload.get("scan_iterations") or [],
+            scan_terminal_state=payload.get("scan_terminal_state"),
+            scan_terminal_reason=payload.get("scan_terminal_reason"),
+            scan_route_selected=payload.get("scan_route_selected"),
         )
 
     def validate(self, payload: Dict[str, Any]) -> ClaireIntent:

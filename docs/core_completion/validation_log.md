@@ -71,3 +71,74 @@ Validation:
   - Live Evaluate proof after dashboard restart: passed, run `claire_run_20260502_100819_climate_insurance_climate_insurance_risk_intelligence`.
   - Export artifact proof: `trend_discovery.status` success, `thesis_formation.status` success, stage 8 complete, stage 10 complete, lifecycle evidence present for both, core completion gate complete.
   - Regression tests were not rerun because the quick checks passed and the user requested minimal validation.
+
+## 2026-05-02 v5.89.9 Portfolio Creation / Optimization
+
+- Added `PortfolioOptimizationEngine` as a narrow artifact layer over existing binder, scores, thesis, trend, opportunity, risk, business model, strategic positioning, and acquirer outputs.
+- Added `portfolio_optimization` to pipeline result output, exported JSON, and Claire result contract.
+- Updated lifecycle stage 27 to use `portfolio_optimization`.
+- Stage 27 contract now requires both `portfolio_binder` and `portfolio_optimization`.
+- Added portfolio optimization evidence to unified lifecycle context.
+- Rate-safe validation only:
+  - Focused Python syntax check for changed portfolio, pipeline, domain, lifecycle, and export files: passed.
+  - Live Evaluate proof after dashboard restart: passed, run `claire_run_20260502_101351_climate_insurance_climate_insurance_risk_intelligence`.
+  - Export artifact proof: `portfolio_optimization.status` success, portfolio path `optimize_for_core_portfolio`, stage 27 complete, lifecycle evidence present, core completion gate complete.
+  - Regression tests were not rerun because the quick checks passed and the user requested minimal validation.
+
+## 2026-05-02 Dashboard Functional Command Surface
+
+- Preserved the top tab scaffold: Run, Discover, Trend, Portfolio, Breakthrough, Design, Packages, Monitor, System.
+- Added route-specific rendering surfaces driven by `core_run_output.json`.
+- Kept lifecycle/system/debug metadata secondary and raw JSON on demand.
+- Added clear empty states for skipped, insufficient, missing, blocked, or not-produced route functions.
+
+Rate-safe validation:
+
+- `node --check src/frontend/export_dashboard/dashboard.js`: passed.
+- Duplicate HTML ID check for `src/frontend/export_dashboard/index.html`: passed.
+- Targeted Python syntax check for `src/claire/output/core_output_builder.py` and `tools/serve_export_dashboard.py`: passed.
+- Dashboard HTTP load with `Invoke-WebRequest http://127.0.0.1:8765`: passed.
+- Headless Edge DOM load check: passed for new functional tabs and Design/Technology surfaces.
+- Full regression tests were not rerun because this was a dashboard/core-output surface pass and quick checks passed.
+
+## 2026-05-02 Technology Intelligence Layer
+
+- Added minimum viable Technology Intelligence package under `src/claire/technology`.
+- Added catalog, exact/fuzzy/keyword/category/tag/compatibility search, stack recommendation, component matching, and route-gated intelligence orchestration.
+- Integrated `technology_intelligence` into `PipelineOrchestrator` after Design Portal route evaluation.
+- Enriched Design Portal context with selected technology stack when design is required.
+- Enriched System Design output with technology stack, component matches, compatibility notes, and dependency notes.
+- Added `technology_intelligence` to the Claire result contract and core output contract.
+
+Rate-safe validation:
+
+- Targeted Python syntax check for technology modules plus AutoDesign, SystemDesign, pipeline, domain contract, and core output builder: passed.
+- `node --check src/frontend/export_dashboard/dashboard.js`: passed.
+- Duplicate HTML ID check: passed.
+- Behavior check:
+  - Portfolio route returns `skipped_by_route`.
+  - Design route returns `success`, `required: true`, selected stack present, and 6 component matches.
+- Full regression tests were not rerun because quick checks passed.
+
+## 2026-05-02 Cognitive Research Foundation
+
+- Added a minimum viable Claire Cognitive Research layer under `src/claire/research`.
+- Added source-governed research result contracts, a web-search adapter interface, evidence basket persistence, internal run/output search, technology search, and route handoff markers.
+- Added the `Research` top-level dashboard tab with command search, source scope selector, result cards, evidence basket, and send-to-pipeline actions.
+- Added dashboard API routes for research search, evidence save/clear, evidence-to-pipeline conversion, and result route handoff.
+- Live web search is intentionally adapter-gated and returns `Live web search not configured yet.` rather than fabricated results.
+
+Rate-safe validation:
+
+- Targeted Python syntax check for `src/claire/research/*.py` and `tools/serve_export_dashboard.py`: passed.
+- `node --check src/frontend/export_dashboard/dashboard.js`: passed.
+- Dashboard served successfully on `http://127.0.0.1:8765`.
+- `/api/research/evidence`: passed with empty basket response before evidence save.
+- `/api/research/search` with `scope=technologies`: passed, returned 4 Claire-ranked technology results.
+- `/api/research/search` with `scope=runs`: passed, returned 3 prior run results for the probe query.
+- `/api/research/search` with `scope=web`: passed with clear unavailable state.
+- `/api/research/evidence/add`: passed, saved one validation evidence item.
+- `/api/research/evidence/pipeline-input`: passed, converted one saved evidence item into one governed signal candidate.
+- Existing dashboard support endpoints remained responsive: `/api/commands`, `/api/runs`, and `/api/live-intelligence/monitor/status` returned `success`.
+- Duplicate stale dashboard listeners on port 8765 were cleared and replaced with a single current dashboard server.
+- Full regression tests were not rerun because quick checks passed and the user requested minimal validation unless a quick check fails.

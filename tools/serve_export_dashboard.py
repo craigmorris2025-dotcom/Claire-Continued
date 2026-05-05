@@ -70,6 +70,8 @@ from claire.live_intelligence.live_opportunity_monitor import LiveOpportunityMon
 from claire.live_intelligence.history_store import LiveIntelligenceHistoryStore
 from claire.live_intelligence.source_scan_planner import SourceScanPlanner
 from claire.live_intelligence.monitor_candidate_bridge import MonitorCandidateBridge
+from claire.scan.scan_continuation import ScanContinuationRunner
+from claire.research import ResearchService
 
 DASHBOARD_DIR=PROJECT_ROOT/"src"/"frontend"/"export_dashboard"
 CATALOG=OpportunityCommandCatalog()
@@ -116,6 +118,8 @@ LIVE_OPPORTUNITY_MONITOR=LiveOpportunityMonitor(PROJECT_ROOT)
 LIVE_HISTORY=LiveIntelligenceHistoryStore(PROJECT_ROOT)
 SOURCE_SCAN_PLANNER=SourceScanPlanner(PROJECT_ROOT)
 MONITOR_CANDIDATE_BRIDGE=MonitorCandidateBridge()
+SCAN_CONTINUATION=ScanContinuationRunner()
+RESEARCH_SERVICE=ResearchService()
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args): print("[dashboard]", fmt % args)
@@ -178,6 +182,7 @@ class Handler(BaseHTTPRequestHandler):
             if path=="/api/feeds/audit": return self.json(FEED_AUDIT.recent())
             if path=="/api/governance/audit": return self.json(LEGAL_AUDIT.recent())
             if path=="/api/runs": return self.json(ExportBrowser().list_runs(limit=200,rescan_if_empty=True))
+            if path=="/api/research/evidence": return self.json(RESEARCH_SERVICE.evidence())
             if path=="/api/summary": return self.json(ExportBrowser().summary())
             if path=="/api/events": return self.json(RUN_EVENTS.list())
             if path.startswith("/api/events/"): return self.events(path,parse_qs(parsed.query))
@@ -202,6 +207,14 @@ class Handler(BaseHTTPRequestHandler):
             if parsed.path=="/api/rescan": return self.json(RunHistory().rescan_exports("exports"))
             if parsed.path=="/api/evaluate": return self.json(self.eval_sync(self.body()))
             if parsed.path=="/api/evaluate/async": return self.json(self.eval_async(self.body()))
+            if parsed.path=="/api/research/search":
+                payload=self.body(); return self.json(RESEARCH_SERVICE.search(payload.get("query",""),payload.get("scope","all"),payload.get("limit",20)))
+            if parsed.path=="/api/research/evidence/add":
+                payload=self.body(); return self.json(RESEARCH_SERVICE.add_evidence(payload.get("result") or {},payload.get("notes","")))
+            if parsed.path=="/api/research/evidence/clear": return self.json(RESEARCH_SERVICE.clear_evidence())
+            if parsed.path=="/api/research/evidence/pipeline-input": return self.json(RESEARCH_SERVICE.evidence_pipeline_input())
+            if parsed.path=="/api/research/send-to-pipeline":
+                payload=self.body(); return self.json(RESEARCH_SERVICE.send_to_pipeline(payload.get("result") or {},payload.get("route","scan")))
             if parsed.path=="/api/opportunities/search-needed-solutions": return self.json(self.search_needed_solutions(self.body()))
             if parsed.path=="/api/opportunities/generate": return self.json(self.generate_public_opportunities(self.body()))
             if parsed.path=="/api/opportunities/enrich-preview": return self.json(self.enrich_preview(self.body()))
@@ -430,7 +443,8 @@ class Handler(BaseHTTPRequestHandler):
         FEED_AUDIT.log("live_opportunity_monitor_v1",activation,isolated)
         if activation.get("decision")=="block":
             return {"status":"blocked","activation_decision":activation,"mode_decision":mode_decision}
-        result=LIVE_OPPORTUNITY_MONITOR.run(isolated)
+        continuation=SCAN_CONTINUATION.run_until_result(isolated, LIVE_OPPORTUNITY_MONITOR.run)
+        result=continuation.get("last_result") or {}
         history=LIVE_HISTORY.record(result,context=isolated)
         bridge=MONITOR_CANDIDATE_BRIDGE.build_candidates(result,context=isolated)
         public_cards=[]
@@ -442,7 +456,80 @@ class Handler(BaseHTTPRequestHandler):
         result["mode_decision"]=mode_decision
         result["history_record"]=history
         result["activated_candidates"]=public_cards
+        result["scan_iterations"]=continuation.get("scan_iterations", [])
+        result["terminal_state"]=continuation.get("terminal_state")
+        result["terminal_reason"]=continuation.get("terminal_reason")
+        result["route_selected"]=continuation.get("route_selected")
+        result["core_pipeline_run"]=self.run_scan_pipeline_output(isolated,result,continuation)
         return result
+    def run_scan_pipeline_output(self,payload,result,continuation):
+        try:
+            raw=self.scan_pipeline_input(payload,result,continuation)
+            mode=self.normalize_mode(payload.get("execution_mode"))
+            intent=ContractValidator().validate_intent({
+                "raw_input":raw,
+                "mode":mode,
+                "request_type":"scan",
+                "scan_iterations":continuation.get("scan_iterations", []),
+                "scan_terminal_state":continuation.get("terminal_state"),
+                "scan_terminal_reason":continuation.get("terminal_reason"),
+                "scan_route_selected":continuation.get("route_selected"),
+                "metadata":{"source":"live_monitor_scan","priority":"high"},
+            })
+            data=PipelineOrchestrator().execute(intent).to_dict()
+            self.write_connected_artifacts(payload, data)
+            self.write_acquisition_artifacts(payload, data)
+            RunHistory().rescan_exports("exports")
+            compact=self.compact(data)
+            compact["scan_terminal_state"]=continuation.get("terminal_state")
+            compact["scan_terminal_reason"]=continuation.get("terminal_reason")
+            compact["scan_iterations"]=continuation.get("scan_iterations", [])
+            compact["core_output"]=data.get("core_output", {})
+            return compact
+        except Exception as e:
+            return {"status":"failed","error":str(e),"traceback":traceback.format_exc(),"scan_iterations":continuation.get("scan_iterations", [])}
+    def scan_pipeline_input(self,payload,result,continuation):
+        iterations=continuation.get("scan_iterations", [])
+        top_candidate=(result.get("top_candidate") or {}) if isinstance(result,dict) else {}
+        solutions=((result.get("solutions") or {}).get("candidates") or []) if isinstance(result.get("solutions"),dict) else []
+        gaps=result.get("gaps") or {}
+        clusters=result.get("clusters") or {}
+        extracted=result.get("extracted") or {}
+        terminal=continuation.get("terminal_state") or "max_iterations_reached"
+        reason=continuation.get("terminal_reason") or "Scan finished without a stronger terminal reason."
+        missing=[]
+        if not extracted.get("signal_count"): missing.append("source signal coverage")
+        if not clusters.get("cluster_count"): missing.append("trend clusters")
+        if not gaps.get("gap_count"): missing.append("gap evidence")
+        if not solutions: missing.append("solution or portfolio candidates")
+        lines=[
+            "Claire live scan continuation result.",
+            f"Terminal state: {terminal}.",
+            f"Terminal reason: {reason}",
+            f"Route selected: {continuation.get('route_selected') or 'trend_thesis'}",
+            f"Market universe: {payload.get('market_universe','custom_universe')}.",
+            f"Objective: {payload.get('objective','discover_market_gaps')}.",
+            f"Scan iterations: {len(iterations)}.",
+            f"Signals found: {extracted.get('signal_count',0)}.",
+            f"Trend clusters: {clusters.get('cluster_count',0)}.",
+            f"Gaps found: {gaps.get('gap_count',0)}.",
+            f"Solution candidates: {len(solutions)}.",
+        ]
+        if top_candidate:
+            lines.extend([
+                f"Top candidate: {top_candidate.get('title','unnamed opportunity')}.",
+                f"Top candidate market gap: {top_candidate.get('market_gap','not reported')}.",
+                f"Top candidate score: {top_candidate.get('solution_score','not scored')}.",
+            ])
+        if missing:
+            lines.append("Missing or weak selections: "+", ".join(missing)+".")
+        if terminal in {"insufficient_data","max_iterations_reached"}:
+            lines.append("Next recommended action: enrich sources, broaden the market universe, and rerun scan continuation before claiming breakthrough.")
+        elif terminal == "breakthrough_reached":
+            lines.append("Next recommended action: classify breakthrough type and select advancement path; do not default to invention unless justified.")
+        else:
+            lines.append("Next recommended action: review trend/thesis and portfolio action before deciding whether escalation is warranted.")
+        return "\n".join(lines)
     def activate_live_candidates(self,payload):
         latest=LIVE_HISTORY.latest()
         result=payload.get("monitor_result") or latest.get("result") or {}
@@ -718,7 +805,8 @@ class Handler(BaseHTTPRequestHandler):
         return MODE_SWITCH.normalize(mode)
     def compact(self,data):
         ew=data.get("export_writer") or {}; hr=ew.get("history_record") or {}; ep=data.get("export_package") or {}
-        return {"status":data.get("status","success"),"run_id":hr.get("run_id") or ew.get("folder_name"),"folder_name":ew.get("folder_name"),"decision_classification":data.get("decision_classification"),"breakthrough_classification":data.get("breakthrough_classification"),"export_level":(ep.get("export_package_score") or {}).get("level"),"export_writer":{"status":ew.get("status"),"output_dir":ew.get("output_dir"),"folder_name":ew.get("folder_name"),"written_file_count":ew.get("written_file_count"),"history_record":hr},"lifecycle_summary":data.get("lifecycle_summary"),"scores":data.get("scores")}
+        core=data.get("core_output") or {}; u=core.get("user_facing_result") or {}
+        return {"status":data.get("status","success"),"run_id":hr.get("run_id") or ew.get("folder_name"),"folder_name":ew.get("folder_name"),"route_selected":core.get("route_selected"),"headline":u.get("headline"),"summary":u.get("summary"),"confidence":(core.get("confidence") or {}).get("overall"),"decision_classification":data.get("decision_classification"),"breakthrough_classification":data.get("breakthrough_classification"),"export_level":(ep.get("export_package_score") or {}).get("level"),"export_writer":{"status":ew.get("status"),"output_dir":ew.get("output_dir"),"folder_name":ew.get("folder_name"),"written_file_count":ew.get("written_file_count"),"history_record":hr},"lifecycle_summary":data.get("lifecycle_summary"),"scores":data.get("scores")}
     def body(self):
         n=int(self.headers.get("Content-Length","0") or 0); raw=self.rfile.read(n).decode("utf-8") if n else "{}"; return json.loads(raw or "{}")
     def run_api(self,path,query):

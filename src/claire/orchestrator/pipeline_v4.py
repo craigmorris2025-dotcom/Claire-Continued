@@ -30,9 +30,12 @@ from claire.engines.lifecycle_stage_engine import LifecycleStageEngine
 from claire.engines.export_package_engine import ExportPackageEngine
 from claire.export.export_writer import ExportWriter
 from claire.lifecycle.lifecycle_runner import CoreLifecycleRunner
+from claire.output.core_output_builder import CoreOutputBuilder
 from claire.design.portal import DesignPortal
 from claire.portfolio.binder_builder import PortfolioBinderBuilder
+from claire.portfolio.optimization_engine import PortfolioOptimizationEngine
 from claire.signals.signal_governance import SignalGovernance
+from claire.technology.technology_intelligence import TechnologyIntelligenceLayer
 
 
 class PipelineOrchestrator:
@@ -59,9 +62,12 @@ class PipelineOrchestrator:
         self.strategic_positioning_engine = StrategicPositioningEngine()
         self.deal_exit_engine = DealExitModelingEngine()
         self.binder_builder = PortfolioBinderBuilder()
+        self.portfolio_optimization_engine = PortfolioOptimizationEngine()
         self.lifecycle_engine = LifecycleStageEngine()
         self.core_lifecycle_runner = CoreLifecycleRunner()
+        self.core_output_builder = CoreOutputBuilder()
         self.signal_governance = SignalGovernance()
+        self.technology_intelligence = TechnologyIntelligenceLayer()
         self.export_package_engine = ExportPackageEngine()
         self.export_writer = ExportWriter()
 
@@ -73,6 +79,11 @@ class PipelineOrchestrator:
         phase_log = []
         text = intent.get_text()
         print(">>> PIPELINE TEXT:", text)
+        intent_extra = getattr(intent, "extra", {}) or {}
+        scan_iterations = intent_extra.get("scan_iterations") or []
+        scan_terminal_state = intent_extra.get("scan_terminal_state")
+        scan_terminal_reason = intent_extra.get("scan_terminal_reason")
+        scan_route_selected = intent_extra.get("scan_route_selected")
 
         domain = self._detect_domain(text)
         keywords = self._extract_keywords(text)
@@ -235,6 +246,10 @@ class PipelineOrchestrator:
         data.update({
             "domain": domain,
             "keywords": keywords,
+            "scan_iterations": scan_iterations,
+            "scan_terminal_state": scan_terminal_state,
+            "scan_terminal_reason": scan_terminal_reason,
+            "scan_route_selected": scan_route_selected,
             "governed_signals": governed_signals,
             "knowledge_ingestion": knowledge_ingestion,
             "connector_sources": external,
@@ -799,6 +814,26 @@ class PipelineOrchestrator:
         )
         data["design_portal"] = design_portal
 
+        technology_intelligence = self._safe_engine(
+            "technology_intelligence_failed",
+            lambda: self.technology_intelligence.analyze({
+                **data,
+                "scores": scores,
+                "domain": domain,
+                "keywords": keywords,
+                "route": "solution_design" if design_portal.get("route_to_design", False) else "portfolio_or_trend",
+                "design_portal": design_portal,
+                "system_design": system_design,
+                "market_gap": market_gap,
+                "trend_discovery": trend_discovery,
+                "thesis_formation": thesis_formation,
+            }),
+        )
+        data["technology_intelligence"] = technology_intelligence
+        if isinstance(design_portal, dict):
+            design_portal["technology_intelligence"] = technology_intelligence
+            design_portal["selected_technology_stack"] = technology_intelligence.get("selected_stack", {})
+
         design_output = self._safe_engine(
             "design_engine_failed",
             lambda: self.system_designer.generate(design_portal)
@@ -987,6 +1022,44 @@ class PipelineOrchestrator:
         )
         data["portfolio_binder"] = portfolio_binder
 
+        portfolio_optimization = self._safe_engine(
+            "portfolio_optimization_failed",
+            lambda: self.portfolio_optimization_engine.optimize({
+                "scores": scores,
+                "domain": domain,
+                "keywords": keywords,
+                "governed_signals": governed_signals,
+                "trend_discovery": trend_discovery,
+                "thesis_formation": thesis_formation,
+                "market_gap": market_gap,
+                "trend_trajectory": trend_trajectory,
+                "market_formation": market_formation,
+                "opportunity_discovery": opportunity_discovery,
+                "moat": moat,
+                "risk_regulation": risk_regulation,
+                "business_model": business_model,
+                "strategic_positioning": strategic_positioning,
+                "portfolio_binder": portfolio_binder,
+                "acquirer_matches": acquirer_matches,
+            }),
+        )
+        data["portfolio_optimization"] = portfolio_optimization
+
+        portfolio_optimization_score = self._get(portfolio_optimization, "portfolio_optimization_score.score", 0.0) or 0.0
+        scores["portfolio_optimization_score"] = portfolio_optimization_score
+        data["signal_trace"].update({
+            "portfolio_optimization_score": portfolio_optimization_score,
+            "portfolio_path": self._get(portfolio_optimization, "portfolio_path", ""),
+        })
+        data["engine_details"]["signals"]["portfolio_optimization"] = portfolio_optimization_score
+        data["engine_details"]["portfolio_optimization"] = {
+            "portfolio_optimization_score": portfolio_optimization.get("portfolio_optimization_score") if isinstance(portfolio_optimization, dict) else None,
+            "portfolio_path": portfolio_optimization.get("portfolio_path") if isinstance(portfolio_optimization, dict) else None,
+            "allocation_hypothesis": portfolio_optimization.get("allocation_hypothesis") if isinstance(portfolio_optimization, dict) else None,
+            "constraints": portfolio_optimization.get("constraints") if isinstance(portfolio_optimization, dict) else None,
+            "confidence": portfolio_optimization.get("confidence") if isinstance(portfolio_optimization, dict) else None,
+        }
+
         lifecycle = self._safe_engine(
             "lifecycle_failed",
             lambda: self.lifecycle_engine.evaluate({
@@ -1017,6 +1090,7 @@ class PipelineOrchestrator:
                 "design_output": data.get("design_output", {}),
                 "acquirer_matches": acquirer_matches,
                 "portfolio_binder": data.get("portfolio_binder", {}),
+                "portfolio_optimization": data.get("portfolio_optimization", {}),
                 "phase_log": phase_log,
             }),
         )
@@ -1061,7 +1135,24 @@ class PipelineOrchestrator:
         data["core_lifecycle_stages"] = core_lifecycle.get("stages", []) if isinstance(core_lifecycle, dict) else []
         data["core_lifecycle_summary"] = core_lifecycle.get("summary", {}) if isinstance(core_lifecycle, dict) else {}
         data["core_completion_gate"] = core_lifecycle.get("completion_gate", {}) if isinstance(core_lifecycle, dict) else {}
-        self._attach_core_lifecycle_to_export(export_package, core_lifecycle)
+        core_output = self._safe_engine(
+            "core_output_failed",
+            lambda: self.core_output_builder.build(
+                run_id=getattr(intent, "run_id", None) or getattr(intent, "intent_id", None) or "unknown",
+                data={
+                    **data,
+                    "acquirer_matches": acquirer_matches,
+                    "export_package": export_package,
+                },
+                scores=scores,
+                decision_classification=decision,
+                breakthrough_classification="HIGH" if breakthrough_signal > 0.65 else "LOW",
+                core_lifecycle=core_lifecycle,
+                export_package=export_package,
+            ),
+        )
+        data["core_output"] = core_output
+        self._attach_core_lifecycle_to_export(export_package, core_lifecycle, core_output)
 
         export_package_confidence = self._get(export_package, "confidence", 0.0) or 0.0
         export_package_score = self._get(export_package, "export_package_score.score", 0.0) or 0.0
@@ -1140,7 +1231,7 @@ class PipelineOrchestrator:
             base.update({"status": failure_status, "error": str(e)})
             return base
 
-    def _attach_core_lifecycle_to_export(self, export_package: Dict[str, Any], core_lifecycle: Dict[str, Any]) -> None:
+    def _attach_core_lifecycle_to_export(self, export_package: Dict[str, Any], core_lifecycle: Dict[str, Any], core_output: Dict[str, Any] | None = None) -> None:
         documents = export_package.get("documents") if isinstance(export_package, dict) else None
         if not isinstance(documents, dict) or not isinstance(core_lifecycle, dict):
             return
@@ -1152,6 +1243,8 @@ class PipelineOrchestrator:
             "route": core_lifecycle.get("route"),
             "stages": core_lifecycle.get("stages", []),
         }
+        if isinstance(core_output, dict):
+            documents["core_run_output.json"] = json.dumps(core_output, indent=2, sort_keys=True, default=str)
 
         raw = documents.get("full_pipeline_output.json")
         if isinstance(raw, str):
@@ -1163,6 +1256,8 @@ class PipelineOrchestrator:
             payload["core_lifecycle_summary"] = core_lifecycle.get("summary", {})
             payload["core_lifecycle_stages"] = core_lifecycle.get("stages", [])
             payload["core_completion_gate"] = core_lifecycle.get("completion_gate", {})
+            if isinstance(core_output, dict):
+                payload["core_output"] = core_output
             documents["full_pipeline_output.json"] = json.dumps(payload, indent=2, sort_keys=True, default=str)
 
     def _get(self, obj: Dict[str, Any], path: str, default=None):

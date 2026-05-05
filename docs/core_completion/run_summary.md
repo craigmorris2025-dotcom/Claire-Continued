@@ -42,6 +42,10 @@ Trend discovery / thesis formation:
 
 - `src/claire/engines/trend_thesis_engine.py`
 
+Portfolio optimization:
+
+- `src/claire/portfolio/optimization_engine.py`
+
 Pipeline exposure:
 
 - `src/claire/orchestrator/pipeline_v4.py`
@@ -66,8 +70,10 @@ Docs:
 - `docs/core_completion/validation_log.md`
 - `docs/core_completion/signal_governance_layer.md`
 - `docs/core_completion/trend_discovery_thesis_layer.md`
+- `docs/core_completion/portfolio_optimization_layer.md`
 - `docs/core_completion/evaluation_results/2026-05-02_signal_governance_evaluate_proof.md`
 - `docs/core_completion/evaluation_results/2026-05-02_trend_thesis_evaluate_proof.md`
+- `docs/core_completion/evaluation_results/2026-05-02_portfolio_optimization_evaluate_proof.md`
 - Supporting lifecycle/core-completion docs in the same folder.
 
 Tests:
@@ -95,6 +101,9 @@ Tests:
 - v5.89.8 focused Python syntax check passed for trend/thesis and integration files.
 - v5.89.8 live Evaluate proof passed after dashboard restart: run `claire_run_20260502_100819_climate_insurance_climate_insurance_risk_intelligence`.
 - Fresh export includes `trend_discovery` and `thesis_formation`; lifecycle stage 8 and stage 10 are complete, lifecycle evidence is present for both, and the completion gate remains complete.
+- v5.89.9 focused Python syntax check passed for portfolio optimization and integration files.
+- v5.89.9 live Evaluate proof passed after dashboard restart: run `claire_run_20260502_101351_climate_insurance_climate_insurance_risk_intelligence`.
+- Fresh export includes `portfolio_optimization`; lifecycle stage 27 is complete, lifecycle evidence is present, portfolio path is `optimize_for_core_portfolio`, and the completion gate remains complete.
 
 ## Known Issues
 
@@ -104,4 +113,4 @@ Tests:
 
 ## Next Recommended Phase
 
-v5.89.8 Trend Discovery + Thesis Formation is implemented and validated with focused checks plus a live Evaluate/export proof. The next safe action is to hold at core-completion validation or proceed only to the next master-plan step with the same narrow validation discipline.
+v5.89.9 Portfolio Creation / Optimization is implemented and validated with focused checks plus a live Evaluate/export proof. The next safe action is to pause for review or proceed into v5.90 only as a narrow breakthrough escalation/classification layer, with no UI redesign and no lifecycle memory/replay work yet.

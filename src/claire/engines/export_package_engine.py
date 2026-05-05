@@ -330,6 +330,8 @@ class ExportPackageEngine:
             "strategic_positioning": data.get("strategic_positioning", {}),
             "deal_exit_modeling": data.get("deal_exit_modeling", {}),
             "portfolio_binder": data.get("portfolio_binder", {}),
+            "portfolio_optimization": data.get("portfolio_optimization", {}),
+            "core_output": data.get("core_output", {}),
             "lifecycle_summary": data.get("lifecycle_summary", {}),
             "lifecycle_stages": data.get("lifecycle_stages", []),
             "acquirer_matches": context.get("acquirer_matches", []),

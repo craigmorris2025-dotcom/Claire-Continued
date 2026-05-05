@@ -36,7 +36,7 @@ footer{padding:14px 28px 24px;color:var(--muted);font-size:12px}
 .appHeader h1{font-size:18px;font-weight:750;letter-spacing:0}
 .headerActions,.buttonRow,.quickActions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .headerActions{justify-content:flex-end}
-.modeNav{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:4px}
+.modeNav{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:4px;max-width:100%;overflow:auto}
 .modeTab{border:0;background:transparent;border-radius:6px;min-height:34px;padding:7px 13px;color:var(--muted);font-weight:750}
 .modeTab:hover{background:#fff;color:var(--primary)}
 .modeTab.active{background:#fff;color:var(--primary);box-shadow:0 1px 4px rgba(15,23,42,.08)}
@@ -52,9 +52,10 @@ footer{padding:14px 28px 24px;color:var(--muted);font-size:12px}
 .viewHeader{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
 .viewHeader h2{font-size:22px;font-weight:800}
 .viewRoute{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 11px;color:var(--muted);font-size:12px;font-weight:750;white-space:nowrap}
-.evaluateGrid{display:grid;grid-template-columns:minmax(300px,360px) minmax(360px,1fr) minmax(280px,360px);grid-template-areas:"intent pipeline decision";gap:16px;align-items:start}
+.evaluateGrid{display:grid;grid-template-columns:minmax(300px,360px) minmax(420px,1fr) minmax(280px,360px);grid-template-areas:"intent result decision" "intent lifecycle decision";gap:16px;align-items:start}
 .evaluateGrid .discoveryPanel{grid-area:intent}
-.evaluateGrid .pipelinePanel{grid-area:pipeline}
+.evaluateGrid .resultPanel{grid-area:result}
+.evaluateGrid .pipelinePanel{grid-area:lifecycle}
 .evaluateGrid .decisionPanel{grid-area:decision;position:sticky;top:92px}
 .discoverGrid{display:grid;grid-template-columns:minmax(340px,430px) repeat(2,minmax(0,1fr));gap:14px;align-items:start}
 .discoverGrid .candidatePanel{grid-row:span 2}
@@ -211,6 +212,65 @@ details.panel>div:last-child{margin-bottom:16px}
 .topSignalList{display:flex;flex-direction:column;gap:8px}
 .topSignal{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:9px;color:#475569;font-size:13px}
 .topSignal b{display:block;color:var(--ink);font-size:11px;text-transform:uppercase;margin-bottom:3px}
+.compactEmpty{min-height:260px}
+.resultHero{border:1px solid rgba(37,99,235,.18);background:linear-gradient(180deg,#f8fbff,#fff);border-radius:8px;padding:16px;margin-top:12px}
+.resultHero h2{font-size:24px;line-height:1.15;font-weight:900;letter-spacing:0;margin-bottom:8px}
+.resultHero p{font-size:14px;color:#475569}
+.resultPathRail{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:12px 0}
+.pathStep{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:10px;min-height:78px}
+.pathStep.active{border-color:rgba(37,99,235,.45);background:#eff6ff}
+.pathStep strong{display:block;font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.pathStep span{display:block;font-size:13px;font-weight:800;color:var(--ink);overflow-wrap:anywhere}
+.resultInsightGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.resultInsight{border:1px solid var(--line);background:#fff;border-radius:8px;padding:12px;min-height:130px}
+.resultInsight h3{font-size:12px;text-transform:uppercase;color:var(--primary);margin-bottom:7px}
+.resultInsight p{color:#475569;font-size:13px}
+.resultInsight .metricLine{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;color:var(--muted);font-size:12px}
+.resultInsight .metricLine b{color:var(--ink);font-size:16px}
+.coreResultSections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.coreResultPanel{border:1px solid var(--line);background:#fff;border-radius:8px;padding:12px;min-height:142px}
+.coreResultPanel h3{font-size:12px;text-transform:uppercase;color:var(--muted);margin:0}
+.warningPanel{border-color:rgba(183,121,31,.35);background:#fffbeb}
+.resultDetailBox{border-top:1px solid var(--line);margin-top:10px;padding-top:10px;color:#475569;font-size:13px;white-space:pre-wrap}
+.resultDetailBox b{color:var(--ink)}
+.resultDetailBox ul{margin:8px 0 0;padding-left:18px}
+.scanProgressList{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.scanIteration{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:9px}
+.scanIteration strong{display:block;color:var(--ink);margin-bottom:5px}
+.scanIterationGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.scanIterationGrid span{display:block;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px;color:var(--muted);font-size:11px}
+.scanIterationGrid b{display:block;color:var(--ink);font-size:13px}
+.nextActionPanel{border-top:1px solid var(--line);margin-top:14px;padding-top:14px}
+.nextActionPanel h3{font-size:12px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.nextActionList{display:flex;flex-direction:column;gap:8px}
+.nextAction{border:1px solid rgba(15,159,110,.32);background:#f0fdf8;border-radius:8px;padding:10px;color:#475569}
+.nextAction strong{display:block;color:var(--ink);margin-bottom:4px}
+.systemModeGrid{display:grid;grid-template-columns:minmax(340px,480px) minmax(0,1fr);gap:14px;align-items:start}
+.lifecycleList{display:flex;flex-direction:column;gap:8px;max-height:520px;overflow:auto}
+.systemStage{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:10px;color:#475569}
+.systemStage strong{display:block;color:var(--ink);margin-bottom:4px}
+.systemStage.complete{border-color:rgba(15,159,110,.34);background:#f0fdf8}
+.systemStage.insufficient_data,.systemStage.blocked,.systemStage.failed{border-color:rgba(194,65,12,.38);background:#fff7ed}
+.systemStage.skipped_by_route{border-color:rgba(100,116,139,.30);background:#f8fafc}
+.functionalRouteGrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:14px;align-items:start}
+.functionalRouteGrid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.routeHeroPanel{min-height:420px}
+.routeSurfaceBox{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:14px;color:#475569;font-size:13px;white-space:pre-wrap;min-height:160px}
+.routeSurfaceBox h3{font-size:18px;color:var(--ink);margin-bottom:8px}
+.routeSurfaceBox h4{font-size:12px;color:var(--muted);text-transform:uppercase;margin:12px 0 5px}
+.routeSurfaceBox b{color:var(--ink)}
+.routeSurfaceBox ul{margin:8px 0 0;padding-left:18px}
+.routeSurfaceBox .emptyReason{border:1px solid rgba(183,121,31,.32);background:#fffbeb;border-radius:8px;padding:10px;margin-top:10px}
+.researchGrid{display:grid;grid-template-columns:minmax(300px,380px) minmax(0,1fr) minmax(300px,380px);gap:14px;align-items:start}
+.researchResultList{display:flex;flex-direction:column;gap:10px;max-height:620px;overflow:auto}
+.researchCard{border:1px solid var(--line);background:#fff;border-radius:8px;padding:12px;color:#475569}
+.researchCard strong{display:block;color:var(--ink);font-size:14px;margin-bottom:5px}
+.researchCard p{font-size:13px;margin-bottom:8px}
+.researchMeta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:8px 0}
+.researchMeta span{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:6px;font-size:11px;color:var(--muted)}
+.researchMeta b{display:block;color:var(--ink);font-size:13px}
+.researchActions{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.researchActions button{min-height:32px;padding:6px 8px;font-size:12px}
 .layerConsole{padding:18px}
 .layerConsoleHead{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px}
 .layerConsoleHead h2{font-size:18px;font-weight:780}
@@ -241,7 +301,7 @@ details.panel>div:last-child{margin-bottom:16px}
   .modeTab{flex:1}
   .appShell{grid-template-columns:1fr}
   .composerRail{position:static;max-height:none;overflow:visible}
-  .topGrid,.opsArea,.evaluateGrid,.discoverGrid,.monitorGrid{grid-template-columns:1fr;grid-template-areas:none}
+  .topGrid,.opsArea,.evaluateGrid,.discoverGrid,.monitorGrid,.systemModeGrid,.functionalRouteGrid,.functionalRouteGrid.three,.researchGrid{grid-template-columns:1fr;grid-template-areas:none}
   .evaluateGrid .discoveryPanel,.evaluateGrid .pipelinePanel,.evaluateGrid .decisionPanel{grid-area:auto}
   .evaluateGrid .decisionPanel{position:static}
   .layerGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -251,6 +311,7 @@ details.panel>div:last-child{margin-bottom:16px}
   .monitorStatusBar,.monitorLayout{grid-template-columns:1fr}
   .monitorDetailPanel{position:static}
   .pipelineFlow{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .resultPathRail{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media(max-width:760px){
   .appHeader{height:auto;align-items:stretch;padding:16px}
@@ -258,7 +319,7 @@ details.panel>div:last-child{margin-bottom:16px}
   .viewHeader{flex-direction:column}
   .viewRoute{white-space:normal;border-radius:8px}
   .appShell{padding:14px;gap:14px}
-  .formGrid,.cards,.metrics,.systemStatusList,.quickActions,.layerGrid,.pipelineFlow,.pipelineDetailGrid{grid-template-columns:1fr}
+  .formGrid,.cards,.metrics,.systemStatusList,.quickActions,.layerGrid,.pipelineFlow,.pipelineDetailGrid,.resultInsightGrid,.resultPathRail{grid-template-columns:1fr}
   .layerConsoleHead{flex-direction:column}
   .flowHint{white-space:normal;border-radius:8px}
   .detailHead{flex-direction:column;align-items:stretch}

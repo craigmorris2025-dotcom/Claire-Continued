@@ -42,7 +42,13 @@ class AutoDesignEngine:
                 "error": "No context provided to AutoDesignEngine"
             }
 
-        # Build simple design output (you can expand later)
+        technology_intelligence = context.get("technology_intelligence", {}) if isinstance(context, dict) else {}
+        selected_stack = technology_intelligence.get("selected_stack", {}) if isinstance(technology_intelligence, dict) else {}
+        selected_technologies = technology_intelligence.get("technologies_considered", []) if isinstance(technology_intelligence, dict) else []
+
+        # Build minimum viable design output. Route activation is handled by
+        # the core output contract and Design Portal, not by forcing every run
+        # into design.
         return {
             "status": "success",
             "design": {
@@ -54,6 +60,29 @@ class AutoDesignEngine:
                     "analysis_engines",
                     "decision_layer",
                     "api_gateway"
+                ],
+                "dependencies": [
+                    "structured_pipeline_contracts",
+                    "run_history_store",
+                    "export_writer",
+                    "dashboard_api",
+                ],
+                "constraints": [
+                    "route_gated_design_only",
+                    "local_desktop_stability",
+                    "traceable_outputs_required",
+                ],
+                "risks": [
+                    "over-routing portfolio outputs into design",
+                    "technology recommendations without sufficient context",
+                ],
+                "selected_technologies": selected_technologies,
+                "selected_stack": selected_stack,
+                "implementation_phases": [
+                    "contract alignment",
+                    "component mapping",
+                    "technology selection",
+                    "validation and package export",
                 ],
                 "inferred_domain": context.get("domain", "unknown"),
                 "confidence": context.get("scores", {}).get("_confidence", 0.5),

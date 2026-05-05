@@ -2,7 +2,7 @@
 
 Current confirmed target:
 
-- v5.89.8: Trend Discovery + Thesis Formation.
+- v5.89.9: Portfolio Creation / Optimization.
 
 Immediate implementation boundary:
 
@@ -45,6 +45,14 @@ v5.89.8 Trend Discovery + Thesis Formation is now implemented as a narrow synthe
 4. Lifecycle stage 10 maps to `thesis_formation`.
 5. Fresh exports include both artifacts and lifecycle evidence for both.
 
+v5.89.9 Portfolio Creation / Optimization is now implemented as a narrow artifact layer:
+
+1. `PortfolioOptimizationEngine` reads binder, scores, trend/thesis, opportunity, strategic, risk, and acquirer evidence.
+2. Pipeline exposes `portfolio_optimization`.
+3. Lifecycle stage 27 maps to `portfolio_optimization`.
+4. Stage 27 requires both `portfolio_binder` and `portfolio_optimization`.
+5. Fresh exports include the portfolio optimization artifact and lifecycle evidence.
+
 ## Next Recommended Action
 
 Stay in rate-safe validation mode.
@@ -52,4 +60,4 @@ Stay in rate-safe validation mode.
 Do not run regression again unless a quick check fails or the next change touches a tested area directly. The safest next move is either:
 
 - pause for review of v5.89.5-v5.89.8 core-completion artifacts; or
-- proceed to the next master-plan step as another narrow layer, preserving backend launch, dashboard modes, and existing endpoints.
+- proceed to v5.90 as a narrow breakthrough escalation/classification layer, preserving backend launch, dashboard modes, and existing endpoints.

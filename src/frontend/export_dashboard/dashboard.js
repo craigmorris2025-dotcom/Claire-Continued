@@ -1,4 +1,5 @@
 const state={runs:[],selected:null,files:[],active:null,timer:null,cursor:0,catalog:null};
+state.researchResults=[];
 const el=id=>document.getElementById(id); const fmt=(v,f='-')=>(v===undefined||v===null||v==='')?f:String(v);
 function stat(id,msg,err=false){const node=el(id);if(!node) return;node.textContent=msg;node.style.color=err?'#f85149':'#8b949e'}
 function setLayer(layer,badge,status){
@@ -11,7 +12,7 @@ async function api(path,opt={}){const r=await fetch(path,opt);if(!r.ok)throw new
 function option(sel,id,name,extra=''){const o=document.createElement('option');o.value=id;o.textContent=extra?`${name} - ${extra}`:name;sel.appendChild(o)}
 async function loadCatalog(){state.catalog=await api('/api/commands');const wf=el('workflowSelect'), em=el('executionModeSelect'), mu=el('marketUniverseSelect'), ind=el('industryDomainSelect'), buyer=el('buyerSegmentSelect'), obj=el('objectiveSelect'), cmd=el('commandSelect');state.catalog.workflow_modes.forEach(x=>option(wf,x.id,x.name));state.catalog.execution_modes.forEach(x=>option(em,x.id,x.name));state.catalog.market_universes.forEach(x=>option(mu,x.id,x.name,x.coverage_count_label));state.catalog.industry_domains.forEach(x=>option(ind,x.id,x.name,x.classification));state.catalog.buyer_segments.forEach(x=>option(buyer,x.id,x.name));state.catalog.opportunity_objectives.forEach(x=>option(obj,x.id,x.name));function fillCmd(){cmd.innerHTML='';state.catalog.commands.filter(c=>c.workflow===wf.value).forEach(c=>option(cmd,c.id,c.name))}wf.onchange=fillCmd;fillCmd();setLayer('Core','command ready',`${state.catalog.commands.length} command(s), ${state.catalog.market_universes.length} market universe(s), ${state.catalog.industry_domains.length} domain(s).`)}
 async function applyDesktopLiveMode(){try{const h=await api('/api/health');if(!h.desktop_live)return;const em=el('executionModeSelect'),mu=el('marketUniverseSelect'),ind=el('industryDomainSelect'),obj=el('objectiveSelect');if(em)em.value='hybrid';if(mu)mu.value='sp500_public';if(ind)ind.value='information_technology';if(obj)obj.value='discover_market_gaps';stat('launchStatus','Desktop live mode is enabled. Hybrid mode and public-company universe are selected.')}catch(e){}}
-function payload(){return {workflow:el('workflowSelect').value,execution_mode:el('executionModeSelect').value,market_universe:el('marketUniverseSelect').value,industry_domain:el('industryDomainSelect').value,buyer_segment:el('buyerSegmentSelect').value,objective:el('objectiveSelect').value,command_id:el('commandSelect').value,signal:el('rawInput').value,count:5}}
+function payload(){return {run_type:el('runTypeSelect')?el('runTypeSelect').value:'evaluate_opportunity',workflow:el('workflowSelect').value,execution_mode:el('executionModeSelect').value,market_universe:el('marketUniverseSelect').value,industry_domain:el('industryDomainSelect').value,buyer_segment:el('buyerSegmentSelect').value,objective:el('objectiveSelect').value,command_id:el('commandSelect').value,signal:el('rawInput').value,count:5}}
 function enrichmentHtml(c){
   const e=c.connected_enrichment||{};
   if(!e || !e.safe_to_enrich) return '<div class="field muted"><b>Connected Enrichment:</b> no safe normalized signal match yet</div>';
@@ -29,10 +30,14 @@ async function needed(){stat('launchStatus','Searching market-wide needed soluti
 async function generate(){stat('launchStatus','Generating protected opportunity selection...');setLayer('Core','generating','Producing protected opportunity cards from the active workflow, market universe, and buyer context.');const x=await api('/api/opportunities/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload())});const box=el('candidateList');box.innerHTML='';(x.candidates||[]).forEach(c=>{const wrap=document.createElement('div');wrap.innerHTML=cardHtml(c,true);const node=wrap.firstChild;node.querySelector('button').onclick=()=>runCandidate(c.candidate_id);box.appendChild(node)});const ce=x.connected_enrichment||{};const hf=x.hybrid_fusion||{};setLayer('Core','cards ready',`${(x.candidates||[]).length} candidate(s), ${fmt(ce.enriched_candidate_count,0)} enriched, ${fmt(hf.hybrid_candidate_count,0)} hybrid-ready.`);stat('launchStatus',`Generated ${(x.candidates||[]).length} opportunity candidate(s). Connected enrichment: ${fmt(ce.enriched_candidate_count,0)}/${fmt((x.candidates||[]).length,0)} enriched from ${fmt(ce.normalized_signal_count,0)} normalized signal(s). Hybrid-ready: ${fmt(hf.hybrid_candidate_count,0)}. Internal construction protected.`)}
 async function runCandidate(id){resetEvents();stat('launchStatus','Launching selected opportunity...');setLayer('Core','running','Running the selected opportunity through Claire and watching live events.');const x=await api('/api/opportunities/run-candidate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({candidate_id:id})});if(x.status==='blocked'){stat('launchStatus','Blocked by governance hard stop. See audit panel.',true);setLayer('Trust','blocked','Governance blocked this opportunity before launch.');loadAuditLog();return}state.active=x.event_run_id;watch()}
 function title(r){return r.category_name||r.sector||r.folder_name||r.run_id||'Claire run'}
-function renderRuns(){const list=el('runList');const count=el('runCount');if(count) count.textContent=state.runs.length;if(!list) return;list.innerHTML='';if(!state.runs.length){list.innerHTML='<div class="status">No runs found.</div>';return} state.runs.forEach(r=>{const d=document.createElement('div');d.className='runCard'+(state.selected&&state.selected.run_id===r.run_id?' active':'');d.innerHTML=`<strong>${fmt(title(r))}</strong><div class="meta">${fmt(r.created_at)}<br>Sector: ${fmt(r.sector)}<br>Decision: ${fmt(r.decision_classification)} · Files: ${fmt(r.written_file_count)}</div>`;d.onclick=()=>selectRun(r);list.appendChild(d)})}
+function renderRuns(){const list=el('runList');const count=el('runCount');if(count) count.textContent=state.runs.length;if(!list) return;list.innerHTML='';if(!state.runs.length){list.innerHTML='<div class="status">No runs found.</div>';renderFunctionalSurfaces(state.selected&&state.selected.core_output||{},state.selected||{});return} state.runs.forEach(r=>{const d=document.createElement('div');d.className='runCard'+(state.selected&&state.selected.run_id===r.run_id?' active':'');d.innerHTML=`<strong>${fmt(r.headline||title(r))}</strong><div class="meta">${fmt(r.created_at)}<br>Route: ${fmt(r.route_selected||r.decision_classification)}<br>Status: ${fmt(r.status)} | Confidence: ${fmt(r.confidence||r.portfolio_score)} | Package: ${fmt(r.export_package_level||r.export_level||'unknown')}</div>`;d.onclick=()=>selectRun(r);list.appendChild(d)});renderFunctionalSurfaces(state.selected&&state.selected.core_output||{},state.selected||{})}
 function renderCards(r){const c=[['Run ID',r.run_id],['Output Folder',r.output_dir],['Domain',r.domain],['Sector',r.sector],['Category',r.category_name],['Decision',r.decision_classification],['Breakthrough',r.breakthrough_classification],['Portfolio Score',r.portfolio_score],['Export Level',r.export_package_level],['Export Score',r.export_package_score],['Documents',r.document_count],['Written Files',r.written_file_count]];el('summaryCards').innerHTML=c.map(([a,b])=>`<div class="card"><h3>${a}</h3><p>${fmt(b)}</p></div>`).join('')}
 async function preview(name){if(!state.selected||!name)return;el('fileSelect').value=name;el('previewBox').textContent='Loading...';try{const x=await api(`/api/runs/${encodeURIComponent(state.selected.run_id)}/files/${encodeURIComponent(name)}?max_chars=120000`);el('previewBox').textContent=typeof x==='string'?x:(x.content||JSON.stringify(x,null,2));tab('preview')}catch(e){el('previewBox').textContent=e.message}}
-function tab(name){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));['summary','files','preview','raw'].forEach(t=>el(t+'Tab').classList.toggle('hidden',t!==name))}
+function tab(name){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+  ['summary','files','preview','raw'].forEach(t=>el(t+'Tab').classList.toggle('hidden',t!==name));
+  if(name==='raw') loadFullRunJsonOnDemand();
+}
 
 function esc(v){
   return fmt(v).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -75,7 +80,33 @@ function compactText(text,limit=120){
   return s.length>limit?s.slice(0,limit-1)+'...':s;
 }
 function pipelineScores(data,r){
-  return Object.assign({},r&&r.domain_scores||{},r&&r.scores||{},data&&data.domain_scores||{},data&&data.scores||{});
+  const core=data&&data.core_output||{};
+  const u=core.user_facing_result||{};
+  const c=u.confidence||{};
+  const summary=core.run_summary||{};
+  return Object.assign(
+    {},
+    r&&r.domain_scores||{},
+    r&&r.scores||{},
+    data&&data.domain_scores||{},
+    data&&data.scores||{},
+    {
+      _confidence:c.overall||summary.confidence,
+      trend_discovery_score:c.trend,
+      thesis_score:c.thesis,
+      portfolio_score:c.portfolio||summary.portfolio_score,
+      portfolio_optimization_score:c.portfolio_optimization,
+      breakthrough_score:c.breakthrough,
+      feasibility_score:c.validation,
+      acquisition_score:c.acquisition,
+      knowledge_quality_score:nested(core,'signal_basis.knowledge_ingestion.knowledge_quality_score.score'),
+      coverage_score:nested(core,'signal_basis.knowledge_ingestion.coverage_assessment.score'),
+      source_quality_score:nested(core,'signal_basis.knowledge_ingestion.source_quality.score'),
+      signal_quality_score:nested(core,'signal_basis.signal_extraction.signal_quality_score.score'),
+      semantic_density_score:nested(core,'signal_basis.signal_extraction.semantic_profile.semantic_density_score'),
+      routing_confidence_score:nested(core,'signal_basis.signal_extraction.routing_evidence.routing_confidence_score')
+    }
+  );
 }
 function engineGroups(data,r){
   const scores=pipelineScores(data,r);
@@ -206,6 +237,475 @@ function topSignals(data,r={}){
   pushSignal(out,'Breakthrough',r.breakthrough_classification||(data&&data.breakthrough_classification));
   return out.slice(0,5);
 }
+function nested(obj,path,fallback=null){
+  let cur=obj||{};
+  for(const part of path.split('.')){
+    if(!cur||typeof cur!=='object'||!(part in cur)) return fallback;
+    cur=cur[part];
+  }
+  return cur===undefined||cur===null?fallback:cur;
+}
+function routeLabel(route){
+  return fmt(route,'pending').replace(/_/g,' ');
+}
+function userFacingResult(data,r={}){
+  const core=data&&data.core_output||{};
+  if(core.user_facing_result) return core.user_facing_result;
+  const trend=data&&data.trend_discovery||{};
+  const thesis=data&&data.thesis_formation||{};
+  const portfolio=data&&data.portfolio_optimization||{};
+  const scores=pipelineScores(data,r);
+  const route=core.route_selected||nested(data,'core_lifecycle.route')||portfolio.portfolio_path||'trend_thesis';
+  const trends=trend.discovered_trends||[];
+  const trendName=(trends[0]&&trends[0].name)||r.category_name||r.sector||'market intelligence opportunity';
+  const summary=thesis.thesis_statement||`Claire detected ${trendName} and formed an initial intelligence output.`;
+  return {
+    headline: `${trendName}: ${routeLabel(route)}`,
+    summary,
+    route_selected: route,
+    trend,
+    thesis,
+    portfolio:{portfolio_optimization:portfolio,portfolio_score:scores.portfolio_score,optimization_score:scores.portfolio_optimization_score},
+    breakthrough:{is_breakthrough:scoreOf(scores,['breakthrough_score'])>=0.65,score:scoreOf(scores,['breakthrough_score']),route_recommendation:thesis.route_recommendation},
+    advancement_path:{route_selected:route,portfolio_path:portfolio.portfolio_path},
+    solution:{applicable:!!(data&&data.design_output&&data.design_output.status==='success'),solution_output:data&&data.design_output||{}},
+    strategy:{strategic_positioning:data&&data.strategic_positioning||{},moat:data&&data.moat||{},business_model:data&&data.business_model||{}},
+    acquisition:{deal_exit_modeling:data&&data.deal_exit_modeling||{},acquirer_matches:data&&data.acquirer_matches||[]},
+    final_package:{package_profile:data&&data.package_profile||{},export_writer:data&&data.export_writer||{}},
+    confidence:{overall:scoreOf(scores,['_confidence','portfolio_score']),trend:scoreOf(scores,['trend_discovery_score']),thesis:scoreOf(scores,['thesis_score']),portfolio:scoreOf(scores,['portfolio_score']),breakthrough:scoreOf(scores,['breakthrough_score'])},
+    next_actions:[{action:'review intelligence output',purpose:'decide whether to validate, optimize, escalate, or package the opportunity',priority:'high'}]
+  };
+}
+function requiredResultSections(){
+  return ['headline','summary','route_selected','trend','thesis','portfolio','breakthrough','advancement_path','solution','strategy','acquisition','final_package','confidence','next_actions'];
+}
+function renderCoreOutputUnavailable(message='Core output not available for this run.'){
+  const empty=el('userResultEmpty'), stateNode=el('userResultState');
+  if(empty) empty.classList.add('hidden');
+  if(stateNode) stateNode.classList.remove('hidden');
+  if(el('resultRouteBadge')) el('resultRouteBadge').textContent='output unavailable';
+  if(el('userResultHeadline')) el('userResultHeadline').textContent='Core output not available';
+  if(el('userResultSummary')) el('userResultSummary').textContent=message;
+  if(el('resultPathRail')) el('resultPathRail').innerHTML='';
+  if(el('resultInsightGrid')) el('resultInsightGrid').innerHTML='<article class="resultInsight"><h3>Missing Contract</h3><p>Run history loaded, but this run does not include core_run_output.json yet.</p></article>';
+  if(el('nextActionList')) el('nextActionList').innerHTML='<div class="nextAction"><strong>rerun or export with core output enabled</strong><div>The dashboard needs core_run_output.json to render the user-facing result.</div><div class="muted">high</div></div>';
+}
+function renderCoreOutputIncomplete(core,r={}){
+  const u=core.user_facing_result||{};
+  const missing=requiredResultSections().filter(k=>!(k in u));
+  const gate=nested(core,'lifecycle_summary.completion_gate',{});
+  const next=(u.next_actions&&u.next_actions[0])||(core.next_actions&&core.next_actions[0])||{action:'complete missing output sections',purpose:'repair the core output contract before presenting this run.',priority:'critical'};
+  const empty=el('userResultEmpty'), stateNode=el('userResultState');
+  if(empty) empty.classList.add('hidden');
+  if(stateNode) stateNode.classList.remove('hidden');
+  if(el('userResultHeadline')) el('userResultHeadline').textContent=fmt(u.headline||core.route_selected,'Incomplete core output');
+  if(el('userResultSummary')) el('userResultSummary').textContent=fmt(u.summary,'Core output exists but is missing required presentation sections.');
+  if(el('resultPathRail')) el('resultPathRail').innerHTML='';
+  if(el('resultRouteBadge')) el('resultRouteBadge').textContent=`${routeLabel(core.route_selected)} incomplete`;
+  if(el('resultInsightGrid')){
+    el('resultInsightGrid').innerHTML=`<article class="resultInsight"><h3>Incomplete Output</h3><p>Route: ${esc(routeLabel(core.route_selected))}</p>${resultMetric('Lifecycle',gate.status||core.status,`Missing sections: ${missing.join(', ')||'none reported'}`)}</article>`;
+  }
+  if(el('nextActionList')) el('nextActionList').innerHTML=`<div class="nextAction"><strong>${esc(next.action)}</strong><div>${esc(next.purpose)}</div><div class="muted">${esc(next.priority||'high')}</div></div>`;
+}
+function resultMetric(title,value,note){
+  return `<div class="metricLine"><span>${esc(title)}</span><b>${esc(scoreText(value))}</b></div>${note?`<p>${esc(compactText(note,150))}</p>`:''}`;
+}
+function line(label,value){return `<div><b>${esc(label)}:</b> ${esc(fmt(value,'not produced for this route'))}</div>`}
+function listItems(items,empty='Not produced for this route'){
+  const arr=Array.isArray(items)?items.filter(Boolean):[];
+  return arr.length?`<ul>${arr.slice(0,6).map(v=>`<li>${esc(typeof v==='object'?compactText(JSON.stringify(v),160):v)}</li>`).join('')}</ul>`:`<div class="muted">${esc(empty)}</div>`;
+}
+function sectionHtml(title,body){return `<h4>${esc(title)}</h4>${body}`}
+function setText(id,value){const node=el(id); if(node) node.textContent=value}
+function setHtml(id,value){const node=el(id); if(node) node.innerHTML=value}
+function trendStage(confidence, breakthrough){
+  const c=Number(confidence||0);
+  if(breakthrough) return 'breakthrough-level';
+  if(c>=0.72) return 'validated';
+  if(c>=0.42) return 'forming';
+  return 'weak';
+}
+function renderCorePanels(core={},r={}){
+  const u=core.user_facing_result||core||{};
+  const confidence=core.confidence||u.confidence||{};
+  const trend=core.trend_discovery||u.trend||{};
+  const thesis=core.thesis||u.thesis||{};
+  const discovery=core.discovery||u.discovery||{};
+  const signalBasis=core.signal_basis||{};
+  const portfolio=core.portfolio||u.portfolio||{};
+  const breakthrough=core.breakthrough||u.breakthrough||{};
+  const advancement=core.advancement_path||u.advancement_path||{};
+  const technology=core.technology_intelligence||u.technology_intelligence||{};
+  const autodesign=core.autodesign||u.autodesign||{};
+  const designPortal=core.design_portal||u.design_portal||{};
+  const solution=core.solution||u.solution||{};
+  const acquisition=core.acquisition||u.acquisition||{};
+  const finalPackage=core.final_package||u.final_package||{};
+  const stages=nested(core,'lifecycle_summary.stages',[]);
+  const skipped=(stages||[]).filter(s=>s.status==='skipped_by_route').map(s=>`${s.number}. ${s.name}`);
+  const required=(stages||[]).filter(s=>['complete','failed','blocked','insufficient_data'].includes(s.status)).slice(0,8).map(s=>`${s.number}. ${s.name} (${s.status})`);
+  const scan=core.scan_iterations||[];
+  if(el('scanProgressBadge')) el('scanProgressBadge').textContent=scan.length?`${scan.length} iteration(s)`:fmt(discovery.scan_terminal_state,'waiting');
+  if(el('scanProgressList')){
+    el('scanProgressList').innerHTML=scan.length?scan.map(it=>`<div class="scanIteration"><strong>Iteration ${esc(it.iteration)}</strong><div class="scanIterationGrid"><span>Signals<b>${esc(fmt(it.signals_found,0))}</b></span><span>Trend<b>${esc(scoreText(it.trend_confidence))}</b></span><span>Discovery<b>${esc(scoreText(it.discovery_confidence))}</b></span><span>Breakthrough<b>${esc(scoreText(it.breakthrough_confidence))}</b></span><span>Decision<b>${esc(fmt(it.route_decision))}</b></span><span>Terminal<b>${esc(fmt(core.status))}</b></span></div><div class="muted">${esc(fmt(it.terminal_reason))}</div></div>`).join(''):'<div class="muted">Waiting for scan continuation output.</div>';
+  }
+  if(el('routeDecisionBadge')) el('routeDecisionBadge').textContent=routeLabel(core.route_selected||u.route_selected);
+  if(el('routeDecisionBox')) el('routeDecisionBox').innerHTML=[
+    line('Selected route',routeLabel(core.route_selected||u.route_selected)),
+    line('Reason',discovery.scan_terminal_reason||breakthrough.route_recommendation||nested(core,'signal_basis.source_summary.scan_terminal_reason')),
+    line('Breakthrough trigger',breakthrough.is_breakthrough?'triggered':'not triggered'),
+    line('Design trigger',solution.applicable?'triggered':'not triggered'),
+    line('Design required',designPortal.required?'yes':'no'),
+    line('AutoDesign',autodesign.status||'skipped by route'),
+    line('Design Portal',designPortal.status||'skipped by route'),
+    line('Next route',nested(advancement,'downstream_action')||(u.next_actions||[])[0]?.action),
+  ].join('');
+  const trendName=nested(trend,'discovered_trends.0.name','No trend discovered yet');
+  if(el('trendThesisBadge')) el('trendThesisBadge').textContent=trendStage(confidence.trend,breakthrough.is_breakthrough);
+  if(el('trendThesisBox')) el('trendThesisBox').innerHTML=[
+    line('Trend',trendName),
+    line('Strength',scoreText(nested(trend,'discovery_score.score',confidence.trend))),
+    line('Stage',trendStage(nested(trend,'discovery_score.score',confidence.trend),breakthrough.is_breakthrough)),
+    line('Why now',nested(trend,'timing_rationale',nested(trend,'why_now','Timing evidence not produced'))),
+    line('Thesis',thesis.thesis_statement||u.summary),
+    line('Confidence',scoreText(confidence.thesis||confidence.trend)),
+    '<b>Supporting signals:</b>'+listItems(nested(trend,'supporting_signals',nested(trend,'discovered_trends',[])),'No supporting signals exported yet.'),
+  ].join('');
+  const pOpt=portfolio.portfolio_optimization||portfolio;
+  if(el('portfolioBadge')) el('portfolioBadge').textContent=pOpt.portfolio_path?'produced':'not produced';
+  if(el('portfolioBox')) el('portfolioBox').innerHTML=pOpt.portfolio_path?[
+    line('Portfolio thesis',pOpt.portfolio_thesis||thesis.thesis_statement),
+    line('Portfolio logic',pOpt.portfolio_logic||pOpt.portfolio_path),
+    line('Recommended action',(u.next_actions||[])[0]?.action),
+    line('Confidence',scoreText(confidence.portfolio||portfolio.portfolio_score)),
+    '<b>Priority ranking:</b>'+listItems(pOpt.priority_ranking||nested(portfolio,'opportunity_map.opportunities',[]),'No ranked opportunities exported.'),
+    '<b>Risk / exposure notes:</b>'+listItems(pOpt.risk_notes||portfolio.exposure_notes||pOpt.constraints,'No risk or exposure notes exported.'),
+  ].join(''):'No portfolio action produced yet.\nReason: insufficient trend confidence, missing signals, or route selected elsewhere.';
+  if(el('breakthroughBadge')) el('breakthroughBadge').textContent=breakthrough.is_breakthrough?'detected':'not detected';
+  if(el('breakthroughBox')) el('breakthroughBox').innerHTML=[
+    line('Breakthrough detected',breakthrough.is_breakthrough?'yes':'no'),
+    line('Primary type',breakthrough.primary_type),
+    line('Secondary types',(breakthrough.secondary_types||[]).join(', ')||'none'),
+    line('Rationale',breakthrough.classification_rationale),
+    line('Route recommendation',breakthrough.route_recommendation),
+    '<b>Trigger signals:</b>'+listItems(breakthrough.trigger_signals,'No breakthrough trigger signals exported.'),
+  ].join('');
+  if(el('advancementBadge')) el('advancementBadge').textContent=fmt(advancement.route_selected||core.route_selected,'pending');
+  if(el('advancementBox')) el('advancementBox').innerHTML=[
+    line('Advancement path selected',routeLabel(advancement.route_selected||core.route_selected)),
+    line('Reason selected',advancement.downstream_action||discovery.scan_terminal_reason),
+    line('Design required',designPortal.required?'yes':'no'),
+    line('Downstream output expected',solution.applicable||designPortal.required?'solution/design output':'portfolio, acquisition, or trend package output'),
+    '<b>Stages required:</b>'+listItems(required,'No required stages loaded.'),
+    '<b>Stages skipped by route:</b>'+listItems(skipped,'No route skips reported.'),
+  ].join('');
+  if(el('autodesignBadge')) el('autodesignBadge').textContent=autodesign.status||'not required';
+  if(el('autodesignBox')){
+    el('autodesignBox').innerHTML=autodesign.triggered?[
+      line('Triggered',autodesign.triggered?'yes':'no'),
+      line('Trigger source',autodesign.trigger_source),
+      line('Advancement path',autodesign.selected_advancement_path||core.route_selected),
+      line('Design type',autodesign.design_type),
+      line('Concept',autodesign.concept),
+      '<b>Core components:</b>'+listItems(autodesign.components,'No components exported.'),
+      '<b>Dependencies:</b>'+listItems(autodesign.dependencies,'No dependencies exported.'),
+      '<b>Constraints:</b>'+listItems(autodesign.constraints,'No constraints exported.'),
+      '<b>Risks:</b>'+listItems(autodesign.risks,'No risks exported.'),
+      line('Next design action',designPortal.required?'review design portal output':'no design action required'),
+    ].join(''):(autodesign.status==='blocked'?'AutoDesign blocked: insufficient breakthrough / solution data.':autodesign.status==='insufficient_data'?'AutoDesign unavailable: missing design output.':'AutoDesign skipped by route.');
+  }
+  if(el('designPortalBadge')) el('designPortalBadge').textContent=designPortal.status||'not required';
+  if(el('designPortalBox')){
+    el('designPortalBox').innerHTML=designPortal.required||designPortal.available?[
+      line('Output available',designPortal.available?'yes':'no'),
+      line('Blueprint/spec summary',designPortal.blueprint_summary),
+      line('Architecture summary',designPortal.architecture_summary),
+      '<b>Component map:</b>'+listItems(designPortal.component_map,'No component map exported.'),
+      '<b>Dependency map:</b>'+listItems(designPortal.dependency_map,'No dependency map exported.'),
+      '<b>Implementation phases:</b>'+listItems(designPortal.build_phases,'No implementation phases exported.'),
+      line('Validation status',designPortal.validation_status),
+      line('Export/package link',designPortal.export_path||nested(finalPackage,'export_writer.output_dir')),
+    ].join(''):(designPortal.status==='blocked'?'Design output blocked by failed buildability / viability / deployability check.':'Design Portal not required for this route.');
+  }
+  if(el('technologySurfaceBadge')) el('technologySurfaceBadge').textContent=technology.status||'skipped';
+  if(el('technologySurfaceBox')) el('technologySurfaceBox').innerHTML=technology.required?[
+    line('Required',technology.required?'yes':'no'),
+    line('Status',technology.status),
+    line('Integration complexity',technology.integration_complexity),
+    line('Confidence',scoreText(technology.confidence)),
+    sectionHtml('Technologies considered',listItems(technology.technologies_considered,'Technology Intelligence missing.')),
+    sectionHtml('Selected stack',technology.selected_stack&&Object.keys(technology.selected_stack).length?`<pre>${esc(JSON.stringify(technology.selected_stack,null,2))}</pre>`:'<div class="muted">No selected stack exported.</div>'),
+    sectionHtml('Component matches',listItems(technology.component_matches,'No component matches exported.')),
+    sectionHtml('Compatibility notes',listItems(technology.compatibility_notes,'No compatibility notes exported.')),
+    sectionHtml('Dependency notes',listItems(technology.dependency_notes,'No dependency notes exported.')),
+    sectionHtml('Buildability notes',listItems(technology.buildability_notes,'No buildability notes exported.')),
+  ].join(''):'Technology Intelligence skipped by route.';
+  if(el('packageBadge')) el('packageBadge').textContent=finalPackage.status||((r.export_writer||{}).status?'available':'missing');
+  if(el('packageBox')) el('packageBox').innerHTML=[
+    line('Core output available',core.run_id?'yes':'no'),
+    line('Package available',finalPackage.status||'unknown'),
+    line('Export path',nested(finalPackage,'export_writer.output_dir',nested(r,'export_writer.output_dir'))),
+    line('Last generated package',nested(finalPackage,'package_profile.category_name',u.headline)),
+  ].join('');
+  const failures=core.failures||[];
+  if(el('failureBadge')) el('failureBadge').textContent=failures.length||['blocked','failed','insufficient_data'].includes(core.status)?fmt(core.status):'clear';
+  if(el('failureBox')) el('failureBox').innerHTML=(failures.length||['blocked','failed','insufficient_data'].includes(core.status))?[
+    line('Status',core.status),
+    line('Stage where stopped',nested(failures,'0.stage','not specified')),
+    line('Reason',nested(failures,'0.type',discovery.scan_terminal_reason)),
+    '<b>Missing data:</b>'+listItems(nested(failures,'0.missing_data',[]),'Missing data was not specified.'),
+    '<b>Next scan action:</b>'+listItems(core.next_actions||u.next_actions,'No next action exported.'),
+  ].join(''):'No blocking failure reported.';
+  renderFunctionalSurfaces(core,r);
+}
+function renderFunctionalSurfaces(core={},r={}){
+  const u=core.user_facing_result||core||{};
+  const confidence=core.confidence||u.confidence||{};
+  const trend=core.trend_discovery||u.trend||{};
+  const thesis=core.thesis||u.thesis||{};
+  const discovery=core.discovery||u.discovery||{};
+  const portfolio=core.portfolio||u.portfolio||{};
+  const breakthrough=core.breakthrough||u.breakthrough||{};
+  const advancement=core.advancement_path||u.advancement_path||{};
+  const autodesign=core.autodesign||u.autodesign||{};
+  const designPortal=core.design_portal||u.design_portal||{};
+  const technology=core.technology_intelligence||u.technology_intelligence||{};
+  const acquisition=core.acquisition||u.acquisition||{};
+  const finalPackage=core.final_package||u.final_package||{};
+  const stages=nested(core,'lifecycle_summary.stages',[]);
+  const skipped=(stages||[]).filter(s=>s.status==='skipped_by_route').map(s=>`${s.number}. ${s.name}`);
+  const required=(stages||[]).filter(s=>['complete','failed','blocked','insufficient_data'].includes(s.status)).slice(0,10).map(s=>`${s.number}. ${s.name} (${s.status})`);
+  const scan=core.scan_iterations||[];
+  const failures=core.failures||[];
+  const reviewRequired=failures.length||['blocked','failed','insufficient_data','incomplete'].includes(core.status);
+  if(el('runAutonomyBox')){
+    el('runAutonomyBox').textContent=[
+      `Current route: ${fmt(core.route_selected||u.route_selected,'waiting for run')}`,
+      `Status: ${fmt(core.status,'waiting')}`,
+      `Terminal state: ${fmt(discovery.scan_terminal_state||nested(signalBasis,'source_summary.scan_terminal_state'),'waiting')}`,
+      `Scan iterations: ${fmt(scan.length,0)}`,
+      `Review required: ${reviewRequired?'yes':'no'}`,
+      `Autonomous execution: ${scan.length?'scan continuation ran until terminal state or guard':'waiting for scan result'}`
+    ].join('\n');
+  }
+  setText('commandRouteBadge',routeLabel(core.route_selected||u.route_selected||'ready'));
+  setText('discoverSurfaceBadge',discovery.scan_terminal_state||core.route_selected||'waiting');
+  setHtml('discoverSurfaceBox',[
+    `<h3>${esc(discovery.scan_terminal_state||'Discovery status pending')}</h3>`,
+    line('Discoveries generated',nested(discovery,'opportunity_discovery.opportunity_count',nested(discovery,'opportunity_discovery.opportunity_score.level','not produced'))),
+    line('Gap qualification',nested(core,'signal_basis.source_summary.scan_terminal_reason',discovery.scan_terminal_reason)),
+    line('Why discovery reached / not reached',discovery.scan_terminal_reason||'Waiting for scan result.'),
+    line('Discovery confidence',scoreText(discovery.confidence||confidence.overall)),
+    line('Next action',(core.next_actions||u.next_actions||[])[0]?.action),
+    sectionHtml('Failure or missing data',listItems((core.failures||[]).map(f=>`${f.stage||f.type}: ${(f.missing_data||[]).join(', ')}`),'No discovery failure reported.')),
+  ].join(''));
+  const governed=nested(signalBasis,'source_summary.accepted_signal_count',nested(signalBasis,'governed_signals.accepted_signal_count'));
+  setText('signalBasisSurfaceBadge',governed!==undefined&&governed!==null?`${governed} governed`:'waiting');
+  setHtml('signalBasisSurfaceBox',[
+    line('Governed signal count',governed),
+    line('Source count',nested(signalBasis,'source_summary.source_count')),
+    line('Connector sources present',nested(signalBasis,'source_summary.connector_sources_present')),
+    line('Terminal state',nested(signalBasis,'source_summary.scan_terminal_state')),
+    sectionHtml('Signal basis',signalBasis&&Object.keys(signalBasis).length?`<pre>${esc(JSON.stringify(signalBasis,null,2))}</pre>`:'<div class="muted">No signal basis exported.</div>'),
+  ].join(''));
+  setText('trendSurfaceBadge',trendStage(confidence.trend,breakthrough.is_breakthrough));
+  setHtml('trendSurfaceBox',[
+    `<h3>${esc(nested(trend,'discovered_trends.0.name','Trend not discovered yet'))}</h3>`,
+    line('Stage',trendStage(nested(trend,'discovery_score.score',confidence.trend),breakthrough.is_breakthrough)),
+    line('Why now',nested(trend,'why_now',nested(trend,'timing_rationale','Waiting for trend evidence.'))),
+    line('Momentum',nested(trend,'momentum',nested(core,'signal_basis.source_summary.accepted_signal_count','not produced'))),
+    line('Trend confidence',scoreText(confidence.trend)),
+    line('Thesis created',thesis.thesis_statement||'No thesis formed yet.'),
+    sectionHtml('Supporting signals',listItems(nested(trend,'supporting_signals',nested(trend,'discovered_trends',[])),'No supporting signals exported yet.')),
+    sectionHtml('Affected sectors/entities/themes',listItems(nested(trend,'affected_sectors',core.keywords||[]),'No affected themes exported yet.')),
+    line('Next action',(core.next_actions||u.next_actions||[])[0]?.action),
+  ].join(''));
+  setText('scanSurfaceBadge',scan.length?`${scan.length} iteration(s)`:fmt(discovery.scan_terminal_state,'waiting'));
+  setHtml('scanSurfaceBox',scan.length?scan.map(it=>[
+    `<h4>Scan iteration ${esc(it.iteration)}</h4>`,
+    line('Signals found',it.signals_found),
+    line('Governed signal count',it.governed_signal_count),
+    line('Trend confidence',scoreText(it.trend_confidence)),
+    line('Discovery confidence',scoreText(it.discovery_confidence)),
+    line('Breakthrough confidence',scoreText(it.breakthrough_confidence)),
+    line('Continue/enrich status',it.route_decision==='continue_scan'?'continue/enrich':it.route_decision),
+    line('Stop reason',it.terminal_reason),
+  ].join('')).join('<hr>'):'No scan iterations loaded. Waiting for run, scan in progress, or core_run_output.json missing.');
+  const pOpt=portfolio.portfolio_optimization||portfolio;
+  setText('portfolioSurfaceBadge',pOpt.portfolio_path?'produced':'not produced');
+  setHtml('portfolioSurfaceBox',pOpt.portfolio_path?[
+    `<h3>${esc(pOpt.portfolio_path||'Portfolio action')}</h3>`,
+    line('Portfolio thesis',pOpt.portfolio_thesis||thesis.thesis_statement),
+    line('Portfolio logic',pOpt.portfolio_logic||pOpt.allocation_hypothesis||pOpt.portfolio_path),
+    sectionHtml('Included themes/entities/opportunities',listItems(pOpt.included_themes||nested(portfolio,'opportunity_map.opportunities',[]),'No included opportunities exported.')),
+    sectionHtml('Priority ranking',listItems(pOpt.priority_ranking||nested(portfolio,'opportunity_map.opportunities',[]),'No priority ranking exported.')),
+    line('Suggested portfolio action',(core.next_actions||u.next_actions||[])[0]?.action),
+    line('Confidence',scoreText(confidence.portfolio||portfolio.portfolio_score)),
+  ].join(''):'Portfolio not produced for this route.\nReason: insufficient trend confidence, missing signals, waiting for portfolio engine, or route selected elsewhere.');
+  setText('portfolioRiskBadge',pOpt.portfolio_path?'available':'not produced');
+  setHtml('portfolioRiskBox',[sectionHtml('Exposure notes',listItems(portfolio.exposure_notes||pOpt.exposure_notes,'No exposure notes exported.')),sectionHtml('Risk notes',listItems(pOpt.risk_notes||pOpt.constraints,'No risk notes exported.'))].join(''));
+  setText('breakthroughSurfaceBadge',breakthrough.is_breakthrough?'detected':'not detected');
+  setHtml('breakthroughSurfaceBox',[
+    `<h3>${esc(breakthrough.is_breakthrough?'Breakthrough detected':'Breakthrough not triggered')}</h3>`,
+    line('Primary type',breakthrough.primary_type),
+    line('Secondary types',(breakthrough.secondary_types||[]).join(', ')||'none'),
+    line('Classification rationale',breakthrough.classification_rationale),
+    line('Why triggered / not triggered',breakthrough.is_breakthrough?breakthrough.classification_rationale:'Breakthrough threshold was not met or selected route does not require escalation.'),
+    line('Route recommendation',breakthrough.route_recommendation),
+    sectionHtml('Trigger signals',listItems(breakthrough.trigger_signals,'No trigger signals exported.')),
+  ].join(''));
+  setText('advancementSurfaceBadge',routeLabel(advancement.route_selected||core.route_selected||'pending'));
+  setHtml('advancementSurfaceBox',[
+    line('Advancement path selected',routeLabel(advancement.route_selected||core.route_selected)),
+    line('Reason selected',advancement.downstream_action||discovery.scan_terminal_reason),
+    line('Downstream output expected',designPortal.required?'design/package':'portfolio, acquisition, trend, or insufficient-data output'),
+    line('Why invention/design triggered',designPortal.required?'Design route requires construction output.':'AutoDesign skipped by route; Design Portal not required.'),
+    sectionHtml('Stages required',listItems(required,'No required stages loaded.')),
+    sectionHtml('Stages skipped_by_route',listItems(skipped,'No skipped stages reported.')),
+  ].join(''));
+  setText('designSurfaceBadge',designPortal.required?'design route':'not required');
+  setText('autodesignSurfaceBadge',autodesign.status||'not required');
+  setHtml('autodesignSurfaceBox',autodesign.triggered?[
+    line('Triggered',autodesign.triggered?'yes':'no'),
+    line('Trigger source',autodesign.trigger_source),
+    line('Design type',autodesign.design_type),
+    line('System type',autodesign.system_type||autodesign.design_type),
+    line('Generated concept',autodesign.concept),
+    line('Intended function',autodesign.intended_function||'Minimum viable design function exported when available.'),
+    sectionHtml('Components',listItems(autodesign.components,'No components exported.')),
+    sectionHtml('Dependencies',listItems(autodesign.dependencies,'No dependencies exported.')),
+    sectionHtml('Constraints',listItems(autodesign.constraints,'No constraints exported.')),
+    sectionHtml('Risks',listItems(autodesign.risks,'No risks exported.')),
+    sectionHtml('Selected technologies',listItems(autodesign.selected_technologies,'No selected technologies exported.')),
+    line('Selected stack',autodesign.selected_stack&&Object.keys(autodesign.selected_stack).length?JSON.stringify(autodesign.selected_stack):'No stack selected.'),
+    line('Next design action',designPortal.required?'Review Design Portal output and validation gates.':'No design action required.'),
+  ].join(''):`AutoDesign skipped by route.\nReason: ${esc(autodesign.status||'not_required')}`);
+  setText('designPortalSurfaceBadge',designPortal.status||'not required');
+  setHtml('designPortalSurfaceBox',designPortal.required||designPortal.available?[
+    line('Design output available',designPortal.available?'yes':'no'),
+    line('Architecture summary',designPortal.architecture_summary),
+    line('Blueprint/spec summary',designPortal.blueprint_summary),
+    sectionHtml('Component map',listItems(designPortal.component_map,'No component map exported.')),
+    sectionHtml('Dependency map',listItems(designPortal.dependency_map,'No dependency map exported.')),
+    line('Technology stack',designPortal.technology_stack&&Object.keys(designPortal.technology_stack).length?JSON.stringify(designPortal.technology_stack):'No technology stack exported.'),
+    sectionHtml('Implementation phases',listItems(designPortal.build_phases,'No implementation phases exported.')),
+    line('Build plan summary',designPortal.blueprint_summary||'Build plan summary not produced.'),
+    line('Validation status',designPortal.validation_status),
+    line('Export/package link',designPortal.export_path||nested(finalPackage,'export_writer.output_dir')),
+  ].join(''):'Design Portal not required for this route.');
+  setText('technologySurfaceBadge',technology.status||'skipped');
+  setHtml('technologySurfaceBox',technology.required?[
+    line('Required',technology.required?'yes':'no'),
+    line('Status',technology.status),
+    line('Integration complexity',technology.integration_complexity),
+    line('Confidence',scoreText(technology.confidence)),
+    sectionHtml('Technologies considered',listItems(technology.technologies_considered,'Technology Intelligence missing.')),
+    line('Selected stack',technology.selected_stack&&Object.keys(technology.selected_stack).length?JSON.stringify(technology.selected_stack):'No selected stack exported.'),
+    sectionHtml('Component matches',listItems(technology.component_matches,'No component matches exported.')),
+    sectionHtml('Compatibility notes',listItems(technology.compatibility_notes,'No compatibility notes exported.')),
+    sectionHtml('Dependency notes',listItems(technology.dependency_notes,'No dependency notes exported.')),
+    sectionHtml('Buildability notes',listItems(technology.buildability_notes,'No buildability notes exported.')),
+  ].join(''):'Technology Intelligence skipped by route.');
+  setText('packageSurfaceBadge',finalPackage.status||'package status');
+  setHtml('packageSurfaceBox',[
+    `<h3>${esc(u.headline||'Package output')}</h3>`,
+    line('Package available',finalPackage.status||'unknown'),
+    line('Opportunity summary',u.summary),
+    line('Market position',nested(core,'strategy.strategic_positioning.positioning_statement','not produced')),
+    line('Moat / differentiation',nested(core,'strategy.moat.moat_type.type','not produced')),
+    line('Business model / value capture',nested(core,'strategy.business_model.value_capture.model','not produced')),
+    line('Acquirer targets',(acquisition.acquirer_matches||[]).length),
+    line('Acquisition readiness',nested(finalPackage,'export_readiness.level','not produced')),
+    line('Export path',nested(finalPackage,'export_writer.output_dir',nested(r,'export_writer.output_dir'))),
+    sectionHtml('Risks / objections',listItems(nested(core,'strategy.risk_regulation.risks',[]),'No package risks exported.')),
+  ].join(''));
+  setText('historySurfaceBadge',state.runs.length?`${state.runs.length} run(s)`:'empty');
+  setHtml('historySurfaceBox',state.runs.length?state.runs.slice(0,8).map(run=>`<div><b>${esc(title(run))}</b><br>${esc(fmt(run.created_at))} | ${esc(fmt(run.route_selected||run.decision_classification))} | ${esc(fmt(run.confidence||run.portfolio_score))}</div>`).join('<hr>'):'No runs found.');
+  setText('monitorRunBadge',core.status||'waiting');
+  setHtml('monitorRunBox',[
+    line('Active scans',scan.length?`${scan.length} iteration(s) in selected run`:'No active scan selected.'),
+    line('Current scan pass',scan.length?scan[scan.length-1].iteration:'waiting'),
+    line('Last run status',core.status||r.status),
+    line('Last export status',nested(finalPackage,'export_writer.status',nested(r,'export_writer.status'))),
+    line('Terminal state',discovery.scan_terminal_state||nested(signalBasis,'source_summary.scan_terminal_state')),
+    sectionHtml('Scan iteration progress',scan.length?scan.map(it=>`<div>Iteration ${esc(it.iteration)}: ${esc(it.route_decision)} | trend ${esc(scoreText(it.trend_confidence))} | discovery ${esc(scoreText(it.discovery_confidence))} | breakthrough ${esc(scoreText(it.breakthrough_confidence))}</div>`).join(''):'<div class="muted">No scan iteration progress loaded.</div>'),
+  ].join(''));
+  setText('monitorActivityBadge',state.runs.length?'history ready':'idle');
+  setHtml('monitorActivityBox',[
+    line('Run history',`${state.runs.length} run(s)`),
+    line('Selected run',r.run_id||core.run_id),
+    line('Last export path',nested(finalPackage,'export_writer.output_dir',nested(r,'export_writer.output_dir'))),
+    line('Known errors',failures.length?`${failures.length} issue(s)`:'none in selected core output'),
+  ].join(''));
+}
+function renderUserFacingResult(data,r={}){
+  const empty=el('userResultEmpty'), stateNode=el('userResultState');
+  if(!data){
+    if(empty) empty.classList.remove('hidden');
+    if(stateNode) stateNode.classList.add('hidden');
+    if(el('resultRouteBadge')) el('resultRouteBadge').textContent='route pending';
+    renderCorePanels({},r);
+    return;
+  }
+  const out=userFacingResult(data,r);
+  const missing=requiredResultSections().filter(k=>!(k in out));
+  if(missing.length&&data&&data.core_output){
+    return renderCoreOutputIncomplete(data.core_output,r);
+  }
+  if(empty) empty.classList.add('hidden');
+  if(stateNode) stateNode.classList.remove('hidden');
+  if(el('resultRouteBadge')) el('resultRouteBadge').textContent=routeLabel(out.route_selected);
+  if(el('userResultHeadline')) el('userResultHeadline').textContent=fmt(out.headline,'Intelligence output ready');
+  if(el('userResultSummary')) el('userResultSummary').textContent=fmt(out.summary,'Claire produced a route-aware intelligence result.');
+  const activeRoute=String(out.route_selected||'');
+  const path=[
+    ['Trend','trend_thesis'],
+    ['Portfolio','portfolio_creation_optimization'],
+    ['Breakthrough','breakthrough_escalation'],
+    ['Design','solution_design'],
+    ['Acquisition','acquisition_package'],
+    ['Package','complete']
+  ];
+  if(el('resultPathRail')){
+    el('resultPathRail').innerHTML=path.map(([label,key])=>`<div class="pathStep ${activeRoute.includes(key)||activeRoute===key?'active':''}"><strong>${esc(label)}</strong><span>${esc(key.replace(/_/g,' '))}</span></div>`).join('');
+  }
+  const trend=out.trend||{}, thesis=out.thesis||{}, discovery=out.discovery||{}, portfolio=(out.portfolio||{}).portfolio_optimization||out.portfolio||{}, breakthrough=out.breakthrough||{};
+  const acquisition=out.acquisition||{}, finalPackage=out.final_package||{}, confidence=out.confidence||{};
+  const cards=[
+    ['Trend Detected', resultMetric('Score',nested(trend,'discovery_score.score',confidence.trend), nested(trend,'discovered_trends.0.name','Trend evidence available'))],
+    ['Thesis', resultMetric('Score',nested(thesis,'thesis_score.score',confidence.thesis), thesis.thesis_statement||out.summary)],
+    ['Discovery Result', resultMetric('Confidence',discovery.confidence||confidence.overall, discovery.scan_terminal_reason||nested(discovery,'opportunity_discovery.opportunity_type','Discovery evidence available'))],
+    ['Portfolio Output', resultMetric('Score',nested(portfolio,'portfolio_optimization_score.score',confidence.portfolio), portfolio.portfolio_path||'Portfolio path not selected')],
+    ['Breakthrough Result', resultMetric('Score',breakthrough.score||confidence.breakthrough, breakthrough.classification_rationale||breakthrough.route_recommendation||'Breakthrough not selected as primary route')],
+    ['Acquisition Layer', resultMetric('Score',nested(acquisition,'scores.acquisition_score',confidence.acquisition), `${fmt((acquisition.acquirer_matches||[]).length,0)} acquirer match(es)`)],
+    ['Final Package', resultMetric('Confidence',confidence.overall, nested(finalPackage,'export_readiness.level','Package readiness available'))]
+  ];
+  if(el('resultInsightGrid')){
+    el('resultInsightGrid').innerHTML=cards.map(([title,body])=>`<article class="resultInsight"><h3>${esc(title)}</h3>${body}</article>`).join('');
+  }
+  const actions=out.next_actions||[];
+  if(el('nextActionList')){
+    el('nextActionList').innerHTML=actions.length?actions.map(a=>`<div class="nextAction"><strong>${esc(a.action||'review output')}</strong><div>${esc(a.purpose||'Review the route-aware result.')}</div><div class="muted">${esc(a.priority||'medium')}</div></div>`).join(''):'<div class="muted">No next action exported.</div>';
+  }
+  renderCorePanels(data.core_output||data,r);
+}
+function renderSystemLayer(data,r={}){
+  const core=data&&data.core_output||{};
+  const lifecycle=data&&data.core_lifecycle||{};
+  const gate=core.lifecycle_summary&&core.lifecycle_summary.completion_gate || data&&data.core_completion_gate || {};
+  if(el('systemLifecycleBadge')) el('systemLifecycleBadge').textContent=fmt(gate.status,'no run');
+  if(el('systemLifecycleSummary')){
+    el('systemLifecycleSummary').textContent=data?`Route: ${fmt(lifecycle.route||core.route_selected)}\nStages: ${fmt(lifecycle.stage_count||nested(core,'lifecycle_summary.stage_count'))}\nGate: ${fmt(gate.status)}\nInsufficient: ${fmt(gate.insufficient_data_stage_count,0)}\nBlocked: ${fmt(gate.blocking_stage_count,0)}`:'Select or run an evaluation to inspect lifecycle metadata.';
+  }
+  const stages=(lifecycle.stages||nested(core,'lifecycle_summary.stages',[])||[]);
+  if(el('systemLifecycleList')){
+    el('systemLifecycleList').innerHTML=stages.length?stages.map(s=>`<div class="systemStage ${esc(s.status)}"><strong>${fmt(s.number)}. ${esc(s.name||s.id)}</strong><div>Status: ${esc(s.status)}</div><div class="muted">${esc((s.missing_outputs||[]).join(', ')||'No missing outputs')}</div></div>`).join(''):'<div class="status">No lifecycle stages loaded.</div>';
+  }
+  if(el('systemContractBadge')) el('systemContractBadge').textContent=nested(core,'contract_validation.status','pending');
+  if(el('systemContractSummary')) el('systemContractSummary').textContent=`Route selected: ${fmt(core.route_selected)}\nStatus: ${fmt(core.status)}\nFailures: ${fmt((core.failures||[]).length,0)}\nEvidence items: ${fmt((core.evidence||[]).length,0)}`;
+  if(el('systemCoreOutputBox')) el('systemCoreOutputBox').textContent=data?JSON.stringify(core||{},null,2):'No core output loaded.';
+  if(el('systemRawOutputBox')){el('systemRawOutputBox').classList.add('hidden');el('systemRawOutputBox').textContent='Full raw JSON loads on demand.'}
+}
 function renderDecision(r={},data=null){
   const decision=cleanDecision(r.decision_classification||(data&&data.decision_classification));
   const breakthrough=fmt(r.breakthrough_classification||(data&&data.breakthrough_classification)||r.export_package_level);
@@ -227,16 +727,40 @@ function renderDecision(r={},data=null){
     list.innerHTML=signals.length?signals.map(s=>`<div class="topSignal"><b>${esc(s.label)}</b><span>${esc(s.text)}</span></div>`).join(''):'<div class="muted">Signal summary not exported for this run.</div>';
   }
 }
-async function loadFullPipeline(r){
-  const runId=r&&(r.run_id||r.folder_name);
+async function loadFullRunJsonOnDemand(run=null){
+  const selected=run||state.selected;
+  const runId=selected&&(selected.run_id||selected.folder_name);
   if(!runId) return null;
+  if(el('rawBox')) el('rawBox').textContent='Loading full raw JSON...';
+  if(el('systemRawOutputBox')){el('systemRawOutputBox').classList.remove('hidden');el('systemRawOutputBox').textContent='Loading full raw JSON...'}
   for(const name of ['full_pipeline_output.json','pipeline_output.json']){
     try{
-      const x=await api(`/api/runs/${encodeURIComponent(runId)}/files/${encodeURIComponent(name)}?max_chars=1500000`);
-      if(x&&x.status==='success'&&x.content) return JSON.parse(x.content);
-    }catch(e){}
+      const x=await api(`/api/runs/${encodeURIComponent(runId)}/files/${encodeURIComponent(name)}?max_chars=5000000`);
+      if(x&&x.status==='success'&&x.content){
+        const parsed=JSON.parse(x.content);
+        if(el('rawBox')) el('rawBox').textContent=JSON.stringify(parsed,null,2);
+        if(el('systemRawOutputBox')) el('systemRawOutputBox').textContent=JSON.stringify(parsed,null,2);
+        return parsed;
+      }
+    }catch(e){
+      if(el('rawBox')) el('rawBox').textContent=`Full raw JSON unavailable: ${e.message}`;
+      if(el('systemRawOutputBox')) el('systemRawOutputBox').textContent=`Full raw JSON unavailable: ${e.message}`;
+    }
   }
+  if(el('rawBox')) el('rawBox').textContent='Full raw JSON not available for this run.';
+  if(el('systemRawOutputBox')) el('systemRawOutputBox').textContent='Full raw JSON not available for this run.';
   return null;
+}
+async function loadCoreRunOutput(r){
+  const runId=r&&(r.run_id||r.folder_name);
+  if(!runId) return {status:'missing',error:'No run id provided.'};
+  try{
+    const x=await api(`/api/runs/${encodeURIComponent(runId)}/files/${encodeURIComponent('core_run_output.json')}?max_chars=1200000`);
+    if(x&&x.status==='success'&&x.content) return {status:'success',core_output:JSON.parse(x.content)};
+  }catch(e){
+    return {status:'missing',error:e.message};
+  }
+  return {status:'missing',error:'core_run_output.json is missing or empty.'};
 }
 function renderFiles(files){
   state.files=files||[];
@@ -264,11 +788,22 @@ async function selectRun(r){
   renderCards(r);
   renderDecision(r,null);
   renderPipeline(null,r);
-  el('rawBox').textContent='Raw JSON hidden until dev mode.';
-  const full=await loadFullPipeline(r);
+  renderUserFacingResult(null,r);
+  renderSystemLayer(null,r);
+  el('rawBox').textContent='Raw JSON loads on demand from Raw Output / Debug.';
+  const core=await loadCoreRunOutput(r);
   if(state.selected&&state.selected.run_id===r.run_id){
-    renderDecision(r,full);
-    renderPipeline(full,r);
+    if(core&&core.status==='success'){
+      state.selected.core_output=core.core_output||{};
+      renderDecision(r,core);
+      renderPipeline(core,r);
+      renderUserFacingResult(core,r);
+      renderSystemLayer(core,r);
+    }else{
+      renderCoreOutputUnavailable(core&&core.error?`Core output not available for this run. ${core.error}`:'Core output not available for this run.');
+      renderPipeline(null,r);
+      renderSystemLayer(null,r);
+    }
   }
   try{
     const x=await api(`/api/runs/${encodeURIComponent(r.run_id)}/files`);
@@ -715,9 +1250,11 @@ async function runLiveOpportunityMonitor(){
     const x=await api('/api/live-intelligence/monitor/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
     const solutions=(x.solutions||{}).candidates||[];
     const activated=x.activated_candidates||[];
-    el('liveIntelligenceBadge').textContent=x.live_opportunities_ready?'opportunities ready':fmt(x.status);
-    el('liveIntelligenceStatusBox').textContent=`Status: ${fmt(x.status)}\nConnector Records: ${fmt((x.connectors||{}).record_count,0)}\nExtracted Signals: ${fmt((x.extracted||{}).signal_count,0)}\nTrend Clusters: ${fmt((x.clusters||{}).cluster_count,0)}\nGaps: ${fmt((x.gaps||{}).gap_count,0)}\nSolutions: ${fmt(solutions.length,0)}\nRunnable Cards: ${fmt(activated.length,0)}`;
-    setLayer('Live',x.live_opportunities_ready?'opportunities ready':fmt(x.status),`${fmt((x.extracted||{}).signal_count,0)} signals, ${fmt((x.clusters||{}).cluster_count,0)} clusters, ${fmt((x.gaps||{}).gap_count,0)} gaps, ${fmt(activated.length,0)} runnable cards.`);
+    const scanIterations=x.scan_iterations||[];
+    const pipelineRun=x.core_pipeline_run||{};
+    el('liveIntelligenceBadge').textContent=fmt(x.terminal_state||(x.live_opportunities_ready?'opportunities ready':x.status));
+    el('liveIntelligenceStatusBox').textContent=`Status: ${fmt(x.status)}\nTerminal State: ${fmt(x.terminal_state)}\nTerminal Reason: ${fmt(x.terminal_reason)}\nScan Iterations: ${fmt(scanIterations.length,0)}\nConnector Records: ${fmt((x.connectors||{}).record_count,0)}\nExtracted Signals: ${fmt((x.extracted||{}).signal_count,0)}\nTrend Clusters: ${fmt((x.clusters||{}).cluster_count,0)}\nGaps: ${fmt((x.gaps||{}).gap_count,0)}\nSolutions: ${fmt(solutions.length,0)}\nRunnable Cards: ${fmt(activated.length,0)}`;
+    setLayer('Live',fmt(x.terminal_state||(x.live_opportunities_ready?'opportunities ready':x.status)),`${fmt(scanIterations.length,0)} scan iteration(s), ${fmt((x.extracted||{}).signal_count,0)} signals, ${fmt((x.clusters||{}).cluster_count,0)} clusters, ${fmt((x.gaps||{}).gap_count,0)} gaps, ${fmt(activated.length,0)} runnable cards.`);
     const list=el('liveIntelligenceList'); if(list){
       list.innerHTML='';
       solutions.slice(0,8).forEach(sol=>{
@@ -740,7 +1277,10 @@ async function runLiveOpportunityMonitor(){
         });
       }
     }
-    stat('launchStatus',`Live monitor produced ${solutions.length} solution candidate(s).`);
+    if(pipelineRun.run_id||pipelineRun.folder_name){
+      await loadRuns(pipelineRun.run_id||pipelineRun.folder_name);
+    }
+    stat('launchStatus',`Live monitor reached ${fmt(x.terminal_state,'scan result')} after ${scanIterations.length||1} iteration(s) and produced ${solutions.length} solution candidate(s).`);
   }catch(e){
     el('liveIntelligenceStatusBox').textContent='Live monitor failed: '+e.message;
     stat('launchStatus','Live monitor failed: '+e.message,true);
@@ -826,6 +1366,70 @@ function bind(id,handler){
   const node=el(id);
   if(node) node.onclick=handler;
 }
+function researchCardHtml(result,index){
+  return `<div class="researchCard"><strong>${esc(result.title)}</strong><p>${esc(result.summary||'No summary available.')}</p><div class="researchMeta"><span>Source<b>${esc(result.source_type)}</b></span><span>Relevance<b>${esc(scoreText(result.relevance))}</b></span><span>Credibility<b>${esc(scoreText(result.source_credibility))}</b></span><span>Freshness<b>${esc(scoreText(result.freshness))}</b></span><span>Route<b>${esc(routeLabel(result.related_lifecycle_route))}</b></span><span>Entities<b>${esc((result.extracted_entities||[]).length)}</b></span></div><div class="muted">${esc(result.url||result.internal_path||'No openable source path')}</div><div class="researchActions"><button data-research-action="open" data-index="${index}">Open</button><button data-research-action="save" data-index="${index}">Save Evidence</button><button data-research-action="scan" data-index="${index}">Send Scan</button><button data-research-action="trend" data-index="${index}">Trend</button><button data-research-action="portfolio" data-index="${index}">Portfolio</button><button data-research-action="breakthrough" data-index="${index}">Breakthrough</button><button data-research-action="design" data-index="${index}">AutoDesign</button><button data-research-action="package" data-index="${index}">Package</button></div></div>`;
+}
+function bindResearchActions(){
+  document.querySelectorAll('[data-research-action]').forEach(btn=>{
+    btn.onclick=async()=>{
+      const result=state.researchResults[Number(btn.dataset.index)];
+      if(!result) return;
+      const action=btn.dataset.researchAction;
+      if(action==='open'){
+        const target=result.url||result.internal_path;
+        if(target) window.open(target,'_blank');
+        return;
+      }
+      if(action==='save'){
+        await api('/api/research/evidence/add',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({result})});
+        await loadEvidenceBasket();
+        stat('researchStatusBox','Result saved to evidence basket.');
+        return;
+      }
+      const route={scan:'scan',trend:'trend_discovery',portfolio:'portfolio_review',breakthrough:'breakthrough_review',design:'autodesign',package:'package'}[action]||'scan';
+      const x=await api('/api/research/send-to-pipeline',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({result,route})});
+      stat('researchStatusBox',`Sent to pipeline marker: ${fmt(x.route)}. This is ready as governed signal input.`);
+    };
+  });
+}
+async function runResearchSearch(){
+  const query=(el('researchQueryInput')&&el('researchQueryInput').value||'').trim();
+  const scope=el('researchScopeSelect')?el('researchScopeSelect').value:'all';
+  if(!query){stat('researchStatusBox','Enter a research command first.',true);return}
+  setText('researchStatusBadge','searching');
+  try{
+    const x=await api('/api/research/search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query,scope,limit:24})});
+    state.researchResults=x.results||[];
+    setText('researchResultCount',String(state.researchResults.length));
+    setText('researchStatusBadge',x.status||'success');
+    const unavailable=(x.unavailable_sources||[]).map(u=>u.reason).join(' ');
+    stat('researchStatusBox',`${state.researchResults.length} result(s). ${unavailable||'Internal research sources searched.'}`);
+    setHtml('researchResultList',state.researchResults.length?state.researchResults.map(researchCardHtml).join(''):'<div class="status">No results found.</div>');
+    bindResearchActions();
+    await loadEvidenceBasket();
+  }catch(e){
+    stat('researchStatusBox','Research search failed: '+e.message,true);
+  }
+}
+async function loadEvidenceBasket(){
+  try{
+    const x=await api('/api/research/evidence');
+    const items=x.items||[];
+    setText('evidenceBasketBadge',`${items.length} saved`);
+    setHtml('evidenceBasketList',items.length?items.map(item=>`<div class="researchCard"><strong>${esc(item.title)}</strong><p>${esc(item.summary)}</p><div class="muted">${esc(item.source_type)} | credibility ${esc(scoreText(item.credibility))}</div></div>`).join(''):'<div class="status">No saved evidence.</div>');
+  }catch(e){
+    setHtml('evidenceBasketList','<div class="status">Evidence basket unavailable.</div>');
+  }
+}
+async function clearEvidenceBasket(){
+  await api('/api/research/evidence/clear',{method:'POST'});
+  await loadEvidenceBasket();
+  stat('researchStatusBox','Evidence basket cleared.');
+}
+async function basketToPipeline(){
+  const x=await api('/api/research/evidence/pipeline-input',{method:'POST'});
+  setText('basketPipelineBox',`Evidence basket ready for pipeline.\nEvidence count: ${fmt(x.evidence_count,0)}\nGoverned signal candidates: ${fmt((x.governed_signal_candidates||[]).length,0)}`);
+}
 function loadIf(id,handler){
   if(el(id)) handler();
 }
@@ -858,6 +1462,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   loadRuns();
   bind('refreshBtn',()=>{
     loadRuns();
+    loadEvidenceBasket();
     loadIf('commandCenterBadge',loadCommandCenter);
     loadIf('enhancedBridgeBadge',loadEnhancedBridgeStatus);
     loadIf('liveIntelligenceBadge',loadLiveIntelligenceStatus);
@@ -887,6 +1492,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     stat('launchStatus','Ready.');
   });
   bind('loadPreviewBtn',()=>preview(el('fileSelect').value));
+  bind('loadRawOutputBtn',()=>loadFullRunJsonOnDemand());
+  bind('researchSearchBtn',runResearchSearch);
+  bind('researchClearBtn',clearEvidenceBasket);
+  bind('basketPipelineBtn',basketToPipeline);
+  loadEvidenceBasket();
   document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
   ['marketUniverseSelect','industryDomainSelect','buyerSegmentSelect','objectiveSelect'].forEach(id=>{
     const node=el(id);

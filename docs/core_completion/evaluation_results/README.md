@@ -11,6 +11,7 @@ Purpose:
 
 Latest proof artifact:
 
+- `2026-05-02_portfolio_optimization_evaluate_proof.md`
 - `2026-05-02_trend_thesis_evaluate_proof.md`
 - `2026-05-02_signal_governance_evaluate_proof.md`
 - `2026-05-02_climate_insurance_evaluate_proof.md`

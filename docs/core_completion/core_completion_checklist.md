@@ -11,6 +11,7 @@
 - [x] Pipeline exposes `core_lifecycle`.
 - [x] v5.89.7 Signal governance skeleton added.
 - [x] v5.89.8 Trend discovery + thesis formation artifact layer added.
+- [x] v5.89.9 Portfolio creation / optimization artifact layer added.
 - [ ] Full pytest suite passes without legacy import failures.
 - [ ] Backend launch probe recorded.
 - [ ] Dashboard load probe recorded.

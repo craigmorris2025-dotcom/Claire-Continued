@@ -33,6 +33,8 @@ class CoreLifecycleRunner:
             context.evidence["trend_discovery"] = outputs.get("trend_discovery")
         if outputs.get("thesis_formation") is not None:
             context.evidence["thesis_formation"] = outputs.get("thesis_formation")
+        if outputs.get("portfolio_optimization") is not None:
+            context.evidence["portfolio_optimization"] = outputs.get("portfolio_optimization")
         validator = LifecycleContractValidator()
         validations = {
             item["stage_id"]: item

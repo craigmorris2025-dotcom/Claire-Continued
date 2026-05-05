@@ -1,0 +1,95 @@
+{
+  "installed_files": {
+    "src/claire/runtime/__init__.py": {
+      "installed_to": "src/claire/runtime/__init__.py",
+      "version_added": "5.91.0",
+      "last_updated": "5.91.0",
+      "sha256": "53f03afa98801d3f42488bb011d68d3e6a24333a1307741704f6677c2c73ff84",
+      "status": "active",
+      "updated_at": "2026-05-05T00:17:13"
+    },
+    "src/claire/runtime/models.py": {
+      "installed_to": "src/claire/runtime/models.py",
+      "version_added": "5.91.0",
+      "last_updated": "5.91.0",
+      "sha256": "5e6970f1a9f8331f18508d982c4466aec5a725432737191917a727cc40e0cdfc",
+      "status": "active",
+      "updated_at": "2026-05-05T00:17:13"
+    },
+    "src/claire/runtime/route_enforcer.py": {
+      "installed_to": "src/claire/runtime/route_enforcer.py",
+      "version_added": "5.91.0",
+      "last_updated": "5.91.0",
+      "sha256": "7375c00196607dfdda36b8e84ee9fc1f706f26d3f7409cae10bb01763511b343",
+      "status": "active",
+      "updated_at": "2026-05-05T00:17:13"
+    },
+    "src/claire/runtime/merge_zone.py": {
+      "installed_to": "src/claire/runtime/merge_zone.py",
+      "version_added": "5.91.0",
+      "last_updated": "5.91.0",
+      "sha256": "72901c44b23921d05f05222cd280d8314c5c2ab6cd2b4010569bf738d7c8b2d0",
+      "status": "active",
+      "updated_at": "2026-05-05T00:17:13"
+    },
+    "src/claire/runtime/validation_authority.py": {
+      "installed_to": "src/claire/runtime/validation_authority.py",
+      "version_added": "5.91.0",
+      "last_updated": "5.91.0",
+      "sha256": "ea90cdc38b7eb4e8dc24a78cace2a23edc7f91091f757713f5b61419f6820ba6",
+      "status": "active",
+      "updated_at": "2026-05-05T00:17:13"
+    },
+    "src/claire/runtime/memory_guard.py": {
+      "installed_to": "src/claire/runtime/memory_guard.py",
+      "version_added": "5.91.0",
+      "last_updated": "5.91.0",
+      "sha256": "b39d3ca7dd1ab7649e8354885f1b34b8a967cf7c1ad5f6b0b5c730b976141a59",
+      "status": "active",
+      "updated_at": "2026-05-05T00:17:13"
+    },
+    "src/claire/runtime/failure_handler.py": {
+      "installed_to": "src/claire/runtime/failure_handler.py",
+      "version_added": "5.91.0",
+      "last_updated": "5.91.0",
+      "sha256": "674eff6f2c279d1d8697ecc899a1fd799b904115cca2baf458241de9a9431de8",
+      "status": "active",
+      "updated_at": "2026-05-05T00:17:13"
+    },
+    "tests/test_runtime_rules.py": {
+      "installed_to": "tests/test_runtime_rules.py",
+      "version_added": "5.91.0",
+      "last_updated": "5.91.0",
+      "sha256": "428d47b146ab3774f001bf9e140f219ab3b6eec9464d4067e4ec62f9ef7be2fc",
+      "status": "active",
+      "updated_at": "2026-05-05T00:17:13"
+    }
+  },
+  "known_families": {
+    "src/claire/runtime": {
+      "first_seen_version": "5.91.0",
+      "last_seen_version": "5.91.0",
+      "status": "active"
+    },
+    "tests": {
+      "first_seen_version": "5.91.0",
+      "last_seen_version": "5.91.0",
+      "status": "active"
+    }
+  },
+  "versions": {
+    "5.91.0": {
+      "installed_at": "2026-05-05T00:17:13",
+      "files_installed": [
+        "src/claire/runtime/__init__.py",
+        "src/claire/runtime/models.py",
+        "src/claire/runtime/route_enforcer.py",
+        "src/claire/runtime/merge_zone.py",
+        "src/claire/runtime/validation_authority.py",
+        "src/claire/runtime/memory_guard.py",
+        "src/claire/runtime/failure_handler.py",
+        "tests/test_runtime_rules.py"
+      ]
+    }
+  }
+}

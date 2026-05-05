@@ -80,7 +80,7 @@ class CoreLifecycleRegistry:
             CoreLifecycleStage("moat_differentiation", 24, "Moat & Differentiation", "strategy", "required", "moat"),
             CoreLifecycleStage("business_model_value_capture", 25, "Business Model & Value Capture", "strategy", "required", "business_model"),
             CoreLifecycleStage("competitor_analysis", 26, "Competitor Analysis", "strategy", "optional", "market_formation"),
-            CoreLifecycleStage("portfolio_creation_optimization", 27, "Portfolio Creation / Optimization", "portfolio", "required", "portfolio_binder"),
+            CoreLifecycleStage("portfolio_creation_optimization", 27, "Portfolio Creation / Optimization", "portfolio", "required", "portfolio_optimization"),
             CoreLifecycleStage("acquirer_identification", 28, "Acquirer Identification", "acquisition", "required", "acquirer_matches"),
             CoreLifecycleStage("acquisition_fit_rationale", 29, "Acquisition Fit & Rationale", "acquisition", "required", "deal_exit_modeling"),
             CoreLifecycleStage("final_package_construction", 30, "Final Package Construction", "package", "required", "export_package"),
