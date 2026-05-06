@@ -1,39 +1,32 @@
 #!/usr/bin/env python3
 """
-Claire Safe Version Installer / Preflight Auditor
-================================================
+Claire Safe Version Installer v2 — Hardened Safety Gate
+=======================================================
 
-This is NOT a normal installer. It is a safety wrapper for Claire's
-self-extracting version installers.
+Purpose:
+  Safe wrapper for Claire self-extracting installers.
 
-Mission:
-  Preserve end-to-end Claire functionality after every version install.
+Guarantees:
+  - Never executes the original installer directly.
+  - Decodes embedded ZIP only.
+  - Blocks forbidden backend/src.backend destinations.
+  - Blocks backend imports.
+  - Blocks ambiguous destination paths unless explicitly approved.
+  - Installs only NEW_SAFE files.
+  - Stages changed existing files for review.
+  - Runs syntax validation.
+  - Runs full pytest validation before registry commit.
+  - Rolls back newly installed files if validation fails.
+  - Supports current-state validation with --validate-current.
 
-Active Claire authority:
-  ACTIVE RUNTIME:  src/claire/
-  ACTIVE FRONTEND: src/frontend/
-  LEGACY ONLY:     backend/
-  FORBIDDEN:       src/backend/
+Validate current installed project:
+  python tools/safe_install_claire_version_v2.py --installer claire_v6_0_0_installer.py --project-root . --validate-current
 
-Core policy:
-  - Dry-run first.
-  - Never execute the original installer.
-  - Decode the embedded ZIP only.
-  - Build exact source -> destination mapping.
-  - Block backend/ and src/backend/.
-  - Never overwrite existing files automatically.
-  - Install NEW_SAFE files only with --approve-install.
-  - Stage changed existing files for review.
-  - Detect ambiguity and stop.
-  - Detect backend imports and stop.
-  - Track successful prior paths in .claire_install/install_registry.json.
-  - Run py_compile on newly installed Python files.
+Dry run:
+  python tools/safe_install_claire_version_v2.py --installer claire_v6_0_0_installer.py --project-root . --dry-run
 
-First command:
-  python tools/safe_install_claire_version.py --installer claire_v5_91_0_installer.py --project-root . --dry-run
-
-Install safe new files only:
-  python tools/safe_install_claire_version.py --installer claire_v5_91_0_installer.py --project-root . --approve-install
+Safe install:
+  python tools/safe_install_claire_version_v2.py --installer claire_v6_0_0_installer.py --project-root . --approve-install
 """
 
 from __future__ import annotations
@@ -46,6 +39,8 @@ import json
 import os
 import py_compile
 import re
+import subprocess
+import sys
 import zipfile
 from dataclasses import dataclass, asdict
 from datetime import datetime
@@ -57,8 +52,21 @@ ACTIVE_RUNTIME_PREFIXES = ("src/claire/", "src/frontend/")
 ALLOWED_SUPPORT_PREFIXES = ("tests/", "docs/", "data/", "tools/", "scripts/", "config/")
 ALLOWED_ROOT_FILES = {"version.json", "README.md", "CHANGELOG.md", "pyproject.toml", "requirements.txt", "pytest.ini"}
 BLOCKED_PREFIXES = ("backend/", "src/backend/", ".venv/", ".git/", "__pycache__/")
-SCAN_EXCLUDE_DIRS = {".git", ".venv", "__pycache__", ".pytest_cache", ".claire_install", "logs"}
+SCAN_EXCLUDE_DIRS = {".git", ".venv", "__pycache__", ".pytest_cache", ".claire_install", "logs", "exports", "output"}
 COMMON_AMBIGUOUS_FILENAMES_TO_IGNORE = {"__init__.py", "README.md", ".gitkeep", "index.json"}
+
+VALIDATION_COMMANDS = [
+    {
+        "name": "compile_all_src_claire",
+        "cmd": [sys.executable, "-m", "compileall", "src/claire"],
+        "required": True,
+    },
+    {
+        "name": "pytest_all_tests",
+        "cmd": [sys.executable, "-m", "pytest", "tests", "-q"],
+        "required": True,
+    },
+]
 
 
 @dataclass
@@ -131,6 +139,7 @@ def install_state_paths(root: Path, version: str) -> Dict[str, Path]:
         "staging": staging,
         "review": staging / "review_required",
         "reports": base / "reports",
+        "validation": base / "validation",
     }
 
 
@@ -163,10 +172,7 @@ def is_approved_ambiguity(root: Path, source_rel: str, dest_rel: str) -> bool:
     source_rel = normalize_rel(source_rel)
     dest_rel = normalize_rel(dest_rel)
     for item in approvals:
-        if (
-            normalize_rel(item.get("source", "")) == source_rel
-            and normalize_rel(item.get("dest", "")) == dest_rel
-        ):
+        if normalize_rel(item.get("source", "")) == source_rel and normalize_rel(item.get("dest", "")) == dest_rel:
             return True
     return False
 
@@ -383,6 +389,21 @@ def write_json_report(paths: Dict[str, Path], report: InstallReport) -> Path:
     return out
 
 
+def write_validation_report(root: Path, version: str, results: List[Dict[str, object]]) -> Path:
+    paths = install_state_paths(root, version)
+    paths["validation"].mkdir(parents=True, exist_ok=True)
+    out = paths["validation"] / f"{version}_validation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    payload = {
+        "version": version,
+        "project_root": str(root),
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "results": results,
+        "passed": all(bool(r.get("passed")) for r in results if r.get("required", True)),
+    }
+    out.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return out
+
+
 def stage_review_file(paths: Dict[str, Path], root: Path, plan: FilePlan, data: bytes) -> None:
     review = paths["review"] / plan.destination
     current = review.with_suffix(review.suffix + ".CURRENT")
@@ -409,6 +430,53 @@ def compile_python_files(root: Path, installed_paths: Iterable[str]) -> Tuple[bo
         except Exception as e:
             errors.append(f"{rel}: {e}")
     return not errors, errors
+
+
+def run_validation_gates(root: Path, version: str) -> Tuple[bool, Path, List[Dict[str, object]]]:
+    results: List[Dict[str, object]] = []
+    print("\n" + "=" * 78)
+    print("Claire Runtime / Regression Validation Gates")
+    print("=" * 78)
+
+    for gate in VALIDATION_COMMANDS:
+        name = str(gate["name"])
+        cmd = list(gate["cmd"])
+        required = bool(gate.get("required", True))
+        print(f"\n[{name}]")
+        print("  command: " + " ".join(cmd))
+        completed = subprocess.run(
+            cmd,
+            cwd=str(root),
+            text=True,
+            capture_output=True,
+        )
+        stdout = completed.stdout or ""
+        stderr = completed.stderr or ""
+        passed = completed.returncode == 0
+        print(f"  exit_code: {completed.returncode}")
+        print(f"  status: {'PASS' if passed else 'FAIL'}")
+        if stdout.strip():
+            print("  stdout:")
+            print("\n".join("    " + line for line in stdout.splitlines()[-60:]))
+        if stderr.strip():
+            print("  stderr:")
+            print("\n".join("    " + line for line in stderr.splitlines()[-60:]))
+
+        results.append({
+            "name": name,
+            "command": cmd,
+            "required": required,
+            "exit_code": completed.returncode,
+            "passed": passed,
+            "stdout_tail": stdout.splitlines()[-80:],
+            "stderr_tail": stderr.splitlines()[-80:],
+        })
+
+    report_path = write_validation_report(root, version, results)
+    passed_all = all(r["passed"] for r in results if r.get("required", True))
+    print(f"\nValidation report written: {report_path}")
+    print(f"Validation result: {'PASS' if passed_all else 'FAIL'}")
+    return passed_all, report_path, results
 
 
 def update_registry(registry: Dict[str, dict], version: str, installed: List[FilePlan]) -> None:
@@ -464,14 +532,19 @@ def install_safe_new_files(root: Path, version: str, paths: Dict[str, Path], pay
     blocking = [p for p in report.files if p.status in {"BLOCKED", "AMBIGUOUS", "IMPORT_MISMATCH"}]
     if blocking:
         raise SystemExit("INSTALL BLOCKED. Resolve BLOCKED / AMBIGUOUS / IMPORT_MISMATCH files before installing.")
+
     review_required = [p for p in report.files if p.status in {"EXISTS_DIFFERENT", "NEW_FOLDER_REVIEW", "NEW_PATH_REVIEW"}]
     new_safe = [p for p in report.files if p.status == "NEW_SAFE"]
+
     paths["staging"].mkdir(parents=True, exist_ok=True)
     paths["review"].mkdir(parents=True, exist_ok=True)
+
     for plan in review_required:
         stage_review_file(paths, root, plan, payload_data[plan.source_relative])
+
     installed: List[FilePlan] = []
     created_paths: List[Path] = []
+
     try:
         for plan in new_safe:
             dest = root / plan.destination
@@ -479,6 +552,7 @@ def install_safe_new_files(root: Path, version: str, paths: Dict[str, Path], pay
             dest.write_bytes(payload_data[plan.source_relative])
             installed.append(plan)
             created_paths.append(dest)
+
         ok, errors = compile_python_files(root, [p.destination for p in installed])
         if not ok:
             for p in created_paths:
@@ -487,13 +561,28 @@ def install_safe_new_files(root: Path, version: str, paths: Dict[str, Path], pay
                 except Exception:
                     pass
             raise SystemExit("PY_COMPILE FAILED. New files were removed.\n" + "\n".join(errors))
+
+        passed, validation_report, _ = run_validation_gates(root, version)
+        if not passed:
+            for p in created_paths:
+                try:
+                    p.unlink()
+                except Exception:
+                    pass
+            raise SystemExit(
+                "INSTALL BLOCKED. Runtime/regression validation failed.\n"
+                f"New files were rolled back.\nValidation report: {validation_report}"
+            )
+
         registry = load_registry(paths["registry"])
         update_registry(registry, version, installed)
         save_registry(paths["registry"], registry)
+
         print(f"\nInstalled NEW_SAFE files: {len(installed)}")
         print(f"Review-required files staged: {len(review_required)}")
         if review_required:
             print(f"Review folder: {paths['review']}")
+
     except Exception:
         for p in created_paths:
             try:
@@ -510,6 +599,7 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true", help="Preflight only. Default behavior.")
     parser.add_argument("--approve-install", action="store_true", help="Install only NEW_SAFE files. Existing different files are staged for review.")
     parser.add_argument("--allow-new-folders", action="store_true", help="Allow new approved-family folders without NEW_FOLDER_REVIEW.")
+    parser.add_argument("--validate-current", action="store_true", help="Run validation gates against the current installed project without installing files.")
     args = parser.parse_args()
 
     root = Path(args.project_root).resolve()
@@ -518,10 +608,24 @@ def main() -> None:
         raise SystemExit(f"Installer not found: {installer}")
 
     version, paths, payload_data, report = build_plan(root, installer, args.allow_new_folders)
-    report.mode = "approve-install-new-safe-only" if args.approve_install else "dry-run"
+    report.mode = (
+        "validate-current"
+        if args.validate_current
+        else "approve-install-new-safe-only"
+        if args.approve_install
+        else "dry-run"
+    )
+
     print_report(report)
     report_path = write_json_report(paths, report)
     print(f"\nReport written: {report_path}")
+
+    if args.validate_current:
+        passed, validation_report, _ = run_validation_gates(root, version)
+        if not passed:
+            raise SystemExit(f"CURRENT VALIDATION FAILED. Report: {validation_report}")
+        print("\nCURRENT VALIDATION PASSED.")
+        return
 
     if args.approve_install:
         install_safe_new_files(root, version, paths, payload_data, report)

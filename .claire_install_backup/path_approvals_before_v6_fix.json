@@ -1,0 +1,44 @@
+{
+  "approved_ambiguities": [
+    {
+      "source": "src/claire/signals/ingestion.py",
+      "dest": "src/claire/signals/ingestion.py",
+      "reason": "v5.92.0 adds dedicated signal-governance ingestion module; existing src/claire/engines/ingestion.py is a separate active engine module."
+    },
+    {
+      "source": "src/claire/trends/discovery.py",
+      "dest": "src/claire/trends/discovery.py",
+      "reason": "v5.93.0 adds dedicated trend-discovery module; existing src/claire/deals/discovery.py and src/claire/engines/discovery.py are separate active discovery modules."
+    },
+    {
+      "source": "src/claire/breakthrough/gap_detection.py",
+      "dest": "src/claire/breakthrough/gap_detection.py",
+      "reason": "v5.94.0 adds dedicated breakthrough gap-detection module; existing src/claire/live_intelligence/gap_detection.py is a separate active live-intelligence module."
+    },
+    {
+      "source": "src/claire/feasibility/buildability.py",
+      "dest": "src/claire/feasibility/buildability.py",
+      "reason": "v5.95.0 adds dedicated feasibility buildability module; existing src/claire/scoring/buildability.py is a separate active scoring module."
+    },
+    {
+      "source": "src/claire/live/pipeline.py",
+      "dest": "src/claire/live/pipeline.py",
+      "reason": "v6.0.0 adds dedicated live pipeline module; same-named pipeline files elsewhere are separate active modules."
+    },
+    {
+      "source": "src/claire/live/connectors/api_connector.py",
+      "dest": "src/claire/live/connectors/api_connector.py",
+      "reason": "v6.0.0 adds dedicated live API connector module."
+    },
+    {
+      "source": "src/claire/live/connectors/feed_connector.py",
+      "dest": "src/claire/live/connectors/feed_connector.py",
+      "reason": "v6.0.0 adds dedicated live feed connector module."
+    },
+    {
+      "source": "src/claire/live/connectors/file_connector.py",
+      "dest": "src/claire/live/connectors/file_connector.py",
+      "reason": "v6.0.0 adds dedicated live file connector module."
+    }
+  ]
+}
