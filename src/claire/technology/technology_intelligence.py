@@ -1,121 +1,110 @@
-"""Route-gated technology intelligence for AutoDesign and Design Portal."""
+"""
+Claire Technology Intelligence Layer
 
-from __future__ import annotations
+Safe v6 compatibility module.
+Provides the TechnologyIntelligenceLayer expected by pipeline_v4.py.
+"""
 
 from typing import Any, Dict, List
 
-from .component_matcher import ComponentMatcher
-from .stack_recommender import StackRecommender
-from .technology_catalog import TechnologyCatalog
-
 
 class TechnologyIntelligenceLayer:
-    """Produce technology recommendations only when design routes require them."""
+    """
+    Lightweight technology intelligence adapter.
 
-    DESIGN_ROUTE_TERMS = {
-        "solution_design",
-        "invention",
-        "design",
-        "system_architecture",
-        "software",
-        "platform",
-        "operational_redesign",
-        "existing_system_replacement",
-        "technical_breakthrough",
-        "business_system_redesign",
-    }
-
-    def __init__(self) -> None:
-        self.catalog = TechnologyCatalog()
-        self.recommender = StackRecommender(self.catalog)
-        self.matcher = ComponentMatcher(self.catalog)
+    This keeps the v6 pipeline stable when the full technology intelligence
+    subsystem is not yet installed.
+    """
 
     def analyze(self, context: Dict[str, Any]) -> Dict[str, Any]:
         context = context or {}
-        required, reason = self._required(context)
-        if not required:
-            return {
-                "required": False,
-                "technologies_considered": [],
-                "selected_stack": {},
-                "component_matches": [],
-                "compatibility_notes": ["Technology Intelligence skipped by route."],
-                "dependency_notes": [],
-                "search_queries": [],
-                "integration_complexity": "not_required",
-                "buildability_notes": [reason],
-                "confidence": 0.0,
-                "status": "skipped_by_route",
-            }
 
-        recommendation = self.recommender.recommend(context)
-        components = self._components(context)
-        component_matches = self.matcher.match(components)
-        selected_stack = recommendation.get("selected_stack", {})
-        dependency_notes = self._dependency_notes(selected_stack, component_matches)
+        domain = context.get("domain", "general")
+        keywords = context.get("keywords", []) or []
+        route = context.get("route", "unknown")
+
+        selected_stack = self._select_stack(domain=domain, keywords=keywords)
 
         return {
-            "required": True,
-            "technologies_considered": recommendation.get("technologies_considered", []),
+            "status": "available",
+            "mode": "safe_compatibility",
+            "route": route,
+            "domain": domain,
+            "keywords": keywords,
             "selected_stack": selected_stack,
-            "component_matches": component_matches,
-            "compatibility_notes": self._compatibility_notes(selected_stack),
-            "dependency_notes": dependency_notes,
-            "search_queries": recommendation.get("search_queries", []),
-            "integration_complexity": self._overall_complexity(component_matches),
-            "buildability_notes": self._buildability_notes(component_matches),
-            "confidence": recommendation.get("confidence", 0.55),
-            "status": "success",
+            "component_recommendations": self._component_recommendations(selected_stack),
+            "dependency_notes": self._dependency_notes(selected_stack),
+            "integration_complexity": self._integration_complexity(selected_stack),
+            "buildability_notes": self._buildability_notes(domain, selected_stack),
+            "confidence": 0.62,
         }
 
-    def _required(self, context: Dict[str, Any]) -> tuple[bool, str]:
-        route = str(context.get("route_selected") or context.get("route") or "").lower()
-        portal = context.get("design_portal", {}) if isinstance(context.get("design_portal"), dict) else {}
-        if portal.get("route_to_design") is True:
-            return True, "Design Portal route_to_design is true."
-        if any(term in route for term in self.DESIGN_ROUTE_TERMS):
-            return True, "Selected route requires design/system/software support."
-        return False, "Selected route does not require design/system/software construction."
+    def _select_stack(self, domain: str, keywords: List[str]) -> Dict[str, Any]:
+        keyword_text = " ".join(str(k).lower() for k in keywords)
 
-    def _components(self, context: Dict[str, Any]) -> List[Any]:
-        system_design = context.get("system_design", {}) if isinstance(context.get("system_design"), dict) else {}
-        design = system_design.get("design", {}) if isinstance(system_design.get("design"), dict) else {}
-        design_output = context.get("design_output", {}) if isinstance(context.get("design_output"), dict) else {}
-        components = design.get("components") or design_output.get("components") or design_output.get("component_map") or []
-        if components:
-            return components
-        return ["ingestion", "semantic_processing", "analysis_engines", "decision_layer", "api_gateway", "monitoring"]
+        if domain == "technology" or any(
+            term in keyword_text
+            for term in ["ai", "software", "platform", "model", "data", "autonomous"]
+        ):
+            return {
+                "application_layer": ["FastAPI", "Python"],
+                "intelligence_layer": ["rules engine", "model adapter", "signal scoring"],
+                "data_layer": ["JSON outputs", "local file persistence"],
+                "interface_layer": ["dashboard", "review tabs"],
+                "deployment_layer": ["local runtime", "safe installer"],
+            }
 
-    def _dependency_notes(self, selected_stack: Dict[str, Any], component_matches: List[Dict[str, Any]]) -> List[str]:
-        notes = []
-        for group, technologies in selected_stack.items():
-            if isinstance(technologies, list) and technologies:
-                notes.append(f"{group}: {', '.join(item.get('name', item.get('id', 'unknown')) for item in technologies if isinstance(item, dict))}")
-        for match in component_matches:
-            if match.get("integration_complexity") in {"medium", "high"}:
-                notes.append(f"{match.get('component')} integration complexity: {match.get('integration_complexity')}")
-        return notes
+        if domain == "finance" or any(
+            term in keyword_text
+            for term in ["portfolio", "market", "asset", "investment", "financial"]
+        ):
+            return {
+                "application_layer": ["FastAPI", "Python"],
+                "intelligence_layer": ["portfolio scoring", "risk scoring", "signal governance"],
+                "data_layer": ["market signal files", "portfolio outputs"],
+                "interface_layer": ["portfolio dashboard", "review tabs"],
+                "deployment_layer": ["local runtime", "safe installer"],
+            }
 
-    def _compatibility_notes(self, selected_stack: Dict[str, Any]) -> List[str]:
-        notes = []
-        frontend = selected_stack.get("frontend_technologies", [])
-        backend = selected_stack.get("backend_technologies", [])
-        database = selected_stack.get("database_technologies", [])
-        if frontend and backend:
-            notes.append("Frontend and backend stack can communicate through OpenAPI-defined routes.")
-        if backend and database:
-            notes.append("Backend stack supports local-first SQLite and scalable PostgreSQL persistence.")
-        notes.append("Technology stack is advisory and route-gated; it should not activate portfolio-only outputs.")
-        return notes
+        return {
+            "application_layer": ["FastAPI", "Python"],
+            "intelligence_layer": ["deterministic scoring", "route-aware lifecycle"],
+            "data_layer": ["JSON outputs"],
+            "interface_layer": ["dashboard"],
+            "deployment_layer": ["local runtime"],
+        }
 
-    def _buildability_notes(self, component_matches: List[Dict[str, Any]]) -> List[str]:
-        notes = [match.get("buildability_note", "") for match in component_matches if match.get("buildability_note")]
-        return notes or ["Buildability requires component map and selected technology stack."]
+    def _component_recommendations(self, selected_stack: Dict[str, Any]) -> Dict[str, Any]:
+        return {
+            "core_components": list(selected_stack.keys()),
+            "priority": [
+                "keep runtime stable",
+                "avoid optional dependency crashes",
+                "preserve route-aware outputs",
+            ],
+        }
 
-    def _overall_complexity(self, component_matches: List[Dict[str, Any]]) -> str:
-        levels = {match.get("integration_complexity") for match in component_matches}
-        if "high" in levels:
-            return "high"
-        if "medium" in levels:
-            return "medium"
-        return "low" if component_matches else "unknown"
+    def _dependency_notes(self, selected_stack: Dict[str, Any]) -> Dict[str, Any]:
+        return {
+            "external_dependencies_required": False,
+            "notes": [
+                "Compatibility layer uses standard Python only.",
+                "Full technology catalog can replace this module later.",
+            ],
+        }
+
+    def _integration_complexity(self, selected_stack: Dict[str, Any]) -> Dict[str, Any]:
+        return {
+            "level": "low",
+            "reason": "Module provides the interface expected by pipeline_v4.py without changing pipeline routing.",
+        }
+
+    def _buildability_notes(self, domain: str, selected_stack: Dict[str, Any]) -> Dict[str, Any]:
+        return {
+            "buildability": "safe",
+            "domain": domain,
+            "notes": [
+                "Prevents missing-module failure.",
+                "Keeps technology intelligence available as a safe optional subsystem.",
+            ],
+        }

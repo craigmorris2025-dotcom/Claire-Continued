@@ -143,6 +143,366 @@
       "sha256": "b9bffcf02cd61219365d7abe6f4b40b8c9ce2e44ca65c5dce1a04fe196b8391c",
       "status": "active",
       "updated_at": "2026-05-05T01:29:31"
+    },
+    "src/claire/analysis/entity_extraction.py": {
+      "installed_to": "src/claire/analysis/entity_extraction.py",
+      "version_added": "5.93.0",
+      "last_updated": "5.93.0",
+      "sha256": "623b4d404db55080dff77a48624698075ec1341379a45a10e35e5ee2d734e429",
+      "status": "active",
+      "updated_at": "2026-05-05T02:10:41"
+    },
+    "src/claire/analysis/relationship_mapping.py": {
+      "installed_to": "src/claire/analysis/relationship_mapping.py",
+      "version_added": "5.93.0",
+      "last_updated": "5.93.0",
+      "sha256": "38ab62cba747324db2b0d712ddc1abcbde9baa67ca6f631b7c1130ba7ab866bd",
+      "status": "active",
+      "updated_at": "2026-05-05T02:10:41"
+    },
+    "src/claire/trends/discovery.py": {
+      "installed_to": "src/claire/trends/discovery.py",
+      "version_added": "5.93.0",
+      "last_updated": "5.93.0",
+      "sha256": "f69866ed833828a65db038d5f77b0e682db26eae2e3dc2673f942e5c5df54d73",
+      "status": "active",
+      "updated_at": "2026-05-05T02:10:41"
+    },
+    "src/claire/trends/cluster_formation.py": {
+      "installed_to": "src/claire/trends/cluster_formation.py",
+      "version_added": "5.93.0",
+      "last_updated": "5.93.0",
+      "sha256": "de55c96b22de7fa1f2faf14fdb32d3407feb4748d9fc3872c836f9482aa54780",
+      "status": "active",
+      "updated_at": "2026-05-05T02:10:41"
+    },
+    "src/claire/thesis/structuring.py": {
+      "installed_to": "src/claire/thesis/structuring.py",
+      "version_added": "5.93.0",
+      "last_updated": "5.93.0",
+      "sha256": "3c788e735e88e8bcb97ff4b161fd9ce41dfb42634dd7002bd32c4dacd5c0adf6",
+      "status": "active",
+      "updated_at": "2026-05-05T02:10:41"
+    },
+    "src/claire/thesis/route_gate.py": {
+      "installed_to": "src/claire/thesis/route_gate.py",
+      "version_added": "5.93.0",
+      "last_updated": "5.93.0",
+      "sha256": "6f71759c7a2530e6c255f080dd8d9926799d0f8d7984c94cf0137d8352af9ac5",
+      "status": "active",
+      "updated_at": "2026-05-05T02:10:41"
+    },
+    "tests/test_analysis_stages.py": {
+      "installed_to": "tests/test_analysis_stages.py",
+      "version_added": "5.93.0",
+      "last_updated": "5.93.0",
+      "sha256": "e856f1ac6ced2f94ba46f5d371d692181e15ea1fe85b0a9d2c86cb9413779a0c",
+      "status": "active",
+      "updated_at": "2026-05-05T02:10:41"
+    },
+    "src/claire/breakthrough/gap_detection.py": {
+      "installed_to": "src/claire/breakthrough/gap_detection.py",
+      "version_added": "5.94.0",
+      "last_updated": "5.94.0",
+      "sha256": "1eabb1783dd73ab13ffd77e78ace9cd08551ba01b2ec57e69ccb1281b6a47b3e",
+      "status": "active",
+      "updated_at": "2026-05-05T02:26:36"
+    },
+    "src/claire/breakthrough/gap_qualification.py": {
+      "installed_to": "src/claire/breakthrough/gap_qualification.py",
+      "version_added": "5.94.0",
+      "last_updated": "5.94.0",
+      "sha256": "0cc2201cf5ea2a4ea74d8a2bb082a75a62bf45b8ddf9254a81a28edfd458b25d",
+      "status": "active",
+      "updated_at": "2026-05-05T02:26:36"
+    },
+    "src/claire/breakthrough/discovery_generation.py": {
+      "installed_to": "src/claire/breakthrough/discovery_generation.py",
+      "version_added": "5.94.0",
+      "last_updated": "5.94.0",
+      "sha256": "e5b1b8aeb0e097364f711803034f17162af7900445fdbf4c919bc92a635f3ff0",
+      "status": "active",
+      "updated_at": "2026-05-05T02:26:36"
+    },
+    "src/claire/breakthrough/classification.py": {
+      "installed_to": "src/claire/breakthrough/classification.py",
+      "version_added": "5.94.0",
+      "last_updated": "5.94.0",
+      "sha256": "991fa2cad4e2f6456f7ea462967dce85c2e4d7f647dfea2dd9eead71f611f2ff",
+      "status": "active",
+      "updated_at": "2026-05-05T02:26:36"
+    },
+    "src/claire/breakthrough/path_selection.py": {
+      "installed_to": "src/claire/breakthrough/path_selection.py",
+      "version_added": "5.94.0",
+      "last_updated": "5.94.0",
+      "sha256": "8edcb4329cec2da2e35bf2a96ba8b632ea045033c875f5781f18435ad2e06996",
+      "status": "active",
+      "updated_at": "2026-05-05T02:26:36"
+    },
+    "src/claire/invention/auto_invention.py": {
+      "installed_to": "src/claire/invention/auto_invention.py",
+      "version_added": "5.94.0",
+      "last_updated": "5.94.0",
+      "sha256": "f590e64f381607cecc7bcd46ed1eb43de8d141a61635c7d8105d666d944a3e46",
+      "status": "active",
+      "updated_at": "2026-05-05T02:26:36"
+    },
+    "src/claire/invention/solution_structuring.py": {
+      "installed_to": "src/claire/invention/solution_structuring.py",
+      "version_added": "5.94.0",
+      "last_updated": "5.94.0",
+      "sha256": "389ba7dcd8796038de0d9cf771c3adad29deb156b559a09695504080c7f082f8",
+      "status": "active",
+      "updated_at": "2026-05-05T02:26:36"
+    },
+    "tests/test_breakthrough_stages.py": {
+      "installed_to": "tests/test_breakthrough_stages.py",
+      "version_added": "5.94.0",
+      "last_updated": "5.94.0",
+      "sha256": "862a0d07be8b43decbe0ae3f5caac0c83646409187832a50bd938a0c629d1518",
+      "status": "active",
+      "updated_at": "2026-05-05T02:26:36"
+    },
+    "src/claire/feasibility/buildability.py": {
+      "installed_to": "src/claire/feasibility/buildability.py",
+      "version_added": "5.95.0",
+      "last_updated": "5.95.0",
+      "sha256": "d93983942d73d43ea0832ee1426ecf86eb28092c2a2d328fbbb8a7343c65b186",
+      "status": "active",
+      "updated_at": "2026-05-05T02:35:41"
+    },
+    "src/claire/feasibility/viability.py": {
+      "installed_to": "src/claire/feasibility/viability.py",
+      "version_added": "5.95.0",
+      "last_updated": "5.95.0",
+      "sha256": "4e729cbf8199e071b71ca36f74fa734357599c564e57c021ff7c6785c1243454",
+      "status": "active",
+      "updated_at": "2026-05-05T02:35:41"
+    },
+    "src/claire/feasibility/manufacturability.py": {
+      "installed_to": "src/claire/feasibility/manufacturability.py",
+      "version_added": "5.95.0",
+      "last_updated": "5.95.0",
+      "sha256": "15ee2eb0028654fc6c0d7ebfa3247342ec90cc9991f544ece74023ad7d5b4477",
+      "status": "active",
+      "updated_at": "2026-05-05T02:35:41"
+    },
+    "src/claire/feasibility/validation.py": {
+      "installed_to": "src/claire/feasibility/validation.py",
+      "version_added": "5.95.0",
+      "last_updated": "5.95.0",
+      "sha256": "07e07ca1fa68ef3f0dc6368ae85b56ee8023501b160062f2cc10d145c6efd1b7",
+      "status": "active",
+      "updated_at": "2026-05-05T02:35:41"
+    },
+    "src/claire/output/design_portal.py": {
+      "installed_to": "src/claire/output/design_portal.py",
+      "version_added": "5.95.0",
+      "last_updated": "5.95.0",
+      "sha256": "8fa6ed98286539087e5814aca6e9046c1fea2cd494a779e1e0b02da23512d523",
+      "status": "active",
+      "updated_at": "2026-05-05T02:35:41"
+    },
+    "tests/test_feasibility_stages.py": {
+      "installed_to": "tests/test_feasibility_stages.py",
+      "version_added": "5.95.0",
+      "last_updated": "5.95.0",
+      "sha256": "709d327230c8432c69c1cb7558bc4e59c0ee1090c40bbc209f2a56f6c6d9a3e3",
+      "status": "active",
+      "updated_at": "2026-05-05T02:35:41"
+    },
+    "src/claire/portfolio/market_positioning.py": {
+      "installed_to": "src/claire/portfolio/market_positioning.py",
+      "version_added": "5.96.0",
+      "last_updated": "5.96.0",
+      "sha256": "45d8c872498a3654342b0eb6634f1b4fa7592c5869ce101357177155cdf7e5e3",
+      "status": "active",
+      "updated_at": "2026-05-05T02:48:54"
+    },
+    "src/claire/strategy/moat_analysis.py": {
+      "installed_to": "src/claire/strategy/moat_analysis.py",
+      "version_added": "5.96.0",
+      "last_updated": "5.96.0",
+      "sha256": "4600a52964f3d8ed91a731f84cebe88df6936241b76527a18d045159e973f86f",
+      "status": "active",
+      "updated_at": "2026-05-05T02:48:54"
+    },
+    "src/claire/strategy/business_model.py": {
+      "installed_to": "src/claire/strategy/business_model.py",
+      "version_added": "5.96.0",
+      "last_updated": "5.96.0",
+      "sha256": "29e14ecbc64e76d32db238e8b2930d2e6977b4718c6c7761abc8d7ac9de931cc",
+      "status": "active",
+      "updated_at": "2026-05-05T02:48:54"
+    },
+    "src/claire/portfolio/competitor_analysis.py": {
+      "installed_to": "src/claire/portfolio/competitor_analysis.py",
+      "version_added": "5.96.0",
+      "last_updated": "5.96.0",
+      "sha256": "e9248eaef63f6c5909c3f08f54a71c2a056b049763df7682df6c64c9797ed8cc",
+      "status": "active",
+      "updated_at": "2026-05-05T02:48:54"
+    },
+    "src/claire/portfolio/optimization.py": {
+      "installed_to": "src/claire/portfolio/optimization.py",
+      "version_added": "5.96.0",
+      "last_updated": "5.96.0",
+      "sha256": "b9c8c47f0874cf6a2fc3fe9dbd6511205d23bd5fe1dd02223900fe5883f7f9d1",
+      "status": "active",
+      "updated_at": "2026-05-05T02:48:54"
+    },
+    "tests/test_portfolio_stages.py": {
+      "installed_to": "tests/test_portfolio_stages.py",
+      "version_added": "5.96.0",
+      "last_updated": "5.96.0",
+      "sha256": "6c07fb2077cfb5235b7da7a6d238ad2011c7fd2468d4297e2ef7b2fea6c45de6",
+      "status": "active",
+      "updated_at": "2026-05-05T02:48:54"
+    },
+    "src/claire/acquisition/acquirer_identification.py": {
+      "installed_to": "src/claire/acquisition/acquirer_identification.py",
+      "version_added": "5.97.0",
+      "last_updated": "5.97.0",
+      "sha256": "6b28f9ae08f2b76d776c72658a7672b50d0fbe7ecfb3abe9753127548642ed9b",
+      "status": "active",
+      "updated_at": "2026-05-05T03:19:38"
+    },
+    "src/claire/acquisition/fit_rationale.py": {
+      "installed_to": "src/claire/acquisition/fit_rationale.py",
+      "version_added": "5.97.0",
+      "last_updated": "5.97.0",
+      "sha256": "b1af1a52af4794f3e62a903d51930bb24e367de3fb051f964f36e430f3acafef",
+      "status": "active",
+      "updated_at": "2026-05-05T03:19:38"
+    },
+    "src/claire/acquisition/final_package.py": {
+      "installed_to": "src/claire/acquisition/final_package.py",
+      "version_added": "5.97.0",
+      "last_updated": "5.97.0",
+      "sha256": "f95ac74d3b39e5713acbf9b0b2856e204adef32e2c0cd8ef484223eb6c6ffb3a",
+      "status": "active",
+      "updated_at": "2026-05-05T03:19:38"
+    },
+    "tests/test_acquisition_stages.py": {
+      "installed_to": "tests/test_acquisition_stages.py",
+      "version_added": "5.97.0",
+      "last_updated": "5.97.0",
+      "sha256": "4c48a56289e364920c7b09358a1584b1587ac0a0172a0d9f9141a229699e8bba",
+      "status": "active",
+      "updated_at": "2026-05-05T03:19:38"
+    },
+    "src/claire/validation/__init__.py": {
+      "installed_to": "src/claire/validation/__init__.py",
+      "version_added": "5.98.0",
+      "last_updated": "5.98.0",
+      "sha256": "9e083a05905012ab98a32db2c0853154c2ea60c35cb75971f62aa0e0f5e425e5",
+      "status": "active",
+      "updated_at": "2026-05-05T03:23:30"
+    },
+    "src/claire/validation/authority.py": {
+      "installed_to": "src/claire/validation/authority.py",
+      "version_added": "5.98.0",
+      "last_updated": "5.98.0",
+      "sha256": "254c6d2bd506699877d6bafdec604beaac2a3b89f212944a7065625eadf5412d",
+      "status": "active",
+      "updated_at": "2026-05-05T03:23:30"
+    },
+    "src/claire/validation/evidence_collector.py": {
+      "installed_to": "src/claire/validation/evidence_collector.py",
+      "version_added": "5.98.0",
+      "last_updated": "5.98.0",
+      "sha256": "6e72afed9b9204696a7a65fcfe2c1cbf283eba968fe2d645205fdfcdc0297200",
+      "status": "active",
+      "updated_at": "2026-05-05T03:23:30"
+    },
+    "src/claire/validation/proof_binder.py": {
+      "installed_to": "src/claire/validation/proof_binder.py",
+      "version_added": "5.98.0",
+      "last_updated": "5.98.0",
+      "sha256": "4b6bbf9682ed54746f4068cd228046cca09a185ebdcb3dc78977e47824ba0bc3",
+      "status": "active",
+      "updated_at": "2026-05-05T03:23:30"
+    },
+    "src/claire/validation/qccp.py": {
+      "installed_to": "src/claire/validation/qccp.py",
+      "version_added": "5.98.0",
+      "last_updated": "5.98.0",
+      "sha256": "29309dc8c0a831d1183445d7a7e473b18bd8266189b2cea2663fe8a69aa099ae",
+      "status": "active",
+      "updated_at": "2026-05-05T03:23:30"
+    },
+    "tests/test_validation_system.py": {
+      "installed_to": "tests/test_validation_system.py",
+      "version_added": "5.98.0",
+      "last_updated": "5.98.0",
+      "sha256": "c000679002027f4f5c05508de5e46fe1133e3d131c8cb6e3b39ea49f782bfd1d",
+      "status": "active",
+      "updated_at": "2026-05-05T03:23:30"
+    },
+    "config/validation.yaml": {
+      "installed_to": "config/validation.yaml",
+      "version_added": "5.98.0",
+      "last_updated": "5.98.0",
+      "sha256": "58a7db7f5623c4b08536cd7c7c93a6c14113c163e03c5cb9fcb0bbf56352a9b0",
+      "status": "active",
+      "updated_at": "2026-05-05T03:23:30"
+    },
+    "src/claire/memory/__init__.py": {
+      "installed_to": "src/claire/memory/__init__.py",
+      "version_added": "5.99.0",
+      "last_updated": "5.99.0",
+      "sha256": "a04853977008e8817787314ef7bbc0bfe557748caa1800696c0b70a48fdb2d54",
+      "status": "active",
+      "updated_at": "2026-05-05T03:27:08"
+    },
+    "src/claire/memory/store.py": {
+      "installed_to": "src/claire/memory/store.py",
+      "version_added": "5.99.0",
+      "last_updated": "5.99.0",
+      "sha256": "bb0a1cea31e278b4d7b1aba9607c5e38ff26feb8464857dfbb9145542da9c940",
+      "status": "active",
+      "updated_at": "2026-05-05T03:27:08"
+    },
+    "src/claire/memory/recursive_ingestion.py": {
+      "installed_to": "src/claire/memory/recursive_ingestion.py",
+      "version_added": "5.99.0",
+      "last_updated": "5.99.0",
+      "sha256": "041b66a1890d374518eef39d005f99b519027a4617df19d634cf34a7c679d85e",
+      "status": "active",
+      "updated_at": "2026-05-05T03:27:08"
+    },
+    "src/claire/memory/lifecycle_memory.py": {
+      "installed_to": "src/claire/memory/lifecycle_memory.py",
+      "version_added": "5.99.0",
+      "last_updated": "5.99.0",
+      "sha256": "48f5472a9fc548b1e81ad9b9b038f81239e9f8bd734a2fabfda21c7947c8edbd",
+      "status": "active",
+      "updated_at": "2026-05-05T03:27:08"
+    },
+    "src/claire/memory/indexer.py": {
+      "installed_to": "src/claire/memory/indexer.py",
+      "version_added": "5.99.0",
+      "last_updated": "5.99.0",
+      "sha256": "ba3e083d991628722397e839df43a3de6f9f9329fb9e9f5d4481a4444e93bbae",
+      "status": "active",
+      "updated_at": "2026-05-05T03:27:08"
+    },
+    "tests/test_memory_system.py": {
+      "installed_to": "tests/test_memory_system.py",
+      "version_added": "5.99.0",
+      "last_updated": "5.99.0",
+      "sha256": "abeda24d4cf4547cfee5a9ba5301889db446e2cfc5eb79a40a1b170674ccefc0",
+      "status": "active",
+      "updated_at": "2026-05-05T03:27:08"
+    },
+    "config/memory.yaml": {
+      "installed_to": "config/memory.yaml",
+      "version_added": "5.99.0",
+      "last_updated": "5.99.0",
+      "sha256": "89741f31e6c864d8fd0e69470a6c16e6217306e71f4623e7ad42ef976314002d",
+      "status": "active",
+      "updated_at": "2026-05-05T03:27:08"
     }
   },
   "known_families": {
@@ -153,7 +513,7 @@
     },
     "tests": {
       "first_seen_version": "5.91.0",
-      "last_seen_version": "5.92.0",
+      "last_seen_version": "5.99.0",
       "status": "active"
     },
     "src/claire/signals": {
@@ -163,7 +523,67 @@
     },
     "config": {
       "first_seen_version": "5.92.0",
-      "last_seen_version": "5.92.0",
+      "last_seen_version": "5.99.0",
+      "status": "active"
+    },
+    "src/claire/analysis": {
+      "first_seen_version": "5.93.0",
+      "last_seen_version": "5.93.0",
+      "status": "active"
+    },
+    "src/claire/trends": {
+      "first_seen_version": "5.93.0",
+      "last_seen_version": "5.93.0",
+      "status": "active"
+    },
+    "src/claire/thesis": {
+      "first_seen_version": "5.93.0",
+      "last_seen_version": "5.93.0",
+      "status": "active"
+    },
+    "src/claire/breakthrough": {
+      "first_seen_version": "5.94.0",
+      "last_seen_version": "5.94.0",
+      "status": "active"
+    },
+    "src/claire/invention": {
+      "first_seen_version": "5.94.0",
+      "last_seen_version": "5.94.0",
+      "status": "active"
+    },
+    "src/claire/feasibility": {
+      "first_seen_version": "5.95.0",
+      "last_seen_version": "5.95.0",
+      "status": "active"
+    },
+    "src/claire/output": {
+      "first_seen_version": "5.95.0",
+      "last_seen_version": "5.95.0",
+      "status": "active"
+    },
+    "src/claire/portfolio": {
+      "first_seen_version": "5.96.0",
+      "last_seen_version": "5.96.0",
+      "status": "active"
+    },
+    "src/claire/strategy": {
+      "first_seen_version": "5.96.0",
+      "last_seen_version": "5.96.0",
+      "status": "active"
+    },
+    "src/claire/acquisition": {
+      "first_seen_version": "5.97.0",
+      "last_seen_version": "5.97.0",
+      "status": "active"
+    },
+    "src/claire/validation": {
+      "first_seen_version": "5.98.0",
+      "last_seen_version": "5.98.0",
+      "status": "active"
+    },
+    "src/claire/memory": {
+      "first_seen_version": "5.99.0",
+      "last_seen_version": "5.99.0",
       "status": "active"
     }
   },
@@ -194,6 +614,86 @@
         "src/claire/signals/adapters/structured.py",
         "tests/test_signal_stages.py",
         "config/signals.yaml"
+      ]
+    },
+    "5.93.0": {
+      "installed_at": "2026-05-05T02:10:41",
+      "files_installed": [
+        "src/claire/analysis/entity_extraction.py",
+        "src/claire/analysis/relationship_mapping.py",
+        "src/claire/trends/discovery.py",
+        "src/claire/trends/cluster_formation.py",
+        "src/claire/thesis/structuring.py",
+        "src/claire/thesis/route_gate.py",
+        "tests/test_analysis_stages.py"
+      ]
+    },
+    "5.94.0": {
+      "installed_at": "2026-05-05T02:26:36",
+      "files_installed": [
+        "src/claire/breakthrough/gap_detection.py",
+        "src/claire/breakthrough/gap_qualification.py",
+        "src/claire/breakthrough/discovery_generation.py",
+        "src/claire/breakthrough/classification.py",
+        "src/claire/breakthrough/path_selection.py",
+        "src/claire/invention/auto_invention.py",
+        "src/claire/invention/solution_structuring.py",
+        "tests/test_breakthrough_stages.py"
+      ]
+    },
+    "5.95.0": {
+      "installed_at": "2026-05-05T02:35:41",
+      "files_installed": [
+        "src/claire/feasibility/buildability.py",
+        "src/claire/feasibility/viability.py",
+        "src/claire/feasibility/manufacturability.py",
+        "src/claire/feasibility/validation.py",
+        "src/claire/output/design_portal.py",
+        "tests/test_feasibility_stages.py"
+      ]
+    },
+    "5.96.0": {
+      "installed_at": "2026-05-05T02:48:54",
+      "files_installed": [
+        "src/claire/portfolio/market_positioning.py",
+        "src/claire/strategy/moat_analysis.py",
+        "src/claire/strategy/business_model.py",
+        "src/claire/portfolio/competitor_analysis.py",
+        "src/claire/portfolio/optimization.py",
+        "tests/test_portfolio_stages.py"
+      ]
+    },
+    "5.97.0": {
+      "installed_at": "2026-05-05T03:19:38",
+      "files_installed": [
+        "src/claire/acquisition/acquirer_identification.py",
+        "src/claire/acquisition/fit_rationale.py",
+        "src/claire/acquisition/final_package.py",
+        "tests/test_acquisition_stages.py"
+      ]
+    },
+    "5.98.0": {
+      "installed_at": "2026-05-05T03:23:30",
+      "files_installed": [
+        "src/claire/validation/__init__.py",
+        "src/claire/validation/authority.py",
+        "src/claire/validation/evidence_collector.py",
+        "src/claire/validation/proof_binder.py",
+        "src/claire/validation/qccp.py",
+        "tests/test_validation_system.py",
+        "config/validation.yaml"
+      ]
+    },
+    "5.99.0": {
+      "installed_at": "2026-05-05T03:27:08",
+      "files_installed": [
+        "src/claire/memory/__init__.py",
+        "src/claire/memory/store.py",
+        "src/claire/memory/recursive_ingestion.py",
+        "src/claire/memory/lifecycle_memory.py",
+        "src/claire/memory/indexer.py",
+        "tests/test_memory_system.py",
+        "config/memory.yaml"
       ]
     }
   }

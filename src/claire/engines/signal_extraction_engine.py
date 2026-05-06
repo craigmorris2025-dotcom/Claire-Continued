@@ -1,12 +1,12 @@
 """
 Signal Extraction Engine — dedicated Stage 2 engine for Claire.
 
-v5.27:
-- Converts Stage 2 from partial signal_trace availability into a real engine.
-- Extracts semantic, routing, buyer, product, control, evidence, technical,
-  and sector-specific signals from the raw input.
-- Produces a structured signal contract used by lifecycle, binder, and later
-  pipeline diagnostics.
+v6.1.1:
+- Preserves existing deterministic signal extraction behavior.
+- Improves source-driven signal interpretation for live/simulated connector packets.
+- Promotes real event-derived keywords over weak upstream keywords.
+- Scores connector event severity/confidence so rich source packets raise signal quality.
+- Keeps outputs compatible with lifecycle, binder, proof, and downstream pipeline diagnostics.
 """
 
 from typing import Any, Dict, List, Optional
@@ -91,9 +91,11 @@ class SignalExtractionEngine:
     def _sector_signals(self, text: str) -> Dict[str, Any]:
         sector_terms = {
             "climate_insurance": [
-                "insurance", "insurer", "reinsurer", "underwriting", "underwriter", "premium",
-                "catastrophe", "weather loss", "wildfire", "flood", "exposure", "risk-transfer",
-                "risk transfer", "market withdrawal", "loss history", "portfolio exposure",
+                "insurance", "insurer", "reinsurer", "reinsurance", "underwriting", "underwriter",
+                "premium", "catastrophe", "weather loss", "wildfire", "flood", "exposure",
+                "risk-transfer", "risk transfer", "market withdrawal", "loss history",
+                "portfolio exposure", "repricing", "property", "carrier", "carriers",
+                "climate", "climate-exposed",
             ],
             "defense_autonomy": [
                 "defense", "mission", "secure command", "command", "sensor", "operator",
@@ -132,10 +134,10 @@ class SignalExtractionEngine:
 
     def _buyer_signals(self, text: str) -> Dict[str, Any]:
         terms = [
-            "buyer", "customer", "underwriter", "operator", "planner", "procurement",
+            "buyer", "customer", "underwriter", "underwriters", "operator", "planner", "procurement",
             "risk team", "research desk", "hospital", "utility", "defense prime",
-            "reinsurer", "carrier", "portfolio team", "mission team", "budget",
-            "sponsor", "workflow owner",
+            "reinsurer", "reinsurers", "carrier", "carriers", "portfolio team", "mission team",
+            "budget", "sponsor", "workflow owner", "broker", "brokers",
         ]
         matched = [term for term in terms if term in text]
         return {
@@ -148,13 +150,17 @@ class SignalExtractionEngine:
         terms = [
             "platform", "product", "pilot", "module", "workflow", "console",
             "dashboard", "api", "service", "engine", "subscription", "enterprise",
-            "benchmark", "recommendation", "detector", "intelligence",
+            "benchmark", "recommendation", "detector", "intelligence", "analytics",
+            "modeling", "automation",
         ]
         matched = [term for term in terms if term in text]
         return {
             "score": round(self._bounded(0.08 + len(matched) * 0.052), 4),
             "matched_terms": matched,
-            "productizable": any(term in matched for term in ["platform", "pilot", "workflow", "console", "engine", "subscription", "enterprise"]),
+            "productizable": any(term in matched for term in [
+                "platform", "pilot", "workflow", "console", "engine", "subscription",
+                "enterprise", "analytics", "modeling", "automation",
+            ]),
         }
 
     def _control_signals(self, text: str) -> Dict[str, Any]:
@@ -184,12 +190,16 @@ class SignalExtractionEngine:
             "simulation", "scenario", "pilot", "proof", "review", "scorecard",
             "historical", "false-positive", "false positive", "false-negative",
             "false negative", "roi", "time-to-decision", "time to decision",
+            "confidence", "severity", "timestamp", "credibility",
         ]
         matched = [term for term in terms if term in text]
         return {
             "score": round(self._bounded(0.08 + len(matched) * 0.050), 4),
             "matched_terms": matched,
-            "validation_ready": any(term in matched for term in ["backtest", "validation", "simulation", "scenario", "pilot", "proof"]),
+            "validation_ready": any(term in matched for term in [
+                "backtest", "validation", "validated", "simulation", "scenario",
+                "pilot", "proof", "evidence", "confidence", "severity",
+            ]),
         }
 
     def _technical_signals(self, text: str) -> Dict[str, Any]:
@@ -197,7 +207,8 @@ class SignalExtractionEngine:
             "ingests", "ingestion", "sensor", "data", "model", "api", "adapter",
             "integration", "simulation", "engine", "workflow", "console",
             "authorization", "audit", "trace", "scoring", "recommendation",
-            "monitoring", "schema", "versioning",
+            "monitoring", "schema", "versioning", "exposure", "analytics",
+            "automation", "modeling",
         ]
         matched = [term for term in terms if term in text]
         return {
@@ -310,7 +321,7 @@ class SignalExtractionEngine:
         if evidence_signals.get("validation_ready"):
             attention.append({
                 "area": "validation",
-                "reason": "validation, simulation, pilot, or proof language appears in the input",
+                "reason": "validation, simulation, pilot, proof, event confidence, or severity evidence appears in the input",
                 "downstream_use": "technical feasibility and productization should create evidence gates",
                 "priority": "high",
             })
@@ -352,20 +363,31 @@ class SignalExtractionEngine:
         top_sector_score = max([v.get("score", 0.0) for v in sector_signals.values()] or [0.0])
         market = connector_sources.get("market", {}) if isinstance(connector_sources, dict) else {}
         patent = connector_sources.get("patent", {}) if isinstance(connector_sources, dict) else {}
+        financial = connector_sources.get("financial", {}) if isinstance(connector_sources, dict) else {}
+
+        event_signal = self._event_signal_score(connector_sources)
+        source_breadth = self._source_breadth_score(connector_sources)
+        cross_source_alignment = self._cross_source_alignment_score(connector_sources)
 
         score = self._bounded(
-            0.10
-            + semantic_profile.get("semantic_density_score", 0.0) * 0.120
-            + semantic_profile.get("specificity_score", 0.0) * 0.130
-            + semantic_profile.get("structure_score", 0.0) * 0.080
-            + top_sector_score * 0.130
-            + buyer_signals.get("score", 0.0) * 0.105
-            + product_signals.get("score", 0.0) * 0.105
-            + control_signals.get("score", 0.0) * 0.090
-            + evidence_signals.get("score", 0.0) * 0.105
-            + technical_signals.get("score", 0.0) * 0.090
-            + float(market.get("growth", 0.0) or 0.0) * 0.025
-            + float(patent.get("activity", 0.0) or 0.0) * 0.030
+            0.12
+            + semantic_profile.get("semantic_density_score", 0.0) * 0.100
+            + semantic_profile.get("specificity_score", 0.0) * 0.120
+            + semantic_profile.get("structure_score", 0.0) * 0.060
+            + top_sector_score * 0.120
+            + buyer_signals.get("score", 0.0) * 0.100
+            + product_signals.get("score", 0.0) * 0.100
+            + control_signals.get("score", 0.0) * 0.080
+            + evidence_signals.get("score", 0.0) * 0.100
+            + technical_signals.get("score", 0.0) * 0.080
+            + event_signal * 0.180
+            + source_breadth * 0.055
+            + cross_source_alignment * 0.070
+            + float(market.get("growth", 0.0) or 0.0) * 0.040
+            + float(market.get("volatility", 0.0) or 0.0) * 0.020
+            + float(patent.get("activity", 0.0) or 0.0) * 0.040
+            + float(patent.get("novelty", patent.get("novelty_score", 0.0)) or 0.0) * 0.030
+            + float(financial.get("health", 0.0) or 0.0) * 0.025
         )
 
         level = "strong" if score >= 0.70 else "usable" if score >= 0.55 else "thin" if score >= 0.38 else "weak"
@@ -381,6 +403,10 @@ class SignalExtractionEngine:
                 control_signals=control_signals,
                 evidence_signals=evidence_signals,
                 technical_signals=technical_signals,
+                connector_sources=connector_sources,
+                event_signal=event_signal,
+                source_breadth=source_breadth,
+                cross_source_alignment=cross_source_alignment,
             ),
         }
 
@@ -411,6 +437,95 @@ class SignalExtractionEngine:
         )
 
     # =========================
+    # Connector / event helpers
+    # =========================
+    def _event_signal_score(self, connector_sources: Dict[str, Any]) -> float:
+        if not isinstance(connector_sources, dict):
+            return 0.0
+
+        total = 0.0
+        count = 0
+
+        for source in connector_sources.values():
+            if not isinstance(source, dict):
+                continue
+            events = source.get("events", [])
+            if not isinstance(events, list):
+                continue
+
+            for event in events:
+                if not isinstance(event, dict):
+                    continue
+                severity = self._safe_float(event.get("severity", 0.0))
+                confidence = self._safe_float(event.get("confidence", 0.0))
+                if severity <= 0 and confidence <= 0:
+                    continue
+                total += severity * max(confidence, 0.35)
+                count += 1
+
+        if count == 0:
+            return 0.0
+
+        return self._bounded(total / count)
+
+    def _source_breadth_score(self, connector_sources: Dict[str, Any]) -> float:
+        if not isinstance(connector_sources, dict):
+            return 0.0
+
+        useful_sources = [
+            name for name, payload in connector_sources.items()
+            if isinstance(payload, dict) and payload
+        ]
+
+        return self._bounded(len(useful_sources) / 5.0)
+
+    def _cross_source_alignment_score(self, connector_sources: Dict[str, Any]) -> float:
+        if not isinstance(connector_sources, dict):
+            return 0.0
+
+        source_terms: List[set] = []
+
+        for source in connector_sources.values():
+            if not isinstance(source, dict):
+                continue
+
+            text_parts: List[str] = []
+
+            for key, value in source.items():
+                if isinstance(value, str):
+                    text_parts.append(value)
+                elif isinstance(value, dict):
+                    text_parts.extend(str(v) for v in value.values() if isinstance(v, (str, int, float)))
+                elif isinstance(value, list):
+                    for item in value:
+                        if isinstance(item, dict):
+                            text_parts.extend(str(v) for v in item.values() if isinstance(v, (str, int, float)))
+                        elif isinstance(item, (str, int, float)):
+                            text_parts.append(str(item))
+
+            tokens = set(self._tokens(self._normalize(" ".join(text_parts))))
+            tokens = {t for t in tokens if len(t) >= 5}
+            if tokens:
+                source_terms.append(tokens)
+
+        if len(source_terms) < 2:
+            return 0.0
+
+        overlap_count = 0
+        comparison_count = 0
+
+        for i in range(len(source_terms)):
+            for j in range(i + 1, len(source_terms)):
+                comparison_count += 1
+                if source_terms[i].intersection(source_terms[j]):
+                    overlap_count += 1
+
+        if comparison_count == 0:
+            return 0.0
+
+        return self._bounded(overlap_count / comparison_count)
+
+    # =========================
     # Simple extraction helpers
     # =========================
     def _ranked_keywords(self, tokens: List[str], existing_keywords: List[str]) -> List[str]:
@@ -418,15 +533,40 @@ class SignalExtractionEngine:
             "the", "and", "for", "with", "that", "this", "from", "into", "than", "then",
             "they", "their", "must", "will", "should", "before", "after", "under", "over",
             "system", "platform", "uses", "using", "use", "need", "needs", "while",
+            "market", "source", "sources", "connected", "signal", "stream", "data",
         }
-        counts: Dict[str, int] = {}
+
+        preferred_terms = {
+            "insurance", "capacity", "withdrawal", "carrier", "carriers", "property",
+            "climate", "climate-exposed", "repricing", "premium", "underwriting",
+            "reinsurance", "reinsurers", "catastrophe", "exposure", "portfolio",
+            "concentration", "risk", "analytics", "modeling", "workflow",
+            "automation", "decision", "pricing", "loss", "loss-ratio", "filing",
+            "patent", "technology", "convergence",
+        }
+
+        counts: Dict[str, float] = {}
+
         for token in tokens:
             if len(token) < 4 or token in stop:
                 continue
-            counts[token] = counts.get(token, 0) + 1
+            weight = 1.0
+            if token in preferred_terms:
+                weight += 1.25
+            if len(token) >= 9:
+                weight += 0.25
+            counts[token] = counts.get(token, 0.0) + weight
 
         ranked = sorted(counts.items(), key=lambda item: (item[1], len(item[0])), reverse=True)
-        terms = list(dict.fromkeys([str(k).lower() for k in existing_keywords] + [word for word, _ in ranked]))
+
+        clean_existing = []
+        for keyword in existing_keywords or []:
+            keyword = str(keyword).lower().strip()
+            if len(keyword) <= 5 or keyword in stop:
+                continue
+            clean_existing.append(keyword)
+
+        terms = list(dict.fromkeys([word for word, _ in ranked] + clean_existing))
         return terms[:24]
 
     def _entities(self, text: str) -> List[str]:
@@ -448,6 +588,10 @@ class SignalExtractionEngine:
         control_signals: Dict[str, Any],
         evidence_signals: Dict[str, Any],
         technical_signals: Dict[str, Any],
+        connector_sources: Optional[Dict[str, Any]] = None,
+        event_signal: float = 0.0,
+        source_breadth: float = 0.0,
+        cross_source_alignment: float = 0.0,
     ) -> List[str]:
         drivers = []
         if semantic_profile.get("specificity_score", 0.0) >= 0.35:
@@ -464,6 +608,13 @@ class SignalExtractionEngine:
             drivers.append("validation/proof signal present")
         if technical_signals.get("implementation_relevant"):
             drivers.append("technical implementation signal present")
+        if event_signal >= 0.55:
+            drivers.append("high-confidence connector event signals")
+        if source_breadth >= 0.60:
+            drivers.append("multi-source connector coverage")
+        if cross_source_alignment >= 0.40:
+            drivers.append("cross-source signal alignment")
+
         return drivers or ["basic semantic extraction completed"]
 
     def _routing_note(self, dominant_sector: str, margin: float) -> str:
@@ -478,6 +629,12 @@ class SignalExtractionEngine:
 
     def _tokens(self, text: str) -> List[str]:
         return re.findall(r"[a-zA-Z][a-zA-Z0-9_-]+", text or "")
+
+    def _safe_float(self, value: Any, default: float = 0.0) -> float:
+        try:
+            return float(value)
+        except (TypeError, ValueError):
+            return default
 
     def _bounded(self, value: float, low: float = 0.0, high: float = 0.96) -> float:
         return max(low, min(high, value))

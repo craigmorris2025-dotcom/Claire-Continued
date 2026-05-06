@@ -1,48 +1,61 @@
-"""Gap detection from trend clusters."""
+"""
+Claire Live Intelligence Gap Detection Compatibility Adapter.
+"""
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
+
+from claire.engines.market_gap_engine import MarketGapEngine
 
 
 class GapDetectionEngine:
-    """Convert trend clusters into unmet needs and opportunity gaps."""
+    """
+    Compatibility class expected by tools/serve_export_dashboard.py.
 
-    GAP_MAP = {
-        "risk_regulation_compliance": ("Governed compliance visibility gap", "Automated governance and compliance intelligence layer"),
-        "ai_infrastructure_pressure": ("AI infrastructure operating pressure", "AI infrastructure planning and risk command center"),
-        "market_competition_pressure": ("Market movement detection gap", "Competitive market pressure sensing and response workflow"),
-        "technical_feasibility_moat": ("Innovation whitespace and defensibility gap", "Patent-aware solution design and moat mapping layer"),
-        "capital_growth_strategy": ("Strategic capital allocation gap", "Executive portfolio signal and investment prioritization dashboard"),
-    }
+    Internally delegates to the current MarketGapEngine when possible.
+    """
 
-    def detect(self, clusters_payload: Dict[str, Any]) -> Dict[str, Any]:
-        gaps: List[Dict[str, Any]] = []
-        for cluster in clusters_payload.get("clusters", []):
-            market_gap, needed_solution = self.GAP_MAP.get(
-                cluster.get("trend_type"),
-                ("Public-market intelligence gap", "Live opportunity intelligence workflow"),
-            )
-            score = round(min(0.98, cluster.get("strength_score", 0.5) + 0.12), 3)
-            gaps.append({
-                "gap_id": f"gap_{cluster.get('cluster_id')}",
-                "cluster_id": cluster.get("cluster_id"),
-                "market_universe": cluster.get("market_universe"),
-                "industry_domain": cluster.get("industry_domain"),
-                "trend_type": cluster.get("trend_type"),
-                "market_gap": market_gap,
-                "needed_solution": needed_solution,
-                "urgency": "high" if score >= 0.72 else "medium",
-                "gap_score": score,
-                "evidence_signal_count": cluster.get("signal_count", 0),
-                "evidence_entity_count": cluster.get("entity_count", 0),
-                "why_now": f"{cluster.get('trajectory')} trend with {cluster.get('signal_count')} supporting signal(s).",
-            })
-        return {
-            "status": "success",
-            "engine": "gap_detection_engine_v1",
-            "gap_count": len(gaps),
-            "gaps": sorted(gaps, key=lambda item: item["gap_score"], reverse=True),
-            "generated_at": datetime.now(timezone.utc).isoformat(),
-        }
+    def __init__(self) -> None:
+        self.engine = MarketGapEngine()
+
+    def detect(
+        self,
+        text: str = "",
+        domain: str = "general",
+        keywords: Optional[List[str]] = None,
+        connector_sources: Optional[Dict[str, Any]] = None,
+        **kwargs: Any,
+    ) -> Dict[str, Any]:
+        return self.engine.analyze(
+            text=text or kwargs.get("raw_input", ""),
+            domain=domain or kwargs.get("domain", "general"),
+            keywords=keywords or kwargs.get("keywords", []),
+            connector_sources=connector_sources or kwargs.get("connector_sources", {}),
+        )
+
+    def analyze(
+        self,
+        text: str = "",
+        domain: str = "general",
+        keywords: Optional[List[str]] = None,
+        connector_sources: Optional[Dict[str, Any]] = None,
+        **kwargs: Any,
+    ) -> Dict[str, Any]:
+        return self.detect(
+            text=text,
+            domain=domain,
+            keywords=keywords,
+            connector_sources=connector_sources,
+            **kwargs,
+        )
+
+    def run(self, payload: Optional[Dict[str, Any]] = None, **kwargs: Any) -> Dict[str, Any]:
+        payload = payload or {}
+
+        return self.detect(
+            text=payload.get("text") or payload.get("raw_input") or kwargs.get("text", ""),
+            domain=payload.get("domain") or kwargs.get("domain", "general"),
+            keywords=payload.get("keywords") or kwargs.get("keywords", []),
+            connector_sources=payload.get("connector_sources") or payload.get("sources") or kwargs.get("connector_sources", {}),
+        )

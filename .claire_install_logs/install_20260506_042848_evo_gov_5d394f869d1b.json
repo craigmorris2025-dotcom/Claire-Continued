@@ -1,0 +1,142 @@
+{
+  "installer_version": "10.3.1",
+  "installer_id": "5d394f869d1b",
+  "timestamp": "2026-05-06T04:28:48.642831",
+  "preflight": {
+    "target": "C:\\Users\\craig/OneDrive/Desktop/Claire",
+    "target_exists": true,
+    "timestamp": "2026-05-06T04:28:48.600834",
+    "installer_version": "10.3.1",
+    "installer_id": "5d394f869d1b",
+    "phases": [
+      {
+        "phase": 1,
+        "name": "Evolution Layer",
+        "new_folders": 1,
+        "new_files": 11,
+        "conflicts": []
+      },
+      {
+        "phase": 2,
+        "name": "Update Governance Layer",
+        "new_folders": 1,
+        "new_files": 19,
+        "conflicts": []
+      },
+      {
+        "phase": 3,
+        "name": "API Route & Frontend Panels",
+        "new_folders": 1,
+        "new_files": 4,
+        "conflicts": []
+      },
+      {
+        "phase": 4,
+        "name": "Data Directories",
+        "new_folders": 20,
+        "new_files": 0,
+        "conflicts": []
+      }
+    ],
+    "conflicts": [],
+    "ready": true
+  },
+  "results": [
+    {
+      "phase": 1,
+      "name": "Evolution Layer",
+      "folders_created": [
+        "src/claire/evolution"
+      ],
+      "files_created": [
+        "src/claire/evolution/__init__.py",
+        "src/claire/evolution/project_identity.py",
+        "src/claire/evolution/master_document_registry.py",
+        "src/claire/evolution/version_timeline.py",
+        "src/claire/evolution/target_state.py",
+        "src/claire/evolution/capability_registry.py",
+        "src/claire/evolution/verified_state_store.py",
+        "src/claire/evolution/regression_guard.py",
+        "src/claire/evolution/forward_motion_policy.py",
+        "src/claire/evolution/evolution_memory.py",
+        "src/claire/evolution/evolution_orchestrator.py"
+      ],
+      "skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 2,
+      "name": "Update Governance Layer",
+      "folders_created": [
+        "src/claire/platform/update_governance"
+      ],
+      "files_created": [
+        "src/claire/platform/update_governance/__init__.py",
+        "src/claire/platform/update_governance/authority_map.py",
+        "src/claire/platform/update_governance/package_inspector.py",
+        "src/claire/platform/update_governance/source_trust.py",
+        "src/claire/platform/update_governance/signature_verifier.py",
+        "src/claire/platform/update_governance/dependency_impact_analyzer.py",
+        "src/claire/platform/update_governance/capability_diff.py",
+        "src/claire/platform/update_governance/lifecycle_stage_impact.py",
+        "src/claire/platform/update_governance/runtime_risk_classifier.py",
+        "src/claire/platform/update_governance/target_alignment.py",
+        "src/claire/platform/update_governance/evolution_gate.py",
+        "src/claire/platform/update_governance/migration_planner.py",
+        "src/claire/platform/update_governance/protected_path_guard.py",
+        "src/claire/platform/update_governance/staged_installer.py",
+        "src/claire/platform/update_governance/validation_gauntlet.py",
+        "src/claire/platform/update_governance/rollback_orchestrator.py",
+        "src/claire/platform/update_governance/audit_writer.py",
+        "src/claire/platform/update_governance/approval_policy.py",
+        "src/claire/platform/update_governance/update_orchestrator.py"
+      ],
+      "skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 3,
+      "name": "API Route & Frontend Panels",
+      "folders_created": [
+        "src/frontend/system"
+      ],
+      "files_created": [
+        "src/claire/api/routes_update_governance.py",
+        "src/frontend/system/UpdateGovernancePanel.js",
+        "src/frontend/system/EvolutionMemoryPanel.js",
+        "src/frontend/system/RegressionGuardPanel.js"
+      ],
+      "skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 4,
+      "name": "Data Directories",
+      "folders_created": [
+        "data/evolution",
+        "data/evolution/origin",
+        "data/evolution/identity",
+        "data/evolution/timeline",
+        "data/evolution/target_state",
+        "data/evolution/verified_states",
+        "data/evolution/capability_snapshots",
+        "data/evolution/regression_reports",
+        "data/evolution/forward_decisions",
+        "data/evolution/completion_memory",
+        "data/update_governance",
+        "data/update_governance/incoming",
+        "data/update_governance/inspected",
+        "data/update_governance/staged",
+        "data/update_governance/backups",
+        "data/update_governance/reports",
+        "data/update_governance/approvals",
+        "data/update_governance/rollback_points",
+        "data/update_governance/signatures",
+        "data/update_governance/quarantined"
+      ],
+      "files_created": [],
+      "skipped": [],
+      "errors": []
+    }
+  ]
+}

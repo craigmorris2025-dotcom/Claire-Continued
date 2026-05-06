@@ -1,0 +1,80 @@
+{
+  "version": "5.95.0",
+  "installer": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire_v5_95_0_installer.py",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "generated_at": "2026-05-05T02:35:41",
+  "mode": "approve-install-new-safe-only",
+  "summary": {
+    "NEW_SAFE": 6
+  },
+  "files": [
+    {
+      "source_in_archive": "claire_v5_95_0/files/src/claire/feasibility/buildability.py",
+      "source_relative": "src/claire/feasibility/buildability.py",
+      "destination": "src/claire/feasibility/buildability.py",
+      "status": "NEW_SAFE",
+      "reason": "Approved ambiguity; exact source/destination pair is allowed.",
+      "sha256_new": "d93983942d73d43ea0832ee1426ecf86eb28092c2a2d328fbbb8a7343c65b186",
+      "sha256_existing": null,
+      "existing_matches": [
+        "src/claire/scoring/buildability.py [active]"
+      ],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v5_95_0/files/src/claire/feasibility/viability.py",
+      "source_relative": "src/claire/feasibility/viability.py",
+      "destination": "src/claire/feasibility/viability.py",
+      "status": "NEW_SAFE",
+      "reason": "New file in approved active/support path.",
+      "sha256_new": "4e729cbf8199e071b71ca36f74fa734357599c564e57c021ff7c6785c1243454",
+      "sha256_existing": null,
+      "existing_matches": [],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v5_95_0/files/src/claire/feasibility/manufacturability.py",
+      "source_relative": "src/claire/feasibility/manufacturability.py",
+      "destination": "src/claire/feasibility/manufacturability.py",
+      "status": "NEW_SAFE",
+      "reason": "New file in approved active/support path.",
+      "sha256_new": "15ee2eb0028654fc6c0d7ebfa3247342ec90cc9991f544ece74023ad7d5b4477",
+      "sha256_existing": null,
+      "existing_matches": [],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v5_95_0/files/src/claire/feasibility/validation.py",
+      "source_relative": "src/claire/feasibility/validation.py",
+      "destination": "src/claire/feasibility/validation.py",
+      "status": "NEW_SAFE",
+      "reason": "New file in approved active/support path.",
+      "sha256_new": "07e07ca1fa68ef3f0dc6368ae85b56ee8023501b160062f2cc10d145c6efd1b7",
+      "sha256_existing": null,
+      "existing_matches": [],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v5_95_0/files/src/claire/output/design_portal.py",
+      "source_relative": "src/claire/output/design_portal.py",
+      "destination": "src/claire/output/design_portal.py",
+      "status": "NEW_SAFE",
+      "reason": "New file in approved active/support path.",
+      "sha256_new": "8fa6ed98286539087e5814aca6e9046c1fea2cd494a779e1e0b02da23512d523",
+      "sha256_existing": null,
+      "existing_matches": [],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v5_95_0/files/tests/test_feasibility_stages.py",
+      "source_relative": "tests/test_feasibility_stages.py",
+      "destination": "tests/test_feasibility_stages.py",
+      "status": "NEW_SAFE",
+      "reason": "New file in approved active/support path.",
+      "sha256_new": "709d327230c8432c69c1cb7558bc4e59c0ee1090c40bbc209f2a56f6c6d9a3e3",
+      "sha256_existing": null,
+      "existing_matches": [],
+      "import_flags": []
+    }
+  ]
+}

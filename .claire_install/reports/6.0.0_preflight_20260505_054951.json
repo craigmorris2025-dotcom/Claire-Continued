@@ -1,0 +1,91 @@
+{
+  "version": "6.0.0",
+  "installer": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire_v6_0_0_installer.py",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "generated_at": "2026-05-05T05:49:51",
+  "mode": "approve-install-new-safe-only",
+  "summary": {
+    "EXISTS_SAME": 7
+  },
+  "files": [
+    {
+      "source_in_archive": "claire_v6_0_0/files/src/claire/live/__init__.py",
+      "source_relative": "src/claire/live/__init__.py",
+      "destination": "src/claire/live/__init__.py",
+      "status": "EXISTS_SAME",
+      "reason": "Identical file already exists; skip.",
+      "sha256_new": "6f4808f5b1443c4ce4f338fd914ff85e48f0d4294e3dc78f035bb02eb7180c8a",
+      "sha256_existing": "6f4808f5b1443c4ce4f338fd914ff85e48f0d4294e3dc78f035bb02eb7180c8a",
+      "existing_matches": [],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v6_0_0/files/src/claire/live/pipeline.py",
+      "source_relative": "src/claire/live/pipeline.py",
+      "destination": "src/claire/live/pipeline.py",
+      "status": "EXISTS_SAME",
+      "reason": "Identical file already exists; skip.",
+      "sha256_new": "1f95f4d67a1d661036e7f1acc8442c4955c3f965eeec8498f459d6e60af50a44",
+      "sha256_existing": "1f95f4d67a1d661036e7f1acc8442c4955c3f965eeec8498f459d6e60af50a44",
+      "existing_matches": [
+        "backend/orchestrator/pipeline.py [legacy]"
+      ],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v6_0_0/files/src/claire/live/connectors/__init__.py",
+      "source_relative": "src/claire/live/connectors/__init__.py",
+      "destination": "src/claire/live/connectors/__init__.py",
+      "status": "EXISTS_SAME",
+      "reason": "Identical file already exists; skip.",
+      "sha256_new": "7ae022750eb8c23a7927967c0358a3908656033de090f26644df0f7e9168329d",
+      "sha256_existing": "7ae022750eb8c23a7927967c0358a3908656033de090f26644df0f7e9168329d",
+      "existing_matches": [],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v6_0_0/files/src/claire/live/connectors/api_connector.py",
+      "source_relative": "src/claire/live/connectors/api_connector.py",
+      "destination": "src/claire/live/connectors/api_connector.py",
+      "status": "EXISTS_SAME",
+      "reason": "Identical file already exists; skip.",
+      "sha256_new": "e8933812a9035582db97baad40de98af608c2892cd24a923f8bf4348765f667e",
+      "sha256_existing": "e8933812a9035582db97baad40de98af608c2892cd24a923f8bf4348765f667e",
+      "existing_matches": [],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v6_0_0/files/src/claire/live/connectors/feed_connector.py",
+      "source_relative": "src/claire/live/connectors/feed_connector.py",
+      "destination": "src/claire/live/connectors/feed_connector.py",
+      "status": "EXISTS_SAME",
+      "reason": "Identical file already exists; skip.",
+      "sha256_new": "912ae61ecf8dab35274137ead240906eaa50f0ddd2badb95429b35d4403cfa17",
+      "sha256_existing": "912ae61ecf8dab35274137ead240906eaa50f0ddd2badb95429b35d4403cfa17",
+      "existing_matches": [],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v6_0_0/files/src/claire/live/connectors/file_connector.py",
+      "source_relative": "src/claire/live/connectors/file_connector.py",
+      "destination": "src/claire/live/connectors/file_connector.py",
+      "status": "EXISTS_SAME",
+      "reason": "Identical file already exists; skip.",
+      "sha256_new": "fbc88a5c4e8e23b266d8a37b8e7434725c64375e275aad3b0c6b2ccc0f5c6f45",
+      "sha256_existing": "fbc88a5c4e8e23b266d8a37b8e7434725c64375e275aad3b0c6b2ccc0f5c6f45",
+      "existing_matches": [],
+      "import_flags": []
+    },
+    {
+      "source_in_archive": "claire_v6_0_0/files/config/live_pipeline.yaml",
+      "source_relative": "config/live_pipeline.yaml",
+      "destination": "config/live_pipeline.yaml",
+      "status": "EXISTS_SAME",
+      "reason": "Identical file already exists; skip.",
+      "sha256_new": "e4e303503f22b6fdd12ff4b0c471d1a10a3504551cfd31fed3d0040cec59b89f",
+      "sha256_existing": "e4e303503f22b6fdd12ff4b0c471d1a10a3504551cfd31fed3d0040cec59b89f",
+      "existing_matches": [],
+      "import_flags": []
+    }
+  ]
+}

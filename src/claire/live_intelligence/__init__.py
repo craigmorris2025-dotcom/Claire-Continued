@@ -1,2 +1,3 @@
-"""Claire live intelligence spine."""
-
+"""
+Claire Live Intelligence Layer (safe compatibility)
+"""

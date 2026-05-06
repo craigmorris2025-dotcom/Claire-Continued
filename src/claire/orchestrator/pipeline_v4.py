@@ -1,6 +1,5 @@
-
 """
-Claire Orchestrator — Deterministic Intelligence Engine (v5.33 EXPORT WRITER)
+Claire Orchestrator — Deterministic Intelligence Engine (v6.1.2 SOURCE KEYWORD ALIGNMENT)
 """
 
 from typing import Dict, Any
@@ -73,13 +72,21 @@ class PipelineOrchestrator:
 
     def execute(self, intent: ClaireIntent) -> ClaireResult:
 
-        print(">>> RUNNING PIPELINE V5.33 (EXPORT WRITER) <<<")
+        print(">>> RUNNING PIPELINE V6.1.2 (SOURCE KEYWORD ALIGNMENT) <<<")
 
         data: Dict[str, Any] = {}
         phase_log = []
-        text = intent.get_text()
-        print(">>> PIPELINE TEXT:", text)
+        raw_text = intent.get_text()
         intent_extra = getattr(intent, "extra", {}) or {}
+        request_sources_raw = intent_extra.get("sources") or {}
+        request_sources = self._normalize_request_sources(request_sources_raw)
+        source_text = self._extract_source_text(request_sources)
+        text = self._compose_pipeline_text(raw_text=raw_text, source_text=source_text)
+
+        print(">>> PIPELINE RAW TEXT:", raw_text)
+        print(">>> PIPELINE SOURCE TEXT:", source_text[:500])
+        print(">>> PIPELINE TEXT:", text)
+
         scan_iterations = intent_extra.get("scan_iterations") or []
         scan_terminal_state = intent_extra.get("scan_terminal_state")
         scan_terminal_reason = intent_extra.get("scan_terminal_reason")
@@ -96,10 +103,19 @@ class PipelineOrchestrator:
             context={"domain": domain, "keywords": keywords},
         )
 
-        external = self.connector_manager.fetch_all({
+        external_connector = self.connector_manager.fetch_all({
             "domain": domain,
             "keywords": keywords
         })
+
+        # v6.1.0: request/live source packets are first-class lifecycle inputs.
+        # Connector manager output remains available, but explicit request sources
+        # override matching connector keys so proof-phase/live-ingestion tests run
+        # on the source packet actually received by the API.
+        external = {
+            **(external_connector or {}),
+            **request_sources,
+        }
 
         intent_metadata = intent.metadata.to_dict() if hasattr(intent, "metadata") and hasattr(intent.metadata, "to_dict") else {}
 
@@ -133,9 +149,42 @@ class PipelineOrchestrator:
         signal_extraction_confidence = self._get(signal_extraction, "confidence", 0.0) or 0.0
         signal_quality_score = self._get(signal_extraction, "signal_quality_score.score", 0.0) or 0.0
         semantic_density_score = self._get(signal_extraction, "semantic_profile.semantic_density_score", 0.0) or 0.0
-        routing_confidence_score = self._get(signal_extraction, "routing_evidence.routing_confidence_score", 0.0) or 0.0
-        evidence_signal_score = self._get(signal_extraction, "evidence_signals.score", 0.0) or 0.0
+
+        # v6.1.2: Promote the source-aware extracted keywords from SignalExtractionEngine.
+        # This keeps the public output contract and downstream trend/thesis naming aligned
+        # with the live/simulated connector evidence instead of the thin synthetic
+        # raw_input marker such as "connected_signal_stream".
+        extracted_keywords = []
+        if isinstance(signal_extraction, dict):
+            extracted_keywords = signal_extraction.get("extracted_keywords") or []
+        if extracted_keywords:
+            keywords = list(dict.fromkeys([str(item).lower().strip() for item in extracted_keywords if str(item).strip()]))[:24]
+
+        raw_routing_confidence_score = self._get(signal_extraction, "routing_evidence.routing_confidence_score", 0.0) or 0.0
+        raw_evidence_signal_score = self._get(signal_extraction, "evidence_signals.score", 0.0) or 0.0
         control_signal_score = self._get(signal_extraction, "control_signals.score", 0.0) or 0.0
+
+        routing_confidence_score = self._strengthen_routing_confidence(
+            raw_score=raw_routing_confidence_score,
+            domain=domain,
+            text=text,
+            keywords=keywords,
+            signal_extraction=signal_extraction,
+            semantic_density_score=semantic_density_score,
+            signal_quality_score=signal_quality_score,
+        )
+
+        evidence_signal_score = self._strengthen_evidence_signal(
+            raw_score=raw_evidence_signal_score,
+            knowledge_quality_score=knowledge_quality_score,
+            source_quality_score=source_quality_score,
+            coverage_score=coverage_score,
+            source_count=source_count,
+            semantic_density_score=semantic_density_score,
+            market_growth=0.0,
+            patent_activity=0.0,
+            financial_health=0.0,
+        )
 
         market = external.get("market", {})
         patent = external.get("patent", {})
@@ -146,6 +195,18 @@ class PipelineOrchestrator:
         patent_novelty = patent.get("novelty", 0.5)
         financial_health = financial.get("health", 0.5)
         financial_risk = financial.get("risk", 0.5)
+
+        evidence_signal_score = self._strengthen_evidence_signal(
+            raw_score=raw_evidence_signal_score,
+            knowledge_quality_score=knowledge_quality_score,
+            source_quality_score=source_quality_score,
+            coverage_score=coverage_score,
+            source_count=source_count,
+            semantic_density_score=semantic_density_score,
+            market_growth=market_growth,
+            patent_activity=patent_activity,
+            financial_health=financial_health,
+        )
 
         market_gap = self._safe_engine(
             "market_gap_failed",
@@ -525,6 +586,27 @@ class PipelineOrchestrator:
         )
         phase_log.append(self._decision("portfolio", portfolio_signal))
 
+        domain_scores = self._build_domain_scores(
+            domain=domain,
+            text=text,
+            keywords=keywords,
+            semantic_density_score=semantic_density_score,
+            signal_quality_score=signal_quality_score,
+            routing_confidence_score=routing_confidence_score,
+            knowledge_quality_score=knowledge_quality_score,
+            source_quality_score=source_quality_score,
+            coverage_score=coverage_score,
+            market_growth=market_growth,
+            patent_activity=patent_activity,
+            patent_novelty=patent_novelty,
+            financial_health=financial_health,
+            financial_risk=financial_risk,
+            value_capture_score=value_capture_score,
+            risk_score=risk_score,
+            implementation_complexity_score=0.0,
+        )
+        data["domain_scores"] = domain_scores
+
         scores = {
             "analysis_score": analysis_signal,
             "discovery_score": discovery_signal,
@@ -550,7 +632,10 @@ class PipelineOrchestrator:
             "semantic_density_score": semantic_density_score,
             "routing_confidence_score": routing_confidence_score,
             "evidence_signal_score": evidence_signal_score,
+            "raw_routing_confidence_score": raw_routing_confidence_score,
+            "raw_evidence_signal_score": raw_evidence_signal_score,
             "control_signal_score": control_signal_score,
+            "domain_scores": domain_scores,
         }
 
         breakthrough_synthesis = self._safe_engine(
@@ -617,6 +702,27 @@ class PipelineOrchestrator:
         scores["data_readiness_score"] = data_readiness_score
         scores["validation_burden_score"] = validation_burden_score
 
+        domain_scores = self._build_domain_scores(
+            domain=domain,
+            text=text,
+            keywords=keywords,
+            semantic_density_score=semantic_density_score,
+            signal_quality_score=signal_quality_score,
+            routing_confidence_score=routing_confidence_score,
+            knowledge_quality_score=knowledge_quality_score,
+            source_quality_score=source_quality_score,
+            coverage_score=coverage_score,
+            market_growth=market_growth,
+            patent_activity=patent_activity,
+            patent_novelty=patent_novelty,
+            financial_health=financial_health,
+            financial_risk=financial_risk,
+            value_capture_score=value_capture_score,
+            risk_score=risk_score,
+            implementation_complexity_score=implementation_complexity_score,
+        )
+        data["domain_scores"] = domain_scores
+
         data["signal_trace"] = {
             "knowledge_ingestion_confidence": knowledge_ingestion_confidence,
             "knowledge_quality_score": knowledge_quality_score,
@@ -628,7 +734,10 @@ class PipelineOrchestrator:
             "semantic_density_score": semantic_density_score,
             "routing_confidence_score": routing_confidence_score,
             "evidence_signal_score": evidence_signal_score,
+            "raw_routing_confidence_score": raw_routing_confidence_score,
+            "raw_evidence_signal_score": raw_evidence_signal_score,
             "control_signal_score": control_signal_score,
+            "domain_scores": domain_scores,
             "analysis": analysis_signal,
             "discovery": discovery_signal,
             "opportunity_confidence": opportunity_confidence,
@@ -685,7 +794,10 @@ class PipelineOrchestrator:
                 "innovation": innovation_signal,
                 "viability": viability_signal,
                 "portfolio": portfolio_signal,
+                "routing_confidence": routing_confidence_score,
+                "evidence_signal": evidence_signal_score,
             },
+            "domain_scores": domain_scores,
             "knowledge_ingestion": {
                 "knowledge_quality_score": knowledge_ingestion.get("knowledge_quality_score") if isinstance(knowledge_ingestion, dict) else None,
                 "source_quality": knowledge_ingestion.get("source_quality") if isinstance(knowledge_ingestion, dict) else None,
@@ -996,6 +1108,7 @@ class PipelineOrchestrator:
             lambda: self.binder_builder.build({
                 "scores": scores,
                 "domain": domain,
+                "domain_scores": domain_scores,
                 "keywords": keywords,
                 "knowledge_ingestion": knowledge_ingestion,
                 "signal_extraction": signal_extraction,
@@ -1111,6 +1224,7 @@ class PipelineOrchestrator:
                 "scores": scores,
                 "data": data,
                 "domain": domain,
+                "domain_scores": domain_scores,
                 "keywords": keywords,
                 "decision_classification": "GO" if portfolio_signal > 0.7 else "CONSIDER" if portfolio_signal > 0.5 else "NO-GO",
                 "breakthrough_classification": "HIGH" if breakthrough_signal > 0.65 else "LOW",
@@ -1125,6 +1239,7 @@ class PipelineOrchestrator:
                 **data,
                 "scores": scores,
                 "domain": domain,
+                "domain_scores": domain_scores,
                 "keywords": keywords,
                 "connector_sources": external,
                 "acquirer_matches": acquirer_matches,
@@ -1222,6 +1337,347 @@ class PipelineOrchestrator:
             acquirer_matches=acquirer_matches,
             ready_for_syntalion=final_score > 0.65,
         )
+
+
+    def _compose_pipeline_text(self, raw_text: str, source_text: str) -> str:
+        """
+        Compose the text used by all downstream lifecycle engines.
+
+        In proof/live-ingestion mode, raw_input may intentionally be a sentinel
+        such as "connected_signal_stream". In that case, the source packet is
+        the real signal and should drive domain detection, keyword extraction,
+        signal extraction, market gap, trend thesis, and all route decisions.
+        """
+        raw_text = (raw_text or "").strip()
+        source_text = (source_text or "").strip()
+
+        sentinel_inputs = {
+            "connected_signal_stream",
+            "external_connected_source_ingestion",
+            "live_condition_stream",
+            "live_source_packet",
+            "source_packet",
+        }
+
+        if source_text and raw_text.lower() in sentinel_inputs:
+            return source_text
+
+        if source_text and raw_text:
+            return f"{raw_text} {source_text}".strip()
+
+        return source_text or raw_text
+
+    def _normalize_request_sources(self, sources: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Normalize API-provided source packets into the flatter connector shape
+        expected by the existing engines, while preserving original fields.
+
+        Existing engines commonly read values like market.growth,
+        patent.activity, financial.health, etc. Proof-phase packets often store
+        those values under data/metrics, so this method lifts them to top-level
+        fields without losing the structured packet.
+        """
+        if not isinstance(sources, dict):
+            return {}
+
+        normalized: Dict[str, Any] = {}
+
+        for source_name, source_payload in sources.items():
+            if not isinstance(source_payload, dict):
+                continue
+
+            item = dict(source_payload)
+            data = item.get("data") if isinstance(item.get("data"), dict) else {}
+            metrics = item.get("metrics") if isinstance(item.get("metrics"), dict) else {}
+
+            # Generic metric lifting.
+            for key, value in {**data, **metrics}.items():
+                if isinstance(value, (int, float, str, bool)) and key not in item:
+                    item[key] = value
+
+            # Source-specific aliases expected by existing engines.
+            if source_name == "market":
+                item.setdefault("growth", metrics.get("growth", data.get("growth", 0.5)))
+                item.setdefault("volatility", metrics.get("volatility", data.get("volatility", 0.5)))
+                item.setdefault("alignment", metrics.get("alignment", data.get("alignment", item.get("credibility", 0.5))))
+            elif source_name == "patent":
+                item.setdefault("activity", metrics.get("activity", data.get("activity", data.get("filing_growth", 0.5))))
+                item.setdefault("novelty", metrics.get("novelty", data.get("novelty", data.get("novelty_score", 0.5))))
+            elif source_name == "financial":
+                item.setdefault("health", metrics.get("health", data.get("health", item.get("credibility", 0.5))))
+                item.setdefault("risk", metrics.get("risk", data.get("risk", 0.5)))
+
+            normalized[source_name] = item
+
+        return normalized
+
+    def _extract_source_text(self, sources: Dict[str, Any]) -> str:
+        """
+        Extract semantic text from structured live/proof source packets.
+
+        This is intentionally conservative: it does not invent conclusions. It
+        only surfaces source-provided sectors, event types, descriptions, signal
+        strings, and source labels so the existing lifecycle engines can detect
+        domain, entities, relationships, trends, gaps, and route conditions.
+        """
+        if not isinstance(sources, dict):
+            return ""
+
+        parts = []
+
+        for source_name, source_payload in sources.items():
+            if not isinstance(source_payload, dict):
+                continue
+
+            source_type = source_payload.get("source_type") or source_payload.get("type") or source_name
+            sector = source_payload.get("sector")
+
+            parts.append(str(source_name).replace("_", " "))
+            parts.append(str(source_type).replace("_", " "))
+
+            if sector:
+                parts.append(str(sector).replace("_", " "))
+
+            signals = source_payload.get("signals")
+            if isinstance(signals, list):
+                for signal in signals:
+                    if isinstance(signal, str):
+                        parts.append(signal)
+                    elif isinstance(signal, dict):
+                        for key in ("description", "summary", "title", "signal", "type"):
+                            value = signal.get(key)
+                            if value:
+                                parts.append(str(value).replace("_", " "))
+
+            events = source_payload.get("events")
+            if isinstance(events, list):
+                for event in events:
+                    if not isinstance(event, dict):
+                        continue
+                    for key in ("type", "description", "summary", "title", "signal"):
+                        value = event.get(key)
+                        if value:
+                            parts.append(str(value).replace("_", " "))
+
+            data = source_payload.get("data")
+            if isinstance(data, dict):
+                for key, value in data.items():
+                    if isinstance(value, dict):
+                        parts.append(str(key).replace("_", " "))
+                    elif isinstance(value, str):
+                        parts.append(str(key).replace("_", " "))
+                        parts.append(value)
+
+            metrics = source_payload.get("metrics")
+            if isinstance(metrics, dict):
+                for key in metrics.keys():
+                    parts.append(str(key).replace("_", " "))
+
+        return " ".join(part for part in parts if part).strip()
+
+
+    def _strengthen_routing_confidence(
+        self,
+        raw_score: float,
+        domain: str,
+        text: str,
+        keywords: list,
+        signal_extraction: Dict[str, Any],
+        semantic_density_score: float,
+        signal_quality_score: float,
+    ) -> float:
+        """
+        Strengthen routing confidence without hiding the raw score.
+
+        This does not overwrite the signal engine result. It creates a safer
+        downstream score by combining raw routing evidence with domain certainty,
+        keyword alignment, semantic density, and dominant-sector agreement.
+        """
+        raw_score = self._clamp(raw_score)
+        semantic_density_score = self._clamp(semantic_density_score)
+        signal_quality_score = self._clamp(signal_quality_score)
+
+        normalized_text = self._normalize_text(text)
+        keyword_text = " ".join(keywords or [])
+        combined = f"{normalized_text} {keyword_text}"
+
+        domain_terms = {
+            "healthcare": ["healthcare", "medical", "clinical", "hospital", "patient", "diagnostic", "imaging"],
+            "technology": ["ai", "software", "platform", "model", "data", "machine", "learning", "autonomous"],
+            "finance": ["finance", "financial", "portfolio", "market", "credit", "liquidity", "asset"],
+            "energy": ["energy", "grid", "utility", "transmission", "power"],
+            "industrial": ["industrial", "manufacturing", "supplier", "production", "factory", "procurement"],
+            "insurance": ["insurance", "underwriting", "claims", "catastrophe", "reinsurance", "actuarial"],
+            "general": [],
+        }
+
+        terms = domain_terms.get(domain, [])
+        term_hits = sum(1 for term in terms if term in combined.split() or f" {term} " in f" {combined} ")
+        term_strength = min(1.0, term_hits / max(1, min(4, len(terms) or 1)))
+
+        dominant_sector = ""
+        if isinstance(signal_extraction, dict):
+            dominant_sector = str(signal_extraction.get("dominant_sector") or "")
+
+        sector_alignment = 0.0
+        if domain and domain in dominant_sector:
+            sector_alignment = 0.25
+        elif domain == "healthcare" and "healthcare" in dominant_sector:
+            sector_alignment = 0.25
+        elif domain == "technology" and any(x in dominant_sector for x in ["technology", "autonomy", "software", "data"]):
+            sector_alignment = 0.20
+
+        strengthened = (
+            raw_score * 0.42
+            + semantic_density_score * 0.18
+            + signal_quality_score * 0.12
+            + term_strength * 0.20
+            + sector_alignment
+        )
+
+        # Never let a clear domain route collapse below a useful floor.
+        if term_strength >= 0.50 and domain != "general":
+            strengthened = max(strengthened, 0.52)
+
+        return round(self._clamp(strengthened), 4)
+
+    def _strengthen_evidence_signal(
+        self,
+        raw_score: float,
+        knowledge_quality_score: float,
+        source_quality_score: float,
+        coverage_score: float,
+        source_count: int,
+        semantic_density_score: float,
+        market_growth: float,
+        patent_activity: float,
+        financial_health: float,
+    ) -> float:
+        """
+        Strengthen evidence score from actual available evidence sources.
+
+        The raw signal extractor may be conservative when user text lacks explicit
+        validation terms. This score rewards real source coverage, source quality,
+        patent/market/financial availability, and semantic density.
+        """
+        raw_score = self._clamp(raw_score)
+        knowledge_quality_score = self._clamp(knowledge_quality_score)
+        source_quality_score = self._clamp(source_quality_score)
+        coverage_score = self._clamp(coverage_score)
+        semantic_density_score = self._clamp(semantic_density_score)
+        market_growth = self._clamp(market_growth)
+        patent_activity = self._clamp(patent_activity)
+        financial_health = self._clamp(financial_health)
+
+        source_count_score = min(1.0, float(source_count or 0) / 3.0)
+
+        strengthened = (
+            raw_score * 0.24
+            + knowledge_quality_score * 0.18
+            + source_quality_score * 0.16
+            + coverage_score * 0.16
+            + source_count_score * 0.10
+            + semantic_density_score * 0.08
+            + market_growth * 0.03
+            + patent_activity * 0.03
+            + financial_health * 0.02
+        )
+
+        # If all three connector classes exist, avoid a misleading near-zero evidence score.
+        if source_count >= 3 and coverage_score >= 0.70:
+            strengthened = max(strengthened, 0.48)
+
+        return round(self._clamp(strengthened), 4)
+
+    def _build_domain_scores(
+        self,
+        domain: str,
+        text: str,
+        keywords: list,
+        semantic_density_score: float,
+        signal_quality_score: float,
+        routing_confidence_score: float,
+        knowledge_quality_score: float,
+        source_quality_score: float,
+        coverage_score: float,
+        market_growth: float,
+        patent_activity: float,
+        patent_novelty: float,
+        financial_health: float,
+        financial_risk: float,
+        value_capture_score: float,
+        risk_score: float,
+        implementation_complexity_score: float,
+    ) -> Dict[str, float]:
+        """
+        Build non-empty comparative domain scores for downstream routing,
+        validation, portfolio intelligence, and proof packaging.
+        """
+        normalized_text = self._normalize_text(text)
+        keyword_text = " ".join(keywords or [])
+        combined = f"{normalized_text} {keyword_text}"
+
+        domain_terms = {
+            "technology": ["ai", "software", "platform", "model", "data", "machine", "learning", "autonomous"],
+            "healthcare": ["healthcare", "medical", "clinical", "hospital", "patient", "patients", "diagnostic", "imaging"],
+            "finance": ["finance", "financial", "portfolio", "market", "credit", "liquidity", "asset", "investment"],
+            "energy": ["energy", "grid", "utility", "transmission", "power"],
+            "industrial": ["industrial", "manufacturing", "supplier", "production", "factory", "procurement"],
+            "insurance": ["insurance", "underwriting", "claims", "catastrophe", "reinsurance", "actuarial"],
+            "general": [],
+        }
+
+        scores: Dict[str, float] = {}
+        for candidate, terms in domain_terms.items():
+            term_hits = sum(1 for term in terms if term in combined.split() or f" {term} " in f" {combined} ")
+            term_score = min(1.0, term_hits / max(1, min(5, len(terms) or 1)))
+
+            base = 0.10
+            if candidate == domain:
+                base += 0.55
+
+            if candidate == "technology":
+                base += semantic_density_score * 0.10 + patent_activity * 0.08 + patent_novelty * 0.06
+            elif candidate == "healthcare":
+                base += coverage_score * 0.08 + source_quality_score * 0.05
+            elif candidate == "finance":
+                base += financial_health * 0.08 + value_capture_score * 0.08 + (1.0 - self._clamp(financial_risk)) * 0.04
+            elif candidate == "energy":
+                base += market_growth * 0.08
+            elif candidate == "industrial":
+                base += implementation_complexity_score * 0.07
+            elif candidate == "insurance":
+                base += risk_score * 0.08
+            else:
+                base += knowledge_quality_score * 0.03
+
+            base += term_score * 0.30
+            base += routing_confidence_score * 0.08
+            base += signal_quality_score * 0.04
+
+            scores[candidate] = self._clamp(base)
+
+        max_score = max(scores.values()) if scores else 1.0
+        if max_score <= 0:
+            max_score = 1.0
+
+        normalized = {
+            key: round(self._clamp(value / max_score), 4)
+            for key, value in scores.items()
+        }
+
+        # Preserve a clear winner for the detected domain.
+        if domain in normalized:
+            normalized[domain] = max(normalized[domain], 1.0)
+
+        return dict(sorted(normalized.items(), key=lambda item: item[1], reverse=True))
+
+    def _clamp(self, value: float) -> float:
+        try:
+            return max(0.0, min(1.0, float(value)))
+        except Exception:
+            return 0.0
+
 
     def _safe_engine(self, failure_status: str, fn, fallback=None):
         try:

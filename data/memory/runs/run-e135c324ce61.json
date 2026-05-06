@@ -1,0 +1,178 @@
+{
+  "run_id": "run-e135c324ce61",
+  "intent_id": "intent-33239a72",
+  "mode": "hybrid",
+  "raw_input": "Analyze the emergence of AI-powered healthcare diagnostic platforms combining large language models with medical imaging and patient data. Identify whether this represents a viable investment opportunity, potential breakthrough, or acquisition target. Include risks, competitive landscape, and potential acquirers.",
+  "status": "error",
+  "decision_classification": null,
+  "breakthrough_classification": null,
+  "domain": null,
+  "created_at": "2026-05-05T09:36:43.032227+00:00",
+  "result": {
+    "run_id": "run-e135c324ce61",
+    "intent_id": "intent-33239a72",
+    "status": "error",
+    "message": "pipeline execution failed",
+    "error": "cannot access local variable 'domain_scores' where it is not associated with a value",
+    "executed_at": "2026-05-05T09:36:43.032227+00:00",
+    "validation": {
+      "status": "weak_evidence",
+      "confidence": 0.0,
+      "evidence_count": 0,
+      "evidence_strength": 0.0,
+      "validation_ready": false,
+      "audit_ready": false,
+      "missing_sections": [
+        "knowledge_ingestion",
+        "signal_extraction",
+        "market_gap",
+        "trend_discovery",
+        "thesis_formation",
+        "opportunity_discovery",
+        "breakthrough_synthesis",
+        "technical_feasibility",
+        "productization_path",
+        "trend_trajectory",
+        "market_formation",
+        "acquirer_matches",
+        "scores"
+      ],
+      "timestamp": "2026-05-05T09:36:43.032227+00:00"
+    },
+    "evidence_chain": [],
+    "proof": {
+      "status": "weak_proof",
+      "confidence": 0.135,
+      "audit_ready": false,
+      "validation_ready": false,
+      "proof_confidence": 0.135,
+      "summary": {
+        "plain_english": "Run run-e135c324ce61 produced a None decision with None breakthrough classification. Proof confidence is 0.135.",
+        "validation_status": "weak_evidence",
+        "validation_ready": false,
+        "audit_ready": false,
+        "evidence_sections": 0
+      }
+    },
+    "proof_package": {
+      "run_id": "run-e135c324ce61",
+      "domain": null,
+      "decision_classification": null,
+      "breakthrough_classification": null,
+      "proof_confidence": 0.135,
+      "proof_status": "weak_proof",
+      "audit_ready": false,
+      "validation_ready": false,
+      "evidence_count": 0,
+      "memory_path": null,
+      "summary": {
+        "plain_english": "Run run-e135c324ce61 produced a None decision with None breakthrough classification. Proof confidence is 0.135.",
+        "validation_status": "weak_evidence",
+        "validation_ready": false,
+        "audit_ready": false,
+        "evidence_sections": 0
+      },
+      "decision_support": {
+        "decision": null,
+        "breakthrough": null,
+        "domain": null,
+        "primary_scores": {
+          "confidence": null,
+          "portfolio_score": null,
+          "breakthrough_score": null,
+          "opportunity_score": null,
+          "acquisition_score": null,
+          "knowledge_quality_score": null,
+          "routing_confidence_score": null,
+          "evidence_signal_score": null
+        },
+        "acquirer_count": 0
+      },
+      "risk_register": [],
+      "evidence_gaps": [
+        {
+          "source_section": "validation",
+          "gap": "missing section: knowledge_ingestion",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: signal_extraction",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: market_gap",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: trend_discovery",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: thesis_formation",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: opportunity_discovery",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: breakthrough_synthesis",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: technical_feasibility",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: productization_path",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: trend_trajectory",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: market_formation",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: acquirer_matches",
+          "priority": "medium"
+        },
+        {
+          "source_section": "validation",
+          "gap": "missing section: scores",
+          "priority": "medium"
+        }
+      ],
+      "audit_trail": {
+        "run_id": "run-e135c324ce61",
+        "intent_id": "intent-33239a72",
+        "executed_at": "2026-05-05T09:36:43.032227+00:00",
+        "runtime_trace": {},
+        "validation_timestamp": "2026-05-05T09:36:43.032227+00:00",
+        "evidence_chain_count": 0,
+        "memory_status": null,
+        "memory_path": null
+      },
+      "recommended_binder_artifacts": [
+        "full_run_output_json",
+        "evidence_chain_json",
+        "proof_binder_summary",
+        "risk_register",
+        "validation_gap_report"
+      ]
+    }
+  }
+}
