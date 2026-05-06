@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Claire Syntalion Command Center</title>
+  <link rel="stylesheet" href="./modern_dashboard.css"/>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">C</div><div><b>Claire Syntalion</b><span>Operational Intelligence Command Center</span></div></div>
+    <nav id="nav"></nav>
+    <section class="guide-card"><b>Operator Rule</b><p>Missing dashboard data means Claire needs proof files, telemetry, labels, or replay evidence — not more feature sprawl.</p></section>
+  </aside>
+  <main>
+    <header>
+      <div><p class="eyebrow">Governance-first deployment scaling</p><h1 id="title">Executive Overview</h1></div>
+      <div class="actions"><button id="refresh">Refresh State</button><button id="help">Use Guide</button></div>
+    </header>
+    <section id="strip" class="strip"></section>
+    <section id="content" class="grid"></section>
+  </main>
+  <dialog id="guide">
+    <h2>Claire Dashboard Use Guide</h2>
+    <p>This command center is for operating Claire through the maturity phase: evidence accumulation, replay proof, governance controls, live activation gates, and package readiness.</p>
+    <ol>
+      <li>Launch Claire using the desktop launcher.</li>
+      <li>Use Executive Overview for decision, confidence, and weak spots.</li>
+      <li>Use Lifecycle Runtime to verify route, terminal state, and stage output.</li>
+      <li>Use Data Readiness to improve lineage, labels, rights, source coverage, and workflow telemetry.</li>
+      <li>Use Evidence Ops and Benchmarks before expanding live activation.</li>
+      <li>Use Governance Controls to block unsafe or unsupported escalation.</li>
+    </ol>
+    <button onclick="document.getElementById('guide').close()">Close</button>
+  </dialog>
+  <script src="./modern_dashboard.js"></script>
+</body>
+</html>

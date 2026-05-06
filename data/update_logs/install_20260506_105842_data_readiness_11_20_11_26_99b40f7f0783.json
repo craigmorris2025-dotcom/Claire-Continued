@@ -1,0 +1,174 @@
+{
+  "installer_version": "11.20-11.26",
+  "installer_title": "Claire Data Readiness Improvement Installer",
+  "installer_id": "99b40f7f0783",
+  "installer_date": "2026-05-06",
+  "install_timestamp": "2026-05-06T10:58:42.872766",
+  "target_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "phase_results": [
+    {
+      "phase": 1,
+      "name": "Data Readiness Core Contracts",
+      "version": "v11.20",
+      "folders_created": [
+        "src/claire/data_readiness",
+        "data/data_readiness/contracts",
+        "data/data_readiness/scorecards",
+        "data/data_readiness/gap_registry",
+        "data/data_readiness/readiness_reports"
+      ],
+      "files_created": [
+        "src/claire/data_readiness/__init__.py",
+        "src/claire/data_readiness/data_readiness_contract.py",
+        "src/claire/data_readiness/data_readiness_scorecard.py",
+        "src/claire/data_readiness/data_gap_registry.py",
+        "src/claire/data_readiness/readiness_report_builder.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 2,
+      "name": "Source Lineage and Provenance Expansion",
+      "version": "v11.21",
+      "folders_created": [
+        "src/claire/data_lineage",
+        "data/data_lineage/source_records",
+        "data/data_lineage/provenance",
+        "data/data_lineage/transformation_chains",
+        "data/data_lineage/citation_anchors",
+        "data/data_lineage/source_rights"
+      ],
+      "files_created": [
+        "src/claire/data_lineage/__init__.py",
+        "src/claire/data_lineage/source_record_builder.py",
+        "src/claire/data_lineage/provenance_tracker.py",
+        "src/claire/data_lineage/transformation_chain.py",
+        "src/claire/data_lineage/citation_anchor_registry.py",
+        "src/claire/data_lineage/source_rights_registry.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 3,
+      "name": "Outcome Label Foundation",
+      "version": "v11.22",
+      "folders_created": [
+        "src/claire/outcome_labels",
+        "data/outcome_labels/schemas",
+        "data/outcome_labels/label_queue",
+        "data/outcome_labels/adjudication",
+        "data/outcome_labels/coverage_reports",
+        "data/outcome_labels/benchmark_exports"
+      ],
+      "files_created": [
+        "src/claire/outcome_labels/__init__.py",
+        "src/claire/outcome_labels/outcome_label_schema.py",
+        "src/claire/outcome_labels/label_queue_manager.py",
+        "src/claire/outcome_labels/label_adjudicator.py",
+        "src/claire/outcome_labels/label_coverage_tracker.py",
+        "src/claire/outcome_labels/benchmark_label_exporter.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 4,
+      "name": "Workflow Telemetry Density",
+      "version": "v11.23",
+      "folders_created": [
+        "src/claire/workflow_telemetry",
+        "data/workflow_telemetry/event_schemas",
+        "data/workflow_telemetry/sessions",
+        "data/workflow_telemetry/operator_reviews",
+        "data/workflow_telemetry/adoption_evidence",
+        "data/workflow_telemetry/density_reports"
+      ],
+      "files_created": [
+        "src/claire/workflow_telemetry/__init__.py",
+        "src/claire/workflow_telemetry/workflow_event_schema.py",
+        "src/claire/workflow_telemetry/workflow_session_tracker.py",
+        "src/claire/workflow_telemetry/operator_review_capture.py",
+        "src/claire/workflow_telemetry/adoption_evidence_tracker.py",
+        "src/claire/workflow_telemetry/telemetry_density_scorer.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 5,
+      "name": "Historical Event and Benchmark Seed Layer",
+      "version": "v11.24",
+      "folders_created": [
+        "src/claire/historical_benchmarks",
+        "data/historical_benchmarks/events",
+        "data/historical_benchmarks/seed_sets",
+        "data/historical_benchmarks/curated_cases",
+        "data/historical_benchmarks/holdout_registry",
+        "data/historical_benchmarks/validation_examples"
+      ],
+      "files_created": [
+        "src/claire/historical_benchmarks/__init__.py",
+        "src/claire/historical_benchmarks/historical_event_record.py",
+        "src/claire/historical_benchmarks/benchmark_seed_builder.py",
+        "src/claire/historical_benchmarks/curated_case_manager.py",
+        "src/claire/historical_benchmarks/holdout_registry.py",
+        "src/claire/historical_benchmarks/validation_example_catalog.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 6,
+      "name": "Replay Depth and Data Quality Monitoring",
+      "version": "v11.25",
+      "folders_created": [
+        "src/claire/data_quality",
+        "data/data_quality/replay_depth",
+        "data/data_quality/quality_reports",
+        "data/data_quality/staleness_reports",
+        "data/data_quality/lineage_failures",
+        "data/data_quality/regression_checks"
+      ],
+      "files_created": [
+        "src/claire/data_quality/__init__.py",
+        "src/claire/data_quality/replay_depth_scorer.py",
+        "src/claire/data_quality/dataset_quality_monitor.py",
+        "src/claire/data_quality/stale_data_detector.py",
+        "src/claire/data_quality/missing_lineage_checker.py",
+        "src/claire/data_quality/data_readiness_regression.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 7,
+      "name": "Data Readiness Dashboard and Tests",
+      "version": "v11.26",
+      "folders_created": [
+        "src/frontend/command_center/data_readiness",
+        "tests/data_readiness"
+      ],
+      "files_created": [
+        "src/frontend/command_center/data_readiness/DataReadinessScorePanel.js",
+        "src/frontend/command_center/data_readiness/SourceLineagePanel.js",
+        "src/frontend/command_center/data_readiness/OutcomeLabelsPanel.js",
+        "src/frontend/command_center/data_readiness/WorkflowTelemetryPanel.js",
+        "src/frontend/command_center/data_readiness/HistoricalBenchmarksPanel.js",
+        "src/frontend/command_center/data_readiness/DataQualityPanel.js",
+        "tests/data_readiness/test_data_readiness_core.py",
+        "tests/data_readiness/test_data_lineage.py",
+        "tests/data_readiness/test_outcome_labels.py",
+        "tests/data_readiness/test_workflow_telemetry.py",
+        "tests/data_readiness/test_historical_benchmarks.py",
+        "tests/data_readiness/test_data_quality.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    }
+  ],
+  "total_files_created": 47,
+  "total_files_skipped": 0,
+  "total_errors": 0
+}

@@ -1,0 +1,27 @@
+{
+  "dashboard": "Claire Modern Command Center",
+  "version": "11.34-11.40",
+  "reads": [
+    "/api/dashboard/state",
+    "/output/core_run_output.json",
+    "/data/dashboard/state_snapshots/desktop_launcher_state.json",
+    "./core_run_output.json"
+  ],
+  "does_not_modify_runtime": true,
+  "does_not_modify_routing": true,
+  "does_not_modify_scoring": true,
+  "operator_surfaces": [
+    "overview",
+    "lifecycle",
+    "data_readiness",
+    "evidence_ops",
+    "live_activation",
+    "benchmarks",
+    "portfolio",
+    "design",
+    "packages",
+    "governance",
+    "telemetry",
+    "system"
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "installer_version": "11.14-11.19",
+  "installer_title": "Claire Controlled Live Intelligence Activation Installer",
+  "installer_id": "1274a88fccc2",
+  "installer_date": "2026-05-06",
+  "install_timestamp": "2026-05-06T10:39:41.099931",
+  "target_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "phase_results": [
+    {
+      "phase": 1,
+      "name": "Controlled Live Source Pilot",
+      "version": "v11.14",
+      "folders_created": [
+        "src/claire/live_activation",
+        "data/live_activation/source_pilots",
+        "data/live_activation/allowlists",
+        "data/live_activation/session_records",
+        "data/live_activation/activation_gates",
+        "data/live_activation/source_decisions"
+      ],
+      "files_created": [
+        "src/claire/live_activation/__init__.py",
+        "src/claire/live_activation/live_source_pilot.py",
+        "src/claire/live_activation/source_allowlist_policy.py",
+        "src/claire/live_activation/live_activation_gate.py",
+        "src/claire/live_activation/live_session_recorder.py",
+        "src/claire/live_activation/source_decision_log.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 2,
+      "name": "Workflow Instrumentation",
+      "version": "v11.15",
+      "folders_created": [
+        "src/claire/workflow_instrumentation",
+        "data/workflow_instrumentation/panel_events",
+        "data/workflow_instrumentation/review_events",
+        "data/workflow_instrumentation/adoption_signals",
+        "data/workflow_instrumentation/workflow_runs",
+        "data/workflow_instrumentation/user_paths"
+      ],
+      "files_created": [
+        "src/claire/workflow_instrumentation/__init__.py",
+        "src/claire/workflow_instrumentation/panel_event_tracker.py",
+        "src/claire/workflow_instrumentation/review_action_tracker.py",
+        "src/claire/workflow_instrumentation/adoption_signal_tracker.py",
+        "src/claire/workflow_instrumentation/workflow_run_logger.py",
+        "src/claire/workflow_instrumentation/user_path_mapper.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 3,
+      "name": "Outcome Labels and ROI Proof",
+      "version": "v11.16",
+      "folders_created": [
+        "src/claire/roi_proof",
+        "data/roi_proof/outcome_labels",
+        "data/roi_proof/baselines",
+        "data/roi_proof/impact_events",
+        "data/roi_proof/value_packets",
+        "data/roi_proof/pilot_scorecards"
+      ],
+      "files_created": [
+        "src/claire/roi_proof/__init__.py",
+        "src/claire/roi_proof/outcome_label_schema.py",
+        "src/claire/roi_proof/roi_baseline_builder.py",
+        "src/claire/roi_proof/impact_event_tracker.py",
+        "src/claire/roi_proof/value_proof_packet.py",
+        "src/claire/roi_proof/pilot_scorecard.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 4,
+      "name": "Live Replay and Drift Monitoring",
+      "version": "v11.17",
+      "folders_created": [
+        "src/claire/live_replay",
+        "data/live_replay/live_sessions",
+        "data/live_replay/replay_runs",
+        "data/live_replay/drift_reports",
+        "data/live_replay/source_drift",
+        "data/live_replay/output_drift"
+      ],
+      "files_created": [
+        "src/claire/live_replay/__init__.py",
+        "src/claire/live_replay/live_replay_session.py",
+        "src/claire/live_replay/evidence_drift_monitor.py",
+        "src/claire/live_replay/source_drift_detector.py",
+        "src/claire/live_replay/output_drift_analyzer.py",
+        "src/claire/live_replay/replay_validation_gate.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 5,
+      "name": "Live Benchmark Dataset Growth",
+      "version": "v11.18",
+      "folders_created": [
+        "src/claire/live_benchmarks",
+        "data/live_benchmarks/dataset_growth",
+        "data/live_benchmarks/label_accumulation",
+        "data/live_benchmarks/benchmark_packs",
+        "data/live_benchmarks/holdout_sets",
+        "data/live_benchmarks/readiness_scorecards"
+      ],
+      "files_created": [
+        "src/claire/live_benchmarks/__init__.py",
+        "src/claire/live_benchmarks/dataset_growth_planner.py",
+        "src/claire/live_benchmarks/label_accumulation_tracker.py",
+        "src/claire/live_benchmarks/benchmark_pack_builder.py",
+        "src/claire/live_benchmarks/holdout_set_manager.py",
+        "src/claire/live_benchmarks/benchmark_readiness_scorer.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 6,
+      "name": "Controlled Live Activation Dashboard and Tests",
+      "version": "v11.19",
+      "folders_created": [
+        "src/frontend/command_center/live_ops",
+        "tests/live_ops"
+      ],
+      "files_created": [
+        "src/frontend/command_center/live_ops/LiveSourcePilotPanel.js",
+        "src/frontend/command_center/live_ops/WorkflowInstrumentationPanel.js",
+        "src/frontend/command_center/live_ops/ROIProofPanel.js",
+        "src/frontend/command_center/live_ops/LiveReplayDriftPanel.js",
+        "src/frontend/command_center/live_ops/LiveBenchmarkGrowthPanel.js",
+        "tests/live_ops/test_live_source_pilot.py",
+        "tests/live_ops/test_workflow_instrumentation.py",
+        "tests/live_ops/test_roi_proof.py",
+        "tests/live_ops/test_live_replay_drift.py",
+        "tests/live_ops/test_live_benchmark_growth.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    }
+  ],
+  "total_files_created": 40,
+  "total_files_skipped": 0,
+  "total_errors": 0
+}

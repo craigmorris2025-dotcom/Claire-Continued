@@ -1,0 +1,100 @@
+{
+  "active_version": "{\n  \"current_version\": \"10.2.0\",\n  \"status\": \"installed\",\n  \"installed_at\": \"2026-05-06T05:00:41.410188+00:00\",\n  \"architecture_status\": \"LOCKED\",\n  \"base_version\": \"5.90.2\"\n}",
+  "claire_version_file": "{\n  \"current_version\": \"10.2.0\",\n  \"status\": \"installed\",\n  \"installed_at\": \"2026-05-06T05:00:41.410188+00:00\",\n  \"architecture_status\": \"LOCKED\",\n  \"base_version\": \"5.90.2\"\n}",
+  "contracts": {
+    "does_not_modify_core_run_output": true,
+    "does_not_modify_routing": true,
+    "does_not_modify_runtime": true,
+    "does_not_modify_scoring": true,
+    "purpose": "Connect desktop launcher to current version state and dashboard proof snapshots."
+  },
+  "installer_registry_present": true,
+  "latest_locked_version": "5.92.0",
+  "launcher": {
+    "desktop_launcher": "START_CLAIRE_DESKTOP.bat",
+    "launcher_version": "11.27-11.33",
+    "main_py_exists": true,
+    "portable_launcher_exists": true,
+    "preferred_target": "tools/portable_launcher.py --live --app"
+  },
+  "locked_versions": [
+    {
+      "path": "version_5_91_0_locked.json",
+      "version": "5.91.0"
+    },
+    {
+      "path": "version_5_92_0_locked.json",
+      "version": "5.92.0"
+    }
+  ],
+  "mode": "desktop_install_check",
+  "recent_preflight_reports": [
+    {
+      "modified_utc": "2026-05-05T11:31:57.112539+00:00",
+      "name": "6.0.0_preflight_20260505_063157.json",
+      "path": ".claire_install\\reports\\6.0.0_preflight_20260505_063157.json"
+    },
+    {
+      "modified_utc": "2026-05-05T11:28:04.427959+00:00",
+      "name": "6.0.0_preflight_20260505_062804.json",
+      "path": ".claire_install\\reports\\6.0.0_preflight_20260505_062804.json"
+    },
+    {
+      "modified_utc": "2026-05-05T11:25:54.433376+00:00",
+      "name": "6.0.0_preflight_20260505_062554.json",
+      "path": ".claire_install\\reports\\6.0.0_preflight_20260505_062554.json"
+    },
+    {
+      "modified_utc": "2026-05-05T10:56:51.296792+00:00",
+      "name": "6.0.0_preflight_20260505_055651.json",
+      "path": ".claire_install\\reports\\6.0.0_preflight_20260505_055651.json"
+    },
+    {
+      "modified_utc": "2026-05-05T10:49:51.457705+00:00",
+      "name": "6.0.0_preflight_20260505_054951.json",
+      "path": ".claire_install\\reports\\6.0.0_preflight_20260505_054951.json"
+    },
+    {
+      "modified_utc": "2026-05-05T08:27:08.569383+00:00",
+      "name": "5.99.0_preflight_20260505_032708.json",
+      "path": ".claire_install\\reports\\5.99.0_preflight_20260505_032708.json"
+    },
+    {
+      "modified_utc": "2026-05-05T08:25:46.748194+00:00",
+      "name": "5.99.0_preflight_20260505_032546.json",
+      "path": ".claire_install\\reports\\5.99.0_preflight_20260505_032546.json"
+    },
+    {
+      "modified_utc": "2026-05-05T08:23:30.801149+00:00",
+      "name": "5.98.0_preflight_20260505_032330.json",
+      "path": ".claire_install\\reports\\5.98.0_preflight_20260505_032330.json"
+    },
+    {
+      "modified_utc": "2026-05-05T08:22:11.766355+00:00",
+      "name": "5.98.0_preflight_20260505_032211.json",
+      "path": ".claire_install\\reports\\5.98.0_preflight_20260505_032211.json"
+    },
+    {
+      "modified_utc": "2026-05-05T08:19:38.628058+00:00",
+      "name": "5.97.0_preflight_20260505_031938.json",
+      "path": ".claire_install\\reports\\5.97.0_preflight_20260505_031938.json"
+    },
+    {
+      "modified_utc": "2026-05-05T08:16:50.801268+00:00",
+      "name": "5.97.0_preflight_20260505_031650.json",
+      "path": ".claire_install\\reports\\5.97.0_preflight_20260505_031650.json"
+    },
+    {
+      "modified_utc": "2026-05-05T08:16:05.940312+00:00",
+      "name": "5.97.0_preflight_20260505_031605.json",
+      "path": ".claire_install\\reports\\5.97.0_preflight_20260505_031605.json"
+    }
+  ],
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "status": "success",
+  "synced_at_utc": "2026-05-06T16:33:03.647512+00:00",
+  "version_json": {
+    "_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version.json",
+    "_read_error": "Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)"
+  }
+}

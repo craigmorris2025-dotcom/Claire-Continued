@@ -1,0 +1,165 @@
+{
+  "installer": "claire_v10.3.9-10.4.4_installer",
+  "installer_id": "5e74b22a3397",
+  "installer_version": "10.3.9-10.4.4",
+  "installer_date": "2026-05-06",
+  "installed_at": "2026-05-06T09:38:57.611704",
+  "target": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Production Readiness",
+      "version": "v10.3.9",
+      "folders_created": [
+        "src/claire/production",
+        "data/production",
+        "data/production/readiness_reports",
+        "data/production/health_snapshots",
+        "data/production/backup_reports",
+        "data/production/recovery_drills"
+      ],
+      "files_created": [
+        "src/claire/production/__init__.py",
+        "src/claire/production/deployment_readiness_checker.py",
+        "src/claire/production/environment_validator.py",
+        "src/claire/production/service_health_contract.py",
+        "src/claire/production/uptime_monitor.py",
+        "src/claire/production/security_readiness.py",
+        "src/claire/production/backup_policy.py",
+        "src/claire/production/recovery_drill.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 2,
+      "name": "Enterprise UI Completion",
+      "version": "v10.4.0",
+      "folders_created": [
+        "src/frontend/enterprise"
+      ],
+      "files_created": [
+        "src/frontend/enterprise/EnterpriseShell.js",
+        "src/frontend/enterprise/EvidenceWorkbench.js",
+        "src/frontend/enterprise/BenchmarkWorkbench.js",
+        "src/frontend/enterprise/RecursiveMemoryView.js",
+        "src/frontend/enterprise/ProductionReadinessView.js",
+        "src/frontend/enterprise/AutonomyGovernanceView.js",
+        "src/frontend/enterprise/MarketValidationView.js",
+        "src/frontend/enterprise/CompletionCommandCenter.js"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 3,
+      "name": "Market / Buyer Validation",
+      "version": "v10.4.1",
+      "folders_created": [
+        "src/claire/market_validation",
+        "data/market_validation",
+        "data/market_validation/buyer_signals",
+        "data/market_validation/interview_evidence",
+        "data/market_validation/workflow_adoption",
+        "data/market_validation/roi_models",
+        "data/market_validation/pricing_signals"
+      ],
+      "files_created": [
+        "src/claire/market_validation/__init__.py",
+        "src/claire/market_validation/buyer_signal_tracker.py",
+        "src/claire/market_validation/interview_evidence_model.py",
+        "src/claire/market_validation/workflow_adoption_tracker.py",
+        "src/claire/market_validation/roi_validation_engine.py",
+        "src/claire/market_validation/pricing_signal_analyzer.py",
+        "src/claire/market_validation/validation_readiness_scorer.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 4,
+      "name": "Final Proof / Completion Binder",
+      "version": "v10.4.2",
+      "folders_created": [
+        "src/claire/completion",
+        "data/completion",
+        "data/completion/scorecards",
+        "data/completion/maturity_reports",
+        "data/completion/closure_checks",
+        "data/completion/final_binders",
+        "data/completion/completion_reports"
+      ],
+      "files_created": [
+        "src/claire/completion/__init__.py",
+        "src/claire/completion/completion_contract.py",
+        "src/claire/completion/completion_scorecard.py",
+        "src/claire/completion/capability_closure_checker.py",
+        "src/claire/completion/maturity_gap_analyzer.py",
+        "src/claire/completion/final_proof_binder.py",
+        "src/claire/completion/v10_completion_reporter.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 5,
+      "name": "Final Regression + E2E Tests",
+      "version": "v10.4.3",
+      "folders_created": [
+        "tests/e2e",
+        "tests/regression"
+      ],
+      "files_created": [
+        "tests/e2e/test_live_research_ingestion.py",
+        "tests/e2e/test_benchmark_backtest_flow.py",
+        "tests/e2e/test_recursive_learning_flow.py",
+        "tests/e2e/test_market_validation_flow.py",
+        "tests/e2e/test_production_readiness.py",
+        "tests/e2e/test_autonomy_governance.py",
+        "tests/e2e/test_full_completion_run.py",
+        "tests/e2e/test_export_completion_binder.py",
+        "tests/regression/test_no_verified_capability_loss.py",
+        "tests/regression/test_update_rollback_proof.py",
+        "tests/regression/test_final_v10_completion_contract.py",
+        "tests/regression/test_runtime_contract_stability.py",
+        "tests/regression/test_dashboard_contract_stability.py",
+        "tests/regression/test_api_unified_routes.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 6,
+      "name": "Online Deployment Governance",
+      "version": "v10.4.4",
+      "folders_created": [
+        "src/claire/online",
+        "data/online",
+        "data/online/sessions",
+        "data/online/connector_approvals",
+        "data/online/risk_reports",
+        "data/online/online_research_logs",
+        "data/online/update_sessions"
+      ],
+      "files_created": [
+        "src/claire/online/__init__.py",
+        "src/claire/online/online_mode_policy.py",
+        "src/claire/online/connector_activation_gate.py",
+        "src/claire/online/external_network_guard.py",
+        "src/claire/online/online_research_session.py",
+        "src/claire/online/online_update_session.py",
+        "src/claire/online/online_risk_monitor.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    }
+  ],
+  "totals": {
+    "phases_installed": 6,
+    "total_folders": 30,
+    "total_files_created": 51,
+    "total_files_skipped": 0,
+    "total_errors": 0
+  },
+  "manifest_sha256": "891db2aa4200c8c71999c03440e1ae2a8c2fe92c6bb31bbd62feaf1de47bd27a"
+}

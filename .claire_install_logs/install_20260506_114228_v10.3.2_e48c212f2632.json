@@ -1,0 +1,230 @@
+{
+  "installer_version": "10.3.2",
+  "installer_id": "e48c212f2632",
+  "installer_date": "2026-05-06",
+  "target": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "started_at": "2026-05-06T11:42:28.907141",
+  "completed_at": "2026-05-06T11:42:28.962537",
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Runtime Contract Layer",
+      "files_written": 8,
+      "files_skipped": 0,
+      "files_failed": 0,
+      "folders_created": 1
+    },
+    {
+      "phase": 2,
+      "name": "Frontend Unification Layer",
+      "files_written": 9,
+      "files_skipped": 15,
+      "files_failed": 0,
+      "folders_created": 0
+    },
+    {
+      "phase": 3,
+      "name": "API Unification Layer",
+      "files_written": 0,
+      "files_skipped": 6,
+      "files_failed": 0,
+      "folders_created": 0
+    }
+  ],
+  "files_written": 17,
+  "files_skipped": 21,
+  "files_failed": 0,
+  "folders_created": 1,
+  "verification": {
+    "src/claire/runtime_contracts/__init__.py": {
+      "sha256": "4f4cd7ac830b6af65766a09acfd70d1e840655afd180aa0ae6bc9176de720b27",
+      "size": 1102,
+      "verified": true
+    },
+    "src/claire/runtime_contracts/core_run_contract.py": {
+      "sha256": "8cad6d473d8b3f243e7d6c06fcdbda2e520283ed947ecb5277afdea203f86b34",
+      "size": 7137,
+      "verified": true
+    },
+    "src/claire/runtime_contracts/lifecycle_output_contract.py": {
+      "sha256": "f780e17afd2545ed019537aceb73a0fb302bdfc2c2d2a77b5ba82d409c18a6e4",
+      "size": 6103,
+      "verified": true
+    },
+    "src/claire/runtime_contracts/route_contract.py": {
+      "sha256": "a8126a517a5217d3b77c056fcc8f55f4108f13a5acf8d16e387010d6cd1466b9",
+      "size": 6736,
+      "verified": true
+    },
+    "src/claire/runtime_contracts/dashboard_contract.py": {
+      "sha256": "f66c235b803b1e298f41a8a1f29d6a5a3f76e434a28b7c219e607f93c734afe7",
+      "size": 8174,
+      "verified": true
+    },
+    "src/claire/runtime_contracts/export_contract.py": {
+      "sha256": "b84c00c25304dc1be73e7e121ba4d733b5e5b7e90b84301cc39a19c976db7b89",
+      "size": 6104,
+      "verified": true
+    },
+    "src/claire/runtime_contracts/proof_contract.py": {
+      "sha256": "e647228ff99affab7601569671a6f94fe971905bc33283011b2528ded9b521bd",
+      "size": 5817,
+      "verified": true
+    },
+    "src/claire/runtime_contracts/contract_validator.py": {
+      "sha256": "fcff0ff1d6e6ac8a9745564b4c1753ec6ddcdb80307e754d7d0e6bbc8d5889ff",
+      "size": 7783,
+      "verified": true
+    },
+    "src/frontend/unified/master_shell.js": {
+      "sha256": "4fb149c2936c81e34010a49672ada2007290a3d07cc3417e35a301e964669693",
+      "size": 1067,
+      "verified": true
+    },
+    "src/frontend/unified/master_shell.css": {
+      "sha256": "e221da00cc795a3b8d363d21086d6431d984c7a89fbd9dea759ebd05d34a04d3",
+      "size": 869,
+      "verified": true
+    },
+    "src/frontend/unified/state/state_manager.js": {
+      "sha256": "197dc4e504f57c7cc4786f0329334482d450e02d47f6cd6189818abd84cfa655",
+      "size": 941,
+      "verified": true
+    },
+    "src/frontend/unified/state/api_client.js": {
+      "sha256": "6d0d5c7b161a7d2177d24c51dbc82a969511ba6e6f65786c35735ae39b598f2b",
+      "size": 932,
+      "verified": true
+    },
+    "src/frontend/unified/state/event_bus.js": {
+      "sha256": "95f39f417751c697b96466176b2157e34ae706d9fc4b2ecaafa8b301fa9d7a65",
+      "size": 830,
+      "verified": true
+    },
+    "src/frontend/unified/panels/run_panel.js": {
+      "sha256": "b76d18ba383f28b070932997a707db5363bf172480816b758289e14888941f06",
+      "size": 963,
+      "verified": true
+    },
+    "src/frontend/unified/panels/lifecycle_panel.js": {
+      "sha256": "c409141ff61a23e9a2ebd7ae49a064a999bdadb22c9ca9319324008d44576861",
+      "size": 4305,
+      "verified": true
+    },
+    "src/frontend/unified/panels/research_panel.js": {
+      "sha256": "3c3c587b8f14338604cf8ea800ad73ad9e68ea549f7374d97d8edaa06e170a61",
+      "size": 2750,
+      "verified": true
+    },
+    "src/frontend/unified/panels/discover_panel.js": {
+      "sha256": "adc97a64f60525eeb8a3e2d920e4c1136dcc40c8f3c775ee57de972a4bc1a693",
+      "size": 2650,
+      "verified": true
+    },
+    "src/frontend/unified/panels/trend_panel.js": {
+      "sha256": "fc59ee952d029eb66a32469c2568fe6eeed9745404b2ba83a93888fe8df58ad4",
+      "size": 2495,
+      "verified": true
+    },
+    "src/frontend/unified/panels/portfolio_panel.js": {
+      "sha256": "a40bcae8d1e816abb8bb375d7694e0d67dc05a62042f2cfc138ef417afd87a28",
+      "size": 909,
+      "verified": true
+    },
+    "src/frontend/unified/panels/breakthrough_panel.js": {
+      "sha256": "94aa80eb452eea694682b70d8bb37f1402b4ca127137027f0a118251c0825ba6",
+      "size": 973,
+      "verified": true
+    },
+    "src/frontend/unified/panels/design_panel.js": {
+      "sha256": "bf4b2a7f34c08014b5f38e7a84e40a90861b13faa53242273ecfa9e93a4b1f8f",
+      "size": 963,
+      "verified": true
+    },
+    "src/frontend/unified/panels/technology_panel.js": {
+      "sha256": "b3672d23b74d980ef7c3e6710981805b0e134642a47c7e3bd71145f650111ae1",
+      "size": 2979,
+      "verified": true
+    },
+    "src/frontend/unified/panels/packages_panel.js": {
+      "sha256": "9f7fd58189fcd0c0bdbe5b2818279bdd644b241c9185194f730b861513f51d0b",
+      "size": 4339,
+      "verified": true
+    },
+    "src/frontend/unified/panels/monitor_panel.js": {
+      "sha256": "a7de1057412fd655dd18079e8c73ee232866266370127dcb68bafeb3ab061517",
+      "size": 4606,
+      "verified": true
+    },
+    "src/frontend/unified/panels/system_panel.js": {
+      "sha256": "d884f3abd6a6bdd48eec381f24af55ad082cfca5c35b5d95d8997286697ef522",
+      "size": 926,
+      "verified": true
+    },
+    "src/frontend/unified/widgets/score_badge.js": {
+      "sha256": "4713f20ae4390a7e736e9861fe4e32544a9ea9e7612c66f1b03780853fc41888",
+      "size": 882,
+      "verified": true
+    },
+    "src/frontend/unified/widgets/radar_chart.js": {
+      "sha256": "6d0240990bae876a3434e29cb72770df824481b318a0185226ecf2595bf40879",
+      "size": 891,
+      "verified": true
+    },
+    "src/frontend/unified/widgets/engine_accordion.js": {
+      "sha256": "dc057121f901f2806ba02b07988993d64c2e05ffbf60117263ad640dd01e9ecd",
+      "size": 902,
+      "verified": true
+    },
+    "src/frontend/unified/widgets/acquirer_card.js": {
+      "sha256": "90dadfcd5d5a89c36dc1a29e89ad3f94090c6e0fdd9abf4277640a020a5ba26e",
+      "size": 894,
+      "verified": true
+    },
+    "src/frontend/unified/widgets/evidence_card.js": {
+      "sha256": "7554bea71a377d1a9185fce79b4b548a445d2e864222778c99f950f3867a8cf3",
+      "size": 1798,
+      "verified": true
+    },
+    "src/frontend/unified/widgets/lifecycle_stage_card.js": {
+      "sha256": "0f0080b99762b861506a861fde1cb6e165b822bc762fbb43305187181745589d",
+      "size": 2295,
+      "verified": true
+    },
+    "src/frontend/unified/widgets/export_browser.js": {
+      "sha256": "d39fc8356b28462a9256467fa764cfec67723b0c7a7d600371241eb78acfdfe0",
+      "size": 880,
+      "verified": true
+    },
+    "src/claire/api/unified/__init__.py": {
+      "sha256": "5b115ea04100671c8ff66773d31b610e9225e658113b1b0a543477b7a7634123",
+      "size": 79,
+      "verified": true
+    },
+    "src/claire/api/unified/router.py": {
+      "sha256": "fd8e14450a05db7c928d7fc46f0fe8be681dec359ffed324fa9c368dace86089",
+      "size": 1530,
+      "verified": true
+    },
+    "src/claire/api/unified/middleware.py": {
+      "sha256": "4350b63d73cd6e3eabb116ecfa8e580e131f4d1fb39dd12528a692b8da96dccf",
+      "size": 1340,
+      "verified": true
+    },
+    "src/claire/api/unified/lifecycle_routes.py": {
+      "sha256": "e5e48a341e3c82f7f8c976ebb8db5faa700287c32660f2bcc73a505cbd509dac",
+      "size": 1382,
+      "verified": true
+    },
+    "src/claire/api/unified/intelligence_routes.py": {
+      "sha256": "feb12f5f86e0d2ed468dddac411a646fcc769c6f9eace9e9b7d3fe48cd829e72",
+      "size": 1417,
+      "verified": true
+    },
+    "src/claire/api/unified/platform_routes.py": {
+      "sha256": "35bc01456d128e6ce4b4fb79128886d5fd5e7ec7c363bc8ae8bcffee5115fd30",
+      "size": 1357,
+      "verified": true
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "installer_version": "11.1-11.7",
+  "installer_title": "Claire Maturity Gap Closure Installer",
+  "installer_id": "7a5c20d7d20c",
+  "installer_date": "2026-05-06",
+  "install_timestamp": "2026-05-06T09:56:46.766483",
+  "target_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "phase_results": [
+    {
+      "phase": 1,
+      "name": "Productization Logic Strengthening",
+      "version": "v11.1",
+      "folders_created": [
+        "src/claire/productization",
+        "data/productization/package_plans",
+        "data/productization/pilot_gates",
+        "data/productization/pricing_models",
+        "data/productization/gtm_readiness",
+        "data/productization/workflow_maps"
+      ],
+      "files_created": [
+        "src/claire/productization/__init__.py",
+        "src/claire/productization/package_strategy_engine.py",
+        "src/claire/productization/pilot_gate_manager.py",
+        "src/claire/productization/pricing_model_builder.py",
+        "src/claire/productization/gtm_readiness_engine.py",
+        "src/claire/productization/workflow_wedge_mapper.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 2,
+      "name": "Technical Feasibility Hardening",
+      "version": "v11.2",
+      "folders_created": [
+        "src/claire/feasibility",
+        "data/feasibility/prototype_harnesses",
+        "data/feasibility/blocker_burndown",
+        "data/feasibility/dependency_proofs",
+        "data/feasibility/control_validation",
+        "data/feasibility/feasibility_scorecards"
+      ],
+      "files_created": [
+        "src/claire/feasibility/__init__.py",
+        "src/claire/feasibility/prototype_harness_builder.py",
+        "src/claire/feasibility/blocker_burndown_tracker.py",
+        "src/claire/feasibility/dependency_proof_engine.py",
+        "src/claire/feasibility/control_validation_engine.py",
+        "src/claire/feasibility/feasibility_scorecard.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 3,
+      "name": "Data Readiness and Live Data Activation",
+      "version": "v11.3",
+      "folders_created": [
+        "src/claire/live_data",
+        "data/live_data/source_registry",
+        "data/live_data/connector_approvals",
+        "data/live_data/raw_snapshots",
+        "data/live_data/normalized_snapshots",
+        "data/live_data/ingestion_contracts",
+        "data/live_data/cache",
+        "data/live_data/replay"
+      ],
+      "files_created": [
+        "src/claire/live_data/__init__.py",
+        "src/claire/live_data/source_registry.py",
+        "src/claire/live_data/connector_approval_gate.py",
+        "src/claire/live_data/live_ingestion_contract.py",
+        "src/claire/live_data/live_snapshot_writer.py",
+        "src/claire/live_data/live_normalizer.py",
+        "src/claire/live_data/deterministic_cache.py",
+        "src/claire/live_data/live_replay_engine.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 4,
+      "name": "Recursive Intelligence Strengthening",
+      "version": "v11.4",
+      "folders_created": [
+        "src/claire/recursive_intelligence",
+        "data/recursive_intelligence/cross_run_memory",
+        "data/recursive_intelligence/quality_deltas",
+        "data/recursive_intelligence/recurring_blockers",
+        "data/recursive_intelligence/thesis_compounding",
+        "data/recursive_intelligence/improvement_plans"
+      ],
+      "files_created": [
+        "src/claire/recursive_intelligence/__init__.py",
+        "src/claire/recursive_intelligence/cross_run_memory_index.py",
+        "src/claire/recursive_intelligence/quality_delta_tracker.py",
+        "src/claire/recursive_intelligence/recurring_blocker_miner.py",
+        "src/claire/recursive_intelligence/thesis_compounding_engine.py",
+        "src/claire/recursive_intelligence/recursive_improvement_planner.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 5,
+      "name": "Production and Enterprise Readiness Upgrade",
+      "version": "v11.5",
+      "folders_created": [
+        "src/claire/enterprise_readiness",
+        "data/enterprise_readiness/deployment_gates",
+        "data/enterprise_readiness/service_contracts",
+        "data/enterprise_readiness/support_models",
+        "data/enterprise_readiness/externalization_plans",
+        "data/enterprise_readiness/readiness_scorecards"
+      ],
+      "files_created": [
+        "src/claire/enterprise_readiness/__init__.py",
+        "src/claire/enterprise_readiness/deployment_gate_engine.py",
+        "src/claire/enterprise_readiness/service_contract_builder.py",
+        "src/claire/enterprise_readiness/support_model_planner.py",
+        "src/claire/enterprise_readiness/externalization_readiness_planner.py",
+        "src/claire/enterprise_readiness/enterprise_readiness_scorecard.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 6,
+      "name": "Recursive Transformation / AGI-Style Maturity Scaffold",
+      "version": "v11.6",
+      "folders_created": [
+        "src/claire/recursive_transformation",
+        "data/recursive_transformation/self_ingestion_reviews",
+        "data/recursive_transformation/transformation_readiness",
+        "data/recursive_transformation/autonomy_ceilings",
+        "data/recursive_transformation/human_review",
+        "data/recursive_transformation/safety_cases"
+      ],
+      "files_created": [
+        "src/claire/recursive_transformation/__init__.py",
+        "src/claire/recursive_transformation/self_ingestion_review_gate.py",
+        "src/claire/recursive_transformation/transformation_readiness_scorer.py",
+        "src/claire/recursive_transformation/autonomy_ceiling_policy.py",
+        "src/claire/recursive_transformation/transformation_human_review_gate.py",
+        "src/claire/recursive_transformation/recursive_safety_case_builder.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 7,
+      "name": "Maturity Gap Dashboard Panels and Tests",
+      "version": "v11.7",
+      "folders_created": [
+        "src/frontend/command_center/maturity",
+        "tests/maturity"
+      ],
+      "files_created": [
+        "src/frontend/command_center/maturity/ProductizationMaturityPanel.js",
+        "src/frontend/command_center/maturity/FeasibilityMaturityPanel.js",
+        "src/frontend/command_center/maturity/LiveDataMaturityPanel.js",
+        "src/frontend/command_center/maturity/RecursiveIntelligencePanel.js",
+        "src/frontend/command_center/maturity/EnterpriseReadinessPanel.js",
+        "src/frontend/command_center/maturity/RecursiveTransformationPanel.js",
+        "tests/maturity/test_productization_strengthening.py",
+        "tests/maturity/test_feasibility_hardening.py",
+        "tests/maturity/test_live_data_readiness.py",
+        "tests/maturity/test_recursive_intelligence.py",
+        "tests/maturity/test_enterprise_readiness.py",
+        "tests/maturity/test_recursive_transformation_scaffold.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    }
+  ],
+  "total_files_created": 50,
+  "total_files_skipped": 0,
+  "total_errors": 0
+}

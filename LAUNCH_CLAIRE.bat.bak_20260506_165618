@@ -1,0 +1,76 @@
+@echo off
+setlocal EnableExtensions
+
+REM ============================================================
+REM Claire Root Launcher
+REM File: LAUNCH_CLAIRE.bat
+REM Purpose:
+REM   One clean launcher from the Claire project root.
+REM   Safe replacement for older START_CLAIRE*.bat launcher clutter.
+REM ============================================================
+
+cd /d "%~dp0"
+
+set "CLAIRE_ROOT=%~dp0"
+set "CLAIRE_APP_SHELL=1"
+set "CLAIRE_LAUNCH_MODE=desktop_root"
+set "CLAIRE_DASHBOARD_PATH=src\frontend\command_center\modern\index.html"
+set "CLAIRE_LOG_DIR=logs"
+
+if not exist "%CLAIRE_LOG_DIR%" mkdir "%CLAIRE_LOG_DIR%"
+
+echo.
+echo ============================================================
+echo Claire Syntalion - Root Launcher
+echo Root: %CLAIRE_ROOT%
+echo ============================================================
+echo.
+
+if exist ".venv\Scripts\python.exe" (
+    set "CLAIRE_PYTHON=.venv\Scripts\python.exe"
+) else (
+    set "CLAIRE_PYTHON=python"
+)
+
+echo Using Python: %CLAIRE_PYTHON%
+echo.
+
+REM Optional version/dashboard sync helper.
+if exist "tools\desktop_version_sync.py" (
+    echo Syncing desktop/version state...
+    "%CLAIRE_PYTHON%" "tools\desktop_version_sync.py" --root "%CLAIRE_ROOT%" --mode desktop_root > "%CLAIRE_LOG_DIR%\desktop_version_sync.out.log" 2> "%CLAIRE_LOG_DIR%\desktop_version_sync.err.log"
+)
+
+REM Prefer the known working portable launcher route.
+if exist "tools\portable_launcher.py" (
+    echo Starting Claire through tools\portable_launcher.py --live --app
+    echo.
+    start "" "%CLAIRE_DASHBOARD_PATH%"
+    "%CLAIRE_PYTHON%" "tools\portable_launcher.py" --live --app
+    goto :done
+)
+
+REM Fallback to main.py if portable launcher is unavailable.
+if exist "main.py" (
+    echo Starting Claire through main.py fallback...
+    echo.
+    start "" "%CLAIRE_DASHBOARD_PATH%"
+    "%CLAIRE_PYTHON%" "main.py"
+    goto :done
+)
+
+echo.
+echo [Claire Launcher Error]
+echo Could not find:
+echo   tools\portable_launcher.py
+echo   main.py
+echo.
+echo This launcher must be inside the Claire project root:
+echo   C:\Users\Craig\OneDrive\Desktop\Claire
+echo.
+pause
+
+:done
+echo.
+echo Claire launcher closed.
+endlocal

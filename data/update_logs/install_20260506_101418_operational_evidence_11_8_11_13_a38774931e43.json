@@ -1,0 +1,158 @@
+{
+  "installer_version": "11.8-11.13",
+  "installer_title": "Claire Operational Evidence Infrastructure Installer",
+  "installer_id": "a38774931e43",
+  "installer_date": "2026-05-06",
+  "install_timestamp": "2026-05-06T10:14:18.356936",
+  "target_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "phase_results": [
+    {
+      "phase": 1,
+      "name": "Operational Evidence Core",
+      "version": "v11.8",
+      "folders_created": [
+        "src/claire/operational_evidence",
+        "data/operational_evidence/events",
+        "data/operational_evidence/packets",
+        "data/operational_evidence/lineage",
+        "data/operational_evidence/contracts",
+        "data/operational_evidence/indexes"
+      ],
+      "files_created": [
+        "src/claire/operational_evidence/__init__.py",
+        "src/claire/operational_evidence/evidence_event.py",
+        "src/claire/operational_evidence/evidence_packet.py",
+        "src/claire/operational_evidence/evidence_store.py",
+        "src/claire/operational_evidence/evidence_contract.py",
+        "src/claire/operational_evidence/lineage_record.py",
+        "src/claire/operational_evidence/evidence_indexer.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 2,
+      "name": "Governed Ingestion Pipeline",
+      "version": "v11.9",
+      "folders_created": [
+        "src/claire/ingestion",
+        "data/ingestion/inbox",
+        "data/ingestion/normalized",
+        "data/ingestion/quarantine",
+        "data/ingestion/approvals",
+        "data/ingestion/dedup",
+        "data/ingestion/audit"
+      ],
+      "files_created": [
+        "src/claire/ingestion/ingestion_queue.py",
+        "src/claire/ingestion/source_intake.py",
+        "src/claire/ingestion/normalization_pipeline.py",
+        "src/claire/ingestion/deduplication_engine.py",
+        "src/claire/ingestion/quarantine_manager.py",
+        "src/claire/ingestion/ingestion_approval_gate.py",
+        "src/claire/ingestion/ingestion_audit_logger.py"
+      ],
+      "files_skipped": [
+        "src/claire/ingestion/__init__.py"
+      ],
+      "errors": []
+    },
+    {
+      "phase": 3,
+      "name": "Source Trust and Citation Infrastructure",
+      "version": "v11.10",
+      "folders_created": [
+        "src/claire/source_trust",
+        "data/source_trust/registry",
+        "data/source_trust/scores",
+        "data/source_trust/citations",
+        "data/source_trust/conflicts",
+        "data/source_trust/audits"
+      ],
+      "files_created": [
+        "src/claire/source_trust/__init__.py",
+        "src/claire/source_trust/source_reliability_registry.py",
+        "src/claire/source_trust/source_trust_scorer.py",
+        "src/claire/source_trust/citation_extractor.py",
+        "src/claire/source_trust/conflict_tracker.py",
+        "src/claire/source_trust/source_audit_reporter.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 4,
+      "name": "Operational Telemetry and Feedback Loops",
+      "version": "v11.11",
+      "folders_created": [
+        "src/claire/telemetry",
+        "data/telemetry/runtime_events",
+        "data/telemetry/workflow_events",
+        "data/telemetry/user_feedback",
+        "data/telemetry/outcome_labels",
+        "data/telemetry/feedback_loops"
+      ],
+      "files_created": [
+        "src/claire/telemetry/__init__.py",
+        "src/claire/telemetry/runtime_event_logger.py",
+        "src/claire/telemetry/workflow_event_logger.py",
+        "src/claire/telemetry/user_feedback_collector.py",
+        "src/claire/telemetry/outcome_label_manager.py",
+        "src/claire/telemetry/feedback_loop_bridge.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 5,
+      "name": "Replayable Evidence and Benchmark Dataset Layer",
+      "version": "v11.12",
+      "folders_created": [
+        "src/claire/evidence_replay",
+        "data/evidence_replay/sessions",
+        "data/evidence_replay/snapshots",
+        "data/evidence_replay/comparisons",
+        "data/evidence_replay/regression_packs",
+        "data/benchmark_datasets/manifests",
+        "data/benchmark_datasets/datasets"
+      ],
+      "files_created": [
+        "src/claire/evidence_replay/__init__.py",
+        "src/claire/evidence_replay/evidence_snapshotter.py",
+        "src/claire/evidence_replay/replay_session_manager.py",
+        "src/claire/evidence_replay/replay_comparator.py",
+        "src/claire/evidence_replay/benchmark_dataset_builder.py",
+        "src/claire/evidence_replay/benchmark_manifest.py",
+        "src/claire/evidence_replay/regression_evidence_pack.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 6,
+      "name": "Operational Evidence Dashboard Surfaces",
+      "version": "v11.13",
+      "folders_created": [
+        "src/frontend/command_center/evidence_ops",
+        "tests/evidence_ops"
+      ],
+      "files_created": [
+        "src/frontend/command_center/evidence_ops/EvidencePacketPanel.js",
+        "src/frontend/command_center/evidence_ops/IngestionPipelinePanel.js",
+        "src/frontend/command_center/evidence_ops/SourceTrustPanel.js",
+        "src/frontend/command_center/evidence_ops/TelemetryPanel.js",
+        "src/frontend/command_center/evidence_ops/ReplayBenchmarkPanel.js",
+        "tests/evidence_ops/test_operational_evidence_core.py",
+        "tests/evidence_ops/test_governed_ingestion.py",
+        "tests/evidence_ops/test_source_trust.py",
+        "tests/evidence_ops/test_telemetry_feedback.py",
+        "tests/evidence_ops/test_evidence_replay.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    }
+  ],
+  "total_files_created": 43,
+  "total_files_skipped": 1,
+  "total_errors": 0
+}

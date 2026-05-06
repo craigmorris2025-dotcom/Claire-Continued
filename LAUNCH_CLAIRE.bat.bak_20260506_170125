@@ -1,0 +1,68 @@
+@echo off
+setlocal EnableExtensions
+
+REM ============================================================
+REM Claire Modern Root Launcher
+REM File: LAUNCH_CLAIRE.bat
+REM Purpose:
+REM   One clean root launcher.
+REM   Opens the modern dashboard only.
+REM   Does NOT call tools\portable_launcher.py --live --app because that can
+REM   open the old dashboard shell.
+REM ============================================================
+
+cd /d "%~dp0"
+
+set "CLAIRE_ROOT=%~dp0"
+set "CLAIRE_APP_SHELL=0"
+set "CLAIRE_LAUNCH_MODE=modern_dashboard_root"
+set "CLAIRE_DASHBOARD_PATH=src\frontend\command_center\modern\index.html"
+set "CLAIRE_LOG_DIR=logs"
+
+if not exist "%CLAIRE_LOG_DIR%" mkdir "%CLAIRE_LOG_DIR%"
+
+echo.
+echo ============================================================
+echo Claire Syntalion - Modern Dashboard Root Launcher
+echo Root: %CLAIRE_ROOT%
+echo ============================================================
+echo.
+
+if exist ".venv\Scripts\python.exe" (
+    set "CLAIRE_PYTHON=.venv\Scripts\python.exe"
+) else (
+    set "CLAIRE_PYTHON=python"
+)
+
+echo Using Python: %CLAIRE_PYTHON%
+echo.
+
+REM Sync dashboard/version state if available.
+if exist "tools\desktop_version_sync.py" (
+    echo Syncing desktop/version state...
+    "%CLAIRE_PYTHON%" "tools\desktop_version_sync.py" --root "%CLAIRE_ROOT%" --mode modern_dashboard_root > "%CLAIRE_LOG_DIR%\desktop_version_sync.out.log" 2> "%CLAIRE_LOG_DIR%\desktop_version_sync.err.log"
+)
+
+REM Open modern dashboard only.
+if exist "%CLAIRE_DASHBOARD_PATH%" (
+    echo Opening modern dashboard:
+    echo   %CLAIRE_DASHBOARD_PATH%
+    echo.
+    start "" "%CLAIRE_DASHBOARD_PATH%"
+    goto :done
+)
+
+echo.
+echo [Claire Launcher Error]
+echo Modern dashboard not found:
+echo   %CLAIRE_DASHBOARD_PATH%
+echo.
+echo Run the modern dashboard installer first:
+echo   python claire_modern_dashboard_web_ui_installer.py --install
+echo.
+pause
+
+:done
+echo.
+echo Modern dashboard launch complete.
+endlocal

@@ -1,0 +1,178 @@
+{
+  "installer_version": "10.3.3-10.8",
+  "installer_id": "30a642ee4058",
+  "installer_date": "2026-05-06",
+  "install_timestamp": "2026-05-06T08:29:05.966868",
+  "target_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "phases_installed": 6,
+  "total_folders": 36,
+  "total_files_created": 47,
+  "total_files_skipped": 9,
+  "total_errors": 0,
+  "phase_results": [
+    {
+      "phase": 1,
+      "name": "Governed Live Research",
+      "version": "v10.3.3",
+      "folders_created": [
+        "src/claire/research",
+        "src/claire/research/live",
+        "data/research/live_packets",
+        "data/research/verified_sources",
+        "data/research/citation_lineage",
+        "data/research/conflict_reports"
+      ],
+      "files_created": [
+        "src/claire/research/live/__init__.py",
+        "src/claire/research/live/governed_live_research.py",
+        "src/claire/research/live/source_verification_engine.py",
+        "src/claire/research/live/citation_lineage_engine.py",
+        "src/claire/research/live/evidence_quality_scorer.py",
+        "src/claire/research/live/evidence_conflict_resolver.py",
+        "src/claire/research/live/claim_verifier.py",
+        "src/claire/research/live/research_packet_builder.py"
+      ],
+      "files_skipped": [
+        "src/claire/research/__init__.py"
+      ],
+      "errors": []
+    },
+    {
+      "phase": 2,
+      "name": "Longitudinal Learning",
+      "version": "v10.4",
+      "folders_created": [
+        "src/claire/recursive",
+        "src/claire/recursive/longitudinal",
+        "data/recursive/run_patterns",
+        "data/recursive/thesis_evolution",
+        "data/recursive/recurring_gaps",
+        "data/recursive/learning_signals",
+        "data/recursive/quality_scores"
+      ],
+      "files_created": [
+        "src/claire/recursive/longitudinal/__init__.py",
+        "src/claire/recursive/longitudinal/run_pattern_miner.py",
+        "src/claire/recursive/longitudinal/thesis_evolution_tracker.py",
+        "src/claire/recursive/longitudinal/recurring_gap_detector.py",
+        "src/claire/recursive/longitudinal/learning_signal_extractor.py",
+        "src/claire/recursive/longitudinal/strategy_memory_synthesizer.py",
+        "src/claire/recursive/longitudinal/recursive_quality_scorer.py"
+      ],
+      "files_skipped": [
+        "src/claire/recursive/__init__.py"
+      ],
+      "errors": []
+    },
+    {
+      "phase": 3,
+      "name": "Validation Benchmarks",
+      "version": "v10.5",
+      "folders_created": [
+        "src/claire/validation",
+        "src/claire/validation/benchmarks",
+        "data/validation/benchmark_datasets",
+        "data/validation/benchmark_results",
+        "data/validation/outcome_labels"
+      ],
+      "files_created": [
+        "src/claire/validation/benchmarks/__init__.py",
+        "src/claire/validation/benchmarks/regime_backtester.py",
+        "src/claire/validation/benchmarks/signal_backtester.py",
+        "src/claire/validation/benchmarks/false_positive_analyzer.py",
+        "src/claire/validation/benchmarks/false_negative_analyzer.py",
+        "src/claire/validation/benchmarks/outcome_label_manager.py",
+        "src/claire/validation/benchmarks/benchmark_dataset_loader.py",
+        "src/claire/validation/benchmarks/benchmark_reporter.py"
+      ],
+      "files_skipped": [
+        "src/claire/validation/__init__.py"
+      ],
+      "errors": []
+    },
+    {
+      "phase": 4,
+      "name": "Design Proof & Renderers",
+      "version": "v10.6",
+      "folders_created": [
+        "src/claire/design",
+        "src/claire/design/proof",
+        "src/claire/design/renderers",
+        "data/design/feasibility_reports",
+        "data/design/dependency_risks",
+        "data/design/cost_models",
+        "data/design/build_sequences",
+        "data/design/maturity_scores"
+      ],
+      "files_created": [
+        "src/claire/design/proof/__init__.py",
+        "src/claire/design/proof/architecture_feasibility_proof.py",
+        "src/claire/design/proof/dependency_risk_proof.py",
+        "src/claire/design/proof/implementation_cost_model.py",
+        "src/claire/design/proof/build_sequence_validator.py",
+        "src/claire/design/proof/deployment_model_validator.py",
+        "src/claire/design/proof/design_maturity_scorer.py",
+        "src/claire/design/renderers/architecture_graph_formatter.py",
+        "src/claire/design/renderers/dependency_graph_formatter.py",
+        "src/claire/design/renderers/design_export_formatter.py",
+        "src/claire/design/renderers/blueprint_summary_formatter.py"
+      ],
+      "files_skipped": [
+        "src/claire/design/__init__.py",
+        "src/claire/design/renderers/__init__.py"
+      ],
+      "errors": []
+    },
+    {
+      "phase": 5,
+      "name": "Technology Intelligence",
+      "version": "v10.7",
+      "folders_created": [
+        "src/claire/technology",
+        "data/technology/compatibility_reports",
+        "data/technology/stack_recommendations",
+        "data/technology/integration_assessments"
+      ],
+      "files_created": [
+        "src/claire/technology/compatibility_engine.py",
+        "src/claire/technology/enterprise_stack_recommender.py",
+        "src/claire/technology/integration_complexity.py",
+        "src/claire/technology/component_matcher.py",
+        "src/claire/technology/technology_catalog.py",
+        "src/claire/technology/model_governance_assessor.py"
+      ],
+      "files_skipped": [
+        "src/claire/technology/__init__.py",
+        "src/claire/technology/deployment_assessor.py",
+        "src/claire/technology/dependency_mapper.py"
+      ],
+      "errors": []
+    },
+    {
+      "phase": 6,
+      "name": "Autonomous Governance",
+      "version": "v10.8",
+      "folders_created": [
+        "src/claire/autonomous",
+        "src/claire/autonomous/governance",
+        "data/autonomous/action_logs",
+        "data/autonomous/permission_grants",
+        "data/autonomous/audit_trails",
+        "data/autonomous/escalation_history"
+      ],
+      "files_created": [
+        "src/claire/autonomous/governance/__init__.py",
+        "src/claire/autonomous/governance/autonomous_action_policy.py",
+        "src/claire/autonomous/governance/self_change_permission_model.py",
+        "src/claire/autonomous/governance/autonomous_decision_auditor.py",
+        "src/claire/autonomous/governance/escalation_boundary.py",
+        "src/claire/autonomous/governance/human_review_gate.py",
+        "src/claire/autonomous/governance/autonomy_maturity_scorer.py"
+      ],
+      "files_skipped": [
+        "src/claire/autonomous/__init__.py"
+      ],
+      "errors": []
+    }
+  ]
+}

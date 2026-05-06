@@ -1,0 +1,123 @@
+{
+  "installer_version": "10.9-11.0",
+  "installer_title": "Claire v10.9 to v11.0 Audit / Proof / Maturation / Platform Lock Installer",
+  "installer_id": "8c2f0f995821",
+  "installer_date": "2026-05-06",
+  "install_timestamp": "2026-05-06T09:40:29.400909",
+  "target_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "phase_results": [
+    {
+      "phase": 1,
+      "name": "System Audit & Consolidation",
+      "version": "v10.9",
+      "folders_created": [
+        "src/claire/audit",
+        "data/audits/system_integrity",
+        "data/audits/module_overlap",
+        "data/audits/unused_files",
+        "data/audits/import_health",
+        "data/audits/lifecycle_coherence"
+      ],
+      "files_created": [
+        "src/claire/audit/__init__.py",
+        "src/claire/audit/system_integrity_auditor.py",
+        "src/claire/audit/module_overlap_detector.py",
+        "src/claire/audit/unused_file_detector.py",
+        "src/claire/audit/duplicate_route_detector.py",
+        "src/claire/audit/import_health_checker.py",
+        "src/claire/audit/lifecycle_coherence_auditor.py",
+        "src/claire/audit/audit_report_builder.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 2,
+      "name": "Runtime Proof Binder",
+      "version": "v10.10",
+      "folders_created": [
+        "src/claire/proof",
+        "data/proof/binders",
+        "data/proof/runtime_snapshots",
+        "data/proof/contract_passes",
+        "data/proof/validation_snapshots",
+        "data/proof/evidence_traces"
+      ],
+      "files_created": [
+        "src/claire/proof/__init__.py",
+        "src/claire/proof/proof_binder.py",
+        "src/claire/proof/runtime_proof_collector.py",
+        "src/claire/proof/evidence_trace_builder.py",
+        "src/claire/proof/contract_pass_registry.py",
+        "src/claire/proof/validation_snapshotter.py",
+        "src/claire/proof/proof_exporter.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 3,
+      "name": "Maturation Validation",
+      "version": "v10.11",
+      "folders_created": [
+        "src/claire/maturation",
+        "data/maturation/scorecards",
+        "data/maturation/readiness_reports",
+        "data/maturation/regression_rechecks",
+        "data/maturation/completion_audits"
+      ],
+      "files_created": [
+        "src/claire/maturation/__init__.py",
+        "src/claire/maturation/maturity_scorecard.py",
+        "src/claire/maturation/readiness_gate.py",
+        "src/claire/maturation/operational_completion_auditor.py",
+        "src/claire/maturation/regression_recheck_runner.py",
+        "src/claire/maturation/platform_maturity_reporter.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 4,
+      "name": "Final v10 Platform Lock",
+      "version": "v10.12",
+      "folders_created": [
+        "src/claire/platform_lock",
+        "data/platform_lock/manifests",
+        "data/platform_lock/capability_freezes",
+        "data/platform_lock/release_gates",
+        "data/platform_lock/final_reports"
+      ],
+      "files_created": [
+        "src/claire/platform_lock/__init__.py",
+        "src/claire/platform_lock/lock_state_writer.py",
+        "src/claire/platform_lock/final_state_manifest.py",
+        "src/claire/platform_lock/capability_freeze_registry.py",
+        "src/claire/platform_lock/release_gate.py",
+        "src/claire/platform_lock/v10_completion_report.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    },
+    {
+      "phase": 5,
+      "name": "Enterprise / Externalization Layer Scaffold",
+      "version": "v11.0",
+      "folders_created": [
+        "src/claire/enterprise",
+        "data/enterprise/readiness",
+        "data/enterprise/externalization_plans"
+      ],
+      "files_created": [
+        "src/claire/enterprise/__init__.py",
+        "src/claire/enterprise/enterprise_readiness_assessor.py",
+        "src/claire/enterprise/externalization_plan_builder.py"
+      ],
+      "files_skipped": [],
+      "errors": []
+    }
+  ],
+  "total_files_created": 30,
+  "total_files_skipped": 0,
+  "total_errors": 0
+}
