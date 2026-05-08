@@ -1,0 +1,39 @@
+{
+  "scorer": "lifecycle_quality_scorer",
+  "version": "v16.42",
+  "created_at": "2026-05-07T02:59:51.402405",
+  "status": "available",
+  "score": 100.0,
+  "covered_stage_hints": [
+    "signal",
+    "normalization",
+    "validation",
+    "trend",
+    "thesis",
+    "portfolio",
+    "breakthrough",
+    "design",
+    "acquisition",
+    "package"
+  ],
+  "missing_stage_hints": [],
+  "lifecycle_file_count": 10,
+  "lifecycle_files": [
+    "src/claire/lifecycle/__init__.py",
+    "src/claire/lifecycle/completion_gate.py",
+    "src/claire/lifecycle/contract_validator.py",
+    "src/claire/lifecycle/lifecycle_context.py",
+    "src/claire/lifecycle/lifecycle_registry.py",
+    "src/claire/lifecycle/lifecycle_runner.py",
+    "src/claire/lifecycle/stage_contracts.py",
+    "src/claire/lifecycle/stage_registry.py",
+    "src/claire/lifecycle/stage_status.py",
+    "src/claire/lifecycle/threshold_provenance.py"
+  ],
+  "recommendations": [
+    "increase explicit lifecycle stage coverage",
+    "ensure terminal states remain route-aware",
+    "keep skipped_by_route reasons visible",
+    "connect quality scoring to runtime outputs before UI expansion"
+  ]
+}

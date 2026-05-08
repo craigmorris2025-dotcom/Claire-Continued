@@ -1,0 +1,40 @@
+{
+  "version": "17.60",
+  "name": "Validation Authority + Evidence Traceability",
+  "build_type": "system_runtime_and_dashboard_bridge",
+  "purpose": "Add deterministic validation authority and evidence traceability over runtime truth.",
+  "depends_on": [
+    "v17.59 Runtime Truth Backbone + Dashboard Data Contract"
+  ],
+  "installed_files": [
+    "docs/dashboard/v17.60_validation_authority_evidence_traceability.md",
+    "docs/update_packs/v17.60_dashboard_update_pack.md",
+    "docs/update_packs/v17.60_system_runtime_update_pack.md",
+    "src/claire/validation_authority/__init__.py",
+    "src/claire/validation_authority/evidence_index.py",
+    "src/claire/validation_authority/evidence_traceability.py",
+    "src/claire/validation_authority/io.py",
+    "src/claire/validation_authority/validation_authority.py",
+    "src/claire/validation_authority/validation_report.py",
+    "src/frontend/command_center/modern/claire_validation_authority.js",
+    "src/frontend/command_center/modern/evidence_traceability_contract.json",
+    "src/frontend/command_center/modern/evidence_traceability_status.json",
+    "src/frontend/command_center/modern/validation_authority_contract.json",
+    "src/frontend/command_center/modern/validation_authority_status.json",
+    "tools/claire_validate_runtime_truth.py"
+  ],
+  "runtime_outputs": [
+    "exports/latest/validation_authority_report.json",
+    "exports/latest/evidence_traceability_index.json"
+  ],
+  "post_install_commands": [
+    "python tools/claire_build_runtime_truth.py",
+    "python tools/claire_validate_runtime_truth.py"
+  ],
+  "safety": {
+    "rollback_backups": true,
+    "launcher_path_preserved": "src/frontend/command_center/modern/index.html",
+    "no_lifecycle_execution_replacement": true,
+    "no_fake_validation_pass": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "version": "16.59",
+  "generated_at": "2026-05-07T08:59:51.241128+00:00",
+  "status": "ready",
+  "record_count": 1,
+  "record_type_counts": {
+    "demo_run": 1
+  },
+  "minimum_targets": {
+    "benchmark_replay": 25,
+    "operator_review": 25,
+    "outcome_label": 25,
+    "false_positive": 10,
+    "source_lineage": 10,
+    "complete_demo_runs": 5,
+    "polished_pilot_scenarios": 3
+  },
+  "readiness_notes": [
+    "Binder is structurally ready.",
+    "Acquisition confidence depends on filling proof targets with real records.",
+    "Live internet evidence should remain gated until lineage, rights, and review are recorded."
+  ],
+  "records": [
+    {
+      "version": "16.58",
+      "timestamp": "2026-05-07T08:59:51.231132+00:00",
+      "record_type": "demo_run",
+      "title": "Regression demo proof record",
+      "payload": {
+        "status": "passed",
+        "source": "v16.60 regression"
+      }
+    }
+  ]
+}

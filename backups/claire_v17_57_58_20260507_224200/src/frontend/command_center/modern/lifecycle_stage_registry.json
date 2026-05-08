@@ -1,0 +1,426 @@
+{
+  "version": "v17.56",
+  "canonical_stage_count": 30,
+  "stages": [
+    {
+      "stage": 1,
+      "name": "Signal Ingestion",
+      "group": "Signal Governance",
+      "dashboard_surface": "governance",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Always execute before route gate."
+    },
+    {
+      "stage": 2,
+      "name": "Signal Normalization",
+      "group": "Signal Governance",
+      "dashboard_surface": "governance",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Always execute before route gate."
+    },
+    {
+      "stage": 3,
+      "name": "Source Validation & Weighting",
+      "group": "Signal Governance",
+      "dashboard_surface": "governance",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Always execute before route gate."
+    },
+    {
+      "stage": 4,
+      "name": "Context Expansion",
+      "group": "Signal Governance",
+      "dashboard_surface": "governance",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Always execute before route gate."
+    },
+    {
+      "stage": 5,
+      "name": "Signal Consolidation",
+      "group": "Signal Governance",
+      "dashboard_surface": "governance",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Always execute before route gate."
+    },
+    {
+      "stage": 6,
+      "name": "Entity Extraction",
+      "group": "Entity Intelligence",
+      "dashboard_surface": "entity",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Always execute before route gate."
+    },
+    {
+      "stage": 7,
+      "name": "Relationship Mapping",
+      "group": "Entity Intelligence",
+      "dashboard_surface": "entity",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Always execute before route gate."
+    },
+    {
+      "stage": 8,
+      "name": "Trend Discovery",
+      "group": "Trend Discovery / Route Gate",
+      "dashboard_surface": "trend",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Always execute before route gate."
+    },
+    {
+      "stage": 9,
+      "name": "Cluster Formation",
+      "group": "Trend Discovery / Route Gate",
+      "dashboard_surface": "trend",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Always execute before route gate."
+    },
+    {
+      "stage": 10,
+      "name": "Insight / Thesis Structuring + Route Gate",
+      "group": "Trend Discovery / Route Gate",
+      "dashboard_surface": "trend",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Always execute before route gate."
+    },
+    {
+      "stage": 11,
+      "name": "Gap Detection",
+      "group": "Breakthrough / Advancement Selection",
+      "dashboard_surface": "breakthrough",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 12,
+      "name": "Gap Qualification",
+      "group": "Breakthrough / Advancement Selection",
+      "dashboard_surface": "breakthrough",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 13,
+      "name": "Discovery Generation",
+      "group": "Breakthrough / Advancement Selection",
+      "dashboard_surface": "breakthrough",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 14,
+      "name": "Breakthrough Identification / Classification",
+      "group": "Breakthrough / Advancement Selection",
+      "dashboard_surface": "breakthrough",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 15,
+      "name": "Advancement Path Selection",
+      "group": "Breakthrough / Advancement Selection",
+      "dashboard_surface": "breakthrough",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 16,
+      "name": "Auto Invention / Solution Generation",
+      "group": "AutoDesign / Design Portal",
+      "dashboard_surface": "autodesign",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 17,
+      "name": "Solution Structuring",
+      "group": "AutoDesign / Design Portal",
+      "dashboard_surface": "autodesign",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 18,
+      "name": "Buildability Assessment",
+      "group": "AutoDesign / Design Portal",
+      "dashboard_surface": "autodesign",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 19,
+      "name": "Viability Assessment",
+      "group": "AutoDesign / Design Portal",
+      "dashboard_surface": "autodesign",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 20,
+      "name": "Manufacturability / Deployability Assessment",
+      "group": "AutoDesign / Design Portal",
+      "dashboard_surface": "autodesign",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 21,
+      "name": "Feasibility Validation",
+      "group": "AutoDesign / Design Portal",
+      "dashboard_surface": "autodesign",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 22,
+      "name": "Design Portal Output / Blueprints / Specs",
+      "group": "AutoDesign / Design Portal",
+      "dashboard_surface": "autodesign",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Breakthrough/design route only unless route contract explicitly requires it."
+    },
+    {
+      "stage": 23,
+      "name": "Market Positioning",
+      "group": "Strategy / Portfolio / Acquisition",
+      "dashboard_surface": "portfolio",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Route-specific strategy, portfolio, or acquisition execution."
+    },
+    {
+      "stage": 24,
+      "name": "Moat & Differentiation",
+      "group": "Strategy / Portfolio / Acquisition",
+      "dashboard_surface": "acquisition",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Route-specific strategy, portfolio, or acquisition execution."
+    },
+    {
+      "stage": 25,
+      "name": "Business Model & Value Capture",
+      "group": "Strategy / Portfolio / Acquisition",
+      "dashboard_surface": "acquisition",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Route-specific strategy, portfolio, or acquisition execution."
+    },
+    {
+      "stage": 26,
+      "name": "Competitor Analysis",
+      "group": "Strategy / Portfolio / Acquisition",
+      "dashboard_surface": "portfolio",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Route-specific strategy, portfolio, or acquisition execution."
+    },
+    {
+      "stage": 27,
+      "name": "Portfolio Creation / Optimization",
+      "group": "Strategy / Portfolio / Acquisition",
+      "dashboard_surface": "portfolio",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Route-specific strategy, portfolio, or acquisition execution."
+    },
+    {
+      "stage": 28,
+      "name": "Acquirer Identification",
+      "group": "Strategy / Portfolio / Acquisition",
+      "dashboard_surface": "acquisition",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Route-specific strategy, portfolio, or acquisition execution."
+    },
+    {
+      "stage": 29,
+      "name": "Acquisition Fit & Rationale",
+      "group": "Strategy / Portfolio / Acquisition",
+      "dashboard_surface": "acquisition",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Route-specific strategy, portfolio, or acquisition execution."
+    },
+    {
+      "stage": 30,
+      "name": "Final Package Construction",
+      "group": "Strategy / Portfolio / Acquisition",
+      "dashboard_surface": "acquisition",
+      "required_state": [
+        "completed",
+        "skipped_by_route",
+        "blocked",
+        "failed"
+      ],
+      "requires_evidence": true,
+      "route_notes": "Route-specific strategy, portfolio, or acquisition execution."
+    }
+  ]
+}

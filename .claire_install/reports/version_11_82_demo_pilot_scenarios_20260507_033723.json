@@ -1,0 +1,139 @@
+{
+  "actions": [
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\demo_pilot_scenarios"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\demo_pilot_scenarios"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\demo_pilot_scenarios\\scenarios"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\demo_pilot_scenarios\\operator_flows"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\demo_pilot_scenarios\\sample_inputs"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\demo_pilot_scenarios\\demo_outputs"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\demo_pilot_scenarios\\readiness_checks"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\demo_pilot_scenarios"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\demo_pilot_scenarios\\__init__.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\demo_pilot_scenarios\\scenario_pack_builder.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\demo_pilot_scenarios\\operator_flow_script.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\demo_pilot_scenarios\\sample_input_library.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\demo_pilot_scenarios\\demo_readiness_check.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\demo_pilot_scenarios\\v11_77_to_v11_82_demo_pilot_scenarios_plan.md"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\demo_pilot_scenarios\\sample_inputs\\default_sample_inputs.json"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\demo_pilot_scenarios\\test_demo_pilot_scenarios.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version_11_82_demo_pilot_scenarios.json"
+    }
+  ],
+  "installed": true,
+  "installed_at_utc": "2026-05-07T03:37:23.703331+00:00",
+  "installer": "Claire v11.77-v11.82 Demo Pilot Scenarios Installer",
+  "installer_version": "11.77-11.82",
+  "post_install_checks": [
+    "Run the targeted pytest folder for this installer.",
+    "Confirm new src/claire package folder exists.",
+    "Confirm new data folders exist.",
+    "Commit after tests pass."
+  ],
+  "safety_contract": {
+    "does_not_modify_routing": true,
+    "does_not_modify_runtime": true,
+    "does_not_modify_scoring": true,
+    "scenario_pack_only": true
+  },
+  "target": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "version_file": "version_11_82_demo_pilot_scenarios.json"
+}

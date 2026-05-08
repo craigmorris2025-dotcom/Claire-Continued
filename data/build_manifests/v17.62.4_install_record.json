@@ -1,0 +1,20 @@
+{
+  "version": "17.62.4",
+  "build_name": "Workspace Stack Fix",
+  "installed_at_utc": "2026-05-08T04:53:58.417811Z",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_62_4_20260508_045358",
+  "index_patched": true,
+  "files_written": [
+    "data/build_manifests/v17.62.4_workspace_stack_fix_manifest.json",
+    "docs/dashboard/v17.62.4_workspace_stack_fix.md",
+    "docs/update_packs/v17.62.4_dashboard_hotfix_pack.md",
+    "src/frontend/command_center/modern/claire_workspace_stack_fix.css",
+    "src/frontend/command_center/modern/claire_workspace_stack_fix.js"
+  ],
+  "notes": [
+    "Forces Command, Validation, and Memory panels into stable vertical flow.",
+    "Neutralizes clipped scroll containers inside Command.",
+    "Runtime, validation, and memory logic unchanged."
+  ]
+}

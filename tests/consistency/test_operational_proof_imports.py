@@ -1,0 +1,19 @@
+from claire.operational_proof.benchmark_replay_accumulator import BenchmarkReplayAccumulator
+from claire.operational_proof.outcome_label_adjudicator import OutcomeLabelAdjudicator
+from claire.operational_proof.operator_review_capture import OperatorReviewCapture
+from claire.operational_proof.drift_false_positive_tracker import DriftFalsePositiveTracker
+from claire.operational_proof.confidence_calibration_reporter import ConfidenceCalibrationReporter
+from claire.operational_proof.pilot_readiness_gate import PilotReadinessGate
+from claire.operational_proof.governance_deployment_lock import GovernanceDeploymentLock
+from claire.operational_proof.operational_proof_plateau import OperationalProofPlateau
+
+
+def test_operational_proof_classes_import_cleanly():
+    assert BenchmarkReplayAccumulator
+    assert OutcomeLabelAdjudicator
+    assert OperatorReviewCapture
+    assert DriftFalsePositiveTracker
+    assert ConfidenceCalibrationReporter
+    assert PilotReadinessGate
+    assert GovernanceDeploymentLock
+    assert OperationalProofPlateau

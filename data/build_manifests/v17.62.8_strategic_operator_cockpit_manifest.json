@@ -1,0 +1,28 @@
+{
+  "version": "17.62.8",
+  "name": "Strategic Operator Cockpit",
+  "build_type": "dashboard_operator_cockpit",
+  "purpose": "Replace dev-oriented operator shell with a strategic intelligence/acquisition cockpit.",
+  "installed_files": [
+    "docs/dashboard/v17.62.8_strategic_operator_cockpit.md",
+    "docs/update_packs/v17.62.8_strategic_operator_cockpit_pack.md",
+    "src/frontend/command_center/modern/claire_strategic_cockpit.css",
+    "src/frontend/command_center/modern/claire_strategic_cockpit.js",
+    "src/frontend/command_center/modern/index.html",
+    "src/frontend/command_center/modern/operator_surface_contract.json"
+  ],
+  "replaces": [
+    "src/frontend/command_center/modern/index.html",
+    "src/frontend/command_center/modern/claire_strategic_cockpit.css",
+    "src/frontend/command_center/modern/claire_strategic_cockpit.js"
+  ],
+  "safety": {
+    "rollback_backups": true,
+    "launcher_path_preserved": "src/frontend/command_center/modern/index.html",
+    "runtime_logic_unchanged": true,
+    "validation_logic_unchanged": true,
+    "memory_logic_unchanged": true,
+    "no_fake_data": true,
+    "developer_diagnostics_collapsed": true
+  }
+}

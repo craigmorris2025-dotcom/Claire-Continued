@@ -1,0 +1,179 @@
+{
+  "actions": [
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\consistency"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\testing"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\testing\\consistency_audits"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\testing\\quarantined_placeholders"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports"
+    },
+    {
+      "action": "skip_existing_file",
+      "backup": null,
+      "existed": true,
+      "installed": false,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\consistency\\__init__.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\consistency\\test_current_system_placeholder_policy.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\consistency\\test_current_system_operational_proof_policy.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\pytest_current_system_guard.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\testing\\v11_50_2_current_system_test_guard.md"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version_11_50_2_current_system_test_guard.json"
+    },
+    {
+      "action": "quarantine_placeholder",
+      "from": "tests\\test_breakthrough_stages.py",
+      "installed": "True",
+      "reason": "active placeholder contained NotImplementedError('Import target class')",
+      "to": "tests\\_test_breakthrough_stages_placeholder.py"
+    },
+    {
+      "action": "quarantine_placeholder",
+      "from": "tests\\test_feasibility_stages.py",
+      "installed": "True",
+      "reason": "active placeholder contained NotImplementedError('Import target class')",
+      "to": "tests\\_test_feasibility_stages_placeholder.py"
+    },
+    {
+      "action": "quarantine_placeholder",
+      "from": "tests\\test_memory_system.py",
+      "installed": "True",
+      "reason": "active placeholder contained NotImplementedError('Import target class')",
+      "to": "tests\\_test_memory_system_placeholder.py"
+    },
+    {
+      "action": "quarantine_placeholder",
+      "from": "tests\\test_portfolio_stages.py",
+      "installed": "True",
+      "reason": "active placeholder contained NotImplementedError('Import target class')",
+      "to": "tests\\_test_portfolio_stages_placeholder.py"
+    },
+    {
+      "action": "quarantine_placeholder",
+      "from": "tests\\test_validation_system.py",
+      "installed": "True",
+      "reason": "active placeholder contained NotImplementedError('Import target class')",
+      "to": "tests\\_test_validation_system_placeholder.py"
+    }
+  ],
+  "active_placeholders_after": [],
+  "active_placeholders_before": [
+    "tests\\test_breakthrough_stages.py",
+    "tests\\test_feasibility_stages.py",
+    "tests\\test_memory_system.py",
+    "tests\\test_portfolio_stages.py",
+    "tests\\test_validation_system.py"
+  ],
+  "installed": true,
+  "installed_at_utc": "2026-05-07T02:40:29.489705+00:00",
+  "installer": "Claire v11.50.2 Current-System Test Guard Installer",
+  "installer_version": "11.50.2",
+  "post_install_checks": [
+    "pytest tests/consistency -v",
+    "pytest tests/operational_proof -v",
+    "python tools/pytest_current_system_guard.py --audit",
+    "pytest"
+  ],
+  "quarantine_moves": [
+    {
+      "from": "tests\\test_breakthrough_stages.py",
+      "installed": "True",
+      "reason": "active placeholder contained NotImplementedError('Import target class')",
+      "to": "tests\\_test_breakthrough_stages_placeholder.py"
+    },
+    {
+      "from": "tests\\test_feasibility_stages.py",
+      "installed": "True",
+      "reason": "active placeholder contained NotImplementedError('Import target class')",
+      "to": "tests\\_test_feasibility_stages_placeholder.py"
+    },
+    {
+      "from": "tests\\test_memory_system.py",
+      "installed": "True",
+      "reason": "active placeholder contained NotImplementedError('Import target class')",
+      "to": "tests\\_test_memory_system_placeholder.py"
+    },
+    {
+      "from": "tests\\test_portfolio_stages.py",
+      "installed": "True",
+      "reason": "active placeholder contained NotImplementedError('Import target class')",
+      "to": "tests\\_test_portfolio_stages_placeholder.py"
+    },
+    {
+      "from": "tests\\test_validation_system.py",
+      "installed": "True",
+      "reason": "active placeholder contained NotImplementedError('Import target class')",
+      "to": "tests\\_test_validation_system_placeholder.py"
+    }
+  ],
+  "quarantine_requested": true,
+  "safety_contract": {
+    "does_not_modify_core_run_output": true,
+    "does_not_modify_dashboard": true,
+    "does_not_modify_launcher": true,
+    "does_not_modify_routing": true,
+    "does_not_modify_runtime": true,
+    "does_not_modify_scoring": true,
+    "renames_placeholder_tests_only_when_requested": true,
+    "test_layer_only": true
+  },
+  "target": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire"
+}

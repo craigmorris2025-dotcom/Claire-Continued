@@ -1,0 +1,119 @@
+{
+  "version": "v17.56",
+  "source_reference": "(7)Claire-Complete-Systems-Flow HTML",
+  "build_name": "Claire Operating Environment Redesign Foundation",
+  "principle": "The dashboard is the Claire operating environment, not a dev dashboard.",
+  "sections": [
+    {
+      "id": "command",
+      "label": "Command",
+      "html_reference": "Master Header",
+      "purpose": "Launch, inspect, and govern live/local Claire runs."
+    },
+    {
+      "id": "sources",
+      "label": "Sources",
+      "html_reference": "External Data Sources",
+      "purpose": "Display configured source domains, trust state, freshness, and intake readiness."
+    },
+    {
+      "id": "acs2",
+      "label": "ACS2 Loops",
+      "html_reference": "ACS2 Intelligence Loops",
+      "purpose": "Show the external sensing loops that feed governed signals into the lifecycle."
+    },
+    {
+      "id": "governance",
+      "label": "Signal Governance",
+      "html_reference": "Signal Governance",
+      "purpose": "Render stages 1-5 and the governance stamp."
+    },
+    {
+      "id": "entity",
+      "label": "Entity Intelligence",
+      "html_reference": "Entity Intelligence",
+      "purpose": "Render stages 6-7, entities, and relationship mapping."
+    },
+    {
+      "id": "trend",
+      "label": "Trend Discovery",
+      "html_reference": "Trend Discovery",
+      "purpose": "Render stages 8-10, thesis formation, clusters, and route gate inputs."
+    },
+    {
+      "id": "route-gate",
+      "label": "Route Gate",
+      "html_reference": "Route Branches",
+      "purpose": "Show selected route, rejected routes, confidence, and reasons."
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio",
+      "html_reference": "Route Branches / Portfolio Route",
+      "purpose": "Render market positioning, competitor analysis, and portfolio creation or optimization."
+    },
+    {
+      "id": "breakthrough",
+      "label": "Breakthrough",
+      "html_reference": "Route Branches / Breakthrough Route",
+      "purpose": "Render gap detection, discovery generation, breakthrough classification, and advancement path."
+    },
+    {
+      "id": "autodesign",
+      "label": "AutoDesign",
+      "html_reference": "Stages 16-22 / Auto Invention & Design Pipeline",
+      "purpose": "Expose stages 16-22 as first-class route execution."
+    },
+    {
+      "id": "technology",
+      "label": "Technology Intelligence",
+      "html_reference": "Technology Intelligence",
+      "purpose": "Support design/software/system routes with catalog, matching, dependencies, and buildability context."
+    },
+    {
+      "id": "acquisition",
+      "label": "Acquisition",
+      "html_reference": "Acquisition Route",
+      "purpose": "Render moat, business model, acquirer identification, fit, and final package readiness."
+    },
+    {
+      "id": "validation",
+      "label": "Validation",
+      "html_reference": "Output & Validation",
+      "purpose": "Make validation the final authority for any output."
+    },
+    {
+      "id": "evidence",
+      "label": "Evidence",
+      "html_reference": "Output & Validation / Lifecycle Contracts",
+      "purpose": "Provide evidence chain, traceability, contract compliance, and proof readiness."
+    },
+    {
+      "id": "memory",
+      "label": "Memory",
+      "html_reference": "Memory & Recursion",
+      "purpose": "Show verified memory eligibility and recursive feedback only after validation pass."
+    },
+    {
+      "id": "runtime",
+      "label": "Runtime",
+      "html_reference": "Runtime Infrastructure / Implementation Status",
+      "purpose": "Show runtime health, protected spine, isolation, launch continuity, and rollback state."
+    },
+    {
+      "id": "update-packs",
+      "label": "Update Packs",
+      "html_reference": "Forward Roadmap",
+      "purpose": "Draft dashboard and system update packs from architecture-map gaps."
+    }
+  ],
+  "non_negotiables": [
+    "No fake runtime data.",
+    "No random UI feature expansion.",
+    "Stages 16-22 remain a dedicated route surface.",
+    "Dashboard renders runtime truth from output artifacts when available.",
+    "Validation is the final authority.",
+    "Only validated outputs can be marked memory eligible.",
+    "Rollback safety is preserved before replacing files."
+  ]
+}

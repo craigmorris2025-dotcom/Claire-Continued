@@ -1,0 +1,52 @@
+{
+  "installer": "v16.41_recovery_rollback_selector",
+  "title": "Recovery Rollback Selector",
+  "created_at": "2026-05-07T02:48:17.925830",
+  "status": "success",
+  "actions": [
+    {
+      "action": "write_file",
+      "path": "tools/recovery_rollback_selector.py",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "docs/runtime/RECOVERY_ROLLBACK_SELECTOR.md",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "tests/regression/test_recovery_rollback_selector.py",
+      "existed_before": false,
+      "backup_path": null
+    }
+  ],
+  "validations": [
+    {
+      "name": "recovery_rollback_selector",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/recovery_rollback_selector.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"selector\": \"recovery_rollback_selector\",\n  \"available_backup_sets\": 16\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "recovery_rollback_selector_tests",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "pytest",
+        "tests/regression/test_recovery_rollback_selector.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout_tail": ".                                                                        [100%]\n",
+      "stderr_tail": ""
+    }
+  ],
+  "failed_validation_count": 0
+}

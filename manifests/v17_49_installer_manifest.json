@@ -1,0 +1,55 @@
+{
+  "build": "v17.49",
+  "commands": [
+    "python install_v17_49_launch_regression_lock.py",
+    "python -m pytest tests/test_v17_49_launch_regression_lock.py"
+  ],
+  "files": [
+    {
+      "path": "src/claire/governance/launch_regression_lock.py",
+      "sha256": "4b5309ab09efb6f56e1c868d7a3289dd6d2860fcb3a86ba4feccd00e858e2da4"
+    },
+    {
+      "path": "src/claire/governance/launch_release_gate.py",
+      "sha256": "4bc1f28c1109ccaef398b446a226f6fd510ca02d832bd8c02d072b4ec2f31a98"
+    },
+    {
+      "path": "src/claire/governance/launch_contract_freeze.py",
+      "sha256": "8cb42b657f440aa1a38d7010ffa0bc996c33edeb16cefa5a41d5372e0cb6d030"
+    },
+    {
+      "path": "manifests/v17_49_launch_regression_lock_manifest.json",
+      "sha256": "f297345c1e317791c3938596eb6129192eba8ad0b764663c18ff6cd06a58348b"
+    },
+    {
+      "path": "manifests/launch_locked_contracts.json",
+      "sha256": "bf43b5dbd945067c9d94122875018d4df94cbedd8b384e812b55c5db1660b430"
+    },
+    {
+      "path": "manifests/launch_rollback_guarantees.json",
+      "sha256": "9f44c8485e77100d844bcccd601a04a3dd07e05cd2793d20fdfbe5cafb1cb906"
+    },
+    {
+      "path": "manifests/launch_operational_state_contract.json",
+      "sha256": "8af7e87214e41188e3ee9bb18276bfb36d0d973d1995f2e3cfba04326011e2ea"
+    },
+    {
+      "path": "manifests/launch_release_certificate_schema.json",
+      "sha256": "f25550b6b06c14fbd1b0a4768525056f439369785b1782eaffeef46a36ee6502"
+    },
+    {
+      "path": "tests/test_v17_49_launch_regression_lock.py",
+      "sha256": "9683fc480479cf6ee8f15e643676a5acfc5249119589304152acaf9fc9e6147a"
+    },
+    {
+      "path": "data/launch/v17_49_launch_lock_state.json",
+      "sha256": "5a90bdec1685dc52622181235451430139291d17257fa07cfea67fb523955e5a"
+    }
+  ],
+  "installed_at": "2026-05-07T21:24:46.063109Z",
+  "name": "Launch Regression Lock",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "tests": [
+    "tests/test_v17_49_launch_regression_lock.py"
+  ]
+}

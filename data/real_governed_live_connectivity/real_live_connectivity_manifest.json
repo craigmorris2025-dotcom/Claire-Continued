@@ -1,0 +1,30 @@
+{
+  "capabilities": [
+    "governed_http_client_adapter",
+    "live_search_adapter_contract",
+    "rate_limit_guard",
+    "content_normalizer",
+    "evidence_persistence",
+    "retry_deadletter_manager",
+    "live_ingestion_worker",
+    "source_policy_bridge",
+    "live_connectivity_regression_lock"
+  ],
+  "default_live_enabled": false,
+  "governance_boundary": "policy_review_rate_limited_no_unapproved_external_action",
+  "installed_at": "2026-05-07T13:47:18.050798Z",
+  "layer": "real_governed_live_connectivity",
+  "not_included_yet": [
+    "production_search_provider_secrets",
+    "browser_automation",
+    "distributed_worker_pool",
+    "streaming_market_feeds",
+    "authenticated_external_actions",
+    "unrestricted_autonomous_browsing"
+  ],
+  "status": "installed",
+  "tests": [
+    "tests/real_governed_live_connectivity/test_real_governed_live_connectivity.py"
+  ],
+  "version_range": "v17.11-v17.20"
+}

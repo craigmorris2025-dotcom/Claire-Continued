@@ -1,17 +1,3 @@
 """
-Design proof sub-package init
-=============================
-ACS2-Claire / Syntalion
-
-Package: src.claire.design.proof
+Temporarily disabled scaffold package during stabilization recovery.
 """
-
-__all__ = [
-    "ArchitectureFeasibilityProof",
-    "DependencyRiskProof",
-    "ImplementationCostModel",
-    "BuildSequenceValidator",
-    "DeploymentModelValidator",
-    "DesignMaturityScorer",
-]
-

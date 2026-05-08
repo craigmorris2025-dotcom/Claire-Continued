@@ -1,0 +1,31 @@
+{
+  "version": "v17.59",
+  "build_name": "Runtime Truth Backbone + Dashboard Data Contract",
+  "installed_at": "2026-05-07T23:09:59",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_59_20260507_230959",
+  "files_written": [
+    "src/claire/runtime_truth/__init__.py",
+    "src/claire/runtime_truth/runtime_truth_contract.py",
+    "src/claire/runtime_truth/run_truth.py",
+    "src/claire/runtime_truth/stage_truth.py",
+    "src/claire/runtime_truth/route_truth.py",
+    "src/claire/runtime_truth/terminal_truth.py",
+    "src/claire/runtime_truth/validation_truth.py",
+    "src/claire/runtime_truth/evidence_truth.py",
+    "src/claire/runtime_truth/memory_truth.py",
+    "src/claire/runtime_truth/runtime_health_truth.py",
+    "src/claire/runtime_truth/runtime_truth_builder.py",
+    "tools/claire_build_runtime_truth.py",
+    "src/frontend/command_center/modern/runtime_truth_contract.json",
+    "src/frontend/command_center/modern/runtime_truth_status.json",
+    "src/frontend/command_center/modern/claire_runtime_truth_backbone.js",
+    "docs/dashboard/v17.59_runtime_truth_backbone.md",
+    "docs/update_packs/v17.59_dashboard_update_pack.md",
+    "docs/update_packs/v17.59_system_runtime_update_pack.md",
+    "data/build_manifests/v17.59_runtime_truth_manifest.json"
+  ],
+  "index_patched": true,
+  "launcher_path": "src/frontend/command_center/modern/index.html",
+  "canonical_runtime_truth_output": "exports/latest/dashboard_runtime_truth.json",
+  "rollback_note": "To rollback, copy files from backup_root back into the project root."
+}

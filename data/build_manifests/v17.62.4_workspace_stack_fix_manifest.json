@@ -1,0 +1,22 @@
+{
+  "version": "17.62.4",
+  "name": "Workspace Stack Fix",
+  "build_type": "dashboard_hotfix",
+  "purpose": "Force main workspace surfaces into clean vertical stack and stop command/validation/memory overlap.",
+  "depends_on": [
+    "v17.62.3 Overlap Fix Hotfix"
+  ],
+  "installed_files": [
+    "docs/dashboard/v17.62.4_workspace_stack_fix.md",
+    "docs/update_packs/v17.62.4_dashboard_hotfix_pack.md",
+    "src/frontend/command_center/modern/claire_workspace_stack_fix.css",
+    "src/frontend/command_center/modern/claire_workspace_stack_fix.js"
+  ],
+  "safety": {
+    "rollback_backups": true,
+    "launcher_path_preserved": "src/frontend/command_center/modern/index.html",
+    "runtime_logic_unchanged": true,
+    "validation_logic_unchanged": true,
+    "memory_logic_unchanged": true
+  }
+}

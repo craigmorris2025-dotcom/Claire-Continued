@@ -1,0 +1,56 @@
+{
+  "lock": "core_runtime_lock",
+  "version": "v16.29",
+  "created_at": "2026-05-07T02:59:26.941232",
+  "status": "locked",
+  "protected_contracts": [
+    {
+      "path": "main.py",
+      "type": "launch_entrypoint",
+      "exists": true,
+      "size_bytes": 345
+    },
+    {
+      "path": "src/claire/app.py",
+      "type": "app_factory",
+      "exists": true,
+      "size_bytes": 1382
+    },
+    {
+      "path": "src/claire/api/routes_pipeline.py",
+      "type": "api_route",
+      "exists": true,
+      "size_bytes": 10401
+    },
+    {
+      "path": "src/claire/orchestrator/pipeline_v4.py",
+      "type": "runtime_orchestrator",
+      "exists": true,
+      "size_bytes": 89998
+    },
+    {
+      "path": "src/claire/technology/technology_intelligence.py",
+      "type": "runtime_dependency",
+      "exists": true,
+      "size_bytes": 4390
+    }
+  ],
+  "required_imports": [
+    {
+      "module": "claire.app",
+      "status": "success"
+    },
+    {
+      "module": "claire.api.routes_pipeline",
+      "status": "success"
+    },
+    {
+      "module": "claire.orchestrator.pipeline_v4",
+      "status": "success"
+    },
+    {
+      "module": "claire.technology.technology_intelligence",
+      "status": "success"
+    }
+  ]
+}

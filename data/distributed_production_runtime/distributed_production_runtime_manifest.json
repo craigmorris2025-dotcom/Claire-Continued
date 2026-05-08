@@ -1,0 +1,30 @@
+{
+  "capabilities": [
+    "distributed_worker_pool",
+    "queue_partitioning",
+    "runtime_sharding",
+    "workload_balancer",
+    "streaming_ingestion_pipeline",
+    "runtime_daemon_contract",
+    "cross_campaign_memory_fusion",
+    "production_telemetry",
+    "runtime_health_dashboard",
+    "production_regression_lock"
+  ],
+  "governance_boundary": "production_contract_no_unreviewed_external_action",
+  "installed_at": "2026-05-07T14:00:02.778392Z",
+  "layer": "distributed_production_runtime",
+  "not_included_yet": [
+    "real_cloud_deployment",
+    "production_message_broker",
+    "kubernetes_or_container_orchestration",
+    "external_service_credentials",
+    "unreviewed_external_actions",
+    "persistent_background_process_started_by_installer"
+  ],
+  "status": "installed",
+  "tests": [
+    "tests/distributed_production_runtime/test_distributed_production_runtime.py"
+  ],
+  "version_range": "v17.31-v17.40"
+}

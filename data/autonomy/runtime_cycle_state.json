@@ -1,0 +1,38 @@
+{
+  "version": "16.86",
+  "cycles": [
+    {
+      "version": "16.86",
+      "cycle_id": "cycle_20260507131843839038",
+      "cycle_name": "autonomous_runtime_cycle",
+      "started_at": "2026-05-07T13:18:43.840038+00:00",
+      "max_cycles": 1,
+      "current_cycle": 1,
+      "operator_approved": true,
+      "status": "completed",
+      "stop_reason": "max_cycles_reached",
+      "events": [
+        {
+          "timestamp": "2026-05-07T13:18:43.845738+00:00",
+          "event": {
+            "type": "regression"
+          }
+        }
+      ],
+      "completed_at": "2026-05-07T13:18:43.845738+00:00"
+    },
+    {
+      "version": "16.86",
+      "cycle_id": "cycle_20260507131843853735",
+      "cycle_name": "autonomous_runtime_cycle",
+      "started_at": "2026-05-07T13:18:43.853735+00:00",
+      "max_cycles": 3,
+      "current_cycle": 0,
+      "operator_approved": true,
+      "status": "stopped",
+      "stop_reason": "operator_stop",
+      "events": [],
+      "stopped_at": "2026-05-07T13:18:43.859738+00:00"
+    }
+  ]
+}

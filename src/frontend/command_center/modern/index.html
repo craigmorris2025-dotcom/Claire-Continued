@@ -1,38 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Claire Syntalion Command Center</title>
-  <link rel="stylesheet" href="./modern_dashboard.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claire Syntalion — Single-Screen Operator Cockpit</title>
+  <link rel="stylesheet" href="claire_single_screen_operator.css" />
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="brand"><div class="logo">C</div><div><b>Claire Syntalion</b><span>Operational Intelligence Command Center</span></div></div>
-    <nav id="nav"></nav>
-    <section class="guide-card"><b>Operator Rule</b><p>Missing dashboard data means Claire needs proof files, telemetry, labels, or replay evidence — not more feature sprawl.</p></section>
-  </aside>
-  <main>
-    <header>
-      <div><p class="eyebrow">Governance-first deployment scaling</p><h1 id="title">Executive Overview</h1></div>
-      <div class="actions"><button id="refresh">Refresh State</button><button id="help">Use Guide</button></div>
-    </header>
-    <section id="strip" class="strip"></section>
-    <section id="content" class="grid"></section>
-  </main>
-  <dialog id="guide">
-    <h2>Claire Dashboard Use Guide</h2>
-    <p>This command center is for operating Claire through the maturity phase: evidence accumulation, replay proof, governance controls, live activation gates, and package readiness.</p>
-    <ol>
-      <li>Launch Claire using the desktop launcher.</li>
-      <li>Use Executive Overview for decision, confidence, and weak spots.</li>
-      <li>Use Lifecycle Runtime to verify route, terminal state, and stage output.</li>
-      <li>Use Data Readiness to improve lineage, labels, rights, source coverage, and workflow telemetry.</li>
-      <li>Use Evidence Ops and Benchmarks before expanding live activation.</li>
-      <li>Use Governance Controls to block unsafe or unsupported escalation.</li>
-    </ol>
-    <button onclick="document.getElementById('guide').close()">Close</button>
-  </dialog>
-  <script src="./modern_dashboard.js"></script>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="kicker">Claire Syntalion</div>
+        <div class="wordmark">CLAIRE</div>
+        <div class="subtitle">Single-Screen Operator Cockpit</div>
+      </div>
+
+      <div id="claire-search" class="search-shell">
+        <div class="search-box">
+          <input id="search-input" type="search" placeholder="Ask Claire about opportunities, paths, packages…" />
+          <button id="mic-button" type="button" class="mic-button" aria-label="Use microphone"><span>◉</span></button>
+        </div>
+        <div id="search-results" class="search-results"></div>
+      </div>
+
+      <div class="sidebar-status">
+        <div class="status-card">
+          <div class="status-value" id="side-mission">No mission loaded</div>
+          <div class="status-label">Mission</div>
+        </div>
+        <div class="status-card">
+          <div class="status-value" id="side-path">Awaiting signal</div>
+          <div class="status-label">Path</div>
+        </div>
+        <div class="status-card">
+          <div class="status-value" id="side-readiness">Not ready</div>
+          <div class="status-label">Readiness</div>
+        </div>
+        <div class="status-card">
+          <div class="status-value" id="side-trust">Unverified</div>
+          <div class="status-label">Trust</div>
+        </div>
+      </div>
+
+      <div class="sidebar-nav">
+        <button class="nav-button active" data-tab="portfolio"><span>01</span> Portfolio</button>
+        <button class="nav-button" data-tab="breakthrough"><span>02</span> Breakthrough</button>
+        <button class="nav-button" data-tab="acquisition"><span>03</span> Acquisition</button>
+        <button class="nav-button" data-tab="trust"><span>04</span> Trust</button>
+        <button class="nav-button" data-tab="continuity"><span>05</span> Continuity</button>
+        <button class="nav-button" data-tab="actions"><span>06</span> Actions</button>
+      </div>
+
+      <div class="sidebar-note">
+        Claire opens as an operator cockpit, not a developer runtime dashboard. Deep technical surfaces are collapsed behind diagnostics.
+      </div>
+    </aside>
+
+    <main class="main-stage">
+      <header class="topbar">
+        <div class="topbar-copy">
+          <div class="kicker">Strategic Operating Environment</div>
+          <h1>Signal → Path → Package</h1>
+          <p>Everything important is consolidated into one screen: mission state, opportunity brief, path decision, trust, continuity, and the active operator workspace.</p>
+        </div>
+        <div class="topbar-actions">
+          <button id="refresh-button" class="primary-button" type="button">Refresh Cockpit</button>
+          <button id="diagnostics-button" class="secondary-button" type="button">Diagnostics</button>
+        </div>
+      </header>
+
+      <section class="proof-strip">
+        <div class="proof-item">
+          <span>Mission</span>
+          <strong id="proof-mission">No mission loaded</strong>
+        </div>
+        <div class="proof-item">
+          <span>Path</span>
+          <strong id="proof-path">Awaiting signal</strong>
+        </div>
+        <div class="proof-item">
+          <span>Readiness</span>
+          <strong id="proof-readiness">Not ready</strong>
+        </div>
+        <div class="proof-item">
+          <span>Trust</span>
+          <strong id="proof-trust">Unverified</strong>
+        </div>
+        <div class="proof-item">
+          <span>Continuity</span>
+          <strong id="proof-continuity">Not ready</strong>
+        </div>
+      </section>
+
+      <section class="summary-grid">
+        <article class="panel compact-panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Opportunity Brief</div>
+              <h2>What Claire Is Seeing</h2>
+            </div>
+            <span id="brief-pill" class="pill amber">Awaiting mission</span>
+          </div>
+          <div class="compact-grid two">
+            <div class="mini-panel">
+              <div class="mini-label">Objective</div>
+              <div class="mini-value" id="brief-objective">Load or generate a mission</div>
+            </div>
+            <div class="mini-panel">
+              <div class="mini-label">Review</div>
+              <div class="mini-value" id="brief-review">Load mission output</div>
+            </div>
+            <div class="mini-panel wide">
+              <div class="mini-label">Strategic Thesis</div>
+              <div class="mini-value small" id="brief-thesis">No thesis available</div>
+            </div>
+            <div class="mini-panel wide">
+              <div class="mini-label">Mission Note</div>
+              <div class="mini-value small" id="brief-note">The cockpit will not invent a mission.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel compact-panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Strategic Path</div>
+              <h2>Which Route Was Chosen?</h2>
+            </div>
+            <span id="path-pill" class="pill amber">Awaiting signal</span>
+          </div>
+          <div class="route-stack">
+            <div class="route-line" id="route-portfolio">
+              <div class="route-title">Portfolio Intelligence</div>
+              <div class="route-state" id="route-portfolio-state">Default path</div>
+            </div>
+            <div class="route-line" id="route-breakthrough">
+              <div class="route-title">Breakthrough / Design</div>
+              <div class="route-state" id="route-breakthrough-state">Not selected</div>
+            </div>
+            <div class="route-line" id="route-acquisition">
+              <div class="route-title">Acquisition Package</div>
+              <div class="route-state" id="route-acquisition-state">Not selected</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="workspace-shell panel">
+        <div class="workspace-head">
+          <div>
+            <div class="kicker">Active Operator Workspace</div>
+            <h2 id="workspace-title">Portfolio Desk</h2>
+            <p id="workspace-subtitle">Review the active operator surface without leaving the main cockpit.</p>
+          </div>
+          <div class="workspace-tabs">
+            <button class="tab-button active" data-tab="portfolio">Portfolio</button>
+            <button class="tab-button" data-tab="breakthrough">Breakthrough</button>
+            <button class="tab-button" data-tab="acquisition">Acquisition</button>
+            <button class="tab-button" data-tab="trust">Trust</button>
+            <button class="tab-button" data-tab="continuity">Continuity</button>
+            <button class="tab-button" data-tab="actions">Actions</button>
+          </div>
+        </div>
+
+        <div class="workspace-body">
+          <section class="tab-panel active" data-tab-panel="portfolio">
+            <div class="content-grid three" id="portfolio-content"></div>
+          </section>
+
+          <section class="tab-panel" data-tab-panel="breakthrough">
+            <div class="content-grid three" id="breakthrough-content"></div>
+          </section>
+
+          <section class="tab-panel" data-tab-panel="acquisition">
+            <div class="content-grid three" id="acquisition-content"></div>
+          </section>
+
+          <section class="tab-panel" data-tab-panel="trust">
+            <div class="content-grid three" id="trust-content"></div>
+          </section>
+
+          <section class="tab-panel" data-tab-panel="continuity">
+            <div class="content-grid three" id="continuity-content"></div>
+          </section>
+
+          <section class="tab-panel" data-tab-panel="actions">
+            <div class="content-grid three" id="actions-content"></div>
+          </section>
+        </div>
+      </section>
+
+      <details id="diagnostics" class="diagnostics">
+        <summary>Developer diagnostics</summary>
+        <div class="diagnostic-codes">
+          <code>python tools/claire_build_runtime_truth.py</code>
+          <code>python tools/claire_validate_runtime_truth.py</code>
+          <code>python tools/claire_build_verified_memory.py</code>
+          <code>python tools/claire_build_dashboard_search_index.py</code>
+        </div>
+        <pre id="diagnostic-json">{}</pre>
+      </details>
+    </main>
+  </div>
+
+  <script src="claire_single_screen_operator.js"></script>
 </body>
 </html>

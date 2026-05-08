@@ -1,0 +1,18 @@
+{
+  "governance_boundary": "recommendation_only_no_external_execution_without_user_approval",
+  "installed_at": "2026-05-07T13:34:04.489873Z",
+  "layer": "strategic_decision_intelligence",
+  "modules": [
+    "decision_scenario_engine",
+    "bounded_outcome_simulator",
+    "intervention_strategy_selector",
+    "expected_actual_outcome_tracker",
+    "strategic_decision_regression_lock",
+    "runtime"
+  ],
+  "regression_tests": [
+    "tests/strategic_decision_intelligence/test_strategic_decision_intelligence.py"
+  ],
+  "status": "installed",
+  "version_range": "v16.96-v17.00"
+}

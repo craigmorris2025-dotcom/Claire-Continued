@@ -1,0 +1,45 @@
+{
+  "version": "16.88",
+  "generated_at": "2026-05-07T13:18:43.893734+00:00",
+  "status": "completed",
+  "threshold": 0.7,
+  "max_follow_on_tasks": 2,
+  "created_task_count": 2,
+  "created_tasks": [
+    {
+      "version": "16.81",
+      "task_id": "task_20260507131843886733",
+      "created_at": "2026-05-07T13:18:43.886733+00:00",
+      "task_type": "thesis_update",
+      "title": "Follow-on task from escalation: Regression signal analysis task",
+      "payload": {
+        "source_escalation_id": "esc_20260507131843869733_0",
+        "source_id": "task_20260507130611010947",
+        "recommended_route": "thesis_update",
+        "score": 0.88
+      },
+      "priority": 8,
+      "owner": "recursive_orchestration_controller",
+      "state": "queued",
+      "attempts": 0
+    },
+    {
+      "version": "16.81",
+      "task_id": "task_20260507131843887732",
+      "created_at": "2026-05-07T13:18:43.887732+00:00",
+      "task_type": "evidence_review",
+      "title": "Follow-on task from escalation: Regression evidence review task",
+      "payload": {
+        "source_escalation_id": "esc_20260507131843869733_1",
+        "source_id": "task_20260507130611017947",
+        "recommended_route": "operator_review",
+        "score": 0.75
+      },
+      "priority": 8,
+      "owner": "recursive_orchestration_controller",
+      "state": "queued",
+      "attempts": 0
+    }
+  ],
+  "governance_note": "Follow-on generation is bounded and route-limited."
+}

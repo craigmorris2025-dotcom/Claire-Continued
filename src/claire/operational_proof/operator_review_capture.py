@@ -1,0 +1,27 @@
+from __future__ import annotations
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict
+
+class OperatorReviewCapture:
+    """Captures human/operator review evidence for Claire outputs."""
+
+    def __init__(self, root: str | Path = ".") -> None:
+        self.root = Path(root)
+
+    def capture_review(self, run_id: str, decision: str, reviewer: str = "operator", rationale: str = "") -> Dict[str, Any]:
+        return {
+            "record_type": "operator_review",
+            "run_id": run_id,
+            "decision": decision,
+            "reviewer": reviewer,
+            "rationale": rationale,
+            "captured_at_utc": datetime.now(timezone.utc).isoformat(),
+        }
+
+    def export_review(self, review: Dict[str, Any]) -> Path:
+        out = self.root / "data" / "operational_proof" / "operator_reviews" / f"{review['run_id']}_{review['captured_at_utc'].replace(':','-')}.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(review, indent=2, sort_keys=True), encoding="utf-8")
+        return out

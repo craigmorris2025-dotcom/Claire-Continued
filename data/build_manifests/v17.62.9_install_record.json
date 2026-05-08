@@ -1,0 +1,23 @@
+{
+  "version": "17.62.9",
+  "build_name": "Single-Screen Operator Cockpit",
+  "installed_at_utc": "2026-05-08T05:39:16.392072Z",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_62_9_20260508_053916",
+  "files_written": [
+    "data/build_manifests/v17.62.9_single_screen_operator_cockpit_manifest.json",
+    "docs/dashboard/v17.62.9_single_screen_operator_cockpit.md",
+    "docs/update_packs/v17.62.9_single_screen_operator_cockpit_pack.md",
+    "src/frontend/command_center/modern/claire_single_screen_operator.css",
+    "src/frontend/command_center/modern/claire_single_screen_operator.js",
+    "src/frontend/command_center/modern/index.html",
+    "src/frontend/command_center/modern/operator_surface_contract.json"
+  ],
+  "notes": [
+    "Converted dashboard to a single-screen cockpit.",
+    "Primary operator surfaces remain visible without multi-scroll page review.",
+    "Deep surfaces moved into tabbed workspace.",
+    "Developer diagnostics remain hidden/collapsed.",
+    "No backend/runtime logic changed."
+  ]
+}

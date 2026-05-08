@@ -1,0 +1,217 @@
+{
+  "checks": [
+    {
+      "evidence": {
+        "manifest_prior_builds": [
+          "v17.41",
+          "v17.42",
+          "v17.43",
+          "v17.44",
+          "v17.45",
+          "v17.46",
+          "v17.47",
+          "v17.48"
+        ],
+        "missing": [],
+        "required": [
+          "v17.41",
+          "v17.42",
+          "v17.43",
+          "v17.44",
+          "v17.45",
+          "v17.46",
+          "v17.47",
+          "v17.48"
+        ]
+      },
+      "message": "All prior launch-critical builds are represented.",
+      "name": "prior_build_chain",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "evidence": {
+        "lock_version": "v17.49",
+        "locked": [
+          "runtime_contract",
+          "deployment_contract",
+          "manifest_contract",
+          "governance_boundary_contract",
+          "rollback_contract",
+          "api_compatibility_contract",
+          "orchestration_invariant_contract",
+          "recovery_invariant_contract",
+          "operational_state_contract",
+          "launch_regression_suite_contract"
+        ],
+        "missing": [],
+        "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\manifests\\launch_locked_contracts.json",
+        "required_contracts": [
+          "runtime_contract",
+          "deployment_contract",
+          "manifest_contract",
+          "governance_boundary_contract",
+          "rollback_contract",
+          "api_compatibility_contract",
+          "orchestration_invariant_contract",
+          "recovery_invariant_contract",
+          "operational_state_contract",
+          "launch_regression_suite_contract"
+        ]
+      },
+      "message": "Launch contracts are locked.",
+      "name": "locked_contract_catalog",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "evidence": {
+        "active_forbidden": [],
+        "forbidden_flags": [
+          "disable_governance",
+          "unbounded_orchestration",
+          "unsafe_external_write",
+          "skip_rollback_capture",
+          "skip_source_trust",
+          "disable_runtime_isolation",
+          "force_live_without_lock"
+        ]
+      },
+      "message": "No forbidden runtime flags are active.",
+      "name": "forbidden_runtime_flags",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "evidence": {
+        "missing": [],
+        "required": [
+          "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\manifests",
+          "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data",
+          "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\output"
+        ]
+      },
+      "message": "Required launch directories exist.",
+      "name": "required_directories",
+      "passed": true,
+      "severity": "high"
+    },
+    {
+      "evidence": {
+        "build": "v17.49",
+        "governance_ok": true,
+        "missing_keys": [],
+        "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\manifests\\v17_49_launch_regression_lock_manifest.json"
+      },
+      "message": "Launch manifest integrity validated.",
+      "name": "manifest_integrity",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "evidence": {
+        "guarantees": {
+          "certificate_written_before_release": true,
+          "launch_blocked_on_failed_lock": true,
+          "manifest_replay": true,
+          "no_external_mutation_on_lock_failure": true,
+          "pre_launch_state_capture": true,
+          "safe_failure_state": true
+        },
+        "missing": [],
+        "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\manifests\\launch_rollback_guarantees.json"
+      },
+      "message": "Rollback guarantees are locked.",
+      "name": "rollback_continuity",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "evidence": {
+        "max_concurrent_campaigns": 4,
+        "max_orchestration_depth": 8,
+        "max_runtime_seconds": 900
+      },
+      "message": "Bounded orchestration remains within launch envelope.",
+      "name": "orchestration_bounds",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "evidence": {
+        "allow_external_mutation_during_lock": false,
+        "runtime_isolation": "enforced"
+      },
+      "message": "Runtime isolation boundary is enforced.",
+      "name": "runtime_isolation_boundary",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "evidence": {
+        "missing": [],
+        "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\manifests\\launch_operational_state_contract.json",
+        "surfaces": [
+          "health_surface",
+          "dashboard_surface",
+          "degraded_mode_surface",
+          "source_trust_surface",
+          "campaign_state_surface"
+        ]
+      },
+      "message": "Operational state surfaces are launch-locked.",
+      "name": "operational_state_contract",
+      "passed": true,
+      "severity": "high"
+    },
+    {
+      "evidence": {
+        "missing": [],
+        "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\manifests\\launch_release_certificate_schema.json",
+        "required_fields": [
+          "version",
+          "status",
+          "generated_at",
+          "passed",
+          "release_blocked",
+          "required_prior_builds",
+          "locked_contracts",
+          "invariant_hash",
+          "checks"
+        ]
+      },
+      "message": "Release certificate schema is locked.",
+      "name": "release_certificate_contract",
+      "passed": true,
+      "severity": "high"
+    }
+  ],
+  "generated_at": "2026-05-07T21:25:12.183534Z",
+  "invariant_hash": "4d03fca5ccb1c28188591f7db3e7b521891ca0c98d9d489b33e5ba32ddc9ee1f",
+  "locked_contracts": [
+    "runtime_contract",
+    "deployment_contract",
+    "manifest_contract",
+    "governance_boundary_contract",
+    "rollback_contract",
+    "api_compatibility_contract",
+    "orchestration_invariant_contract",
+    "recovery_invariant_contract",
+    "operational_state_contract",
+    "launch_regression_suite_contract"
+  ],
+  "passed": true,
+  "release_blocked": false,
+  "required_prior_builds": [
+    "v17.41",
+    "v17.42",
+    "v17.43",
+    "v17.44",
+    "v17.45",
+    "v17.46",
+    "v17.47",
+    "v17.48"
+  ],
+  "status": "locked",
+  "version": "v17.49"
+}

@@ -1,0 +1,24 @@
+{
+  "version": "17.62.6",
+  "name": "Clean Dashboard Shell Rebuild",
+  "build_type": "dashboard_shell_rebuild",
+  "purpose": "Replace broken layered dashboard with one clean, stable operating shell.",
+  "installed_files": [
+    "docs/dashboard/v17.62.6_clean_dashboard_shell.md",
+    "docs/update_packs/v17.62.6_dashboard_clean_shell_pack.md",
+    "src/frontend/command_center/modern/claire_clean_shell.css",
+    "src/frontend/command_center/modern/claire_clean_shell.js",
+    "src/frontend/command_center/modern/index.html"
+  ],
+  "replaces": [
+    "src/frontend/command_center/modern/index.html"
+  ],
+  "safety": {
+    "rollback_backups": true,
+    "launcher_path_preserved": "src/frontend/command_center/modern/index.html",
+    "runtime_logic_unchanged": true,
+    "validation_logic_unchanged": true,
+    "memory_logic_unchanged": true,
+    "no_fake_data": true
+  }
+}

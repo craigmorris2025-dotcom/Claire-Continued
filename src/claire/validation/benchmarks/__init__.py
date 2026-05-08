@@ -1,18 +1,9 @@
 """
-Benchmarks sub-package init
-===========================
-ACS2-Claire / Syntalion
+Validation benchmark package placeholder.
 
-Package: src.claire.validation.benchmarks
+The previous benchmark modules were moved to:
+archive/disabled_validation_benchmarks/benchmarks
+
+Reason:
+They contained incomplete placeholder syntax and were blocking compile/runtime recovery.
 """
-
-__all__ = [
-    "RegimeBacktester",
-    "SignalBacktester",
-    "FalsePositiveAnalyzer",
-    "FalseNegativeAnalyzer",
-    "OutcomeLabelManager",
-    "BenchmarkDatasetLoader",
-    "BenchmarkReporter",
-]
-

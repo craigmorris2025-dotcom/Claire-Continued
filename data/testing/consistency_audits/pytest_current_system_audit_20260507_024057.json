@@ -1,0 +1,18 @@
+{
+  "active_placeholder_tests": [],
+  "created_at_utc": "2026-05-07T02:40:57.198748+00:00",
+  "quarantined_placeholder_tests": [
+    "tests\\_test_acquisition_stages_placeholder.py",
+    "tests\\_test_analysis_stages_placeholder.py",
+    "tests\\_test_breakthrough_stages_placeholder.py",
+    "tests\\_test_feasibility_stages_placeholder.py",
+    "tests\\_test_memory_system_placeholder.py",
+    "tests\\_test_portfolio_stages_placeholder.py",
+    "tests\\_test_runtime_rules_placeholder.py",
+    "tests\\_test_signal_stages_placeholder.py",
+    "tests\\_test_validation_system_placeholder.py"
+  ],
+  "record_type": "current_system_pytest_guard_audit",
+  "rule": "Old Import target class placeholders must be quarantined until bound to real current-system classes.",
+  "status": "pass"
+}

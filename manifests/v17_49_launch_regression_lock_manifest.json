@@ -1,0 +1,35 @@
+{
+  "build": "v17.49",
+  "name": "Launch Regression Lock",
+  "status": "installed",
+  "installed_at": "2026-05-07T21:24:46.063109Z",
+  "prior_builds_locked": [
+    "v17.41",
+    "v17.42",
+    "v17.43",
+    "v17.44",
+    "v17.45",
+    "v17.46",
+    "v17.47",
+    "v17.48"
+  ],
+  "governance_preserved": {
+    "bounded_orchestration": true,
+    "rollback_safety": true,
+    "runtime_isolation": true,
+    "launch_continuity": true,
+    "source_trust_memory": true,
+    "adaptive_evidence_weighting": true,
+    "degraded_mode_execution": true
+  },
+  "installed_files": [
+    "src/claire/governance/launch_regression_lock.py",
+    "src/claire/governance/launch_release_gate.py",
+    "src/claire/governance/launch_contract_freeze.py",
+    "manifests/launch_locked_contracts.json",
+    "manifests/launch_rollback_guarantees.json",
+    "manifests/launch_operational_state_contract.json",
+    "manifests/launch_release_certificate_schema.json",
+    "tests/test_v17_49_launch_regression_lock.py"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": "17.62.7",
+  "name": "Operator Surface Conversion",
+  "build_type": "dashboard_operator_surface",
+  "purpose": "Convert the clean dashboard shell from developer-facing terminology to operator-facing surfaces.",
+  "installed_files": [
+    "docs/dashboard/v17.62.7_operator_surface_conversion.md",
+    "docs/update_packs/v17.62.7_operator_surface_pack.md",
+    "src/frontend/command_center/modern/claire_operator_shell.css",
+    "src/frontend/command_center/modern/claire_operator_shell.js",
+    "src/frontend/command_center/modern/index.html"
+  ],
+  "replaces": [
+    "src/frontend/command_center/modern/index.html",
+    "src/frontend/command_center/modern/claire_operator_shell.css",
+    "src/frontend/command_center/modern/claire_operator_shell.js"
+  ],
+  "safety": {
+    "rollback_backups": true,
+    "launcher_path_preserved": "src/frontend/command_center/modern/index.html",
+    "runtime_logic_unchanged": true,
+    "validation_logic_unchanged": true,
+    "memory_logic_unchanged": true,
+    "no_fake_data": true
+  }
+}

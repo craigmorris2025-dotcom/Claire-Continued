@@ -1,0 +1,39 @@
+{
+  "build_name": "Dashboard End-to-End First-Use Test",
+  "dashboard_buttons": [
+    "Run First-Use E2E Check",
+    "View Latest First-Use Result"
+  ],
+  "dashboard_routes_to_register": [
+    "GET /dashboard/e2e/first-use/manifest",
+    "GET /dashboard/e2e/first-use/latest",
+    "POST /dashboard/e2e/first-use/run"
+  ],
+  "governance_preserved": {
+    "bounded_orchestration": true,
+    "launch_continuity": true,
+    "no_external_credentials_required_for_test": true,
+    "rollback_safety": true,
+    "runtime_isolation": true
+  },
+  "installed_at": "2026-05-07T21:53:45.576853Z",
+  "installed_files": [
+    "src/claire/runtime/dashboard_e2e_first_use.py",
+    "src/claire/api/routes_dashboard_e2e.py",
+    "manifests/v17_51_dashboard_e2e_first_use_manifest.json",
+    "data/launch_verification/v17_51_install_state.json",
+    "tests/test_v17_51_dashboard_e2e_use_test.py"
+  ],
+  "package_type": "single_file_root_installer",
+  "required_actions": [
+    "dashboard_capability_check",
+    "governed_runtime_health_check",
+    "internet_operations_state_check",
+    "campaign_state_check",
+    "source_trust_state_check",
+    "deployment_state_check",
+    "rollback_state_check",
+    "manifest_integrity_check"
+  ],
+  "version": "17.51"
+}

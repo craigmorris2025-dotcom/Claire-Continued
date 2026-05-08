@@ -1,0 +1,23 @@
+{
+  "schema": "claire.operator_surface_contract.v2",
+  "version": "17.62.9",
+  "purpose": "Single-screen operator cockpit contract.",
+  "requirements": [
+    "Dashboard must fit core operator surfaces into a single screen on standard desktop viewport.",
+    "Page-level long vertical stacking is not allowed for primary operator review.",
+    "Use consolidated workspaces/tabs for deep surfaces.",
+    "Mission, path, readiness, trust, and continuity must remain visible without multi-scroll review.",
+    "Developer diagnostics must remain hidden/collapsed.",
+    "No fake mission or route data may be invented."
+  ],
+  "operator_surfaces": [
+    "Opportunity Brief",
+    "Strategic Path",
+    "Portfolio Desk",
+    "Breakthrough Studio",
+    "Acquisition Room",
+    "Trust Gate",
+    "Continuity Gate",
+    "Next Operator Actions"
+  ]
+}

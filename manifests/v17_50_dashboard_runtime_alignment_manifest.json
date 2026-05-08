@@ -1,0 +1,37 @@
+{
+  "backup_root": "rollback/v17_50_dashboard_runtime_alignment/20260507_164304",
+  "build": "Dashboard Runtime Alignment + Action Buttons",
+  "governance": {
+    "allowed_methods": [
+      "GET",
+      "POST"
+    ],
+    "bounded_orchestration_preserved": true,
+    "buttons_are_route_bound": true,
+    "launch_continuity_preserved": true,
+    "no_shell_execution_from_dashboard": true,
+    "rollback_backups_created_before_patch": true,
+    "runtime_isolation_preserved": true
+  },
+  "install_id": "v17_50_dashboard_runtime_alignment",
+  "installed_at": "2026-05-07T21:43:04.178683Z",
+  "installed_files": [
+    "src/claire/dashboard/__init__.py",
+    "src/claire/dashboard/button_registry.py",
+    "src/claire/dashboard/runtime_alignment.py",
+    "src/claire/api/routes_dashboard_alignment.py",
+    "src/frontend/claire_dashboard_actions.js",
+    "docs/v17_50_dashboard_runtime_alignment.md",
+    "tests/test_v17_50_dashboard_runtime_alignment.py",
+    "docs/v17_50_static_dashboard_actions_mount_hint.md"
+  ],
+  "patched_backend_files": [
+    "src/claire/app.py"
+  ],
+  "patched_frontend_files": [
+    "src/frontend/command_center/modern/index.html",
+    "src/frontend/export_dashboard/index.html",
+    "src/frontend/internet_operations_dashboard/internet_operations_dashboard.html"
+  ],
+  "version": "17.50"
+}

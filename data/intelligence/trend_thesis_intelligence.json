@@ -1,0 +1,582 @@
+{
+  "upgrade": "trend_thesis_intelligence",
+  "version": "v16.43",
+  "created_at": "2026-05-07T03:00:03.323181",
+  "status": "available",
+  "readiness": "strong",
+  "signal_coverage": {
+    "trend": 230,
+    "thesis": 249,
+    "signal": 1906,
+    "cluster": 27,
+    "market": 1109,
+    "evidence": 418,
+    "confidence": 209
+  },
+  "evidence_file_count": 70,
+  "evidence": [
+    {
+      "path": "src/claire/engines/acquirer_matching.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/auto_design.py",
+      "signals": [
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/base.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/breakthrough.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/breakthrough_synthesis_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/business_model_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/company.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/competitive.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/compliance.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/customer.py",
+      "signals": [
+        "signal"
+      ]
+    },
+    {
+      "path": "src/claire/engines/deal.py",
+      "signals": [
+        "signal"
+      ]
+    },
+    {
+      "path": "src/claire/engines/deal_exit_modeling_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/decision.py",
+      "signals": [
+        "thesis",
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/discovery.py",
+      "signals": [
+        "signal"
+      ]
+    },
+    {
+      "path": "src/claire/engines/engineering.py",
+      "signals": [
+        "signal"
+      ]
+    },
+    {
+      "path": "src/claire/engines/export_package_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/financial.py",
+      "signals": [
+        "signal"
+      ]
+    },
+    {
+      "path": "src/claire/engines/forecasting.py",
+      "signals": [
+        "trend",
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/fusion.py",
+      "signals": [
+        "signal",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/ingestion.py",
+      "signals": [
+        "signal"
+      ]
+    },
+    {
+      "path": "src/claire/engines/innovation.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/knowledge_ingestion_engine.py",
+      "signals": [
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/lifecycle_stage_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/market.py",
+      "signals": [
+        "trend",
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/market_formation_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/market_gap_engine.py",
+      "signals": [
+        "thesis",
+        "signal",
+        "market",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/moat_defensibility_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/operational.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/opportunity_discovery_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/portfolio.py",
+      "signals": [
+        "thesis",
+        "signal"
+      ]
+    },
+    {
+      "path": "src/claire/engines/predictive.py",
+      "signals": [
+        "trend",
+        "signal",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/product.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/productization_path_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/risk.py",
+      "signals": [
+        "signal",
+        "market",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/risk_regulation_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/semantic.py",
+      "signals": [
+        "signal"
+      ]
+    },
+    {
+      "path": "src/claire/engines/signal_extraction_engine.py",
+      "signals": [
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/strategic_positioning_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/strategy.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/synergy.py",
+      "signals": [
+        "thesis",
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/engines/system_design_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/technical_feasibility_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/trend_thesis_engine.py",
+      "signals": [
+        "trend",
+        "thesis",
+        "signal",
+        "cluster",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/engines/trend_trajectory_engine.py",
+      "signals": [
+        "trend",
+        "signal",
+        "market",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/trends/cluster_formation.py",
+      "signals": [
+        "trend",
+        "cluster",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/trends/discovery.py",
+      "signals": [
+        "trend",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/thesis/route_gate.py",
+      "signals": [
+        "thesis",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/thesis/structuring.py",
+      "signals": [
+        "thesis",
+        "evidence",
+        "confidence"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/feeds_init.py",
+      "signals": [
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/feed_registry.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/feed_result_contracts.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/governed_feed_activation.py",
+      "signals": [
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/government_defense_universe.py",
+      "signals": [
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/live_source_orchestrator.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/market_universe_feeds.py",
+      "signals": [
+        "signal",
+        "cluster",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/private_establishment_universe.py",
+      "signals": [
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/public_company_live_scan.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/public_company_universe.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/public_signal_contracts.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/signal_contracts.py",
+      "signals": [
+        "signal",
+        "market",
+        "evidence"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/signal_normalizer.py",
+      "signals": [
+        "signal",
+        "market",
+        "evidence"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/signal_registry.py",
+      "signals": [
+        "signal"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/signal_scoring.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/source_catalogs/index_universe_registry.py",
+      "signals": [
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/source_catalogs/live_source_catalog.py",
+      "signals": [
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/source_catalogs/offline_universe_resolver.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/source_catalogs/public_company_sources.py",
+      "signals": [
+        "signal",
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/source_catalogs/source_contracts.py",
+      "signals": [
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/source_catalogs/source_health.py",
+      "signals": [
+        "market"
+      ]
+    },
+    {
+      "path": "src/claire/feeds/source_catalogs/universe_resolution_contracts.py",
+      "signals": [
+        "market"
+      ]
+    }
+  ],
+  "recommendations": [
+    "connect trend/thesis scoring to core_run_output",
+    "track confidence and evidence per thesis",
+    "separate trend discovery from breakthrough escalation",
+    "preserve portfolio-first default route"
+  ]
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "version": "16.66",
+    "memory_id": "mem_20260507091018475828",
+    "created_at": "2026-05-07T09:10:18.475828+00:00",
+    "memory_type": "thesis",
+    "title": "Regression thesis memory",
+    "payload": {
+      "summary": "test continuity thesis"
+    },
+    "confidence": 0.6,
+    "tags": [
+      "regression"
+    ],
+    "status": "active"
+  },
+  {
+    "version": "16.66",
+    "memory_id": "mem_20260507091018487829",
+    "created_at": "2026-05-07T09:10:18.487829+00:00",
+    "memory_type": "operator_decision",
+    "title": "Operator feedback: approved",
+    "payload": {
+      "version": "16.69",
+      "feedback_id": "feedback_20260507091018486829",
+      "created_at": "2026-05-07T09:10:18.486829+00:00",
+      "target_id": "target_regression",
+      "feedback": "approved",
+      "rationale": "Regression approval.",
+      "operator": "system",
+      "confidence_delta": 0.1,
+      "metadata": {}
+    },
+    "confidence": 0.6,
+    "tags": [
+      "operator_feedback",
+      "approved"
+    ],
+    "status": "active"
+  },
+  {
+    "version": "16.66",
+    "memory_id": "mem_20260507130611070371",
+    "created_at": "2026-05-07T13:06:11.070371+00:00",
+    "memory_type": "thesis",
+    "title": "Regression orchestration thesis",
+    "payload": {
+      "summary": "test priority"
+    },
+    "confidence": 0.7,
+    "tags": [],
+    "status": "active"
+  },
+  {
+    "version": "16.66",
+    "memory_id": "mem_20260507131843861736",
+    "created_at": "2026-05-07T13:18:43.861736+00:00",
+    "memory_type": "thesis",
+    "title": "High priority regression thesis",
+    "payload": {
+      "summary": "test"
+    },
+    "confidence": 0.9,
+    "tags": [],
+    "status": "active"
+  }
+]

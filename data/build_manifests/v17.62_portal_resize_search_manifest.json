@@ -1,0 +1,38 @@
+{
+  "version": "17.62",
+  "name": "Portal Resize + Dashboard Search Foundation",
+  "build_type": "dashboard_stabilization_and_intelligence_foundation",
+  "purpose": "Resize/readability repair for all portals and add dashboard-wide local truth search foundation.",
+  "depends_on": [
+    "v17.56 Operating Environment Redesign Foundation",
+    "v17.59 Runtime Truth Backbone",
+    "v17.60 Validation Authority",
+    "v17.61 Verified Memory Gate"
+  ],
+  "installed_files": [
+    "docs/dashboard/v17.62_portal_resize_search.md",
+    "docs/update_packs/v17.62_dashboard_update_pack.md",
+    "docs/update_packs/v17.62_system_runtime_update_pack.md",
+    "src/claire/dashboard_intelligence/__init__.py",
+    "src/claire/dashboard_intelligence/local_index.py",
+    "src/frontend/command_center/modern/claire_dashboard_search.js",
+    "src/frontend/command_center/modern/claire_portal_responsive_layout.css",
+    "src/frontend/command_center/modern/dashboard_search_contract.json",
+    "src/frontend/command_center/modern/dashboard_search_index.json",
+    "src/frontend/command_center/modern/intelligence_command_contract.json",
+    "tools/claire_build_dashboard_search_index.py"
+  ],
+  "post_install_commands": [
+    "python tools/claire_build_runtime_truth.py",
+    "python tools/claire_validate_runtime_truth.py",
+    "python tools/claire_build_verified_memory.py",
+    "python tools/claire_build_dashboard_search_index.py"
+  ],
+  "safety": {
+    "rollback_backups": true,
+    "launcher_path_preserved": "src/frontend/command_center/modern/index.html",
+    "no_fake_search_results": true,
+    "no_fake_standalone_intelligence": true,
+    "runtime_logic_unchanged": true
+  }
+}

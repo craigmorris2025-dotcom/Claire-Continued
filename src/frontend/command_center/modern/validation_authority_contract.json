@@ -1,0 +1,41 @@
+{
+  "schema": "claire.validation_authority_contract.v1",
+  "version": "17.60",
+  "purpose": "Define the dashboard-facing validation authority report contract.",
+  "canonical_outputs": [
+    "exports/latest/validation_authority_report.json",
+    "exports/latest/evidence_traceability_index.json",
+    "src/frontend/command_center/modern/validation_authority_status.json",
+    "src/frontend/command_center/modern/evidence_traceability_status.json"
+  ],
+  "required_report_fields": [
+    "schema",
+    "contract_version",
+    "generated_at",
+    "run_id",
+    "route_selected",
+    "terminal_state",
+    "validation_authority_status",
+    "validation_passed",
+    "validation_score",
+    "memory_eligible",
+    "recursive_feedback_allowed",
+    "checks_total",
+    "checks_passed",
+    "checks_warning",
+    "checks_failed",
+    "critical_failures",
+    "blocking_failures",
+    "evidence_summary",
+    "checks"
+  ],
+  "allowed_statuses": [
+    "pass",
+    "warning",
+    "blocked",
+    "fail"
+  ],
+  "validation_rule": "Dashboard must treat outputs as verified only when validation_authority_status is pass.",
+  "memory_rule": "No validation pass means no verified memory and no recursive feedback.",
+  "stage_16_22_rule": "Design-capable routes must explicitly represent stages 16 through 22."
+}

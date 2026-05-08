@@ -1,0 +1,17 @@
+{
+  "lock_version": "v17.49",
+  "surfaces": [
+    "health_surface",
+    "dashboard_surface",
+    "degraded_mode_surface",
+    "source_trust_surface",
+    "campaign_state_surface"
+  ],
+  "state_requirements": {
+    "main_result_never_blank": true,
+    "degraded_mode_visible": true,
+    "source_trust_visible": true,
+    "campaign_scheduler_visible": true,
+    "rollback_state_visible": true
+  }
+}

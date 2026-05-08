@@ -1,0 +1,42 @@
+{
+  "version": "17.61",
+  "name": "Verified Memory + Recursive Feedback Gate",
+  "build_type": "system_runtime_and_dashboard_bridge",
+  "purpose": "Govern whether validated Claire outputs may enter verified memory and recursive feedback.",
+  "depends_on": [
+    "v17.59 Runtime Truth Backbone + Dashboard Data Contract",
+    "v17.60 Validation Authority + Evidence Traceability"
+  ],
+  "installed_files": [
+    "docs/dashboard/v17.61_verified_memory_recursive_feedback.md",
+    "docs/update_packs/v17.61_dashboard_update_pack.md",
+    "docs/update_packs/v17.61_system_runtime_update_pack.md",
+    "src/claire/verified_memory/__init__.py",
+    "src/claire/verified_memory/io.py",
+    "src/claire/verified_memory/memory_gate.py",
+    "src/claire/verified_memory/memory_record.py",
+    "src/claire/verified_memory/recursive_feedback_gate.py",
+    "src/frontend/command_center/modern/claire_verified_memory.js",
+    "src/frontend/command_center/modern/recursive_feedback_contract.json",
+    "src/frontend/command_center/modern/recursive_feedback_status.json",
+    "src/frontend/command_center/modern/verified_memory_contract.json",
+    "src/frontend/command_center/modern/verified_memory_status.json",
+    "tools/claire_build_verified_memory.py"
+  ],
+  "runtime_outputs": [
+    "exports/latest/verified_memory_gate_report.json",
+    "exports/latest/recursive_feedback_gate_report.json"
+  ],
+  "post_install_commands": [
+    "python tools/claire_build_runtime_truth.py",
+    "python tools/claire_validate_runtime_truth.py",
+    "python tools/claire_build_verified_memory.py"
+  ],
+  "safety": {
+    "rollback_backups": true,
+    "launcher_path_preserved": "src/frontend/command_center/modern/index.html",
+    "no_fake_memory_storage": true,
+    "no_autonomous_runtime_mutation": true,
+    "memory_requires_validation_pass": true
+  }
+}

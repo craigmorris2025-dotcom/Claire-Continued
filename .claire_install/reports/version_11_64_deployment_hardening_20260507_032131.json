@@ -1,0 +1,132 @@
+{
+  "actions": [
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\deployment_hardening"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\deployment_hardening"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\deployment_hardening\\preflight_checks"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\deployment_hardening\\rollback_points"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\deployment_hardening\\environment_manifests"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\deployment_hardening\\release_gates"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\deployment_hardening\\audit_snapshots"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\deployment_hardening"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\deployment_hardening\\__init__.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\deployment_hardening\\environment_manifest_builder.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\deployment_hardening\\release_gate_evaluator.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\deployment_hardening\\rollback_point_registry.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\deployment_hardening\\preflight_checklist.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\deployment_hardening\\v11_58_to_v11_64_deployment_hardening_plan.md"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\deployment_hardening\\test_deployment_hardening.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version_11_64_deployment_hardening.json"
+    }
+  ],
+  "installed": true,
+  "installed_at_utc": "2026-05-07T03:21:31.762829+00:00",
+  "installer": "Claire v11.58-v11.64 Deployment Hardening Installer",
+  "installer_version": "11.58-11.64",
+  "post_install_checks": [
+    "Run the targeted pytest folder for this installer.",
+    "Confirm new src/claire package folder exists.",
+    "Confirm new data folders exist.",
+    "Commit after tests pass."
+  ],
+  "safety_contract": {
+    "does_not_modify_routing": true,
+    "does_not_modify_runtime": true,
+    "does_not_modify_scoring": true,
+    "release_gates_only": true
+  },
+  "target": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "version_file": "version_11_64_deployment_hardening.json"
+}

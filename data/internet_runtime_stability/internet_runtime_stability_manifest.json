@@ -1,0 +1,26 @@
+{
+  "capabilities": [
+    "retry_policy",
+    "failure_classification",
+    "degraded_mode",
+    "recovery_journal",
+    "stability_reports",
+    "health_checks",
+    "campaign_refresh_recovery_wrapper",
+    "scheduler_recovery_wrapper",
+    "cli",
+    "fastapi_routes",
+    "tests"
+  ],
+  "governance_boundary": "no_retry_for_governance_blocks_no_unapproved_external_action",
+  "installed_at": "2026-05-07T16:35:47.092385Z",
+  "layer": "internet_runtime_stability",
+  "requires": [
+    "claire.internet_activation",
+    "claire.internet_runtime_integration",
+    "claire.persistent_internet_campaigns",
+    "claire.governed_campaign_scheduler"
+  ],
+  "status": "installed",
+  "version": "v17.45"
+}

@@ -1,0 +1,22 @@
+{
+  "version": "v17.55",
+  "name": "Live Intelligence Feed + Narrative Flow Layer",
+  "primary_dashboard": "src/frontend/command_center/modern/index.html",
+  "frontend_only": true,
+  "runtime_isolation_preserved": true,
+  "storage": "browser localStorage",
+  "local_storage_key": "claire_intelligence_feed_v17_55",
+  "features": [
+    "live intelligence feed surface",
+    "saved insight cards",
+    "what changed panel",
+    "why it matters summaries",
+    "narrative timeline",
+    "operator notes",
+    "signal to evidence to thesis flow",
+    "feed seeded state",
+    "discovery to feed integration",
+    "campaign draft to narrative note"
+  ],
+  "installed_at": "2026-05-07T23:35:11.546705+00:00"
+}

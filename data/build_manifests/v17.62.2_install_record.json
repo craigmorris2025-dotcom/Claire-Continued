@@ -1,0 +1,21 @@
+{
+  "version": "17.62.2",
+  "build_name": "Search Relocation + Mic Button Hotfix",
+  "installed_at_utc": "2026-05-08T04:47:16.982116Z",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_62_2_20260508_044716",
+  "index_patched": true,
+  "files_written": [
+    "data/build_manifests/v17.62.2_search_relocation_mic_manifest.json",
+    "docs/dashboard/v17.62.2_search_relocation_mic.md",
+    "docs/update_packs/v17.62.2_dashboard_hotfix_pack.md",
+    "src/frontend/command_center/modern/claire_dashboard_search.js",
+    "src/frontend/command_center/modern/claire_search_relocation.css"
+  ],
+  "notes": [
+    "Search moved into brand/sidebar intro area.",
+    "Existing intro text is hidden/replaced by search.",
+    "Mic button uses browser speech recognition when supported.",
+    "Runtime logic unchanged."
+  ]
+}

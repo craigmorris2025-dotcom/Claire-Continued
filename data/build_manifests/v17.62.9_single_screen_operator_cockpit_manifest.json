@@ -1,0 +1,29 @@
+{
+  "version": "17.62.9",
+  "name": "Single-Screen Operator Cockpit",
+  "build_type": "dashboard_single_screen_consolidation",
+  "purpose": "Fully consolidate operator surfaces into one-screen cockpit with tabbed workspace.",
+  "installed_files": [
+    "docs/dashboard/v17.62.9_single_screen_operator_cockpit.md",
+    "docs/update_packs/v17.62.9_single_screen_operator_cockpit_pack.md",
+    "src/frontend/command_center/modern/claire_single_screen_operator.css",
+    "src/frontend/command_center/modern/claire_single_screen_operator.js",
+    "src/frontend/command_center/modern/index.html",
+    "src/frontend/command_center/modern/operator_surface_contract.json"
+  ],
+  "replaces": [
+    "src/frontend/command_center/modern/index.html",
+    "src/frontend/command_center/modern/claire_single_screen_operator.css",
+    "src/frontend/command_center/modern/claire_single_screen_operator.js"
+  ],
+  "safety": {
+    "rollback_backups": true,
+    "launcher_path_preserved": "src/frontend/command_center/modern/index.html",
+    "runtime_logic_unchanged": true,
+    "validation_logic_unchanged": true,
+    "memory_logic_unchanged": true,
+    "no_fake_data": true,
+    "developer_diagnostics_collapsed": true,
+    "single_screen_consolidation": true
+  }
+}

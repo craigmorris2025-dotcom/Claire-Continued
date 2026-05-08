@@ -1,0 +1,30 @@
+{
+  "version": "17.60",
+  "build_name": "Validation Authority + Evidence Traceability",
+  "installed_at_utc": "2026-05-08T04:13:31.170391Z",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_60_20260508_041331",
+  "index_patched": true,
+  "files_written": [
+    "data/build_manifests/v17.60_validation_authority_manifest.json",
+    "docs/dashboard/v17.60_validation_authority_evidence_traceability.md",
+    "docs/update_packs/v17.60_dashboard_update_pack.md",
+    "docs/update_packs/v17.60_system_runtime_update_pack.md",
+    "src/claire/validation_authority/__init__.py",
+    "src/claire/validation_authority/evidence_index.py",
+    "src/claire/validation_authority/evidence_traceability.py",
+    "src/claire/validation_authority/io.py",
+    "src/claire/validation_authority/validation_authority.py",
+    "src/claire/validation_authority/validation_report.py",
+    "src/frontend/command_center/modern/claire_validation_authority.js",
+    "src/frontend/command_center/modern/evidence_traceability_contract.json",
+    "src/frontend/command_center/modern/evidence_traceability_status.json",
+    "src/frontend/command_center/modern/validation_authority_contract.json",
+    "src/frontend/command_center/modern/validation_authority_status.json",
+    "tools/claire_validate_runtime_truth.py"
+  ],
+  "post_install_commands": [
+    "python tools/claire_build_runtime_truth.py",
+    "python tools/claire_validate_runtime_truth.py"
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "actions": [
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\operational_proof"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\operational_proof"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\operational_proof\\benchmark_replays"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\operational_proof\\outcome_labels"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\operational_proof\\operator_reviews"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\operational_proof\\drift_reports"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\operational_proof\\false_positives"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\operational_proof\\confidence_calibration"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\operational_proof\\pilot_gates"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\operational_proof\\governance_locks"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\operational_proof\\plateau"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\operational_proof"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\operational_proof\\__init__.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\operational_proof\\benchmark_replay_accumulator.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\operational_proof\\outcome_label_adjudicator.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\operational_proof\\operator_review_capture.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\operational_proof\\drift_false_positive_tracker.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\operational_proof\\confidence_calibration_reporter.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\operational_proof\\pilot_readiness_gate.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\operational_proof\\governance_deployment_lock.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\operational_proof\\operational_proof_plateau.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\operational_proof\\test_benchmark_replay_accumulator.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\operational_proof\\test_outcome_label_adjudicator.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\operational_proof\\test_operator_review_capture.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\operational_proof\\test_drift_false_positive_tracker.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\operational_proof\\test_confidence_calibration_reporter.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\operational_proof\\test_pilot_readiness_gate.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\operational_proof\\test_governance_deployment_lock.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\operational_proof\\test_operational_proof_plateau.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\operational_proof\\v11_43_to_v11_50_operational_proof_plan.md"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\operational_proof\\plateau\\v11_50_operational_proof_plateau.json"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version_11_50_operational_proof_plateau.json"
+    }
+  ],
+  "installed": true,
+  "installed_at_utc": "2026-05-07T02:26:30.797118+00:00",
+  "installer": "Claire v11.43-v11.50 Operational Proof Installer",
+  "installer_version": "11.43-11.50",
+  "post_install_checks": [
+    "Run: pytest tests/operational_proof",
+    "Confirm src/claire/operational_proof exists.",
+    "Confirm data/operational_proof folders exist.",
+    "Do not move to v12 until proof records are populated."
+  ],
+  "safety_contract": {
+    "does_not_modify_core_run_output": true,
+    "does_not_modify_routing": true,
+    "does_not_modify_runtime": true,
+    "does_not_modify_scoring": true,
+    "proof_infrastructure_only": true
+  },
+  "target": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "version_path": "11.43 -> 11.50"
+}

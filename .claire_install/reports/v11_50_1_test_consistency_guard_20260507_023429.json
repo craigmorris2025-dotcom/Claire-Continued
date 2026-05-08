@@ -1,0 +1,102 @@
+{
+  "actions": [
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\consistency"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\testing"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\testing\\consistency_audits"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\consistency\\__init__.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\consistency\\test_operational_proof_imports.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\consistency\\test_placeholder_failure_policy.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\consistency\\test_baseline_runner_policy.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\pytest_consistency_audit.py"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\testing\\v11_50_1_test_consistency_guard.md"
+    },
+    {
+      "action": "write_file",
+      "backup": null,
+      "existed": false,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version_11_50_1_test_consistency_guard.json"
+    }
+  ],
+  "installed": true,
+  "installed_at_utc": "2026-05-07T02:34:29.448714+00:00",
+  "installer": "Claire v11.50.1 Test Consistency Guard Installer",
+  "installer_version": "11.50.1",
+  "post_install_checks": [
+    "pytest tests/consistency -v",
+    "pytest tests/operational_proof -v",
+    "python tools/pytest_consistency_audit.py",
+    "pytest"
+  ],
+  "safety_contract": {
+    "does_not_modify_core_run_output": true,
+    "does_not_modify_dashboard": true,
+    "does_not_modify_routing": true,
+    "does_not_modify_runtime": true,
+    "does_not_modify_scoring": true,
+    "test_layer_only": true
+  },
+  "target": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire"
+}

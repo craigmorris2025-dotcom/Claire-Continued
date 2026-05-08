@@ -1,0 +1,55 @@
+{
+  "guard": "forward_install_guard",
+  "version": "v16.26",
+  "created_at": "2026-05-07T01:47:02.976604",
+  "status": "failed",
+  "check_count": 5,
+  "failed_count": 1,
+  "checks": [
+    {
+      "name": "protected_paths",
+      "status": "success",
+      "missing": [],
+      "checked_count": 9
+    },
+    {
+      "name": "nested_repo_pollution",
+      "status": "success",
+      "nested": []
+    },
+    {
+      "name": "active_placeholder_tests",
+      "status": "failed",
+      "offenders": [
+        "tests\\placeholder_disabled\\test_acquisition_stages.py",
+        "tests\\placeholder_disabled\\test_analysis_stages.py",
+        "tests\\placeholder_disabled\\test_breakthrough_stages.py",
+        "tests\\placeholder_disabled\\test_feasibility_stages.py",
+        "tests\\placeholder_disabled\\test_memory_system.py",
+        "tests\\placeholder_disabled\\test_portfolio_stages.py",
+        "tests\\placeholder_disabled\\test_validation_system.py",
+        "tests\\regression\\test_runtime_cleanroom.py"
+      ],
+      "offender_count": 8
+    },
+    {
+      "name": "syntax_fast",
+      "status": "success",
+      "failure_count": 0,
+      "failures": []
+    },
+    {
+      "name": "protected_imports",
+      "status": "success",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "imports": [
+        "claire.app",
+        "claire.api.routes_pipeline",
+        "claire.orchestrator.pipeline_v4",
+        "claire.technology.technology_intelligence"
+      ]
+    }
+  ]
+}

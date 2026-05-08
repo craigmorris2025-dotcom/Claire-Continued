@@ -1,0 +1,32 @@
+{
+  "version": "17.62.5",
+  "build_name": "Dashboard Conflict Cleanup + Stable Runtime Stack",
+  "installed_at_utc": "2026-05-08T05:02:56.441478Z",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_62_5_20260508_050256",
+  "index_patched": true,
+  "files_written": [
+    "data/build_manifests/v17.62.5_dashboard_conflict_cleanup_manifest.json",
+    "docs/dashboard/v17.62.5_dashboard_conflict_cleanup.md",
+    "docs/update_packs/v17.62.5_dashboard_cleanup_pack.md",
+    "src/frontend/command_center/modern/claire_dashboard_reset_v17_62_5.css",
+    "src/frontend/command_center/modern/claire_dashboard_reset_v17_62_5.js"
+  ],
+  "removed_conflicting_assets_from_index": [
+    "claire_portal_responsive_layout.css",
+    "claire_dashboard_decongestion.css",
+    "claire_search_relocation.css",
+    "claire_overlap_fix.css",
+    "claire_workspace_stack_fix.css",
+    "claire_dashboard_search.js",
+    "claire_workspace_stack_fix.js",
+    "claire_validation_authority.js",
+    "claire_verified_memory.js"
+  ],
+  "notes": [
+    "Removes conflicting v17.62-series dashboard scripts/styles from index.html.",
+    "Adds one reset CSS and one reset JS.",
+    "Hides old dynamic validation/memory bridge panels and renders stable runtime truth stack.",
+    "Runtime, validation, and memory logic unchanged."
+  ]
+}

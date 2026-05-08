@@ -1,0 +1,21 @@
+{
+  "version": "17.62.7",
+  "build_name": "Operator Surface Conversion",
+  "installed_at_utc": "2026-05-08T05:13:44.444098Z",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_62_7_20260508_051344",
+  "files_written": [
+    "data/build_manifests/v17.62.7_operator_surface_manifest.json",
+    "docs/dashboard/v17.62.7_operator_surface_conversion.md",
+    "docs/update_packs/v17.62.7_operator_surface_pack.md",
+    "src/frontend/command_center/modern/claire_operator_shell.css",
+    "src/frontend/command_center/modern/claire_operator_shell.js",
+    "src/frontend/command_center/modern/index.html"
+  ],
+  "notes": [
+    "Converted main dashboard surfaces from developer-facing terms to operator-facing terms.",
+    "Developer diagnostics moved to collapsed section.",
+    "Runtime, validation, and memory logic unchanged.",
+    "Dashboard remains honest: no fake runtime data."
+  ]
+}

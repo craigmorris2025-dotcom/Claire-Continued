@@ -1,0 +1,23 @@
+{
+  "layer": "internet_operations_dashboard",
+  "version": "v17.47",
+  "status": "installed",
+  "requires": [
+    "claire.persistent_internet_campaigns",
+    "claire.governed_campaign_scheduler",
+    "claire.internet_runtime_stability",
+    "claire.dynamic_source_trust"
+  ],
+  "capabilities": [
+    "dashboard_snapshot",
+    "campaign_panel_payload",
+    "scheduler_panel_payload",
+    "stability_panel_payload",
+    "source_trust_panel_payload",
+    "run_due_control_endpoint",
+    "manual_campaign_refresh_endpoint",
+    "standalone_html_dashboard",
+    "tests"
+  ],
+  "governance_boundary": "dashboard_controls_call_existing_governed_services_only"
+}

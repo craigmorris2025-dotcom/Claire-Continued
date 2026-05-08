@@ -1,0 +1,30 @@
+{
+  "version": "v17.52",
+  "name": "Modern Operator Dashboard",
+  "installed_at": "2026-05-07T22:14:22.387278+00:00",
+  "purpose": "Replace build-layer Command Center with a modern operator dashboard shell and runtime-aware UI sections.",
+  "files": [
+    "src/frontend/command_center/modern/index.html",
+    "src/frontend/command_center/modern/operator_dashboard.css",
+    "src/frontend/command_center/modern/operator_dashboard.js",
+    "src/frontend/command_center/modern/internet_operations_dashboard.html",
+    "tests/test_v17_52_modern_operator_dashboard.py"
+  ],
+  "governance": {
+    "no_placeholders": true,
+    "runtime_isolation_preserved": true,
+    "dashboard_does_not_fake_success": true,
+    "missing_routes_are_visible": true,
+    "rollback_backup_created": true
+  },
+  "operator_sections": [
+    "overview",
+    "internet",
+    "campaigns",
+    "source_trust",
+    "runtime_health",
+    "deployment",
+    "launch_lock",
+    "actions"
+  ]
+}

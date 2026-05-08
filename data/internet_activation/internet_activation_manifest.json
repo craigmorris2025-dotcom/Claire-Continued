@@ -1,0 +1,31 @@
+{
+  "capabilities": [
+    "real_aiohttp_fetch",
+    "tavily_search",
+    "brave_search",
+    "serpapi_search",
+    "bing_search",
+    "source_policy",
+    "safe_download_filter",
+    "content_normalization",
+    "evidence_extraction",
+    "evidence_persistence",
+    "audit_logging",
+    "fastapi_routes",
+    "mocked_network_tests"
+  ],
+  "governance_boundary": "no_hidden_browsing_no_executable_downloads_no_unapproved_unknown_domains",
+  "implementation_type": "real_local_internet_activation_core",
+  "installed_at": "2026-05-07T15:25:18.864696Z",
+  "layer": "internet_activation",
+  "not_claimed": [
+    "cloud_deployment",
+    "kubernetes",
+    "distributed_queue_broker",
+    "browser_automation",
+    "autonomous_unrestricted_crawling",
+    "private_authenticated_browsing"
+  ],
+  "status": "installed",
+  "version": "v17.41"
+}

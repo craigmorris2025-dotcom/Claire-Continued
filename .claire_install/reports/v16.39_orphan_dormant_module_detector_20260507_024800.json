@@ -1,0 +1,52 @@
+{
+  "installer": "v16.39_orphan_dormant_module_detector",
+  "title": "Orphan Dormant Module Detector",
+  "created_at": "2026-05-07T02:48:00.800696",
+  "status": "success",
+  "actions": [
+    {
+      "action": "write_file",
+      "path": "tools/orphan_dormant_module_detector.py",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "docs/runtime/ORPHAN_DORMANT_MODULE_DETECTOR.md",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "tests/regression/test_orphan_dormant_module_detector.py",
+      "existed_before": false,
+      "backup_path": null
+    }
+  ],
+  "validations": [
+    {
+      "name": "orphan_dormant_module_detector",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/orphan_dormant_module_detector.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"detector\": \"orphan_dormant_module_detector\",\n  \"candidate_count\": 38\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "orphan_dormant_module_detector_tests",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "pytest",
+        "tests/regression/test_orphan_dormant_module_detector.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout_tail": ".                                                                        [100%]\n",
+      "stderr_tail": ""
+    }
+  ],
+  "failed_validation_count": 0
+}

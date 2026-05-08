@@ -7,6 +7,7 @@ from claire.config.logging import setup_logging
 
 # ?? import routers at top (cleaner + safer)
 from claire.api.routes_pipeline import router as pipeline_router
+from claire.api.routes_dashboard_alignment import router as dashboard_alignment_router
 
 
 logger = logging.getLogger("claire.server")
@@ -50,6 +51,7 @@ def create_app() -> FastAPI:
 
     # ? Attach first working router
     app.include_router(pipeline_router)
+    app.include_router(dashboard_alignment_router)
 
     return app
 

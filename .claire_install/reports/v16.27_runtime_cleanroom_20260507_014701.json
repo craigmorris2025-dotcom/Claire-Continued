@@ -1,0 +1,210 @@
+{
+  "installer": "v16.27_runtime_cleanroom",
+  "created_at": "2026-05-07T01:47:09.084140",
+  "status": "installed_with_warnings",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "actions": [
+    {
+      "action": "write_file",
+      "path": "tools/runtime_compile_check.py",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "tools/runtime_test_scope.py",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "pytest_runtime.ini",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "docs/install_governance/RUNTIME_CLEANROOM.md",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "tests/regression/test_runtime_cleanroom.py",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "fix_bom",
+      "path": "src/claire/autonomous/governance/__init__.py",
+      "exists": true,
+      "backup_path": ".claire_install/backups/v16.27_runtime_cleanroom_20260507_014701/src/claire/autonomous/governance/__init__.py",
+      "changed": true
+    },
+    {
+      "action": "fix_bom",
+      "path": "src/claire/design/proof/__init__.py",
+      "exists": true,
+      "backup_path": ".claire_install/backups/v16.27_runtime_cleanroom_20260507_014701/src/claire/design/proof/__init__.py",
+      "changed": true
+    },
+    {
+      "action": "fix_bom",
+      "path": "src/claire/design/renderers/__init__.py",
+      "exists": true,
+      "backup_path": ".claire_install/backups/v16.27_runtime_cleanroom_20260507_014701/src/claire/design/renderers/__init__.py",
+      "changed": true
+    },
+    {
+      "action": "fix_bom",
+      "path": "src/claire/production/uptime_monitor.py",
+      "exists": true,
+      "backup_path": ".claire_install/backups/v16.27_runtime_cleanroom_20260507_014701/src/claire/production/uptime_monitor.py",
+      "changed": true
+    },
+    {
+      "action": "fix_bom",
+      "path": "src/claire/recursive/longitudinal/__init__.py",
+      "exists": true,
+      "backup_path": ".claire_install/backups/v16.27_runtime_cleanroom_20260507_014701/src/claire/recursive/longitudinal/__init__.py",
+      "changed": true
+    },
+    {
+      "action": "fix_bom",
+      "path": "src/claire/research/live/__init__.py",
+      "exists": true,
+      "backup_path": ".claire_install/backups/v16.27_runtime_cleanroom_20260507_014701/src/claire/research/live/__init__.py",
+      "changed": true
+    },
+    {
+      "action": "fix_bom",
+      "path": "src/claire/technology/__init__.py",
+      "exists": true,
+      "backup_path": ".claire_install/backups/v16.27_runtime_cleanroom_20260507_014701/src/claire/technology/__init__.py",
+      "changed": true
+    },
+    {
+      "action": "fix_bom",
+      "path": "src/claire/validation/benchmarks/__init__.py",
+      "exists": true,
+      "backup_path": ".claire_install/backups/v16.27_runtime_cleanroom_20260507_014701/src/claire/validation/benchmarks/__init__.py",
+      "changed": true
+    },
+    {
+      "action": "quarantine_placeholder_test",
+      "source": "tests/test_acquisition_stages.py",
+      "target": "tests/placeholder_disabled/test_acquisition_stages.py",
+      "source_exists": true,
+      "moved": true
+    },
+    {
+      "action": "quarantine_placeholder_test",
+      "source": "tests/test_analysis_stages.py",
+      "target": "tests/placeholder_disabled/test_analysis_stages.py",
+      "source_exists": true,
+      "moved": true
+    },
+    {
+      "action": "quarantine_placeholder_test",
+      "source": "tests/test_breakthrough_stages.py",
+      "target": "tests/placeholder_disabled/test_breakthrough_stages.py",
+      "source_exists": true,
+      "moved": true
+    },
+    {
+      "action": "quarantine_placeholder_test",
+      "source": "tests/test_feasibility_stages.py",
+      "target": "tests/placeholder_disabled/test_feasibility_stages.py",
+      "source_exists": true,
+      "moved": true
+    },
+    {
+      "action": "quarantine_placeholder_test",
+      "source": "tests/test_memory_system.py",
+      "target": "tests/placeholder_disabled/test_memory_system.py",
+      "source_exists": true,
+      "moved": true
+    },
+    {
+      "action": "quarantine_placeholder_test",
+      "source": "tests/test_portfolio_stages.py",
+      "target": "tests/placeholder_disabled/test_portfolio_stages.py",
+      "source_exists": true,
+      "moved": true
+    },
+    {
+      "action": "quarantine_placeholder_test",
+      "source": "tests/test_validation_system.py",
+      "target": "tests/placeholder_disabled/test_validation_system.py",
+      "source_exists": true,
+      "moved": true
+    }
+  ],
+  "validations": [
+    {
+      "name": "active_runtime_check",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/active_runtime_check.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"check\": \"active_runtime_check\",\n  \"created_at\": \"2026-05-07T01:47:01.693768\",\n  \"status\": \"success\",\n  \"failed_count\": 0,\n  \"imports\": [\n    {\n      \"module\": \"claire.app\",\n      \"status\": \"success\"\n    },\n    {\n      \"module\": \"claire.api.routes_pipeline\",\n      \"status\": \"success\"\n    },\n    {\n      \"module\": \"claire.orchestrator.pipeline_v4\",\n      \"status\": \"success\"\n    },\n    {\n      \"module\": \"claire.technology.technology_intelligence\",\n      \"status\": \"success\"\n    }\n  ]\n}\n\nReport written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports\\active_runtime_check_20260507_014701.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "runtime_compile_check",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/runtime_compile_check.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"check\": \"runtime_compile_check\",\n  \"created_at\": \"2026-05-07T01:47:02.128706\",\n  \"status\": \"success\",\n  \"failure_count\": 0,\n  \"failures\": []\n}\n\nReport written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports\\runtime_compile_check_20260507_014702.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "forward_install_guard",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/forward_install_guard.py"
+      ],
+      "returncode": 1,
+      "stdout_tail": "{\n  \"guard\": \"forward_install_guard\",\n  \"version\": \"v16.26\",\n  \"created_at\": \"2026-05-07T01:47:02.976604\",\n  \"status\": \"failed\",\n  \"check_count\": 5,\n  \"failed_count\": 1,\n  \"checks\": [\n    {\n      \"name\": \"protected_paths\",\n      \"status\": \"success\",\n      \"missing\": [],\n      \"checked_count\": 9\n    },\n    {\n      \"name\": \"nested_repo_pollution\",\n      \"status\": \"success\",\n      \"nested\": []\n    },\n    {\n      \"name\": \"active_placeholder_tests\",\n      \"status\": \"failed\",\n      \"offenders\": [\n        \"tests\\\\placeholder_disabled\\\\test_acquisition_stages.py\",\n        \"tests\\\\placeholder_disabled\\\\test_analysis_stages.py\",\n        \"tests\\\\placeholder_disabled\\\\test_breakthrough_stages.py\",\n        \"tests\\\\placeholder_disabled\\\\test_feasibility_stages.py\",\n        \"tests\\\\placeholder_disabled\\\\test_memory_system.py\",\n        \"tests\\\\placeholder_disabled\\\\test_portfolio_stages.py\",\n        \"tests\\\\placeholder_disabled\\\\test_validation_system.py\",\n        \"tests\\\\regression\\\\test_runtime_cleanroom.py\"\n      ],\n      \"offender_count\": 8\n    },\n    {\n      \"name\": \"syntax_fast\",\n      \"status\": \"success\",\n      \"failure_count\": 0,\n      \"failures\": []\n    },\n    {\n      \"name\": \"protected_imports\",\n      \"status\": \"success\",\n      \"returncode\": 0,\n      \"stdout\": \"\",\n      \"stderr\": \"\",\n      \"imports\": [\n        \"claire.app\",\n        \"claire.api.routes_pipeline\",\n        \"claire.orchestrator.pipeline_v4\",\n        \"claire.technology.technology_intelligence\"\n      ]\n    }\n  ]\n}\n\nReport written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports\\forward_install_guard_20260507_014702.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "runtime_cleanroom_tests",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "pytest",
+        "tests/regression/test_runtime_cleanroom.py",
+        "-q"
+      ],
+      "returncode": 1,
+      "stdout_tail": "F..                                                                      [100%]\n================================== FAILURES ===================================\n___________________ test_placeholder_tests_are_quarantined ____________________\n\n    def test_placeholder_tests_are_quarantined():\n        offenders = []\n        for path in (ROOT / \"tests\").rglob(\"test_*.py\"):\n            if \"placeholder_disabled\" in str(path):\n                continue\n            text = path.read_text(encoding=\"utf-8\", errors=\"ignore\")\n            if 'raise NotImplementedError(\"Import target class\")' in text:\n                offenders.append(str(path.relative_to(ROOT)))\n    \n>       assert offenders == []\nE       AssertionError: assert ['tests\\\\regr...cleanroom.py'] == []\nE         \nE         Left contains one more item: 'tests\\\\regression\\\\test_runtime_cleanroom.py'\nE         Use -v to get more diff\n\ntests\\regression\\test_runtime_cleanroom.py:16: AssertionError\n=========================== short test summary info ===========================\nFAILED tests/regression/test_runtime_cleanroom.py::test_placeholder_tests_are_quarantined\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "runtime_pytest_scope",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "pytest",
+        "-c",
+        "pytest_runtime.ini"
+      ],
+      "returncode": 1,
+      "stdout_tail": "brid_ready\",\n      \"hybrid_readiness\": \"hybrid_ready\",\n      \"recommended_mode\": \"hybrid\"\n    },\n    {\n      \"name\": \"dashboard_status\",\n      \"status\": \"success\",\n      \"subsystem_count\": 8,\n      \"completion_posture\": \"plateau_candidate\"\n    },\n    {\n      \"name\": \"acquisition_exports\",\n      \"status\": \"success\",\n      \"acquisition_readiness\": \"acquisition_grade\",\n      \"diligence_section_count\": 7\n    },\n    {\n      \"name\": \"updater_health\",\n      \"status\": \"success\",\n      \"readiness\": \"self_update_ready\"\n    },\n    {\n      \"name\": \"feed_activation_depth\",\n      \"status\": \"success\",\n      \"effective_mode\": \"hybrid\",\n      \"next_action\": \"provide_public_source_urls_or_use_offline_resolver\"\n    },\n    {\n      \"name\": \"live_source_catalog\",\n      \"status\": \"success\",\n      \"catalog_version\": \"v5.65\",\n      \"active_source_count\": 12,\n      \"resolved_source_count\": 5\n    },\n    {\n      \"name\": \"live_source_orchestration\",\n      \"status\": \"success\",\n      \"orchestrator\": \"live_source_orchestrator_v1\",\n      \"active_source_count\": 12\n    },\n    {\n      \"name\": \"portable_desktop_readiness\",\n      \"status\": \"failed\",\n      \"error\": \"\",\n      \"traceback\": \"Traceback (most recent call last):\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\tests\\\\..\\\\tools\\\\run_claire_baseline.py\\\", line 70, in _run_check\\n    payload = fn()\\n              ^^^^\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\tests\\\\..\\\\tools\\\\run_claire_baseline.py\\\", line 295, in check_portable_desktop_readiness\\n    assert payload[\\\"status\\\"] == \\\"success\\\"\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAssertionError\\n\"\n    },\n    {\n      \"name\": \"dashboard_update_workflow\",\n      \"status\": \"success\",\n      \"readiness\": \"self_update_ready\",\n      \"dashboard_install_enabled\": true\n    },\n    {\n      \"name\": \"desktop_app_shell\",\n      \"status\": \"failed\",\n      \"error\": \"\",\n      \"traceback\": \"Traceback (most recent call last):\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\tests\\\\..\\\\tools\\\\run_claire_baseline.py\\\", line 70, in _run_check\\n    payload = fn()\\n              ^^^^\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\tests\\\\..\\\\tools\\\\run_claire_baseline.py\\\", line 312, in check_desktop_app_shell\\n    assert payload[\\\"status\\\"] == \\\"success\\\"\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAssertionError\\n\"\n    },\n    {\n      \"name\": \"enhanced_interface_bridge\",\n      \"status\": \"success\",\n      \"capability_count\": 23,\n      \"ready_or_starter_count\": 23,\n      \"planned_count\": 0\n    },\n    {\n      \"name\": \"live_intelligence_spine\",\n      \"status\": \"success\",\n      \"registry_version\": \"safe\",\n      \"connector_record_count\": 4,\n      \"solution_candidate_count\": 1\n    },\n    {\n      \"name\": \"live_intelligence_activation\",\n      \"status\": \"success\",\n      \"scan_item_count\": 4,\n      \"monitor_run_id\": \"safe_run\",\n      \"candidate_count\": 1\n    },\n    {\n      \"name\": \"dashboard_layout\",\n      \"status\": \"success\",\n      \"layout_version\": \"v5.59_dashboard_ux_consolidation\",\n      \"group_count\": 5\n    },\n    {\n      \"name\": \"production_readiness\",\n      \"status\": \"success\",\n      \"production_posture\": \"plateau_ready_not_deployed\",\n      \"known_blocker_count\": 4\n    },\n    {\n      \"name\": \"plateau_candidate\",\n      \"status\": \"success\",\n      \"plateau_posture\": \"candidate\",\n      \"blocker_count\": 0\n    },\n    {\n      \"name\": \"portable_launcher\",\n      \"status\": \"success\",\n      \"portable_status\": \"success\",\n      \"selected_python\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\.venv\\\\Scripts\\\\python.exe\"\n    },\n    {\n      \"name\": \"desktop_live_services\",\n      \"status\": \"success\",\n      \"desktop_state\": \"portable_local\",\n      \"ready_service_count\": 10\n    },\n    {\n      \"name\": \"update_sources\",\n      \"status\": \"success\",\n      \"path\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\data\\\\update_sources\\\\allowed_sources.json\",\n      \"state\": \"available\"\n    }\n  ]\n}\n___________________ test_placeholder_tests_are_quarantined ____________________\n\n    def test_placeholder_tests_are_quarantined():\n        offenders = []\n        for path in (ROOT / \"tests\").rglob(\"test_*.py\"):\n            if \"placeholder_disabled\" in str(path):\n                continue\n            text = path.read_text(encoding=\"utf-8\", errors=\"ignore\")\n            if 'raise NotImplementedError(\"Import target class\")' in text:\n                offenders.append(str(path.relative_to(ROOT)))\n    \n>       assert offenders == []\nE       AssertionError: assert ['tests\\\\regr...cleanroom.py'] == []\nE         \nE         Left contains one more item: 'tests\\\\regression\\\\test_runtime_cleanroom.py'\nE         Use -v to get more diff\n\ntests\\regression\\test_runtime_cleanroom.py:16: AssertionError\n=========================== short test summary info ===========================\nFAILED tests/regression/test_baseline_runner.py::test_baseline_runner_checks_pass\nFAILED tests/regression/test_runtime_cleanroom.py::test_placeholder_tests_are_quarantined\n2 failed, 30 passed, 30 skipped in 5.22s\n",
+      "stderr_tail": ""
+    }
+  ],
+  "failed_validation_count": 3,
+  "next_commands": [
+    "python tools/active_runtime_check.py",
+    "python tools/runtime_compile_check.py",
+    "python tools/forward_install_guard.py",
+    "pytest tests/regression/test_runtime_cleanroom.py -q",
+    "pytest -c pytest_runtime.ini",
+    "python main.py"
+  ]
+}

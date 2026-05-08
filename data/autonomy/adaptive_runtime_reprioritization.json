@@ -1,0 +1,122 @@
+{
+  "version": "16.89",
+  "generated_at": "2026-05-07T13:18:43.907739+00:00",
+  "status": "ready",
+  "feedback_record_count": 1,
+  "feedback_adjustment": 0.1,
+  "adjusted_priorities": [
+    {
+      "kind": "task",
+      "id": "task_20260507131843871733",
+      "title": "High priority recursive regression task",
+      "task_type": "signal_analysis",
+      "state": "queued",
+      "score": 1.0,
+      "base_score": 1.0,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 1.0
+    },
+    {
+      "kind": "task",
+      "id": "task_20260507131843886733",
+      "title": "Follow-on task from escalation: Regression signal analysis task",
+      "task_type": "thesis_update",
+      "state": "queued",
+      "score": 1.0,
+      "base_score": 1.0,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 1.0
+    },
+    {
+      "kind": "task",
+      "id": "task_20260507131843887732",
+      "title": "Follow-on task from escalation: Regression evidence review task",
+      "task_type": "evidence_review",
+      "state": "queued",
+      "score": 0.95,
+      "base_score": 0.95,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 1.0
+    },
+    {
+      "kind": "memory",
+      "id": "mem_20260507131843861736",
+      "title": "High priority regression thesis",
+      "memory_type": "thesis",
+      "status": "active",
+      "score": 1.0,
+      "base_score": 1.0,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 1.0
+    },
+    {
+      "kind": "task",
+      "id": "task_20260507130611010947",
+      "title": "Regression signal analysis task",
+      "task_type": "signal_analysis",
+      "state": "completed",
+      "score": 0.88,
+      "base_score": 0.88,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 0.98
+    },
+    {
+      "kind": "memory",
+      "id": "mem_20260507130611070371",
+      "title": "Regression orchestration thesis",
+      "memory_type": "thesis",
+      "status": "active",
+      "score": 0.88,
+      "base_score": 0.88,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 0.98
+    },
+    {
+      "kind": "memory",
+      "id": "mem_20260507091018475828",
+      "title": "Regression thesis memory",
+      "memory_type": "thesis",
+      "status": "active",
+      "score": 0.78,
+      "base_score": 0.78,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 0.88
+    },
+    {
+      "kind": "task",
+      "id": "task_20260507130611017947",
+      "title": "Regression evidence review task",
+      "task_type": "evidence_review",
+      "state": "completed",
+      "score": 0.75,
+      "base_score": 0.75,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 0.85
+    },
+    {
+      "kind": "memory",
+      "id": "mem_20260507091018487829",
+      "title": "Operator feedback: approved",
+      "memory_type": "operator_decision",
+      "status": "active",
+      "score": 0.7,
+      "base_score": 0.7,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 0.8
+    }
+  ],
+  "top_adjusted_priority": [
+    {
+      "kind": "task",
+      "id": "task_20260507131843871733",
+      "title": "High priority recursive regression task",
+      "task_type": "signal_analysis",
+      "state": "queued",
+      "score": 1.0,
+      "base_score": 1.0,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 1.0
+    }
+  ],
+  "governance_note": "Adaptive reprioritization is bounded and explainable; it does not bypass operator review."
+}

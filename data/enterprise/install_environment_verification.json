@@ -1,0 +1,49 @@
+{
+  "version": "16.78",
+  "generated_at": "2026-05-07T12:55:47.288189+00:00",
+  "status": "ready",
+  "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "path_checks": [
+    {
+      "path": "src/claire",
+      "exists": true
+    },
+    {
+      "path": "tests",
+      "exists": true
+    },
+    {
+      "path": "data",
+      "exists": true
+    }
+  ],
+  "module_checks": [
+    {
+      "module": "claire.runtime.runtime_command_contracts",
+      "available": true
+    },
+    {
+      "module": "claire.runtime.runtime_command_dispatcher",
+      "available": true
+    },
+    {
+      "module": "claire.runtime.command_execution_guard",
+      "available": true
+    },
+    {
+      "module": "claire.live.source_registry",
+      "available": true
+    },
+    {
+      "module": "claire.memory.strategic_memory_registry",
+      "available": true
+    }
+  ],
+  "missing_path_count": 0,
+  "missing_module_count": 0,
+  "notes": [
+    "This verification checks local environment readiness.",
+    "Enterprise deployment still requires secrets review, security review, and deployment-specific configuration."
+  ]
+}

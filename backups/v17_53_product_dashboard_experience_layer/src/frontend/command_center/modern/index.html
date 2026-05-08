@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Claire Syntalion Operator Dashboard</title>
+  <link rel="stylesheet" href="./operator_dashboard.css"/>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">C</div>
+        <div>
+          <strong>Claire Syntalion</strong>
+          <span>Governed Intelligence Platform</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary dashboard navigation">
+        <button class="nav-item active" data-view="overview">Overview</button>
+        <button class="nav-item" data-view="internet">Internet Ops</button>
+        <button class="nav-item" data-view="campaigns">Campaigns</button>
+        <button class="nav-item" data-view="trust">Source Trust</button>
+        <button class="nav-item" data-view="runtime">Runtime Health</button>
+        <button class="nav-item" data-view="deployment">Deployment</button>
+        <button class="nav-item" data-view="launch">Launch Lock</button>
+        <button class="nav-item" data-view="actions">Actions</button>
+      </nav>
+
+      <section class="operator-card">
+        <span class="card-label">Operator Rule</span>
+        <p>Blank data is a system signal. Claire should show unavailable, missing route, or insufficient evidence — never fake success.</p>
+      </section>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Modern Operator Dashboard</p>
+          <h1 id="view-title">Overview</h1>
+          <p id="view-subtitle">Governed operational status, runtime readiness, and controlled launch actions.</p>
+        </div>
+        <div class="topbar-actions">
+          <button id="refresh-state" class="button primary">Refresh State</button>
+          <button id="open-guide" class="button ghost">Use Guide</button>
+        </div>
+      </header>
+
+      <section id="status-strip" class="status-strip" aria-live="polite"></section>
+      <section id="dashboard-content" class="content-grid"></section>
+    </main>
+  </div>
+
+  <dialog id="guide-dialog" class="guide-dialog">
+    <h2>Claire Operator Guide</h2>
+    <p>This dashboard is the control surface for using Claire, not just viewing build progress.</p>
+    <ol>
+      <li>Start with Overview to confirm readiness and blockers.</li>
+      <li>Use Internet Ops and Campaigns for governed external intelligence work.</li>
+      <li>Use Source Trust before relying on live findings.</li>
+      <li>Use Runtime Health and Deployment before extended runs.</li>
+      <li>Use Launch Lock to confirm protected invariants before any real use session.</li>
+    </ol>
+    <button class="button primary" onclick="document.getElementById('guide-dialog').close()">Close</button>
+  </dialog>
+
+  <script src="./operator_dashboard.js"></script>
+</body>
+</html>

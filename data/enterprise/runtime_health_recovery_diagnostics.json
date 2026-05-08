@@ -1,0 +1,71 @@
+{
+  "version": "16.77",
+  "generated_at": "2026-05-07T12:55:47.278103+00:00",
+  "status": "healthy_or_partial",
+  "readable_count": 9,
+  "missing_count": 0,
+  "checked_count": 9,
+  "runtime_files": [
+    {
+      "path": "data/runtime/master_control_state.json",
+      "exists": true,
+      "readable": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "data/runtime/runtime_state.json",
+      "exists": true,
+      "readable": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "data/runtime/unified_runtime_dashboard.json",
+      "exists": true,
+      "readable": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "data/runtime/runtime_control_center.json",
+      "exists": true,
+      "readable": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "data/runtime/runtime_intelligence.json",
+      "exists": true,
+      "readable": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "data/runtime/runtime_recovery_state.json",
+      "exists": true,
+      "readable": true,
+      "top_level_type": "dict"
+    }
+  ],
+  "intelligence_files": [
+    {
+      "path": "data/intelligence/lifecycle_quality_score.json",
+      "exists": true,
+      "readable": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "data/intelligence/trend_thesis_intelligence.json",
+      "exists": true,
+      "readable": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "data/intelligence/portfolio_breakthrough_routing.json",
+      "exists": true,
+      "readable": true,
+      "top_level_type": "dict"
+    }
+  ],
+  "recovery_notes": [
+    "Missing files may be acceptable if the runtime has not generated them yet.",
+    "Unreadable files should be treated as recovery or corruption risks.",
+    "This diagnostic does not mutate runtime state."
+  ]
+}

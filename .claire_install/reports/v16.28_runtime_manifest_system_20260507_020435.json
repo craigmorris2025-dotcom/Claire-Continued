@@ -1,0 +1,101 @@
+{
+  "installer": "v16.28_runtime_manifest_system",
+  "title": "Runtime Manifest System",
+  "created_at": "2026-05-07T02:04:42.325605",
+  "status": "success",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "actions": [
+    {
+      "action": "write_file",
+      "path": "tools/runtime_manifest_builder.py",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "tools/active_module_registry.py",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "tools/runtime_dependency_map.py",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "tools/install_manifest_reader.py",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "docs/runtime/RUNTIME_MANIFEST_SYSTEM.md",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "tests/regression/test_runtime_manifest_system.py",
+      "existed_before": false,
+      "backup_path": null
+    }
+  ],
+  "validations": [
+    {
+      "name": "runtime_manifest_builder",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/runtime_manifest_builder.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"manifest\": \"runtime_manifest\",\n  \"version\": \"v16.28\",\n  \"file_count\": 7137,\n  \"category_counts\": {\n    \"supporting\": 626,\n    \"protected_runtime\": 195,\n    \"install_record\": 144,\n    \"disabled_or_archived\": 93,\n    \"documentation\": 58,\n    \"generated\": 4473,\n    \"active_runtime\": 1359,\n    \"active_test\": 189\n  }\n}\n\nManifest written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\runtime\\runtime_manifest.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "install_manifest_reader",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/install_manifest_reader.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": " \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/v11_50_1_test_consistency_guard_20260507_023429.json\",\n      \"installer\": \"Claire v11.50.1 Test Consistency Guard Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/v11_50_2_current_system_test_guard_20260507_024029.json\",\n      \"installer\": \"Claire v11.50.2 Current-System Test Guard Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/v16.26_forward_install_guard_20260507_013744.json\",\n      \"installer\": \"v16.26_forward_install_guard\",\n      \"status\": \"installed_with_warnings\",\n      \"created_at\": \"2026-05-07T01:37:48.804696\"\n    },\n    {\n      \"path\": \".claire_install/reports/v16.27_runtime_cleanroom_20260507_014701.json\",\n      \"installer\": \"v16.27_runtime_cleanroom\",\n      \"status\": \"installed_with_warnings\",\n      \"created_at\": \"2026-05-07T01:47:09.084140\"\n    },\n    {\n      \"path\": \".claire_install/reports/version_11_57_pilot_operations_20260507_031638.json\",\n      \"installer\": \"Claire v11.51-v11.57 Pilot Operations Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_11_64_deployment_hardening_20260507_032131.json\",\n      \"installer\": \"Claire v11.58-v11.64 Deployment Hardening Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_11_70_ops_closeout_20260507_033225.json\",\n      \"installer\": \"Claire v11.65-v11.70 Ops Closeout Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_11_76_evidence_population_20260507_033340.json\",\n      \"installer\": \"Claire v11.71-v11.76 Evidence Population Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_11_82_demo_pilot_scenarios_20260507_033723.json\",\n      \"installer\": \"Claire v11.77-v11.82 Demo Pilot Scenarios Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_11_90_final_stability_20260507_033952.json\",\n      \"installer\": \"Claire v11.83-v11.90 Final Stability Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_11_90_final_stability_20260507_034208.json\",\n      \"installer\": \"Claire v11.83-v11.90 Final Stability Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_11_95_ip_transfer_package_20260507_034405.json\",\n      \"installer\": \"Claire v11.91-v11.95 IP Transfer Package Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_12_00_valuation_demo_binder_20260507_034535.json\",\n      \"installer\": \"Claire v11.96-v12.00 Valuation Demo Binder Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_12_05_external_review_readiness_20260507_034634.json\",\n      \"installer\": \"Claire v12.01-v12.05 External Review Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_13_enterprise_orchestration_20260507_034723.json\",\n      \"installer\": \"Claire v13 Enterprise Orchestration Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_14_autonomous_research_ecosystem_20260507_034813.json\",\n      \"installer\": \"Claire v14 Autonomous Research Ecosystem Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_15_recursive_platform_maturity_20260507_035100.json\",\n      \"installer\": \"Claire v15 Recursive Platform Maturity Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_16_10_package_update_governance_20260507_035321.json\",\n      \"installer\": \"Claire v16.6-v16.10 Package Update Governance Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_16_20_online_ops_endgame_20260507_035423.json\",\n      \"installer\": \"Claire v16.11-v16.20 Online Ops Endgame Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_16_25_clean_install_recovery_20260507_045646.json\",\n      \"installer\": \"Claire v16.21-v16.25 Clean Install Recovery Installer\",\n      \"status\": null,\n      \"created_at\": null\n    },\n    {\n      \"path\": \".claire_install/reports/version_16_5_live_connectivity_20260507_035232.json\",\n      \"installer\": \"Claire v16.0-v16.5 Governed Live Connectivity Installer\",\n      \"status\": null,\n      \"created_at\": null\n    }\n  ]\n}\n\nInstall manifest index written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\runtime\\install_manifest_index.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "runtime_dependency_map",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/runtime_dependency_map.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"map\": \"runtime_dependency_map\",\n  \"module_count\": 764\n}\n\nDependency map written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\runtime\\runtime_dependency_map.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "active_module_registry",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/active_module_registry.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"registry\": \"active_module_registry\",\n  \"version\": \"v16.28\",\n  \"created_at\": \"2026-05-07T02:04:38.833613\",\n  \"module_count\": 8,\n  \"failed_count\": 0,\n  \"modules\": [\n    {\n      \"module\": \"claire.app\",\n      \"status\": \"active\",\n      \"file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\src\\\\claire\\\\app.py\"\n    },\n    {\n      \"module\": \"claire.api.routes_pipeline\",\n      \"status\": \"active\",\n      \"file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\src\\\\claire\\\\api\\\\routes_pipeline.py\"\n    },\n    {\n      \"module\": \"claire.orchestrator.pipeline_v4\",\n      \"status\": \"active\",\n      \"file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\src\\\\claire\\\\orchestrator\\\\pipeline_v4.py\"\n    },\n    {\n      \"module\": \"claire.lifecycle.lifecycle_runner\",\n      \"status\": \"active\",\n      \"file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\src\\\\claire\\\\lifecycle\\\\lifecycle_runner.py\"\n    },\n    {\n      \"module\": \"claire.lifecycle.stage_registry\",\n      \"status\": \"active\",\n      \"file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\src\\\\claire\\\\lifecycle\\\\stage_registry.py\"\n    },\n    {\n      \"module\": \"claire.output.core_output_builder\",\n      \"status\": \"active\",\n      \"file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\src\\\\claire\\\\output\\\\core_output_builder.py\"\n    },\n    {\n      \"module\": \"claire.dashboard.dashboard_state_builder\",\n      \"status\": \"active\",\n      \"file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\src\\\\claire\\\\dashboard\\\\dashboard_state_builder.py\"\n    },\n    {\n      \"module\": \"claire.technology.technology_intelligence\",\n      \"status\": \"active\",\n      \"file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\src\\\\claire\\\\technology\\\\technology_intelligence.py\"\n    }\n  ]\n}\n\nRegistry written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\runtime\\active_module_registry.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "runtime_manifest_tests",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "pytest",
+        "tests/regression/test_runtime_manifest_system.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout_tail": "...                                                                      [100%]\n",
+      "stderr_tail": ""
+    }
+  ],
+  "failed_validation_count": 0
+}

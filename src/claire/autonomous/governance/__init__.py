@@ -1,17 +1,3 @@
 """
-Governance sub-package init
-===========================
-ACS2-Claire / Syntalion
-
-Package: src.claire.autonomous.governance
+Temporarily disabled scaffold package during stabilization recovery.
 """
-
-__all__ = [
-    "AutonomousActionPolicy",
-    "SelfChangePermissionModel",
-    "AutonomousDecisionAuditor",
-    "EscalationBoundary",
-    "HumanReviewGate",
-    "AutonomyMaturityScorer",
-]
-

@@ -1,0 +1,22 @@
+{
+  "version": "17.62.8",
+  "build_name": "Strategic Operator Cockpit",
+  "installed_at_utc": "2026-05-08T05:24:08.498061Z",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_62_8_20260508_052408",
+  "files_written": [
+    "data/build_manifests/v17.62.8_strategic_operator_cockpit_manifest.json",
+    "docs/dashboard/v17.62.8_strategic_operator_cockpit.md",
+    "docs/update_packs/v17.62.8_strategic_operator_cockpit_pack.md",
+    "src/frontend/command_center/modern/claire_strategic_cockpit.css",
+    "src/frontend/command_center/modern/claire_strategic_cockpit.js",
+    "src/frontend/command_center/modern/index.html",
+    "src/frontend/command_center/modern/operator_surface_contract.json"
+  ],
+  "notes": [
+    "Replaced main UI with strategic operator cockpit surfaces.",
+    "Developer diagnostics moved to collapsed section.",
+    "Runtime, validation, evidence, memory, and feedback data are still read honestly.",
+    "No backend/runtime logic changed."
+  ]
+}

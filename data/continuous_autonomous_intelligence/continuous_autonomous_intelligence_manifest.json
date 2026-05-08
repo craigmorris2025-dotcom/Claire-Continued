@@ -1,0 +1,30 @@
+{
+  "capabilities": [
+    "worker_registry",
+    "signal_event_bus",
+    "ingestion_priority_routing",
+    "runtime_supervisor",
+    "heartbeat_monitor",
+    "state_recovery",
+    "campaign_continuity",
+    "signal_conflict_reconciliation",
+    "event_driven_escalation_contracts",
+    "continuous_regression_lock"
+  ],
+  "governance_boundary": "bounded_internal_orchestration_no_unreviewed_external_action",
+  "installed_at": "2026-05-07T13:53:58.863057Z",
+  "layer": "continuous_autonomous_intelligence",
+  "not_included_yet": [
+    "distributed_cloud_worker_pool",
+    "production_message_broker",
+    "live_streaming_market_feeds",
+    "browser_automation",
+    "unrestricted_external_actions",
+    "self_modifying_runtime"
+  ],
+  "status": "installed",
+  "tests": [
+    "tests/continuous_autonomous_intelligence/test_continuous_autonomous_intelligence.py"
+  ],
+  "version_range": "v17.21-v17.30"
+}

@@ -1,0 +1,20 @@
+{
+  "capabilities": [
+    "campaign_schedule_records",
+    "due_campaign_detection",
+    "lock_file_overlap_prevention",
+    "one_shot_update_runner",
+    "scheduler_reports",
+    "cli_runner",
+    "fastapi_routes",
+    "tests"
+  ],
+  "governance_boundary": "explicit_manual_or_task_scheduler_invocation_no_hidden_background_service",
+  "installed_at": "2026-05-07T16:24:04.785707Z",
+  "layer": "governed_campaign_scheduler",
+  "requires": [
+    "claire.persistent_internet_campaigns"
+  ],
+  "status": "installed",
+  "version": "v17.44"
+}

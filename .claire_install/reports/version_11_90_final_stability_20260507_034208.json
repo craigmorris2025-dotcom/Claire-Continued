@@ -1,0 +1,139 @@
+{
+  "actions": [
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\final_stability"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\final_stability\\health_checks"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\final_stability\\recovery_points"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\final_stability\\freeze_checks"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\final_stability\\maintenance_notes"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\final_stability\\resume_docs"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\final_stability"
+    },
+    {
+      "action": "ensure_dir",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports"
+    },
+    {
+      "action": "write_file",
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability\\__init__.py.bak_20260507_034208",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability\\__init__.py"
+    },
+    {
+      "action": "write_file",
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability\\health_check_runner.py.bak_20260507_034208",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability\\health_check_runner.py"
+    },
+    {
+      "action": "write_file",
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability\\recovery_point_builder.py.bak_20260507_034208",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability\\recovery_point_builder.py"
+    },
+    {
+      "action": "write_file",
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability\\final_freeze_checklist.py.bak_20260507_034208",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability\\final_freeze_checklist.py"
+    },
+    {
+      "action": "write_file",
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability\\resume_doc_builder.py.bak_20260507_034208",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\final_stability\\resume_doc_builder.py"
+    },
+    {
+      "action": "write_file",
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\final_stability\\v11_83_to_v11_90_final_stability_plan.md.bak_20260507_034208",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\final_stability\\v11_83_to_v11_90_final_stability_plan.md"
+    },
+    {
+      "action": "write_file",
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\final_stability\\resume_docs\\v11_90_resume_point.json.bak_20260507_034208",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\final_stability\\resume_docs\\v11_90_resume_point.json"
+    },
+    {
+      "action": "write_file",
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\final_stability\\test_final_stability.py.bak_20260507_034208",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\final_stability\\test_final_stability.py"
+    },
+    {
+      "action": "write_file",
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version_11_90_final_stability.json.bak_20260507_034208",
+      "existed": true,
+      "installed": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version_11_90_final_stability.json"
+    }
+  ],
+  "installed": true,
+  "installed_at_utc": "2026-05-07T03:42:08.698430+00:00",
+  "installer": "Claire v11.83-v11.90 Final Stability Installer",
+  "installer_version": "11.83-11.90",
+  "post_install_checks": [
+    "Run the targeted pytest folder for this installer.",
+    "Confirm new src/claire package folder exists.",
+    "Confirm new data folders exist.",
+    "Commit after tests pass."
+  ],
+  "safety_contract": {
+    "does_not_modify_routing": true,
+    "does_not_modify_runtime": true,
+    "does_not_modify_scoring": true,
+    "stability_recovery_only": true
+  },
+  "target": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "version_file": "version_11_90_final_stability.json"
+}

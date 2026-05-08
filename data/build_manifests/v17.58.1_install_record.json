@@ -1,0 +1,17 @@
+{
+  "version": "v17.58.1",
+  "build_name": "Dashboard Text Layout Repair Hotfix",
+  "installed_at": "2026-05-07T22:59:51",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_58_1_20260507_225951",
+  "launcher_path": "src/frontend/command_center/modern/index.html",
+  "runtime_changed": false,
+  "dashboard_changed": true,
+  "files_written_or_updated": [
+    "src/frontend/command_center/modern/claire_operating_environment.css",
+    "docs/dashboard/v17.58.1_dashboard_text_layout_repair.md",
+    "docs/update_packs/v17.58.1_dashboard_update_pack.md",
+    "docs/update_packs/v17.58.1_system_runtime_update_pack.md",
+    "data/build_manifests/v17.58.1_dashboard_text_repair_manifest.json"
+  ],
+  "rollback_note": "To rollback, copy the CSS file from backup_root back into the project root."
+}

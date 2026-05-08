@@ -1,0 +1,42 @@
+{
+  "build_id": "v17.48",
+  "name": "Deployment + Production Hardening",
+  "phase": "launch-critical-hardening",
+  "installed_by": "install_v17_48_deployment_production_hardening.py",
+  "protected_architecture": {
+    "governance_architecture": true,
+    "bounded_orchestration": true,
+    "rollback_safety": true,
+    "runtime_isolation": true,
+    "launch_continuity": true,
+    "internet_runtime_integration": true,
+    "persistent_campaigns": true,
+    "adaptive_source_trust": true,
+    "operations_dashboard": true
+  },
+  "capabilities_added": [
+    "production_profile_validation",
+    "deployment_readiness_gate",
+    "runtime_hardening_policy",
+    "secret_material_scan",
+    "network_exposure_policy",
+    "production_health_contract"
+  ],
+  "runtime_mutation": false,
+  "external_network_calls": false,
+  "rollback_safe": true,
+  "tests": [
+    "tests/test_v17_48_deployment_production_hardening.py"
+  ],
+  "files": [
+    "src/claire/deployment/__init__.py",
+    "src/claire/deployment/production_profile.py",
+    "src/claire/deployment/runtime_hardening.py",
+    "src/claire/deployment/secret_scanner.py",
+    "src/claire/deployment/network_policy.py",
+    "src/claire/deployment/health_contract.py",
+    "src/claire/deployment/deployment_readiness.py",
+    "manifests/v17_48_deployment_production_hardening.json",
+    "tests/test_v17_48_deployment_production_hardening.py"
+  ]
+}

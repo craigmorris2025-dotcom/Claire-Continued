@@ -1,0 +1,202 @@
+/*
+  Claire v17.62.4 — Workspace Stack Fix
+
+  The dashboard shell is still clipping the Command panel and letting generated
+  runtime/validation/memory panels collide. This hotfix forces the center
+  workspace into a clean vertical document flow.
+
+  Runtime logic unchanged.
+*/
+
+/* Named classes added by claire_workspace_stack_fix.js */
+.claire-main-workspace-fixed {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+.claire-main-workspace-fixed > * {
+  position: relative !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  transform: none !important;
+}
+
+.claire-main-workspace-fixed .claire-stack-panel,
+.claire-main-workspace-fixed .claire-command-stack-panel,
+.claire-main-workspace-fixed .claire-validation-stack-panel,
+.claire-main-workspace-fixed .claire-memory-stack-panel {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  clear: both !important;
+  margin: 0 0 22px 0 !important;
+  z-index: auto !important;
+}
+
+/* Command panel specifically: stop nested clipping. */
+.claire-command-stack-panel,
+.claire-command-stack-panel *,
+.claire-command-stack-panel [style] {
+  max-height: none !important;
+}
+
+.claire-command-stack-panel {
+  min-height: 420px !important;
+  padding-bottom: 28px !important;
+}
+
+.claire-command-stack-panel .claire-stack-scroll-kill,
+.claire-command-stack-panel .claire-stack-scroll-kill * {
+  max-height: none !important;
+}
+
+.claire-command-stack-panel .claire-stack-scroll-kill {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* Give runtime summary cards enough vertical room. */
+.claire-command-stack-panel [class*="card"],
+.claire-command-stack-panel [class*="metric"],
+.claire-command-stack-panel [class*="summary"],
+.claire-command-stack-panel [class*="run"],
+.claire-command-stack-panel [class*="route"],
+.claire-command-stack-panel [class*="terminal"] {
+  height: auto !important;
+  min-height: 120px !important;
+  overflow: visible !important;
+}
+
+/* Validation and memory generated panels need normal stack behavior. */
+#claire-validation-authority-panel,
+#claire-verified-memory-panel,
+.claire-validation-authority-panel,
+.claire-memory-panel,
+.claire-validation-stack-panel,
+.claire-memory-stack-panel {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 260px !important;
+  max-height: none !important;
+  overflow: visible !important;
+  clear: both !important;
+  margin: 22px 0 !important;
+  z-index: auto !important;
+}
+
+/* Stop the large circular status badges from forcing overlap. */
+.claire-validation-authority-panel .claire-validation-pill,
+.claire-memory-panel .claire-memory-pill,
+#claire-validation-authority-panel .claire-validation-pill,
+#claire-verified-memory-panel .claire-memory-pill {
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: 170px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  border-radius: 999px !important;
+  padding: 8px 12px !important;
+  line-height: 1.25 !important;
+}
+
+/* Some earlier cards created giant circle status badges through inherited rules. */
+.claire-validation-authority-panel [class*="pill"],
+.claire-memory-panel [class*="pill"] {
+  aspect-ratio: auto !important;
+}
+
+/* Make validation/memory headers wrap without collision. */
+.claire-validation-header,
+.claire-memory-header {
+  align-items: flex-start !important;
+  flex-wrap: wrap !important;
+}
+
+/* Internal grids must sit below headers. */
+.claire-validation-grid,
+.claire-memory-grid,
+.claire-validation-checks,
+.claire-memory-reasons {
+  position: relative !important;
+  clear: both !important;
+  width: 100% !important;
+}
+
+/* Right rail may scroll independently, but should not dictate center clipping. */
+.live-rail,
+.right-rail,
+.narrative-rail,
+aside[class*="rail"],
+section[class*="rail"] {
+  max-height: calc(100vh - 180px) !important;
+  overflow-y: auto !important;
+}
+
+/* The bottom proofbar should not float over the center workspace. */
+.proofbar,
+.status-rail,
+.bottom-rail,
+.claire-proofbar,
+[class*="proofbar"],
+[class*="bottom"] {
+  position: relative !important;
+  clear: both !important;
+  z-index: 2 !important;
+}
+
+/* Remove visible scrollbars from command content specifically. */
+.claire-command-stack-panel ::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* If old shell uses a fixed viewport workspace, allow vertical scrolling at page/root instead. */
+html,
+body {
+  min-height: 100% !important;
+}
+
+body {
+  overflow-y: auto !important;
+}
+
+/* If a dashboard has a main-center column, it should be vertical. */
+.center-column,
+.main-column,
+.content-column,
+.workspace-column,
+[class*="center"],
+[class*="workspace"] {
+  min-height: 0 !important;
+}
+
+/* Responsive: stack everything. */
+@media (max-width: 1180px) {
+  .claire-command-stack-panel {
+    min-height: 480px !important;
+  }
+
+  .claire-validation-grid,
+  .claire-memory-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .claire-command-stack-panel,
+  #claire-validation-authority-panel,
+  #claire-verified-memory-panel,
+  .claire-validation-authority-panel,
+  .claire-memory-panel {
+    min-height: 0 !important;
+  }
+}

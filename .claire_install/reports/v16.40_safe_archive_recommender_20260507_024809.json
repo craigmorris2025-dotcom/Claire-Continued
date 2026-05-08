@@ -1,0 +1,52 @@
+{
+  "installer": "v16.40_safe_archive_recommender",
+  "title": "Safe Archive Recommender",
+  "created_at": "2026-05-07T02:48:09.785676",
+  "status": "success",
+  "actions": [
+    {
+      "action": "write_file",
+      "path": "tools/safe_archive_recommender.py",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "docs/runtime/SAFE_ARCHIVE_RECOMMENDER.md",
+      "existed_before": false,
+      "backup_path": null
+    },
+    {
+      "action": "write_file",
+      "path": "tests/regression/test_safe_archive_recommender.py",
+      "existed_before": false,
+      "backup_path": null
+    }
+  ],
+  "validations": [
+    {
+      "name": "safe_archive_recommender",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/safe_archive_recommender.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"recommender\": \"safe_archive_recommender\",\n  \"recommendation_count\": 38\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "safe_archive_recommender_tests",
+      "cmd": [
+        "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "pytest",
+        "tests/regression/test_safe_archive_recommender.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout_tail": ".                                                                        [100%]\n",
+      "stderr_tail": ""
+    }
+  ],
+  "failed_validation_count": 0
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claire Syntalion — Operator Console</title>
+  <link rel="stylesheet" href="claire_operator_shell.css" />
+</head>
+<body>
+  <div id="claire-app" class="claire-app">
+    <aside class="claire-sidebar">
+      <div class="brand-block">
+        <div class="brand-kicker">Claire Syntalion</div>
+        <div class="brand-name">CLAIRE</div>
+
+        <div id="claire-search" class="search-shell">
+          <div class="search-box">
+            <input id="claire-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Ask Claire or search workspace…" />
+            <button id="claire-mic-button" class="mic-button" type="button" aria-label="Use microphone">
+              <span aria-hidden="true">◉</span>
+            </button>
+          </div>
+          <div id="claire-search-results" class="search-results"></div>
+        </div>
+      </div>
+
+      <div class="sidebar-status-grid">
+        <div class="mini-card">
+          <div class="mini-value">v17.62.7</div>
+          <div class="mini-label">Console</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-value">Live capable</div>
+          <div class="mini-label">Mode</div>
+        </div>
+        <div class="mini-card">
+          <div id="sidebar-route" class="mini-value">No run loaded</div>
+          <div class="mini-label">Active path</div>
+        </div>
+        <div class="mini-card">
+          <div id="sidebar-validation" class="mini-value">Unverified</div>
+          <div class="mini-label">Trust state</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Claire operator sections">
+        <a href="#command" class="nav-item active"><span>01</span> Command</a>
+        <a href="#brief" class="nav-item"><span>02</span> Intelligence Brief</a>
+        <a href="#decision" class="nav-item"><span>03</span> Decision Path</a>
+        <a href="#output" class="nav-item"><span>04</span> Output Review</a>
+        <a href="#trust" class="nav-item"><span>05</span> Trust & Evidence</a>
+        <a href="#continuity" class="nav-item"><span>06</span> Continuity</a>
+      </nav>
+    </aside>
+
+    <main class="claire-main">
+      <header class="topbar">
+        <div>
+          <h1>Claire Operator Console</h1>
+          <p>Command Claire, review active runs, inspect decisions, and verify outputs before reuse.</p>
+        </div>
+        <div class="top-pills">
+          <span class="top-pill green">Live capable</span>
+          <span class="top-pill cyan">Operator surface</span>
+          <span class="top-pill amber">Trust gated</span>
+        </div>
+      </header>
+
+      <div class="workspace-grid">
+        <section id="command" class="panel command-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-kicker">Command</div>
+              <h2>Start Here</h2>
+              <p>Launch, refresh, or review Claire’s latest available operating state.</p>
+            </div>
+            <button id="refresh-runtime" class="primary-button" type="button">Refresh Claire State</button>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric-card">
+              <div class="metric-label">Current run</div>
+              <div id="metric-run" class="metric-value">No run loaded</div>
+              <div class="metric-note">Latest known Claire output</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Operating path</div>
+              <div id="metric-route" class="metric-value">No path selected</div>
+              <div class="metric-note">Portfolio, breakthrough, design, acquisition, or blocked</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Completion state</div>
+              <div id="metric-terminal" class="metric-value">Not complete</div>
+              <div class="metric-note">Meaningful terminal state required</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Trust state</div>
+              <div id="metric-validation" class="metric-value">Unverified</div>
+              <div class="metric-note">Outputs remain gated until verified</div>
+            </div>
+          </div>
+        </section>
+
+        <aside id="brief" class="panel live-panel">
+          <div class="panel-kicker">Intelligence Brief</div>
+          <h2>What Claire Knows Right Now</h2>
+          <div id="live-feed" class="live-feed"></div>
+        </aside>
+      </div>
+
+      <section id="decision" class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-kicker">Decision Path</div>
+            <h2>Run Path, Stage Progress, and Decision State</h2>
+            <p>Operator view of where Claire is in the lifecycle and whether the result is ready for review.</p>
+          </div>
+          <span id="runtime-pill" class="status-pill amber">Not verified</span>
+        </div>
+
+        <div class="metric-grid six">
+          <div class="metric-card">
+            <div class="metric-label">Run</div>
+            <div id="stack-run" class="metric-value">No run loaded</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Path</div>
+            <div id="stack-route" class="metric-value">No path selected</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Completion</div>
+            <div id="stack-terminal" class="metric-value">Not complete</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Lifecycle coverage</div>
+            <div id="stack-stages" class="metric-value">Not loaded</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Evidence</div>
+            <div id="stack-evidence" class="metric-value">0 item(s)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Unsupported</div>
+            <div id="stack-unsupported" class="metric-value">0</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="workspace-grid">
+        <section id="trust" class="panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-kicker">Trust & Evidence</div>
+              <h2>Can This Output Be Trusted?</h2>
+              <p>Claire’s result is not operator-ready until it passes verification and evidence checks.</p>
+            </div>
+            <span id="validation-pill" class="status-pill amber">Unverified</span>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric-card">
+              <div class="metric-label">Confidence score</div>
+              <div id="validation-score" class="metric-value">0/100</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Review checks</div>
+              <div id="validation-checks" class="metric-value">0 pass / 0 warn / 0 fail</div>
+            </div>
+            <div class="metric-card wide">
+              <div class="metric-label">Operator message</div>
+              <div id="validation-message" class="metric-value small">No verified output loaded yet.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="continuity" class="panel purple">
+          <div class="panel-header">
+            <div>
+              <div class="panel-kicker purple-text">Continuity</div>
+              <h2>Can Claire Reuse This Result?</h2>
+              <p>Only verified outputs can become trusted continuity for future Claire reasoning.</p>
+            </div>
+            <span id="memory-pill" class="status-pill amber">Not ready</span>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric-card">
+              <div class="metric-label">Continuity status</div>
+              <div id="memory-status" class="metric-value">Not ready</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Reuse eligibility</div>
+              <div id="memory-eligible" class="metric-value">Blocked</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Feedback status</div>
+              <div id="feedback-status" class="metric-value">Not ready</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Future-use permission</div>
+              <div id="feedback-allowed" class="metric-value">Blocked</div>
+            </div>
+            <div class="metric-card wide">
+              <div class="metric-label">Continuity reason</div>
+              <div id="memory-reason" class="metric-value small">Claire needs a verified output before continuity can be enabled.</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section id="output" class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-kicker">Output Review</div>
+            <h2>Next Operator Actions</h2>
+            <p>Use this area to confirm what is missing before treating a run as finished.</p>
+          </div>
+        </div>
+        <div id="operator-actions" class="action-list"></div>
+      </section>
+
+      <details id="developer-diagnostics" class="diagnostics">
+        <summary>Developer diagnostics</summary>
+        <div class="command-list">
+          <code>python tools/claire_build_runtime_truth.py</code>
+          <code>python tools/claire_validate_runtime_truth.py</code>
+          <code>python tools/claire_build_verified_memory.py</code>
+          <code>python tools/claire_build_dashboard_search_index.py</code>
+        </div>
+      </details>
+
+      <footer class="proofbar">
+        <div><span>Run</span><strong id="proof-run">No run loaded</strong></div>
+        <div><span>Path</span><strong id="proof-route">No path selected</strong></div>
+        <div><span>Completion</span><strong id="proof-terminal">Not complete</strong></div>
+        <div><span>Stages</span><strong id="proof-stages">Not loaded</strong></div>
+        <div><span>Trust</span><strong id="proof-validation">Unverified</strong></div>
+        <div><span>Continuity</span><strong id="proof-memory">Not ready</strong></div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="claire_operator_shell.js"></script>
+</body>
+</html>

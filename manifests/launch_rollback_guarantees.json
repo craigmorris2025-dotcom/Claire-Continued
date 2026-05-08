@@ -1,0 +1,11 @@
+{
+  "lock_version": "v17.49",
+  "rollback_guarantees": {
+    "pre_launch_state_capture": true,
+    "manifest_replay": true,
+    "safe_failure_state": true,
+    "no_external_mutation_on_lock_failure": true,
+    "certificate_written_before_release": true,
+    "launch_blocked_on_failed_lock": true
+  }
+}

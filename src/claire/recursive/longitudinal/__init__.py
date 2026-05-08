@@ -1,17 +1,3 @@
 """
-Longitudinal learning sub-package init
-======================================
-ACS2-Claire / Syntalion
-
-Package: src.claire.recursive.longitudinal
+Temporarily disabled scaffold package during stabilization recovery.
 """
-
-__all__ = [
-    "RunPatternMiner",
-    "ThesisEvolutionTracker",
-    "RecurringGapDetector",
-    "LearningSignalExtractor",
-    "StrategyMemorySynthesizer",
-    "RecursiveQualityScorer",
-]
-

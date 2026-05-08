@@ -1,18 +1,3 @@
 """
-Live research sub-package init
-==============================
-ACS2-Claire / Syntalion
-
-Package: src.claire.research.live
+Temporarily disabled scaffold package during stabilization recovery.
 """
-
-__all__ = [
-    "GovernedLiveResearch",
-    "SourceVerificationEngine",
-    "CitationLineageEngine",
-    "EvidenceQualityScorer",
-    "EvidenceConflictResolver",
-    "ClaimVerifier",
-    "ResearchPacketBuilder",
-]
-

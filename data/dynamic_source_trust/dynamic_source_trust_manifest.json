@@ -1,0 +1,23 @@
+{
+  "capabilities": [
+    "source_trust_profiles",
+    "adaptive_source_scores",
+    "source_trust_events",
+    "source_quarantine",
+    "source_release",
+    "evidence_weighting",
+    "batch_weighting",
+    "cli",
+    "fastapi_routes",
+    "tests"
+  ],
+  "governance_boundary": "trust_adjustment_only_no_hidden_source_banning_without_event_or_manual_quarantine",
+  "installed_at": "2026-05-07T16:49:14.936436Z",
+  "layer": "dynamic_source_trust",
+  "requires": [
+    "claire.internet_activation",
+    "claire.persistent_internet_campaigns"
+  ],
+  "status": "installed",
+  "version": "v17.46"
+}

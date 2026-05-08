@@ -1,0 +1,19 @@
+{
+  "capabilities": [
+    "runtime_bridge_to_v17_41",
+    "lifecycle_adapter",
+    "core_run_output_merger",
+    "evidence_continuity_links",
+    "dashboard_payload_builder",
+    "fastapi_runtime_routes",
+    "integration_tests"
+  ],
+  "governance_boundary": "uses_v17_41_governed_internet_activation_no_unrestricted_browsing",
+  "installed_at": "2026-05-07T15:53:17.881028Z",
+  "layer": "internet_runtime_integration",
+  "requires": [
+    "claire.internet_activation"
+  ],
+  "status": "installed",
+  "version": "v17.42"
+}

@@ -1,0 +1,27 @@
+{
+  "version": "v17.57-v17.58",
+  "build_name": "Runtime Execution Mirror + Route Gate Branch Execution",
+  "installed_at": "2026-05-07T22:42:00",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_57_58_20260507_224200",
+  "files_written": [
+    "src/frontend/command_center/modern/index.html",
+    "src/frontend/command_center/modern/claire_operating_environment.css",
+    "src/frontend/command_center/modern/claire_operating_environment.js",
+    "src/frontend/command_center/modern/dashboard_architecture_map.json",
+    "src/frontend/command_center/modern/lifecycle_stage_registry.json",
+    "src/frontend/command_center/modern/runtime_surface_registry.json",
+    "src/frontend/command_center/modern/route_surface_registry.json",
+    "src/frontend/command_center/modern/runtime_execution_mirror.json",
+    "src/frontend/command_center/modern/route_execution_contract.json",
+    "src/claire/runtime_truth/__init__.py",
+    "src/claire/runtime_truth/runtime_truth_reader.py",
+    "tools/claire_runtime_truth_probe.py",
+    "docs/dashboard/v17.57_runtime_execution_mirror.md",
+    "docs/dashboard/v17.58_route_gate_branch_execution.md",
+    "docs/update_packs/v17.57_58_dashboard_update_pack.md",
+    "docs/update_packs/v17.57_58_system_runtime_update_pack.md",
+    "data/build_manifests/v17.57_58_runtime_route_manifest.json"
+  ],
+  "launcher_path": "src/frontend/command_center/modern/index.html",
+  "rollback_note": "To rollback, copy files from backup_root back into the project root."
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Claire Syntalion — Operating Environment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./claire_operating_environment.css" />
+
+<link rel="stylesheet" href="claire_portal_responsive_layout.css">
+
+<link rel="stylesheet" href="claire_dashboard_decongestion.css">
+
+<link rel="stylesheet" href="claire_search_relocation.css">
+
+<link rel="stylesheet" href="claire_overlap_fix.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar glass">
+      <div class="brand">
+        <div class="kicker">CLAIRE SYNTALION</div>
+        <h1>CLAIRE</h1>
+        <p>Operating environment aligned to the Complete Systems Flow map. Runtime truth first. No fake run data.</p>
+      </div>
+      <div class="launch-state">
+        <div class="state-chip"><b id="chip-build">v17.58</b><span>Build</span></div>
+        <div class="state-chip"><b id="chip-live">Live capable</b><span>Status</span></div>
+        <div class="state-chip"><b id="chip-route">No run loaded</b><span>Route</span></div>
+        <div class="state-chip"><b id="chip-validation">Unverified</b><span>Validation</span></div>
+      </div>
+      <nav class="nav" id="main-nav" aria-label="Claire operating surfaces"></nav>
+    </aside>
+
+    <header class="topbar glass">
+      <div>
+        <h2 id="top-title">Runtime Execution Mirror + Route Gate</h2>
+        <div class="subtitle" id="top-subtitle">v17.57-v17.58: full 30-stage lifecycle visibility, route decision proof, and route branch execution surfaces.</div>
+      </div>
+      <div class="top-actions">
+        <span class="pill good"><span class="dot"></span> Launch continuity</span>
+        <span class="pill info"><span class="dot"></span> 30-stage mirror</span>
+        <span class="pill warn"><span class="dot"></span> Route proof</span>
+      </div>
+    </header>
+
+    <main class="workspace glass">
+      <div class="workspace-header">
+        <div>
+          <div class="surface-kicker" id="surface-kicker">COMMAND</div>
+          <h3 id="surface-title">Command Surface</h3>
+          <p id="surface-description">Refresh runtime truth, inspect lifecycle status, and verify route selection without adding disconnected dashboard features.</p>
+        </div>
+        <button class="btn" id="refresh-runtime" type="button">Refresh Runtime Truth</button>
+      </div>
+      <div class="workspace-body" id="workspace-body"></div>
+    </main>
+
+    <aside class="rail glass">
+      <div class="rail-header">
+        <div class="rail-kicker">LIVE INTELLIGENCE</div>
+        <h3>Execution Narrative</h3>
+      </div>
+      <div class="rail-body" id="event-rail"></div>
+    </aside>
+
+    <footer class="proofbar glass" id="proofbar"></footer>
+  </div>
+
+  <script src="./claire_operating_environment.js"></script>
+  <script src="./claire_runtime_truth_backbone.js"></script>
+
+<script src="claire_validation_authority.js"></script>
+
+<script src="claire_verified_memory.js"></script>
+
+<script src="claire_dashboard_search.js"></script>
+</body>
+</html>

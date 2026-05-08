@@ -1,0 +1,21 @@
+{
+  "lock_version": "v17.49",
+  "locked_contracts": [
+    "runtime_contract",
+    "deployment_contract",
+    "manifest_contract",
+    "governance_boundary_contract",
+    "rollback_contract",
+    "api_compatibility_contract",
+    "orchestration_invariant_contract",
+    "recovery_invariant_contract",
+    "operational_state_contract",
+    "launch_regression_suite_contract"
+  ],
+  "contract_policy": {
+    "breaking_changes_after_lock": "blocked_without_new_version",
+    "runtime_mutation_without_manifest": "blocked",
+    "ungoverned_internet_path": "blocked",
+    "unbounded_campaign_execution": "blocked"
+  }
+}

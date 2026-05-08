@@ -1,0 +1,2646 @@
+{
+  "upgrade": "portfolio_breakthrough_routing",
+  "version": "v16.44",
+  "created_at": "2026-05-07T03:00:11.327411",
+  "status": "available",
+  "route_scores": {
+    "portfolio": 100,
+    "breakthrough": 100,
+    "design": 100,
+    "acquisition": 100
+  },
+  "route_hits": {
+    "portfolio": [
+      {
+        "path": "src/claire/agi/meta_learning/transfer_engine.py",
+        "hits": [
+          "optimization"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_dashboard.py",
+        "hits": [
+          "portfolio",
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_history.py",
+        "hits": [
+          "portfolio"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_proxy.py",
+        "hits": [
+          "portfolio"
+        ]
+      },
+      {
+        "path": "src/claire/api/schemas.py",
+        "hits": [
+          "portfolio",
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/api/unified/intelligence_routes.py",
+        "hits": [
+          "portfolio"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/self_optimizer.py",
+        "hits": [
+          "optimization"
+        ]
+      },
+      {
+        "path": "src/claire/completion/final_proof_binder.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/connectors/connector_hub.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/connectors/connector_manager.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/connectors/financial.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/connectors/manager.py",
+        "hits": [
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/connectors/market.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/connectors/patent.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/core/interpreter.py",
+        "hits": [
+          "portfolio"
+        ]
+      },
+      {
+        "path": "src/claire/core/planner.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/core/signal_amplifier.py",
+        "hits": [
+          "optimization",
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/dashboard/live_dashboard_adapter.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/demo_pilot_scenarios/sample_input_library.py",
+        "hits": [
+          "portfolio"
+        ]
+      },
+      {
+        "path": "src/claire/design/portal.py",
+        "hits": [
+          "portfolio",
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/dependency_generator.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/implementation_planner.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/stack_intelligence.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/domain/contract.py",
+        "hits": [
+          "portfolio",
+          "optimization",
+          "market",
+          "risk",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/acquirer_matching.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/auto_design.py",
+        "hits": [
+          "portfolio",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/base.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/engines/breakthrough.py",
+        "hits": [
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/breakthrough_synthesis_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/business_model_engine.py",
+        "hits": [
+          "portfolio",
+          "optimization",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/company.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/competitive.py",
+        "hits": [
+          "market",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/compliance.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/customer.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/deal.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/deal_exit_modeling_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/decision.py",
+        "hits": [
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/export_package_engine.py",
+        "hits": [
+          "portfolio",
+          "optimization",
+          "market",
+          "risk",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/financial.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/forecasting.py",
+        "hits": [
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/innovation.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/engines/knowledge_ingestion_engine.py",
+        "hits": [
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/lifecycle_stage_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/market.py",
+        "hits": [
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/market_formation_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/market_gap_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/moat_defensibility_engine.py",
+        "hits": [
+          "portfolio",
+          "optimization",
+          "market",
+          "risk",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/operational.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/engines/opportunity_discovery_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/portfolio.py",
+        "hits": [
+          "portfolio",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/product.py",
+        "hits": [
+          "market",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/productization_path_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/risk.py",
+        "hits": [
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/risk_regulation_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/signal_extraction_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/strategic_positioning_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/strategy.py",
+        "hits": [
+          "portfolio",
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/engines/synergy.py",
+        "hits": [
+          "portfolio",
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/engines/system_design_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/engines/technical_feasibility_engine.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/engines/trend_thesis_engine.py",
+        "hits": [
+          "portfolio",
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/engines/trend_trajectory_engine.py",
+        "hits": [
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/enrichment/connected_opportunity_enricher.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/enterprise_readiness/externalization_readiness_planner.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/evolution/target_state.py",
+        "hits": [
+          "portfolio"
+        ]
+      },
+      {
+        "path": "src/claire/export/acquisition_export_artifacts.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/export/connected_export_artifacts.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/export/export_writer.py",
+        "hits": [
+          "portfolio",
+          "positioning"
+        ]
+      },
+      {
+        "path": "src/claire/export/portfolio_export.py",
+        "hits": [
+          "portfolio"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/dependency_proof_engine.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/viability.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/feeds_init.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/feed_registry.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/feed_result_contracts.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/governed_feed_activation.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/government_defense_universe.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/live_source_orchestrator.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/market_universe_feeds.py",
+        "hits": [
+          "portfolio",
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/private_establishment_universe.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/public_company_live_scan.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/public_company_universe.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/public_signal_contracts.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/signal_contracts.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/signal_normalizer.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/signal_scoring.py",
+        "hits": [
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/source_catalogs/index_universe_registry.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/source_catalogs/live_source_catalog.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/source_catalogs/offline_universe_resolver.py",
+        "hits": [
+          "portfolio",
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/source_catalogs/public_company_sources.py",
+        "hits": [
+          "market",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/source_catalogs/source_contracts.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/source_catalogs/source_health.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/source_catalogs/universe_resolution_contracts.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/fusion/hybrid_opportunity_fusion.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/governance/defense_risk_taxonomy.py",
+        "hits": [
+          "optimization",
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/governance/feed_activation_policy.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/governance/feed_audit_log.py",
+        "hits": [
+          "market"
+        ]
+      },
+      {
+        "path": "src/claire/governance/governance_init.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/governance/policy_engine.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/governance/redline_classifier.py",
+        "hits": [
+          "risk"
+        ]
+      },
+      {
+        "path": "src/claire/governance/source_allowlist.py",
+        "hits": [
+          "market"
+        ]
+      }
+    ],
+    "breakthrough": [
+      {
+        "path": "src/claire/analysis/bridge/masterpass.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_history.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_pipeline.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_platform.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_proxy.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_update_governance.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/api/schemas.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/api/unified/intelligence_routes.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/api/unified/platform_routes.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/governance_boundary.py",
+        "hits": [
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/self_enricher.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/classification.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/discovery_generation.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/gap_detection.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/gap_qualification.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/path_selection.py",
+        "hits": [
+          "breakthrough",
+          "path_selection"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/maturity/category_validator.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/maturity/compound_scorer.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/maturity/cross_category_detector.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/maturity/evidence_thresholds.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/maturity/__init__.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/bridge/masterpass.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/completion/completion_scorecard.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/completion/maturity_gap_analyzer.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/completion/__init__.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/concepts/breakthrough_filter.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/core/gateway.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/core/interpreter.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/core/signal_amplifier.py",
+        "hits": [
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/data_quality/replay_depth_scorer.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/data_readiness/data_gap_registry.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/data_readiness/readiness_report_builder.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/design/portal.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/design/__init__.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/architecture_generator.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/domain/contract.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/engines/acquirer_matching.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/breakthrough.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/engines/breakthrough_synthesis_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/engines/business_model_engine.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/deal_exit_modeling_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/decision.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/engines/engineering.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/engines/export_package_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/engines/forecasting.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/engines/innovation.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/engines/knowledge_ingestion_engine.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/lifecycle_stage_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/engines/market_formation_engine.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/market_gap_engine.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/moat_defensibility_engine.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/opportunity_discovery_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/portfolio.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/predictive.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/engines/productization_path_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/engines/risk_regulation_engine.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/signal_extraction_engine.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/engines/strategic_positioning_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/engines/synergy.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/system_design_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/technical_feasibility_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/engines/trend_thesis_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/engines/trend_trajectory_engine.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/enrichment/connected_opportunity_enricher.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/enterprise/enterprise_readiness_assessor.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/enterprise_readiness/deployment_gate_engine.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/enterprise_readiness/enterprise_readiness_scorecard.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/enterprise_readiness/externalization_readiness_planner.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/enterprise_readiness/service_contract_builder.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/enterprise_readiness/support_model_planner.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/evolution/capability_registry.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/evolution/target_state.py",
+        "hits": [
+          "breakthrough",
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/export/acquisition_export_artifacts.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/export/connected_export_artifacts.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/export/export_writer.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/blocker_burndown_tracker.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/control_validation_engine.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/dependency_proof_engine.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/feasibility_scorecard.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/prototype_harness_builder.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/live_source_orchestrator.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/market_universe_feeds.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/public_company_live_scan.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/public_company_universe.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/signal_scoring.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/source_catalogs/offline_universe_resolver.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/governance/audit.py",
+        "hits": [
+          "gap"
+        ]
+      },
+      {
+        "path": "src/claire/governance/defense_risk_taxonomy.py",
+        "hits": [
+          "breakthrough",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/governance/governance_decision.py",
+        "hits": [
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/governance/legal_audit_log.py",
+        "hits": [
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/governance/redline_classifier.py",
+        "hits": [
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/intelligence/portfolio_breakthrough_routing.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/intelligence/synthesis_loop.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/invention/auto_invention.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/invention/solution_structuring.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/lifecycle/lifecycle_registry.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification",
+          "path_selection"
+        ]
+      },
+      {
+        "path": "src/claire/lifecycle/lifecycle_runner.py",
+        "hits": [
+          "breakthrough"
+        ]
+      },
+      {
+        "path": "src/claire/lifecycle/stage_contracts.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification",
+          "path_selection"
+        ]
+      },
+      {
+        "path": "src/claire/lifecycle/stage_registry.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification"
+        ]
+      },
+      {
+        "path": "src/claire/lifecycle/threshold_provenance.py",
+        "hits": [
+          "breakthrough",
+          "gap",
+          "classification"
+        ]
+      }
+    ],
+    "design": [
+      {
+        "path": "src/claire/acquisition/acquirer_identification.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/acquisition/final_package.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/acquisition/fit_rationale.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/agi/consensus_engine.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/agi/decision_scaler.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/agi/knowledge_graph.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/agi/reasoning_engine.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/agi/__init__.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/agi/meta_learning/strategy_optimizer.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/agi/meta_learning/transfer_engine.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/agi/meta_learning/__init__.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/analysis/entity_extraction.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/analysis/relationship_mapping.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/api/unified/intelligence_routes.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/api/unified/lifecycle_routes.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/api/unified/middleware.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/api/unified/platform_routes.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/api/unified/router.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/api/v2/auth.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/api/v2/endpoints.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/api/v2/webhooks.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/api/v2/__init__.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/governance_boundary.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/research_director.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/self_corrector.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/self_enricher.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/self_escalator.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/self_invalidator.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/self_optimizer.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/classification.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/discovery_generation.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/gap_detection.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/gap_qualification.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/path_selection.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/maturity/category_validator.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/maturity/compound_scorer.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/maturity/cross_category_detector.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/maturity/evidence_thresholds.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/cross_system/integration_engine.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/cross_system/pattern_transfer.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/cross_system/__init__.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/dashboard/generator.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/dashboard/__init__.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/design/portal.py",
+        "hits": [
+          "design"
+        ]
+      },
+      {
+        "path": "src/claire/design/__init__.py",
+        "hits": [
+          "design"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/architecture_generator.py",
+        "hits": [
+          "design",
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/component_tree_generator.py",
+        "hits": [
+          "design",
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/dependency_generator.py",
+        "hits": [
+          "design",
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/implementation_planner.py",
+        "hits": [
+          "design",
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/stack_intelligence.py",
+        "hits": [
+          "design",
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/__init__.py",
+        "hits": [
+          "design"
+        ]
+      },
+      {
+        "path": "src/claire/design/proof/__init__.py",
+        "hits": [
+          "design"
+        ]
+      },
+      {
+        "path": "src/claire/design/renderers/__init__.py",
+        "hits": [
+          "design"
+        ]
+      },
+      {
+        "path": "src/claire/domain/contract.py",
+        "hits": [
+          "design"
+        ]
+      },
+      {
+        "path": "src/claire/engines/auto_design.py",
+        "hits": [
+          "design",
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/breakthrough_synthesis_engine.py",
+        "hits": [
+          "design",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/business_model_engine.py",
+        "hits": [
+          "design",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/deal_exit_modeling_engine.py",
+        "hits": [
+          "design",
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/engineering.py",
+        "hits": [
+          "design",
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/engines/export_package_engine.py",
+        "hits": [
+          "design",
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/lifecycle_stage_engine.py",
+        "hits": [
+          "design",
+          "architecture",
+          "blueprint",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/market_formation_engine.py",
+        "hits": [
+          "design",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/market_gap_engine.py",
+        "hits": [
+          "design"
+        ]
+      },
+      {
+        "path": "src/claire/engines/moat_defensibility_engine.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/opportunity_discovery_engine.py",
+        "hits": [
+          "design"
+        ]
+      },
+      {
+        "path": "src/claire/engines/productization_path_engine.py",
+        "hits": [
+          "design",
+          "architecture",
+          "blueprint",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/signal_extraction_engine.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/strategic_positioning_engine.py",
+        "hits": [
+          "design",
+          "architecture",
+          "blueprint"
+        ]
+      },
+      {
+        "path": "src/claire/engines/system_design_engine.py",
+        "hits": [
+          "design",
+          "architecture",
+          "blueprint",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/technical_feasibility_engine.py",
+        "hits": [
+          "design",
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/engines/__init__.py",
+        "hits": [
+          "design"
+        ]
+      },
+      {
+        "path": "src/claire/export/binder.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/export/portfolio_export.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/export/__init__.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/buildability.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/manufacturability.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/validation.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/viability.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/public_signal_contracts.py",
+        "hits": [
+          "design"
+        ]
+      },
+      {
+        "path": "src/claire/final_stability/resume_doc_builder.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/install_safety/current_state_cleaner.py",
+        "hits": [
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/intelligence/analysis_loop.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/intelligence/autonomous_decision.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/intelligence/discovery_loop.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/intelligence/loop_manager.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/intelligence/synthesis_loop.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/intelligence/__init__.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/auto_invention.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/invention/solution_structuring.py",
+        "hits": [
+          "architecture",
+          "implementation"
+        ]
+      },
+      {
+        "path": "src/claire/invention/autonomous/experiment_runner.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/autonomous/hypothesis_engine.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/autonomous/__init__.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/multi_domain/category_engine.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/multi_domain/cross_pollinator.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/multi_domain/__init__.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/portfolio/manager.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/portfolio/pipeline_tracker.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/portfolio/__init__.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/validation/impact_assessor.py",
+        "hits": [
+          "architecture"
+        ]
+      },
+      {
+        "path": "src/claire/invention/validation/novelty_checker.py",
+        "hits": [
+          "architecture"
+        ]
+      }
+    ],
+    "acquisition": [
+      {
+        "path": "src/claire/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/acquirers/dataset.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/acquirers/matcher.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/acquirers/scoring.py",
+        "hits": [
+          "acquisition",
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/acquirers/__init__.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/acquisition/acquirer_identification.py",
+        "hits": [
+          "acquisition",
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/acquisition/final_package.py",
+        "hits": [
+          "acquisition",
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/acquisition/fit_rationale.py",
+        "hits": [
+          "acquisition"
+        ]
+      },
+      {
+        "path": "src/claire/agi/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/agi/meta_learning/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/analysis/bridge/masterpass.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_acquirers.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_dashboard.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_pipeline.py",
+        "hits": [
+          "acquisition",
+          "acquirer",
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_system.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_update.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/api/routes_update_governance.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/api/schemas.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/api/unified/intelligence_routes.py",
+        "hits": [
+          "acquisition"
+        ]
+      },
+      {
+        "path": "src/claire/api/unified/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/api/v2/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/audit/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/autonomous/governance/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/breakthrough/maturity/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/bridge/masterpass.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/completion/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/connectors/connector_hub.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/core/data_engine.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/core/gateway.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/core/orreadir.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/core/planner.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/core/signal_amplifier.py",
+        "hits": [
+          "acquisition"
+        ]
+      },
+      {
+        "path": "src/claire/cross_system/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/dashboard/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/data_lineage/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/data_quality/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/data_readiness/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/deals/deal_scorer.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/deals/discovery.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/deals/rationale.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/deployment_hardening/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/design/generators/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/design/proof/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/design/renderers/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/domain/contract.py",
+        "hits": [
+          "acquirer",
+          "package",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/acquirer_matching.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/engines/auto_design.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/engines/breakthrough_synthesis_engine.py",
+        "hits": [
+          "acquirer",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/business_model_engine.py",
+        "hits": [
+          "acquirer",
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/engines/deal.py",
+        "hits": [
+          "acquisition",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/deal_exit_modeling_engine.py",
+        "hits": [
+          "acquisition",
+          "acquirer",
+          "package",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/decision.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/discovery.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/export_package_engine.py",
+        "hits": [
+          "acquirer",
+          "package",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/financial.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/knowledge_ingestion_engine.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/lifecycle_stage_engine.py",
+        "hits": [
+          "acquirer",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/market.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/market_formation_engine.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/engines/market_gap_engine.py",
+        "hits": [
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/engines/moat_defensibility_engine.py",
+        "hits": [
+          "acquirer",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/opportunity_discovery_engine.py",
+        "hits": [
+          "acquirer",
+          "package",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/portfolio.py",
+        "hits": [
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/productization_path_engine.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/engines/strategic_positioning_engine.py",
+        "hits": [
+          "acquirer",
+          "package",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/synergy.py",
+        "hits": [
+          "acquirer",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/system_design_engine.py",
+        "hits": [
+          "acquirer",
+          "package",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/engines/technical_feasibility_engine.py",
+        "hits": [
+          "package",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/enrichment/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/enterprise/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/enterprise_readiness/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/evidence_replay/regression_evidence_pack.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/evidence_replay/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/evolution/capability_registry.py",
+        "hits": [
+          "acquisition"
+        ]
+      },
+      {
+        "path": "src/claire/evolution/target_state.py",
+        "hits": [
+          "acquisition"
+        ]
+      },
+      {
+        "path": "src/claire/evolution/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/export/acquisition_export_artifacts.py",
+        "hits": [
+          "acquisition",
+          "acquirer",
+          "package",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/export/binder.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/export/connected_export_artifacts.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/export/export_writer.py",
+        "hits": [
+          "package",
+          "deal"
+        ]
+      },
+      {
+        "path": "src/claire/export/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/feasibility/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/feed_result_contracts.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/government_defense_universe.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/market_universe_feeds.py",
+        "hits": [
+          "acquisition"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/private_establishment_universe.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/source_catalogs/offline_universe_resolver.py",
+        "hits": [
+          "acquisition",
+          "acquirer"
+        ]
+      },
+      {
+        "path": "src/claire/feeds/source_catalogs/public_company_sources.py",
+        "hits": [
+          "acquisition"
+        ]
+      },
+      {
+        "path": "src/claire/fusion/hybrid_opportunity_fusion.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/fusion/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/historical_benchmarks/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/install_safety/current_state_cleaner.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/intelligence/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/invention/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/invention/autonomous/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/invention/multi_domain/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/invention/portfolio/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/invention/validation/__init__.py",
+        "hits": [
+          "package"
+        ]
+      },
+      {
+        "path": "src/claire/ip_transfer_package/ownership_record_builder.py",
+        "hits": [
+          "package"
+        ]
+      }
+    ]
+  },
+  "routing_policy": {
+    "default_route": "portfolio",
+    "breakthrough_is_conditional": true,
+    "design_is_conditional": true,
+    "acquisition_package_is_terminal_route": true
+  },
+  "recommendations": [
+    "keep portfolio route as default practical output path",
+    "trigger breakthrough only with qualified gap/advancement evidence",
+    "trigger design only after advancement path requires build/spec output",
+    "keep acquisition package terminal and evidence-backed"
+  ]
+}

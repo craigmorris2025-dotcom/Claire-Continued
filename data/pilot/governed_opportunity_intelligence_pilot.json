@@ -1,0 +1,39 @@
+{
+  "version": "16.71",
+  "generated_at": "2026-05-07T09:16:01.349580+00:00",
+  "offer_name": "Governed Opportunity Intelligence Pilot",
+  "positioning": "Claire ingests a domain, detects weak signals, forms opportunity theses, builds evidence packets, identifies portfolio implications, and produces acquisition/productization recommendations.",
+  "target_buyers": [
+    "strategy teams",
+    "corporate development teams",
+    "innovation groups",
+    "R&D organizations",
+    "market intelligence teams",
+    "defense and critical infrastructure strategy groups"
+  ],
+  "pilot_scope": {
+    "duration": "bounded pilot",
+    "inputs": [
+      "domain",
+      "strategic question",
+      "known constraints",
+      "approved sources"
+    ],
+    "outputs": [
+      "opportunity thesis report",
+      "evidence binder",
+      "source lineage report",
+      "benchmark replay summary",
+      "portfolio recommendation",
+      "acquirer or partner map",
+      "go/no-go decision memo"
+    ]
+  },
+  "guardrails": [
+    "No unrestricted source scoring.",
+    "Live evidence must pass source approval, lineage, rights, and review gates.",
+    "Pilot claims must distinguish proven outputs from roadmap capabilities.",
+    "Claire is positioned as governed strategic intelligence infrastructure, not AGI."
+  ],
+  "status": "defined"
+}

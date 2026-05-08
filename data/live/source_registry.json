@@ -1,0 +1,29 @@
+{
+  "version": "16.62",
+  "generated_at": "2026-05-07T09:04:18.398393+00:00",
+  "policy": "Only approved sources may enter high-confidence scoring.",
+  "allowed_domains": {
+    "sec.gov": {
+      "rights_status": "public_government_source",
+      "confidence_tier": "high",
+      "use_allowed": true
+    },
+    "federalreserve.gov": {
+      "rights_status": "public_government_source",
+      "confidence_tier": "high",
+      "use_allowed": true
+    },
+    "bls.gov": {
+      "rights_status": "public_government_source",
+      "confidence_tier": "high",
+      "use_allowed": true
+    },
+    "census.gov": {
+      "rights_status": "public_government_source",
+      "confidence_tier": "high",
+      "use_allowed": true
+    }
+  },
+  "blocked_domains": {},
+  "pending_review_domains": {}
+}

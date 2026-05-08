@@ -1,0 +1,21 @@
+{
+  "version": "17.62.1",
+  "name": "Dashboard Decongestion Hotfix",
+  "build_type": "dashboard_hotfix",
+  "purpose": "Repair dashboard congestion caused by search overlay and nested portal scroll behavior.",
+  "depends_on": [
+    "v17.62 Portal Resize + Dashboard Search Foundation"
+  ],
+  "installed_files": [
+    "docs/dashboard/v17.62.1_dashboard_decongestion.md",
+    "docs/update_packs/v17.62.1_dashboard_hotfix_pack.md",
+    "src/frontend/command_center/modern/claire_dashboard_decongestion.css",
+    "src/frontend/command_center/modern/claire_dashboard_search.js"
+  ],
+  "safety": {
+    "rollback_backups": true,
+    "launcher_path_preserved": "src/frontend/command_center/modern/index.html",
+    "runtime_logic_unchanged": true,
+    "no_fake_data": true
+  }
+}

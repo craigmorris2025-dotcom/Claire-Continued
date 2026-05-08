@@ -1,0 +1,55 @@
+{
+  "build_id": "v17.48",
+  "build_name": "Deployment + Production Hardening",
+  "installed_at": "20260507T201944Z",
+  "installer": "install_v17_48_deployment_production_hardening.py",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "entries": [
+    {
+      "path": "src/claire/deployment/__init__.py",
+      "backup": "backups\\v17_48_20260507T201944Z\\src\\claire\\deployment\\__init__.py",
+      "action": "replace"
+    },
+    {
+      "path": "src/claire/deployment/production_profile.py",
+      "backup": null,
+      "action": "create"
+    },
+    {
+      "path": "src/claire/deployment/runtime_hardening.py",
+      "backup": null,
+      "action": "create"
+    },
+    {
+      "path": "src/claire/deployment/secret_scanner.py",
+      "backup": null,
+      "action": "create"
+    },
+    {
+      "path": "src/claire/deployment/network_policy.py",
+      "backup": null,
+      "action": "create"
+    },
+    {
+      "path": "src/claire/deployment/health_contract.py",
+      "backup": null,
+      "action": "create"
+    },
+    {
+      "path": "src/claire/deployment/deployment_readiness.py",
+      "backup": null,
+      "action": "create"
+    },
+    {
+      "path": "manifests/v17_48_deployment_production_hardening.json",
+      "backup": null,
+      "action": "create"
+    },
+    {
+      "path": "tests/test_v17_48_deployment_production_hardening.py",
+      "backup": null,
+      "action": "create"
+    }
+  ],
+  "rollback_note": "Restore each backup path over its matching project path. Created files with backup=null can be removed if rolling back."
+}

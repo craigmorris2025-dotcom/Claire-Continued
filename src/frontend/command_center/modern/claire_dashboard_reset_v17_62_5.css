@@ -1,0 +1,445 @@
+/*
+  Claire v17.62.5 — Dashboard Conflict Cleanup + Stable Runtime Stack
+
+  This is a cleanup/reset hotfix for the v17.62 layout chain.
+  It disables conflicting generated panels/search overlays and replaces them
+  with one clean, readable runtime-truth stack.
+
+  Runtime logic unchanged.
+*/
+
+:root {
+  --claire-reset-border: rgba(0, 212, 255, 0.22);
+  --claire-reset-bg: rgba(7, 14, 27, 0.86);
+  --claire-reset-card: rgba(12, 20, 36, 0.78);
+  --claire-reset-text: #d9e5f3;
+  --claire-reset-muted: #93a4ba;
+  --claire-reset-cyan: #00d4ff;
+  --claire-reset-purple: #c084fc;
+  --claire-reset-amber: #f59e0b;
+  --claire-reset-green: #22c55e;
+}
+
+/* Remove the old floating/duplicated search shells and bridge panels. */
+.claire-old-ui-hidden,
+#claire-validation-authority-panel.claire-old-ui-hidden,
+#claire-verified-memory-panel.claire-old-ui-hidden,
+#claire-search-json-result-panel.claire-old-ui-hidden {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Hard remove top-overlay search from old v17.62 layers. */
+body .claire-dashboard-search-shell:not(#claire-clean-search-shell),
+body #claire-dashboard-search-shell:not(#claire-clean-search-shell) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Base workspace normalization. */
+html, body {
+  min-height: 100% !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-y: auto !important;
+}
+
+main,
+#app,
+#workspace,
+#main-workspace,
+.command-center,
+.operating-environment,
+.claire-operating-environment,
+.claire-shell,
+.dashboard-shell {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Let right and left rails scroll independently, but do not let them control center height. */
+.nav-sidebar,
+.side-nav,
+.sidebar,
+aside[class*="side"] {
+  max-height: calc(100vh - 24px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.live-rail,
+.right-rail,
+.narrative-rail,
+aside[class*="rail"],
+section[class*="rail"] {
+  max-height: calc(100vh - 160px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Clean search embedded in the Claire identity/sidebar area. */
+#claire-clean-search-shell {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  margin: 16px 0 10px 0 !important;
+  z-index: 50 !important;
+  color: var(--claire-reset-text);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.claire-clean-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  border: 1px solid rgba(0, 212, 255, 0.30);
+  border-radius: 16px;
+  padding: 8px 10px;
+  background: rgba(2, 10, 20, 0.78);
+  box-shadow: inset 0 0 18px rgba(0, 212, 255, 0.04), 0 0 20px rgba(0, 212, 255, 0.08);
+}
+
+.claire-clean-search-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #f8fafc;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.claire-clean-search-input::placeholder {
+  color: #69758a;
+}
+
+.claire-clean-mic {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 212, 255, 0.28);
+  border-radius: 999px;
+  color: var(--claire-reset-cyan);
+  background: rgba(0, 212, 255, 0.08);
+  cursor: pointer;
+}
+
+.claire-clean-mic.listening {
+  color: var(--claire-reset-green);
+  border-color: rgba(34, 197, 94, 0.72);
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.claire-clean-mic[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.claire-clean-search-results {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 10080;
+  border: 1px solid rgba(0, 212, 255, 0.24);
+  border-radius: 16px;
+  background: rgba(3, 8, 18, 0.97);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.34);
+  max-height: min(62vh, 520px);
+  overflow: auto;
+  padding: 8px;
+}
+
+.claire-clean-search-results.open {
+  display: block;
+}
+
+.claire-clean-result {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin: 6px 0;
+  background: rgba(15, 23, 42, 0.52);
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+.claire-clean-result:hover,
+.claire-clean-result.active {
+  border-color: rgba(0, 212, 255, 0.45);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.claire-clean-result-title {
+  color: #f8fafc;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.claire-clean-result-meta {
+  margin-top: 2px;
+  color: #7dd3fc;
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.claire-clean-result-snippet {
+  margin-top: 6px;
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Hide the old intro text only after the new slot is installed. */
+.claire-clean-intro-hidden {
+  display: none !important;
+}
+
+/* Clean main truth stack. */
+#claire-clean-runtime-stack {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  clear: both !important;
+  margin: 22px 0 26px 0 !important;
+  padding: 0 !important;
+  z-index: 3 !important;
+}
+
+.claire-clean-stack-section {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin: 0 0 18px 0 !important;
+  padding: 22px !important;
+  border: 1px solid var(--claire-reset-border);
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(7, 14, 27, 0.94), rgba(10, 18, 34, 0.86));
+  box-shadow: 0 0 26px rgba(0, 212, 255, 0.06);
+}
+
+.claire-clean-stack-section.purple {
+  border-color: rgba(192, 132, 252, 0.30);
+  background: linear-gradient(135deg, rgba(13, 9, 28, 0.94), rgba(22, 14, 39, 0.86));
+  box-shadow: 0 0 26px rgba(192, 132, 252, 0.06);
+}
+
+.claire-clean-stack-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.claire-clean-stack-kicker {
+  font-family: Orbitron, Inter, system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--claire-reset-cyan);
+  margin-bottom: 6px;
+}
+
+.claire-clean-stack-section.purple .claire-clean-stack-kicker {
+  color: var(--claire-reset-purple);
+}
+
+.claire-clean-stack-title {
+  font-family: Orbitron, Inter, system-ui, sans-serif;
+  color: #f2f8ff;
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-weight: 800;
+  letter-spacing: .06em;
+  line-height: 1.25;
+}
+
+.claire-clean-stack-subtitle {
+  color: var(--claire-reset-muted);
+  font-size: 13px;
+  line-height: 1.55;
+  margin-top: 5px;
+  max-width: 760px;
+}
+
+.claire-clean-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  width: auto;
+  height: auto;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  color: #cbd5e1;
+  background: rgba(148, 163, 184, 0.06);
+  white-space: normal;
+}
+
+.claire-clean-pill.pass,
+.claire-clean-pill.eligible,
+.claire-clean-pill.allowed,
+.claire-clean-pill.loaded {
+  color: var(--claire-reset-green);
+  border-color: rgba(34, 197, 94, 0.42);
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.claire-clean-pill.warning,
+.claire-clean-pill.not_generated,
+.claire-clean-pill.not_loaded,
+.claire-clean-pill.missing {
+  color: var(--claire-reset-amber);
+  border-color: rgba(245, 158, 11, 0.42);
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.claire-clean-pill.fail,
+.claire-clean-pill.blocked {
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.42);
+  background: rgba(248, 113, 113, 0.08);
+}
+
+.claire-clean-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)) !important;
+  gap: 12px !important;
+  align-items: stretch !important;
+}
+
+.claire-clean-card {
+  position: relative !important;
+  height: auto !important;
+  min-height: 96px !important;
+  max-height: none !important;
+  overflow: visible !important;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.48);
+  padding: 14px !important;
+}
+
+.claire-clean-label {
+  color: #91a0b6;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.claire-clean-value {
+  color: #f8fafc;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.claire-clean-note {
+  margin-top: 10px;
+  color: #a8b5c8;
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.claire-clean-wide {
+  grid-column: 1 / -1;
+}
+
+/* Neutralize major old overlap causes in command area. */
+.claire-clean-command-repaired,
+.claire-clean-command-repaired * {
+  max-height: none !important;
+}
+
+.claire-clean-command-repaired {
+  position: relative !important;
+  height: auto !important;
+  min-height: 220px !important;
+  overflow: visible !important;
+  margin-bottom: 22px !important;
+  padding-bottom: 22px !important;
+  z-index: 2 !important;
+}
+
+.claire-clean-command-repaired [style*="overflow"],
+.claire-clean-command-repaired [style*="max-height"],
+.claire-clean-command-repaired [style*="height"] {
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto !important;
+}
+
+/* Avoid the bottom proofbar becoming a cross-page overlay. */
+.proofbar,
+.status-rail,
+.bottom-rail,
+.claire-proofbar,
+[class*="proofbar"] {
+  position: relative !important;
+  clear: both !important;
+  z-index: 2 !important;
+}
+
+/* Focus button stays available but does not dominate. */
+.claire-view-mode-toggle {
+  position: fixed !important;
+  top: 18px !important;
+  right: 18px !important;
+  z-index: 10010 !important;
+}
+
+/* Mobile/smaller widths. */
+@media (max-width: 920px) {
+  .claire-clean-search-results {
+    position: relative;
+    top: auto;
+    margin-top: 8px;
+  }
+
+  .claire-clean-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .claire-clean-stack-section {
+    padding: 16px !important;
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "capabilities": [
+    "source_policy",
+    "fetch_contract",
+    "evidence_extraction",
+    "source_reliability_scoring",
+    "async_ingestion_queue",
+    "continuous_monitor_foundation",
+    "signal_refresh_schedule_contract",
+    "opportunity_watchlists",
+    "connectivity_regression_lock"
+  ],
+  "governance_boundary": "no_unreviewed_external_action",
+  "installed_at": "2026-05-07T13:42:12.001179Z",
+  "layer": "governed_internet_connectivity",
+  "not_included_yet": [
+    "real_network_fetching",
+    "browser_automation",
+    "distributed_worker_pool",
+    "production_streaming_ingestion",
+    "authenticated_external_actions",
+    "unrestricted_autonomous_browsing"
+  ],
+  "status": "installed",
+  "tests": [
+    "tests/governed_internet_connectivity/test_governed_internet_connectivity.py"
+  ],
+  "version_range": "v17.01-v17.10"
+}

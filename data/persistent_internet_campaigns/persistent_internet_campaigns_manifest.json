@@ -1,0 +1,22 @@
+{
+  "capabilities": [
+    "persistent_campaign_state",
+    "manual_refresh_cycles",
+    "evidence_drift_detection",
+    "source_change_detection",
+    "confidence_delta_tracking",
+    "refresh_reports",
+    "cli_runner",
+    "fastapi_routes",
+    "tests"
+  ],
+  "governance_boundary": "manual_or_api_refresh_only_no_hidden_background_browsing",
+  "installed_at": "2026-05-07T16:11:21.971823Z",
+  "layer": "persistent_internet_campaigns",
+  "requires": [
+    "claire.internet_activation",
+    "claire.internet_runtime_integration"
+  ],
+  "status": "installed",
+  "version": "v17.43"
+}

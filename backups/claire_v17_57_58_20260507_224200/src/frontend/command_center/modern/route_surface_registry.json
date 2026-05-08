@@ -1,0 +1,144 @@
+{
+  "version": "v17.56",
+  "routes": {
+    "portfolio": {
+      "label": "Portfolio Route",
+      "default_when": "Signals form a viable market/thesis or optimization action without qualifying for breakthrough/design escalation.",
+      "required_stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        23,
+        26,
+        27
+      ],
+      "optional_stages": [
+        24,
+        25
+      ],
+      "terminal_states": [
+        "portfolio_action_ready",
+        "portfolio_optimization_ready",
+        "insufficient_data",
+        "blocked",
+        "failed"
+      ],
+      "dashboard_surface": "portfolio"
+    },
+    "breakthrough": {
+      "label": "Breakthrough / AutoDesign Route",
+      "default_when": "A qualified gap or non-obvious structural advancement is detected and advancement path selection requires solution/design execution.",
+      "required_stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "optional_stages": [
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30
+      ],
+      "terminal_states": [
+        "breakthrough_classified",
+        "advancement_path_selected",
+        "design_output_ready",
+        "final_package_ready",
+        "insufficient_data",
+        "blocked",
+        "failed"
+      ],
+      "dashboard_surface": "breakthrough/autodesign"
+    },
+    "acquisition": {
+      "label": "Acquisition Route",
+      "default_when": "The run has enough strategy, moat, target, and fit evidence to prepare acquisition-facing rationale or package.",
+      "required_stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        24,
+        25,
+        28,
+        29,
+        30
+      ],
+      "optional_stages": [
+        23,
+        26,
+        27
+      ],
+      "terminal_states": [
+        "acquisition_ready",
+        "final_package_ready",
+        "insufficient_data",
+        "blocked",
+        "failed"
+      ],
+      "dashboard_surface": "acquisition"
+    },
+    "research_discovery": {
+      "label": "Discovery / Research Route",
+      "default_when": "The system has enough governed signals to produce a discovery or thesis but not enough to route into portfolio, design, or acquisition execution.",
+      "required_stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "optional_stages": [],
+      "terminal_states": [
+        "discovery_ready",
+        "insufficient_data",
+        "blocked",
+        "failed"
+      ],
+      "dashboard_surface": "trend/breakthrough"
+    }
+  }
+}

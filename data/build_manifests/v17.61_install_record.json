@@ -1,0 +1,30 @@
+{
+  "version": "17.61",
+  "build_name": "Verified Memory + Recursive Feedback Gate",
+  "installed_at_utc": "2026-05-08T04:16:27.654378Z",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\claire_v17_61_20260508_041627",
+  "index_patched": true,
+  "files_written": [
+    "data/build_manifests/v17.61_verified_memory_manifest.json",
+    "docs/dashboard/v17.61_verified_memory_recursive_feedback.md",
+    "docs/update_packs/v17.61_dashboard_update_pack.md",
+    "docs/update_packs/v17.61_system_runtime_update_pack.md",
+    "src/claire/verified_memory/__init__.py",
+    "src/claire/verified_memory/io.py",
+    "src/claire/verified_memory/memory_gate.py",
+    "src/claire/verified_memory/memory_record.py",
+    "src/claire/verified_memory/recursive_feedback_gate.py",
+    "src/frontend/command_center/modern/claire_verified_memory.js",
+    "src/frontend/command_center/modern/recursive_feedback_contract.json",
+    "src/frontend/command_center/modern/recursive_feedback_status.json",
+    "src/frontend/command_center/modern/verified_memory_contract.json",
+    "src/frontend/command_center/modern/verified_memory_status.json",
+    "tools/claire_build_verified_memory.py"
+  ],
+  "post_install_commands": [
+    "python tools/claire_build_runtime_truth.py",
+    "python tools/claire_validate_runtime_truth.py",
+    "python tools/claire_build_verified_memory.py"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "version": "16.82",
+  "generated_at": "2026-05-07T13:06:11.043944+00:00",
+  "status": "completed",
+  "max_concurrent": 2,
+  "selected_task_count": 2,
+  "records": [
+    {
+      "task_id": "task_20260507130611010947",
+      "title": "Regression signal analysis task",
+      "task_type": "signal_analysis",
+      "status": "completed",
+      "priority": 8
+    },
+    {
+      "task_id": "task_20260507130611017947",
+      "title": "Regression evidence review task",
+      "task_type": "evidence_review",
+      "status": "completed",
+      "priority": 7
+    }
+  ],
+  "note": "Bounded scheduler uses controlled concurrency and placeholder execution only."
+}
