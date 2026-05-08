@@ -1,0 +1,612 @@
+================================================================================
+  CLAIRE v10.3.1 — EVOLUTION & UPDATE GOVERNANCE FILE MAP
+  ACS2-Claire / Syntalion
+  Generated: 2026-05-06
+  Companion to: claire_v10.3.1_evolution_governance_installer.py
+  Total New Files: 34  |  Total New Folders: 21
+================================================================================
+
+FILE MAP LEGEND
+───────────────
+  [NEW-DIR]   New directory created by this installer
+  [NEW-FILE]  New file created by this installer
+  [EXISTING]  Pre-existing directory (not created, used as parent)
+
+  Authority Levels:
+    OWNER-ONLY     Only Craig can modify — immutable identity/policy data
+    GOVERNED       Requires full update governance pipeline to modify
+    SYSTEM         Claire can modify under governance rules
+    APPEND-ONLY    Can add records; cannot modify or delete existing
+
+================================================================================
+PHASE 1 — EVOLUTION LAYER (11 files, 1 folder)
+================================================================================
+
+Purpose: Claire's self-awareness — who she IS, where she's been, where she's
+         going, what's verified, what's protected, and how she learns from her
+         own evolution.
+
+Depends On: Nothing (foundational layer)
+Spec Source: Safety Evolution.txt — Evolution Governance System Package
+
+[EXISTING]  src/claire/
+[NEW-DIR]   src/claire/evolution/
+
+  [NEW-FILE] src/claire/evolution/__init__.py
+  ├── Role:       Evolution layer package init
+  ├── Authority:  GOVERNED
+  ├── Exports:    ProjectIdentity, MasterDocumentRegistry, VersionTimeline,
+  │               TargetState, CapabilityRegistry, VerifiedStateStore,
+  │               RegressionGuard, ForwardMotionPolicy, EvolutionMemory,
+  │               EvolutionOrchestrator
+  └── Depends:    All evolution modules below
+
+  [NEW-FILE] src/claire/evolution/project_identity.py
+  ├── Role:       Claire's canonical self-definition — who she IS
+  ├── Authority:  OWNER-ONLY
+  ├── Class:      ProjectIdentity
+  ├── Fields:     system_name, codename, owner, mission_statement,
+  │               core_principles (7), identity_hash
+  ├── Embedded:   IDENTITY dict (project, full_name, platform_type,
+  │               system_architect, organization, current_structural_state,
+  │               target_end_state, primary_runtime_authority, target_master_ui)
+  │               CORE_PRINCIPLES list (7 principles from spec)
+  ├── Methods:    validate_identity(), get_identity_summary(),
+  │               identity_drift_check(proposed), freeze(), save_snapshot()
+  ├── Data I/O:   Reads/Writes → data/evolution/identity/
+  └── Constraint: Immutable once loaded — no runtime modification
+
+  [NEW-FILE] src/claire/evolution/master_document_registry.py
+  ├── Role:       Registry of all governing documents
+  ├── Authority:  OWNER-ONLY
+  ├── Class:      MasterDocumentRegistry
+  ├── Enums:      DocumentAuthority (CONSTITUTIONAL, GOVERNING, OPERATIONAL, REFERENCE)
+  ├── Per-Doc:    document_id, title, version, hash, authority_level,
+  │               last_verified_date, registered_date
+  ├── Methods:    register_document(), verify_document_integrity(),
+  │               get_authority_chain(), detect_conflicts(), save(), load()
+  └── Data I/O:   Reads/Writes → data/evolution/origin/
+
+  [NEW-FILE] src/claire/evolution/version_timeline.py
+  ├── Role:       Append-only version history tracker
+  ├── Authority:  APPEND-ONLY
+  ├── Class:      VersionTimeline
+  ├── Per-Version: version, name, description, milestone_type,
+  │               files_added, files_modified, installer_id, locked
+  ├── Methods:    add_milestone(), get_current_version(), get_full_timeline(),
+  │               get_version(str), lock_version(str), save(), load()
+  └── Data I/O:   Reads/Writes → data/evolution/timeline/
+
+  [NEW-FILE] src/claire/evolution/target_state.py
+  ├── Role:       Defines where Claire is going — target architecture
+  ├── Authority:  OWNER-ONLY
+  ├── Class:      TargetState
+  ├── Embedded:   TARGET_END_STATE = "Autonomous Strategic Intelligence OS"
+  │               ALIGNMENT_TARGETS list (12 alignment dimensions from spec):
+  │                 30-stage lifecycle, route-aware execution, signal governance,
+  │                 trend discovery, portfolio intelligence, breakthrough escalation,
+  │                 Design Portal, Technology Intelligence, acquisition package
+  │                 construction, recursive memory, safe self-improvement,
+  │                 enterprise update governance
+  ├── Methods:    score_alignment(change, targets), register_gap(),
+  │               get_gaps(), resolve_gap(), get_completion_status(), save()
+  └── Data I/O:   Reads/Writes → data/evolution/target_state/
+
+  [NEW-FILE] src/claire/evolution/capability_registry.py
+  ├── Role:       Verified capability tracking with preservation enforcement
+  ├── Authority:  SYSTEM (governed)
+  ├── Class:      CapabilityRegistry
+  ├── Embedded:   PROTECTED_CAPABILITIES list (11 from spec):
+  │                 launch/health/docs, POST /evaluate, dashboard load,
+  │                 runtime execution, route selection, export generation,
+  │                 run history, evidence/proof output, acquisition intelligence,
+  │                 portfolio intelligence, lifecycle governance
+  ├── Methods:    register_capability(), verify_capability(), check_preservation(),
+  │               get_verified(), get_unverified(), get_protected(),
+  │               snapshot(), save(), load()
+  └── Data I/O:   Reads/Writes → data/evolution/capability_snapshots/
+
+  [NEW-FILE] src/claire/evolution/verified_state_store.py
+  ├── Role:       Append-only store of verified working states
+  ├── Authority:  APPEND-ONLY
+  ├── Class:      VerifiedStateStore
+  ├── Per-State:  state_id, version, verification_method, capabilities_verified,
+  │               file_hashes, timestamp, locked (always True)
+  ├── Methods:    record_verified_state(), get_latest(), get_state(id),
+  │               get_all_states(), get_capabilities_at_version(),
+  │               verify_no_regression(current_caps), save(), load()
+  └── Data I/O:   Reads/Writes → data/evolution/verified_states/
+
+  [NEW-FILE] src/claire/evolution/regression_guard.py
+  ├── Role:       Prevents capability regression across all change types
+  ├── Authority:  GOVERNED
+  ├── Class:      RegressionGuard
+  ├── Embedded:   CHANGE_TYPES list: update, repair, installer,
+  │               file_replacement, generated_code, online_package
+  ├── Rule:       "No update, repair, installer, file replacement, generated
+  │               code, or online package may reduce a verified working capability"
+  ├── Methods:    evaluate_change(type, files, caps, desc), get_history(),
+  │               block_if_regression(report), generate_regression_report()
+  └── Data I/O:   Writes → data/evolution/regression_reports/
+
+  [NEW-FILE] src/claire/evolution/forward_motion_policy.py
+  ├── Role:       Enforces forward-only change policy with decision classification
+  ├── Authority:  GOVERNED
+  ├── Class:      ForwardMotionPolicy
+  ├── Embedded:   DECISION_CLASSES enum (7 from spec):
+  │                 FORWARD_SAFE, FORWARD_REVIEW, NEUTRAL_SAFE,
+  │                 REGRESSION_RISK, ARCHITECTURE_CONFLICT,
+  │                 RUNTIME_CRITICAL, BLOCKED
+  │               AUTO_APPROVE list (7 rules from spec)
+  │               REQUIRE_REVIEW list (9 rules from spec)
+  │               MUST_BLOCK list (8 rules from spec)
+  ├── Rule:       "No change allowed unless it improves Claire or preserves
+  │               Claire while preparing a safe improvement"
+  ├── Methods:    classify_change(type, files, caps), evaluate_forward_motion(),
+  │               is_approved(classification), get_policy_summary(), save()
+  └── Data I/O:   Writes → data/evolution/forward_decisions/
+
+  [NEW-FILE] src/claire/evolution/evolution_memory.py
+  ├── Role:       Claire's memory of her own evolution
+  ├── Authority:  APPEND-ONLY
+  ├── Class:      EvolutionMemory
+  ├── Embedded:   MEMORY_CATEGORIES list (12 from spec):
+  │                 origin_vision, version_timeline, architecture_milestones,
+  │                 locked_states, verified_working_states,
+  │                 manual_strengthening_history, installed_version_history,
+  │                 current_capability_map, target_architecture, known_gaps,
+  │                 known_regressions, known_protected_capabilities
+  ├── Methods:    record_event(category, data), get_memory(category),
+  │               search_memory(query), get_summary(), save(), load()
+  └── Data I/O:   Reads/Writes → data/evolution/completion_memory/
+
+  [NEW-FILE] src/claire/evolution/evolution_orchestrator.py
+  ├── Role:       Master orchestrator — coordinates all evolution modules
+  ├── Authority:  GOVERNED
+  ├── Class:      EvolutionOrchestrator
+  ├── Composes:   ProjectIdentity, MasterDocumentRegistry, VersionTimeline,
+  │               TargetState, CapabilityRegistry, VerifiedStateStore,
+  │               RegressionGuard, ForwardMotionPolicy, EvolutionMemory
+  ├── Methods:    evaluate_change(type, files, caps, desc),
+  │               get_system_state(), get_evolution_report(),
+  │               enforce_governance(change), save_all(), load_all()
+  └── Data I/O:   Delegates to all sub-modules
+
+================================================================================
+PHASE 2 — UPDATE GOVERNANCE LAYER (19 files, 1 folder)
+================================================================================
+
+Purpose: Enterprise-grade 25-step update pipeline — from source detection
+         through audit logging, with authority mapping, inspection, staging,
+         validation gauntlet, and rollback orchestration.
+
+Depends On: Phase 1 (Evolution Layer)
+Spec Source: Claire Enterprise Online Update Governance System.txt
+
+[EXISTING]  src/claire/platform/
+[NEW-DIR]   src/claire/platform/update_governance/
+
+  [NEW-FILE] src/claire/platform/update_governance/__init__.py
+  ├── Role:       Update governance layer package init
+  ├── Authority:  GOVERNED
+  ├── Exports:    All 18 governance modules
+  └── Depends:    All update governance modules below
+
+  [NEW-FILE] src/claire/platform/update_governance/authority_map.py
+  ├── Role:       Maps system paths to authority levels
+  ├── Authority:  OWNER-ONLY
+  ├── Class:      AuthorityMap
+  ├── Enums:      AuthorityLevel (OWNER_ONLY, GOVERNED, SYSTEM, APPEND_ONLY)
+  ├── Embedded:   PROTECTED_PATHS list (20 patterns from spec)
+  │               PROTECTION_REQUIREMENTS list (9 from spec)
+  │               DEFAULT_AUTHORITY dict (path → level mappings)
+  ├── Methods:    is_protected(path), get_authority(path),
+  │               get_protection_requirements(path), compare_authority(a, b),
+  │               analyze_update_paths(paths)
+  └── Used By:    Steps 7-8 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/package_inspector.py
+  ├── Role:       Inspects/catalogs update packages before governance
+  ├── Authority:  SYSTEM
+  ├── Class:      PackageInspector
+  ├── Embedded:   SUSPICIOUS_EXTENSIONS, SUSPICIOUS_PATTERNS
+  ├── Methods:    inspect_package(path), generate_manifest(result),
+  │               extract_metadata(path), quarantine(path, reason)
+  └── Used By:    Steps 3-6 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/source_trust.py
+  ├── Role:       Manages trusted update sources
+  ├── Authority:  GOVERNED
+  ├── Class:      SourceTrust
+  ├── Trust Levels: TRUSTED, CONDITIONAL, UNTRUSTED, REVOKED
+  ├── Methods:    verify_source(id), add_trusted_source(id, url),
+  │               revoke_trust(id), get_all_trusted(), save()
+  ├── Integrates: data/update_sources/allowed_sources.json
+  └── Used By:    Steps 1-2 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/signature_verifier.py
+  ├── Role:       Verifies package signatures and content hashes
+  ├── Authority:  SYSTEM
+  ├── Class:      SignatureVerifier
+  ├── Algorithms: sha256, sha512, md5
+  ├── Methods:    generate_hash(path), verify_hash(path, expected),
+  │               verify_signature(path, sig_path), validate_integrity(),
+  │               register_hash(), save()
+  └── Used By:    Step 4 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/dependency_impact_analyzer.py
+  ├── Role:       Analyzes dependency trees and cascading impacts
+  ├── Authority:  SYSTEM
+  ├── Class:      DependencyImpactAnalyzer
+  ├── Risk Levels: NONE, LOW, MEDIUM, HIGH, CRITICAL
+  ├── Methods:    analyze_impact(files), get_dependency_tree(path),
+  │               detect_conflicts(current, proposed), score_risk(report)
+  └── Used By:    Step 9 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/capability_diff.py
+  ├── Role:       Generates capability diffs between states
+  ├── Authority:  SYSTEM
+  ├── Class:      CapabilityDiff
+  ├── Methods:    generate_diff(current, proposed), compare_capabilities(),
+  │               detect_removals(), detect_additions(), is_safe(diff)
+  └── Used By:    Step 10 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/lifecycle_stage_impact.py
+  ├── Role:       Scores impact on 30-stage lifecycle
+  ├── Authority:  GOVERNED
+  ├── Class:      LifecycleStageImpact
+  ├── Embedded:   CRITICAL_STAGES list (30 lifecycle stages from spec)
+  ├── Methods:    score_impact(files, stages), get_affected_stages(paths),
+  │               validate_stage_safety(stages), generate_impact_report()
+  └── Used By:    Step 11 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/runtime_risk_classifier.py
+  ├── Role:       Classifies runtime risk using Evolution Decision Classes
+  ├── Authority:  GOVERNED
+  ├── Class:      RuntimeRiskClassifier
+  ├── Enums:      DecisionClass (7 from spec), RiskLevel (5 levels)
+  ├── Embedded:   RUNTIME_CRITICAL_PATHS list
+  │               DECISION_RISK_MAP (decision class → risk level)
+  ├── Methods:    classify_risk(desc, files, diff, impact),
+  │               get_risk_score(), is_critical(), generate_risk_report()
+  └── Used By:    Step 12 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/target_alignment.py
+  ├── Role:       Scores update alignment against target architecture
+  ├── Authority:  GOVERNED
+  ├── Class:      TargetAlignment
+  ├── Embedded:   ALIGNMENT_DOMAINS list (12 with weighted scores):
+  │                 lifecycle_30 (1.0), route_execution (1.0),
+  │                 signal_governance (0.9), trend_discovery (0.8),
+  │                 portfolio_intelligence (0.9), breakthrough_escalation (0.8),
+  │                 design_portal (0.7), tech_intelligence (0.8),
+  │                 acquisition_construction (0.9), recursive_memory (0.9),
+  │                 safe_self_improvement (1.0), enterprise_update_gov (1.0)
+  ├── Methods:    score_alignment(desc, aligned, conflicting),
+  │               get_alignment_gaps(), is_forward_aligned(report),
+  │               generate_alignment_report(), save_report()
+  └── Used By:    Step 13 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/evolution_gate.py
+  ├── Role:       Master go/no-go decision gate for all updates
+  ├── Authority:  GOVERNED
+  ├── Class:      EvolutionGate
+  ├── Statuses:   GO, NO_GO, CONDITIONAL, OVERRIDE
+  ├── Embedded:   GATE_CRITERIA list (6 from spec — core principle):
+  │                 1) forward_architectural_alignment
+  │                 2) no_capability_regression
+  │                 3) no_unsafe_overwrite
+  │                 4) full_rollback_capability
+  │                 5) validation_success
+  │                 6) human_approval_for_critical
+  ├── Methods:    evaluate(id, alignment, diff, protection, rollback,
+  │               validation, critical, approved),
+  │               get_gate_status(id), override_with_approval(id, approver),
+  │               generate_gate_report(), save()
+  └── Used By:    Step 14 of enterprise update flow (master decision)
+
+  [NEW-FILE] src/claire/platform/update_governance/migration_planner.py
+  ├── Role:       Creates and manages migration plans for governed updates
+  ├── Authority:  GOVERNED
+  ├── Class:      MigrationPlanner
+  ├── Per-Step:   step_id, action, source_path, target_path,
+  │               requires_backup, requires_validation, status
+  ├── Methods:    create_plan(id, operations), validate_plan(id),
+  │               execute_plan(id), get_plan_status(id), save(id)
+  └── Used By:    Step 16 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/protected_path_guard.py
+  ├── Role:       Enforces Protected System Paths specification
+  ├── Authority:  OWNER-ONLY
+  ├── Class:      ProtectedPathGuard
+  ├── Embedded:   PROTECTED_PATHS list (20 patterns — exact spec):
+  │                 main.py, START_CLAIRE*.bat, version.json, pyproject.toml,
+  │                 requirements.txt, src/claire/app.py,
+  │                 src/claire/api/routes_pipeline.py,
+  │                 src/claire/lifecycle/*, src/claire/orchestrator/*,
+  │                 src/claire/domain/*, src/claire/memory/*,
+  │                 src/claire/recursive/*, src/claire/safety/*,
+  │                 src/claire/singularity/*, data/runs/*, data/memory/*,
+  │                 data/evolution/*, exports/*, .claire_install/*,
+  │                 .claire_install_logs/*
+  │               REQUIRED_APPROVALS list (9 from spec):
+  │                 manual_approval, full_backup, migration_plan,
+  │                 rollback_point, compile_pass, health_pass,
+  │                 evaluate_pass, dashboard_pass, proof_report
+  ├── Methods:    check_paths(paths), is_protected(path),
+  │               get_required_approvals(path), generate_protection_report()
+  └── Used By:    Step 8 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/staged_installer.py
+  ├── Role:       Staged installation with verification before promotion
+  ├── Authority:  GOVERNED
+  ├── Class:      StagedInstaller
+  ├── Methods:    stage_files(id, file_map), verify_staged(id),
+  │               promote_to_live(id, base_path), rollback_staged(id)
+  ├── Data I/O:   data/update_governance/staged/, data/update_governance/backups/
+  └── Used By:    Steps 18, 24 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/validation_gauntlet.py
+  ├── Role:       Full validation pipeline for staged updates
+  ├── Authority:  GOVERNED
+  ├── Class:      ValidationGauntlet
+  ├── Embedded:   VALIDATION_STEPS list (5 from spec — Steps 19-23):
+  │                 compile_import (Step 19), test_suite (Step 20),
+  │                 health_check (Step 21), dashboard_check (Step 22),
+  │                 proof_report (Step 23)
+  ├── Methods:    run_gauntlet(id, files), get_results(result),
+  │               is_passed(result), generate_validation_report()
+  ├── Data I/O:   Writes → data/update_governance/reports/
+  └── Used By:    Steps 19-23 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/rollback_orchestrator.py
+  ├── Role:       Manages rollback points and executes rollbacks
+  ├── Authority:  GOVERNED
+  ├── Class:      RollbackOrchestrator
+  ├── Per-Point:  rollback_id, update_id, backed_up_files, state_snapshot
+  ├── Methods:    create_rollback_point(id, files, base, state),
+  │               execute_rollback(id, base), verify_rollback(id, base),
+  │               get_rollback_history()
+  ├── Data I/O:   data/update_governance/rollback_points/,
+  │               data/update_governance/backups/
+  └── Used By:    Steps 17, 24 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/audit_writer.py
+  ├── Role:       Append-only audit log writer for all governance actions
+  ├── Authority:  APPEND-ONLY
+  ├── Class:      AuditWriter
+  ├── Per-Entry:  timestamp, update_id, action, actor, decision_class, details
+  ├── Methods:    write_audit(id, action, details), get_audit_log(id),
+  │               search_audits(query), generate_audit_summary(), load()
+  ├── Format:     JSONL (one JSON object per line, append-only)
+  └── Used By:    Step 25 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/approval_policy.py
+  ├── Role:       Three-tier approval policy engine
+  ├── Authority:  OWNER-ONLY
+  ├── Class:      ApprovalPolicy
+  ├── Embedded:   AUTO_APPROVE list (7 rules from spec):
+  │                 documentation additions, non-runtime manifests,
+  │                 new isolated data schemas, new isolated frontend panels,
+  │                 new tests, new audit reports, new read-only analysis tools
+  │               REQUIRE_REVIEW list (9 rules from spec):
+  │                 runtime changes, orchestrator changes, lifecycle changes,
+  │                 API route changes, dashboard master changes, memory changes,
+  │                 update system changes, dependency changes, launcher changes
+  │               MUST_BLOCK list (8 rules from spec):
+  │                 unverified downgrades, unknown overwrites,
+  │                 removal of working routes, removal of export systems,
+  │                 removal of run history, bypass of lifecycle governance,
+  │                 bypass of validation gates, unsafe self-modification
+  ├── Methods:    evaluate_approval(type, desc), is_auto_approved(),
+  │               is_blocked(), get_required_level(), save()
+  ├── Data I/O:   Writes → data/update_governance/approvals/
+  └── Used By:    Step 15 of enterprise update flow
+
+  [NEW-FILE] src/claire/platform/update_governance/update_orchestrator.py
+  ├── Role:       Master orchestrator for the 25-step enterprise update flow
+  ├── Authority:  GOVERNED
+  ├── Class:      UpdateOrchestrator
+  ├── Statuses:   PENDING, IN_PROGRESS, APPROVED, REJECTED, STAGED,
+  │               PROMOTED, ROLLED_BACK, FAILED, CANCELLED
+  ├── Embedded:   ENTERPRISE_UPDATE_FLOW list (25 steps from spec):
+  │                 1. Online source detected → source_trust
+  │                 2. Source trust verified → source_trust
+  │                 3. Package downloaded into incoming/ → package_inspector
+  │                 4. Signature/hash verified → signature_verifier
+  │                 5. Package unpacked into inspected/ → package_inspector
+  │                 6. File manifest generated → package_inspector
+  │                 7. Authority map comparison → authority_map
+  │                 8. Protected path analysis → protected_path_guard
+  │                 9. Dependency impact analysis → dependency_impact_analyzer
+  │                 10. Capability diff generated → capability_diff
+  │                 11. Lifecycle stage impact scored → lifecycle_stage_impact
+  │                 12. Runtime risk classified → runtime_risk_classifier
+  │                 13. Target alignment scored → target_alignment
+  │                 14. Evolution gate evaluates → evolution_gate
+  │                 15. Approval policy applied → approval_policy
+  │                 16. Migration plan created → migration_planner
+  │                 17. Rollback point created → rollback_orchestrator
+  │                 18. Staged install to staged/ → staged_installer
+  │                 19. Compile/import verification → validation_gauntlet
+  │                 20. Test suite execution → validation_gauntlet
+  │                 21. Health verification → validation_gauntlet
+  │                 22. Dashboard verification → validation_gauntlet
+  │                 23. Proof report generated → validation_gauntlet
+  │                 24. Promotion to live (or rollback) → staged_installer
+  │                 25. Audit log written → audit_writer
+  ├── Composes:   All 17 governance modules
+  ├── Methods:    process_update(id, source, path, caps, base),
+  │               get_update_status(id), cancel_update(id, reason),
+  │               get_update_history(), get_flow_definition()
+  └── Data I/O:   Delegates to all sub-modules
+
+================================================================================
+PHASE 3 — API ROUTE + FRONTEND PANELS (4 files, 1 folder)
+================================================================================
+
+Purpose: REST API endpoints and dashboard panels for the Evolution and
+         Update Governance subsystems.
+
+Depends On: Phase 1, Phase 2
+
+[EXISTING]  src/claire/api/
+[EXISTING]  src/frontend/
+[NEW-DIR]   src/frontend/system/
+
+  [NEW-FILE] src/claire/api/routes_update_governance.py
+  ├── Role:       Flask Blueprint for evolution + governance API
+  ├── Authority:  GOVERNED
+  ├── Function:   create_update_governance_blueprint(evo_orch, upd_orch)
+  ├── Endpoints:
+  │     GET  /api/evolution/state              — Evolution system state
+  │     GET  /api/evolution/memory             — Evolution memory summary
+  │     POST /api/evolution/evaluate-change    — Evaluate proposed change
+  │     GET  /api/evolution/identity           — Project identity
+  │     GET  /api/evolution/timeline           — Version timeline
+  │     GET  /api/evolution/capabilities       — Capability registry
+  │     GET  /api/evolution/regression-report  — Regression guard report
+  │     GET  /api/update-governance/status     — Pipeline status
+  │     POST /api/update-governance/submit     — Submit update for governance
+  │     GET  /api/update-governance/history    — Update history
+  │     GET  /api/update-governance/flow       — 25-step flow definition
+  │     GET  /api/update-governance/protected-paths — Protected paths list
+  └── Depends:    EvolutionOrchestrator, UpdateOrchestrator
+
+  [NEW-FILE] src/frontend/system/UpdateGovernancePanel.js
+  ├── Role:       Dashboard panel for enterprise update governance
+  ├── Authority:  SYSTEM
+  ├── Class:      UpdateGovernancePanel
+  ├── Sections:   25-step flow visualization, active updates table,
+  │               protected paths list, update submission
+  ├── API Calls:  /api/update-governance/flow, /api/update-governance/status,
+  │               /api/update-governance/protected-paths,
+  │               /api/update-governance/submit
+  └── Renders:    Flow steps, update status table, protected paths list
+
+  [NEW-FILE] src/frontend/system/EvolutionMemoryPanel.js
+  ├── Role:       Dashboard panel for evolution subsystem
+  ├── Authority:  SYSTEM
+  ├── Class:      EvolutionMemoryPanel
+  ├── Sections:   Project identity, core principles, version timeline,
+  │               capability registry (verified/protected/unverified),
+  │               evolution state summary
+  ├── API Calls:  /api/evolution/identity, /api/evolution/timeline,
+  │               /api/evolution/capabilities, /api/evolution/state,
+  │               /api/evolution/memory
+  └── Renders:    Identity grid, timeline, capability stats, state JSON
+
+  [NEW-FILE] src/frontend/system/RegressionGuardPanel.js
+  ├── Role:       Dashboard panel for regression monitoring
+  ├── Authority:  SYSTEM
+  ├── Class:      RegressionGuardPanel
+  ├── Sections:   Capability preservation status table, regression reports,
+  │               change evaluation interface
+  ├── API Calls:  /api/evolution/regression-report, /api/evolution/capabilities,
+  │               /api/evolution/evaluate-change
+  └── Renders:    Protected capabilities table, regression event cards
+
+================================================================================
+PHASE 4 — GOVERNED DATA DIRECTORIES (0 files, 18 folders)
+================================================================================
+
+Purpose: Create governed data directories for evolution state and update
+         governance pipeline artifacts.
+
+Depends On: Nothing (can install independently)
+
+[EXISTING]  data/
+
+  [NEW-DIR]   data/evolution/
+  [NEW-DIR]   data/evolution/origin/
+  │           └── Stores: governing document registry, constitutional docs
+  │           └── Authority: OWNER-ONLY
+  [NEW-DIR]   data/evolution/identity/
+  │           └── Stores: project identity snapshots
+  │           └── Authority: OWNER-ONLY
+  [NEW-DIR]   data/evolution/timeline/
+  │           └── Stores: version timeline records
+  │           └── Authority: APPEND-ONLY
+  [NEW-DIR]   data/evolution/target_state/
+  │           └── Stores: target state definition, gap register
+  │           └── Authority: OWNER-ONLY
+  [NEW-DIR]   data/evolution/verified_states/
+  │           └── Stores: verified state snapshots (locked)
+  │           └── Authority: APPEND-ONLY
+  [NEW-DIR]   data/evolution/capability_snapshots/
+  │           └── Stores: capability registry snapshots
+  │           └── Authority: SYSTEM
+  [NEW-DIR]   data/evolution/regression_reports/
+  │           └── Stores: regression evaluation reports
+  │           └── Authority: APPEND-ONLY
+  [NEW-DIR]   data/evolution/forward_decisions/
+  │           └── Stores: forward motion policy decisions
+  │           └── Authority: APPEND-ONLY
+  [NEW-DIR]   data/evolution/completion_memory/
+  │           └── Stores: evolution memory records
+  │           └── Authority: APPEND-ONLY
+
+  [NEW-DIR]   data/update_governance/
+  [NEW-DIR]   data/update_governance/incoming/
+  │           └── Stores: downloaded update packages (pre-inspection)
+  │           └── Authority: SYSTEM
+  [NEW-DIR]   data/update_governance/inspected/
+  │           └── Stores: unpacked/inspected packages
+  │           └── Authority: SYSTEM
+  [NEW-DIR]   data/update_governance/staged/
+  │           └── Stores: staged update files (pre-promotion)
+  │           └── Authority: SYSTEM
+  [NEW-DIR]   data/update_governance/backups/
+  │           └── Stores: pre-update file backups for rollback
+  │           └── Authority: SYSTEM
+  [NEW-DIR]   data/update_governance/reports/
+  │           └── Stores: validation reports, alignment reports, audit logs
+  │           └── Authority: APPEND-ONLY
+  [NEW-DIR]   data/update_governance/approvals/
+  │           └── Stores: approval decisions and history
+  │           └── Authority: APPEND-ONLY
+  [NEW-DIR]   data/update_governance/rollback_points/
+  │           └── Stores: rollback point manifests
+  │           └── Authority: SYSTEM
+  [NEW-DIR]   data/update_governance/signatures/
+  │           └── Stores: package signatures, known hashes, source trust
+  │           └── Authority: GOVERNED
+  [NEW-DIR]   data/update_governance/quarantined/
+  │           └── Stores: quarantined suspicious packages
+  │           └── Authority: SYSTEM
+
+================================================================================
+CROSS-REFERENCE — SPEC RULES EMBEDDED IN CODE
+================================================================================
+
+The following governance rules from both specifications are hardcoded as
+Python data structures (lists, dicts, enums) in the generated modules:
+
+  Rule                          │ Module                              │ Data Type
+  ──────────────────────────────┼─────────────────────────────────────┼──────────
+  System Identity (8 fields)    │ project_identity.py                 │ IDENTITY dict
+  Core Principles (7)           │ project_identity.py                 │ CORE_PRINCIPLES list
+  Decision Classes (7)          │ forward_motion_policy.py            │ DecisionClass Enum
+                                │ runtime_risk_classifier.py          │ DecisionClass Enum
+  Auto-Approve Rules (7)        │ forward_motion_policy.py            │ AUTO_APPROVE list
+                                │ approval_policy.py                  │ AUTO_APPROVE list
+  Require-Review Rules (9)      │ forward_motion_policy.py            │ REQUIRE_REVIEW list
+                                │ approval_policy.py                  │ REQUIRE_REVIEW list
+  Must-Block Rules (8)          │ forward_motion_policy.py            │ MUST_BLOCK list
+                                │ approval_policy.py                  │ MUST_BLOCK list
+  Protected Capabilities (11)   │ capability_registry.py              │ PROTECTED_CAPABILITIES list
+  Evolution Memory Rules (12)   │ evolution_memory.py                 │ MEMORY_CATEGORIES list
+  Target Alignment (12)         │ target_state.py                     │ ALIGNMENT_TARGETS list
+                                │ target_alignment.py                 │ ALIGNMENT_DOMAINS list (weighted)
+  Protected System Paths (20)   │ authority_map.py                    │ PROTECTED_PATHS list
+                                │ protected_path_guard.py             │ PROTECTED_PATHS list
+  Protection Requirements (9)   │ authority_map.py                    │ PROTECTION_REQUIREMENTS list
+                                │ protected_path_guard.py             │ REQUIRED_APPROVALS list
+  Gate Criteria (6)             │ evolution_gate.py                   │ GATE_CRITERIA list
+  Enterprise Flow (25 steps)    │ update_orchestrator.py              │ ENTERPRISE_UPDATE_FLOW list
+  Validation Steps (5)          │ validation_gauntlet.py              │ VALIDATION_STEPS list
+  Lifecycle Stages (30)         │ lifecycle_stage_impact.py           │ CRITICAL_STAGES list
+
+================================================================================
+END OF FILE MAP
+================================================================================

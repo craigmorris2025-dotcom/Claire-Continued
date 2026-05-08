@@ -1,0 +1,456 @@
+================================================================================
+  CLAIRE v10.3.2 — COMPLETION SYSTEM FILE MAP
+  ACS2-Claire / Syntalion
+  Generated: 2026-05-06
+  Companion to: claire_v10.3.2_completion_installer.py
+  Total New Files: 38  |  Total New Folders: 6  |  Phases: 3
+================================================================================
+
+FILE MAP LEGEND
+───────────────
+  [NEW-DIR]   New directory created by this installer
+  [NEW-FILE]  New file created by this installer
+  [EXISTING]  Pre-existing directory (not created, used as parent)
+
+================================================================================
+PHASE 1 — RUNTIME CONTRACT LAYER (8 files, 1 folder)
+================================================================================
+
+Purpose: Create one canonical truth between runtime output, dashboard
+         rendering, exports, memory, proof binders, and update governance.
+         Every runtime output must pass contract validation before reaching
+         downstream consumers.
+
+Depends On: Nothing (foundational layer)
+Spec Source: v10.3.2 Completion System Spec — Section 1
+
+[EXISTING]  src/claire/
+[NEW-DIR]   src/claire/runtime_contracts/
+
+  [NEW-FILE] src/claire/runtime_contracts/__init__.py
+  ├── Role:       Runtime contracts package init
+  ├── Exports:    CoreRunContract, LifecycleOutputContract, RouteContract,
+  │               DashboardContract, ExportContract, ProofContract,
+  │               ContractValidator
+  └── Depends:    All contract modules below
+
+  [NEW-FILE] src/claire/runtime_contracts/core_run_contract.py
+  ├── Role:       Defines required core_run_output.json fields and types
+  ├── Class:      CoreRunContract
+  ├── Fields:     REQUIRED_TOP_LEVEL_FIELDS (18 fields with type constraints)
+  │               VALID_ROUTES (6 routes), VALID_TERMINAL_STATES (6 states)
+  │               SCORE_FIELDS (8 scoring dimensions)
+  ├── Methods:    validate(output) → (is_valid, errors, warnings)
+  │               generate_contract_hash() → str
+  │               to_dict() → dict
+  ├── Validates:  Field presence, types, route validity, terminal state,
+  │               score ranges (0-100), evidence structure, lifecycle stage
+  │               (1-30), metadata recommended fields
+  └── Data I/O:   Reads core_run_output.json from data/runs/
+
+  [NEW-FILE] src/claire/runtime_contracts/lifecycle_output_contract.py
+  ├── Role:       Defines lifecycle stage output shape for all 30 stages
+  ├── Class:      LifecycleOutputContract
+  ├── Fields:     TOTAL_STAGES=30, STAGE_STATUSES (7 values),
+  │               REQUIRED_STAGE_FIELDS (11 fields), STAGE_NAMES (30 names)
+  ├── Methods:    validate_stage(stage_output), validate_full_lifecycle(stages),
+  │               get_stage_name(number), get_route_skippable_stages(route),
+  │               to_dict()
+  └── Key Logic:  Route-aware skip validation — each route defines which
+                  stages can be legally skipped
+
+  [NEW-FILE] src/claire/runtime_contracts/route_contract.py
+  ├── Role:       Defines route selection output contract
+  ├── Class:      RouteContract
+  ├── Routes:     6 defined routes, each with:
+  │               description, primary flag, min_confidence, required_stages,
+  │               skippable_stages, valid_terminal_states
+  ├── Methods:    validate(route_output), get_route_definition(route),
+  │               list_routes(primary_only), to_dict()
+  └── Key Logic:  Cross-validates confidence thresholds, terminal state
+                  legality per route, and skip authorization
+
+  [NEW-FILE] src/claire/runtime_contracts/dashboard_contract.py
+  ├── Role:       Transforms runtime output into UI-ready panel sections
+  ├── Class:      DashboardContract
+  ├── Panels:     12 panels defined (run, lifecycle, research, discover,
+  │               trend, portfolio, breakthrough, design, technology,
+  │               packages, monitor, system)
+  ├── Per Panel:  Required fields list + derived fields list
+  ├── Methods:    transform_for_panel(panel, output),
+  │               transform_all_panels(output), to_dict()
+  └── Key Logic:  Computes derived fields (score_badge_data, progress_pct,
+                  radar_chart_data, evidence_cards, source_breakdown)
+
+  [NEW-FILE] src/claire/runtime_contracts/export_contract.py
+  ├── Role:       Defines export package requirements
+  ├── Class:      ExportContract
+  ├── Types:      portfolio_binder, opportunity_discovery,
+  │               technical_feasibility, strategic_positioning,
+  │               acquisition_package, full_pipeline
+  ├── Required:   package_id, package_type, run_id, created_at,
+  │               company_name, route, terminal_state, contents,
+  │               integrity_hash, version
+  ├── Methods:    validate(package), validate_contents(contents, type),
+  │               generate_integrity_hash(package), to_dict()
+  └── Key Logic:  Type-specific content requirements — each export type
+                  mandates different required sections
+
+  [NEW-FILE] src/claire/runtime_contracts/proof_contract.py
+  ├── Role:       Defines evidence/proof binder structure
+  ├── Class:      ProofContract
+  ├── Required:   binder_id, run_id, created_at, company_name,
+  │               route, terminal_state, evidence_chain, methodology,
+  │               conclusions, integrity_hash
+  ├── Evidence:   Each evidence item requires: evidence_id, source,
+  │               source_type, content, relevance, collected_at,
+  │               provenance, verified
+  ├── Methods:    validate(binder), validate_evidence_chain(chain),
+  │               validate_methodology(methodology), to_dict()
+  └── Key Logic:  Chain-of-custody validation — every evidence item must
+                  have provenance metadata
+
+  [NEW-FILE] src/claire/runtime_contracts/contract_validator.py
+  ├── Role:       Master validator — runs all contracts against output
+  ├── Class:      ContractValidator
+  ├── Contracts:  CoreRunContract, LifecycleOutputContract, RouteContract,
+  │               ExportContract, ProofContract
+  ├── Methods:    validate_all(output), validate_for_dashboard(output),
+  │               validate_for_export(package), validate_for_proof(binder),
+  │               get_validation_summary(output), to_dict()
+  └── Key Logic:  Aggregates all contract validations into single pass/fail
+                  with detailed error/warning report
+
+================================================================================
+PHASE 2 — FRONTEND UNIFICATION LAYER (24 files, 4 folders)
+================================================================================
+
+Purpose: Make Generation 2 lifecycle dashboard the master UI, merging old
+         widgets and platform tools. One coherent operating surface built
+         around core_run_output.json. Replaces 3 overlapping UI generations
+         with a single unified shell.
+
+Depends On: Phase 1 (dashboard contract for panel data shapes)
+Spec Source: v10.3.2 Completion System Spec — Section 2
+
+[EXISTING]  src/frontend/
+[NEW-DIR]   src/frontend/unified/
+[NEW-DIR]   src/frontend/unified/state/
+[NEW-DIR]   src/frontend/unified/panels/
+[NEW-DIR]   src/frontend/unified/widgets/
+
+── Shell ──────────────────────────────────────────────────────────────
+
+  [NEW-FILE] src/frontend/unified/master_shell.js
+  ├── Role:       Main UI boot shell — single entry point
+  ├── Class:      ClaireShell
+  ├── Methods:    init(), switchPanel(id), _registerPanels(),
+  │               _renderNavigation(), _bindEvents(),
+  │               _refreshActivePanel()
+  ├── Boot Flow:  init → create EventBus → create ApiClient →
+  │               create StateManager → register panels →
+  │               render nav → load initial state → mount default panel
+  ├── Navigation: 12-panel sidebar navigation with hash routing
+  └── Events:     panel:switch, data:refresh, run:completed, hashchange
+
+  [NEW-FILE] src/frontend/unified/master_shell.css
+  ├── Role:       Unified styling — single CSS authority
+  ├── Replaces:   dashboard.css, dashboard(1).css, theme.css (overlap)
+  ├── System:     CSS custom properties (design tokens), dark theme
+  ├── Layout:     Grid: nav sidebar (220px) + panel container
+  ├── Components: Cards, badges, buttons, tables, meters, grids
+  ├── Responsive: 1024px (collapsed nav), 768px (horizontal nav)
+  └── Variables:  26 CSS custom properties for colors, fonts, spacing
+
+── State ──────────────────────────────────────────────────────────────
+
+  [NEW-FILE] src/frontend/unified/state/state_manager.js
+  ├── Role:       Centralized frontend state store
+  ├── Class:      ClaireStateManager
+  ├── State:      system, lastRun, runHistory, activePanel, filters,
+  │               preferences, cache
+  ├── Methods:    getState(key), setState(key, value), updateState(),
+  │               subscribe(key, callback), getHistory(), clearCache(),
+  │               cacheSet/Get(), savePreferences(), reset()
+  └── Features:   Deep cloning, state history (50 entries), TTL cache,
+                  localStorage preferences, reactive subscriptions
+
+  [NEW-FILE] src/frontend/unified/state/api_client.js
+  ├── Role:       Unified API communication layer
+  ├── Class:      ClaireApiClient
+  ├── Methods:    get(), post(), put(), del()
+  ├── Features:   Auto-retry (3 attempts), request/response interceptors,
+  │               timeout (30s), response normalization, query param building
+  └── Error:      ClaireApiError class with status, data, url
+
+  [NEW-FILE] src/frontend/unified/state/event_bus.js
+  ├── Role:       UI pub/sub event system
+  ├── Class:      ClaireEventBus
+  ├── Methods:    on(), once(), off(), emit(), pause(), resume(),
+  │               getHistory(), clear()
+  └── Features:   Wildcard handlers (namespace:*), event history (100),
+                  pause/resume queue, error isolation per handler
+
+── Panels (12) ────────────────────────────────────────────────────────
+
+  Each panel implements: constructor(stateManager, apiClient, eventBus),
+  mount(container), unmount(), refresh(data)
+
+  [NEW-FILE] src/frontend/unified/panels/run_panel.js
+  ├── Role:       Run command surface — initiate and review evaluations
+  ├── Class:      RunPanel
+  ├── Sections:   Run configuration form, last run summary (score badge,
+  │               confidence, stage, evidence), recent runs table
+  └── Actions:    Execute evaluation via POST /api/v2/lifecycle/evaluate
+
+  [NEW-FILE] src/frontend/unified/panels/lifecycle_panel.js
+  ├── Role:       30-stage lifecycle viewer with route-aware status
+  ├── Class:      LifecyclePanel
+  └── Sections:   Progress percentage, 30 stage cards in grid with
+                  status badges (completed/skipped/active/pending)
+
+  [NEW-FILE] src/frontend/unified/panels/research_panel.js
+  ├── Role:       Research and source evidence surface
+  ├── Class:      ResearchPanel
+  └── Sections:   Evidence items list with relevance scores and source badges
+
+  [NEW-FILE] src/frontend/unified/panels/discover_panel.js
+  ├── Role:       Discovery pipeline — signals, opportunities, convergence
+  ├── Class:      DiscoverPanel
+  └── Actions:    Start discovery scan via POST /api/v2/intelligence/discover/scan
+
+  [NEW-FILE] src/frontend/unified/panels/trend_panel.js
+  ├── Role:       Trend detection and thesis timeline display
+  ├── Class:      TrendPanel
+  └── Sections:   Active trends list, thesis timeline
+
+  [NEW-FILE] src/frontend/unified/panels/portfolio_panel.js
+  ├── Role:       Portfolio scoring with radar chart
+  ├── Class:      PortfolioPanel
+  ├── Sections:   Canvas radar chart, score breakdown with meters
+  └── Key Logic:  Canvas 2D radar chart with polygon fill, axis labels
+
+  [NEW-FILE] src/frontend/unified/panels/breakthrough_panel.js
+  ├── Role:       Breakthrough classification and escalation
+  ├── Class:      BreakthroughPanel
+  └── Sections:   Classification status, escalation status, 10 breakthrough
+                  type cards (technological through discontinuity)
+
+  [NEW-FILE] src/frontend/unified/panels/design_panel.js
+  ├── Role:       Design Portal — architecture generation
+  ├── Class:      DesignPanel
+  └── Sections:   Portal status, AutoDesign output, component tree
+
+  [NEW-FILE] src/frontend/unified/panels/technology_panel.js
+  ├── Role:       Technology intelligence and stack assessment
+  ├── Class:      TechnologyPanel
+  └── Sections:   Tech assessment results, compatibility matrix
+
+  [NEW-FILE] src/frontend/unified/panels/packages_panel.js
+  ├── Role:       Export/package browser
+  ├── Class:      PackagesPanel
+  └── Sections:   Package table, totals cards (total, portfolio, acquisition)
+
+  [NEW-FILE] src/frontend/unified/panels/monitor_panel.js
+  ├── Role:       Live intelligence monitoring
+  ├── Class:      MonitorPanel
+  ├── Sections:   Monitor timeline, source health, active signals
+  └── Features:   Live mode toggle (15s refresh interval)
+
+  [NEW-FILE] src/frontend/unified/panels/system_panel.js
+  ├── Role:       Platform health, governance, gap analysis
+  ├── Class:      SystemPanel
+  └── Sections:   Version/health/modules/files cards, evolution governance
+                  status, update governance status, gap analysis
+
+── Widgets (7) ────────────────────────────────────────────────────────
+
+  [NEW-FILE] src/frontend/unified/widgets/score_badge.js
+  ├── Role:       Color-coded score badge (pill or circle)
+  ├── Class:      ScoreBadge
+  └── Methods:    render(), update(value), static create()
+
+  [NEW-FILE] src/frontend/unified/widgets/radar_chart.js
+  ├── Role:       Canvas radar chart for multi-dimensional scores
+  ├── Class:      RadarChart
+  └── Methods:    draw(), update(labels, values)
+                  Internal: _drawGrid, _drawAxes, _drawData, _drawLabels
+
+  [NEW-FILE] src/frontend/unified/widgets/engine_accordion.js
+  ├── Role:       Collapsible engine detail accordion (from old dashboard)
+  ├── Class:      EngineAccordion
+  └── Methods:    render(), update(engines)
+                  Per-item: score badge, status, confidence, evidence, summary
+
+  [NEW-FILE] src/frontend/unified/widgets/acquirer_card.js
+  ├── Role:       Acquirer display card with fit score
+  ├── Class:      AcquirerCard
+  └── Methods:    render(), update(acquirer), static create()
+
+  [NEW-FILE] src/frontend/unified/widgets/evidence_card.js
+  ├── Role:       Evidence item card with provenance
+  ├── Class:      EvidenceCard
+  └── Methods:    render(), update(evidence), static create()
+
+  [NEW-FILE] src/frontend/unified/widgets/lifecycle_stage_card.js
+  ├── Role:       Individual lifecycle stage display card
+  ├── Class:      LifecycleStageCard
+  └── Methods:    render(), update(stage), static create()
+
+  [NEW-FILE] src/frontend/unified/widgets/export_browser.js
+  ├── Role:       File browser for navigating export packages
+  ├── Class:      ExportBrowser
+  └── Methods:    render(), update(exports)
+
+================================================================================
+PHASE 3 — API UNIFICATION LAYER (6 files, 1 folder)
+================================================================================
+
+Purpose: Stop dual API drift (System A: app.py → routes_pipeline.py vs.
+         System B: router.py → routes_platform.py). Create clean forward
+         /api/v2/* namespace while preserving old routes for backward
+         compatibility.
+
+Depends On: Phase 1 (contract validation in middleware)
+Spec Source: v10.3.2 Completion System Spec — Section 3
+
+[EXISTING]  src/claire/api/
+[NEW-DIR]   src/claire/api/unified/
+
+  [NEW-FILE] src/claire/api/unified/__init__.py
+  ├── Role:       Unified API package init
+  ├── Exports:    UnifiedRouter, RequestLogger,
+  │               ContractValidationMiddleware, ErrorHandler,
+  │               lifecycle_blueprint, intelligence_blueprint,
+  │               platform_blueprint
+  └── API_VERSION: "v2"
+
+  [NEW-FILE] src/claire/api/unified/router.py
+  ├── Role:       Master router mounting all blueprints under /api/v2/
+  ├── Class:      UnifiedRouter
+  ├── Methods:    init_app(app), register_all(), get_route_map()
+  ├── Root Routes: /api/v2/status, /api/v2/health, /api/v2/version
+  ├── Blueprints: lifecycle → /api/v2/lifecycle/*
+  │               intelligence → /api/v2/intelligence/*
+  │               platform → /api/v2/platform/*
+  └── Health:     Checks api_router, contract_validator, evolution_governance
+
+  [NEW-FILE] src/claire/api/unified/middleware.py
+  ├── Role:       Request/response middleware
+  ├── Classes:    RequestLogger — correlation IDs, timing
+  │               ContractValidationMiddleware — validate outputs
+  │               ErrorHandler — structured JSON errors (400/404/405/500)
+  ├── Decorators: require_json, validate_required_fields(*fields)
+  └── Headers:    X-Request-Id, X-Duration-Ms, X-Claire-Version,
+                  X-Contract-Valid
+
+  [NEW-FILE] src/claire/api/unified/lifecycle_routes.py
+  ├── Role:       Lifecycle API endpoints
+  ├── Blueprint:  lifecycle_blueprint
+  ├── Endpoints:  POST /evaluate — full evaluation run
+  │               GET  /runs — list recent runs (paginated)
+  │               GET  /runs/<id> — get specific run
+  │               GET  /stages — list all 30 stages
+  │               GET  /routes — list available routes
+  │               GET  /contracts — return contract definitions
+  └── Integration: PipelineOrchestrator, ContractValidator
+
+  [NEW-FILE] src/claire/api/unified/intelligence_routes.py
+  ├── Role:       Intelligence/research API endpoints
+  ├── Blueprint:  intelligence_blueprint
+  ├── Endpoints:  GET  /research/evidence — get evidence by run_id
+  │               POST /discover/scan — initiate discovery scan
+  │               GET  /trends — get active trends
+  │               POST /portfolio/score — portfolio scoring
+  │               POST /breakthrough/classify — classification
+  │               POST /technology/assess — tech assessment
+  │               GET  /acquisition/targets — list targets
+  │               GET  /monitor/status — monitor status
+  │               GET  /packages — list export packages
+  └── Integration: SignalGovernor, TrendDetector, PortfolioScorer,
+                   BreakthroughClassifier, TechnologyAnalyzer
+
+  [NEW-FILE] src/claire/api/unified/platform_routes.py
+  ├── Role:       Platform/system API endpoints
+  ├── Blueprint:  platform_blueprint
+  ├── Endpoints:  GET /health — comprehensive health check
+  │               GET /gaps — operational gap analysis
+  │               GET /evolution — evolution governance status
+  │               GET /governance/updates — update governance status
+  │               GET /info — full platform info
+  └── Health:     Checks python runtime, data directory, claire modules,
+                  runtime contracts, evolution layer, update governance,
+                  unified API, unified frontend
+
+================================================================================
+COMPLETE FILE LIST — SORTED BY PATH
+================================================================================
+
+  src/claire/api/unified/__init__.py
+  src/claire/api/unified/intelligence_routes.py
+  src/claire/api/unified/lifecycle_routes.py
+  src/claire/api/unified/middleware.py
+  src/claire/api/unified/platform_routes.py
+  src/claire/api/unified/router.py
+  src/claire/runtime_contracts/__init__.py
+  src/claire/runtime_contracts/contract_validator.py
+  src/claire/runtime_contracts/core_run_contract.py
+  src/claire/runtime_contracts/dashboard_contract.py
+  src/claire/runtime_contracts/export_contract.py
+  src/claire/runtime_contracts/lifecycle_output_contract.py
+  src/claire/runtime_contracts/proof_contract.py
+  src/claire/runtime_contracts/route_contract.py
+  src/frontend/unified/master_shell.css
+  src/frontend/unified/master_shell.js
+  src/frontend/unified/panels/breakthrough_panel.js
+  src/frontend/unified/panels/design_panel.js
+  src/frontend/unified/panels/discover_panel.js
+  src/frontend/unified/panels/lifecycle_panel.js
+  src/frontend/unified/panels/monitor_panel.js
+  src/frontend/unified/panels/packages_panel.js
+  src/frontend/unified/panels/portfolio_panel.js
+  src/frontend/unified/panels/research_panel.js
+  src/frontend/unified/panels/run_panel.js
+  src/frontend/unified/panels/system_panel.js
+  src/frontend/unified/panels/technology_panel.js
+  src/frontend/unified/panels/trend_panel.js
+  src/frontend/unified/state/api_client.js
+  src/frontend/unified/state/event_bus.js
+  src/frontend/unified/state/state_manager.js
+  src/frontend/unified/widgets/acquirer_card.js
+  src/frontend/unified/widgets/engine_accordion.js
+  src/frontend/unified/widgets/evidence_card.js
+  src/frontend/unified/widgets/export_browser.js
+  src/frontend/unified/widgets/lifecycle_stage_card.js
+  src/frontend/unified/widgets/radar_chart.js
+  src/frontend/unified/widgets/score_badge.js
+
+TOTAL: 38 new files
+
+================================================================================
+NEW FOLDER LIST
+================================================================================
+
+  src/claire/api/unified/          (Phase 3)
+  src/claire/runtime_contracts/    (Phase 1)
+  src/frontend/unified/            (Phase 2)
+  src/frontend/unified/panels/     (Phase 2)
+  src/frontend/unified/state/      (Phase 2)
+  src/frontend/unified/widgets/    (Phase 2)
+
+TOTAL: 6 new folders
+
+================================================================================
+INSTALLATION ORDER
+================================================================================
+
+  Phase 1 → Runtime Contract Layer    (8 files)  — No dependencies
+  Phase 2 → Frontend Unification      (24 files) — Depends on Phase 1
+  Phase 3 → API Unification           (6 files)  — Depends on Phase 1
+
+  Phases 2 and 3 both depend on Phase 1 (contracts).
+  Phases 2 and 3 are independent of each other.
+
+================================================================================
+END OF FILE MAP
+================================================================================

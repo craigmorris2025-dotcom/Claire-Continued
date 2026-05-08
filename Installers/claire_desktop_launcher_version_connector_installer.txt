@@ -1,0 +1,423 @@
+#!/usr/bin/env python3
+# Claire Desktop Launcher Version Connector Installer
+# Version: 11.27-11.33
+# Date: 2026-05-06
+#
+# Purpose:
+# - Connect START_CLAIRE_DESKTOP.bat to the current Claire version state.
+# - Preserve the existing launcher path: tools\portable_launcher.py --live --app
+# - Add a safe desktop version sync helper.
+# - Write launcher state snapshots for dashboard/system proof.
+# - Back up existing files before replacement.
+# - Do not modify runtime engines, routing, scoring, or core_run_output.json.
+#
+# Usage from Claire root:
+#     python claire_desktop_launcher_version_connector_installer.py --install
+#
+# Optional target:
+#     python claire_desktop_launcher_version_connector_installer.py --target "C:\\Users\\Craig\\OneDrive\\Desktop\\Claire" --install
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import shutil
+import subprocess
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List
+
+
+INSTALLER_NAME = "Claire Desktop Launcher Version Connector Installer"
+INSTALLER_VERSION = "11.27-11.33"
+DEFAULT_TARGET = Path.home() / "OneDrive" / "Desktop" / "Claire"
+
+
+DESKTOP_LAUNCHER_BAT = '''@echo off
+setlocal EnableExtensions
+
+REM Claire Desktop Launcher - version-connected
+REM Installed by Claire Desktop Launcher Version Connector Installer 11.27-11.33
+REM Preserves existing launcher path: tools\portable_launcher.py --live --app
+
+cd /d "%~dp0"
+
+set "CLAIRE_ROOT=%~dp0"
+set "CLAIRE_APP_SHELL=1"
+set "CLAIRE_DESKTOP_LAUNCHER_VERSION=11.27-11.33"
+set "CLAIRE_LAUNCH_MODE=desktop"
+set "CLAIRE_VERSION_SYNC=1"
+
+if exist ".venv\Scripts\python.exe" (
+    set "CLAIRE_PYTHON=.venv\Scripts\python.exe"
+) else (
+    set "CLAIRE_PYTHON=python"
+)
+
+if exist "tools\desktop_version_sync.py" (
+    "%CLAIRE_PYTHON%" "tools\desktop_version_sync.py" --root "%CLAIRE_ROOT%" --mode desktop
+)
+
+if exist "tools\portable_launcher.py" (
+    "%CLAIRE_PYTHON%" "tools\portable_launcher.py" --live --app
+    goto :done
+)
+
+if exist "main.py" (
+    "%CLAIRE_PYTHON%" "main.py"
+    goto :done
+)
+
+echo.
+echo [Claire Launcher Error]
+echo Could not find tools\portable_launcher.py or main.py.
+echo Make sure this launcher is inside the Claire project root.
+echo.
+pause
+
+:done
+endlocal
+'''
+
+
+DESKTOP_VERSION_SYNC_PY = '''#!/usr/bin/env python3
+# Desktop version sync helper for Claire.
+#
+# This helper is intentionally lightweight and safe:
+# - reads version files if present
+# - reads installer registry if present
+# - detects latest locked version file
+# - writes dashboard/system state snapshots
+# - does not mutate runtime, routing, scoring, or lifecycle output
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def read_json(path: Path) -> Any:
+    try:
+        if path.exists():
+            return json.loads(path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        return {"_read_error": str(exc), "_path": str(path)}
+    return None
+
+
+def read_text(path: Path) -> Optional[str]:
+    try:
+        if path.exists():
+            return path.read_text(encoding="utf-8", errors="ignore").strip()
+    except Exception:
+        return None
+    return None
+
+
+def normalize_version_tuple(value: str) -> tuple:
+    numbers = re.findall(r"\d+", value or "")
+    return tuple(int(n) for n in numbers[:4]) if numbers else (0,)
+
+
+def find_locked_versions(root: Path) -> List[Dict[str, str]]:
+    locked = []
+    for path in root.glob("version_*_locked.json"):
+        version = path.stem.replace("version_", "").replace("_locked", "").replace("_", ".")
+        locked.append({"version": version, "path": str(path.relative_to(root))})
+    locked.sort(key=lambda item: normalize_version_tuple(item["version"]))
+    return locked
+
+
+def find_recent_preflights(root: Path, limit: int = 12) -> List[Dict[str, str]]:
+    reports_dir = root / ".claire_install" / "reports"
+    reports = []
+    if reports_dir.exists():
+        for path in reports_dir.glob("*_preflight_*.json"):
+            reports.append({
+                "name": path.name,
+                "path": str(path.relative_to(root)),
+                "modified_utc": datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat(),
+            })
+    reports.sort(key=lambda item: item["modified_utc"], reverse=True)
+    return reports[:limit]
+
+
+def detect_launcher_target(root: Path) -> Dict[str, Any]:
+    portable = root / "tools" / "portable_launcher.py"
+    main = root / "main.py"
+    return {
+        "preferred_target": "tools/portable_launcher.py --live --app" if portable.exists() else "main.py" if main.exists() else "missing",
+        "portable_launcher_exists": portable.exists(),
+        "main_py_exists": main.exists(),
+    }
+
+
+def build_state(root: Path, mode: str) -> Dict[str, Any]:
+    claire_version = read_text(root / ".claire_version")
+    version_json = read_json(root / "version.json")
+    install_registry = read_json(root / ".claire_install" / "install_registry.json")
+    locked_versions = find_locked_versions(root)
+    recent_preflights = find_recent_preflights(root)
+
+    latest_locked = locked_versions[-1]["version"] if locked_versions else None
+
+    version_candidates = [
+        claire_version,
+        version_json.get("version") if isinstance(version_json, dict) else None,
+        latest_locked,
+    ]
+    active_version = next((v for v in version_candidates if v), "unknown")
+
+    launcher_target = detect_launcher_target(root)
+
+    return {
+        "status": "success" if launcher_target["preferred_target"] != "missing" else "launcher_target_missing",
+        "mode": mode,
+        "synced_at_utc": utc_now(),
+        "root": str(root),
+        "active_version": active_version,
+        "claire_version_file": claire_version,
+        "version_json": version_json,
+        "latest_locked_version": latest_locked,
+        "locked_versions": locked_versions,
+        "recent_preflight_reports": recent_preflights,
+        "installer_registry_present": isinstance(install_registry, dict),
+        "launcher": {
+            "desktop_launcher": "START_CLAIRE_DESKTOP.bat",
+            "launcher_version": "11.27-11.33",
+            **launcher_target,
+        },
+        "contracts": {
+            "does_not_modify_runtime": True,
+            "does_not_modify_routing": True,
+            "does_not_modify_scoring": True,
+            "does_not_modify_core_run_output": True,
+            "purpose": "Connect desktop launcher to current version state and dashboard proof snapshots.",
+        },
+    }
+
+
+def write_json(path: Path, payload: Dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", default=".", help="Claire project root")
+    parser.add_argument("--mode", default="desktop", help="Launch mode label")
+    args = parser.parse_args()
+
+    root = Path(args.root).expanduser().resolve()
+    state = build_state(root, args.mode)
+
+    write_json(root / "data" / "version_sync" / "desktop_launcher_version_state.json", state)
+    write_json(root / "data" / "dashboard" / "state_snapshots" / "desktop_launcher_state.json", state)
+
+    print("[Claire Desktop Version Sync]", state["status"])
+    print("active_version:", state["active_version"])
+    print("launcher_target:", state["launcher"]["preferred_target"])
+    return 0 if state["status"] == "success" else 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+'''
+
+
+README_TEXT = '''# Claire Desktop Launcher Version Connector
+
+Installed files:
+
+- `START_CLAIRE_DESKTOP.bat`
+- `tools/desktop_version_sync.py`
+- `data/version_sync/.gitkeep`
+- `data/dashboard/state_snapshots/.gitkeep`
+
+Purpose:
+
+This connects the desktop launcher to the current Claire version state while preserving the known working launch route:
+
+```bat
+tools\portable_launcher.py --live --app
+```
+
+It writes launcher/version proof snapshots to:
+
+- `data/version_sync/desktop_launcher_version_state.json`
+- `data/dashboard/state_snapshots/desktop_launcher_state.json`
+
+It does not modify runtime engines, lifecycle routing, scoring, or `core_run_output.json`.
+'''
+
+
+def utc_stamp() -> str:
+    return datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+
+
+def write_file(path: Path, content: str, install: bool, actions: List[Dict[str, Any]]) -> None:
+    existed = path.exists()
+    backup_path = None
+    if install:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if existed:
+            backup = path.with_name(path.name + f".bak_{utc_stamp()}")
+            shutil.copy2(path, backup)
+            backup_path = str(backup)
+        path.write_text(content, encoding="utf-8", newline="\n")
+    actions.append({
+        "action": "write_file",
+        "path": str(path),
+        "installed": install,
+        "existed": existed,
+        "backup_created": bool(backup_path),
+        "backup_path": backup_path,
+    })
+
+
+def ensure_dir(path: Path, install: bool, actions: List[Dict[str, Any]]) -> None:
+    existed = path.exists()
+    if install:
+        path.mkdir(parents=True, exist_ok=True)
+    actions.append({
+        "action": "ensure_dir",
+        "path": str(path),
+        "installed": install,
+        "existed": existed,
+    })
+
+
+def run_check(cmd: List[str], cwd: Path) -> Dict[str, Any]:
+    try:
+        proc = subprocess.run(cmd, cwd=str(cwd), text=True, capture_output=True, timeout=60)
+        return {
+            "cmd": cmd,
+            "returncode": proc.returncode,
+            "stdout": proc.stdout[-4000:],
+            "stderr": proc.stderr[-4000:],
+        }
+    except Exception as exc:
+        return {"cmd": cmd, "error": str(exc)}
+
+
+def detect_python(root: Path) -> str:
+    venv_py = root / ".venv" / "Scripts" / "python.exe"
+    if venv_py.exists():
+        return str(venv_py)
+    return sys.executable
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=INSTALLER_NAME)
+    parser.add_argument("--target", default=str(DEFAULT_TARGET), help="Claire project root")
+    parser.add_argument("--install", action="store_true", help="Actually install files. Without this, dry run only.")
+    parser.add_argument("--run-sync-check", action="store_true", help="After install, run desktop_version_sync.py once.")
+    args = parser.parse_args()
+
+    root = Path(args.target).expanduser().resolve()
+    install = bool(args.install)
+    actions: List[Dict[str, Any]] = []
+
+    print(f"{INSTALLER_NAME} {INSTALLER_VERSION}")
+    print(f"Target: {root}")
+    print("Mode:", "INSTALL" if install else "DRY RUN")
+
+    if not root.exists():
+        print(f"[ERROR] Target root does not exist: {root}")
+        return 2
+
+    sanity = {
+        "root_exists": root.exists(),
+        "main_py_exists": (root / "main.py").exists(),
+        "tools_dir_exists": (root / "tools").exists(),
+        "portable_launcher_exists": (root / "tools" / "portable_launcher.py").exists(),
+        "version_json_exists": (root / "version.json").exists(),
+        "claire_version_exists": (root / ".claire_version").exists(),
+        "desktop_launcher_exists": (root / "START_CLAIRE_DESKTOP.bat").exists(),
+    }
+
+    if not sanity["main_py_exists"] and not sanity["portable_launcher_exists"]:
+        print("[ERROR] This does not look like the Claire root. Missing main.py and tools/portable_launcher.py.")
+        return 3
+
+    ensure_dir(root / "tools", install, actions)
+    ensure_dir(root / "data" / "version_sync", install, actions)
+    ensure_dir(root / "data" / "dashboard" / "state_snapshots", install, actions)
+    ensure_dir(root / "docs" / "launcher", install, actions)
+
+    write_file(root / "START_CLAIRE_DESKTOP.bat", DESKTOP_LAUNCHER_BAT, install, actions)
+    write_file(root / "tools" / "desktop_version_sync.py", DESKTOP_VERSION_SYNC_PY, install, actions)
+    write_file(root / "data" / "version_sync" / ".gitkeep", "", install, actions)
+    write_file(root / "data" / "dashboard" / "state_snapshots" / ".gitkeep", "", install, actions)
+    write_file(root / "docs" / "launcher" / "desktop_launcher_version_connector.md", README_TEXT, install, actions)
+
+    checks: List[Dict[str, Any]] = []
+    if install:
+        py = detect_python(root)
+        checks.append(run_check([py, "tools/desktop_version_sync.py", "--root", str(root), "--mode", "desktop_install_check"], root))
+        if args.run_sync_check:
+            checks.append(run_check([py, "tools/desktop_version_sync.py", "--root", str(root), "--mode", "desktop_manual_check"], root))
+
+    report = {
+        "installer": INSTALLER_NAME,
+        "installer_version": INSTALLER_VERSION,
+        "installed": install,
+        "installed_at_utc": datetime.now(timezone.utc).isoformat(),
+        "target": str(root),
+        "sanity": sanity,
+        "actions": actions,
+        "checks": checks,
+        "post_install_next_steps": [
+            "Double-click START_CLAIRE_DESKTOP.bat from the Claire root or use your existing desktop shortcut if it points to that file.",
+            "Confirm data/version_sync/desktop_launcher_version_state.json exists.",
+            "Confirm data/dashboard/state_snapshots/desktop_launcher_state.json exists.",
+            "Run pytest only after confirming the launcher opens normally.",
+        ],
+        "safety_contract": {
+            "backs_up_existing_launcher": True,
+            "preserves_portable_launcher_route": True,
+            "does_not_modify_runtime": True,
+            "does_not_modify_routing": True,
+            "does_not_modify_scoring": True,
+            "does_not_modify_core_run_output": True,
+        },
+    }
+
+    if install:
+        report_dir = root / ".claire_install" / "reports"
+        report_dir.mkdir(parents=True, exist_ok=True)
+        report_path = report_dir / f"desktop_launcher_version_connector_{utc_stamp()}.json"
+        report_path.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
+        print(f"[OK] Install report written: {report_path}")
+    else:
+        print("[DRY RUN] No files were changed. Re-run with --install to apply.")
+
+    print(json.dumps({
+        "installed": install,
+        "target": str(root),
+        "portable_launcher_exists": sanity["portable_launcher_exists"],
+        "desktop_launcher_exists": sanity["desktop_launcher_exists"],
+        "planned_files": [
+            "START_CLAIRE_DESKTOP.bat",
+            "tools/desktop_version_sync.py",
+            "data/version_sync/.gitkeep",
+            "data/dashboard/state_snapshots/.gitkeep",
+            "docs/launcher/desktop_launcher_version_connector.md",
+        ],
+    }, indent=2))
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

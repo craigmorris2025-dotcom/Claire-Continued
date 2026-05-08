@@ -1,0 +1,598 @@
+================================================================================
+  CLAIRE v10.3 COMPLETION FILE MAP
+  Every New Folder & File — Where It Goes in the Project Tree
+================================================================================
+  Generated: May 6, 2026
+  Companion to: claire_v10.3_completion_installer.py
+  Base Path: C:\Users\craig\OneDrive\Desktop\Claire\
+================================================================================
+
+SUMMARY
+───────
+  Total New Folders:  16
+  Total New Files:    78
+  Phases:             10
+  Existing Files Modified: 0 (all additive — no existing files touched)
+
+================================================================================
+  COMPLETE PROJECT TREE — NEW FILES MARKED WITH [NEW]
+================================================================================
+
+Claire\
+├── main.py
+├── version.json
+├── ...existing root files...
+│
+├── src\
+│   ├── claire\                                    ← ACTIVE MASTER SYSTEM
+│   │   ├── app.py
+│   │   ├── __init__.py
+│   │   │
+│   │   ├── acquirers\                             (existing — untouched)
+│   │   ├── acquisition\                           (existing — untouched)
+│   │   ├── agi\                                   (existing — untouched)
+│   │   ├── analysis\                              (existing — untouched)
+│   │   │
+│   │   ├── api\
+│   │   │   ├── routes_pipeline.py                 (existing — untouched)
+│   │   │   ├── routes_platform.py                 (existing — untouched)
+│   │   │   ├── router.py                          (existing — untouched)
+│   │   │   ├── server.py                          (existing — untouched)
+│   │   │   │
+│   │   │   └── unified\                           [NEW FOLDER — Phase 2]
+│   │   │       ├── __init__.py                    [NEW — Phase 2]
+│   │   │       ├── router.py                      [NEW — Phase 2]
+│   │   │       ├── middleware.py                   [NEW — Phase 2]
+│   │   │       ├── lifecycle_routes.py             [NEW — Phase 2]
+│   │   │       ├── intelligence_routes.py          [NEW — Phase 2]
+│   │   │       └── platform_routes.py              [NEW — Phase 2]
+│   │   │
+│   │   ├── autonomous\                            [NEW FOLDER — Phase 10]
+│   │   │   ├── __init__.py                        [NEW — Phase 10]
+│   │   │   ├── self_escalator.py                  [NEW — Phase 10]
+│   │   │   ├── self_corrector.py                  [NEW — Phase 10]
+│   │   │   ├── self_enricher.py                   [NEW — Phase 10]
+│   │   │   ├── self_invalidator.py                [NEW — Phase 10]
+│   │   │   ├── self_optimizer.py                  [NEW — Phase 10]
+│   │   │   ├── self_researcher.py                 [NEW — Phase 10]
+│   │   │   └── safety_governor.py                 [NEW — Phase 10]
+│   │   │
+│   │   ├── breakthrough\
+│   │   │   ├── classification.py                  (existing — untouched)
+│   │   │   ├── discovery_generation.py            (existing — untouched)
+│   │   │   ├── gap_detection.py                   (existing — untouched)
+│   │   │   ├── path_selection.py                  (existing — untouched)
+│   │   │   ├── qualification.py                   (existing — untouched)
+│   │   │   │
+│   │   │   └── maturity\                          [NEW FOLDER — Phase 5]
+│   │   │       ├── __init__.py                    [NEW — Phase 5]
+│   │   │       ├── evidence_thresholds.py         [NEW — Phase 5]
+│   │   │       ├── cross_category_detector.py     [NEW — Phase 5]
+│   │   │       ├── compound_scorer.py             [NEW — Phase 5]
+│   │   │       └── category_validator.py          [NEW — Phase 5]
+│   │   │
+│   │   ├── bridge\                                (existing — untouched)
+│   │   ├── concepts\                              (existing — untouched)
+│   │   ├── config\                                (existing — untouched)
+│   │   ├── connectors\                            (existing — untouched)
+│   │   ├── core\                                  (existing — untouched)
+│   │   ├── cross_system\                          (existing — untouched)
+│   │   ├── dashboard\                             (existing — untouched)
+│   │   ├── deals\                                 (existing — untouched)
+│   │   │
+│   │   ├── design\
+│   │   │   ├── portal.py                          (existing — untouched, gate-only)
+│   │   │   │
+│   │   │   ├── generators\                        [NEW FOLDER — Phase 9]
+│   │   │   │   ├── __init__.py                    [NEW — Phase 9]
+│   │   │   │   ├── architecture_generator.py      [NEW — Phase 9]
+│   │   │   │   ├── dependency_generator.py        [NEW — Phase 9]
+│   │   │   │   ├── component_tree_generator.py    [NEW — Phase 9]
+│   │   │   │   ├── implementation_planner.py      [NEW — Phase 9]
+│   │   │   │   └── stack_intelligence.py          [NEW — Phase 9]
+│   │   │   │
+│   │   │   └── renderers\                         [NEW FOLDER — Phase 9]
+│   │   │       ├── __init__.py                    [NEW — Phase 9]
+│   │   │       ├── graph_renderer.py              [NEW — Phase 9]
+│   │   │       └── blueprint_formatter.py         [NEW — Phase 9]
+│   │   │
+│   │   ├── domain\                                (existing — untouched)
+│   │   ├── engines\                               (existing — untouched)
+│   │   ├── enrichment\                            (existing — untouched)
+│   │   ├── export\                                (existing — untouched)
+│   │   ├── feeds\                                 (existing — untouched)
+│   │   ├── fusion\                                (existing — untouched)
+│   │   ├── governance\                            (existing — untouched)
+│   │   ├── infra\                                 (existing — untouched)
+│   │   ├── intelligence\                          (existing — untouched)
+│   │   ├── lifecycle\                             (existing — untouched)
+│   │   ├── live\                                  (existing — untouched)
+│   │   ├── live_intelligence\                     (existing — untouched)
+│   │   │
+│   │   ├── loops\                                 [NEW FOLDER — Phase 7]
+│   │   │   ├── __init__.py                        [NEW — Phase 7]
+│   │   │   ├── loop_orchestrator.py               [NEW — Phase 7]
+│   │   │   ├── discovery_loop.py                  [NEW — Phase 7]
+│   │   │   ├── analysis_loop.py                   [NEW — Phase 7]
+│   │   │   ├── synthesis_loop.py                  [NEW — Phase 7]
+│   │   │   ├── validation_loop.py                 [NEW — Phase 7]
+│   │   │   ├── regulatory_loop.py                 [NEW — Phase 7]
+│   │   │   ├── marketing_loop.py                  [NEW — Phase 7]
+│   │   │   ├── execution_loop.py                  [NEW — Phase 7]
+│   │   │   └── decision_engine.py                 [NEW — Phase 7]
+│   │   │
+│   │   ├── memory\
+│   │   │   ├── ...existing memory files...        (existing — untouched)
+│   │   │   │
+│   │   │   └── compound\                          [NEW FOLDER — Phase 8]
+│   │   │       ├── __init__.py                    [NEW — Phase 8]
+│   │   │       ├── compound_engine.py             [NEW — Phase 8]
+│   │   │       ├── thesis_historian.py            [NEW — Phase 8]
+│   │   │       ├── routing_evolver.py             [NEW — Phase 8]
+│   │   │       └── assumption_tracker.py          [NEW — Phase 8]
+│   │   │
+│   │   ├── mode\                                  (existing — untouched)
+│   │   ├── models\                                (existing — untouched)
+│   │   ├── orchestrator\                          (existing — untouched)
+│   │   ├── output\                                (existing — untouched)
+│   │   ├── persistence\                           (existing — untouched)
+│   │   ├── platform\                              (existing — untouched)
+│   │   ├── portfolio\                             (existing — untouched)
+│   │   │
+│   │   ├── recursive\
+│   │   │   ├── ...existing recursive files...     (existing — untouched)
+│   │   │   ├── deep_ingestion.py                  [NEW — Phase 8]
+│   │   │   └── ingestion_scheduler.py             [NEW — Phase 8]
+│   │   │
+│   │   ├── research\                              (existing — untouched)
+│   │   │
+│   │   ├── routing\                               [NEW FOLDER — Phase 4]
+│   │   │   ├── __init__.py                        [NEW — Phase 4]
+│   │   │   ├── depth_scorer.py                    [NEW — Phase 4]
+│   │   │   ├── confidence_calibrator.py           [NEW — Phase 4]
+│   │   │   ├── multi_route_evaluator.py           [NEW — Phase 4]
+│   │   │   ├── route_evidence.py                  [NEW — Phase 4]
+│   │   │   └── route_history.py                   [NEW — Phase 4]
+│   │   │
+│   │   ├── runtime\                               (existing — untouched)
+│   │   ├── safety\                                (existing — untouched)
+│   │   ├── scan\                                  (existing — untouched)
+│   │   ├── scoring\                               (existing — untouched)
+│   │   ├── self_analysis\                         (existing — untouched)
+│   │   ├── services\                              (existing — untouched)
+│   │   │
+│   │   ├── signals\
+│   │   │   ├── ...existing signal files...        (existing — untouched)
+│   │   │   ├── credibility_engine.py              [NEW — Phase 3]
+│   │   │   │
+│   │   │   └── detection\                         [NEW FOLDER — Phase 3]
+│   │   │       ├── __init__.py                    [NEW — Phase 3]
+│   │   │       ├── weak_signal_detector.py        [NEW — Phase 3]
+│   │   │       ├── discontinuity_detector.py      [NEW — Phase 3]
+│   │   │       ├── convergence_detector.py        [NEW — Phase 3]
+│   │   │       └── signal_lifecycle.py            [NEW — Phase 3]
+│   │   │
+│   │   ├── singularity\                           (existing — untouched)
+│   │   ├── strategy\                              (existing — untouched)
+│   │   ├── system_ingestion\                      (existing — untouched)
+│   │   │
+│   │   ├── technology\
+│   │   │   ├── ...existing technology files...    (existing — untouched)
+│   │   │   ├── stack_comparator.py                [NEW — Phase 6]
+│   │   │   ├── architecture_builder.py            [NEW — Phase 6]
+│   │   │   ├── dependency_mapper.py               [NEW — Phase 6]
+│   │   │   ├── manufacturability_assessor.py      [NEW — Phase 6]
+│   │   │   └── deployment_assessor.py             [NEW — Phase 6]
+│   │   │
+│   │   ├── thesis\                                (existing — untouched)
+│   │   ├── trends\                                (existing — untouched)
+│   │   ├── updater\                               (existing — untouched)
+│   │   ├── updates\                               (existing — untouched)
+│   │   ├── utils\                                 (existing — untouched)
+│   │   └── validation\                            (existing — untouched)
+│   │
+│   └── frontend\
+│       ├── ...existing frontend files...          (existing — untouched)
+│       │
+│       └── unified\                               [NEW FOLDER — Phase 1]
+│           ├── master_shell.js                    [NEW — Phase 1]
+│           ├── master_shell.css                   [NEW — Phase 1]
+│           │
+│           ├── state\                             [NEW FOLDER — Phase 1]
+│           │   ├── state_manager.js               [NEW — Phase 1]
+│           │   ├── api_client.js                  [NEW — Phase 1]
+│           │   └── event_bus.js                   [NEW — Phase 1]
+│           │
+│           ├── panels\                            [NEW FOLDER — Phase 1]
+│           │   ├── run_panel.js                   [NEW — Phase 1]
+│           │   ├── portfolio_panel.js             [NEW — Phase 1]
+│           │   ├── breakthrough_panel.js          [NEW — Phase 1]
+│           │   ├── design_panel.js                [NEW — Phase 1]
+│           │   └── system_panel.js                [NEW — Phase 1]
+│           │
+│           └── widgets\                           [NEW FOLDER — Phase 1]
+│               ├── radar_chart.js                 [NEW — Phase 1]
+│               ├── engine_accordion.js            [NEW — Phase 1]
+│               ├── acquirer_card.js               [NEW — Phase 1]
+│               ├── score_badge.js                 [NEW — Phase 1]
+│               └── export_browser.js              [NEW — Phase 1]
+│
+├── data\
+│   ├── ...existing data dirs...                   (existing — untouched)
+│   │
+│   ├── breakthrough_thresholds\                   [NEW FOLDER — Phase 5]
+│   │   └── threshold_config.json                  [NEW — Phase 5]
+│   │
+│   └── memory\
+│       ├── ...existing memory data...             (existing — untouched)
+│       ├── thesis_history\                        [NEW FOLDER — Phase 8]
+│       └── routing_evolution\                     [NEW FOLDER — Phase 8]
+│
+├── backend\                                       (LEGACY — untouched)
+├── docs\                                          (existing — untouched)
+├── exports\                                       (existing — untouched)
+├── tests\                                         (existing — untouched)
+├── tools\                                         (existing — untouched)
+├── logs\                                          (existing — untouched)
+├── output\                                        (existing — untouched)
+├── .claire_install\                               (GOVERNANCE — untouched, used by installer)
+└── .claire_install_logs\                          (AUDIT — untouched, written to by installer)
+
+
+================================================================================
+  PHASE-BY-PHASE FILE MANIFEST
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+PHASE 1: FRONTEND UNIFICATION  (Priority: HIGHEST — #1 structural problem)
+────────────────────────────────────────────────────────────────────────────────
+Status: FRAGMENTED → UNIFIED
+Depends on: Nothing (can start immediately)
+
+NEW FOLDERS (4):
+  src/frontend/unified/
+  src/frontend/unified/panels/
+  src/frontend/unified/widgets/
+  src/frontend/unified/state/
+
+NEW FILES (15):
+  ┌─────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────┐
+  │ File                                                │ Role                                                    │
+  ├─────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+  │ src/frontend/unified/master_shell.js                │ Single master UI shell — boot, routing, tabs            │
+  │ src/frontend/unified/master_shell.css               │ Unified CSS — merges all 4 CSS files                    │
+  │ src/frontend/unified/state/state_manager.js         │ Centralized state — single source of truth              │
+  │ src/frontend/unified/state/api_client.js            │ Unified API client — single interface                   │
+  │ src/frontend/unified/state/event_bus.js             │ Cross-component pub/sub event system                    │
+  │ src/frontend/unified/panels/run_panel.js            │ Run execution — pipeline trigger + progress             │
+  │ src/frontend/unified/panels/portfolio_panel.js      │ Portfolio intelligence panel                            │
+  │ src/frontend/unified/panels/breakthrough_panel.js   │ Breakthrough classification + escalation                │
+  │ src/frontend/unified/panels/design_panel.js         │ Design portal — architecture visualization              │
+  │ src/frontend/unified/panels/system_panel.js         │ System health + platform status                         │
+  │ src/frontend/unified/widgets/radar_chart.js         │ Radar chart (preserved from old dashboard)              │
+  │ src/frontend/unified/widgets/engine_accordion.js    │ Engine detail accordion (preserved)                     │
+  │ src/frontend/unified/widgets/acquirer_card.js       │ Acquirer visualization card (preserved)                 │
+  │ src/frontend/unified/widgets/score_badge.js         │ Universal score badge widget                            │
+  │ src/frontend/unified/widgets/export_browser.js      │ Export/package browser widget                           │
+  └─────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+WHAT THIS SOLVES:
+  • dashboard.js monolith → decomposed into state_manager + panels + widgets
+  • 3 UI generations → unified lifecycle-based master shell
+  • 4 overlapping CSS files → single master_shell.css with CSS custom properties
+  • Duplicate API calls → single api_client.js
+  • Preserves: radar charts, engine accordions, acquirer cards from old dashboard
+
+
+────────────────────────────────────────────────────────────────────────────────
+PHASE 2: API UNIFICATION  (Priority: HIGH — eliminates dual routing)
+────────────────────────────────────────────────────────────────────────────────
+Status: DUAL SYSTEMS → UNIFIED
+Depends on: Nothing (can run parallel with Phase 1)
+
+NEW FOLDERS (1):
+  src/claire/api/unified/
+
+NEW FILES (6):
+  ┌─────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────┐
+  │ File                                                │ Role                                                    │
+  ├─────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+  │ src/claire/api/unified/__init__.py                  │ Package init                                            │
+  │ src/claire/api/unified/router.py                    │ Unified router — merges System A + System B             │
+  │ src/claire/api/unified/middleware.py                │ Shared middleware — auth, logging, CORS, errors         │
+  │ src/claire/api/unified/lifecycle_routes.py          │ Lifecycle routes — clean extraction                     │
+  │ src/claire/api/unified/intelligence_routes.py       │ Intelligence query routes — unified surface             │
+  │ src/claire/api/unified/platform_routes.py           │ Platform management routes — clean extraction           │
+  └─────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+WHAT THIS SOLVES:
+  • System A (app.py → routes_pipeline.py) and System B (router.py → routes_platform.py)
+    merged into single router with namespaced endpoints
+  • /api/v3/lifecycle/*, /api/v3/platform/*, /api/v3/intelligence/*
+  • Backward-compatible /api/v2/* passthrough preserved
+
+
+────────────────────────────────────────────────────────────────────────────────
+PHASE 3: SIGNAL INTELLIGENCE DEEPENING  (Priority: HIGH — core input layer)
+────────────────────────────────────────────────────────────────────────────────
+Status: PARTIAL → OPERATIONAL
+Depends on: Nothing (can run parallel with Phases 1-2)
+
+NEW FOLDERS (1):
+  src/claire/signals/detection/
+
+NEW FILES (6):
+  ┌─────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────┐
+  │ File                                                │ Role                                                    │
+  ├─────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+  │ src/claire/signals/detection/__init__.py            │ Detection sub-package init                              │
+  │ src/claire/signals/detection/weak_signal_detector.py│ Weak/early signal amplification                         │
+  │ src/claire/signals/detection/discontinuity_detector.py│ Pattern break detection                               │
+  │ src/claire/signals/detection/convergence_detector.py│ Hidden convergence pattern detection                    │
+  │ src/claire/signals/detection/signal_lifecycle.py    │ Signal lifecycle tracking (nascent→mature→declining)    │
+  │ src/claire/signals/credibility_engine.py            │ Enhanced source credibility weighting                   │
+  └─────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+WHAT THIS SOLVES:
+  • "amplify weak early signals" → weak_signal_detector.py
+  • "detect discontinuities" → discontinuity_detector.py
+  • "identify hidden convergence patterns" → convergence_detector.py
+  • "weight credibility" depth → credibility_engine.py
+
+
+────────────────────────────────────────────────────────────────────────────────
+PHASE 4: ROUTE INTELLIGENCE MATURATION  (Priority: MEDIUM)
+────────────────────────────────────────────────────────────────────────────────
+Status: PARTIALLY OPERATIONAL → FULLY OPERATIONAL
+Depends on: Phase 3
+
+NEW FOLDERS (1):
+  src/claire/routing/
+
+NEW FILES (6):
+  ┌─────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────┐
+  │ File                                                │ Role                                                    │
+  ├─────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+  │ src/claire/routing/__init__.py                      │ Routing intelligence package init                       │
+  │ src/claire/routing/depth_scorer.py                  │ Route depth scoring — evidence strength per route       │
+  │ src/claire/routing/confidence_calibrator.py         │ Confidence calibration — prevents premature commitment  │
+  │ src/claire/routing/multi_route_evaluator.py         │ Multi-route comparison — parallel evaluation            │
+  │ src/claire/routing/route_evidence.py                │ Route evidence requirements — per-route schemas         │
+  │ src/claire/routing/route_history.py                 │ Route history — learns from past decisions              │
+  └─────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+WHAT THIS SOLVES:
+  • "Depth and confidence maturity do not yet" → depth_scorer + confidence_calibrator
+  • Distinguishes 6 route types with evidence-backed selection
+  • Historical routing accuracy tracking for self-improvement
+
+
+────────────────────────────────────────────────────────────────────────────────
+PHASE 5: BREAKTHROUGH CLASSIFICATION MATURATION  (Priority: MEDIUM)
+────────────────────────────────────────────────────────────────────────────────
+Status: STRUCTURALLY PRESENT → FULLY MATURE
+Depends on: Phases 3, 4
+
+NEW FOLDERS (2):
+  src/claire/breakthrough/maturity/
+  data/breakthrough_thresholds/
+
+NEW FILES (6):
+  ┌─────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────┐
+  │ File                                                │ Role                                                    │
+  ├─────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+  │ src/claire/breakthrough/maturity/__init__.py        │ Maturity sub-package init                               │
+  │ src/claire/breakthrough/maturity/evidence_thresholds.py│ Per-category evidence thresholds (61 categories)     │
+  │ src/claire/breakthrough/maturity/cross_category_detector.py│ Cross-category breakthrough detection            │
+  │ src/claire/breakthrough/maturity/compound_scorer.py │ Compound breakthrough scoring                           │
+  │ src/claire/breakthrough/maturity/category_validator.py│ Classification accuracy validation                    │
+  │ data/breakthrough_thresholds/threshold_config.json  │ 61-category threshold configuration                     │
+  └─────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────
+PHASE 6: TECHNOLOGY INTELLIGENCE COMPLETION  (Priority: MEDIUM)
+────────────────────────────────────────────────────────────────────────────────
+Status: PARTIAL → OPERATIONAL
+Depends on: Nothing (can run parallel)
+
+NEW FOLDERS (0)  — files added to existing src/claire/technology/
+
+NEW FILES (5):
+  ┌─────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────┐
+  │ File                                                │ Role                                                    │
+  ├─────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+  │ src/claire/technology/stack_comparator.py           │ Technology stack comparison                              │
+  │ src/claire/technology/architecture_builder.py       │ Architecture construction from requirements             │
+  │ src/claire/technology/dependency_mapper.py          │ Dependency graph mapping + vulnerability surface        │
+  │ src/claire/technology/manufacturability_assessor.py │ Manufacturability readiness assessment                  │
+  │ src/claire/technology/deployment_assessor.py        │ Deployment viability assessment                          │
+  └─────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────
+PHASE 7: INTELLIGENCE LOOPS OPERATIONALIZATION  (Priority: HIGH — ACS2 core)
+────────────────────────────────────────────────────────────────────────────────
+Status: MOSTLY STRUCTURAL → RECURSIVE OPERATIONAL
+Depends on: Phases 3, 4, 5, 6
+
+NEW FOLDERS (1):
+  src/claire/loops/
+
+NEW FILES (10):
+  ┌─────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────┐
+  │ File                                                │ Role                                                    │
+  ├─────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+  │ src/claire/loops/__init__.py                        │ ACS2 loops package init                                 │
+  │ src/claire/loops/loop_orchestrator.py               │ Master loop coordinator — all 8 ACS2 loops              │
+  │ src/claire/loops/discovery_loop.py                  │ Discovery Loop — recursive signal → trend → gap         │
+  │ src/claire/loops/analysis_loop.py                   │ Analysis Loop — recursive understanding deepening       │
+  │ src/claire/loops/synthesis_loop.py                  │ Synthesis Loop — recursive insight integration           │
+  │ src/claire/loops/validation_loop.py                 │ Validation Loop — recursive evidence validation          │
+  │ src/claire/loops/regulatory_loop.py                 │ Regulatory Intelligence Loop                             │
+  │ src/claire/loops/marketing_loop.py                  │ Marketing Intelligence Loop                              │
+  │ src/claire/loops/execution_loop.py                  │ Execution Loop — implementation planning                 │
+  │ src/claire/loops/decision_engine.py                 │ Autonomous Decision Engine — loop-of-loops               │
+  └─────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────
+PHASE 8: MEMORY & RECURSIVE LEARNING COMPLETION  (Priority: HIGH — largest gap)
+────────────────────────────────────────────────────────────────────────────────
+Status: EARLY-STAGE → FULLY OPERATIONAL
+Depends on: Phase 7
+
+NEW FOLDERS (3):
+  src/claire/memory/compound/
+  data/memory/thesis_history/
+  data/memory/routing_evolution/
+
+NEW FILES (7):
+  ┌─────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────┐
+  │ File                                                │ Role                                                    │
+  ├─────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+  │ src/claire/memory/compound/__init__.py              │ Compound intelligence package init                      │
+  │ src/claire/memory/compound/compound_engine.py       │ Compound intelligence — cross-run learning              │
+  │ src/claire/memory/compound/thesis_historian.py      │ Thesis history — evolution and outcome tracking          │
+  │ src/claire/memory/compound/routing_evolver.py       │ Routing quality evolution — improves over time           │
+  │ src/claire/memory/compound/assumption_tracker.py    │ Assumption validation tracking                           │
+  │ src/claire/recursive/deep_ingestion.py              │ Deep recursive self-ingestion                            │
+  │ src/claire/recursive/ingestion_scheduler.py         │ Re-ingestion priority scheduling                         │
+  └─────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────
+PHASE 9: DESIGN PORTAL FULL BUILD  (Priority: MEDIUM)
+────────────────────────────────────────────────────────────────────────────────
+Status: GATE-ONLY → FULL DESIGN SYSTEM
+Depends on: Phase 6
+
+NEW FOLDERS (2):
+  src/claire/design/generators/
+  src/claire/design/renderers/
+
+NEW FILES (9):
+  ┌─────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────┐
+  │ File                                                │ Role                                                    │
+  ├─────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+  │ src/claire/design/generators/__init__.py            │ Generators sub-package init                              │
+  │ src/claire/design/generators/architecture_generator.py│ Architecture graph generation                         │
+  │ src/claire/design/generators/dependency_generator.py│ Dependency map generation                               │
+  │ src/claire/design/generators/component_tree_generator.py│ Hierarchical component decomposition               │
+  │ src/claire/design/generators/implementation_planner.py│ Phased implementation plan generation                 │
+  │ src/claire/design/generators/stack_intelligence.py  │ Technology stack recommendation                         │
+  │ src/claire/design/renderers/__init__.py             │ Renderers sub-package init                               │
+  │ src/claire/design/renderers/graph_renderer.py       │ Architecture graph visual rendering (SVG/PNG)           │
+  │ src/claire/design/renderers/blueprint_formatter.py  │ Blueprint document output formatter                     │
+  └─────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────
+PHASE 10: AUTONOMOUS DECISIONING  (Priority: ENDGAME — depends on all above)
+────────────────────────────────────────────────────────────────────────────────
+Status: MOSTLY NOT OPERATIONAL → GOVERNED AUTONOMOUS
+Depends on: Phases 7, 8
+
+NEW FOLDERS (1):
+  src/claire/autonomous/
+
+NEW FILES (8):
+  ┌─────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────┐
+  │ File                                                │ Role                                                    │
+  ├─────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+  │ src/claire/autonomous/__init__.py                   │ Autonomous decisioning package init                     │
+  │ src/claire/autonomous/self_escalator.py             │ Self-escalation — automatic finding escalation           │
+  │ src/claire/autonomous/self_corrector.py             │ Self-correction — error/drift detection + correction     │
+  │ src/claire/autonomous/self_enricher.py              │ Self-enrichment — autonomous data acquisition            │
+  │ src/claire/autonomous/self_invalidator.py           │ Self-invalidation — confidence decay + retraction        │
+  │ src/claire/autonomous/self_optimizer.py             │ Self-optimization — performance tuning                   │
+  │ src/claire/autonomous/self_researcher.py            │ Self-directed research — autonomous investigation        │
+  │ src/claire/autonomous/safety_governor.py            │ Safety governor — boundaries for autonomous operation    │
+  └─────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+
+================================================================================
+  DEPENDENCY GRAPH — RECOMMENDED EXECUTION ORDER
+================================================================================
+
+  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐
+  │ Phase 1  │  │ Phase 2  │  │ Phase 3  │  │ Phase 6  │
+  │ Frontend │  │ API      │  │ Signals  │  │ Tech     │
+  │ Unify    │  │ Unify    │  │ Deepen   │  │ Complete │
+  └──────────┘  └──────────┘  └────┬─────┘  └────┬─────┘
+     (independent)  (independent)   │              │
+                                    ▼              │
+                              ┌──────────┐         │
+                              │ Phase 4  │         │
+                              │ Route    │         │
+                              │ Mature   │         │
+                              └────┬─────┘         │
+                                   │               │
+                                   ▼               │
+                              ┌──────────┐         │
+                              │ Phase 5  │         │
+                              │ Breakthru│         │
+                              │ Mature   │         │
+                              └────┬─────┘         │
+                                   │               │
+                                   ▼               ▼
+                              ┌─────────────────────────┐
+                              │       Phase 7           │
+                              │  Intelligence Loops     │
+                              │  Operationalization     │
+                              └───────────┬─────────────┘
+                                          │
+                                    ┌─────┴──────┐
+                                    ▼            ▼
+                              ┌──────────┐ ┌──────────┐
+                              │ Phase 8  │ │ Phase 9  │
+                              │ Memory   │ │ Design   │
+                              │ Complete │ │ Build    │
+                              └────┬─────┘ └──────────┘
+                                   │
+                                   ▼
+                              ┌──────────┐
+                              │ Phase 10 │
+                              │ Autonomy │
+                              │ (Final)  │
+                              └──────────┘
+
+  PARALLEL EXECUTION GROUPS:
+    Group A (start immediately): Phases 1, 2, 3, 6
+    Group B (after Phase 3):     Phase 4
+    Group C (after Phase 4):     Phase 5
+    Group D (after 3,4,5,6):     Phase 7
+    Group E (after Phase 7):     Phases 8, 9 (parallel)
+    Group F (after Phase 8):     Phase 10 (final)
+
+
+================================================================================
+  INSTALLER GOVERNANCE
+================================================================================
+
+Each phase follows Claire's existing installer governance pattern:
+
+  1. PREFLIGHT
+     ├── Validate target directory exists
+     ├── Check no file collisions with existing files
+     ├── Verify dependency phases completed
+     ├── Generate preflight report → .claire_install/
+     └── Write to .claire_install_logs/
+
+  2. INSTALL
+     ├── Create new folders
+     ├── Write new files (stub templates with docstrings)
+     ├── Register each file in install registry
+     └── Generate install manifest
+
+  3. POSTFLIGHT
+     ├── Verify all files written successfully
+     ├── Calculate file checksums
+     ├── Update version.json
+     ├── Generate postflight report → .claire_install/
+     └── Write completion audit → .claire_install_logs/
+
+
+================================================================================
+  END OF FILE MAP
+================================================================================

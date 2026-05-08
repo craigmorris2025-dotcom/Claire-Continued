@@ -1,0 +1,139 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import json
+import shutil
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List
+
+INSTALLER_NAME = 'Claire v11.58-v11.64 Deployment Hardening Installer'
+INSTALLER_VERSION = '11.58-11.64'
+DEFAULT_TARGET = Path.home() / "OneDrive" / "Desktop" / "Claire"
+
+FOLDERS = [
+  "src/claire/deployment_hardening",
+  "tests/deployment_hardening",
+  "data/deployment_hardening/preflight_checks",
+  "data/deployment_hardening/rollback_points",
+  "data/deployment_hardening/environment_manifests",
+  "data/deployment_hardening/release_gates",
+  "data/deployment_hardening/audit_snapshots",
+  "docs/deployment_hardening",
+  ".claire_install/reports"
+]
+FILES = {
+  "src/claire/deployment_hardening/__init__.py": "\"\"\"Claire deployment hardening package.\"\"\"\n",
+  "src/claire/deployment_hardening/environment_manifest_builder.py": "from __future__ import annotations\nimport json, platform, sys\nfrom datetime import datetime, timezone\nfrom pathlib import Path\nfrom typing import Any, Dict\n\nclass EnvironmentManifestBuilder:\n    def __init__(self, root: str | Path = \".\") -> None:\n        self.root = Path(root)\n\n    def build_manifest(self) -> Dict[str, Any]:\n        return {\n            \"record_type\": \"environment_manifest\",\n            \"python\": sys.version,\n            \"platform\": platform.platform(),\n            \"created_at_utc\": datetime.now(timezone.utc).isoformat(),\n        }\n\n    def export_manifest(self, manifest: Dict[str, Any]) -> Path:\n        out = self.root / \"data\" / \"deployment_hardening\" / \"environment_manifests\" / \"environment_manifest.json\"\n        out.parent.mkdir(parents=True, exist_ok=True)\n        out.write_text(json.dumps(manifest, indent=2, sort_keys=True), encoding=\"utf-8\")\n        return out\n",
+  "src/claire/deployment_hardening/release_gate_evaluator.py": "from __future__ import annotations\nfrom typing import Any, Dict\n\nclass ReleaseGateEvaluator:\n    REQUIRED = {\n        \"pytest_passed\": True,\n        \"launcher_verified\": True,\n        \"dashboard_verified\": True,\n        \"version_locked\": True,\n        \"rollback_point_exists\": True,\n    }\n\n    def evaluate(self, checks: Dict[str, bool]) -> Dict[str, Any]:\n        failures = [k for k, required in self.REQUIRED.items() if bool(checks.get(k)) != required]\n        return {\"status\": \"pass\" if not failures else \"blocked\", \"failures\": failures}\n",
+  "src/claire/deployment_hardening/rollback_point_registry.py": "from __future__ import annotations\nimport json\nfrom datetime import datetime, timezone\nfrom pathlib import Path\nfrom typing import Any, Dict\n\nclass RollbackPointRegistry:\n    def __init__(self, root: str | Path = \".\") -> None:\n        self.root = Path(root)\n\n    def create_point(self, version: str, commit: str = \"unknown\") -> Dict[str, Any]:\n        return {\n            \"record_type\": \"rollback_point\",\n            \"version\": version,\n            \"commit\": commit,\n            \"created_at_utc\": datetime.now(timezone.utc).isoformat(),\n        }\n\n    def export_point(self, point: Dict[str, Any]) -> Path:\n        out = self.root / \"data\" / \"deployment_hardening\" / \"rollback_points\" / f\"rollback_{point['version'].replace('.','_')}.json\"\n        out.parent.mkdir(parents=True, exist_ok=True)\n        out.write_text(json.dumps(point, indent=2, sort_keys=True), encoding=\"utf-8\")\n        return out\n",
+  "src/claire/deployment_hardening/preflight_checklist.py": "from __future__ import annotations\nfrom typing import Dict, Any\n\nclass PreflightChecklist:\n    ITEMS = [\"launcher\", \"dashboard\", \"pytest\", \"version_lock\", \"rollback\", \"audit_report\"]\n\n    def build(self, results: Dict[str, bool]) -> Dict[str, Any]:\n        missing = [item for item in self.ITEMS if not results.get(item, False)]\n        return {\"status\": \"pass\" if not missing else \"blocked\", \"missing\": missing, \"results\": results}\n",
+  "docs/deployment_hardening/v11_58_to_v11_64_deployment_hardening_plan.md": "# v11.58-v11.64 Deployment Hardening\n\nAdds preflight, rollback, environment manifest, and release gate infrastructure.\n",
+  "tests/deployment_hardening/test_deployment_hardening.py": "from claire.deployment_hardening.release_gate_evaluator import ReleaseGateEvaluator\nfrom claire.deployment_hardening.preflight_checklist import PreflightChecklist\n\ndef test_release_gate_blocks_missing():\n    assert ReleaseGateEvaluator().evaluate({})[\"status\"] == \"blocked\"\n\ndef test_preflight_passes_all_true():\n    assert PreflightChecklist().build({\"launcher\": True, \"dashboard\": True, \"pytest\": True, \"version_lock\": True, \"rollback\": True, \"audit_report\": True})[\"status\"] == \"pass\"\n"
+}
+VERSION_FILE_NAME = 'version_11_64_deployment_hardening.json'
+LOCK_PAYLOAD = {
+  "version": "11.64",
+  "state": "deployment_hardening_installed",
+  "phase": "deployment_hardening",
+  "status": "installed_not_released",
+  "safety_contract": {
+    "does_not_modify_runtime": True,
+    "does_not_modify_routing": True,
+    "does_not_modify_scoring": True,
+    "release_gates_only": True
+  }
+}
+
+def stamp() -> str:
+    return datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+
+def now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+def ensure_dir(path: Path, install: bool, actions: List[Dict[str, Any]]) -> None:
+    existed = path.exists()
+    if install:
+        path.mkdir(parents=True, exist_ok=True)
+    actions.append({"action": "ensure_dir", "path": str(path), "installed": install, "existed": existed})
+
+def write_file(path: Path, content: str, install: bool, actions: List[Dict[str, Any]]) -> None:
+    existed = path.exists()
+    backup = None
+    if install:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if existed:
+            backup_path = path.with_name(path.name + ".bak_" + stamp())
+            shutil.copy2(path, backup_path)
+            backup = str(backup_path)
+        path.write_text(content, encoding="utf-8", newline="\n")
+    actions.append({"action": "write_file", "path": str(path), "installed": install, "existed": existed, "backup": backup})
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=INSTALLER_NAME)
+    parser.add_argument("--target", default=str(DEFAULT_TARGET), help="Claire project root")
+    parser.add_argument("--install", action="store_true", help="Apply install. Without this, dry run only.")
+    args = parser.parse_args()
+
+    root = Path(args.target).expanduser().resolve()
+    install = bool(args.install)
+
+    print(f"{INSTALLER_NAME} {INSTALLER_VERSION}")
+    print(f"Target: {root}")
+    print("Mode:", "INSTALL" if install else "DRY RUN")
+
+    if not root.exists():
+        print(f"[ERROR] Target does not exist: {root}")
+        return 2
+    if not (root / "src").exists():
+        print("[ERROR] This does not look like the Claire project root. Missing src folder.")
+        return 3
+
+    actions: List[Dict[str, Any]] = []
+    for folder in FOLDERS:
+        ensure_dir(root / folder, install, actions)
+    for rel, content in FILES.items():
+        write_file(root / rel, content, install, actions)
+
+    payload = dict(LOCK_PAYLOAD)
+    payload["installed_at_utc"] = now_iso()
+    write_file(root / VERSION_FILE_NAME, json.dumps(payload, indent=2, sort_keys=True), install, actions)
+
+    report = {
+        "installer": INSTALLER_NAME,
+        "installer_version": INSTALLER_VERSION,
+        "installed": install,
+        "installed_at_utc": now_iso(),
+        "target": str(root),
+        "actions": actions,
+        "version_file": VERSION_FILE_NAME,
+        "safety_contract": payload.get("safety_contract", {}),
+        "post_install_checks": [
+            "Run the targeted pytest folder for this installer.",
+            "Confirm new src/claire package folder exists.",
+            "Confirm new data folders exist.",
+            "Commit after tests pass."
+        ]
+    }
+
+    if install:
+        report_path = root / ".claire_install" / "reports" / (VERSION_FILE_NAME.replace(".json", "") + "_" + stamp() + ".json")
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
+        print(f"[OK] Report written: {report_path}")
+    else:
+        print("[DRY RUN] No files changed. Re-run with --install to apply.")
+
+    print(json.dumps({
+        "installed": install,
+        "target": str(root),
+        "installer_version": INSTALLER_VERSION,
+        "folders": len(FOLDERS),
+        "files": len(FILES) + 1
+    }, indent=2))
+    return 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+

@@ -1,0 +1,346 @@
+#!/usr/bin/env python3
+"""
+Claire v11.50.1 Test Consistency Guard Installer
+
+Adds consistency guardrails so old placeholder tests and stale baseline
+assumptions stop destabilizing full pytest.
+
+Dry-run by default. Use --install to apply.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import shutil
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List
+
+
+INSTALLER_NAME = "Claire v11.50.1 Test Consistency Guard Installer"
+INSTALLER_VERSION = "11.50.1"
+DEFAULT_TARGET = Path.home() / "OneDrive" / "Desktop" / "Claire"
+
+FOLDERS = [
+    "tests/consistency",
+    "tools",
+    "docs/testing",
+    "data/testing/consistency_audits",
+    ".claire_install/reports",
+]
+
+FILES: Dict[str, str] = {
+    "tests/consistency/__init__.py": "\"\"\"Claire test consistency guard tests.\"\"\"\n",
+
+    "tests/consistency/test_operational_proof_imports.py": """from claire.operational_proof.benchmark_replay_accumulator import BenchmarkReplayAccumulator
+from claire.operational_proof.outcome_label_adjudicator import OutcomeLabelAdjudicator
+from claire.operational_proof.operator_review_capture import OperatorReviewCapture
+from claire.operational_proof.drift_false_positive_tracker import DriftFalsePositiveTracker
+from claire.operational_proof.confidence_calibration_reporter import ConfidenceCalibrationReporter
+from claire.operational_proof.pilot_readiness_gate import PilotReadinessGate
+from claire.operational_proof.governance_deployment_lock import GovernanceDeploymentLock
+from claire.operational_proof.operational_proof_plateau import OperationalProofPlateau
+
+
+def test_operational_proof_classes_import_cleanly():
+    assert BenchmarkReplayAccumulator
+    assert OutcomeLabelAdjudicator
+    assert OperatorReviewCapture
+    assert DriftFalsePositiveTracker
+    assert ConfidenceCalibrationReporter
+    assert PilotReadinessGate
+    assert GovernanceDeploymentLock
+    assert OperationalProofPlateau
+""",
+
+    "tests/consistency/test_placeholder_failure_policy.py": """from pathlib import Path
+
+
+PLACEHOLDER_PATTERNS = [
+    "NotImplementedError",
+    "Import target class",
+]
+
+
+def test_no_active_placeholder_import_target_class_tests():
+    root = Path(__file__).resolve().parents[2]
+    test_files = [p for p in (root / "tests").rglob("test_*.py") if "consistency" not in p.parts]
+
+    offenders = []
+    for path in test_files:
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if all(pattern in text for pattern in PLACEHOLDER_PATTERNS):
+            offenders.append(str(path.relative_to(root)))
+
+    assert not offenders, "Active placeholder stage tests found: " + ", ".join(offenders)
+""",
+
+    "tests/consistency/test_baseline_runner_policy.py": """from pathlib import Path
+
+
+def test_baseline_runner_has_guard_or_fixture():
+    root = Path(__file__).resolve().parents[2]
+    candidate = root / "tests" / "regression" / "test_baseline_runner.py"
+
+    if not candidate.exists():
+        return
+
+    text = candidate.read_text(encoding="utf-8", errors="ignore")
+    bad_fragments = [
+        "assert 1 == 0",
+        "assert failures == 0",
+        "assert len(failures) == 0",
+    ]
+    has_context_guard = (
+        "CLAIRE_ALLOW_BASELINE_FAILURES" in text
+        or "known_placeholder" in text.lower()
+        or "baseline_runner_guard" in text.lower()
+        or "expected_failures" in text.lower()
+    )
+
+    assert has_context_guard or not any(fragment in text for fragment in bad_fragments), (
+        "Baseline runner needs a context guard/fixture for known placeholder or maturity-stage failures."
+    )
+""",
+
+    "tools/pytest_consistency_audit.py": """#!/usr/bin/env python3
+from __future__ import annotations
+
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Dict, List
+
+
+def audit(root: Path) -> Dict[str, object]:
+    tests = root / "tests"
+    active_placeholder_tests: List[str] = []
+    underscored_placeholder_tests: List[str] = []
+
+    for path in tests.rglob("*.py"):
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        has_placeholder = "NotImplementedError" in text and "Import target class" in text
+        if not has_placeholder:
+            continue
+
+        rel = str(path.relative_to(root))
+        if path.name.startswith("_"):
+            underscored_placeholder_tests.append(rel)
+        else:
+            active_placeholder_tests.append(rel)
+
+    baseline = root / "tests" / "regression" / "test_baseline_runner.py"
+    baseline_guarded = None
+    if baseline.exists():
+        text = baseline.read_text(encoding="utf-8", errors="ignore")
+        baseline_guarded = any(
+            marker in text
+            for marker in [
+                "CLAIRE_ALLOW_BASELINE_FAILURES",
+                "known_placeholder",
+                "baseline_runner_guard",
+                "expected_failures",
+            ]
+        )
+
+    status = "pass" if not active_placeholder_tests and baseline_guarded is not False else "needs_attention"
+
+    return {
+        "record_type": "pytest_consistency_audit",
+        "status": status,
+        "created_at_utc": datetime.now(timezone.utc).isoformat(),
+        "active_placeholder_tests": active_placeholder_tests,
+        "underscored_placeholder_tests": underscored_placeholder_tests,
+        "baseline_runner_exists": baseline.exists(),
+        "baseline_runner_guarded": baseline_guarded,
+        "rule": "Generic placeholder stage tests must not remain active in full pytest. Bind them or underscore-disable them.",
+        "recommended_commands": [
+            "pytest tests/consistency -v",
+            "pytest tests/operational_proof -v",
+            "pytest tests/consistency tests/operational_proof -v",
+            "pytest",
+        ],
+    }
+
+
+def main() -> int:
+    root = Path.cwd()
+    report = audit(root)
+    out = root / "data" / "testing" / "consistency_audits" / (
+        "pytest_consistency_audit_" + datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S") + ".json"
+    )
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
+
+    print(json.dumps(report, indent=2, sort_keys=True))
+    print(f"\nReport written: {out}")
+
+    return 0 if report["status"] == "pass" else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+""",
+
+    "docs/testing/v11_50_1_test_consistency_guard.md": """# Claire v11.50.1 Test Consistency Guard
+
+## Problem
+
+Full pytest is repeatedly being destabilized by older placeholder tests and baseline assumptions that no longer match the current Claire maturity state.
+
+Typical failure shape:
+
+- `NotImplementedError: Import target class`
+- old stage tests never bound to real runtime classes
+- baseline checks expecting zero records/failures while the system now has installed proof/governance infrastructure
+
+## Rule
+
+A test may be one of three things:
+
+1. Active proof test — must import a real class and pass.
+2. Bound stage contract test — must point to a real stage/runtime class.
+3. Future placeholder — must be underscore-disabled, documented, or marked until the target class exists.
+
+A placeholder test must not break full pytest.
+
+## Validation
+
+```bat
+pytest tests/consistency -v
+pytest tests/operational_proof -v
+python tools/pytest_consistency_audit.py
+pytest
+```
+
+This installer does not modify runtime, scoring, routing, dashboard, or core_run_output.
+""",
+}
+
+
+def now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def stamp() -> str:
+    return datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+
+
+def write_file(path: Path, content: str, install: bool, actions: List[Dict[str, Any]], overwrite: bool) -> None:
+    existed = path.exists()
+    backup = None
+
+    if install:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if existed and not overwrite:
+            actions.append({"action": "skip_existing_file", "path": str(path), "installed": False, "existed": existed})
+            return
+        if existed and overwrite:
+            backup_path = path.with_name(path.name + ".bak_" + stamp())
+            shutil.copy2(path, backup_path)
+            backup = str(backup_path)
+        path.write_text(content, encoding="utf-8", newline="\n")
+
+    actions.append({"action": "write_file", "path": str(path), "installed": install, "existed": existed, "backup": backup})
+
+
+def version_payload() -> Dict[str, Any]:
+    return {
+        "version": "11.50.1",
+        "state": "test_consistency_guard_installed",
+        "installed_at_utc": now_iso(),
+        "phase": "operational_proof_plateau_consistency",
+        "status": "installed_not_validated",
+        "purpose": "Prevent recurring pytest instability from unbound placeholder tests and stale baseline assumptions.",
+        "safety_contract": {
+            "does_not_modify_runtime": True,
+            "does_not_modify_routing": True,
+            "does_not_modify_scoring": True,
+            "does_not_modify_dashboard": True,
+            "does_not_modify_core_run_output": True,
+            "test_layer_only": True,
+        },
+        "validation_commands": [
+            "pytest tests/consistency -v",
+            "pytest tests/operational_proof -v",
+            "python tools/pytest_consistency_audit.py",
+            "pytest",
+        ],
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=INSTALLER_NAME)
+    parser.add_argument("--target", default=str(DEFAULT_TARGET), help="Claire project root")
+    parser.add_argument("--install", action="store_true", help="Apply install. Without this, dry run only.")
+    parser.add_argument("--overwrite", action="store_true", help="Overwrite files installed by this package if they already exist.")
+    args = parser.parse_args()
+
+    root = Path(args.target).expanduser().resolve()
+    install = bool(args.install)
+
+    print(f"{INSTALLER_NAME} {INSTALLER_VERSION}")
+    print(f"Target: {root}")
+    print("Mode:", "INSTALL" if install else "DRY RUN")
+
+    if not root.exists():
+        print(f"[ERROR] Target does not exist: {root}")
+        return 2
+
+    if not (root / "src").exists() or not (root / "tests").exists():
+        print("[ERROR] This does not look like the Claire project root. Missing src or tests folder.")
+        return 3
+
+    actions: List[Dict[str, Any]] = []
+
+    for folder in FOLDERS:
+        path = root / folder
+        existed = path.exists()
+        if install:
+            path.mkdir(parents=True, exist_ok=True)
+        actions.append({"action": "ensure_dir", "path": str(path), "installed": install, "existed": existed})
+
+    for rel, content in FILES.items():
+        write_file(root / rel, content, install, actions, overwrite=args.overwrite)
+
+    write_file(
+        root / "version_11_50_1_test_consistency_guard.json",
+        json.dumps(version_payload(), indent=2, sort_keys=True),
+        install,
+        actions,
+        overwrite=True,
+    )
+
+    report = {
+        "installer": INSTALLER_NAME,
+        "installer_version": INSTALLER_VERSION,
+        "installed": install,
+        "installed_at_utc": now_iso(),
+        "target": str(root),
+        "actions": actions,
+        "post_install_checks": version_payload()["validation_commands"],
+        "safety_contract": version_payload()["safety_contract"],
+    }
+
+    if install:
+        report_path = root / ".claire_install" / "reports" / ("v11_50_1_test_consistency_guard_" + stamp() + ".json")
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
+        print(f"[OK] Report written: {report_path}")
+    else:
+        print("[DRY RUN] No files changed. Re-run with --install to apply.")
+
+    print(json.dumps({
+        "installed": install,
+        "target": str(root),
+        "version": INSTALLER_VERSION,
+        "folders": len(FOLDERS),
+        "files": len(FILES) + 1,
+    }, indent=2))
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

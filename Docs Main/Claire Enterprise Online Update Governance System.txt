@@ -1,0 +1,33 @@
+Claire Enterprise Online Update Governance System
+Core Principle
+Claire may discover, download, inspect, score, stage, and validate updates online.Claire may NOT modify active runtime code unless the update proves:1. forward architectural alignment,2. no regression of verified capabilities,3. no unsafe overwrite of protected paths,4. full rollback capability,5. validation success,6. human approval for critical changes.
+
+New Enterprise Modules to Add
+Create:
+src/claire/evolution/├── __init__.py├── project_identity.py├── master_document_registry.py├── version_timeline.py├── target_state.py├── capability_registry.py├── verified_state_store.py├── regression_guard.py├── forward_motion_policy.py├── evolution_memory.py└── evolution_orchestrator.py
+Create:
+src/claire/platform/update_governance/├── __init__.py├── authority_map.py├── package_inspector.py├── source_trust.py├── signature_verifier.py├── dependency_impact_analyzer.py├── capability_diff.py├── lifecycle_stage_impact.py├── runtime_risk_classifier.py├── target_alignment.py├── evolution_gate.py├── migration_planner.py├── protected_path_guard.py├── staged_installer.py├── validation_gauntlet.py├── rollback_orchestrator.py├── audit_writer.py├── approval_policy.py└── update_orchestrator.py
+Create API:
+src/claire/api/routes_update_governance.py
+Create frontend:
+src/frontend/system/UpdateGovernancePanel.jssrc/frontend/system/EvolutionMemoryPanel.jssrc/frontend/system/RegressionGuardPanel.js
+Create data folders:
+data/evolution/├── origin/├── identity/├── timeline/├── target_state/├── verified_states/├── capability_snapshots/├── regression_reports/├── forward_decisions/└── completion_memory/data/update_governance/├── incoming/├── inspected/├── staged/├── backups/├── reports/├── approvals/├── rollback_points/├── signatures/└── quarantined/
+
+Protected System Paths
+These are critical protected paths:
+main.pySTART_CLAIRE*.batversion.jsonpyproject.tomlrequirements.txtsrc/claire/app.pysrc/claire/api/routes_pipeline.pysrc/claire/lifecycle/*src/claire/orchestrator/*src/claire/domain/*src/claire/memory/*src/claire/recursive/*src/claire/safety/*src/claire/singularity/*data/runs/*data/memory/*data/evolution/*exports/*.claire_install/*.claire_install_logs/*
+Any update touching these requires:
+manual approvalfull backupmigration planrollback pointcompile passhealth passevaluate passdashboard passproof report
+
+Enterprise Update Flow
+1. Online source detected2. Source trust verified3. Package downloaded into data/update_governance/incoming/4. Signature/hash verified5. Package unpacked into inspected/6. File manifest generated7. Authority map comparison8. Protected path analysis9. Dependency impact analysis10. Capability diff11. Lifecycle stage impact12. Target-state alignment check13. Regression risk score14. Migration plan created15. Human approval if required16. Backup + rollback point created17. Staged install only18. Compile validation19. /health validation20. /docs validation21. /evaluate smoke test22. Dashboard load test23. Export/package smoke test24. Final audit report25. Promote staged update to active26. Record verified state snapshot
+
+Hard Refusal Rules
+Claire must refuse an update if:
+- update source is untrusted- signature/hash fails- package modifies protected paths without approval- package removes working capability- package downgrades lifecycle stage coverage- package weakens evidence/proof/rollback systems- package conflicts with v10 target architecture- package cannot be rolled back- package fails compile- package fails health/evaluate/dashboard tests
+
+Enterprise Standard
+The update system must be:
+zero-trustforward-onlyrollback-capableauditablestagedpolicy-gatedcapability-awarearchitecture-awareidentity-awareregression-resistant
+This becomes the safe bridge from local Claire to online Claire.

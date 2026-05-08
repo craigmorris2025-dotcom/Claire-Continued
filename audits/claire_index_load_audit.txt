@@ -1,0 +1,55 @@
+﻿
+src\frontend\command_center\modern\index.html
+:6:  <title>Claire Syntalion — Single-Screen 
+Operator Cockpit</title>
+src\frontend\command_center\modern\index.html
+:7:  <link rel="stylesheet" 
+href="claire_single_screen_operator.css" />
+src\frontend\command_center\modern\index.html
+:15:        <div 
+class="subtitle">Single-Screen Operator 
+Cockpit</div>
+src\frontend\command_center\modern\index.html
+:55:        Claire opens as an operator 
+cockpit, not a developer runtime dashboard. 
+Deep technical surfaces are collapsed behind 
+diagnostics.
+src\frontend\command_center\modern\index.html
+:64:          <p>Everything important is 
+consolidated into one screen: mission state, 
+opportunity brief, path decision, trust, 
+continuity, and the active operator 
+workspace.</p>
+src\frontend\command_center\modern\index.html
+:67:          <button id="refresh-button" 
+class="primary-button" type="button">Refresh 
+Cockpit</button>
+src\frontend\command_center\modern\index.html
+:119:              <div class="mini-value 
+small" id="brief-note">The cockpit will not 
+invent a mission.</div>
+src\frontend\command_center\modern\index.html
+:152:            <div class="kicker">Active 
+Operator Workspace</div>
+src\frontend\command_center\modern\index.html
+:154:            <p 
+id="workspace-subtitle">Review the active 
+operator surface without leaving the main 
+cockpit.</p>
+src\frontend\command_center\modern\index.html
+:196:          <code>python 
+tools/claire_build_runtime_truth.py</code>
+src\frontend\command_center\modern\index.html
+:197:          <code>python 
+tools/claire_validate_runtime_truth.py</code>
+src\frontend\command_center\modern\index.html
+:198:          <code>python 
+tools/claire_build_verified_memory.py</code>
+src\frontend\command_center\modern\index.html
+:199:          <code>python tools/claire_buil
+d_dashboard_search_index.py</code>
+src\frontend\command_center\modern\index.html
+:206:  <script src="claire_single_screen_oper
+ator.js"></script>
+
+

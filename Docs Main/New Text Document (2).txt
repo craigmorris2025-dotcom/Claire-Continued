@@ -1,0 +1,296 @@
+Below is the implementation file list needed to move Claire from v10.3.1 installed/proven runtime into a coherent completion system. This is based on the v10.2 system map and the v10.3 / v10.3.1 package maps.
+
+1. Runtime Contract Layer
+
+Purpose: create one canonical truth between runtime, dashboard, exports, memory, proof, and update governance.
+
+src/claire/runtime_contracts/
+├── __init__.py
+├── core_run_contract.py              # Defines required core_run_output fields
+├── lifecycle_output_contract.py      # Defines lifecycle/stage output shape
+├── route_contract.py                 # Defines route_selected, terminal_state, skipped_by_route
+├── dashboard_contract.py             # Converts runtime output into UI-ready sections
+├── export_contract.py                # Defines package/export output requirements
+├── proof_contract.py                 # Defines evidence/proof binder requirements
+└── contract_validator.py             # Validates all runtime output before UI/export
+2. Frontend Unification Layer
+
+Purpose: make Generation 2 lifecycle dashboard the master UI, while merging old widgets and platform tools into it. The v10.2 map already identifies Generation 2 as the target master UI.
+
+src/frontend/unified/
+├── master_shell.js                   # Main UI boot shell
+├── master_shell.css                  # Unified styling
+├── state/
+│   ├── state_manager.js              # One frontend state store
+│   ├── api_client.js                 # One API client
+│   └── event_bus.js                  # UI event system
+├── panels/
+│   ├── run_panel.js                  # Run command surface
+│   ├── lifecycle_panel.js            # 30-stage lifecycle viewer
+│   ├── research_panel.js             # Research/source evidence surface
+│   ├── discover_panel.js             # Discovery pipeline
+│   ├── trend_panel.js                # Trend/thesis display
+│   ├── portfolio_panel.js            # Portfolio intelligence
+│   ├── breakthrough_panel.js         # Breakthrough classification/escalation
+│   ├── design_panel.js               # Design Portal UI
+│   ├── technology_panel.js           # Technology Intelligence UI
+│   ├── packages_panel.js             # Export/package browser
+│   ├── monitor_panel.js              # Monitor/live intelligence
+│   └── system_panel.js               # Health, governance, update status
+└── widgets/
+    ├── score_badge.js
+    ├── radar_chart.js
+    ├── engine_accordion.js
+    ├── acquirer_card.js
+    ├── evidence_card.js
+    ├── lifecycle_stage_card.js
+    └── export_browser.js
+3. API Unification Layer
+
+Purpose: stop dual API drift and create a clean forward API while preserving old routes.
+
+src/claire/api/unified/
+├── __init__.py
+├── router.py                         # Master unified router
+├── middleware.py                     # Logging/CORS/error normalization
+├── lifecycle_routes.py               # Run/evaluate/stage/run-history routes
+├── intelligence_routes.py            # Trend/thesis/portfolio/breakthrough routes
+├── design_routes.py                  # Design Portal API
+├── technology_routes.py              # Technology Intelligence API
+├── package_routes.py                 # Export/package API
+├── monitor_routes.py                 # Monitor/live-intelligence API
+├── evolution_routes.py               # Evolution governance API
+└── platform_routes.py                # Health/gap/update/system routes
+4. Design Portal Completion
+
+Purpose: move Design Portal from route gate into real system design output. Current design layer is structurally present but underbuilt.
+
+src/claire/design/generators/
+├── __init__.py
+├── architecture_generator.py         # Builds architecture summary
+├── dependency_generator.py           # Builds dependency map
+├── component_tree_generator.py       # Builds component tree
+├── implementation_planner.py         # Builds phased build plan
+├── stack_intelligence.py             # Chooses stack from technology layer
+├── blueprint_generator.py            # Produces blueprint/spec output
+└── validation_plan_generator.py      # Produces validation/testing plan
+
+src/claire/design/renderers/
+├── __init__.py
+├── graph_renderer.py                 # UI/data graph format
+├── blueprint_formatter.py            # Human-readable blueprint
+└── design_export_formatter.py        # Export/package-ready format
+5. Technology Intelligence Completion
+
+Purpose: deepen technology stack selection, compatibility, buildability, deployment, manufacturability.
+
+src/claire/technology/
+├── stack_comparator.py               # Compares competing stacks
+├── architecture_builder.py           # Converts requirements into architecture
+├── dependency_mapper.py              # Maps dependencies and risks
+├── manufacturability_assessor.py     # Assesses production/scaling feasibility
+├── deployment_assessor.py            # Assesses deployment viability
+├── compatibility_engine.py           # Checks component compatibility
+├── technology_catalog.py             # Local technology catalog
+├── component_matcher.py              # Matches tech components to design needs
+└── integration_complexity.py         # Scores integration burden
+6. Signal Intelligence Deepening
+
+Purpose: improve weak-signal discovery, discontinuity detection, convergence detection, source credibility.
+
+src/claire/signals/
+├── credibility_engine.py             # Enhanced source credibility scoring
+└── detection/
+    ├── __init__.py
+    ├── weak_signal_detector.py       # Detects early/weak signals
+    ├── discontinuity_detector.py     # Detects regime breaks
+    ├── convergence_detector.py       # Detects cross-domain convergence
+    └── signal_lifecycle.py           # Tracks signal maturity over time
+7. Route Intelligence Maturation
+
+Purpose: make route selection deeper, more explainable, confidence-calibrated, and historically aware.
+
+src/claire/routing/
+├── __init__.py
+├── depth_scorer.py                   # Evidence depth per route
+├── confidence_calibrator.py          # Route confidence calibration
+├── multi_route_evaluator.py          # Compares all viable routes
+├── route_evidence.py                 # Evidence requirements per route
+└── route_history.py                  # Learns from route history
+8. Breakthrough Maturity Layer
+
+Purpose: make breakthrough classification evidence-thresholded, cross-category, and compound-aware.
+
+src/claire/breakthrough/maturity/
+├── __init__.py
+├── evidence_thresholds.py            # Thresholds for 61 categories
+├── cross_category_detector.py        # Detects multi-category breakthroughs
+├── compound_scorer.py                # Scores compound breakthroughs
+└── category_validator.py             # Validates category accuracy
+
+data/breakthrough_thresholds/
+└── threshold_config.json             # Threshold config for breakthrough categories
+9. Intelligence Loops
+
+Purpose: operationalize the 8 ACS2 loops from the roadmap.
+
+src/claire/loops/
+├── __init__.py
+├── loop_orchestrator.py              # Coordinates all loops
+├── discovery_loop.py                 # Recursive discovery
+├── analysis_loop.py                  # Recursive analysis deepening
+├── synthesis_loop.py                 # Cross-domain synthesis
+├── validation_loop.py                # Evidence validation loop
+├── regulatory_loop.py                # Regulatory intelligence
+├── marketing_loop.py                 # Market/narrative intelligence
+├── execution_loop.py                 # Execution/deal/build loop
+└── decision_engine.py                # Go/no-go/resource decisioning
+10. Compound Memory / Recursive Learning
+
+Purpose: make memory longitudinal and useful across runs.
+
+src/claire/memory/compound/
+├── __init__.py
+├── compound_engine.py                # Cross-run memory synthesis
+├── thesis_historian.py               # Tracks thesis evolution
+├── routing_evolver.py                # Learns route improvements
+└── assumption_tracker.py             # Tracks assumptions/falsifiers
+
+src/claire/recursive/
+├── deep_ingestion.py                 # Ingests prior outputs deeply
+└── ingestion_scheduler.py            # Schedules recursive ingestion
+
+data/memory/thesis_history/
+data/memory/routing_evolution/
+11. Evolution Governance System
+
+Purpose: make Claire know origin, current state, target state, verified capabilities, regression risk, and forward motion. v10.3.1 already maps this as the foundational self-awareness layer.
+
+src/claire/evolution/
+├── __init__.py
+├── project_identity.py               # Canonical identity
+├── master_document_registry.py       # Governing document registry
+├── version_timeline.py               # Version history/proof
+├── target_state.py                   # Target completion model
+├── capability_registry.py            # Verified capability registry
+├── verified_state_store.py           # Immutable verified states
+├── regression_guard.py               # Blocks capability loss
+├── forward_motion_policy.py          # Blocks drift/regression
+├── evolution_memory.py               # Learns from evolution history
+└── evolution_orchestrator.py         # Coordinates evolution system
+
+Data:
+
+data/evolution/
+├── origin/
+├── identity/
+├── timeline/
+├── target_state/
+├── verified_states/
+├── capability_snapshots/
+├── regression_reports/
+├── forward_decisions/
+└── completion_memory/
+12. Enterprise Update Governance
+
+Purpose: online update inspection, signature verification, protected-path gating, staging, validation, rollback, and audit. v10.3.1 defines this as the update safety layer.
+
+src/claire/platform/update_governance/
+├── __init__.py
+├── authority_map.py
+├── package_inspector.py
+├── source_trust.py
+├── signature_verifier.py
+├── dependency_impact_analyzer.py
+├── capability_diff.py
+├── lifecycle_stage_impact.py
+├── runtime_risk_classifier.py
+├── target_alignment.py
+├── evolution_gate.py
+├── migration_planner.py
+├── protected_path_guard.py
+├── staged_installer.py
+├── validation_gauntlet.py
+├── rollback_orchestrator.py
+├── audit_writer.py
+├── approval_policy.py
+└── update_orchestrator.py
+
+Data:
+
+data/update_governance/
+├── incoming/
+├── inspected/
+├── staged/
+├── backups/
+├── reports/
+├── approvals/
+├── rollback_points/
+├── signatures/
+└── quarantined/
+13. Proof / Evidence Binder
+
+Purpose: turn outputs into verifiable proof packages.
+
+src/claire/proof/
+├── __init__.py
+├── proof_binder.py                  # Assembles proof binder
+├── evidence_summary.py              # Summarizes evidence
+├── route_proof.py                   # Explains selected route
+├── capability_proof.py              # Proves system capabilities
+├── regression_proof.py              # Proves no regression after update
+└── export_manifest.py               # Writes package manifest
+
+Data:
+
+data/proof/
+├── binders/
+├── route_proofs/
+├── capability_proofs/
+└── regression_proofs/
+14. Autonomous Orchestration Layer
+
+Purpose: enable governed self-escalation, self-correction, enrichment, invalidation, and optimization.
+
+src/claire/autonomous/
+├── __init__.py
+├── self_escalator.py                # Decides when to escalate route/depth
+├── self_corrector.py                # Corrects incomplete/weak outputs
+├── self_enricher.py                 # Requests more evidence/context
+├── self_invalidator.py              # Invalidates weak theses
+├── self_optimizer.py                # Optimizes route/output quality
+├── self_researcher.py               # Triggers governed research loops
+└── safety_governor.py               # Prevents unsafe autonomous action
+15. Tests Needed
+
+Purpose: prove the system after each install/update.
+
+tests/regression/test_runtime_contracts.py
+tests/regression/test_frontend_contracts.py
+tests/regression/test_design_portal.py
+tests/regression/test_technology_intelligence.py
+tests/regression/test_signal_detection.py
+tests/regression/test_route_intelligence.py
+tests/regression/test_breakthrough_maturity.py
+tests/regression/test_compound_memory.py
+tests/regression/test_evolution_governance.py
+tests/regression/test_update_governance.py
+tests/regression/test_no_regression_after_update.py
+tests/e2e/test_evaluate_full_lifecycle.py
+tests/e2e/test_dashboard_loads.py
+tests/e2e/test_export_package_created.py
+Install priority
+1. Runtime contracts
+2. Frontend unification
+3. API unification
+4. Design Portal completion
+5. Technology Intelligence completion
+6. Signal intelligence deepening
+7. Route intelligence maturation
+8. Breakthrough maturity
+9. Compound memory
+10. Evolution governance
+11. Update governance
+12. Proof binder
+13. Autonomous orchestration
+14. Regression/e2e tests

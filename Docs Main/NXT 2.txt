@@ -1,0 +1,29 @@
+Remaining Folder/File List
+1. Live Evidence + Source Validation
+src/claire/research/live/├─ __init__.py├─ governed_live_research.py├─ source_verification_engine.py├─ citation_lineage_engine.py├─ evidence_quality_scorer.py├─ evidence_conflict_resolver.py├─ claim_verifier.py└─ research_packet_builder.py
+data/research/live_packets/data/research/verified_sources/data/research/citation_lineage/data/research/conflict_reports/
+2. Benchmark + Backtest System
+src/claire/validation/benchmarks/├─ __init__.py├─ regime_backtester.py├─ signal_backtester.py├─ false_positive_analyzer.py├─ false_negative_analyzer.py├─ outcome_label_manager.py├─ benchmark_dataset_loader.py└─ benchmark_reporter.py
+data/benchmarks/├─ regimes/├─ signal_tests/├─ outcome_labels/├─ false_positive_reports/├─ benchmark_reports/
+3. Production Deployment Hardening
+src/claire/production/├─ __init__.py├─ deployment_readiness_checker.py├─ environment_validator.py├─ service_health_contract.py├─ uptime_monitor.py├─ security_readiness.py├─ backup_policy.py└─ recovery_drill.py
+data/production/├─ readiness_reports/├─ health_snapshots/├─ backup_reports/└─ recovery_drills/
+4. Longitudinal Recursive Intelligence
+src/claire/recursive/longitudinal/├─ __init__.py├─ run_pattern_miner.py├─ thesis_evolution_tracker.py├─ recurring_gap_detector.py├─ learning_signal_extractor.py├─ strategy_memory_synthesizer.py└─ recursive_quality_scorer.py
+data/recursive/├─ run_patterns/├─ thesis_evolution/├─ recurring_gaps/├─ learning_signals/└─ quality_scores/
+5. Buyer / Market Validation Layer
+src/claire/market_validation/├─ __init__.py├─ buyer_signal_tracker.py├─ interview_evidence_model.py├─ workflow_adoption_tracker.py├─ roi_validation_engine.py├─ pricing_signal_analyzer.py└─ validation_readiness_scorer.py
+data/market_validation/├─ buyer_signals/├─ interview_evidence/├─ workflow_adoption/├─ roi_models/└─ pricing_signals/
+6. Advanced Design / Build Proof
+src/claire/design/proof/├─ __init__.py├─ architecture_feasibility_proof.py├─ dependency_risk_proof.py├─ implementation_cost_model.py├─ build_sequence_validator.py├─ deployment_model_validator.py└─ design_maturity_scorer.py
+data/design_proof/├─ architecture_proofs/├─ dependency_risks/├─ cost_models/├─ deployment_models/└─ maturity_scores/
+7. Autonomous Agent Governance
+src/claire/autonomous/governance/├─ __init__.py├─ autonomous_action_policy.py├─ self_change_permission_model.py├─ autonomous_decision_auditor.py├─ escalation_boundary.py├─ human_review_gate.py└─ autonomy_maturity_scorer.py
+data/autonomy/├─ action_logs/├─ decision_audits/├─ permission_records/├─ review_queue/└─ maturity_reports/
+8. Enterprise UI Completion
+src/frontend/enterprise/├─ EnterpriseShell.js├─ EvidenceWorkbench.js├─ BenchmarkWorkbench.js├─ RecursiveMemoryView.js├─ ProductionReadinessView.js├─ AutonomyGovernanceView.js├─ MarketValidationView.js└─ CompletionCommandCenter.js
+9. Final Completion Tests
+tests/e2e/test_live_research_ingestion.pytests/e2e/test_benchmark_backtest_flow.pytests/e2e/test_recursive_learning_flow.pytests/e2e/test_market_validation_flow.pytests/e2e/test_production_readiness.pytests/e2e/test_autonomy_governance.pytests/e2e/test_full_completion_run.pytests/regression/test_no_verified_capability_loss.pytests/regression/test_update_rollback_proof.pytests/regression/test_final_v10_completion_contract.py
+Priority order
+1. live evidence/source validation2. benchmark/backtest system3. proof/evidence maturity4. recursive longitudinal intelligence5. production deployment hardening6. market/buyer validation7. autonomous agent governance8. enterprise UI completion9. final completion tests
+The installer you uploaded covers the consolidation layers; these remaining files target the last missing maturity areas: live evidence depth, backtesting, production proof, recursive learning, and governed autonomy. 

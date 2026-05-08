@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import json
+import shutil
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List
+
+INSTALLER_NAME = 'Claire v16.11-v16.20 Online Ops Endgame Installer'
+INSTALLER_VERSION = '16.11-16.20'
+DEFAULT_TARGET = Path.home() / "OneDrive" / "Desktop" / "Claire"
+
+FOLDERS = [
+  "src/claire/online_ops_endgame",
+  "tests/online_ops_endgame",
+  "data/online_ops_endgame/provider_contracts",
+  "data/online_ops_endgame/research_pipeline_contracts",
+  "data/online_ops_endgame/endgame_roadmaps",
+  "data/online_ops_endgame/industry_standard_checks",
+  "docs/online_ops_endgame",
+  ".claire_install/reports"
+]
+FILES = {
+  "src/claire/online_ops_endgame/__init__.py": "\"\"\"Claire online operations and endgame planning package.\"\"\"\n",
+  "src/claire/online_ops_endgame/provider_adapter_contract.py": "from __future__ import annotations\nfrom typing import Any, Dict, List\n\nclass ProviderAdapterContract:\n    def build_contract(self, provider_name: str, capabilities: List[str]) -> Dict[str, Any]:\n        return {\n            \"record_type\": \"provider_adapter_contract\",\n            \"provider_name\": provider_name,\n            \"capabilities\": capabilities,\n            \"required_controls\": [\"timeouts\", \"rate_limits\", \"source_policy\", \"audit_log\", \"quarantine\"],\n            \"status\": \"contract_defined\",\n        }\n",
+  "src/claire/online_ops_endgame/online_research_pipeline_contract.py": "from __future__ import annotations\nfrom typing import Any, Dict\n\nclass OnlineResearchPipelineContract:\n    def build_contract(self) -> Dict[str, Any]:\n        return {\n            \"record_type\": \"online_research_pipeline_contract\",\n            \"stages\": [\n                \"query_intent\",\n                \"source_policy_check\",\n                \"fetch_or_search\",\n                \"lineage_record\",\n                \"evidence_packet\",\n                \"quarantine_or_promote\",\n                \"operator_review\",\n                \"benchmark_replay\"\n            ],\n            \"rule\": \"Online research is evidence-first and review-gated.\",\n        }\n",
+  "src/claire/online_ops_endgame/industry_standard_readiness_check.py": "from __future__ import annotations\nfrom typing import Any, Dict\n\nclass IndustryStandardReadinessCheck:\n    REQUIRED = [\"timeouts\", \"retries\", \"rate_limits\", \"allowlist\", \"audit_logs\", \"secrets_management\", \"dependency_audit\", \"tests\"]\n\n    def evaluate(self, checks: Dict[str, bool]) -> Dict[str, Any]:\n        missing = [item for item in self.REQUIRED if not checks.get(item, False)]\n        return {\"status\": \"ready\" if not missing else \"not_ready\", \"missing\": missing}\n",
+  "src/claire/online_ops_endgame/endgame_roadmap_builder.py": "from __future__ import annotations\nfrom typing import Any, Dict\n\nclass EndgameRoadmapBuilder:\n    def build_roadmap(self) -> Dict[str, Any]:\n        return {\n            \"record_type\": \"endgame_online_ops_roadmap\",\n            \"near_term\": [\"governed internet connectivity\", \"dependency update governance\", \"live source verification\"],\n            \"mid_term\": [\"provider adapters\", \"evidence-first online research\", \"pilot telemetry\"],\n            \"long_term\": [\"recursive system transformation\", \"acquisition-ready packages\", \"multi-operator enterprise orchestration\"],\n            \"rule\": \"Endgame expansion requires proof-backed online operations, not uncontrolled autonomy.\",\n        }\n",
+  "docs/online_ops_endgame/v16_11_to_v16_20_online_ops_endgame_plan.md": "# v16.11-v16.20 Online Operations Endgame Plan\n\nClaire's modern industry-standard online layer should be:\n\n- async-capable where needed\n- timeout controlled\n- rate-limit aware\n- allowlist governed\n- source-rights aware\n- audit logged\n- dependency audited\n- replay validated\n- operator reviewed\n- quarantine capable\n\nThis prepares Claire for its endgame direction without letting unverified internet data corrupt deterministic runtime proof.\n",
+  "tests/online_ops_endgame/test_online_ops_endgame.py": "from claire.online_ops_endgame.provider_adapter_contract import ProviderAdapterContract\nfrom claire.online_ops_endgame.industry_standard_readiness_check import IndustryStandardReadinessCheck\n\ndef test_provider_contract_controls():\n    contract = ProviderAdapterContract().build_contract(\"web_search\", [\"search\"])\n    assert \"audit_log\" in contract[\"required_controls\"]\n\ndef test_industry_standard_check_blocks_empty():\n    assert IndustryStandardReadinessCheck().evaluate({})[\"status\"] == \"not_ready\"\n"
+}
+VERSION_FILE = 'version_16_20_online_ops_endgame.json'
+LOCK_PAYLOAD = {
+  "version": "16.20",
+  "state": "online_ops_endgame_plan_installed",
+  "phase": "online_ops_endgame_planning",
+  "status": "planned_not_fully_online",
+  "safety_contract": {
+    "does_not_modify_runtime": True,
+    "does_not_modify_routing": True,
+    "does_not_modify_scoring": True,
+    "does_not_modify_core_run_output": True,
+    "live_data_gated": True,
+    "internet_access_requires_allowlist": True
+  }
+}
+
+def stamp() -> str:
+    return datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+
+def now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+def ensure_dir(path: Path, install: bool, actions: List[Dict[str, Any]]) -> None:
+    existed = path.exists()
+    if install:
+        path.mkdir(parents=True, exist_ok=True)
+    actions.append({"action": "ensure_dir", "path": str(path), "installed": install, "existed": existed})
+
+def write_file(path: Path, content: str, install: bool, actions: List[Dict[str, Any]]) -> None:
+    existed = path.exists()
+    backup = None
+    if install:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if existed:
+            backup_path = path.with_name(path.name + ".bak_" + stamp())
+            shutil.copy2(path, backup_path)
+            backup = str(backup_path)
+        path.write_text(content, encoding="utf-8", newline="\n")
+    actions.append({"action": "write_file", "path": str(path), "installed": install, "existed": existed, "backup": backup})
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=INSTALLER_NAME)
+    parser.add_argument("--target", default=str(DEFAULT_TARGET), help="Claire project root")
+    parser.add_argument("--install", action="store_true", help="Apply install. Without this, dry run only.")
+    args = parser.parse_args()
+
+    root = Path(args.target).expanduser().resolve()
+    install = bool(args.install)
+
+    print(f"{INSTALLER_NAME} {INSTALLER_VERSION}")
+    print(f"Target: {root}")
+    print("Mode:", "INSTALL" if install else "DRY RUN")
+
+    if not root.exists():
+        print(f"[ERROR] Target does not exist: {root}")
+        return 2
+    if not (root / "src").exists():
+        print("[ERROR] This does not look like Claire root. Missing src folder.")
+        return 3
+
+    actions: List[Dict[str, Any]] = []
+    for folder in FOLDERS:
+        ensure_dir(root / folder, install, actions)
+    for rel, content in FILES.items():
+        write_file(root / rel, content, install, actions)
+
+    payload = dict(LOCK_PAYLOAD)
+    payload["installed_at_utc"] = now_iso()
+    write_file(root / VERSION_FILE, json.dumps(payload, indent=2, sort_keys=True), install, actions)
+
+    report = {
+        "installer": INSTALLER_NAME,
+        "installer_version": INSTALLER_VERSION,
+        "installed": install,
+        "installed_at_utc": now_iso(),
+        "target": str(root),
+        "actions": actions,
+        "version_file": VERSION_FILE,
+        "safety_contract": payload.get("safety_contract", {}),
+        "post_install_checks": [
+            "Run the targeted pytest folder for this installer.",
+            "Review docs before enabling live internet use.",
+            "Do not add live data to high-confidence scoring without lineage and source policy approval.",
+            "Commit after tests pass."
+        ]
+    }
+
+    if install:
+        report_path = root / ".claire_install" / "reports" / (VERSION_FILE.replace(".json", "") + "_" + stamp() + ".json")
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
+        print(f"[OK] Report written: {report_path}")
+    else:
+        print("[DRY RUN] No files changed. Re-run with --install to apply.")
+
+    print(json.dumps({
+        "installed": install,
+        "target": str(root),
+        "installer_version": INSTALLER_VERSION,
+        "folders": len(FOLDERS),
+        "files": len(FILES) + 1
+    }, indent=2))
+    return 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+

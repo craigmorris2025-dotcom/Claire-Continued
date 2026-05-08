@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"><head><meta name="referrer" content="strict-origin-when-cross-origin"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'nonce-required' 'strict-dynamic' https://cdn.jsdelivr.net/npm/ https://cdn.tailwindcss.com https://unpkg.com/lucide; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net/npm/ https://copilot.microsoft.com; worker-src 'self' blob:; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com/css2 https://cdn.jsdelivr.net/npm/; img-src 'self' data: blob: *.mm.bing.net th.bing.com cdn.tailwindcss.com copilot.microsoft.com *.tile.openstreetmap.org https://cdn.jsdelivr.net/npm/; font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests"><style>
+._nav-link-tooltip {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  max-width: min(80%, 600px);
+  padding: 4px 8px;
+  background: rgba(32, 33, 36, 0.88);
+  color: #e8eaed;
+  font: 12px/16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-top-right-radius: 4px;
+  z-index: 2147483647;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+  box-sizing: border-box;
+}
+._nav-link-tooltip._visible {
+  opacity: 1;
+}
+@media (prefers-color-scheme: light) {
+  ._nav-link-tooltip {
+    background: rgba(241, 243, 244, 0.92);
+    color: #202124;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+</style>
+<script nonce="">
+(function() {
+  // Helper: check if a raw href is an external URL (http/https)
+  // Hash links (#section), relative paths (/page), mailto:, tel:, etc. are NOT external
+  function _isExternalHref(rawHref) {
+    if (!rawHref) return false;
+    var h = rawHref.trim().toLowerCase();
+    return h.startsWith('http://') || h.startsWith('https://') || h.startsWith('//');
+  }
+
+  // --- Link hover URL preview tooltip ---
+  var _tooltip = document.createElement('div');
+  _tooltip.className = '_nav-link-tooltip';
+  function _ensureTooltipMounted() {
+    if (!_tooltip.parentNode) {
+      (document.body || document.documentElement).appendChild(_tooltip);
+    }
+  }
+
+  document.addEventListener('mouseover', function(event) {
+    var el = event.target;
+    while (el && el.tagName !== 'A') {
+      el = el.parentElement;
+    }
+    if (!el) return;
+    var rawHref = el.getAttribute('href');
+    if (!rawHref || rawHref.startsWith('javascript:')) return;
+    _ensureTooltipMounted();
+    // Show raw href for clean display (avoids blob: URL noise)
+    _tooltip.textContent = rawHref;
+    _tooltip.classList.add('_visible');
+  }, true);
+
+  document.addEventListener('mouseout', function(event) {
+    var el = event.target;
+    while (el && el.tagName !== 'A') {
+      el = el.parentElement;
+    }
+    if (!el) return;
+    _tooltip.classList.remove('_visible');
+  }, true);
+
+  // --- Intercept anchor tag clicks ---
+  document.addEventListener('click', function(event) {
+    var target = event.target;
+    while (target && target.tagName !== 'A') {
+      target = target.parentElement;
+    }
+    if (!target) return;
+
+    var rawHref = target.getAttribute('href');
+    if (!rawHref || rawHref.startsWith('javascript:')) return;
+
+    // Hash links: Ctrl/Cmd+click to scroll to target, plain click places cursor
+    if (rawHref.startsWith('#')) {
+      if (event.ctrlKey || event.metaKey) {
+        var targetId = rawHref.substring(1);
+        if (targetId) {
+          var targetEl = document.getElementById(targetId) || document.getElementsByName(targetId)[0];
+          if (targetEl) {
+            event.preventDefault();
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+      return;
+    }
+
+    // Only intercept external links (http/https)
+    if (!_isExternalHref(rawHref)) return;
+
+    // Allow download links to proceed natively instead of intercepting them.
+    // The 'download' attribute signals the browser to save the file rather than navigate.
+    if (target.hasAttribute('download')) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    window.parent.postMessage({
+      type: 'navigate-link',
+      payload: {
+        url: target.href || rawHref,
+        target: target.target || undefined
+      },
+      timestamp: Date.now()
+    }, '*');
+  }, true);
+
+  // --- Intercept window.open calls ---
+  var _origOpen = window.open;
+  window.open = function(url, target, features) {
+    if (!url) return null;
+    var urlStr = String(url);
+
+    // Only intercept external URLs (http/https)
+    if (!_isExternalHref(urlStr)) {
+      return _origOpen.call(window, url, target, features);
+    }
+
+    var resolvedUrl;
+    try {
+      resolvedUrl = new URL(urlStr, window.location.href).href;
+    } catch (e) {
+      resolvedUrl = urlStr;
+    }
+
+    window.parent.postMessage({
+      type: 'navigate-link',
+      payload: {
+        url: resolvedUrl,
+        target: target || '_blank'
+      },
+      timestamp: Date.now()
+    }, '*');
+    return null;
+  };
+})();
+</script>
+      <script nonce="">
+        (function() {
+          if (typeof window !== 'undefined' && window.trustedTypes && window.trustedTypes.createPolicy) {
+            try {
+              window.trustedTypes.createPolicy('default', {
+                createHTML: function(input) { return input; },
+                createScript: function(input) { return input; },
+                createScriptURL: function(input) { return input; }
+              });
+            } catch (e) {
+              // Policy may already exist — ignore
+            }
+          }
+        })();
+      </script>
+      <script nonce="">
+        (function() {
+          const _0x1a2b = {
+            log: console.log,
+            info: console.info,
+            warn: console.warn,
+            error: console.error,
+            debug: console.debug
+          };
+
+          function _0x3c4d(e, t, n) {
+            try {
+              const o = {
+                type: 'iframe-console-log',
+                payload: {
+                  level: e,
+                  message: String(t),
+                  args: n.map(e => {
+                    try {
+                      return typeof e === 'object' ? JSON.stringify(e, null, 2) : String(e);
+                    } catch (e) {
+                      return '[Circular or Non-serializable]';
+                    }
+                  }),
+                  timestamp: Date.now(),
+                  stackTrace: e === 'error' ? new Error().stack : undefined
+                }
+              };
+
+              window.parent.postMessage(o, '*');
+            } catch (e) {
+              _0x1a2b[e].apply(console, [t, ...n]);
+            }
+          }
+
+          console.log = function(...args) {
+            _0x1a2b.log.apply(console, args);
+            _0x3c4d('log', args[0] || '', args.slice(1));
+          };
+
+          console.info = function(...args) {
+            _0x1a2b.info.apply(console, args);
+            _0x3c4d('info', args[0] || '', args.slice(1));
+          };
+
+          console.warn = function(...args) {
+            _0x1a2b.warn.apply(console, args);
+            _0x3c4d('warn', args[0] || '', args.slice(1));
+          };
+
+          console.error = function(...args) {
+            _0x1a2b.error.apply(console, args);
+            _0x3c4d('error', args[0] || '', args.slice(1));
+          };
+
+          console.debug = function(...args) {
+            _0x1a2b.debug.apply(console, args);
+            _0x3c4d('debug', args[0] || '', args.slice(1));
+          };
+
+          window.addEventListener('error', function(event) {
+            _0x3c4d('error', event.message, [
+              'Error in ' + event.filename + ':' + event.lineno + ':' + event.colno,
+              event.error ? event.error.stack : ''
+            ]);
+          });
+
+          window.addEventListener('unhandledrejection', function(event) {
+            _0x3c4d('error', 'Unhandled Promise Rejection', [
+              event.reason ? String(event.reason) : 'Unknown reason'
+            ]);
+          });
+
+          window.addEventListener('securitypolicyviolation', function(event) {
+            _0x3c4d('error', 'CSP Violation: ' + event.effectiveDirective, [
+              'blockedURI: ' + event.blockedURI,
+              'violatedDirective: ' + event.violatedDirective,
+              'originalPolicy: ' + event.originalPolicy,
+              'disposition: ' + event.disposition,
+              'documentURI: ' + event.documentURI
+            ]);
+          });
+
+          var _llmRequestHandlers = {};
+
+          window._useLLM = function(name, params) {
+            const requestId = Math.random().toString(36).slice(2);
+            const p = new Promise((resolve) => {
+              _llmRequestHandlers[requestId] = resolve;
+            });
+
+            const llmMsg = {
+              type: "use-llm",
+              requestId: requestId,
+              timestamp: Date.now(),
+              payload: {
+                name: name,
+                params: params,
+              },
+            };
+            window.parent.postMessage(llmMsg, '*');
+
+            return p;
+          };
+
+          window.addEventListener('message', function(event) {
+            if (event.data && event.data.type === 'update-theme') {
+              const theme = event.data.payload?.theme;
+              if (theme === 'dark' || theme === 'light') {
+                const html = document.documentElement || document.querySelector('html');
+                if (html) {
+                  html.setAttribute('data-theme', theme);
+                }
+              }
+            }
+
+            if (event.source === window.parent && event.data.type === 'llmReply') {
+              const requestId = event.data.requestId;
+              const handler = _llmRequestHandlers[requestId];
+              if (handler !== undefined) {
+                handler(event.data.payload);
+                delete _llmRequestHandlers[requestId];
+              }
+            }
+          });
+
+          
+        })();
+      </script>
+    
+      <script nonce="">
+        (function() {
+          var _appDataCfg = { apiBase: "https://copilot.microsoft.com/c/api", appId: "3JnkcKwrUrgo7CeaHC8Es" };
+
+          var _reqCounter = 0;
+          var _pendingRequests = {};
+
+          function _appDataRequest(method, path, body) {
+            if (!_appDataCfg) {
+              return Promise.reject(new Error('AppSDK: not configured for this artifact type.'));
+            }
+            var requestId = 'adr-' + (++_reqCounter);
+            var fullPath = _appDataCfg.appId + '/' + path;
+
+            return new Promise(function(resolve, reject) {
+              var timeoutId = setTimeout(function() {
+                delete _pendingRequests[requestId];
+                reject(new Error('AppSDK: request timed out'));
+              }, 30000);
+
+              _pendingRequests[requestId] = { resolve: resolve, reject: reject, timeoutId: timeoutId };
+
+              var requestMsg = {
+                type: 'app-data:request',
+                timestamp: Date.now(),
+                payload: { method: method, path: fullPath, body: body, requestId: requestId }
+              };
+              window.parent.postMessage(requestMsg, '*');
+            });
+          }
+
+          window.addEventListener('message', function(event) {
+            if (event.data && event.data.type === 'app-data:response') {
+              var payload = event.data.payload;
+              var pending = _pendingRequests[payload.requestId];
+              if (pending) {
+                clearTimeout(pending.timeoutId);
+                delete _pendingRequests[payload.requestId];
+                if (payload.ok) {
+                  pending.resolve(payload.data !== undefined ? payload.data : null);
+                } else {
+                  pending.reject(new Error(payload.error || 'Request failed'));
+                }
+              }
+            }
+          });
+
+          window.AppSDK = {
+            upsert: function(entityId, entityType, data) {
+              return _appDataRequest('PUT', entityId + '/' + entityType, { data: data });
+            },
+            get: function(entityId, entityType) {
+              return _appDataRequest('GET', entityId + '/' + entityType);
+            },
+            list: function(entityId) {
+              return _appDataRequest('GET', entityId);
+            },
+            delete: function(entityId, entityType) {
+              return _appDataRequest('DELETE', entityId + '/' + entityType);
+            },
+            deleteAll: function() {
+              return _appDataRequest('DELETE', '');
+            }
+          };
+        })();
+      </script>
+      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Claire Canonical 30-Stage Lifecycle Flow</title>
+    <script nonce="" src="https://cdn.tailwindcss.com"></script>
+    <script nonce="" src="https://cdn.jsdelivr.net/npm/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Orbitron:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <script nonce="">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        base: { 900: '#0a0e17', 800: '#0f1420', 700: '#151b2c', 600: '#1a2236', 500: '#212a40' },
+                        txt: { 100: '#e8eaf0', 200: '#c8ccd6', 300: '#9ea3b0', 400: '#6b7080', 500: '#4a4f5c' },
+                        cyan: { glow: '#00d4ff', dim: '#00d4ff33', soft: '#00d4ff18' },
+                        purple: { glow: '#a855f7', dim: '#a855f733', soft: '#a855f718' },
+                        green: { glow: '#22c55e', dim: '#22c55e33', soft: '#22c55e18' },
+                        gold: { glow: '#fbbf24', dim: '#fbbf2433', soft: '#fbbf2418' },
+                        blue: { glow: '#3b82f6', dim: '#3b82f633', soft: '#3b82f618' },
+                        orange: { glow: '#f97316', dim: '#f9731633', soft: '#f9731618' },
+                        red: { glow: '#ef4444', dim: '#ef444433', soft: '#ef444418' },
+                        teal: { glow: '#14b8a6', dim: '#14b8a633', soft: '#14b8a618' },
+                        pink: { glow: '#ec4899', dim: '#ec489933', soft: '#ec489918' },
+                    },
+                    fontFamily: {
+                        display: ['Orbitron', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background-color: #0a0e17;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: #e8eaf0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Glow animations */
+        @keyframes breathe {
+            0%, 100% { box-shadow: 0 0 8px var(--glow-color), inset 0 0 4px var(--glow-color-dim); }
+            50% { box-shadow: 0 0 18px var(--glow-color), 0 0 30px var(--glow-color-dim), inset 0 0 8px var(--glow-color-dim); }
+        }
+        @keyframes diamondPulse {
+            0%, 100% { box-shadow: 0 0 12px #fbbf24, 0 0 30px #fbbf2455; }
+            50% { box-shadow: 0 0 24px #fbbf24, 0 0 50px #fbbf2477, 0 0 70px #fbbf2433; }
+        }
+        @keyframes flowDown {
+            0% { top: -6px; opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { top: calc(100% + 6px); opacity: 0; }
+        }
+        @keyframes flowDownLong {
+            0% { top: -6px; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: calc(100% + 6px); opacity: 0; }
+        }
+        @keyframes dashMove {
+            0% { stroke-dashoffset: 20; }
+            100% { stroke-dashoffset: 0; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes legendPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .stage-node {
+            --glow-color: #00d4ff;
+            --glow-color-dim: #00d4ff33;
+            animation: breathe 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        .stage-node:hover {
+            transform: scale(1.05);
+            z-index: 20;
+        }
+        .stage-node:hover .tooltip-desc {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0) translateY(-50%);
+        }
+
+        .tooltip-desc {
+            position: absolute;
+            left: calc(100% + 14px);
+            top: 50%;
+            transform: translateX(-8px) translateY(-50%);
+            background: #151b2cee;
+            border: 1px solid;
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 12px;
+            line-height: 1.5;
+            width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            z-index: 50;
+            pointer-events: none;
+        }
+        .tooltip-left {
+            left: auto;
+            right: calc(100% + 14px);
+            transform: translateX(8px) translateY(-50%);
+        }
+        .tooltip-left-visible {
+            transform: translateX(0) translateY(-50%) !important;
+        }
+
+        .connector {
+            position: relative;
+            width: 2px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .connector::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--conn-color, #00d4ff33);
+        }
+        .connector .dot {
+            position: absolute;
+            left: -2px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--dot-color, #00d4ff);
+            animation: flowDown 2s linear infinite;
+            box-shadow: 0 0 6px var(--dot-color, #00d4ff);
+        }
+
+        .connector-long .dot {
+            animation: flowDownLong 3s linear infinite;
+        }
+
+        .group-header {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        .group-header:hover {
+            filter: brightness(1.2);
+        }
+        .group-header.active {
+            filter: brightness(1.4);
+        }
+
+        .diamond-gate {
+            width: 60px;
+            height: 60px;
+            transform: rotate(45deg);
+            animation: diamondPulse 2s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .diamond-gate-inner {
+            transform: rotate(-45deg);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .route-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            border: 1px solid;
+        }
+
+        .feedback-loop svg {
+            overflow: visible;
+        }
+        .feedback-loop .dash-line {
+            stroke-dasharray: 8 4;
+            animation: dashMove 0.8s linear infinite;
+        }
+
+        .stats-item {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: legendPulse 2.5s ease-in-out infinite;
+        }
+
+        /* Phase group highlight */
+        .phase-group.highlighted .stage-node {
+            animation-duration: 1s;
+        }
+        .phase-group {
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0e17; }
+        ::-webkit-scrollbar-thumb { background: #212a40; border-radius: 3px; }
+
+        .branch-connector-h {
+            height: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .branch-connector-h::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+        }
+
+        /* Download toolbar styles */
+        #download-toolbar {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 9999;
+            background: rgba(10, 14, 23, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .dl-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            padding: 7px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 212, 255, 0.35);
+            background: rgba(0, 212, 255, 0.08);
+            color: #00d4ff;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+        .dl-btn:hover {
+            background: rgba(0, 212, 255, 0.18);
+            border-color: rgba(0, 212, 255, 0.6);
+            box-shadow: 0 0 14px rgba(0, 212, 255, 0.3), 0 0 30px rgba(0, 212, 255, 0.1);
+        }
+        .dl-btn:active {
+            transform: scale(0.97);
+        }
+        .dl-btn .dl-icon {
+            font-style: normal;
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        /* Print styles */
+        @media print {
+            #download-toolbar {
+                display: none !important;
+            }
+            body {
+                background: #fff !important;
+                background-image: none !important;
+                color: #1a1a1a !important;
+            }
+            * {
+                animation: none !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+            .stage-node {
+                animation: none !important;
+                box-shadow: none !important;
+                border-color: #ccc !important;
+                background: #f9f9f9 !important;
+            }
+            .stage-node span,
+            .stage-node .text-txt-100 {
+                color: #1a1a1a !important;
+            }
+            .connector .dot {
+                animation: none !important;
+                display: none !important;
+            }
+            .connector::before {
+                background: #ccc !important;
+            }
+            .diamond-gate {
+                animation: none !important;
+                box-shadow: none !important;
+            }
+            .legend-dot {
+                animation: none !important;
+            }
+            .feedback-loop .dash-line {
+                animation: none !important;
+            }
+            .tooltip-desc {
+                display: none !important;
+            }
+            #legend-panel-k9j3 {
+                display: none !important;
+            }
+            header, footer, .group-header span, .route-label, .stats-item {
+                color: #333 !important;
+                border-color: #ccc !important;
+                background: transparent !important;
+            }
+            h1, h2, h3, p, span {
+                color: #1a1a1a !important;
+            }
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.relative{position:relative}.right-4{right:1rem}.top-4{top:1rem}.z-10{z-index:10}.z-40{z-index:40}.order-1{order:1}.order-2{order:2}.order-3{order:3}.mx-4{margin-left:1rem;margin-right:1rem}.mx-auto{margin-left:auto;margin-right:auto}.-mt-0\.5{margin-top:-0.125rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mr-1{margin-right:0.25rem}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-2\.5{height:0.625rem}.h-3{height:0.75rem}.h-3\.5{height:0.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-px{height:1px}.min-h-screen{min-height:100vh}.w-16{width:4rem}.w-2\.5{width:0.625rem}.w-3{width:0.75rem}.w-3\.5{width:0.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-7{width:1.75rem}.w-72{width:18rem}.w-full{width:100%}.w-px{width:1px}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.gap-0{gap:0px}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-base-500\/50{border-color:rgb(33 42 64 / 0.5)}.border-txt-500{--tw-border-opacity:1;border-color:rgb(74 79 92 / var(--tw-border-opacity, 1))}.bg-base-600{--tw-bg-opacity:1;background-color:rgb(26 34 54 / var(--tw-bg-opacity, 1))}.bg-base-800\/80{background-color:rgb(15 20 32 / 0.8)}.bg-base-800\/90{background-color:rgb(15 20 32 / 0.9)}.p-4{padding:1rem}.p-5{padding:1.25rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-12{padding-bottom:3rem}.pb-6{padding-bottom:1.5rem}.pt-10{padding-top:2.5rem}.text-center{text-align:center}.font-display{font-family:Orbitron, sans-serif}.font-sans{font-family:Inter, sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[9px\]{font-size:9px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.leading-tight{line-height:1.25}.tracking-\[0\.12em\]{letter-spacing:0.12em}.tracking-\[0\.15em\]{letter-spacing:0.15em}.tracking-\[0\.18em\]{letter-spacing:0.18em}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-wider{letter-spacing:0.05em}.text-txt-100{--tw-text-opacity:1;color:rgb(232 234 240 / var(--tw-text-opacity, 1))}.text-txt-300{--tw-text-opacity:1;color:rgb(158 163 176 / var(--tw-text-opacity, 1))}.text-txt-400{--tw-text-opacity:1;color:rgb(107 112 128 / var(--tw-text-opacity, 1))}.text-txt-500{--tw-text-opacity:1;color:rgb(74 79 92 / var(--tw-text-opacity, 1))}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}@media (min-width: 768px){.md\:order-1{order:1}.md\:order-2{order:2}.md\:order-3{order:3}.md\:block{display:block}.md\:w-80{width:20rem}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:gap-4{gap:1rem}.md\:gap-8{gap:2rem}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-base{font-size:1rem;line-height:1.5rem}}@media (min-width: 1024px){.lg\:block{display:block}.lg\:hidden{display:none}.lg\:text-3xl{font-size:1.875rem;line-height:2.25rem}.lg\:text-5xl{font-size:3rem;line-height:1}}</style></head>
+<body data-id="0" class="min-h-screen flex flex-col">
+    <app-icon data-id="1" hidden="" data-icon="workflow" data-palette="Dark" data-selection-initialized="true"></app-icon>
+
+    <!-- DOWNLOAD TOOLBAR -->
+    <div data-id="2" id="download-toolbar" data-selection-initialized="true" style="display: none;">
+        <button data-id="3" class="dl-btn" id="btn-download-png" data-selection-initialized="true">
+            <span data-id="4" class="dl-icon" data-selection-initialized="true">📷</span> Download PNG
+        </button>
+        <button data-id="5" class="dl-btn" id="btn-download-html" data-selection-initialized="true">
+            <span data-id="6" class="dl-icon" data-selection-initialized="true">💾</span> Download HTML
+        </button>
+    </div>
+
+    <!-- HEADER -->
+    <header data-id="7" id="header-z8k1" class="pt-10 pb-6 text-center relative z-10" data-selection-initialized="true">
+        <div data-id="8" class="max-w-5xl mx-auto px-4" data-selection-initialized="true">
+            <p data-id="9" id="version-badge-q3r2" class="inline-block mb-4 font-display text-[10px] tracking-[0.2em] uppercase px-4 py-1.5 rounded-full border border-txt-500 text-txt-300" data-selection-initialized="true">
+                v5.90.2 &nbsp;|&nbsp; Architecture: LOCKED
+            </p>
+            <h1 data-id="10" id="main-title-f7g4" class="font-display text-2xl md:text-4xl lg:text-5xl font-bold tracking-wider text-txt-100 mb-3" style="text-shadow: 0 0 30px #00d4ff33;" data-selection-initialized="true">
+                CLAIRE <span data-id="11" class="text-lg md:text-2xl lg:text-3xl font-medium text-txt-300" data-selection-initialized="true">—</span> Canonical 30-Stage Lifecycle
+            </h1>
+            <p data-id="12" id="subtitle-m2n5" class="font-sans text-sm md:text-base text-txt-400 tracking-[0.15em] uppercase" data-selection-initialized="true">
+                Cognitive Learning Artificial Intelligence Research Engineering
+            </p>
+        </div>
+    </header>
+
+    <!-- LEGEND PANEL -->
+    <div data-id="13" id="legend-panel-k9j3" class="fixed top-4 right-4 z-40 bg-base-800/90 backdrop-blur-sm border border-base-500/50 rounded-2xl p-4 hidden lg:block" style="min-width: 200px; top: 70px;" data-selection-initialized="true">
+        <h3 data-id="14" class="font-display text-[10px] tracking-[0.15em] uppercase text-txt-300 mb-3" data-selection-initialized="true">Route Legend</h3>
+        <div data-id="15" class="space-y-2.5" data-selection-initialized="true">
+            <div data-id="16" class="flex items-center gap-2.5" data-selection-initialized="true"><div data-id="17" class="legend-dot" style="background:#00d4ff; box-shadow:0 0 6px #00d4ff;" data-selection-initialized="true"></div><span data-id="18" class="text-xs text-txt-300" data-selection-initialized="true">Signal Governance</span></div>
+            <div data-id="19" class="flex items-center gap-2.5" data-selection-initialized="true"><div data-id="20" class="legend-dot" style="background:#a855f7; box-shadow:0 0 6px #a855f7;" data-selection-initialized="true"></div><span data-id="21" class="text-xs text-txt-300" data-selection-initialized="true">Entity Intelligence</span></div>
+            <div data-id="22" class="flex items-center gap-2.5" data-selection-initialized="true"><div data-id="23" class="legend-dot" style="background:#22c55e; box-shadow:0 0 6px #22c55e;" data-selection-initialized="true"></div><span data-id="24" class="text-xs text-txt-300" data-selection-initialized="true">Trend Discovery</span></div>
+            <div data-id="25" class="flex items-center gap-2.5" data-selection-initialized="true"><div data-id="26" class="legend-dot" style="background:#fbbf24; box-shadow:0 0 6px #fbbf24;" data-selection-initialized="true"></div><span data-id="27" class="text-xs text-txt-300" data-selection-initialized="true">Route Selection Gate</span></div>
+            <div data-id="28" class="flex items-center gap-2.5" data-selection-initialized="true"><div data-id="29" class="legend-dot" style="background:#3b82f6; box-shadow:0 0 6px #3b82f6;" data-selection-initialized="true"></div><span data-id="30" class="text-xs text-txt-300" data-selection-initialized="true">Portfolio Route</span></div>
+            <div data-id="31" class="flex items-center gap-2.5" data-selection-initialized="true"><div data-id="32" class="legend-dot" style="background:#f97316; box-shadow:0 0 6px #f97316;" data-selection-initialized="true"></div><span data-id="33" class="text-xs text-txt-300" data-selection-initialized="true">Acquisition Route</span></div>
+            <div data-id="34" class="flex items-center gap-2.5" data-selection-initialized="true"><div data-id="35" class="legend-dot" style="background:#ef4444; box-shadow:0 0 6px #ef4444;" data-selection-initialized="true"></div><span data-id="36" class="text-xs text-txt-300" data-selection-initialized="true">Breakthrough Route</span></div>
+            <div data-id="37" class="flex items-center gap-2.5" data-selection-initialized="true"><div data-id="38" class="legend-dot" style="background:#14b8a6; box-shadow:0 0 6px #14b8a6;" data-selection-initialized="true"></div><span data-id="39" class="text-xs text-txt-300" data-selection-initialized="true">Gap Analysis</span></div>
+            <div data-id="40" class="flex items-center gap-2.5" data-selection-initialized="true"><div data-id="41" class="legend-dot" style="background:#ec4899; box-shadow:0 0 6px #ec4899;" data-selection-initialized="true"></div><span data-id="42" class="text-xs text-txt-300" data-selection-initialized="true">Design &amp; Invention</span></div>
+        </div>
+    </div>
+
+    <!-- MOBILE LEGEND TOGGLE -->
+    <div data-id="43" class="lg:hidden flex justify-center mb-4 px-4" data-selection-initialized="true">
+        <button data-id="44" id="legend-toggle-btn-x4y2" class="flex items-center gap-2 text-xs text-txt-300 border border-base-500/50 rounded-full px-4 py-2 bg-base-800/80" data-selection-initialized="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="info" aria-hidden="true" data-id="45" class="lucide lucide-info w-4 h-4" data-selection-initialized="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg> View Legend
+        </button>
+    </div>
+    <div data-id="46" id="mobile-legend-v5w3" class="lg:hidden hidden mx-4 mb-6 bg-base-800/90 border border-base-500/50 rounded-2xl p-4" data-selection-initialized="true">
+        <div data-id="47" class="flex flex-wrap gap-3" data-selection-initialized="true">
+            <div data-id="48" class="flex items-center gap-1.5" data-selection-initialized="true"><div data-id="49" class="w-2.5 h-2.5 rounded-full" style="background:#00d4ff;" data-selection-initialized="true"></div><span data-id="50" class="text-[10px] text-txt-300" data-selection-initialized="true">Signal</span></div>
+            <div data-id="51" class="flex items-center gap-1.5" data-selection-initialized="true"><div data-id="52" class="w-2.5 h-2.5 rounded-full" style="background:#a855f7;" data-selection-initialized="true"></div><span data-id="53" class="text-[10px] text-txt-300" data-selection-initialized="true">Entity</span></div>
+            <div data-id="54" class="flex items-center gap-1.5" data-selection-initialized="true"><div data-id="55" class="w-2.5 h-2.5 rounded-full" style="background:#22c55e;" data-selection-initialized="true"></div><span data-id="56" class="text-[10px] text-txt-300" data-selection-initialized="true">Trend</span></div>
+            <div data-id="57" class="flex items-center gap-1.5" data-selection-initialized="true"><div data-id="58" class="w-2.5 h-2.5 rounded-full" style="background:#fbbf24;" data-selection-initialized="true"></div><span data-id="59" class="text-[10px] text-txt-300" data-selection-initialized="true">Gate</span></div>
+            <div data-id="60" class="flex items-center gap-1.5" data-selection-initialized="true"><div data-id="61" class="w-2.5 h-2.5 rounded-full" style="background:#3b82f6;" data-selection-initialized="true"></div><span data-id="62" class="text-[10px] text-txt-300" data-selection-initialized="true">Portfolio</span></div>
+            <div data-id="63" class="flex items-center gap-1.5" data-selection-initialized="true"><div data-id="64" class="w-2.5 h-2.5 rounded-full" style="background:#f97316;" data-selection-initialized="true"></div><span data-id="65" class="text-[10px] text-txt-300" data-selection-initialized="true">Acquisition</span></div>
+            <div data-id="66" class="flex items-center gap-1.5" data-selection-initialized="true"><div data-id="67" class="w-2.5 h-2.5 rounded-full" style="background:#ef4444;" data-selection-initialized="true"></div><span data-id="68" class="text-[10px] text-txt-300" data-selection-initialized="true">Breakthrough</span></div>
+            <div data-id="69" class="flex items-center gap-1.5" data-selection-initialized="true"><div data-id="70" class="w-2.5 h-2.5 rounded-full" style="background:#14b8a6;" data-selection-initialized="true"></div><span data-id="71" class="text-[10px] text-txt-300" data-selection-initialized="true">Gap</span></div>
+            <div data-id="72" class="flex items-center gap-1.5" data-selection-initialized="true"><div data-id="73" class="w-2.5 h-2.5 rounded-full" style="background:#ec4899;" data-selection-initialized="true"></div><span data-id="74" class="text-[10px] text-txt-300" data-selection-initialized="true">Design</span></div>
+        </div>
+    </div>
+
+    <!-- MAIN FLOW DIAGRAM -->
+    <main data-id="75" id="main-flow-h8k2" class="flex-1 max-w-6xl mx-auto w-full px-4 pb-12" data-selection-initialized="true">
+
+        <!-- ============== GROUP 1: SIGNAL GOVERNANCE ============== -->
+        <section data-id="76" class="phase-group mb-2" data-group="signal" style="animation-delay: 0.1s;" data-selection-initialized="true">
+            <div data-id="77" class="group-header text-center mb-5" data-group-name="signal" data-selection-initialized="true">
+                <span data-id="78" class="inline-flex items-center gap-2 font-display text-[11px] tracking-[0.18em] uppercase px-5 py-1.5 rounded-full border" style="color:#00d4ff; border-color:#00d4ff44; background:#00d4ff0a;" data-selection-initialized="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="radio" aria-hidden="true" data-id="79" class="lucide lucide-radio w-3.5 h-3.5" data-selection-initialized="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"></path><path d="M19.075 4.933a10 10 0 0 1 0 14.134"></path><path d="M4.925 19.067a10 10 0 0 1 0-14.134"></path><path d="M7.753 16.239a6 6 0 0 1 0-8.478"></path><circle cx="12" cy="12" r="2"></circle></svg>
+                    Signal Governance
+                </span>
+            </div>
+            <div data-id="80" class="flex flex-col items-center" data-selection-initialized="true">
+                <!-- Stage 1 -->
+                <div data-id="81" class="stage-node rounded-xl px-5 py-3 flex items-center gap-3 border w-72 md:w-80" style="--glow-color:#00d4ff; --glow-color-dim:#00d4ff33; border-color:#00d4ff44; background:#00d4ff0c;" data-stage="1" data-selection-initialized="true">
+                    <span data-id="82" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border" style="border-color:#00d4ff; color:#00d4ff; background:#00d4ff15;" data-selection-initialized="true">1</span>
+                    <span data-id="83" class="text-sm font-medium text-txt-100" data-selection-initialized="true">Signal Ingestion</span>
+                    <div data-id="84" class="tooltip-desc" style="border-color:#00d4ff55; color:#00d4ff;" data-selection-initialized="true">Raw data intake from all configured sources</div>
+                </div>
+                <div data-id="85" class="connector h-7" style="--conn-color:#00d4ff33; --dot-color:#00d4ff;" data-selection-initialized="true"><div data-id="86" class="dot" style="animation-delay: 0s;" data-selection-initialized="true"></div></div>
+                <!-- Stage 2 -->
+                <div data-id="87" class="stage-node rounded-xl px-5 py-3 flex items-center gap-3 border w-72 md:w-80" style="--glow-color:#00d4ff; --glow-color-dim:#00d4ff33; border-color:#00d4ff44; background:#00d4ff0c;" data-stage="2" data-selection-initialized="true">
+                    <span data-id="88" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border" style="border-color:#00d4ff; color:#00d4ff; background:#00d4ff15;" data-selection-initialized="true">2</span>
+                    <span data-id="89" class="text-sm font-medium text-txt-100" data-selection-initialized="true">Signal Normalization</span>
+                    <div data-id="90" class="tooltip-desc" style="border-color:#00d4ff55; color:#00d4ff;" data-selection-initialized="true">Standardize signal format and structure</div>
+                </div>
+                <div data-id="91" class="connector h-7" style="--conn-color:#00d4ff33; --dot-color:#00d4ff;" data-selection-initialized="true"><div data-id="92" class="dot" style="animation-delay:0.3s;" data-selection-initialized="true"></div></div>
+                <!-- Stage 3 -->
+                <div data-id="93" class="stage-node rounded-xl px-5 py-3 flex items-center gap-3 border w-72 md:w-80" style="--glow-color:#00d4ff; --glow-color-dim:#00d4ff33; border-color:#00d4ff44; background:#00d4ff0c;" data-stage="3" data-selection-initialized="true">
+                    <span data-id="94" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border" style="border-color:#00d4ff; color:#00d4ff; background:#00d4ff15;" data-selection-initialized="true">3</span>
+                    <span data-id="95" class="text-sm font-medium text-txt-100" data-selection-initialized="true">Source Validation &amp; Weighting</span>
+                    <div data-id="96" class="tooltip-desc" style="border-color:#00d4ff55; color:#00d4ff;" data-selection-initialized="true">Validate source quality and assign trust weights</div>
+                </div>
+                <div data-id="97" class="connector h-7" style="--conn-color:#00d4ff33; --dot-color:#00d4ff;" data-selection-initialized="true"><div data-id="98" class="dot" style="animation-delay:0.6s;" data-selection-initialized="true"></div></div>
+                <!-- Stage 4 -->
+                <div data-id="99" class="stage-node rounded-xl px-5 py-3 flex items-center gap-3 border w-72 md:w-80" style="--glow-color:#00d4ff; --glow-color-dim:#00d4ff33; border-color:#00d4ff44; background:#00d4ff0c;" data-stage="4" data-selection-initialized="true">
+                    <span data-id="100" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border" style="border-color:#00d4ff; color:#00d4ff; background:#00d4ff15;" data-selection-initialized="true">4</span>
+                    <span data-id="101" class="text-sm font-medium text-txt-100" data-selection-initialized="true">Context Expansion</span>
+                    <div data-id="102" class="tooltip-desc" style="border-color:#00d4ff55; color:#00d4ff;" data-selection-initialized="true">Enrich signals with market, sector, and entity context</div>
+                </div>
+                <div data-id="103" class="connector h-7" style="--conn-color:#00d4ff33; --dot-color:#00d4ff;" data-selection-initialized="true"><div data-id="104" class="dot" style="animation-delay:0.9s;" data-selection-initialized="true"></div></div>
+                <!-- Stage 5 -->
+                <div data-id="105" class="stage-node rounded-xl px-5 py-3 flex items-center gap-3 border w-72 md:w-80" style="--glow-color:#00d4ff; --glow-color-dim:#00d4ff33; border-color:#00d4ff44; background:#00d4ff0c;" data-stage="5" data-selection-initialized="true">
+                    <span data-id="106" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border" style="border-color:#00d4ff; color:#00d4ff; background:#00d4ff15;" data-selection-initialized="true">5</span>
+                    <span data-id="107" class="text-sm font-medium text-txt-100" data-selection-initialized="true">Signal Consolidation</span>
+                    <div data-id="108" class="tooltip-desc" style="border-color:#00d4ff55; color:#00d4ff;" data-selection-initialized="true">Merge and deduplicate normalized signals</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connector to Group 2 -->
+        <div data-id="109" class="flex justify-center" data-selection-initialized="true"><div data-id="110" class="connector h-10" style="--conn-color:#a855f733; --dot-color:#a855f7;" data-selection-initialized="true"><div data-id="111" class="dot" style="animation-delay: 0.8s;" data-selection-initialized="true"></div></div></div>
+
+        <!-- ============== GROUP 2: ENTITY INTELLIGENCE ============== -->
+        <section data-id="112" class="phase-group mb-2" data-group="entity" style="animation-delay: 0.2s;" data-selection-initialized="true">
+            <div data-id="113" class="group-header text-center mb-5" data-group-name="entity" data-selection-initialized="true">
+                <span data-id="114" class="inline-flex items-center gap-2 font-display text-[11px] tracking-[0.18em] uppercase px-5 py-1.5 rounded-full border" style="color:#a855f7; border-color:#a855f744; background:#a855f70a;" data-selection-initialized="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="brain" aria-hidden="true" data-id="115" class="lucide lucide-brain w-3.5 h-3.5" data-selection-initialized="true"><path d="M12 18V5"></path><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"></path><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"></path><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"></path><path d="M18 18a4 4 0 0 0 2-7.464"></path><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"></path><path d="M6 18a4 4 0 0 1-2-7.464"></path><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"></path></svg>
+                    Entity Intelligence
+                </span>
+            </div>
+            <div data-id="116" class="flex flex-col items-center" data-selection-initialized="true">
+                <!-- Stage 6 -->
+                <div data-id="117" class="stage-node rounded-xl px-5 py-3 flex items-center gap-3 border w-72 md:w-80" style="--glow-color:#a855f7; --glow-color-dim:#a855f733; border-color:#a855f744; background:#a855f70c;" data-stage="6" data-selection-initialized="true">
+                    <span data-id="118" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border" style="border-color:#a855f7; color:#a855f7; background:#a855f715;" data-selection-initialized="true">6</span>
+                    <span data-id="119" class="text-sm font-medium text-txt-100" data-selection-initialized="true">Entity Extraction</span>
+                    <div data-id="120" class="tooltip-desc" style="border-color:#a855f755; color:#a855f7;" data-selection-initialized="true">Identify companies, technologies, people, markets</div>
+                </div>
+                <div data-id="121" class="connector h-7" style="--conn-color:#a855f733; --dot-color:#a855f7;" data-selection-initialized="true"><div data-id="122" class="dot" style="animation-delay: 1s;" data-selection-initialized="true"></div></div>
+                <!-- Stage 7 -->
+                <div data-id="123" class="stage-node rounded-xl px-5 py-3 flex items-center gap-3 border w-72 md:w-80" style="--glow-color:#a855f7; --glow-color-dim:#a855f733; border-color:#a855f744; background:#a855f70c;" data-stage="7" data-selection-initialized="true">
+                    <span data-id="124" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border" style="border-color:#a855f7; color:#a855f7; background:#a855f715;" data-selection-initialized="true">7</span>
+                    <span data-id="125" class="text-sm font-medium text-txt-100" data-selection-initialized="true">Relationship Mapping</span>
+                    <div data-id="126" class="tooltip-desc" style="border-color:#a855f755; color:#a855f7;" data-selection-initialized="true">Map entity relationships and dependencies</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connector to Group 3 -->
+        <div data-id="127" class="flex justify-center" data-selection-initialized="true"><div data-id="128" class="connector h-10" style="--conn-color:#22c55e33; --dot-color:#22c55e;" data-selection-initialized="true"><div data-id="129" class="dot" style="animation-delay: 1.2s;" data-selection-initialized="true"></div></div></div>
+
+        <!-- ============== GROUP 3: TREND DISCOVERY ============== -->
+        <section data-id="130" class="phase-group mb-2" data-group="trend" style="animation-delay: 0.3s;" data-selection-initialized="true">
+            <div data-id="131" class="group-header text-center mb-5" data-group-name="trend" data-selection-initialized="true">
+                <span data-id="132" class="inline-flex items-center gap-2 font-display text-[11px] tracking-[0.18em] uppercase px-5 py-1.5 rounded-full border" style="color:#22c55e; border-color:#22c55e44; background:#22c55e0a;" data-selection-initialized="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trending-up" aria-hidden="true" data-id="133" class="lucide lucide-trending-up w-3.5 h-3.5" data-selection-initialized="true"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>
+                    Trend Discovery
+                </span>
+            </div>
+            <div data-id="134" class="flex flex-col items-center" data-selection-initialized="true">
+                <!-- Stage 8 -->
+                <div data-id="135" class="stage-node rounded-xl px-5 py-3 flex items-center gap-3 border w-72 md:w-80" style="--glow-color:#22c55e; --glow-color-dim:#22c55e33; border-color:#22c55e44; background:#22c55e0c;" data-stage="8" data-selection-initialized="true">
+                    <span data-id="136" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border" style="border-color:#22c55e; color:#22c55e; background:#22c55e15;" data-selection-initialized="true">8</span>
+                    <span data-id="137" class="text-sm font-medium text-txt-100" data-selection-initialized="true">Trend Discovery</span>
+                    <div data-id="138" class="tooltip-desc" style="border-color:#22c55e55; color:#22c55e;" data-selection-initialized="true">Detect emerging trends from consolidated signals</div>
+                </div>
+                <div data-id="139" class="connector h-7" style="--conn-color:#22c55e33; --dot-color:#22c55e;" data-selection-initialized="true"><div data-id="140" class="dot" style="animation-delay: 1.4s;" data-selection-initialized="true"></div></div>
+                <!-- Stage 9 -->
+                <div data-id="141" class="stage-node rounded-xl px-5 py-3 flex items-center gap-3 border w-72 md:w-80" style="--glow-color:#22c55e; --glow-color-dim:#22c55e33; border-color:#22c55e44; background:#22c55e0c;" data-stage="9" data-selection-initialized="true">
+                    <span data-id="142" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border" style="border-color:#22c55e; color:#22c55e; background:#22c55e15;" data-selection-initialized="true">9</span>
+                    <span data-id="143" class="text-sm font-medium text-txt-100" data-selection-initialized="true">Cluster Formation</span>
+                    <div data-id="144" class="tooltip-desc" style="border-color:#22c55e55; color:#22c55e;" data-selection-initialized="true">Group related signals and trends into clusters</div>
+                </div>
+                <div data-id="145" class="connector h-7" style="--conn-color:#22c55e33; --dot-color:#22c55e;" data-selection-initialized="true"><div data-id="146" class="dot" style="animation-delay:0.4s;" data-selection-initialized="true"></div></div>
+                <!-- Stage 10 -->
+                <div data-id="147" class="stage-node rounded-xl px-5 py-3 flex items-center gap-3 border w-72 md:w-80" style="--glow-color:#22c55e; --glow-color-dim:#22c55e33; border-color:#22c55e44; background:#22c55e0c;" data-stage="10" data-selection-initialized="true">
+                    <span data-id="148" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border" style="border-color:#22c55e; color:#22c55e; background:#22c55e15;" data-selection-initialized="true">10</span>
+                    <span data-id="149" class="text-sm font-medium text-txt-100" data-selection-initialized="true">Insight / Thesis Structuring</span>
+                    <div data-id="150" class="tooltip-desc" style="border-color:#22c55e55; color:#22c55e;" data-selection-initialized="true">Form investment/strategic theses from trends</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connector to GATE -->
+        <div data-id="151" class="flex justify-center" data-selection-initialized="true"><div data-id="152" class="connector h-10" style="--conn-color:#fbbf2433; --dot-color:#fbbf24;" data-selection-initialized="true"><div data-id="153" class="dot" style="animation-delay: 1.8s;" data-selection-initialized="true"></div></div></div>
+
+        <!-- ============== ROUTE SELECTION GATE ============== -->
+        <section data-id="154" id="gate-section-p4q7" class="mb-2" data-selection-initialized="true">
+            <div data-id="155" class="flex flex-col items-center" data-selection-initialized="true">
+                <div data-id="156" class="diamond-gate rounded-lg border-2" style="border-color:#fbbf24; background: linear-gradient(135deg, #fbbf2418, #fbbf240a);" data-selection-initialized="true">
+                    <div data-id="157" class="diamond-gate-inner" style="color:#fbbf24;" data-selection-initialized="true">ROUTE<br data-id="158" data-selection-initialized="true">GATE</div>
+                </div>
+                <p data-id="159" class="mt-3 font-display text-[10px] tracking-[0.18em] uppercase" style="color:#fbbf24;" data-selection-initialized="true">Route Selection Gate</p>
+            </div>
+        </section>
+
+        <!-- ============== THREE-BRANCH ROUTING ============== -->
+        <section data-id="160" id="routing-section-r6s9" class="mt-6 mb-2" data-selection-initialized="true">
+            <div data-id="161" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4" data-selection-initialized="true">
+
+                <!-- LEFT BRANCH: PORTFOLIO ROUTE -->
+                <div data-id="162" class="flex flex-col items-center order-2 md:order-1" data-selection-initialized="true">
+                    <div data-id="163" class="route-label mb-4" style="color:#3b82f6; border-color:#3b82f644; background:#3b82f60a;" data-selection-initialized="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="briefcase" aria-hidden="true" data-id="164" class="lucide lucide-briefcase w-3 h-3 inline-block mr-1 -mt-0.5" data-selection-initialized="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg> Portfolio · Default
+                    </div>
+                    <div data-id="165" class="flex flex-col items-center gap-0" data-selection-initialized="true">
+                        <!-- Stage 23 -->
+                        <div data-id="166" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#3b82f6; --glow-color-dim:#3b82f633; border-color:#3b82f644; background:#3b82f60c;" data-stage="23" data-selection-initialized="true">
+                            <span data-id="167" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#3b82f6; color:#3b82f6; background:#3b82f615;" data-selection-initialized="true">23</span>
+                            <span data-id="168" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Market Positioning</span>
+                            <div data-id="169" class="tooltip-desc tooltip-left" style="border-color:#3b82f655; color:#3b82f6;" data-selection-initialized="true">Define competitive positioning and value proposition</div>
+                        </div>
+                        <div data-id="170" class="connector h-6" style="--conn-color:#3b82f633; --dot-color:#3b82f6;" data-selection-initialized="true"><div data-id="171" class="dot" style="animation-delay: 0s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 26 -->
+                        <div data-id="172" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#3b82f6; --glow-color-dim:#3b82f633; border-color:#3b82f644; background:#3b82f60c;" data-stage="26" data-selection-initialized="true">
+                            <span data-id="173" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#3b82f6; color:#3b82f6; background:#3b82f615;" data-selection-initialized="true">26</span>
+                            <span data-id="174" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Competitor Analysis</span>
+                            <div data-id="175" class="tooltip-desc tooltip-left" style="border-color:#3b82f655; color:#3b82f6;" data-selection-initialized="true">Map competitive landscape and threats</div>
+                        </div>
+                        <div data-id="176" class="connector h-6" style="--conn-color:#3b82f633; --dot-color:#3b82f6;" data-selection-initialized="true"><div data-id="177" class="dot" style="animation-delay:0.5s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 27 -->
+                        <div data-id="178" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#3b82f6; --glow-color-dim:#3b82f633; border-color:#3b82f644; background:#3b82f60c;" data-stage="27" data-selection-initialized="true">
+                            <span data-id="179" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#3b82f6; color:#3b82f6; background:#3b82f615;" data-selection-initialized="true">27</span>
+                            <span data-id="180" class="text-xs font-medium text-txt-100 leading-tight" data-selection-initialized="true">Portfolio Creation / Optimization</span>
+                            <div data-id="181" class="tooltip-desc tooltip-left" style="border-color:#3b82f655; color:#3b82f6;" data-selection-initialized="true">Build or optimize investment portfolio</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CENTER BRANCH: BREAKTHROUGH ROUTE -->
+                <div data-id="182" class="flex flex-col items-center order-1 md:order-2" data-selection-initialized="true">
+                    <div data-id="183" class="route-label mb-4" style="color:#ef4444; border-color:#ef444444; background:#ef44440a;" data-selection-initialized="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="zap" aria-hidden="true" data-id="184" class="lucide lucide-zap w-3 h-3 inline-block mr-1 -mt-0.5" data-selection-initialized="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg> Breakthrough · Conditional
+                    </div>
+                    <div data-id="185" class="flex flex-col items-center gap-0" data-selection-initialized="true">
+
+                        <!-- GROUP 4: GAP ANALYSIS -->
+                        <div data-id="186" class="group-header text-center mb-3" data-group-name="gap" data-selection-initialized="true">
+                            <span data-id="187" class="inline-flex items-center gap-1.5 font-display text-[9px] tracking-[0.15em] uppercase px-3 py-1 rounded-full border" style="color:#14b8a6; border-color:#14b8a644; background:#14b8a60a;" data-selection-initialized="true">
+                                Gap Analysis
+                            </span>
+                        </div>
+                        <!-- Stage 11 -->
+                        <div data-id="188" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#14b8a6; --glow-color-dim:#14b8a633; border-color:#14b8a644; background:#14b8a60c;" data-stage="11" data-selection-initialized="true">
+                            <span data-id="189" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#14b8a6; color:#14b8a6; background:#14b8a615;" data-selection-initialized="true">11</span>
+                            <span data-id="190" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Gap Detection</span>
+                            <div data-id="191" class="tooltip-desc" style="border-color:#14b8a655; color:#14b8a6;" data-selection-initialized="true">Identify market, technology, or capability gaps</div>
+                        </div>
+                        <div data-id="192" class="connector h-5" style="--conn-color:#14b8a633; --dot-color:#14b8a6;" data-selection-initialized="true"><div data-id="193" class="dot" style="animation-delay: 0.4s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 12 -->
+                        <div data-id="194" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#14b8a6; --glow-color-dim:#14b8a633; border-color:#14b8a644; background:#14b8a60c;" data-stage="12" data-selection-initialized="true">
+                            <span data-id="195" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#14b8a6; color:#14b8a6; background:#14b8a615;" data-selection-initialized="true">12</span>
+                            <span data-id="196" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Gap Qualification</span>
+                            <div data-id="197" class="tooltip-desc" style="border-color:#14b8a655; color:#14b8a6;" data-selection-initialized="true">Score and prioritize detected gaps</div>
+                        </div>
+                        <div data-id="198" class="connector h-5" style="--conn-color:#14b8a633; --dot-color:#14b8a6;" data-selection-initialized="true"><div data-id="199" class="dot" style="animation-delay:0.3s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 13 -->
+                        <div data-id="200" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#14b8a6; --glow-color-dim:#14b8a633; border-color:#14b8a644; background:#14b8a60c;" data-stage="13" data-selection-initialized="true">
+                            <span data-id="201" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#14b8a6; color:#14b8a6; background:#14b8a615;" data-selection-initialized="true">13</span>
+                            <span data-id="202" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Discovery Generation</span>
+                            <div data-id="203" class="tooltip-desc" style="border-color:#14b8a655; color:#14b8a6;" data-selection-initialized="true">Produce discovery candidates from qualified gaps</div>
+                        </div>
+                        <div data-id="204" class="connector h-5" style="--conn-color:#ef444433; --dot-color:#ef4444;" data-selection-initialized="true"><div data-id="205" class="dot" style="animation-delay: 0.8s;" data-selection-initialized="true"></div></div>
+
+                        <!-- GROUP 5: BREAKTHROUGH CLASSIFICATION -->
+                        <div data-id="206" class="group-header text-center mb-3 mt-1" data-group-name="breakthrough" data-selection-initialized="true">
+                            <span data-id="207" class="inline-flex items-center gap-1.5 font-display text-[9px] tracking-[0.15em] uppercase px-3 py-1 rounded-full border" style="color:#ef4444; border-color:#ef444444; background:#ef44440a;" data-selection-initialized="true">
+                                Breakthrough Classification
+                            </span>
+                        </div>
+                        <!-- Stage 14 -->
+                        <div data-id="208" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#ef4444; --glow-color-dim:#ef444433; border-color:#ef444444; background:#ef44440c;" data-stage="14" data-selection-initialized="true">
+                            <span data-id="209" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#ef4444; color:#ef4444; background:#ef444415;" data-selection-initialized="true">14</span>
+                            <span data-id="210" class="text-xs font-medium text-txt-100 leading-tight" data-selection-initialized="true">Breakthrough ID &amp; Classification</span>
+                            <div data-id="211" class="tooltip-desc" style="border-color:#ef444455; color:#ef4444;" data-selection-initialized="true">Classify discoveries by breakthrough type</div>
+                        </div>
+                        <div data-id="212" class="connector h-5" style="--conn-color:#ef444433; --dot-color:#ef4444;" data-selection-initialized="true"><div data-id="213" class="dot" style="animation-delay:0.2s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 15 -->
+                        <div data-id="214" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#ef4444; --glow-color-dim:#ef444433; border-color:#ef444444; background:#ef44440c;" data-stage="15" data-selection-initialized="true">
+                            <span data-id="215" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#ef4444; color:#ef4444; background:#ef444415;" data-selection-initialized="true">15</span>
+                            <span data-id="216" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Advancement Path Selection</span>
+                            <div data-id="217" class="tooltip-desc" style="border-color:#ef444455; color:#ef4444;" data-selection-initialized="true">Choose portfolio, acquisition, design, or system route</div>
+                        </div>
+                        <div data-id="218" class="connector h-5" style="--conn-color:#ec489933; --dot-color:#ec4899;" data-selection-initialized="true"><div data-id="219" class="dot" style="animation-delay: 1.2s;" data-selection-initialized="true"></div></div>
+
+                        <!-- GROUP 6: DESIGN & INVENTION -->
+                        <div data-id="220" class="group-header text-center mb-3 mt-1" data-group-name="design" data-selection-initialized="true">
+                            <span data-id="221" class="inline-flex items-center gap-1.5 font-display text-[9px] tracking-[0.15em] uppercase px-3 py-1 rounded-full border" style="color:#ec4899; border-color:#ec489944; background:#ec48990a;" data-selection-initialized="true">
+                                Design &amp; Invention
+                            </span>
+                        </div>
+                        <!-- Stage 16 -->
+                        <div data-id="222" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#ec4899; --glow-color-dim:#ec489933; border-color:#ec489944; background:#ec48990c;" data-stage="16" data-selection-initialized="true">
+                            <span data-id="223" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#ec4899; color:#ec4899; background:#ec489915;" data-selection-initialized="true">16</span>
+                            <span data-id="224" class="text-xs font-medium text-txt-100 leading-tight" data-selection-initialized="true">Auto Invention / Solution Gen</span>
+                            <div data-id="225" class="tooltip-desc" style="border-color:#ec489955; color:#ec4899;" data-selection-initialized="true">Generate solutions for design-route items</div>
+                        </div>
+                        <div data-id="226" class="connector h-5" style="--conn-color:#ec489933; --dot-color:#ec4899;" data-selection-initialized="true"><div data-id="227" class="dot" style="animation-delay: 1.4s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 17 -->
+                        <div data-id="228" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#ec4899; --glow-color-dim:#ec489933; border-color:#ec489944; background:#ec48990c;" data-stage="17" data-selection-initialized="true">
+                            <span data-id="229" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#ec4899; color:#ec4899; background:#ec489915;" data-selection-initialized="true">17</span>
+                            <span data-id="230" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Solution Structuring</span>
+                            <div data-id="231" class="tooltip-desc" style="border-color:#ec489955; color:#ec4899;" data-selection-initialized="true">Structure solutions with specifications and requirements</div>
+                        </div>
+                        <div data-id="232" class="connector h-5" style="--conn-color:#ec489933; --dot-color:#ec4899;" data-selection-initialized="true"><div data-id="233" class="dot" style="animation-delay:0.4s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 18 -->
+                        <div data-id="234" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#ec4899; --glow-color-dim:#ec489933; border-color:#ec489944; background:#ec48990c;" data-stage="18" data-selection-initialized="true">
+                            <span data-id="235" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#ec4899; color:#ec4899; background:#ec489915;" data-selection-initialized="true">18</span>
+                            <span data-id="236" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Buildability Assessment</span>
+                            <div data-id="237" class="tooltip-desc" style="border-color:#ec489955; color:#ec4899;" data-selection-initialized="true">Evaluate engineering and construction feasibility</div>
+                        </div>
+                        <div data-id="238" class="connector h-5" style="--conn-color:#ec489933; --dot-color:#ec4899;" data-selection-initialized="true"><div data-id="239" class="dot" style="animation-delay:0.6s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 19 -->
+                        <div data-id="240" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#ec4899; --glow-color-dim:#ec489933; border-color:#ec489944; background:#ec48990c;" data-stage="19" data-selection-initialized="true">
+                            <span data-id="241" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#ec4899; color:#ec4899; background:#ec489915;" data-selection-initialized="true">19</span>
+                            <span data-id="242" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Viability Assessment</span>
+                            <div data-id="243" class="tooltip-desc" style="border-color:#ec489955; color:#ec4899;" data-selection-initialized="true">Evaluate market and business viability</div>
+                        </div>
+                        <div data-id="244" class="connector h-5" style="--conn-color:#ec489933; --dot-color:#ec4899;" data-selection-initialized="true"><div data-id="245" class="dot" style="animation-delay:0.8s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 20 -->
+                        <div data-id="246" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#ec4899; --glow-color-dim:#ec489933; border-color:#ec489944; background:#ec48990c;" data-stage="20" data-selection-initialized="true">
+                            <span data-id="247" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#ec4899; color:#ec4899; background:#ec489915;" data-selection-initialized="true">20</span>
+                            <span data-id="248" class="text-xs font-medium text-txt-100 leading-tight" data-selection-initialized="true">Manufacturability / Deploy</span>
+                            <div data-id="249" class="tooltip-desc" style="border-color:#ec489955; color:#ec4899;" data-selection-initialized="true">Evaluate production/deployment readiness</div>
+                        </div>
+                        <div data-id="250" class="connector h-5" style="--conn-color:#ec489933; --dot-color:#ec4899;" data-selection-initialized="true"><div data-id="251" class="dot" style="animation-delay:1s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 21 -->
+                        <div data-id="252" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#ec4899; --glow-color-dim:#ec489933; border-color:#ec489944; background:#ec48990c;" data-stage="21" data-selection-initialized="true">
+                            <span data-id="253" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#ec4899; color:#ec4899; background:#ec489915;" data-selection-initialized="true">21</span>
+                            <span data-id="254" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Feasibility Validation</span>
+                            <div data-id="255" class="tooltip-desc" style="border-color:#ec489955; color:#ec4899;" data-selection-initialized="true">Final feasibility gate combining all assessments</div>
+                        </div>
+                        <div data-id="256" class="connector h-5" style="--conn-color:#ec489933; --dot-color:#ec4899;" data-selection-initialized="true"><div data-id="257" class="dot" style="animation-delay:1.2s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 22 -->
+                        <div data-id="258" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#ec4899; --glow-color-dim:#ec489933; border-color:#ec489944; background:#ec48990c;" data-stage="22" data-selection-initialized="true">
+                            <span data-id="259" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#ec4899; color:#ec4899; background:#ec489915;" data-selection-initialized="true">22</span>
+                            <span data-id="260" class="text-xs font-medium text-txt-100 leading-tight" data-selection-initialized="true">Design Portal / Blueprints</span>
+                            <div data-id="261" class="tooltip-desc" style="border-color:#ec489955; color:#ec4899;" data-selection-initialized="true">Produce engineering deliverables and blueprints</div>
+                        </div>
+                    </div>
+                    <!-- Merge indicator -->
+                    <div data-id="262" class="mt-4 text-center" data-selection-initialized="true">
+                        <span data-id="263" class="font-display text-[9px] tracking-[0.12em] uppercase px-3 py-1 rounded-full border" style="color:#ef4444; border-color:#ef444433; background:#ef44440a;" data-selection-initialized="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="git-merge" aria-hidden="true" data-id="264" class="lucide lucide-git-merge w-3 h-3 inline-block mr-1 -mt-0.5" data-selection-initialized="true"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M6 21V9a9 9 0 0 0 9 9"></path></svg> Merges → Strategy
+                        </span>
+                    </div>
+                </div>
+
+                <!-- RIGHT BRANCH: ACQUISITION ROUTE -->
+                <div data-id="265" class="flex flex-col items-center order-3 md:order-3" data-selection-initialized="true">
+                    <div data-id="266" class="route-label mb-4" style="color:#f97316; border-color:#f9731644; background:#f973160a;" data-selection-initialized="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" data-id="267" class="lucide lucide-target w-3 h-3 inline-block mr-1 -mt-0.5" data-selection-initialized="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> Acquisition · Strategic
+                    </div>
+                    <div data-id="268" class="flex flex-col items-center gap-0" data-selection-initialized="true">
+                        <!-- Stage 24 -->
+                        <div data-id="269" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#f97316; --glow-color-dim:#f9731633; border-color:#f9731644; background:#f973160c;" data-stage="24" data-selection-initialized="true">
+                            <span data-id="270" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#f97316; color:#f97316; background:#f9731615;" data-selection-initialized="true">24</span>
+                            <span data-id="271" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Moat &amp; Differentiation</span>
+                            <div data-id="272" class="tooltip-desc" style="border-color:#f9731655; color:#f97316;" data-selection-initialized="true">Identify defensible competitive advantages</div>
+                        </div>
+                        <div data-id="273" class="connector h-6" style="--conn-color:#f9731633; --dot-color:#f97316;" data-selection-initialized="true"><div data-id="274" class="dot" style="animation-delay: 0.6s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 25 -->
+                        <div data-id="275" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#f97316; --glow-color-dim:#f9731633; border-color:#f9731644; background:#f973160c;" data-stage="25" data-selection-initialized="true">
+                            <span data-id="276" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#f97316; color:#f97316; background:#f9731615;" data-selection-initialized="true">25</span>
+                            <span data-id="277" class="text-xs font-medium text-txt-100 leading-tight" data-selection-initialized="true">Business Model &amp; Value Capture</span>
+                            <div data-id="278" class="tooltip-desc" style="border-color:#f9731655; color:#f97316;" data-selection-initialized="true">Design revenue model and value capture strategy</div>
+                        </div>
+                        <div data-id="279" class="connector h-6" style="--conn-color:#f9731633; --dot-color:#f97316;" data-selection-initialized="true"><div data-id="280" class="dot" style="animation-delay:0.3s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 28 -->
+                        <div data-id="281" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#f97316; --glow-color-dim:#f9731633; border-color:#f9731644; background:#f973160c;" data-stage="28" data-selection-initialized="true">
+                            <span data-id="282" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#f97316; color:#f97316; background:#f9731615;" data-selection-initialized="true">28</span>
+                            <span data-id="283" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Acquirer Identification</span>
+                            <div data-id="284" class="tooltip-desc" style="border-color:#f9731655; color:#f97316;" data-selection-initialized="true">Identify potential acquirers or partners</div>
+                        </div>
+                        <div data-id="285" class="connector h-6" style="--conn-color:#f9731633; --dot-color:#f97316;" data-selection-initialized="true"><div data-id="286" class="dot" style="animation-delay:0.6s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 29 -->
+                        <div data-id="287" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#f97316; --glow-color-dim:#f9731633; border-color:#f9731644; background:#f973160c;" data-stage="29" data-selection-initialized="true">
+                            <span data-id="288" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#f97316; color:#f97316; background:#f9731615;" data-selection-initialized="true">29</span>
+                            <span data-id="289" class="text-xs font-medium text-txt-100" data-selection-initialized="true">Acquisition Fit &amp; Rationale</span>
+                            <div data-id="290" class="tooltip-desc" style="border-color:#f9731655; color:#f97316;" data-selection-initialized="true">Evaluate strategic fit and deal rationale</div>
+                        </div>
+                        <div data-id="291" class="connector h-6" style="--conn-color:#f9731633; --dot-color:#f97316;" data-selection-initialized="true"><div data-id="292" class="dot" style="animation-delay:0.9s;" data-selection-initialized="true"></div></div>
+                        <!-- Stage 30 -->
+                        <div data-id="293" class="stage-node rounded-xl px-4 py-2.5 flex items-center gap-2.5 border w-64" style="--glow-color:#f97316; --glow-color-dim:#f9731633; border-color:#f9731644; background:#f973160c;" data-stage="30" data-selection-initialized="true">
+                            <span data-id="294" class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border" style="border-color:#f97316; color:#f97316; background:#f9731615;" data-selection-initialized="true">30</span>
+                            <span data-id="295" class="text-xs font-medium text-txt-100 leading-tight" data-selection-initialized="true">Final Package Construction</span>
+                            <div data-id="296" class="tooltip-desc" style="border-color:#f9731655; color:#f97316;" data-selection-initialized="true">Produce acquisition-ready output package</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== CONVERGENCE & FEEDBACK LOOP ============== -->
+        <section data-id="297" id="convergence-a3b6" class="mt-10 mb-6" data-selection-initialized="true">
+            <div data-id="298" class="flex flex-col items-center" data-selection-initialized="true">
+                <!-- Convergence indicator -->
+                <div data-id="299" class="flex items-center gap-3 mb-6" data-selection-initialized="true">
+                    <div data-id="300" class="h-px flex-1 w-16" style="background: linear-gradient(90deg, transparent, #fbbf2466);" data-selection-initialized="true"></div>
+                    <span data-id="301" class="font-display text-[10px] tracking-[0.15em] uppercase px-4 py-1.5 rounded-full border" style="color:#fbbf24; border-color:#fbbf2433; background:#fbbf240a;" data-selection-initialized="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="merge" aria-hidden="true" data-id="302" class="lucide lucide-merge w-3 h-3 inline-block mr-1 -mt-0.5" data-selection-initialized="true"><path d="m8 6 4-4 4 4"></path><path d="M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22"></path><path d="m20 22-5-5"></path></svg> All Routes Converge
+                    </span>
+                    <div data-id="303" class="h-px flex-1 w-16" style="background: linear-gradient(90deg, #fbbf2466, transparent);" data-selection-initialized="true"></div>
+                </div>
+
+                <!-- Lifecycle Memory Feedback Loop -->
+                <div data-id="304" class="feedback-loop relative w-full max-w-md mx-auto" data-selection-initialized="true">
+                    <div data-id="305" class="rounded-2xl border-2 p-5 text-center" style="border-color:#fbbf2433; background: linear-gradient(180deg, #fbbf240a, #0a0e17);" data-selection-initialized="true">
+                        <div data-id="306" class="flex items-center justify-center gap-2 mb-2" data-selection-initialized="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="refresh-ccw" aria-hidden="true" data-id="307" class="lucide lucide-refresh-ccw w-5 h-5" style="color:#fbbf24;" data-selection-initialized="true"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path><path d="M16 16h5v5"></path></svg>
+                            <span data-id="308" class="font-display text-sm font-bold tracking-wider" style="color:#fbbf24;" data-selection-initialized="true">LIFECYCLE MEMORY</span>
+                        </div>
+                        <p data-id="309" class="text-xs text-txt-400 mb-3" data-selection-initialized="true">Recursive Self-Ingestion — Compounding Intelligence Loop</p>
+                        <svg data-id="310" width="100%" height="50" viewBox="0 0 400 50" class="mx-auto" style="max-width:400px;" data-selection-initialized="true">
+                            <defs data-id="311">
+                                <marker data-id="312" id="arrowhead-gold" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" data-selection-initialized="true">
+                                    <polygon data-id="313" points="0 0, 8 3, 0 6" fill="#fbbf24"></polygon>
+                                </marker>
+                            </defs>
+                            <path data-id="314" d="M 200 5 C 50 5, 10 45, 200 45" fill="none" stroke="#fbbf2466" stroke-width="2" class="dash-line" marker-end="url(#arrowhead-gold)"></path>
+                            <path data-id="315" d="M 200 5 C 350 5, 390 45, 200 45" fill="none" stroke="#fbbf2466" stroke-width="2" class="dash-line" marker-end="url(#arrowhead-gold)" style="animation-delay:0.4s;"></path>
+                            <text data-id="316" x="200" y="30" text-anchor="middle" fill="#fbbf24" font-size="9" font-family="Orbitron" letter-spacing="0.1em" data-selection-initialized="true">BACK TO STAGE 1</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== STATS BAR ============== -->
+        <section data-id="317" id="stats-bar-d5e8" class="mt-8 mb-4" data-selection-initialized="true">
+            <div data-id="318" class="rounded-2xl border px-4 md:px-8 py-5 flex flex-wrap items-center justify-center gap-4 md:gap-8" style="border-color:#1a223666; background: linear-gradient(135deg, #0f142033, #151b2c33);" data-selection-initialized="true">
+                <div data-id="319" class="stats-item flex items-center gap-2" style="color:#00d4ff;" data-selection-initialized="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layers" aria-hidden="true" data-id="320" class="lucide lucide-layers w-4 h-4" data-selection-initialized="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>
+                    <span data-id="321" data-selection-initialized="true">30 Stages</span>
+                </div>
+                <div data-id="322" class="w-px h-5 bg-base-600 hidden md:block" data-selection-initialized="true"></div>
+                <div data-id="323" class="stats-item flex items-center gap-2" style="color:#a855f7;" data-selection-initialized="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="git-branch" aria-hidden="true" data-id="324" class="lucide lucide-git-branch w-4 h-4" data-selection-initialized="true"><path d="M15 6a9 9 0 0 0-9 9V3"></path><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle></svg>
+                    <span data-id="325" data-selection-initialized="true">3 Routes</span>
+                </div>
+                <div data-id="326" class="w-px h-5 bg-base-600 hidden md:block" data-selection-initialized="true"></div>
+                <div data-id="327" class="stats-item flex items-center gap-2" style="color:#22c55e;" data-selection-initialized="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="boxes" aria-hidden="true" data-id="328" class="lucide lucide-boxes w-4 h-4" data-selection-initialized="true"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"></path><path d="m7 16.5-4.74-2.85"></path><path d="m7 16.5 5-3"></path><path d="M7 16.5v5.17"></path><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"></path><path d="m17 16.5-5-3"></path><path d="m17 16.5 4.74-2.85"></path><path d="M17 16.5v5.17"></path><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"></path><path d="M12 8 7.26 5.15"></path><path d="m12 8 4.74-2.85"></path><path d="M12 13.5V8"></path></svg>
+                    <span data-id="329" data-selection-initialized="true">7 Phase Groups</span>
+                </div>
+                <div data-id="330" class="w-px h-5 bg-base-600 hidden md:block" data-selection-initialized="true"></div>
+                <div data-id="331" class="stats-item flex items-center gap-2" style="color:#fbbf24;" data-selection-initialized="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="repeat" aria-hidden="true" data-id="332" class="lucide lucide-repeat w-4 h-4" data-selection-initialized="true"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+                    <span data-id="333" data-selection-initialized="true">Recursive Learning</span>
+                </div>
+                <div data-id="334" class="w-px h-5 bg-base-600 hidden md:block" data-selection-initialized="true"></div>
+                <div data-id="335" class="stats-item flex items-center gap-2" style="color:#ef4444;" data-selection-initialized="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" aria-hidden="true" data-id="336" class="lucide lucide-lock w-4 h-4" data-selection-initialized="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span data-id="337" data-selection-initialized="true">Architecture: LOCKED</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer data-id="338" id="footer-g1h4" class="py-8 mt-auto text-center" data-selection-initialized="true">
+        <p data-id="339" class="text-xs text-txt-500" data-selection-initialized="true">Made by Copilot</p>
+    </footer>
+
+    <script nonce="">
+        lucide.createIcons();
+
+        // Mobile legend toggle
+        const legendToggleBtn = document.getElementById('legend-toggle-btn-x4y2');
+        const mobileLegend = document.getElementById('mobile-legend-v5w3');
+        if (legendToggleBtn && mobileLegend) {
+            legendToggleBtn.addEventListener('click', function() {
+                mobileLegend.classList.toggle('hidden');
+            });
+        }
+
+        // Group header click to highlight
+        document.querySelectorAll('.group-header').forEach(function(header) {
+            header.addEventListener('click', function() {
+                const groupName = this.dataset.groupName;
+                const isActive = this.classList.contains('active');
+
+                // Remove active from all
+                document.querySelectorAll('.group-header').forEach(function(h) {
+                    h.classList.remove('active');
+                });
+                document.querySelectorAll('.phase-group').forEach(function(g) {
+                    g.classList.remove('highlighted');
+                });
+
+                if (!isActive) {
+                    this.classList.add('active');
+                    const parentGroup = this.closest('.phase-group');
+                    if (parentGroup) {
+                        parentGroup.classList.add('highlighted');
+                    }
+                    const section = this.closest('section') || this.closest('div');
+                    if (section) {
+                        section.querySelectorAll('.stage-node').forEach(function(node) {
+                            node.style.animationDuration = '1s';
+                        });
+                    }
+                } else {
+                    document.querySelectorAll('.stage-node').forEach(function(node) {
+                        node.style.animationDuration = '';
+                    });
+                }
+            });
+        });
+
+        // Fix tooltip positioning for left-side tooltips
+        document.querySelectorAll('.tooltip-left').forEach(function(tip) {
+            const node = tip.closest('.stage-node');
+            if (node) {
+                node.addEventListener('mouseenter', function() {
+                    tip.classList.add('tooltip-left-visible');
+                });
+                node.addEventListener('mouseleave', function() {
+                    tip.classList.remove('tooltip-left-visible');
+                });
+            }
+        });
+
+        // Stagger animation delays for connectors
+        document.querySelectorAll('.connector .dot').forEach(function(dot, i) {
+            if (!dot.style.animationDelay) {
+                dot.style.animationDelay = (i * 0.2 % 2) + 's';
+            }
+        });
+
+        // Subtle parallax on scroll for header
+        var headerEl = document.getElementById('header-z8k1');
+        if (headerEl) {
+            window.addEventListener('scroll', function() {
+                var scrollY = window.scrollY;
+                headerEl.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
+                headerEl.style.opacity = Math.max(0.3, 1 - scrollY / 600);
+            }, { passive: true });
+        }
+
+        // ========== DOWNLOAD TOOLBAR LOGIC ==========
+        var toolbar = document.getElementById('download-toolbar');
+        var btnPng = document.getElementById('btn-download-png');
+        var btnHtml = document.getElementById('btn-download-html');
+
+        // Helper: trigger a download from a blob or data URL
+        function triggerDownload(url, filename) {
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // Helper: download full HTML as a standalone file
+        function downloadAsHTML() {
+            var htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+            var blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+            var url = URL.createObjectURL(blob);
+            triggerDownload(url, 'Claire-30-Stage-Lifecycle.html');
+            setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+        }
+
+        // Download PNG button
+        btnPng.addEventListener('click', function() {
+            // Hide toolbar before capture
+            toolbar.style.display = 'none';
+
+            try {
+                var body = document.body;
+                var w = body.scrollWidth;
+                var h = body.scrollHeight;
+
+                // Clone the entire body
+                var clone = body.cloneNode(true);
+
+                // Collect all stylesheets as text
+                var styleText = '';
+                var sheets = document.querySelectorAll('style');
+                sheets.forEach(function(s) {
+                    styleText += s.outerHTML;
+                });
+
+                // Also include computed font imports
+                var linkEls = document.querySelectorAll('link[rel="stylesheet"], link[rel="preconnect"]');
+                var linkHTML = '';
+                linkEls.forEach(function(l) {
+                    linkHTML += l.outerHTML;
+                });
+
+                // Build the foreignObject HTML
+                var xmlns = 'http://www.w3.org/1999/xhtml';
+                var foreignHTML =
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '">' +
+                    '<foreignObject width="100%" height="100%">' +
+                    '<div xmlns="' + xmlns + '" style="width:' + w + 'px;height:' + h + 'px;">' +
+                    linkHTML +
+                    styleText +
+                    '<style xmlns="' + xmlns + '">*{animation:none!important;transition:none!important;}</style>' +
+                    clone.innerHTML +
+                    '</div>' +
+                    '</foreignObject>' +
+                    '</svg>';
+
+                var svgBlob = new Blob([foreignHTML], { type: 'image/svg+xml;charset=utf-8' });
+                var svgUrl = URL.createObjectURL(svgBlob);
+
+                var img = new Image();
+                img.addEventListener('load', function() {
+                    try {
+                        var canvas = document.createElement('canvas');
+                        canvas.width = w;
+                        canvas.height = h;
+                        var ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0);
+                        URL.revokeObjectURL(svgUrl);
+
+                        var pngUrl = canvas.toDataURL('image/png');
+                        triggerDownload(pngUrl, 'Claire-30-Stage-Lifecycle.png');
+                    } catch (e) {
+                        // Canvas tainted or toDataURL fails — fallback to HTML
+                        console.warn('PNG export failed (canvas), falling back to HTML download.', e);
+                        downloadAsHTML();
+                    }
+                    toolbar.style.display = '';
+                });
+
+                img.addEventListener('error', function() {
+                    URL.revokeObjectURL(svgUrl);
+                    console.warn('PNG export failed (image load), falling back to HTML download.');
+                    downloadAsHTML();
+                    toolbar.style.display = '';
+                });
+
+                img.src = svgUrl;
+
+            } catch (e) {
+                console.warn('PNG export failed, falling back to HTML download.', e);
+                downloadAsHTML();
+                toolbar.style.display = '';
+            }
+        });
+
+        // Download HTML button
+        btnHtml.addEventListener('click', function() {
+            downloadAsHTML();
+        });
+    </script>
+<script nonce="">
+  var activeElement = null;
+  var selectionEnabled = false;
+  var selectableElements = [];
+  var SELECTABLE_SELECTOR = '[data-id]';
+  var SKIP_TAGS = {'HTML':1,'HEAD':1,'BODY':1,'SCRIPT':1,'STYLE':1,'LINK':1,'META':1,'PATH':1,'CIRCLE':1,'RECT':1,'POLYGON':1,'POLYLINE':1,'LINE':1,'ELLIPSE':1,'G':1,'DEFS':1,'CLIPPATH':1,'USE':1,'SYMBOL':1,'IFRAME':1,'CANVAS':1};
+  var INTERACTIVE_TAGS = {'INPUT':1,'TEXTAREA':1,'SELECT':1,'BUTTON':1,'A':1,'VIDEO':1,'AUDIO':1,'DETAILS':1,'SUMMARY':1};
+
+
+  function getSlotId(el) {
+    return el.getAttribute('data-id') || '';
+  }
+
+  function isImageElement(el) {
+    var tag = el.tagName.toUpperCase();
+    if (tag === 'IMG' || tag === 'SVG') return true;
+    var children = el.children;
+    for (var i = 0; i < children.length; i++) {
+      var childTag = children[i].tagName.toUpperCase();
+      if (childTag === 'IMG' || childTag === 'SVG') return true;
+    }
+    return false;
+  }
+
+  function isInteractiveElement(el) {
+    return INTERACTIVE_TAGS[el.tagName.toUpperCase()] === 1;
+  }
+
+  function hasInteractiveChild(el) {
+    var children = el.children;
+    for (var i = 0; i < children.length; i++) {
+      if (INTERACTIVE_TAGS[children[i].tagName.toUpperCase()] === 1) return true;
+    }
+    return false;
+  }
+
+  function isSelectableElement(el) {
+    var tag = el.tagName.toUpperCase();
+    if (SKIP_TAGS[tag]) return false;
+    // The backend curates which elements receive data-id, so any
+    // non-skipped element with that attribute is considered meaningful
+    // and should be selectable (text, images, interactive, or visual).
+    return true;
+  }
+
+  function deactivateElement() {
+    if (activeElement) {
+      activeElement.style.removeProperty('outline');
+      activeElement.style.removeProperty('outline-offset');
+      activeElement.style.removeProperty('border-radius');
+    }
+  }
+
+  function activateElement(el) {
+    activeElement = el;
+    el.style.setProperty('outline', '2.5px solid #987AEE', 'important');
+    el.style.setProperty('outline-offset', '2px', 'important');
+    el.style.setProperty('border-radius', '6px', 'important');
+  }
+
+  function getWrappingHtml(el) {
+    var current = el;
+    while (current && current !== document.body) {
+      var parent = current.parentElement;
+      if (parent && parent.hasAttribute('data-id') && parent !== el) {
+        return parent.outerHTML;
+      }
+      current = parent;
+    }
+    return el.outerHTML;
+  }
+
+  function getInteractiveValue(el) {
+    var tag = el.tagName.toUpperCase();
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return el.value || el.placeholder || '';
+    if (tag === 'SELECT') return el.options && el.selectedIndex >= 0 ? el.options[el.selectedIndex].text : '';
+    if (tag === 'A') return (el.textContent || '') + (el.href ? ' (' + el.href + ')' : '');
+    if (tag === 'VIDEO' || tag === 'AUDIO') return el.src || '';
+    return el.textContent || '';
+  }
+
+  function getElementType(el) {
+    if (isImageElement(el)) return 'image';
+    if (isInteractiveElement(el) || hasInteractiveChild(el)) return 'interactive';
+    return 'text';
+  }
+
+  function getElementValue(el) {
+    var elType = getElementType(el);
+    if (elType === 'image') return '';
+    if (isInteractiveElement(el)) return getInteractiveValue(el);
+    if (hasInteractiveChild(el)) {
+      var children = el.children;
+      for (var i = 0; i < children.length; i++) {
+        if (INTERACTIVE_TAGS[children[i].tagName.toUpperCase()] === 1) {
+          return getInteractiveValue(children[i]);
+        }
+      }
+    }
+    return el.textContent || '';
+  }
+
+  function getElementDescription(el) {
+    var text = (el.textContent || '').trim();
+    if (text) return text.length > 100 ? text.substring(0, 100) : text;
+    var img = el.tagName.toUpperCase() === 'IMG' ? el : el.querySelector('img');
+    if (img) {
+      var alt = img.getAttribute('alt');
+      if (alt && alt.trim()) return alt.trim();
+    }
+    var ariaLabel = el.getAttribute('aria-label');
+    if (ariaLabel && ariaLabel.trim()) return ariaLabel.trim();
+    var title = el.getAttribute('title');
+    if (title && title.trim()) return title.trim();
+    if (el.placeholder && el.placeholder.trim()) return el.placeholder.trim();
+    return '';
+  }
+
+  function notifyElementSelected(el, action) {
+    var rect = el.getBoundingClientRect();
+    var elementType = getElementType(el);
+    var value = getElementValue(el);
+    var description = getElementDescription(el);
+    var selectionHtml = getWrappingHtml(el);
+    var msg = {
+      type: 'element_selected',
+      slotId: getSlotId(el),
+      elementType: elementType,
+      value: value,
+      description: description,
+      selectionHtml: selectionHtml,
+      bounds: { top: rect.top, left: rect.left, width: rect.width, height: rect.height }
+    };
+    if (action) msg.action = action;
+    window.parent.postMessage(msg, '*');
+  }
+
+
+  function setupElement(el) {
+    if (el.dataset.selectionInitialized) return;
+    el.dataset.selectionInitialized = 'true';
+    if (selectionEnabled) el.style.cursor = 'pointer';
+
+    el.addEventListener('click', function(e) {
+      if (!selectionEnabled) return;
+      e.stopPropagation();
+      if (activeElement !== el) {
+        deactivateElement();
+        activateElement(el);
+      }
+      notifyElementSelected(el);
+    });
+
+    el.addEventListener('mouseenter', function() {
+      if (!selectionEnabled) return;
+      if (el !== activeElement) {
+        el.style.setProperty('outline', '1.5px solid rgba(59, 130, 246, 0.5)', 'important');
+        el.style.setProperty('outline-offset', '2px', 'important');
+        el.style.setProperty('border-radius', '6px', 'important');
+      }
+    });
+
+    el.addEventListener('mouseleave', function() {
+      if (!selectionEnabled) return;
+      if (el !== activeElement) {
+        el.style.removeProperty('outline');
+        el.style.removeProperty('outline-offset');
+        el.style.removeProperty('border-radius');
+      }
+    });
+  }
+
+  function initializeElements() {
+    var allElements = document.querySelectorAll(SELECTABLE_SELECTOR);
+    for (var i = 0; i < allElements.length; i++) {
+      if (isSelectableElement(allElements[i])) {
+        setupElement(allElements[i]);
+      }
+    }
+    rebuildSelectableList();
+  }
+
+  // Rebuild the cached list of keyboard-navigable elements.
+  // Called by initializeElements (at init + on DOM mutations).
+  function rebuildSelectableList() {
+    var all = document.querySelectorAll('[data-selection-initialized]');
+    var result = [];
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i];
+      var rect = el.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) continue;
+      var style = window.getComputedStyle(el);
+      if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') continue;
+      result.push(el);
+    }
+    selectableElements = result;
+  }
+
+
+  function setupBodyListeners() {
+    if (!document.body) return;
+
+    // Capture-phase handler: block all native interactions (links, buttons, forms)
+    // when selection is enabled. Our element click handlers still fire normally.
+    document.addEventListener('click', function(e) {
+      if (selectionEnabled) {
+        e.preventDefault();
+      }
+    }, true);
+
+    document.body.addEventListener('click', function(e) {
+      if (!selectionEnabled) return;
+      var closestInitialized = e.target.closest('[data-selection-initialized]');
+      if (closestInitialized) return;
+
+      deactivateElement();
+      activeElement = null;
+      window.parent.postMessage({ type: 'element_deselected' }, '*');
+    });
+  }
+
+
+  window.addEventListener('message', function(e) {
+    var data = e.data;
+    if (data && data.type === 'slideCommand' && data.payload) {
+      data = { type: data.payload.command, ...data.payload.data };
+    }
+
+    if (data.type === 'clear_selection') {
+      deactivateElement();
+      activeElement = null;
+      window.parent.postMessage({ type: 'element_deselected' }, '*');
+      return;
+    }
+
+    if (data.type === 'enable_selection') {
+      selectionEnabled = true;
+      var allEls = document.querySelectorAll('[data-selection-initialized]');
+      for (var i = 0; i < allEls.length; i++) {
+        allEls[i].style.cursor = 'pointer';
+      }
+      return;
+    }
+
+    if (data.type === 'disable_selection') {
+      selectionEnabled = false;
+      deactivateElement();
+      activeElement = null;
+      var allEls2 = document.querySelectorAll('[data-selection-initialized]');
+      for (var j = 0; j < allEls2.length; j++) {
+        allEls2[j].style.cursor = '';
+      }
+      window.parent.postMessage({ type: 'element_deselected' }, '*');
+      return;
+    }
+  });
+
+
+  var isMouseDown = false;
+  document.addEventListener('mousedown', function() { isMouseDown = true; });
+  document.addEventListener('mouseup', function() { isMouseDown = false; });
+
+  // Auto-activate the first selectable element when iframe gains keyboard focus
+  // (skip if the focus came from a mouse click).
+  window.addEventListener('focus', function() {
+    if (isMouseDown) return;
+    if (!selectionEnabled) return;
+    if (!activeElement) {
+      if (selectableElements.length > 0) {
+        activateElement(selectableElements[0]);
+        notifyElementSelected(selectableElements[0]);
+      }
+    }
+  });
+
+  // Keyboard navigation: Tab cycles elements, Enter triggers Ask Copilot,
+  // Escape deselects.
+  document.addEventListener('keydown', function(e) {
+    if (!selectionEnabled) return;
+
+    if (e.key === 'Escape') {
+      if (activeElement) {
+        e.preventDefault();
+        deactivateElement();
+        activeElement = null;
+        window.parent.postMessage({ type: 'element_deselected' }, '*');
+      }
+      return;
+    }
+
+    if (e.key === 'Enter') {
+      if (activeElement) {
+        e.preventDefault();
+        // Re-send element_selected with action so the parent triggers Ask Copilot
+        notifyElementSelected(activeElement, 'ask_copilot');
+      }
+      return;
+    }
+
+    if (e.key !== 'Tab') return;
+    e.preventDefault();
+
+    if (selectableElements.length === 0) return;
+
+    var currentIndex = activeElement ? selectableElements.indexOf(activeElement) : -1;
+    var nextIndex;
+    var atBoundary = false;
+
+    if (e.shiftKey) {
+      if (currentIndex <= 0) {
+        atBoundary = true;
+      } else {
+        nextIndex = currentIndex - 1;
+      }
+    } else {
+      if (currentIndex >= selectableElements.length - 1) {
+        atBoundary = true;
+      } else {
+        nextIndex = currentIndex + 1;
+      }
+    }
+
+    // At boundary: tell parent to move focus outside the iframe.
+    if (atBoundary) {
+      deactivateElement();
+      activeElement = null;
+      window.parent.postMessage({
+        type: 'tab_exit',
+        direction: e.shiftKey ? 'backward' : 'forward'
+      }, '*');
+      return;
+    }
+
+    deactivateElement();
+    activateElement(selectableElements[nextIndex]);
+    notifyElementSelected(selectableElements[nextIndex]);
+    selectableElements[nextIndex].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  });
+
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeElements();
+      setupBodyListeners();
+    });
+  } else {
+    initializeElements();
+    setupBodyListeners();
+  }
+
+  var mutationTimer = null;
+  var observer = new MutationObserver(function() {
+    if (mutationTimer) return;
+    mutationTimer = setTimeout(function() {
+      mutationTimer = null;
+      initializeElements();
+    }, 200);
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+</script>
+</body></html>

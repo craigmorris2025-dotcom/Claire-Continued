@@ -1,0 +1,115 @@
+Claire/
+├─ src/
+│  └─ claire/
+│     ├─ research/
+│     │  └─ live/
+│     │     ├─ __init__.py
+│     │     ├─ governed_live_research.py
+│     │     ├─ source_verification_engine.py
+│     │     ├─ citation_lineage_engine.py
+│     │     ├─ evidence_quality_scorer.py
+│     │     ├─ evidence_conflict_resolver.py
+│     │     ├─ claim_verifier.py
+│     │     └─ research_packet_builder.py
+│     │
+│     ├─ recursive/
+│     │  └─ longitudinal/
+│     │     ├─ __init__.py
+│     │     ├─ run_pattern_miner.py
+│     │     ├─ thesis_evolution_tracker.py
+│     │     ├─ recurring_gap_detector.py
+│     │     ├─ learning_signal_extractor.py
+│     │     ├─ strategy_memory_synthesizer.py
+│     │     └─ recursive_quality_scorer.py
+│     │
+│     ├─ validation/
+│     │  └─ benchmarks/
+│     │     ├─ __init__.py
+│     │     ├─ regime_backtester.py
+│     │     ├─ signal_backtester.py
+│     │     ├─ false_positive_analyzer.py
+│     │     ├─ false_negative_analyzer.py
+│     │     ├─ outcome_label_manager.py
+│     │     ├─ benchmark_dataset_loader.py
+│     │     └─ benchmark_reporter.py
+│     │
+│     ├─ design/
+│     │  ├─ proof/
+│     │  │  ├─ __init__.py
+│     │  │  ├─ architecture_feasibility_proof.py
+│     │  │  ├─ dependency_risk_proof.py
+│     │  │  ├─ implementation_cost_model.py
+│     │  │  ├─ build_sequence_validator.py
+│     │  │  ├─ deployment_model_validator.py
+│     │  │  └─ design_maturity_scorer.py
+│     │  │
+│     │  └─ renderers/
+│     │     ├─ __init__.py
+│     │     ├─ architecture_graph_formatter.py
+│     │     ├─ dependency_graph_formatter.py
+│     │     ├─ design_export_formatter.py
+│     │     └─ blueprint_summary_formatter.py
+│     │
+│     ├─ technology/
+│     │  ├─ compatibility_engine.py
+│     │  ├─ enterprise_stack_recommender.py
+│     │  ├─ integration_complexity.py
+│     │  ├─ component_matcher.py
+│     │  ├─ deployment_assessor.py
+│     │  ├─ technology_catalog.py
+│     │  ├─ dependency_mapper.py
+│     │  └─ model_governance_assessor.py
+│     │
+│     └─ autonomous/
+│        └─ governance/
+│           ├─ __init__.py
+│           ├─ autonomous_action_policy.py
+│           ├─ self_change_permission_model.py
+│           ├─ autonomous_decision_auditor.py
+│           ├─ escalation_boundary.py
+│           ├─ human_review_gate.py
+│           └─ autonomy_maturity_scorer.py
+│
+└─ data/
+   ├─ research/
+   │  ├─ live_packets/
+   │  ├─ verified_sources/
+   │  ├─ citation_lineage/
+   │  └─ conflict_reports/
+   │
+   ├─ recursive/
+   │  ├─ run_patterns/
+   │  ├─ thesis_evolution/
+   │  ├─ recurring_gaps/
+   │  ├─ learning_signals/
+   │  └─ quality_scores/
+   │
+   ├─ benchmarks/
+   │  ├─ regimes/
+   │  ├─ signal_tests/
+   │  ├─ outcome_labels/
+   │  ├─ false_positive_reports/
+   │  ├─ false_negative_reports/
+   │  └─ benchmark_reports/
+   │
+   ├─ design_proof/
+   │  ├─ architecture_proofs/
+   │  ├─ dependency_risks/
+   │  ├─ cost_models/
+   │  ├─ deployment_models/
+   │  └─ maturity_scores/
+   │
+   ├─ technology/
+   │  ├─ catalogs/
+   │  ├─ stack_recommendations/
+   │  ├─ compatibility_reports/
+   │  ├─ dependency_maps/
+   │  ├─ deployment_assessments/
+   │  └─ governance_assessments/
+   │
+   └─ autonomy/
+      ├─ action_logs/
+      ├─ decision_audits/
+      ├─ permission_records/
+      ├─ review_queue/
+      └─ maturity_reports/

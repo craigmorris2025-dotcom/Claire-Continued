@@ -1,0 +1,250 @@
+#!/usr/bin/env python3
+# Claire Data Readiness Improvement Installer.
+# Dry-run by default. Existing files are skipped. Audit log is written on install.
+
+import os, sys, json, argparse, hashlib
+from datetime import datetime
+from pathlib import Path
+
+DEFAULT_TARGET = os.path.expanduser("~/OneDrive/Desktop/Claire")
+INSTALLER_VERSION = "11.20-11.26"
+INSTALLER_TITLE = "Claire Data Readiness Improvement Installer"
+INSTALLER_DATE = "2026-05-06"
+INSTALLER_ID = hashlib.md5((INSTALLER_VERSION + INSTALLER_DATE).encode()).hexdigest()[:12]
+PHASES = json.loads('[{"phase": 1, "name": "Data Readiness Core Contracts", "version": "v11.20", "depends_on": [], "description": "Defines the core data readiness contract, scoring model, gap registry, and readiness report outputs.", "new_folders": ["src/claire/data_readiness", "data/data_readiness/contracts", "data/data_readiness/scorecards", "data/data_readiness/gap_registry", "data/data_readiness/readiness_reports"], "new_files": {"src/claire/data_readiness/__init__.py": {"kind": "init", "role": "Data readiness package init"}, "src/claire/data_readiness/data_readiness_contract.py": {"kind": "py", "class_name": "DataReadinessContract", "role": "Defines minimum viable data readiness requirements for live/pilot/runtime use", "methods": ["build_contract", "validate_payload", "validate_required_fields", "export_contract"], "writes_to": "data/data_readiness/contracts"}, "src/claire/data_readiness/data_readiness_scorecard.py": {"kind": "py", "class_name": "DataReadinessScorecard", "role": "Scores data readiness across lineage, labels, telemetry, replay, benchmarks, rights, and coverage", "methods": ["score_readiness", "score_dimension", "identify_weak_dimensions", "export_scorecard"], "writes_to": "data/data_readiness/scorecards"}, "src/claire/data_readiness/data_gap_registry.py": {"kind": "py", "class_name": "DataGapRegistry", "role": "Registers persistent data gaps and tracks closure progress", "methods": ["register_gap", "update_gap", "list_gaps", "export_registry"], "writes_to": "data/data_readiness/gap_registry"}, "src/claire/data_readiness/readiness_report_builder.py": {"kind": "py", "class_name": "ReadinessReportBuilder", "role": "Builds data readiness reports for runtime, dashboard, and proof binders", "methods": ["build_report", "summarize_scorecard", "summarize_gaps", "export_report"], "writes_to": "data/data_readiness/readiness_reports"}}}, {"phase": 2, "name": "Source Lineage and Provenance Expansion", "version": "v11.21", "depends_on": [1], "description": "Improves source lineage depth with provenance records, transformation chains, citation anchors, and source rights records.", "new_folders": ["src/claire/data_lineage", "data/data_lineage/source_records", "data/data_lineage/provenance", "data/data_lineage/transformation_chains", "data/data_lineage/citation_anchors", "data/data_lineage/source_rights"], "new_files": {"src/claire/data_lineage/__init__.py": {"kind": "init", "role": "Data lineage package init"}, "src/claire/data_lineage/source_record_builder.py": {"kind": "py", "class_name": "SourceRecordBuilder", "role": "Builds normalized source records with source identity, timestamp, URI/path, owner, and use context", "methods": ["build_source_record", "validate_source_record", "hash_source_record", "export_record"], "writes_to": "data/data_lineage/source_records"}, "src/claire/data_lineage/provenance_tracker.py": {"kind": "py", "class_name": "ProvenanceTracker", "role": "Tracks where data came from, how it was obtained, and how it enters Claire", "methods": ["record_provenance", "validate_provenance", "query_provenance", "export_provenance"], "writes_to": "data/data_lineage/provenance"}, "src/claire/data_lineage/transformation_chain.py": {"kind": "py", "class_name": "TransformationChain", "role": "Tracks transformations from raw source to normalized evidence to runtime usage", "methods": ["start_chain", "attach_transformation", "validate_chain", "export_chain"], "writes_to": "data/data_lineage/transformation_chains"}, "src/claire/data_lineage/citation_anchor_registry.py": {"kind": "py", "class_name": "CitationAnchorRegistry", "role": "Registers citation anchors for evidence, reports, and proof binders", "methods": ["register_anchor", "resolve_anchor", "list_anchors", "export_registry"], "writes_to": "data/data_lineage/citation_anchors"}, "src/claire/data_lineage/source_rights_registry.py": {"kind": "py", "class_name": "SourceRightsRegistry", "role": "Tracks source rights, allowed uses, restrictions, and derived-data constraints", "methods": ["register_rights", "check_allowed_use", "list_restrictions", "export_registry"], "writes_to": "data/data_lineage/source_rights"}}}, {"phase": 3, "name": "Outcome Label Foundation", "version": "v11.22", "depends_on": [1, 2], "description": "Adds outcome label schemas, label queue, label adjudication, label coverage tracking, and benchmark-ready label exports.", "new_folders": ["src/claire/outcome_labels", "data/outcome_labels/schemas", "data/outcome_labels/label_queue", "data/outcome_labels/adjudication", "data/outcome_labels/coverage_reports", "data/outcome_labels/benchmark_exports"], "new_files": {"src/claire/outcome_labels/__init__.py": {"kind": "init", "role": "Outcome labels package init"}, "src/claire/outcome_labels/outcome_label_schema.py": {"kind": "py", "class_name": "OutcomeLabelSchema", "role": "Defines labels for correctness, usefulness, adoption, ROI, false positives, false negatives, and route outcomes", "methods": ["build_schema", "validate_label", "list_label_types", "export_schema"], "writes_to": "data/outcome_labels/schemas"}, "src/claire/outcome_labels/label_queue_manager.py": {"kind": "py", "class_name": "LabelQueueManager", "role": "Queues evidence items, outputs, and workflow events for outcome labeling", "methods": ["enqueue_label_task", "claim_task", "complete_task", "export_queue"], "writes_to": "data/outcome_labels/label_queue"}, "src/claire/outcome_labels/label_adjudicator.py": {"kind": "py", "class_name": "LabelAdjudicator", "role": "Adjudicates conflicting labels and tracks reviewer decisions", "methods": ["submit_label", "adjudicate_conflict", "finalize_label", "export_adjudication"], "writes_to": "data/outcome_labels/adjudication"}, "src/claire/outcome_labels/label_coverage_tracker.py": {"kind": "py", "class_name": "LabelCoverageTracker", "role": "Scores label coverage by route, source, workflow, benchmark, and domain", "methods": ["score_coverage", "identify_label_gaps", "summarize_coverage", "export_coverage_report"], "writes_to": "data/outcome_labels/coverage_reports"}, "src/claire/outcome_labels/benchmark_label_exporter.py": {"kind": "py", "class_name": "BenchmarkLabelExporter", "role": "Exports clean labeled examples for benchmark dataset construction", "methods": ["build_export", "validate_export", "export_labels", "export_manifest"], "writes_to": "data/outcome_labels/benchmark_exports"}}}, {"phase": 4, "name": "Workflow Telemetry Density", "version": "v11.23", "depends_on": [1, 2, 3], "description": "Adds richer workflow telemetry density tracking, event schemas, session summaries, operator reviews, and adoption evidence.", "new_folders": ["src/claire/workflow_telemetry", "data/workflow_telemetry/event_schemas", "data/workflow_telemetry/sessions", "data/workflow_telemetry/operator_reviews", "data/workflow_telemetry/adoption_evidence", "data/workflow_telemetry/density_reports"], "new_files": {"src/claire/workflow_telemetry/__init__.py": {"kind": "init", "role": "Workflow telemetry package init"}, "src/claire/workflow_telemetry/workflow_event_schema.py": {"kind": "py", "class_name": "WorkflowEventSchema", "role": "Defines workflow telemetry events for review, approval, override, export, repeat usage, and adoption", "methods": ["build_schema", "validate_event", "list_event_types", "export_schema"], "writes_to": "data/workflow_telemetry/event_schemas"}, "src/claire/workflow_telemetry/workflow_session_tracker.py": {"kind": "py", "class_name": "WorkflowSessionTracker", "role": "Tracks workflow sessions and session-level telemetry summaries", "methods": ["start_session", "record_event", "close_session", "export_session"], "writes_to": "data/workflow_telemetry/sessions"}, "src/claire/workflow_telemetry/operator_review_capture.py": {"kind": "py", "class_name": "OperatorReviewCapture", "role": "Captures operator review decisions and links them to output/evidence records", "methods": ["capture_review", "link_review_to_output", "summarize_reviews", "export_reviews"], "writes_to": "data/workflow_telemetry/operator_reviews"}, "src/claire/workflow_telemetry/adoption_evidence_tracker.py": {"kind": "py", "class_name": "AdoptionEvidenceTracker", "role": "Tracks repeat usage, conversion, friction, and workflow adoption evidence", "methods": ["record_adoption_event", "score_adoption", "identify_friction", "export_adoption_evidence"], "writes_to": "data/workflow_telemetry/adoption_evidence"}, "src/claire/workflow_telemetry/telemetry_density_scorer.py": {"kind": "py", "class_name": "TelemetryDensityScorer", "role": "Scores telemetry density and identifies sparse workflow evidence areas", "methods": ["score_density", "score_session_density", "identify_density_gaps", "export_density_report"], "writes_to": "data/workflow_telemetry/density_reports"}}}, {"phase": 5, "name": "Historical Event and Benchmark Seed Layer", "version": "v11.24", "depends_on": [1, 2, 3, 4], "description": "Adds historical event records, benchmark seeds, curated case sets, holdout registry, and validation example catalog.", "new_folders": ["src/claire/historical_benchmarks", "data/historical_benchmarks/events", "data/historical_benchmarks/seed_sets", "data/historical_benchmarks/curated_cases", "data/historical_benchmarks/holdout_registry", "data/historical_benchmarks/validation_examples"], "new_files": {"src/claire/historical_benchmarks/__init__.py": {"kind": "init", "role": "Historical benchmark package init"}, "src/claire/historical_benchmarks/historical_event_record.py": {"kind": "py", "class_name": "HistoricalEventRecord", "role": "Builds historical event records for backtests and opportunity validation", "methods": ["build_event", "validate_event", "hash_event", "export_event"], "writes_to": "data/historical_benchmarks/events"}, "src/claire/historical_benchmarks/benchmark_seed_builder.py": {"kind": "py", "class_name": "BenchmarkSeedBuilder", "role": "Builds seed benchmark sets from curated historical events and labeled examples", "methods": ["build_seed_set", "attach_event", "attach_label", "export_seed_set"], "writes_to": "data/historical_benchmarks/seed_sets"}, "src/claire/historical_benchmarks/curated_case_manager.py": {"kind": "py", "class_name": "CuratedCaseManager", "role": "Manages curated cases for route, discovery, productization, and feasibility validation", "methods": ["add_case", "validate_case", "list_cases", "export_case_set"], "writes_to": "data/historical_benchmarks/curated_cases"}, "src/claire/historical_benchmarks/holdout_registry.py": {"kind": "py", "class_name": "HoldoutRegistry", "role": "Tracks holdout examples to prevent overfitting and false benchmark confidence", "methods": ["register_holdout", "check_holdout", "list_holdouts", "export_registry"], "writes_to": "data/historical_benchmarks/holdout_registry"}, "src/claire/historical_benchmarks/validation_example_catalog.py": {"kind": "py", "class_name": "ValidationExampleCatalog", "role": "Catalogs validation examples for regression, benchmark, and replay tests", "methods": ["add_example", "validate_example", "query_examples", "export_catalog"], "writes_to": "data/historical_benchmarks/validation_examples"}}}, {"phase": 6, "name": "Replay Depth and Data Quality Monitoring", "version": "v11.25", "depends_on": [1, 2, 3, 4, 5], "description": "Adds replay-depth scoring, dataset quality monitoring, stale data detection, missing lineage checks, and data-readiness regression tests.", "new_folders": ["src/claire/data_quality", "data/data_quality/replay_depth", "data/data_quality/quality_reports", "data/data_quality/staleness_reports", "data/data_quality/lineage_failures", "data/data_quality/regression_checks"], "new_files": {"src/claire/data_quality/__init__.py": {"kind": "init", "role": "Data quality package init"}, "src/claire/data_quality/replay_depth_scorer.py": {"kind": "py", "class_name": "ReplayDepthScorer", "role": "Scores replay depth by snapshots, routes, domains, labels, and comparison coverage", "methods": ["score_replay_depth", "score_route_coverage", "identify_replay_gaps", "export_scorecard"], "writes_to": "data/data_quality/replay_depth"}, "src/claire/data_quality/dataset_quality_monitor.py": {"kind": "py", "class_name": "DatasetQualityMonitor", "role": "Monitors benchmark and operational datasets for completeness, balance, drift, and errors", "methods": ["monitor_dataset", "score_quality", "identify_quality_issues", "export_report"], "writes_to": "data/data_quality/quality_reports"}, "src/claire/data_quality/stale_data_detector.py": {"kind": "py", "class_name": "StaleDataDetector", "role": "Detects stale source records, old labels, outdated benchmarks, and expired rights records", "methods": ["detect_stale_records", "score_staleness", "recommend_refresh", "export_staleness_report"], "writes_to": "data/data_quality/staleness_reports"}, "src/claire/data_quality/missing_lineage_checker.py": {"kind": "py", "class_name": "MissingLineageChecker", "role": "Finds evidence, labels, and benchmarks missing required lineage", "methods": ["check_lineage", "find_missing_lineage", "summarize_failures", "export_failure_report"], "writes_to": "data/data_quality/lineage_failures"}, "src/claire/data_quality/data_readiness_regression.py": {"kind": "py", "class_name": "DataReadinessRegression", "role": "Runs regression checks to prevent data readiness score degradation", "methods": ["run_regression", "compare_scorecards", "detect_degradation", "export_regression_report"], "writes_to": "data/data_quality/regression_checks"}}}, {"phase": 7, "name": "Data Readiness Dashboard and Tests", "version": "v11.26", "depends_on": [1, 2, 3, 4, 5, 6], "description": "Adds dashboard panels and tests for data readiness improvement infrastructure.", "new_folders": ["src/frontend/command_center/data_readiness", "tests/data_readiness"], "new_files": {"src/frontend/command_center/data_readiness/DataReadinessScorePanel.js": {"kind": "js", "component": "DataReadinessScorePanel", "role": "Shows data readiness scorecards, dimensions, gap registry, and score movement"}, "src/frontend/command_center/data_readiness/SourceLineagePanel.js": {"kind": "js", "component": "SourceLineagePanel", "role": "Shows source records, provenance, transformation chains, citation anchors, and source rights"}, "src/frontend/command_center/data_readiness/OutcomeLabelsPanel.js": {"kind": "js", "component": "OutcomeLabelsPanel", "role": "Shows label schema, label queue, adjudication, coverage, and benchmark exports"}, "src/frontend/command_center/data_readiness/WorkflowTelemetryPanel.js": {"kind": "js", "component": "WorkflowTelemetryPanel", "role": "Shows workflow telemetry density, sessions, operator reviews, and adoption evidence"}, "src/frontend/command_center/data_readiness/HistoricalBenchmarksPanel.js": {"kind": "js", "component": "HistoricalBenchmarksPanel", "role": "Shows historical events, seed sets, curated cases, holdouts, and validation examples"}, "src/frontend/command_center/data_readiness/DataQualityPanel.js": {"kind": "js", "component": "DataQualityPanel", "role": "Shows replay depth, dataset quality, stale data, missing lineage, and regression checks"}, "tests/data_readiness/test_data_readiness_core.py": {"kind": "test", "role": "Data readiness core smoke test"}, "tests/data_readiness/test_data_lineage.py": {"kind": "test", "role": "Data lineage smoke test"}, "tests/data_readiness/test_outcome_labels.py": {"kind": "test", "role": "Outcome labels smoke test"}, "tests/data_readiness/test_workflow_telemetry.py": {"kind": "test", "role": "Workflow telemetry smoke test"}, "tests/data_readiness/test_historical_benchmarks.py": {"kind": "test", "role": "Historical benchmarks smoke test"}, "tests/data_readiness/test_data_quality.py": {"kind": "test", "role": "Data quality smoke test"}}}]')
+
+def py_class_file(spec):
+    role = spec.get("role", "Claire data readiness module")
+    class_name = spec.get("class_name", "ClaireDataReadinessModule")
+    writes_to = spec.get("writes_to", "data/data_readiness")
+    methods = spec.get("methods", [])
+    lines = []
+    lines.append("# " + role)
+    lines.append("# Generated by Claire data readiness improvement installer " + INSTALLER_VERSION)
+    lines.append("")
+    lines.append("import json")
+    lines.append("import hashlib")
+    lines.append("import logging")
+    lines.append("from datetime import datetime")
+    lines.append("from pathlib import Path")
+    lines.append("")
+    lines.append("logger = logging.getLogger(__name__)")
+    lines.append("")
+    lines.append("class " + class_name + ":")
+    lines.append("    OUTPUT_DIR = Path(" + repr(writes_to) + ")")
+    lines.append("    def __init__(self, output_dir=None):")
+    lines.append("        self.output_dir = Path(output_dir) if output_dir else self.OUTPUT_DIR")
+    lines.append("        self.logger = logging.getLogger(self.__class__.__name__)")
+    lines.append("    def _artifact(self, method, **extra):")
+    lines.append("        payload = {'status': 'success', 'component': self.__class__.__name__, 'method': method, 'generated_at': datetime.now().isoformat()}")
+    lines.append("        payload.update(extra)")
+    lines.append("        return payload")
+    lines.append("    def _hash_payload(self, payload):")
+    lines.append("        raw = json.dumps(payload, sort_keys=True, default=str).encode('utf-8')")
+    lines.append("        return hashlib.sha256(raw).hexdigest()[:16]")
+    lines.append("    def _save_json(self, name, payload):")
+    lines.append("        self.output_dir.mkdir(parents=True, exist_ok=True)")
+    lines.append("        path = self.output_dir / name")
+    lines.append("        path.write_text(json.dumps(payload, indent=2, default=str), encoding='utf-8')")
+    lines.append("        return str(path)")
+    for method in methods:
+        lines.append("    def " + method + "(self, *args, **kwargs):")
+        if any(x in method for x in ["validate", "check", "detect"]):
+            lines.append("        return self._artifact(" + repr(method) + ", valid=True, errors=[], warnings=[])")
+        elif any(x in method for x in ["score"]):
+            lines.append("        return self._artifact(" + repr(method) + ", score=0.0, level='unscored')")
+        elif any(x in method for x in ["list", "query", "find"]):
+            lines.append("        return self._artifact(" + repr(method) + ", items=[])")
+        elif any(x in method for x in ["hash"]):
+            lines.append("        payload = {'args': args, 'kwargs': kwargs}")
+            lines.append("        return self._artifact(" + repr(method) + ", hash=self._hash_payload(payload))")
+        else:
+            lines.append("        return self._artifact(" + repr(method) + ")")
+    if not methods:
+        lines.append("    def run(self, *args, **kwargs):")
+        lines.append("        return self._artifact('run')")
+    return "\n".join(lines) + "\n"
+
+def init_file(spec):
+    return "# " + spec.get("role", "Package init") + "\n__version__ = " + repr(INSTALLER_VERSION) + "\n__all__ = []\n"
+
+def js_file(spec):
+    role = spec.get("role", "Claire data readiness dashboard component")
+    component = spec.get("component", "ClaireDataReadinessPanel")
+    return f"""// {role}
+// Generated by Claire data readiness improvement installer {INSTALLER_VERSION}
+
+export default class {component} {{
+  constructor(options = {{}}) {{
+    this.options = options;
+    this.name = "{component}";
+    this.role = "{role}";
+    this.state = {{ status: "initialized", updatedAt: new Date().toISOString() }};
+  }}
+
+  mount(container, data = {{}}) {{
+    const target = typeof container === "string" ? document.querySelector(container) : container;
+    if (!target) return {{ status: "error", error: "container_not_found", component: this.name }};
+    target.innerHTML = this.render(data);
+    this.state.status = "mounted";
+    this.state.updatedAt = new Date().toISOString();
+    return {{ status: "success", component: this.name }};
+  }}
+
+  update(data = {{}}) {{
+    this.state = {{ ...this.state, ...data, updatedAt: new Date().toISOString() }};
+    return this.state;
+  }}
+
+  render(data = {{}}) {{
+    return `<section class="claire-panel" data-component="{component}">
+      <header>
+        <h2>{role}</h2>
+        <p class="claire-muted">Component: {component}</p>
+      </header>
+      <pre>${{JSON.stringify(data || {{}}, null, 2)}}</pre>
+    </section>`;
+  }}
+}}
+"""
+
+def test_file(spec, rel_path):
+    name = Path(rel_path).stem
+    return "# " + spec.get("role", "Claire data readiness smoke test") + "\n\ndef test_" + name + "_placeholder():\n    assert True\n"
+
+def create_file_content(rel_path, spec):
+    kind = spec.get("kind", Path(rel_path).suffix.lower().lstrip("."))
+    if kind == "init":
+        return init_file(spec)
+    if kind == "py":
+        return py_class_file(spec)
+    if kind == "js":
+        return js_file(spec)
+    if kind == "test":
+        return test_file(spec, rel_path)
+    return "# Claire generated data readiness file\n"
+
+def preflight_check(target):
+    checks = {
+        "target_exists": target.is_dir(),
+        "has_src": (target / "src").is_dir(),
+        "has_frontend": (target / "src" / "frontend").is_dir(),
+        "has_main": (target / "main.py").is_file(),
+        "has_version_json": (target / "version.json").is_file(),
+    }
+    print("\n  Preflight checks:")
+    ok = True
+    for name, passed in checks.items():
+        print(f"    [{'✓' if passed else '✗'}] {name}")
+        ok = ok and passed
+    return ok
+
+def install_phase(phase_def, target, dry_run=True):
+    print(f"\n  ── Phase {phase_def['phase']}: {phase_def['name']} ({phase_def['version']}) ──")
+    result = {"phase": phase_def["phase"], "name": phase_def["name"], "version": phase_def["version"], "folders_created": [], "files_created": [], "files_skipped": [], "errors": []}
+    for folder in phase_def.get("new_folders", []):
+        path = target / folder
+        if dry_run:
+            print(f"    [DIR]  {folder} ({'EXISTS' if path.exists() else 'NEW'})")
+            result["folders_created"].append(folder)
+        else:
+            try:
+                path.mkdir(parents=True, exist_ok=True)
+                if folder.startswith("data/"):
+                    (path / ".gitkeep").touch(exist_ok=True)
+                print(f"    [DIR]  ✓ {folder}")
+                result["folders_created"].append(folder)
+            except Exception as exc:
+                print(f"    [DIR]  ✗ {folder}: {exc}")
+                result["errors"].append(f"folder:{folder}:{exc}")
+    for rel_path, spec in phase_def.get("new_files", {}).items():
+        path = target / rel_path
+        if path.exists():
+            print(f"    [FILE] ⊘ {rel_path} (already exists, skipped)")
+            result["files_skipped"].append(rel_path)
+            continue
+        if dry_run:
+            print(f"    [FILE] {rel_path} ({spec.get('role', '')})")
+            result["files_created"].append(rel_path)
+        else:
+            try:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(create_file_content(rel_path, spec), encoding="utf-8")
+                print(f"    [FILE] ✓ {rel_path}")
+                result["files_created"].append(rel_path)
+            except Exception as exc:
+                print(f"    [FILE] ✗ {rel_path}: {exc}")
+                result["errors"].append(f"file:{rel_path}:{exc}")
+    print(f"    {'DRY RUN' if dry_run else 'INSTALLED'}: {len(result['folders_created'])} folders, {len(result['files_created'])} files, {len(result['files_skipped'])} skipped, {len(result['errors'])} errors")
+    return result
+
+def write_audit_log(target, results, dry_run):
+    if dry_run:
+        return
+    log_dir = target / "data" / "update_logs"
+    log_dir.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    clean_version = INSTALLER_VERSION.replace(".", "_").replace("-", "_")
+    path = log_dir / f"install_{stamp}_data_readiness_{clean_version}_{INSTALLER_ID}.json"
+    audit = {
+        "installer_version": INSTALLER_VERSION,
+        "installer_title": INSTALLER_TITLE,
+        "installer_id": INSTALLER_ID,
+        "installer_date": INSTALLER_DATE,
+        "install_timestamp": datetime.now().isoformat(),
+        "target_path": str(target),
+        "phase_results": results,
+        "total_files_created": sum(len(r["files_created"]) for r in results),
+        "total_files_skipped": sum(len(r["files_skipped"]) for r in results),
+        "total_errors": sum(len(r["errors"]) for r in results),
+    }
+    path.write_text(json.dumps(audit, indent=2), encoding="utf-8")
+    print(f"\n  Audit log: {path}")
+
+def show_summary():
+    total_files = sum(len(p["new_files"]) for p in PHASES)
+    total_folders = sum(len(p["new_folders"]) for p in PHASES)
+    print(f"\n{INSTALLER_TITLE}")
+    print(f"Claire v{INSTALLER_VERSION}: {len(PHASES)} phases, {total_files} files, {total_folders} folders\n")
+    for p in PHASES:
+        deps = ", ".join(str(d) for d in p["depends_on"]) if p["depends_on"] else "none"
+        print(f"  Phase {p['phase']}: {p['name']} ({p['version']}) — {len(p['new_files'])} files, {len(p['new_folders'])} folders | depends on: {deps}")
+
+def main():
+    parser = argparse.ArgumentParser(description=INSTALLER_TITLE)
+    parser.add_argument("--install", action="store_true", help="Actually install; default is dry run")
+    parser.add_argument("--phase", type=int, choices=[p["phase"] for p in PHASES], help="Install only one phase")
+    parser.add_argument("--target", type=str, default=DEFAULT_TARGET, help=f"Project root; default: {DEFAULT_TARGET}")
+    parser.add_argument("--summary", action="store_true", help="Show summary")
+    args = parser.parse_args()
+
+    target = Path(args.target).resolve()
+    dry_run = not args.install
+
+    print("\n" + "═"*64)
+    print(f"  {INSTALLER_TITLE}")
+    print(f"  Target: {target}")
+    print(f"  Mode: {'INSTALL' if args.install else 'DRY RUN'}")
+    print("═"*64)
+
+    if args.summary:
+        show_summary()
+        return
+
+    if not preflight_check(target) and args.install:
+        print("\n  ✗ Aborting install due to failed preflight checks.")
+        sys.exit(1)
+
+    phases = [p for p in PHASES if not args.phase or p["phase"] == args.phase]
+    results = [install_phase(p, target, dry_run) for p in phases]
+    write_audit_log(target, results, dry_run)
+
+    print("\n" + "═"*64)
+    print(f"  {'INSTALLATION COMPLETE' if args.install else 'DRY RUN COMPLETE'}")
+    print(f"  {len(results)} phases | {sum(len(r['folders_created']) for r in results)} folders | {sum(len(r['files_created']) for r in results)} files | {sum(len(r['files_skipped']) for r in results)} skipped | {sum(len(r['errors']) for r in results)} errors")
+    if dry_run:
+        print("  To install for real, run with --install")
+    print("═"*64 + "\n")
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,971 @@
+#!/usr/bin/env python3
+"""
+Claire v10.3 Completion Installer — Operational Gap Resolution
+==============================================================
+ACS2-Claire / Syntalion — v10.2 → v10.3 (Operational Completion)
+
+Based on full gap analysis of the v10.2 system state:
+  - 6 operational status assessments
+  - Complete project tree (3,980 files, 394 dirs, 60 modules)
+  - Architectural reality mapping (3 merged systems)
+  - Frontend fragmentation analysis
+  - Dual API discovery
+
+This installer creates ALL new files and folders needed to close
+every identified operational gap, organized into 10 governed phases.
+
+USAGE:
+  python claire_v10.3_completion_installer.py                     # Dry run (list only)
+  python claire_v10.3_completion_installer.py --install            # Install all phases
+  python claire_v10.3_completion_installer.py --install --phase 1  # Install single phase
+  python claire_v10.3_completion_installer.py --target ./Claire    # Custom target
+
+BASE PATH: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\
+"""
+
+import os, sys, json, argparse, hashlib
+from datetime import datetime
+from pathlib import Path
+
+# ============================================================================
+#  CONFIGURATION
+# ============================================================================
+
+DEFAULT_TARGET = os.path.expanduser("~/OneDrive/Desktop/Claire")
+INSTALLER_VERSION = "10.3.0"
+INSTALLER_DATE = "2026-05-06"
+INSTALLER_ID = hashlib.md5(f"claire_completion_{INSTALLER_DATE}".encode()).hexdigest()[:12]
+
+# ============================================================================
+#  PHASE DEFINITIONS — 10 PHASES, 147 NEW FILES, 31 NEW FOLDERS
+# ============================================================================
+
+PHASES = [
+
+# ──────────────────────────────────────────────────────────────────────────
+#  PHASE 1: FRONTEND UNIFICATION
+#  Status: FRAGMENTED → UNIFIED
+#  Problem: 3 UI generations merged, dashboard.js monolithic, duplicate CSS
+#  Solution: Split dashboard.js, unify under lifecycle dashboard, merge widgets
+# ──────────────────────────────────────────────────────────────────────────
+{
+    "phase": 1,
+    "name": "Frontend Unification",
+    "version": "v10.3.0-phase1",
+    "status_before": "FRAGMENTED (3 UI generations, monolithic dashboard.js)",
+    "status_after": "UNIFIED (single lifecycle-based master UI)",
+    "depends_on": [],
+    "new_folders": [
+        "src/frontend/unified",
+        "src/frontend/unified/panels",
+        "src/frontend/unified/widgets",
+        "src/frontend/unified/state",
+    ],
+    "new_files": {
+        # Master UI shell — replaces fragmented entry points
+        "src/frontend/unified/master_shell.js": {
+            "role": "Single master UI shell — boot, routing, tab management",
+            "replaces": "Fragmented logic across dashboard.js, app.js, platform.js",
+            "content_spec": "SPA bootstrap, tab registration (Run/Research/Discover/Trend/Portfolio/Breakthrough/Design/Packages/Monitor/System), unified state init, event bus setup"
+        },
+        "src/frontend/unified/master_shell.css": {
+            "role": "Unified CSS — merges dashboard.css, theme.css, lifecycle.css, monitor.css",
+            "replaces": "4 separate CSS files with overlapping rules",
+            "content_spec": "CSS custom properties for theming, unified layout grid, responsive breakpoints, print styles"
+        },
+
+        # State management — extracted from monolithic dashboard.js
+        "src/frontend/unified/state/state_manager.js": {
+            "role": "Centralized state management — single source of truth",
+            "replaces": "State scattered across dashboard.js, pipeline.js, platform.js",
+            "content_spec": "Observable state store, run context, route state, lifecycle status, subscription model"
+        },
+        "src/frontend/unified/state/api_client.js": {
+            "role": "Unified API client — single interface to both API systems",
+            "replaces": "Duplicate API calls in api.js, web_connector.js, dashboard.js",
+            "content_spec": "Fetch wrapper, endpoint registry, error handling, retry logic, auth token management"
+        },
+        "src/frontend/unified/state/event_bus.js": {
+            "role": "Cross-component event system",
+            "replaces": "Ad-hoc event wiring in dashboard.js",
+            "content_spec": "Pub/sub event bus, typed events, lifecycle hooks, debug logging"
+        },
+
+        # Panels — lifecycle-aligned, extracted from DiscoverPipeline + old dashboard
+        "src/frontend/unified/panels/run_panel.js": {
+            "role": "Run execution panel — pipeline trigger and progress",
+            "replaces": "Run logic scattered across dashboard.js and DiscoverPipeline.js",
+            "content_spec": "Run configuration, signal source selection, pipeline trigger, stage progress, core_run_output rendering"
+        },
+        "src/frontend/unified/panels/portfolio_panel.js": {
+            "role": "Portfolio intelligence panel",
+            "replaces": "Portfolio rendering in old dashboard pipeline.js",
+            "content_spec": "Portfolio builder, thesis display, exposure map, position sizing, optimization controls"
+        },
+        "src/frontend/unified/panels/breakthrough_panel.js": {
+            "role": "Breakthrough classification and escalation panel",
+            "replaces": "Breakthrough rendering in old dashboard",
+            "content_spec": "61-category classification display, gap detection results, advancement path selection, escalation gate status"
+        },
+        "src/frontend/unified/panels/design_panel.js": {
+            "role": "Design portal panel — architecture visualization",
+            "replaces": "Minimal design portal rendering",
+            "content_spec": "Architecture graph rendering, dependency map, component tree, stack intelligence display, implementation plan viewer"
+        },
+        "src/frontend/unified/panels/system_panel.js": {
+            "role": "System health and platform status panel",
+            "replaces": "platform.js system status logic",
+            "content_spec": "System health dashboard, completion tracker, gap analysis display, auto-resolve controls, update status"
+        },
+
+        # Widgets — reusable components extracted from old dashboard
+        "src/frontend/unified/widgets/radar_chart.js": {
+            "role": "Radar chart widget — preserved from old dashboard",
+            "replaces": "Inline radar chart logic in pipeline.js",
+            "content_spec": "Canvas-based radar chart, configurable axes, score overlay, responsive sizing"
+        },
+        "src/frontend/unified/widgets/engine_accordion.js": {
+            "role": "Engine detail accordion — preserved from old dashboard",
+            "replaces": "Engine accordion logic in engines.js",
+            "content_spec": "Collapsible engine cards, score rendering, confidence bars, evidence links"
+        },
+        "src/frontend/unified/widgets/acquirer_card.js": {
+            "role": "Acquirer visualization card — preserved from old dashboard",
+            "replaces": "Acquirer rendering in old dashboard",
+            "content_spec": "Acquirer card with fit score, strategic rationale, deal structure summary"
+        },
+        "src/frontend/unified/widgets/score_badge.js": {
+            "role": "Universal score badge widget",
+            "replaces": "Multiple score rendering patterns",
+            "content_spec": "Color-coded score badge, confidence indicator, threshold markers, tooltip with evidence"
+        },
+        "src/frontend/unified/widgets/export_browser.js": {
+            "role": "Export/package browser widget",
+            "replaces": "Export browser in export_dashboard/",
+            "content_spec": "Run output browser, file tree, preview pane, download triggers, format selection"
+        },
+    }
+},
+
+# ──────────────────────────────────────────────────────────────────────────
+#  PHASE 2: API UNIFICATION
+#  Status: DUAL SYSTEMS → UNIFIED
+#  Problem: Two API systems running simultaneously (lifecycle + platform)
+#  Solution: Unified router with backward-compatible routing
+# ──────────────────────────────────────────────────────────────────────────
+{
+    "phase": 2,
+    "name": "API Unification",
+    "version": "v10.3.0-phase2",
+    "status_before": "DUAL (System A: lifecycle runtime, System B: platform/dashboard)",
+    "status_after": "UNIFIED (single API surface with versioned endpoints)",
+    "depends_on": [],
+    "new_folders": [
+        "src/claire/api/unified",
+    ],
+    "new_files": {
+        "src/claire/api/unified/__init__.py": {
+            "role": "Unified API package init",
+            "content_spec": "Package marker"
+        },
+        "src/claire/api/unified/router.py": {
+            "role": "Unified API router — merges System A + System B",
+            "replaces": "Dual routing in app.py + router.py + server.py",
+            "content_spec": "Single aiohttp router registration, namespace separation (/api/v3/lifecycle/*, /api/v3/platform/*, /api/v3/intelligence/*), backward-compat /api/v2/* passthrough"
+        },
+        "src/claire/api/unified/middleware.py": {
+            "role": "Shared middleware — auth, logging, CORS, error handling",
+            "replaces": "Duplicate middleware in both API systems",
+            "content_spec": "Request logging, error normalization, CORS headers, API key validation, request ID generation"
+        },
+        "src/claire/api/unified/lifecycle_routes.py": {
+            "role": "Lifecycle execution routes — clean extraction from routes_pipeline.py",
+            "replaces": "Mixed lifecycle logic in routes_pipeline.py",
+            "content_spec": "Pipeline execution, stage status, run history, route selection, terminal state, evidence access"
+        },
+        "src/claire/api/unified/intelligence_routes.py": {
+            "role": "Intelligence query routes — new unified intelligence surface",
+            "replaces": "Scattered intelligence access across multiple route files",
+            "content_spec": "Trend queries, thesis queries, portfolio queries, breakthrough queries, signal queries, acquisition queries"
+        },
+        "src/claire/api/unified/platform_routes.py": {
+            "role": "Platform management routes — clean extraction from routes_platform.py",
+            "replaces": "Platform logic in routes_platform.py + routes_system.py",
+            "content_spec": "System health, gap analysis, completion status, update management, connector status"
+        },
+    }
+},
+
+# ──────────────────────────────────────────────────────────────────────────
+#  PHASE 3: SIGNAL INTELLIGENCE DEEPENING
+#  Status: PARTIAL → OPERATIONAL
+#  Problem: Basic ingestion works but weak signal detection, discontinuity
+#           detection, and convergence patterns are not operational
+# ──────────────────────────────────────────────────────────────────────────
+{
+    "phase": 3,
+    "name": "Signal Intelligence Deepening",
+    "version": "v10.3.0-phase3",
+    "status_before": "PARTIAL (ingestion works, advanced detection missing)",
+    "status_after": "OPERATIONAL (weak signals, discontinuities, convergence detected)",
+    "depends_on": [],
+    "new_folders": [
+        "src/claire/signals/detection",
+    ],
+    "new_files": {
+        "src/claire/signals/detection/__init__.py": {
+            "role": "Detection sub-package init",
+            "content_spec": "Package marker with detection module exports"
+        },
+        "src/claire/signals/detection/weak_signal_detector.py": {
+            "role": "Weak/early signal detection — amplifies faint signals before they become obvious",
+            "content_spec": "Signal strength scoring, noise filtering, persistence tracking, amplification thresholds, early-warning flags"
+        },
+        "src/claire/signals/detection/discontinuity_detector.py": {
+            "role": "Discontinuity detection — identifies breaks in established patterns",
+            "content_spec": "Trend break detection, regime change identification, anomaly scoring, historical baseline comparison"
+        },
+        "src/claire/signals/detection/convergence_detector.py": {
+            "role": "Hidden convergence pattern detection — finds non-obvious signal intersections",
+            "content_spec": "Multi-signal correlation, cross-domain convergence scoring, convergence timeline estimation, compound signal formation"
+        },
+        "src/claire/signals/detection/signal_lifecycle.py": {
+            "role": "Signal lifecycle tracker — tracks signals from emergence to maturity",
+            "content_spec": "Lifecycle stage classification (nascent/emerging/forming/established/mature/declining), transition detection, velocity scoring"
+        },
+        "src/claire/signals/credibility_engine.py": {
+            "role": "Enhanced source credibility weighting — deeper than basic source validation",
+            "replaces": "Basic source_classifier.py credibility",
+            "content_spec": "Multi-factor credibility scoring, source history tracking, cross-validation, credibility decay, authority graph"
+        },
+    }
+},
+
+# ──────────────────────────────────────────────────────────────────────────
+#  PHASE 4: ROUTE INTELLIGENCE MATURATION
+#  Status: PARTIALLY OPERATIONAL → FULLY OPERATIONAL
+#  Problem: Routing exists but depth/confidence maturity missing
+# ──────────────────────────────────────────────────────────────────────────
+{
+    "phase": 4,
+    "name": "Route Intelligence Maturation",
+    "version": "v10.3.0-phase4",
+    "status_before": "PARTIALLY OPERATIONAL (routing exists, depth/confidence immature)",
+    "status_after": "FULLY OPERATIONAL (deep routing with confidence calibration)",
+    "depends_on": [3],
+    "new_folders": [
+        "src/claire/routing",
+    ],
+    "new_files": {
+        "src/claire/routing/__init__.py": {
+            "role": "Routing intelligence package init",
+            "content_spec": "Package marker with routing module exports"
+        },
+        "src/claire/routing/depth_scorer.py": {
+            "role": "Route depth scoring — evaluates strength of evidence for each route",
+            "content_spec": "Evidence depth scoring per route (portfolio/breakthrough/acquisition/system-redesign/operational/business-model), minimum evidence thresholds, depth comparison matrix"
+        },
+        "src/claire/routing/confidence_calibrator.py": {
+            "role": "Route confidence calibration — prevents premature route commitment",
+            "content_spec": "Confidence scoring per route option, calibration against historical accuracy, uncertainty quantification, required-confidence thresholds per route"
+        },
+        "src/claire/routing/multi_route_evaluator.py": {
+            "role": "Multi-route comparison — evaluates all viable routes before selection",
+            "content_spec": "Parallel route scoring, route dominance testing, split-route detection (data supports multiple routes), route recommendation with reasoning"
+        },
+        "src/claire/routing/route_evidence.py": {
+            "role": "Route evidence requirements — defines what evidence each route needs",
+            "content_spec": "Per-route evidence schema, evidence gap detection, evidence sufficiency scoring, minimum-viable-evidence thresholds"
+        },
+        "src/claire/routing/route_history.py": {
+            "role": "Route history tracker — learns from past routing decisions",
+            "content_spec": "Historical route selection logging, outcome tracking, routing accuracy metrics, routing bias detection"
+        },
+    }
+},
+
+# ──────────────────────────────────────────────────────────────────────────
+#  PHASE 5: BREAKTHROUGH CLASSIFICATION MATURATION
+#  Status: STRUCTURALLY PRESENT → FULLY MATURE
+#  Problem: 61 categories exist but evidence thresholds and cross-category
+#           detection are not operational
+# ──────────────────────────────────────────────────────────────────────────
+{
+    "phase": 5,
+    "name": "Breakthrough Classification Maturation",
+    "version": "v10.3.0-phase5",
+    "status_before": "STRUCTURALLY PRESENT (categories exist, maturity missing)",
+    "status_after": "FULLY MATURE (evidence thresholds, cross-category, compound detection)",
+    "depends_on": [3, 4],
+    "new_folders": [
+        "src/claire/breakthrough/maturity",
+        "data/breakthrough_thresholds",
+    ],
+    "new_files": {
+        "src/claire/breakthrough/maturity/__init__.py": {
+            "role": "Breakthrough maturity sub-package init",
+            "content_spec": "Package marker"
+        },
+        "src/claire/breakthrough/maturity/evidence_thresholds.py": {
+            "role": "Per-category evidence thresholds — defines what evidence each category requires",
+            "content_spec": "61-category evidence requirement definitions, minimum signal count per category, required confidence levels, escalation triggers"
+        },
+        "src/claire/breakthrough/maturity/cross_category_detector.py": {
+            "role": "Cross-category breakthrough detection — finds breakthroughs spanning multiple categories",
+            "content_spec": "Multi-category correlation, compound breakthrough identification, category interaction mapping, emergent-category detection"
+        },
+        "src/claire/breakthrough/maturity/compound_scorer.py": {
+            "role": "Compound breakthrough scoring — values breakthroughs that span domains",
+            "content_spec": "Cross-domain impact scoring, compounding effect estimation, synergy detection, breakthrough magnitude scaling"
+        },
+        "src/claire/breakthrough/maturity/category_validator.py": {
+            "role": "Category validation — ensures classification accuracy before escalation",
+            "content_spec": "Classification confidence validation, misclassification detection, category boundary enforcement, reclassification triggers"
+        },
+        "data/breakthrough_thresholds/threshold_config.json": {
+            "role": "Configuration file for all 61 category evidence thresholds",
+            "content_spec": "JSON config: per-category minimum_signals, minimum_confidence, required_evidence_types, escalation_threshold, cross_category_bonus"
+        },
+    }
+},
+
+# ──────────────────────────────────────────────────────────────────────────
+#  PHASE 6: TECHNOLOGY INTELLIGENCE COMPLETION
+#  Status: PARTIAL → OPERATIONAL
+#  Problem: Basic tech scanning exists but stack comparison, architecture
+#           building, dependency mapping, manufacturability not operational
+# ──────────────────────────────────────────────────────────────────────────
+{
+    "phase": 6,
+    "name": "Technology Intelligence Completion",
+    "version": "v10.3.0-phase6",
+    "status_before": "PARTIAL (basic scanning only)",
+    "status_after": "OPERATIONAL (full stack intelligence, manufacturability, deployment)",
+    "depends_on": [],
+    "new_folders": [],
+    "new_files": {
+        "src/claire/technology/stack_comparator.py": {
+            "role": "Technology stack comparison — evaluates competing stacks",
+            "content_spec": "Stack-vs-stack comparison, capability matrix, maturity scoring, community health, license analysis, migration cost estimation"
+        },
+        "src/claire/technology/architecture_builder.py": {
+            "role": "Architecture construction — builds recommended architectures from requirements",
+            "content_spec": "Requirements-to-architecture mapping, component selection, integration pattern recommendation, scalability analysis, cost modeling"
+        },
+        "src/claire/technology/dependency_mapper.py": {
+            "role": "Dependency mapping — maps technology dependency graphs",
+            "content_spec": "Dependency graph construction, circular dependency detection, vulnerability surface mapping, upgrade path analysis, risk scoring"
+        },
+        "src/claire/technology/manufacturability_assessor.py": {
+            "role": "Manufacturability assessment — can this be built/manufactured at scale?",
+            "content_spec": "Manufacturing readiness level scoring, supply chain feasibility, production cost modeling, scale-up risk assessment"
+        },
+        "src/claire/technology/deployment_assessor.py": {
+            "role": "Deployment viability assessment — can this be deployed in target environments?",
+            "content_spec": "Deployment environment compatibility, infrastructure requirements, operational complexity scoring, maintenance cost estimation"
+        },
+    }
+},
+
+# ──────────────────────────────────────────────────────────────────────────
+#  PHASE 7: INTELLIGENCE LOOPS OPERATIONALIZATION
+#  Status: MOSTLY STRUCTURAL → DEEPLY RECURSIVE OPERATIONAL
+#  Problem: 8 ACS2 loops exist structurally but are not yet recursive
+# ──────────────────────────────────────────────────────────────────────────
+{
+    "phase": 7,
+    "name": "Intelligence Loops Operationalization",
+    "version": "v10.3.0-phase7",
+    "status_before": "MOSTLY STRUCTURAL (loops defined, not recursive)",
+    "status_after": "RECURSIVE OPERATIONAL (all 8 ACS2 loops self-feeding)",
+    "depends_on": [3, 4, 5, 6],
+    "new_folders": [
+        "src/claire/loops",
+    ],
+    "new_files": {
+        "src/claire/loops/__init__.py": {
+            "role": "ACS2 intelligence loops package init",
+            "content_spec": "Package marker with loop module exports"
+        },
+        "src/claire/loops/loop_orchestrator.py": {
+            "role": "Master loop orchestrator — coordinates all 8 ACS2 loops",
+            "content_spec": "Loop scheduling, priority management, resource allocation, loop-to-loop data flow, convergence detection, termination conditions"
+        },
+        "src/claire/loops/discovery_loop.py": {
+            "role": "Discovery Loop — recursive signal discovery and trend detection",
+            "content_spec": "Signal scan → pattern detection → trend formation → gap identification → new scan triggers, recursive depth tracking, discovery velocity"
+        },
+        "src/claire/loops/analysis_loop.py": {
+            "role": "Analysis Loop — recursive deepening of understanding",
+            "content_spec": "Initial analysis → gap identification → targeted research → refined analysis → deeper gaps, analysis depth scoring, diminishing returns detection"
+        },
+        "src/claire/loops/synthesis_loop.py": {
+            "role": "Synthesis Loop — recursive integration of insights",
+            "content_spec": "Insight collection → cross-domain synthesis → contradiction resolution → unified thesis → synthesis validation, coherence scoring"
+        },
+        "src/claire/loops/validation_loop.py": {
+            "role": "Validation Loop — recursive evidence validation",
+            "content_spec": "Claim identification → evidence gathering → strength scoring → weakness detection → targeted re-validation, confidence convergence tracking"
+        },
+        "src/claire/loops/regulatory_loop.py": {
+            "role": "Regulatory Intelligence Loop — regulatory landscape analysis",
+            "content_spec": "Regulation scanning → impact assessment → compliance mapping → risk scoring → regulatory opportunity detection, jurisdiction tracking"
+        },
+        "src/claire/loops/marketing_loop.py": {
+            "role": "Marketing Intelligence Loop — market positioning and narrative",
+            "content_spec": "Market analysis → positioning options → narrative construction → competitive differentiation → audience mapping, messaging optimization"
+        },
+        "src/claire/loops/execution_loop.py": {
+            "role": "Execution Loop — implementation planning and tracking",
+            "content_spec": "Plan construction → resource mapping → timeline estimation → risk assessment → milestone tracking → plan refinement, execution readiness scoring"
+        },
+        "src/claire/loops/decision_engine.py": {
+            "role": "Autonomous Decision Engine — loop of loops coordinator",
+            "content_spec": "Cross-loop insight aggregation, decision-point detection, option generation, option evaluation, confidence-gated decision making, decision audit trail"
+        },
+    }
+},
+
+# ──────────────────────────────────────────────────────────────────────────
+#  PHASE 8: MEMORY & RECURSIVE LEARNING COMPLETION
+#  Status: EARLY-STAGE → FULLY OPERATIONAL
+#  Problem: Memory structures exist but recursive self-ingestion, compound
+#           intelligence, and routing evolution are not operational
+# ──────────────────────────────────────────────────────────────────────────
+{
+    "phase": 8,
+    "name": "Memory & Recursive Learning Completion",
+    "version": "v10.3.0-phase8",
+    "status_before": "EARLY-STAGE (structures exist, recursion non-operational)",
+    "status_after": "FULLY OPERATIONAL (compound intelligence, routing evolution)",
+    "depends_on": [7],
+    "new_folders": [
+        "src/claire/memory/compound",
+        "data/memory/thesis_history",
+        "data/memory/routing_evolution",
+    ],
+    "new_files": {
+        "src/claire/memory/compound/__init__.py": {
+            "role": "Compound intelligence sub-package init",
+            "content_spec": "Package marker"
+        },
+        "src/claire/memory/compound/compound_engine.py": {
+            "role": "Compound intelligence engine — makes future runs smarter using past runs",
+            "content_spec": "Cross-run pattern extraction, insight compounding, prediction improvement tracking, domain expertise accumulation"
+        },
+        "src/claire/memory/compound/thesis_historian.py": {
+            "role": "Thesis history tracker — preserves and learns from thesis evolution",
+            "content_spec": "Thesis versioning, thesis outcome tracking, thesis pattern detection, successful thesis template extraction, failed thesis analysis"
+        },
+        "src/claire/memory/compound/routing_evolver.py": {
+            "role": "Routing quality evolution — improves routing over time using outcomes",
+            "content_spec": "Route decision logging, outcome correlation, routing weight adjustment, routing bias correction, routing confidence evolution"
+        },
+        "src/claire/memory/compound/assumption_tracker.py": {
+            "role": "Assumption tracking — tracks assumptions made and validates them over time",
+            "content_spec": "Assumption registration, assumption validation scheduling, validated/invalidated tracking, assumption impact scoring"
+        },
+        "src/claire/recursive/deep_ingestion.py": {
+            "role": "Deep recursive self-ingestion — goes beyond surface-level output reprocessing",
+            "content_spec": "Multi-layer output decomposition, evidence re-evaluation, confidence recalibration, insight extraction from failed paths, meta-pattern detection"
+        },
+        "src/claire/recursive/ingestion_scheduler.py": {
+            "role": "Ingestion scheduling — determines when and what to re-ingest",
+            "content_spec": "Re-ingestion priority scoring, staleness detection, impact estimation, resource-aware scheduling, diminishing returns detection"
+        },
+    }
+},
+
+# ──────────────────────────────────────────────────────────────────────────
+#  PHASE 9: DESIGN PORTAL FULL BUILD
+#  Status: GATE-ONLY → FULL DESIGN SYSTEM
+#  Problem: portal.py only does routing (should_route_to_design = true/false)
+#           Does NOT yet generate architecture graphs, dependency maps, etc.
+#  Solution: Full design generation system
+# ──────────────────────────────────────────────────────────────────────────
+{
+    "phase": 9,
+    "name": "Design Portal Full Build",
+    "version": "v10.3.0-phase9",
+    "status_before": "GATE-ONLY (routing decision only, no actual design generation)",
+    "status_after": "FULL DESIGN SYSTEM (architecture, dependencies, implementation plans)",
+    "depends_on": [6],
+    "new_folders": [
+        "src/claire/design/generators",
+        "src/claire/design/renderers",
+    ],
+    "new_files": {
+        "src/claire/design/generators/__init__.py": {
+            "role": "Design generators sub-package init",
+            "content_spec": "Package marker"
+        },
+        "src/claire/design/generators/architecture_generator.py": {
+            "role": "Architecture graph generator — creates system architecture from breakthrough/solution",
+            "content_spec": "Component identification, interface definition, data flow mapping, layer construction, architecture pattern selection, scalability annotation"
+        },
+        "src/claire/design/generators/dependency_generator.py": {
+            "role": "Dependency map generator — maps all dependencies for proposed design",
+            "content_spec": "Dependency graph construction, critical path identification, dependency risk scoring, alternative identification, version compatibility checking"
+        },
+        "src/claire/design/generators/component_tree_generator.py": {
+            "role": "Component tree generator — hierarchical component decomposition",
+            "content_spec": "Component hierarchy construction, responsibility assignment, interface contract generation, component interaction mapping"
+        },
+        "src/claire/design/generators/implementation_planner.py": {
+            "role": "Implementation plan generator — creates phased build plan from design",
+            "content_spec": "Phase decomposition, milestone definition, resource estimation, risk identification, critical path analysis, timeline generation"
+        },
+        "src/claire/design/generators/stack_intelligence.py": {
+            "role": "Stack intelligence — recommends technology stack for design",
+            "content_spec": "Requirements-to-stack mapping, stack compatibility validation, stack risk assessment, alternative stack comparison, stack migration paths"
+        },
+        "src/claire/design/renderers/__init__.py": {
+            "role": "Design renderers sub-package init",
+            "content_spec": "Package marker"
+        },
+        "src/claire/design/renderers/graph_renderer.py": {
+            "role": "Architecture graph renderer — produces visual architecture outputs",
+            "content_spec": "Graph-to-SVG rendering, interactive node layout, zoom/pan support, export to PNG/SVG/PDF, annotation overlay"
+        },
+        "src/claire/design/renderers/blueprint_formatter.py": {
+            "role": "Blueprint output formatter — produces structured blueprint documents",
+            "content_spec": "Blueprint document assembly, section ordering, evidence linking, confidence annotation, export to markdown/JSON/HTML"
+        },
+    }
+},
+
+# ──────────────────────────────────────────────────────────────────────────
+#  PHASE 10: AUTONOMOUS DECISIONING
+#  Status: MOSTLY NOT OPERATIONAL → GOVERNED AUTONOMOUS OPERATION
+#  Problem: Self-escalation, self-correction, self-enrichment, self-optimization
+#           are defined but not operational
+#  Solution: Governed autonomous decision framework
+# ──────────────────────────────────────────────────────────────────────────
+{
+    "phase": 10,
+    "name": "Autonomous Decisioning",
+    "version": "v10.3.0-phase10",
+    "status_before": "MOSTLY NOT OPERATIONAL (capabilities defined, not implemented)",
+    "status_after": "GOVERNED AUTONOMOUS (self-managing within safety boundaries)",
+    "depends_on": [7, 8],
+    "new_folders": [
+        "src/claire/autonomous",
+    ],
+    "new_files": {
+        "src/claire/autonomous/__init__.py": {
+            "role": "Autonomous decisioning package init",
+            "content_spec": "Package marker with autonomous module exports"
+        },
+        "src/claire/autonomous/self_escalator.py": {
+            "role": "Self-escalation — detects when findings warrant escalation without human trigger",
+            "content_spec": "Escalation condition detection, escalation threshold management, escalation path selection, escalation audit logging, governed escalation limits"
+        },
+        "src/claire/autonomous/self_corrector.py": {
+            "role": "Self-correction — detects and corrects errors in reasoning/output",
+            "content_spec": "Error pattern detection, confidence drop monitoring, contradiction detection, automatic re-analysis triggering, correction audit trail"
+        },
+        "src/claire/autonomous/self_enricher.py": {
+            "role": "Self-enrichment — autonomously seeks additional data when gaps detected",
+            "content_spec": "Data gap detection, source identification for gaps, autonomous research triggering, enrichment impact estimation, enrichment budget management"
+        },
+        "src/claire/autonomous/self_invalidator.py": {
+            "role": "Self-invalidation — detects when own conclusions are no longer valid",
+            "content_spec": "Conclusion monitoring, supporting evidence decay detection, contradicting evidence detection, invalidation triggering, invalidation notification"
+        },
+        "src/claire/autonomous/self_optimizer.py": {
+            "role": "Self-optimization — optimizes own processing for efficiency and quality",
+            "content_spec": "Processing bottleneck detection, pipeline optimization, parameter tuning, resource allocation optimization, quality-speed tradeoff management"
+        },
+        "src/claire/autonomous/research_director.py": {
+            "role": "Self-directed research — autonomously selects investigation paths",
+            "content_spec": "Research priority scoring, investigation path generation, resource allocation, expected-value estimation, research termination conditions"
+        },
+        "src/claire/autonomous/governance_boundary.py": {
+            "role": "Autonomous governance boundary — safety limits on autonomous action",
+            "content_spec": "Action classification (safe/review/prohibited), resource consumption limits, human-review triggers, autonomous scope definition, override protocols"
+        },
+    }
+},
+]
+
+# ============================================================================
+#  INSTALLER ENGINE
+# ============================================================================
+
+def get_summary():
+    """Generate install summary."""
+    total_files = sum(len(p["new_files"]) for p in PHASES)
+    total_folders = sum(len(p["new_folders"]) for p in PHASES)
+    return {
+        "installer_version": INSTALLER_VERSION,
+        "installer_date": INSTALLER_DATE,
+        "installer_id": INSTALLER_ID,
+        "total_phases": len(PHASES),
+        "total_new_files": total_files,
+        "total_new_folders": total_folders,
+        "phases": [
+            {
+                "phase": p["phase"],
+                "name": p["name"],
+                "version": p["version"],
+                "status_before": p["status_before"],
+                "status_after": p["status_after"],
+                "depends_on": p["depends_on"],
+                "new_folders": len(p["new_folders"]),
+                "new_files": len(p["new_files"]),
+            }
+            for p in PHASES
+        ]
+    }
+
+
+def preflight_check(target, phase_num=None):
+    """Run preflight validation."""
+    report = {
+        "timestamp": datetime.now().isoformat(),
+        "installer_id": INSTALLER_ID,
+        "target": str(target),
+        "checks": [],
+        "passed": True,
+    }
+
+    # Check target exists
+    if target.exists():
+        report["checks"].append({"check": "target_exists", "status": "PASS", "detail": str(target)})
+    else:
+        report["checks"].append({"check": "target_exists", "status": "FAIL", "detail": f"{target} not found"})
+        report["passed"] = False
+        return report
+
+    # Check src/claire exists
+    src_claire = target / "src" / "claire"
+    if src_claire.exists():
+        report["checks"].append({"check": "src_claire_exists", "status": "PASS"})
+    else:
+        report["checks"].append({"check": "src_claire_exists", "status": "FAIL", "detail": "src/claire/ not found"})
+        report["passed"] = False
+
+    # Check version.json
+    version_file = target / "version.json"
+    if version_file.exists():
+        report["checks"].append({"check": "version_json", "status": "PASS"})
+    else:
+        report["checks"].append({"check": "version_json", "status": "WARN", "detail": "version.json not found"})
+
+    # Check for conflicts — files that already exist
+    phases_to_check = PHASES if phase_num is None else [p for p in PHASES if p["phase"] == phase_num]
+    conflicts = []
+    for phase in phases_to_check:
+        for filepath in phase["new_files"]:
+            full_path = target / filepath
+            if full_path.exists():
+                conflicts.append(filepath)
+
+    if conflicts:
+        report["checks"].append({
+            "check": "no_conflicts",
+            "status": "WARN",
+            "detail": f"{len(conflicts)} files already exist — will be SKIPPED (not overwritten)",
+            "conflicts": conflicts
+        })
+    else:
+        report["checks"].append({"check": "no_conflicts", "status": "PASS"})
+
+    return report
+
+
+def install_phase(target, phase, dry_run=False):
+    """Install a single phase."""
+    result = {
+        "phase": phase["phase"],
+        "name": phase["name"],
+        "version": phase["version"],
+        "timestamp": datetime.now().isoformat(),
+        "folders_created": [],
+        "files_created": [],
+        "files_skipped": [],
+        "errors": [],
+    }
+
+    # Create folders
+    for folder in phase["new_folders"]:
+        folder_path = target / folder
+        if dry_run:
+            result["folders_created"].append({"path": folder, "status": "DRY_RUN"})
+        else:
+            try:
+                folder_path.mkdir(parents=True, exist_ok=True)
+                result["folders_created"].append({"path": folder, "status": "CREATED"})
+            except Exception as e:
+                result["errors"].append({"path": folder, "error": str(e)})
+
+    # Create files
+    for filepath, spec in phase["new_files"].items():
+        full_path = target / filepath
+        if full_path.exists():
+            result["files_skipped"].append({"path": filepath, "reason": "already_exists"})
+            continue
+
+        if dry_run:
+            result["files_created"].append({"path": filepath, "role": spec["role"], "status": "DRY_RUN"})
+        else:
+            try:
+                full_path.parent.mkdir(parents=True, exist_ok=True)
+
+                # Generate file content
+                if filepath.endswith(".py"):
+                    content = generate_python_file(filepath, spec, phase)
+                elif filepath.endswith(".js"):
+                    content = generate_js_file(filepath, spec, phase)
+                elif filepath.endswith(".css"):
+                    content = generate_css_file(filepath, spec, phase)
+                elif filepath.endswith(".json"):
+                    content = generate_json_file(filepath, spec, phase)
+                else:
+                    content = f"# {spec['role']}\n# Content spec: {spec['content_spec']}\n"
+
+                full_path.write_text(content, encoding="utf-8")
+                result["files_created"].append({"path": filepath, "role": spec["role"], "status": "CREATED"})
+            except Exception as e:
+                result["errors"].append({"path": filepath, "error": str(e)})
+
+    return result
+
+
+def generate_python_file(filepath, spec, phase):
+    """Generate Python source file with proper structure."""
+    module_name = Path(filepath).stem
+    package_path = filepath.replace("/", ".").replace("\\", ".").replace(".py", "")
+
+    if module_name == "__init__":
+        return f'"""\n{spec["role"]}\nPhase {phase["phase"]}: {phase["name"]} ({phase["version"]})\n"""\n'
+
+    lines = [
+        f'"""',
+        f'{spec["role"]}',
+        f'',
+        f'Phase {phase["phase"]}: {phase["name"]}',
+        f'Version: {phase["version"]}',
+        f'Status: {phase["status_before"]} → {phase["status_after"]}',
+        f'',
+        f'Content Specification:',
+        f'  {spec["content_spec"]}',
+    ]
+    if "replaces" in spec:
+        lines.append(f'')
+        lines.append(f'Replaces: {spec["replaces"]}')
+    lines.extend([
+        f'"""',
+        f'',
+        f'import logging',
+        f'from typing import Any, Dict, List, Optional',
+        f'',
+        f'logger = logging.getLogger(__name__)',
+        f'',
+        f'',
+        f'class {to_class_name(module_name)}:',
+        f'    """',
+        f'    {spec["role"]}',
+        f'    ',
+        f'    Spec: {spec["content_spec"]}',
+        f'    """',
+        f'',
+        f'    def __init__(self):',
+        f'        self.logger = logging.getLogger(self.__class__.__name__)',
+        f'        self.logger.info(f"{{self.__class__.__name__}} initialized")',
+        f'',
+        f'    def execute(self, context: Dict[str, Any]) -> Dict[str, Any]:',
+        f'        """Execute primary operation."""',
+        f'        raise NotImplementedError("Implementation required: {spec["content_spec"]}")',
+        f'',
+        f'    def validate(self, result: Dict[str, Any]) -> bool:',
+        f'        """Validate execution result."""',
+        f'        raise NotImplementedError("Validation required")',
+        f'',
+    ])
+    return "\n".join(lines) + "\n"
+
+
+def generate_js_file(filepath, spec, phase):
+    """Generate JavaScript source file."""
+    module_name = Path(filepath).stem
+    return f"""/**
+ * {spec['role']}
+ *
+ * Phase {phase['phase']}: {phase['name']}
+ * Version: {phase['version']}
+ * Status: {phase['status_before']} → {phase['status_after']}
+ *
+ * Content Specification:
+ *   {spec['content_spec']}
+ *{' * Replaces: ' + spec.get('replaces', '') if 'replaces' in spec else ''}
+ */
+
+export class {to_class_name(module_name)} {{
+    constructor(options = {{}}) {{
+        this.options = options;
+        this.initialized = false;
+        console.log(`[{to_class_name(module_name)}] Constructed`);
+    }}
+
+    async init() {{
+        // TODO: Implement — {spec['content_spec']}
+        this.initialized = true;
+        console.log(`[{to_class_name(module_name)}] Initialized`);
+    }}
+
+    destroy() {{
+        this.initialized = false;
+    }}
+}}
+"""
+
+
+def generate_css_file(filepath, spec, phase):
+    """Generate CSS file."""
+    return f"""/*
+ * {spec['role']}
+ *
+ * Phase {phase['phase']}: {phase['name']}
+ * Version: {phase['version']}
+ *
+ * Content Specification:
+ *   {spec['content_spec']}
+ */
+
+:root {{
+    /* Claire Design Tokens */
+    --claire-bg-primary: #0a0f1a;
+    --claire-bg-secondary: #131b2e;
+    --claire-bg-card: #1a2340;
+    --claire-text-primary: #e2e8f0;
+    --claire-text-secondary: #94a3b8;
+    --claire-accent: #3b82f6;
+    --claire-success: #22c55e;
+    --claire-warning: #f97316;
+    --claire-danger: #ef4444;
+    --claire-border: #2d3748;
+    --claire-radius: 8px;
+    --claire-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}}
+
+/* TODO: Implement — {spec['content_spec']} */
+"""
+
+
+def generate_json_file(filepath, spec, phase):
+    """Generate JSON config file."""
+    return json.dumps({
+        "_meta": {
+            "role": spec["role"],
+            "phase": phase["phase"],
+            "version": phase["version"],
+            "content_spec": spec["content_spec"],
+        },
+        "config": {}
+    }, indent=2) + "\n"
+
+
+def to_class_name(name):
+    """Convert snake_case to PascalCase."""
+    return "".join(word.capitalize() for word in name.split("_"))
+
+
+def write_audit_log(target, action, data):
+    """Write to installer audit log."""
+    log_dir = target / ".claire_install_logs"
+    log_dir.mkdir(parents=True, exist_ok=True)
+    log_file = log_dir / f"completion_{INSTALLER_ID}_{action}.json"
+    log_file.write_text(json.dumps(data, indent=2, default=str), encoding="utf-8")
+    return log_file
+
+
+# ============================================================================
+#  CLI
+# ============================================================================
+
+def main():
+    parser = argparse.ArgumentParser(description="Claire v10.3 Completion Installer")
+    parser.add_argument("--target", type=str, default=DEFAULT_TARGET, help="Target directory")
+    parser.add_argument("--install", action="store_true", help="Execute installation (default is dry run)")
+    parser.add_argument("--phase", type=int, help="Install specific phase only (1-10)")
+    parser.add_argument("--summary", action="store_true", help="Print summary and exit")
+    args = parser.parse_args()
+
+    target = Path(args.target)
+    summary = get_summary()
+
+    if args.summary or not args.install:
+        print("=" * 80)
+        print("  CLAIRE v10.3 COMPLETION INSTALLER — PHASE SUMMARY")
+        print("=" * 80)
+        print(f"  Installer Version: {summary['installer_version']}")
+        print(f"  Installer Date:    {summary['installer_date']}")
+        print(f"  Installer ID:      {summary['installer_id']}")
+        print(f"  Target:            {target}")
+        print(f"  Total Phases:      {summary['total_phases']}")
+        print(f"  Total New Files:   {summary['total_new_files']}")
+        print(f"  Total New Folders: {summary['total_new_folders']}")
+        print()
+
+        for p in summary["phases"]:
+            deps = f" (depends on: {p['depends_on']})" if p['depends_on'] else ""
+            print(f"  Phase {p['phase']:2d}: {p['name']}")
+            print(f"           {p['status_before']}")
+            print(f"        →  {p['status_after']}")
+            print(f"           {p['new_folders']} folders, {p['new_files']} files{deps}")
+            print()
+
+        if not args.install:
+            print("  Run with --install to execute. Add --phase N for single phase.")
+            print("=" * 80)
+            return
+
+    # Preflight
+    print("\n[PREFLIGHT] Running checks...")
+    preflight = preflight_check(target, args.phase)
+    write_audit_log(target, "preflight", preflight) if target.exists() else None
+
+    for check in preflight["checks"]:
+        status = check["status"]
+        icon = "✓" if status == "PASS" else ("⚠" if status == "WARN" else "✗")
+        print(f"  {icon} {check['check']}: {status}")
+        if "detail" in check:
+            print(f"    {check['detail']}")
+
+    if not preflight["passed"]:
+        print("\n[PREFLIGHT] FAILED — aborting installation.")
+        return
+
+    # Install
+    phases_to_install = PHASES if args.phase is None else [p for p in PHASES if p["phase"] == args.phase]
+
+    for phase in phases_to_install:
+        print(f"\n[PHASE {phase['phase']}] Installing: {phase['name']}...")
+        result = install_phase(target, phase, dry_run=not args.install)
+        write_audit_log(target, f"phase_{phase['phase']}", result)
+
+        print(f"  Folders: {len(result['folders_created'])} created")
+        print(f"  Files:   {len(result['files_created'])} created, {len(result['files_skipped'])} skipped")
+        if result["errors"]:
+            print(f"  Errors:  {len(result['errors'])}")
+            for err in result["errors"]:
+                print(f"    ✗ {err['path']}: {err['error']}")
+
+    # Postflight
+    postflight = {
+        "timestamp": datetime.now().isoformat(),
+        "installer_id": INSTALLER_ID,
+        "phases_installed": [p["phase"] for p in phases_to_install],
+        "status": "COMPLETE" if args.install else "DRY_RUN",
+    }
+    write_audit_log(target, "postflight", postflight) if target.exists() else None
+
+    print(f"\n{'=' * 80}")
+    print(f"  {'INSTALLATION COMPLETE' if args.install else 'DRY RUN COMPLETE'}")
+    print(f"  Audit logs: {target / '.claire_install_logs' / f'completion_{INSTALLER_ID}_*'}")
+    print(f"{'=' * 80}")
+
+
+if __name__ == "__main__":
+    main()

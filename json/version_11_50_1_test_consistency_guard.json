@@ -1,0 +1,22 @@
+{
+  "installed_at_utc": "2026-05-07T02:34:29.448714+00:00",
+  "phase": "operational_proof_plateau_consistency",
+  "purpose": "Prevent recurring pytest instability from unbound placeholder tests and stale baseline assumptions.",
+  "safety_contract": {
+    "does_not_modify_core_run_output": true,
+    "does_not_modify_dashboard": true,
+    "does_not_modify_routing": true,
+    "does_not_modify_runtime": true,
+    "does_not_modify_scoring": true,
+    "test_layer_only": true
+  },
+  "state": "test_consistency_guard_installed",
+  "status": "installed_not_validated",
+  "validation_commands": [
+    "pytest tests/consistency -v",
+    "pytest tests/operational_proof -v",
+    "python tools/pytest_consistency_audit.py",
+    "pytest"
+  ],
+  "version": "11.50.1"
+}

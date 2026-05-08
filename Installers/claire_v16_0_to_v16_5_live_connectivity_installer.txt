@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import json
+import shutil
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List
+
+INSTALLER_NAME = 'Claire v16.0-v16.5 Governed Live Connectivity Installer'
+INSTALLER_VERSION = '16.0-16.5'
+DEFAULT_TARGET = Path.home() / "OneDrive" / "Desktop" / "Claire"
+
+FOLDERS = [
+  "src/claire/live_connectivity",
+  "tests/live_connectivity",
+  "data/live_connectivity/connectivity_checks",
+  "data/live_connectivity/source_allowlists",
+  "data/live_connectivity/live_ingestion_gates",
+  "data/live_connectivity/internet_audit_logs",
+  "data/live_connectivity/quarantine",
+  "docs/live_connectivity",
+  ".claire_install/reports"
+]
+FILES = {
+  "src/claire/live_connectivity/__init__.py": "\"\"\"Claire governed live connectivity package.\"\"\"\n",
+  "src/claire/live_connectivity/source_allowlist.py": "from __future__ import annotations\nfrom typing import Any, Dict, List\nfrom urllib.parse import urlparse\n\nclass SourceAllowlist:\n    def build_policy(self, allowed_domains: List[str]) -> Dict[str, Any]:\n        return {\n            \"record_type\": \"source_allowlist_policy\",\n            \"allowed_domains\": sorted(set(allowed_domains)),\n            \"default_decision\": \"blocked\",\n            \"rights_required\": True,\n            \"lineage_required\": True,\n        }\n\n    def is_allowed(self, url: str, policy: Dict[str, Any]) -> bool:\n        host = urlparse(url).netloc.lower()\n        allowed = [d.lower() for d in policy.get(\"allowed_domains\", [])]\n        return any(host == d or host.endswith(\".\" + d) for d in allowed)\n",
+  "src/claire/live_connectivity/connectivity_probe.py": "from __future__ import annotations\nfrom datetime import datetime, timezone\nfrom typing import Any, Dict\nfrom urllib.request import Request, urlopen\n\nclass ConnectivityProbe:\n    def probe(self, url: str = \"https://example.com\", timeout: int = 8) -> Dict[str, Any]:\n        started = datetime.now(timezone.utc).isoformat()\n        try:\n            req = Request(url, headers={\"User-Agent\": \"ClaireConnectivityProbe/16.0\"})\n            with urlopen(req, timeout=timeout) as response:\n                return {\n                    \"record_type\": \"connectivity_probe\",\n                    \"url\": url,\n                    \"status\": \"success\",\n                    \"http_status\": getattr(response, \"status\", None),\n                    \"started_at_utc\": started,\n                    \"completed_at_utc\": datetime.now(timezone.utc).isoformat(),\n                }\n        except Exception as exc:\n            return {\n                \"record_type\": \"connectivity_probe\",\n                \"url\": url,\n                \"status\": \"failed\",\n                \"error\": str(exc),\n                \"started_at_utc\": started,\n                \"completed_at_utc\": datetime.now(timezone.utc).isoformat(),\n            }\n",
+  "src/claire/live_connectivity/live_ingestion_gate.py": "from __future__ import annotations\nfrom typing import Any, Dict\n\nclass LiveIngestionGate:\n    REQUIRED = [\"source_allowed\", \"rights_confirmed\", \"lineage_created\", \"audit_logged\", \"quarantine_supported\"]\n\n    def evaluate(self, checks: Dict[str, bool]) -> Dict[str, Any]:\n        missing = [key for key in self.REQUIRED if not checks.get(key, False)]\n        return {\n            \"record_type\": \"live_ingestion_gate\",\n            \"status\": \"pass\" if not missing else \"blocked\",\n            \"missing\": missing,\n            \"rule\": \"Live internet data must be allowlisted, rights-aware, lineage-tracked, audited, and quarantine-capable.\"\n        }\n",
+  "src/claire/live_connectivity/internet_audit_log.py": "from __future__ import annotations\nimport json\nfrom datetime import datetime, timezone\nfrom pathlib import Path\nfrom typing import Any, Dict\n\nclass InternetAuditLog:\n    def __init__(self, root: str | Path = \".\") -> None:\n        self.root = Path(root)\n\n    def build_event(self, url: str, decision: str, reason: str) -> Dict[str, Any]:\n        return {\n            \"record_type\": \"internet_audit_event\",\n            \"url\": url,\n            \"decision\": decision,\n            \"reason\": reason,\n            \"created_at_utc\": datetime.now(timezone.utc).isoformat(),\n        }\n\n    def export_event(self, event: Dict[str, Any]) -> Path:\n        safe = event[\"created_at_utc\"].replace(\":\", \"-\")\n        out = self.root / \"data\" / \"live_connectivity\" / \"internet_audit_logs\" / f\"internet_audit_{safe}.json\"\n        out.parent.mkdir(parents=True, exist_ok=True)\n        out.write_text(json.dumps(event, indent=2, sort_keys=True), encoding=\"utf-8\")\n        return out\n",
+  "src/claire/live_connectivity/quarantine_record.py": "from __future__ import annotations\nfrom datetime import datetime, timezone\nfrom typing import Any, Dict\n\nclass QuarantineRecord:\n    def build_record(self, source: str, reason: str) -> Dict[str, Any]:\n        return {\n            \"record_type\": \"live_source_quarantine\",\n            \"source\": source,\n            \"reason\": reason,\n            \"status\": \"quarantined\",\n            \"created_at_utc\": datetime.now(timezone.utc).isoformat(),\n        }\n",
+  "docs/live_connectivity/v16_0_to_v16_5_live_connectivity_plan.md": "# v16.0-v16.5 Governed Live Connectivity\n\nThis phase verifies internet connectivity without allowing uncontrolled live data into high-confidence scoring.\n\n## Rules\n\n- All live sources require allowlist approval.\n- All source use requires rights and lineage.\n- Failed or unknown sources go to quarantine.\n- Live data is evidence input only until replay and operator review confirm reliability.\n",
+  "tests/live_connectivity/test_live_connectivity.py": "from claire.live_connectivity.source_allowlist import SourceAllowlist\nfrom claire.live_connectivity.live_ingestion_gate import LiveIngestionGate\n\ndef test_allowlist_allows_domain():\n    policy = SourceAllowlist().build_policy([\"example.com\"])\n    assert SourceAllowlist().is_allowed(\"https://www.example.com/page\", policy)\n\ndef test_live_gate_blocks_empty():\n    assert LiveIngestionGate().evaluate({})[\"status\"] == \"blocked\"\n"
+}
+VERSION_FILE = 'version_16_5_live_connectivity.json'
+LOCK_PAYLOAD = {
+  "version": "16.5",
+  "state": "governed_live_connectivity_installed",
+  "phase": "live_connectivity_verification",
+  "status": "installed_not_enabled",
+  "safety_contract": {
+    "does_not_modify_runtime": True,
+    "does_not_modify_routing": True,
+    "does_not_modify_scoring": True,
+    "does_not_modify_core_run_output": True,
+    "live_data_gated": True,
+    "internet_access_requires_allowlist": True
+  }
+}
+
+def stamp() -> str:
+    return datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+
+def now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+def ensure_dir(path: Path, install: bool, actions: List[Dict[str, Any]]) -> None:
+    existed = path.exists()
+    if install:
+        path.mkdir(parents=True, exist_ok=True)
+    actions.append({"action": "ensure_dir", "path": str(path), "installed": install, "existed": existed})
+
+def write_file(path: Path, content: str, install: bool, actions: List[Dict[str, Any]]) -> None:
+    existed = path.exists()
+    backup = None
+    if install:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if existed:
+            backup_path = path.with_name(path.name + ".bak_" + stamp())
+            shutil.copy2(path, backup_path)
+            backup = str(backup_path)
+        path.write_text(content, encoding="utf-8", newline="\n")
+    actions.append({"action": "write_file", "path": str(path), "installed": install, "existed": existed, "backup": backup})
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=INSTALLER_NAME)
+    parser.add_argument("--target", default=str(DEFAULT_TARGET), help="Claire project root")
+    parser.add_argument("--install", action="store_true", help="Apply install. Without this, dry run only.")
+    args = parser.parse_args()
+
+    root = Path(args.target).expanduser().resolve()
+    install = bool(args.install)
+
+    print(f"{INSTALLER_NAME} {INSTALLER_VERSION}")
+    print(f"Target: {root}")
+    print("Mode:", "INSTALL" if install else "DRY RUN")
+
+    if not root.exists():
+        print(f"[ERROR] Target does not exist: {root}")
+        return 2
+    if not (root / "src").exists():
+        print("[ERROR] This does not look like Claire root. Missing src folder.")
+        return 3
+
+    actions: List[Dict[str, Any]] = []
+    for folder in FOLDERS:
+        ensure_dir(root / folder, install, actions)
+    for rel, content in FILES.items():
+        write_file(root / rel, content, install, actions)
+
+    payload = dict(LOCK_PAYLOAD)
+    payload["installed_at_utc"] = now_iso()
+    write_file(root / VERSION_FILE, json.dumps(payload, indent=2, sort_keys=True), install, actions)
+
+    report = {
+        "installer": INSTALLER_NAME,
+        "installer_version": INSTALLER_VERSION,
+        "installed": install,
+        "installed_at_utc": now_iso(),
+        "target": str(root),
+        "actions": actions,
+        "version_file": VERSION_FILE,
+        "safety_contract": payload.get("safety_contract", {}),
+        "post_install_checks": [
+            "Run the targeted pytest folder for this installer.",
+            "Review docs before enabling live internet use.",
+            "Do not add live data to high-confidence scoring without lineage and source policy approval.",
+            "Commit after tests pass."
+        ]
+    }
+
+    if install:
+        report_path = root / ".claire_install" / "reports" / (VERSION_FILE.replace(".json", "") + "_" + stamp() + ".json")
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
+        print(f"[OK] Report written: {report_path}")
+    else:
+        print("[DRY RUN] No files changed. Re-run with --install to apply.")
+
+    print(json.dumps({
+        "installed": install,
+        "target": str(root),
+        "installer_version": INSTALLER_VERSION,
+        "folders": len(FOLDERS),
+        "files": len(FILES) + 1
+    }, indent=2))
+    return 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
