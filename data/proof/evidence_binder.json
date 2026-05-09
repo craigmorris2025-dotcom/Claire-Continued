@@ -1,10 +1,10 @@
 {
   "version": "16.59",
-  "generated_at": "2026-05-07T08:59:51.241128+00:00",
+  "generated_at": "2026-05-09T01:46:33.353265+00:00",
   "status": "ready",
-  "record_count": 1,
+  "record_count": 2,
   "record_type_counts": {
-    "demo_run": 1
+    "demo_run": 2
   },
   "minimum_targets": {
     "benchmark_replay": 25,
@@ -24,6 +24,16 @@
     {
       "version": "16.58",
       "timestamp": "2026-05-07T08:59:51.231132+00:00",
+      "record_type": "demo_run",
+      "title": "Regression demo proof record",
+      "payload": {
+        "status": "passed",
+        "source": "v16.60 regression"
+      }
+    },
+    {
+      "version": "16.58",
+      "timestamp": "2026-05-09T01:46:33.340266+00:00",
       "record_type": "demo_run",
       "title": "Regression demo proof record",
       "payload": {

@@ -38,8 +38,10 @@
     "payload": {},
     "priority": 10,
     "owner": "runtime",
-    "state": "queued",
-    "attempts": 0
+    "state": "completed",
+    "attempts": 0,
+    "updated_at": "2026-05-09T01:46:35.703535+00:00",
+    "note": "Scheduler completed bounded placeholder execution."
   },
   {
     "version": "16.81",
@@ -55,8 +57,10 @@
     },
     "priority": 8,
     "owner": "recursive_orchestration_controller",
-    "state": "queued",
-    "attempts": 0
+    "state": "completed",
+    "attempts": 0,
+    "updated_at": "2026-05-09T01:46:35.729536+00:00",
+    "note": "Scheduler completed bounded placeholder execution."
   },
   {
     "version": "16.81",
@@ -72,6 +76,84 @@
     },
     "priority": 8,
     "owner": "recursive_orchestration_controller",
+    "state": "completed",
+    "attempts": 0,
+    "updated_at": "2026-05-09T01:46:35.735535+00:00",
+    "note": "Scheduler completed bounded placeholder execution."
+  },
+  {
+    "version": "16.81",
+    "task_id": "task_20260509014633078266",
+    "created_at": "2026-05-09T01:46:33.078266+00:00",
+    "task_type": "signal_analysis",
+    "title": "High priority recursive regression task",
+    "payload": {},
+    "priority": 10,
+    "owner": "runtime",
+    "state": "completed",
+    "attempts": 0,
+    "updated_at": "2026-05-09T01:46:35.710538+00:00",
+    "note": "Scheduler completed bounded placeholder execution."
+  },
+  {
+    "version": "16.81",
+    "task_id": "task_20260509014633093263",
+    "created_at": "2026-05-09T01:46:33.093263+00:00",
+    "task_type": "thesis_update",
+    "title": "Follow-on task from escalation: Regression signal analysis task",
+    "payload": {
+      "source_escalation_id": "esc_20260507131843869733_0",
+      "source_id": "task_20260507130611010947",
+      "recommended_route": "thesis_update",
+      "score": 0.88
+    },
+    "priority": 8,
+    "owner": "recursive_orchestration_controller",
+    "state": "completed",
+    "attempts": 0,
+    "updated_at": "2026-05-09T01:46:35.748536+00:00",
+    "note": "Scheduler completed bounded placeholder execution."
+  },
+  {
+    "version": "16.81",
+    "task_id": "task_20260509014633095264",
+    "created_at": "2026-05-09T01:46:33.095264+00:00",
+    "task_type": "evidence_review",
+    "title": "Follow-on task from escalation: Regression evidence review task",
+    "payload": {
+      "source_escalation_id": "esc_20260507131843869733_1",
+      "source_id": "task_20260507130611017947",
+      "recommended_route": "operator_review",
+      "score": 0.75
+    },
+    "priority": 8,
+    "owner": "recursive_orchestration_controller",
+    "state": "queued",
+    "attempts": 0
+  },
+  {
+    "version": "16.81",
+    "task_id": "task_20260509014635673534",
+    "created_at": "2026-05-09T01:46:35.673534+00:00",
+    "task_type": "signal_analysis",
+    "title": "Regression signal analysis task",
+    "payload": {
+      "summary": "test"
+    },
+    "priority": 8,
+    "owner": "runtime",
+    "state": "queued",
+    "attempts": 0
+  },
+  {
+    "version": "16.81",
+    "task_id": "task_20260509014635682536",
+    "created_at": "2026-05-09T01:46:35.682536+00:00",
+    "task_type": "evidence_review",
+    "title": "Regression evidence review task",
+    "payload": {},
+    "priority": 7,
+    "owner": "runtime",
     "state": "queued",
     "attempts": 0
   }

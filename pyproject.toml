@@ -29,4 +29,6 @@ dev = [
 claire = "claire.main:app"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["."]
+include = ["claire*", "backend*"]
+exclude = ["src*", "old_backend*", "quarantine*", "frontend*", "tests*"]

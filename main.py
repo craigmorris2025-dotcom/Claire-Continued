@@ -4,8 +4,11 @@ import os
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
 
-if SRC not in sys.path:
-    sys.path.insert(0, SRC)
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
+
+if os.path.exists(SRC) and SRC not in sys.path:
+    sys.path.append(SRC)
 
 from claire.app import create_app
 

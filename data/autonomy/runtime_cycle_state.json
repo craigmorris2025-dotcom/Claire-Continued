@@ -33,6 +33,39 @@
       "stop_reason": "operator_stop",
       "events": [],
       "stopped_at": "2026-05-07T13:18:43.859738+00:00"
+    },
+    {
+      "version": "16.86",
+      "cycle_id": "cycle_20260509014632988264",
+      "cycle_name": "autonomous_runtime_cycle",
+      "started_at": "2026-05-09T01:46:32.988264+00:00",
+      "max_cycles": 1,
+      "current_cycle": 1,
+      "operator_approved": true,
+      "status": "completed",
+      "stop_reason": "max_cycles_reached",
+      "events": [
+        {
+          "timestamp": "2026-05-09T01:46:32.996264+00:00",
+          "event": {
+            "type": "regression"
+          }
+        }
+      ],
+      "completed_at": "2026-05-09T01:46:32.996264+00:00"
+    },
+    {
+      "version": "16.86",
+      "cycle_id": "cycle_20260509014633004264",
+      "cycle_name": "autonomous_runtime_cycle",
+      "started_at": "2026-05-09T01:46:33.004264+00:00",
+      "max_cycles": 3,
+      "current_cycle": 0,
+      "operator_approved": true,
+      "status": "stopped",
+      "stop_reason": "operator_stop",
+      "events": [],
+      "stopped_at": "2026-05-09T01:46:33.010265+00:00"
     }
   ]
 }

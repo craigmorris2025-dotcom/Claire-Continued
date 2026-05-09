@@ -1,6 +1,6 @@
 {
   "version": "16.89",
-  "generated_at": "2026-05-07T13:18:43.907739+00:00",
+  "generated_at": "2026-05-09T01:46:33.118262+00:00",
   "status": "ready",
   "feedback_record_count": 1,
   "feedback_adjustment": 0.1,
@@ -29,7 +29,40 @@
     },
     {
       "kind": "task",
+      "id": "task_20260509014633078266",
+      "title": "High priority recursive regression task",
+      "task_type": "signal_analysis",
+      "state": "queued",
+      "score": 1.0,
+      "base_score": 1.0,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 1.0
+    },
+    {
+      "kind": "task",
+      "id": "task_20260509014633093263",
+      "title": "Follow-on task from escalation: Regression signal analysis task",
+      "task_type": "thesis_update",
+      "state": "queued",
+      "score": 1.0,
+      "base_score": 1.0,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 1.0
+    },
+    {
+      "kind": "task",
       "id": "task_20260507131843887732",
+      "title": "Follow-on task from escalation: Regression evidence review task",
+      "task_type": "evidence_review",
+      "state": "queued",
+      "score": 0.95,
+      "base_score": 0.95,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 1.0
+    },
+    {
+      "kind": "task",
+      "id": "task_20260509014633095264",
       "title": "Follow-on task from escalation: Regression evidence review task",
       "task_type": "evidence_review",
       "state": "queued",
@@ -41,6 +74,17 @@
     {
       "kind": "memory",
       "id": "mem_20260507131843861736",
+      "title": "High priority regression thesis",
+      "memory_type": "thesis",
+      "status": "active",
+      "score": 1.0,
+      "base_score": 1.0,
+      "feedback_adjustment": 0.1,
+      "adjusted_score": 1.0
+    },
+    {
+      "kind": "memory",
+      "id": "mem_20260509014633012266",
       "title": "High priority regression thesis",
       "memory_type": "thesis",
       "status": "active",
