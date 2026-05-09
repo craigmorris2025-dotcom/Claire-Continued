@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DASH = ROOT / "frontend" / "command_center" / "modern"
+DASH = ROOT / "src" / "frontend" / "command_center" / "modern"
 
 def test_v17_54_files_exist():
     assert (DASH / "index.html").exists()

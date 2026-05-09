@@ -48,7 +48,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
 
-ACTIVE_RUNTIME_PREFIXES = ("claire/", "frontend/")
+ACTIVE_RUNTIME_PREFIXES = ("src/claire/", "src/frontend/")
 ALLOWED_SUPPORT_PREFIXES = ("tests/", "docs/", "data/", "tools/", "scripts/", "config/")
 ALLOWED_ROOT_FILES = {"version.json", "README.md", "CHANGELOG.md", "pyproject.toml", "requirements.txt", "pytest.ini"}
 BLOCKED_PREFIXES = ("backend/", "src/backend/", ".venv/", ".git/", "__pycache__/")
@@ -58,7 +58,7 @@ COMMON_AMBIGUOUS_FILENAMES_TO_IGNORE = {"__init__.py", "README.md", ".gitkeep", 
 VALIDATION_COMMANDS = [
     {
         "name": "compile_all_src_claire",
-        "cmd": [sys.executable, "-m", "compileall", "claire"],
+        "cmd": [sys.executable, "-m", "compileall", "src/claire"],
         "required": True,
     },
     {
@@ -115,9 +115,9 @@ def read_text_safely(data: bytes) -> str:
 
 def ensure_project_root(root: Path) -> None:
     required = [
-        
-        root / "claire",
-        root / "frontend",
+        root / "src",
+        root / "src" / "claire",
+        root / "src" / "frontend",
         root / "tests",
         root / "version.json",
     ]
@@ -251,10 +251,10 @@ def is_allowed_path(rel: str) -> bool:
 
 def family_key(rel: str) -> str:
     parts = normalize_rel(rel).split("/")
-    if len(parts) >= 3 and parts[0] == "claire":
+    if len(parts) >= 3 and parts[0] == "src" and parts[1] == "claire":
         return "/".join(parts[:3])
-    if len(parts) >= 2 and parts[0] == "frontend":
-        return "frontend"
+    if len(parts) >= 2 and parts[0] == "src" and parts[1] == "frontend":
+        return "src/frontend"
     return parts[0] if parts else ""
 
 
@@ -323,7 +323,7 @@ def classify_file(root: Path, source_rel: str, dest_rel: str, data: bytes, exist
             meaningful_matches.append(pn + " [legacy]")
         elif pn.startswith("src/backend/"):
             meaningful_matches.append(pn + " [forbidden]")
-        elif pn.startswith("claire/") or pn.startswith("frontend/"):
+        elif pn.startswith("src/claire/") or pn.startswith("src/frontend/"):
             meaningful_matches.append(pn + " [active]")
         elif pn.startswith(("tests/", "docs/", "tools/", "scripts/", "config/")):
             meaningful_matches.append(pn + " [support]")

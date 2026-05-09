@@ -15,8 +15,8 @@ class PortableDesktopReadiness:
         "tools/portable_launcher.py",
         "tools/serve_export_dashboard.py",
         "tools/run_claire_baseline.py",
-        "claire",
-        "frontend/export_dashboard/index.html",
+        "src/claire",
+        "src/frontend/export_dashboard/index.html",
         "data/live_sources/public_company_source_packs.json",
         "data/update_sources/allowed_sources.json",
     ]

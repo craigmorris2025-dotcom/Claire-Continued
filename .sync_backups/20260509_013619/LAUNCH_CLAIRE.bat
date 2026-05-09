@@ -4,7 +4,7 @@ setlocal EnableExtensions
 REM ============================================================
 REM Claire Root Launcher
 REM Version: 17.52.1
-REM Active Dashboard: frontend\command_center\modern\index.html
+REM Active Dashboard: src\frontend\command_center\modern\index.html
 REM Purpose:
 REM   Opens the modern Claire Operator Dashboard.
 REM   Uses the v17.52 dashboard as the primary launcher surface.
@@ -16,7 +16,7 @@ cd /d "%~dp0"
 set "CLAIRE_ROOT=%~dp0"
 set "CLAIRE_APP_SHELL=0"
 set "CLAIRE_LAUNCH_MODE=modern_operator_dashboard"
-set "CLAIRE_DASHBOARD_PATH=frontend\command_center\modern\index.html"
+set "CLAIRE_DASHBOARD_PATH=src\frontend\command_center\modern\index.html"
 set "CLAIRE_LOG_DIR=logs"
 
 if not exist "%CLAIRE_LOG_DIR%" mkdir "%CLAIRE_LOG_DIR%"
@@ -55,7 +55,7 @@ echo Modern Operator Dashboard not found:
 echo   %CLAIRE_DASHBOARD_PATH%
 echo.
 echo Expected file:
-echo   frontend\command_center\modern\index.html
+echo   src\frontend\command_center\modern\index.html
 echo.
 echo Install or rerun:
 echo   python .\install_v17_52_modern_operator_dashboard.py

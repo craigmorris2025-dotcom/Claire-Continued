@@ -40,8 +40,8 @@ def main() -> int:
         "top_folders_by_file_count": top,
         "key_paths": {
             "main.py": (ROOT / "main.py").exists(),
-            "claire": (ROOT / "claire").exists(),
-            "frontend": (ROOT / "frontend").exists(),
+            "src/claire": (ROOT / "src" / "claire").exists(),
+            "src/frontend": (ROOT / "src" / "frontend").exists(),
             "tests": (ROOT / "tests").exists(),
             "archive": (ROOT / "archive").exists(),
             ".claire_install": (ROOT / ".claire_install").exists(),
