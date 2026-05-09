@@ -1,2 +1,0 @@
-"""Connected opportunity enrichment package."""
-

@@ -1,0 +1,66 @@
+Claire will do:
+
+reality → structure → gaps → necessity → invention → validation → strategy → outcome
+
+NEXT:
+1. knowledge/
+2. discovery/ (gap + opportunity)
+3. feasibility/
+4. market/
+5. moat/
+6. acquirers/ (replace current simple engine later)
+
+Mental model to keep you grounded
+
+Every new module must answer one question:
+
+“What new truth does this layer uncover that the previous layer could not?”
+
+the first real file to build: knowledge/repository.py (full replacement)
+
+Breakthrough Synthesis
+→ Feasibility
+→ Productization Path
+→ Design Portal
+→ Design Engine
+→ Specs / Blueprint
+→ Portfolio Binder
+
+Recommended folder structure:
+
+src/claire/
+  design/
+    __init__.py
+    portal.py              # decides whether a concept is ready for design
+    design_engine.py       # generates system / technology design
+    specs.py               # technical requirements + component specs
+    blueprints.py          # build plan, architecture, implementation path
+    artifacts.py           # packages output for portfolio/binders
+
+  portfolios/
+    binder.py              # assembles final investor/acquirer package
+
+concept
+scores
+needed_solution
+technical_feasibility
+market_gap
+risk_profile
+moat_profile
+productization_path
+
+system_design
+technical_specs
+architecture
+components
+data_flows
+build_blueprint
+implementation_phases
+portfolio_artifacts
+
+Claire discovers what should exist
+→ validates that it matters
+→ designs how it should be built
+→ packages it into portfolio/binder form
+→ then evaluates strategic acquirers
+

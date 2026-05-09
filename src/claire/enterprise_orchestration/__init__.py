@@ -1,1 +1,0 @@
-"""Claire enterprise orchestration foundation."""

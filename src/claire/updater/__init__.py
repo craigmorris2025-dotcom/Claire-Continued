@@ -1,2 +1,0 @@
-"""Claire updater bootstrap package."""
-

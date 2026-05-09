@@ -1,1 +1,0 @@
-"""Bridge — MasterPass handoff layer."""

@@ -1,1 +1,0 @@
-"""Claire external review readiness."""
