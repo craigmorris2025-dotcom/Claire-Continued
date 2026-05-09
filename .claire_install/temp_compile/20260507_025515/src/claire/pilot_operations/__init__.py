@@ -1,1 +1,0 @@
-"""Claire pilot operations package."""

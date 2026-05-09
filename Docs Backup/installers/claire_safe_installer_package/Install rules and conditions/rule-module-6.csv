@@ -1,7 +1,0 @@
-﻿Rule,Module,Enforcement
-1. One primary route per run,route_enforcer.py,RouteViolationError raised if a second route is selected or a cross-route stage is executed
-2. Supporting routes as context only,route_enforcer.py,"ContextEnrichment objects are always read_only=True; primary route cannot produce ""context"""
-3. Merge zone reconciles outputs,merge_zone.py,Breakthrough merges Stages 11-22 into 23-30 with conflict detection/resolution; Portfolio and Acquisition use simple aggregation
-4. Validation determines truth,validation_authority.py,"7 checks executed — data consistency, evidence validation, contract compliance, confidence thresholds, route integrity, temporal consistency, source traceability. ALL must PASS"
-5. Only verified outputs enter memory,memory_guard.py,"MemoryGuardViolation raised for any unvalidated, failed, or low-confidence output; rejection log maintained"
-6. Failures terminate cleanly,failure_handler.py,"Every failure produces a TerminalState with structured FailureRecord — classified as insufficient_data, blocked, or failed. No silent failures, no hanging runs"
