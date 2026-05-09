@@ -1,8 +1,8 @@
 {
   "lock": "core_runtime_lock",
-  "version": "v16.29",
-  "created_at": "2026-05-08T20:51:17.685280",
-  "status": "failed",
+  "version": "v16.29-phase4d",
+  "created_at": "2026-05-08T21:26:48.593553",
+  "status": "locked",
   "protected_contracts": [
     {
       "path": "main.py",
@@ -11,46 +11,52 @@
       "size_bytes": 424
     },
     {
-      "path": "src/claire/app.py",
+      "path": "claire/app.py",
       "type": "app_factory",
-      "exists": false,
-      "size_bytes": 0
+      "exists": true,
+      "size_bytes": 1462
     },
     {
-      "path": "src/claire/api/routes_pipeline.py",
+      "path": "claire/api/routes_pipeline.py",
       "type": "api_route",
-      "exists": false,
-      "size_bytes": 0
+      "exists": true,
+      "size_bytes": 10401
     },
     {
-      "path": "src/claire/orchestrator/pipeline_v4.py",
+      "path": "claire/orchestrator/pipeline_v4.py",
       "type": "runtime_orchestrator",
-      "exists": false,
-      "size_bytes": 0
+      "exists": true,
+      "size_bytes": 89998
     },
     {
-      "path": "src/claire/technology/technology_intelligence.py",
+      "path": "claire/technology/technology_intelligence.py",
       "type": "runtime_dependency",
-      "exists": false,
-      "size_bytes": 0
+      "exists": true,
+      "size_bytes": 4390
     }
   ],
   "required_imports": [
     {
       "module": "claire.app",
-      "status": "success"
+      "status": "success",
+      "origin": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py"
     },
     {
       "module": "claire.api.routes_pipeline",
-      "status": "success"
+      "status": "success",
+      "origin": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\routes_pipeline.py"
     },
     {
       "module": "claire.orchestrator.pipeline_v4",
-      "status": "success"
+      "status": "success",
+      "origin": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\orchestrator\\pipeline_v4.py"
     },
     {
       "module": "claire.technology.technology_intelligence",
-      "status": "success"
+      "status": "success",
+      "origin": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\technology\\technology_intelligence.py"
     }
-  ]
+  ],
+  "canonical_runtime_root": "claire",
+  "legacy_src_compatibility": true
 }
