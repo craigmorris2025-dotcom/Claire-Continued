@@ -1,0 +1,23 @@
+{
+  "version": "v17.57",
+  "name": "Runtime Execution Mirror Pack",
+  "purpose": "Make the dashboard render real lifecycle truth from core_run_output/dashboard_runtime_truth data.",
+  "status_policy": "Do not invent stage results. Unknown runtime data must render as no_data or not_reported.",
+  "stage_status_order": [
+    "running",
+    "completed",
+    "skipped_by_route",
+    "blocked",
+    "failed",
+    "waiting",
+    "not_started",
+    "not_reported"
+  ],
+  "proof_requirements": [
+    "all_30_stages_have_status",
+    "terminal_state_present",
+    "route_selected_or_safe_failure_present",
+    "validation_result_present_or_pending",
+    "evidence_chain_reported"
+  ]
+}

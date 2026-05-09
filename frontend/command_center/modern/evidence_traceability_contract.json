@@ -1,0 +1,29 @@
+{
+  "schema": "claire.evidence_traceability_contract.v1",
+  "version": "17.60",
+  "purpose": "Define the dashboard-facing evidence traceability index contract.",
+  "required_index_fields": [
+    "schema",
+    "generated_at",
+    "evidence_count",
+    "unsupported_count",
+    "unsupported_evidence_ids",
+    "by_stage",
+    "by_route",
+    "by_source_type",
+    "items"
+  ],
+  "required_item_fields": [
+    "evidence_id",
+    "stage_number",
+    "route",
+    "source",
+    "source_type",
+    "claim_supported",
+    "confidence",
+    "timestamp",
+    "trace_reference",
+    "supported"
+  ],
+  "dashboard_rule": "Evidence must be shown as traceability, not decorative source counts."
+}

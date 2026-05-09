@@ -1,0 +1,31 @@
+{
+  "schema": "claire.dashboard_search_contract.v1",
+  "version": "17.62",
+  "purpose": "Define the dashboard-wide search and standalone intelligence command-bar foundation.",
+  "search_scope": [
+    "visible dashboard text",
+    "dashboard_architecture_map.json",
+    "lifecycle_stage_registry.json",
+    "runtime_surface_registry.json",
+    "route_surface_registry.json",
+    "runtime_truth_status.json",
+    "dashboard_runtime_truth.json",
+    "validation_authority_status.json",
+    "evidence_traceability_status.json",
+    "verified_memory_status.json",
+    "recursive_feedback_status.json"
+  ],
+  "rules": [
+    "Search must not fake internet or autonomous intelligence results.",
+    "Search must label missing data honestly.",
+    "Search may summarize local dashboard/runtime truth only.",
+    "Future standalone intelligence can replace the local index through the same contract."
+  ],
+  "future_extension_points": [
+    "standalone Claire intelligence service",
+    "source-governed external search",
+    "runtime command execution",
+    "validated evidence retrieval",
+    "design simulation portal search"
+  ]
+}

@@ -1,0 +1,166 @@
+/* Claire Syntalion — Dark Theme Dashboard v4.1 */
+:root {
+    --claire-bg: #0d1117;
+    --claire-surface: #161b22;
+    --claire-border: #30363d;
+    --claire-accent: #58a6ff;
+    --claire-success: #3fb950;
+    --claire-warning: #d29922;
+    --claire-danger: #f85149;
+    --claire-text: #c9d1d9;
+    --claire-muted: #8b949e;
+    --claire-purple: #bc8cff;
+}
+
+body {
+    background: var(--claire-bg);
+    color: var(--claire-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.navbar { background: var(--claire-surface) !important; }
+
+.card {
+    background: var(--claire-surface);
+    border-color: var(--claire-border);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card:hover { border-color: var(--claire-accent); }
+
+.stat-card:hover {
+    box-shadow: 0 0 20px rgba(88,166,255,0.08);
+    transform: translateY(-1px);
+    transition: all 0.2s;
+}
+
+.card-header {
+    background: rgba(0,0,0,0.2);
+    border-bottom: 1px solid var(--claire-border);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.nav-tabs { border-bottom-color: var(--claire-border); }
+.nav-tabs .nav-link {
+    color: var(--claire-muted);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    transition: color 0.2s, border-color 0.2s;
+}
+.nav-tabs .nav-link:hover { color: var(--claire-text); border-bottom: 2px solid var(--claire-muted); }
+.nav-tabs .nav-link.active {
+    color: var(--claire-accent);
+    background: transparent;
+    border-bottom: 2px solid var(--claire-accent);
+}
+
+.form-control, .form-select {
+    background: var(--claire-bg) !important;
+    border-color: var(--claire-border);
+    color: var(--claire-text) !important;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--claire-accent);
+    box-shadow: 0 0 0 0.2rem rgba(88,166,255,0.15);
+}
+
+.table-dark {
+    --bs-table-bg: var(--claire-surface);
+    --bs-table-border-color: var(--claire-border);
+    --bs-table-hover-bg: rgba(88,166,255,0.05);
+    --bs-table-striped-bg: rgba(0,0,0,0.15);
+}
+
+.badge { font-weight: 500; font-size: 0.75rem; }
+
+.btn-info {
+    background: var(--claire-accent);
+    border-color: var(--claire-accent);
+    color: #0d1117;
+    font-weight: 600;
+}
+.btn-info:hover { background: #79c0ff; border-color: #79c0ff; color: #0d1117; }
+
+.engine-card {
+    cursor: default;
+    min-height: 110px;
+}
+.engine-card .badge { font-size: 0.65rem; }
+
+.mode-card { min-height: 200px; }
+.mode-card.active-mode { border-color: var(--claire-accent) !important; }
+
+.score-bar {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--claire-border);
+    overflow: hidden;
+}
+.score-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+
+.spinner-border { width: 1.5rem; height: 1.5rem; border-width: 0.15rem; }
+
+pre { white-space: pre-wrap; word-break: break-word; }
+
+footer a { text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* Accordion — dark theme overrides */
+.accordion-button {
+    background: var(--claire-surface) !important;
+    color: var(--claire-text) !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--claire-border);
+    font-size: 0.85rem;
+}
+.accordion-button::after {
+    filter: invert(0.7);
+}
+.accordion-button:not(.collapsed)::after {
+    filter: invert(0.7);
+}
+.accordion-body {
+    background: var(--claire-bg);
+    padding: 0.5rem;
+}
+.accordion-item {
+    background: var(--claire-surface);
+    border-color: var(--claire-border) !important;
+}
+
+/* List group — dark theme */
+.list-group-item.bg-dark {
+    border-color: var(--claire-border) !important;
+}
+.list-group-item.bg-dark:hover {
+    background: rgba(88,166,255,0.05) !important;
+}
+
+/* Modal dark theme */
+.modal-content { background: var(--claire-surface); }
+.modal-header { border-color: var(--claire-border); }
+
+/* Progress bar refinements */
+.progress {
+    background: var(--claire-border);
+    border-radius: 4px;
+}
+
+/* Animations */
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+.pulse { animation: pulse 1.5s infinite; }
+
+@keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+.fade-in { animation: fadeIn 0.3s ease; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-tabs .nav-link { padding: 0.4rem 0.6rem; font-size: 0.85rem; }
+    .stat-card h2 { font-size: 1.5rem; }
+}

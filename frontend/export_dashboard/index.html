@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Claire Syntalion Dashboard</title>
+  <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+  <header class="appHeader">
+    <div class="brandBlock">
+      <div class="brandMark">C</div>
+      <div>
+        <div class="eyebrow">Claire Syntalion</div>
+        <h1>Multi-Mode Intelligence Platform</h1>
+      </div>
+    </div>
+    <nav class="modeNav" aria-label="Claire workspace modes">
+      <button class="modeTab active" data-mode="evaluate">Run</button>
+      <button class="modeTab" data-mode="research">Research</button>
+      <button class="modeTab" data-mode="discover">Discover</button>
+      <button class="modeTab" data-mode="trend">Trend</button>
+      <button class="modeTab" data-mode="portfolio">Portfolio</button>
+      <button class="modeTab" data-mode="breakthrough">Breakthrough</button>
+      <button class="modeTab" data-mode="design">Design</button>
+      <button class="modeTab" data-mode="packages">Packages</button>
+      <button class="modeTab" data-mode="monitor">Monitor</button>
+      <button class="modeTab" data-mode="system">System</button>
+    </nav>
+    <div class="headerActions">
+      <span id="liveBadge" class="badge">idle</span>
+      <button id="refreshBtn">Refresh</button>
+      <button id="rescanBtn">Rescan</button>
+    </div>
+  </header>
+
+  <main class="modeShell" data-active-mode="evaluate">
+    <section class="modeView active" data-view="evaluate">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Run / Command Surface</div>
+          <h2>Lifecycle Command Center</h2>
+        </div>
+        <span class="viewRoute">scan -> route -> output</span>
+      </div>
+      <div class="evaluateGrid">
+        <section class="panel discoveryPanel">
+          <div class="row">
+            <h2>Intent</h2>
+            <span id="commandRouteBadge" class="badge">ready</span>
+          </div>
+          <div class="intentGrid">
+            <label>Run Type</label><select id="runTypeSelect">
+              <option value="trend_scan">Trend scan</option>
+              <option value="discovery_scan">Discovery scan</option>
+              <option value="portfolio_intelligence">Portfolio intelligence run</option>
+              <option value="evaluate_opportunity">Evaluate opportunity run</option>
+              <option value="breakthrough_scan">Breakthrough scan</option>
+              <option value="design_route">Design route run</option>
+              <option value="package_export">Package/export run</option>
+            </select>
+            <label>Mode</label><select id="executionModeSelect"></select>
+            <label>Market Universe</label><select id="marketUniverseSelect"></select>
+            <label>Industry / Domain</label><select id="industryDomainSelect"></select>
+            <label>Buyer Segment</label><select id="buyerSegmentSelect"></select>
+          </div>
+          <details class="secondaryIntent">
+            <summary>Secondary Controls</summary>
+            <div class="formGrid">
+              <label>Workflow</label><select id="workflowSelect"></select>
+              <label>Objective</label><select id="objectiveSelect"></select>
+              <label>Command</label><select id="commandSelect"></select>
+            </div>
+          </details>
+          <label>Signal or project description</label>
+          <textarea id="rawInput" placeholder="Describe the market signal, buyer pain, opportunity, product idea, or strategic question."></textarea>
+          <div class="buttonRow">
+            <button id="runBtn" class="primary">Run Claire</button>
+            <button id="clearBtn">Clear</button>
+          </div>
+          <div id="launchStatus" class="status">Ready.</div>
+          <div id="runAutonomyBox" class="status">Autonomous execution summary will appear after a run is selected.</div>
+        </section>
+
+        <section class="panel resultPanel">
+          <div class="row">
+            <div>
+              <div class="eyebrow">Main Result</div>
+              <h2>Intelligence Output</h2>
+            </div>
+            <span id="resultRouteBadge" class="badge">route pending</span>
+          </div>
+          <div id="userResultEmpty" class="empty compactEmpty">
+            <h2>No Output Yet</h2>
+            <p>Run Claire or select a completed run to see the external intelligence result.</p>
+          </div>
+          <div id="userResultState" class="hidden">
+            <div class="resultHero">
+              <h2 id="userResultHeadline">-</h2>
+              <p id="userResultSummary" class="muted">-</p>
+            </div>
+            <div id="resultPathRail" class="resultPathRail"></div>
+            <div id="resultInsightGrid" class="resultInsightGrid"></div>
+            <div class="coreResultSections">
+              <section class="coreResultPanel">
+                <div class="row"><h3>Scan Progress</h3><span id="scanProgressBadge" class="badge">waiting</span></div>
+                <div id="scanProgressList" class="scanProgressList"><div class="muted">Waiting for scan continuation output.</div></div>
+              </section>
+              <section class="coreResultPanel">
+                <div class="row"><h3>Route Decision</h3><span id="routeDecisionBadge" class="badge">pending</span></div>
+                <div id="routeDecisionBox" class="resultDetailBox">Route decision will appear after core output loads.</div>
+              </section>
+              <section class="coreResultPanel">
+                <div class="row"><h3>Trend / Thesis</h3><span id="trendThesisBadge" class="badge">pending</span></div>
+                <div id="trendThesisBox" class="resultDetailBox">No trend thesis loaded.</div>
+              </section>
+              <section class="coreResultPanel">
+                <div class="row"><h3>Portfolio Intelligence</h3><span id="portfolioBadge" class="badge">pending</span></div>
+                <div id="portfolioBox" class="resultDetailBox">No portfolio action produced yet.</div>
+              </section>
+              <section class="coreResultPanel">
+                <div class="row"><h3>Breakthrough Escalation</h3><span id="breakthroughBadge" class="badge">not triggered</span></div>
+                <div id="breakthroughBox" class="resultDetailBox">Breakthrough escalation was not selected for this route.</div>
+              </section>
+              <section class="coreResultPanel">
+                <div class="row"><h3>Advancement Path</h3><span id="advancementBadge" class="badge">pending</span></div>
+                <div id="advancementBox" class="resultDetailBox">Advancement path will appear when route selection is available.</div>
+              </section>
+              <section class="coreResultPanel">
+                <div class="row"><h3>AutoDesign</h3><span id="autodesignBadge" class="badge">not required</span></div>
+                <div id="autodesignBox" class="resultDetailBox">AutoDesign not triggered for this route.</div>
+              </section>
+              <section class="coreResultPanel">
+                <div class="row"><h3>Design Portal</h3><span id="designPortalBadge" class="badge">not required</span></div>
+                <div id="designPortalBox" class="resultDetailBox">No design portal output required for this route.</div>
+              </section>
+              <section class="coreResultPanel">
+                <div class="row"><h3>Package / Export</h3><span id="packageBadge" class="badge">checking</span></div>
+                <div id="packageBox" class="resultDetailBox">Package status will appear after a run is selected.</div>
+              </section>
+              <section class="coreResultPanel warningPanel">
+                <div class="row"><h3>Failure / Insufficient Data</h3><span id="failureBadge" class="badge">clear</span></div>
+                <div id="failureBox" class="resultDetailBox">No blocking failure reported.</div>
+              </section>
+            </div>
+            <section class="nextActionPanel">
+              <h3>Next Recommended Action</h3>
+              <div id="nextActionList" class="nextActionList"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="panel pipelinePanel">
+          <div class="row"><h2>Lifecycle Status</h2><span id="pipelineBadge" class="badge">idle</span></div>
+          <div class="pipelineFlow" id="pipelineFlow">
+            <button class="pipelineStage idle active" data-stage="ingestion"><span>Ingestion</span><b>-</b></button>
+            <button class="pipelineStage idle" data-stage="semantic"><span>Semantic</span><b>-</b></button>
+            <button class="pipelineStage idle" data-stage="fusion"><span>Fusion</span><b>-</b></button>
+            <button class="pipelineStage idle" data-stage="engines"><span>Domain Engines</span><b>-</b></button>
+            <button class="pipelineStage idle" data-stage="decision"><span>Decision</span><b>-</b></button>
+          </div>
+          <div id="pipelineDetail" class="pipelineDetail">
+            <strong>Ingestion</strong>
+            <div class="muted">Run Claire or select a completed run to inspect grouped pipeline detail.</div>
+          </div>
+          <details class="eventDrawer">
+            <summary>System Details / Run Events</summary>
+            <div class="progress"><div id="progressBar"></div></div>
+            <div id="eventList" class="eventList"><div class="event muted">No active run.</div></div>
+          </details>
+        </section>
+
+        <section class="panel decisionPanel detail">
+          <div id="emptyState" class="empty">
+            <h2>Decision Pending</h2>
+            <p>Run or select an evaluation to see the decision immediately.</p>
+          </div>
+          <div id="detailState" class="hidden">
+            <div class="decisionHead">
+              <div id="decisionHero" class="decisionHero">-</div>
+              <span id="decisionConfidence" class="badge">pending</span>
+            </div>
+            <div class="detailHead decisionMeta">
+              <div>
+                <div id="selectedSector" class="eyebrow"></div>
+                <h2 id="selectedTitle"></h2>
+                <p id="selectedMeta" class="muted"></p>
+              </div>
+              <div class="metrics">
+                <div><span>Decision</span><b id="decisionValue">-</b></div>
+                <div><span>Breakthrough</span><b id="exportValue">-</b></div>
+                <div><span>Domain</span><b id="filesValue">-</b></div>
+              </div>
+            </div>
+            <section class="decisionSignals">
+              <h3>Top Signals</h3>
+              <div id="topSignalList" class="topSignalList">
+                <div class="muted">No signal summary yet.</div>
+              </div>
+            </section>
+            <div id="summaryTab" class="hidden"><div id="summaryCards" class="cards"></div></div>
+            <div id="filesTab" class="hidden"><div id="fileList"></div></div>
+            <div id="previewTab" class="hidden"><p><select id="fileSelect"></select><button id="loadPreviewBtn">Load Preview</button></p><pre id="previewBox">Choose a file.</pre></div>
+            <div id="rawTab" class="hidden"><pre id="rawBox">Raw JSON hidden until dev mode.</pre></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="research">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Cognitive Research Surface</div>
+          <h2>Search, Evidence, And Lifecycle Routing</h2>
+        </div>
+        <span id="researchSurfaceBadge" class="viewRoute">ready</span>
+      </div>
+      <div class="researchGrid">
+        <section class="panel researchCommandPanel">
+          <div class="row"><h2>Research Command</h2><span id="researchStatusBadge" class="badge">idle</span></div>
+          <label>Search Command</label>
+          <input id="researchQueryInput" placeholder="Find emerging AI infrastructure trends, compatible FastAPI technologies, prior breakthrough runs..." />
+          <label>Source Scope</label>
+          <select id="researchScopeSelect">
+            <option value="all">All</option>
+            <option value="web">Web</option>
+            <option value="runs">Runs</option>
+            <option value="signals">Signals</option>
+            <option value="trends">Trends</option>
+            <option value="portfolio">Portfolio</option>
+            <option value="breakthroughs">Breakthroughs</option>
+            <option value="technologies">Technologies</option>
+            <option value="designs">Designs</option>
+            <option value="packages">Packages</option>
+            <option value="system">System</option>
+          </select>
+          <div class="buttonRow">
+            <button id="researchSearchBtn" class="primary">Search Research</button>
+            <button id="researchClearBtn">Clear Evidence</button>
+          </div>
+          <div id="researchStatusBox" class="status">Live web search is adapter-gated. Internal and technology search are available.</div>
+        </section>
+        <section class="panel researchResultsPanel">
+          <div class="row"><h2>Claire-Ranked Results</h2><span id="researchResultCount" class="badge">0</span></div>
+          <div id="researchResultList" class="researchResultList"><div class="status">No results yet.</div></div>
+        </section>
+        <section class="panel researchEvidencePanel">
+          <div class="row"><h2>Evidence Basket</h2><span id="evidenceBasketBadge" class="badge">0 saved</span></div>
+          <div id="evidenceBasketList" class="researchResultList"><div class="status">No saved evidence.</div></div>
+          <div class="buttonRow">
+            <button id="basketPipelineBtn">Send Basket To Pipeline</button>
+          </div>
+          <div id="basketPipelineBox" class="status">Evidence basket can become governed signal candidates.</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="discover">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Discover Mode</div>
+          <h2>Signals To Solutions</h2>
+        </div>
+        <span class="viewRoute">signals -> clusters -> gaps -> solutions</span>
+      </div>
+      <div class="functionalRouteGrid">
+        <section class="panel routeHeroPanel">
+          <div class="row"><h2>Discovery Output</h2><span id="discoverSurfaceBadge" class="badge">waiting</span></div>
+          <div id="discoverSurfaceBox" class="routeSurfaceBox">Waiting for scan result.</div>
+        </section>
+        <section class="panel">
+          <div class="row"><h2>Signal Basis</h2><span id="signalBasisSurfaceBadge" class="badge">waiting</span></div>
+          <div id="signalBasisSurfaceBox" class="routeSurfaceBox">No signal basis loaded.</div>
+        </section>
+      </div>
+      <div id="discoverPipelineRoot" class="discoverPipelineMount">
+        <div class="status">Loading Discover pipeline...</div>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="trend">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Trend Discovery Surface</div>
+          <h2>Root Trend And Thesis Output</h2>
+        </div>
+        <span id="trendSurfaceBadge" class="viewRoute">waiting</span>
+      </div>
+      <div class="functionalRouteGrid">
+        <section class="panel routeHeroPanel">
+          <div id="trendSurfaceBox" class="routeSurfaceBox">Waiting for core_run_output.json.</div>
+        </section>
+        <section class="panel">
+          <div class="row"><h2>Scan / Discovery Control</h2><span id="scanSurfaceBadge" class="badge">waiting</span></div>
+          <div id="scanSurfaceBox" class="routeSurfaceBox">No scan iterations loaded.</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="portfolio">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Portfolio Intelligence Surface</div>
+          <h2>Portfolio Creation / Optimization</h2>
+        </div>
+        <span id="portfolioSurfaceBadge" class="viewRoute">waiting</span>
+      </div>
+      <div class="functionalRouteGrid">
+        <section class="panel routeHeroPanel">
+          <div id="portfolioSurfaceBox" class="routeSurfaceBox">No portfolio run selected.</div>
+        </section>
+        <section class="panel">
+          <div class="row"><h2>Exposure / Risk Notes</h2><span id="portfolioRiskBadge" class="badge">pending</span></div>
+          <div id="portfolioRiskBox" class="routeSurfaceBox">Portfolio risk and exposure notes will appear here.</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="breakthrough">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Breakthrough Escalation Surface</div>
+          <h2>Classification And Advancement Routing</h2>
+        </div>
+        <span id="breakthroughSurfaceBadge" class="viewRoute">waiting</span>
+      </div>
+      <div class="functionalRouteGrid">
+        <section class="panel routeHeroPanel">
+          <div id="breakthroughSurfaceBox" class="routeSurfaceBox">No breakthrough output loaded.</div>
+        </section>
+        <section class="panel">
+          <div class="row"><h2>Advancement Path</h2><span id="advancementSurfaceBadge" class="badge">pending</span></div>
+          <div id="advancementSurfaceBox" class="routeSurfaceBox">Advancement route details will appear here.</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="design">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">AutoDesign / Design Portal Surface</div>
+          <h2>Route-Aware Design Execution</h2>
+        </div>
+        <span id="designSurfaceBadge" class="viewRoute">waiting</span>
+      </div>
+      <div class="functionalRouteGrid three">
+        <section class="panel">
+          <div class="row"><h2>AutoDesign</h2><span id="autodesignSurfaceBadge" class="badge">not required</span></div>
+          <div id="autodesignSurfaceBox" class="routeSurfaceBox">AutoDesign skipped by route.</div>
+        </section>
+        <section class="panel">
+          <div class="row"><h2>Design Portal</h2><span id="designPortalSurfaceBadge" class="badge">not required</span></div>
+          <div id="designPortalSurfaceBox" class="routeSurfaceBox">Design Portal not required for this route.</div>
+        </section>
+        <section class="panel">
+          <div class="row"><h2>Technology Intelligence</h2><span id="technologySurfaceBadge" class="badge">skipped</span></div>
+          <div id="technologySurfaceBox" class="routeSurfaceBox">Technology Intelligence skipped by route.</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="packages">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Acquisition / Package Surface</div>
+          <h2>Package Construction And Export</h2>
+        </div>
+        <span id="packageSurfaceBadge" class="viewRoute">waiting</span>
+      </div>
+      <div class="functionalRouteGrid">
+        <section class="panel routeHeroPanel">
+          <div id="packageSurfaceBox" class="routeSurfaceBox">No package selected.</div>
+        </section>
+        <section class="panel">
+          <div class="row"><h2>Run History / Output Browser</h2><span id="historySurfaceBadge" class="badge">loaded</span></div>
+          <div id="historySurfaceBox" class="routeSurfaceBox">Select a run from history to inspect package availability.</div>
+          <div class="row historyHead"><h2>Prior Outputs</h2><span id="runCount" class="badge">0</span></div>
+          <div id="runList" class="compactList"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="monitor">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">Monitor Mode</div>
+          <h2>Live Intelligence And System State</h2>
+        </div>
+        <span class="viewRoute">monitor + history + system</span>
+      </div>
+      <div class="functionalRouteGrid">
+        <section class="panel routeHeroPanel">
+          <div class="row"><h2>Live Run Monitor</h2><span id="monitorRunBadge" class="badge">waiting</span></div>
+          <div id="monitorRunBox" class="routeSurfaceBox">No active scan selected.</div>
+        </section>
+        <section class="panel">
+          <div class="row"><h2>System Activity</h2><span id="monitorActivityBadge" class="badge">idle</span></div>
+          <div id="monitorActivityBox" class="routeSurfaceBox">System activity feed will appear here when available.</div>
+        </section>
+      </div>
+      <div id="monitorSurfaceRoot" class="monitorSurfaceMount">
+        <div class="status">Loading Monitor timeline...</div>
+      </div>
+    </section>
+
+    <section class="modeView" data-view="system">
+      <div class="viewHeader">
+        <div>
+          <div class="eyebrow">System / Lifecycle Mode</div>
+          <h2>Lifecycle, Context, And Debug</h2>
+        </div>
+        <span class="viewRoute">metadata + contracts + raw context</span>
+      </div>
+      <div class="systemModeGrid">
+        <section class="panel">
+          <div class="row"><h2>Selected Run Lifecycle</h2><span id="systemLifecycleBadge" class="badge">no run</span></div>
+          <div id="systemLifecycleSummary" class="status">Select or run an evaluation to inspect lifecycle metadata.</div>
+          <div id="systemLifecycleList" class="lifecycleList"></div>
+        </section>
+        <section class="panel">
+          <div class="row"><h2>Core Output Contract</h2><span id="systemContractBadge" class="badge">pending</span></div>
+          <div id="systemContractSummary" class="status">The route-aware output contract will appear here for completed runs.</div>
+          <pre id="systemCoreOutputBox">No core output loaded.</pre>
+          <div class="buttonRow systemDebugActions">
+            <button id="loadRawOutputBtn">Load Full Raw JSON</button>
+          </div>
+          <pre id="systemRawOutputBox" class="hidden">Full raw JSON loads on demand.</pre>
+        </section>
+        <section class="panel">
+          <div class="row"><h2>System Health</h2><span id="systemStatusBadge" class="badge">checking</span></div>
+          <div id="systemStatusBox" class="status">Backend status, dashboard status, last run, export status, and known errors will appear here.</div>
+          <div id="systemStatusList" class="systemStatusList"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>Protected mode: opportunity cards and export artifacts are visible; internal construction remains server-side.</footer>
+  <script src="./discover/DiscoverPipeline.js"></script>
+  <script src="./discover/SignalPanel.js"></script>
+  <script src="./discover/ClusterPanel.js"></script>
+  <script src="./discover/GapPanel.js"></script>
+  <script src="./discover/SolutionPanel.js"></script>
+  <script src="./monitor/MonitorSurface.js"></script>
+  <script src="./monitor/MonitorStatusBar.js"></script>
+  <script src="./monitor/MonitorTimeline.js"></script>
+  <script src="./monitor/MonitorDetailPanel.js"></script>
+  <script src="./dashboard.js"></script>
+  <script src="/claire_dashboard_actions.js"></script>
+</body>
+</html>

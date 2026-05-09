@@ -1,0 +1,212 @@
+/*
+  Claire v17.62.3 — Overlap Fix Hotfix
+
+  Purpose:
+  - Stop the command/runtime summary region from clipping its cards.
+  - Stop the section below from overlapping upward.
+  - Let main workspace sections size to content.
+  - Keep this CSS broad enough to catch the current shell without changing runtime logic.
+*/
+
+/* Main vertical flow must size to content instead of clipping. */
+main,
+#app,
+#workspace,
+#main-workspace,
+.command-center,
+.operating-environment,
+.claire-operating-environment,
+.claire-shell,
+.dashboard-shell,
+.workspace-stack,
+.main-stack,
+.surface-stack {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+/* Major stacked sections in the center column should never overlap. */
+main > section,
+main > article,
+#app > section,
+#app > article,
+#main-workspace > section,
+#main-workspace > article,
+.command-panel,
+.command-surface,
+.dashboard-panel,
+.claire-panel,
+.surface,
+.claire-surface,
+.portal,
+.claire-portal {
+  position: relative !important;
+  clear: both !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  margin-bottom: 18px !important;
+}
+
+/* Command area and its first summary block need extra room. */
+#command,
+.command,
+.command-panel,
+.command-surface,
+.command-workspace,
+.command-workspace-panel,
+.command-summary,
+.runtime-summary,
+.top-summary,
+.hero-summary,
+.hero-panel {
+  height: auto !important;
+  min-height: 220px !important;
+  overflow: visible !important;
+  padding-bottom: 20px !important;
+}
+
+/* Grids that hold the run/route/terminal cards must expand, not clip. */
+.command-grid,
+.command-summary-grid,
+.runtime-grid,
+.runtime-summary-grid,
+.summary-grid,
+.hero-grid,
+.panel-grid,
+.cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 18px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  align-items: stretch !important;
+  margin-bottom: 14px !important;
+}
+
+/* Individual metric cards should never be partially hidden. */
+.run-card,
+.route-card,
+.terminal-card,
+.status-card,
+.metric-card,
+.summary-card,
+.info-card,
+.command-card,
+.dashboard-card,
+.claire-card {
+  position: relative !important;
+  height: auto !important;
+  min-height: 118px !important;
+  overflow: visible !important;
+  padding-bottom: 18px !important;
+}
+
+/* The specific command cards shown in the screenshot are being cut off. */
+[class*="run-id"],
+[class*="route"],
+[class*="terminal"],
+[class*="validation"],
+[class*="memory"],
+[data-surface="run"],
+[data-surface="route"],
+[data-surface="terminal"] {
+  height: auto !important;
+  min-height: 118px !important;
+  overflow: visible !important;
+}
+
+/* Prevent lower panels from sitting on top of the command summary region. */
+#claire-validation-authority-panel,
+#claire-verified-memory-panel,
+.claire-validation-authority-panel,
+.claire-memory-panel,
+.validation-panel,
+.memory-panel {
+  position: relative !important;
+  margin-top: 18px !important;
+  clear: both !important;
+  z-index: 1 !important;
+}
+
+/* Containers that previously had internal scrollbars should stop clipping content here. */
+.command-panel *,
+.command-surface *,
+.command-summary *,
+.runtime-summary * {
+  min-width: 0;
+}
+
+/* The scroll bars visible on the clipped block suggest a nested overflow container. Neutralize it. */
+.command-panel [style*="overflow"],
+.command-surface [style*="overflow"],
+.runtime-summary [style*="overflow"],
+.summary-grid [style*="overflow"] {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+/* If there is a center content rail, let it flow naturally. */
+.center-column,
+.main-column,
+.content-column,
+.workspace-column {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* The next panel should start beneath the previous content, not on top of it. */
+section + section,
+article + article,
+section + article,
+article + section,
+.command-panel + section,
+.command-surface + section,
+.command-panel + .dashboard-panel,
+.command-surface + .dashboard-panel,
+.command-panel + .claire-validation-authority-panel,
+.command-surface + .claire-validation-authority-panel {
+  margin-top: 18px !important;
+}
+
+/* Responsive: stack these cards on smaller widths to reduce pressure. */
+@media (max-width: 1200px) {
+  .command-grid,
+  .command-summary-grid,
+  .runtime-grid,
+  .runtime-summary-grid,
+  .summary-grid,
+  .hero-grid,
+  .panel-grid,
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .command-grid,
+  .command-summary-grid,
+  .runtime-grid,
+  .runtime-summary-grid,
+  .summary-grid,
+  .hero-grid,
+  .panel-grid,
+  .cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .run-card,
+  .route-card,
+  .terminal-card,
+  .status-card,
+  .metric-card,
+  .summary-card,
+  .info-card,
+  .command-card,
+  .dashboard-card,
+  .claire-card {
+    min-height: 108px !important;
+  }
+}

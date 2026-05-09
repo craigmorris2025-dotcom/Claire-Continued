@@ -1,6 +1,596 @@
 {
-  "run_count": 347,
+  "run_count": 352,
   "runs": [
+    {
+      "breakthrough_classification": "opportunity_candidate",
+      "category_name": "opportunity intelligence",
+      "created_at": "2026-05-09T05:20:15.075631+00:00",
+      "decision_classification": "CONSIDER",
+      "document_count": 10,
+      "domain": "general",
+      "export_package_level": "export_ready",
+      "export_package_score": 0.788,
+      "files": [
+        {
+          "filename": "run_summary.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\run_summary.md",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/run_summary.md",
+          "sha256": "f32838e518592c1064cda802268c9f0848254c00c6ef43b69a4f4c9975499165",
+          "size_bytes": 3111
+        },
+        {
+          "filename": "portfolio_binder.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\portfolio_binder.md",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/portfolio_binder.md",
+          "sha256": "67a5f2f1de3da739c4a7eac975bb0d983825606008baca01f8b5e07b260842c4",
+          "size_bytes": 29762
+        },
+        {
+          "filename": "technical_feasibility.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\technical_feasibility.md",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/technical_feasibility.md",
+          "sha256": "b089eef5773525b0ed77f2b64d60eca9c1d385e237f3d03d57179bd93291a6d1",
+          "size_bytes": 6530
+        },
+        {
+          "filename": "productization_path.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\productization_path.md",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/productization_path.md",
+          "sha256": "8d269920fa71a3fb5bf6ecf049b8b154565f549cf35d5224ef95531a2be9cc21",
+          "size_bytes": 10306
+        },
+        {
+          "filename": "strategic_positioning.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\strategic_positioning.md",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/strategic_positioning.md",
+          "sha256": "7cc38aadc86539f59b00568a6af3ba76c12a227f502c84acafdcc3bea9ad1c84",
+          "size_bytes": 9055
+        },
+        {
+          "filename": "deal_exit_model.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\deal_exit_model.md",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/deal_exit_model.md",
+          "sha256": "001be49e5bc0d329f8e5caae0e98f04119018a4d040e50039ef786d440bdfb0c",
+          "size_bytes": 7863
+        },
+        {
+          "filename": "opportunity_discovery.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\opportunity_discovery.md",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/opportunity_discovery.md",
+          "sha256": "51e18012bd5ac84c9581692dc9a9107aba6450a3194d2087900affc6c3aef6a7",
+          "size_bytes": 3887
+        },
+        {
+          "filename": "full_pipeline_output.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\full_pipeline_output.json",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/full_pipeline_output.json",
+          "sha256": "d0dfb8f79e0a28843d434f28053f64e20bb6c277419837a4aec49128d8d68e57",
+          "size_bytes": 1859267
+        },
+        {
+          "filename": "core_lifecycle_summary.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\core_lifecycle_summary.json",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/core_lifecycle_summary.json",
+          "sha256": "c34b79d8fcb2bca8b84a6a9d4fd89f27d0d84e42a00941045e8975a801e71560",
+          "size_bytes": 14846
+        },
+        {
+          "filename": "core_run_output.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\core_run_output.json",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/core_run_output.json",
+          "sha256": "c0b26d59dbc2eaad490ca8a7a058144a6da5a3dc5b3b8af79454ad72fba3e4ec",
+          "size_bytes": 645498
+        },
+        {
+          "filename": "export_writer_manifest.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\export_writer_manifest.json",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/export_writer_manifest.json",
+          "sha256": "778d7cac18268a9e9ea8ef63da6d78dcf5d3a24d093d792ebce6991e94796f60",
+          "size_bytes": 7207
+        },
+        {
+          "filename": "README.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\README.md",
+          "relative_path": "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/README.md",
+          "sha256": "432372cbe25b0d3ec214287b5af5e3f4f0e7550620211591f7e9ed39aa9c595e",
+          "size_bytes": 948
+        }
+      ],
+      "fingerprint": "6eddaadef44996b7",
+      "folder_name": "claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91",
+      "index_path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\README.md",
+      "manifest_path": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91\\export_writer_manifest.json",
+      "output_dir": "exports\\claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91",
+      "portfolio_score": 0.6800757642096869,
+      "run_id": "claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91",
+      "sector": "general_intelligence",
+      "status": "success",
+      "written_file_count": 12
+    },
+    {
+      "breakthrough_classification": "opportunity_candidate",
+      "category_name": "opportunity intelligence",
+      "created_at": "2026-05-09T05:19:15.229280+00:00",
+      "decision_classification": "CONSIDER",
+      "document_count": 10,
+      "domain": "general",
+      "export_package_level": "export_ready",
+      "export_package_score": 0.788,
+      "files": [
+        {
+          "filename": "run_summary.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\run_summary.md",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/run_summary.md",
+          "sha256": "f32838e518592c1064cda802268c9f0848254c00c6ef43b69a4f4c9975499165",
+          "size_bytes": 3111
+        },
+        {
+          "filename": "portfolio_binder.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\portfolio_binder.md",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/portfolio_binder.md",
+          "sha256": "e884a18631f61a0c7e69f3d3bd1a1d560a0abb1d52c97afb607c9d67e2e06b53",
+          "size_bytes": 29762
+        },
+        {
+          "filename": "technical_feasibility.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\technical_feasibility.md",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/technical_feasibility.md",
+          "sha256": "b089eef5773525b0ed77f2b64d60eca9c1d385e237f3d03d57179bd93291a6d1",
+          "size_bytes": 6530
+        },
+        {
+          "filename": "productization_path.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\productization_path.md",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/productization_path.md",
+          "sha256": "8d269920fa71a3fb5bf6ecf049b8b154565f549cf35d5224ef95531a2be9cc21",
+          "size_bytes": 10306
+        },
+        {
+          "filename": "strategic_positioning.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\strategic_positioning.md",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/strategic_positioning.md",
+          "sha256": "7cc38aadc86539f59b00568a6af3ba76c12a227f502c84acafdcc3bea9ad1c84",
+          "size_bytes": 9055
+        },
+        {
+          "filename": "deal_exit_model.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\deal_exit_model.md",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/deal_exit_model.md",
+          "sha256": "001be49e5bc0d329f8e5caae0e98f04119018a4d040e50039ef786d440bdfb0c",
+          "size_bytes": 7863
+        },
+        {
+          "filename": "opportunity_discovery.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\opportunity_discovery.md",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/opportunity_discovery.md",
+          "sha256": "51e18012bd5ac84c9581692dc9a9107aba6450a3194d2087900affc6c3aef6a7",
+          "size_bytes": 3887
+        },
+        {
+          "filename": "full_pipeline_output.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\full_pipeline_output.json",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/full_pipeline_output.json",
+          "sha256": "255b84a3f3502399558f0c6bafe05f4a934ed44330dfda436cc6216e4a7dd69c",
+          "size_bytes": 1859267
+        },
+        {
+          "filename": "core_lifecycle_summary.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\core_lifecycle_summary.json",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/core_lifecycle_summary.json",
+          "sha256": "c34b79d8fcb2bca8b84a6a9d4fd89f27d0d84e42a00941045e8975a801e71560",
+          "size_bytes": 14846
+        },
+        {
+          "filename": "core_run_output.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\core_run_output.json",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/core_run_output.json",
+          "sha256": "adf32d705358bdd7400fd65735bc8266a57ec0115db8648f13b3783169042194",
+          "size_bytes": 645498
+        },
+        {
+          "filename": "export_writer_manifest.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\export_writer_manifest.json",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/export_writer_manifest.json",
+          "sha256": "97cabdfb5aea9d1d177a3301edf59e802d53cd0b2471b2372e22a41c83d4ecf0",
+          "size_bytes": 7207
+        },
+        {
+          "filename": "README.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\README.md",
+          "relative_path": "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/README.md",
+          "sha256": "e346717d0b4d50aeed8e14862fdb28bbe86f39f93accd06d11cc3d071be7e690",
+          "size_bytes": 948
+        }
+      ],
+      "fingerprint": "2074cc5c26e023f4",
+      "folder_name": "claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad",
+      "index_path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\README.md",
+      "manifest_path": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad\\export_writer_manifest.json",
+      "output_dir": "exports\\claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad",
+      "portfolio_score": 0.6800757642096869,
+      "run_id": "claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad",
+      "sector": "general_intelligence",
+      "status": "success",
+      "written_file_count": 12
+    },
+    {
+      "breakthrough_classification": "opportunity_candidate",
+      "category_name": "opportunity intelligence",
+      "created_at": "2026-05-09T05:18:48.252286+00:00",
+      "decision_classification": "CONSIDER",
+      "document_count": 10,
+      "domain": "general",
+      "export_package_level": "export_ready",
+      "export_package_score": 0.788,
+      "files": [
+        {
+          "filename": "run_summary.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\run_summary.md",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/run_summary.md",
+          "sha256": "f32838e518592c1064cda802268c9f0848254c00c6ef43b69a4f4c9975499165",
+          "size_bytes": 3111
+        },
+        {
+          "filename": "portfolio_binder.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\portfolio_binder.md",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/portfolio_binder.md",
+          "sha256": "09b36d695dcdbf2cc25f05351015123e85f6878a62f30f9661a1c5cf7b70a39d",
+          "size_bytes": 29762
+        },
+        {
+          "filename": "technical_feasibility.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\technical_feasibility.md",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/technical_feasibility.md",
+          "sha256": "b089eef5773525b0ed77f2b64d60eca9c1d385e237f3d03d57179bd93291a6d1",
+          "size_bytes": 6530
+        },
+        {
+          "filename": "productization_path.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\productization_path.md",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/productization_path.md",
+          "sha256": "8d269920fa71a3fb5bf6ecf049b8b154565f549cf35d5224ef95531a2be9cc21",
+          "size_bytes": 10306
+        },
+        {
+          "filename": "strategic_positioning.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\strategic_positioning.md",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/strategic_positioning.md",
+          "sha256": "7cc38aadc86539f59b00568a6af3ba76c12a227f502c84acafdcc3bea9ad1c84",
+          "size_bytes": 9055
+        },
+        {
+          "filename": "deal_exit_model.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\deal_exit_model.md",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/deal_exit_model.md",
+          "sha256": "001be49e5bc0d329f8e5caae0e98f04119018a4d040e50039ef786d440bdfb0c",
+          "size_bytes": 7863
+        },
+        {
+          "filename": "opportunity_discovery.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\opportunity_discovery.md",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/opportunity_discovery.md",
+          "sha256": "51e18012bd5ac84c9581692dc9a9107aba6450a3194d2087900affc6c3aef6a7",
+          "size_bytes": 3887
+        },
+        {
+          "filename": "full_pipeline_output.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\full_pipeline_output.json",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/full_pipeline_output.json",
+          "sha256": "c6cf246c0dd6c63346f7ad2d70fca628d2474a2b871e8e7b8d60d5114806ad20",
+          "size_bytes": 1859267
+        },
+        {
+          "filename": "core_lifecycle_summary.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\core_lifecycle_summary.json",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/core_lifecycle_summary.json",
+          "sha256": "c34b79d8fcb2bca8b84a6a9d4fd89f27d0d84e42a00941045e8975a801e71560",
+          "size_bytes": 14846
+        },
+        {
+          "filename": "core_run_output.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\core_run_output.json",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/core_run_output.json",
+          "sha256": "22522f768bc79a37866ab48f68aa512d22d3adf9f9292744aa720bfcc1355580",
+          "size_bytes": 645498
+        },
+        {
+          "filename": "export_writer_manifest.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\export_writer_manifest.json",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/export_writer_manifest.json",
+          "sha256": "b4b2c4878402770c5dce1dc990f16e0080dfdd122eb9230e5390b0f24ba28b45",
+          "size_bytes": 7207
+        },
+        {
+          "filename": "README.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\README.md",
+          "relative_path": "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/README.md",
+          "sha256": "c099b64a13df87f7be234a8d8e4e36f3d2791ddab6f6c9fd18160fe90c939487",
+          "size_bytes": 948
+        }
+      ],
+      "fingerprint": "41dc0181a1c8ddcc",
+      "folder_name": "claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675",
+      "index_path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\README.md",
+      "manifest_path": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675\\export_writer_manifest.json",
+      "output_dir": "exports\\claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675",
+      "portfolio_score": 0.6800757642096869,
+      "run_id": "claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675",
+      "sector": "general_intelligence",
+      "status": "success",
+      "written_file_count": 12
+    },
+    {
+      "breakthrough_classification": "opportunity_candidate",
+      "category_name": "opportunity intelligence",
+      "created_at": "2026-05-09T02:47:45.348446+00:00",
+      "decision_classification": "CONSIDER",
+      "document_count": 10,
+      "domain": "general",
+      "export_package_level": "export_ready",
+      "export_package_score": 0.788,
+      "files": [
+        {
+          "filename": "run_summary.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\run_summary.md",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/run_summary.md",
+          "sha256": "f32838e518592c1064cda802268c9f0848254c00c6ef43b69a4f4c9975499165",
+          "size_bytes": 3111
+        },
+        {
+          "filename": "portfolio_binder.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\portfolio_binder.md",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/portfolio_binder.md",
+          "sha256": "2410af565a39043a295ce506c344706816f3ba04430b732fd7ffd578dc0968a4",
+          "size_bytes": 29762
+        },
+        {
+          "filename": "technical_feasibility.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\technical_feasibility.md",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/technical_feasibility.md",
+          "sha256": "b089eef5773525b0ed77f2b64d60eca9c1d385e237f3d03d57179bd93291a6d1",
+          "size_bytes": 6530
+        },
+        {
+          "filename": "productization_path.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\productization_path.md",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/productization_path.md",
+          "sha256": "8d269920fa71a3fb5bf6ecf049b8b154565f549cf35d5224ef95531a2be9cc21",
+          "size_bytes": 10306
+        },
+        {
+          "filename": "strategic_positioning.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\strategic_positioning.md",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/strategic_positioning.md",
+          "sha256": "7cc38aadc86539f59b00568a6af3ba76c12a227f502c84acafdcc3bea9ad1c84",
+          "size_bytes": 9055
+        },
+        {
+          "filename": "deal_exit_model.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\deal_exit_model.md",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/deal_exit_model.md",
+          "sha256": "001be49e5bc0d329f8e5caae0e98f04119018a4d040e50039ef786d440bdfb0c",
+          "size_bytes": 7863
+        },
+        {
+          "filename": "opportunity_discovery.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\opportunity_discovery.md",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/opportunity_discovery.md",
+          "sha256": "51e18012bd5ac84c9581692dc9a9107aba6450a3194d2087900affc6c3aef6a7",
+          "size_bytes": 3887
+        },
+        {
+          "filename": "full_pipeline_output.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\full_pipeline_output.json",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/full_pipeline_output.json",
+          "sha256": "cba72a6138d89dbf80e7300f2b33b03ab719ffa7b995e626cd6c548991da922c",
+          "size_bytes": 1859267
+        },
+        {
+          "filename": "core_lifecycle_summary.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\core_lifecycle_summary.json",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/core_lifecycle_summary.json",
+          "sha256": "c34b79d8fcb2bca8b84a6a9d4fd89f27d0d84e42a00941045e8975a801e71560",
+          "size_bytes": 14846
+        },
+        {
+          "filename": "core_run_output.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\core_run_output.json",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/core_run_output.json",
+          "sha256": "fc6ad2a455a0f0af289e5b844cb4230380de225a1c6ae0ca49e2381d960a7867",
+          "size_bytes": 645498
+        },
+        {
+          "filename": "export_writer_manifest.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\export_writer_manifest.json",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/export_writer_manifest.json",
+          "sha256": "2fc1ba7f48b24ef94d2600ad186e9f5910eaa48b3c36c76efe167b1c537f260f",
+          "size_bytes": 7207
+        },
+        {
+          "filename": "README.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\README.md",
+          "relative_path": "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/README.md",
+          "sha256": "8e07a5d409f73dba29dc28c9aebe1e8f32fe0d1d9d7ee716c65a5af44c69798a",
+          "size_bytes": 948
+        }
+      ],
+      "fingerprint": "f10129bc0e4799d8",
+      "folder_name": "claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e",
+      "index_path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\README.md",
+      "manifest_path": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e\\export_writer_manifest.json",
+      "output_dir": "exports\\claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e",
+      "portfolio_score": 0.6800757642096869,
+      "run_id": "claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e",
+      "sector": "general_intelligence",
+      "status": "success",
+      "written_file_count": 12
+    },
+    {
+      "breakthrough_classification": "opportunity_candidate",
+      "category_name": "opportunity intelligence",
+      "created_at": "2026-05-09T02:47:22.982512+00:00",
+      "decision_classification": "CONSIDER",
+      "document_count": 10,
+      "domain": "general",
+      "export_package_level": "export_ready",
+      "export_package_score": 0.788,
+      "files": [
+        {
+          "filename": "run_summary.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\run_summary.md",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/run_summary.md",
+          "sha256": "f32838e518592c1064cda802268c9f0848254c00c6ef43b69a4f4c9975499165",
+          "size_bytes": 3111
+        },
+        {
+          "filename": "portfolio_binder.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\portfolio_binder.md",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/portfolio_binder.md",
+          "sha256": "fd6a8334246a58f403882e2ad8c912394654df582d03c664743f2f5ff121cf1d",
+          "size_bytes": 29762
+        },
+        {
+          "filename": "technical_feasibility.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\technical_feasibility.md",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/technical_feasibility.md",
+          "sha256": "b089eef5773525b0ed77f2b64d60eca9c1d385e237f3d03d57179bd93291a6d1",
+          "size_bytes": 6530
+        },
+        {
+          "filename": "productization_path.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\productization_path.md",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/productization_path.md",
+          "sha256": "8d269920fa71a3fb5bf6ecf049b8b154565f549cf35d5224ef95531a2be9cc21",
+          "size_bytes": 10306
+        },
+        {
+          "filename": "strategic_positioning.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\strategic_positioning.md",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/strategic_positioning.md",
+          "sha256": "7cc38aadc86539f59b00568a6af3ba76c12a227f502c84acafdcc3bea9ad1c84",
+          "size_bytes": 9055
+        },
+        {
+          "filename": "deal_exit_model.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\deal_exit_model.md",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/deal_exit_model.md",
+          "sha256": "001be49e5bc0d329f8e5caae0e98f04119018a4d040e50039ef786d440bdfb0c",
+          "size_bytes": 7863
+        },
+        {
+          "filename": "opportunity_discovery.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\opportunity_discovery.md",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/opportunity_discovery.md",
+          "sha256": "51e18012bd5ac84c9581692dc9a9107aba6450a3194d2087900affc6c3aef6a7",
+          "size_bytes": 3887
+        },
+        {
+          "filename": "full_pipeline_output.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\full_pipeline_output.json",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/full_pipeline_output.json",
+          "sha256": "4753a4f358b5289d1631f3ebe90a08ead241438daf7cc42644f1f3d7f215ce7d",
+          "size_bytes": 1859267
+        },
+        {
+          "filename": "core_lifecycle_summary.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\core_lifecycle_summary.json",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/core_lifecycle_summary.json",
+          "sha256": "c34b79d8fcb2bca8b84a6a9d4fd89f27d0d84e42a00941045e8975a801e71560",
+          "size_bytes": 14846
+        },
+        {
+          "filename": "core_run_output.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\core_run_output.json",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/core_run_output.json",
+          "sha256": "b5bbb567476518a9421085b076f489f49701cb735fea1cb4afbfb8452dc63eb8",
+          "size_bytes": 645498
+        },
+        {
+          "filename": "export_writer_manifest.json",
+          "format": "json",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\export_writer_manifest.json",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/export_writer_manifest.json",
+          "sha256": "baa533f17672828d7f512d397387b4f6112ffb58b7d60f775345862315d2b760",
+          "size_bytes": 7207
+        },
+        {
+          "filename": "README.md",
+          "format": "markdown",
+          "path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\README.md",
+          "relative_path": "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/README.md",
+          "sha256": "c4ad86e8f72b3819d6e84802d0f77cc57d603d3aa0f643d6e8f5040f5773ee65",
+          "size_bytes": 948
+        }
+      ],
+      "fingerprint": "d2c4cf4114227916",
+      "folder_name": "claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87",
+      "index_path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\README.md",
+      "manifest_path": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87\\export_writer_manifest.json",
+      "output_dir": "exports\\claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87",
+      "portfolio_score": 0.6800757642096869,
+      "run_id": "claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87",
+      "sector": "general_intelligence",
+      "status": "success",
+      "written_file_count": 12
+    },
     {
       "breakthrough_classification": "opportunity_candidate",
       "category_name": "opportunity intelligence",
@@ -39429,5 +40019,5 @@
     }
   ],
   "status": "success",
-  "updated_at": "2026-05-09T02:08:35.707889+00:00"
+  "updated_at": "2026-05-09T05:20:15.108625+00:00"
 }

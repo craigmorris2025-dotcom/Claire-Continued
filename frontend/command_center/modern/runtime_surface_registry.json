@@ -1,0 +1,108 @@
+{
+  "version": "v17.57-v17.58",
+  "runtime_truth_sources": [
+    "./dashboard_runtime_truth.json",
+    "./core_run_output.json",
+    "/exports/latest/dashboard_runtime_truth.json",
+    "/exports/latest/core_run_output.json",
+    "/output/core_run_output.json",
+    "/core_run_output.json",
+    "/api/runtime/latest",
+    "/runtime/latest",
+    "/api/core-run-output/latest",
+    "/exports/index.json"
+  ],
+  "required_fields": [
+    "run_id",
+    "timestamp",
+    "route_selected",
+    "route_decision",
+    "routes_rejected",
+    "stages_completed",
+    "stages_skipped",
+    "evidence_chain",
+    "confidence_scores",
+    "governance_stamp",
+    "terminal_state",
+    "validation_result",
+    "validated_output_path",
+    "memory_eligibility"
+  ],
+  "surfaces": [
+    {
+      "id": "command",
+      "label": "Command",
+      "purpose": "Launch and inspect live/local Claire runs."
+    },
+    {
+      "id": "sources",
+      "label": "Sources",
+      "purpose": "External source intake, source readiness, trust, and freshness."
+    },
+    {
+      "id": "acs2",
+      "label": "ACS2 Loops",
+      "purpose": "Autonomous sensing loops feeding the lifecycle."
+    },
+    {
+      "id": "lifecycle",
+      "label": "Lifecycle",
+      "purpose": "Full 30-stage execution mirror."
+    },
+    {
+      "id": "route-gate",
+      "label": "Route Gate",
+      "purpose": "Selected route, rejected routes, confidence, and rationale."
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio",
+      "purpose": "Portfolio route execution and action readiness."
+    },
+    {
+      "id": "breakthrough",
+      "label": "Breakthrough",
+      "purpose": "Gap, discovery, classification, and advancement path stages."
+    },
+    {
+      "id": "autodesign",
+      "label": "AutoDesign",
+      "purpose": "Stages 16-22 Auto Invention / Design Portal execution."
+    },
+    {
+      "id": "technology",
+      "label": "Technology Intelligence",
+      "purpose": "Technology layer activated only for design/system routes."
+    },
+    {
+      "id": "acquisition",
+      "label": "Acquisition",
+      "purpose": "Moat, business model, acquirer fit, and final package route."
+    },
+    {
+      "id": "validation",
+      "label": "Validation",
+      "purpose": "Final authority, contract compliance, route integrity, and PASS/FAIL proof."
+    },
+    {
+      "id": "evidence",
+      "label": "Evidence",
+      "purpose": "Traceable evidence chain and source-backed claims."
+    },
+    {
+      "id": "memory",
+      "label": "Memory",
+      "purpose": "Verified memory eligibility and recursive feedback."
+    },
+    {
+      "id": "runtime",
+      "label": "Runtime",
+      "purpose": "Runtime files, endpoints, health, isolation, and rollback state."
+    },
+    {
+      "id": "update-packs",
+      "label": "Update Packs",
+      "purpose": "Dashboard/system update packs mapped to architecture gaps."
+    }
+  ]
+}

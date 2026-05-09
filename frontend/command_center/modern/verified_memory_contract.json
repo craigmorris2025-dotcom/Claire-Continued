@@ -1,0 +1,29 @@
+{
+  "schema": "claire.verified_memory_contract.v1",
+  "version": "17.61",
+  "purpose": "Dashboard-facing contract for verified memory eligibility.",
+  "canonical_outputs": [
+    "exports/latest/verified_memory_gate_report.json",
+    "src/frontend/command_center/modern/verified_memory_status.json"
+  ],
+  "required_fields": [
+    "schema",
+    "contract_version",
+    "generated_at",
+    "run_id",
+    "route_selected",
+    "terminal_state",
+    "validation_status",
+    "validation_passed",
+    "validation_score",
+    "evidence_count",
+    "memory_status",
+    "memory_eligible",
+    "memory_blockers",
+    "memory_reasons",
+    "memory_record",
+    "storage_mode"
+  ],
+  "rule": "Memory is eligible only when validation passes, evidence exists, terminal state is memory-eligible, and run_id exists.",
+  "no_fake_storage_rule": "v17.61 produces an eligibility report and record payload only; it does not pretend long-term memory storage occurred."
+}
