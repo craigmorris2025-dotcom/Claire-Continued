@@ -1,24 +1,29 @@
 {
   "check": "lifecycle_enforcement_check",
-  "version": "v16.29",
-  "created_at": "2026-05-08T21:26:48.728553",
+  "version": "v16.29-phase4e",
+  "created_at": "2026-05-08T21:42:17.912375",
   "status": "success",
   "modules": [
     {
       "module": "claire.lifecycle.lifecycle_runner",
-      "status": "success"
+      "status": "success",
+      "origin": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\lifecycle\\lifecycle_runner.py"
     },
     {
       "module": "claire.lifecycle.stage_registry",
-      "status": "success"
+      "status": "success",
+      "origin": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\lifecycle\\stage_registry.py"
     },
     {
       "module": "claire.lifecycle.stage_contracts",
-      "status": "success"
+      "status": "success",
+      "origin": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\lifecycle\\stage_contracts.py"
     },
     {
       "module": "claire.lifecycle.stage_status",
-      "status": "success"
+      "status": "success",
+      "origin": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\lifecycle\\stage_status.py"
     }
-  ]
+  ],
+  "canonical_runtime_root": "claire"
 }
