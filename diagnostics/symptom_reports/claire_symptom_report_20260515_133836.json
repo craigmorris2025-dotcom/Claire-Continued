@@ -1,0 +1,5991 @@
+{
+  "candidate_bridge_modules": [
+    {
+      "modified": "2026-05-15T16:57:29.908278+00:00",
+      "path": "claire\\api\\governed_payload_bridge_live_patch_s142_s148.py",
+      "size": 3557
+    }
+  ],
+  "candidate_compile_results": [
+    {
+      "compile_ok": true,
+      "path": "claire\\api\\governed_cockpit_payload_visibility_s149_s155.py"
+    },
+    {
+      "compile_ok": true,
+      "path": "src\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py"
+    },
+    {
+      "compile_ok": true,
+      "path": "claire\\api\\governed_payload_bridge_live_patch_s142_s148.py"
+    }
+  ],
+  "candidate_target_modules": [
+    {
+      "modified": "2026-05-15T18:29:30.576674+00:00",
+      "path": "claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+      "size": 6315
+    },
+    {
+      "modified": "2026-05-15T18:29:30.577676+00:00",
+      "path": "src\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+      "size": 6315
+    }
+  ],
+  "candidate_tests": [
+    {
+      "modified": "2026-05-15T14:04:39.934180+00:00",
+      "path": "tests\\test_s149_s155_live_payload_visibility.py",
+      "size": 2542
+    }
+  ],
+  "created_at": "2026-05-15T18:38:37.871509+00:00",
+  "cwd": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "diagnosis_hints": [
+    "If target_module_import.file is not one of the patched files, import precedence/path shadowing is confirmed.",
+    "If function_results return missing status/ok but source contains those fields, pytest may be importing stale bytecode or another module.",
+    "If function_results pass but pytest_target fails, the test may import different names, monkeypatch behavior, or assert additional fields.",
+    "If forward_motion flags show stop_go=STOP or safe_to_continue=False in an imported dependency, visibility builders may be branching into blocked payloads."
+  ],
+  "forward_motion_and_lock_flags": [
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\acquirers\\dataset.py",
+      "sample_lines": [
+        {
+          "line": 53,
+          "text": "                \"ticker\": \"GOOGL\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\allowlist_rate_limit_enforcement_proof.py",
+      "sample_lines": [
+        {
+          "line": 50,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 51,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\canonical_browser_session_persistence.py",
+      "sample_lines": [
+        {
+          "line": 43,
+          "text": "            \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 45,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\canonical_cockpit_surface_health.py",
+      "sample_lines": [
+        {
+          "line": 104,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\canonical_cockpit_surface_registry.py",
+      "sample_lines": [
+        {
+          "line": 140,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\cockpit_action_intent_contract.py",
+      "sample_lines": [
+        {
+          "line": 55,
+          "text": "            \"blocked_reason\": \"automatic_updates_blocked\","
+        },
+        {
+          "line": 58,
+          "text": "            \"intent_id\": \"execute_runtime_mutation\","
+        },
+        {
+          "line": 64,
+          "text": "            \"blocked_reason\": \"runtime_mutation_blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_action_registry.py",
+      "sample_lines": [
+        {
+          "line": 27,
+          "text": "    triggers_autonomous_execution: bool"
+        },
+        {
+          "line": 46,
+          "text": "            triggers_autonomous_execution=False,"
+        },
+        {
+          "line": 58,
+          "text": "            triggers_autonomous_execution=False,"
+        },
+        {
+          "line": 70,
+          "text": "            triggers_autonomous_execution=False,"
+        },
+        {
+          "line": 82,
+          "text": "            triggers_autonomous_execution=False,"
+        },
+        {
+          "line": 94,
+          "text": "            triggers_autonomous_execution=False,"
+        },
+        {
+          "line": 106,
+          "text": "            triggers_autonomous_execution=False,"
+        },
+        {
+          "line": 118,
+          "text": "            triggers_autonomous_execution=False,"
+        },
+        {
+          "line": 122,
+          "text": "            action_id=\"apply_runtime_mutation\","
+        },
+        {
+          "line": 130,
+          "text": "            triggers_autonomous_execution=False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation"
+      ],
+      "path": "claire\\api\\cockpit_diagnostics_drawer_payload.py",
+      "sample_lines": [
+        {
+          "line": 41,
+          "text": "        \"allows_runtime_mutation\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\cockpit_disabled_button_behavior.py",
+      "sample_lines": [
+        {
+          "line": 12,
+          "text": "            \"reason\": \"automatic_updates_blocked\","
+        },
+        {
+          "line": 16,
+          "text": "            \"button_id\": \"execute_runtime_mutation\","
+        },
+        {
+          "line": 19,
+          "text": "            \"reason\": \"runtime_mutation_blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_dry_run_trigger_quarantine_view.py",
+      "sample_lines": [
+        {
+          "line": 55,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 56,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\cockpit_live_governance_banners.py",
+      "sample_lines": [
+        {
+          "line": 27,
+          "text": "            \"banner_id\": \"automatic_updates_blocked\","
+        },
+        {
+          "line": 33,
+          "text": "            \"banner_id\": \"runtime_mutation_blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_manual_review_gate.py",
+      "sample_lines": [
+        {
+          "line": 54,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 55,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_metadata_probe_trigger_contract.py",
+      "sample_lines": [
+        {
+          "line": 42,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 43,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_monitoring_snapshot.py",
+      "sample_lines": [
+        {
+          "line": 28,
+          "text": "            \"runtime_mutation_blocked\": True,"
+        },
+        {
+          "line": 29,
+          "text": "            \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 30,
+          "text": "            \"autonomous_execution_blocked\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_operational_proof_routes.py",
+      "sample_lines": [
+        {
+          "line": 71,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 72,
+          "text": "        \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_operator_control_readiness.py",
+      "sample_lines": [
+        {
+          "line": 37,
+          "text": "            \"runtime_mutation\","
+        },
+        {
+          "line": 38,
+          "text": "            \"automatic_updates\","
+        },
+        {
+          "line": 39,
+          "text": "            \"autonomous_execution\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\cockpit_operator_next_actions.py",
+      "sample_lines": [
+        {
+          "line": 41,
+          "text": "            \"blocked_reason\": \"automatic_updates_blocked\","
+        },
+        {
+          "line": 44,
+          "text": "            \"action_id\": \"execute_runtime_mutation\","
+        },
+        {
+          "line": 48,
+          "text": "            \"blocked_reason\": \"runtime_mutation_blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_shell_payload_assembler.py",
+      "sample_lines": [
+        {
+          "line": 53,
+          "text": "            \"runtime_mutation\": False,"
+        },
+        {
+          "line": 54,
+          "text": "            \"automatic_updates\": False,"
+        },
+        {
+          "line": 55,
+          "text": "            \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_state_consolidator.py",
+      "sample_lines": [
+        {
+          "line": 52,
+          "text": "            \"runtime_mutation\": False,"
+        },
+        {
+          "line": 53,
+          "text": "            \"automatic_updates\": False,"
+        },
+        {
+          "line": 54,
+          "text": "            \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation"
+      ],
+      "path": "claire\\api\\cockpit_static_shell_manifest.py",
+      "sample_lines": [
+        {
+          "line": 29,
+          "text": "            \"execute_runtime_mutation\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_validation_lanes.py",
+      "sample_lines": [
+        {
+          "line": 9,
+          "text": "    \"runtime_mutation\": False,"
+        },
+        {
+          "line": 10,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 11,
+          "text": "    \"autonomous_execution\": False,"
+        },
+        {
+          "line": 23,
+          "text": "    allowed_for_forward_motion: bool"
+        },
+        {
+          "line": 35,
+          "text": "            allowed_for_forward_motion=True,"
+        },
+        {
+          "line": 44,
+          "text": "            allowed_for_forward_motion=True,"
+        },
+        {
+          "line": 53,
+          "text": "            allowed_for_forward_motion=True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\cockpit_visual_controls.py",
+      "sample_lines": [
+        {
+          "line": 12,
+          "text": "    \"runtime_mutation_blocked\": True,"
+        },
+        {
+          "line": 13,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 90,
+          "text": "        \"action_id\": \"execute_runtime_mutation\","
+        },
+        {
+          "line": 98,
+          "text": "        \"blocked_reason\": \"runtime_mutation_blocked\","
+        },
+        {
+          "line": 101,
+          "text": "        \"action_id\": \"enable_automatic_updates\","
+        },
+        {
+          "line": 109,
+          "text": "        \"blocked_reason\": \"automatic_updates_blocked\","
+        },
+        {
+          "line": 272,
+          "text": "            \"execute_runtime_mutation\","
+        },
+        {
+          "line": 273,
+          "text": "            \"enable_automatic_updates\","
+        },
+        {
+          "line": 304,
+          "text": "        \"safe_forward_motion\": len(unsafe_enabled) == 0,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\cockpit_warning_banner_contracts.py",
+      "sample_lines": [
+        {
+          "line": 9,
+          "text": "            \"banner_id\": \"runtime_mutation_blocked\","
+        },
+        {
+          "line": 11,
+          "text": "            \"visible_when\": \"runtime_mutation_requested\","
+        },
+        {
+          "line": 16,
+          "text": "            \"banner_id\": \"automatic_updates_blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\continuous_browser_runtime_loop.py",
+      "sample_lines": [
+        {
+          "line": 46,
+          "text": "            \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 53,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\continuous_governed_loop_contract.py",
+      "sample_lines": [
+        {
+          "line": 18,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 31,
+          "text": "            \"autonomous_runtime_mutation\","
+        },
+        {
+          "line": 39,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 40,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\continuous_runtime_presence.py",
+      "sample_lines": [
+        {
+          "line": 61,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\controlled_guarded_endpoint_registration_attempt.py",
+      "sample_lines": [
+        {
+          "line": 47,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 48,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\controlled_metadata_probe_executor.py",
+      "sample_lines": [
+        {
+          "line": 53,
+          "text": "        \"autonomous_execution_performed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\controlled_read_only_provider_probe_gate.py",
+      "sample_lines": [
+        {
+          "line": 66,
+          "text": "        \"autonomous_execution_performed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\dashboard_payload_bridge.py",
+      "sample_lines": [
+        {
+          "line": 376,
+          "text": "    payload[\"automatic_updates_enabled\"] = False"
+        },
+        {
+          "line": 501,
+          "text": "    payload[\"automatic_updates_enabled\"] = False"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\explicit_one_shot_metadata_probe_runner.py",
+      "sample_lines": [
+        {
+          "line": 69,
+          "text": "        \"autonomous_execution_performed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\first_guarded_live_update_path_contract.py",
+      "sample_lines": [
+        {
+          "line": 64,
+          "text": "        \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 65,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\first_metadata_probe_dry_run_simulator.py",
+      "sample_lines": [
+        {
+          "line": 49,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 50,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\first_metadata_probe_operator_readiness_checklist.py",
+      "sample_lines": [
+        {
+          "line": 67,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 68,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_backend_truth_surfaces.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_blocked_capability_matrix.py",
+      "sample_lines": [
+        {
+          "line": 9,
+          "text": "            \"capability\": \"automatic_updates\","
+        },
+        {
+          "line": 15,
+          "text": "            \"capability\": \"runtime_mutation\","
+        },
+        {
+          "line": 27,
+          "text": "            \"capability\": \"autonomous_execution\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_cockpit_attachment_gate_s128_s134.py",
+      "sample_lines": [
+        {
+          "line": 19,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 20,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 134,
+          "text": "            \"automatic_updates_blocked\","
+        },
+        {
+          "line": 135,
+          "text": "            \"autonomous_execution_blocked\","
+        },
+        {
+          "line": 179,
+          "text": "        \"forward_motion_allowed\": ok,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_cockpit_consumption_contracts.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution\": False,"
+        },
+        {
+          "line": 163,
+          "text": "            failures.append(f\"{panel.get('panel')}_runtime_mutation_not_false\")"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_cockpit_integration_plan_s113r1.py",
+      "sample_lines": [
+        {
+          "line": 71,
+          "text": "            \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 72,
+          "text": "            \"autonomous_execution_blocked\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "safe_to_continue",
+        "stop_go",
+        "GO",
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+      "sample_lines": [
+        {
+          "line": 10,
+          "text": "    \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 11,
+          "text": "    \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 12,
+          "text": "    \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 119,
+          "text": "        \"stop_go\": \"GO\","
+        },
+        {
+          "line": 121,
+          "text": "        \"safe_to_continue\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_cockpit_preview_export_s111r1.py",
+      "sample_lines": [
+        {
+          "line": 35,
+          "text": "        \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 36,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 69,
+          "text": "        \"automatic_updates_blocked\": payload.get(\"automatic_updates\") == \"blocked\","
+        },
+        {
+          "line": 70,
+          "text": "        \"autonomous_execution_blocked\": payload.get(\"autonomous_execution\") == \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "safe_to_continue"
+      ],
+      "path": "claire\\api\\governed_cockpit_status_rollup.py",
+      "sample_lines": [
+        {
+          "line": 16,
+          "text": "        \"safe_to_continue_builds\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_cockpit_stop_gate_s112r1.py",
+      "sample_lines": [
+        {
+          "line": 30,
+          "text": "    \"automatic_updates_blocked\","
+        },
+        {
+          "line": 31,
+          "text": "    \"autonomous_execution_blocked\","
+        },
+        {
+          "line": 92,
+          "text": "        \"forward_motion_allowed\": ok,"
+        },
+        {
+          "line": 125,
+          "text": "        \"forward_motion_allowed\": report[\"forward_motion_allowed\"],"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_dashboard_live_search_routes.py",
+      "sample_lines": [
+        {
+          "line": 12,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 22,
+          "text": "        \"url\": GOOGLE_URL,"
+        },
+        {
+          "line": 56,
+          "text": "            \"autonomous_execution\": False,"
+        },
+        {
+          "line": 57,
+          "text": "            \"automatic_updates\": False,"
+        },
+        {
+          "line": 92,
+          "text": "            \"autonomous_execution\": False,"
+        },
+        {
+          "line": 93,
+          "text": "            \"automatic_updates\": False,"
+        },
+        {
+          "line": 99,
+          "text": "__all__ = [\"router\", \"router_readiness\", \"GOOGLE_URL\"]"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_dashboard_payload_spine_compat_s108r1.py",
+      "sample_lines": [
+        {
+          "line": 79,
+          "text": "        \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 80,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 96,
+          "text": "        and read_model[\"automatic_updates\"] == \"blocked\""
+        },
+        {
+          "line": 97,
+          "text": "        and read_model[\"autonomous_execution\"] == \"blocked\""
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_dashboard_upgrade_s177_s183.py",
+      "sample_lines": [
+        {
+          "line": 16,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 17,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 27,
+          "text": "    \"runtime_mutation\": \"must remain blocked; only mutation proposals can be generated\","
+        },
+        {
+          "line": 125,
+          "text": "def build_runtime_mutation_proposal_contract() -> Dict[str, Any]:"
+        },
+        {
+          "line": 128,
+          "text": "        \"status\": \"runtime_mutation_proposal_contract_ready\","
+        },
+        {
+          "line": 129,
+          "text": "        \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 202,
+          "text": "    mutation = build_runtime_mutation_proposal_contract()"
+        },
+        {
+          "line": 210,
+          "text": "        \"runtime_mutation_still_disabled\": mutation[\"runtime_mutation_enabled\"] is False,"
+        },
+        {
+          "line": 213,
+          "text": "        \"autonomous_execution_blocked\": LOCKS[\"autonomous_execution_blocked\"] is True,"
+        },
+        {
+          "line": 214,
+          "text": "        \"automatic_updates_blocked\": LOCKS[\"automatic_updates_blocked\"] is True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_demo_run.py",
+      "sample_lines": [
+        {
+          "line": 49,
+          "text": "            \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 50,
+          "text": "            \"autonomous_execution\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_discovery_candidates.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_evidence_basket.py",
+      "sample_lines": [
+        {
+          "line": 66,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_functional_slice_s114_s120.py",
+      "sample_lines": [
+        {
+          "line": 19,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 20,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 144,
+          "text": "        \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 145,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 205,
+          "text": "        \"autonomous_execution_blocked\": demo[\"locks\"][\"autonomous_execution_blocked\"] is True,"
+        },
+        {
+          "line": 224,
+          "text": "        \"forward_motion_allowed\": ok,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_live_fetch_validation_s170_s176.py",
+      "sample_lines": [
+        {
+          "line": 22,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 23,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 168,
+          "text": "        \"automatic_updates_blocked\": LOCKS[\"automatic_updates_blocked\"] is True,"
+        },
+        {
+          "line": 169,
+          "text": "        \"autonomous_execution_blocked\": LOCKS[\"autonomous_execution_blocked\"] is True,"
+        },
+        {
+          "line": 195,
+          "text": "        \"automatic_updates_blocked\": readiness[\"checks\"][\"automatic_updates_blocked\"] is True,"
+        },
+        {
+          "line": 196,
+          "text": "        \"autonomous_execution_blocked\": readiness[\"checks\"][\"autonomous_execution_blocked\"] is True,"
+        },
+        {
+          "line": 215,
+          "text": "        \"forward_motion_allowed\": ok,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_manual_promotion_candidates.py",
+      "sample_lines": [
+        {
+          "line": 17,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 18,
+          "text": "    \"automatic_updates_blocked\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_multi_workspace_orchestration.py",
+      "sample_lines": [
+        {
+          "line": 85,
+          "text": "            \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 89,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_operational_cockpit_binding_s156_s162.py",
+      "sample_lines": [
+        {
+          "line": 19,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 20,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 195,
+          "text": "        \"forward_motion_allowed\": ok,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_operational_payload_adapter.py",
+      "sample_lines": [
+        {
+          "line": 14,
+          "text": "            \"runtime_mutation\": False,"
+        },
+        {
+          "line": 15,
+          "text": "            \"automatic_updates\": False,"
+        },
+        {
+          "line": 16,
+          "text": "            \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation"
+      ],
+      "path": "claire\\api\\governed_operational_session_orchestration.py",
+      "sample_lines": [
+        {
+          "line": 747,
+          "text": "        \"automatic_runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 749,
+          "text": "        \"automatic_runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 756,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_operational_topology_continuity.py",
+      "sample_lines": [
+        {
+          "line": 89,
+          "text": "            \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 93,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_operator_actions_s163_s169.py",
+      "sample_lines": [
+        {
+          "line": 27,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 28,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 61,
+          "text": "        \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 62,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 196,
+          "text": "        \"governed_search_still_blocked\": search_control[\"automatic_updates\"] == \"blocked\","
+        },
+        {
+          "line": 220,
+          "text": "        \"forward_motion_allowed\": ok,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_operator_router_mount_contracts.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_operator_route_contracts.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution\": False,"
+        },
+        {
+          "line": 179,
+          "text": "            failures.append(f\"{contract.get('route')}_runtime_mutation_not_false\")"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_operator_route_plateau.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_operator_runtime_snapshots.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution\": False,"
+        },
+        {
+          "line": 71,
+          "text": "        \"autonomous_execution_allowed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_operator_state_digest.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_operator_workflow.py",
+      "sample_lines": [
+        {
+          "line": 102,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_payload_bridge_adapter_s109r1.py",
+      "sample_lines": [
+        {
+          "line": 64,
+          "text": "            \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 65,
+          "text": "            \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 89,
+          "text": "        and locks.get(\"automatic_updates_blocked\") is True"
+        },
+        {
+          "line": 90,
+          "text": "        and locks.get(\"autonomous_execution_blocked\") is True"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "stop_go",
+        "GO",
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_payload_bridge_live_patch_s142_s148.py",
+      "sample_lines": [
+        {
+          "line": 10,
+          "text": "        \"stop_go\": \"GO\","
+        },
+        {
+          "line": 14,
+          "text": "        \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 15,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 16,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 30,
+          "text": "            \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 31,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 32,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation"
+      ],
+      "path": "claire\\api\\governed_payload_reconciliation.py",
+      "sample_lines": [
+        {
+          "line": 151,
+          "text": "            \"runtime_mutation_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_payload_registry_s135_s141.py",
+      "sample_lines": [
+        {
+          "line": 16,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 17,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 163,
+          "text": "        \"forward_motion_allowed\": ok,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_promotion_readiness_ledger.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_promotion_review_audit_boundary.py",
+      "sample_lines": [
+        {
+          "line": 12,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 13,
+          "text": "    \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_promotion_review_gate.py",
+      "sample_lines": [
+        {
+          "line": 17,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 18,
+          "text": "    \"automatic_updates_blocked\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_provider_configuration_contract.py",
+      "sample_lines": [
+        {
+          "line": 81,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 82,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_provider_readiness_validator.py",
+      "sample_lines": [
+        {
+          "line": 65,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 66,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_readonly_cockpit_integration_s121_s127.py",
+      "sample_lines": [
+        {
+          "line": 23,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 24,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 88,
+          "text": "            \"automatic_updates\": control.get(\"automatic_updates\"),"
+        },
+        {
+          "line": 139,
+          "text": "            \"forward_motion_allowed\": stop_gate.get(\"forward_motion_allowed\"),"
+        },
+        {
+          "line": 163,
+          "text": "            \"automatic_updates_blocked\","
+        },
+        {
+          "line": 164,
+          "text": "            \"autonomous_execution_blocked\","
+        },
+        {
+          "line": 199,
+          "text": "        \"forward_motion_allowed\": validation[\"ok\"],"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\governed_review_queue.py",
+      "sample_lines": [
+        {
+          "line": 57,
+          "text": "            \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_route_activity_overlay.py",
+      "sample_lines": [
+        {
+          "line": 87,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_route_repeat.py",
+      "sample_lines": [
+        {
+          "line": 25,
+          "text": "            \"autonomous_execution\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "safe_to_continue"
+      ],
+      "path": "claire\\api\\governed_runtime_registry_discovery_s107r1.py",
+      "sample_lines": [
+        {
+          "line": 145,
+          "text": "        \"safe_to_continue\": plan[\"ok\"],"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_runtime_spine_s106r1.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 118,
+          "text": "        \"autonomous_execution_blocked\": state[\"locks\"][\"autonomous_execution_blocked\"] is True,"
+        },
+        {
+          "line": 119,
+          "text": "        \"automatic_updates_blocked\": state[\"locks\"][\"automatic_updates_blocked\"] is True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_runtime_spine_s106_s112.py",
+      "sample_lines": [
+        {
+          "line": 22,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 23,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 157,
+          "text": "            \"automatic_updates\": True,"
+        },
+        {
+          "line": 158,
+          "text": "            \"autonomous_execution\": True,"
+        },
+        {
+          "line": 228,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_runtime_timeline.py",
+      "sample_lines": [
+        {
+          "line": 123,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_runtime_workspace_continuity.py",
+      "sample_lines": [
+        {
+          "line": 94,
+          "text": "            \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 97,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_s39_promotion_plateau_index.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_s92_s98_cockpit_contracts.py",
+      "sample_lines": [
+        {
+          "line": 18,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 19,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_s99_s105_routes.py",
+      "sample_lines": [
+        {
+          "line": 26,
+          "text": "    \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 27,
+          "text": "    \"autonomous_execution_blocked\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_search_session.py",
+      "sample_lines": [
+        {
+          "line": 47,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        },
+        {
+          "line": 63,
+          "text": "            \"automatic_runtime_mutation\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_timeline_classification.py",
+      "sample_lines": [
+        {
+          "line": 70,
+          "text": "        \"autonomous_execution_expansion\": False,"
+        },
+        {
+          "line": 76,
+          "text": "    authority[\"autonomous_execution_expansion\"] = False"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_unified_cockpit_preview_s110r1.py",
+      "sample_lines": [
+        {
+          "line": 68,
+          "text": "                \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 98,
+          "text": "            \"automatic_updates_blocked\": True,"
+        },
+        {
+          "line": 99,
+          "text": "            \"autonomous_execution_blocked\": True,"
+        },
+        {
+          "line": 126,
+          "text": "        and locks.get(\"automatic_updates_blocked\") is True"
+        },
+        {
+          "line": 127,
+          "text": "        and locks.get(\"autonomous_execution_blocked\") is True"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_unified_operator_payload.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    \"automatic_updates\": False,"
+        },
+        {
+          "line": 14,
+          "text": "    \"autonomous_execution\": False,"
+        },
+        {
+          "line": 178,
+          "text": "            failures.append(f\"{section.get('section')}_runtime_mutation_not_false\")"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\governed_update_proposal_flow.py",
+      "sample_lines": [
+        {
+          "line": 43,
+          "text": "            \"blocked_reason\": \"automatic_updates_and_runtime_mutation_blocked\","
+        },
+        {
+          "line": 51,
+          "text": "        \"runtime_mutation_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_useful_outputs.py",
+      "sample_lines": [
+        {
+          "line": 51,
+          "text": "            \"autonomous_execution\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\governed_web_job_lifecycle.py",
+      "sample_lines": [
+        {
+          "line": 35,
+          "text": "        \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\governed_web_safety_activation.py",
+      "sample_lines": [
+        {
+          "line": 42,
+          "text": "        \"autonomous_execution_blocked\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\guarded_endpoint_non_mutating_registration_plan.py",
+      "sample_lines": [
+        {
+          "line": 65,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 66,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\guarded_endpoint_registration_audit.py",
+      "sample_lines": [
+        {
+          "line": 75,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 76,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\guarded_endpoint_registration_decision_gate.py",
+      "sample_lines": [
+        {
+          "line": 54,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 55,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\guarded_metadata_probe_endpoint.py",
+      "sample_lines": [
+        {
+          "line": 125,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 148,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 149,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\guarded_metadata_probe_endpoint_registration.py",
+      "sample_lines": [
+        {
+          "line": 108,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 109,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\guarded_metadata_probe_request_policy.py",
+      "sample_lines": [
+        {
+          "line": 60,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 61,
+          "text": "        \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 90,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 91,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\guarded_metadata_probe_schema_contract.py",
+      "sample_lines": [
+        {
+          "line": 59,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 60,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\guarded_route_rollback_proof_validator.py",
+      "sample_lines": [
+        {
+          "line": 49,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 50,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\internet_operation_readiness_snapshot.py",
+      "sample_lines": [
+        {
+          "line": 17,
+          "text": "            \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 18,
+          "text": "            \"runtime_mutation\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\live_update_candidate_generation_contract.py",
+      "sample_lines": [
+        {
+          "line": 52,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 53,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\manual_update_approval_workflow_contract.py",
+      "sample_lines": [
+        {
+          "line": 38,
+          "text": "        \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 49,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\metadata_probe_quarantine_store_contract.py",
+      "sample_lines": [
+        {
+          "line": 52,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 53,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\metadata_probe_quarantine_writer.py",
+      "sample_lines": [
+        {
+          "line": 84,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 85,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\mounted_router_proof_audit.py",
+      "sample_lines": [
+        {
+          "line": 233,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 234,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\multi_panel_runtime_cohesion.py",
+      "sample_lines": [
+        {
+          "line": 35,
+          "text": "    autonomous_expansion = authority.get(\"autonomous_execution_expansion\", False)"
+        },
+        {
+          "line": 49,
+          "text": "        \"autonomous_execution_expansion\": autonomous_expansion,"
+        },
+        {
+          "line": 87,
+          "text": "            \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 89,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\operational_proof_routes.py",
+      "sample_lines": [
+        {
+          "line": 71,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 72,
+          "text": "        \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\operator_dashboard_compat_routes.py",
+      "sample_lines": [
+        {
+          "line": 12,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 23,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 24,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 41,
+          "text": "            \"url\": GOOGLE_URL,"
+        },
+        {
+          "line": 190,
+          "text": "    \"GOOGLE_URL\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation"
+      ],
+      "path": "claire\\api\\operator_route_harness.py",
+      "sample_lines": [
+        {
+          "line": 507,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\operator_triggered_metadata_probe_endpoint.py",
+      "sample_lines": [
+        {
+          "line": 72,
+          "text": "        \"autonomous_execution_performed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation"
+      ],
+      "path": "claire\\api\\operator_workflow_storage_adapter.py",
+      "sample_lines": [
+        {
+          "line": 58,
+          "text": "    safe_record[\"runtime_mutation\"] = False"
+        },
+        {
+          "line": 70,
+          "text": "        \"runtime_mutation\": False,"
+        },
+        {
+          "line": 96,
+          "text": "        \"runtime_mutation_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation"
+      ],
+      "path": "claire\\api\\operator_workflow_storage_readiness.py",
+      "sample_lines": [
+        {
+          "line": 16,
+          "text": "        \"runtime_mutation_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\promoted_evidence_integration_contract.py",
+      "sample_lines": [
+        {
+          "line": 43,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 44,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\provider_environment_setup_guide.py",
+      "sample_lines": [
+        {
+          "line": 43,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 44,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\provider_gate_diagnostic.py",
+      "sample_lines": [
+        {
+          "line": 50,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 51,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\real_provider_operator_probe_routes.py",
+      "sample_lines": [
+        {
+          "line": 12,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 34,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 35,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 44,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 45,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 94,
+          "text": "            \"url\": GOOGLE_URL,"
+        },
+        {
+          "line": 132,
+          "text": "            \"autonomous_execution\": False,"
+        },
+        {
+          "line": 133,
+          "text": "            \"automatic_updates\": False,"
+        },
+        {
+          "line": 139,
+          "text": "__all__ = [\"router\", \"router_readiness\", \"GOOGLE_URL\"]"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\router_integration_adapter_contract.py",
+      "sample_lines": [
+        {
+          "line": 43,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 44,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "stop_go"
+      ],
+      "path": "claire\\api\\routes_full_e2e_proof_pack.py",
+      "sample_lines": [
+        {
+          "line": 30,
+          "text": "def get_stop_go_report():"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "stop_go"
+      ],
+      "path": "claire\\api\\routes_platform_endpoint_smoke_proof.py",
+      "sample_lines": [
+        {
+          "line": 30,
+          "text": "def get_platform_stop_go():"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\runtime_continuity_visualization.py",
+      "sample_lines": [
+        {
+          "line": 75,
+          "text": "            \"autonomous_execution_expansion\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\runtime_truth_read_api.py",
+      "sample_lines": [
+        {
+          "line": 34,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 66,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s28_governed_operational_session_orchestration.py",
+      "sample_lines": [
+        {
+          "line": 19,
+          "text": "        \"runtime_mutation\": False,"
+        },
+        {
+          "line": 21,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 22,
+          "text": "        \"automatic_updates\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s34_first_live_metadata_plateau_status.py",
+      "sample_lines": [
+        {
+          "line": 38,
+          "text": "        \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 39,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_blocked_by_default_execution_capsule.py",
+      "sample_lines": [
+        {
+          "line": 40,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 41,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_controlled_provider_launch_profile.py",
+      "sample_lines": [
+        {
+          "line": 45,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 46,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_endpoint_registration_preflight.py",
+      "sample_lines": [
+        {
+          "line": 53,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 54,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_first_probe_preflight_audit_report.py",
+      "sample_lines": [
+        {
+          "line": 42,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 43,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_no_network_endpoint_contract_test.py",
+      "sample_lines": [
+        {
+          "line": 50,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 51,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_one_shot_execution_gate.py",
+      "sample_lines": [
+        {
+          "line": 50,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 51,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_one_shot_metadata_execution_readiness.py",
+      "sample_lines": [
+        {
+          "line": 47,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 48,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_operator_probe_command_contract.py",
+      "sample_lines": [
+        {
+          "line": 48,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 49,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_post_install_payload_verifier.py",
+      "sample_lines": [
+        {
+          "line": 29,
+          "text": "            \"automatic_updates_enabled remains false\","
+        },
+        {
+          "line": 38,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 39,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_provider_activation_verifier.py",
+      "sample_lines": [
+        {
+          "line": 61,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 62,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_quarantine_verification_report.py",
+      "sample_lines": [
+        {
+          "line": 46,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 47,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s35_single_probe_run_manifest_contract.py",
+      "sample_lines": [
+        {
+          "line": 49,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 50,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s37_review_export_fetch_capsule.py",
+      "sample_lines": [
+        {
+          "line": 28,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 30,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 31,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation"
+      ],
+      "path": "claire\\api\\s43_app_integration_probe.py",
+      "sample_lines": [
+        {
+          "line": 550,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s43_exposure_inventory.py",
+      "sample_lines": [
+        {
+          "line": 14,
+          "text": "            \"runtime_mutation\": False,"
+        },
+        {
+          "line": 19,
+          "text": "            \"autonomous_execution\": False,"
+        },
+        {
+          "line": 20,
+          "text": "            \"automatic_updates\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s43_route_visibility_registry.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "        \"autonomous_execution\": governance[\"autonomous_execution\"],"
+        },
+        {
+          "line": 14,
+          "text": "        \"automatic_updates\": governance[\"automatic_updates\"],"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s44_cockpit_fetch_contracts.py",
+      "sample_lines": [
+        {
+          "line": 20,
+          "text": "    runtime_mutation_allowed: bool = False"
+        },
+        {
+          "line": 22,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 23,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 53,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 54,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 55,
+          "text": "        \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation"
+      ],
+      "path": "claire\\api\\s44_cockpit_fetch_verification.py",
+      "sample_lines": [
+        {
+          "line": 49,
+          "text": "            \"runtime_mutation_allowed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s44_cockpit_status_aggregation.py",
+      "sample_lines": [
+        {
+          "line": 37,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 39,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 40,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 77,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 78,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s44_dashboard_consumption_manifest.py",
+      "sample_lines": [
+        {
+          "line": 27,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 29,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 30,
+          "text": "        \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s44_operator_payload_rendering_contracts.py",
+      "sample_lines": [
+        {
+          "line": 26,
+          "text": "            \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 28,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 29,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s45_cockpit_shell_bridge.py",
+      "sample_lines": [
+        {
+          "line": 45,
+          "text": "            \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 47,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 48,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 69,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 71,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 72,
+          "text": "        \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s45_cockpit_ui_bridge.py",
+      "sample_lines": [
+        {
+          "line": 36,
+          "text": "            \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 38,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 39,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 57,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 59,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 60,
+          "text": "        \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\s45_operator_visible_panels.py",
+      "sample_lines": [
+        {
+          "line": 43,
+          "text": "                \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s45_panel_data_mounting.py",
+      "sample_lines": [
+        {
+          "line": 34,
+          "text": "            \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 36,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 37,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 83,
+          "text": "            \"runtime_mutation_allowed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\s46_modern_cockpit_layout_contract.py",
+      "sample_lines": [
+        {
+          "line": 47,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s46_modern_cockpit_shell_blueprint.py",
+      "sample_lines": [
+        {
+          "line": 39,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 40,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 61,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 63,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 64,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s47_cockpit_operator_payload.py",
+      "sample_lines": [
+        {
+          "line": 32,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 33,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 51,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 53,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 54,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s47_live_status_zones.py",
+      "sample_lines": [
+        {
+          "line": 72,
+          "text": "            \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 74,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 75,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 94,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 95,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s48_dashboard_route_payload_browser.py",
+      "sample_lines": [
+        {
+          "line": 34,
+          "text": "            \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 36,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 37,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 86,
+          "text": "            \"runtime_mutation_allowed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s49_governed_web_evidence_panels.py",
+      "sample_lines": [
+        {
+          "line": 7,
+          "text": "GOVERNED_WEB_PANEL_KEYS = ("
+        },
+        {
+          "line": 18,
+          "text": "    for key in GOVERNED_WEB_PANEL_KEYS:"
+        },
+        {
+          "line": 40,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 41,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 58,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 59,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 85,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 86,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 107,
+          "text": "    if web[\"panel_count\"] != len(GOVERNED_WEB_PANEL_KEYS):"
+        },
+        {
+          "line": 160,
+          "text": "        \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s50_modern_cockpit_consolidation.py",
+      "sample_lines": [
+        {
+          "line": 39,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 40,
+          "text": "            \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 64,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 65,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 88,
+          "text": "        if section[\"automatic_updates_enabled\"]:"
+        },
+        {
+          "line": 121,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 122,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 143,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 144,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s51_route_specific_useful_outputs.py",
+      "sample_lines": [
+        {
+          "line": 76,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 78,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 79,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s52_useful_output_quality_gate.py",
+      "sample_lines": [
+        {
+          "line": 34,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 36,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 37,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s53_cockpit_useful_output_browser.py",
+      "sample_lines": [
+        {
+          "line": 19,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 21,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 22,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s54_useful_output_run_history.py",
+      "sample_lines": [
+        {
+          "line": 16,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 18,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 19,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s55_useful_output_replay_snapshots.py",
+      "sample_lines": [
+        {
+          "line": 16,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 18,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 19,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s56_output_package_export_manifest.py",
+      "sample_lines": [
+        {
+          "line": 17,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 19,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 20,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s57_output_dashboard_mounting.py",
+      "sample_lines": [
+        {
+          "line": 11,
+          "text": "        \"operator_mutation_enabled\": False, \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 12,
+          "text": "        \"autonomous_execution_enabled\": False, \"live_web_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s58_governed_web_provider_readiness.py",
+      "sample_lines": [
+        {
+          "line": 8,
+          "text": "    return {\"backend_owns_truth\": True, \"cockpit_presentation_only\": True, \"presentation_only\": True, \"read_only\": True, \"runtime_truth_mutation_allowed\": False, \"runtime_truth_write_allowed\": False, \"operator_mutation_enabled\": False, \"aut"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s59_controlled_probe_request_contracts.py",
+      "sample_lines": [
+        {
+          "line": 7,
+          "text": "    return {\"backend_owns_truth\": True, \"cockpit_presentation_only\": True, \"presentation_only\": True, \"read_only\": True, \"runtime_truth_mutation_allowed\": False, \"runtime_truth_write_allowed\": False, \"operator_mutation_enabled\": False, \"aut"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s60_quarantined_evidence_intake.py",
+      "sample_lines": [
+        {
+          "line": 7,
+          "text": "    return {\"backend_owns_truth\": True, \"cockpit_presentation_only\": True, \"presentation_only\": True, \"read_only\": True, \"runtime_truth_mutation_allowed\": False, \"runtime_truth_write_allowed\": False, \"operator_mutation_enabled\": False, \"aut"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s61_manual_promotion_workflow.py",
+      "sample_lines": [
+        {
+          "line": 7,
+          "text": "    return {\"backend_owns_truth\": True, \"cockpit_presentation_only\": True, \"presentation_only\": True, \"read_only\": True, \"runtime_truth_mutation_allowed\": False, \"runtime_truth_write_allowed\": False, \"operator_mutation_enabled\": False, \"aut"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s62_governed_update_readiness_boundary.py",
+      "sample_lines": [
+        {
+          "line": 7,
+          "text": "    return {\"backend_owns_truth\": True, \"cockpit_presentation_only\": True, \"presentation_only\": True, \"read_only\": True, \"runtime_truth_mutation_allowed\": False, \"runtime_truth_write_allowed\": False, \"operator_mutation_enabled\": False, \"aut"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s63_demonstrable_platform_readiness.py",
+      "sample_lines": [
+        {
+          "line": 7,
+          "text": "    return {\"backend_owns_truth\": True, \"cockpit_presentation_only\": True, \"presentation_only\": True, \"read_only\": True, \"runtime_truth_mutation_allowed\": False, \"runtime_truth_write_allowed\": False, \"operator_mutation_enabled\": False, \"aut"
+        },
+        {
+          "line": 18,
+          "text": "        (\"automatic_updates_enabled\", False),"
+        },
+        {
+          "line": 29,
+          "text": "    if snapshot[\"automatic_updates_enabled\"]: failures.append(\"automatic updates enabled\")"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s64_route_execution_payload_bridge.py",
+      "sample_lines": [
+        {
+          "line": 21,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 22,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s65_runtime_output_rendering.py",
+      "sample_lines": [
+        {
+          "line": 21,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 22,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\s68_dashboard_navigation_stabilization.py",
+      "sample_lines": [
+        {
+          "line": 12,
+          "text": "        \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\s69_cockpit_loading_reconciliation.py",
+      "sample_lines": [
+        {
+          "line": 12,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 22,
+          "text": "            \"runtime_mutation_allowed\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s70_modern_governed_cockpit_proof.py",
+      "sample_lines": [
+        {
+          "line": 12,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 13,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 27,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 38,
+          "text": "    if proof[\"automatic_updates_enabled\"]:"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s71_governed_continuous_runtime_observation.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 14,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s72_run_output_operator_review_bridge.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 14,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s73_useful_run_package_composer.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 14,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s74_governed_output_quality_scoring.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 14,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s75_cockpit_demo_run_packet.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 14,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s76_controlled_probe_arming_review.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 14,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s77_provider_probe_dry_run_action.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 14,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\s78_s84_governed_web_vertical_slice.py",
+      "sample_lines": [
+        {
+          "line": 18,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 19,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 27,
+          "text": "        \"google_cse_configured\": bool(os.environ.get(\"GOOGLE_CSE_ID\") and os.environ.get(\"GOOGLE_API_KEY\")),"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\safe_mounted_router_comparator.py",
+      "sample_lines": [
+        {
+          "line": 57,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 58,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\safe_router_allowlist_contract.py",
+      "sample_lines": [
+        {
+          "line": 50,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 51,
+          "text": "        \"automatic_updates\": \"blocked\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\search_bar_dashboard_api.py",
+      "sample_lines": [
+        {
+          "line": 42,
+          "text": "    result[\"automatic_updates_enabled\"] = False"
+        },
+        {
+          "line": 67,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation",
+        "automatic_updates"
+      ],
+      "path": "claire\\api\\workflow_persistence_readiness.py",
+      "sample_lines": [
+        {
+          "line": 15,
+          "text": "        \"runtime_mutation_enabled\": False,"
+        },
+        {
+          "line": 16,
+          "text": "        \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "runtime_mutation",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\_s43_governance.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "        \"runtime_mutation\": False,"
+        },
+        {
+          "line": 15,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 16,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 44,
+          "text": "# BEGIN CLAIRE_S43_FIX7_GOVERNANCE_COMPAT"
+        },
+        {
+          "line": 50,
+          "text": "        \"autonomous_execution\": \"blocked\","
+        },
+        {
+          "line": 51,
+          "text": "        \"automatic_updates\": \"blocked\","
+        },
+        {
+          "line": 64,
+          "text": "        \"runtime_mutation_allowed\": False,"
+        },
+        {
+          "line": 67,
+          "text": "        \"autonomous_execution_enabled\": False,"
+        },
+        {
+          "line": 68,
+          "text": "        \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 82,
+          "text": "# END CLAIRE_S43_FIX7_GOVERNANCE_COMPAT"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "autonomous_execution"
+      ],
+      "path": "claire\\api\\routes\\governed_live_probe.py",
+      "sample_lines": [
+        {
+          "line": 25,
+          "text": "PROVIDER_GATE_ENV = \"CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE\""
+        },
+        {
+          "line": 120,
+          "text": "        \"autonomous_execution_allowed\": False,"
+        },
+        {
+          "line": 144,
+          "text": "        \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\autonomous\\governance_boundary.py",
+      "sample_lines": [
+        {
+          "line": 6,
+          "text": "Status: MOSTLY NOT OPERATIONAL (capabilities defined, not implemented) \u2192 GOVERNED AUTONOMOUS (self-managing within safety boundaries)"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\autonomous\\research_director.py",
+      "sample_lines": [
+        {
+          "line": 6,
+          "text": "Status: MOSTLY NOT OPERATIONAL (capabilities defined, not implemented) \u2192 GOVERNED AUTONOMOUS (self-managing within safety boundaries)"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\autonomous\\self_corrector.py",
+      "sample_lines": [
+        {
+          "line": 6,
+          "text": "Status: MOSTLY NOT OPERATIONAL (capabilities defined, not implemented) \u2192 GOVERNED AUTONOMOUS (self-managing within safety boundaries)"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\autonomous\\self_enricher.py",
+      "sample_lines": [
+        {
+          "line": 6,
+          "text": "Status: MOSTLY NOT OPERATIONAL (capabilities defined, not implemented) \u2192 GOVERNED AUTONOMOUS (self-managing within safety boundaries)"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\autonomous\\self_escalator.py",
+      "sample_lines": [
+        {
+          "line": 6,
+          "text": "Status: MOSTLY NOT OPERATIONAL (capabilities defined, not implemented) \u2192 GOVERNED AUTONOMOUS (self-managing within safety boundaries)"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\autonomous\\self_invalidator.py",
+      "sample_lines": [
+        {
+          "line": 6,
+          "text": "Status: MOSTLY NOT OPERATIONAL (capabilities defined, not implemented) \u2192 GOVERNED AUTONOMOUS (self-managing within safety boundaries)"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\autonomous\\self_optimizer.py",
+      "sample_lines": [
+        {
+          "line": 6,
+          "text": "Status: MOSTLY NOT OPERATIONAL (capabilities defined, not implemented) \u2192 GOVERNED AUTONOMOUS (self-managing within safety boundaries)"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\autonomous\\governance\\autonomy_maturity_scorer.py",
+      "sample_lines": [
+        {
+          "line": 26,
+          "text": "    FULLY_GOVERNED = \"fully_governed\""
+        }
+      ]
+    },
+    {
+      "hits": [
+        "stop_go",
+        "STOP",
+        "GO"
+      ],
+      "path": "claire\\cleanup\\archive_approval_gate.py",
+      "sample_lines": [
+        {
+          "line": 23,
+          "text": "STOP_GO_PATH = Path(\"data/cleanup/v17_82_archive_approval_stop_go.json\")"
+        },
+        {
+          "line": 24,
+          "text": "STOP_GO_MD_PATH = Path(\"data/cleanup/v17_82_archive_approval_stop_go.md\")"
+        },
+        {
+          "line": 232,
+          "text": "        status = \"STOP\""
+        },
+        {
+          "line": 263,
+          "text": "    write_json(root / STOP_GO_PATH, {"
+        },
+        {
+          "line": 429,
+          "text": "    write_text(root / STOP_GO_MD_PATH, \"\\n\".join(lines))"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "stop_go",
+        "STOP",
+        "GO"
+      ],
+      "path": "claire\\cleanup\\cleanup_proof.py",
+      "sample_lines": [
+        {
+          "line": 17,
+          "text": "STOP_GO_PATH = Path(\"data/cleanup/v17_81_cleanup_stop_go.json\")"
+        },
+        {
+          "line": 18,
+          "text": "STOP_GO_MD_PATH = Path(\"data/cleanup/v17_81_cleanup_stop_go.md\")"
+        },
+        {
+          "line": 313,
+          "text": "def determine_stop_go(classified: List[Dict[str, object]], freeze: Dict[str, object], protected: Dict[str, object]) -> Dict[str, object]:"
+        },
+        {
+          "line": 338,
+          "text": "        status = \"STOP\""
+        },
+        {
+          "line": 353,
+          "text": "    sg = report[\"stop_go\"]"
+        },
+        {
+          "line": 402,
+          "text": "    write_text(root / STOP_GO_MD_PATH, \"\\n\".join(lines))"
+        },
+        {
+          "line": 421,
+          "text": "    stop_go = determine_stop_go(classified, freeze, protected)"
+        },
+        {
+          "line": 443,
+          "text": "        \"status\": stop_go[\"status\"],"
+        },
+        {
+          "line": 444,
+          "text": "        \"stop_go\": stop_go,"
+        },
+        {
+          "line": 471,
+          "text": "    write_json(root / STOP_GO_PATH, {\"version\": VERSION, \"generated_at\": report[\"generated_at\"], **stop_go})"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\core\\interpreter.py",
+      "sample_lines": [
+        {
+          "line": 13,
+          "text": "    DECISION_THRESHOLDS = {\"GO\": 0.65, \"CAUTION\": 0.35}"
+        },
+        {
+          "line": 17,
+          "text": "        if score >= self.DECISION_THRESHOLDS[\"GO\"]:"
+        },
+        {
+          "line": 18,
+          "text": "            return \"GO\""
+        },
+        {
+          "line": 21,
+          "text": "        return \"NO-GO\""
+        },
+        {
+          "line": 39,
+          "text": "        # Ready for Syntalion if GO or HIGH-BREAKTHROUGH"
+        },
+        {
+          "line": 41,
+          "text": "            result.decision_classification == \"GO\" or"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\dashboard\\dashboard_live_search_binding.py",
+      "sample_lines": [
+        {
+          "line": 19,
+          "text": "GOOGLE_TITLE = \"Google\""
+        },
+        {
+          "line": 20,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 42,
+          "text": "    title = str(raw.get(\"title\") or raw.get(\"name\") or GOOGLE_TITLE).strip()"
+        },
+        {
+          "line": 43,
+          "text": "    url = str(raw.get(\"url\") or raw.get(\"link\") or GOOGLE_URL).strip()"
+        },
+        {
+          "line": 49,
+          "text": "    return DashboardSearchResultCard(title=GOOGLE_TITLE, url=GOOGLE_URL).to_dict()"
+        },
+        {
+          "line": 83,
+          "text": "        if first.get(\"title\") != GOOGLE_TITLE:"
+        },
+        {
+          "line": 85,
+          "text": "        if first.get(\"url\") != GOOGLE_URL:"
+        },
+        {
+          "line": 103,
+          "text": "            \"google_card_present\": state[\"primary_result\"][\"title\"] == GOOGLE_TITLE and state[\"primary_result\"][\"url\"] == GOOGLE_URL,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "stop_go",
+        "automatic_updates"
+      ],
+      "path": "claire\\dashboard\\operator_dashboard_state.py",
+      "sample_lines": [
+        {
+          "line": 16,
+          "text": "    \"stop_go\": Path(\"data/proof/v17_75_stop_go_report.json\"),"
+        },
+        {
+          "line": 160,
+          "text": "    stop_go = payloads[\"stop_go\"]"
+        },
+        {
+          "line": 174,
+          "text": "    stop_go_status = stop_go.get(\"status\") or proof.get(\"status\") or \"not_loaded\""
+        },
+        {
+          "line": 195,
+          "text": "            \"status\": stop_go_status,"
+        },
+        {
+          "line": 196,
+          "text": "            \"summary\": get_nested(proof, [\"stop_go\", \"recommendation\"]) or \"Start a run or rebuild runtime truth to populate live mission data.\","
+        },
+        {
+          "line": 274,
+          "text": "            \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 279,
+          "text": "            \"status\": proof.get(\"status\", stop_go_status),"
+        },
+        {
+          "line": 280,
+          "text": "            \"stop_go\": proof.get(\"stop_go\") or stop_go,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "runtime_mutation"
+      ],
+      "path": "claire\\deployment\\production_profile.py",
+      "sample_lines": [
+        {
+          "line": 20,
+          "text": "    allow_runtime_mutation: bool = False"
+        },
+        {
+          "line": 38,
+          "text": "        if self.allow_runtime_mutation:"
+        },
+        {
+          "line": 94,
+          "text": "        allow_runtime_mutation=_bool(source.get(\"CLAIRE_ALLOW_RUNTIME_MUTATION\"), False),"
+        },
+        {
+          "line": 96,
+          "text": "        require_source_governance=_bool(source.get(\"CLAIRE_REQUIRE_SOURCE_GOVERNANCE\"), True),"
+        },
+        {
+          "line": 97,
+          "text": "        require_recovery_governance=_bool(source.get(\"CLAIRE_REQUIRE_RECOVERY_GOVERNANCE\"), True),"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "runtime_mutation"
+      ],
+      "path": "claire\\deployment\\runtime_hardening.py",
+      "sample_lines": [
+        {
+          "line": 48,
+          "text": "        if self.policy.require_runtime_isolation and profile.allow_runtime_mutation:"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "stop_go",
+        "STOP",
+        "GO",
+        "automatic_updates"
+      ],
+      "path": "claire\\desktop\\startup_reliability.py",
+      "sample_lines": [
+        {
+          "line": 22,
+          "text": "STOP_GO_PATH = Path(\"data/desktop_packaging/v17_78_desktop_startup_stop_go.json\")"
+        },
+        {
+          "line": 23,
+          "text": "STOP_GO_MD_PATH = Path(\"data/desktop_packaging/v17_78_desktop_startup_stop_go.md\")"
+        },
+        {
+          "line": 44,
+          "text": "    \"launch_hardening_stop_go\": \"data/launch_hardening/v17_77_launch_hardening_stop_go.json\","
+        },
+        {
+          "line": 190,
+          "text": "    stop_go, stop_source = read_json(root / \"data/launch_hardening/v17_77_launch_hardening_stop_go.json\")"
+        },
+        {
+          "line": 196,
+          "text": "        \"launch_hardening_status\": (launch_hardening.get(\"stop_go\") or {}).get(\"status\", launch_hardening.get(\"status\", \"missing\")),"
+        },
+        {
+          "line": 197,
+          "text": "        \"launch_hardening_stop_go_source\": stop_source,"
+        },
+        {
+          "line": 198,
+          "text": "        \"launch_hardening_stop_go_status\": stop_go.get(\"status\", \"missing\"),"
+        },
+        {
+          "line": 243,
+          "text": "def determine_stop_go(report: Dict[str, Any]) -> Dict[str, Any]:"
+        },
+        {
+          "line": 270,
+          "text": "    if continuity.get(\"launch_hardening_stop_go_status\") == \"STOP\":"
+        },
+        {
+          "line": 271,
+          "text": "        warnings.append(\"prior_launch_hardening_stop_go_is_STOP\")"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion"
+      ],
+      "path": "claire\\evolution\\evolution_orchestrator.py",
+      "sample_lines": [
+        {
+          "line": 8,
+          "text": "  Coordinates: project_identity, master_document_registry, version_timeline, target_state, capability_registry, verified_state_store, regression_guard, forward_motion_policy, evolution_memory. Methods: get_system_status() \u2014 full evolution s"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "forward_motion"
+      ],
+      "path": "claire\\evolution\\forward_motion_policy.py",
+      "sample_lines": [
+        {
+          "line": 20,
+          "text": "        \"\"\"Initialize the forward_motion_policy subsystem.\"\"\""
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO"
+      ],
+      "path": "claire\\evolution\\target_state.py",
+      "sample_lines": [
+        {
+          "line": 2,
+          "text": "Defines where Claire is GOING \u2014 the target completion state"
+        },
+        {
+          "line": 13,
+          "text": "    Defines where Claire is GOING \u2014 the target completion state"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governance\\runtime_truth_consumption_firewall.py",
+      "sample_lines": [
+        {
+          "line": 162,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governance\\safe_concurrent_probe_governance.py",
+      "sample_lines": [
+        {
+          "line": 20,
+          "text": "    allow_autonomous_execution: bool = False"
+        },
+        {
+          "line": 81,
+          "text": "        allow_autonomous_execution=False,"
+        },
+        {
+          "line": 114,
+          "text": "    if active_policy.allow_autonomous_execution:"
+        },
+        {
+          "line": 115,
+          "text": "        reasons.append(\"autonomous_execution_not_allowed_for_concurrent_probes\")"
+        },
+        {
+          "line": 135,
+          "text": "            \"autonomous_execution_allowed\": active_policy.allow_autonomous_execution,"
+        },
+        {
+          "line": 169,
+          "text": "            \"automatic_updates_disabled\": True,"
+        },
+        {
+          "line": 170,
+          "text": "            \"autonomous_execution_disabled\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governance\\governed_web\\controlled_head_transport_executor.py",
+      "sample_lines": [
+        {
+          "line": 77,
+          "text": "        \"automatic_updates_forbidden\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governance\\governed_web\\first_controlled_read_only_live_probe_executor.py",
+      "sample_lines": [
+        {
+          "line": 117,
+          "text": "        \"automatic_updates_forbidden\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governance\\governed_web\\first_live_probe_permission_switch.py",
+      "sample_lines": [
+        {
+          "line": 129,
+          "text": "        \"automatic_updates_forbidden\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governance\\governed_web\\first_real_controlled_head_handshake.py",
+      "sample_lines": [
+        {
+          "line": 63,
+          "text": "        \"automatic_updates_forbidden\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governance\\governed_web\\pre_live_probe_authorization_audit.py",
+      "sample_lines": [
+        {
+          "line": 156,
+          "text": "        \"automatic_updates_forbidden\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governance\\governed_web\\read_only_probe_executor_null_transport.py",
+      "sample_lines": [
+        {
+          "line": 141,
+          "text": "        \"automatic_updates_forbidden\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governance\\governed_web\\read_only_transport_selection_gate.py",
+      "sample_lines": [
+        {
+          "line": 111,
+          "text": "        \"automatic_updates_forbidden\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\accelerated_governed_live_web_activation_pack.py",
+      "sample_lines": [
+        {
+          "line": 24,
+          "text": "GOOGLE_QUERY = \"google\""
+        },
+        {
+          "line": 25,
+          "text": "GOOGLE_TITLE = \"Google\""
+        },
+        {
+          "line": 26,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 71,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 72,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 86,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 87,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 100,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 101,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 217,
+          "text": "        \"query\": GOOGLE_QUERY,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\active_app_final_web_activation_mount_verification.py",
+      "sample_lines": [
+        {
+          "line": 14,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 41,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 42,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 57,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 58,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 68,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 69,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 274,
+          "text": "        and first.get(\"url\") == GOOGLE_URL"
+        },
+        {
+          "line": 419,
+          "text": "    \"GOOGLE_URL\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\active_app_mounted_route_verification.py",
+      "sample_lines": [
+        {
+          "line": 19,
+          "text": "SMOKE_GOOGLE_PATH = \"/api/dashboard/search/smoke/google\""
+        },
+        {
+          "line": 37,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 38,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 52,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 53,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 62,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 63,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 116,
+          "text": "    smoke_present = SMOKE_GOOGLE_PATH in paths"
+        },
+        {
+          "line": 125,
+          "text": "        \"required_paths\": [LIVE_SEARCH_PATH, SMOKE_GOOGLE_PATH],"
+        },
+        {
+          "line": 242,
+          "text": "        response = client.get(SMOKE_GOOGLE_PATH)"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\consolidated_web_activation_packs.py",
+      "sample_lines": [
+        {
+          "line": 18,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 55,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 56,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 69,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 70,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 81,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 82,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 279,
+          "text": "        and google_first.get(\"url\") == GOOGLE_URL"
+        },
+        {
+          "line": 371,
+          "text": "    \"GOOGLE_URL\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\controlled_limited_body_fetch.py",
+      "sample_lines": [
+        {
+          "line": 84,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\controlled_metadata_probe.py",
+      "sample_lines": [
+        {
+          "line": 57,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\controlled_retry_timeout_governance.py",
+      "sample_lines": [
+        {
+          "line": 70,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\dashboard_live_search_route_mount_adapter.py",
+      "sample_lines": [
+        {
+          "line": 51,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 52,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 66,
+          "text": "            'autonomous_execution_enabled': self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 67,
+          "text": "            'automatic_updates_enabled': self.automatic_updates_enabled,"
+        },
+        {
+          "line": 77,
+          "text": "        'autonomous_execution': False,"
+        },
+        {
+          "line": 78,
+          "text": "        'automatic_updates': False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\dashboard_live_search_ui_fetch_binding.py",
+      "sample_lines": [
+        {
+          "line": 46,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 47,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 61,
+          "text": "            'autonomous_execution_enabled': self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 62,
+          "text": "            'automatic_updates_enabled': self.automatic_updates_enabled,"
+        },
+        {
+          "line": 114,
+          "text": "            'autonomous_execution': False,"
+        },
+        {
+          "line": 115,
+          "text": "            'automatic_updates': False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\dashboard_search_api_adapter.py",
+      "sample_lines": [
+        {
+          "line": 42,
+          "text": "                \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 52,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\dashboard_search_bar_html_integration_gate.py",
+      "sample_lines": [
+        {
+          "line": 22,
+          "text": "START_MARKER = \"<!-- CLAIRE_GOVERNED_LIVE_SEARCH_START -->\""
+        },
+        {
+          "line": 23,
+          "text": "END_MARKER = \"<!-- CLAIRE_GOVERNED_LIVE_SEARCH_END -->\""
+        },
+        {
+          "line": 24,
+          "text": "SCRIPT_MARKER = \"<!-- CLAIRE_GOVERNED_LIVE_SEARCH_SCRIPT -->\""
+        },
+        {
+          "line": 46,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 47,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 59,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 60,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 176,
+          "text": "            \"autonomous_execution\": False,"
+        },
+        {
+          "line": 177,
+          "text": "            \"automatic_updates\": False,"
+        },
+        {
+          "line": 210,
+          "text": "                \"autonomous_execution\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\dashboard_search_endpoint_result_contract.py",
+      "sample_lines": [
+        {
+          "line": 67,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 68,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 80,
+          "text": "            'autonomous_execution_enabled': self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 81,
+          "text": "            'automatic_updates_enabled': self.automatic_updates_enabled,"
+        },
+        {
+          "line": 160,
+          "text": "            'autonomous_execution': False,"
+        },
+        {
+          "line": 161,
+          "text": "            'automatic_updates': False,"
+        },
+        {
+          "line": 200,
+          "text": "                'autonomous_execution': False,"
+        },
+        {
+          "line": 201,
+          "text": "                'automatic_updates': False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\dashboard_search_provider_probe_separation_repair.py",
+      "sample_lines": [
+        {
+          "line": 54,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 55,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 65,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 66,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 116,
+          "text": "            \"autonomous_execution\": False,"
+        },
+        {
+          "line": 117,
+          "text": "            \"automatic_updates\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\dashboard_search_query_execution_bridge.py",
+      "sample_lines": [
+        {
+          "line": 70,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 71,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 84,
+          "text": "            'autonomous_execution_enabled': self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 85,
+          "text": "            'automatic_updates_enabled': self.automatic_updates_enabled,"
+        },
+        {
+          "line": 133,
+          "text": "            'autonomous_execution': False,"
+        },
+        {
+          "line": 134,
+          "text": "            'automatic_updates': False,"
+        },
+        {
+          "line": 266,
+          "text": "                'autonomous_execution': False,"
+        },
+        {
+          "line": 267,
+          "text": "                'automatic_updates': False,"
+        },
+        {
+          "line": 329,
+          "text": "            'autonomous_execution': False,"
+        },
+        {
+          "line": 330,
+          "text": "            'automatic_updates': False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\dashboard_search_result_binding.py",
+      "sample_lines": [
+        {
+          "line": 111,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 112,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 124,
+          "text": "            'autonomous_execution_enabled': self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 125,
+          "text": "            'automatic_updates_enabled': self.automatic_updates_enabled,"
+        },
+        {
+          "line": 217,
+          "text": "                'autonomous_execution': False,"
+        },
+        {
+          "line": 218,
+          "text": "                'automatic_updates': False,"
+        },
+        {
+          "line": 245,
+          "text": "                'autonomous_execution': False,"
+        },
+        {
+          "line": 246,
+          "text": "                'automatic_updates': False,"
+        },
+        {
+          "line": 269,
+          "text": "        'autonomous_execution': False,"
+        },
+        {
+          "line": 270,
+          "text": "        'automatic_updates': False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\dashboard_to_endpoint_fetch_proof.py",
+      "sample_lines": [
+        {
+          "line": 21,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 47,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 48,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 61,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 62,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 71,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 72,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 93,
+          "text": "                \"url\": GOOGLE_URL,"
+        },
+        {
+          "line": 230,
+          "text": "        and first.get(\"url\") == GOOGLE_URL"
+        },
+        {
+          "line": 290,
+          "text": "    \"GOOGLE_URL\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\end_to_end_live_search_flow.py",
+      "sample_lines": [
+        {
+          "line": 51,
+          "text": "    autonomous_execution_allowed: bool = False"
+        },
+        {
+          "line": 87,
+          "text": "        \"autonomous_execution_allowed\": False,"
+        },
+        {
+          "line": 253,
+          "text": "            \"automatic_updates_disabled\": True,"
+        },
+        {
+          "line": 254,
+          "text": "            \"autonomous_execution_disabled\": True,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\first_active_dashboard_google_result_proof.py",
+      "sample_lines": [
+        {
+          "line": 23,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 64,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 65,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 79,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 80,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 89,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 90,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 177,
+          "text": "        and google_fetch_proof.get(\"first_result_url\") == GOOGLE_URL"
+        },
+        {
+          "line": 195,
+          "text": "        \"expected_url\": GOOGLE_URL,"
+        },
+        {
+          "line": 230,
+          "text": "            \"url\": GOOGLE_URL,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\governance_error_state_hardening.py",
+      "sample_lines": [
+        {
+          "line": 29,
+          "text": "                \"automatic_updates_enabled\": False,"
+        },
+        {
+          "line": 52,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\governed_live_search_orchestrator.py",
+      "sample_lines": [
+        {
+          "line": 45,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\head_probe_review_capture.py",
+      "sample_lines": [
+        {
+          "line": 41,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\live_dashboard_result_rendering_contract.py",
+      "sample_lines": [
+        {
+          "line": 58,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\live_search_active_app_mount_gate.py",
+      "sample_lines": [
+        {
+          "line": 21,
+          "text": "SMOKE_GOOGLE_PATH = \"/api/dashboard/search/smoke/google\""
+        },
+        {
+          "line": 48,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 49,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 62,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 63,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 71,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 72,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 178,
+          "text": "            \"paths\": [LIVE_SEARCH_PATH, SMOKE_GOOGLE_PATH],"
+        },
+        {
+          "line": 191,
+          "text": "            \"paths\": [LIVE_SEARCH_PATH, SMOKE_GOOGLE_PATH],"
+        },
+        {
+          "line": 204,
+          "text": "            \"paths\": [LIVE_SEARCH_PATH, SMOKE_GOOGLE_PATH],"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\live_search_dashboard_smoke.py",
+      "sample_lines": [
+        {
+          "line": 182,
+          "text": "            \"autonomous_execution\": False,"
+        },
+        {
+          "line": 183,
+          "text": "            \"automatic_updates\": False,"
+        },
+        {
+          "line": 252,
+          "text": "        governance.get(\"autonomous_execution\"),"
+        },
+        {
+          "line": 253,
+          "text": "        governance.get(\"automatic_updates\"),"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\live_search_session_lifecycle.py",
+      "sample_lines": [
+        {
+          "line": 68,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\mounted_live_search_endpoint_smoke_test.py",
+      "sample_lines": [
+        {
+          "line": 19,
+          "text": "SMOKE_GOOGLE_PATH = \"/api/dashboard/search/smoke/google\""
+        },
+        {
+          "line": 37,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 38,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 51,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 52,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 61,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 62,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 116,
+          "text": "            \"google\": SMOKE_GOOGLE_PATH,"
+        },
+        {
+          "line": 136,
+          "text": "            \"endpoint_path\": SMOKE_GOOGLE_PATH,"
+        },
+        {
+          "line": 152,
+          "text": "            \"endpoint_path\": SMOKE_GOOGLE_PATH,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\multi_result_aggregation.py",
+      "sample_lines": [
+        {
+          "line": 64,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\operator_probe_active_app_mount.py",
+      "sample_lines": [
+        {
+          "line": 27,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 28,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 41,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 42,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 51,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 52,
+          "text": "        \"automatic_updates\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\provider_health_registry.py",
+      "sample_lines": [
+        {
+          "line": 48,
+          "text": "    autonomous_execution_allowed: bool = False"
+        },
+        {
+          "line": 87,
+          "text": "        data[\"autonomous_execution_triggered\"] = False"
+        },
+        {
+          "line": 141,
+          "text": "        \"autonomous_execution_allowed\": False,"
+        },
+        {
+          "line": 357,
+          "text": "    data[\"autonomous_execution_triggered\"] = False"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\real_controlled_provider_result_proof.py",
+      "sample_lines": [
+        {
+          "line": 21,
+          "text": "GOOGLE_QUERY = \"google\""
+        },
+        {
+          "line": 22,
+          "text": "GOOGLE_TITLE = \"Google\""
+        },
+        {
+          "line": 23,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 72,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 73,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 87,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 88,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 99,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 100,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 182,
+          "text": "    query = _string(kwargs.get(\"query\"), GOOGLE_QUERY)"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "GO",
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\real_provider_operator_probe_route.py",
+      "sample_lines": [
+        {
+          "line": 10,
+          "text": "GOOGLE_URL = \"https://www.google.com\""
+        },
+        {
+          "line": 32,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 33,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 45,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 46,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 56,
+          "text": "        \"autonomous_execution\": False,"
+        },
+        {
+          "line": 57,
+          "text": "        \"automatic_updates\": False,"
+        },
+        {
+          "line": 203,
+          "text": "        and result.get(\"first_result_url\") == GOOGLE_URL"
+        },
+        {
+          "line": 318,
+          "text": "    \"GOOGLE_URL\","
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates"
+      ],
+      "path": "claire\\governed_web\\real_search_provider_adapter.py",
+      "sample_lines": [
+        {
+          "line": 57,
+          "text": "            \"automatic_updates_enabled\": False,"
+        }
+      ]
+    },
+    {
+      "hits": [
+        "automatic_updates",
+        "autonomous_execution"
+      ],
+      "path": "claire\\governed_web\\root_consolidation_single_dashboard_launcher.py",
+      "sample_lines": [
+        {
+          "line": 54,
+          "text": "    autonomous_execution_enabled: bool = False"
+        },
+        {
+          "line": 55,
+          "text": "    automatic_updates_enabled: bool = False"
+        },
+        {
+          "line": 65,
+          "text": "            \"autonomous_execution_enabled\": self.autonomous_execution_enabled,"
+        },
+        {
+          "line": 66,
+          "text": "            \"automatic_updates_enabled\": self.automatic_updates_enabled,"
+        },
+        {
+          "line": 123,
+          "text": "            \"autonomous_execution\": False,"
+        },
+        {
+          "line": 124,
+          "text": "            \"automatic_updates\": False,"
+        }
+      ]
+    }
+  ],
+  "function_results": [
+    {
+      "call_ok": true,
+      "exists": true,
+      "expected_field_mismatches": {},
+      "function": "build_cockpit_payload_read_contract",
+      "return": {
+        "allowed_methods": [
+          "GET"
+        ],
+        "automatic_updates_enabled": false,
+        "autonomous_execution_enabled": false,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_enabled": false,
+        "contract_id": "cockpit_payload_read_contract",
+        "endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "manual_promotion_required": true,
+        "ok": true,
+        "quarantine_required": true,
+        "read_only": true,
+        "required_endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "runtime_mutation_enabled": false,
+        "runtime_truth_write_enabled": false,
+        "stage_version": "S149",
+        "status": "cockpit_payload_read_contract_ready"
+      },
+      "signature": "() -> 'Dict[str, Any]'",
+      "source": "def build_cockpit_payload_read_contract() -> Dict[str, Any]:\n    payload = _base(\"S149\")\n    payload.update({\n        \"contract_id\": \"cockpit_payload_read_contract\",\n        \"status\": \"cockpit_payload_read_contract_ready\",\n        \"ok\": True,\n    })\n    return payload\n"
+    },
+    {
+      "call_ok": true,
+      "exists": true,
+      "expected_field_mismatches": {},
+      "function": "build_live_payload_visibility_probe",
+      "return": {
+        "allowed_methods": [
+          "GET"
+        ],
+        "automatic_updates_enabled": false,
+        "autonomous_execution_enabled": false,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_enabled": false,
+        "dashboard_payload_visible": true,
+        "endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "live_payload_visibility": true,
+        "manual_promotion_required": true,
+        "ok": true,
+        "payload_status_visible": true,
+        "probe_id": "live_payload_visibility_probe",
+        "quarantine_required": true,
+        "read_only": true,
+        "required_endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "runtime_mutation_enabled": false,
+        "runtime_truth_write_enabled": false,
+        "stage_version": "S150",
+        "status": "live_payload_visibility_probe_ready"
+      },
+      "signature": "() -> 'Dict[str, Any]'",
+      "source": "def build_live_payload_visibility_probe() -> Dict[str, Any]:\n    payload = _base(\"S150\")\n    payload.update({\n        \"probe_id\": \"live_payload_visibility_probe\",\n        \"status\": \"live_payload_visibility_probe_ready\",\n        \"ok\": True,\n        \"live_payload_visibility\": True,\n        \"dashboard_payload_visible\": True,\n        \"payload_status_visible\": True,\n    })\n    return payload\n"
+    },
+    {
+      "call_ok": true,
+      "exists": true,
+      "expected_field_mismatches": {},
+      "function": "build_existing_payload_nonbreak_probe",
+      "return": {
+        "allowed_methods": [
+          "GET"
+        ],
+        "automatic_updates_enabled": false,
+        "autonomous_execution_enabled": false,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_enabled": false,
+        "endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "manual_promotion_required": true,
+        "mutates_payload": false,
+        "nonbreaking": true,
+        "ok": true,
+        "preserves_existing_payload": true,
+        "probe_id": "existing_payload_nonbreak_probe",
+        "quarantine_required": true,
+        "read_only": true,
+        "required_endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "runtime_mutation_enabled": false,
+        "runtime_truth_write_enabled": false,
+        "stage_version": "S151",
+        "status": "existing_payload_nonbreak_probe_ready",
+        "writes_runtime_truth": false
+      },
+      "signature": "() -> 'Dict[str, Any]'",
+      "source": "def build_existing_payload_nonbreak_probe() -> Dict[str, Any]:\n    payload = _base(\"S151\")\n    payload.update({\n        \"probe_id\": \"existing_payload_nonbreak_probe\",\n        \"status\": \"existing_payload_nonbreak_probe_ready\",\n        \"ok\": True,\n        \"preserves_existing_payload\": True,\n        \"nonbreaking\": True,\n        \"mutates_payload\": False,\n        \"writes_runtime_truth\": False,\n    })\n    return payload\n"
+    },
+    {
+      "call_ok": true,
+      "exists": true,
+      "expected_field_mismatches": {},
+      "function": "build_repeated_payload_fetch_stability_probe",
+      "return": {
+        "all_fetches_consistent": true,
+        "allowed_methods": [
+          "GET"
+        ],
+        "automatic_updates_enabled": false,
+        "autonomous_execution_enabled": false,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_enabled": false,
+        "endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "fetch_count": 3,
+        "manual_promotion_required": true,
+        "ok": true,
+        "probe_id": "repeated_payload_fetch_stability_probe",
+        "quarantine_required": true,
+        "read_only": true,
+        "repeated_fetch_stable": true,
+        "required_endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "runtime_mutation_enabled": false,
+        "runtime_truth_write_enabled": false,
+        "stage_version": "S152",
+        "status": "repeated_payload_fetch_stability_probe_ready"
+      },
+      "signature": "(fetch_count: 'int' = 3, **_: 'Any') -> 'Dict[str, Any]'",
+      "source": "def build_repeated_payload_fetch_stability_probe(fetch_count: int = 3, **_: Any) -> Dict[str, Any]:\n    payload = _base(\"S152\")\n    payload.update({\n        \"probe_id\": \"repeated_payload_fetch_stability_probe\",\n        \"status\": \"repeated_payload_fetch_stability_probe_ready\",\n        \"ok\": True,\n        \"fetch_count\": fetch_count,\n        \"repeated_fetch_stable\": True,\n        \"all_fetches_consistent\": True,\n    })\n    return payload\n"
+    },
+    {
+      "call_ok": true,
+      "exists": true,
+      "expected_field_mismatches": {},
+      "function": "build_cockpit_payload_manifest",
+      "return": {
+        "allowed_methods": [
+          "GET"
+        ],
+        "automatic_updates_enabled": false,
+        "autonomous_execution_enabled": false,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_enabled": false,
+        "endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "manifest_id": "cockpit_payload_manifest",
+        "manual_promotion_required": true,
+        "ok": true,
+        "payload_fragments": [
+          "cockpit_payload_read_contract",
+          "live_payload_visibility_probe",
+          "existing_payload_nonbreak_probe",
+          "repeated_payload_fetch_stability_probe",
+          "cockpit_live_visibility_readiness",
+          "s149_s155_stop_gate"
+        ],
+        "quarantine_required": true,
+        "read_only": true,
+        "required_endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "runtime_mutation_enabled": false,
+        "runtime_truth_write_enabled": false,
+        "stage_version": "S153",
+        "status": "cockpit_payload_manifest_ready"
+      },
+      "signature": "() -> 'Dict[str, Any]'",
+      "source": "def build_cockpit_payload_manifest() -> Dict[str, Any]:\n    payload = _base(\"S153\")\n    payload.update({\n        \"manifest_id\": \"cockpit_payload_manifest\",\n        \"status\": \"cockpit_payload_manifest_ready\",\n        \"ok\": True,\n        \"payload_fragments\": [\n            \"cockpit_payload_read_contract\",\n            \"live_payload_visibility_probe\",\n            \"existing_payload_nonbreak_probe\",\n            \"repeated_payload_fetch_stability_probe\",\n            \"cockpit_live_visibility_readiness\",\n            \"s149_s155_stop_gate\",\n        ],\n    })\n    return payload\n"
+    },
+    {
+      "call_ok": true,
+      "exists": true,
+      "expected_field_mismatches": {},
+      "function": "build_cockpit_live_visibility_readiness",
+      "return": {
+        "allowed_methods": [
+          "GET"
+        ],
+        "automatic_updates_enabled": false,
+        "autonomous_execution_enabled": false,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_enabled": false,
+        "dashboard_ready": true,
+        "endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "live_visibility_ready": true,
+        "manual_promotion_required": true,
+        "ok": true,
+        "payload_ready": true,
+        "quarantine_required": true,
+        "read_only": true,
+        "readiness_id": "cockpit_live_visibility_readiness",
+        "required_endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "runtime_mutation_enabled": false,
+        "runtime_truth_write_enabled": false,
+        "stage_version": "S154",
+        "status": "cockpit_live_visibility_readiness_ready"
+      },
+      "signature": "() -> 'Dict[str, Any]'",
+      "source": "def build_cockpit_live_visibility_readiness() -> Dict[str, Any]:\n    payload = _base(\"S154\")\n    payload.update({\n        \"readiness_id\": \"cockpit_live_visibility_readiness\",\n        \"status\": \"cockpit_live_visibility_readiness_ready\",\n        \"ok\": True,\n        \"live_visibility_ready\": True,\n        \"dashboard_ready\": True,\n        \"payload_ready\": True,\n    })\n    return payload\n"
+    },
+    {
+      "call_ok": true,
+      "exists": true,
+      "expected_field_mismatches": {},
+      "function": "build_s149_s155_stop_gate",
+      "return": {
+        "allowed_methods": [
+          "GET"
+        ],
+        "automatic_updates_enabled": false,
+        "autonomous_execution_enabled": false,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_enabled": false,
+        "endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "gate_id": "s149_s155_stop_gate",
+        "manual_promotion_required": true,
+        "ok": true,
+        "passed": true,
+        "quarantine_required": true,
+        "read_only": true,
+        "report_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\diagnostics\\symptom_reports\\tmp_stop_gate_probe\\s149_s155_stop_gate.json",
+        "required_endpoints": [
+          "/dashboard/payload",
+          "/dashboard/payload/status",
+          "/health"
+        ],
+        "runtime_mutation_enabled": false,
+        "runtime_truth_write_enabled": false,
+        "safe_to_continue": true,
+        "stage_version": "S155",
+        "status": "s149_s155_stop_gate_passed",
+        "stop_go": "GO"
+      },
+      "signature": "(report_dir: 'str | Path | None' = None, **_: 'Any') -> 'Dict[str, Any]'",
+      "source": "def build_s149_s155_stop_gate(report_dir: str | Path | None = None, **_: Any) -> Dict[str, Any]:\n    payload = _base(\"S155\")\n    payload.update({\n        \"gate_id\": \"s149_s155_stop_gate\",\n        \"status\": \"s149_s155_stop_gate_passed\",\n        \"ok\": True,\n        \"stop_go\": \"GO\",\n        \"passed\": True,\n        \"safe_to_continue\": True,\n    })\n\n    if report_dir is not None:\n        report_path = Path(report_dir)\n        report_path.mkdir(parents=True, exist_ok=True)\n        output = report_path / \"s149_s155_stop_gate.json\"\n        output.write_text(json.dumps(payload, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")\n        payload[\"report_path\"] = str(output)\n\n    return payload\n"
+    }
+  ],
+  "import_debug": {
+    "args": [
+      "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-c",
+      "import inspect, claire.api.governed_cockpit_payload_visibility_s149_s155 as m;print('FILE=', m.__file__);print('S149=', m.build_cockpit_payload_read_contract());print('S150=', m.build_live_payload_visibility_probe());print('S151=', m.build_existing_payload_nonbreak_probe());print('S152=', m.build_repeated_payload_fetch_stability_probe(fetch_count=3));print('S153=', m.build_cockpit_payload_manifest());print('S154=', m.build_cockpit_live_visibility_readiness());print('S155=', m.build_s149_s155_stop_gate());"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "FILE= C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py\nS149= {'stage_version': 'S149', 'backend_owns_truth': True, 'cockpit_presentation_only': True, 'read_only': True, 'allowed_methods': ['GET'], 'required_endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'manual_promotion_required': True, 'quarantine_required': True, 'runtime_truth_write_enabled': False, 'runtime_mutation_enabled': False, 'automatic_updates_enabled': False, 'autonomous_execution_enabled': False, 'continuous_crawling_enabled': False, 'contract_id': 'cockpit_payload_read_contract', 'status': 'cockpit_payload_read_contract_ready', 'ok': True}\nS150= {'stage_version': 'S150', 'backend_owns_truth': True, 'cockpit_presentation_only': True, 'read_only': True, 'allowed_methods': ['GET'], 'required_endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'manual_promotion_required': True, 'quarantine_required': True, 'runtime_truth_write_enabled': False, 'runtime_mutation_enabled': False, 'automatic_updates_enabled': False, 'autonomous_execution_enabled': False, 'continuous_crawling_enabled': False, 'probe_id': 'live_payload_visibility_probe', 'status': 'live_payload_visibility_probe_ready', 'ok': True, 'live_payload_visibility': True, 'dashboard_payload_visible': True, 'payload_status_visible': True}\nS151= {'stage_version': 'S151', 'backend_owns_truth': True, 'cockpit_presentation_only': True, 'read_only': True, 'allowed_methods': ['GET'], 'required_endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'manual_promotion_required': True, 'quarantine_required': True, 'runtime_truth_write_enabled': False, 'runtime_mutation_enabled': False, 'automatic_updates_enabled': False, 'autonomous_execution_enabled': False, 'continuous_crawling_enabled': False, 'probe_id': 'existing_payload_nonbreak_probe', 'status': 'existing_payload_nonbreak_probe_ready', 'ok': True, 'preserves_existing_payload': True, 'nonbreaking': True, 'mutates_payload': False, 'writes_runtime_truth': False}\nS152= {'stage_version': 'S152', 'backend_owns_truth': True, 'cockpit_presentation_only': True, 'read_only': True, 'allowed_methods': ['GET'], 'required_endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'manual_promotion_required': True, 'quarantine_required': True, 'runtime_truth_write_enabled': False, 'runtime_mutation_enabled': False, 'automatic_updates_enabled': False, 'autonomous_execution_enabled': False, 'continuous_crawling_enabled': False, 'probe_id': 'repeated_payload_fetch_stability_probe', 'status': 'repeated_payload_fetch_stability_probe_ready', 'ok': True, 'fetch_count': 3, 'repeated_fetch_stable': True, 'all_fetches_consistent': True}\nS153= {'stage_version': 'S153', 'backend_owns_truth': True, 'cockpit_presentation_only': True, 'read_only': True, 'allowed_methods': ['GET'], 'required_endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'manual_promotion_required': True, 'quarantine_required': True, 'runtime_truth_write_enabled': False, 'runtime_mutation_enabled': False, 'automatic_updates_enabled': False, 'autonomous_execution_enabled': False, 'continuous_crawling_enabled': False, 'manifest_id': 'cockpit_payload_manifest', 'status': 'cockpit_payload_manifest_ready', 'ok': True, 'payload_fragments': ['cockpit_payload_read_contract', 'live_payload_visibility_probe', 'existing_payload_nonbreak_probe', 'repeated_payload_fetch_stability_probe', 'cockpit_live_visibility_readiness', 's149_s155_stop_gate']}\nS154= {'stage_version': 'S154', 'backend_owns_truth': True, 'cockpit_presentation_only': True, 'read_only': True, 'allowed_methods': ['GET'], 'required_endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'manual_promotion_required': True, 'quarantine_required': True, 'runtime_truth_write_enabled': False, 'runtime_mutation_enabled': False, 'automatic_updates_enabled': False, 'autonomous_execution_enabled': False, 'continuous_crawling_enabled': False, 'readiness_id': 'cockpit_live_visibility_readiness', 'status': 'cockpit_live_visibility_readiness_ready', 'ok': True, 'live_visibility_ready': True, 'dashboard_ready': True, 'payload_ready': True}\nS155= {'stage_version': 'S155', 'backend_owns_truth': True, 'cockpit_presentation_only': True, 'read_only': True, 'allowed_methods': ['GET'], 'required_endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'endpoints': ['/dashboard/payload', '/dashboard/payload/status', '/health'], 'manual_promotion_required': True, 'quarantine_required': True, 'runtime_truth_write_enabled': False, 'runtime_mutation_enabled': False, 'automatic_updates_enabled': False, 'autonomous_execution_enabled': False, 'continuous_crawling_enabled': False, 'gate_id': 's149_s155_stop_gate', 'status': 's149_s155_stop_gate_passed', 'ok': True, 'stop_go': 'GO', 'passed': True, 'safe_to_continue': True}\n"
+  },
+  "platform": "Windows-10-10.0.26200-SP0",
+  "pytest_collect": {
+    "args": [
+      "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-m",
+      "pytest",
+      "--collect-only",
+      "tests/test_s149_s155_live_payload_visibility.py",
+      "-q"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "tests/test_s149_s155_live_payload_visibility.py: 7\n\n"
+  },
+  "pytest_target": {
+    "args": [
+      "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_s149_s155_live_payload_visibility.py",
+      "-q"
+    ],
+    "returncode": 1,
+    "stderr": "",
+    "stdout": "FFFFFFF                                                                  [100%]\n================================== FAILURES ===================================\n________________________ test_s149_read_contract_ready ________________________\n\n    def test_s149_read_contract_ready():\n        contract = build_cockpit_payload_read_contract()\n        assert contract[\"stage_version\"] == \"S149\"\n        assert contract[\"status\"] == \"cockpit_payload_read_contract_ready\"\n>       assert contract[\"payload_key\"] == \"governed_operations\"\n               ^^^^^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'payload_key'\n\ntests\\test_s149_s155_live_payload_visibility.py:19: KeyError\n______________________ test_s150_visibility_probe_passes ______________________\n\n    def test_s150_visibility_probe_passes():\n        probe = build_live_payload_visibility_probe()\n        assert probe[\"stage_version\"] == \"S150\"\n        assert probe[\"ok\"] is True\n>       assert \"runtime_spine\" in probe[\"visible_panel_keys\"]\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'visible_panel_keys'\n\ntests\\test_s149_s155_live_payload_visibility.py:26: KeyError\n__________________ test_s151_existing_payload_nonbreak_probe __________________\n\n    def test_s151_existing_payload_nonbreak_probe():\n        probe = build_existing_payload_nonbreak_probe()\n        assert probe[\"stage_version\"] == \"S151\"\n        assert probe[\"ok\"] is True\n>       assert probe[\"rules\"][\"governed_operations_appended_only\"] is True\n               ^^^^^^^^^^^^^^\nE       KeyError: 'rules'\n\ntests\\test_s149_s155_live_payload_visibility.py:33: KeyError\n_____________________ test_s152_repeated_fetch_stability ______________________\n\n    def test_s152_repeated_fetch_stability():\n        probe = build_repeated_payload_fetch_stability_probe(fetch_count=3)\n        assert probe[\"stage_version\"] == \"S152\"\n        assert probe[\"ok\"] is True\n>       assert probe[\"stable_top_level_keys\"] is True\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'stable_top_level_keys'\n\ntests\\test_s149_s155_live_payload_visibility.py:40: KeyError\n______________________ test_s153_payload_manifest_ready _______________________\n\n    def test_s153_payload_manifest_ready():\n        manifest = build_cockpit_payload_manifest()\n        assert manifest[\"stage_version\"] == \"S153\"\n        assert manifest[\"status\"] == \"cockpit_payload_manifest_ready\"\n>       assert manifest[\"panel_count\"] >= 4\n               ^^^^^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'panel_count'\n\ntests\\test_s149_s155_live_payload_visibility.py:47: KeyError\n_____________________ test_s154_live_visibility_readiness _____________________\n\n    def test_s154_live_visibility_readiness():\n        readiness = build_cockpit_live_visibility_readiness()\n        assert readiness[\"stage_version\"] == \"S154\"\n        assert readiness[\"ok\"] is True\n>       assert readiness[\"checks\"][\"runtime_truth_write_blocked\"] is True\n               ^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'checks'\n\ntests\\test_s149_s155_live_payload_visibility.py:53: KeyError\n_________________________ test_s155_stop_gate_passes __________________________\n\ntmp_path = WindowsPath('C:/Users/craig/AppData/Local/Temp/pytest-of-craig/pytest-158/test_s155_stop_gate_passes0')\n\n    def test_s155_stop_gate_passes(tmp_path: Path):\n        report = build_s149_s155_stop_gate(report_dir=tmp_path / \"reports\")\n        assert report[\"stage_version\"] == \"S155\"\n        assert report[\"ok\"] is True\n>       assert report[\"forward_motion_allowed\"] is True\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'forward_motion_allowed'\n\ntests\\test_s149_s155_live_payload_visibility.py:59: KeyError\n=========================== short test summary info ===========================\nFAILED tests/test_s149_s155_live_payload_visibility.py::test_s149_read_contract_ready\nFAILED tests/test_s149_s155_live_payload_visibility.py::test_s150_visibility_probe_passes\nFAILED tests/test_s149_s155_live_payload_visibility.py::test_s151_existing_payload_nonbreak_probe\nFAILED tests/test_s149_s155_live_payload_visibility.py::test_s152_repeated_fetch_stability\nFAILED tests/test_s149_s155_live_payload_visibility.py::test_s153_payload_manifest_ready\nFAILED tests/test_s149_s155_live_payload_visibility.py::test_s154_live_visibility_readiness\nFAILED tests/test_s149_s155_live_payload_visibility.py::test_s155_stop_gate_passes\n"
+  },
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "sys_path_head": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+    "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python311.zip",
+    "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\DLLs",
+    "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\Lib",
+    "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311",
+    "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src"
+  ],
+  "target_module": "claire.api.governed_cockpit_payload_visibility_s149_s155",
+  "target_module_import": {
+    "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+    "import_ok": true,
+    "module": "claire.api.governed_cockpit_payload_visibility_s149_s155",
+    "package": "claire.api"
+  },
+  "target_test": "tests\\test_s149_s155_live_payload_visibility.py",
+  "test_source_analysis": {
+    "assertions": [
+      {
+        "lineno": 17,
+        "source": "assert contract[\"stage_version\"] == \"S149\""
+      },
+      {
+        "lineno": 18,
+        "source": "assert contract[\"status\"] == \"cockpit_payload_read_contract_ready\""
+      },
+      {
+        "lineno": 19,
+        "source": "assert contract[\"payload_key\"] == \"governed_operations\""
+      },
+      {
+        "lineno": 20,
+        "source": "assert contract[\"read_only\"] is True"
+      },
+      {
+        "lineno": 24,
+        "source": "assert probe[\"stage_version\"] == \"S150\""
+      },
+      {
+        "lineno": 25,
+        "source": "assert probe[\"ok\"] is True"
+      },
+      {
+        "lineno": 26,
+        "source": "assert \"runtime_spine\" in probe[\"visible_panel_keys\"]"
+      },
+      {
+        "lineno": 27,
+        "source": "assert \"review_export\" in probe[\"visible_panel_keys\"]"
+      },
+      {
+        "lineno": 31,
+        "source": "assert probe[\"stage_version\"] == \"S151\""
+      },
+      {
+        "lineno": 32,
+        "source": "assert probe[\"ok\"] is True"
+      },
+      {
+        "lineno": 33,
+        "source": "assert probe[\"rules\"][\"governed_operations_appended_only\"] is True"
+      },
+      {
+        "lineno": 34,
+        "source": "assert probe[\"rules\"][\"app_py_patch_performed\"] is False"
+      },
+      {
+        "lineno": 38,
+        "source": "assert probe[\"stage_version\"] == \"S152\""
+      },
+      {
+        "lineno": 39,
+        "source": "assert probe[\"ok\"] is True"
+      },
+      {
+        "lineno": 40,
+        "source": "assert probe[\"stable_top_level_keys\"] is True"
+      },
+      {
+        "lineno": 41,
+        "source": "assert probe[\"stable_panel_keys\"] is True"
+      },
+      {
+        "lineno": 45,
+        "source": "assert manifest[\"stage_version\"] == \"S153\""
+      },
+      {
+        "lineno": 46,
+        "source": "assert manifest[\"status\"] == \"cockpit_payload_manifest_ready\""
+      },
+      {
+        "lineno": 47,
+        "source": "assert manifest[\"panel_count\"] >= 4"
+      },
+      {
+        "lineno": 51,
+        "source": "assert readiness[\"stage_version\"] == \"S154\""
+      },
+      {
+        "lineno": 52,
+        "source": "assert readiness[\"ok\"] is True"
+      },
+      {
+        "lineno": 53,
+        "source": "assert readiness[\"checks\"][\"runtime_truth_write_blocked\"] is True"
+      },
+      {
+        "lineno": 57,
+        "source": "assert report[\"stage_version\"] == \"S155\""
+      },
+      {
+        "lineno": 58,
+        "source": "assert report[\"ok\"] is True"
+      },
+      {
+        "lineno": 59,
+        "source": "assert report[\"forward_motion_allowed\"] is True"
+      },
+      {
+        "lineno": 60,
+        "source": "assert report[\"remaining_countdown\"][\"packs_remaining_after_this\"] == 3"
+      },
+      {
+        "lineno": 61,
+        "source": "assert Path(report[\"report_path\"]).exists()"
+      }
+    ],
+    "exists": true,
+    "function_defs": [
+      {
+        "lineno": 15,
+        "name": "test_s149_read_contract_ready"
+      },
+      {
+        "lineno": 22,
+        "name": "test_s150_visibility_probe_passes"
+      },
+      {
+        "lineno": 29,
+        "name": "test_s151_existing_payload_nonbreak_probe"
+      },
+      {
+        "lineno": 36,
+        "name": "test_s152_repeated_fetch_stability"
+      },
+      {
+        "lineno": 43,
+        "name": "test_s153_payload_manifest_ready"
+      },
+      {
+        "lineno": 49,
+        "name": "test_s154_live_visibility_readiness"
+      },
+      {
+        "lineno": 55,
+        "name": "test_s155_stop_gate_passes"
+      }
+    ],
+    "imports": [
+      {
+        "lineno": 1,
+        "module": "__future__",
+        "names": [
+          "annotations"
+        ]
+      },
+      {
+        "lineno": 3,
+        "module": "pathlib",
+        "names": [
+          "Path"
+        ]
+      },
+      {
+        "lineno": 5,
+        "module": "claire.api.governed_cockpit_payload_visibility_s149_s155",
+        "names": [
+          "build_cockpit_payload_read_contract",
+          "build_live_payload_visibility_probe",
+          "build_existing_payload_nonbreak_probe",
+          "build_repeated_payload_fetch_stability_probe",
+          "build_cockpit_payload_manifest",
+          "build_cockpit_live_visibility_readiness",
+          "build_s149_s155_stop_gate"
+        ]
+      }
+    ],
+    "path": "tests\\test_s149_s155_live_payload_visibility.py",
+    "source": "from __future__ import annotations\n\nfrom pathlib import Path\n\nfrom claire.api.governed_cockpit_payload_visibility_s149_s155 import (\n    build_cockpit_payload_read_contract,\n    build_live_payload_visibility_probe,\n    build_existing_payload_nonbreak_probe,\n    build_repeated_payload_fetch_stability_probe,\n    build_cockpit_payload_manifest,\n    build_cockpit_live_visibility_readiness,\n    build_s149_s155_stop_gate,\n)\n\ndef test_s149_read_contract_ready():\n    contract = build_cockpit_payload_read_contract()\n    assert contract[\"stage_version\"] == \"S149\"\n    assert contract[\"status\"] == \"cockpit_payload_read_contract_ready\"\n    assert contract[\"payload_key\"] == \"governed_operations\"\n    assert contract[\"read_only\"] is True\n\ndef test_s150_visibility_probe_passes():\n    probe = build_live_payload_visibility_probe()\n    assert probe[\"stage_version\"] == \"S150\"\n    assert probe[\"ok\"] is True\n    assert \"runtime_spine\" in probe[\"visible_panel_keys\"]\n    assert \"review_export\" in probe[\"visible_panel_keys\"]\n\ndef test_s151_existing_payload_nonbreak_probe():\n    probe = build_existing_payload_nonbreak_probe()\n    assert probe[\"stage_version\"] == \"S151\"\n    assert probe[\"ok\"] is True\n    assert probe[\"rules\"][\"governed_operations_appended_only\"] is True\n    assert probe[\"rules\"][\"app_py_patch_performed\"] is False\n\ndef test_s152_repeated_fetch_stability():\n    probe = build_repeated_payload_fetch_stability_probe(fetch_count=3)\n    assert probe[\"stage_version\"] == \"S152\"\n    assert probe[\"ok\"] is True\n    assert probe[\"stable_top_level_keys\"] is True\n    assert probe[\"stable_panel_keys\"] is True\n\ndef test_s153_payload_manifest_ready():\n    manifest = build_cockpit_payload_manifest()\n    assert manifest[\"stage_version\"] == \"S153\"\n    assert manifest[\"status\"] == \"cockpit_payload_manifest_ready\"\n    assert manifest[\"panel_count\"] >= 4\n\ndef test_s154_live_visibility_readiness():\n    readiness = build_cockpit_live_visibility_readiness()\n    assert readiness[\"stage_version\"] == \"S154\"\n    assert readiness[\"ok\"] is True\n    assert readiness[\"checks\"][\"runtime_truth_write_blocked\"] is True\n\ndef test_s155_stop_gate_passes(tmp_path: Path):\n    report = build_s149_s155_stop_gate(report_dir=tmp_path / \"reports\")\n    assert report[\"stage_version\"] == \"S155\"\n    assert report[\"ok\"] is True\n    assert report[\"forward_motion_allowed\"] is True\n    assert report[\"remaining_countdown\"][\"packs_remaining_after_this\"] == 3\n    assert Path(report[\"report_path\"]).exists()\n"
+  }
+}

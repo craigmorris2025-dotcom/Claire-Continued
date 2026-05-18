@@ -1,0 +1,31 @@
+{
+  "blockers": [],
+  "errors": [],
+  "internet_status": "warning",
+  "mount_report": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "operator_dashboard_state": {
+    "contract_version": "v17.64.1",
+    "source": {
+      "invalid_candidate_count": 0,
+      "invalid_candidates_sample": [],
+      "raw_available": true,
+      "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+    },
+    "status": "rebuilt"
+  },
+  "readiness": {
+    "automatic_updates_enabled": false,
+    "live_internet_enabled": false,
+    "requires_v17_71_to_v17_74_update_pack_governance": true,
+    "safe_for_automatic_updates": false,
+    "safe_to_attempt_live_probe_after_operator_review": false,
+    "static_internet_readiness": true
+  },
+  "status": "passed",
+  "warnings": [
+    "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+  ]
+}

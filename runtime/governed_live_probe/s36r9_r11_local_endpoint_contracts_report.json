@@ -1,0 +1,26 @@
+{
+  "app_py_touched": false,
+  "autonomous_execution_allowed": false,
+  "blocked_by_default_required": true,
+  "body_reads_allowed": false,
+  "browser_execution_allowed": false,
+  "continuous_crawling_allowed": false,
+  "head_endpoint_expected": "/api/governed/live-probe/head",
+  "installed_at": "2026-05-14T17:36:47.762281+00:00",
+  "installed_files": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s36r9_r11_local_endpoint_contracts.py"
+  ],
+  "live_network_execution_during_install": false,
+  "manual_promotion_required": true,
+  "next_manual_probe_command": "python tools/run_s36_single_head_probe.py --url https://example.com --operator-ack YES",
+  "one_shot_only_required": true,
+  "operator_ack_required": true,
+  "payload_bridge_touched": false,
+  "post_probe_verify_command": "python tools/verify_s36_probe_quarantine.py",
+  "purpose": "local TestClient endpoint contract proof before first governed HEAD probe",
+  "quarantine_required": true,
+  "router_touched": false,
+  "runtime_truth_mutation_allowed": false,
+  "status_endpoint_expected": "/api/governed/live-probe/status",
+  "version": "v19.89.8-S36R9-R11-local-endpoint-contracts"
+}

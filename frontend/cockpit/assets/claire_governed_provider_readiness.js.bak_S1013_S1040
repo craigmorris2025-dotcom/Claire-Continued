@@ -1,0 +1,124 @@
+(function () {
+  "use strict";
+
+  const ENDPOINTS = {
+    payload: "/api/search/providers/payload",
+    cards: "/api/search/providers/cards",
+    actions: "/api/search/providers/actions",
+    status: "/api/search/providers/status"
+  };
+
+  function ready(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn);
+    } else {
+      fn();
+    }
+  }
+
+  function makeEl(tag, className, text) {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    if (text !== undefined && text !== null) el.textContent = text;
+    return el;
+  }
+
+  function findCockpitHost() {
+    return document.querySelector("[data-panel='governed-web']") ||
+      document.querySelector("#governed-web") ||
+      document.querySelector("main") ||
+      document.body;
+  }
+
+  function findActionsHost() {
+    return document.querySelector("[data-panel='actions']") ||
+      document.querySelector("#actions") ||
+      document.querySelector("main") ||
+      document.body;
+  }
+
+  function renderSkeleton(host) {
+    let root = document.getElementById("claire-provider-readiness-root");
+    if (!root) {
+      root = makeEl("section", "claire-provider-readiness", null);
+      root.id = "claire-provider-readiness-root";
+      host.appendChild(root);
+    }
+    root.innerHTML = "";
+    const header = makeEl("div", "cpr-header", null);
+    header.appendChild(makeEl("div", "cpr-eyebrow", "Governed Source/Search Provider Readiness"));
+    header.appendChild(makeEl("h2", null, "Provider readiness is visible; execution remains blocked"));
+    header.appendChild(makeEl("p", "cpr-subtitle", "Claire can show source/provider policy, trust tiers, blocked operations, and operator review actions before live web authority is opened."));
+    root.appendChild(header);
+    const grid = makeEl("div", "cpr-grid", null);
+    grid.id = "claire-provider-readiness-grid";
+    root.appendChild(grid);
+    return root;
+  }
+
+  function boolText(value) {
+    return value ? "allowed" : "blocked";
+  }
+
+  function renderCards(payload) {
+    const host = findCockpitHost();
+    const root = renderSkeleton(host);
+    const grid = root.querySelector("#claire-provider-readiness-grid");
+    const cards = (((payload || {}).cards || {}).cards) || [];
+    cards.forEach(card => {
+      const item = makeEl("article", "cpr-card", null);
+      item.appendChild(makeEl("div", "cpr-card-kicker", card.trust_tier_label || card.trust_tier || "Trust tier"));
+      item.appendChild(makeEl("h3", null, card.title || card.provider_id || "Provider"));
+      item.appendChild(makeEl("p", "cpr-policy", card.primary_policy || "No policy supplied"));
+      const flags = makeEl("div", "cpr-flags", null);
+      flags.appendChild(makeEl("span", "cpr-flag blocked", "Execution " + boolText(card.execution_allowed)));
+      flags.appendChild(makeEl("span", "cpr-flag blocked", "Network " + boolText(card.network_allowed)));
+      flags.appendChild(makeEl("span", "cpr-flag blocked", "Body read " + boolText(card.body_read_allowed)));
+      item.appendChild(flags);
+      item.appendChild(makeEl("p", "cpr-blocked", card.blocked_reason || "blocked by governance"));
+      if (Array.isArray(card.blocked_operations) && card.blocked_operations.length) {
+        const list = makeEl("ul", "cpr-list", null);
+        card.blocked_operations.slice(0, 4).forEach(op => list.appendChild(makeEl("li", null, op)));
+        item.appendChild(list);
+      }
+      grid.appendChild(item);
+    });
+  }
+
+  function renderActions(payload) {
+    const host = findActionsHost();
+    let root = document.getElementById("claire-provider-actions-root");
+    if (!root) {
+      root = makeEl("section", "claire-provider-actions", null);
+      root.id = "claire-provider-actions-root";
+      host.appendChild(root);
+    }
+    root.innerHTML = "";
+    root.appendChild(makeEl("div", "cpr-eyebrow", "Governed Actions"));
+    root.appendChild(makeEl("h2", null, "Source/search actions are registered as blocked descriptors"));
+    const actions = (((payload || {}).actions || {}).actions) || [];
+    actions.forEach(action => {
+      const row = makeEl("div", "cpr-action-row", null);
+      row.appendChild(makeEl("strong", null, action.label || action.action_id));
+      row.appendChild(makeEl("span", "cpr-action-status", action.blocked_reason || "blocked"));
+      root.appendChild(row);
+    });
+  }
+
+  async function load() {
+    try {
+      const response = await fetch(ENDPOINTS.payload, { cache: "no-store" });
+      if (!response.ok) throw new Error("Provider readiness endpoint returned " + response.status);
+      const payload = await response.json();
+      renderCards(payload);
+      renderActions(payload);
+      window.claireGovernedProviderReadiness = payload;
+    } catch (err) {
+      const host = findCockpitHost();
+      const root = renderSkeleton(host);
+      root.appendChild(makeEl("pre", "cpr-error", "Provider readiness unavailable: " + err.message));
+    }
+  }
+
+  ready(load);
+})();

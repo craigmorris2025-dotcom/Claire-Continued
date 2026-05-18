@@ -1,0 +1,53 @@
+Claire Full System Audit + Diagnosis
+Version: v19.89.8-full-system-audit-diagnosis-stable
+Root: C:\Users\craig\OneDrive\Desktop\Claire
+Report folder: C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-full-system-audit-diagnosis-stable_20260515_200246
+
+WHERE IT WAS
+- Declared plateau: v19.89.8 S282-S288 COMPLETE, pytest 100%.
+- Authority locks blocked: runtime truth writes, mutation, auto updates, autonomous execution, continuous crawling.
+
+WHERE IT IS
+- pytest collect returncode: 0
+- pytest full returncode: 1
+- src/claire exists: False
+- top-level claire exists: True
+- create_app ok: True
+- route count: 122
+
+WHERE IT IS ON THE WAY TO
+- Stable top-level claire/ package only.
+- Backend-owned truth via mounted FastAPI routes.
+- Frontend/cockpit presentation that fetches backend payloads.
+- Proposal-only workflow actions until authority gates are intentionally opened.
+
+MAIN SYSTEM PATHWAYS
+1. Launcher/main.py -> claire.app:create_app -> FastAPI app.
+2. claire/api route modules -> backend truth surfaces.
+3. runtime/data/output/exports -> persisted run/workflow/export artifacts.
+4. frontend dashboard/cockpit -> fetches backend routes only.
+5. tests -> contract proof for routes, governance, payloads, cockpit surfaces.
+
+FINDINGS
+- [CRITICAL] imports: 1 direct src.* imports detected.
+- [MEDIUM] imports: 53 sys.path mutation lines detected.
+- [INFO] pytest: pytest collection succeeds.
+- [HIGH] pytest: full pytest fails or timed out; inspect pytest_full_run.txt.
+- [HIGH] routes: Expected route not mounted in create_app: /api/workflow/counts
+- [HIGH] routes: Expected route not mounted in create_app: /api/workflow/monitoring
+
+RECOMMENDATIONS
+- [HIGH] Freeze new feature builds until layout/import state is resolved.
+- [HIGH] Keep active package as top-level claire/ only.
+- [MEDIUM] After pytest is clean, generate a dashboard fetch-map lock against mounted backend routes.
+
+FILES TO UPLOAD
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-full-system-audit-diagnosis-stable_20260515_200246\full_system_audit.json
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-full-system-audit-diagnosis-stable_20260515_200246\full_system_audit.txt
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-full-system-audit-diagnosis-stable_20260515_200246\project_tree.txt
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-full-system-audit-diagnosis-stable_20260515_200246\route_inventory.json
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-full-system-audit-diagnosis-stable_20260515_200246\import_path_audit.json
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-full-system-audit-diagnosis-stable_20260515_200246\file_manifest.json
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-full-system-audit-diagnosis-stable_20260515_200246\pytest_collect_only.txt
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-full-system-audit-diagnosis-stable_20260515_200246\pytest_full_run.txt
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-full-system-audit-diagnosis-stable_20260515_200246\_AUDIT_ERRORS.txt

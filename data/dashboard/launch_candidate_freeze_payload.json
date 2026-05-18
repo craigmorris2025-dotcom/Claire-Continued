@@ -1,0 +1,48 @@
+{
+  "blockers": [
+    "missing_protected_path:OPEN_CLAIRE_PROOF_URLS.bat",
+    "missing_protected_path:START_CLAIRE_SAFE.bat",
+    "missing_protected_path:VERIFY_CLAIRE_STARTUP.bat"
+  ],
+  "generated_at": "2026-05-13T11:19:01.038870Z",
+  "manual_proof": {
+    "failed_slots": 0,
+    "manual_final_review_status": "not_checked",
+    "not_checked_slots": 25,
+    "passed_slots": 0,
+    "required_slots": 25,
+    "source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/manual_browser_swagger_evidence_template.json",
+      "status": "loaded"
+    },
+    "status": "incomplete",
+    "warning_slots": 0
+  },
+  "next_allowed_builds": [
+    "v17.81 Cleanup Proof Before Archive/Delete",
+    "v17.82 Launch Candidate Repair Pack if manual proof finds blockers",
+    "v17.83 Internet Provider Configuration Gate"
+  ],
+  "protected_path_count": 30,
+  "recommendation": "Do not freeze as launch candidate until blockers are fixed.",
+  "safety_locks": {
+    "checks": {
+      "automatic_updates_disabled": true,
+      "live_internet_disabled": true,
+      "regression_lock_active": true,
+      "runner_background_disabled": true,
+      "runner_execution_disabled": true,
+      "search_automatic_updates_disabled": true,
+      "search_live_web_disabled": true
+    },
+    "status": "passed"
+  },
+  "status": "STOP",
+  "version": "v17.80",
+  "warnings": [
+    "manual_browser_swagger_evidence_not_complete",
+    "prior_report_stop:v17_76_platform_smoke",
+    "prior_report_stop:v17_77_launch_hardening",
+    "prior_report_stop:v17_78_desktop_startup"
+  ]
+}

@@ -1,0 +1,94 @@
+.claire-provider-readiness,
+.claire-provider-actions {
+  margin: 18px 0;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.62);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+}
+
+.cpr-header h2,
+.claire-provider-actions h2 {
+  margin: 5px 0 8px;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.cpr-eyebrow,
+.cpr-card-kicker {
+  color: #93c5fd;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  font-weight: 700;
+}
+
+.cpr-subtitle,
+.cpr-policy,
+.cpr-blocked,
+.cpr-action-status {
+  color: rgba(226, 232, 240, 0.76);
+  line-height: 1.45;
+}
+
+.cpr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.cpr-card {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 15px;
+  background: rgba(2, 6, 23, 0.42);
+  padding: 14px;
+}
+
+.cpr-card h3 {
+  margin: 8px 0;
+  font-size: 0.98rem;
+}
+
+.cpr-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0;
+}
+
+.cpr-flag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 0.72rem;
+  border: 1px solid rgba(248, 113, 113, 0.36);
+  color: #fecaca;
+  background: rgba(127, 29, 29, 0.18);
+}
+
+.cpr-list {
+  margin: 8px 0 0 18px;
+  padding: 0;
+  color: rgba(226, 232, 240, 0.72);
+  font-size: 0.84rem;
+}
+
+.cpr-action-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.cpr-error {
+  white-space: pre-wrap;
+  color: #fecaca;
+  background: rgba(127, 29, 29, 0.18);
+  border: 1px solid rgba(248, 113, 113, 0.28);
+  border-radius: 12px;
+  padding: 12px;
+}

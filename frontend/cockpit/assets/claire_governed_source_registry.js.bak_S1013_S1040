@@ -1,0 +1,151 @@
+(function () {
+  "use strict";
+
+  const REGISTRY_URL = "/api/sources/registry";
+  const ACTIONS_URL = "/api/sources/actions";
+
+  function claireSourceReady(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn);
+    } else {
+      fn();
+    }
+  }
+
+  function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined && text !== null) node.textContent = text;
+    return node;
+  }
+
+  function findPanel(candidates) {
+    for (const selector of candidates) {
+      const found = document.querySelector(selector);
+      if (found) return found;
+    }
+    return document.querySelector("main") || document.querySelector("#app") || document.body;
+  }
+
+  function upsertContainer(id, target, className) {
+    let existing = document.getElementById(id);
+    if (existing) return existing;
+    existing = el("section", className || "claire-source-registry-panel");
+    existing.id = id;
+    target.appendChild(existing);
+    return existing;
+  }
+
+  function chip(text) {
+    return el("span", "claire-source-chip", text);
+  }
+
+  function renderSourceCard(card) {
+    const node = el("article", "claire-source-card");
+    const header = el("div", "claire-source-card-header");
+    const titleBlock = el("div", "claire-source-card-title-block");
+    titleBlock.appendChild(el("h3", "claire-source-card-title", card.title || "Source"));
+    titleBlock.appendChild(el("p", "claire-source-card-subtitle", card.subtitle || "domain unavailable"));
+    header.appendChild(titleBlock);
+    header.appendChild(el("span", "claire-source-status", card.status || "review_required"));
+    node.appendChild(header);
+
+    const badges = el("div", "claire-source-badges");
+    (card.badges || []).slice(0, 4).forEach((badge) => badges.appendChild(chip(badge)));
+    node.appendChild(badges);
+
+    node.appendChild(el("p", "claire-source-card-body", card.body || "Governed source candidate."));
+
+    const policy = card.policy || {};
+    const blocked = (policy.blocked_uses || []).slice(0, 4).join(", ");
+    node.appendChild(el("p", "claire-source-card-foot", "Blocked: " + (blocked || "runtime mutation, body reads, automatic updates")));
+    return node;
+  }
+
+  function renderAction(action) {
+    const node = el("article", "claire-source-action-card");
+    node.appendChild(el("h3", "claire-source-action-title", action.label || action.action_id || "Governed action"));
+    node.appendChild(el("p", "claire-source-action-status", (action.status || "blocked") + " • count " + (action.count || 0)));
+    node.appendChild(el("p", "claire-source-card-body", action.reason || "Execution remains blocked."));
+    return node;
+  }
+
+  function renderRegistry(payload) {
+    const target = findPanel([
+      "[data-panel='governed-web']",
+      "[data-view='governed-web']",
+      "#governed-web",
+      "#governedWeb",
+      ".governed-web",
+      ".governed-web-panel",
+      "main"
+    ]);
+    const panel = upsertContainer("claire-source-registry-panel", target, "claire-source-registry-panel");
+    panel.innerHTML = "";
+
+    const summary = payload.summary || {};
+    const header = el("div", "claire-source-panel-header");
+    const titleBlock = el("div", "claire-source-card-title-block");
+    titleBlock.appendChild(el("h2", "claire-source-panel-title", "Governed Source Registry"));
+    titleBlock.appendChild(el("p", "claire-source-panel-subtitle", "Trust tiers, allowlist/quarantine policy, and source cards are now cockpit-visible. No live web, body reads, updates, or mutation enabled."));
+    header.appendChild(titleBlock);
+    header.appendChild(el("span", "claire-source-status", payload.readiness || "source_registry_ready_governed_blocked"));
+    panel.appendChild(header);
+
+    const metrics = el("div", "claire-source-metrics");
+    metrics.appendChild(chip("Sources " + (summary.total_sources || 0)));
+    metrics.appendChild(chip("Allowlisted metadata " + (summary.allowlisted_metadata_only || 0)));
+    metrics.appendChild(chip("Quarantined " + (summary.quarantined || 0)));
+    metrics.appendChild(chip("Review " + (summary.review_required || 0)));
+    panel.appendChild(metrics);
+
+    const grid = el("div", "claire-source-card-grid");
+    (payload.source_cards || []).forEach((card) => grid.appendChild(renderSourceCard(card)));
+    panel.appendChild(grid);
+  }
+
+  function renderActions(payload) {
+    const target = findPanel([
+      "[data-panel='actions']",
+      "[data-view='actions']",
+      "#actions",
+      "#actions-panel",
+      ".actions-panel",
+      "main"
+    ]);
+    const panel = upsertContainer("claire-source-actions-panel", target, "claire-source-actions-panel");
+    panel.innerHTML = "";
+    const header = el("div", "claire-source-panel-header");
+    header.appendChild(el("h2", "claire-source-panel-title", "Governed Source Actions"));
+    header.appendChild(el("span", "claire-source-status", "registered • execution blocked"));
+    panel.appendChild(header);
+    const grid = el("div", "claire-source-action-grid");
+    ((payload && payload.governed_actions) || []).forEach((action) => grid.appendChild(renderAction(action)));
+    panel.appendChild(grid);
+  }
+
+  function renderFailure(error) {
+    const target = findPanel(["main"]);
+    const panel = upsertContainer("claire-source-registry-panel", target, "claire-source-registry-panel");
+    panel.innerHTML = "";
+    panel.appendChild(el("h2", "claire-source-panel-title", "Governed Source Registry"));
+    panel.appendChild(el("p", "claire-source-panel-subtitle", "Source registry endpoint not available yet. Backend remains fail-closed."));
+    panel.appendChild(el("p", "claire-source-card-foot", String(error && error.message ? error.message : error)));
+  }
+
+  claireSourceReady(function () {
+    fetch(REGISTRY_URL, { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) throw new Error("registry endpoint returned " + response.status);
+        return response.json();
+      })
+      .then(renderRegistry)
+      .catch(renderFailure);
+
+    fetch(ACTIONS_URL, { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : null)
+      .then((payload) => { if (payload) renderActions(payload); })
+      .catch(function () {});
+  });
+})();
+

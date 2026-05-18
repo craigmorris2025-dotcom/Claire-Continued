@@ -1,0 +1,20 @@
+{
+  "version": "v19.89.8-S247-S253",
+  "installed_at": "2026-05-15T16:27:14.443319+00:00",
+  "stage_pack": "S247-S253",
+  "purpose": "Cockpit route handoff, launcher metadata, endpoint probe display, and safer shell state renderer.",
+  "files": [
+    "claire/api/cockpit_route_handoff_manifest.py",
+    "claire/api/cockpit_endpoint_probe_display_contract.py",
+    "claire/api/cockpit_launcher_handoff_metadata.py",
+    "claire/api/cockpit_shell_state_render_contract.py",
+    "frontend/cockpit/modern/claire_cockpit_shell.js",
+    "tests/test_s247_s253_route_handoff_and_launcher.py",
+    "tests/test_s247_s253_endpoint_probe_and_render_contract.py",
+    "tests/test_s247_s253_shell_js_state_renderer.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s247_s253_route_handoff_and_launcher.py tests/test_s247_s253_endpoint_probe_and_render_contract.py tests/test_s247_s253_shell_js_state_renderer.py -q",
+    "pytest"
+  ]
+}

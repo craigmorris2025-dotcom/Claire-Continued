@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260512_120340_c123da4d",
+  "generated_at": "2026-05-12T12:03:40.509054+00:00",
+  "gate_decisions": [
+    {
+      "gate": "runtime_start",
+      "status": "pass",
+      "reason": "Operator requested run through enterprise cockpit.",
+      "evidence_refs": [
+        "data/runs/run_20260512_120340_c123da4d/run_manifest.json"
+      ],
+      "route_effect": "initialize_discovery_first_runtime"
+    },
+    {
+      "gate": "source_universe",
+      "status": "waiting",
+      "reason": "No source universe selected yet.",
+      "evidence_refs": [],
+      "route_effect": "hold_before_signal_governance"
+    }
+  ]
+}

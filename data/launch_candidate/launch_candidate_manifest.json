@@ -1,0 +1,22 @@
+{
+  "candidate_name": "Claire Syntalion v17.80 Launch Candidate",
+  "candidate_status": "STOP",
+  "freeze_file": "data/launch_candidate/v17_80_launch_candidate_freeze.json",
+  "generated_at": "2026-05-13T11:19:01.038870Z",
+  "manual_proof_status": "incomplete",
+  "next_allowed_builds": [
+    "v17.81 Cleanup Proof Before Archive/Delete",
+    "v17.82 Launch Candidate Repair Pack if manual proof finds blockers",
+    "v17.83 Internet Provider Configuration Gate"
+  ],
+  "prior_report_status": {
+    "v17_75_e2e_proof": "GO_WITH_WARNINGS",
+    "v17_76_platform_smoke": "STOP",
+    "v17_77_launch_hardening": "STOP",
+    "v17_78_desktop_startup": "STOP",
+    "v17_79_manual_browser_swagger": "READY_FOR_MANUAL_BROWSER_SWAGGER_PROOF"
+  },
+  "protected_paths_file": "data/launch_candidate/protected_paths_manifest.json",
+  "stop_go_file": "data/launch_candidate/v17_80_launch_candidate_stop_go.json",
+  "version": "v17.80"
+}

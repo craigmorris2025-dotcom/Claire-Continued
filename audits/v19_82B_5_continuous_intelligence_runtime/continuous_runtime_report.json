@@ -1,0 +1,28 @@
+{
+  "version": "v19.82B.5",
+  "timestamp": "2026-05-11T12:53:02",
+  "status": "go",
+  "route_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\routes_continuous_runtime.py",
+  "test_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_v19_82B_5_continuous_intelligence_runtime.py",
+  "app_patch": {
+    "patched": true,
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\continuous_runtime\\v19.82B.5\\app.py.20260511_125302.bak",
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py"
+  },
+  "endpoints": [
+    "GET /runtime/continuous/status",
+    "POST /runtime/continuous/start",
+    "POST /runtime/continuous/pause",
+    "GET /runtime/continuous/cycles",
+    "GET /runtime/continuous/review-queue"
+  ],
+  "artifacts": [
+    "data/continuous_runtime/status.json",
+    "data/continuous_runtime/review_queue.json",
+    "data/continuous_runtime/discovery_candidates.json",
+    "data/continuous_runtime/breakthrough_candidates.json",
+    "data/continuous_runtime/portfolio_candidates.json",
+    "data/continuous_runtime/design_candidates.json",
+    "data/continuous_runtime/cycles/{cycle_id}.json"
+  ]
+}

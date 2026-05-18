@@ -1,0 +1,78 @@
+(function () {
+  "use strict";
+  const API = "/api/cockpit/operations/payload";
+  const ROOT_ID = "claire-s929-s956-operation-controls-root";
+  const ACTIONS_ROOT_ID = "claire-s929-s956-operation-actions-root";
+  const WEB_ROOT_ID = "claire-s929-s956-operation-web-root";
+  const COMMAND_ROOT_ID = "claire-s929-s956-command-buttons-root";
+  const PREVIEW_ROOT_ID = "claire-s929-s956-preview-root";
+  function el(tag, attrs, text) { const node = document.createElement(tag); if (attrs) { Object.entries(attrs).forEach(([key, value]) => { if (key === "class") node.className = value; else node.setAttribute(key, value); }); } if (text !== undefined && text !== null) node.textContent = text; return node; }
+  function safeText(value, fallback) { if (value === undefined || value === null || value === "") return fallback || ""; return String(value); }
+  function findVisibleHeading(pattern) { return Array.from(document.querySelectorAll("h1,h2,h3")).find((heading) => pattern.test((heading.textContent || "").trim())); }
+  function upsertAfterHeading(id, headingPattern) { const heading = findVisibleHeading(headingPattern); let root = document.getElementById(id); if (!root) { root = el("section", { id, class: "claire-op-panel" }); if (heading && heading.parentNode) { if (heading.nextSibling) heading.parentNode.insertBefore(root, heading.nextSibling); else heading.parentNode.appendChild(root); } else { (document.querySelector("main") || document.body).appendChild(root); } } return root; }
+  function upsertNearCommandBar() { let root = document.getElementById(COMMAND_ROOT_ID); if (root) return root; root = el("section", { id: COMMAND_ROOT_ID, class: "claire-op-command-panel" }); const input = Array.from(document.querySelectorAll("input, textarea")).find((node) => { const p = (node.getAttribute("placeholder") || "").toLowerCase(); return p.includes("ask claire") || p.includes("governed web"); }); const commandButton = Array.from(document.querySelectorAll("button")).find((node) => /command/i.test(node.textContent || "")); const anchor = input ? input.closest("section, div") : (commandButton ? commandButton.closest("section, div") : null); if (anchor && anchor.parentNode) { if (anchor.nextSibling) anchor.parentNode.insertBefore(root, anchor.nextSibling); else anchor.parentNode.appendChild(root); } else { (document.querySelector("main") || document.body).prepend(root); } return root; }
+  function setTopActionCount(payload) { const count = payload && payload.actions ? payload.actions.length : 0; Array.from(document.querySelectorAll("*")).forEach((node) => { const text = (node.textContent || "").trim(); if (/^Actions:\s*\d+$/i.test(text)) node.textContent = "Actions: " + count; if (text === "No governed actions registered.") node.textContent = count + " governed operation controls registered."; }); }
+  function previewRoot() { let root = document.getElementById(PREVIEW_ROOT_ID); if (!root) { root = el("section", { id: PREVIEW_ROOT_ID, class: "claire-op-preview" }); const commandRoot = upsertNearCommandBar(); commandRoot.parentNode.insertBefore(root, commandRoot.nextSibling); } return root; }
+  async function runPreview(button, command) { const root = previewRoot(); root.innerHTML = ""; root.appendChild(el("div", { class: "claire-op-kicker" }, "OPERATION PREVIEW")); root.appendChild(el("h3", {}, button.label)); root.appendChild(el("p", {}, "Loading local preview packet...")); try { const response = await fetch(button.preview_endpoint + "?command=" + encodeURIComponent(command || ""), { cache: "no-store" }); if (!response.ok) throw new Error("HTTP " + response.status); const payload = await response.json(); root.innerHTML = ""; root.appendChild(el("div", { class: "claire-op-kicker" }, "OPERATION PREVIEW")); root.appendChild(el("h3", {}, button.label)); root.appendChild(el("p", {}, payload.what_click_does_now || payload.message || "Preview ready.")); const meta = el("div", { class: "claire-op-preview-grid" }); [["Status", payload.status], ["Execution", "blocked"], ["External web", "blocked"], ["Body read", "blocked"], ["Target payload", button.target_payload_endpoint]].forEach(([label, value]) => { const item = el("div", { class: "claire-op-mini" }); item.appendChild(el("span", {}, label)); item.appendChild(el("strong", {}, safeText(value, "—"))); meta.appendChild(item); }); root.appendChild(meta); } catch (error) { root.innerHTML = ""; root.appendChild(el("div", { class: "claire-op-kicker" }, "OPERATION PREVIEW")); root.appendChild(el("h3", {}, "Preview unavailable")); root.appendChild(el("p", {}, error.message)); } }
+  function buttonNode(button) { const node = el("button", { class: "claire-op-button", type: "button", "data-op-key": button.key }); node.appendChild(el("span", { class: "claire-op-button-label" }, button.label)); node.appendChild(el("small", {}, button.stage_range + " · " + button.button_mode)); node.addEventListener("click", function () { const input = Array.from(document.querySelectorAll("input, textarea")).find((candidate) => { const p = (candidate.getAttribute("placeholder") || "").toLowerCase(); return p.includes("ask claire") || p.includes("governed web"); }); runPreview(button, input ? input.value : ""); }); return node; }
+  function renderCommandButtons(payload) { const root = upsertNearCommandBar(); root.innerHTML = ""; root.appendChild(el("div", { class: "claire-op-kicker" }, "COMMAND BAR OPERATIONS")); root.appendChild(el("h2", {}, "Governed operation buttons")); root.appendChild(el("p", {}, "Buttons now exist for system operation, but every click returns local preview/preflight only. External execution remains blocked.")); const primary = (payload.buttons || []).filter((button) => (payload.command_surface.primary_buttons || []).includes(button.key)); const grid = el("div", { class: "claire-op-button-grid" }); primary.forEach((button) => grid.appendChild(buttonNode(button))); root.appendChild(grid); }
+  function renderOperationGroups(payload, root, title) { root.innerHTML = ""; root.appendChild(el("div", { class: "claire-op-kicker" }, "S929-S956 OPERATION CONTROLS")); root.appendChild(el("h2", {}, title)); root.appendChild(el("p", {}, "Operation controls are visible and usable for preview/preflight. They do not unlock web execution, body reads, mutation, installs, or command execution.")); const grid = el("div", { class: "claire-op-card-grid" }); (payload.cards || []).forEach((group) => { const card = el("article", { class: "claire-op-card" }); card.appendChild(el("h3", {}, group.title)); card.appendChild(el("p", {}, group.summary)); const buttons = el("div", { class: "claire-op-mini-buttons" }); (group.operations || []).forEach((button) => buttons.appendChild(buttonNode(button))); card.appendChild(buttons); grid.appendChild(card); }); root.appendChild(grid); }
+  function renderActions(payload) { const root = upsertAfterHeading(ACTIONS_ROOT_ID, /Governed Actions|Actions/i); root.innerHTML = ""; root.appendChild(el("div", { class: "claire-op-kicker" }, "ACTION BUTTON REGISTRY")); root.appendChild(el("h2", {}, payload.action_count + " governed operation actions")); const grid = el("div", { class: "claire-op-action-list" }); (payload.actions || []).forEach((action) => { const card = el("article", { class: "claire-op-action" }); card.appendChild(el("h3", {}, action.title)); card.appendChild(el("p", {}, action.reason)); card.appendChild(el("span", { class: "claire-op-pill" }, action.state)); grid.appendChild(card); }); root.appendChild(grid); }
+  async function refreshOperations() { try { const response = await fetch(API, { cache: "no-store" }); if (!response.ok) throw new Error("HTTP " + response.status); const payload = await response.json(); window.ClaireS929S956OperationPayload = payload; setTopActionCount(payload); renderCommandButtons(payload); renderOperationGroups(payload, upsertAfterHeading(ROOT_ID, /Claire Operator Cockpit|Overview/i), "Cockpit operation controls ready"); renderOperationGroups(payload, upsertAfterHeading(WEB_ROOT_ID, /Governed Web Workflow|Governed Web/i), "Governed web operation controls"); renderActions(payload); } catch (error) { const root = upsertNearCommandBar(); root.innerHTML = ""; root.appendChild(el("div", { class: "claire-op-kicker" }, "OPERATION CONTROLS")); root.appendChild(el("h2", {}, "Operation controls unavailable")); root.appendChild(el("p", {}, error.message)); } }
+  window.ClaireOperationControls = { refresh: refreshOperations, endpoint: API, phase: "S929-S956" };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", refreshOperations); else refreshOperations();
+})();
+
+/* CLAIRE_S985_S1012_JS_FORCE_MOUNT: force visible cockpit operation controls into active JS-rendered shell. */
+(function () {
+  function loadClaireS985S1012ControlSurface() {
+    if (window.__CLAIRE_S985_S1012_CONTROL_SURFACE_LOADING__) return;
+    window.__CLAIRE_S985_S1012_CONTROL_SURFACE_LOADING__ = true;
+    if (!document.querySelector('link[data-claire-s985-s1012="active-control-surface"]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/api/cockpit/control-surface/assets/css';
+      link.setAttribute('data-claire-s985-s1012', 'active-control-surface');
+      document.head.appendChild(link);
+    }
+    if (!document.querySelector('script[data-claire-s985-s1012="active-control-surface"]')) {
+      var script = document.createElement('script');
+      script.src = '/api/cockpit/control-surface/assets/js';
+      script.defer = true;
+      script.setAttribute('data-claire-s985-s1012', 'active-control-surface');
+      document.body.appendChild(script);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadClaireS985S1012ControlSurface);
+  } else {
+    loadClaireS985S1012ControlSurface();
+  }
+  setTimeout(loadClaireS985S1012ControlSurface, 800);
+  setTimeout(loadClaireS985S1012ControlSurface, 2000);
+})();
+
+;(function(){
+  if (window.__CLAIRE_OPERATOR_EXPERIENCE_LOADER__) return;
+  window.__CLAIRE_OPERATOR_EXPERIENCE_LOADER__ = true;
+  function loadOperatorExperience(){
+    if (window.ClaireOperatorExperienceConsole && window.ClaireOperatorExperienceConsole.init) {
+      window.ClaireOperatorExperienceConsole.init();
+      return;
+    }
+    var existing = document.querySelector('script[data-claire-operator-experience="true"]');
+    if (existing) return;
+    var script = document.createElement('script');
+    script.defer = true;
+    script.dataset.claireOperatorExperience = 'true';
+    script.src = '/api/cockpit/operator-experience/assets/js';
+    script.onerror = function(){ script.src = 'assets/claire_operator_experience_console.js'; };
+    document.head.appendChild(script);
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/api/cockpit/operator-experience/assets/css';
+    document.head.appendChild(link);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadOperatorExperience);
+  else setTimeout(loadOperatorExperience, 0);
+})();

@@ -1,0 +1,391 @@
+{
+  "contract_name": "Governed Update Pack Staging",
+  "generated_at": "2026-05-13T11:18:57.536163Z",
+  "governance": {
+    "automatic_execution_enabled": false,
+    "execution_enabled": false,
+    "operator_review_required": true,
+    "rollback_required": true,
+    "staging_only": true,
+    "validation_required": true
+  },
+  "latest_pack": {
+    "automatic_execution_enabled": false,
+    "created_at": "2026-05-13T11:18:57.528157Z",
+    "execution_enabled": false,
+    "pack_hash": "5be1dff4dc44c99e344eb41b90fcde616278af2e37bf0021468a85cb874332d6",
+    "pack_id": "update_pack_20260513_111857_update_governance_patch",
+    "pack_type": "update_governance_patch",
+    "path": "data/update_packs/staging/update_pack_20260513_111857_update_governance_patch.json",
+    "status": "warning"
+  },
+  "next": [
+    "v17.72 Rollback-Aware Update Plan Contract",
+    "v17.73 Automatic Update Runner Gate",
+    "v17.74 Update Governance Regression Lock",
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "packs": [
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-09T23:59:29.215017Z",
+      "execution_enabled": false,
+      "pack_hash": "94f024a29bf464d03b93e42a7b73c08875f1747fb4ce086cf1c893de0084a06c",
+      "pack_id": "update_pack_20260509_235929_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260509_235929_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-09T23:59:47.920263Z",
+      "execution_enabled": false,
+      "pack_hash": "550350bd4eb5165b2d15122c20ef8d0a7a4d6b8fe04329b97e1be0165675527e",
+      "pack_id": "update_pack_20260509_235947_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260509_235947_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-09T23:59:47.942263Z",
+      "execution_enabled": false,
+      "pack_hash": "18b8c150a286d56ca1aa2801bf8128791b338548ee0ff1f425d22fbe39d9f3f2",
+      "pack_id": "update_pack_20260509_235947_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260509_235947_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-09T23:59:47.965263Z",
+      "execution_enabled": false,
+      "pack_hash": "7190ffbc1a5a2ee3bb1034ae89b00e61746a0a4acaef8cb1d3a001b20e95845e",
+      "pack_id": "update_pack_20260509_235947_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260509_235947_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:33:25.178071Z",
+      "execution_enabled": false,
+      "pack_hash": "6b5d7d3375cb8eb9ca3743157595f28e599def37209d1c3062fbd37195e57597",
+      "pack_id": "update_pack_20260510_003325_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260510_003325_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:33:38.319796Z",
+      "execution_enabled": false,
+      "pack_hash": "96b88c4b3e4108af8040d508472d3d8825f969fd825218d6f1c72a77c64bb8fd",
+      "pack_id": "update_pack_20260510_003338_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260510_003338_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:33:44.968957Z",
+      "execution_enabled": false,
+      "pack_hash": "d5a778161961a6ba3f54442e5750253630faa69605ec68482d36e3fc68ca0f9f",
+      "pack_id": "update_pack_20260510_003344_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260510_003344_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:33:51.654093Z",
+      "execution_enabled": false,
+      "pack_hash": "8a56c0f418783bcff5cfa38d1a0249c518b0304a99bd609633c8a8ffd6da9d3f",
+      "pack_id": "update_pack_20260510_003351_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260510_003351_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:33:58.160916Z",
+      "execution_enabled": false,
+      "pack_hash": "3cb7780542e5285bd7aab74e6432f3a33b53cf2267af431baccda554e23a17de",
+      "pack_id": "update_pack_20260510_003358_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260510_003358_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:42:14.845743Z",
+      "execution_enabled": false,
+      "pack_hash": "e177db2489b469bb5af47b753e16081076eae7b19176c326ea03f9d5b3a174fc",
+      "pack_id": "update_pack_20260512_174214_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260512_174214_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:42:14.864743Z",
+      "execution_enabled": false,
+      "pack_hash": "b6a8cf6527d6e0fd282998042cad2a41b91115469db2f396cb1e65e5525635d7",
+      "pack_id": "update_pack_20260512_174214_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260512_174214_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:42:14.890740Z",
+      "execution_enabled": false,
+      "pack_hash": "ea68a1c951cb1a7bf8b0ff5024dea8208646e4240ea4c0ea7a2e0d8047e71385",
+      "pack_id": "update_pack_20260512_174214_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260512_174214_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:51:56.089983Z",
+      "execution_enabled": false,
+      "pack_hash": "3cd3d6947fb02703b56de26d61c4b7b2bdf76fb8d523d3549ff1ca075634e890",
+      "pack_id": "update_pack_20260512_175156_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260512_175156_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:51:56.104984Z",
+      "execution_enabled": false,
+      "pack_hash": "87824eec9892b80f79af4339380bd54b982b4a8d36a6324070b840aed65c4e3b",
+      "pack_id": "update_pack_20260512_175156_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260512_175156_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:51:56.125984Z",
+      "execution_enabled": false,
+      "pack_hash": "74a0ed92c96039da4edfad33ea2523a62ec8e41f77cee4b8ab6a8374c3df9f04",
+      "pack_id": "update_pack_20260512_175156_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260512_175156_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T18:03:15.217876Z",
+      "execution_enabled": false,
+      "pack_hash": "44387024bf2d6dfadc09d2d06144e7cebe3cd0e4396e5ac1440d259bbd428911",
+      "pack_id": "update_pack_20260512_180315_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260512_180315_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T18:03:15.233876Z",
+      "execution_enabled": false,
+      "pack_hash": "190a2a4a2c33cb95a35701209f27d423212b9e9ce803c075abc719e77d7d53de",
+      "pack_id": "update_pack_20260512_180315_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260512_180315_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T18:03:15.254876Z",
+      "execution_enabled": false,
+      "pack_hash": "45cd0d6c3ab4e9178c8af0cf74b0b6f9fd368ae9add5405e2fae4b1ba96046e6",
+      "pack_id": "update_pack_20260512_180315_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260512_180315_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:36:56.603738Z",
+      "execution_enabled": false,
+      "pack_hash": "07db554edec4dbfb9598c0b3f226822f340bc2233ef47da9f1ee8e12b9b5ba68",
+      "pack_id": "update_pack_20260513_043656_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_043656_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:36:56.619737Z",
+      "execution_enabled": false,
+      "pack_hash": "4294a1751ca46312b5e4f5c819030625bdf4625eb4d83d4ec0f78555bf719ea9",
+      "pack_id": "update_pack_20260513_043656_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_043656_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:36:56.640738Z",
+      "execution_enabled": false,
+      "pack_hash": "04d63af3b339b0aadff9bad0b963efb978c35a3d44b895fb999fbd81fc8a96b5",
+      "pack_id": "update_pack_20260513_043656_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_043656_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:42:18.215129Z",
+      "execution_enabled": false,
+      "pack_hash": "1b287fe93bc61fd98ab5bb6d7b9f2024755c72b0c420be9e6e01bb244f4aa411",
+      "pack_id": "update_pack_20260513_044218_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_044218_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:42:18.229129Z",
+      "execution_enabled": false,
+      "pack_hash": "4a7ee4710caa6ba4136ac303780cd57e498d4c7e946115b7cb55c0891ea74176",
+      "pack_id": "update_pack_20260513_044218_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_044218_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:42:18.249130Z",
+      "execution_enabled": false,
+      "pack_hash": "c8149b42ca4ecea0dfc40f2d796da274e97b6fc10d73b84854db4b80f5638038",
+      "pack_id": "update_pack_20260513_044218_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_044218_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:35:44.517819Z",
+      "execution_enabled": false,
+      "pack_hash": "b48b69532a7fdbe2bf6247f97ab665408508c5df21977bf407e03589002b66e5",
+      "pack_id": "update_pack_20260513_103544_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_103544_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:35:44.534817Z",
+      "execution_enabled": false,
+      "pack_hash": "aa5940e53fc8a2a5647b0cd060c116e06a36a6440fb4e8003c50dd2215903d88",
+      "pack_id": "update_pack_20260513_103544_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_103544_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:35:44.558820Z",
+      "execution_enabled": false,
+      "pack_hash": "5b8f63e585f09280bd8fdea60fca1e3474958efcd1d4aac9dddb8512a9c97a0e",
+      "pack_id": "update_pack_20260513_103544_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_103544_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:45:16.967581Z",
+      "execution_enabled": false,
+      "pack_hash": "38f54de13a3dd69904e4bd08967cf5fe0079d1c6384428d4e4cdaf2fe141e6a7",
+      "pack_id": "update_pack_20260513_104516_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_104516_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:45:16.983585Z",
+      "execution_enabled": false,
+      "pack_hash": "a1c5d59146f1a753eb3c4433334615e16314590f93b538c99227b9c4523fae16",
+      "pack_id": "update_pack_20260513_104516_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_104516_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:45:17.004580Z",
+      "execution_enabled": false,
+      "pack_hash": "6ff35fccceef7d0c24055b4406d9dfc40819001b0190915cc14e4b9f7b72a535",
+      "pack_id": "update_pack_20260513_104517_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_104517_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T11:18:57.490157Z",
+      "execution_enabled": false,
+      "pack_hash": "503a38ed104e6a017f984f737dcffe1a38d892405984dd2d5e8c0a14f1c63ee3",
+      "pack_id": "update_pack_20260513_111857_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_111857_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T11:18:57.506157Z",
+      "execution_enabled": false,
+      "pack_hash": "55ce5fd4bc155a60051ab44f2c1847b7ca38cbb08ae21be81af93452071055fc",
+      "pack_id": "update_pack_20260513_111857_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_111857_update_governance_patch.json",
+      "status": "warning"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T11:18:57.528157Z",
+      "execution_enabled": false,
+      "pack_hash": "5be1dff4dc44c99e344eb41b90fcde616278af2e37bf0021468a85cb874332d6",
+      "pack_id": "update_pack_20260513_111857_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260513_111857_update_governance_patch.json",
+      "status": "warning"
+    }
+  ],
+  "protected_paths": {
+    "missing": [],
+    "out_of": 8,
+    "present": [
+      "claire/app.py",
+      "claire/api/routes_pipeline.py",
+      "claire/orchestrator/pipeline_v4.py",
+      "claire/runtime_truth/runtime_truth_contract_repair.py",
+      "frontend/command_center/modern/index.html",
+      "LAUNCH_CLAIRE.bat",
+      "pyproject.toml",
+      "requirements.txt"
+    ],
+    "score": 8
+  },
+  "sources": {
+    "build_validation": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/validation/buildability_viability_manufacturability_validation.json",
+      "status": "loaded"
+    },
+    "internet_readiness": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+      "status": "loaded"
+    },
+    "runtime_truth": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json",
+      "status": "loaded"
+    }
+  },
+  "staging_dir": "data/update_packs/staging",
+  "version": "v17.71"
+}

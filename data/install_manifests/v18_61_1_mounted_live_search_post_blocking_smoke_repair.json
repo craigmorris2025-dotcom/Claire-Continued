@@ -1,0 +1,18 @@
+
+{
+  "version": "v18.61.1",
+  "name": "Mounted Live Search POST Blocking Smoke Repair",
+  "scope": [
+    "repair v18.61 POST blocking smoke result proof",
+    "record mounted route response details",
+    "record direct endpoint contract fallback details",
+    "confirm manual-enable block without real internet calls",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_61_mounted_live_search_endpoint_smoke_test.py tests/test_v18_61_1_mounted_live_search_post_blocking_smoke_repair.py -q"
+  ]
+}

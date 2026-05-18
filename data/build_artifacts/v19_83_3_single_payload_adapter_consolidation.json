@@ -1,0 +1,22 @@
+{
+  "version": "v19.83.3",
+  "build_name": "Single Payload Adapter Consolidation",
+  "installed_at": "2026-05-12T09:57:32.074844+00:00",
+  "created_or_updated": [
+    "frontend/cockpit/shared/canonical_payload_adapter.js",
+    "frontend/cockpit/shell/assets/claire_canonical_cockpit_renderer.js",
+    "tests/test_v19_83_3_single_payload_adapter_consolidation.py",
+    "data/build_artifacts/v19_83_3_single_payload_adapter_consolidation.json"
+  ],
+  "patched": [
+    "frontend/cockpit/shell/cockpit_shell.html"
+  ],
+  "rules": [
+    "one frontend payload adapter",
+    "one payload fallback policy",
+    "backend owns truth",
+    "empty states allowed",
+    "fake output forbidden"
+  ],
+  "next_recommended_build": "v19.83.4 Continuous Runtime Executor Binding"
+}

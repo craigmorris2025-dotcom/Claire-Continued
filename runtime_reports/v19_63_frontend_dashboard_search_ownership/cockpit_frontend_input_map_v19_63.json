@@ -1,0 +1,1415 @@
+{
+  "created_at": "2026-05-11T09:25:08.720576Z",
+  "frontend_source_of_truth_rule": "Frontend owns presentation and operator interaction only. Backend payload/routes own truth.",
+  "goal": "Define what frontend pieces inform the new enterprise cockpit without inheriting old dashboard sprawl.",
+  "legacy_dashboard_rule": "Do not scale the existing dashboard. Treat it as reference until parity is proven.",
+  "new_cockpit_root": "frontend/cockpit/",
+  "no_redesign_later_constraints": [
+    "Permanent search command surface must be top-level from the start.",
+    "Panel registry must exist before adding panels.",
+    "Payload adapter must be the only canonical dashboard payload fetch owner.",
+    "Legacy dashboard shells must not become new cockpit architecture by accident.",
+    "Cockpit must reserve spaces for runtime, intelligence, design, package, and system health from the start."
+  ],
+  "required_new_frontend_modules": {
+    "governed_web_workspace": {
+      "informed_by": [],
+      "path": "frontend/cockpit/intelligence/",
+      "purpose": "governed web/search operations, provider status, trust/rate/allowlist visibility"
+    },
+    "runtime_panels": {
+      "informed_by": [],
+      "path": "frontend/cockpit/runtime/",
+      "purpose": "runtime status, lifecycle execution, run history, evidence/runtime truth"
+    },
+    "search_command_surface": {
+      "informed_by": {
+        "permanent_architecture_rule": "Search becomes Claire Command Surface: normal web search + governed research + runtime command + project/system search + future AI-agent entry.",
+        "search_asset_candidates": [
+          {
+            "path": "backups/claire_v17_57_58_20260507_224200/src/frontend/command_center/modern/claire_operating_environment.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "backups/claire_v17_62_1_20260508_043941/src/frontend/command_center/modern/claire_dashboard_search.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "backups/claire_v17_62_2_20260508_044716/src/frontend/command_center/modern/claire_dashboard_search.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "backups/v17_54_persistent_workspace_operational_flow/src/frontend/command_center/modern/product_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "backups/v17_55_live_intelligence_feed_narrative_flow/src/frontend/command_center/modern/product_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "backups/v17_64_dashboard_decongestion_single_cockpit/20260509_133316/frontend/command_center/modern/claire_single_screen_operator.css",
+            "recommended_status": "new_cockpit_candidate_or_future_owner",
+            "roles": [
+              "cockpit_asset",
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "backups/v17_64_dashboard_decongestion_single_cockpit/20260509_133316/frontend/command_center/modern/claire_single_screen_operator.js",
+            "recommended_status": "new_cockpit_candidate_or_future_owner",
+            "roles": [
+              "cockpit_asset",
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "backups/v18_73_1_operator_dashboard_compat_endpoint_repair/20260510_084238/__Users__craig__OneDrive__Desktop__Claire__frontend__command_center__modern__dashboard_file_origin_fetch_bridge.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/ClaireCommandCenter.js",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/core/CommandCenterLayout.js",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/core/CommandCenterRouter.js",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/assets/css/claire_v18_74_dashboard_live_web_search_final_binding.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/assets/js/claire_v18_74_dashboard_live_web_search_final_binding.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_clean_shell.css",
+            "recommended_status": "frontend_reference",
+            "roles": [
+              "command_surface_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_clean_shell.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_connected_operator_dashboard.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_connected_operator_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_dashboard_decongestion.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_dashboard_reset_v17_62_5.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_dashboard_reset_v17_62_5.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_dashboard_search.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_functional_operator_dashboard.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_functional_operator_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_operating_environment.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_operator_shell.css",
+            "recommended_status": "frontend_reference",
+            "roles": [
+              "command_surface_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_operator_shell.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_overlap_fix.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_portal_responsive_layout.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_search_relocation.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_single_screen_operator.css",
+            "recommended_status": "frontend_reference",
+            "roles": [
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_single_screen_operator.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "cockpit_asset",
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_strategic_cockpit.css",
+            "recommended_status": "new_cockpit_candidate_or_future_owner",
+            "roles": [
+              "cockpit_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_strategic_cockpit.js",
+            "recommended_status": "new_cockpit_candidate_or_future_owner",
+            "roles": [
+              "cockpit_asset",
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_validation_authority.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "fetch_owner_candidate"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_verified_memory.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "fetch_owner_candidate"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_workspace_agent_dashboard.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_workspace_agent_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_workspace_stack_fix.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/command_center/modern/claire_workspace_stack_fix.js",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/dashboard_primary_web_search_binding.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/governed_live_search_ui_binding.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/governed_provider_probe_ui_binding.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/live_search_visible_result_contract.js",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "dashboard_asset",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/operator_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/modern/product_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/command_center/styles/command_center.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/enterprise/CompletionCommandCenter.js",
+            "recommended_status": "frontend_reference",
+            "roles": [
+              "command_surface_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/enterprise/EvidenceWorkbench.js",
+            "recommended_status": "frontend_reference",
+            "roles": [
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/export_dashboard/dashboard.css",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".css"
+          },
+          {
+            "path": "frontend/export_dashboard/dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/js/api.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "command_surface_asset",
+              "fetch_owner_candidate"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/js/dashboard.js",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "command_surface_asset",
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/js/web_connector.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/unified/master_shell.js",
+            "recommended_status": "legacy_dashboard_reference",
+            "roles": [
+              "dashboard_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "frontend/unified/panels/research_panel.js",
+            "recommended_status": "frontend_reference",
+            "roles": [
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "runtime/archives/v18.75/frontend/command_center/modern/operator_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "runtime/archives/v18.76/frontend/command_center/modern/operator_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "runtime/archives/v18.77/frontend/command_center/modern/operator_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "runtime/archives/v18.78/frontend/command_center/modern/operator_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          },
+          {
+            "path": "runtime/archives/v18.79/frontend/command_center/modern/operator_dashboard.js",
+            "recommended_status": "fetch_owner_audit_before_reuse",
+            "roles": [
+              "dashboard_asset",
+              "fetch_owner_candidate",
+              "provider_asset",
+              "search_asset"
+            ],
+            "suffix": ".js"
+          }
+        ],
+        "search_fetch_candidates": [],
+        "search_shell_candidates": [
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 14,
+            "path": "backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate",
+              "operator_dashboard_js_owner"
+            ],
+            "title": "Claire Syntalion \u2014 Connected Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "_claire_archives/v18_85_to_v18_89_dashboard_runtime_governed_search_pack/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "_claire_archives/v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "_claire_archives/v18_95_to_v18_99_primary_pipeline_connection_desired_output_contract_pack/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "_claire_archives/v19_00_to_v19_04_actual_run_output_dashboard_binding_pack/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "_claire_archives/v19_05_to_v19_09_route_aware_autonomous_execution_proof_pack/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "_claire_archives/v19_10_to_v19_14_live_web_evidence_pipeline_ingestion_pack/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "_claire_archives/v19_15_to_v19_19_pipeline_result_quality_blocked_state_pack/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "_claire_archives/v19_20_to_v19_24_dashboard_sophistication_no_restructure_pack/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "backups/claire_v17_62_9_20260508_053916/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Strategic Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion - Single Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "backups/v17_64_dashboard_decongestion_single_cockpit/20260509_133316/frontend/command_center/modern/index.html",
+            "recommended_status": "new_cockpit_candidate_or_future_owner",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Single-Screen Operator Cockpit"
+          },
+          {
+            "legacy_probability": "unknown",
+            "ownership_score": 10,
+            "path": "backups/v18_73_2_dashboard_search_provider_probe_separation_repair/20260510_090938/__Users__craig__OneDrive__Desktop__Claire__frontend__command_center__modern__index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "backups/v19_dashboard_fetch_wiring_pack/20260510_152245/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "quarantine_legacy_placeholders/archive/claire_install_backups/v18_74_dashboard_live_web_search_final_binding/20260510T141858Z/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "runtime/archives/v18.75/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "runtime/archives/v18.76/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "runtime/archives/v18.77/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "runtime/archives/v18.78/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 10,
+            "path": "runtime/archives/v18.79/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "cockpit_shell_candidate",
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 9,
+            "path": "backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate",
+              "operator_dashboard_js_owner"
+            ],
+            "title": "Claire Syntalion - Functional Operator Dashboard"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_56_20260507_185658/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_59_20260507_230959/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_60_20260508_041331/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_61_20260508_041627/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_62_1_20260508_043941/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_62_20260508_042340/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_62_2_20260508_044716/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_62_3_20260508_045136/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_62_4_20260508_045358/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_62_5_20260508_050256/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_62_6_20260508_050912/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_62_7_20260508_051344/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/claire_v17_62_8_20260508_052408/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operator Console"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/v17_52_modern_operator_dashboard/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate",
+              "launcher_related_ui"
+            ],
+            "title": "Claire Syntalion Command Center"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/v17_54_persistent_workspace_operational_flow/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 5,
+            "path": "backups/v17_55_live_intelligence_feed_narrative_flow/src/frontend/command_center/modern/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion"
+          },
+          {
+            "legacy_probability": "unknown",
+            "ownership_score": 5,
+            "path": "frontend/export_dashboard/index.html",
+            "recommended_status": "legacy_dashboard_reference_pending_parity",
+            "roles": [
+              "command_search_surface_candidate",
+              "dashboard_shell_candidate"
+            ],
+            "title": "Claire Syntalion Dashboard"
+          },
+          {
+            "legacy_probability": "medium",
+            "ownership_score": 2,
+            "path": "backups/claire_v17_57_58_20260507_224200/src/frontend/command_center/modern/index.html",
+            "recommended_status": "frontend_reference",
+            "roles": [
+              "command_search_surface_candidate"
+            ],
+            "title": "Claire Syntalion \u2014 Operating Environment"
+          }
+        ]
+      },
+      "path": "frontend/cockpit/intelligence/",
+      "purpose": "permanent search/command/research/agent surface"
+    },
+    "shared_payload_adapter": {
+      "informed_by": [],
+      "path": "frontend/cockpit/shared/",
+      "purpose": "single fetch owner for /dashboard/payload and status"
+    },
+    "shell": {
+      "informed_by": [
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 14,
+          "path": "backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate",
+            "operator_dashboard_js_owner"
+          ],
+          "title": "Claire Syntalion \u2014 Connected Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "_claire_archives/v18_85_to_v18_89_dashboard_runtime_governed_search_pack/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "_claire_archives/v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "_claire_archives/v18_95_to_v18_99_primary_pipeline_connection_desired_output_contract_pack/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "_claire_archives/v19_00_to_v19_04_actual_run_output_dashboard_binding_pack/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "_claire_archives/v19_05_to_v19_09_route_aware_autonomous_execution_proof_pack/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "_claire_archives/v19_10_to_v19_14_live_web_evidence_pipeline_ingestion_pack/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "_claire_archives/v19_15_to_v19_19_pipeline_result_quality_blocked_state_pack/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "_claire_archives/v19_20_to_v19_24_dashboard_sophistication_no_restructure_pack/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "backups/claire_v17_62_9_20260508_053916/src/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Strategic Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion - Single Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "backups/v17_64_dashboard_decongestion_single_cockpit/20260509_133316/frontend/command_center/modern/index.html",
+          "recommended_status": "new_cockpit_candidate_or_future_owner",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Single-Screen Operator Cockpit"
+        },
+        {
+          "legacy_probability": "unknown",
+          "ownership_score": 10,
+          "path": "backups/v18_73_2_dashboard_search_provider_probe_separation_repair/20260510_090938/__Users__craig__OneDrive__Desktop__Claire__frontend__command_center__modern__index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "backups/v19_dashboard_fetch_wiring_pack/20260510_152245/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "quarantine_legacy_placeholders/archive/claire_install_backups/v18_74_dashboard_live_web_search_final_binding/20260510T141858Z/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "runtime/archives/v18.75/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "runtime/archives/v18.76/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "runtime/archives/v18.77/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "runtime/archives/v18.78/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 10,
+          "path": "runtime/archives/v18.79/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "cockpit_shell_candidate",
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Workspace Operator Cockpit"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 9,
+          "path": "backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate",
+            "operator_dashboard_js_owner"
+          ],
+          "title": "Claire Syntalion - Functional Operator Dashboard"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 7,
+          "path": "backups/v17_53_product_dashboard_experience_layer/src/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "dashboard_shell_candidate",
+            "operator_dashboard_js_owner"
+          ],
+          "title": "Claire Syntalion Operator Dashboard"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 5,
+          "path": "backups/claire_v17_56_20260507_185658/src/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion"
+        },
+        {
+          "legacy_probability": "medium",
+          "ownership_score": 5,
+          "path": "backups/claire_v17_59_20260507_230959/src/frontend/command_center/modern/index.html",
+          "recommended_status": "legacy_dashboard_reference_pending_parity",
+          "roles": [
+            "command_search_surface_candidate",
+            "dashboard_shell_candidate"
+          ],
+          "title": "Claire Syntalion \u2014 Operating Environment"
+        }
+      ],
+      "path": "frontend/cockpit/shell/",
+      "purpose": "workspace, navigation, docking, panel registry, route state"
+    }
+  },
+  "version": "v19.63"
+}

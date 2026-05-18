@@ -1,0 +1,24 @@
+{
+  "version": "v19.89.8-S18",
+  "installed_at_utc": "2026-05-14T02:39:16.100481+00:00",
+  "status": "installed",
+  "files_written": [
+    "claire\\api\\canonical_cockpit_surface_health.py",
+    "tests\\test_canonical_cockpit_surface_health_s18.py",
+    "docs\\build_notes\\v19.89.8-S18_surface_health_drift_detection.md",
+    "output\\cockpit\\v19.89.8-S18_install_report.json"
+  ],
+  "patch_report": [
+    "added S18 import guard to claire\\app.py",
+    "registered S18 API routes in claire\\app.py",
+    "attached S18 health to dashboard payload in claire\\app.py"
+  ],
+  "run_tests": "python -m pytest tests/test_canonical_cockpit_surface_health_s18.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

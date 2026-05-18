@@ -1,0 +1,90 @@
+{
+  "app_registration": {
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\backups\\s929_s956\\app.py.20260517_001920.bak",
+    "exists": true,
+    "message": "Inserted guarded local router registration before return app.",
+    "registered": true
+  },
+  "blocked_authority_preserved": {
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "body_read_allowed": false,
+    "browser_execution_enabled": false,
+    "command_execution_enabled": false,
+    "external_network_request_performed": false,
+    "live_web_execution_enabled": false,
+    "network_request_performed": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_enabled": false,
+    "search_provider_execution_enabled": false
+  },
+  "compile_results": [
+    {
+      "compiled": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\governance\\governed_cockpit_operation_controls.py"
+    },
+    {
+      "compiled": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_operation_control_routes.py"
+    },
+    {
+      "compiled": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s929_s956_cockpit_operation_controls.py"
+    }
+  ],
+  "expected_visual_results": [
+    "Command bar area should show governed operation buttons.",
+    "Actions tab should show operation action cards instead of no actions.",
+    "Governed Web should show operation control groups with preview-only buttons.",
+    "Button clicks should return local preview/preflight packets only.",
+    "Top Actions chip should show a count greater than zero."
+  ],
+  "html_results": [
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\backups\\s929_s956\\cockpit_shell.html.20260517_001920.bak",
+      "exists": true,
+      "message": "operation-control asset tags inserted",
+      "patched": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html"
+    },
+    {
+      "exists": false,
+      "message": "missing",
+      "patched": false,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\index.html"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\backups\\s929_s956\\index.html.20260517_001920.bak",
+      "exists": true,
+      "message": "operation-control asset tags inserted",
+      "patched": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html"
+    }
+  ],
+  "installed_at": "2026-05-17T05:19:20.825274+00:00",
+  "new_endpoints": [
+    "/api/cockpit/operations/payload",
+    "/api/cockpit/operations/buttons",
+    "/api/cockpit/operations/cards",
+    "/api/cockpit/operations/actions",
+    "/api/cockpit/operations/status",
+    "/api/cockpit/operations/stop-gate",
+    "/api/cockpit/operations/preview/{operation_key}",
+    "/api/command-bar/operations/payload",
+    "/api/command-bar/operations/buttons",
+    "/api/command-bar/submit/preview",
+    "/api/internet/operation-controls/payload",
+    "/api/internet/s956-stop-gate"
+  ],
+  "paths_written": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\governance\\governed_cockpit_operation_controls.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_operation_control_routes.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\assets\\claire_cockpit_operation_controls.js",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\assets\\claire_cockpit_operation_controls.css",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s929_s956_cockpit_operation_controls.py"
+  ],
+  "version": "v19.89.8-S929-S956-cockpit-operation-controls"
+}

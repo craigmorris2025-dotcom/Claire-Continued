@@ -1,0 +1,24 @@
+{
+  "automatic_updates_allowed": false,
+  "autonomous_execution_allowed": false,
+  "body_reads_allowed": false,
+  "browser_execution_allowed": false,
+  "continuous_crawling_allowed": false,
+  "installed_at": "2026-05-14T17:31:07.604428+00:00",
+  "installed_files": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\run_s36_single_head_probe.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\verify_s36_probe_quarantine.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s36r3_r5_operator_probe_pack.py"
+  ],
+  "live_network_execution_during_install": false,
+  "manual_promotion_required": true,
+  "metadata_only": true,
+  "method": "HEAD",
+  "next_manual_command_example": "python tools/run_s36_single_head_probe.py --url https://example.com --operator-ack YES",
+  "one_shot_only": true,
+  "operator_triggered_only": true,
+  "post_probe_verify_command": "python tools/verify_s36_probe_quarantine.py",
+  "quarantine_required": true,
+  "runtime_truth_mutation_allowed": false,
+  "version": "v19.89.8-S36R3-R5-operator-probe-pack"
+}

@@ -1,0 +1,96 @@
+{
+  "all_passed": true,
+  "app_patch_required": false,
+  "automatic_updates": false,
+  "autonomous_execution": false,
+  "browser_execution": false,
+  "direct_app_patch": false,
+  "discovery": {
+    "app_patch_required": false,
+    "direct_app_patch": false,
+    "discovered": true,
+    "discovery": true,
+    "factory": "create_app",
+    "factory_available": true,
+    "module": "claire.app",
+    "non_invasive": true,
+    "read_only": true
+  },
+  "javascript_execution": false,
+  "mutation_authority": false,
+  "non_invasive": true,
+  "passed": true,
+  "probe": {
+    "all_passed": true,
+    "app_patch_required": false,
+    "automatic_updates": false,
+    "autonomous_execution": false,
+    "browser_execution": false,
+    "direct_app_patch": false,
+    "javascript_execution": false,
+    "mounted": true,
+    "mounted_routes": [
+      "/operator/runtime/status",
+      "/operator/evidence/review",
+      "/operator/routes/status",
+      "/operator/payload/status"
+    ],
+    "mutation_authority": false,
+    "non_invasive": true,
+    "passed": true,
+    "probes": [
+      {
+        "ok": true,
+        "path": "/operator/runtime/status",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/evidence/review",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/routes/status",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/payload/status",
+        "status_code": 200
+      }
+    ],
+    "read_only": true,
+    "routes": [
+      {
+        "ok": true,
+        "path": "/operator/runtime/status",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/evidence/review",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/routes/status",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/payload/status",
+        "status_code": 200
+      }
+    ],
+    "runtime_authority": false,
+    "runtime_truth_mutation": false,
+    "verification_passed": true,
+    "verified": true
+  },
+  "read_only": true,
+  "runtime_authority": false,
+  "runtime_truth_mutation": false,
+  "verification_passed": true,
+  "verified": true
+}

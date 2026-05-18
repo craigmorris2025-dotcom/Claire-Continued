@@ -1,0 +1,1303 @@
+{
+  "version": "v19.89.8-S562-S568",
+  "phase": "S562-S568",
+  "stage_version": "S568",
+  "status": "claire_update_control_cockpit_wiring_passed",
+  "ready": true,
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "created_at": "2026-05-17T02:21:42.507314+00:00",
+  "runtime_mutation_enabled": false,
+  "runtime_truth_mutation_allowed": false,
+  "runtime_truth_write_allowed": false,
+  "automatic_updates_enabled": false,
+  "autonomous_crawling_enabled": false,
+  "autonomous_execution_enabled": false,
+  "autonomous_agent_execution_enabled": false,
+  "live_web_execution_enabled": false,
+  "browser_execution_enabled": false,
+  "network_request_performed": false,
+  "body_read_allowed": false,
+  "package_download_performed": false,
+  "package_install_performed": false,
+  "package_execution_enabled": false,
+  "package_export_performed": false,
+  "sandbox_file_write_performed": false,
+  "sandbox_created": false,
+  "test_execution_performed": false,
+  "validation_execution_performed": false,
+  "promotion_performed": false,
+  "promotion_allowed_now": false,
+  "update_apply_allowed": false,
+  "backup_created": false,
+  "restore_performed": false,
+  "rollback_execution_performed": false,
+  "recovery_execution_performed": false,
+  "handoff_execution_performed": false,
+  "application_handoff_performed": false,
+  "cockpit_action_execution_performed": false,
+  "cockpit_persistent_write_performed": false,
+  "ok": true,
+  "checks": {
+    "s562_panel_registry_ready": true,
+    "s563_runway_modules_import": true,
+    "s564_actions_do_not_execute": true,
+    "s565_authority_matrix_all_blocked": true,
+    "s566_payload_ready": true,
+    "s567_assets_exist": true,
+    "panel_order_complete": true,
+    "buttons_complete": true,
+    "payload_no_persistence": true,
+    "payload_no_action_execution": true,
+    "no_update_authority": true,
+    "contracts_ready": true
+  },
+  "sample_outputs": {
+    "panel_registry": {
+      "version": "v19.89.8-S562-S568",
+      "phase": "S562-S568",
+      "stage_version": "S562",
+      "status": "update_control_panel_registry_ready",
+      "ready": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "created_at": "2026-05-17T02:21:42.484316+00:00",
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false,
+      "package_download_performed": false,
+      "package_install_performed": false,
+      "package_execution_enabled": false,
+      "package_export_performed": false,
+      "sandbox_file_write_performed": false,
+      "sandbox_created": false,
+      "test_execution_performed": false,
+      "validation_execution_performed": false,
+      "promotion_performed": false,
+      "promotion_allowed_now": false,
+      "update_apply_allowed": false,
+      "backup_created": false,
+      "restore_performed": false,
+      "rollback_execution_performed": false,
+      "recovery_execution_performed": false,
+      "handoff_execution_performed": false,
+      "application_handoff_performed": false,
+      "cockpit_action_execution_performed": false,
+      "cockpit_persistent_write_performed": false,
+      "panel_order": [
+        "update_runway_overview",
+        "governed_update_inspector",
+        "staged_update_sandbox",
+        "controlled_validation_plan",
+        "update_evidence_review_queue",
+        "validation_result_intake",
+        "promotion_decision_packet",
+        "rollback_recovery_gate",
+        "operator_staged_update_handoff",
+        "blocked_authority_matrix"
+      ],
+      "panels": [
+        {
+          "panel_id": "update_runway_overview",
+          "label": "Update Runway Overview",
+          "source_stage": "S562-S568",
+          "purpose": "Show the full governed update-control chain.",
+          "authority": "presentation_only",
+          "enabled": true
+        },
+        {
+          "panel_id": "governed_update_inspector",
+          "label": "Governed Update Inspector",
+          "source_stage": "S506-S512",
+          "purpose": "Show metadata-only update candidate inspection.",
+          "authority": "review_only",
+          "enabled": true
+        },
+        {
+          "panel_id": "staged_update_sandbox",
+          "label": "Staged Update Sandbox",
+          "source_stage": "S513-S519",
+          "purpose": "Show sandbox contract status without creating sandbox files.",
+          "authority": "review_only",
+          "enabled": true
+        },
+        {
+          "panel_id": "controlled_validation_plan",
+          "label": "Controlled Validation Plan",
+          "source_stage": "S520-S526",
+          "purpose": "Show planned validation commands without executing them.",
+          "authority": "review_only",
+          "enabled": true
+        },
+        {
+          "panel_id": "update_evidence_review_queue",
+          "label": "Update Evidence Review Queue",
+          "source_stage": "S527-S533",
+          "purpose": "Show evidence bundles and review packets.",
+          "authority": "review_only",
+          "enabled": true
+        },
+        {
+          "panel_id": "validation_result_intake",
+          "label": "Validation Result Intake",
+          "source_stage": "S534-S540",
+          "purpose": "Show manually supplied validation result intake packets.",
+          "authority": "review_only",
+          "enabled": true
+        },
+        {
+          "panel_id": "promotion_decision_packet",
+          "label": "Promotion Decision Packet",
+          "source_stage": "S541-S547",
+          "purpose": "Show promotion eligibility and blockers.",
+          "authority": "review_only",
+          "enabled": true
+        },
+        {
+          "panel_id": "rollback_recovery_gate",
+          "label": "Rollback Recovery Gate",
+          "source_stage": "S548-S554",
+          "purpose": "Show rollback proof and recovery gate blockers.",
+          "authority": "review_only",
+          "enabled": true
+        },
+        {
+          "panel_id": "operator_staged_update_handoff",
+          "label": "Operator Staged Update Handoff",
+          "source_stage": "S555-S561",
+          "purpose": "Show approval/handoff boundary and final blockers.",
+          "authority": "review_only",
+          "enabled": true
+        },
+        {
+          "panel_id": "blocked_authority_matrix",
+          "label": "Blocked Authority Matrix",
+          "source_stage": "S562-S568",
+          "purpose": "Show all disabled update authorities.",
+          "authority": "presentation_only",
+          "enabled": true
+        }
+      ],
+      "panel_count": 10,
+      "registry_rules": [
+        "Panels display backend truth only.",
+        "Panel registration does not create routes or apply updates.",
+        "Control surfaces remain review-only."
+      ]
+    },
+    "runway_readiness": {
+      "runway_summary_id": "update_runway_summary_2200197",
+      "version": "v19.89.8-S562-S568",
+      "created_at": "2026-05-17T02:21:42.494315+00:00",
+      "module_count": 8,
+      "modules": [
+        {
+          "stage_range": "S506-S512",
+          "label": "Governed update inspector",
+          "owner": "metadata_inspection",
+          "module": "claire.api.claire_governed_update_inspector_s506_s512",
+          "import_ok": true,
+          "stop_gate_ready": true,
+          "detail": "import_ok"
+        },
+        {
+          "stage_range": "S513-S519",
+          "label": "Staged update sandbox contract",
+          "owner": "sandbox_contract",
+          "module": "claire.api.claire_staged_update_sandbox_contract_s513_s519",
+          "import_ok": true,
+          "stop_gate_ready": true,
+          "detail": "import_ok"
+        },
+        {
+          "stage_range": "S520-S526",
+          "label": "Controlled validation plan",
+          "owner": "validation_plan",
+          "module": "claire.api.claire_controlled_update_validation_plan_s520_s526",
+          "import_ok": true,
+          "stop_gate_ready": true,
+          "detail": "import_ok"
+        },
+        {
+          "stage_range": "S527-S533",
+          "label": "Update evidence review queue",
+          "owner": "review_queue",
+          "module": "claire.api.claire_update_evidence_review_queue_s527_s533",
+          "import_ok": true,
+          "stop_gate_ready": true,
+          "detail": "import_ok"
+        },
+        {
+          "stage_range": "S534-S540",
+          "label": "Validation result intake",
+          "owner": "result_intake",
+          "module": "claire.api.claire_validation_result_intake_s534_s540",
+          "import_ok": true,
+          "stop_gate_ready": true,
+          "detail": "import_ok"
+        },
+        {
+          "stage_range": "S541-S547",
+          "label": "Promotion decision packet",
+          "owner": "promotion_packet",
+          "module": "claire.api.claire_update_promotion_decision_packet_s541_s547",
+          "import_ok": true,
+          "stop_gate_ready": true,
+          "detail": "import_ok"
+        },
+        {
+          "stage_range": "S548-S554",
+          "label": "Rollback recovery gate",
+          "owner": "rollback_gate",
+          "module": "claire.api.claire_rollback_recovery_gate_s548_s554",
+          "import_ok": true,
+          "stop_gate_ready": true,
+          "detail": "import_ok"
+        },
+        {
+          "stage_range": "S555-S561",
+          "label": "Operator staged update handoff",
+          "owner": "handoff",
+          "module": "claire.api.claire_operator_staged_update_handoff_s555_s561",
+          "import_ok": true,
+          "stop_gate_ready": true,
+          "detail": "import_ok"
+        }
+      ],
+      "all_modules_import": true,
+      "all_checked_stop_gates_ready": true,
+      "ready_stage_count": 8,
+      "authority_state": "blocked_review_only",
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false,
+      "package_download_performed": false,
+      "package_install_performed": false,
+      "package_execution_enabled": false,
+      "package_export_performed": false,
+      "sandbox_file_write_performed": false,
+      "sandbox_created": false,
+      "test_execution_performed": false,
+      "validation_execution_performed": false,
+      "promotion_performed": false,
+      "promotion_allowed_now": false,
+      "update_apply_allowed": false,
+      "backup_created": false,
+      "restore_performed": false,
+      "rollback_execution_performed": false,
+      "recovery_execution_performed": false,
+      "handoff_execution_performed": false,
+      "application_handoff_performed": false,
+      "cockpit_action_execution_performed": false,
+      "cockpit_persistent_write_performed": false
+    },
+    "action_buttons": {
+      "version": "v19.89.8-S562-S568",
+      "phase": "S562-S568",
+      "stage_version": "S564",
+      "status": "cockpit_action_button_contracts_ready",
+      "ready": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "created_at": "2026-05-17T02:21:42.499314+00:00",
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false,
+      "package_download_performed": false,
+      "package_install_performed": false,
+      "package_execution_enabled": false,
+      "package_export_performed": false,
+      "sandbox_file_write_performed": false,
+      "sandbox_created": false,
+      "test_execution_performed": false,
+      "validation_execution_performed": false,
+      "promotion_performed": false,
+      "promotion_allowed_now": false,
+      "update_apply_allowed": false,
+      "backup_created": false,
+      "restore_performed": false,
+      "rollback_execution_performed": false,
+      "recovery_execution_performed": false,
+      "handoff_execution_performed": false,
+      "application_handoff_performed": false,
+      "cockpit_action_execution_performed": false,
+      "cockpit_persistent_write_performed": false,
+      "buttons": [
+        {
+          "button_id": "view_update_runway",
+          "label": "View Update Runway",
+          "visible": true,
+          "enabled": true,
+          "execution_allowed": false,
+          "execution_performed": false,
+          "authority": "presentation_only",
+          "disabled_reason": "review_navigation_only"
+        },
+        {
+          "button_id": "open_review_queue",
+          "label": "Open Review Queue",
+          "visible": true,
+          "enabled": true,
+          "execution_allowed": false,
+          "execution_performed": false,
+          "authority": "presentation_only",
+          "disabled_reason": "review_navigation_only"
+        },
+        {
+          "button_id": "inspect_validation_results",
+          "label": "Inspect Validation Results",
+          "visible": true,
+          "enabled": true,
+          "execution_allowed": false,
+          "execution_performed": false,
+          "authority": "presentation_only",
+          "disabled_reason": "review_navigation_only"
+        },
+        {
+          "button_id": "review_promotion_packet",
+          "label": "Review Promotion Packet",
+          "visible": true,
+          "enabled": true,
+          "execution_allowed": false,
+          "execution_performed": false,
+          "authority": "presentation_only",
+          "disabled_reason": "review_navigation_only"
+        },
+        {
+          "button_id": "review_rollback_gate",
+          "label": "Review Rollback Gate",
+          "visible": true,
+          "enabled": true,
+          "execution_allowed": false,
+          "execution_performed": false,
+          "authority": "presentation_only",
+          "disabled_reason": "review_navigation_only"
+        },
+        {
+          "button_id": "review_handoff_packet",
+          "label": "Review Handoff Packet",
+          "visible": true,
+          "enabled": true,
+          "execution_allowed": false,
+          "execution_performed": false,
+          "authority": "presentation_only",
+          "disabled_reason": "review_navigation_only"
+        },
+        {
+          "button_id": "export_review_snapshot_disabled",
+          "label": "Export Review Snapshot Disabled",
+          "visible": true,
+          "enabled": false,
+          "execution_allowed": false,
+          "execution_performed": false,
+          "authority": "blocked",
+          "disabled_reason": "unsafe_authority_not_enabled"
+        },
+        {
+          "button_id": "apply_update_disabled",
+          "label": "Apply Update Disabled",
+          "visible": true,
+          "enabled": false,
+          "execution_allowed": false,
+          "execution_performed": false,
+          "authority": "blocked",
+          "disabled_reason": "unsafe_authority_not_enabled"
+        }
+      ],
+      "button_count": 8,
+      "action_rules": [
+        "Enabled buttons are navigation/review only.",
+        "Disabled buttons make blocked authorities visible.",
+        "No cockpit button executes updates in this phase."
+      ]
+    },
+    "blocked_authority_matrix": {
+      "blocked_authority_matrix_id": "blocked_authority_matrix_0516884",
+      "version": "v19.89.8-S562-S568",
+      "created_at": "2026-05-17T02:21:42.499314+00:00",
+      "items": [
+        {
+          "authority": "application_handoff_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "cockpit"
+        },
+        {
+          "authority": "automatic_updates_enabled",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "cockpit"
+        },
+        {
+          "authority": "autonomous_agent_execution_enabled",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "execution"
+        },
+        {
+          "authority": "autonomous_crawling_enabled",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "cockpit"
+        },
+        {
+          "authority": "autonomous_execution_enabled",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "execution"
+        },
+        {
+          "authority": "backup_created",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "rollback_recovery"
+        },
+        {
+          "authority": "body_read_allowed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "internet"
+        },
+        {
+          "authority": "browser_execution_enabled",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "internet"
+        },
+        {
+          "authority": "cockpit_action_execution_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "execution"
+        },
+        {
+          "authority": "cockpit_persistent_write_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "cockpit"
+        },
+        {
+          "authority": "handoff_execution_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "execution"
+        },
+        {
+          "authority": "live_web_execution_enabled",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "internet"
+        },
+        {
+          "authority": "network_request_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "internet"
+        },
+        {
+          "authority": "package_download_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "cockpit"
+        },
+        {
+          "authority": "package_execution_enabled",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "update_application"
+        },
+        {
+          "authority": "package_export_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "cockpit"
+        },
+        {
+          "authority": "package_install_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "update_application"
+        },
+        {
+          "authority": "promotion_allowed_now",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "cockpit"
+        },
+        {
+          "authority": "promotion_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "update_application"
+        },
+        {
+          "authority": "recovery_execution_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "execution"
+        },
+        {
+          "authority": "restore_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "rollback_recovery"
+        },
+        {
+          "authority": "rollback_execution_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "execution"
+        },
+        {
+          "authority": "runtime_mutation_enabled",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "runtime"
+        },
+        {
+          "authority": "runtime_truth_mutation_allowed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "runtime"
+        },
+        {
+          "authority": "runtime_truth_write_allowed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "runtime"
+        },
+        {
+          "authority": "sandbox_created",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "cockpit"
+        },
+        {
+          "authority": "sandbox_file_write_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "cockpit"
+        },
+        {
+          "authority": "test_execution_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "execution"
+        },
+        {
+          "authority": "update_apply_allowed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "update_application"
+        },
+        {
+          "authority": "validation_execution_performed",
+          "enabled": false,
+          "status": "blocked",
+          "display_group": "execution"
+        }
+      ],
+      "item_count": 30,
+      "all_blocked": true,
+      "unexpected_enabled": [],
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false,
+      "package_download_performed": false,
+      "package_install_performed": false,
+      "package_execution_enabled": false,
+      "package_export_performed": false,
+      "sandbox_file_write_performed": false,
+      "sandbox_created": false,
+      "test_execution_performed": false,
+      "validation_execution_performed": false,
+      "promotion_performed": false,
+      "promotion_allowed_now": false,
+      "update_apply_allowed": false,
+      "backup_created": false,
+      "restore_performed": false,
+      "rollback_execution_performed": false,
+      "recovery_execution_performed": false,
+      "handoff_execution_performed": false,
+      "application_handoff_performed": false,
+      "cockpit_action_execution_performed": false,
+      "cockpit_persistent_write_performed": false
+    },
+    "cockpit_payload": {
+      "update_control_cockpit_payload_id": "update_control_cockpit_payload_3086415",
+      "version": "v19.89.8-S562-S568",
+      "created_at": "2026-05-17T02:21:42.503314+00:00",
+      "title": "Claire Governed Update Control",
+      "subtitle": "Readiness runway through S561; dashboard wiring through S568.",
+      "panel_registry": {
+        "version": "v19.89.8-S562-S568",
+        "phase": "S562-S568",
+        "stage_version": "S562",
+        "status": "update_control_panel_registry_ready",
+        "ready": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "created_at": "2026-05-17T02:21:42.499314+00:00",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_download_performed": false,
+        "package_install_performed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false,
+        "sandbox_file_write_performed": false,
+        "sandbox_created": false,
+        "test_execution_performed": false,
+        "validation_execution_performed": false,
+        "promotion_performed": false,
+        "promotion_allowed_now": false,
+        "update_apply_allowed": false,
+        "backup_created": false,
+        "restore_performed": false,
+        "rollback_execution_performed": false,
+        "recovery_execution_performed": false,
+        "handoff_execution_performed": false,
+        "application_handoff_performed": false,
+        "cockpit_action_execution_performed": false,
+        "cockpit_persistent_write_performed": false,
+        "panel_order": [
+          "update_runway_overview",
+          "governed_update_inspector",
+          "staged_update_sandbox",
+          "controlled_validation_plan",
+          "update_evidence_review_queue",
+          "validation_result_intake",
+          "promotion_decision_packet",
+          "rollback_recovery_gate",
+          "operator_staged_update_handoff",
+          "blocked_authority_matrix"
+        ],
+        "panels": [
+          {
+            "panel_id": "update_runway_overview",
+            "label": "Update Runway Overview",
+            "source_stage": "S562-S568",
+            "purpose": "Show the full governed update-control chain.",
+            "authority": "presentation_only",
+            "enabled": true
+          },
+          {
+            "panel_id": "governed_update_inspector",
+            "label": "Governed Update Inspector",
+            "source_stage": "S506-S512",
+            "purpose": "Show metadata-only update candidate inspection.",
+            "authority": "review_only",
+            "enabled": true
+          },
+          {
+            "panel_id": "staged_update_sandbox",
+            "label": "Staged Update Sandbox",
+            "source_stage": "S513-S519",
+            "purpose": "Show sandbox contract status without creating sandbox files.",
+            "authority": "review_only",
+            "enabled": true
+          },
+          {
+            "panel_id": "controlled_validation_plan",
+            "label": "Controlled Validation Plan",
+            "source_stage": "S520-S526",
+            "purpose": "Show planned validation commands without executing them.",
+            "authority": "review_only",
+            "enabled": true
+          },
+          {
+            "panel_id": "update_evidence_review_queue",
+            "label": "Update Evidence Review Queue",
+            "source_stage": "S527-S533",
+            "purpose": "Show evidence bundles and review packets.",
+            "authority": "review_only",
+            "enabled": true
+          },
+          {
+            "panel_id": "validation_result_intake",
+            "label": "Validation Result Intake",
+            "source_stage": "S534-S540",
+            "purpose": "Show manually supplied validation result intake packets.",
+            "authority": "review_only",
+            "enabled": true
+          },
+          {
+            "panel_id": "promotion_decision_packet",
+            "label": "Promotion Decision Packet",
+            "source_stage": "S541-S547",
+            "purpose": "Show promotion eligibility and blockers.",
+            "authority": "review_only",
+            "enabled": true
+          },
+          {
+            "panel_id": "rollback_recovery_gate",
+            "label": "Rollback Recovery Gate",
+            "source_stage": "S548-S554",
+            "purpose": "Show rollback proof and recovery gate blockers.",
+            "authority": "review_only",
+            "enabled": true
+          },
+          {
+            "panel_id": "operator_staged_update_handoff",
+            "label": "Operator Staged Update Handoff",
+            "source_stage": "S555-S561",
+            "purpose": "Show approval/handoff boundary and final blockers.",
+            "authority": "review_only",
+            "enabled": true
+          },
+          {
+            "panel_id": "blocked_authority_matrix",
+            "label": "Blocked Authority Matrix",
+            "source_stage": "S562-S568",
+            "purpose": "Show all disabled update authorities.",
+            "authority": "presentation_only",
+            "enabled": true
+          }
+        ],
+        "panel_count": 10,
+        "registry_rules": [
+          "Panels display backend truth only.",
+          "Panel registration does not create routes or apply updates.",
+          "Control surfaces remain review-only."
+        ]
+      },
+      "runway_readiness": {
+        "runway_summary_id": "update_runway_summary_2200197",
+        "version": "v19.89.8-S562-S568",
+        "created_at": "2026-05-17T02:21:42.503314+00:00",
+        "module_count": 8,
+        "modules": [
+          {
+            "stage_range": "S506-S512",
+            "label": "Governed update inspector",
+            "owner": "metadata_inspection",
+            "module": "claire.api.claire_governed_update_inspector_s506_s512",
+            "import_ok": true,
+            "stop_gate_ready": true,
+            "detail": "import_ok"
+          },
+          {
+            "stage_range": "S513-S519",
+            "label": "Staged update sandbox contract",
+            "owner": "sandbox_contract",
+            "module": "claire.api.claire_staged_update_sandbox_contract_s513_s519",
+            "import_ok": true,
+            "stop_gate_ready": true,
+            "detail": "import_ok"
+          },
+          {
+            "stage_range": "S520-S526",
+            "label": "Controlled validation plan",
+            "owner": "validation_plan",
+            "module": "claire.api.claire_controlled_update_validation_plan_s520_s526",
+            "import_ok": true,
+            "stop_gate_ready": true,
+            "detail": "import_ok"
+          },
+          {
+            "stage_range": "S527-S533",
+            "label": "Update evidence review queue",
+            "owner": "review_queue",
+            "module": "claire.api.claire_update_evidence_review_queue_s527_s533",
+            "import_ok": true,
+            "stop_gate_ready": true,
+            "detail": "import_ok"
+          },
+          {
+            "stage_range": "S534-S540",
+            "label": "Validation result intake",
+            "owner": "result_intake",
+            "module": "claire.api.claire_validation_result_intake_s534_s540",
+            "import_ok": true,
+            "stop_gate_ready": true,
+            "detail": "import_ok"
+          },
+          {
+            "stage_range": "S541-S547",
+            "label": "Promotion decision packet",
+            "owner": "promotion_packet",
+            "module": "claire.api.claire_update_promotion_decision_packet_s541_s547",
+            "import_ok": true,
+            "stop_gate_ready": true,
+            "detail": "import_ok"
+          },
+          {
+            "stage_range": "S548-S554",
+            "label": "Rollback recovery gate",
+            "owner": "rollback_gate",
+            "module": "claire.api.claire_rollback_recovery_gate_s548_s554",
+            "import_ok": true,
+            "stop_gate_ready": true,
+            "detail": "import_ok"
+          },
+          {
+            "stage_range": "S555-S561",
+            "label": "Operator staged update handoff",
+            "owner": "handoff",
+            "module": "claire.api.claire_operator_staged_update_handoff_s555_s561",
+            "import_ok": true,
+            "stop_gate_ready": true,
+            "detail": "import_ok"
+          }
+        ],
+        "all_modules_import": true,
+        "all_checked_stop_gates_ready": true,
+        "ready_stage_count": 8,
+        "authority_state": "blocked_review_only",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_download_performed": false,
+        "package_install_performed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false,
+        "sandbox_file_write_performed": false,
+        "sandbox_created": false,
+        "test_execution_performed": false,
+        "validation_execution_performed": false,
+        "promotion_performed": false,
+        "promotion_allowed_now": false,
+        "update_apply_allowed": false,
+        "backup_created": false,
+        "restore_performed": false,
+        "rollback_execution_performed": false,
+        "recovery_execution_performed": false,
+        "handoff_execution_performed": false,
+        "application_handoff_performed": false,
+        "cockpit_action_execution_performed": false,
+        "cockpit_persistent_write_performed": false
+      },
+      "action_buttons": {
+        "version": "v19.89.8-S562-S568",
+        "phase": "S562-S568",
+        "stage_version": "S564",
+        "status": "cockpit_action_button_contracts_ready",
+        "ready": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "created_at": "2026-05-17T02:21:42.503314+00:00",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_download_performed": false,
+        "package_install_performed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false,
+        "sandbox_file_write_performed": false,
+        "sandbox_created": false,
+        "test_execution_performed": false,
+        "validation_execution_performed": false,
+        "promotion_performed": false,
+        "promotion_allowed_now": false,
+        "update_apply_allowed": false,
+        "backup_created": false,
+        "restore_performed": false,
+        "rollback_execution_performed": false,
+        "recovery_execution_performed": false,
+        "handoff_execution_performed": false,
+        "application_handoff_performed": false,
+        "cockpit_action_execution_performed": false,
+        "cockpit_persistent_write_performed": false,
+        "buttons": [
+          {
+            "button_id": "view_update_runway",
+            "label": "View Update Runway",
+            "visible": true,
+            "enabled": true,
+            "execution_allowed": false,
+            "execution_performed": false,
+            "authority": "presentation_only",
+            "disabled_reason": "review_navigation_only"
+          },
+          {
+            "button_id": "open_review_queue",
+            "label": "Open Review Queue",
+            "visible": true,
+            "enabled": true,
+            "execution_allowed": false,
+            "execution_performed": false,
+            "authority": "presentation_only",
+            "disabled_reason": "review_navigation_only"
+          },
+          {
+            "button_id": "inspect_validation_results",
+            "label": "Inspect Validation Results",
+            "visible": true,
+            "enabled": true,
+            "execution_allowed": false,
+            "execution_performed": false,
+            "authority": "presentation_only",
+            "disabled_reason": "review_navigation_only"
+          },
+          {
+            "button_id": "review_promotion_packet",
+            "label": "Review Promotion Packet",
+            "visible": true,
+            "enabled": true,
+            "execution_allowed": false,
+            "execution_performed": false,
+            "authority": "presentation_only",
+            "disabled_reason": "review_navigation_only"
+          },
+          {
+            "button_id": "review_rollback_gate",
+            "label": "Review Rollback Gate",
+            "visible": true,
+            "enabled": true,
+            "execution_allowed": false,
+            "execution_performed": false,
+            "authority": "presentation_only",
+            "disabled_reason": "review_navigation_only"
+          },
+          {
+            "button_id": "review_handoff_packet",
+            "label": "Review Handoff Packet",
+            "visible": true,
+            "enabled": true,
+            "execution_allowed": false,
+            "execution_performed": false,
+            "authority": "presentation_only",
+            "disabled_reason": "review_navigation_only"
+          },
+          {
+            "button_id": "export_review_snapshot_disabled",
+            "label": "Export Review Snapshot Disabled",
+            "visible": true,
+            "enabled": false,
+            "execution_allowed": false,
+            "execution_performed": false,
+            "authority": "blocked",
+            "disabled_reason": "unsafe_authority_not_enabled"
+          },
+          {
+            "button_id": "apply_update_disabled",
+            "label": "Apply Update Disabled",
+            "visible": true,
+            "enabled": false,
+            "execution_allowed": false,
+            "execution_performed": false,
+            "authority": "blocked",
+            "disabled_reason": "unsafe_authority_not_enabled"
+          }
+        ],
+        "button_count": 8,
+        "action_rules": [
+          "Enabled buttons are navigation/review only.",
+          "Disabled buttons make blocked authorities visible.",
+          "No cockpit button executes updates in this phase."
+        ]
+      },
+      "blocked_authority_matrix": {
+        "blocked_authority_matrix_id": "blocked_authority_matrix_0516884",
+        "version": "v19.89.8-S562-S568",
+        "created_at": "2026-05-17T02:21:42.503314+00:00",
+        "items": [
+          {
+            "authority": "application_handoff_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "cockpit"
+          },
+          {
+            "authority": "automatic_updates_enabled",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "cockpit"
+          },
+          {
+            "authority": "autonomous_agent_execution_enabled",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "execution"
+          },
+          {
+            "authority": "autonomous_crawling_enabled",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "cockpit"
+          },
+          {
+            "authority": "autonomous_execution_enabled",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "execution"
+          },
+          {
+            "authority": "backup_created",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "rollback_recovery"
+          },
+          {
+            "authority": "body_read_allowed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "internet"
+          },
+          {
+            "authority": "browser_execution_enabled",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "internet"
+          },
+          {
+            "authority": "cockpit_action_execution_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "execution"
+          },
+          {
+            "authority": "cockpit_persistent_write_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "cockpit"
+          },
+          {
+            "authority": "handoff_execution_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "execution"
+          },
+          {
+            "authority": "live_web_execution_enabled",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "internet"
+          },
+          {
+            "authority": "network_request_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "internet"
+          },
+          {
+            "authority": "package_download_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "cockpit"
+          },
+          {
+            "authority": "package_execution_enabled",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "update_application"
+          },
+          {
+            "authority": "package_export_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "cockpit"
+          },
+          {
+            "authority": "package_install_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "update_application"
+          },
+          {
+            "authority": "promotion_allowed_now",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "cockpit"
+          },
+          {
+            "authority": "promotion_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "update_application"
+          },
+          {
+            "authority": "recovery_execution_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "execution"
+          },
+          {
+            "authority": "restore_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "rollback_recovery"
+          },
+          {
+            "authority": "rollback_execution_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "execution"
+          },
+          {
+            "authority": "runtime_mutation_enabled",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "runtime"
+          },
+          {
+            "authority": "runtime_truth_mutation_allowed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "runtime"
+          },
+          {
+            "authority": "runtime_truth_write_allowed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "runtime"
+          },
+          {
+            "authority": "sandbox_created",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "cockpit"
+          },
+          {
+            "authority": "sandbox_file_write_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "cockpit"
+          },
+          {
+            "authority": "test_execution_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "execution"
+          },
+          {
+            "authority": "update_apply_allowed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "update_application"
+          },
+          {
+            "authority": "validation_execution_performed",
+            "enabled": false,
+            "status": "blocked",
+            "display_group": "execution"
+          }
+        ],
+        "item_count": 30,
+        "all_blocked": true,
+        "unexpected_enabled": [],
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_download_performed": false,
+        "package_install_performed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false,
+        "sandbox_file_write_performed": false,
+        "sandbox_created": false,
+        "test_execution_performed": false,
+        "validation_execution_performed": false,
+        "promotion_performed": false,
+        "promotion_allowed_now": false,
+        "update_apply_allowed": false,
+        "backup_created": false,
+        "restore_performed": false,
+        "rollback_execution_performed": false,
+        "recovery_execution_performed": false,
+        "handoff_execution_performed": false,
+        "application_handoff_performed": false,
+        "cockpit_action_execution_performed": false,
+        "cockpit_persistent_write_performed": false
+      },
+      "primary_status": "review_only_ready",
+      "operator_message": "Update-control cockpit wiring is ready. Apply/install/update authority remains blocked.",
+      "cockpit_persistent_write_allowed": false,
+      "cockpit_persistent_write_performed": false,
+      "cockpit_action_execution_performed": false,
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false,
+      "package_download_performed": false,
+      "package_install_performed": false,
+      "package_execution_enabled": false,
+      "package_export_performed": false,
+      "sandbox_file_write_performed": false,
+      "sandbox_created": false,
+      "test_execution_performed": false,
+      "validation_execution_performed": false,
+      "promotion_performed": false,
+      "promotion_allowed_now": false,
+      "update_apply_allowed": false,
+      "backup_created": false,
+      "restore_performed": false,
+      "rollback_execution_performed": false,
+      "recovery_execution_performed": false,
+      "handoff_execution_performed": false,
+      "application_handoff_performed": false
+    }
+  },
+  "forward_motion_allowed": true,
+  "next_phase": "S569-S575 End-to-end governed update readiness demo"
+}

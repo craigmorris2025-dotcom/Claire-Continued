@@ -1,0 +1,181 @@
+{
+  "version": "v19.89.8-S21R",
+  "checked_at_utc": "2026-05-14T03:08:20.172788+00:00",
+  "status": "FAIL",
+  "failed_count": 2,
+  "checks": [
+    {
+      "name": "compile claire/app.py",
+      "ok": true,
+      "detail": "compile_ok"
+    },
+    {
+      "name": "import claire.api.governed_runtime_timeline",
+      "ok": false,
+      "detail": "SyntaxError('from __future__ imports must occur at the beginning of the file', ('C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\governed_runtime_timeline.py', 7, 1, 'from __future__ import annotations\\n', 7, 35))"
+    },
+    {
+      "name": "import claire.api.governed_timeline_classification",
+      "ok": true,
+      "detail": "import_ok"
+    },
+    {
+      "name": "import claire.api.canonical_cockpit_surface_registry",
+      "ok": true,
+      "detail": "import_ok"
+    },
+    {
+      "name": "import claire.api.canonical_cockpit_surface_health",
+      "ok": true,
+      "detail": "import_ok"
+    },
+    {
+      "name": "import claire.api.governed_route_activity_overlay",
+      "ok": true,
+      "detail": "import_ok"
+    },
+    {
+      "name": "import claire.api.continuous_runtime_presence",
+      "ok": true,
+      "detail": "import_ok"
+    },
+    {
+      "name": "import claire.api.governed_search_session",
+      "ok": true,
+      "detail": "import_ok"
+    },
+    {
+      "name": "asset frontend/cockpit/assets/js/governed_runtime_timeline.js",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "asset frontend/cockpit/assets/css/governed_runtime_timeline.css",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "asset frontend/cockpit/assets/css/governed_runtime_timeline_s16.css",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "asset frontend/cockpit/assets/js/governed_route_activity_overlay.js",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "asset frontend/cockpit/assets/css/governed_route_activity_overlay.css",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "asset frontend/cockpit/assets/js/continuous_runtime_presence.js",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "asset frontend/cockpit/assets/css/continuous_runtime_presence.css",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "asset frontend/cockpit/assets/js/governed_search_session.js",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "asset frontend/cockpit/assets/css/governed_search_session.css",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "active cockpit shell",
+      "ok": true,
+      "detail": "frontend\\cockpit\\shell\\cockpit_shell.html"
+    },
+    {
+      "name": "shell link count governed_runtime_timeline.js",
+      "ok": true,
+      "detail": {
+        "count": 1,
+        "expected": 1
+      }
+    },
+    {
+      "name": "shell link count governed_route_activity_overlay.js",
+      "ok": true,
+      "detail": {
+        "count": 1,
+        "expected": 1
+      }
+    },
+    {
+      "name": "shell link count continuous_runtime_presence.js",
+      "ok": true,
+      "detail": {
+        "count": 1,
+        "expected": 1
+      }
+    },
+    {
+      "name": "shell link count governed_search_session.js",
+      "ok": true,
+      "detail": {
+        "count": 1,
+        "expected": 1
+      }
+    },
+    {
+      "name": "no top-level return app",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "app token count register_governed_runtime_timeline_routes(app)",
+      "ok": true,
+      "detail": {
+        "count": 0,
+        "max": 1
+      }
+    },
+    {
+      "name": "app token count register_cockpit_surface_registry_routes(app)",
+      "ok": true,
+      "detail": {
+        "count": 0,
+        "max": 1
+      }
+    },
+    {
+      "name": "app token count register_surface_health_routes(app)",
+      "ok": true,
+      "detail": {
+        "count": 0,
+        "max": 1
+      }
+    },
+    {
+      "name": "app token count register_route_activity_overlay_routes(app)",
+      "ok": true,
+      "detail": {
+        "count": 0,
+        "max": 1
+      }
+    },
+    {
+      "name": "reconciled payload build",
+      "ok": false,
+      "detail": "SyntaxError('from __future__ imports must occur at the beginning of the file', ('C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\governed_runtime_timeline.py', 7, 1, 'from __future__ import annotations\\n', 7, 35))"
+    }
+  ],
+  "if_pass_next": "Proceed to S22 Evidence Basket Visualization.",
+  "if_fail_next": "Stop feature builds and repair listed failures first.",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

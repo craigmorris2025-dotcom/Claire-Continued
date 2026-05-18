@@ -1,0 +1,149 @@
+{
+  "build": "Thin Input Escalation Blocker",
+  "contract": {
+    "backend_owns_truth": true,
+    "build": "Thin Input Escalation Blocker",
+    "cockpit_owns_presentation_only": true,
+    "frontend_truth_generation_allowed": false,
+    "generated_at": "2026-05-13T11:22:15.850711+00:00",
+    "minimums": {
+      "minimum_raw_characters": 80,
+      "minimum_semantic_density_score": 0.25,
+      "minimum_specificity_score": 0.2,
+      "minimum_token_count": 10,
+      "minimum_unique_token_count": 7
+    },
+    "placeholder_terms": [
+      "additionalprop1",
+      "additionalprop2",
+      "additionalprop3",
+      "example",
+      "ipsum",
+      "lorem",
+      "none",
+      "null",
+      "placeholder",
+      "sample",
+      "string",
+      "test",
+      "todo",
+      "undefined"
+    ],
+    "route_behavior": {
+      "acquisition": {
+        "allowed_to_escalate": false,
+        "thin_input_terminal_state": "blocked_evidence"
+      },
+      "breakthrough": {
+        "allowed_to_escalate": false,
+        "thin_input_terminal_state": "blocked_evidence"
+      },
+      "design": {
+        "allowed_to_escalate": false,
+        "thin_input_terminal_state": "blocked_evidence"
+      },
+      "discovery": {
+        "allowed_to_escalate": false,
+        "thin_input_terminal_state": "pending_evidence"
+      },
+      "final_package": {
+        "allowed_to_escalate": false,
+        "thin_input_terminal_state": "blocked_evidence"
+      },
+      "portfolio": {
+        "allowed_to_escalate": false,
+        "thin_input_terminal_state": "insufficient_data"
+      }
+    },
+    "rules": [
+      "Thin input must not become discovery, portfolio, breakthrough, design, acquisition, or package truth.",
+      "Placeholder terms such as additionalprop1 and string must block high-escalation routes.",
+      "Frontend may render the backend terminal state but may not override it.",
+      "Substantive raw input and evidence baskets are required before route escalation."
+    ],
+    "version": "v19.85.3"
+  },
+  "contract_path": "data\\evidence_governance\\thin_input_escalation_blocker.json",
+  "evaluation": {
+    "blocker_count": 0,
+    "blockers": [],
+    "status": "locked_clean",
+    "warning_count": 0,
+    "warnings": []
+  },
+  "generated_at": "2026-05-13T11:22:15.851710+00:00",
+  "inputs": {
+    "evidence_escalation_policy": "data\\evidence_governance\\evidence_escalation_policy.json",
+    "evidence_escalation_policy_present": true,
+    "route_specific_evidence_thresholds": "data\\evidence_governance\\route_specific_evidence_thresholds.json",
+    "route_specific_evidence_thresholds_present": true
+  },
+  "next_build": "v19.85.4 Evidence Gate Runtime Adapter",
+  "read_only": true,
+  "self_checks": {
+    "case_count": 4,
+    "failed_count": 0,
+    "results": [
+      {
+        "expected_terminal_state": "pending_evidence",
+        "name": "empty discovery",
+        "observed_terminal_state": "pending_evidence",
+        "passed": true,
+        "reasons": [
+          "empty_input",
+          "raw_input_too_short",
+          "token_count_too_low",
+          "unique_token_count_too_low",
+          "placeholder_ratio_too_high",
+          "specificity_score_too_low",
+          "semantic_density_score_too_low"
+        ],
+        "route_type": "discovery",
+        "status": "pending_evidence"
+      },
+      {
+        "expected_terminal_state": "blocked_evidence",
+        "name": "swagger placeholder breakthrough",
+        "observed_terminal_state": "blocked_evidence",
+        "passed": true,
+        "reasons": [
+          "raw_input_too_short",
+          "token_count_too_low",
+          "unique_token_count_too_low",
+          "placeholder_ratio_too_high",
+          "specificity_score_too_low",
+          "semantic_density_score_too_low"
+        ],
+        "route_type": "breakthrough",
+        "status": "blocked_thin_input"
+      },
+      {
+        "expected_terminal_state": "insufficient_data",
+        "name": "swagger placeholder portfolio",
+        "observed_terminal_state": "insufficient_data",
+        "passed": true,
+        "reasons": [
+          "raw_input_too_short",
+          "token_count_too_low",
+          "unique_token_count_too_low",
+          "placeholder_ratio_too_high",
+          "specificity_score_too_low",
+          "semantic_density_score_too_low"
+        ],
+        "route_type": "portfolio",
+        "status": "insufficient_input"
+      },
+      {
+        "expected_terminal_state": "candidate_ready",
+        "name": "substantive discovery",
+        "observed_terminal_state": "candidate_ready",
+        "passed": true,
+        "reasons": [],
+        "route_type": "discovery",
+        "status": "substantive_input"
+      }
+    ],
+    "status": "passed"
+  },
+  "version": "v19.85.3"
+}

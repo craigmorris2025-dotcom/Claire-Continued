@@ -1,0 +1,115 @@
+{
+  "items": [
+    {
+      "action": "AUDIT_BEFORE_ARCHIVE",
+      "path": "backend",
+      "reason": "backend folder exists but no backend imports were found in scanned Python files"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_clean_shell.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_clean_shell.js",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_dashboard_decongestion.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_dashboard_reset_v17_62_5.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_dashboard_reset_v17_62_5.js",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_operating_environment.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_operating_environment.js",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_overlap_fix.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_search_relocation.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_single_screen_operator.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_strategic_cockpit.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_strategic_cockpit.js",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_workspace_stack_fix.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/claire_workspace_stack_fix.js",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/internet_operations_dashboard.html",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/operator_dashboard.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/operator_dashboard.js",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/product_dashboard.css",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/command_center/modern/product_dashboard.js",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    },
+    {
+      "action": "DO_NOT_DELETE_YET",
+      "path": "frontend/internet_operations_dashboard/internet_operations_dashboard.html",
+      "reason": "dashboard conflict candidate for v17.64 audit"
+    }
+  ],
+  "rule": "No deletion until active launcher, dashboard, runtime truth, routes, tests, and rollback are proven."
+}

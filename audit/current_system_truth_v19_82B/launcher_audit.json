@@ -1,0 +1,44 @@
+{
+  "launcher_candidates": [
+    {
+      "path": "LAUNCH_CLAIRE.bat",
+      "size_bytes": 1794,
+      "mentions_uvicorn": false,
+      "mentions_main_app": false,
+      "mentions_cockpit_shell": true,
+      "mentions_frontend": true,
+      "mentions_port_8000": true,
+      "mentions_port_8765": false
+    },
+    {
+      "path": "audit_claire_current_system_truth_v19_82B.py",
+      "size_bytes": 14990,
+      "mentions_uvicorn": true,
+      "mentions_main_app": true,
+      "mentions_cockpit_shell": true,
+      "mentions_frontend": true,
+      "mentions_port_8000": true,
+      "mentions_port_8765": true
+    },
+    {
+      "path": "main.py",
+      "size_bytes": 424,
+      "mentions_uvicorn": true,
+      "mentions_main_app": true,
+      "mentions_cockpit_shell": false,
+      "mentions_frontend": false,
+      "mentions_port_8000": true,
+      "mentions_port_8765": false
+    },
+    {
+      "path": "safe_install_claire_version.py",
+      "size_bytes": 21191,
+      "mentions_uvicorn": false,
+      "mentions_main_app": false,
+      "mentions_cockpit_shell": false,
+      "mentions_frontend": true,
+      "mentions_port_8000": false,
+      "mentions_port_8765": false
+    }
+  ]
+}

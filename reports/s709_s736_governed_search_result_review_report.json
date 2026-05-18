@@ -1,0 +1,67 @@
+{
+  "build": "v19.89.8 S709-S736",
+  "installed_at": "2026-05-17T04:28:00+00:00",
+  "written_files": [
+    "claire/governance/governed_search_result_quarantine.py",
+    "claire/governance/governed_result_evidence_normalizer.py",
+    "claire/governance/governed_source_confidence_builder.py",
+    "claire/governance/governed_operator_review_actions.py",
+    "claire/api/governed_search_result_review_routes.py",
+    "tests/test_s709_s736_governed_search_result_review.py",
+    "frontend/cockpit/assets/claire_governed_search_result_review.js",
+    "frontend/cockpit/assets/claire_governed_search_result_review.css",
+    "reports/s709_s736_governed_search_result_review_report.json"
+  ],
+  "compiled_files": [
+    "claire/governance/governed_search_result_quarantine.py",
+    "claire/governance/governed_result_evidence_normalizer.py",
+    "claire/governance/governed_source_confidence_builder.py",
+    "claire/governance/governed_operator_review_actions.py",
+    "claire/api/governed_search_result_review_routes.py",
+    "tests/test_s709_s736_governed_search_result_review.py",
+    "claire/app.py"
+  ],
+  "app_registration": {
+    "attempted": true,
+    "registered": true,
+    "message": "route registration inserted before create_app return app"
+  },
+  "cockpit_assets_patched": [
+    "frontend\\cockpit\\shell\\cockpit_shell.html",
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "new_endpoints": [
+    "/api/search/results/quarantine/store",
+    "/api/search/results/quarantine/cards",
+    "/api/search/results/quarantine/status",
+    "/api/search/results/quarantine/payload",
+    "/api/search/results/normalize/cards",
+    "/api/search/results/normalize/payload",
+    "/api/search/results/normalize/status",
+    "/api/search/source-confidence/cards",
+    "/api/search/source-confidence/payload",
+    "/api/search/source-confidence/status",
+    "/api/search/operator-review/actions",
+    "/api/search/operator-review/payload",
+    "/api/search/operator-review/status",
+    "/api/cockpit/search-results/payload",
+    "/api/cockpit/search-results/cards",
+    "/api/cockpit/search-results/actions",
+    "/api/cockpit/search-results/status",
+    "/api/cockpit/search-results/stop-gate",
+    "/api/internet/search-results/payload"
+  ],
+  "blocked_capabilities_preserved": {
+    "live_web_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  }
+}

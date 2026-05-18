@@ -1,0 +1,10 @@
+{
+  "archive_before_modify": true,
+  "dashboards_patched": [
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "delete_policy": "delete_nothing",
+  "pack_name": "Pipeline Result Quality + Insufficient-Data + Blocked-State Proof Pack",
+  "pack_version": "v19.15-v19.19",
+  "pytest_command": "python -m pytest tests/test_v19_15_to_v19_19_pipeline_result_quality_blocked_state_pack.py -q"
+}

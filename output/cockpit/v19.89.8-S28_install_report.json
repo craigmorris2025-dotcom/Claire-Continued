@@ -1,0 +1,29 @@
+{
+  "version": "v19.89.8-S28",
+  "installed_at_utc": "2026-05-14T04:13:11.065755+00:00",
+  "status": "installed",
+  "safety_note": "S28 intentionally did not patch claire/app.py.",
+  "files_written": [
+    "claire\\api\\governed_operational_session_orchestration.py",
+    "frontend\\cockpit\\assets\\js\\governed_operational_session_orchestration.js",
+    "frontend\\cockpit\\assets\\css\\governed_operational_session_orchestration.css",
+    "tests\\test_governed_operational_session_orchestration_s28.py",
+    "docs\\build_notes\\v19.89.8-S28_governed_operational_session_orchestration.md",
+    "output\\cockpit\\v19.89.8-S28_install_report.json"
+  ],
+  "link_report": [
+    "linked S28 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S28 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_governed_operational_session_orchestration_s28.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "operator_mutation_enabled": false,
+    "runtime_mutation_enabled": false,
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

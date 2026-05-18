@@ -1,0 +1,35 @@
+{
+  "app_created": true,
+  "audited_at": "2026-05-18T22:37:40.077218+00:00",
+  "automatic_updates_allowed": false,
+  "autonomous_execution_allowed": false,
+  "body_reads_allowed": false,
+  "bootstrap_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "browser_execution_allowed": false,
+  "continuous_crawling_allowed": false,
+  "create_app_imported": true,
+  "expected_head_route": "/api/governed/live-probe/head",
+  "expected_status_route": "/api/governed/live-probe/status",
+  "found_head_route": true,
+  "found_status_route": true,
+  "manual_promotion_required": true,
+  "matched_routes": [
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "governed_live_probe_status",
+      "path": "/api/governed/live-probe/status"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "governed_live_probe_head",
+      "path": "/api/governed/live-probe/head"
+    }
+  ],
+  "quarantine_required": true,
+  "runtime_truth_mutation_allowed": false,
+  "version": "v19.89.8-S36R6-R8.1-bootstrap-fix"
+}

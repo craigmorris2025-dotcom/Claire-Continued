@@ -1,0 +1,51 @@
+{
+  "installer": "install_claire_v19_89_8_s352_s358_authoritative_import_contract_repair.py",
+  "started_at": "2026-05-16T17:02:45.405688Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "target_module": "claire\\api\\dashboard_live_visibility_smoke_s352_s358.py",
+  "mode": "authoritative_full_rewrite_plus_subprocess_exact_import_validation",
+  "exact_test_import_names": [
+    "build_live_dashboard_visibility_smoke_s352_s358",
+    "build_s352_payload_endpoint_visibility_smoke",
+    "build_s353_frontend_asset_visibility_smoke",
+    "build_s354_panel_content_projection_smoke",
+    "build_s355_action_disabled_smoke_proof",
+    "build_s356_no_fake_connected_state_proof",
+    "build_s357_dashboard_launch_readiness_summary",
+    "build_s358_stop_gate",
+    "register_s352_s358_dashboard_visibility_routes"
+  ],
+  "assets": [
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.css",
+      "written": true
+    }
+  ],
+  "module_backup": "backups\\v19_89_8_s352_s358_authoritative_import_contract_repair\\dashboard_live_visibility_smoke_s352_s358.py.20260516_170245.bak",
+  "module_written": true,
+  "module_size": 18981,
+  "pycache_removed": [
+    "claire\\api\\__pycache__\\dashboard_live_visibility_smoke_s352_s358.cpython-311.pyc"
+  ],
+  "module_compiled": true,
+  "missing_import_names_in_source_after_write": [],
+  "missing_import_names_in_runtime_after_import": [],
+  "subprocess_validation_returncode": 0,
+  "subprocess_validation_stdout": "S352-S358 exact import contract validation passed\n",
+  "subprocess_validation_stderr": "",
+  "fixed": "Authoritative full rewrite of S352-S358 module, with exact test import validation in a fresh Python subprocess. If pytest still reports the same missing import after this installer prints success, the command is running against a different project copy.",
+  "finished_at": "2026-05-16T17:02:45.525668Z"
+}

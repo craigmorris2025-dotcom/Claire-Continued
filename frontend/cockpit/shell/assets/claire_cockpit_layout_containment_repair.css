@@ -1,0 +1,313 @@
+/*
+Claire Syntalion v19.82B.12.1
+Cockpit Layout Containment Repair
+
+This file fixes cockpit shell overlap after v19.82B.10-B.12 surfaces were injected.
+It is presentation/layout only. It does not own runtime truth.
+*/
+
+:root {
+  --claire-cockpit-sidebar-width: 280px;
+  --claire-cockpit-sidebar-collapsed-width: 88px;
+  --claire-cockpit-shell-gap: 18px;
+  --claire-cockpit-safe-padding: 20px;
+  --claire-cockpit-max-content: 1680px;
+}
+
+/* Normalize cockpit sizing so injected panels cannot ignore the shell width. */
+html,
+body {
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+Known cockpit shell selectors are intentionally broad because prior builds used
+several shells/views. This repair reserves content space without changing runtime.
+*/
+body,
+.claire-cockpit-shell,
+.cockpit-shell,
+.enterprise-cockpit-shell,
+#claire-cockpit-shell,
+#cockpit-shell {
+  min-width: 0;
+}
+
+/* Main cockpit regions must not slide under fixed/absolute side navigation. */
+main,
+[role="main"],
+.claire-cockpit-main,
+.cockpit-main,
+.enterprise-cockpit-main,
+#claire-cockpit-main,
+#cockpit-main,
+.claire-main-display,
+#claire-main-display {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/*
+If the shell has a fixed sidebar or nav, reserve desktop space for main content.
+This is deliberately applied only on larger screens to avoid mobile compression.
+*/
+@media (min-width: 1024px) {
+  body:has(.sidebar),
+  body:has(.side-nav),
+  body:has(.cockpit-sidebar),
+  body:has(.claire-sidebar),
+  body:has(#sidebar),
+  body:has(#side-nav),
+  body:has(#claire-sidebar) {
+    --claire-detected-sidebar-width: var(--claire-cockpit-sidebar-width);
+  }
+
+  body:has(.sidebar) main,
+  body:has(.side-nav) main,
+  body:has(.cockpit-sidebar) main,
+  body:has(.claire-sidebar) main,
+  body:has(#sidebar) main,
+  body:has(#side-nav) main,
+  body:has(#claire-sidebar) main,
+  body:has(.sidebar) [role="main"],
+  body:has(.side-nav) [role="main"],
+  body:has(.cockpit-sidebar) [role="main"],
+  body:has(.claire-sidebar) [role="main"],
+  body:has(#sidebar) [role="main"],
+  body:has(#side-nav) [role="main"],
+  body:has(#claire-sidebar) [role="main"],
+  body:has(.sidebar) .claire-cockpit-main,
+  body:has(.side-nav) .claire-cockpit-main,
+  body:has(.cockpit-sidebar) .claire-cockpit-main,
+  body:has(.claire-sidebar) .claire-cockpit-main,
+  body:has(#sidebar) .claire-cockpit-main,
+  body:has(#side-nav) .claire-cockpit-main,
+  body:has(#claire-sidebar) .claire-cockpit-main,
+  body:has(.sidebar) #claire-cockpit-main,
+  body:has(.side-nav) #claire-cockpit-main,
+  body:has(.cockpit-sidebar) #claire-cockpit-main,
+  body:has(.claire-sidebar) #claire-cockpit-main,
+  body:has(#sidebar) #claire-cockpit-main,
+  body:has(#side-nav) #claire-cockpit-main,
+  body:has(#claire-sidebar) #claire-cockpit-main {
+    margin-left: max(var(--claire-detected-sidebar-width), env(safe-area-inset-left, 0px));
+    width: calc(100vw - var(--claire-detected-sidebar-width));
+    max-width: calc(100vw - var(--claire-detected-sidebar-width));
+    padding-left: var(--claire-cockpit-safe-padding);
+    padding-right: var(--claire-cockpit-safe-padding);
+  }
+}
+
+/*
+If the cockpit uses CSS grid/flex for the shell, force a valid two-zone layout.
+This prevents the sidebar from occupying the same grid cell as the panels.
+*/
+@media (min-width: 1024px) {
+  .claire-cockpit-shell,
+  .cockpit-shell,
+  .enterprise-cockpit-shell,
+  #claire-cockpit-shell,
+  #cockpit-shell {
+    display: grid;
+    grid-template-columns: minmax(72px, var(--claire-cockpit-sidebar-width)) minmax(0, 1fr);
+    gap: var(--claire-cockpit-shell-gap);
+    align-items: start;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .claire-cockpit-shell > main,
+  .cockpit-shell > main,
+  .enterprise-cockpit-shell > main,
+  #claire-cockpit-shell > main,
+  #cockpit-shell > main,
+  .claire-cockpit-shell > [role="main"],
+  .cockpit-shell > [role="main"],
+  .enterprise-cockpit-shell > [role="main"],
+  #claire-cockpit-shell > [role="main"],
+  #cockpit-shell > [role="main"] {
+    grid-column: 2;
+    min-width: 0;
+    margin-left: 0;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .claire-cockpit-shell > aside,
+  .cockpit-shell > aside,
+  .enterprise-cockpit-shell > aside,
+  #claire-cockpit-shell > aside,
+  #cockpit-shell > aside,
+  .claire-cockpit-shell > nav,
+  .cockpit-shell > nav,
+  .enterprise-cockpit-shell > nav,
+  #claire-cockpit-shell > nav,
+  #cockpit-shell > nav {
+    grid-column: 1;
+    max-width: var(--claire-cockpit-sidebar-width);
+    min-width: 0;
+  }
+}
+
+/* Keep every v19.82B cockpit surface in the main content flow and away from nav. */
+#claire-source-universe-workspace,
+#claire-probe-review-bridge,
+#claire-discovery-candidate-surface,
+.claire-source-universe-workspace,
+.claire-probe-review-bridge,
+.claire-discovery-candidate-surface {
+  position: relative;
+  z-index: 1;
+  clear: both;
+  width: 100%;
+  max-width: min(100%, var(--claire-cockpit-max-content));
+  min-width: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Prevent internal grids from causing horizontal overflow. */
+.claire-su-grid,
+.claire-prb-grid,
+.claire-dcs-grid {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.claire-su-card,
+.claire-prb-card,
+.claire-dcs-card,
+.claire-su-detail,
+.claire-prb-content,
+.claire-dcs-content {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Long JSON payloads must scroll inside cards, not push underneath the sidebar. */
+.claire-source-universe-workspace pre,
+.claire-probe-review-bridge pre,
+.claire-discovery-candidate-surface pre,
+.claire-source-universe-workspace code,
+.claire-probe-review-bridge code,
+.claire-discovery-candidate-surface code {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Header action rows wrap instead of colliding with nav or cards. */
+.claire-su-header,
+.claire-prb-header,
+.claire-dcs-header {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.claire-su-actions,
+.claire-prb-actions,
+.claire-dcs-actions {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/*
+Fallback containment for browsers/environments where :has() behavior varies.
+The JS companion adds this class when it detects sidebar/nav elements.
+*/
+@media (min-width: 1024px) {
+  body.claire-has-sidebar-nav main,
+  body.claire-has-sidebar-nav [role="main"],
+  body.claire-has-sidebar-nav .claire-cockpit-main,
+  body.claire-has-sidebar-nav #claire-cockpit-main,
+  body.claire-has-sidebar-nav .cockpit-main,
+  body.claire-has-sidebar-nav #cockpit-main,
+  body.claire-has-sidebar-nav .claire-main-display,
+  body.claire-has-sidebar-nav #claire-main-display {
+    margin-left: var(--claire-cockpit-sidebar-width);
+    width: calc(100vw - var(--claire-cockpit-sidebar-width));
+    max-width: calc(100vw - var(--claire-cockpit-sidebar-width));
+    padding-left: var(--claire-cockpit-safe-padding);
+    padding-right: var(--claire-cockpit-safe-padding);
+  }
+
+  body.claire-grid-shell-detected main,
+  body.claire-grid-shell-detected [role="main"],
+  body.claire-grid-shell-detected .claire-cockpit-main,
+  body.claire-grid-shell-detected #claire-cockpit-main {
+    margin-left: 0;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+/* Tablet and mobile: collapse to a clean stacked portal and avoid sidebar overlay. */
+@media (max-width: 1023px) {
+  .claire-cockpit-shell,
+  .cockpit-shell,
+  .enterprise-cockpit-shell,
+  #claire-cockpit-shell,
+  #cockpit-shell {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  main,
+  [role="main"],
+  .claire-cockpit-main,
+  .cockpit-main,
+  .enterprise-cockpit-main,
+  #claire-cockpit-main,
+  #cockpit-main,
+  .claire-main-display,
+  #claire-main-display {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  #claire-source-universe-workspace,
+  #claire-probe-review-bridge,
+  #claire-discovery-candidate-surface,
+  .claire-source-universe-workspace,
+  .claire-probe-review-bridge,
+  .claire-discovery-candidate-surface {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Very narrow screens: reduce card padding and force one-column internals. */
+@media (max-width: 760px) {
+  .claire-source-universe-workspace,
+  .claire-probe-review-bridge,
+  .claire-discovery-candidate-surface {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .claire-su-metrics,
+  .claire-prb-metrics,
+  .claire-dcs-metrics {
+    grid-template-columns: 1fr !important;
+  }
+
+  .claire-su-header,
+  .claire-prb-header,
+  .claire-dcs-header {
+    gap: 12px;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "version": "v18.73.1",
+  "name": "Operator Dashboard Legacy Endpoint Compatibility Repair",
+  "scope": [
+    "repair dashboard 404s for /operator/search/capabilities",
+    "repair dashboard 404s for /operator/dashboard/state",
+    "add compatibility aliases for /operator/search routes",
+    "preserve canonical /api/dashboard/search routes",
+    "patch dashboard file-origin bridge to route /operator paths to localhost:8000",
+    "wrap active launcher create_app to mount compatibility routes",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve no uncontrolled browsing"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_73_1_operator_dashboard_compat_endpoint_repair.py -q"
+  ]
+}

@@ -1,0 +1,503 @@
+{
+  "backend_owns_truth": true,
+  "build": "Cockpit Canonical Fetch Map",
+  "cockpit_owns_presentation_only": true,
+  "evaluation": {
+    "blocker_count": 0,
+    "blockers": [],
+    "status": "review_required",
+    "warning_count": 17,
+    "warnings": [
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/dashboard/alignment/buttons"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/runtime/continuous/start"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/runtime/continuous/pause"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/runs/latest"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/system/cockpit-truth"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/>\n        <path d="
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/operator/dashboard/state"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/exports/index.json"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/api/dashboard/search/live"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/api/dashboard/state"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/health"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/api/commands"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/api/feeds/live-source-catalog/health-check"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/api/feeds/public-company-live/status"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/api/command"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/api/platform/status"
+      },
+      {
+        "reason": "frontend_route_not_in_canonical_registry",
+        "recommended_action": "Map route into canonical backend registry or remove cockpit dependency.",
+        "route": "/api/platform/resolve"
+      }
+    ]
+  },
+  "fetch_reference_count": 33,
+  "generated_at": "2026-05-12T15:13:49.794433+00:00",
+  "mapped_route_count": 23,
+  "mapping": {
+    "/>\n        <path d=": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 2,
+      "frontend_references": [
+        {
+          "file": "frontend\\command_center\\modern\\claire_dashboard_reset_v17_62_5.js",
+          "line": 68,
+          "route": "/>\n        <path d="
+        },
+        {
+          "file": "frontend\\command_center\\modern\\claire_dashboard_search.js",
+          "line": 70,
+          "route": "/>\n        <path d="
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/api/command": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\js\\api.js",
+          "line": 14,
+          "route": "/api/command"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/api/commands": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\export_dashboard\\dashboard.js",
+          "line": 11,
+          "route": "/api/commands"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/api/dashboard/search/live": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 2,
+      "frontend_references": [
+        {
+          "file": "frontend\\command_center\\modern\\governed_live_search_ui_binding.js",
+          "line": 3,
+          "route": "/api/dashboard/search/live"
+        },
+        {
+          "file": "frontend\\command_center\\modern\\operator_dashboard.js",
+          "line": 65,
+          "route": "/api/dashboard/search/live"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/api/dashboard/state": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\command_center\\modern\\modern_dashboard.js",
+          "line": 1,
+          "route": "/api/dashboard/state"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/api/feeds/live-source-catalog/health-check": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\export_dashboard\\dashboard.js",
+          "line": 1025,
+          "route": "/api/feeds/live-source-catalog/health-check"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/api/feeds/public-company-live/status": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\export_dashboard\\dashboard.js",
+          "line": 1030,
+          "route": "/api/feeds/public-company-live/status"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/api/platform/resolve": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\js\\platform.js",
+          "line": 89,
+          "route": "/api/platform/resolve"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/api/platform/status": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\js\\platform.js",
+          "line": 10,
+          "route": "/api/platform/status"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/dashboard/alignment/buttons": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\claire_dashboard_actions.js",
+          "line": 3,
+          "route": "/dashboard/alignment/buttons"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/dashboard/payload": {
+      "canonical_owner": "backend.enterprise_cockpit_payload_bridge",
+      "cockpit_role": "presentation_only",
+      "frontend_reference_count": 3,
+      "frontend_references": [
+        {
+          "file": "frontend\\cockpit\\assets\\enterprise_cockpit_workspace_shell.js",
+          "line": 258,
+          "route": "/dashboard/payload"
+        },
+        {
+          "file": "frontend\\cockpit\\runtime\\runtime_payload_gate.js",
+          "line": 10,
+          "route": "/dashboard/payload"
+        },
+        {
+          "file": "frontend\\cockpit\\shell\\assets\\claire_authored_enterprise_cockpit_shell.js",
+          "line": 48,
+          "route": "/dashboard/payload"
+        }
+      ],
+      "registered": true,
+      "status": "canonical",
+      "truth_owner": "backend"
+    },
+    "/dashboard/payload/status": {
+      "canonical_owner": "backend.enterprise_cockpit_payload_status",
+      "cockpit_role": "presentation_only",
+      "frontend_reference_count": 2,
+      "frontend_references": [
+        {
+          "file": "frontend\\cockpit\\assets\\enterprise_cockpit_workspace_shell.js",
+          "line": 241,
+          "route": "/dashboard/payload/status"
+        },
+        {
+          "file": "frontend\\cockpit\\shared\\payload_adapter.js",
+          "line": 2,
+          "route": "/dashboard/payload/status"
+        }
+      ],
+      "registered": true,
+      "status": "canonical",
+      "truth_owner": "backend"
+    },
+    "/exports/index.json": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\command_center\\modern\\claire_operating_environment.js",
+          "line": 1100,
+          "route": "/exports/index.json"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/health": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\command_center\\modern\\product_dashboard.js",
+          "line": 15,
+          "route": "/health"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/operator/dashboard/state": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\command_center\\modern\\claire_functional_operator_dashboard.js",
+          "line": 1,
+          "route": "/operator/dashboard/state"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/runs/latest": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\cockpit\\assets\\enterprise_cockpit_workspace_shell.js",
+          "line": 268,
+          "route": "/runs/latest"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/runs/start": {
+      "canonical_owner": "backend.enterprise_runtime_runs_backend",
+      "cockpit_role": "operator_command",
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\cockpit\\assets\\enterprise_cockpit_actions.js",
+          "line": 2,
+          "route": "/runs/start"
+        }
+      ],
+      "registered": true,
+      "status": "canonical",
+      "truth_owner": "backend"
+    },
+    "/runtime/continuous/pause": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\cockpit\\assets\\enterprise_cockpit_continuous_runtime.js",
+          "line": 90,
+          "route": "/runtime/continuous/pause"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/runtime/continuous/review-queue": {
+      "canonical_owner": "backend.continuous_intelligence_review_queue",
+      "cockpit_role": "presentation_only",
+      "frontend_reference_count": 4,
+      "frontend_references": [
+        {
+          "file": "frontend\\cockpit\\assets\\enterprise_cockpit_continuous_runtime.js",
+          "line": 49,
+          "route": "/runtime/continuous/review-queue"
+        },
+        {
+          "file": "frontend\\cockpit\\assets\\enterprise_cockpit_workspace_shell.js",
+          "line": 280,
+          "route": "/runtime/continuous/review-queue"
+        },
+        {
+          "file": "frontend\\cockpit\\shell\\assets\\claire_discovery_candidate_surface.js",
+          "line": 55,
+          "route": "/runtime/continuous/review-queue"
+        },
+        {
+          "file": "frontend\\cockpit\\shell\\assets\\claire_probe_review_queue_bridge.js",
+          "line": 52,
+          "route": "/runtime/continuous/review-queue"
+        }
+      ],
+      "registered": true,
+      "status": "canonical",
+      "truth_owner": "backend"
+    },
+    "/runtime/continuous/start": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 2,
+      "frontend_references": [
+        {
+          "file": "frontend\\cockpit\\assets\\enterprise_cockpit_continuous_runtime.js",
+          "line": 69,
+          "route": "/runtime/continuous/start"
+        },
+        {
+          "file": "frontend\\cockpit\\shell\\assets\\claire_authored_enterprise_cockpit_shell.js",
+          "line": 174,
+          "route": "/runtime/continuous/start"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/runtime/continuous/status": {
+      "canonical_owner": "backend.continuous_intelligence_runtime_status",
+      "cockpit_role": "presentation_only",
+      "frontend_reference_count": 2,
+      "frontend_references": [
+        {
+          "file": "frontend\\cockpit\\assets\\enterprise_cockpit_continuous_runtime.js",
+          "line": 2,
+          "route": "/runtime/continuous/status"
+        },
+        {
+          "file": "frontend\\cockpit\\assets\\enterprise_cockpit_workspace_shell.js",
+          "line": 274,
+          "route": "/runtime/continuous/status"
+        }
+      ],
+      "registered": true,
+      "status": "canonical",
+      "truth_owner": "backend"
+    },
+    "/system/cockpit-truth": {
+      "canonical_owner": null,
+      "cockpit_role": null,
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\cockpit\\shell\\assets\\claire_active_route_truth_panel.js",
+          "line": 8,
+          "route": "/system/cockpit-truth"
+        }
+      ],
+      "registered": false,
+      "status": "unregistered",
+      "truth_owner": null
+    },
+    "/universes": {
+      "canonical_owner": "backend.source_universe_backend",
+      "cockpit_role": "presentation_only",
+      "frontend_reference_count": 1,
+      "frontend_references": [
+        {
+          "file": "frontend\\cockpit\\shell\\assets\\claire_source_universe_workspace.js",
+          "line": 54,
+          "route": "/universes"
+        }
+      ],
+      "registered": true,
+      "status": "canonical",
+      "truth_owner": "backend"
+    }
+  },
+  "next_build": "v19.84.9 Cockpit Binding Lock",
+  "read_only": true,
+  "truth_risk_count": 0,
+  "truth_risks": [],
+  "version": "v19.84.8"
+}

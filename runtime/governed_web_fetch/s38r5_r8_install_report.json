@@ -1,0 +1,19 @@
+{
+  "automatic_updates_allowed": false,
+  "autonomous_execution_allowed": false,
+  "installed_at": "2026-05-14T18:43:16.084319+00:00",
+  "installed_files": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\s38_build_quarantined_evidence_basket.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\s38_extract_structured_knowledge.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s38r5_r8_evidence_basket_extraction.py"
+  ],
+  "manual_promotion_required": true,
+  "next_commands_after_s38_fetch": [
+    "python tools/s38_build_quarantined_evidence_basket.py",
+    "python tools/s38_extract_structured_knowledge.py"
+  ],
+  "quarantine_required": true,
+  "runtime_truth_mutation_allowed": false,
+  "version": "v19.89.8-S38R5-R8-evidence-basket-extraction",
+  "web_fetch_executed_during_install": false
+}

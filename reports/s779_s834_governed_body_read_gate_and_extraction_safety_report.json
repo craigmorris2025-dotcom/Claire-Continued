@@ -1,0 +1,65 @@
+{
+  "build": "v19.89.8 S779-S834",
+  "installed_at": "2026-05-17T04:48:26+00:00",
+  "written_files": [
+    "claire/governance/governed_body_read_authorization.py",
+    "claire/governance/governed_extraction_scope_contract.py",
+    "claire/governance/governed_content_safety_sanitizer.py",
+    "claire/governance/governed_manual_body_read_gate.py",
+    "claire/api/governed_body_read_gate_routes.py",
+    "tests/test_s779_s834_governed_body_read_gate_and_extraction_safety.py",
+    "frontend/cockpit/assets/claire_governed_body_read_gate.js",
+    "frontend/cockpit/assets/claire_governed_body_read_gate.css",
+    "reports/s779_s834_governed_body_read_gate_and_extraction_safety_report.json"
+  ],
+  "compiled_files": [
+    "claire/governance/governed_body_read_authorization.py",
+    "claire/governance/governed_extraction_scope_contract.py",
+    "claire/governance/governed_content_safety_sanitizer.py",
+    "claire/governance/governed_manual_body_read_gate.py",
+    "claire/api/governed_body_read_gate_routes.py",
+    "tests/test_s779_s834_governed_body_read_gate_and_extraction_safety.py",
+    "claire/app.py"
+  ],
+  "app_registration": {
+    "attempted": true,
+    "registered": true,
+    "message": "route registration inserted before create_app return app"
+  },
+  "cockpit_assets_patched": [
+    "frontend\\cockpit\\shell\\cockpit_shell.html",
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "new_endpoints": [
+    "/api/web/body-read/authorization/payload",
+    "/api/web/body-read/authorization/cards",
+    "/api/web/body-read/authorization/actions",
+    "/api/web/body-read/extraction-scope/contract",
+    "/api/web/body-read/extraction-scope/cards",
+    "/api/web/body-read/sanitizer/payload",
+    "/api/web/body-read/sanitizer/classify",
+    "/api/web/body-read/manual-gate/preflight",
+    "/api/web/body-read/manual-gate/payload",
+    "/api/web/body-read/manual-gate/stop-gate",
+    "/api/cockpit/body-read-gate/payload",
+    "/api/cockpit/body-read-gate/cards",
+    "/api/cockpit/body-read-gate/actions",
+    "/api/cockpit/body-read-gate/status",
+    "/api/cockpit/body-read-gate/stop-gate",
+    "/api/internet/body-read-gate/payload"
+  ],
+  "blocked_capabilities_preserved": {
+    "live_web_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "body_read_performed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  }
+}

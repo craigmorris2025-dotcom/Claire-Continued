@@ -1,0 +1,19 @@
+{
+  "authority": {
+    "automatic_updates": false,
+    "autonomous_execution": false,
+    "browser_execution": false,
+    "continuous_live_crawling": false,
+    "javascript_execution": false,
+    "runtime_truth_mutation": false
+  },
+  "files": [
+    "claire/__init__.py",
+    "claire/api/__init__.py",
+    "claire/api/operator_read_only_router.py",
+    "claire/api/operator_router_include_adapter.py"
+  ],
+  "installed_at": "2026-05-14T22:23:21.054756+00:00",
+  "repair": "writes operator_read_only_router and operator_router_include_adapter with package guards",
+  "version": "v19.89.8-S42-FULL-IMPORT-REPAIR"
+}

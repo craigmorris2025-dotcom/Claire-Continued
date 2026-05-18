@@ -1,0 +1,69 @@
+{
+  "approval_template": "data/cleanup/approved_archive_moves_template.json",
+  "archive_execution_allowed_by_installer": false,
+  "blockers": [],
+  "candidate_counts": {
+    "archive_review_candidates": 0,
+    "blocked_from_approval": 0,
+    "eligible_for_approval": 0
+  },
+  "contract_name": "Archive Approval Gate + Safe Archive Executor Prepared",
+  "delete_allowed": false,
+  "execution_enabled_now": false,
+  "execution_lock": {
+    "approval_file": "data/cleanup/approved_archive_moves_template.json",
+    "archive_execution_enabled": false,
+    "automatic_execution_enabled": false,
+    "delete_enabled": false,
+    "execution_default": "locked",
+    "generated_at": "2026-05-13T11:20:32.934037Z",
+    "post_archive_proofs_required": [
+      "python -m pytest tests/test_v17_76_platform_endpoint_smoke_proof.py -q",
+      "python -m pytest tests/test_v17_78_desktop_packaging_startup_reliability.py -q",
+      "START_CLAIRE_SAFE.bat",
+      "VERIFY_CLAIRE_STARTUP.bat"
+    ],
+    "required_confirm_text": "ARCHIVE APPROVED",
+    "rules": {
+      "desktop_startup_required_after_move": true,
+      "endpoint_smoke_required_after_move": true,
+      "forbidden_prefixes_blocked": true,
+      "move_only_no_delete": true,
+      "operator_approval_required": true,
+      "protected_paths_blocked": true,
+      "rollback_by_move_back_required": true
+    },
+    "version": "v17.82"
+  },
+  "generated_at": "2026-05-13T11:20:32.935039Z",
+  "recommendation": "Review approved_archive_moves_template.json. Do not execute moves until explicit approval and post-move proof plan are ready.",
+  "required_post_archive_proofs": [
+    "python -m pytest tests/test_v17_76_platform_endpoint_smoke_proof.py -q",
+    "python -m pytest tests/test_v17_78_desktop_packaging_startup_reliability.py -q",
+    "START_CLAIRE_SAFE.bat",
+    "VERIFY_CLAIRE_STARTUP.bat"
+  ],
+  "sources": {
+    "archive_plan": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/cleanup/archive_plan_do_not_execute.json",
+      "status": "loaded"
+    },
+    "cleanup_report": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/cleanup/cleanup_proof_before_archive_delete.json",
+      "status": "loaded"
+    },
+    "launch_candidate_freeze": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/launch_candidate/v17_80_launch_candidate_freeze.json",
+      "status": "loaded"
+    },
+    "protected_conflict_report": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/cleanup/protected_path_conflict_report.json",
+      "status": "loaded"
+    }
+  },
+  "status": "ARCHIVE_APPROVAL_READY_NO_EXECUTION",
+  "version": "v17.82",
+  "warnings": [
+    "no_archive_review_candidates_found"
+  ]
+}

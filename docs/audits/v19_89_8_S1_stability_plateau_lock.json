@@ -1,0 +1,34 @@
+{
+  "version": "v19.89.8-S1",
+  "build": "Stability Plateau Lock",
+  "timestamp": "2026-05-14T00:31:15.312144+00:00",
+  "changes": [
+    "Wrote LAUNCH_CLAIRE_RESTORED_WORKING.bat",
+    "Wrote LAUNCH_CLAIRE.bat",
+    "Wrote LAUNCH_CLAIRE_VISIBLE_DASHBOARD.bat",
+    "Wrote docs/audits/v19_89_8_S1_stability_plateau_lock.md"
+  ],
+  "warnings": [],
+  "runtime_authority_expanded": false,
+  "safe_to_expand_runtime_authority": false,
+  "beacon_middleware_experiments": "stopped",
+  "launcher_mode": "visible_dashboard_file_shell_with_backend_running",
+  "checks": {
+    "claire_app_py": {
+      "exists": true,
+      "syntax_ok": true,
+      "error": null
+    },
+    "claire_api_server_py": {
+      "exists": true,
+      "syntax_ok": false,
+      "error": "unterminated string literal (detected at line 69) at line 69"
+    },
+    "main_py": {
+      "exists": true,
+      "syntax_ok": true,
+      "error": null
+    },
+    "cockpit_shell_exists": true
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "version": "v19.89.8-S471-S477",
+  "phase": "S471-S477",
+  "stage_version": "S477",
+  "status": "claire_knowledge_base_registry_passed",
+  "ready": true,
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "created_at": "2026-05-17T00:54:19.302564+00:00",
+  "runtime_mutation_enabled": false,
+  "runtime_truth_mutation_allowed": false,
+  "runtime_truth_write_allowed": false,
+  "automatic_updates_enabled": false,
+  "autonomous_crawling_enabled": false,
+  "autonomous_execution_enabled": false,
+  "autonomous_agent_execution_enabled": false,
+  "live_web_execution_enabled": false,
+  "browser_execution_enabled": false,
+  "network_request_performed": false,
+  "body_read_allowed": false,
+  "ok": true,
+  "checks": {
+    "s471_registry_has_enough_documents": true,
+    "s472_ontology_has_required_domains": true,
+    "s473_retrieval_returns_governance": true,
+    "s474_route_map_has_core_routes": true,
+    "s475_has_governing_trust_tier": true,
+    "s476_assets_exist": true,
+    "portfolio_search_finds_pipeline": true,
+    "update_search_finds_update_governance": true,
+    "registry_exports_evidence_sources": true
+  },
+  "sample_searches": {
+    "governance": {
+      "version": "v19.89.8-S471-S477",
+      "phase": "S471-S477",
+      "stage_version": "S473",
+      "status": "knowledge_registry_search_complete",
+      "ready": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "created_at": "2026-05-17T00:54:19.301563+00:00",
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false,
+      "query": "governance safety redline mode switching",
+      "domains": [
+        "governance",
+        "safety"
+      ],
+      "result_count": 6,
+      "results": [
+        {
+          "doc_id": "claire_governance_and_safety",
+          "title": "Claire AI Governance and Safety Documentation",
+          "trust_tier": "governing",
+          "score": 0.852,
+          "matched_tokens": [
+            "governance",
+            "safety",
+            "redline",
+            "mode",
+            "switching"
+          ],
+          "matched_domains": [
+            "governance",
+            "safety"
+          ],
+          "summary": "Defines Claire governance model, redline detection, compliance boundaries, oversight, intervention, mode-switching safety, and auditability.",
+          "route_anchors": [
+            "governance_gate",
+            "redline_review",
+            "mode_switching"
+          ],
+          "key_claims": [
+            "Governance overrides unsafe behavior.",
+            "Mode isolation and auditability are foundational.",
+            "Redline scenarios must block or require review."
+          ]
+        },
+        {
+          "doc_id": "claire_mode_switching_architecture",
+          "title": "Claire AI Mode Switching Architecture",
+          "trust_tier": "architectural",
+          "score": 0.692,
+          "matched_tokens": [
+            "governance",
+            "safety",
+            "mode",
+            "switching"
+          ],
+          "matched_domains": [
+            "governance",
+            "safety"
+          ],
+          "summary": "Defines explicit governed transitions between deterministic, connected, and hybrid modes.",
+          "route_anchors": [
+            "mode_switching",
+            "isolation_reset",
+            "governed_transition"
+          ],
+          "key_claims": [
+            "Claire never switches modes automatically.",
+            "Mode transitions require validation and governance checks."
+          ]
+        },
+        {
+          "doc_id": "claire_enterprise_update_governance",
+          "title": "Claire Enterprise Online Update Governance System",
+          "trust_tier": "governing",
+          "score": 0.582,
+          "matched_tokens": [
+            "governance",
+            "safety"
+          ],
+          "matched_domains": [
+            "governance",
+            "safety"
+          ],
+          "summary": "Defines safe online update discovery, inspection, scoring, staging, validation, rollback, approval, and refusal rules.",
+          "route_anchors": [
+            "online_update_readiness",
+            "staged_update",
+            "rollback",
+            "approval_gate"
+          ],
+          "key_claims": [
+            "Claire may discover and stage updates online but may not modify active runtime code without validation and approval.",
+            "Update flow must be zero-trust, rollback-capable, audit-aware, and regression-resistant."
+          ]
+        },
+        {
+          "doc_id": "claire_full_data_model_map",
+          "title": "Claire AI Full Data Model Map",
+          "trust_tier": "canonical",
+          "score": 0.53,
+          "matched_tokens": [
+            "governance",
+            "safety",
+            "mode"
+          ],
+          "matched_domains": [
+            "governance"
+          ],
+          "summary": "Defines Breakthrough Object, Portfolio Candidate Object, Portfolio Item, signal objects, score objects, safety objects, cluster objects, and mode state.",
+          "route_anchors": [
+            "bo",
+            "pco",
+            "portfolio_item",
+            "signal_objects",
+            "safety_objects"
+          ],
+          "key_claims": [
+            "Claire intelligence should use structured objects rather than untyped text blobs.",
+            "BO, PCO, and PI are key internal primitives."
+          ]
+        },
+        {
+          "doc_id": "claire_execution_flow_specification",
+          "title": "Claire AI Execution Flow Specification",
+          "trust_tier": "architectural",
+          "score": 0.522,
+          "matched_tokens": [
+            "governance",
+            "safety",
+            "mode"
+          ],
+          "matched_domains": [
+            "governance"
+          ],
+          "summary": "Defines mode initialization, ingestion, semantic processing, hybrid fusion, breakthrough detection, safety pre-validation, scoring, promotion, portfolio creation, and dashboard output.",
+          "route_anchors": [
+            "mode_initialization",
+            "scoring_validation",
+            "portfolio_creation",
+            "dashboard_output"
+          ],
+          "key_claims": [
+            "Safety and governance override every execution stage.",
+            "Connected and hybrid modes activate external ingestion only through governed pathways."
+          ]
+        },
+        {
+          "doc_id": "claire_subsystem_dependency_graph",
+          "title": "Claire AI Subsystem Dependency Graph",
+          "trust_tier": "architectural",
+          "score": 0.522,
+          "matched_tokens": [
+            "governance",
+            "safety",
+            "mode"
+          ],
+          "matched_domains": [
+            "governance"
+          ],
+          "summary": "Defines dependencies among deterministic engine, connected engine, semantic layer, ingestion layer, hybrid fusion, scoring, portfolio engine, and safety governance.",
+          "route_anchors": [
+            "dependency_graph",
+            "engine_activation",
+            "safety_layer"
+          ],
+          "key_claims": [
+            "Connected engine cannot run without the safety layer.",
+            "Breakthrough detection is the central convergence point."
+          ]
+        }
+      ]
+    },
+    "portfolio": {
+      "version": "v19.89.8-S471-S477",
+      "phase": "S471-S477",
+      "stage_version": "S473",
+      "status": "knowledge_registry_search_complete",
+      "ready": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "created_at": "2026-05-17T00:54:19.301563+00:00",
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false,
+      "query": "portfolio trend discovery thesis route",
+      "domains": [
+        "portfolio",
+        "trend_discovery"
+      ],
+      "result_count": 6,
+      "results": [
+        {
+          "doc_id": "claire_core_pipeline_architecture",
+          "title": "Core Pipeline Architecture",
+          "trust_tier": "canonical",
+          "score": 0.84,
+          "matched_tokens": [
+            "portfolio",
+            "trend",
+            "discovery",
+            "thesis",
+            "route"
+          ],
+          "matched_domains": [
+            "portfolio",
+            "trend_discovery"
+          ],
+          "summary": "Defines inputs, signal governance, trend discovery, thesis formation, portfolio creation, breakthrough escalation, advancement routing, lifecycle memory, and recursive self-ingestion.",
+          "route_anchors": [
+            "signal_to_thesis",
+            "portfolio_path",
+            "breakthrough_gate",
+            "recursive_memory"
+          ],
+          "key_claims": [
+            "Portfolio action is the normal early path.",
+            "Breakthrough escalation selects the correct downstream route.",
+            "Lifecycle memory enables stronger future runs."
+          ]
+        },
+        {
+          "doc_id": "claire_master_system_build_plan",
+          "title": "Claire Master System Build Plan - Singularity-Aligned Edition",
+          "trust_tier": "governing",
+          "score": 0.772,
+          "matched_tokens": [
+            "portfolio",
+            "trend",
+            "discovery",
+            "thesis",
+            "route"
+          ],
+          "matched_domains": [
+            "portfolio"
+          ],
+          "summary": "Master governing document defining Claire as a recursive trend-discovery, portfolio-construction, breakthrough-escalation, system-transformation, and acquisition-readiness platform.",
+          "route_anchors": [
+            "signal_to_portfolio",
+            "breakthrough_escalation",
+            "final_package",
+            "recursive_self_ingestion"
+          ],
+          "key_claims": [
+            "Claire's root system is signal governance to trend discovery to thesis formation to portfolio creation or optimization.",
+            "Breakthrough escalation is conditional and governed.",
+            "Auto invention and design output are route-dependent."
+          ]
+        },
+        {
+          "doc_id": "claire_connected_intelligence_mode",
+          "title": "Claire Connected Intelligence Mode",
+          "trust_tier": "architectural",
+          "score": 0.602,
+          "matched_tokens": [
+            "portfolio",
+            "trend",
+            "discovery"
+          ],
+          "matched_domains": [
+            "portfolio",
+            "trend_discovery"
+          ],
+          "summary": "Defines Claire's live market-aware intelligence mode with governed technology, market, competitor, regulatory, and acquisition signals.",
+          "route_anchors": [
+            "live_signal_ingestion",
+            "real_time_scanning",
+            "connected_intelligence"
+          ],
+          "key_claims": [
+            "Connected mode uses governed external signal ingestion.",
+            "Connected mode supports real-time strategic intelligence and dynamic portfolio optimization."
+          ]
+        },
+        {
+          "doc_id": "claire_branching_master_pipeline",
+          "title": "Branching Master Pipeline",
+          "trust_tier": "canonical",
+          "score": 0.58,
+          "matched_tokens": [
+            "portfolio",
+            "thesis",
+            "route"
+          ],
+          "matched_domains": [
+            "portfolio"
+          ],
+          "summary": "Defines split paths for market/portfolio intelligence and breakthrough/design intelligence after thesis formation.",
+          "route_anchors": [
+            "portfolio_path",
+            "breakthrough_design_path",
+            "final_package"
+          ],
+          "key_claims": [
+            "Market and portfolio routes do not require full invention routing.",
+            "Breakthrough/design paths continue through buildability, viability, manufacturability, and feasibility."
+          ]
+        },
+        {
+          "doc_id": "claire_unified_platform_definition_v1",
+          "title": "Claire Syntalion Unified Platform Definition v1",
+          "trust_tier": "governing",
+          "score": 0.502,
+          "matched_tokens": [
+            "portfolio",
+            "route"
+          ],
+          "matched_domains": [
+            "portfolio"
+          ],
+          "summary": "Current compact platform definition consolidating Claire identity, specs, operations, functionality, governance, lifecycle, and roadmap.",
+          "route_anchors": [
+            "all_routes",
+            "operator_reference"
+          ],
+          "key_claims": [
+            "Claire is a governed lifecycle intelligence platform.",
+            "The 30-stage lifecycle is canonical.",
+            "Q&A should be intelligence-routed and evidence-aware."
+          ]
+        },
+        {
+          "doc_id": "claire_breakthrough_categories",
+          "title": "Breakthrough Categories",
+          "trust_tier": "canonical",
+          "score": 0.49,
+          "matched_tokens": [
+            "portfolio",
+            "route"
+          ],
+          "matched_domains": [
+            "portfolio"
+          ],
+          "summary": "Defines broad breakthrough categories across technology, market, finance, operations, regulation, acquisition, system architecture, evidence, learning loops, and category creation.",
+          "route_anchors": [
+            "breakthrough_classification",
+            "advancement_path_selection"
+          ],
+          "key_claims": [
+            "Breakthroughs are structural, not only technological.",
+            "Breakthrough classification can drive portfolio, strategy, acquisition, design, or system routes."
+          ]
+        }
+      ]
+    },
+    "update_governance": {
+      "version": "v19.89.8-S471-S477",
+      "phase": "S471-S477",
+      "stage_version": "S473",
+      "status": "knowledge_registry_search_complete",
+      "ready": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "created_at": "2026-05-17T00:54:19.302564+00:00",
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false,
+      "query": "online update rollback approval staged validation",
+      "domains": [
+        "update_governance"
+      ],
+      "result_count": 2,
+      "results": [
+        {
+          "doc_id": "claire_enterprise_update_governance",
+          "title": "Claire Enterprise Online Update Governance System",
+          "trust_tier": "governing",
+          "score": 0.862,
+          "matched_tokens": [
+            "online",
+            "update",
+            "rollback",
+            "approval",
+            "staged",
+            "validation"
+          ],
+          "matched_domains": [
+            "update_governance"
+          ],
+          "summary": "Defines safe online update discovery, inspection, scoring, staging, validation, rollback, approval, and refusal rules.",
+          "route_anchors": [
+            "online_update_readiness",
+            "staged_update",
+            "rollback",
+            "approval_gate"
+          ],
+          "key_claims": [
+            "Claire may discover and stage updates online but may not modify active runtime code without validation and approval.",
+            "Update flow must be zero-trust, rollback-capable, audit-aware, and regression-resistant."
+          ]
+        },
+        {
+          "doc_id": "claire_governance_and_safety",
+          "title": "Claire AI Governance and Safety Documentation",
+          "trust_tier": "governing",
+          "score": 0.412,
+          "matched_tokens": [
+            "update"
+          ],
+          "matched_domains": [
+            "update_governance"
+          ],
+          "summary": "Defines Claire governance model, redline detection, compliance boundaries, oversight, intervention, mode-switching safety, and auditability.",
+          "route_anchors": [
+            "governance_gate",
+            "redline_review",
+            "mode_switching"
+          ],
+          "key_claims": [
+            "Governance overrides unsafe behavior.",
+            "Mode isolation and auditability are foundational.",
+            "Redline scenarios must block or require review."
+          ]
+        }
+      ]
+    }
+  },
+  "evidence_source_count": 7,
+  "forward_motion_allowed": true,
+  "next_phase": "S478-S484 Market / research / engineering answer routes"
+}

@@ -1,0 +1,20 @@
+{
+  "automatic_updates_allowed": false,
+  "autonomous_execution_allowed": false,
+  "body_reads_allowed": false,
+  "browser_execution_allowed": false,
+  "continuous_crawling_allowed": false,
+  "installed_at": "2026-05-14T17:57:46.248353+00:00",
+  "installed_files": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\run_s36_first_live_operator_plateau.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s36r19_r22_first_live_operator_plateau.py"
+  ],
+  "live_network_execution_during_install": false,
+  "manual_promotion_required": true,
+  "metadata_only": true,
+  "operator_probe_still_manual": true,
+  "plateau_command": "python tools/run_s36_first_live_operator_plateau.py --url https://example.com --operator-ack YES",
+  "quarantine_required": true,
+  "runtime_truth_mutation_allowed": false,
+  "version": "v19.89.8-S36R19-R22-first-live-operator-plateau"
+}

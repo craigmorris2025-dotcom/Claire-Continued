@@ -1,0 +1,240 @@
+/*
+Claire Syntalion v19.82B.12
+Discovery Candidate Cockpit Surface styling.
+*/
+
+.claire-discovery-candidate-surface {
+  margin: 18px 0 28px;
+  padding: 22px;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.20);
+
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.10), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.08), transparent 26%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.99));
+
+  color: #e5eefc;
+}
+
+.claire-dcs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.claire-dcs-kicker {
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #7dd3fc;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.claire-dcs-header h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.9rem);
+  letter-spacing: -0.03em;
+}
+
+.claire-dcs-subtitle {
+  margin: 8px 0 0 0;
+  max-width: 860px;
+  color: #a8b7cc;
+  line-height: 1.5;
+}
+
+.claire-dcs-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.claire-dcs-button {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(15, 23, 42, 0.86);
+  color: #e5eefc;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.claire-dcs-button:hover {
+  border-color: rgba(125, 211, 252, 0.60);
+}
+
+.claire-dcs-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(420px, 1.35fr) minmax(320px, 1fr);
+  gap: 16px;
+}
+
+.claire-dcs-card {
+  min-height: 260px;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.claire-dcs-card-title {
+  margin-bottom: 12px;
+  color: #cbd5e1;
+  font-weight: 900;
+}
+
+.claire-dcs-empty {
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+.claire-dcs-warning,
+.claire-dcs-lock {
+  border-radius: 16px;
+  padding: 12px;
+  line-height: 1.45;
+}
+
+.claire-dcs-warning {
+  border: 1px solid rgba(251, 191, 36, 0.32);
+  background: rgba(251, 191, 36, 0.10);
+  color: #fde68a;
+}
+
+.claire-dcs-warning span {
+  display: block;
+  margin-top: 6px;
+  color: #cbd5e1;
+  font-size: 0.82rem;
+}
+
+.claire-dcs-lock {
+  margin-top: 14px;
+  border: 1px solid rgba(96, 165, 250, 0.30);
+  background: rgba(96, 165, 250, 0.10);
+  color: #bfdbfe;
+}
+
+.claire-dcs-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.claire-dcs-metrics div {
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 14px;
+  padding: 10px;
+  background: rgba(2, 6, 23, 0.38);
+}
+
+.claire-dcs-metrics span {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  margin-bottom: 4px;
+}
+
+.claire-dcs-metrics strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 0.96rem;
+}
+
+.claire-dcs-candidate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.claire-dcs-candidate-card {
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(2, 6, 23, 0.40);
+}
+
+.claire-dcs-candidate-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.claire-dcs-candidate-top strong {
+  color: #f8fafc;
+}
+
+.claire-dcs-candidate-top span {
+  color: #7dd3fc;
+  font-size: 0.82rem;
+}
+
+.claire-dcs-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.claire-dcs-pill-row span {
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  color: #bae6fd;
+  font-size: 0.78rem;
+}
+
+.claire-dcs-candidate-note {
+  margin-top: 10px;
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.claire-dcs-section {
+  margin-top: 14px;
+}
+
+.claire-dcs-section h4 {
+  margin: 0 0 8px 0;
+  color: #dbeafe;
+  font-size: 0.92rem;
+}
+
+.claire-dcs-section pre {
+  max-height: 240px;
+  overflow: auto;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.62);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  color: #cbd5e1;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.claire-dcs-lockline {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  color: #93c5fd;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 1180px) {
+  .claire-dcs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .claire-dcs-header {
+    flex-direction: column;
+  }
+
+  .claire-dcs-actions {
+    justify-content: flex-start;
+  }
+}

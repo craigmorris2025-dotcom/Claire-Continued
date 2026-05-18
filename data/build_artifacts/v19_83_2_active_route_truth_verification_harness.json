@@ -1,0 +1,30 @@
+{
+  "version": "v19.83.2",
+  "build_name": "Active Route Truth Verification Harness",
+  "installed_at": "2026-05-12T09:49:11.325035+00:00",
+  "created_or_updated": [
+    "claire\\routes\\active_route_truth_routes.py",
+    "frontend/cockpit/shell/assets/claire_active_route_truth_panel.js",
+    "frontend/cockpit/shell/assets/claire_active_route_truth_panel.css",
+    "tools/active_route_truth_verification.py",
+    "tests/test_v19_83_2_active_route_truth_verification_harness.py",
+    "data/build_artifacts/v19_83_2_active_route_truth_verification_harness.json"
+  ],
+  "patched": [
+    "claire\\app.py",
+    "frontend/cockpit/shell/cockpit_shell.html"
+  ],
+  "routes_added": [
+    "GET /system/route-truth",
+    "GET /system/route-truth/required",
+    "GET /system/cockpit-truth"
+  ],
+  "scope": [
+    "route truth verification",
+    "cockpit/backend synchronization proof",
+    "offline route audit",
+    "no runtime truth mutation",
+    "no fake candidates"
+  ],
+  "next_recommended_build": "v19.83.3 Single Payload Adapter Consolidation"
+}

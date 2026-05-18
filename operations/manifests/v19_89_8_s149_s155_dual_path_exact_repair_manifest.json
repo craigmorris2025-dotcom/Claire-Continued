@@ -1,0 +1,15 @@
+{
+  "version": "v19.89.8-S149-S155-dual-path-exact-repair",
+  "installed_at": "2026-05-15T18:29:30.577675+00:00",
+  "repair_only": true,
+  "reason_previous_repairs_failed": "pytest likely imported a shadow module from another package path such as src/claire/api instead of only claire/api",
+  "patched_files": [
+    "claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+    "src\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s149_s155_dual_path_exact_repair.py -q",
+    "pytest tests/test_s149_s155_live_payload_visibility.py -q",
+    "pytest"
+  ]
+}

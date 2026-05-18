@@ -1,0 +1,29 @@
+{
+  "installer": "install_claire_v19_89_8_s352_s358_modern_cockpit_asset_visibility_fix.py",
+  "started_at": "2026-05-16T16:41:31.163236Z",
+  "pytest_inside_installer": false,
+  "ok": false,
+  "target_module": "claire\\api\\dashboard_live_visibility_smoke_s352_s358.py",
+  "assets": [
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.css",
+      "written": true
+    }
+  ],
+  "module_backup": "backups\\v19_89_8_s352_s358_modern_cockpit_asset_visibility_fix\\dashboard_live_visibility_smoke_s352_s358.py.20260516_164131.bak",
+  "module_patched": true,
+  "error": "PyCompileError('  File \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\dashboard_live_visibility_smoke_s352_s358.py\", line 286\\n    from __future__ import annotations as _v19898_s352_annotations\\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nSyntaxError: from __future__ imports must occur at the beginning of the file\\n', 'SyntaxError', SyntaxError('from __future__ imports must occur at the beginning of the file', ('C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\dashboard_live_visibility_smoke_s352_s358.py', 286, 1, 'from __future__ import annotations as _v19898_s352_annotations\\n', 286, 63)), 'C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\dashboard_live_visibility_smoke_s352_s358.py')",
+  "finished_at": "2026-05-16T16:41:31.207236Z"
+}

@@ -1,0 +1,44 @@
+{
+  "installer": "install_claire_v19_89_8_s352_s358_visible_key_projection_contract_repair.py",
+  "started_at": "2026-05-16T17:10:07.824227Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "target_module": "claire\\api\\dashboard_live_visibility_smoke_s352_s358.py",
+  "mode": "full_rewrite_for_visible_key_checks_and_projection_contract",
+  "assets": [
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.css",
+      "written": true
+    }
+  ],
+  "module_backup": "backups\\v19_89_8_s352_s358_visible_key_projection_contract_repair\\dashboard_live_visibility_smoke_s352_s358.py.20260516_171007.bak",
+  "module_written": true,
+  "module_size": 22510,
+  "pycache_removed": [
+    "claire\\api\\__pycache__\\dashboard_live_visibility_smoke_s352_s358.cpython-311.pyc"
+  ],
+  "module_compiled": true,
+  "direct_checks": {
+    "visible_key_checks": true,
+    "projection_runtime_mutation_blocked": true,
+    "action_checks": true,
+    "stop_gate_state": true
+  },
+  "subprocess_validation_returncode": 0,
+  "subprocess_validation_stdout": "S352-S358 visible-key/projection contract validation passed\n",
+  "subprocess_validation_stderr": "",
+  "fixed": "Full S352-S358 rewrite with visible_key_checks and projection dict expected by tests.",
+  "finished_at": "2026-05-16T17:10:07.945226Z"
+}

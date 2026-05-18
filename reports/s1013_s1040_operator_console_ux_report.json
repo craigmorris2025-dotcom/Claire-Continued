@@ -1,0 +1,48 @@
+{
+  "stage_range": "S1013-S1040",
+  "status": "installed",
+  "app_registration": "registered",
+  "html_files_changed": [
+    "frontend\\cockpit\\shell\\cockpit_shell.html",
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "asset_loaders_changed": [
+    "frontend\\cockpit\\assets\\claire_cockpit_control_surface_force_mount.js",
+    "frontend\\cockpit\\assets\\claire_cockpit_operation_controls.js",
+    "frontend\\cockpit\\assets\\claire_cockpit_operation_visual_controls.js",
+    "frontend\\cockpit\\assets\\claire_cockpit_web_search_convergence.js",
+    "frontend\\cockpit\\assets\\claire_governed_body_read_gate.js",
+    "frontend\\cockpit\\assets\\claire_governed_body_read_to_source_ingestion.js",
+    "frontend\\cockpit\\assets\\claire_governed_controlled_metadata_search.js",
+    "frontend\\cockpit\\assets\\claire_governed_evidence_cards.js",
+    "frontend\\cockpit\\assets\\claire_governed_metadata_activation_preflight.js",
+    "frontend\\cockpit\\assets\\claire_governed_provider_capability_and_source_policy.js",
+    "frontend\\cockpit\\assets\\claire_governed_provider_readiness.js",
+    "frontend\\cockpit\\assets\\claire_governed_quarantine_and_metadata_results.js",
+    "frontend\\cockpit\\assets\\claire_governed_search_intake_and_query_compiler.js",
+    "frontend\\cockpit\\assets\\claire_governed_search_plan.js",
+    "frontend\\cockpit\\assets\\claire_governed_search_result_review.js",
+    "frontend\\cockpit\\assets\\claire_governed_source_gap_matrix.js",
+    "frontend\\cockpit\\assets\\claire_governed_source_registry.js",
+    "frontend\\cockpit\\assets\\claire_governed_web_search_body_read_planning.js",
+    "frontend\\cockpit\\assets\\enterprise_cockpit_actions.js",
+    "frontend\\cockpit\\assets\\enterprise_cockpit_continuous_runtime.js",
+    "frontend\\cockpit\\assets\\enterprise_cockpit_payload_map.js",
+    "frontend\\cockpit\\assets\\enterprise_cockpit_workspace_shell.js"
+  ],
+  "files_written": [
+    "claire/api/governed_operator_experience_routes.py",
+    "claire/governance/governed_operator_experience_console.py",
+    "frontend/cockpit/assets/claire_operator_experience_console.css",
+    "frontend/cockpit/assets/claire_operator_experience_console.js",
+    "reports/s1013_s1040_operator_console_ux_report.json",
+    "tests/test_s1013_s1040_operator_console_ux.py"
+  ],
+  "expected_visual_change": [
+    "Operator Command Console mounted near the command bar.",
+    "Primary user-facing buttons appear for search planning, source policy, provider inspection, metadata preview, and quarantine review.",
+    "Existing stage-labeled developer text is visually normalized by the cockpit JS.",
+    "Buttons return preview packets only; all dangerous authorities remain blocked."
+  ],
+  "blocked_authorities_preserved": true
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "run_20260512_120340_c123da4d",
+  "generated_at": "2026-05-12T12:03:40.509054+00:00",
+  "missing_evidence": [
+    {
+      "id": "source_universe_required",
+      "severity": "required",
+      "reason": "A source universe is required before signal governance can proceed.",
+      "suggested_action": "Select or create a governed source universe."
+    },
+    {
+      "id": "initial_signal_set_required",
+      "severity": "required",
+      "reason": "Initial signals are required before trend discovery can run.",
+      "suggested_action": "Run governed source probe or provide input signals."
+    }
+  ],
+  "policy": "missing_evidence_enrichment_before_failure"
+}

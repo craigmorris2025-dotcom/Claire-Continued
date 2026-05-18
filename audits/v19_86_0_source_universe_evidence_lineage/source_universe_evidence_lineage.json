@@ -1,0 +1,68 @@
+{
+  "contract": {
+    "backend_owns_truth": true,
+    "build": "Source Universe Evidence Lineage",
+    "cockpit_owns_presentation_only": true,
+    "generated_at": "2026-05-13T11:22:15.898710+00:00",
+    "lineage_flow": [
+      "source_universe",
+      "probe_request",
+      "probe_result",
+      "source_trust_score",
+      "evidence_item",
+      "evidence_basket",
+      "route_gate",
+      "review_queue"
+    ],
+    "rules": [
+      "Source universes provide evidence context, not runtime truth.",
+      "Every probe result must preserve source_universe_id.",
+      "Evidence baskets must preserve universe and probe lineage.",
+      "No direct promotion from source universe to runtime truth."
+    ],
+    "universes": {
+      "acquisition_targets": {
+        "allowed_routes": [
+          "portfolio",
+          "acquisition"
+        ],
+        "evidence_role": "buyer_fit_signal",
+        "label": "Acquisition Targets"
+      },
+      "existing_systems": {
+        "allowed_routes": [
+          "discovery",
+          "breakthrough",
+          "design",
+          "acquisition"
+        ],
+        "evidence_role": "system_decomposition_signal",
+        "label": "Existing Systems"
+      },
+      "market_intelligence": {
+        "allowed_routes": [
+          "discovery",
+          "portfolio",
+          "acquisition"
+        ],
+        "evidence_role": "market_signal",
+        "label": "Market Intelligence"
+      },
+      "technology_breakthroughs": {
+        "allowed_routes": [
+          "discovery",
+          "breakthrough",
+          "design"
+        ],
+        "evidence_role": "technology_signal",
+        "label": "Technology Breakthroughs"
+      }
+    },
+    "version": "v19.86.0"
+  },
+  "contract_path": "data\\source_universes\\source_universe_evidence_lineage.json",
+  "generated_at": "2026-05-13T11:22:15.899711+00:00",
+  "next_build": "v19.86.1 Source Probe Result Schema",
+  "read_only": true,
+  "version": "v19.86.0"
+}

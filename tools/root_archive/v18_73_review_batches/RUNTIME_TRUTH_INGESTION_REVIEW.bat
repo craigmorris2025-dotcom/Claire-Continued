@@ -1,0 +1,2 @@
+@echo off
+notepad data\runtime_truth\v17_86_runtime_truth_ingestion_stop_go.md

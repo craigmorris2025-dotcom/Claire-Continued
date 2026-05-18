@@ -1,0 +1,57 @@
+.claire-governed-update-readiness-demo-panel {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 14px;
+  margin: 14px 0;
+  background: rgba(7, 13, 24, 0.88);
+  box-shadow: 0 12px 42px rgba(0, 0, 0, 0.25);
+}
+
+.claire-readiness-demo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.claire-readiness-demo-header small,
+.claire-governed-update-readiness-demo-panel footer {
+  opacity: 0.7;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.claire-readiness-demo-body {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.claire-readiness-demo-card {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.058);
+}
+
+.claire-readiness-demo-topline,
+.claire-readiness-demo-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.claire-readiness-demo-topline span,
+.claire-readiness-demo-badges span {
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+}
+
+.claire-readiness-demo-card p {
+  line-height: 1.5;
+  margin: 10px 0;
+}

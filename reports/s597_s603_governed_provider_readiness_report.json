@@ -1,0 +1,65 @@
+{
+  "installer": "install_claire_v19_89_8_s597_s603_governed_provider_readiness.py",
+  "version": "v19.89.8-S597-S603",
+  "installed_at": "2026-05-17T03:18:12.080265+00:00",
+  "phase": "Governed Search Provider Readiness + Source Health Cards",
+  "created_or_replaced": [
+    "claire\\governance\\governed_provider_readiness.py",
+    "claire\\api\\governed_provider_readiness_routes.py",
+    "frontend\\cockpit\\assets\\claire_governed_provider_readiness.js",
+    "frontend\\cockpit\\assets\\claire_governed_provider_readiness.css",
+    "tests\\test_s597_s603_governed_provider_readiness.py"
+  ],
+  "app_patch": {
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "exists": true,
+    "patched": true,
+    "reason": "provider readiness router registration inserted"
+  },
+  "html_patches": [
+    {
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html",
+      "exists": true,
+      "patched": true,
+      "reason": "provider readiness cockpit assets linked"
+    },
+    {
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\index.html",
+      "exists": false,
+      "patched": false,
+      "reason": "html file not found"
+    },
+    {
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html",
+      "exists": true,
+      "patched": true,
+      "reason": "provider readiness cockpit assets linked"
+    }
+  ],
+  "endpoints": [
+    "/api/search/providers/readiness",
+    "/api/search/providers/cards",
+    "/api/search/providers/actions",
+    "/api/search/providers/policy",
+    "/api/search/providers/status",
+    "/api/search/providers/payload",
+    "/api/search/providers/stop-gate",
+    "/api/sources/providers/readiness",
+    "/api/sources/providers/cards",
+    "/api/sources/providers/actions"
+  ],
+  "blocked_flags_preserved": {
+    "live_web_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  },
+  "next_recommended_phase": "S604-S610 governed source gap matrix and search scope planner"
+}

@@ -1,0 +1,34 @@
+{
+  "contract_id": "dashboard_live_web_search_final_binding_contract",
+  "dashboard_currentness": {
+    "must_show_current_pack_status": true,
+    "must_show_live_search_panel": true,
+    "must_show_result_cards": true,
+    "pack_status": "v18.84 five-pack installed"
+  },
+  "governance": {
+    "delete_behavior": "no_delete",
+    "fail_closed_when_not_enabled": true,
+    "manual_enable_required_for_probe": true,
+    "read_only_search": true
+  },
+  "normal_dashboard_search": {
+    "endpoint": "/api/dashboard/search/live",
+    "expected_result_card": {
+      "title": "Google",
+      "url": "https://www.google.com"
+    },
+    "expected_smoke_query": "google",
+    "method": "GET_OR_POST_ADAPTER_ALLOWED",
+    "must_not_route_to_provider_probe": true,
+    "query_parameter": "q"
+  },
+  "provider_probe": {
+    "advanced_manual_only": true,
+    "display_label": "Provider Probe \u2014 Advanced / Manual",
+    "endpoint": "/api/dashboard/search/provider/probe",
+    "must_not_be_used_for_normal_dashboard_search": true,
+    "requires_explicit_enable": true
+  },
+  "version_range": "v18.80-v18.84"
+}

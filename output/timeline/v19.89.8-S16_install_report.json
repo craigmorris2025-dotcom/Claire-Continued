@@ -1,0 +1,24 @@
+{
+  "version": "v19.89.8-S16",
+  "installed_at_utc": "2026-05-14T02:25:53.293696+00:00",
+  "status": "installed",
+  "files_written": [
+    "frontend\\cockpit\\assets\\js\\governed_runtime_timeline.js",
+    "frontend\\cockpit\\assets\\css\\governed_runtime_timeline_s16.css",
+    "tests\\test_governed_runtime_timeline_s16.py",
+    "docs\\build_notes\\v19.89.8-S16_timeline_renderer_lock.md",
+    "output\\timeline\\v19.89.8-S16_install_report.json"
+  ],
+  "link_report": [
+    "linked S16 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "timeline JS already linked"
+  ],
+  "run_tests": "python -m pytest tests/test_governed_runtime_timeline_s16.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

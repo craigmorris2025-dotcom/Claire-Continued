@@ -1,0 +1,137 @@
+Audit: v19.89.8-current-import-failure-audit
+Created: 2026-05-15T19:27:34.887334+00:00
+Root: C:\Users\craig\OneDrive\Desktop\Claire
+Target exists: True
+Required imported names: build_cockpit_live_visibility_readiness, build_cockpit_payload_manifest, build_cockpit_payload_read_contract, build_dashboard_payload_visibility_contract, build_existing_payload_nonbreak_probe, build_governed_cockpit_payload_visibility_s149_s155, build_governed_operations_visibility_contract, build_live_payload_visibility_contract, build_live_payload_visibility_probe, build_payload_status_visibility_contract, build_repeated_payload_fetch_stability_probe, build_s149_s155_live_payload_visibility, build_s149_s155_stop_gate, dashboard_payload_visibility_fragment, get_governed_cockpit_payload_visibility_s149_s155, governed_operations_payload_fragment, live_payload_visibility_fragment, payload_status_visibility_fragment
+Missing names by static parse: build_payload_status_visibility_contract, payload_status_visibility_fragment
+
+Import attempts:
+- claire.api.governed_cockpit_payload_visibility_s149_s155: OK
+- claire.api.governed_live_fetch_validation_s170_s176: OK
+- claire.api.governed_dashboard_upgrade_s177_s183: OK
+
+pytest --collect-only returncode: 0
+--- stdout tail ---
+proposal_flow.py: 1
+tests/test_s205_s211_web_job_lifecycle.py: 1
+tests/test_s212_s218_dashboard_card_contracts.py: 1
+tests/test_s212_s218_operational_payload_adapter.py: 2
+tests/test_s212_s218_status_and_blocked_matrix.py: 2
+tests/test_s219_s225_action_cards_and_banners.py: 2
+tests/test_s219_s225_diagnostics_drawer.py: 1
+tests/test_s219_s225_frontend_presentation_schema.py: 2
+tests/test_s226_s232_render_safety_and_states.py: 2
+tests/test_s226_s232_shell_payload_assembler.py: 2
+tests/test_s226_s232_single_shell_readiness.py: 1
+tests/test_s233_s239_card_region_binding.py: 1
+tests/test_s233_s239_disabled_buttons_and_health.py: 2
+tests/test_s233_s239_fetch_map_contract.py: 1
+tests/test_s240_s246_static_shell_files.py: 3
+tests/test_s240_s246_static_shell_manifest.py: 2
+tests/test_s247_s253_endpoint_probe_and_render_contract.py: 2
+tests/test_s247_s253_route_handoff_and_launcher.py: 2
+tests/test_s247_s253_shell_js_state_renderer.py: 2
+tests/test_s254_s260_action_intents_and_workflow_cards.py: 2
+tests/test_s254_s260_governance_banners_and_readiness.py: 2
+tests/test_s254_s260_shell_workflow_binding_files.py: 3
+tests/test_s261_s267_export_and_audit_contracts.py: 2
+tests/test_s261_s267_review_and_job_contracts.py: 2
+tests/test_s261_s267_workflow_persistence_readiness.py: 1
+tests/test_s268_s274_dashboard_counts_and_readiness.py: 2
+tests/test_s268_s274_storage_adapter.py: 2
+tests/test_s275_s281_dashboard_count_payload.py: 2
+tests/test_s275_s281_operator_workflow_route_contracts.py: 1
+tests/test_s275_s281_readiness_string_repair.py: 1
+tests/test_s282_s288_count_binding_and_mount_readiness.py: 2
+tests/test_s282_s288_operator_workflow_handlers.py: 1
+tests/test_s289_s295_compat_repair_import_contracts.py: 1
+tests/test_s289_s295_safe_workflow_router_contract.py: 1
+tests/test_s28_governed_operational_session_orchestration.py: 3
+tests/test_s31r2_operational_expansion_dock.py: 2
+tests/test_s31r3_payload_attachment_reconciliation.py: 4
+tests/test_s31r4_safe_dashboard_payload_handoff.py: 4
+tests/test_s31r6_dashboard_payload_bridge_reconciliation.py: 4
+tests/test_s31r_cockpit_visibility_bridge.py: 3
+tests/test_s32r2r1_ast_bridge_web_safety_payload.py: 3
+tests/test_s32r2r2_runtime_route_owner_web_safety_payload.py: 2
+tests/test_s32r2r3_finalize_web_safety_payload.py: 2
+tests/test_s32r2r4_fresh_process_web_safety_payload.py: 2
+tests/test_s33_controlled_read_only_provider_probe_gate.py: 2
+tests/test_s33r1_controlled_metadata_probe_executor.py: 2
+tests/test_s33r2_explicit_one_shot_metadata_probe_runner.py: 2
+tests/test_s33r3_operator_triggered_metadata_probe_endpoint.py: 2
+tests/test_s36_governed_live_probe_contracts.py: 5
+tests/test_s36r12_r14_probe_guard_quarantine_report.py: 4
+tests/test_s36r15_r18_first_live_preflight.py: 4
+tests/test_s36r19_r22_first_live_operator_plateau.py: 4
+tests/test_s36r22_1_first_live_runner_bootstrap_fix.py: 4
+tests/test_s36r2_endpoint_blocked_verifier.py: 7
+tests/test_s36r3_r5_operator_probe_pack.py: 5
+tests/test_s36r6_r8_route_visibility_readiness.py: 3
+tests/test_s36r9_r11_local_endpoint_contracts.py: 6
+tests/test_s37r1_r4_self_inventory_need_classifier.py: 4
+tests/test_s37r5_r8_research_queue_source_policy.py: 4
+tests/test_s37r9_r16_review_export_fetch_capsule.py: 4
+tests/test_s38r1_r4_first_approved_source_fetch.py: 4
+tests/test_s38r5_r8_evidence_basket_extraction.py: 4
+tests/test_s38r9_r12_manual_promotion_candidate_layer.py: 5
+tests/test_s39r13_r16_promotion_plateau_index.py: 4
+tests/test_s39r1_r4_promotion_review_gate.py: 6
+tests/test_s39r5_r8_promotion_review_audit_boundary.py: 4
+tests/test_s39r9_r12_promotion_readiness_ledger.py: 4
+tests/test_s40r1_r4_backend_truth_surfaces.py: 4
+tests/test_s40r5_r8_cockpit_consumption_contracts.py: 4
+tests/test_s40r9_r12_unified_operator_payload.py: 4
+tests/test_s41r13_r16_operator_route_plateau.py: 4
+tests/test_s41r1_r4_operator_runtime_snapshots.py: 4
+tests/test_s41r5_r8_operator_state_digest.py: 4
+tests/test_s41r9_r12_operator_route_contracts.py: 4
+tests/test_s42r13_r20_router_include_adapter.py: 4
+tests/test_s42r21_r28_live_route_harness.py: 4
+tests/test_s42r5_r12_operator_router_mount_contracts.py: 4
+tests/test_s43r11_r12_route_contract_replay.py: 1
+tests/test_s43r13_r14_route_lineage.py: 1
+tests/test_s43r15_r16_exposure_inventory.py: 2
+tests/test_s43r1_r8_app_integration_probe.py: 4
+tests/test_s43r9_r10_route_visibility_registry.py: 2
+tests/test_s44r11_r12_cockpit_status_aggregation.py: 2
+tests/test_s44r13_r16_cockpit_surface_health_snapshot.py: 3
+tests/test_s44r1_r2_cockpit_fetch_contracts.py: 2
+tests/test_s44r3_r4_operator_payload_rendering_contracts.py: 2
+tests/test_s44r5_r8_dashboard_consumption_manifest.py: 4
+tests/test_s44r9_r10_cockpit_fetch_verification.py: 2
+tests/test_s45r11_r16_panel_data_mounting.py: 3
+tests/test_s45r1_r2_cockpit_ui_bridge.py: 2
+tests/test_s45r3_r4_operator_visible_panels.py: 2
+tests/test_s45r5_r8_frontend_bridge_assets.py: 4
+tests/test_s45r9_r10_cockpit_shell_bridge.py: 2
+tests/test_s46r1_r4_modern_cockpit_layout_contract.py: 3
+tests/test_s46r5_r12_modern_cockpit_shell_blueprint.py: 4
+tests/test_s47r1_r4_live_status_zones.py: 2
+tests/test_s47r5_r8_cockpit_operator_payload.py: 3
+tests/test_s48r1_r8_dashboard_route_payload_browser.py: 3
+tests/test_s49r1_r8_governed_web_evidence_panels.py: 3
+tests/test_s50r1_r8_modern_cockpit_consolidation.py: 5
+tests/test_s51r1_r8_route_specific_useful_outputs.py: 3
+tests/test_s52r1_r8_useful_output_quality_gate.py: 3
+tests/test_s53r1_r8_cockpit_useful_output_browser.py: 4
+tests/test_s54r1_r8_useful_output_run_history.py: 3
+tests/test_s55r1_r8_useful_output_replay_snapshots.py: 3
+tests/test_s56r1_r8_output_package_export_manifest.py: 4
+tests/test_s57_s63_platform_readiness_pack.py: 4
+tests/test_s64_s70_governed_cockpit_pack.py: 1
+tests/test_s71_s77_observation_outputs_probe_pack.py: 3
+tests/test_s78_s84_governed_web_vertical_slice.py: 4
+tests/test_s85_s91_governed_vertical_slice.py: 10
+tests/test_s92_s98_cockpit_contracts.py: 7
+tests/test_s99_s105_operator_api_routes.py: 8
+
+
+--- stderr tail ---
+
+
+Diagnosis hints:
+- Static parse shows required imported names are not physically defined in the target module. If __getattr__ exists, direct attribute access may work, but from-import collection can still fail if explicit globals were not created before import completion.
+- A src/claire duplicate target module exists; verify Python is importing the intended top-level claire package.
+
+JSON report: C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-current-import-failure-audit.json

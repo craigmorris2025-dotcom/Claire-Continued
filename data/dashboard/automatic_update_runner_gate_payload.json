@@ -1,0 +1,40 @@
+{
+  "automatic_updates_enabled": false,
+  "blockers": [],
+  "execution_enabled": false,
+  "generated_at": "2026-05-13T11:18:57.609157Z",
+  "linked_rollback_plan": {
+    "automatic_execution_enabled": false,
+    "created_at": "2026-05-13T11:18:57.575157Z",
+    "execution_enabled": false,
+    "linked_pack_id": "update_pack_20260513_111857_update_governance_patch",
+    "path": "data/update_packs/rollback_plans/rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch.json",
+    "plan_id": "rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch",
+    "status": "rollback_plan_ready"
+  },
+  "linked_update_pack": {
+    "automatic_execution_enabled": false,
+    "created_at": "2026-05-13T11:18:57.528157Z",
+    "execution_enabled": false,
+    "pack_hash": "5be1dff4dc44c99e344eb41b90fcde616278af2e37bf0021468a85cb874332d6",
+    "pack_id": "update_pack_20260513_111857_update_governance_patch",
+    "pack_type": "update_governance_patch",
+    "path": "data/update_packs/staging/update_pack_20260513_111857_update_governance_patch.json",
+    "status": "warning"
+  },
+  "runner_contract": {
+    "automatic_execution_enabled": false,
+    "background_execution_enabled": false,
+    "execution_enabled": false,
+    "requires_operator_approval_token": true,
+    "requires_rollback_plan": true,
+    "requires_source_trust": true,
+    "requires_validation_gauntlet": true,
+    "runner_executes_updates": false,
+    "runner_mode": "gate_only_no_execution",
+    "runner_registered": true
+  },
+  "status": "gate_ready_but_execution_disabled",
+  "version": "v17.73",
+  "warnings": []
+}

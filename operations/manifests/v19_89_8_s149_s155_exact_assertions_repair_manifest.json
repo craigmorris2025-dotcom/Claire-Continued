@@ -1,0 +1,11 @@
+{
+  "version": "v19.89.8-S149-S155-exact-assertions-repair",
+  "installed_at": "2026-05-15T18:22:48.567239+00:00",
+  "repair_only": true,
+  "purpose": "Exact repair from screenshot assertions: status fields, ok fields, fetch_count kwarg, report_dir kwarg.",
+  "recommended_commands": [
+    "pytest tests/test_s149_s155_exact_assertions_repair.py -q",
+    "pytest tests/test_s149_s155_live_payload_visibility.py -q",
+    "pytest"
+  ]
+}

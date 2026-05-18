@@ -1,0 +1,22 @@
+{
+  "adapter_function": "evaluate_runtime_evidence_gate",
+  "backend_owns_truth": true,
+  "build": "Evidence Gate Runtime Adapter",
+  "cockpit_owns_presentation_only": true,
+  "gate_order": [
+    "thin_input_gate",
+    "route_specific_evidence_gate",
+    "operator_review_gate"
+  ],
+  "generated_at": "2026-05-13T11:22:15.861710+00:00",
+  "runtime_mutation": "none",
+  "valid_terminal_states": [
+    "pending_evidence",
+    "insufficient_data",
+    "blocked_evidence",
+    "review_required",
+    "candidate_ready",
+    "validated_candidate"
+  ],
+  "version": "v19.85.4"
+}

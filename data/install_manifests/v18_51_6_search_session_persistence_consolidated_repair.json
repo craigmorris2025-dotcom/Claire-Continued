@@ -1,0 +1,16 @@
+{
+  "version": "v18.51.6",
+  "name": "Search Session Persistence Consolidated Repair",
+  "files": [
+    "claire/governed_web/search_session_persistence.py",
+    "claire/governed_web/governed_search_session_persistence_layer.py",
+    "tests/test_v18_51_6_search_session_persistence_consolidated_repair.py"
+  ],
+  "repairs": [
+    "restores missing read_search_session_ledger export",
+    "restores missing persist_search_session_record export",
+    "keeps legacy and locked policy reason compatibility",
+    "keeps runtime truth immutable",
+    "keeps autonomous execution blocked"
+  ]
+}

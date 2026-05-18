@@ -1,0 +1,1166 @@
+{
+  "app_import": {
+    "error": null,
+    "status": "loaded"
+  },
+  "contract_name": "Platform Endpoint Smoke Proof + Launch Hardening Gate",
+  "domains": {
+    "autodesign": {
+      "endpoints": [
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "autodesign",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "autodesign_handoff",
+          "path": "/autodesign/handoff",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "autodesign",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "autodesign_handoff_summary",
+          "path": "/autodesign/handoff/summary",
+          "required": true,
+          "status": "failed"
+        }
+      ],
+      "failed": 2,
+      "optional_failed": 0,
+      "passed": 0,
+      "required": 2,
+      "status": "blocked"
+    },
+    "core": {
+      "endpoints": [
+        {
+          "body_preview": "{\"status\":\"ok\",\"mode\":\"recovery\"}",
+          "domain": "core",
+          "error": null,
+          "http_status": 200,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "mode",
+            "status"
+          ],
+          "method": "GET",
+          "name": "root",
+          "path": "/",
+          "required": false,
+          "status": "passed"
+        },
+        {
+          "body_preview": "{\"status\":\"healthy\"}",
+          "domain": "core",
+          "error": null,
+          "http_status": 200,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "status"
+          ],
+          "method": "GET",
+          "name": "health",
+          "path": "/health",
+          "required": false,
+          "status": "passed"
+        }
+      ],
+      "failed": 0,
+      "optional_failed": 0,
+      "passed": 0,
+      "required": 0,
+      "status": "passed"
+    },
+    "dashboard": {
+      "endpoints": [
+        {
+          "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"status\":\"dashboard_state_ready\",\"created_at\":\"2026-05-13T11:18:58.086156Z\",\"backend_search_available\":true,\"backend_search_status\":\"ready\",\"provider_probe_status\":\"mounted_guarded\",\"operator_probe_ready\":false,\"manual_enable_required\":true,\"routes\":{\"search_capabilities\":\"/operator/search/capabilities\",\"dashboard_state\":\"/operator/dashboard/state\",\"compat_search\":\"/operator/search\",\"compat_live_search\":\"/operator/search/live\",\"canonical_live_search\":\"/api/dashboard/search/live\",\"canonical_google_smoke\":\"/api/dashboard/search/smoke/google\",\"provider_status\":\"/api/dashboard/search/provider/status\",\"provider_probe\":\"/api/",
+          "domain": "dashboard",
+          "error": null,
+          "http_status": 200,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "backend_search_available",
+            "backend_search_status",
+            "contract_version",
+            "created_at",
+            "governance",
+            "manual_enable_required",
+            "operator_probe_ready",
+            "provider_probe_status",
+            "routes",
+            "status"
+          ],
+          "method": "GET",
+          "name": "operator_dashboard_state",
+          "path": "/operator/dashboard/state",
+          "required": true,
+          "status": "passed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "dashboard",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "dashboard_state",
+          "path": "/dashboard/state",
+          "required": true,
+          "status": "failed"
+        }
+      ],
+      "failed": 1,
+      "optional_failed": 0,
+      "passed": 1,
+      "required": 2,
+      "status": "blocked"
+    },
+    "design_portal": {
+      "endpoints": [
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "design_portal",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "design_portal_output",
+          "path": "/design-portal/output",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "design_portal",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "design_portal_output_summary",
+          "path": "/design-portal/output/summary",
+          "required": true,
+          "status": "failed"
+        }
+      ],
+      "failed": 2,
+      "optional_failed": 0,
+      "passed": 0,
+      "required": 2,
+      "status": "blocked"
+    },
+    "internet": {
+      "endpoints": [
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "internet",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "internet_readiness",
+          "path": "/internet/readiness",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "internet",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "internet_readiness_summary",
+          "path": "/internet/readiness/summary",
+          "required": true,
+          "status": "failed"
+        }
+      ],
+      "failed": 2,
+      "optional_failed": 0,
+      "passed": 0,
+      "required": 2,
+      "status": "blocked"
+    },
+    "proof": {
+      "endpoints": [
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "proof",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "proof_e2e",
+          "path": "/proof/e2e",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "proof",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "proof_e2e_summary",
+          "path": "/proof/e2e/summary",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "proof",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "system_stop_go",
+          "path": "/system/stop-go",
+          "required": true,
+          "status": "failed"
+        }
+      ],
+      "failed": 3,
+      "optional_failed": 0,
+      "passed": 0,
+      "required": 3,
+      "status": "blocked"
+    },
+    "routes": {
+      "endpoints": [
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "routes",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "route_audit",
+          "path": "/routes/audit",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "routes",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "route_audit_summary",
+          "path": "/routes/audit/summary",
+          "required": true,
+          "status": "failed"
+        }
+      ],
+      "failed": 2,
+      "optional_failed": 0,
+      "passed": 0,
+      "required": 2,
+      "status": "blocked"
+    },
+    "runtime_truth": {
+      "endpoints": [
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "runtime_truth",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "runtime_truth",
+          "path": "/runtime/truth",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "runtime_truth",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "runtime_state",
+          "path": "/runtime/state",
+          "required": true,
+          "status": "failed"
+        }
+      ],
+      "failed": 2,
+      "optional_failed": 0,
+      "passed": 0,
+      "required": 2,
+      "status": "blocked"
+    },
+    "search": {
+      "endpoints": [
+        {
+          "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"status\":\"capabilities_ready\",\"created_at\":\"2026-05-13T11:18:58.090155Z\",\"backend_search_available\":true,\"visible_dashboard_filtering_available\":true,\"manual_enable_required\":true,\"capabilities\":[{\"id\":\"governed_live_web_search\",\"label\":\"Governed Live Web Search\",\"status\":\"ready\",\"canonical_endpoint\":\"/api/dashboard/search/live\",\"compatibility_endpoint\":\"/operator/search\",\"methods\":[\"GET\",\"POST\"]},{\"id\":\"provider_probe_status\",\"label\":\"Governed Provider Probe Status\",\"status\":\"ready\",\"canonical_endpoint\":\"/api/dashboard/search/provider/status\",\"compatibility_endpoint\":\"/operator/dashboard/state\",\"methods\":[\"GET\"]}],\"gov",
+          "domain": "search",
+          "error": null,
+          "http_status": 200,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "backend_search_available",
+            "capabilities",
+            "contract_version",
+            "created_at",
+            "governance",
+            "manual_enable_required",
+            "status",
+            "visible_dashboard_filtering_available"
+          ],
+          "method": "GET",
+          "name": "operator_search_capabilities",
+          "path": "/operator/search/capabilities",
+          "required": true,
+          "status": "passed"
+        },
+        {
+          "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"endpoint_status\":\"endpoint_response_ready\",\"status\":\"no_results\",\"reason\":\"no_governed_result_for_query\",\"created_at\":\"2026-05-13T11:18:58.093157Z\",\"query\":\"runtime\",\"manual_enable\":true,\"visible_result_count\":0,\"result_cards\":[],\"compatibility_paths\":[\"/operator/search\",\"/operator/search/live\",\"/operator/search/query\",\"/operator/search/run\",\"/operator/search/smoke/google\"],\"canonical_paths\":[\"/api/dashboard/search/live\",\"/api/dashboard/search/smoke/google\"],\"governance\":{\"review_required\":true,\"runtime_truth_mutated\":false,\"autonomous_execution\":false,\"automatic_updates\":false,\"uncontrolled_browsing\":false,\"fail_close",
+          "domain": "search",
+          "error": null,
+          "http_status": 200,
+          "json": {
+            "limit": 3,
+            "mode": "runtime",
+            "query": "runtime"
+          },
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "canonical_paths",
+            "compatibility_paths",
+            "contract_version",
+            "created_at",
+            "endpoint_status",
+            "governance",
+            "manual_enable",
+            "query",
+            "reason",
+            "result_cards",
+            "status",
+            "visible_result_count"
+          ],
+          "method": "POST",
+          "name": "operator_search_query",
+          "path": "/operator/search/query",
+          "required": true,
+          "status": "passed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "search",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json": {
+            "query": "open autodesign"
+          },
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "POST",
+          "name": "operator_command_parse",
+          "path": "/operator/command/parse",
+          "required": true,
+          "status": "failed"
+        }
+      ],
+      "failed": 1,
+      "optional_failed": 0,
+      "passed": 2,
+      "required": 3,
+      "status": "blocked"
+    },
+    "updates": {
+      "endpoints": [
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "updates",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "update_staging",
+          "path": "/updates/staging",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "updates",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "rollback_plan",
+          "path": "/updates/rollback-plan",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "updates",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "runner_gate",
+          "path": "/updates/runner-gate",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "updates",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "regression_lock",
+          "path": "/updates/regression-lock",
+          "required": true,
+          "status": "failed"
+        }
+      ],
+      "failed": 4,
+      "optional_failed": 0,
+      "passed": 0,
+      "required": 4,
+      "status": "blocked"
+    },
+    "validation": {
+      "endpoints": [
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "validation",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "buildability_validation",
+          "path": "/validation/buildability",
+          "required": true,
+          "status": "failed"
+        },
+        {
+          "body_preview": "{\"detail\":\"Not Found\"}",
+          "domain": "validation",
+          "error": "Endpoint did not return 2xx JSON.",
+          "http_status": 404,
+          "json_ok": true,
+          "json_root_type": "dict",
+          "keys": [
+            "detail"
+          ],
+          "method": "GET",
+          "name": "buildability_validation_summary",
+          "path": "/validation/buildability/summary",
+          "required": true,
+          "status": "failed"
+        }
+      ],
+      "failed": 2,
+      "optional_failed": 0,
+      "passed": 0,
+      "required": 2,
+      "status": "blocked"
+    }
+  },
+  "endpoint_results": [
+    {
+      "body_preview": "{\"status\":\"ok\",\"mode\":\"recovery\"}",
+      "domain": "core",
+      "error": null,
+      "http_status": 200,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "mode",
+        "status"
+      ],
+      "method": "GET",
+      "name": "root",
+      "path": "/",
+      "required": false,
+      "status": "passed"
+    },
+    {
+      "body_preview": "{\"status\":\"healthy\"}",
+      "domain": "core",
+      "error": null,
+      "http_status": 200,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "status"
+      ],
+      "method": "GET",
+      "name": "health",
+      "path": "/health",
+      "required": false,
+      "status": "passed"
+    },
+    {
+      "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"status\":\"dashboard_state_ready\",\"created_at\":\"2026-05-13T11:18:58.086156Z\",\"backend_search_available\":true,\"backend_search_status\":\"ready\",\"provider_probe_status\":\"mounted_guarded\",\"operator_probe_ready\":false,\"manual_enable_required\":true,\"routes\":{\"search_capabilities\":\"/operator/search/capabilities\",\"dashboard_state\":\"/operator/dashboard/state\",\"compat_search\":\"/operator/search\",\"compat_live_search\":\"/operator/search/live\",\"canonical_live_search\":\"/api/dashboard/search/live\",\"canonical_google_smoke\":\"/api/dashboard/search/smoke/google\",\"provider_status\":\"/api/dashboard/search/provider/status\",\"provider_probe\":\"/api/",
+      "domain": "dashboard",
+      "error": null,
+      "http_status": 200,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "backend_search_available",
+        "backend_search_status",
+        "contract_version",
+        "created_at",
+        "governance",
+        "manual_enable_required",
+        "operator_probe_ready",
+        "provider_probe_status",
+        "routes",
+        "status"
+      ],
+      "method": "GET",
+      "name": "operator_dashboard_state",
+      "path": "/operator/dashboard/state",
+      "required": true,
+      "status": "passed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "dashboard",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "dashboard_state",
+      "path": "/dashboard/state",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"status\":\"capabilities_ready\",\"created_at\":\"2026-05-13T11:18:58.090155Z\",\"backend_search_available\":true,\"visible_dashboard_filtering_available\":true,\"manual_enable_required\":true,\"capabilities\":[{\"id\":\"governed_live_web_search\",\"label\":\"Governed Live Web Search\",\"status\":\"ready\",\"canonical_endpoint\":\"/api/dashboard/search/live\",\"compatibility_endpoint\":\"/operator/search\",\"methods\":[\"GET\",\"POST\"]},{\"id\":\"provider_probe_status\",\"label\":\"Governed Provider Probe Status\",\"status\":\"ready\",\"canonical_endpoint\":\"/api/dashboard/search/provider/status\",\"compatibility_endpoint\":\"/operator/dashboard/state\",\"methods\":[\"GET\"]}],\"gov",
+      "domain": "search",
+      "error": null,
+      "http_status": 200,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "backend_search_available",
+        "capabilities",
+        "contract_version",
+        "created_at",
+        "governance",
+        "manual_enable_required",
+        "status",
+        "visible_dashboard_filtering_available"
+      ],
+      "method": "GET",
+      "name": "operator_search_capabilities",
+      "path": "/operator/search/capabilities",
+      "required": true,
+      "status": "passed"
+    },
+    {
+      "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"endpoint_status\":\"endpoint_response_ready\",\"status\":\"no_results\",\"reason\":\"no_governed_result_for_query\",\"created_at\":\"2026-05-13T11:18:58.093157Z\",\"query\":\"runtime\",\"manual_enable\":true,\"visible_result_count\":0,\"result_cards\":[],\"compatibility_paths\":[\"/operator/search\",\"/operator/search/live\",\"/operator/search/query\",\"/operator/search/run\",\"/operator/search/smoke/google\"],\"canonical_paths\":[\"/api/dashboard/search/live\",\"/api/dashboard/search/smoke/google\"],\"governance\":{\"review_required\":true,\"runtime_truth_mutated\":false,\"autonomous_execution\":false,\"automatic_updates\":false,\"uncontrolled_browsing\":false,\"fail_close",
+      "domain": "search",
+      "error": null,
+      "http_status": 200,
+      "json": {
+        "limit": 3,
+        "mode": "runtime",
+        "query": "runtime"
+      },
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "canonical_paths",
+        "compatibility_paths",
+        "contract_version",
+        "created_at",
+        "endpoint_status",
+        "governance",
+        "manual_enable",
+        "query",
+        "reason",
+        "result_cards",
+        "status",
+        "visible_result_count"
+      ],
+      "method": "POST",
+      "name": "operator_search_query",
+      "path": "/operator/search/query",
+      "required": true,
+      "status": "passed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "search",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json": {
+        "query": "open autodesign"
+      },
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "POST",
+      "name": "operator_command_parse",
+      "path": "/operator/command/parse",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "runtime_truth",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "runtime_truth",
+      "path": "/runtime/truth",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "runtime_truth",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "runtime_state",
+      "path": "/runtime/state",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "routes",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "route_audit",
+      "path": "/routes/audit",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "routes",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "route_audit_summary",
+      "path": "/routes/audit/summary",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "autodesign",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "autodesign_handoff",
+      "path": "/autodesign/handoff",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "autodesign",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "autodesign_handoff_summary",
+      "path": "/autodesign/handoff/summary",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "design_portal",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "design_portal_output",
+      "path": "/design-portal/output",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "design_portal",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "design_portal_output_summary",
+      "path": "/design-portal/output/summary",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "validation",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "buildability_validation",
+      "path": "/validation/buildability",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "validation",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "buildability_validation_summary",
+      "path": "/validation/buildability/summary",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "internet",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "internet_readiness",
+      "path": "/internet/readiness",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "internet",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "internet_readiness_summary",
+      "path": "/internet/readiness/summary",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "updates",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "update_staging",
+      "path": "/updates/staging",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "updates",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "rollback_plan",
+      "path": "/updates/rollback-plan",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "updates",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "runner_gate",
+      "path": "/updates/runner-gate",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "updates",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "regression_lock",
+      "path": "/updates/regression-lock",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "proof",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "proof_e2e",
+      "path": "/proof/e2e",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "proof",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "proof_e2e_summary",
+      "path": "/proof/e2e/summary",
+      "required": true,
+      "status": "failed"
+    },
+    {
+      "body_preview": "{\"detail\":\"Not Found\"}",
+      "domain": "proof",
+      "error": "Endpoint did not return 2xx JSON.",
+      "http_status": 404,
+      "json_ok": true,
+      "json_root_type": "dict",
+      "keys": [
+        "detail"
+      ],
+      "method": "GET",
+      "name": "system_stop_go",
+      "path": "/system/stop-go",
+      "required": true,
+      "status": "failed"
+    }
+  ],
+  "generated_at": "2026-05-13T11:18:58.127157Z",
+  "governance": {
+    "automatic_updates_disabled": true,
+    "live_internet_disabled": true,
+    "missing_outputs_remain_visible": true,
+    "no_fake_endpoint_pass": true,
+    "operator_review_required": true,
+    "testclient_smoke_proof": true
+  },
+  "launch_hardening_readiness": {
+    "ready_for_automatic_updates": false,
+    "ready_for_launch_hardening": false,
+    "ready_for_live_internet": false,
+    "requires_manual_browser_proof": true,
+    "requires_packaging_after_smoke_pass": true,
+    "requires_swagger_proof": true
+  },
+  "next": [
+    "v17.77 Platform Launch Hardening",
+    "v17.78 Desktop Packaging / Startup Reliability",
+    "v17.79 Manual Browser + Swagger Proof Binder"
+  ],
+  "output_files": {
+    "autodesign_handoff": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/autodesign/autodesign_handoff_contract.json",
+      "size_bytes": 405424
+    },
+    "buildability_validation": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/validation/buildability_viability_manufacturability_validation.json",
+      "size_bytes": 5468
+    },
+    "dashboard_state": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/dashboard/operator_dashboard_state.json",
+      "size_bytes": 20495
+    },
+    "design_portal": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/design_portal/design_portal_output_contract.json",
+      "size_bytes": 232562
+    },
+    "e2e_proof": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/proof/full_end_to_end_proof_pack.json",
+      "size_bytes": 10303
+    },
+    "internet_readiness": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/internet_readiness/internet_readiness_verification.json",
+      "size_bytes": 24866
+    },
+    "regression_lock": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/update_packs/update_governance_regression_lock.json",
+      "size_bytes": 3537
+    },
+    "rollback_plan": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/update_packs/rollback_plan_index.json",
+      "size_bytes": 17825
+    },
+    "route_audit": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/routes/discovery_breakthrough_innovation_route_audit.json",
+      "size_bytes": 4181
+    },
+    "runner_gate": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/update_packs/automatic_update_runner_gate.json",
+      "size_bytes": 4699
+    },
+    "runtime_truth": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/runtime/runtime_truth_canonical.json",
+      "size_bytes": 1223058
+    },
+    "search_capabilities": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/operator/search_command/search_command_capabilities.json",
+      "size_bytes": 4637
+    },
+    "update_staging": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/update_packs/update_pack_staging_index.json",
+      "size_bytes": 18014
+    }
+  },
+  "safety": {
+    "checks": {
+      "automatic_updates_enabled_false": true,
+      "live_internet_enabled_false": true,
+      "regression_lock_active": true,
+      "runner_background_execution_false": true,
+      "runner_executes_updates_false": true,
+      "search_current_automatic_updates_disabled": true,
+      "search_current_live_web_disabled": true
+    },
+    "expected_flags": {
+      "automatic_updates_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "background_execution_enabled": false,
+      "live_internet_enabled": false,
+      "uncontrolled_web_search_enabled": false
+    },
+    "status": "passed"
+  },
+  "status": "STOP",
+  "stop_go": {
+    "blocked_domains": [
+      "dashboard",
+      "search",
+      "runtime_truth",
+      "routes",
+      "autodesign",
+      "design_portal",
+      "validation",
+      "internet",
+      "updates",
+      "proof"
+    ],
+    "blockers": [
+      "domain_blocked:autodesign",
+      "domain_blocked:dashboard",
+      "domain_blocked:design_portal",
+      "domain_blocked:internet",
+      "domain_blocked:proof",
+      "domain_blocked:routes",
+      "domain_blocked:runtime_truth",
+      "domain_blocked:search",
+      "domain_blocked:updates",
+      "domain_blocked:validation"
+    ],
+    "missing_files": [],
+    "recommendation": "Do not proceed to launch hardening until blocked endpoint, output, or safety domains are fixed.",
+    "status": "STOP"
+  },
+  "version": "v17.76"
+}

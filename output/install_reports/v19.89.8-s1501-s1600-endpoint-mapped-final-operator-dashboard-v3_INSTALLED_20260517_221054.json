@@ -1,0 +1,129 @@
+{
+  "backups": [
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1501-s1600-endpoint-mapped-final-operator-dashboard-v3\\20260517_221053\\OneDrive__Desktop__Claire__frontend__command_center__modern__index.html",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1501-s1600-endpoint-mapped-final-operator-dashboard-v3\\20260517_221053\\Users__craig__OneDrive__Desktop__Claire__claire__app.py",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1501-s1600-endpoint-mapped-final-operator-dashboard-v3\\20260517_221053\\OneDrive__Desktop__Claire__frontend__command_center__modern__dashboard_endpoint_mapped_v3.html",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_endpoint_mapped_v3.html"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1501-s1600-endpoint-mapped-final-operator-dashboard-v3\\20260517_221053\\OneDrive__Desktop__Claire__frontend__command_center__modern__index.html",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1501-s1600-endpoint-mapped-final-operator-dashboard-v3\\20260517_221053\\OneDrive__Desktop__Claire__frontend__command_center__modern__dashboard_endpoint_mapped_v3.css",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_endpoint_mapped_v3.css"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1501-s1600-endpoint-mapped-final-operator-dashboard-v3\\20260517_221053\\OneDrive__Desktop__Claire__frontend__command_center__modern__dashboard_endpoint_mapped_v3.js",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_endpoint_mapped_v3.js"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1501-s1600-endpoint-mapped-final-operator-dashboard-v3\\20260517_221053\\Users__craig__OneDrive__Desktop__Claire__tests__test_s1501_s1600_endpoint_mapped_dashboard_v3.py",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s1501_s1600_endpoint_mapped_dashboard_v3.py"
+    }
+  ],
+  "build_id": "v19.89.8-s1501-s1600-endpoint-mapped-final-operator-dashboard-v3",
+  "endpoint_map_latest": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\output\\dashboard_endpoint_map\\dashboard_endpoint_map_latest.json",
+  "endpoint_summary": {
+    "domain_counts": {
+      "dashboard": 25,
+      "lifecycle": 2,
+      "search_evidence": 1,
+      "system": 567
+    },
+    "endpoint_count": 595,
+    "get_route_count": 525,
+    "method_counts": {
+      "GET": 525,
+      "POST": 70
+    },
+    "parameterized_count": 34,
+    "post_or_mutating_route_count": 70,
+    "verified_get_200_count": 11
+  },
+  "notes": [
+    "Dashboard V3 is built from the actual create_app() route table.",
+    "Every mounted endpoint is mapped and classified into operator domains.",
+    "GET endpoints can be fetched into the result pane. POST/mutating/parameterized endpoints are visible but blocked.",
+    "This is the final modern dashboard foundation: every required pane/portal/tab/search/result surface exists now.",
+    "No deletion, runtime mutation, POST execution, package install, autonomous crawling, automatic updates, or authority unlock was added."
+  ],
+  "post_proof": {
+    "/api/dashboard/active-control-map": {
+      "status": 200
+    },
+    "/command-center": {
+      "contains_v3": true,
+      "status": 200
+    },
+    "/dashboard": {
+      "contains_v3": true,
+      "status": 200
+    },
+    "/dashboard/active-control-map": {
+      "status": 200
+    },
+    "/dashboard/endpoint-map": {
+      "status": 200
+    },
+    "/dashboard/final": {
+      "contains_v3": true,
+      "status": 200
+    },
+    "/dashboard/payload": {
+      "status": 200
+    },
+    "/dashboard/payload/status": {
+      "status": 200
+    },
+    "/dashboard/v3": {
+      "contains_v3": true,
+      "status": 200
+    },
+    "/dashboard/v3/assets/dashboard_endpoint_mapped_v3.css": {
+      "status": 200
+    },
+    "/dashboard/v3/assets/dashboard_endpoint_mapped_v3.js": {
+      "status": 200
+    },
+    "/operator-cockpit": {
+      "contains_v3": true,
+      "status": 200
+    },
+    "/operator-dashboard": {
+      "contains_v3": true,
+      "status": 200
+    }
+  },
+  "preflight": {
+    "/api/dashboard/active-control-map": 200,
+    "/dashboard/active-control-map": 200,
+    "/dashboard/payload": 200,
+    "/dashboard/payload/status": 200
+  },
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "status": "installed",
+  "written_files": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\output\\dashboard_endpoint_map\\dashboard_endpoint_map_20260517_221053.json",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\output\\dashboard_endpoint_map\\dashboard_endpoint_map_latest.json",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_endpoint_mapped_v3.html",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_endpoint_mapped_v3.css",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_endpoint_mapped_v3.js",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s1501_s1600_endpoint_mapped_dashboard_v3.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\output\\dashboard_endpoint_map\\dashboard_endpoint_map_20260517_221053.json",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\output\\dashboard_endpoint_map\\dashboard_endpoint_map_latest.json",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_endpoint_mapped_v3.html",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_endpoint_mapped_v3.css",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_endpoint_mapped_v3.js",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s1501_s1600_endpoint_mapped_dashboard_v3.py"
+  ]
+}

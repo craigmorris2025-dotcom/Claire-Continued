@@ -1,0 +1,75 @@
+{
+  "allowed_fetches": {
+    "/dashboard/payload": {
+      "method": "GET",
+      "purpose": "Primary cockpit runtime payload.",
+      "required": true,
+      "truth_owner": "backend"
+    },
+    "/dashboard/payload/status": {
+      "method": "GET",
+      "purpose": "Payload availability and backend truth status.",
+      "required": true,
+      "truth_owner": "backend"
+    },
+    "/docs": {
+      "method": "GET",
+      "operator_cockpit_dependency": false,
+      "purpose": "Developer/API documentation surface; not an operator cockpit dependency.",
+      "required": false,
+      "truth_owner": "backend"
+    },
+    "/health": {
+      "method": "GET",
+      "purpose": "Backend runtime health check.",
+      "required": false,
+      "truth_owner": "backend"
+    },
+    "/runs/start": {
+      "method": "POST",
+      "purpose": "Operator-commanded manual run start.",
+      "required": true,
+      "truth_owner": "backend"
+    },
+    "/runtime/continuous/review-queue": {
+      "method": "GET",
+      "purpose": "Operator review queue.",
+      "required": true,
+      "truth_owner": "backend"
+    },
+    "/runtime/continuous/status": {
+      "method": "GET",
+      "purpose": "Continuous governed runtime status.",
+      "required": true,
+      "truth_owner": "backend"
+    },
+    "/universes": {
+      "method": "GET",
+      "purpose": "Configured source universe list.",
+      "required": true,
+      "truth_owner": "backend"
+    }
+  },
+  "backend_owns_truth": true,
+  "binding_rules": [
+    "Cockpit may only fetch from allowed backend-owned routes unless explicitly registered.",
+    "Cockpit must render unavailable/pending/empty states instead of synthesizing truth.",
+    "Cockpit may issue operator commands only to registered operator_command routes.",
+    "Cockpit must not create discoveries, route decisions, candidate counts, scores, or narratives locally.",
+    "Backend payload is the sole source of runtime truth."
+  ],
+  "blocked_frontend_truth_patterns": [
+    "mockData",
+    "syntheticPayload",
+    "fakePayload",
+    "generatedPayload",
+    "fallbackTruth",
+    "hardcodedResults"
+  ],
+  "build": "Cockpit Binding Contract Lock",
+  "cockpit_owns_presentation_only": true,
+  "empty_pending_unavailable_states_are_valid": true,
+  "frontend_truth_generation_allowed": false,
+  "generated_at": "2026-05-13T11:22:15.798711+00:00",
+  "version": "v19.84.9"
+}

@@ -1,0 +1,303 @@
+{
+  "architecture_reference": {
+    "backend_surface_inputs": {
+      "boot_health": {
+        "feeds_cockpit_modules": [
+          "shell",
+          "system"
+        ],
+        "owner_count": 56,
+        "route_count": 64
+      },
+      "dashboard_payload": {
+        "canonical_rule": "Payload adapter should be single frontend owner for /dashboard/payload.",
+        "feeds_cockpit_modules": [
+          "shared",
+          "runtime",
+          "intelligence",
+          "design",
+          "package",
+          "system"
+        ],
+        "owner_count": 127,
+        "route_count": 8
+      },
+      "governed_web_probe": {
+        "feeds_cockpit_modules": [
+          "intelligence",
+          "system"
+        ],
+        "owner_count": 297,
+        "route_count": 25
+      },
+      "runtime_lifecycle": {
+        "feeds_cockpit_modules": [
+          "runtime"
+        ],
+        "owner_count": 262,
+        "route_count": 27
+      },
+      "runtime_truth_evidence": {
+        "feeds_cockpit_modules": [
+          "runtime",
+          "system"
+        ],
+        "owner_count": 94,
+        "route_count": 0
+      },
+      "search_provider": {
+        "feeds_cockpit_modules": [
+          "intelligence"
+        ],
+        "owner_count": 409,
+        "route_count": 22
+      }
+    },
+    "created_at": "2026-05-11T09:28:48.103288Z",
+    "decision": "Retire scaling of old dashboard; build new enterprise cockpit from mapped active systems.",
+    "frontend_input_status": {
+      "frontend_input_available": true,
+      "required_modules_from_v19_63": [
+        "governed_web_workspace",
+        "runtime_panels",
+        "search_command_surface",
+        "shared_payload_adapter",
+        "shell"
+      ]
+    },
+    "legacy_dashboard_rule": "Existing dashboard remains legacy/reference until payload, runtime, search, and operator parity are proven.",
+    "new_root": "frontend/cockpit/",
+    "pack": "New Cockpit Build Path From Existing Systems",
+    "permanent_search_panel_rule": {
+      "capabilities": [
+        "normal web search interface",
+        "governed internet research interface",
+        "runtime/project search",
+        "lifecycle navigation and command recognition",
+        "future AI-agent command entry"
+      ],
+      "must_not_do": [
+        "Do not build search as a simple standalone textbox.",
+        "Do not bypass governed source trust/rate/allowlist systems.",
+        "Do not let frontend fabricate research truth."
+      ],
+      "placement": "top-level command surface, not optional panel-only search",
+      "status": "core architecture requirement"
+    },
+    "required_folder_architecture": {
+      "frontend/cockpit/design/": {
+        "first_files_to_create_later": [
+          "breakthrough_panel.js",
+          "advancement_path_panel.js",
+          "autodesign_panel.js",
+          "blueprint_viewer_panel.js",
+          "validation_panel.js",
+          "buildability_panel.js"
+        ],
+        "purpose": "breakthroughs, advancement path, AutoDesign, blueprint viewer, validation, buildability"
+      },
+      "frontend/cockpit/intelligence/": {
+        "first_files_to_create_later": [
+          "command_surface.js",
+          "search_panel.js",
+          "governed_web_panel.js",
+          "discovery_panel.js",
+          "trend_panel.js",
+          "portfolio_panel.js",
+          "signals_panel.js"
+        ],
+        "purpose": "permanent search command surface, governed web, discovery, trend, portfolio, signals"
+      },
+      "frontend/cockpit/package/": {
+        "first_files_to_create_later": [
+          "packages_panel.js",
+          "acquisition_fit_panel.js",
+          "positioning_panel.js",
+          "exports_panel.js"
+        ],
+        "purpose": "packages, acquisition fit, strategic positioning, exports"
+      },
+      "frontend/cockpit/runtime/": {
+        "first_files_to_create_later": [
+          "runtime_panel.js",
+          "lifecycle_panel.js",
+          "execution_graph_panel.js",
+          "run_history_panel.js",
+          "runtime_truth_panel.js",
+          "evidence_queue_panel.js"
+        ],
+        "purpose": "runtime status, active lifecycle, execution graph, run history, runtime truth, evidence queue"
+      },
+      "frontend/cockpit/shared/": {
+        "first_files_to_create_later": [
+          "api_client.js",
+          "payload_adapter.js",
+          "state_store.js",
+          "status_model.js",
+          "empty_state.js"
+        ],
+        "purpose": "shared adapters, API client, payload adapter, state store, formatters, error states"
+      },
+      "frontend/cockpit/shell/": {
+        "first_files_to_create_later": [
+          "cockpit_shell.html",
+          "cockpit_shell.css",
+          "cockpit_bootstrap.js",
+          "workspace_manager.js",
+          "panel_registry.js",
+          "route_state.js"
+        ],
+        "purpose": "application shell, workspace layout, navigation, docking, route state, panel registry"
+      },
+      "frontend/cockpit/system/": {
+        "first_files_to_create_later": [
+          "system_health_panel.js",
+          "route_proof_panel.js",
+          "provider_readiness_panel.js",
+          "governance_panel.js"
+        ],
+        "purpose": "system health, backend status, route proof, provider readiness, governance proof"
+      }
+    },
+    "source_of_truth_rule": "Backend runtime APIs and canonical payload contracts own truth. Frontend owns presentation, navigation, command entry, and operator interaction.",
+    "version": "v19.64"
+  },
+  "build_sequence": [
+    {
+      "must_include": [
+        "README/contract marker",
+        "legacy reference note",
+        "no fetch behavior yet"
+      ],
+      "name": "Cockpit Root + Legacy Dashboard Freeze Marker",
+      "purpose": "Create frontend/cockpit skeleton and mark old dashboard as legacy reference without deleting it.",
+      "runtime_change": "none/minimal",
+      "version": "v19.65"
+    },
+    {
+      "must_include": [
+        "panel registry",
+        "route state",
+        "empty states",
+        "system status placeholder"
+      ],
+      "name": "Cockpit Shell + Workspace Manager",
+      "purpose": "Create stable shell, layout, navigation, workspace manager, and panel registry.",
+      "runtime_change": "frontend only",
+      "version": "v19.66"
+    },
+    {
+      "must_include": [
+        "api_client.js",
+        "payload_adapter.js",
+        "error handling",
+        "offline/blocked states"
+      ],
+      "name": "Shared API Client + Canonical Payload Adapter",
+      "purpose": "Create the single frontend adapter for /dashboard/payload and /dashboard/payload/status.",
+      "runtime_change": "frontend fetch consolidation only",
+      "version": "v19.67"
+    },
+    {
+      "must_include": [
+        "normal web search mode",
+        "governed research mode",
+        "runtime/project search mode",
+        "command recognition placeholder"
+      ],
+      "name": "Permanent Search Command Surface",
+      "purpose": "Build search panel as command/search/research surface from the start.",
+      "runtime_change": "frontend integration with existing search/provider routes",
+      "version": "v19.68"
+    },
+    {
+      "must_include": [
+        "runtime status",
+        "lifecycle graph/list",
+        "run history",
+        "evidence/runtime truth"
+      ],
+      "name": "Runtime + Lifecycle Panels",
+      "purpose": "Render active runtime state, 30-stage lifecycle, run history, terminal states, runtime truth/evidence.",
+      "runtime_change": "consume existing payload/runtime APIs",
+      "version": "v19.69"
+    },
+    {
+      "must_include": [
+        "governed web status",
+        "discovery",
+        "trends",
+        "portfolio",
+        "signals"
+      ],
+      "name": "Intelligence Workspace",
+      "purpose": "Render governed web, discovery, trends, portfolio, signals.",
+      "runtime_change": "consume existing payload/search/governed web APIs",
+      "version": "v19.70"
+    },
+    {
+      "must_include": [
+        "breakthroughs",
+        "advancement path",
+        "AutoDesign",
+        "blueprint viewer",
+        "validation"
+      ],
+      "name": "Design + Breakthrough Workspace",
+      "purpose": "Render breakthrough, advancement path, AutoDesign, Design Portal/blueprints, validation/buildability.",
+      "runtime_change": "consume existing payload/design route outputs where available",
+      "version": "v19.71"
+    },
+    {
+      "must_include": [
+        "packages",
+        "acquisition fit",
+        "positioning",
+        "exports"
+      ],
+      "name": "Package + Export Workspace",
+      "purpose": "Render package, acquisition fit, positioning, exports.",
+      "runtime_change": "consume existing payload/package outputs",
+      "version": "v19.72"
+    },
+    {
+      "must_include": [
+        "parity report",
+        "legacy dashboard retirement readiness",
+        "missing coverage list"
+      ],
+      "name": "Cockpit Parity Gate",
+      "purpose": "Compare old dashboard against new cockpit and prove payload/runtime/search parity before retirement.",
+      "runtime_change": "test/report only",
+      "version": "v19.73"
+    }
+  ],
+  "created_at": "2026-05-11T09:28:48.103288Z",
+  "input_presence": {
+    "v19_60_project_diagram": true,
+    "v19_61_active_system_pathway": true,
+    "v19_61_cockpit_input_map": true,
+    "v19_62_backend_contract": true,
+    "v19_62_backend_ownership": true,
+    "v19_63_frontend_input": true,
+    "v19_63_frontend_ownership": true
+  },
+  "non_negotiable_constraints": [
+    "Do not scale the old dashboard.",
+    "Do not delete legacy dashboard until parity is proven.",
+    "Do not add new cockpit panels without registering them in panel registry.",
+    "Do not create more than one canonical payload fetch owner.",
+    "Do not build search without governed web/source-trust awareness.",
+    "Do not let UI become the source of runtime truth.",
+    "Do not redesign cockpit again after v19.65+ without a failed parity reason."
+  ],
+  "pack": "New Cockpit Build Path From Existing Systems",
+  "phase_decision": "Map-complete enough to define cockpit build path; implementation should begin only after this blueprint is reviewed.",
+  "safety": {
+    "deleted_files": [],
+    "modified_runtime_files": [],
+    "moved_files": [],
+    "note": "This pack creates build-path reports and tests only."
+  },
+  "version": "v19.64"
+}

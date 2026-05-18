@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-05-13T11:18:57.707156Z",
+  "live_web_conditions": {
+    "allowlist_or_quarantine_required": true,
+    "current_automatic_updates_enabled": false,
+    "current_live_web_enabled": false,
+    "evidence_capture_required": true,
+    "operator_visible_results_required": true,
+    "provider_key_required": true,
+    "rate_limits_required": true,
+    "source_trust_required": true
+  },
+  "modes": {
+    "agent_command_mode": {
+      "enabled": false,
+      "label": "AI Agent Command Mode",
+      "prepared": true,
+      "reason": "Command parsing is prepared. Autonomous execution remains disabled until later governed agent runtime builds."
+    },
+    "governed_research_search": {
+      "enabled": false,
+      "label": "Governed Research Search",
+      "prepared": true,
+      "reason": "Requires source trust, allowlist/quarantine, evidence capture, rate limits, and operator-visible results."
+    },
+    "normal_web_search": {
+      "enabled": false,
+      "label": "Normal Web Search",
+      "prepared": true,
+      "reason": "Prepared as a normal search-engine mode, but live search remains gated until governed provider and internet readiness are verified."
+    },
+    "runtime_system_search": {
+      "enabled": true,
+      "label": "Claire Runtime/System Search",
+      "prepared": true,
+      "reason": "Searches local runtime truth, proof, route, AutoDesign, Design Portal, validation, internet readiness, and update governance outputs."
+    }
+  },
+  "search_bar": {
+    "must_not_be_removed": true,
+    "permanent": true,
+    "placeholder": "Search web, ask Claire, run command, or find system output...",
+    "role": "normal web search + governed research + runtime search + future AI-agent command surface"
+  },
+  "version": "v17.75.2",
+  "workspace_targets": [
+    "mission",
+    "routes",
+    "discovery",
+    "autodesign",
+    "design_portal",
+    "portfolio",
+    "acquisition",
+    "internet",
+    "updates",
+    "proof",
+    "diagnostics"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "build": "v19.89.8 S737-S778",
+  "installed_at": "2026-05-17T04:40:36+00:00",
+  "written_files": [
+    "claire/governance/governed_evidence_basket_promotion_preview.py",
+    "claire/governance/governed_metadata_search_stop_gate.py",
+    "claire/governance/governed_body_read_safety_plan.py",
+    "claire/governance/governed_body_read_preflight.py",
+    "claire/api/governed_web_search_body_read_planning_routes.py",
+    "tests/test_s737_s778_controlled_metadata_proof_and_body_read_planning.py",
+    "frontend/cockpit/assets/claire_governed_web_search_body_read_planning.js",
+    "frontend/cockpit/assets/claire_governed_web_search_body_read_planning.css",
+    "reports/s737_s778_controlled_metadata_proof_and_body_read_planning_report.json"
+  ],
+  "compiled_files": [
+    "claire/governance/governed_evidence_basket_promotion_preview.py",
+    "claire/governance/governed_metadata_search_stop_gate.py",
+    "claire/governance/governed_body_read_safety_plan.py",
+    "claire/governance/governed_body_read_preflight.py",
+    "claire/api/governed_web_search_body_read_planning_routes.py",
+    "tests/test_s737_s778_controlled_metadata_proof_and_body_read_planning.py",
+    "claire/app.py"
+  ],
+  "app_registration": {
+    "attempted": true,
+    "registered": true,
+    "message": "route registration inserted before create_app return app"
+  },
+  "cockpit_assets_patched": [
+    "frontend\\cockpit\\shell\\cockpit_shell.html",
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "new_endpoints": [
+    "/api/evidence/basket/promotion-preview",
+    "/api/evidence/basket/promotion-preview/cards",
+    "/api/evidence/basket/promotion-preview/actions",
+    "/api/evidence/basket/promotion-preview/status",
+    "/api/search/metadata/controlled-proof/payload",
+    "/api/search/metadata/controlled-proof/cards",
+    "/api/search/metadata/controlled-proof/actions",
+    "/api/search/metadata/controlled-proof/status",
+    "/api/search/metadata/controlled-proof/stop-gate",
+    "/api/web/body-read/safety-plan",
+    "/api/web/body-read/safety/cards",
+    "/api/web/body-read/safety/status",
+    "/api/web/body-read/risk-classifier",
+    "/api/web/body-read/request-packet",
+    "/api/web/body-read/preflight/payload",
+    "/api/web/body-read/preflight/cards",
+    "/api/web/body-read/preflight/actions",
+    "/api/web/body-read/preflight/status",
+    "/api/web/body-read/preflight/stop-gate",
+    "/api/cockpit/web-search/payload",
+    "/api/cockpit/web-search/cards",
+    "/api/cockpit/web-search/actions",
+    "/api/cockpit/web-search/status",
+    "/api/cockpit/web-search/stop-gate",
+    "/api/internet/controlled-metadata-proof/payload"
+  ],
+  "blocked_capabilities_preserved": {
+    "live_web_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "body_read_performed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "forward_motion_allowed": true,
+  "functional_coverage": {
+    "S121": "runtime spine into read-only cockpit payload",
+    "S122": "review/export state into cockpit payload",
+    "S123": "governed search state into cockpit payload",
+    "S124": "evidence/demo status into cockpit payload",
+    "S125": "fragmented payload consolidation",
+    "S126": "single operational cockpit payload preview",
+    "S127": "fail-closed stop-gate validation"
+  },
+  "generated_at": "2026-05-15T13:11:18.980141+00:00",
+  "next_allowed_phase": "S128 controlled live cockpit attachment gate",
+  "ok": true,
+  "payload": {
+    "app_patch_performed": false,
+    "cockpit_payload_version": "S121-S127",
+    "fetch_map": {
+      "app_patch_performed": false,
+      "fetch_map": {
+        "approved_run": "backend:function:build_approved_evidence_run_contract",
+        "dashboard_demo": "backend:function:build_dashboard_managed_demo_backend",
+        "evidence_bridge": "backend:function:build_evidence_to_lifecycle_bridge",
+        "governed_search_control": "backend:function:build_governed_search_control_backend",
+        "review_export_control": "backend:function:build_review_export_control_backend",
+        "runtime_spine": "backend:function:build_runtime_spine_state"
+      },
+      "live_dashboard_rewire_performed": false,
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_blocked": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "read_only": true,
+      "route_registration_performed": false,
+      "stage_version": "S116",
+      "status": "dashboard_operations_fetch_map_locked"
+    },
+    "generated_at": "2026-05-15T13:11:18.980141+00:00",
+    "live_dashboard_rewire_performed": false,
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "continuous_crawling_blocked": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "panel_order": [
+      "runtime_spine",
+      "review_export",
+      "governed_search",
+      "evidence_demo"
+    ],
+    "panels": {
+      "evidence_demo": {
+        "backend_owned": true,
+        "cockpit_presentation_only": true,
+        "data": {
+          "approved_run_status": "approved_evidence_run_contract_ready",
+          "bridge_status": "evidence_to_lifecycle_bridge_ready",
+          "discovery_candidate_id": "disc_1e5c4663435e929c",
+          "export_path": "exports\\s121_s127\\export_4354bed4409a4fdd.json",
+          "export_status": "exported",
+          "output_candidate_id": "out_af37f1f7c280b7df"
+        },
+        "panel_id": "evidence_demo",
+        "read_only": true,
+        "runtime_truth_write": "blocked",
+        "status": "ready",
+        "title": "Evidence To Output Demo"
+      },
+      "governed_search": {
+        "backend_owned": true,
+        "cockpit_presentation_only": true,
+        "data": {
+          "automatic_updates": "blocked",
+          "continuous_crawling": "blocked",
+          "live_web_execution": "blocked_unless_explicitly_gated",
+          "manual_probe_required": true,
+          "manual_promotion_required": true,
+          "operator_review_required": true,
+          "quarantine_required": true
+        },
+        "panel_id": "governed_search",
+        "read_only": true,
+        "runtime_truth_write": "blocked",
+        "status": "ready",
+        "title": "Governed Search Control"
+      },
+      "review_export": {
+        "backend_owned": true,
+        "cockpit_presentation_only": true,
+        "data": {
+          "available_actions": [
+            "approve",
+            "reject",
+            "archive",
+            "export_only"
+          ],
+          "decision_total": 3,
+          "latest_export": {
+            "derived_artifact": true,
+            "export_id": "export_fad3c31b0603be8a",
+            "export_version": "S88",
+            "format": "json",
+            "path": "exports\\s121_s127\\export_fad3c31b0603be8a.json",
+            "review_item_id": "review_out_af37f1f7c280b7df",
+            "runtime_truth_write": "blocked",
+            "status": "exported"
+          },
+          "manual_operator_only": true,
+          "queue_total": 1
+        },
+        "panel_id": "review_export",
+        "read_only": true,
+        "runtime_truth_write": "blocked",
+        "status": "ready",
+        "title": "Review / Export"
+      },
+      "runtime_spine": {
+        "backend_owned": true,
+        "cockpit_presentation_only": true,
+        "data": {
+          "authority_model": {
+            "cockpit": "presentation_only",
+            "operator_actions": "manual_only",
+            "single_evidence_authority": "backend",
+            "single_route_state_authority": "backend",
+            "single_runtime_state_authority": "backend"
+          },
+          "proof_status": "ready",
+          "route_count": 3,
+          "spine_version": "S106R1",
+          "stage_count": 12
+        },
+        "panel_id": "runtime_spine",
+        "read_only": true,
+        "runtime_truth_write": "blocked",
+        "status": "ready",
+        "title": "Runtime Spine"
+      }
+    },
+    "read_only": true,
+    "route_registration_performed": false,
+    "runtime_truth_write": "blocked",
+    "status": "readonly_cockpit_payload_ready",
+    "stop_gate": {
+      "forward_motion_allowed": true,
+      "ok": true,
+      "status": "s114_s120_stop_gate_passed"
+    }
+  },
+  "status": "s121_s127_readonly_cockpit_integration_passed",
+  "stop_gate_version": "S121-S127",
+  "validation": {
+    "checks": {
+      "governance_locks_ok": true,
+      "no_app_patch": true,
+      "no_live_rewire": true,
+      "no_route_registration": true,
+      "panels_read_only": true,
+      "payload_ready": true,
+      "read_only": true,
+      "required_panels_present": true,
+      "runtime_truth_write_blocked": true,
+      "stop_gate_ok": true
+    },
+    "next_allowed_phase": "S128 controlled live cockpit attachment gate",
+    "ok": true,
+    "status": "readonly_cockpit_integration_validation_passed",
+    "validation_version": "S127"
+  }
+}

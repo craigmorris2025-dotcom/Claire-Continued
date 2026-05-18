@@ -1,0 +1,48 @@
+{
+  "installer": "install_claire_v19_89_8_s422_s428_dashboard_action_wiring_refresh_pack.py",
+  "started_at": "2026-05-16T14:38:14.427097Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "files": [
+    {
+      "path": "claire/api/dashboard_action_wiring_refresh_s422_s428.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "tests/test_s422_s428_dashboard_action_wiring_refresh.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s422_s428_dashboard_action_wiring.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s422_s428_dashboard_action_wiring.css",
+      "written": true
+    }
+  ],
+  "backups": {
+    "claire/api/dashboard_action_wiring_refresh_s422_s428.py": null,
+    "tests/test_s422_s428_dashboard_action_wiring_refresh.py": null,
+    "frontend/cockpit/consolidated/s422_s428_dashboard_action_wiring.js": null,
+    "frontend/cockpit/consolidated/s422_s428_dashboard_action_wiring.css": null
+  },
+  "patches": [
+    {
+      "path": "claire\\app.py",
+      "exists": true,
+      "patched": false,
+      "marker": "BEGIN CLAIRE_S408_S428",
+      "skipped_reason": "marker_already_present"
+    },
+    {
+      "path": "frontend\\cockpit\\shell\\cockpit_shell.html",
+      "exists": true,
+      "patched": true,
+      "marker": "BEGIN CLAIRE_S422_S428_ACTION_WIRING"
+    }
+  ],
+  "finished_at": "2026-05-16T14:38:14.459102Z"
+}

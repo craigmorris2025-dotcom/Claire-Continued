@@ -1,0 +1,19 @@
+{
+  "version": "v19.89.8-S33R5",
+  "payload_key": "cockpit_dry_run_trigger_quarantine_view",
+  "changed_files": [
+    "claire/api/cockpit_dry_run_trigger_quarantine_view.py",
+    "claire/api/governed_payload_reconciliation.py"
+  ],
+  "changed_app_py": false,
+  "route_registered": false,
+  "dry_run_execution_enabled": false,
+  "evidence_quarantine_visible": true,
+  "evidence_quarantine_items": [],
+  "network_request_during_install": false,
+  "response_body_read_during_install": false,
+  "browser_execution_enabled": false,
+  "runtime_truth_mutation_enabled": false,
+  "autonomous_execution_enabled": false,
+  "automatic_updates_enabled": false
+}

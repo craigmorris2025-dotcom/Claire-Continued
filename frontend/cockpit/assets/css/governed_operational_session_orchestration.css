@@ -1,0 +1,98 @@
+.governed-operational-session-orchestration-card {
+  margin: 16px 0;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.operational-session-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.operational-session-kicker {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.operational-session-header h2 {
+  margin: 4px 0 0;
+  font-size: 20px;
+}
+
+.operational-session-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  background: rgba(14, 165, 233, 0.10);
+  color: rgba(186, 230, 253, 0.96);
+  white-space: nowrap;
+}
+
+.operational-session-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.operational-session-summary span {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.operational-session-bindings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+}
+
+.operational-session-binding {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(2, 6, 23, 0.24);
+}
+
+.binding-name {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.binding-state {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(125, 211, 252, 0.95);
+}
+
+.binding-detail {
+  margin-top: 6px;
+  color: rgba(203, 213, 225, 0.78);
+  font-size: 12px;
+}
+
+.session-orchestration-blocked {
+  border-color: rgba(248, 113, 113, 0.54);
+}
+
+.session-orchestration-partial,
+.session-orchestration-review {
+  border-color: rgba(251, 191, 36, 0.48);
+}
+
+.session-orchestration-active {
+  border-color: rgba(52, 211, 153, 0.36);
+}

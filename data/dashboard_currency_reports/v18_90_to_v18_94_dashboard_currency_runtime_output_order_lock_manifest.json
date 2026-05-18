@@ -1,0 +1,25 @@
+{
+  "archive_before_modify": true,
+  "dashboards_patched_if_present": [
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "delete_policy": "delete_nothing",
+  "files_written": [
+    "claire\\dashboard_currency_runtime_order_lock.py",
+    "tests\\test_v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack.py",
+    "data\\dashboard_currency_reports\\v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_report.json",
+    "data\\dashboard_currency_reports\\v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_manifest.json"
+  ],
+  "installed_at": "2026-05-10T15:20:09.779170Z",
+  "installer": "install_claire_v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack.py",
+  "pack_name": "Dashboard Currency + Runtime Output Order Lock Pack",
+  "pack_version": "v18.90-v18.94",
+  "purpose": [
+    "keep dashboard current during internet connectivity process",
+    "lock normal live search visibility",
+    "separate manual provider probe from normal search",
+    "lock runtime output order across dashboard surfaces",
+    "preserve stages 16-22 design route block"
+  ],
+  "pytest_command": "python -m pytest tests/test_v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack.py -q"
+}

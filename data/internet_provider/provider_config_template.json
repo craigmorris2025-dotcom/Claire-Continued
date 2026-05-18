@@ -1,0 +1,62 @@
+{
+  "created_at": "2026-05-13T11:20:32.966037Z",
+  "default_limits": {
+    "max_bytes_per_result": 250000,
+    "max_queries_per_minute": 6,
+    "max_queries_per_session": 30,
+    "max_results_per_query": 8,
+    "request_timeout_seconds": 12,
+    "require_operator_visible_results": true
+  },
+  "governance": {
+    "allowlist_or_quarantine_required": true,
+    "evidence_capture_required": true,
+    "no_automatic_update_execution": true,
+    "no_autonomous_agent_execution": true,
+    "no_hidden_background_browsing": true,
+    "operator_visible_results_required": true,
+    "rate_limits_required": true,
+    "source_trust_required": true
+  },
+  "instructions": [
+    "Choose exactly one provider by setting CLAIRE_SEARCH_PROVIDER in your environment or .env.",
+    "Never paste API keys into ChatGPT.",
+    "This template does not enable live web execution by itself.",
+    "After provider configuration, run this gate and then a separate governed live-search probe build."
+  ],
+  "required_environment_variables": {
+    "BING_SEARCH_API_KEY": "required only if CLAIRE_SEARCH_PROVIDER=bing",
+    "BRAVE_SEARCH_API_KEY": "required only if CLAIRE_SEARCH_PROVIDER=brave",
+    "CLAIRE_SEARCH_PROVIDER": "one of: none, brave, bing, serpapi, tavily",
+    "SERPAPI_API_KEY": "required only if CLAIRE_SEARCH_PROVIDER=serpapi",
+    "TAVILY_API_KEY": "required only if CLAIRE_SEARCH_PROVIDER=tavily"
+  },
+  "supported_providers": {
+    "bing": {
+      "env_key": "BING_SEARCH_API_KEY",
+      "label": "Bing Web Search API",
+      "official_setup_url_note": "Use your Microsoft/Bing search API key; do not paste it into ChatGPT."
+    },
+    "brave": {
+      "env_key": "BRAVE_SEARCH_API_KEY",
+      "label": "Brave Search API",
+      "official_setup_url_note": "Use your Brave Search API key; do not paste it into ChatGPT."
+    },
+    "none": {
+      "env_key": "",
+      "label": "No Provider Configured",
+      "official_setup_url_note": "Runtime/system search remains available. Live web remains disabled."
+    },
+    "serpapi": {
+      "env_key": "SERPAPI_API_KEY",
+      "label": "SerpAPI",
+      "official_setup_url_note": "Use your SerpAPI key; do not paste it into ChatGPT."
+    },
+    "tavily": {
+      "env_key": "TAVILY_API_KEY",
+      "label": "Tavily Search API",
+      "official_setup_url_note": "Use your Tavily key; do not paste it into ChatGPT."
+    }
+  },
+  "version": "v17.83"
+}

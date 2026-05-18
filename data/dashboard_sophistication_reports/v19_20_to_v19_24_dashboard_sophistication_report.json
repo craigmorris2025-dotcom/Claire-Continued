@@ -1,0 +1,152 @@
+{
+  "contract": {
+    "approach": "incremental_cockpit_binding_without_full_restructure",
+    "cockpit_zones": [
+      "mission_control",
+      "main_result",
+      "live_web_evidence",
+      "runtime_truth",
+      "route_progress",
+      "trend_thesis",
+      "portfolio",
+      "breakthrough",
+      "autodesign",
+      "design_portal",
+      "validation",
+      "acquisition",
+      "system_health"
+    ],
+    "dashboard_currency_requirements": [
+      "current_pack_visible",
+      "runtime_state_visible",
+      "live_connectivity_visible",
+      "pipeline_route_visible",
+      "main_result_never_blank",
+      "blocked_state_visible",
+      "insufficient_data_visible"
+    ],
+    "layout_policy": {
+      "delete_dashboard_files": false,
+      "full_restructure": false,
+      "safe_incremental_panel_binding": true,
+      "single_launcher_consistency": true
+    },
+    "no_restructure_rules": [
+      "preserve_existing_launcher",
+      "preserve_existing_dashboard_entry",
+      "append_or_bind_panels_safely",
+      "do_not_delete_dashboard_files",
+      "do_not_replace_full_ui_without_explicit_approval",
+      "keep_search_bar_visible",
+      "keep_provider_probe_advanced_manual"
+    ],
+    "pack_version": "v19.20-v19.24",
+    "provider_probe_role": "advanced_manual_explicit_enable_only",
+    "search_bar_role": [
+      "normal_web_search",
+      "governed_research",
+      "runtime_search",
+      "future_agent_command_surface"
+    ],
+    "status": "dashboard_sophistication_contract_locked",
+    "updated_at": "2026-05-10T18:13:42.208254Z"
+  },
+  "errors": [],
+  "pack_name": "Dashboard Sophistication Pass without Full Restructure Pack",
+  "pack_version": "v19.20-v19.24",
+  "panel_manifest": {
+    "pack_version": "v19.20-v19.24",
+    "panels": [
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": false,
+        "required": true,
+        "zone": "mission_control"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "main_result"
+      },
+      {
+        "binds_live_web": true,
+        "binds_runtime_output": false,
+        "required": true,
+        "zone": "live_web_evidence"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "runtime_truth"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "route_progress"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "trend_thesis"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "portfolio"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "breakthrough"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "autodesign"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "design_portal"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "validation"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "acquisition"
+      },
+      {
+        "binds_live_web": false,
+        "binds_runtime_output": true,
+        "required": true,
+        "zone": "system_health"
+      }
+    ],
+    "status": "dashboard_panel_manifest_ready",
+    "updated_at": "2026-05-10T18:13:42.208254Z"
+  },
+  "proofs": {
+    "cockpit_zones_present": true,
+    "full_restructure_avoided": true,
+    "provider_probe_manual": true,
+    "safe_incremental_binding": true,
+    "search_bar_preserved": true,
+    "single_launcher_consistency": true
+  },
+  "status": "pass",
+  "updated_at": "2026-05-10T18:13:42.208254Z"
+}

@@ -1,0 +1,544 @@
+{
+  "installer": "install_claire_v19_89_8_s464_s470_claire_evidence_backed_answer_model.py",
+  "version": "v19.89.8-S464-S470",
+  "created_at": "2026-05-17T00:47:17.855572+00:00",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_dir": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19_89_8_s464_s470_claire_evidence_backed_answer_model\\20260517T004717Z",
+  "written_files": [
+    "claire\\api\\claire_evidence_backed_answer_model_s464_s470.py",
+    "frontend\\cockpit\\shell\\assets\\claire_evidence_backed_answers.js",
+    "frontend\\cockpit\\shell\\assets\\claire_evidence_backed_answers.css",
+    "tests\\test_s464_s470_claire_evidence_backed_answer_model.py"
+  ],
+  "compile_results": {
+    "claire\\api\\claire_evidence_backed_answer_model_s464_s470.py": {
+      "ok": true,
+      "detail": "ok"
+    },
+    "tests\\test_s464_s470_claire_evidence_backed_answer_model.py": {
+      "ok": true,
+      "detail": "ok"
+    }
+  },
+  "forbidden_pattern_scan": {
+    "claire\\api\\claire_evidence_backed_answer_model_s464_s470.py": [],
+    "tests\\test_s464_s470_claire_evidence_backed_answer_model.py": []
+  },
+  "stop_gate": {
+    "version": "v19.89.8-S464-S470",
+    "phase": "S464-S470",
+    "stage_version": "S470",
+    "status": "claire_evidence_backed_answer_model_passed",
+    "ready": true,
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "created_at": "2026-05-17T00:47:17.854572+00:00",
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_allowed": false,
+    "runtime_truth_write_allowed": false,
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "autonomous_execution_enabled": false,
+    "autonomous_agent_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "ok": true,
+    "checks": {
+      "s464_schema_ready": true,
+      "s465_scoring_ready": true,
+      "s466_basket_ready": true,
+      "s467_claim_support_ready": true,
+      "s468_answer_contract_ready": true,
+      "s469_traceability_ready": true,
+      "strong_answer_safe": true,
+      "weak_answer_marks_verification_needed": true,
+      "assets_exist": true
+    },
+    "sample_answer": {
+      "answer_id": "claire_answer_5655308",
+      "version": "v19.89.8-S464-S470",
+      "created_at": "2026-05-17T00:47:17.854572+00:00",
+      "question": "Can Claire evaluate this engineering architecture for buildability?",
+      "classification": {
+        "question": "Can Claire evaluate this engineering architecture for buildability?",
+        "domain": "engineering",
+        "label": "Engineering Intelligence",
+        "confidence": 0.86,
+        "matched_keywords": [
+          "engineering",
+          "build",
+          "architecture"
+        ],
+        "evidence_requirement": "moderate_to_high",
+        "default_route": "engineering_feasibility_path",
+        "innovation_potential": true,
+        "answer_mode": "governed_intelligence_answer"
+      },
+      "response_card": {
+        "card_id": "claire_card_9984741",
+        "card_type": "answer",
+        "title": "Claire intelligence answer",
+        "chips": [
+          "Ask Claire",
+          "domain:engineering",
+          "route:engineering_feasibility_path",
+          "evidence:moderate_to_high",
+          "read-only",
+          "innovation-potential"
+        ]
+      },
+      "direct_answer": "Claire classified this as Engineering Intelligence and would answer using the engineering_feasibility_path route with moderate_to_high evidence requirements.",
+      "evidence_basket": {
+        "version": "v19.89.8-S464-S470",
+        "phase": "S464-S470",
+        "stage_version": "S466",
+        "status": "evidence_basket_ready",
+        "ready": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "created_at": "2026-05-17T00:47:17.854572+00:00",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "question": "Can Claire evaluate this engineering architecture for buildability?",
+        "classification": {
+          "question": "Can Claire evaluate this engineering architecture for buildability?",
+          "domain": "engineering",
+          "label": "Engineering Intelligence",
+          "confidence": 0.86,
+          "matched_keywords": [
+            "engineering",
+            "build",
+            "architecture"
+          ],
+          "evidence_requirement": "moderate_to_high",
+          "default_route": "engineering_feasibility_path",
+          "innovation_potential": true,
+          "answer_mode": "governed_intelligence_answer"
+        },
+        "context_keys": [],
+        "source_count": 5,
+        "scored_sources": [
+          {
+            "source": {
+              "source_id": "claire_governance_safety",
+              "title": "Claire Governance and Safety Documentation",
+              "source_type": "governance_contract",
+              "summary": "Defines mode isolation, redline detection, oversight, intervention, and compliance boundaries.",
+              "relevance": 0.94,
+              "specificity": 0.9,
+              "trust": 0.95,
+              "recency": 0.8,
+              "supports": [
+                "blocked_authority",
+                "fail_closed_governance",
+                "mode_safety"
+              ],
+              "limitations": []
+            },
+            "score": {
+              "source_id": "claire_governance_safety",
+              "source_type": "governance_contract",
+              "score": 0.98,
+              "grade": "strong",
+              "components": {
+                "relevance": 0.94,
+                "specificity": 0.9,
+                "trust": 0.95,
+                "recency": 0.8,
+                "type_weight": 0.95,
+                "support_bonus": 0.06,
+                "limitation_penalty": 0.0
+              }
+            }
+          },
+          {
+            "source": {
+              "source_id": "claire_master_build_plan",
+              "title": "Claire Master System Build Plan",
+              "source_type": "uploaded_master_document",
+              "summary": "Defines Claire as a governed recursive lifecycle system with a 30-stage canonical pipeline.",
+              "relevance": 0.95,
+              "specificity": 0.92,
+              "trust": 0.88,
+              "recency": 0.82,
+              "supports": [
+                "platform_identity",
+                "30_stage_lifecycle",
+                "route_aware_runtime"
+              ],
+              "limitations": []
+            },
+            "score": {
+              "source_id": "claire_master_build_plan",
+              "source_type": "uploaded_master_document",
+              "score": 0.966,
+              "grade": "strong",
+              "components": {
+                "relevance": 0.95,
+                "specificity": 0.92,
+                "trust": 0.88,
+                "recency": 0.82,
+                "type_weight": 0.88,
+                "support_bonus": 0.06,
+                "limitation_penalty": 0.0
+              }
+            }
+          },
+          {
+            "source": {
+              "source_id": "claire_core_pipeline",
+              "title": "Core Pipeline Architecture",
+              "source_type": "uploaded_pipeline_document",
+              "summary": "Defines signal governance to trend discovery, thesis, portfolio optimization, escalation, and recursive self-ingestion.",
+              "relevance": 0.92,
+              "specificity": 0.86,
+              "trust": 0.84,
+              "recency": 0.84,
+              "supports": [
+                "signal_governance",
+                "portfolio_path",
+                "breakthrough_escalation",
+                "recursive_self_ingestion"
+              ],
+              "limitations": []
+            },
+            "score": {
+              "source_id": "claire_core_pipeline",
+              "source_type": "uploaded_pipeline_document",
+              "score": 0.95,
+              "grade": "strong",
+              "components": {
+                "relevance": 0.92,
+                "specificity": 0.86,
+                "trust": 0.84,
+                "recency": 0.84,
+                "type_weight": 0.84,
+                "support_bonus": 0.08,
+                "limitation_penalty": 0.0
+              }
+            }
+          },
+          {
+            "source": {
+              "source_id": "claire_hybrid_mode",
+              "title": "Claire Hybrid Mode Architecture",
+              "source_type": "uploaded_architecture_document",
+              "summary": "Defines deterministic and connected intelligence fusion as Claire's maximum capability state.",
+              "relevance": 0.88,
+              "specificity": 0.84,
+              "trust": 0.86,
+              "recency": 0.78,
+              "supports": [
+                "hybrid_mode",
+                "cross_validation",
+                "strategic_intelligence"
+              ],
+              "limitations": []
+            },
+            "score": {
+              "source_id": "claire_hybrid_mode",
+              "source_type": "uploaded_architecture_document",
+              "score": 0.914,
+              "grade": "strong",
+              "components": {
+                "relevance": 0.88,
+                "specificity": 0.84,
+                "trust": 0.86,
+                "recency": 0.78,
+                "type_weight": 0.86,
+                "support_bonus": 0.06,
+                "limitation_penalty": 0.0
+              }
+            }
+          },
+          {
+            "source": {
+              "source_id": "claire_technology_database",
+              "title": "Technology Database and Search Dictionary",
+              "source_type": "technology_database_document",
+              "summary": "Defines technology categories, maturity, dependencies, compatibility, complexity, and recommendation fields.",
+              "relevance": 0.78,
+              "specificity": 0.82,
+              "trust": 0.82,
+              "recency": 0.72,
+              "supports": [
+                "technology_intelligence",
+                "engineering_answering",
+                "buildability_context"
+              ],
+              "limitations": []
+            },
+            "score": {
+              "source_id": "claire_technology_database",
+              "source_type": "technology_database_document",
+              "score": 0.857,
+              "grade": "strong",
+              "components": {
+                "relevance": 0.78,
+                "specificity": 0.82,
+                "trust": 0.82,
+                "recency": 0.72,
+                "type_weight": 0.82,
+                "support_bonus": 0.06,
+                "limitation_penalty": 0.0
+              }
+            }
+          }
+        ],
+        "support_summary": {
+          "strong_count": 5,
+          "usable_count": 5,
+          "weak_count": 0,
+          "insufficient_count": 0,
+          "support_level": "strong",
+          "confidence": 0.91
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "claim_2195272",
+          "text": "Claire classified this as Engineering Intelligence and would answer using the engineering_feasibility_path route with moderate_to_high evidence requirements.",
+          "status": "supported",
+          "support_level": 0.91,
+          "evidence_ids": [
+            "claire_governance_safety",
+            "claire_master_build_plan",
+            "claire_core_pipeline",
+            "claire_hybrid_mode"
+          ],
+          "assumptions": [],
+          "verification_needed": []
+        }
+      ],
+      "confidence": 0.89,
+      "confidence_basis": {
+        "base_answer_confidence": 0.86,
+        "evidence_confidence": 0.91,
+        "support_level": "strong"
+      },
+      "assumptions": [
+        "This response is a governed answer contract, not a live external research result.",
+        "No runtime mutation, live web action, or autonomous execution was performed."
+      ],
+      "verification_needed": [],
+      "innovation_potential": true,
+      "route_hint": "engineering_feasibility_path",
+      "evidence_requirement": "moderate_to_high",
+      "answer_quality_state": "evidence_backed",
+      "governance_state": {
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false
+      },
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false
+    },
+    "weak_answer": {
+      "answer_id": "claire_answer_0261131",
+      "version": "v19.89.8-S464-S470",
+      "created_at": "2026-05-17T00:47:17.854572+00:00",
+      "question": "Can Claire prove this unsupported claim?",
+      "classification": {
+        "question": "Can Claire prove this unsupported claim?",
+        "domain": "general",
+        "label": "General Question",
+        "confidence": 0.45,
+        "matched_keywords": [],
+        "evidence_requirement": "low_or_contextual",
+        "default_route": "general_answer",
+        "innovation_potential": false,
+        "answer_mode": "governed_intelligence_answer"
+      },
+      "response_card": {
+        "card_id": "claire_card_0503074",
+        "card_type": "answer",
+        "title": "Claire intelligence answer",
+        "chips": [
+          "Ask Claire",
+          "domain:general",
+          "route:general_answer",
+          "evidence:low_or_contextual",
+          "read-only"
+        ]
+      },
+      "direct_answer": "Claire classified this as General Question and would answer using the general_answer route with low_or_contextual evidence requirements.",
+      "evidence_basket": {
+        "version": "v19.89.8-S464-S470",
+        "phase": "S464-S470",
+        "stage_version": "S466",
+        "status": "evidence_basket_ready",
+        "ready": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "created_at": "2026-05-17T00:47:17.854572+00:00",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "question": "Can Claire prove this unsupported claim?",
+        "classification": {
+          "question": "Can Claire prove this unsupported claim?",
+          "domain": "general",
+          "label": "General Question",
+          "confidence": 0.45,
+          "matched_keywords": [],
+          "evidence_requirement": "low_or_contextual",
+          "default_route": "general_answer",
+          "innovation_potential": false,
+          "answer_mode": "governed_intelligence_answer"
+        },
+        "context_keys": [],
+        "source_count": 1,
+        "scored_sources": [
+          {
+            "source": {
+              "source_id": "weak_note",
+              "title": "Weak Operator Note",
+              "source_type": "general_context",
+              "summary": "Unverified note.",
+              "relevance": 0.2,
+              "specificity": 0.2,
+              "trust": 0.2,
+              "recency": 0.2,
+              "supports": [],
+              "limitations": [
+                "unverified",
+                "not specific",
+                "no corroboration"
+              ]
+            },
+            "score": {
+              "source_id": "weak_note",
+              "source_type": "general_context",
+              "score": 0.128,
+              "grade": "insufficient",
+              "components": {
+                "relevance": 0.2,
+                "specificity": 0.2,
+                "trust": 0.2,
+                "recency": 0.2,
+                "type_weight": 0.5,
+                "support_bonus": 0.0,
+                "limitation_penalty": 0.09
+              }
+            }
+          }
+        ],
+        "support_summary": {
+          "strong_count": 0,
+          "usable_count": 0,
+          "weak_count": 0,
+          "insufficient_count": 1,
+          "support_level": "insufficient",
+          "confidence": 0.31
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "claim_1202483",
+          "text": "Claire classified this as General Question and would answer using the general_answer route with low_or_contextual evidence requirements.",
+          "status": "needs_verification",
+          "support_level": 0.31,
+          "evidence_ids": [],
+          "assumptions": [
+            "Available evidence is not enough for an absolute claim."
+          ],
+          "verification_needed": [
+            "No usable evidence sources were found in the current basket."
+          ]
+        }
+      ],
+      "confidence": 0.37,
+      "confidence_basis": {
+        "base_answer_confidence": 0.45,
+        "evidence_confidence": 0.31,
+        "support_level": "insufficient"
+      },
+      "assumptions": [
+        "This response is a governed answer contract, not a live external research result.",
+        "No runtime mutation, live web action, or autonomous execution was performed.",
+        "Available evidence is not enough for an absolute claim."
+      ],
+      "verification_needed": [
+        "No usable evidence sources were found in the current basket."
+      ],
+      "innovation_potential": false,
+      "route_hint": "general_answer",
+      "evidence_requirement": "low_or_contextual",
+      "answer_quality_state": "verification_needed",
+      "governance_state": {
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false
+      },
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false
+    },
+    "forward_motion_allowed": true,
+    "next_phase": "S471-S477 Claire knowledge base registry from uploaded docs"
+  },
+  "ok": true,
+  "fast_test": "python -X utf8 -m pytest tests/test_s464_s470_claire_evidence_backed_answer_model.py -q --tb=short",
+  "next": [
+    "python -X utf8 -m pytest tests/test_s464_s470_claire_evidence_backed_answer_model.py -q --tb=short",
+    "python -X utf8 -m pytest --lf -q --tb=short",
+    "python -X utf8 -m pytest -vv --tb=short",
+    "If clean, continue to S471-S477 Claire knowledge base registry from uploaded docs."
+  ]
+}

@@ -1,0 +1,20 @@
+
+{
+  "version": "v18.62",
+  "name": "Live Search Endpoint Mounted Into Active App Gate",
+  "scope": [
+    "create stable governed dashboard live-search API router module",
+    "add explicit active-app mount gate",
+    "support active app candidate inspection without mutation",
+    "mount routes only when explicit_enable=True",
+    "verify idempotent mounting",
+    "avoid real internet calls",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_62_live_search_endpoint_mounted_into_active_app_gate.py -q"
+  ]
+}

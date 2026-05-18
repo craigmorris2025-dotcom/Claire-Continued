@@ -1,0 +1,168 @@
+{
+  "gate": "claire_complete_system_gate",
+  "generated_at": "2026-05-18T22:35:37.487448+00:00",
+  "status": "complete",
+  "completion_percent": 100,
+  "scores": {
+    "backend_startup_routes": 100,
+    "test_suite_health": 100,
+    "safety_governance_locks": 100,
+    "lifecycle_contract": 100,
+    "signal_to_portfolio_path": 100,
+    "breakthrough_escalation_route": 100,
+    "acquisition_package_route": 100,
+    "dashboard_functionality": 100,
+    "operator_functionality": 100,
+    "system_processes_mapped": 100,
+    "favicon_clean": 100,
+    "future_payload_compatibility": 100,
+    "all_30_stages_mapped": 100,
+    "design_route_16_22_mapped": 100,
+    "repository_organization": 100,
+    "industry_standard_demonstrability": 100
+  },
+  "checks": {
+    "backend_startup_routes": true,
+    "test_suite_health": true,
+    "safety_governance_locks": true,
+    "lifecycle_contract": true,
+    "signal_to_portfolio_path": true,
+    "breakthrough_escalation_route": true,
+    "acquisition_package_route": true,
+    "dashboard_functionality": true,
+    "operator_functionality": true,
+    "system_processes_mapped": true,
+    "favicon_clean": true,
+    "future_payload_compatibility": true,
+    "all_30_stages_mapped": true,
+    "design_route_16_22_mapped": true,
+    "repository_organization": true,
+    "industry_standard_demonstrability": true
+  },
+  "required_files": {
+    "main.py": true,
+    "claire/app.py": true,
+    "claire/dashboard/payload_compatibility.py": true,
+    "claire/dashboard/final_dashboard_payload.py": true,
+    "claire/api/routes_dashboard_v4.py": true,
+    "claire/api/routes_dashboard_v5.py": true,
+    "frontend/operator_dashboard/v4/index.html": true,
+    "frontend/operator_dashboard/v4/dashboard_v4.css": true,
+    "frontend/operator_dashboard/v4/dashboard_v4.js": true,
+    "frontend/operator_dashboard/v5/index.html": true,
+    "frontend/operator_dashboard/v5/dashboard_v5.css": true,
+    "frontend/operator_dashboard/v5/dashboard_v5.js": true
+  },
+  "required_routes": {
+    "/": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/favicon.ico": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/health": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/openapi.json": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/payload": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/payload/status": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/api/dashboard/v4/payload": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/v4/payload": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/v4": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/operator-v4": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/v4/assets/dashboard_v4.css": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/v4/assets/dashboard_v4.js": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/api/dashboard/v5/payload": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/v5/payload": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/v5": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/final-user": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/v5/assets/dashboard_v5.css": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
+    "/dashboard/v5/assets/dashboard_v5.js": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    }
+  },
+  "dashboard_v4_payload": {
+    "schema_version": "claire_dashboard_payload_v4",
+    "completion_percent": 100,
+    "domain_count": 13
+  },
+  "dashboard_v5_payload": {
+    "schema_version": "claire_final_dashboard_v5",
+    "completion_percent": 100,
+    "stage_count": 30,
+    "design_route_stage_count": 7,
+    "operator_workflow_count": 6,
+    "operator_panel_count": 10,
+    "system_process_count": 7
+  },
+  "plateau_lock": {
+    "status": "locked",
+    "plateau_ready": true,
+    "blocker_count": 0,
+    "warning_count": 0
+  }
+}

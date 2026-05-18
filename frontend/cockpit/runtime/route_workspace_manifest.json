@@ -1,0 +1,70 @@
+{
+  "version": "v19.79",
+  "workspaces": [
+    {
+      "id": "portfolio_intelligence",
+      "required_payload": [
+        "portfolio",
+        "portfolio_intelligence",
+        "thesis",
+        "risk",
+        "weighting"
+      ]
+    },
+    {
+      "id": "acquisition_intelligence",
+      "required_payload": [
+        "acquisition",
+        "acquirer_map",
+        "fit_rationale",
+        "package_readiness"
+      ]
+    },
+    {
+      "id": "breakthrough_design",
+      "required_payload": [
+        "breakthrough",
+        "breakthrough_design",
+        "autodesign",
+        "design_portal",
+        "blueprints"
+      ]
+    },
+    {
+      "id": "existing_system_replacement",
+      "required_payload": [
+        "existing_system",
+        "system_decomposition",
+        "replacement_design"
+      ]
+    },
+    {
+      "id": "governance_update",
+      "required_payload": [
+        "governance",
+        "update_governance",
+        "source_trust",
+        "rollback",
+        "approval"
+      ]
+    },
+    {
+      "id": "recursive_learning",
+      "required_payload": [
+        "recursive",
+        "lifecycle_memory",
+        "self_ingestion"
+      ]
+    },
+    {
+      "id": "evidence_traceability",
+      "required_payload": [
+        "evidence",
+        "evidence_basis",
+        "source_lineage",
+        "proof"
+      ]
+    }
+  ],
+  "truth_rule": "Every workspace must render unavailable if canonical backend payload does not provide matching truth."
+}

@@ -1,0 +1,14 @@
+{
+  "blockers": [
+    "launcher_check_failed"
+  ],
+  "generated_at": "2026-05-13T11:18:59.291875Z",
+  "recommendation": "Fix launch blockers before using Claire as a platform launch candidate.",
+  "status": "STOP",
+  "version": "v17.77",
+  "warnings": [
+    "launcher_contains_legacy_pattern:python main.py",
+    "some_expected_endpoints_not_registered:/runtime/truth,/routes/audit,/autodesign/handoff,/design-portal/output,/validation/buildability,/internet/readiness,/updates/regression-lock,/proof/e2e,/proof/platform-smoke",
+    "v17_76_platform_smoke_report_is_STOP_review_before_launch"
+  ]
+}

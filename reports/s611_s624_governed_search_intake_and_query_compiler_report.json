@@ -1,0 +1,68 @@
+{
+  "app_registration": {
+    "patched": true,
+    "reason": "registered guarded routers before return app"
+  },
+  "blocked_authorities_preserved": {
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "body_read_allowed": false,
+    "browser_execution_enabled": false,
+    "command_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "network_request_performed": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "runtime_mutation_enabled": false,
+    "search_provider_execution_enabled": false
+  },
+  "compile_results": {
+    "claire/api/governed_query_compiler_routes.py": "ok",
+    "claire/api/governed_source_evidence_intake_routes.py": "ok",
+    "claire/governance/governed_query_compiler.py": "ok",
+    "claire/governance/governed_source_evidence_intake.py": "ok",
+    "tests/test_s611_s624_governed_search_intake_and_query_compiler.py": "ok"
+  },
+  "files_written": [
+    "claire\\governance\\governed_source_evidence_intake.py",
+    "claire\\governance\\governed_query_compiler.py",
+    "claire\\api\\governed_source_evidence_intake_routes.py",
+    "claire\\api\\governed_query_compiler_routes.py",
+    "frontend\\cockpit\\assets\\claire_governed_search_intake_and_query_compiler.js",
+    "frontend\\cockpit\\assets\\claire_governed_search_intake_and_query_compiler.css",
+    "tests\\test_s611_s624_governed_search_intake_and_query_compiler.py"
+  ],
+  "frontend_assets": {
+    "frontend\\cockpit\\index.html": {
+      "patched": false,
+      "reason": "missing"
+    },
+    "frontend\\cockpit\\shell\\cockpit_shell.html": {
+      "patched": true,
+      "reason": "asset refs ensured"
+    },
+    "frontend\\command_center\\modern\\index.html": {
+      "patched": true,
+      "reason": "asset refs ensured"
+    }
+  },
+  "installed_at": "2026-05-17T03:41:18.187354+00:00",
+  "new_endpoints": [
+    "/api/evidence/source/intake",
+    "/api/evidence/source/intake/cards",
+    "/api/evidence/source/intake/actions",
+    "/api/evidence/source/intake/policy",
+    "/api/evidence/source/intake/status",
+    "/api/evidence/source/intake/stop-gate",
+    "/api/search/governed/query/compile",
+    "/api/search/governed/query/sample",
+    "/api/search/governed/query/cards",
+    "/api/search/governed/query/actions",
+    "/api/search/governed/query/policy",
+    "/api/search/governed/query/status",
+    "/api/search/governed/query/payload"
+  ],
+  "next_phase": "S625-S631 provider capability map and probe readiness hardening",
+  "phase": "v19.89.8-S611-S624",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire"
+}

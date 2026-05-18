@@ -1,0 +1,104 @@
+{
+  "backup_dir": "backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004",
+  "build_name": "Governed Web Evidence Promotion Gate",
+  "files_written": [
+    "claire/internet/evidence_promotion_gate.py",
+    "claire/api/routes_evidence_promotion_gate.py",
+    "EVIDENCE_PROMOTION_REVIEW.bat",
+    "tests/test_v17_85_governed_web_evidence_promotion_gate.py",
+    "docs/internet/v17.85_governed_web_evidence_promotion_gate.md",
+    "data/internet_evidence/evidence_promotion_gate.json",
+    "data/internet_evidence/promoted_evidence_candidates_template.json",
+    "data/internet_evidence/quarantine_review_queue.json",
+    "data/internet_evidence/v17_85_evidence_promotion_stop_go.json",
+    "data/internet_evidence/v17_85_evidence_promotion_stop_go.md",
+    "data/dashboard/internet_evidence_promotion_payload.json",
+    "data/internet_evidence/v17_85_evidence_promotion_validation_result.json"
+  ],
+  "installed_at": "2026-05-10T02:00:04.924299Z",
+  "next": [
+    "Review promoted_evidence_candidates_template.json",
+    "Promote reviewed evidence only if needed",
+    "v17.86 Reviewed Evidence to Runtime Truth Ingestion Gate"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "candidate_count": 0,
+    "errors": [],
+    "gate_status": "PROMOTION_REVIEW_READY_WITH_WARNINGS",
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.75.1",
+      "source": {
+        "inputs": {
+          "autodesign_handoff": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/autodesign/autodesign_handoff_contract.json",
+            "status": "loaded"
+          },
+          "buildability_validation": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/validation/buildability_viability_manufacturability_validation.json",
+            "status": "loaded"
+          },
+          "dashboard_runtime_truth": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/dashboard_runtime_truth.json",
+            "status": "loaded"
+          },
+          "design_portal": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/design_portal_output_contract.json",
+            "status": "loaded"
+          },
+          "internet_readiness": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+            "status": "loaded"
+          },
+          "proof_pack": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/full_end_to_end_proof_pack.json",
+            "status": "loaded"
+          },
+          "regression_lock": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_governance_regression_lock.json",
+            "status": "loaded"
+          },
+          "rollback_plan": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json",
+            "status": "loaded"
+          },
+          "route_audit": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/routes/discovery_breakthrough_innovation_route_audit.json",
+            "status": "loaded"
+          },
+          "runner_gate": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/automatic_update_runner_gate.json",
+            "status": "loaded"
+          },
+          "runtime_truth": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json",
+            "status": "loaded"
+          },
+          "stop_go": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/v17_75_stop_go_report.json",
+            "status": "loaded"
+          },
+          "update_pack_staging": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json",
+            "status": "loaded"
+          }
+        },
+        "missing_data_stays_missing": true,
+        "proof_pack_loaded": true,
+        "runtime_truth_loaded": true
+      },
+      "status": "rebuilt"
+    },
+    "quarantine_count": 0,
+    "recommendation": "Review evidence candidates. Do not promote quarantined or unreviewed records. Runtime truth ingestion remains disabled.",
+    "status": "passed"
+  },
+  "version": "v17.85"
+}

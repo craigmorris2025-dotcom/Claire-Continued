@@ -1,0 +1,15 @@
+{
+  "version": "v19.85.6.1",
+  "build": "Review Queue Promotion Gate Repair",
+  "installed_at": "2026-05-12T16:30:27.178796+00:00",
+  "fix": "Avoid unhashable list TypeError during required-field validation.",
+  "files_written": [
+    "tools/review_queue_promotion_gate.py",
+    "tests/test_v19_85_6_review_queue_promotion_gate.py",
+    "data/build_artifacts/v19_85_6_1_review_queue_promotion_gate_repair.json"
+  ],
+  "commands": [
+    "python tools/review_queue_promotion_gate.py",
+    "pytest tests/test_v19_85_6_review_queue_promotion_gate.py -q"
+  ]
+}

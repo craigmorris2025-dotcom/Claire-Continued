@@ -1,0 +1,70 @@
+{
+  "build": "Evidence Basket Contract",
+  "contract": {
+    "backend_owns_truth": true,
+    "basket_schema": {
+      "aggregate_confidence": "float",
+      "aggregate_confidence_owner": "backend",
+      "basket_id": "uuid",
+      "created_at": "iso8601",
+      "evidence_items": [
+        {
+          "confidence": "float",
+          "confidence_owner": "backend",
+          "evidence_id": "uuid",
+          "headline": "string",
+          "lineage": {
+            "ingestion_id": "uuid",
+            "retrieval_path": "string",
+            "retrieved_at": "iso8601"
+          },
+          "raw_excerpt": "string",
+          "source_identifier": "string",
+          "source_type": "web|internal|document|runtime|provider",
+          "source_universe": "string",
+          "source_url": "string|null",
+          "summary": "string",
+          "validation": {
+            "validated": "bool",
+            "validation_reason": "string"
+          }
+        }
+      ],
+      "operator_review_required": true,
+      "route_type": "portfolio|breakthrough|design|acquisition|discovery",
+      "runtime_id": "string",
+      "source_universe_count": "int",
+      "terminal_state": "string"
+    },
+    "build": "Evidence Basket Contract",
+    "cockpit_owns_presentation_only": true,
+    "generated_at": "2026-05-13T11:22:15.822711+00:00",
+    "invalid_conditions": [
+      "missing_source_universe",
+      "missing_lineage",
+      "frontend_generated_confidence",
+      "empty_evidence_items",
+      "synthetic_evidence"
+    ],
+    "lineage_rules": [
+      "Every evidence item must contain lineage metadata.",
+      "Every evidence item must identify its source universe.",
+      "Confidence scores are backend-generated only.",
+      "Frontend may render evidence but may not create lineage.",
+      "Operator review required before promotion into runtime truth."
+    ],
+    "version": "v19.85.1"
+  },
+  "contract_path": "data\\evidence_governance\\evidence_basket_contract.json",
+  "evaluation": {
+    "blocker_count": 0,
+    "blockers": [],
+    "status": "locked_clean",
+    "warning_count": 0,
+    "warnings": []
+  },
+  "generated_at": "2026-05-13T11:22:15.822711+00:00",
+  "next_build": "v19.85.2 Route-Specific Evidence Thresholds",
+  "read_only": true,
+  "version": "v19.85.1"
+}

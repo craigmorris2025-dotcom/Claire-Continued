@@ -1,0 +1,26 @@
+{
+  "version": "v18.26",
+  "name": "Pre-Live Probe Authorization Audit",
+  "files": [
+    "SEARCH_BAR_PRE_LIVE_PROBE_AUTHORIZATION_AUDIT_REVIEW.bat",
+    "claire/governance/governed_web/pre_live_probe_authorization_audit.py",
+    "tests/test_v18_26_pre_live_probe_authorization_audit.py"
+  ],
+  "accelerated_safely": true,
+  "invariants": {
+    "authorization_granted": false,
+    "execution_gate_passed": false,
+    "execution_permitted": false,
+    "no_http_client_invoked": true,
+    "planned_url_not_fetched": true,
+    "probe_attempted": false,
+    "execution_performed": false,
+    "network_call_performed": false,
+    "external_request_performed": false,
+    "runtime_truth_mutated": false,
+    "automatic_update_performed": false,
+    "response_body_fetched": false,
+    "review_gated": true,
+    "fail_closed": true
+  }
+}

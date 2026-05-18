@@ -1,0 +1,48 @@
+{
+  "accepted_bodies": [
+    {
+      "confirm_text": "RUN GOVERNED WEB PROBE",
+      "query": "OpenAI latest research"
+    },
+    {
+      "confirm_text": "RUN GOVERNED WEB PROBE",
+      "raw_input": "OpenAI latest research"
+    }
+  ],
+  "backup_dir": "backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426",
+  "build_name": "Live Probe Body Compatibility Repair",
+  "files_written": [
+    "claire/internet/live_probe_request_adapter.py",
+    "claire/api/routes_governed_live_probe.py",
+    "tests/test_v17_84_1_live_probe_body_compatibility_repair.py",
+    "docs/internet/v17.84.1_live_probe_body_compatibility_repair.md",
+    "data/internet_live_probe/v17_84_1_body_compatibility_repair_validation.json",
+    "data/internet_live_probe/v17_84_1_body_compatibility_status.json"
+  ],
+  "installed_at": "2026-05-10T01:54:26.790416Z",
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "already_mounted"
+  },
+  "use_this_endpoint": "POST /internet/live-probe/run-confirmed",
+  "validation": {
+    "accepted_examples": [
+      {
+        "confirm_text": "RUN GOVERNED WEB PROBE",
+        "query": "OpenAI latest research"
+      },
+      {
+        "confirm_text": "RUN GOVERNED WEB PROBE",
+        "raw_input": "OpenAI latest research"
+      }
+    ],
+    "adapter_status": "ready",
+    "errors": [],
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "already_mounted"
+    },
+    "status": "passed"
+  },
+  "version": "v17.84.1"
+}

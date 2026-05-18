@@ -1,0 +1,224 @@
+/*
+Claire Syntalion v19.82B.11
+Governed Probe Result Review Queue Bridge styling.
+*/
+
+.claire-probe-review-bridge {
+  margin: 18px 0 26px;
+  padding: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(34, 197, 94, 0.10), transparent 26%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(2, 6, 23, 0.98));
+  color: #e5eefc;
+}
+
+.claire-prb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.claire-prb-kicker {
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #86efac;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.claire-prb-header h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.9rem);
+  letter-spacing: -0.03em;
+}
+
+.claire-prb-subtitle {
+  margin: 8px 0 0 0;
+  max-width: 820px;
+  color: #a8b7cc;
+  line-height: 1.5;
+}
+
+.claire-prb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.claire-prb-button {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(15, 23, 42, 0.86);
+  color: #e5eefc;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.claire-prb-button:hover {
+  border-color: rgba(134, 239, 172, 0.60);
+}
+
+.claire-prb-button-primary {
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.92), rgba(14, 165, 233, 0.74));
+  border-color: rgba(134, 239, 172, 0.45);
+}
+
+.claire-prb-grid {
+  display: grid;
+  grid-template-columns: minmax(330px, 1fr) minmax(360px, 1.25fr) minmax(280px, 0.85fr);
+  gap: 16px;
+}
+
+.claire-prb-card {
+  min-height: 240px;
+  padding: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.claire-prb-card-title {
+  margin-bottom: 12px;
+  color: #cbd5e1;
+  font-weight: 900;
+}
+
+.claire-prb-empty {
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+.claire-prb-warning,
+.claire-prb-success,
+.claire-prb-lock {
+  border-radius: 16px;
+  padding: 12px;
+  line-height: 1.45;
+}
+
+.claire-prb-warning {
+  border: 1px solid rgba(251, 191, 36, 0.32);
+  background: rgba(251, 191, 36, 0.10);
+  color: #fde68a;
+}
+
+.claire-prb-success {
+  border: 1px solid rgba(34, 197, 94, 0.32);
+  background: rgba(34, 197, 94, 0.10);
+  color: #bbf7d0;
+}
+
+.claire-prb-lock {
+  border: 1px solid rgba(96, 165, 250, 0.32);
+  background: rgba(96, 165, 250, 0.10);
+  color: #bfdbfe;
+}
+
+.claire-prb-warning span,
+.claire-prb-success span {
+  display: block;
+  margin-top: 6px;
+  color: #cbd5e1;
+  font-size: 0.82rem;
+}
+
+.claire-prb-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.claire-prb-metrics div {
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 14px;
+  padding: 10px;
+  background: rgba(2, 6, 23, 0.36);
+}
+
+.claire-prb-metrics span {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  margin-bottom: 4px;
+}
+
+.claire-prb-metrics strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 0.95rem;
+}
+
+.claire-prb-section {
+  margin-top: 14px;
+}
+
+.claire-prb-section h4 {
+  margin: 0 0 8px 0;
+  color: #dbeafe;
+  font-size: 0.92rem;
+}
+
+.claire-prb-section pre {
+  max-height: 220px;
+  overflow: auto;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.62);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  color: #cbd5e1;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.claire-prb-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.claire-prb-item {
+  padding: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.38);
+}
+
+.claire-prb-item strong,
+.claire-prb-item span {
+  display: block;
+}
+
+.claire-prb-item span {
+  margin-top: 4px;
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.claire-prb-rules {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: #cbd5e1;
+  line-height: 1.55;
+}
+
+@media (max-width: 1180px) {
+  .claire-prb-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .claire-prb-header {
+    flex-direction: column;
+  }
+
+  .claire-prb-actions {
+    justify-content: flex-start;
+  }
+}

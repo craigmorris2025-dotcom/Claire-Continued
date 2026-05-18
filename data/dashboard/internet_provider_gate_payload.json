@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-05-13T11:20:32.970039Z",
+  "governance": {
+    "agent_execution_disabled": true,
+    "allowlist_or_quarantine_required": true,
+    "automatic_updates_disabled": true,
+    "evidence_capture_required": true,
+    "governed_research_execution_enabled": false,
+    "live_search_enabled": false,
+    "no_automatic_update_execution": true,
+    "no_autonomous_agent_execution": true,
+    "no_fake_web_results": true,
+    "no_hidden_background_browsing": true,
+    "normal_web_search_execution_enabled": false,
+    "operator_visible_results_required": true,
+    "provider_configuration_gate_only": true,
+    "rate_limits_required": true,
+    "single_query_probe_enabled": false,
+    "source_trust_required": true
+  },
+  "live_search_enabled": false,
+  "normal_web_search_execution_enabled": false,
+  "provider_known": true,
+  "recommendation": "Runtime/system search remains available. Configure a provider later for normal web search.",
+  "required_key_present": false,
+  "selected_provider": "none",
+  "status": "PROVIDER_NOT_CONFIGURED_RUNTIME_SEARCH_ONLY",
+  "version": "v17.83"
+}

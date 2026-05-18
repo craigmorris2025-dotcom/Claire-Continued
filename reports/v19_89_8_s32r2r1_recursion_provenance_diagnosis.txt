@@ -1,0 +1,72 @@
+CLAIRE S32R2R1 RECURSION PROVENANCE DIAGNOSIS
+================================================================
+Root: C:\Users\craig\OneDrive\Desktop\Claire
+
+governed_web_safety_activation:
+  path: claire\api\governed_web_safety_activation.py
+  exists: True
+  compiled: True
+  line_count: 276
+  recursive_fragment_count: 0
+
+dashboard_payload_bridge:
+  path: claire\api\dashboard_payload_bridge.py
+  exists: True
+  compiled: True
+  line_count: 916
+  recursive_fragment_count: 12
+  recovery markers:
+    - # --- v19.89.8 recovery: S32R2R1 live_web_execution_enabled exact safety contract ---
+    - # --- end v19.89.8 recovery: S32R2R1 live_web_execution_enabled exact safety contract ---
+    - # --- v19.89.8 recovery: dashboard payload S32R2R1 safety key normalization ---
+    - # --- end v19.89.8 recovery: dashboard payload S32R2R1 safety key normalization ---
+    - # --- v19.89.8 recovery: S32R2R1 clean final dashboard payload safety normalizer ---
+    - # --- end v19.89.8 recovery: S32R2R1 clean final dashboard payload safety normalizer ---
+
+app:
+  path: claire\app.py
+  exists: True
+  compiled: True
+  line_count: 1956
+  recursive_fragment_count: 0
+  recovery markers:
+    - # --- v19.89.8 recovery: force S359-S365 route override after app construction ---
+    - # --- end v19.89.8 recovery: force S359-S365 route override after app construction ---
+    - # --- v19.89.8 recovery: force S359-S365 route status ok after app construction ---
+    - # --- end v19.89.8 recovery: force S359-S365 route status ok after app construction ---
+    - # --- v19.89.8 recovery: force S359-S365 expansion dock contract after app construction ---
+    - # --- end v19.89.8 recovery: force S359-S365 expansion dock contract after app construction ---
+    - # --- v19.89.8 recovery: normalize dashboard payload live_web_execution_enabled safety flag ---
+    - # --- end v19.89.8 recovery: normalize dashboard payload live_web_execution_enabled safety flag ---
+    - # --- v19.89.8 recovery: S32R2R1 clean final dashboard payload routes ---
+    - # --- end v19.89.8 recovery: S32R2R1 clean final dashboard payload routes ---
+
+test:
+  path: tests\test_s32r2r1_ast_bridge_web_safety_payload.py
+  exists: True
+  compiled: True
+  line_count: 39
+  recursive_fragment_count: 0
+
+Fresh subprocess probe:
+  governed_module_file: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_web_safety_activation.py
+  build_function_file: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_web_safety_activation.py
+  build_function_firstlineno: 152
+  build_call_ok: False
+  build_call_error: RecursionError('maximum recursion depth exceeded while calling a Python object')
+  bridge_module_file: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\dashboard_payload_bridge.py
+  get_dashboard_payload_file: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\dashboard_payload_bridge.py
+  get_dashboard_payload_firstlineno: 873
+  bridge_call_ok: False
+  bridge_call_error: RecursionError('maximum recursion depth exceeded while calling a Python object')
+
+Diagnosis:
+  - dashboard_payload_bridge.py still contains recursive S32R2R1 wrapper fragments.
+  - Fresh subprocess call to build_governed_web_safety_activation() fails.
+  - Fresh subprocess call to get_dashboard_payload() fails.
+  - build_governed_web_safety_activation() does not expose live_web_execution_enabled=False.
+  - build_governed_web_safety_activation() does not expose autonomous_agent_execution_enabled=False.
+  - get_dashboard_payload() does not expose live_web_execution_enabled=False.
+  - get_dashboard_payload() does not expose autonomous_agent_execution_enabled=False.
+
+JSON report: C:\Users\craig\OneDrive\Desktop\Claire\reports\v19_89_8_s32r2r1_recursion_provenance_diagnosis.json

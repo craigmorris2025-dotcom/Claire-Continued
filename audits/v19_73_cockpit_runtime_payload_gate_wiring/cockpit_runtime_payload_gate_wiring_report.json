@@ -1,0 +1,28 @@
+{
+  "version": "v19.73",
+  "build_name": "Cockpit Runtime Payload Gate Wiring",
+  "created_at": "2026-05-11T11:12:55.548730Z",
+  "non_destructive": true,
+  "launcher_rewired": false,
+  "legacy_deleted": false,
+  "backend_rewritten": false,
+  "required_paths": {
+    "runtime_workspace": true,
+    "payload_route_guard": true,
+    "runtime_render_gate": true,
+    "api_client": true,
+    "payload_adapter": true,
+    "launcher": true,
+    "legacy_dashboard": true
+  },
+  "blockers": [],
+  "added_files": [
+    "frontend/cockpit/runtime/runtime_payload_gate.js",
+    "frontend/cockpit/docs/v19_73_cockpit_runtime_payload_gate_wiring.md",
+    "tests/test_v19_73_cockpit_runtime_payload_gate_wiring.py"
+  ],
+  "modified_files": [
+    "frontend/cockpit/runtime/runtime_panel.css"
+  ],
+  "next_gate": "Wire runtime_payload_gate.js into visible cockpit shell after tests pass."
+}

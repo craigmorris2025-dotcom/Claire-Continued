@@ -1,0 +1,281 @@
+{
+  "version": "v19.83.1",
+  "build_name": "Canonical Cockpit Consolidation Contract",
+  "created_utc": "2026-05-11T21:44:13.809021+00:00",
+  "purpose": "Declare the single canonical cockpit architecture before further dashboard/runtime builds.",
+  "current_truth_from_audit": {
+    "manifest_entries": 9845,
+    "python_route_hits": 287,
+    "frontend_cockpit_dashboard_files_of_interest": 22,
+    "payload_related_files": 692,
+    "launcher_candidates": 4,
+    "build_artifacts_found": 13,
+    "app_candidates": [
+      "main.py",
+      "claire/app.py"
+    ],
+    "canonical_app_candidate": "claire/app.py",
+    "launcher_candidate": "LAUNCH_CLAIRE.bat",
+    "canonical_cockpit_shell": "frontend/cockpit/shell/cockpit_shell.html",
+    "authored_shell_assets": [
+      "frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.css",
+      "frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.js"
+    ]
+  },
+  "final_platform_mission": {
+    "summary": "Claire must become a governed autonomous intelligence platform, not a static dashboard.",
+    "spine": [
+      "signal_ingestion",
+      "signal_governance",
+      "trend_discovery",
+      "thesis_formation",
+      "portfolio_action",
+      "breakthrough_escalation",
+      "advancement_routing",
+      "validation",
+      "design_blueprint_package_construction",
+      "lifecycle_memory",
+      "recursive_self_ingestion"
+    ],
+    "thirty_stage_lifecycle": [
+      "Signal Ingestion",
+      "Signal Normalization",
+      "Source Validation & Weighting",
+      "Context Expansion",
+      "Signal Consolidation",
+      "Entity Extraction",
+      "Relationship Mapping",
+      "Trend Discovery",
+      "Cluster Formation",
+      "Insight / Thesis Structuring",
+      "Gap Detection",
+      "Gap Qualification",
+      "Discovery Generation",
+      "Breakthrough Identification & Classification",
+      "Advancement Path Selection",
+      "Auto Invention / Solution Generation",
+      "Solution Structuring",
+      "Buildability Assessment",
+      "Viability Assessment",
+      "Manufacturability / Deployability Assessment",
+      "Feasibility Validation",
+      "Design Portal Output / Blueprints / Specs",
+      "Market Positioning",
+      "Moat & Differentiation",
+      "Business Model & Value Capture",
+      "Competitor Analysis",
+      "Portfolio Creation / Optimization",
+      "Acquirer Identification",
+      "Acquisition Fit & Rationale",
+      "Final Package Construction"
+    ],
+    "protected_stage_range": {
+      "start": 16,
+      "end": 22,
+      "reason": "AutoDesign, solution structuring, buildability, viability, manufacturability/deployability, feasibility validation, and design portal output must remain first-class."
+    },
+    "recursive_learning": [
+      "completed_run_output",
+      "lifecycle_memory_storage",
+      "self_ingestion",
+      "pattern_comparison",
+      "prior_breakthrough_comparison",
+      "prior_blueprint_comparison",
+      "prior_package_comparison",
+      "store_improved_output",
+      "future_self_ingestion"
+    ]
+  },
+  "canonical_cockpit_contract": {
+    "one_canonical_shell": "frontend/cockpit/shell/cockpit_shell.html",
+    "one_primary_payload_source": "GET /dashboard/payload",
+    "allowed_payload_fallbacks": [
+      "GET /dashboard/payload/status",
+      "GET /api/dashboard/payload",
+      "GET /api/dashboard/payload/status"
+    ],
+    "one_primary_runtime_status_source": "GET /runtime/continuous/status",
+    "one_primary_review_queue_source": "GET /runtime/continuous/review-queue",
+    "one_primary_manual_run_start": "POST /runs/start",
+    "one_primary_source_registry": "GET /universes",
+    "truth_rule": "Backend owns all runtime truth; cockpit renders only.",
+    "no_dev_surface_rule": "No Swagger, docs, OpenAPI, health control, or endpoint list is exposed in the operator cockpit.",
+    "no_fake_output_rule": "The cockpit may show unavailable/waiting/empty states, but may not fabricate discoveries, scoring, portfolios, breakthroughs, designs, packages, or route states."
+  },
+  "canonical_workspaces": [
+    {
+      "id": "runtime",
+      "label": "Runtime",
+      "purpose": "Manual run state, continuous runtime state, lifecycle state, route state, review counts.",
+      "routes": [
+        "GET /dashboard/payload",
+        "GET /runtime/continuous/status",
+        "POST /runtime/continuous/start",
+        "POST /runtime/continuous/pause",
+        "POST /runs/start",
+        "GET /runs/latest"
+      ]
+    },
+    {
+      "id": "intelligence",
+      "label": "Intelligence",
+      "purpose": "Signals, governance, trend discovery, cluster formation, thesis formation, gap detection, discovery candidates.",
+      "lifecycle_stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio",
+      "purpose": "Portfolio creation, optimization, risk/exposure notes, action recommendations.",
+      "lifecycle_stages": [
+        23,
+        26,
+        27
+      ]
+    },
+    {
+      "id": "breakthrough",
+      "label": "Breakthrough",
+      "purpose": "Breakthrough identification, classification, category routing, threshold gates.",
+      "lifecycle_stages": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "id": "design",
+      "label": "Design",
+      "purpose": "Auto Invention, solution structuring, buildability, viability, manufacturability, feasibility, design portal outputs.",
+      "lifecycle_stages": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "id": "acquisition",
+      "label": "Acquisition",
+      "purpose": "Market positioning, moat, business model, competitor analysis, acquirer mapping, acquisition fit, final package.",
+      "lifecycle_stages": [
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "id": "sources",
+      "label": "Sources",
+      "purpose": "Source universes, trust, governance, probes, evidence capture.",
+      "routes": [
+        "GET /universes",
+        "GET /universes/{universe_id}",
+        "POST /universes/{universe_id}/probe"
+      ]
+    },
+    {
+      "id": "review",
+      "label": "Review Queue",
+      "purpose": "Operator-gated promotion, evidence review, candidate review, governance disposition.",
+      "routes": [
+        "GET /runtime/continuous/review-queue"
+      ]
+    },
+    {
+      "id": "system",
+      "label": "System",
+      "purpose": "Diagnostics, route availability, payload verification, update governance, regression guard, lifecycle memory."
+    }
+  ],
+  "frontend_consolidation_rules": {
+    "canonical_active_frontend": [
+      "frontend/cockpit/shell/cockpit_shell.html",
+      "frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.css",
+      "frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.js"
+    ],
+    "may_be_reused_after_review": [
+      "frontend/cockpit/shared/payload_adapter.js",
+      "frontend/cockpit/shared/payload_route_guard.js",
+      "frontend/cockpit/runtime/runtime_payload_gate.js",
+      "frontend/cockpit/assets/enterprise_cockpit_workspace_shell.js",
+      "frontend/cockpit/assets/enterprise_cockpit_continuous_runtime.js",
+      "frontend/cockpit/assets/enterprise_cockpit_actions.js"
+    ],
+    "must_not_drive_canonical_dashboard_without_review": [
+      "frontend/command_center/modern/index.html",
+      "archive/cockpit_shell_backups/*",
+      "_claire_archives/**/frontend/command_center/modern/index.html"
+    ],
+    "next_required_action": "Build a route-truth verification and cockpit payload binding layer before adding new UI panels."
+  },
+  "build_order_from_here": [
+    {
+      "version": "v19.83.2",
+      "name": "Active Route Truth Verification Harness",
+      "goal": "Create a testable route truth endpoint/audit that proves the running backend returns the cockpit's required payloads."
+    },
+    {
+      "version": "v19.83.3",
+      "name": "Single Payload Adapter Consolidation",
+      "goal": "Make authored cockpit use one payload adapter and one fallback policy."
+    },
+    {
+      "version": "v19.83.4",
+      "name": "Continuous Runtime Executor Binding",
+      "goal": "Bind continuous runtime buttons and state to the real executor/cycle store."
+    },
+    {
+      "version": "v19.83.5",
+      "name": "Workspace Data Contracts",
+      "goal": "Define exact payload contracts per workspace: runtime, intelligence, portfolio, breakthrough, design, acquisition, sources, review, system."
+    },
+    {
+      "version": "v19.83.6",
+      "name": "Legacy Dashboard Quarantine Gate",
+      "goal": "Stop noncanonical frontend shells from affecting the operator cockpit."
+    },
+    {
+      "version": "v19.83.7",
+      "name": "Lifecycle Stage Status Renderer",
+      "goal": "Render all 30 lifecycle stages with route-aware status, skipped_by_route reasons, evidence, confidence, and terminal state."
+    },
+    {
+      "version": "v19.83.8",
+      "name": "Candidate Review and Promotion Workflow",
+      "goal": "Surface candidates and operator review actions without automatic truth mutation."
+    },
+    {
+      "version": "v19.83.9",
+      "name": "Portfolio/Breakthrough/Design/Acquisition Workspace Binding",
+      "goal": "Bind downstream workspaces to backend-owned artifacts and empty states."
+    },
+    {
+      "version": "v19.83.10",
+      "name": "Lifecycle Memory and Recursive Self-Ingestion Surface",
+      "goal": "Expose memory/replay/self-ingestion status and artifacts."
+    }
+  ]
+}

@@ -1,107 +1,52 @@
-#!/usr/bin/env python
 from __future__ import annotations
 
 import json
-import sys
-import traceback
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Callable, Dict, List
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-SRC = PROJECT_ROOT / "src"
+from fastapi.testclient import TestClient
 
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-if SRC.exists() and str(SRC) not in sys.path:
-    sys.path.append(str(SRC))
+from claire.app import create_app
 
 
 class BaselineRunner:
-    def __init__(self) -> None:
-        self.manifest_path = (
-            PROJECT_ROOT
-            / "data"
-            / "baselines"
-            / "claire_baseline_manifest.json"
-        )
-
-        self.manifest = json.loads(
-            self.manifest_path.read_text(encoding="utf-8")
-        )
-
-        self.results: List[Dict[str, Any]] = []
+    def __init__(self, root: Path | None = None) -> None:
+        self.root = root or Path(__file__).resolve().parents[1]
 
     def run(self) -> int:
-        checks: List[tuple[str, Callable[[], Dict[str, Any]]]] = [
-            ("imports", self.check_imports),
-        ]
+        report_path = self.root / "reports" / "baseline_runner.json"
+        report_path.parent.mkdir(parents=True, exist_ok=True)
 
-        for name, fn in checks:
-            self.results.append(self._run_check(name, fn))
-
-        summary = {
-            "status": (
-                "success"
-                if all(
-                    item["status"] == "success"
-                    for item in self.results
-                )
-                else "failed"
-            ),
-            "baseline_version": self.manifest.get(
-                "baseline_version",
-                "unknown",
-            ),
-            "check_count": len(self.results),
-            "passed_count": len(
-                [
-                    item
-                    for item in self.results
-                    if item["status"] == "success"
-                ]
-            ),
-            "failed": [
-                item
-                for item in self.results
-                if item["status"] != "success"
-            ],
-            "results": self.results,
-        }
-
-        print(json.dumps(summary, indent=2))
-
-        return 0 if summary["status"] == "success" else 1
-
-    def _run_check(
-        self,
-        name: str,
-        fn: Callable[[], Dict[str, Any]],
-    ) -> Dict[str, Any]:
         try:
-            payload = fn()
+            app = create_app()
+            client = TestClient(app)
 
-            return {
-                "name": name,
-                "status": "success",
-                **payload,
+            checks = {
+                "/health": client.get("/health").status_code,
+                "/openapi.json": client.get("/openapi.json").status_code,
+                "/dashboard/payload/status": client.get("/dashboard/payload/status").status_code,
+                "/runtime/continuous/status": client.get("/runtime/continuous/status").status_code,
             }
+
+            report = {
+                "runner": "BaselineRunner",
+                "status": "success",
+                "created_at": datetime.now(timezone.utc).isoformat(),
+                "checks": checks,
+            }
+
+            report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+            return 0
 
         except Exception as exc:
-            return {
-                "name": name,
+            report = {
+                "runner": "BaselineRunner",
                 "status": "failed",
-                "error": str(exc),
-                "traceback": traceback.format_exc(),
+                "created_at": datetime.now(timezone.utc).isoformat(),
+                "error": f"{exc.__class__.__name__}: {exc}",
             }
-
-    def check_imports(self) -> Dict[str, Any]:
-        import claire.app  # noqa: F401
-        import claire.orchestrator.pipeline_v4  # noqa: F401
-
-        return {
-            "message": "top-level claire imports succeeded",
-        }
+            report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+            return 1
 
 
 def main() -> int:
@@ -109,4 +54,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(main())

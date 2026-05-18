@@ -1,0 +1,41 @@
+{
+  "approvals": [
+    {
+      "approval_id": "S37-WEB-NEED-001-APPROVED",
+      "approved_at": "2026-05-15T00:13:05.223695+00:00",
+      "automatic_action_allowed": false,
+      "candidate_url": "https://docs.python.org",
+      "manual_promotion_required": true,
+      "operator_ack": true,
+      "quarantine_required": true,
+      "queue_id": "S37-WEB-NEED-001",
+      "runtime_truth_mutation_allowed": false,
+      "source_queue_entry": {
+        "allowed_domains": [
+          "docs.python.org"
+        ],
+        "allowed_source_type": "official_python_docs",
+        "automatic_action_allowed": false,
+        "classification": "official_docs_needed",
+        "manual_promotion_required": true,
+        "operator_must_select_target": false,
+        "quarantine_required": true,
+        "queue_id": "S37-WEB-NEED-001",
+        "reason": "Validate HEAD-only metadata behavior against official docs before expanding providers.",
+        "requires_official_source": true,
+        "runtime_truth_mutation_allowed": false,
+        "status": "queued_for_manual_governed_research",
+        "topic": "Python stdlib http.client HEAD request behavior and header-only metadata handling",
+        "web_search_executed": false
+      },
+      "status": "approved_for_single_governed_fetch_capsule",
+      "web_fetch_executed": false
+    }
+  ],
+  "automatic_action_allowed": false,
+  "generated_at": "2026-05-15T00:13:05.224693+00:00",
+  "manual_promotion_required": true,
+  "runtime_truth_mutation_allowed": false,
+  "version": "v19.89.8-S37R9-R16-review-export-fetch-capsule",
+  "web_fetch_executed": false
+}

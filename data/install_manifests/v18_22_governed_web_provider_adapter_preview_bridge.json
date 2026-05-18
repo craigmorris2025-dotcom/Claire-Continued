@@ -1,0 +1,23 @@
+{
+  "version": "v18.22",
+  "name": "Governed Web Provider Adapter Preview Bridge",
+  "files": [
+    "SEARCH_BAR_GOVERNED_WEB_PROVIDER_ADAPTER_PREVIEW_BRIDGE_REVIEW.bat",
+    "claire/governance/governed_web/provider_adapter_preview_bridge.py",
+    "tests/test_v18_22_governed_web_provider_adapter_preview_bridge.py"
+  ],
+  "accelerated_safely": true,
+  "invariants": {
+    "provider_adapter_preview_ready": true,
+    "preview_url_constructed_not_fetched": true,
+    "no_http_client_invoked": true,
+    "execution_performed": false,
+    "network_call_performed": false,
+    "external_request_performed": false,
+    "runtime_truth_mutated": false,
+    "automatic_update_performed": false,
+    "response_body_fetched": false,
+    "review_gated": true,
+    "fail_closed": true
+  }
+}

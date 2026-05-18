@@ -1,0 +1,16 @@
+{
+  "version": "v19.85.1",
+  "build": "Evidence Basket Contract",
+  "installed_at": "2026-05-12T15:57:01.178714+00:00",
+  "runtime_mutation": "none",
+  "files_written": [
+    "tools/evidence_basket_contract.py",
+    "tests/test_v19_85_1_evidence_basket_contract.py",
+    "docs/builds/v19_85_1_evidence_basket_contract.md",
+    "data/build_artifacts/v19_85_1_evidence_basket_contract.json"
+  ],
+  "commands": [
+    "python tools/evidence_basket_contract.py",
+    "pytest tests/test_v19_85_1_evidence_basket_contract.py -q"
+  ]
+}

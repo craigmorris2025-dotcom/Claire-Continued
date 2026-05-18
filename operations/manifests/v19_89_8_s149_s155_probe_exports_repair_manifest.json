@@ -1,0 +1,11 @@
+{
+  "version": "v19.89.8-S149-S155-probe-exports-repair",
+  "installed_at": "2026-05-15T17:53:21.768715+00:00",
+  "repair_only": true,
+  "purpose": "Restore build_live_payload_visibility_probe and broad S149-S155 legacy aliases.",
+  "recommended_commands": [
+    "pytest tests/test_s149_s155_probe_exports_repair.py -q",
+    "pytest tests/test_s149_s155_live_payload_visibility.py -q",
+    "pytest"
+  ]
+}

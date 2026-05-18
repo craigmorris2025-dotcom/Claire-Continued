@@ -1,0 +1,16 @@
+{
+  "version": "v19.85.3",
+  "build": "Thin Input Escalation Blocker",
+  "installed_at": "2026-05-12T16:15:51.686057+00:00",
+  "runtime_mutation": "none",
+  "files_written": [
+    "tools/thin_input_escalation_blocker.py",
+    "tests/test_v19_85_3_thin_input_escalation_blocker.py",
+    "docs/builds/v19_85_3_thin_input_escalation_blocker.md",
+    "data/build_artifacts/v19_85_3_thin_input_escalation_blocker.json"
+  ],
+  "commands": [
+    "python tools/thin_input_escalation_blocker.py",
+    "pytest tests/test_v19_85_3_thin_input_escalation_blocker.py -q"
+  ]
+}

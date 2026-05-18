@@ -1,0 +1,28 @@
+{
+  "version": "v19.89.8-S26",
+  "installed_at_utc": "2026-05-14T03:46:01.452776+00:00",
+  "status": "installed",
+  "safety_note": "S26 intentionally did not patch claire/app.py.",
+  "files_written": [
+    "claire\\api\\canonical_browser_session_persistence.py",
+    "frontend\\cockpit\\assets\\js\\canonical_browser_session_persistence.js",
+    "frontend\\cockpit\\assets\\css\\canonical_browser_session_persistence.css",
+    "tests\\test_canonical_browser_session_persistence_s26.py",
+    "docs\\build_notes\\v19.89.8-S26_canonical_browser_session_persistence.md",
+    "output\\cockpit\\v19.89.8-S26_install_report.json"
+  ],
+  "link_report": [
+    "linked S26 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S26 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_canonical_browser_session_persistence_s26.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "runtime_mutation_enabled": false,
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

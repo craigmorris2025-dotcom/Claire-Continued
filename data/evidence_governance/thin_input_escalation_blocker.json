@@ -1,0 +1,63 @@
+{
+  "backend_owns_truth": true,
+  "build": "Thin Input Escalation Blocker",
+  "cockpit_owns_presentation_only": true,
+  "frontend_truth_generation_allowed": false,
+  "generated_at": "2026-05-13T11:22:15.850711+00:00",
+  "minimums": {
+    "minimum_raw_characters": 80,
+    "minimum_semantic_density_score": 0.25,
+    "minimum_specificity_score": 0.2,
+    "minimum_token_count": 10,
+    "minimum_unique_token_count": 7
+  },
+  "placeholder_terms": [
+    "additionalprop1",
+    "additionalprop2",
+    "additionalprop3",
+    "example",
+    "ipsum",
+    "lorem",
+    "none",
+    "null",
+    "placeholder",
+    "sample",
+    "string",
+    "test",
+    "todo",
+    "undefined"
+  ],
+  "route_behavior": {
+    "acquisition": {
+      "allowed_to_escalate": false,
+      "thin_input_terminal_state": "blocked_evidence"
+    },
+    "breakthrough": {
+      "allowed_to_escalate": false,
+      "thin_input_terminal_state": "blocked_evidence"
+    },
+    "design": {
+      "allowed_to_escalate": false,
+      "thin_input_terminal_state": "blocked_evidence"
+    },
+    "discovery": {
+      "allowed_to_escalate": false,
+      "thin_input_terminal_state": "pending_evidence"
+    },
+    "final_package": {
+      "allowed_to_escalate": false,
+      "thin_input_terminal_state": "blocked_evidence"
+    },
+    "portfolio": {
+      "allowed_to_escalate": false,
+      "thin_input_terminal_state": "insufficient_data"
+    }
+  },
+  "rules": [
+    "Thin input must not become discovery, portfolio, breakthrough, design, acquisition, or package truth.",
+    "Placeholder terms such as additionalprop1 and string must block high-escalation routes.",
+    "Frontend may render the backend terminal state but may not override it.",
+    "Substantive raw input and evidence baskets are required before route escalation."
+  ],
+  "version": "v19.85.3"
+}

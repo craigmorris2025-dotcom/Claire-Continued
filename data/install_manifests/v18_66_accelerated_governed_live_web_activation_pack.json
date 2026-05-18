@@ -1,0 +1,19 @@
+
+{
+  "version": "v18.66",
+  "name": "Accelerated Governed Live Web Activation Pack",
+  "scope": [
+    "compress environment, module, dashboard, endpoint, mounted route, and google result proofs into one activation pack",
+    "verify active dashboard is ready for google -> Google / https://www.google.com",
+    "verify endpoint google proof returns result_cards",
+    "verify provider readiness without uncontrolled browsing",
+    "support optional explicit controlled provider probe with injected callable",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_66_accelerated_governed_live_web_activation_pack.py -q"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "version": "v18.74",
+  "installer": "Dashboard Live Web Search Final Binding + Result Card Proof",
+  "created_at_utc": "2026-05-10T14:18:58Z",
+  "canonical_dashboard": "frontend/command_center/modern/index.html",
+  "javascript_asset": "frontend/command_center/modern/assets/js/claire_v18_74_dashboard_live_web_search_final_binding.js",
+  "css_asset": "frontend/command_center/modern/assets/css/claire_v18_74_dashboard_live_web_search_final_binding.css",
+  "normal_dashboard_search": {
+    "label": "Governed Live Web Search",
+    "endpoint": "/api/dashboard/search/live",
+    "bound_by": "claire_v18_74_dashboard_live_web_search_final_binding.js",
+    "fail_closed": true
+  },
+  "provider_probe": {
+    "label": "Provider Probe \u2014 Advanced / Manual",
+    "endpoint": "/api/dashboard/search/smoke/google",
+    "status_endpoint": "/api/dashboard/search/provider/status",
+    "explicit_enable_required": true,
+    "role": "advanced_manual_operator_probe_only"
+  },
+  "google_result_card_proof": {
+    "query": "google",
+    "expected_title": "Google",
+    "expected_url": "https://www.google.com",
+    "normal_search_endpoint": "/api/dashboard/search/live",
+    "provider_probe_endpoint": "/api/dashboard/search/smoke/google",
+    "provider_probe_role": "advanced_manual_operator_probe_only"
+  },
+  "operator_notes": [
+    "The normal dashboard search panel calls /api/dashboard/search/live.",
+    "The provider probe panel remains separate, advanced/manual, and explicit-enable gated.",
+    "The Google card proof expects the live search route to render Google / https://www.google.com when the backend returns that provider result."
+  ]
+}

@@ -1,1 +1,1 @@
-"""Governance — audit trail and policy enforcement."""
+"""Claire governance package."""

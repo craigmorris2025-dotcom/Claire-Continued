@@ -1,0 +1,32 @@
+{
+  "autonomous_execution": false,
+  "body_read": false,
+  "browser_execution": false,
+  "completed_at": "2026-05-14T18:03:24.377567+00:00",
+  "manual_promotion_required": true,
+  "metadata": {
+    "content_type": "text/html",
+    "headers": {
+      "accept-ranges": "bytes",
+      "age": "7199",
+      "allow": "GET, HEAD",
+      "cf-cache-status": "HIT",
+      "cf-ray": "9fbbd1be1a3961a5-ORD",
+      "connection": "keep-alive",
+      "content-type": "text/html",
+      "date": "Thu, 14 May 2026 18:03:23 GMT",
+      "last-modified": "Thu, 14 May 2026 05:31:28 GMT",
+      "server": "cloudflare"
+    },
+    "latency_ms": 344.003,
+    "reason": "OK",
+    "status": 200
+  },
+  "one_shot_only": true,
+  "operator_triggered_only": true,
+  "probe_type": "HEAD_METADATA_ONLY",
+  "quarantined": true,
+  "runtime_truth_mutation": false,
+  "url": "https://example.com",
+  "version": "v19.89.8-S36R1D-router-only-exclude-bridge"
+}

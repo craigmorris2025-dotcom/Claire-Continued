@@ -1,0 +1,25 @@
+{
+  "version": "v19.82B.8",
+  "timestamp": "2026-05-11T13:16:23",
+  "status": "go",
+  "route_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\routes_enterprise_cockpit_payload.py",
+  "test_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_v19_82B_8_enterprise_cockpit_payload_bridge.py",
+  "app_patch": {
+    "patched": true,
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\enterprise_payload_bridge\\v19.82B.8\\app.py.20260511_131623.bak",
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py"
+  },
+  "payload_fields": [
+    "operator_summary",
+    "active_run_id",
+    "terminal_state",
+    "selected_route",
+    "lifecycle",
+    "gates",
+    "missing_evidence",
+    "continuous_runtime",
+    "review_queue",
+    "candidate_sets",
+    "candidate_counts"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "v18.76",
+  "title": "Dashboard Current-State Banner and Smoke Report",
+  "installed_at": "2026-05-10T14:35:24.929714Z",
+  "dashboard": "frontend\\command_center\\modern\\index.html",
+  "javascript": "frontend\\command_center\\modern\\operator_dashboard.js",
+  "normal_search_endpoint": "/api/dashboard/search/live",
+  "provider_status_endpoint": "/api/dashboard/search/provider/status",
+  "provider_probe_endpoint": "/api/dashboard/search/smoke/google",
+  "provider_probe_manual_only": true,
+  "explicit_enable_required": true,
+  "expected_normal_result": {
+    "title": "Google",
+    "url": "https://www.google.com"
+  },
+  "dashboard_current": true,
+  "touched": [
+    "frontend\\command_center\\modern\\index.html",
+    "frontend\\command_center\\modern\\operator_dashboard.js"
+  ],
+  "deleted_files": []
+}

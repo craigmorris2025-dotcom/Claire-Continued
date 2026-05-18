@@ -1,0 +1,15 @@
+{
+  "version": "v18.55.2",
+  "name": "Dashboard Result Binding Init Repair Installer Fix",
+  "scope": [
+    "repair failed v18.55.1 installer output",
+    "replace escaped newline corruption in claire/governed_web/__init__.py",
+    "restore governed web package importability",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_55_dashboard_search_bar_real_result_binding.py tests/test_v18_55_2_dashboard_result_binding_init_repair_installer_fix.py -q"
+  ]
+}

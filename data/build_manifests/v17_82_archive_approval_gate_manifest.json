@@ -1,0 +1,111 @@
+{
+  "backup_dir": "backups/v17_82_archive_approval_gate/20260509_203610",
+  "build_name": "Archive Approval Gate + Safe Archive Executor Prepared",
+  "files_written": [
+    "claire/cleanup/archive_approval_gate.py",
+    "claire/api/routes_archive_approval_gate.py",
+    "ARCHIVE_APPROVAL_REVIEW.bat",
+    "tests/test_v17_82_archive_approval_gate.py",
+    "docs/cleanup/v17.82_archive_approval_gate.md",
+    "data/cleanup/archive_approval_gate.json",
+    "data/cleanup/approved_archive_moves_template.json",
+    "data/cleanup/archive_execution_lock.json",
+    "data/cleanup/v17_82_archive_approval_stop_go.json",
+    "data/cleanup/v17_82_archive_approval_stop_go.md",
+    "data/cleanup/ARCHIVE_APPROVAL_REVIEW.md",
+    "data/dashboard/archive_approval_gate_payload.json",
+    "data/cleanup/v17_82_archive_approval_gate_validation_result.json"
+  ],
+  "installed_at": "2026-05-10T01:36:10.143690Z",
+  "next": [
+    "Manual review approved_archive_moves_template.json",
+    "Only after approval: controlled archive movement",
+    "Immediately rerun endpoint smoke proof and desktop startup proof after any movement",
+    "v17.83 Internet Provider Configuration Gate"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "candidate_counts": {
+      "archive_review_candidates": 0,
+      "blocked_from_approval": 0,
+      "eligible_for_approval": 0
+    },
+    "delete_allowed": false,
+    "errors": [],
+    "execution_enabled_now": false,
+    "gate_status": "STOP",
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.75.1",
+      "source": {
+        "inputs": {
+          "autodesign_handoff": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/autodesign/autodesign_handoff_contract.json",
+            "status": "loaded"
+          },
+          "buildability_validation": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/validation/buildability_viability_manufacturability_validation.json",
+            "status": "loaded"
+          },
+          "dashboard_runtime_truth": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/dashboard_runtime_truth.json",
+            "status": "loaded"
+          },
+          "design_portal": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/design_portal_output_contract.json",
+            "status": "loaded"
+          },
+          "internet_readiness": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+            "status": "loaded"
+          },
+          "proof_pack": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/full_end_to_end_proof_pack.json",
+            "status": "loaded"
+          },
+          "regression_lock": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_governance_regression_lock.json",
+            "status": "loaded"
+          },
+          "rollback_plan": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json",
+            "status": "loaded"
+          },
+          "route_audit": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/routes/discovery_breakthrough_innovation_route_audit.json",
+            "status": "loaded"
+          },
+          "runner_gate": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/automatic_update_runner_gate.json",
+            "status": "loaded"
+          },
+          "runtime_truth": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json",
+            "status": "loaded"
+          },
+          "stop_go": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/v17_75_stop_go_report.json",
+            "status": "loaded"
+          },
+          "update_pack_staging": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json",
+            "status": "loaded"
+          }
+        },
+        "missing_data_stays_missing": true,
+        "proof_pack_loaded": true,
+        "runtime_truth_loaded": true
+      },
+      "status": "rebuilt"
+    },
+    "recommendation": "Do not prepare archive execution until cleanup proof, archive plan, and freeze files exist.",
+    "status": "passed"
+  },
+  "version": "v17.82"
+}

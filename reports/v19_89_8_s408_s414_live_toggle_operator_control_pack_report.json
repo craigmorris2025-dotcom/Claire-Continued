@@ -1,0 +1,31 @@
+{
+  "installer": "install_claire_v19_89_8_s408_s414_live_toggle_operator_control_pack.py",
+  "started_at": "2026-05-16T14:30:29.174476Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "files": [
+    {
+      "path": "claire/api/internet_live_toggle_operator_control_s408_s414.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "tests/test_s408_s414_live_toggle_operator_control.py",
+      "written": true,
+      "compiled": true
+    }
+  ],
+  "backups": {
+    "claire/api/internet_live_toggle_operator_control_s408_s414.py": null,
+    "tests/test_s408_s414_live_toggle_operator_control.py": null
+  },
+  "patches": [
+    {
+      "path": "claire\\app.py",
+      "exists": true,
+      "patched": true,
+      "marker": "BEGIN CLAIRE_S408_S428"
+    }
+  ],
+  "finished_at": "2026-05-16T14:30:29.221476Z"
+}

@@ -1,0 +1,24 @@
+{
+  "version": "v18.24",
+  "name": "Controlled Network Probe Adapter Shell",
+  "files": [
+    "SEARCH_BAR_CONTROLLED_NETWORK_PROBE_ADAPTER_SHELL_REVIEW.bat",
+    "claire/governance/governed_web/network_probe_adapter_shell.py",
+    "tests/test_v18_24_controlled_network_probe_adapter_shell.py"
+  ],
+  "accelerated_safely": true,
+  "invariants": {
+    "probe_executor_hard_disabled": true,
+    "planned_url_not_fetched": true,
+    "no_http_client_invoked": true,
+    "probe_attempted": false,
+    "execution_performed": false,
+    "network_call_performed": false,
+    "external_request_performed": false,
+    "runtime_truth_mutated": false,
+    "automatic_update_performed": false,
+    "response_body_fetched": false,
+    "review_gated": true,
+    "fail_closed": true
+  }
+}

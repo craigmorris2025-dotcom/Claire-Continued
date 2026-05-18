@@ -1,0 +1,86 @@
+{
+  "version": "v19.89.8",
+  "build_range": "S681-S708",
+  "title": "Governed search/web readiness audit, provider configuration inspector, metadata adapter boundary, and manual metadata probe gate",
+  "created_at": "2026-05-17T04:17:38.897944+00:00",
+  "files_created_or_replaced": [
+    "claire/governance/governed_web_readiness_audit.py",
+    "claire/governance/governed_provider_config_inspector.py",
+    "claire/governance/governed_metadata_adapter_boundary.py",
+    "claire/governance/governed_manual_metadata_probe_gate.py",
+    "claire/api/governed_metadata_activation_routes.py",
+    "frontend/cockpit/assets/claire_governed_metadata_activation_preflight.js",
+    "frontend/cockpit/assets/claire_governed_metadata_activation_preflight.css",
+    "tests/test_s681_s708_governed_metadata_activation_preflight.py"
+  ],
+  "app_registration": {
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py.bak_s681_s708",
+    "registration_inserted": true
+  },
+  "html_patched": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html"
+  ],
+  "verification": {
+    "imported_modules": [
+      "claire.governance.governed_web_readiness_audit",
+      "claire.governance.governed_provider_config_inspector",
+      "claire.governance.governed_metadata_adapter_boundary",
+      "claire.governance.governed_manual_metadata_probe_gate",
+      "claire.api.governed_metadata_activation_routes"
+    ],
+    "app_check": {
+      "create_app_imported": true,
+      "routes_registered": true,
+      "manual_probe_route_registered": true,
+      "route_count": 285
+    }
+  },
+  "blocked_authority_preserved": {
+    "live_web_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  },
+  "new_endpoints": [
+    "/api/search/readiness/audit",
+    "/api/search/readiness/preflight",
+    "/api/search/readiness/cards",
+    "/api/search/readiness/actions",
+    "/api/search/readiness/payload",
+    "/api/internet/search/readiness/preflight",
+    "/api/search/providers/configuration",
+    "/api/search/providers/configuration/cards",
+    "/api/search/providers/configuration/actions",
+    "/api/search/providers/configuration/status",
+    "/api/search/providers/configuration/payload",
+    "/api/search/metadata/adapter/boundary",
+    "/api/search/metadata/adapter/preview",
+    "/api/search/metadata/adapter/validate",
+    "/api/search/metadata/adapter/cards",
+    "/api/search/metadata/adapter/actions",
+    "/api/search/metadata/adapter/status",
+    "/api/search/metadata/adapter/payload",
+    "/api/search/metadata/probe/manual/preflight",
+    "/api/search/metadata/probe/manual/preview",
+    "/api/search/metadata/probe/manual/cards",
+    "/api/search/metadata/probe/manual/actions",
+    "/api/search/metadata/probe/manual/status",
+    "/api/search/metadata/probe/manual/payload",
+    "/api/search/metadata/probe/manual/stop-gate",
+    "/api/internet/metadata/probe/manual/preflight",
+    "/api/cockpit/metadata-search/payload",
+    "/api/cockpit/metadata-search/cards",
+    "/api/cockpit/metadata-search/actions",
+    "/api/cockpit/metadata-search/status"
+  ],
+  "next_phase": "S709-S736 result quarantine, evidence normalization, confidence, and review actions"
+}

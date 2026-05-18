@@ -1,0 +1,23 @@
+{
+  "active_dashboard_exists": true,
+  "active_dashboard_from_launcher": "frontend/command_center/modern/index.html",
+  "launcher_count": 1,
+  "launcher_records": [
+    {
+      "dashboard_path": "frontend/command_center/modern/index.html",
+      "fingerprint": {
+        "exists": true,
+        "is_file": true,
+        "path": "LAUNCH_CLAIRE.bat",
+        "sha256_16": "a57c105025614a68",
+        "size_bytes": 2017
+      },
+      "first_80_lines": "@echo off\nsetlocal EnableExtensions\n\nREM ============================================================\nREM Claire Root Launcher\nREM Version: 17.52.1\nREM Active Dashboard: frontend\\command_center\\modern\\index.html\nREM Purpose:\nREM   Opens the modern Claire Operator Dashboard.\nREM   Uses the v17.52 dashboard as the primary launcher surface.\nREM   Does not open old build-layer shells.\nREM ============================================================\n\ncd /d \"%~dp0\"\n\nset \"CLAIRE_ROOT=%~dp0\"\nset \"CLAIRE_APP_SHELL=0\"\nset \"CLAIRE_LAUNCH_MODE=modern_operator_dashboard\"\nset \"CLAIRE_DASHBOARD_PATH=frontend\\command_center\\modern\\index.html\"\nset \"CLAIRE_LOG_DIR=logs\"\n\nif not exist \"%CLAIRE_LOG_DIR%\" mkdir \"%CLAIRE_LOG_DIR%\"\n\necho.\necho ============================================================\necho Claire Syntalion - Root Launcher v17.52.1\necho Root: %CLAIRE_ROOT%\necho Dashboard: %CLAIRE_DASHBOARD_PATH%\necho ============================================================\necho.\n\nif exist \".venv\\Scripts\\python.exe\" (\n    set \"CLAIRE_PYTHON=.venv\\Scripts\\python.exe\"\n) else (\n    set \"CLAIRE_PYTHON=python\"\n)\n\necho Using Python: %CLAIRE_PYTHON%\necho.\n\nif exist \"tools\\desktop_version_sync.py\" (\n    echo Syncing desktop/version state...\n    \"%CLAIRE_PYTHON%\" \"tools\\desktop_version_sync.py\" --root \"%CLAIRE_ROOT%\" --mode modern_operator_dashboard > \"%CLAIRE_LOG_DIR%\\desktop_version_sync.out.log\" 2> \"%CLAIRE_LOG_DIR%\\desktop_version_sync.err.log\"\n)\n\nif exist \"%CLAIRE_DASHBOARD_PATH%\" (\n    echo Opening modern Claire Operator Dashboard...\n    start \"\" \"%CLAIRE_DASHBOARD_PATH%\"\n    goto :done\n)\n\necho.\necho [Claire Launcher Error]\necho Modern Operator Dashboard not found:\necho   %CLAIRE_DASHBOARD_PATH%\necho.\necho Expected file:\necho   frontend\\command_center\\modern\\index.html\necho.\necho Install or rerun:\necho   python .\\install_v17_52_modern_operator_dashboard.py\necho.\npause\n\n:done\necho.\necho Claire Operator Dashboard launch complete.\nendlocal",
+      "mentions_main_py": false,
+      "mentions_modern_operator_dashboard": true,
+      "mentions_portable_launcher": false,
+      "path": "LAUNCH_CLAIRE.bat"
+    }
+  ],
+  "primary_launcher_exists": true
+}

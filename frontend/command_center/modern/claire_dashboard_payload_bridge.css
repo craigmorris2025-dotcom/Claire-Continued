@@ -1,0 +1,130 @@
+/* Claire Syntalion v19 Dashboard Payload Fetch Wiring */
+
+.claire-payload-bridge {
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 18px;
+  padding: 18px;
+  margin: 18px;
+  background: rgba(15, 23, 42, 0.78);
+  color: #e5e7eb;
+  font-family: Inter, Segoe UI, system-ui, sans-serif;
+}
+
+.claire-payload-bridge__header,
+.claire-payload-bridge__panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.claire-payload-bridge__eyebrow {
+  margin: 0 0 4px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.claire-payload-bridge h2,
+.claire-payload-bridge h3 {
+  margin: 0;
+}
+
+.claire-payload-bridge__status,
+.claire-payload-bridge__panel-header span {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.claire-payload-bridge__summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.claire-payload-bridge__metric,
+.claire-payload-bridge__panel {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(2, 6, 23, 0.42);
+}
+
+.claire-payload-bridge__metric span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.72;
+  margin-bottom: 6px;
+}
+
+.claire-payload-bridge__metric strong {
+  display: block;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.claire-payload-bridge__panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.claire-payload-bridge__keys {
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.claire-payload-bridge__keys li {
+  margin: 5px 0;
+  overflow-wrap: anywhere;
+}
+
+.claire-payload-bridge__empty {
+  opacity: 0.72;
+  margin-bottom: 0;
+}
+
+.claire-payload-bridge__stage-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+  max-height: 420px;
+  overflow: auto;
+}
+
+.claire-payload-bridge__stage {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  padding: 7px 8px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.68);
+}
+
+.claire-payload-bridge__stage-name {
+  overflow-wrap: anywhere;
+}
+
+.claire-payload-bridge__stage-status {
+  opacity: 0.78;
+}
+
+.claire-payload-bridge__raw {
+  margin-top: 16px;
+}
+
+.claire-payload-bridge__raw pre {
+  max-height: 360px;
+  overflow: auto;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.72);
+}

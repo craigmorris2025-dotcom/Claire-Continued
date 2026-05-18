@@ -1,0 +1,40 @@
+{
+  "version": "v19.72",
+  "build_name": "Cockpit Payload Route Gate + Runtime Render Verification",
+  "created_at": "2026-05-11T11:10:20.747794Z",
+  "non_destructive": true,
+  "launcher_rewired": false,
+  "legacy_deleted": false,
+  "path_status": {
+    "backend_app": true,
+    "payload_bridge": true,
+    "live_search_routes": true,
+    "operator_search_routes": true,
+    "cockpit_root": true,
+    "cockpit_shell": true,
+    "cockpit_bootstrap": true,
+    "cockpit_workspace_manager": true,
+    "cockpit_payload_adapter": true,
+    "cockpit_api_client": true,
+    "cockpit_runtime_workspace": true,
+    "cockpit_runtime_status_panel": true,
+    "cockpit_lifecycle_panel": true,
+    "cockpit_runtime_truth_panel": true,
+    "cockpit_run_history_panel": true,
+    "legacy_dashboard": true,
+    "launcher": true
+  },
+  "static_findings": {
+    "app_mentions_dashboard_payload_bridge": true,
+    "bridge_mentions_payload_status": true,
+    "bridge_mentions_payload_route": true,
+    "adapter_mentions_payload_status": true,
+    "adapter_mentions_payload_route": true,
+    "api_client_present": true,
+    "runtime_workspace_present": true
+  },
+  "hard_blockers": [],
+  "route_risk": [],
+  "next_gate": "Verify /dashboard/payload/status and /dashboard/payload while backend is running.",
+  "recommendation": "Proceed to launcher rewire only after payload routes return valid backend truth."
+}

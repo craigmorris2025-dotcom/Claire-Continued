@@ -1,0 +1,18 @@
+{
+  "version": "v19.89.8-S240-S246",
+  "installed_at": "2026-05-15T16:21:38.884822+00:00",
+  "stage_pack": "S240-S246",
+  "purpose": "First real cockpit implementation scaffold with safe static shell binding.",
+  "files": [
+    "frontend/cockpit/modern/claire_cockpit_shell.html",
+    "frontend/cockpit/modern/claire_cockpit_shell.css",
+    "frontend/cockpit/modern/claire_cockpit_shell.js",
+    "claire/api/cockpit_static_shell_manifest.py",
+    "tests/test_s240_s246_static_shell_manifest.py",
+    "tests/test_s240_s246_static_shell_files.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s240_s246_static_shell_manifest.py tests/test_s240_s246_static_shell_files.py -q",
+    "pytest"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "active_controls_extracted": 0,
+  "active_controls_rejected": [],
+  "active_controls_validated": 0,
+  "backups": [],
+  "build_id": "v19.89.8-s1351-s1450-system-fit-operator-cockpit-v2",
+  "failure": "Only 0 valid GET 200 active controls found; 15 required. This usually means S1323 did not mount/expose the active-control-map correctly or it contains unbound controls.",
+  "preflight": {
+    "/api/dashboard/active-control-map": {
+      "payload_type": "dict",
+      "status": 200
+    },
+    "/dashboard/active-control-map": {
+      "payload_type": "dict",
+      "status": 200
+    },
+    "/dashboard/payload": {
+      "payload_type": "dict",
+      "status": 200
+    },
+    "/dashboard/payload/status": {
+      "payload_type": "dict",
+      "status": 200
+    },
+    "get_route_count": 517,
+    "post_route_count": 70,
+    "route_count": 587
+  },
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "status": "failed",
+  "traceback": "NoneType: None\n",
+  "written_files": []
+}

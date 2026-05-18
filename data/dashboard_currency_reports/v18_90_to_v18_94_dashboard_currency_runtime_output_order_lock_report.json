@@ -1,0 +1,177 @@
+{
+  "errors": [],
+  "pack_name": "Dashboard Currency + Runtime Output Order Lock Pack",
+  "pack_version": "v18.90-v18.94",
+  "proofs": {
+    "dashboard_currency_required": true,
+    "normal_search_visible": true,
+    "provider_probe_separate": true,
+    "required_surfaces_present": true,
+    "runtime_output_order_locked": true,
+    "stage_16_to_22_preserved": true
+  },
+  "state": {
+    "dashboard_must_update_each_pack": true,
+    "dashboard_no_change_requires_explicit_report": true,
+    "live_connectivity_visible": true,
+    "normal_search_endpoint": "/api/dashboard/search/live",
+    "pack_version": "v18.90-v18.94",
+    "provider_probe_endpoint": "/api/dashboard/search/provider/probe",
+    "provider_probe_manual_gated": true,
+    "required_surfaces": [
+      {
+        "key": "main_result",
+        "label": "Main Result",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "governed_live_web_search",
+        "label": "Governed Live Web Search",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "runtime_truth",
+        "label": "Runtime Truth",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "trend_thesis",
+        "label": "Trend Thesis",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "portfolio",
+        "label": "Portfolio",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "breakthrough",
+        "label": "Breakthrough",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "advancement_path",
+        "label": "Advancement Path",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "autodesign",
+        "label": "Autodesign",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "design_portal",
+        "label": "Design Portal",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "validation",
+        "label": "Validation",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "acquisition",
+        "label": "Acquisition",
+        "required": true,
+        "status": "expected"
+      },
+      {
+        "key": "system_health",
+        "label": "System Health",
+        "required": true,
+        "status": "expected"
+      }
+    ],
+    "runtime_output_order": [
+      {
+        "dashboard_visible": true,
+        "index": 1,
+        "key": "signal_governance",
+        "locked": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 2,
+        "key": "trend_discovery",
+        "locked": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 3,
+        "key": "thesis_formation",
+        "locked": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 4,
+        "key": "portfolio_intelligence",
+        "locked": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 5,
+        "key": "breakthrough_escalation",
+        "locked": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 6,
+        "key": "advancement_path_selection",
+        "locked": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 7,
+        "key": "autodesign_handoff",
+        "locked": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 8,
+        "key": "design_portal_output",
+        "locked": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 9,
+        "key": "validation_stack",
+        "locked": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 10,
+        "key": "acquisition_package",
+        "locked": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 11,
+        "key": "final_package",
+        "locked": true
+      }
+    ],
+    "stage_16_to_22_preserved": {
+      "16": "auto_invention_solution_generation",
+      "17": "solution_structuring",
+      "18": "buildability_assessment",
+      "19": "viability_assessment",
+      "20": "manufacturability_deployability_assessment",
+      "21": "feasibility_validation",
+      "22": "design_portal_output_blueprints_specs"
+    },
+    "status": "dashboard_currency_locked",
+    "updated_at": "2026-05-10T15:20:09.760168Z"
+  },
+  "status": "pass",
+  "updated_at": "2026-05-10T15:20:09.760168Z"
+}

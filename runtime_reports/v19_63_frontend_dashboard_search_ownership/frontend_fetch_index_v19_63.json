@@ -1,0 +1,114 @@
+[
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/api.js",
+    "kind": "fetch",
+    "line": 14,
+    "source": "const response = await fetch(`${BASE_URL}${path}`, {",
+    "url": "${BASE_URL}${path}"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/api.js",
+    "kind": "fetch",
+    "line": 22,
+    "source": "const response = await fetch(`${BASE_URL}${path}`, {",
+    "url": "${BASE_URL}${path}"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/api.js",
+    "kind": "fetch",
+    "line": 31,
+    "source": "const response = await fetch(\"/api/command\", {",
+    "url": "/api/command"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/platform.js",
+    "kind": "fetch",
+    "line": 10,
+    "source": "const resp = await fetch('/api/platform/status');",
+    "url": "/api/platform/status"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/platform.js",
+    "kind": "fetch",
+    "line": 89,
+    "source": "const resp = await fetch('/api/platform/resolve', { method: 'POST' });",
+    "url": "/api/platform/resolve"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/updater.js",
+    "kind": "fetch",
+    "line": 12,
+    "source": "const resp = await fetch(`${API_BASE}/api/update/status`);",
+    "url": "${API_BASE}/api/update/status"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/updater.js",
+    "kind": "fetch",
+    "line": 142,
+    "source": "const resp = await fetch(`${API_BASE}/api/update/apply`, { method: 'POST' });",
+    "url": "${API_BASE}/api/update/apply"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/updater.js",
+    "kind": "fetch",
+    "line": 177,
+    "source": "const resp = await fetch(`${API_BASE}/api/update/cache`);",
+    "url": "${API_BASE}/api/update/cache"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/updater.js",
+    "kind": "fetch",
+    "line": 184,
+    "source": "const resp = await fetch(`${API_BASE}/api/update/cache`, { method: 'DELETE' });",
+    "url": "${API_BASE}/api/update/cache"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/web_connector.js",
+    "kind": "fetch",
+    "line": 23,
+    "source": "const resp = await fetch(`${API_BASE}/api/proxy/get?${query}`);",
+    "url": "${API_BASE}/api/proxy/get?${query}"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/web_connector.js",
+    "kind": "fetch",
+    "line": 37,
+    "source": "const resp = await fetch(`${API_BASE}/api/proxy/post`, {",
+    "url": "${API_BASE}/api/proxy/post"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/web_connector.js",
+    "kind": "fetch",
+    "line": 55,
+    "source": "const resp = await fetch(`${API_BASE}/api/proxy/ping`);",
+    "url": "${API_BASE}/api/proxy/ping"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/web_connector.js",
+    "kind": "fetch",
+    "line": 71,
+    "source": "const resp = await fetch(`${API_BASE}/api/connectors/${connectorName}/fetch`, {",
+    "url": "${API_BASE}/api/connectors/${connectorName}/fetch"
+  },
+  {
+    "category": "other_or_relative",
+    "file": "frontend/js/web_connector.js",
+    "kind": "fetch",
+    "line": 89,
+    "source": "const resp = await fetch(`${API_BASE}/api/connectors/status`);",
+    "url": "${API_BASE}/api/connectors/status"
+  }
+]

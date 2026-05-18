@@ -1,0 +1,20 @@
+
+{
+  "version": "v18.67",
+  "name": "Real Controlled Provider Result Proof",
+  "scope": [
+    "inspect required real provider environment flags",
+    "discover real provider adapters without executing them",
+    "block real provider execution unless explicit probe and env flags are enabled",
+    "support deterministic injected provider proof for validation",
+    "normalize controlled provider results into dashboard endpoint result_cards",
+    "prove google can become Google / https://www.google.com through controlled provider result pipeline",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_67_real_controlled_provider_result_proof.py -q"
+  ]
+}

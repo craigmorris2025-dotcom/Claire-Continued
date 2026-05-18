@@ -1,0 +1,18 @@
+{
+  "version": "v19.84.7",
+  "build": "Cockpit Binding Readiness Gate",
+  "installed_at": "2026-05-12T15:03:46.189766+00:00",
+  "purpose": "Block cockpit binding work until critical route authority is clean.",
+  "runtime_mutation": "none",
+  "files_written": [
+    "tools/cockpit_binding_readiness_gate.py",
+    "tests/test_v19_84_7_cockpit_binding_readiness_gate.py",
+    "docs/builds/v19_84_7_cockpit_binding_readiness_gate.md",
+    "data/build_artifacts/v19_84_7_cockpit_binding_readiness_gate.json"
+  ],
+  "commands": [
+    "python tools/cockpit_binding_readiness_gate.py",
+    "pytest tests/test_v19_84_7_cockpit_binding_readiness_gate.py -q"
+  ],
+  "next_build": "v19.84.8 selected by readiness gate"
+}

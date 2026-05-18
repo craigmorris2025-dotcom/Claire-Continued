@@ -1,0 +1,97 @@
+(function () {
+  const PANEL_ID = "claire-governed-search-result-review";
+  const ENDPOINT = "/api/cockpit/search-results/payload";
+
+  function asArray(value) {
+    return Array.isArray(value) ? value : [];
+  }
+
+  function text(value, fallback) {
+    return value === undefined || value === null || value === "" ? fallback : String(value);
+  }
+
+  function makeCard(card, kind) {
+    const div = document.createElement("div");
+    div.className = "claire-s709-card";
+    const title = text(card.title || card.evidence_card_id || card.confidence_card_id, "Untitled");
+    const state = text(card.state || card.evidence_state || card.confidence_band || card.review_state, "pending");
+    const subtitle = text(card.subtitle || card.source_family || card.trust_tier, "metadata-only");
+    div.innerHTML = `
+      <div class="claire-s709-card-top">
+        <span class="claire-s709-kind">${kind}</span>
+        <span class="claire-s709-state">${state}</span>
+      </div>
+      <div class="claire-s709-title">${title}</div>
+      <div class="claire-s709-subtitle">${subtitle}</div>
+      <div class="claire-s709-summary">${text(card.summary || (card.claim_preview && card.claim_preview.snippet) || card.citation_state, "No body read. Metadata-only review card.")}</div>
+    `;
+    return div;
+  }
+
+  function makeAction(action) {
+    const div = document.createElement("div");
+    div.className = "claire-s709-action";
+    div.innerHTML = `
+      <div class="claire-s709-title">${text(action.action_type, "review_action")}</div>
+      <div class="claire-s709-subtitle">${text(action.title, "Candidate")}</div>
+      <div class="claire-s709-summary">Execution: ${action.execution_enabled ? "enabled" : "blocked"} / Runtime mutation: ${action.runtime_truth_mutation_enabled ? "enabled" : "blocked"}</div>
+    `;
+    return div;
+  }
+
+  function ensurePanel() {
+    let panel = document.getElementById(PANEL_ID);
+    if (panel) return panel;
+    const host = document.querySelector("main") || document.querySelector("#app") || document.body;
+    panel = document.createElement("section");
+    panel.id = PANEL_ID;
+    panel.className = "claire-s709-panel";
+    panel.innerHTML = `
+      <div class="claire-s709-header">
+        <div>
+          <div class="claire-s709-eyebrow">S709-S736</div>
+          <h2>Governed Search Result Review</h2>
+          <p>Quarantined metadata results, evidence cards, confidence candidates, and non-executable operator actions.</p>
+        </div>
+        <div class="claire-s709-chip">Metadata only</div>
+      </div>
+      <div class="claire-s709-grid" data-role="cards"></div>
+      <div class="claire-s709-actions" data-role="actions"></div>
+    `;
+    host.appendChild(panel);
+    return panel;
+  }
+
+  async function loadPayload() {
+    const panel = ensurePanel();
+    const cardHost = panel.querySelector('[data-role="cards"]');
+    const actionHost = panel.querySelector('[data-role="actions"]');
+    try {
+      const response = await fetch(ENDPOINT, { headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const payload = await response.json();
+      const quarantineCards = asArray(payload.quarantine && payload.quarantine.results).slice(0, 3).map((item) => ({
+        title: item.title,
+        subtitle: `${item.source_family} / ${item.trust_tier}`,
+        state: item.quarantine_state,
+        summary: item.snippet
+      }));
+      const evidenceCards = asArray(payload.evidence && payload.evidence.cards).slice(0, 3);
+      const confidenceCards = asArray(payload.confidence && payload.confidence.cards).slice(0, 3);
+      cardHost.innerHTML = "";
+      quarantineCards.forEach((card) => cardHost.appendChild(makeCard(card, "quarantine")));
+      evidenceCards.forEach((card) => cardHost.appendChild(makeCard(card, "evidence")));
+      confidenceCards.forEach((card) => cardHost.appendChild(makeCard(card, "confidence")));
+      actionHost.innerHTML = "";
+      asArray(payload.operator_review && payload.operator_review.actions).slice(0, 6).forEach((action) => actionHost.appendChild(makeAction(action)));
+    } catch (error) {
+      cardHost.innerHTML = `<div class="claire-s709-card"><div class="claire-s709-title">Search result review payload unavailable</div><div class="claire-s709-summary">${text(error.message, "Fetch failed")}</div></div>`;
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", loadPayload);
+  } else {
+    loadPayload();
+  }
+})();

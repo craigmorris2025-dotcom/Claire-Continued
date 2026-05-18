@@ -1,0 +1,25 @@
+{
+  "approval_file": "data/cleanup/approved_archive_moves_template.json",
+  "archive_execution_enabled": false,
+  "automatic_execution_enabled": false,
+  "delete_enabled": false,
+  "execution_default": "locked",
+  "generated_at": "2026-05-13T11:20:32.934037Z",
+  "post_archive_proofs_required": [
+    "python -m pytest tests/test_v17_76_platform_endpoint_smoke_proof.py -q",
+    "python -m pytest tests/test_v17_78_desktop_packaging_startup_reliability.py -q",
+    "START_CLAIRE_SAFE.bat",
+    "VERIFY_CLAIRE_STARTUP.bat"
+  ],
+  "required_confirm_text": "ARCHIVE APPROVED",
+  "rules": {
+    "desktop_startup_required_after_move": true,
+    "endpoint_smoke_required_after_move": true,
+    "forbidden_prefixes_blocked": true,
+    "move_only_no_delete": true,
+    "operator_approval_required": true,
+    "protected_paths_blocked": true,
+    "rollback_by_move_back_required": true
+  },
+  "version": "v17.82"
+}

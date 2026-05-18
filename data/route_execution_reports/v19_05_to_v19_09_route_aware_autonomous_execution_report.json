@@ -1,0 +1,2313 @@
+{
+  "errors": [],
+  "pack_name": "Route-Aware Autonomous Execution Proof Pack",
+  "pack_version": "v19.05-v19.09",
+  "proofs": {
+    "main_result_present": true,
+    "metadata_only_output_forbidden": true,
+    "multiple_routes_proven": true,
+    "skipped_by_route_reasons_present": true,
+    "stage_plan_covers_30_stages": true,
+    "terminal_states_route_matched": true
+  },
+  "samples": [
+    {
+      "executed_stages": [
+        {
+          "index": 1,
+          "reason": "required_by_selected_route",
+          "stage": "signal_ingestion",
+          "status": "executed"
+        },
+        {
+          "index": 2,
+          "reason": "required_by_selected_route",
+          "stage": "signal_normalization",
+          "status": "executed"
+        },
+        {
+          "index": 3,
+          "reason": "required_by_selected_route",
+          "stage": "source_validation_weighting",
+          "status": "executed"
+        },
+        {
+          "index": 4,
+          "reason": "required_by_selected_route",
+          "stage": "context_expansion",
+          "status": "executed"
+        },
+        {
+          "index": 8,
+          "reason": "required_by_selected_route",
+          "stage": "trend_discovery",
+          "status": "executed"
+        },
+        {
+          "index": 10,
+          "reason": "required_by_selected_route",
+          "stage": "insight_thesis_structuring",
+          "status": "executed"
+        }
+      ],
+      "main_result": {
+        "route": "discovery_to_thesis",
+        "summary": "Claire selected discovery_to_thesis and reached trend_thesis_ready.",
+        "title": "trend_thesis_ready"
+      },
+      "metadata_only_output": false,
+      "pack_version": "v19.05-v19.09",
+      "query": "discover early market trend signals",
+      "route": "discovery_to_thesis",
+      "skipped_by_route": [
+        {
+          "index": 5,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_consolidation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 6,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "entity_extraction",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 7,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "relationship_mapping",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 9,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "cluster_formation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 11,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_detection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 12,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_qualification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 13,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "discovery_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 14,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "breakthrough_identification_classification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 15,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "advancement_path_selection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 16,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "auto_invention_solution_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 17,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "solution_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 18,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "buildability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 19,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "viability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 20,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 21,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "feasibility_validation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 22,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 23,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "market_positioning",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 24,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "moat_differentiation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 25,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "business_model_value_capture",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 26,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "competitor_analysis",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 27,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "portfolio_creation_optimization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 28,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquirer_identification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 29,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquisition_fit_rationale",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 30,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "final_package_construction",
+          "status": "skipped_by_route"
+        }
+      ],
+      "stage_plan": [
+        {
+          "index": 1,
+          "reason": "required_by_selected_route",
+          "stage": "signal_ingestion",
+          "status": "executed"
+        },
+        {
+          "index": 2,
+          "reason": "required_by_selected_route",
+          "stage": "signal_normalization",
+          "status": "executed"
+        },
+        {
+          "index": 3,
+          "reason": "required_by_selected_route",
+          "stage": "source_validation_weighting",
+          "status": "executed"
+        },
+        {
+          "index": 4,
+          "reason": "required_by_selected_route",
+          "stage": "context_expansion",
+          "status": "executed"
+        },
+        {
+          "index": 5,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_consolidation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 6,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "entity_extraction",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 7,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "relationship_mapping",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 8,
+          "reason": "required_by_selected_route",
+          "stage": "trend_discovery",
+          "status": "executed"
+        },
+        {
+          "index": 9,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "cluster_formation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 10,
+          "reason": "required_by_selected_route",
+          "stage": "insight_thesis_structuring",
+          "status": "executed"
+        },
+        {
+          "index": 11,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_detection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 12,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_qualification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 13,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "discovery_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 14,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "breakthrough_identification_classification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 15,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "advancement_path_selection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 16,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "auto_invention_solution_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 17,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "solution_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 18,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "buildability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 19,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "viability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 20,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 21,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "feasibility_validation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 22,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 23,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "market_positioning",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 24,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "moat_differentiation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 25,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "business_model_value_capture",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 26,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "competitor_analysis",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 27,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "portfolio_creation_optimization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 28,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquirer_identification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 29,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquisition_fit_rationale",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 30,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "final_package_construction",
+          "status": "skipped_by_route"
+        }
+      ],
+      "status": "route_aware_execution_complete",
+      "terminal_state": "trend_thesis_ready",
+      "updated_at": "2026-05-10T17:56:12.132326Z"
+    },
+    {
+      "executed_stages": [
+        {
+          "index": 1,
+          "reason": "required_by_selected_route",
+          "stage": "signal_ingestion",
+          "status": "executed"
+        },
+        {
+          "index": 2,
+          "reason": "required_by_selected_route",
+          "stage": "signal_normalization",
+          "status": "executed"
+        },
+        {
+          "index": 8,
+          "reason": "required_by_selected_route",
+          "stage": "trend_discovery",
+          "status": "executed"
+        },
+        {
+          "index": 10,
+          "reason": "required_by_selected_route",
+          "stage": "insight_thesis_structuring",
+          "status": "executed"
+        },
+        {
+          "index": 27,
+          "reason": "required_by_selected_route",
+          "stage": "portfolio_creation_optimization",
+          "status": "executed"
+        }
+      ],
+      "main_result": {
+        "route": "discovery_to_portfolio",
+        "summary": "Claire selected discovery_to_portfolio and reached portfolio_action_ready.",
+        "title": "portfolio_action_ready"
+      },
+      "metadata_only_output": false,
+      "pack_version": "v19.05-v19.09",
+      "query": "create portfolio from AI infrastructure trend",
+      "route": "discovery_to_portfolio",
+      "skipped_by_route": [
+        {
+          "index": 3,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "source_validation_weighting",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 4,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "context_expansion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 5,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_consolidation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 6,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "entity_extraction",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 7,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "relationship_mapping",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 9,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "cluster_formation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 11,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_detection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 12,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_qualification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 13,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "discovery_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 14,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "breakthrough_identification_classification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 15,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "advancement_path_selection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 16,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "auto_invention_solution_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 17,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "solution_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 18,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "buildability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 19,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "viability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 20,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 21,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "feasibility_validation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 22,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 23,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "market_positioning",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 24,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "moat_differentiation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 25,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "business_model_value_capture",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 26,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "competitor_analysis",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 28,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquirer_identification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 29,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquisition_fit_rationale",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 30,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "final_package_construction",
+          "status": "skipped_by_route"
+        }
+      ],
+      "stage_plan": [
+        {
+          "index": 1,
+          "reason": "required_by_selected_route",
+          "stage": "signal_ingestion",
+          "status": "executed"
+        },
+        {
+          "index": 2,
+          "reason": "required_by_selected_route",
+          "stage": "signal_normalization",
+          "status": "executed"
+        },
+        {
+          "index": 3,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "source_validation_weighting",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 4,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "context_expansion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 5,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_consolidation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 6,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "entity_extraction",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 7,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "relationship_mapping",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 8,
+          "reason": "required_by_selected_route",
+          "stage": "trend_discovery",
+          "status": "executed"
+        },
+        {
+          "index": 9,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "cluster_formation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 10,
+          "reason": "required_by_selected_route",
+          "stage": "insight_thesis_structuring",
+          "status": "executed"
+        },
+        {
+          "index": 11,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_detection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 12,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_qualification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 13,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "discovery_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 14,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "breakthrough_identification_classification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 15,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "advancement_path_selection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 16,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "auto_invention_solution_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 17,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "solution_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 18,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "buildability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 19,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "viability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 20,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 21,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "feasibility_validation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 22,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 23,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "market_positioning",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 24,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "moat_differentiation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 25,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "business_model_value_capture",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 26,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "competitor_analysis",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 27,
+          "reason": "required_by_selected_route",
+          "stage": "portfolio_creation_optimization",
+          "status": "executed"
+        },
+        {
+          "index": 28,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquirer_identification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 29,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquisition_fit_rationale",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 30,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "final_package_construction",
+          "status": "skipped_by_route"
+        }
+      ],
+      "status": "route_aware_execution_complete",
+      "terminal_state": "portfolio_action_ready",
+      "updated_at": "2026-05-10T17:56:12.132326Z"
+    },
+    {
+      "executed_stages": [
+        {
+          "index": 1,
+          "reason": "required_by_selected_route",
+          "stage": "signal_ingestion",
+          "status": "executed"
+        },
+        {
+          "index": 11,
+          "reason": "required_by_selected_route",
+          "stage": "gap_detection",
+          "status": "executed"
+        },
+        {
+          "index": 12,
+          "reason": "required_by_selected_route",
+          "stage": "gap_qualification",
+          "status": "executed"
+        },
+        {
+          "index": 14,
+          "reason": "required_by_selected_route",
+          "stage": "breakthrough_identification_classification",
+          "status": "executed"
+        }
+      ],
+      "main_result": {
+        "route": "breakthrough_classification",
+        "summary": "Claire selected breakthrough_classification and reached breakthrough_classified.",
+        "title": "breakthrough_classified"
+      },
+      "metadata_only_output": false,
+      "pack_version": "v19.05-v19.09",
+      "query": "classify breakthrough innovation signal",
+      "route": "breakthrough_classification",
+      "skipped_by_route": [
+        {
+          "index": 2,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_normalization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 3,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "source_validation_weighting",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 4,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "context_expansion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 5,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_consolidation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 6,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "entity_extraction",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 7,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "relationship_mapping",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 8,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "trend_discovery",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 9,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "cluster_formation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 10,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "insight_thesis_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 13,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "discovery_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 15,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "advancement_path_selection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 16,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "auto_invention_solution_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 17,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "solution_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 18,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "buildability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 19,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "viability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 20,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 21,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "feasibility_validation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 22,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 23,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "market_positioning",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 24,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "moat_differentiation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 25,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "business_model_value_capture",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 26,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "competitor_analysis",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 27,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "portfolio_creation_optimization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 28,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquirer_identification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 29,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquisition_fit_rationale",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 30,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "final_package_construction",
+          "status": "skipped_by_route"
+        }
+      ],
+      "stage_plan": [
+        {
+          "index": 1,
+          "reason": "required_by_selected_route",
+          "stage": "signal_ingestion",
+          "status": "executed"
+        },
+        {
+          "index": 2,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_normalization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 3,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "source_validation_weighting",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 4,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "context_expansion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 5,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_consolidation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 6,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "entity_extraction",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 7,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "relationship_mapping",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 8,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "trend_discovery",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 9,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "cluster_formation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 10,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "insight_thesis_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 11,
+          "reason": "required_by_selected_route",
+          "stage": "gap_detection",
+          "status": "executed"
+        },
+        {
+          "index": 12,
+          "reason": "required_by_selected_route",
+          "stage": "gap_qualification",
+          "status": "executed"
+        },
+        {
+          "index": 13,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "discovery_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 14,
+          "reason": "required_by_selected_route",
+          "stage": "breakthrough_identification_classification",
+          "status": "executed"
+        },
+        {
+          "index": 15,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "advancement_path_selection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 16,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "auto_invention_solution_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 17,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "solution_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 18,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "buildability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 19,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "viability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 20,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 21,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "feasibility_validation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 22,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 23,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "market_positioning",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 24,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "moat_differentiation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 25,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "business_model_value_capture",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 26,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "competitor_analysis",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 27,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "portfolio_creation_optimization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 28,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquirer_identification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 29,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquisition_fit_rationale",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 30,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "final_package_construction",
+          "status": "skipped_by_route"
+        }
+      ],
+      "status": "route_aware_execution_complete",
+      "terminal_state": "breakthrough_classified",
+      "updated_at": "2026-05-10T17:56:12.133326Z"
+    },
+    {
+      "executed_stages": [
+        {
+          "index": 14,
+          "reason": "required_by_selected_route",
+          "stage": "breakthrough_identification_classification",
+          "status": "executed"
+        },
+        {
+          "index": 15,
+          "reason": "required_by_selected_route",
+          "stage": "advancement_path_selection",
+          "status": "executed"
+        },
+        {
+          "index": 16,
+          "reason": "required_by_selected_route",
+          "stage": "auto_invention_solution_generation",
+          "status": "executed"
+        },
+        {
+          "index": 17,
+          "reason": "required_by_selected_route",
+          "stage": "solution_structuring",
+          "status": "executed"
+        },
+        {
+          "index": 18,
+          "reason": "required_by_selected_route",
+          "stage": "buildability_assessment",
+          "status": "executed"
+        },
+        {
+          "index": 19,
+          "reason": "required_by_selected_route",
+          "stage": "viability_assessment",
+          "status": "executed"
+        },
+        {
+          "index": 20,
+          "reason": "required_by_selected_route",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "executed"
+        },
+        {
+          "index": 21,
+          "reason": "required_by_selected_route",
+          "stage": "feasibility_validation",
+          "status": "executed"
+        },
+        {
+          "index": 22,
+          "reason": "required_by_selected_route",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "executed"
+        }
+      ],
+      "main_result": {
+        "route": "autodesign_to_design_portal",
+        "summary": "Claire selected autodesign_to_design_portal and reached design_output_ready.",
+        "title": "design_output_ready"
+      },
+      "metadata_only_output": false,
+      "pack_version": "v19.05-v19.09",
+      "query": "build AutoDesign system from qualified breakthrough",
+      "route": "autodesign_to_design_portal",
+      "skipped_by_route": [
+        {
+          "index": 1,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_ingestion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 2,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_normalization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 3,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "source_validation_weighting",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 4,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "context_expansion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 5,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_consolidation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 6,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "entity_extraction",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 7,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "relationship_mapping",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 8,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "trend_discovery",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 9,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "cluster_formation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 10,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "insight_thesis_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 11,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_detection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 12,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_qualification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 13,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "discovery_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 23,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "market_positioning",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 24,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "moat_differentiation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 25,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "business_model_value_capture",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 26,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "competitor_analysis",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 27,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "portfolio_creation_optimization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 28,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquirer_identification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 29,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquisition_fit_rationale",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 30,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "final_package_construction",
+          "status": "skipped_by_route"
+        }
+      ],
+      "stage_plan": [
+        {
+          "index": 1,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_ingestion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 2,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_normalization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 3,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "source_validation_weighting",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 4,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "context_expansion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 5,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_consolidation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 6,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "entity_extraction",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 7,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "relationship_mapping",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 8,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "trend_discovery",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 9,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "cluster_formation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 10,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "insight_thesis_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 11,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_detection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 12,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_qualification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 13,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "discovery_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 14,
+          "reason": "required_by_selected_route",
+          "stage": "breakthrough_identification_classification",
+          "status": "executed"
+        },
+        {
+          "index": 15,
+          "reason": "required_by_selected_route",
+          "stage": "advancement_path_selection",
+          "status": "executed"
+        },
+        {
+          "index": 16,
+          "reason": "required_by_selected_route",
+          "stage": "auto_invention_solution_generation",
+          "status": "executed"
+        },
+        {
+          "index": 17,
+          "reason": "required_by_selected_route",
+          "stage": "solution_structuring",
+          "status": "executed"
+        },
+        {
+          "index": 18,
+          "reason": "required_by_selected_route",
+          "stage": "buildability_assessment",
+          "status": "executed"
+        },
+        {
+          "index": 19,
+          "reason": "required_by_selected_route",
+          "stage": "viability_assessment",
+          "status": "executed"
+        },
+        {
+          "index": 20,
+          "reason": "required_by_selected_route",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "executed"
+        },
+        {
+          "index": 21,
+          "reason": "required_by_selected_route",
+          "stage": "feasibility_validation",
+          "status": "executed"
+        },
+        {
+          "index": 22,
+          "reason": "required_by_selected_route",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "executed"
+        },
+        {
+          "index": 23,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "market_positioning",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 24,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "moat_differentiation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 25,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "business_model_value_capture",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 26,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "competitor_analysis",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 27,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "portfolio_creation_optimization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 28,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquirer_identification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 29,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "acquisition_fit_rationale",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 30,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "final_package_construction",
+          "status": "skipped_by_route"
+        }
+      ],
+      "status": "route_aware_execution_complete",
+      "terminal_state": "design_output_ready",
+      "updated_at": "2026-05-10T17:56:12.133326Z"
+    },
+    {
+      "executed_stages": [
+        {
+          "index": 27,
+          "reason": "required_by_selected_route",
+          "stage": "portfolio_creation_optimization",
+          "status": "executed"
+        },
+        {
+          "index": 28,
+          "reason": "required_by_selected_route",
+          "stage": "acquirer_identification",
+          "status": "executed"
+        },
+        {
+          "index": 29,
+          "reason": "required_by_selected_route",
+          "stage": "acquisition_fit_rationale",
+          "status": "executed"
+        },
+        {
+          "index": 30,
+          "reason": "required_by_selected_route",
+          "stage": "final_package_construction",
+          "status": "executed"
+        }
+      ],
+      "main_result": {
+        "route": "acquisition_package",
+        "summary": "Claire selected acquisition_package and reached acquisition_package_ready.",
+        "title": "acquisition_package_ready"
+      },
+      "metadata_only_output": false,
+      "pack_version": "v19.05-v19.09",
+      "query": "prepare acquisition package",
+      "route": "acquisition_package",
+      "skipped_by_route": [
+        {
+          "index": 1,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_ingestion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 2,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_normalization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 3,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "source_validation_weighting",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 4,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "context_expansion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 5,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_consolidation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 6,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "entity_extraction",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 7,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "relationship_mapping",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 8,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "trend_discovery",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 9,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "cluster_formation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 10,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "insight_thesis_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 11,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_detection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 12,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_qualification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 13,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "discovery_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 14,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "breakthrough_identification_classification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 15,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "advancement_path_selection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 16,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "auto_invention_solution_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 17,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "solution_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 18,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "buildability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 19,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "viability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 20,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 21,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "feasibility_validation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 22,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 23,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "market_positioning",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 24,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "moat_differentiation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 25,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "business_model_value_capture",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 26,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "competitor_analysis",
+          "status": "skipped_by_route"
+        }
+      ],
+      "stage_plan": [
+        {
+          "index": 1,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_ingestion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 2,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_normalization",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 3,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "source_validation_weighting",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 4,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "context_expansion",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 5,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "signal_consolidation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 6,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "entity_extraction",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 7,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "relationship_mapping",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 8,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "trend_discovery",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 9,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "cluster_formation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 10,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "insight_thesis_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 11,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_detection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 12,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "gap_qualification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 13,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "discovery_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 14,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "breakthrough_identification_classification",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 15,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "advancement_path_selection",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 16,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "auto_invention_solution_generation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 17,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "solution_structuring",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 18,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "buildability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 19,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "viability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 20,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 21,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "feasibility_validation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 22,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 23,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "market_positioning",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 24,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "moat_differentiation",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 25,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "business_model_value_capture",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 26,
+          "reason": "not_applicable_to_selected_route",
+          "stage": "competitor_analysis",
+          "status": "skipped_by_route"
+        },
+        {
+          "index": 27,
+          "reason": "required_by_selected_route",
+          "stage": "portfolio_creation_optimization",
+          "status": "executed"
+        },
+        {
+          "index": 28,
+          "reason": "required_by_selected_route",
+          "stage": "acquirer_identification",
+          "status": "executed"
+        },
+        {
+          "index": 29,
+          "reason": "required_by_selected_route",
+          "stage": "acquisition_fit_rationale",
+          "status": "executed"
+        },
+        {
+          "index": 30,
+          "reason": "required_by_selected_route",
+          "stage": "final_package_construction",
+          "status": "executed"
+        }
+      ],
+      "status": "route_aware_execution_complete",
+      "terminal_state": "acquisition_package_ready",
+      "updated_at": "2026-05-10T17:56:12.133326Z"
+    },
+    {
+      "executed_stages": [],
+      "main_result": {
+        "route": "insufficient_data",
+        "summary": "Claire selected insufficient_data and reached insufficient_data.",
+        "title": "insufficient_data"
+      },
+      "metadata_only_output": false,
+      "pack_version": "v19.05-v19.09",
+      "query": "empty evidence case",
+      "route": "insufficient_data",
+      "skipped_by_route": [],
+      "stage_plan": [
+        {
+          "index": 1,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "signal_ingestion",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 2,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "signal_normalization",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 3,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "source_validation_weighting",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 4,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "context_expansion",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 5,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "signal_consolidation",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 6,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "entity_extraction",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 7,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "relationship_mapping",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 8,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "trend_discovery",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 9,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "cluster_formation",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 10,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "insight_thesis_structuring",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 11,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "gap_detection",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 12,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "gap_qualification",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 13,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "discovery_generation",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 14,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "breakthrough_identification_classification",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 15,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "advancement_path_selection",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 16,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "auto_invention_solution_generation",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 17,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "solution_structuring",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 18,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "buildability_assessment",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 19,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "viability_assessment",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 20,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 21,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "feasibility_validation",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 22,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 23,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "market_positioning",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 24,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "moat_differentiation",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 25,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "business_model_value_capture",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 26,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "competitor_analysis",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 27,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "portfolio_creation_optimization",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 28,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "acquirer_identification",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 29,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "acquisition_fit_rationale",
+          "status": "insufficient_data"
+        },
+        {
+          "index": 30,
+          "reason": "route terminal state is insufficient_data; downstream stages not executed",
+          "stage": "final_package_construction",
+          "status": "insufficient_data"
+        }
+      ],
+      "status": "route_aware_execution_complete",
+      "terminal_state": "insufficient_data",
+      "updated_at": "2026-05-10T17:56:12.133326Z"
+    },
+    {
+      "executed_stages": [],
+      "main_result": {
+        "route": "blocked",
+        "summary": "Claire selected blocked and reached blocked.",
+        "title": "blocked"
+      },
+      "metadata_only_output": false,
+      "pack_version": "v19.05-v19.09",
+      "query": "blocked operator case",
+      "route": "blocked",
+      "skipped_by_route": [],
+      "stage_plan": [
+        {
+          "index": 1,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "signal_ingestion",
+          "status": "blocked"
+        },
+        {
+          "index": 2,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "signal_normalization",
+          "status": "blocked"
+        },
+        {
+          "index": 3,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "source_validation_weighting",
+          "status": "blocked"
+        },
+        {
+          "index": 4,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "context_expansion",
+          "status": "blocked"
+        },
+        {
+          "index": 5,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "signal_consolidation",
+          "status": "blocked"
+        },
+        {
+          "index": 6,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "entity_extraction",
+          "status": "blocked"
+        },
+        {
+          "index": 7,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "relationship_mapping",
+          "status": "blocked"
+        },
+        {
+          "index": 8,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "trend_discovery",
+          "status": "blocked"
+        },
+        {
+          "index": 9,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "cluster_formation",
+          "status": "blocked"
+        },
+        {
+          "index": 10,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "insight_thesis_structuring",
+          "status": "blocked"
+        },
+        {
+          "index": 11,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "gap_detection",
+          "status": "blocked"
+        },
+        {
+          "index": 12,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "gap_qualification",
+          "status": "blocked"
+        },
+        {
+          "index": 13,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "discovery_generation",
+          "status": "blocked"
+        },
+        {
+          "index": 14,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "breakthrough_identification_classification",
+          "status": "blocked"
+        },
+        {
+          "index": 15,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "advancement_path_selection",
+          "status": "blocked"
+        },
+        {
+          "index": 16,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "auto_invention_solution_generation",
+          "status": "blocked"
+        },
+        {
+          "index": 17,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "solution_structuring",
+          "status": "blocked"
+        },
+        {
+          "index": 18,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "buildability_assessment",
+          "status": "blocked"
+        },
+        {
+          "index": 19,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "viability_assessment",
+          "status": "blocked"
+        },
+        {
+          "index": 20,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "manufacturability_deployability_assessment",
+          "status": "blocked"
+        },
+        {
+          "index": 21,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "feasibility_validation",
+          "status": "blocked"
+        },
+        {
+          "index": 22,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "design_portal_output_blueprints_specs",
+          "status": "blocked"
+        },
+        {
+          "index": 23,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "market_positioning",
+          "status": "blocked"
+        },
+        {
+          "index": 24,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "moat_differentiation",
+          "status": "blocked"
+        },
+        {
+          "index": 25,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "business_model_value_capture",
+          "status": "blocked"
+        },
+        {
+          "index": 26,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "competitor_analysis",
+          "status": "blocked"
+        },
+        {
+          "index": 27,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "portfolio_creation_optimization",
+          "status": "blocked"
+        },
+        {
+          "index": 28,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "acquirer_identification",
+          "status": "blocked"
+        },
+        {
+          "index": 29,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "acquisition_fit_rationale",
+          "status": "blocked"
+        },
+        {
+          "index": 30,
+          "reason": "route terminal state is blocked; downstream stages not executed",
+          "stage": "final_package_construction",
+          "status": "blocked"
+        }
+      ],
+      "status": "route_aware_execution_complete",
+      "terminal_state": "blocked",
+      "updated_at": "2026-05-10T17:56:12.133326Z"
+    }
+  ],
+  "status": "pass",
+  "updated_at": "2026-05-10T17:56:12.133326Z"
+}

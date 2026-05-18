@@ -28,7 +28,7 @@ export async function apiPost(path, body) {
 }
 
 export async function sendCommand(query) {
-    const response = await fetch("/api/command", {
+    const response = await window.ClaireCanonicalFetch.fetchLegacy("/api/command", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query })

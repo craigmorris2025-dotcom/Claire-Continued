@@ -1,0 +1,57 @@
+{
+  "version": "v19.89.8-S31R3",
+  "installed_at_utc": "2026-05-14T04:50:52.637533+00:00",
+  "status": "installed",
+  "safety_note": "S31R3 intentionally did not patch claire/app.py.",
+  "files_written": [
+    "claire\\api\\governed_payload_reconciliation.py",
+    "tests\\test_s31r3_payload_attachment_reconciliation.py",
+    "docs\\build_notes\\v19.89.8-S31R3_payload_attachment_reconciliation.md",
+    "output\\cockpit\\v19.89.8-S31R3_payload_attachment_reconciliation_report.json"
+  ],
+  "compose_report": {
+    "status": "composed",
+    "payload_keys": [
+      "canonical_browser_session_persistence",
+      "canonical_cockpit_surface_health",
+      "canonical_cockpit_surface_registry",
+      "continuous_browser_runtime_loop",
+      "continuous_runtime_presence",
+      "event_stream",
+      "governance",
+      "governed_evidence_basket",
+      "governed_multi_workspace_orchestration",
+      "governed_operational_session_orchestration",
+      "governed_operational_topology_continuity",
+      "governed_operator_workflow",
+      "governed_payload_reconciliation",
+      "governed_route_activity_overlay",
+      "governed_runtime_timeline",
+      "governed_runtime_workspace_continuity",
+      "governed_search_session",
+      "multi_panel_runtime_cohesion",
+      "runtime",
+      "runtime_continuity_visualization",
+      "telemetry"
+    ],
+    "reconciliation_summary": {
+      "attachment_total": 16,
+      "attached_total": 16,
+      "failed_total": 0,
+      "payload_key_total": 20
+    }
+  },
+  "run_tests": "python -m pytest tests/test_s31r3_payload_attachment_reconciliation.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "operator_mutation_enabled": false,
+    "runtime_mutation_enabled": false,
+    "workspace_mutation_enabled": false,
+    "topology_mutation_enabled": false,
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

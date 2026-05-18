@@ -1,0 +1,111 @@
+{
+  "backend_owns_truth": true,
+  "build": "Canonical Route Owner Registry",
+  "cockpit_owns_presentation_only": true,
+  "critical_route_count": 6,
+  "generated_at": "2026-05-13T11:22:15.571711+00:00",
+  "next_build": "v19.84.5 Duplicate Route Fail Test",
+  "route_registry_policy": {
+    "compatibility_layers_must_delegate": true,
+    "empty_pending_unavailable_states_are_valid": true,
+    "frontend_truth_generation_allowed": false,
+    "one_owner_per_method_path": true,
+    "operator_review_required_before_promotion": true
+  },
+  "routes": {
+    "/dashboard/payload": {
+      "audit_owner_count_v19_84_3": 3,
+      "audit_state_v19_84_3": "duplicate_owner",
+      "canonical_owner": "backend.enterprise_cockpit_payload_bridge",
+      "cockpit_role": "presentation_only",
+      "compatibility_policy": "no_frontend_synthesis; legacy aliases must delegate to canonical backend payload only",
+      "implementation_action": "assign_canonical_and_demote_duplicates",
+      "methods": [
+        "GET"
+      ],
+      "purpose": "Unified enterprise cockpit payload composed from backend runtime truth.",
+      "required_state": "single_owner",
+      "route": "/dashboard/payload",
+      "truth_owner": "backend"
+    },
+    "/dashboard/payload/status": {
+      "audit_owner_count_v19_84_3": 3,
+      "audit_state_v19_84_3": "duplicate_owner",
+      "canonical_owner": "backend.enterprise_cockpit_payload_status",
+      "cockpit_role": "presentation_only",
+      "compatibility_policy": "status must report backend truth owner and must not compute cockpit truth",
+      "implementation_action": "assign_canonical_and_demote_duplicates",
+      "methods": [
+        "GET"
+      ],
+      "purpose": "Health/status check for canonical cockpit payload availability.",
+      "required_state": "single_owner",
+      "route": "/dashboard/payload/status",
+      "truth_owner": "backend"
+    },
+    "/runs/start": {
+      "audit_owner_count_v19_84_3": 2,
+      "audit_state_v19_84_3": "duplicate_owner",
+      "canonical_owner": "backend.enterprise_runtime_runs_backend",
+      "cockpit_role": "operator_command",
+      "compatibility_policy": "must initialize pending_evidence rather than fabricate outputs",
+      "implementation_action": "assign_canonical_and_demote_duplicates",
+      "methods": [
+        "POST"
+      ],
+      "purpose": "Start a governed manual runtime run and create backend-owned run artifacts.",
+      "required_state": "single_owner",
+      "route": "/runs/start",
+      "truth_owner": "backend"
+    },
+    "/runtime/continuous/review-queue": {
+      "audit_owner_count_v19_84_3": 2,
+      "audit_state_v19_84_3": "duplicate_owner",
+      "canonical_owner": "backend.continuous_intelligence_review_queue",
+      "cockpit_role": "presentation_only",
+      "compatibility_policy": "no promotion without operator review",
+      "implementation_action": "assign_canonical_and_demote_duplicates",
+      "methods": [
+        "GET"
+      ],
+      "purpose": "Operator review queue for candidates requiring approval before promotion.",
+      "required_state": "single_owner",
+      "route": "/runtime/continuous/review-queue",
+      "truth_owner": "backend"
+    },
+    "/runtime/continuous/status": {
+      "audit_owner_count_v19_84_3": 2,
+      "audit_state_v19_84_3": "duplicate_owner",
+      "canonical_owner": "backend.continuous_intelligence_runtime_status",
+      "cockpit_role": "presentation_only",
+      "compatibility_policy": "manual runs and continuous runtime remain separate",
+      "implementation_action": "assign_canonical_and_demote_duplicates",
+      "methods": [
+        "GET"
+      ],
+      "purpose": "Governed continuous runtime status, scheduler state, guardrails, and artifact paths.",
+      "required_state": "single_owner",
+      "route": "/runtime/continuous/status",
+      "truth_owner": "backend"
+    },
+    "/universes": {
+      "audit_owner_count_v19_84_3": 2,
+      "audit_state_v19_84_3": "duplicate_owner",
+      "canonical_owner": "backend.source_universe_backend",
+      "cockpit_role": "presentation_only",
+      "compatibility_policy": "universes provide context only; they do not directly promote runtime truth",
+      "implementation_action": "assign_canonical_and_demote_duplicates",
+      "methods": [
+        "GET"
+      ],
+      "purpose": "Expose configured governed source universes for evidence-producing discovery contexts.",
+      "required_state": "single_owner",
+      "route": "/universes",
+      "truth_owner": "backend"
+    }
+  },
+  "runtime_mutation": "none",
+  "source_audit": "audits\\v19_84_3_canonical_route_mount_audit\\canonical_route_mount_audit_report.json",
+  "status": "configured",
+  "version": "v19.84.4"
+}

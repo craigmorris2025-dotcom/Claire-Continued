@@ -1,0 +1,30 @@
+{
+  "version": "v19.82B.12.3",
+  "build_name": "Cockpit Workspace Anchor Consolidation",
+  "installed_at": "2026-05-11T20:00:19.283012+00:00",
+  "primary_cockpit_path": "frontend/cockpit/shell/cockpit_shell.html",
+  "reason": [
+    "Screenshots showed Source Universe and Operator Review Bridge rendering side-by-side as top-level shell/grid items.",
+    "Injected workspaces must be moved into a single main-content stack anchor.",
+    "This build creates and owns that stack anchor without changing runtime truth."
+  ],
+  "created_or_updated": [
+    "frontend/cockpit/shell/assets/claire_cockpit_workspace_anchor_consolidation.css",
+    "frontend/cockpit/shell/assets/claire_cockpit_workspace_anchor_consolidation.js",
+    "tests/test_v19_82B_12_3_cockpit_workspace_anchor_consolidation.py",
+    "data/build_artifacts/v19_82B_12_3_cockpit_workspace_anchor_consolidation.json"
+  ],
+  "moved_at_runtime": [
+    "claire-source-universe-workspace",
+    "claire-probe-review-bridge",
+    "claire-discovery-candidate-surface"
+  ],
+  "scope": [
+    "layout/DOM placement only",
+    "workspace stack anchor",
+    "vertical consolidation",
+    "no backend calls",
+    "no runtime truth mutation"
+  ],
+  "next_recommended_build": "v19.82B.12.4 Runtime Route Availability Repair"
+}

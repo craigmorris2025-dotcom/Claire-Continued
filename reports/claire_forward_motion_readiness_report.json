@@ -1,0 +1,177 @@
+{
+  "generated_at": "2026-05-17T00:12:24.314022Z",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "ready_for_s450_s456": true,
+  "required_failure_count": 0,
+  "warning_count": 0,
+  "checks": [
+    {
+      "name": "active_top_level_claire_exists",
+      "ok": true,
+      "severity": "required",
+      "detail": "Expected active top-level claire/"
+    },
+    {
+      "name": "active_top_level_frontend_exists",
+      "ok": true,
+      "severity": "required",
+      "detail": "Expected active top-level frontend/"
+    },
+    {
+      "name": "active_top_level_tests_exists",
+      "ok": true,
+      "severity": "required",
+      "detail": "Expected active top-level tests/"
+    },
+    {
+      "name": "no_active_src_tree",
+      "ok": true,
+      "severity": "warning",
+      "detail": "Current known layout should not use active src/"
+    },
+    {
+      "name": "root_file_exists_main.py",
+      "ok": true,
+      "severity": "warning",
+      "detail": "main.py"
+    },
+    {
+      "name": "root_file_exists_pytest.ini",
+      "ok": true,
+      "severity": "warning",
+      "detail": "pytest.ini"
+    },
+    {
+      "name": "python_compile_claire_and_tests",
+      "ok": true,
+      "severity": "required",
+      "detail": "[]"
+    },
+    {
+      "name": "import_claire_app",
+      "ok": true,
+      "severity": "required",
+      "detail": "ok"
+    },
+    {
+      "name": "endpoint_/docs",
+      "ok": true,
+      "severity": "required",
+      "detail": "status=200"
+    },
+    {
+      "name": "endpoint_/openapi.json",
+      "ok": true,
+      "severity": "required",
+      "detail": "status=200"
+    },
+    {
+      "name": "endpoint_/dashboard/payload",
+      "ok": true,
+      "severity": "required",
+      "detail": "status=200"
+    },
+    {
+      "name": "endpoint_/dashboard/payload/status",
+      "ok": true,
+      "severity": "required",
+      "detail": "status=200"
+    },
+    {
+      "name": "dashboard_payload_json",
+      "ok": true,
+      "severity": "required",
+      "detail": "keys=76"
+    },
+    {
+      "name": "dashboard_payload_required_keys_present",
+      "ok": true,
+      "severity": "required",
+      "detail": "[]"
+    },
+    {
+      "name": "dashboard_payload_safety_flags_false",
+      "ok": true,
+      "severity": "required",
+      "detail": "{}"
+    },
+    {
+      "name": "dashboard_payload_has_30_lifecycle_stages",
+      "ok": true,
+      "severity": "required",
+      "detail": "count=30"
+    },
+    {
+      "name": "import_claire.api.dashboard_operational_action_console_s436_s442",
+      "ok": true,
+      "severity": "required",
+      "detail": "ok"
+    },
+    {
+      "name": "claire.api.dashboard_operational_action_console_s436_s442_build_s442_stop_gate_exists",
+      "ok": true,
+      "severity": "required",
+      "detail": "callable"
+    },
+    {
+      "name": "claire.api.dashboard_operational_action_console_s436_s442_build_s442_stop_gate_passes",
+      "ok": true,
+      "severity": "required",
+      "detail": "{'stage_version': 'S442', 'phase': 'S436-S442', 'version': 'v19.89.8-S436-S442', 'status': 'operational_action_console_passed', 'ok': True, 'ready': True, 'runtime_mutation_enabled': False, 'automatic_updates_enabled': False, 'autonomous_crawling_enabled': False, 'body_read_allowed': False, 'created_at': '2026-05-17T00:12:24.075022+00:00', 'checks': {'console_contract_ok': True, 'bindings_complete': True, 'result_drawer_ok': True, 'event_log_ok': True, 'confirmation_ok': True, 'js_exists': True, 'css_exists': True}, 'forward_motion_allowed': True, 'next_phase': 'S443-S449 governed web workflow UI'}"
+    },
+    {
+      "name": "import_claire.api.dashboard_governed_web_workflow_s443_s449",
+      "ok": true,
+      "severity": "required",
+      "detail": "ok"
+    },
+    {
+      "name": "claire.api.dashboard_governed_web_workflow_s443_s449_build_s449_stop_gate_exists",
+      "ok": true,
+      "severity": "required",
+      "detail": "callable"
+    },
+    {
+      "name": "claire.api.dashboard_governed_web_workflow_s443_s449_build_s449_stop_gate_passes",
+      "ok": true,
+      "severity": "required",
+      "detail": "{'stage_version': 'S449', 'phase': 'S443-S449', 'version': 'v19.89.8-S443-S449', 'status': 'governed_web_workflow_ui_passed', 'ok': True, 'ready': True, 'runtime_mutation_enabled': False, 'automatic_updates_enabled': False, 'autonomous_crawling_enabled': False, 'body_read_allowed': False, 'created_at': '2026-05-17T00:12:24.076021+00:00', 'checks': {'workflow_steps_ok': True, 'source_input_ok': True, 'endpoint_map_ok': True, 'result_model_ok': True, 'guardrails_ok': True, 'js_exists': True, 'css_exists': True}, 'forward_motion_allowed': True, 'dashboard_operational_cockpit_ready': True, 'next_phase': 'Claire Q&A foundation or visual polish after operator verification'}"
+    },
+    {
+      "name": "frontend_asset_exists_frontend/cockpit/shell/assets/claire_action_console.js",
+      "ok": true,
+      "severity": "required",
+      "detail": "frontend/cockpit/shell/assets/claire_action_console.js"
+    },
+    {
+      "name": "frontend_asset_exists_frontend/cockpit/shell/assets/claire_action_console.css",
+      "ok": true,
+      "severity": "required",
+      "detail": "frontend/cockpit/shell/assets/claire_action_console.css"
+    },
+    {
+      "name": "frontend_asset_exists_frontend/cockpit/shell/assets/claire_governed_web_workflow.js",
+      "ok": true,
+      "severity": "required",
+      "detail": "frontend/cockpit/shell/assets/claire_governed_web_workflow.js"
+    },
+    {
+      "name": "frontend_asset_exists_frontend/cockpit/shell/assets/claire_governed_web_workflow.css",
+      "ok": true,
+      "severity": "required",
+      "detail": "frontend/cockpit/shell/assets/claire_governed_web_workflow.css"
+    },
+    {
+      "name": "no_recursive_s32r2r1_global_wrapper_patterns",
+      "ok": true,
+      "severity": "required",
+      "detail": "[]"
+    },
+    {
+      "name": "dashboard_bridge_s31r6_marker_count_one",
+      "ok": true,
+      "severity": "required",
+      "detail": "count=1"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claire S45 Cockpit Shell Bridge</title>
+    <link rel="stylesheet" href="./s45_shell_mount.css" />
+  \n<link rel="stylesheet" href="cockpit/safe_workflow_panel.css">\n<script src="cockpit/safe_workflow_panel.js" defer></script>\n  <!-- CLAIRE_S985_S1012_ACTIVE_CONTROL_SURFACE -->
+  <link rel="stylesheet" href="/api/cockpit/control-surface/assets/css" data-claire-s985-s1012="active-control-surface">
+</head>
+  <body>
+    <main>
+      <header>
+        <h1>Claire S45 Cockpit Shell Bridge</h1>
+        <p>Presentation-only bridge for backend-owned read-only operator surfaces.</p>
+      </header>
+
+      <section class="s45-shell-grid" data-runtime-truth-mutation-allowed="false" data-operator-mutation-enabled="false">
+        <div id="s45-panel-operator-payload"></div>
+        <div id="s45-panel-operator-routes"></div>
+        <div id="s45-panel-operator-runtime-status"></div>
+        <div id="s45-panel-operator-evidence-review"></div>
+        <div id="s45-panel-operator-evidence-status"></div>
+        <div id="s45-panel-operator-review-status"></div>
+        <div id="s45-panel-operator-routes-status"></div>
+      </section>
+    </main>
+    <script src="/api/cockpit/control-surface/assets/js" defer data-claire-s985-s1012="active-control-surface"></script>
+</body>
+</html>

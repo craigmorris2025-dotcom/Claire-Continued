@@ -1,0 +1,20 @@
+{
+  "version": "v18.70",
+  "name": "Consolidated Web Activation Packs",
+  "scope": [
+    "install dashboard provider probe UI binding",
+    "inject provider probe dashboard panel into active dashboard",
+    "mount live search and provider probe routes together into active app smoke harness",
+    "verify google live-search smoke returns Google / https://www.google.com",
+    "verify provider status route responds",
+    "verify provider probe remains blocked without explicit operator probe enable",
+    "run final web activation checkpoint",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_70_consolidated_web_activation_packs.py -q"
+  ]
+}

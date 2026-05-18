@@ -1,8 +1,8 @@
 {
   "lock": "core_runtime_lock",
   "version": "v16.29-phase4d",
-  "created_at": "2026-05-08T21:42:17.787376",
-  "status": "locked",
+  "created_at": "2026-05-13T00:09:10.400634",
+  "status": "failed",
   "protected_contracts": [
     {
       "path": "main.py",
@@ -14,7 +14,7 @@
       "path": "claire/app.py",
       "type": "app_factory",
       "exists": true,
-      "size_bytes": 1462
+      "size_bytes": 16560
     },
     {
       "path": "claire/api/routes_pipeline.py",
@@ -38,8 +38,8 @@
   "required_imports": [
     {
       "module": "claire.app",
-      "status": "success",
-      "origin": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py"
+      "status": "failed",
+      "error": "SyntaxError('unterminated string literal (detected at line 92)', ('C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\live_source_catalog_routes.py', 92, 68, '                \"path\": str(path.relative_to(root)).replace(\"\\\\\", \"/\"),', 92, 68))"
     },
     {
       "module": "claire.api.routes_pipeline",
@@ -58,5 +58,5 @@
     }
   ],
   "canonical_runtime_root": "claire",
-  "legacy_src_compatibility": true
+  "legacy_src_compatibility": false
 }

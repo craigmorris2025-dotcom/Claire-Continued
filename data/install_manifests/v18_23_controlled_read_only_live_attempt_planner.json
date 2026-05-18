@@ -1,0 +1,22 @@
+{
+  "version": "v18.23",
+  "name": "Controlled Read-Only Live Attempt Planner",
+  "files": [
+    "SEARCH_BAR_CONTROLLED_READ_ONLY_LIVE_ATTEMPT_PLANNER_REVIEW.bat",
+    "claire/governance/governed_web/live_attempt_planner.py",
+    "tests/test_v18_23_controlled_read_only_live_attempt_planner.py"
+  ],
+  "accelerated_safely": true,
+  "invariants": {
+    "planned_url_not_fetched": true,
+    "no_http_client_invoked": true,
+    "execution_performed": false,
+    "network_call_performed": false,
+    "external_request_performed": false,
+    "runtime_truth_mutated": false,
+    "automatic_update_performed": false,
+    "response_body_fetched": false,
+    "review_gated": true,
+    "fail_closed": true
+  }
+}

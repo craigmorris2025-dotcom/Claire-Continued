@@ -1,0 +1,38 @@
+{
+  "build": "Evidence Lineage Propagation Contract",
+  "contract": {
+    "backend_owns_truth": true,
+    "build": "Evidence Lineage Propagation Contract",
+    "cockpit_owns_presentation_only": true,
+    "generated_at": "2026-05-13T11:22:15.870711+00:00",
+    "propagation_targets": [
+      "runtime_status",
+      "lifecycle_state",
+      "gate_decisions",
+      "review_queue",
+      "candidate_payload",
+      "export_package"
+    ],
+    "required_lineage_fields": [
+      "source_universe",
+      "source_type",
+      "source_identifier",
+      "ingestion_id",
+      "retrieval_path",
+      "retrieved_at",
+      "evidence_id"
+    ],
+    "rules": [
+      "Lineage must be preserved across runtime artifacts.",
+      "Candidate payloads must not strip evidence identifiers.",
+      "Review queue items must reference evidence basket ids.",
+      "Exports must include evidence lineage or state insufficient evidence."
+    ],
+    "version": "v19.85.5"
+  },
+  "contract_path": "data\\evidence_governance\\evidence_lineage_propagation_contract.json",
+  "generated_at": "2026-05-13T11:22:15.871711+00:00",
+  "next_build": "v19.85.6 Review Queue Promotion Gate",
+  "read_only": true,
+  "version": "v19.85.5"
+}

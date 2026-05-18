@@ -1,0 +1,42 @@
+:root {
+  --claire-ux-bg: rgba(4, 17, 31, 0.96);
+  --claire-ux-panel: rgba(8, 32, 54, 0.92);
+  --claire-ux-border: rgba(65, 185, 255, 0.34);
+  --claire-ux-border-strong: rgba(80, 210, 255, 0.62);
+  --claire-ux-text: #f5fbff;
+  --claire-ux-muted: #a8c4de;
+  --claire-ux-cyan: #62f4ff;
+  --claire-ux-green: #63ff99;
+  --claire-ux-gold: #ffc44d;
+}
+#claire-operator-experience-console {
+  margin: 24px 0 28px 0;
+  padding: 24px;
+  border: 1px solid var(--claire-ux-border-strong);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(8, 24, 42, 0.98), rgba(6, 34, 56, 0.92));
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+  color: var(--claire-ux-text);
+}
+.claire-operator-console-header { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; margin-bottom:18px; }
+.claire-operator-console-kicker { color:var(--claire-ux-cyan); font-size:12px; text-transform:uppercase; letter-spacing:.24em; margin-bottom:8px; }
+.claire-operator-console-title { font-size:clamp(24px,2.6vw,38px); font-weight:800; line-height:1.05; margin:0; }
+.claire-operator-console-subtitle { margin:10px 0 0 0; max-width:840px; color:var(--claire-ux-muted); font-size:16px; line-height:1.45; }
+.claire-operator-console-guardrails { display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end; min-width:280px; }
+.claire-operator-chip { border:1px solid rgba(255,196,77,.45); color:var(--claire-ux-gold); background:rgba(255,196,77,.06); border-radius:999px; padding:8px 12px; font-size:13px; white-space:nowrap; }
+.claire-operator-primary-row { display:grid; grid-template-columns:repeat(5,minmax(150px,1fr)); gap:12px; margin:18px 0; }
+.claire-operator-primary-button, .claire-operator-card-button { cursor:pointer; border:1px solid var(--claire-ux-border-strong); border-radius:16px; background:rgba(0,95,145,.24); color:var(--claire-ux-text); padding:13px 15px; font-weight:750; letter-spacing:.01em; transition:transform 120ms ease,border-color 120ms ease,background 120ms ease; }
+.claire-operator-primary-button:hover, .claire-operator-card-button:hover { transform:translateY(-1px); border-color:var(--claire-ux-cyan); background:rgba(0,124,188,.34); }
+.claire-operator-main-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:16px; align-items:start; }
+.claire-operator-card-grid { display:grid; grid-template-columns:repeat(2,minmax(230px,1fr)); gap:12px; }
+.claire-operator-card { border:1px solid rgba(65,185,255,.25); background:rgba(5,27,48,.76); border-radius:18px; padding:16px; min-height:150px; display:flex; flex-direction:column; justify-content:space-between; }
+.claire-operator-card-topline { color:var(--claire-ux-cyan); font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:8px; }
+.claire-operator-card-title { font-size:18px; font-weight:800; margin:0 0 8px 0; }
+.claire-operator-card-summary { color:var(--claire-ux-muted); line-height:1.4; font-size:14px; margin:0 0 14px 0; }
+.claire-operator-card-button { align-self:flex-start; padding:10px 13px; font-size:13px; }
+.claire-operator-result-panel { border:1px solid rgba(99,255,153,.3); background:rgba(3,20,36,.88); border-radius:18px; padding:18px; position:sticky; top:18px; }
+.claire-operator-result-title { font-size:18px; margin:0 0 10px 0; color:var(--claire-ux-green); }
+.claire-operator-result-body { color:var(--claire-ux-muted); line-height:1.5; font-size:14px; white-space:pre-wrap; }
+.claire-operator-result-body code { display:block; margin-top:12px; padding:12px; max-height:260px; overflow:auto; border-radius:12px; background:rgba(0,0,0,.28); color:#d9efff; font-size:12px; }
+@media (max-width:1200px) { .claire-operator-primary-row{grid-template-columns:repeat(3,minmax(150px,1fr));} .claire-operator-main-grid{grid-template-columns:1fr;} .claire-operator-result-panel{position:relative;top:auto;} }
+@media (max-width:760px) { #claire-operator-experience-console{padding:18px;} .claire-operator-console-header{flex-direction:column;} .claire-operator-console-guardrails{justify-content:flex-start;} .claire-operator-primary-row{grid-template-columns:1fr;} .claire-operator-card-grid{grid-template-columns:1fr;} }

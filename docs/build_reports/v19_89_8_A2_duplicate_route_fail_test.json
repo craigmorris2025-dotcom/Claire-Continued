@@ -1,0 +1,26 @@
+{
+  "version": "v19.89.8-A2",
+  "build": "Duplicate Route Fail Test",
+  "installed_at": "2026-05-13T22:22:54.119550+00:00",
+  "intent": "Install duplicate route fail test gate after canonical route owner registry.",
+  "new_endpoints": [
+    "/system/duplicate-route-fail-test",
+    "/system/duplicate-route-fail-test/report",
+    "/system/duplicate-route-fail-test/summary",
+    "/system/duplicate-route-fail-test/critical-failures",
+    "/system/duplicate-route-fail-test/grandfathered",
+    "/system/duplicate-route-fail-test/registration-proof"
+  ],
+  "initial_status": "pass_with_grandfathered_duplicates",
+  "critical_failure_count": 0,
+  "grandfathered_temporary_count": 6,
+  "safe_to_expand_runtime_authority": false,
+  "files": {
+    "scanner": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\authority\\duplicate_route_fail_test.py",
+    "backend_route_module": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\duplicate_route_fail_test_routes.py",
+    "app_file_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "fail_test_report": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\authority\\duplicate_route_fail_test_report.json",
+    "version_json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version.json"
+  },
+  "next_phase": "v19.89.8-A3 Canonical Cockpit Fetch Map Lock"
+}

@@ -1,0 +1,18 @@
+
+{
+  "version": "v18.61",
+  "name": "Mounted Live Search Endpoint Smoke Test",
+  "scope": [
+    "create explicit FastAPI smoke harness for governed dashboard live-search route",
+    "verify mounted GET /api/dashboard/search/smoke/google returns visible Google result",
+    "verify POST /api/dashboard/search/live remains blocked without manual enable",
+    "avoid real internet calls",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_61_mounted_live_search_endpoint_smoke_test.py -q"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "v19.82B.13",
+  "build_name": "Enterprise Cockpit Workspace Router",
+  "installed_at": "2026-05-11T20:04:29.756882+00:00",
+  "primary_cockpit_path": "frontend/cockpit/shell/cockpit_shell.html",
+  "reason": [
+    "User rejected consolidated portal stack.",
+    "Dashboard must be repaired before further platform build sessions.",
+    "This build creates a single active workspace router so Source/Review/Discovery are not all visible at once."
+  ],
+  "created_or_updated": [
+    "frontend/cockpit/shell/assets/claire_enterprise_cockpit_workspace_router.css",
+    "frontend/cockpit/shell/assets/claire_enterprise_cockpit_workspace_router.js",
+    "tests/test_v19_82B_13_enterprise_cockpit_workspace_router.py",
+    "data/build_artifacts/v19_82B_13_enterprise_cockpit_workspace_router.json"
+  ],
+  "routed_workspaces": [
+    "runtime",
+    "sources",
+    "review",
+    "discovery"
+  ],
+  "locked_rules": [
+    "one active workspace at a time",
+    "runtime remains default",
+    "frontend does not call backend from router",
+    "frontend does not create or promote intelligence",
+    "backend truth ownership preserved"
+  ],
+  "next_recommended_build": "v19.82B.14 Enterprise Cockpit Visual Frame v2"
+}

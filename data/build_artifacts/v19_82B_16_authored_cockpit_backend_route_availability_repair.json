@@ -1,0 +1,35 @@
+{
+  "version": "v19.82B.16",
+  "build_name": "Authored Cockpit Backend Route Availability Repair",
+  "installed_at": "2026-05-11T20:38:17.047364+00:00",
+  "reason": [
+    "Authored cockpit shell needs stable backend route availability.",
+    "Routes should return truthful waiting/empty states instead of frontend checking forever.",
+    "No candidate/discovery/breakthrough/portfolio/design truth is fabricated."
+  ],
+  "created_or_updated": [
+    "claire\\routes\\authored_cockpit_compat_routes.py",
+    "tests\\test_v19_82B_16_authored_cockpit_backend_route_availability_repair.py",
+    "data\\build_artifacts\\v19_82B_16_authored_cockpit_backend_route_availability_repair.json"
+  ],
+  "patched": [
+    "claire\\app.py"
+  ],
+  "routes_added": [
+    "GET /dashboard/payload",
+    "GET /runtime/continuous/status",
+    "GET /runtime/continuous/review-queue",
+    "POST /runtime/continuous/start",
+    "POST /runtime/continuous/pause",
+    "GET /universes",
+    "POST /runs/start"
+  ],
+  "locked_rules": [
+    "backend owns truth",
+    "empty review queue means no validated candidates",
+    "candidate generation not fabricated",
+    "operator review required",
+    "no Swagger/docs/dev controls in cockpit"
+  ],
+  "next_recommended_build": "v19.82B.17 Authored Cockpit Payload Binding Verification"
+}

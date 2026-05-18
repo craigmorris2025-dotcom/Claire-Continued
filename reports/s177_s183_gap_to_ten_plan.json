@@ -1,0 +1,293 @@
+{
+  "checks": {
+    "automatic_updates_blocked": true,
+    "autonomous_execution_blocked": true,
+    "bounded_crawl_contract_ready": true,
+    "dashboard_controls_visible": true,
+    "future_boundaries_ready": true,
+    "monitoring_plan_ready": true,
+    "previous_plateau_ok": true,
+    "runtime_mutation_still_disabled": true,
+    "web_updates_proposal_only": true
+  },
+  "control": {
+    "controls": {
+      "evidence_demo": {
+        "actions": [
+          "view_candidate",
+          "view_output",
+          "view_export"
+        ],
+        "panel_key": "evidence_demo",
+        "visible": true,
+        "write_enabled": false
+      },
+      "governed_search": {
+        "actions": [
+          "manual_probe",
+          "view_quarantine",
+          "create_evidence_basket"
+        ],
+        "panel_key": "governed_search",
+        "requires_manual_confirmation": true,
+        "visible": true,
+        "write_enabled": false
+      },
+      "review_export": {
+        "actions": [
+          "approve",
+          "reject",
+          "archive",
+          "export_only"
+        ],
+        "panel_key": "review_export",
+        "requires_manual_confirmation": true,
+        "visible": true,
+        "write_enabled": false
+      },
+      "runtime_spine": {
+        "actions": [
+          "view_status",
+          "view_routes",
+          "view_locks"
+        ],
+        "panel_key": "runtime_spine",
+        "visible": true,
+        "write_enabled": false
+      }
+    },
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "continuous_crawling_blocked": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "ok": true,
+    "runtime_truth_write": "blocked",
+    "stage_version": "S177",
+    "status": "dashboard_core_control_map_ready",
+    "visual_rewire_performed": false
+  },
+  "crawl": {
+    "autonomous_crawling_enabled": false,
+    "continuous_crawling": "blocked",
+    "crawl_mode": "bounded_quarantined_job",
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "continuous_crawling_blocked": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "requirements": {
+      "allowlist_required": true,
+      "body_read_requires_gate": true,
+      "manual_promotion_required": true,
+      "max_results_required": true,
+      "operator_started": true,
+      "quarantine_required": true,
+      "rate_limit_required": true
+    },
+    "stage_version": "S179",
+    "status": "bounded_crawl_job_contract_ready"
+  },
+  "forward_motion_allowed": true,
+  "functional_coverage": {
+    "S177": "dashboard core control map",
+    "S178": "safe web update readiness contract",
+    "S179": "bounded crawl job contract",
+    "S180": "runtime mutation proposal contract",
+    "S181": "monitoring and enterprise hardening readiness",
+    "S182": "future integration boundaries",
+    "S183": "gap-to-10 stop gate"
+  },
+  "future_boundary": {
+    "brokerage_integrations": {
+      "credentials_required": true,
+      "operator_confirmation_required": true,
+      "read_only_first": true,
+      "status": "adapter_boundary_only",
+      "trading_execution_enabled": false
+    },
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "continuous_crawling_blocked": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "longitudinal_memory_loops": {
+      "hidden_self_modification": false,
+      "operator_visible": true,
+      "status": "append_only_memory_boundary",
+      "stores": [
+        "evidence_lineage",
+        "review_decisions",
+        "exports",
+        "run_summaries"
+      ]
+    },
+    "stage_version": "S182",
+    "status": "future_integration_boundary_ready",
+    "thirty_stage_lifecycle_from_live_evidence": {
+      "requires": [
+        "approved_evidence_basket",
+        "lineage",
+        "review_state",
+        "export_contract"
+      ],
+      "status": "approved_evidence_only",
+      "unapproved_live_evidence_allowed": false
+    }
+  },
+  "gap_areas": {
+    "automatic_web_updating": "must start as scheduled update proposals, not automatic runtime writes",
+    "autonomous_crawling": "must start as bounded crawl jobs with allowlist, rate limits, and quarantine",
+    "brokerage_integrations": "must be adapter-ready and disabled until credentials/governance exist",
+    "dashboard_control": "visual operator controls must bind to backend contracts",
+    "enterprise_hardening": "must add audit, rollback, role gates, config locks, and deployment checks",
+    "memory_loops": "must be append-only lineage/memory, not hidden self-modification",
+    "production_monitoring": "must expose health, evidence, queue, export, and error status",
+    "runtime_mutation": "must remain blocked; only mutation proposals can be generated",
+    "thirty_stage_live_lifecycle": "must consume approved evidence only"
+  },
+  "generated_at": "2026-05-15T15:09:33.564715+00:00",
+  "monitoring": {
+    "enterprise_controls": {
+      "audit_required": true,
+      "config_lock_required": true,
+      "deployment_check_required": true,
+      "role_gate_required": true,
+      "rollback_required": true,
+      "secrets_not_stored_in_code": true
+    },
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "continuous_crawling_blocked": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "monitors": {
+      "audit_log": {
+        "required": true,
+        "status": "planned"
+      },
+      "crawl_jobs": {
+        "required": true,
+        "status": "planned"
+      },
+      "error_log": {
+        "required": true,
+        "status": "planned"
+      },
+      "export_manifest": {
+        "required": true,
+        "status": "planned"
+      },
+      "health": {
+        "required": true,
+        "status": "planned"
+      },
+      "payload_stability": {
+        "required": true,
+        "status": "planned"
+      },
+      "review_queue": {
+        "required": true,
+        "status": "planned"
+      },
+      "web_update_jobs": {
+        "required": true,
+        "status": "planned"
+      }
+    },
+    "stage_version": "S181",
+    "status": "monitoring_and_hardening_readiness_ready"
+  },
+  "mutation": {
+    "allowed": {
+      "diff_against_current_contract": true,
+      "export_patch_plan": true,
+      "generate_update_proposal": true,
+      "operator_review_required": true
+    },
+    "blocked": {
+      "automatic_dependency_change": true,
+      "autonomous_code_execution": true,
+      "self_apply_patch": true,
+      "silent_runtime_truth_change": true
+    },
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "continuous_crawling_blocked": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "runtime_mutation_enabled": false,
+    "runtime_truth_write_enabled": false,
+    "stage_version": "S180",
+    "status": "runtime_mutation_proposal_contract_ready"
+  },
+  "next_allowed_phase": "S184-S190 visual cockpit controls and monitoring backend",
+  "ok": true,
+  "purpose": "Define the safe path from first operational cockpit plateau toward 10/10 capability without unsafe autonomous behavior.",
+  "stage_version": "S183",
+  "status": "s177_s183_gap_to_ten_plan_gate_passed",
+  "web_updates": {
+    "allowed_flow": [
+      "scheduled_or_manual_check",
+      "bounded_provider_query",
+      "quarantine_result",
+      "evidence_basket",
+      "operator_review",
+      "approved_export",
+      "runtime_update_proposal"
+    ],
+    "automatic_web_updating_mode": "proposal_only",
+    "blocked_flow": [
+      "automatic_runtime_truth_write",
+      "unreviewed_live_crawl",
+      "unbounded_continuous_crawling",
+      "self_modifying_runtime_patch"
+    ],
+    "execution_enabled_now": false,
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "continuous_crawling_blocked": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "manual_enable_required": true,
+    "runtime_truth_write": "blocked",
+    "stage_version": "S178",
+    "status": "safe_web_update_readiness_contract_ready"
+  }
+}

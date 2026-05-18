@@ -1,0 +1,28 @@
+{
+  "version": "v19.77",
+  "build_name": "Cockpit Search + Runtime UX Stabilization",
+  "created_at": "2026-05-11T11:43:56.510399Z",
+  "non_destructive": true,
+  "launcher_rewired": false,
+  "legacy_deleted": false,
+  "backend_rewritten": false,
+  "required": {
+    "cockpit_shell": true,
+    "cockpit_shell_css": true,
+    "cockpit_bootstrap": true,
+    "search_panel_css": true,
+    "search_panel_js": true,
+    "command_surface_js": true,
+    "runtime_gate_js": true,
+    "launcher": true,
+    "legacy_dashboard": true
+  },
+  "blockers": [],
+  "changed": {
+    "shell_html": true,
+    "shell_css": true,
+    "search_panel_css": true,
+    "diagnostics_added": true
+  },
+  "next_recommended_build": "v19.78 Legacy Dashboard Freeze / Quarantine Gate"
+}

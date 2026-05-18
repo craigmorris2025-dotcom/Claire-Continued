@@ -1,0 +1,5 @@
+/* Claire legacy dashboard asset compatibility stylesheet.
+   Modern cockpit shell remains primary. */
+[data-claire-legacy-asset-browser-runtime-observation="true"] {
+  display: none;
+}

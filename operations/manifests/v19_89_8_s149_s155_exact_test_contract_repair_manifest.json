@@ -1,0 +1,18 @@
+{
+  "version": "v19.89.8-S149-S155-exact-test-contract-repair",
+  "installed_at": "2026-05-15T18:10:18.222226+00:00",
+  "repair_only": true,
+  "purpose": "Exact repair for tests/test_s149_s155_live_payload_visibility.py stage_version and fetch_count expectations.",
+  "authority_locks": {
+    "runtime_truth_write": false,
+    "runtime_mutation": false,
+    "automatic_updates": false,
+    "autonomous_execution": false,
+    "continuous_crawling": false
+  },
+  "recommended_commands": [
+    "pytest tests/test_s149_s155_exact_contract_repair.py -q",
+    "pytest tests/test_s149_s155_live_payload_visibility.py -q",
+    "pytest"
+  ]
+}

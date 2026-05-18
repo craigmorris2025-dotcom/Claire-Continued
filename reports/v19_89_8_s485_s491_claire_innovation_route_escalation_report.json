@@ -1,0 +1,730 @@
+{
+  "installer": "install_claire_v19_89_8_s485_s491_claire_innovation_route_escalation.py",
+  "version": "v19.89.8-S485-S491",
+  "created_at": "2026-05-17T01:06:17.018282+00:00",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_dir": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19_89_8_s485_s491_claire_innovation_route_escalation\\20260517T010616Z",
+  "written_files": [
+    "claire\\api\\claire_innovation_route_escalation_s485_s491.py",
+    "frontend\\cockpit\\shell\\assets\\claire_innovation_route_escalation.js",
+    "frontend\\cockpit\\shell\\assets\\claire_innovation_route_escalation.css",
+    "tests\\test_s485_s491_claire_innovation_route_escalation.py"
+  ],
+  "compile_results": {
+    "claire\\api\\claire_innovation_route_escalation_s485_s491.py": {
+      "ok": true,
+      "detail": "ok"
+    },
+    "tests\\test_s485_s491_claire_innovation_route_escalation.py": {
+      "ok": true,
+      "detail": "ok"
+    }
+  },
+  "forbidden_pattern_scan": {
+    "claire\\api\\claire_innovation_route_escalation_s485_s491.py": [],
+    "tests\\test_s485_s491_claire_innovation_route_escalation.py": []
+  },
+  "stop_gate": {
+    "version": "v19.89.8-S485-S491",
+    "phase": "S485-S491",
+    "stage_version": "S491",
+    "status": "claire_innovation_route_escalation_passed",
+    "ready": true,
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "created_at": "2026-05-17T01:06:17.016282+00:00",
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_allowed": false,
+    "runtime_truth_write_allowed": false,
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "autonomous_execution_enabled": false,
+    "autonomous_agent_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "automatic_escalation_execution_enabled": false,
+    "ok": true,
+    "checks": {
+      "s485_schema_ready": true,
+      "s486_scoring_ready": true,
+      "s487_routes_ready": true,
+      "s488_candidate_ready": true,
+      "s489_guardrails_ready": true,
+      "s490_assets_exist": true,
+      "market_detection_safe": true,
+      "engineering_detection_has_candidate": true,
+      "update_detection_finds_update_route": true,
+      "breakthrough_candidate_safe": true
+    },
+    "sample_outputs": {
+      "market_detection": {
+        "version": "v19.89.8-S485-S491",
+        "created_at": "2026-05-17T01:06:17.013283+00:00",
+        "question": "Can Claire find a market gap and portfolio optimization route from this trend?",
+        "route_output_summary": {
+          "selected_domain_route": "market",
+          "route_id": "market_intelligence_route",
+          "answer_quality_state": "evidence_backed",
+          "confidence": 0.82
+        },
+        "category_scores": {
+          "market_gap": {
+            "score": 0.46,
+            "matched_terms": [
+              "gap",
+              "latent demand"
+            ]
+          },
+          "breakthrough": {
+            "score": 0.72,
+            "matched_terms": [
+              "breakthrough",
+              "invention",
+              "invent",
+              "category creation"
+            ]
+          },
+          "engineering": {
+            "score": 0.18,
+            "matched_terms": [
+              "architecture"
+            ]
+          },
+          "portfolio": {
+            "score": 0.82,
+            "matched_terms": [
+              "portfolio",
+              "exposure",
+              "optimization",
+              "thesis"
+            ]
+          },
+          "acquisition": {
+            "score": 0.36,
+            "matched_terms": [
+              "acquisition",
+              "package"
+            ]
+          },
+          "update_governance": {
+            "score": 0.18,
+            "matched_terms": [
+              "update"
+            ]
+          },
+          "recursive_learning": {
+            "score": 0.54,
+            "matched_terms": [
+              "recursive",
+              "self-ingestion",
+              "learning loop"
+            ]
+          }
+        },
+        "innovation_score": 0.913,
+        "innovation_potential_level": "high",
+        "route_candidates": [
+          {
+            "candidate_key": "portfolio_optimization",
+            "label": "Portfolio Optimization Route",
+            "route_id": "portfolio_creation_or_optimization",
+            "composite_score": 0.848,
+            "qualifies_for_review": true,
+            "requires": [
+              "trend_or_thesis_context",
+              "risk_notes",
+              "evidence_basket"
+            ],
+            "trigger_categories": [
+              "portfolio",
+              "market_gap"
+            ]
+          },
+          {
+            "candidate_key": "acquisition_package",
+            "label": "Acquisition Package Route",
+            "route_id": "acquirer_identification_to_final_package",
+            "composite_score": 0.848,
+            "qualifies_for_review": true,
+            "requires": [
+              "strategic_fit",
+              "value_capture",
+              "package_readiness"
+            ],
+            "trigger_categories": [
+              "acquisition",
+              "market_gap",
+              "portfolio"
+            ]
+          },
+          {
+            "candidate_key": "breakthrough_escalation",
+            "label": "Breakthrough Escalation Route",
+            "route_id": "breakthrough_identification_and_classification",
+            "composite_score": 0.778,
+            "qualifies_for_review": true,
+            "requires": [
+              "structural_gap",
+              "non_obvious_advancement",
+              "evidence_basket"
+            ],
+            "trigger_categories": [
+              "breakthrough",
+              "market_gap",
+              "engineering"
+            ]
+          },
+          {
+            "candidate_key": "engineering_design",
+            "label": "Engineering / Design Route",
+            "route_id": "auto_invention_solution_generation_to_design_portal",
+            "composite_score": 0.778,
+            "qualifies_for_review": true,
+            "requires": [
+              "buildability_context",
+              "dependencies",
+              "constraints"
+            ],
+            "trigger_categories": [
+              "engineering",
+              "breakthrough"
+            ]
+          },
+          {
+            "candidate_key": "recursive_learning",
+            "label": "Recursive Learning Route",
+            "route_id": "lifecycle_memory_and_recursive_self_ingestion",
+            "composite_score": 0.652,
+            "qualifies_for_review": true,
+            "requires": [
+              "run_history",
+              "evidence_trace",
+              "replay_contract"
+            ],
+            "trigger_categories": [
+              "recursive_learning"
+            ]
+          },
+          {
+            "candidate_key": "update_governance",
+            "label": "Governed Update Readiness Route",
+            "route_id": "online_update_readiness_to_staged_validation",
+            "composite_score": 0.4,
+            "qualifies_for_review": false,
+            "requires": [
+              "zero_trust_scan",
+              "rollback_plan",
+              "operator_approval"
+            ],
+            "trigger_categories": [
+              "update_governance"
+            ]
+          }
+        ],
+        "selected_candidate": {
+          "candidate_key": "portfolio_optimization",
+          "label": "Portfolio Optimization Route",
+          "route_id": "portfolio_creation_or_optimization",
+          "composite_score": 0.848,
+          "qualifies_for_review": true,
+          "requires": [
+            "trend_or_thesis_context",
+            "risk_notes",
+            "evidence_basket"
+          ],
+          "trigger_categories": [
+            "portfolio",
+            "market_gap"
+          ]
+        },
+        "requires_operator_review": true,
+        "escalation_execution_allowed": false,
+        "recommended_operator_action": "review_candidate_route",
+        "governance_note": "This detector recommends route review only. It does not execute escalation or mutate runtime truth.",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "automatic_escalation_execution_enabled": false
+      },
+      "engineering_detection": {
+        "version": "v19.89.8-S485-S491",
+        "created_at": "2026-05-17T01:06:17.014282+00:00",
+        "question": "Can Claire identify a buildable breakthrough system design with feasible architecture?",
+        "route_output_summary": {
+          "selected_domain_route": "engineering",
+          "route_id": "engineering_intelligence_route",
+          "answer_quality_state": "evidence_backed",
+          "confidence": 0.82
+        },
+        "category_scores": {
+          "market_gap": {
+            "score": 0.0,
+            "matched_terms": []
+          },
+          "breakthrough": {
+            "score": 0.72,
+            "matched_terms": [
+              "breakthrough",
+              "invention",
+              "invent",
+              "category creation"
+            ]
+          },
+          "engineering": {
+            "score": 1.0,
+            "matched_terms": [
+              "buildable",
+              "architecture",
+              "system design",
+              "component",
+              "dependency",
+              "feasible"
+            ]
+          },
+          "portfolio": {
+            "score": 0.54,
+            "matched_terms": [
+              "portfolio",
+              "optimization",
+              "thesis"
+            ]
+          },
+          "acquisition": {
+            "score": 0.54,
+            "matched_terms": [
+              "acquisition",
+              "exit",
+              "package"
+            ]
+          },
+          "update_governance": {
+            "score": 0.18,
+            "matched_terms": [
+              "update"
+            ]
+          },
+          "recursive_learning": {
+            "score": 0.54,
+            "matched_terms": [
+              "recursive",
+              "self-ingestion",
+              "learning loop"
+            ]
+          }
+        },
+        "innovation_score": 0.973,
+        "innovation_potential_level": "high",
+        "route_candidates": [
+          {
+            "candidate_key": "breakthrough_escalation",
+            "label": "Breakthrough Escalation Route",
+            "route_id": "breakthrough_identification_and_classification",
+            "composite_score": 0.992,
+            "qualifies_for_review": true,
+            "requires": [
+              "structural_gap",
+              "non_obvious_advancement",
+              "evidence_basket"
+            ],
+            "trigger_categories": [
+              "breakthrough",
+              "market_gap",
+              "engineering"
+            ]
+          },
+          {
+            "candidate_key": "engineering_design",
+            "label": "Engineering / Design Route",
+            "route_id": "auto_invention_solution_generation_to_design_portal",
+            "composite_score": 0.992,
+            "qualifies_for_review": true,
+            "requires": [
+              "buildability_context",
+              "dependencies",
+              "constraints"
+            ],
+            "trigger_categories": [
+              "engineering",
+              "breakthrough"
+            ]
+          },
+          {
+            "candidate_key": "portfolio_optimization",
+            "label": "Portfolio Optimization Route",
+            "route_id": "portfolio_creation_or_optimization",
+            "composite_score": 0.67,
+            "qualifies_for_review": true,
+            "requires": [
+              "trend_or_thesis_context",
+              "risk_notes",
+              "evidence_basket"
+            ],
+            "trigger_categories": [
+              "portfolio",
+              "market_gap"
+            ]
+          },
+          {
+            "candidate_key": "acquisition_package",
+            "label": "Acquisition Package Route",
+            "route_id": "acquirer_identification_to_final_package",
+            "composite_score": 0.67,
+            "qualifies_for_review": true,
+            "requires": [
+              "strategic_fit",
+              "value_capture",
+              "package_readiness"
+            ],
+            "trigger_categories": [
+              "acquisition",
+              "market_gap",
+              "portfolio"
+            ]
+          },
+          {
+            "candidate_key": "recursive_learning",
+            "label": "Recursive Learning Route",
+            "route_id": "lifecycle_memory_and_recursive_self_ingestion",
+            "composite_score": 0.67,
+            "qualifies_for_review": true,
+            "requires": [
+              "run_history",
+              "evidence_trace",
+              "replay_contract"
+            ],
+            "trigger_categories": [
+              "recursive_learning"
+            ]
+          },
+          {
+            "candidate_key": "update_governance",
+            "label": "Governed Update Readiness Route",
+            "route_id": "online_update_readiness_to_staged_validation",
+            "composite_score": 0.418,
+            "qualifies_for_review": false,
+            "requires": [
+              "zero_trust_scan",
+              "rollback_plan",
+              "operator_approval"
+            ],
+            "trigger_categories": [
+              "update_governance"
+            ]
+          }
+        ],
+        "selected_candidate": {
+          "candidate_key": "breakthrough_escalation",
+          "label": "Breakthrough Escalation Route",
+          "route_id": "breakthrough_identification_and_classification",
+          "composite_score": 0.992,
+          "qualifies_for_review": true,
+          "requires": [
+            "structural_gap",
+            "non_obvious_advancement",
+            "evidence_basket"
+          ],
+          "trigger_categories": [
+            "breakthrough",
+            "market_gap",
+            "engineering"
+          ]
+        },
+        "requires_operator_review": true,
+        "escalation_execution_allowed": false,
+        "recommended_operator_action": "review_candidate_route",
+        "governance_note": "This detector recommends route review only. It does not execute escalation or mutate runtime truth.",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "automatic_escalation_execution_enabled": false
+      },
+      "update_detection": {
+        "version": "v19.89.8-S485-S491",
+        "created_at": "2026-05-17T01:06:17.015282+00:00",
+        "question": "Can Claire evaluate an online update package with rollback validation and approval?",
+        "route_output_summary": {
+          "selected_domain_route": "cross_domain",
+          "route_id": "cross_domain_synthesis_route",
+          "answer_quality_state": "evidence_backed",
+          "confidence": 0.86
+        },
+        "category_scores": {
+          "market_gap": {
+            "score": 0.06,
+            "matched_terms": []
+          },
+          "breakthrough": {
+            "score": 0.78,
+            "matched_terms": [
+              "breakthrough",
+              "invention",
+              "invent",
+              "category creation"
+            ]
+          },
+          "engineering": {
+            "score": 0.24,
+            "matched_terms": [
+              "architecture"
+            ]
+          },
+          "portfolio": {
+            "score": 0.6,
+            "matched_terms": [
+              "portfolio",
+              "optimization",
+              "thesis"
+            ]
+          },
+          "acquisition": {
+            "score": 0.42,
+            "matched_terms": [
+              "acquisition",
+              "package"
+            ]
+          },
+          "update_governance": {
+            "score": 0.96,
+            "matched_terms": [
+              "update",
+              "online update",
+              "rollback",
+              "approval",
+              "validation"
+            ]
+          },
+          "recursive_learning": {
+            "score": 0.42,
+            "matched_terms": [
+              "recursive",
+              "learning loop"
+            ]
+          }
+        },
+        "innovation_score": 0.9,
+        "innovation_potential_level": "high",
+        "route_candidates": [
+          {
+            "candidate_key": "update_governance",
+            "label": "Governed Update Readiness Route",
+            "route_id": "online_update_readiness_to_staged_validation",
+            "composite_score": 0.942,
+            "qualifies_for_review": true,
+            "requires": [
+              "zero_trust_scan",
+              "rollback_plan",
+              "operator_approval"
+            ],
+            "trigger_categories": [
+              "update_governance"
+            ]
+          },
+          {
+            "candidate_key": "breakthrough_escalation",
+            "label": "Breakthrough Escalation Route",
+            "route_id": "breakthrough_identification_and_classification",
+            "composite_score": 0.816,
+            "qualifies_for_review": true,
+            "requires": [
+              "structural_gap",
+              "non_obvious_advancement",
+              "evidence_basket"
+            ],
+            "trigger_categories": [
+              "breakthrough",
+              "market_gap",
+              "engineering"
+            ]
+          },
+          {
+            "candidate_key": "engineering_design",
+            "label": "Engineering / Design Route",
+            "route_id": "auto_invention_solution_generation_to_design_portal",
+            "composite_score": 0.816,
+            "qualifies_for_review": true,
+            "requires": [
+              "buildability_context",
+              "dependencies",
+              "constraints"
+            ],
+            "trigger_categories": [
+              "engineering",
+              "breakthrough"
+            ]
+          },
+          {
+            "candidate_key": "portfolio_optimization",
+            "label": "Portfolio Optimization Route",
+            "route_id": "portfolio_creation_or_optimization",
+            "composite_score": 0.69,
+            "qualifies_for_review": true,
+            "requires": [
+              "trend_or_thesis_context",
+              "risk_notes",
+              "evidence_basket"
+            ],
+            "trigger_categories": [
+              "portfolio",
+              "market_gap"
+            ]
+          },
+          {
+            "candidate_key": "acquisition_package",
+            "label": "Acquisition Package Route",
+            "route_id": "acquirer_identification_to_final_package",
+            "composite_score": 0.69,
+            "qualifies_for_review": true,
+            "requires": [
+              "strategic_fit",
+              "value_capture",
+              "package_readiness"
+            ],
+            "trigger_categories": [
+              "acquisition",
+              "market_gap",
+              "portfolio"
+            ]
+          },
+          {
+            "candidate_key": "recursive_learning",
+            "label": "Recursive Learning Route",
+            "route_id": "lifecycle_memory_and_recursive_self_ingestion",
+            "composite_score": 0.564,
+            "qualifies_for_review": true,
+            "requires": [
+              "run_history",
+              "evidence_trace",
+              "replay_contract"
+            ],
+            "trigger_categories": [
+              "recursive_learning"
+            ]
+          }
+        ],
+        "selected_candidate": {
+          "candidate_key": "update_governance",
+          "label": "Governed Update Readiness Route",
+          "route_id": "online_update_readiness_to_staged_validation",
+          "composite_score": 0.942,
+          "qualifies_for_review": true,
+          "requires": [
+            "zero_trust_scan",
+            "rollback_plan",
+            "operator_approval"
+          ],
+          "trigger_categories": [
+            "update_governance"
+          ]
+        },
+        "requires_operator_review": true,
+        "escalation_execution_allowed": false,
+        "recommended_operator_action": "review_candidate_route",
+        "governance_note": "This detector recommends route review only. It does not execute escalation or mutate runtime truth.",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "automatic_escalation_execution_enabled": false
+      },
+      "breakthrough_candidate": {
+        "candidate_id": "breakthrough_candidate_2811030",
+        "question": "Can Claire find a non-obvious breakthrough from this market gap and system design?",
+        "breakthrough_score": 0.926,
+        "category_scores": {
+          "breakthrough": {
+            "score": 0.9,
+            "matched_terms": [
+              "breakthrough",
+              "non-obvious",
+              "invention",
+              "invent",
+              "category creation"
+            ]
+          },
+          "market_gap": {
+            "score": 0.46,
+            "matched_terms": [
+              "gap",
+              "latent demand"
+            ]
+          },
+          "engineering": {
+            "score": 0.54,
+            "matched_terms": [
+              "architecture",
+              "system design",
+              "dependency"
+            ]
+          }
+        },
+        "classification": "breakthrough_review_candidate",
+        "route_review_required": true,
+        "recommended_route_candidate": {
+          "candidate_key": "breakthrough_escalation",
+          "label": "Breakthrough Escalation Route",
+          "route_id": "breakthrough_identification_and_classification",
+          "composite_score": 0.922,
+          "qualifies_for_review": true,
+          "requires": [
+            "structural_gap",
+            "non_obvious_advancement",
+            "evidence_basket"
+          ],
+          "trigger_categories": [
+            "breakthrough",
+            "market_gap",
+            "engineering"
+          ]
+        },
+        "execution_allowed": false,
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "automatic_escalation_execution_enabled": false
+      }
+    },
+    "forward_motion_allowed": true,
+    "next_phase": "S492-S498 Useful output package preview"
+  },
+  "ok": true,
+  "fast_test": "python -X utf8 -m pytest tests/test_s485_s491_claire_innovation_route_escalation.py -q --tb=short",
+  "next": [
+    "python -X utf8 -m pytest tests/test_s485_s491_claire_innovation_route_escalation.py -q --tb=short",
+    "python -X utf8 -m pytest --lf -q --tb=short",
+    "python -X utf8 -m pytest -vv --tb=short",
+    "If clean, continue to S492-S498 Useful output package preview."
+  ]
+}

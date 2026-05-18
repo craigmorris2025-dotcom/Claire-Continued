@@ -1,0 +1,29 @@
+{
+  "version": "v19.82B.12",
+  "build_name": "Discovery Candidate Cockpit Surface",
+  "installed_at": "2026-05-11T19:49:17.111757+00:00",
+  "primary_cockpit_path": "frontend/cockpit/shell/cockpit_shell.html",
+  "depends_on": [
+    "v19.82B.10 Source Universe Cockpit Workspace",
+    "v19.82B.11 Governed Probe Result Review Queue Bridge"
+  ],
+  "backend_truth_routes_consumed": [
+    "GET /runtime/continuous/review-queue",
+    "GET /dashboard/payload"
+  ],
+  "created_or_updated": [
+    "frontend/cockpit/shell/assets/claire_discovery_candidate_surface.js",
+    "frontend/cockpit/shell/assets/claire_discovery_candidate_surface.css",
+    "tests/test_v19_82B_12_discovery_candidate_cockpit_surface.py",
+    "data/build_artifacts/v19_82B_12_discovery_candidate_cockpit_surface.json"
+  ],
+  "locked_rules": [
+    "frontend may display discovery candidates only",
+    "frontend may not create discoveries",
+    "frontend may not mutate runtime truth",
+    "frontend may not fabricate lifecycle scoring",
+    "operator approval required before promotion",
+    "backend remains lifecycle truth owner"
+  ],
+  "next_recommended_build": "v19.82B.13 Breakthrough Candidate Cockpit Surface"
+}

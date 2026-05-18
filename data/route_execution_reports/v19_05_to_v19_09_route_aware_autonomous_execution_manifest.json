@@ -1,0 +1,26 @@
+{
+  "archive_before_modify": true,
+  "dashboards_patched_if_present": [
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "delete_policy": "delete_nothing",
+  "files_written": [
+    "claire\\route_aware_autonomous_execution.py",
+    "tests\\test_v19_05_to_v19_09_route_aware_autonomous_execution_proof_pack.py",
+    "data\\route_execution_reports\\v19_05_to_v19_09_route_aware_autonomous_execution_report.json",
+    "data\\route_execution_reports\\v19_05_to_v19_09_route_aware_autonomous_execution_manifest.json"
+  ],
+  "installed_at": "2026-05-10T17:56:12.152326Z",
+  "installer": "install_claire_v19_05_to_v19_09_route_aware_autonomous_execution_proof_pack.py",
+  "pack_name": "Route-Aware Autonomous Execution Proof Pack",
+  "pack_version": "v19.05-v19.09",
+  "purpose": [
+    "prove route-aware autonomous execution",
+    "map intents to terminal states",
+    "cover all 30 lifecycle stages",
+    "mark non-applicable stages skipped_by_route with reasons",
+    "prevent metadata-only terminal output",
+    "keep dashboard current during pipeline execution buildout"
+  ],
+  "pytest_command": "python -m pytest tests/test_v19_05_to_v19_09_route_aware_autonomous_execution_proof_pack.py -q"
+}

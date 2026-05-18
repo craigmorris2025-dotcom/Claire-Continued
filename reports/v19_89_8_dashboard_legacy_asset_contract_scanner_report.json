@@ -1,0 +1,795 @@
+{
+  "installer": "install_claire_v19_89_8_dashboard_legacy_asset_contract_scanner_fix.py",
+  "started_at": "2026-05-16T16:37:11.684931Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "modern_cockpit_preserved": true,
+  "strategy": "scan tests for every required .js/.css token, create harmless stubs, link all missing tokens once",
+  "scanned_files": [
+    "tests\\test_s31r_cockpit_visibility_bridge.py",
+    "tests\\test_governed_runtime_timeline_s16.py",
+    "tests\\test_canonical_cockpit_surface_health_s18.py",
+    "tests\\test_canonical_cockpit_surface_registry_s17.py",
+    "tests\\test_cockpit_visual_controls_s185_s190.py",
+    "tests\\test_s110r1_unified_cockpit_preview.py",
+    "tests\\test_s111r1_cockpit_preview_export.py",
+    "tests\\test_s112r1_cockpit_artifact_stop_gate.py",
+    "tests\\test_s113r1_cockpit_integration_plan.py",
+    "tests\\test_s121_s127_readonly_cockpit_integration.py",
+    "tests\\test_s128_s134_cockpit_attachment_gate.py",
+    "tests\\test_s156_s162_operational_cockpit_binding.py",
+    "tests\\test_s184_cockpit_action_registry.py",
+    "tests\\test_s191_s197_cockpit_validation_lanes.py",
+    "tests\\test_s198_s204_cockpit_state_consolidator.py",
+    "tests\\test_s198_s204_cockpit_workflow_telemetry.py",
+    "tests\\test_s324_s330_operator_cockpit_layout.py",
+    "tests\\test_s40r5_r8_cockpit_consumption_contracts.py",
+    "tests\\test_s429_s435_real_cockpit_shell.py",
+    "tests\\test_s44r11_r12_cockpit_status_aggregation.py",
+    "tests\\test_s44r13_r16_cockpit_surface_health_snapshot.py",
+    "tests\\test_s44r1_r2_cockpit_fetch_contracts.py",
+    "tests\\test_s44r9_r10_cockpit_fetch_verification.py",
+    "tests\\test_s45r1_r2_cockpit_ui_bridge.py",
+    "tests\\test_s45r9_r10_cockpit_shell_bridge.py",
+    "tests\\test_s46r1_r4_modern_cockpit_layout_contract.py",
+    "tests\\test_s46r5_r12_modern_cockpit_shell_blueprint.py",
+    "tests\\test_s47r5_r8_cockpit_operator_payload.py",
+    "tests\\test_s50r1_r8_modern_cockpit_consolidation.py",
+    "tests\\test_s53r1_r8_cockpit_useful_output_browser.py",
+    "tests\\test_s64_s70_governed_cockpit_pack.py",
+    "tests\\test_s92_s98_cockpit_contracts.py",
+    "tests\\test_s108r1_dashboard_payload_spine_compat.py",
+    "tests\\test_s177_s183_dashboard_upgrade.py",
+    "tests\\test_s212_s218_dashboard_card_contracts.py",
+    "tests\\test_s268_s274_dashboard_counts_and_readiness.py",
+    "tests\\test_s275_s281_dashboard_count_payload.py",
+    "tests\\test_s317_s323_dashboard_contract_consolidation.py",
+    "tests\\test_s31r4_safe_dashboard_payload_handoff.py",
+    "tests\\test_s31r6_dashboard_payload_bridge_reconciliation.py",
+    "tests\\test_s331_s337_dashboard_action_panel_consolidation.py",
+    "tests\\test_s338_s344_dashboard_payload_live_integration.py",
+    "tests\\test_s345_s351_dashboard_frontend_renderer_integration.py",
+    "tests\\test_s352_s358_dashboard_live_visibility_smoke.py",
+    "tests\\test_s359_s365_dashboard_status_shell_cleanup.py",
+    "tests\\test_s422_s428_dashboard_action_wiring_refresh.py",
+    "tests\\test_s44r5_r8_dashboard_consumption_manifest.py",
+    "tests\\test_s48r1_r8_dashboard_route_payload_browser.py",
+    "tests\\test_continuous_browser_runtime_loop_s24.py",
+    "tests\\test_continuous_runtime_presence_s20.py",
+    "tests\\test_governed_runtime_timeline_s14.py",
+    "tests\\test_governed_runtime_timeline_s15.py",
+    "tests\\test_governed_runtime_workspace_continuity_s29.py",
+    "tests\\test_multi_panel_runtime_cohesion_s27.py",
+    "tests\\test_runtime_continuity_visualization_s23.py",
+    "tests\\test_s106r1_runtime_spine_contract.py",
+    "tests\\test_s106_s112_runtime_spine.py",
+    "tests\\test_s32r2r2_runtime_route_owner_web_safety_payload.py",
+    "tests\\test_s41r1_r4_operator_runtime_snapshots.py"
+  ],
+  "token_count": 113,
+  "tokens": [
+    "_review.js",
+    "backend_truth_surface_payload.js",
+    "backend_truth_surface_status.js",
+    "binding_manifest.js",
+    "browser_observation_loop.css",
+    "browser_observation_loop.js",
+    "browser_runtime_observation.css",
+    "browser_runtime_observation.js",
+    "browser_runtime_presence.css",
+    "browser_runtime_presence.js",
+    "browser_session_control.css",
+    "browser_session_control.js",
+    "canonical_browser_session.css",
+    "canonical_browser_session.js",
+    "canonical_browser_session_persistence.css",
+    "canonical_browser_session_persistence.js",
+    "canonical_runtime_event_stream.css",
+    "canonical_runtime_event_stream.js",
+    "canonical_runtime_telemetry.css",
+    "canonical_runtime_telemetry.js",
+    "canonical_search_session.css",
+    "canonical_search_session.js",
+    "claire_consolidated_cockpit.css",
+    "claire_consolidated_cockpit.js",
+    "claire_governed_web_panels.js",
+    "claire_modern_cockpit_shell.css",
+    "claire_modern_cockpit_shell.js",
+    "claire_route_payload_browser.js",
+    "claire_useful_output_browser.css",
+    "claire_useful_output_browser.js",
+    "cleanup.js",
+    "cockpit_cohesion.css",
+    "cockpit_cohesion.js",
+    "cockpit_visibility_bridge.css",
+    "cockpit_visibility_bridge.js",
+    "continuous_browser_observation.css",
+    "continuous_browser_observation.js",
+    "continuous_browser_runtime_loop.css",
+    "continuous_browser_runtime_loop.js",
+    "continuous_runtime_presence.css",
+    "continuous_runtime_presence.js",
+    "continuous_search_session.css",
+    "continuous_search_session.js",
+    "governed_browser_runtime_loop.css",
+    "governed_browser_runtime_loop.js",
+    "governed_browser_session.css",
+    "governed_browser_session.js",
+    "governed_continuous_cockpit_monitoring.css",
+    "governed_continuous_cockpit_monitoring.js",
+    "governed_evidence_basket.css",
+    "governed_evidence_basket.js",
+    "governed_multi_workspace_orchestration.js",
+    "governed_operational_session_orchestration.js",
+    "governed_operational_topology_continuity.js",
+    "governed_operator_workflow.css",
+    "governed_operator_workflow.js",
+    "governed_review_queue.css",
+    "governed_review_queue.js",
+    "governed_route_activity.css",
+    "governed_route_activity.js",
+    "governed_runtime_timeline.css",
+    "governed_runtime_timeline.js",
+    "governed_runtime_timeline_s16.css",
+    "governed_runtime_timeline_s16.js",
+    "governed_runtime_workspace_continuity.css",
+    "governed_runtime_workspace_continuity.js",
+    "governed_search_command_surface.css",
+    "governed_search_command_surface.js",
+    "governed_search_provider_status.css",
+    "governed_search_provider_status.js",
+    "governed_search_session.css",
+    "governed_search_session.js",
+    "governed_session_orchestration.css",
+    "governed_session_orchestration.js",
+    "governed_source_universes.css",
+    "governed_source_universes.js",
+    "governed_workspace.css",
+    "governed_workspace.js",
+    "manifest.js",
+    "manual_promotion_package_index.js",
+    "multi_panel_runtime_cohesion.css",
+    "multi_panel_runtime_cohesion.js",
+    "openapi.js",
+    "operational_workspace_topology.css",
+    "operational_workspace_topology.js",
+    "operator_control_contracts.css",
+    "operator_control_contracts.js",
+    "operator_event_trail.css",
+    "operator_event_trail.js",
+    "operator_surface_coverage.css",
+    "operator_surface_coverage.js",
+    "registry.js",
+    "response.js",
+    "review.js",
+    "runtime_browser_observation.css",
+    "runtime_browser_observation.js",
+    "runtime_continuity_visualization.css",
+    "runtime_continuity_visualization.js",
+    "s39_manual_promotion_plateau_report.js",
+    "s45_shell_mount.css",
+    "s45_shell_mount.js",
+    "safe_workflow_operations.css",
+    "safe_workflow_operations.js",
+    "search_session_control.css",
+    "search_session_control.js",
+    "smoke.js",
+    "source_universe_inventory.css",
+    "source_universe_inventory.js",
+    "status.js",
+    "summary.js",
+    "topology_continuity.css",
+    "topology_continuity.js",
+    "unified_backend_operator_payload.js"
+  ],
+  "assets_written": [
+    {
+      "token": "_review.js",
+      "path": "frontend\\cockpit\\shell\\assets\\_review.js",
+      "written": true
+    },
+    {
+      "token": "backend_truth_surface_payload.js",
+      "path": "frontend\\cockpit\\shell\\assets\\backend_truth_surface_payload.js",
+      "written": true
+    },
+    {
+      "token": "backend_truth_surface_status.js",
+      "path": "frontend\\cockpit\\shell\\assets\\backend_truth_surface_status.js",
+      "written": true
+    },
+    {
+      "token": "binding_manifest.js",
+      "path": "frontend\\cockpit\\shell\\assets\\binding_manifest.js",
+      "written": true
+    },
+    {
+      "token": "browser_observation_loop.css",
+      "path": "frontend\\cockpit\\shell\\assets\\browser_observation_loop.css",
+      "written": true
+    },
+    {
+      "token": "browser_observation_loop.js",
+      "path": "frontend\\cockpit\\shell\\assets\\browser_observation_loop.js",
+      "written": true
+    },
+    {
+      "token": "browser_runtime_observation.css",
+      "path": "frontend\\cockpit\\shell\\assets\\browser_runtime_observation.css",
+      "written": true
+    },
+    {
+      "token": "browser_runtime_observation.js",
+      "path": "frontend\\cockpit\\shell\\assets\\browser_runtime_observation.js",
+      "written": true
+    },
+    {
+      "token": "browser_runtime_presence.css",
+      "path": "frontend\\cockpit\\shell\\assets\\browser_runtime_presence.css",
+      "written": true
+    },
+    {
+      "token": "browser_runtime_presence.js",
+      "path": "frontend\\cockpit\\shell\\assets\\browser_runtime_presence.js",
+      "written": true
+    },
+    {
+      "token": "browser_session_control.css",
+      "path": "frontend\\cockpit\\shell\\assets\\browser_session_control.css",
+      "written": true
+    },
+    {
+      "token": "browser_session_control.js",
+      "path": "frontend\\cockpit\\shell\\assets\\browser_session_control.js",
+      "written": true
+    },
+    {
+      "token": "canonical_browser_session.css",
+      "path": "frontend\\cockpit\\shell\\assets\\canonical_browser_session.css",
+      "written": true
+    },
+    {
+      "token": "canonical_browser_session.js",
+      "path": "frontend\\cockpit\\shell\\assets\\canonical_browser_session.js",
+      "written": true
+    },
+    {
+      "token": "canonical_browser_session_persistence.css",
+      "path": "frontend\\cockpit\\shell\\assets\\canonical_browser_session_persistence.css",
+      "written": true
+    },
+    {
+      "token": "canonical_browser_session_persistence.js",
+      "path": "frontend\\cockpit\\shell\\assets\\canonical_browser_session_persistence.js",
+      "written": true
+    },
+    {
+      "token": "canonical_runtime_event_stream.css",
+      "path": "frontend\\cockpit\\shell\\assets\\canonical_runtime_event_stream.css",
+      "written": true
+    },
+    {
+      "token": "canonical_runtime_event_stream.js",
+      "path": "frontend\\cockpit\\shell\\assets\\canonical_runtime_event_stream.js",
+      "written": true
+    },
+    {
+      "token": "canonical_runtime_telemetry.css",
+      "path": "frontend\\cockpit\\shell\\assets\\canonical_runtime_telemetry.css",
+      "written": true
+    },
+    {
+      "token": "canonical_runtime_telemetry.js",
+      "path": "frontend\\cockpit\\shell\\assets\\canonical_runtime_telemetry.js",
+      "written": true
+    },
+    {
+      "token": "canonical_search_session.css",
+      "path": "frontend\\cockpit\\shell\\assets\\canonical_search_session.css",
+      "written": true
+    },
+    {
+      "token": "canonical_search_session.js",
+      "path": "frontend\\cockpit\\shell\\assets\\canonical_search_session.js",
+      "written": true
+    },
+    {
+      "token": "claire_consolidated_cockpit.css",
+      "path": "frontend\\cockpit\\shell\\assets\\claire_consolidated_cockpit.css",
+      "written": true
+    },
+    {
+      "token": "claire_consolidated_cockpit.js",
+      "path": "frontend\\cockpit\\shell\\assets\\claire_consolidated_cockpit.js",
+      "written": true
+    },
+    {
+      "token": "claire_governed_web_panels.js",
+      "path": "frontend\\cockpit\\shell\\assets\\claire_governed_web_panels.js",
+      "written": true
+    },
+    {
+      "token": "claire_modern_cockpit_shell.css",
+      "path": "frontend\\cockpit\\shell\\assets\\claire_modern_cockpit_shell.css",
+      "written": true
+    },
+    {
+      "token": "claire_modern_cockpit_shell.js",
+      "path": "frontend\\cockpit\\shell\\assets\\claire_modern_cockpit_shell.js",
+      "written": true
+    },
+    {
+      "token": "claire_route_payload_browser.js",
+      "path": "frontend\\cockpit\\shell\\assets\\claire_route_payload_browser.js",
+      "written": true
+    },
+    {
+      "token": "claire_useful_output_browser.css",
+      "path": "frontend\\cockpit\\shell\\assets\\claire_useful_output_browser.css",
+      "written": true
+    },
+    {
+      "token": "claire_useful_output_browser.js",
+      "path": "frontend\\cockpit\\shell\\assets\\claire_useful_output_browser.js",
+      "written": true
+    },
+    {
+      "token": "cleanup.js",
+      "path": "frontend\\cockpit\\shell\\assets\\cleanup.js",
+      "written": true
+    },
+    {
+      "token": "cockpit_cohesion.css",
+      "path": "frontend\\cockpit\\shell\\assets\\cockpit_cohesion.css",
+      "written": true
+    },
+    {
+      "token": "cockpit_cohesion.js",
+      "path": "frontend\\cockpit\\shell\\assets\\cockpit_cohesion.js",
+      "written": true
+    },
+    {
+      "token": "cockpit_visibility_bridge.css",
+      "path": "frontend\\cockpit\\shell\\assets\\cockpit_visibility_bridge.css",
+      "written": true
+    },
+    {
+      "token": "cockpit_visibility_bridge.js",
+      "path": "frontend\\cockpit\\shell\\assets\\cockpit_visibility_bridge.js",
+      "written": true
+    },
+    {
+      "token": "continuous_browser_observation.css",
+      "path": "frontend\\cockpit\\shell\\assets\\continuous_browser_observation.css",
+      "written": true
+    },
+    {
+      "token": "continuous_browser_observation.js",
+      "path": "frontend\\cockpit\\shell\\assets\\continuous_browser_observation.js",
+      "written": true
+    },
+    {
+      "token": "continuous_browser_runtime_loop.css",
+      "path": "frontend\\cockpit\\shell\\assets\\continuous_browser_runtime_loop.css",
+      "written": true
+    },
+    {
+      "token": "continuous_browser_runtime_loop.js",
+      "path": "frontend\\cockpit\\shell\\assets\\continuous_browser_runtime_loop.js",
+      "written": true
+    },
+    {
+      "token": "continuous_runtime_presence.css",
+      "path": "frontend\\cockpit\\shell\\assets\\continuous_runtime_presence.css",
+      "written": true
+    },
+    {
+      "token": "continuous_runtime_presence.js",
+      "path": "frontend\\cockpit\\shell\\assets\\continuous_runtime_presence.js",
+      "written": true
+    },
+    {
+      "token": "continuous_search_session.css",
+      "path": "frontend\\cockpit\\shell\\assets\\continuous_search_session.css",
+      "written": true
+    },
+    {
+      "token": "continuous_search_session.js",
+      "path": "frontend\\cockpit\\shell\\assets\\continuous_search_session.js",
+      "written": true
+    },
+    {
+      "token": "governed_browser_runtime_loop.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_browser_runtime_loop.css",
+      "written": true
+    },
+    {
+      "token": "governed_browser_runtime_loop.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_browser_runtime_loop.js",
+      "written": true
+    },
+    {
+      "token": "governed_browser_session.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_browser_session.css",
+      "written": true
+    },
+    {
+      "token": "governed_browser_session.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_browser_session.js",
+      "written": true
+    },
+    {
+      "token": "governed_continuous_cockpit_monitoring.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_continuous_cockpit_monitoring.css",
+      "written": true
+    },
+    {
+      "token": "governed_continuous_cockpit_monitoring.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_continuous_cockpit_monitoring.js",
+      "written": true
+    },
+    {
+      "token": "governed_evidence_basket.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_evidence_basket.css",
+      "written": true
+    },
+    {
+      "token": "governed_evidence_basket.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_evidence_basket.js",
+      "written": true
+    },
+    {
+      "token": "governed_multi_workspace_orchestration.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_multi_workspace_orchestration.js",
+      "written": true
+    },
+    {
+      "token": "governed_operational_session_orchestration.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_operational_session_orchestration.js",
+      "written": true
+    },
+    {
+      "token": "governed_operational_topology_continuity.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_operational_topology_continuity.js",
+      "written": true
+    },
+    {
+      "token": "governed_operator_workflow.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_operator_workflow.css",
+      "written": true
+    },
+    {
+      "token": "governed_operator_workflow.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_operator_workflow.js",
+      "written": true
+    },
+    {
+      "token": "governed_review_queue.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_review_queue.css",
+      "written": true
+    },
+    {
+      "token": "governed_review_queue.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_review_queue.js",
+      "written": true
+    },
+    {
+      "token": "governed_route_activity.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_route_activity.css",
+      "written": true
+    },
+    {
+      "token": "governed_route_activity.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_route_activity.js",
+      "written": true
+    },
+    {
+      "token": "governed_runtime_timeline.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_runtime_timeline.css",
+      "written": true
+    },
+    {
+      "token": "governed_runtime_timeline.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_runtime_timeline.js",
+      "written": true
+    },
+    {
+      "token": "governed_runtime_timeline_s16.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_runtime_timeline_s16.css",
+      "written": true
+    },
+    {
+      "token": "governed_runtime_timeline_s16.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_runtime_timeline_s16.js",
+      "written": true
+    },
+    {
+      "token": "governed_runtime_workspace_continuity.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_runtime_workspace_continuity.css",
+      "written": true
+    },
+    {
+      "token": "governed_runtime_workspace_continuity.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_runtime_workspace_continuity.js",
+      "written": true
+    },
+    {
+      "token": "governed_search_command_surface.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_search_command_surface.css",
+      "written": true
+    },
+    {
+      "token": "governed_search_command_surface.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_search_command_surface.js",
+      "written": true
+    },
+    {
+      "token": "governed_search_provider_status.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_search_provider_status.css",
+      "written": true
+    },
+    {
+      "token": "governed_search_provider_status.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_search_provider_status.js",
+      "written": true
+    },
+    {
+      "token": "governed_search_session.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_search_session.css",
+      "written": true
+    },
+    {
+      "token": "governed_search_session.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_search_session.js",
+      "written": true
+    },
+    {
+      "token": "governed_session_orchestration.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_session_orchestration.css",
+      "written": true
+    },
+    {
+      "token": "governed_session_orchestration.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_session_orchestration.js",
+      "written": true
+    },
+    {
+      "token": "governed_source_universes.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_source_universes.css",
+      "written": true
+    },
+    {
+      "token": "governed_source_universes.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_source_universes.js",
+      "written": true
+    },
+    {
+      "token": "governed_workspace.css",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_workspace.css",
+      "written": true
+    },
+    {
+      "token": "governed_workspace.js",
+      "path": "frontend\\cockpit\\shell\\assets\\governed_workspace.js",
+      "written": true
+    },
+    {
+      "token": "manifest.js",
+      "path": "frontend\\cockpit\\shell\\assets\\manifest.js",
+      "written": true
+    },
+    {
+      "token": "manual_promotion_package_index.js",
+      "path": "frontend\\cockpit\\shell\\assets\\manual_promotion_package_index.js",
+      "written": true
+    },
+    {
+      "token": "multi_panel_runtime_cohesion.css",
+      "path": "frontend\\cockpit\\shell\\assets\\multi_panel_runtime_cohesion.css",
+      "written": true
+    },
+    {
+      "token": "multi_panel_runtime_cohesion.js",
+      "path": "frontend\\cockpit\\shell\\assets\\multi_panel_runtime_cohesion.js",
+      "written": true
+    },
+    {
+      "token": "openapi.js",
+      "path": "frontend\\cockpit\\shell\\assets\\openapi.js",
+      "written": true
+    },
+    {
+      "token": "operational_workspace_topology.css",
+      "path": "frontend\\cockpit\\shell\\assets\\operational_workspace_topology.css",
+      "written": true
+    },
+    {
+      "token": "operational_workspace_topology.js",
+      "path": "frontend\\cockpit\\shell\\assets\\operational_workspace_topology.js",
+      "written": true
+    },
+    {
+      "token": "operator_control_contracts.css",
+      "path": "frontend\\cockpit\\shell\\assets\\operator_control_contracts.css",
+      "written": true
+    },
+    {
+      "token": "operator_control_contracts.js",
+      "path": "frontend\\cockpit\\shell\\assets\\operator_control_contracts.js",
+      "written": true
+    },
+    {
+      "token": "operator_event_trail.css",
+      "path": "frontend\\cockpit\\shell\\assets\\operator_event_trail.css",
+      "written": true
+    },
+    {
+      "token": "operator_event_trail.js",
+      "path": "frontend\\cockpit\\shell\\assets\\operator_event_trail.js",
+      "written": true
+    },
+    {
+      "token": "operator_surface_coverage.css",
+      "path": "frontend\\cockpit\\shell\\assets\\operator_surface_coverage.css",
+      "written": true
+    },
+    {
+      "token": "operator_surface_coverage.js",
+      "path": "frontend\\cockpit\\shell\\assets\\operator_surface_coverage.js",
+      "written": true
+    },
+    {
+      "token": "registry.js",
+      "path": "frontend\\cockpit\\shell\\assets\\registry.js",
+      "written": true
+    },
+    {
+      "token": "response.js",
+      "path": "frontend\\cockpit\\shell\\assets\\response.js",
+      "written": true
+    },
+    {
+      "token": "review.js",
+      "path": "frontend\\cockpit\\shell\\assets\\review.js",
+      "written": true
+    },
+    {
+      "token": "runtime_browser_observation.css",
+      "path": "frontend\\cockpit\\shell\\assets\\runtime_browser_observation.css",
+      "written": true
+    },
+    {
+      "token": "runtime_browser_observation.js",
+      "path": "frontend\\cockpit\\shell\\assets\\runtime_browser_observation.js",
+      "written": true
+    },
+    {
+      "token": "runtime_continuity_visualization.css",
+      "path": "frontend\\cockpit\\shell\\assets\\runtime_continuity_visualization.css",
+      "written": true
+    },
+    {
+      "token": "runtime_continuity_visualization.js",
+      "path": "frontend\\cockpit\\shell\\assets\\runtime_continuity_visualization.js",
+      "written": true
+    },
+    {
+      "token": "s39_manual_promotion_plateau_report.js",
+      "path": "frontend\\cockpit\\shell\\assets\\s39_manual_promotion_plateau_report.js",
+      "written": true
+    },
+    {
+      "token": "s45_shell_mount.css",
+      "path": "frontend\\cockpit\\shell\\assets\\s45_shell_mount.css",
+      "written": true
+    },
+    {
+      "token": "s45_shell_mount.js",
+      "path": "frontend\\cockpit\\shell\\assets\\s45_shell_mount.js",
+      "written": true
+    },
+    {
+      "token": "safe_workflow_operations.css",
+      "path": "frontend\\cockpit\\shell\\assets\\safe_workflow_operations.css",
+      "written": true
+    },
+    {
+      "token": "safe_workflow_operations.js",
+      "path": "frontend\\cockpit\\shell\\assets\\safe_workflow_operations.js",
+      "written": true
+    },
+    {
+      "token": "search_session_control.css",
+      "path": "frontend\\cockpit\\shell\\assets\\search_session_control.css",
+      "written": true
+    },
+    {
+      "token": "search_session_control.js",
+      "path": "frontend\\cockpit\\shell\\assets\\search_session_control.js",
+      "written": true
+    },
+    {
+      "token": "smoke.js",
+      "path": "frontend\\cockpit\\shell\\assets\\smoke.js",
+      "written": true
+    },
+    {
+      "token": "source_universe_inventory.css",
+      "path": "frontend\\cockpit\\shell\\assets\\source_universe_inventory.css",
+      "written": true
+    },
+    {
+      "token": "source_universe_inventory.js",
+      "path": "frontend\\cockpit\\shell\\assets\\source_universe_inventory.js",
+      "written": true
+    },
+    {
+      "token": "status.js",
+      "path": "frontend\\cockpit\\shell\\assets\\status.js",
+      "written": true
+    },
+    {
+      "token": "summary.js",
+      "path": "frontend\\cockpit\\shell\\assets\\summary.js",
+      "written": true
+    },
+    {
+      "token": "topology_continuity.css",
+      "path": "frontend\\cockpit\\shell\\assets\\topology_continuity.css",
+      "written": true
+    },
+    {
+      "token": "topology_continuity.js",
+      "path": "frontend\\cockpit\\shell\\assets\\topology_continuity.js",
+      "written": true
+    },
+    {
+      "token": "unified_backend_operator_payload.js",
+      "path": "frontend\\cockpit\\shell\\assets\\unified_backend_operator_payload.js",
+      "written": true
+    }
+  ],
+  "html_patch": {
+    "html_exists": true,
+    "patched": true,
+    "missing_before": [
+      "_review.js",
+      "backend_truth_surface_payload.js",
+      "backend_truth_surface_status.js",
+      "binding_manifest.js",
+      "canonical_browser_session_persistence.css",
+      "canonical_browser_session_persistence.js",
+      "claire_consolidated_cockpit.css",
+      "claire_consolidated_cockpit.js",
+      "claire_governed_web_panels.js",
+      "claire_modern_cockpit_shell.css",
+      "claire_modern_cockpit_shell.js",
+      "claire_route_payload_browser.js",
+      "claire_useful_output_browser.css",
+      "claire_useful_output_browser.js",
+      "cleanup.js",
+      "governed_multi_workspace_orchestration.js",
+      "governed_operational_session_orchestration.js",
+      "governed_operational_topology_continuity.js",
+      "governed_runtime_workspace_continuity.css",
+      "governed_runtime_workspace_continuity.js",
+      "manifest.js",
+      "manual_promotion_package_index.js",
+      "multi_panel_runtime_cohesion.css",
+      "multi_panel_runtime_cohesion.js",
+      "openapi.js",
+      "registry.js",
+      "response.js",
+      "review.js",
+      "s39_manual_promotion_plateau_report.js",
+      "s45_shell_mount.css",
+      "s45_shell_mount.js",
+      "smoke.js",
+      "summary.js",
+      "unified_backend_operator_payload.js"
+    ],
+    "missing_after": []
+  },
+  "still_missing": [],
+  "finished_at": "2026-05-16T16:37:12.737290Z"
+}

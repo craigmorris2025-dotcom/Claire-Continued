@@ -1,0 +1,369 @@
+"""
+Claire Syntalion v19
+Canonical Dashboard Payload Bridge
+
+This module gives the dashboard one stable read-only payload contract.
+
+It does not execute web requests.
+It does not mutate runtime truth.
+It does not run autonomous agent commands.
+It does not perform updates.
+"""
+
+from __future__ import annotations
+from claire.api.governed_payload_reconciliation import compose_governed_payload
+
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+try:
+    from fastapi import APIRouter
+except Exception:  # pragma: no cover
+    APIRouter = None
+
+
+VERSION = "v19-canonical-dashboard-payload-bridge"
+
+CRITICAL_PAYLOAD_FILES = {
+    "core_run_output": [
+        "output/core_run_output.json",
+        "data/runtime/core_run_output.json",
+        "data/core_run_output.json",
+    ],
+    "runtime_truth": [
+        "data/runtime/runtime_truth_canonical.json",
+        "data/runtime/dashboard_runtime_truth.json",
+        "data/runtime_truth/runtime_truth_ledger.json",
+    ],
+    "operator_dashboard_state": [
+        "data/dashboard/operator_dashboard_state.json",
+    ],
+    "search_session": [
+        "data/search/search_bar_session_log.json",
+    ],
+    "governed_web_queue": [
+        "data/search/governed_web_review_queue.json",
+    ],
+    "web_probe": [
+        "data/internet_live_probe/last_live_probe_result.json",
+        "data/dashboard/governed_live_probe_payload.json",
+    ],
+    "web_evidence": [
+        "data/internet_evidence/promoted_evidence_store.json",
+        "data/internet_evidence/evidence_promotion_gate.json",
+    ],
+    "route_audit": [
+        "data/routes/discovery_breakthrough_innovation_route_audit.json",
+        "data/dashboard/discovery_breakthrough_innovation_route_payload.json",
+    ],
+    "autodesign": [
+        "data/autodesign/autodesign_handoff_contract.json",
+        "data/dashboard/autodesign_handoff_payload.json",
+    ],
+    "design_portal": [
+        "data/design_portal/design_portal_output_contract.json",
+        "data/dashboard/design_portal_output_payload.json",
+    ],
+    "validation": [
+        "data/validation/buildability_viability_manufacturability_validation.json",
+        "data/dashboard/buildability_viability_manufacturability_payload.json",
+    ],
+}
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def read_json(path: Path) -> tuple[Any, dict[str, Any]]:
+    meta: dict[str, Any] = {
+        "path": str(path).replace("\\", "/"),
+        "exists": path.exists(),
+        "loaded": False,
+        "error": None,
+        "top_level_keys": [],
+    }
+
+    if not path.exists():
+        return None, meta
+
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        meta["loaded"] = True
+        if isinstance(payload, dict):
+            meta["top_level_keys"] = sorted(str(key) for key in payload.keys())
+        return payload, meta
+    except Exception as exc:
+        meta["error"] = str(exc)
+        return None, meta
+
+
+def first_loaded(root: Path, candidates: list[str]) -> tuple[Any, list[dict[str, Any]]]:
+    attempts: list[dict[str, Any]] = []
+    for relative in candidates:
+        payload, meta = read_json(root / relative)
+        attempts.append(meta)
+        if meta["loaded"]:
+            return payload, attempts
+    return None, attempts
+
+
+def compact_status(payload: Any) -> dict[str, Any]:
+    if not isinstance(payload, dict):
+        return {
+            "available": False,
+            "status": "missing",
+            "top_level_keys": [],
+            "summary": {},
+        }
+
+    summary = {}
+    for key in [
+        "status",
+        "terminal_state",
+        "route",
+        "route_selected",
+        "run_id",
+        "mode",
+        "decision",
+        "operator_status",
+        "display_state",
+        "version",
+    ]:
+        if key in payload:
+            summary[key] = payload.get(key)
+
+    return {
+        "available": True,
+        "status": str(payload.get("status") or payload.get("terminal_state") or "available"),
+        "top_level_keys": sorted(str(key) for key in payload.keys()),
+        "summary": summary,
+    }
+
+
+def build_stage_runtime(core_payload: Any) -> dict[str, Any]:
+    stage_names = [
+        "signal_ingestion",
+        "signal_normalization",
+        "source_validation_weighting",
+        "context_expansion",
+        "signal_consolidation",
+        "entity_extraction",
+        "relationship_mapping",
+        "trend_discovery",
+        "cluster_formation",
+        "insight_thesis_structuring",
+        "gap_detection",
+        "gap_qualification",
+        "discovery_generation",
+        "breakthrough_identification_classification",
+        "advancement_path_selection",
+        "auto_invention_solution_generation",
+        "solution_structuring",
+        "buildability_assessment",
+        "viability_assessment",
+        "manufacturability_deployability_assessment",
+        "feasibility_validation",
+        "design_portal_output",
+        "market_positioning",
+        "moat_differentiation",
+        "business_model_value_capture",
+        "competitor_analysis",
+        "portfolio_creation_optimization",
+        "acquirer_identification",
+        "acquisition_fit_rationale",
+        "final_package_construction",
+    ]
+
+    stages = []
+    stage_source = None
+
+    if isinstance(core_payload, dict):
+        raw = core_payload.get("stages") or core_payload.get("stage_results") or core_payload.get("lifecycle_stages")
+        if isinstance(raw, list):
+            stage_source = "core_payload_list"
+            for index, item in enumerate(raw, start=1):
+                if isinstance(item, dict):
+                    stages.append(
+                        {
+                            "index": item.get("index", index),
+                            "name": item.get("name") or item.get("stage") or f"stage_{index}",
+                            "status": item.get("status", "unknown"),
+                            "route_status": item.get("route_status") or item.get("route"),
+                            "summary": item.get("summary") or item.get("result") or {},
+                        }
+                    )
+        elif isinstance(raw, dict):
+            stage_source = "core_payload_dict"
+            for index, (name, item) in enumerate(raw.items(), start=1):
+                item_dict = item if isinstance(item, dict) else {"value": item}
+                stages.append(
+                    {
+                        "index": index,
+                        "name": str(name),
+                        "status": item_dict.get("status", "unknown"),
+                        "route_status": item_dict.get("route_status") or item_dict.get("route"),
+                        "summary": item_dict.get("summary") or item_dict.get("result") or {},
+                    }
+                )
+
+    if not stages:
+        stage_source = "canonical_30_stage_placeholder"
+        stages = [
+            {
+                "index": index,
+                "name": name,
+                "status": "waiting_for_runtime_output",
+                "route_status": "not_loaded",
+                "summary": {},
+            }
+            for index, name in enumerate(stage_names, start=1)
+        ]
+
+    completed = sum(1 for item in stages if str(item.get("status")).lower() in {"complete", "completed", "ready", "done"})
+    blocked = sum(1 for item in stages if "block" in str(item.get("status")).lower() or "fail" in str(item.get("status")).lower())
+
+    return {
+        "stage_source": stage_source,
+        "stage_count": len(stages),
+        "completed_count": completed,
+        "blocked_count": blocked,
+        "stages": stages,
+    }
+
+
+def build_panels(payload_sections: dict[str, Any]) -> list[dict[str, Any]]:
+    return [
+        {"id": "main_result", "title": "Main Result", "status": payload_sections["runtime"]["status"], "payload_key": "runtime", "required": True},
+        {"id": "stage_runtime", "title": "30-Stage Runtime", "status": "available" if payload_sections["stage_runtime"]["stage_count"] else "missing", "payload_key": "stage_runtime", "required": True},
+        {"id": "route_decision", "title": "Route Decision", "status": payload_sections["route_decision"]["status"], "payload_key": "route_decision", "required": True},
+        {"id": "portfolio", "title": "Portfolio Intelligence", "status": payload_sections["portfolio"]["status"], "payload_key": "portfolio", "required": False},
+        {"id": "breakthrough", "title": "Breakthrough / Advancement", "status": payload_sections["breakthrough"]["status"], "payload_key": "breakthrough", "required": False},
+        {"id": "design", "title": "AutoDesign / Design Portal", "status": payload_sections["design"]["status"], "payload_key": "design", "required": False},
+        {"id": "web_intelligence", "title": "Governed Web Intelligence", "status": payload_sections["web"]["status"], "payload_key": "web", "required": False},
+        {"id": "operator_review", "title": "Operator Review", "status": payload_sections["operator_review"]["status"], "payload_key": "operator_review", "required": True},
+        {"id": "system_health", "title": "System Health", "status": payload_sections["system_health"]["status"], "payload_key": "system_health", "required": True},
+    ]
+
+
+def build_canonical_dashboard_payload(project_root: str | Path | None = None) -> dict[str, Any]:
+    root = Path(project_root) if project_root is not None else Path.cwd()
+
+    loaded_payloads: dict[str, Any] = {}
+    source_attempts: dict[str, list[dict[str, Any]]] = {}
+
+    for key, candidates in CRITICAL_PAYLOAD_FILES.items():
+        payload, attempts = first_loaded(root, candidates)
+        loaded_payloads[key] = payload
+        source_attempts[key] = attempts
+
+    core = loaded_payloads.get("core_run_output")
+    route = loaded_payloads.get("route_audit")
+    autodesign = loaded_payloads.get("autodesign")
+    design_portal = loaded_payloads.get("design_portal")
+    validation = loaded_payloads.get("validation")
+    web_probe = loaded_payloads.get("web_probe")
+    web_evidence = loaded_payloads.get("web_evidence")
+    queue = loaded_payloads.get("governed_web_queue")
+    dashboard_state = loaded_payloads.get("operator_dashboard_state")
+
+    runtime_status = compact_status(core)
+    runtime_status["payload"] = core if isinstance(core, dict) else {}
+
+    route_status = compact_status(route)
+    route_status["payload"] = route if isinstance(route, dict) else {}
+
+    design_status = {
+        "status": "available" if isinstance(autodesign, dict) or isinstance(design_portal, dict) else "missing",
+        "autodesign": compact_status(autodesign),
+        "design_portal": compact_status(design_portal),
+        "validation": compact_status(validation),
+    }
+
+    web_status = {
+        "status": "available" if isinstance(web_probe, dict) or isinstance(web_evidence, dict) else "not_connected_or_missing",
+        "live_web_execution_enabled": False,
+        "automatic_updates_enabled": False,
+        "autonomous_agent_execution_enabled": False,
+        "runtime_truth_mutation_enabled": False,
+        "probe": compact_status(web_probe),
+        "evidence": compact_status(web_evidence),
+    }
+
+    operator_status = {
+        "status": "available" if isinstance(queue, dict) or isinstance(dashboard_state, dict) else "missing",
+        "dashboard_state": compact_status(dashboard_state),
+        "governed_web_queue": compact_status(queue),
+        "operator_actions": [
+            {"id": "review", "enabled": True, "execution": "review_only"},
+            {"id": "approve", "enabled": False, "execution": "disabled_until_review_contract"},
+            {"id": "execute", "enabled": False, "execution": "disabled"},
+            {"id": "mutate_runtime_truth", "enabled": False, "execution": "disabled"},
+            {"id": "automatic_update", "enabled": False, "execution": "disabled"},
+        ],
+    }
+
+    portfolio_payload = {}
+    breakthrough_payload = {}
+    if isinstance(core, dict):
+        portfolio_payload = core.get("portfolio") if isinstance(core.get("portfolio"), dict) else {}
+        breakthrough_payload = core.get("breakthrough") if isinstance(core.get("breakthrough"), dict) else {}
+
+    sections = {
+        "runtime": runtime_status,
+        "stage_runtime": build_stage_runtime(core),
+        "route_decision": route_status,
+        "portfolio": {"status": "available" if portfolio_payload else "missing_or_not_route_selected", "payload": portfolio_payload},
+        "breakthrough": {"status": "available" if breakthrough_payload else "missing_or_not_route_selected", "payload": breakthrough_payload},
+        "design": design_status,
+        "web": web_status,
+        "operator_review": operator_status,
+        "system_health": {"status": "available", "backend_bootproof_required": True, "dashboard_contract_version": VERSION, "source_attempts": source_attempts},
+    }
+
+    panels = build_panels(sections)
+
+    return {
+        "version": VERSION,
+        "generated_at": utc_now(),
+        "contract": "canonical_dashboard_payload",
+        "read_only": True,
+        "dashboard_ready": True,
+        "live_web_execution_enabled": False,
+        "automatic_updates_enabled": False,
+        "autonomous_agent_execution_enabled": False,
+        "runtime_truth_mutation_enabled": False,
+        "summary": {
+            "runtime_status": sections["runtime"]["status"],
+            "stage_count": sections["stage_runtime"]["stage_count"],
+            "route_status": sections["route_decision"]["status"],
+            "web_status": sections["web"]["status"],
+            "operator_review_status": sections["operator_review"]["status"],
+            "panel_count": len(panels),
+        },
+        "panels": panels,
+        "sections": sections,
+    }
+
+
+if APIRouter is not None:
+    router = APIRouter(prefix="/dashboard", tags=["Dashboard Payload"])
+
+    @router.get("/payload")
+    def get_dashboard_payload() -> dict[str, Any]:
+        return compose_governed_payload(build_canonical_dashboard_payload())  # S32R2R4 runtime-owner payload reconciliation wrapper
+
+    @router.get("/payload/status")
+    def get_dashboard_payload_status() -> dict[str, Any]:
+        payload = build_canonical_dashboard_payload()
+        return {
+            "version": VERSION,
+            "status": "DASHBOARD_PAYLOAD_BRIDGE_READY",
+            "summary": payload.get("summary", {}),
+            "read_only": True,
+            "route": "/dashboard/payload",
+        }
+else:
+    router = None

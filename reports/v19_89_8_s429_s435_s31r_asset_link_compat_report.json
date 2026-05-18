@@ -1,0 +1,175 @@
+{
+  "installer": "install_claire_v19_89_8_s429_s435_s31r_asset_link_compat_fix.py",
+  "started_at": "2026-05-16T16:24:56.028246Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "modern_cockpit_preserved": true,
+  "target": "frontend\\cockpit\\shell\\cockpit_shell.html",
+  "assets_written": [
+    {
+      "path": "frontend/cockpit/shell/assets/continuous_runtime_presence.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/continuous_runtime_presence.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/runtime_continuity_visualization.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/runtime_continuity_visualization.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/browser_observation_loop.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/browser_observation_loop.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/canonical_browser_session.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/canonical_browser_session.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/cockpit_cohesion.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/cockpit_cohesion.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/governed_session_orchestration.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/governed_session_orchestration.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/governed_workspace.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/governed_workspace.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/operational_workspace_topology.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/operational_workspace_topology.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/topology_continuity.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/topology_continuity.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/safe_workflow_operations.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/safe_workflow_operations.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/canonical_runtime_event_stream.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/canonical_runtime_event_stream.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/canonical_runtime_telemetry.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/canonical_runtime_telemetry.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/governed_continuous_cockpit_monitoring.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/governed_continuous_cockpit_monitoring.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/cockpit_visibility_bridge.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/cockpit_visibility_bridge.css",
+      "written": true
+    }
+  ],
+  "html_patch": {
+    "html_exists": true,
+    "patched": true,
+    "missing_before": [
+      "continuous_runtime_presence.js",
+      "runtime_continuity_visualization.js",
+      "browser_observation_loop.js",
+      "canonical_browser_session.js",
+      "cockpit_cohesion.js",
+      "governed_session_orchestration.js",
+      "governed_workspace.js",
+      "operational_workspace_topology.js",
+      "topology_continuity.js",
+      "safe_workflow_operations.js",
+      "canonical_runtime_event_stream.js",
+      "canonical_runtime_telemetry.js",
+      "governed_continuous_cockpit_monitoring.js",
+      "cockpit_visibility_bridge.js"
+    ],
+    "missing_after": []
+  },
+  "required_tokens": [
+    "continuous_runtime_presence.js",
+    "runtime_continuity_visualization.js",
+    "browser_observation_loop.js",
+    "canonical_browser_session.js",
+    "cockpit_cohesion.js",
+    "governed_session_orchestration.js",
+    "governed_workspace.js",
+    "operational_workspace_topology.js",
+    "topology_continuity.js",
+    "safe_workflow_operations.js",
+    "canonical_runtime_event_stream.js",
+    "canonical_runtime_telemetry.js",
+    "governed_continuous_cockpit_monitoring.js",
+    "cockpit_visibility_bridge.js",
+    "continuous_runtime_presence.css",
+    "runtime_continuity_visualization.css",
+    "browser_observation_loop.css",
+    "canonical_browser_session.css",
+    "cockpit_cohesion.css",
+    "governed_session_orchestration.css",
+    "governed_workspace.css",
+    "operational_workspace_topology.css",
+    "topology_continuity.css",
+    "safe_workflow_operations.css",
+    "canonical_runtime_event_stream.css",
+    "canonical_runtime_telemetry.css",
+    "governed_continuous_cockpit_monitoring.css",
+    "cockpit_visibility_bridge.css"
+  ],
+  "missing_tokens": [],
+  "finished_at": "2026-05-16T16:24:56.059245Z"
+}

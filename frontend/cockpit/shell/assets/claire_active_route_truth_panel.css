@@ -1,0 +1,92 @@
+.claire-active-route-truth-panel {
+  margin-top: 22px;
+  border: 1px solid rgba(96, 165, 250, 0.28);
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.76);
+  color: #e5eefc;
+  overflow: hidden;
+}
+
+.claire-artp-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.claire-artp-head p {
+  margin: 0 0 6px;
+  color: #67e8f9;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.claire-artp-head h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.claire-artp-head span {
+  display: block;
+  margin-top: 6px;
+  color: #9fb2cc;
+}
+
+.claire-artp-head button {
+  align-self: start;
+  border: 1px solid rgba(103, 232, 249, 0.38);
+  border-radius: 14px;
+  padding: 10px 14px;
+  background: rgba(14, 165, 233, 0.18);
+  color: #e5eefc;
+  font-weight: 900;
+}
+
+.claire-artp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+.claire-artp-grid article {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 16px;
+  background: rgba(2, 6, 23, 0.36);
+}
+
+.claire-artp-grid span {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  margin-bottom: 6px;
+}
+
+.claire-artp-grid strong {
+  display: block;
+  color: #f8fafc;
+}
+
+#claire-artp-json {
+  margin: 0;
+  padding: 16px 20px;
+  max-height: 260px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(2, 6, 23, 0.42);
+}
+
+@media (max-width: 900px) {
+  .claire-artp-grid {
+    grid-template-columns: 1fr;
+  }
+}

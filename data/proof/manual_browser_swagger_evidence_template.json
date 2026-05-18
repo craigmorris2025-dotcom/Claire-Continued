@@ -1,0 +1,284 @@
+{
+  "allowed_operator_status": [
+    "not_checked",
+    "passed",
+    "failed",
+    "warning",
+    "not_applicable"
+  ],
+  "created_at": "2026-05-13T11:19:00.838871Z",
+  "evidence_slots": [
+    {
+      "expected": "Swagger UI opens and shows Claire API routes.",
+      "id": "swagger_docs",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/docs"
+    },
+    {
+      "expected": "JSON response includes contract_version, mission, route_gate, surfaces, proof, updates.",
+      "id": "operator_dashboard_state",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser_json",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/operator/dashboard/state"
+    },
+    {
+      "expected": "JSON response shows permanent search bar, normal web search prepared, runtime search enabled, agent command prepared.",
+      "id": "search_capabilities",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser_json",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/operator/search/capabilities"
+    },
+    {
+      "expected": "Runtime truth endpoint responds with canonical truth data or visible missing state.",
+      "id": "runtime_truth",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser_json",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/runtime/truth"
+    },
+    {
+      "expected": "Route audit confirms discovery/breakthrough/innovation and AutoDesign/Design Portal route rules.",
+      "id": "route_audit",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser_json",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/routes/audit"
+    },
+    {
+      "expected": "AutoDesign handoff contract responds and does not fake missing design data.",
+      "id": "autodesign_handoff",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser_json",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/autodesign/handoff"
+    },
+    {
+      "expected": "Design Portal output contract responds with design sections or visible missing state.",
+      "id": "design_portal_output",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser_json",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/design-portal/output"
+    },
+    {
+      "expected": "Internet readiness responds; live uncontrolled web remains disabled.",
+      "id": "internet_readiness",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser_json",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/internet/readiness"
+    },
+    {
+      "expected": "Update governance lock responds; automatic/background execution remains disabled.",
+      "id": "update_regression_lock",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser_json",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/updates/regression-lock"
+    },
+    {
+      "expected": "Platform smoke proof responds with domain status and Stop/Go.",
+      "id": "platform_smoke",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser_json",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/proof/platform-smoke"
+    },
+    {
+      "expected": "Desktop startup reliability report responds.",
+      "id": "desktop_startup",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "browser_json",
+      "required": true,
+      "screenshot_file": "",
+      "url": "http://127.0.0.1:8000/desktop/startup"
+    },
+    {
+      "body": {
+        "limit": 5,
+        "mode": "runtime",
+        "query": "runtime truth"
+      },
+      "expected": "Returns completed runtime/system search response with result list shape.",
+      "id": "search_runtime_query",
+      "method": "POST",
+      "notes": "",
+      "operator_status": "not_checked",
+      "path": "/operator/search/query",
+      "proof_type": "swagger_try_it_out",
+      "required": true,
+      "screenshot_file": ""
+    },
+    {
+      "body": {
+        "query": "open autodesign"
+      },
+      "expected": "Returns command parse result; execution_enabled remains false.",
+      "id": "command_parse_autodesign",
+      "method": "POST",
+      "notes": "",
+      "operator_status": "not_checked",
+      "path": "/operator/command/parse",
+      "proof_type": "swagger_try_it_out",
+      "required": true,
+      "screenshot_file": ""
+    },
+    {
+      "body": {},
+      "expected": "Rebuilds platform smoke proof and returns domain status.",
+      "id": "proof_platform_rebuild",
+      "method": "POST",
+      "notes": "",
+      "operator_status": "not_checked",
+      "path": "/proof/platform-smoke/rebuild",
+      "proof_type": "swagger_try_it_out",
+      "required": true,
+      "screenshot_file": ""
+    },
+    {
+      "body": {},
+      "expected": "Rebuilds desktop startup report and returns Stop/Go status.",
+      "id": "desktop_startup_rebuild",
+      "method": "POST",
+      "notes": "",
+      "operator_status": "not_checked",
+      "path": "/desktop/startup/rebuild",
+      "proof_type": "swagger_try_it_out",
+      "required": true,
+      "screenshot_file": ""
+    },
+    {
+      "expected": "Operator confirms manually.",
+      "id": "dashboard_step_01",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "dashboard_manual",
+      "required": true,
+      "screenshot_file": "",
+      "step": "Run START_CLAIRE_SAFE.bat."
+    },
+    {
+      "expected": "Operator confirms manually.",
+      "id": "dashboard_step_02",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "dashboard_manual",
+      "required": true,
+      "screenshot_file": "",
+      "step": "Confirm Swagger opens at http://127.0.0.1:8000/docs."
+    },
+    {
+      "expected": "Operator confirms manually.",
+      "id": "dashboard_step_03",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "dashboard_manual",
+      "required": true,
+      "screenshot_file": "",
+      "step": "Confirm the dashboard opens from frontend/command_center/modern/index.html."
+    },
+    {
+      "expected": "Operator confirms manually.",
+      "id": "dashboard_step_04",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "dashboard_manual",
+      "required": true,
+      "screenshot_file": "",
+      "step": "Wait for backend startup, then press dashboard Refresh/Search if Backend Offline appears."
+    },
+    {
+      "expected": "Operator confirms manually.",
+      "id": "dashboard_step_05",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "dashboard_manual",
+      "required": true,
+      "screenshot_file": "",
+      "step": "Confirm dashboard top status says Backend Online."
+    },
+    {
+      "expected": "Operator confirms manually.",
+      "id": "dashboard_step_06",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "dashboard_manual",
+      "required": true,
+      "screenshot_file": "",
+      "step": "Confirm the permanent search bar remains visible."
+    },
+    {
+      "expected": "Operator confirms manually.",
+      "id": "dashboard_step_07",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "dashboard_manual",
+      "required": true,
+      "screenshot_file": "",
+      "step": "Switch through workspaces: Mission, Routes, Discovery, AutoDesign, Design Portal, Portfolio, Acquisition, Internet, Updates, Proof, Diagnostics."
+    },
+    {
+      "expected": "Operator confirms manually.",
+      "id": "dashboard_step_08",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "dashboard_manual",
+      "required": true,
+      "screenshot_file": "",
+      "step": "Run Runtime search in the command/search bar with query: runtime truth."
+    },
+    {
+      "expected": "Operator confirms manually.",
+      "id": "dashboard_step_09",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "dashboard_manual",
+      "required": true,
+      "screenshot_file": "",
+      "step": "Run Command mode with query: open autodesign."
+    },
+    {
+      "expected": "Operator confirms manually.",
+      "id": "dashboard_step_10",
+      "notes": "",
+      "operator_status": "not_checked",
+      "proof_type": "dashboard_manual",
+      "required": true,
+      "screenshot_file": "",
+      "step": "Run Web mode with query: test web search gate. Confirm it returns prepared_not_executed, not fake web results."
+    }
+  ],
+  "instructions": "After manually checking browser, dashboard, and Swagger results, set operator_status to passed, failed, or warning and optionally add screenshot_file and notes.",
+  "operator_final_review": {
+    "notes": "",
+    "reviewed_at": "",
+    "reviewer": "",
+    "status": "not_checked"
+  },
+  "version": "v17.79"
+}

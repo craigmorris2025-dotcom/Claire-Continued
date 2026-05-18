@@ -1,0 +1,162 @@
+(function () {
+  "use strict";
+
+  const PLANS_URL = "/api/search/governed/plans";
+  const ACTIONS_URL = "/api/search/governed/actions";
+
+  function ready(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn);
+    } else {
+      fn();
+    }
+  }
+
+  function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined && text !== null) node.textContent = text;
+    return node;
+  }
+
+  function findPanel(candidates) {
+    for (const selector of candidates) {
+      const found = document.querySelector(selector);
+      if (found) return found;
+    }
+    return document.querySelector("main") || document.querySelector("#app") || document.body;
+  }
+
+  function upsert(id, target, className) {
+    let existing = document.getElementById(id);
+    if (existing) return existing;
+    existing = el("section", className || "claire-search-plan-panel");
+    existing.id = id;
+    target.appendChild(existing);
+    return existing;
+  }
+
+  function chip(text) {
+    return el("span", "claire-search-plan-chip", text);
+  }
+
+  function renderPlanCard(card) {
+    const node = el("article", "claire-search-plan-card");
+    const header = el("div", "claire-search-plan-card-header");
+    const titleBlock = el("div", "claire-search-plan-title-block");
+    titleBlock.appendChild(el("h3", "claire-search-plan-title", card.title || "Governed search plan"));
+    titleBlock.appendChild(el("p", "claire-search-plan-subtitle", card.subtitle || "query unavailable"));
+    header.appendChild(titleBlock);
+    header.appendChild(el("span", "claire-search-plan-status", card.status || "execution_blocked"));
+    node.appendChild(header);
+
+    const badges = el("div", "claire-search-plan-badges");
+    (card.badges || []).slice(0, 5).forEach((badge) => badges.appendChild(chip(badge)));
+    node.appendChild(badges);
+
+    const scope = card.source_scope || {};
+    const tiers = (scope.preferred_trust_tiers || []).join(", ") || "tier_1_authoritative, tier_2_reputable";
+    node.appendChild(el("p", "claire-search-plan-body", "Source scope: " + tiers));
+
+    const steps = el("ol", "claire-search-plan-steps");
+    (card.steps || []).slice(0, 5).forEach((step) => {
+      const item = el("li", "claire-search-plan-step");
+      item.appendChild(el("strong", null, step.label || step.step_id || "planned step"));
+      item.appendChild(el("span", null, " — " + (step.status || "planned")));
+      steps.appendChild(item);
+    });
+    node.appendChild(steps);
+
+    const policy = card.policy || {};
+    node.appendChild(
+      el(
+        "p",
+        "claire-search-plan-foot",
+        "Execution " + (policy.execution_allowed ? "allowed" : "blocked") +
+          " • Body reads " + (policy.body_read_allowed ? "allowed" : "blocked") +
+          " • Runtime truth " + (policy.runtime_truth_allowed ? "allowed" : "blocked")
+      )
+    );
+    return node;
+  }
+
+  function renderAction(action) {
+    const node = el("article", "claire-search-action-card");
+    node.appendChild(el("h3", "claire-search-action-title", action.label || action.action_id || "Governed search action"));
+    node.appendChild(el("p", "claire-search-action-status", (action.status || "blocked") + " • count " + (action.count || 0)));
+    node.appendChild(el("p", "claire-search-plan-body", action.reason || "Execution remains blocked."));
+    return node;
+  }
+
+  function renderPlans(payload) {
+    const target = findPanel([
+      "[data-panel='governed-web']",
+      "[data-view='governed-web']",
+      "#governed-web",
+      "#governedWeb",
+      ".governed-web",
+      ".governed-web-panel",
+      "main"
+    ]);
+    const panel = upsert("claire-governed-search-plan-panel", target, "claire-search-plan-panel");
+    panel.innerHTML = "";
+
+    const summary = payload.summary || {};
+    const header = el("div", "claire-search-plan-panel-header");
+    const titleBlock = el("div", "claire-search-plan-title-block");
+    titleBlock.appendChild(el("h2", "claire-search-plan-panel-title", "Governed Search Plan"));
+    titleBlock.appendChild(el("p", "claire-search-plan-panel-subtitle", "Query intent, source scope, trust constraints, and evidence path are now cockpit-visible before any search is allowed."));
+    header.appendChild(titleBlock);
+    header.appendChild(el("span", "claire-search-plan-status", payload.readiness || "execution_blocked"));
+    panel.appendChild(header);
+
+    const metrics = el("div", "claire-search-plan-metrics");
+    metrics.appendChild(chip("Plans " + (summary.total_plans || 0)));
+    metrics.appendChild(chip("Risk flags " + (summary.risk_flags || 0)));
+    metrics.appendChild(chip("Provider execution blocked"));
+    metrics.appendChild(chip("Body reads blocked"));
+    panel.appendChild(metrics);
+
+    const grid = el("div", "claire-search-plan-grid");
+    (payload.search_plan_cards || []).forEach((card) => grid.appendChild(renderPlanCard(card)));
+    panel.appendChild(grid);
+  }
+
+  function renderActions(payload) {
+    const target = findPanel([
+      "[data-panel='actions']",
+      "[data-view='actions']",
+      "#actions",
+      ".actions-panel",
+      "main"
+    ]);
+    const panel = upsert("claire-governed-search-actions-panel", target, "claire-search-actions-panel");
+    panel.innerHTML = "";
+    panel.appendChild(el("h2", "claire-search-plan-panel-title", "Search Governance Actions"));
+    panel.appendChild(el("p", "claire-search-plan-panel-subtitle", "Action descriptors are registered, visible, and execution-blocked."));
+    const grid = el("div", "claire-search-plan-grid claire-search-action-grid");
+    (payload.governed_actions || []).forEach((action) => grid.appendChild(renderAction(action)));
+    panel.appendChild(grid);
+  }
+
+  function renderFallback(message) {
+    const target = findPanel(["main"]);
+    const panel = upsert("claire-governed-search-plan-panel", target, "claire-search-plan-panel");
+    panel.innerHTML = "";
+    panel.appendChild(el("h2", "claire-search-plan-panel-title", "Governed Search Plan"));
+    panel.appendChild(el("p", "claire-search-plan-panel-subtitle", message));
+  }
+
+  ready(function () {
+    fetch(PLANS_URL, { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("plans " + response.status)))
+      .then(renderPlans)
+      .catch((error) => renderFallback("Search plan endpoint unavailable: " + error.message));
+
+    fetch(ACTIONS_URL, { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("actions " + response.status)))
+      .then(renderActions)
+      .catch(function () { /* action panel is additive; leave shell stable */ });
+  });
+})();
+

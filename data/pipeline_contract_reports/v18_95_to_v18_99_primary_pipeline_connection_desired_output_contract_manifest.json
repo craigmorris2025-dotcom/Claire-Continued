@@ -1,0 +1,26 @@
+{
+  "archive_before_modify": true,
+  "dashboards_patched_if_present": [
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "delete_policy": "delete_nothing",
+  "files_written": [
+    "claire\\primary_pipeline_desired_output_contract.py",
+    "tests\\test_v18_95_to_v18_99_primary_pipeline_connection_desired_output_contract_pack.py",
+    "data\\pipeline_contract_reports\\v18_95_to_v18_99_primary_pipeline_connection_desired_output_contract_report.json",
+    "data\\pipeline_contract_reports\\v18_95_to_v18_99_primary_pipeline_connection_desired_output_contract_manifest.json"
+  ],
+  "installed_at": "2026-05-10T15:26:31.396264Z",
+  "installer": "install_claire_v18_95_to_v18_99_primary_pipeline_connection_desired_output_contract_pack.py",
+  "pack_name": "Primary Pipeline Connection + Desired Output Contract Pack",
+  "pack_version": "v18.95-v18.99",
+  "purpose": [
+    "connect Claire's primary pipeline purpose to a desired output contract",
+    "lock primary output order",
+    "forbid metadata-only output as final result",
+    "keep dashboard current with route-aware output surfaces",
+    "define web search as input evidence capability, not primary output",
+    "preserve design route stage 16-22 requirement"
+  ],
+  "pytest_command": "python -m pytest tests/test_v18_95_to_v18_99_primary_pipeline_connection_desired_output_contract_pack.py -q"
+}

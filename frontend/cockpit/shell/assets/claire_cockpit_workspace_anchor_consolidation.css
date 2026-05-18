@@ -1,0 +1,146 @@
+/*
+Claire Syntalion v19.82B.12.3
+Cockpit Workspace Anchor Consolidation
+
+This repair prevents injected cockpit workspaces from becoming top-level grid
+children. They must live inside a main-content vertical stack.
+
+Presentation only. No backend truth ownership.
+*/
+
+:root {
+  --claire-workspace-stack-gap: 22px;
+  --claire-workspace-stack-max: 1280px;
+}
+
+/* The consolidated anchor lives in main and stacks every injected workspace vertically. */
+#claire-cockpit-workspace-stack,
+.claire-cockpit-workspace-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--claire-workspace-stack-gap) !important;
+  width: 100% !important;
+  max-width: var(--claire-workspace-stack-max) !important;
+  min-width: 0 !important;
+  margin: 22px 0 0 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  grid-column: 1 / -1 !important;
+  align-self: stretch !important;
+}
+
+/* Every injected enterprise workspace must be a full-width vertical stack item. */
+#claire-cockpit-workspace-stack > #claire-source-universe-workspace,
+#claire-cockpit-workspace-stack > #claire-probe-review-bridge,
+#claire-cockpit-workspace-stack > #claire-discovery-candidate-surface,
+.claire-cockpit-workspace-stack > .claire-source-universe-workspace,
+.claire-cockpit-workspace-stack > .claire-probe-review-bridge,
+.claire-cockpit-workspace-stack > .claire-discovery-candidate-surface {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  overflow: hidden !important;
+}
+
+/*
+If any injected workspace is still a direct child of the page/shell before JS
+moves it, prevent side-by-side grid placement as a fallback.
+*/
+body.claire-workspace-stack-ready #claire-source-universe-workspace,
+body.claire-workspace-stack-ready #claire-probe-review-bridge,
+body.claire-workspace-stack-ready #claire-discovery-candidate-surface,
+body.claire-workspace-stack-ready .claire-source-universe-workspace,
+body.claire-workspace-stack-ready .claire-probe-review-bridge,
+body.claire-workspace-stack-ready .claire-discovery-candidate-surface {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  clear: both !important;
+}
+
+/* The Source Universe panel was too wide internally; stack it until the final cockpit layout is rebuilt. */
+body.claire-workspace-stack-ready .claire-su-grid,
+body.claire-workspace-stack-ready .claire-prb-grid,
+body.claire-workspace-stack-ready .claire-dcs-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Cards and content cannot overflow the stack. */
+body.claire-workspace-stack-ready .claire-su-card,
+body.claire-workspace-stack-ready .claire-prb-card,
+body.claire-workspace-stack-ready .claire-dcs-card,
+body.claire-workspace-stack-ready .claire-su-detail,
+body.claire-workspace-stack-ready .claire-prb-content,
+body.claire-workspace-stack-ready .claire-dcs-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Keep long payloads inside their cards. */
+body.claire-workspace-stack-ready #claire-cockpit-workspace-stack pre,
+body.claire-workspace-stack-ready #claire-cockpit-workspace-stack code,
+body.claire-workspace-stack-ready #claire-cockpit-workspace-stack [class*="payload"],
+body.claire-workspace-stack-ready #claire-cockpit-workspace-stack [class*="json"],
+body.claire-workspace-stack-ready #claire-cockpit-workspace-stack [class*="raw"] {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow-x: auto !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+/* Header rows in injected surfaces should wrap instead of widening the page. */
+body.claire-workspace-stack-ready .claire-su-header,
+body.claire-workspace-stack-ready .claire-prb-header,
+body.claire-workspace-stack-ready .claire-dcs-header {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+body.claire-workspace-stack-ready .claire-su-actions,
+body.claire-workspace-stack-ready .claire-prb-actions,
+body.claire-workspace-stack-ready .claire-dcs-actions {
+  flex-wrap: wrap !important;
+  max-width: 100% !important;
+}
+
+/*
+Main content should stack native runtime content first, then consolidated injected workspaces.
+Do not let the shell grid auto-place injected sections beside the rail.
+*/
+body.claire-workspace-stack-ready main,
+body.claire-workspace-stack-ready [role="main"],
+body.claire-workspace-stack-ready .claire-cockpit-main,
+body.claire-workspace-stack-ready .cockpit-main,
+body.claire-workspace-stack-ready .enterprise-cockpit-main,
+body.claire-workspace-stack-ready #claire-cockpit-main,
+body.claire-workspace-stack-ready #cockpit-main {
+  display: block !important;
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+}
+
+/* Responsive: no special side behavior inside the stack. */
+@media (max-width: 900px) {
+  #claire-cockpit-workspace-stack,
+  .claire-cockpit-workspace-stack {
+    gap: 16px !important;
+    margin-top: 16px !important;
+  }
+}

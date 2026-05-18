@@ -1,0 +1,31 @@
+{
+  "installer": "install_claire_v19_89_8_s387_s393_live_provider_authority_pack.py",
+  "started_at": "2026-05-16T13:57:29.103001Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "files": [
+    {
+      "path": "claire/api/internet_live_provider_authority_s387_s393.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "tests/test_s387_s393_live_provider_authority.py",
+      "written": true,
+      "compiled": true
+    }
+  ],
+  "backups": {
+    "claire/api/internet_live_provider_authority_s387_s393.py": null,
+    "tests/test_s387_s393_live_provider_authority.py": null
+  },
+  "patches": [
+    {
+      "path": "claire\\app.py",
+      "exists": true,
+      "patched": true,
+      "marker": "BEGIN CLAIRE_S387_S407"
+    }
+  ],
+  "finished_at": "2026-05-16T13:57:29.145001Z"
+}

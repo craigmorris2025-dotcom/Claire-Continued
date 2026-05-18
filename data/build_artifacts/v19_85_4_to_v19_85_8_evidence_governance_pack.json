@@ -1,0 +1,29 @@
+{
+  "version": "v19.85.4-v19.85.8",
+  "build": "Evidence Governance Batch Pack",
+  "installed_at": "2026-05-12T16:27:08.834114+00:00",
+  "runtime_mutation": "none",
+  "files_written": [
+    "docs/builds/v19_85_4_to_v19_85_8_evidence_governance_pack.md",
+    "tests/test_v19_85_4_evidence_gate_runtime_adapter.py",
+    "tests/test_v19_85_5_evidence_lineage_propagation_contract.py",
+    "tests/test_v19_85_6_review_queue_promotion_gate.py",
+    "tests/test_v19_85_7_runtime_artifact_integrity_check.py",
+    "tests/test_v19_85_8_evidence_governance_plateau_gate.py",
+    "tools/evidence_gate_runtime_adapter.py",
+    "tools/evidence_governance_plateau_gate.py",
+    "tools/evidence_lineage_propagation_contract.py",
+    "tools/review_queue_promotion_gate.py",
+    "tools/runtime_artifact_integrity_check.py",
+    "data/build_artifacts/v19_85_4_to_v19_85_8_evidence_governance_pack.json"
+  ],
+  "commands": [
+    "python tools/evidence_gate_runtime_adapter.py",
+    "python tools/evidence_lineage_propagation_contract.py",
+    "python tools/review_queue_promotion_gate.py",
+    "python tools/runtime_artifact_integrity_check.py",
+    "python tools/evidence_governance_plateau_gate.py",
+    "pytest tests/test_v19_85_4_evidence_gate_runtime_adapter.py tests/test_v19_85_5_evidence_lineage_propagation_contract.py tests/test_v19_85_6_review_queue_promotion_gate.py tests/test_v19_85_7_runtime_artifact_integrity_check.py tests/test_v19_85_8_evidence_governance_plateau_gate.py -q"
+  ],
+  "next_build": "v19.86.0 Source Universe Evidence Lineage"
+}

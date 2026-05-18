@@ -1,0 +1,48 @@
+{
+  "installer": "install_claire_v19_89_8_required_fields_direct_fix.py",
+  "started_at": "2026-05-16T03:35:37.702595Z",
+  "scope": "repair required_fields/authority_locks contract shape for S289-S295 failure",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "targets": [
+    "claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+    "claire\\api\\governed_dashboard_upgrade_s177_s183.py",
+    "claire\\api\\governed_live_fetch_validation_s170_s176.py",
+    "claire\\api\\governed_operational_cockpit_binding_s156_s162.py",
+    "claire\\api\\governed_operator_actions_s163_s169.py"
+  ],
+  "errors": [],
+  "patched_files": [
+    {
+      "path": "claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+      "patched": true,
+      "compiled": true,
+      "backup": "backups\\v19_89_8_required_fields_no_pytest_repair\\governed_cockpit_payload_visibility_s149_s155.py.20260516_033537.bak"
+    },
+    {
+      "path": "claire\\api\\governed_dashboard_upgrade_s177_s183.py",
+      "patched": true,
+      "compiled": true,
+      "backup": "backups\\v19_89_8_required_fields_no_pytest_repair\\governed_dashboard_upgrade_s177_s183.py.20260516_033537.bak"
+    },
+    {
+      "path": "claire\\api\\governed_live_fetch_validation_s170_s176.py",
+      "patched": true,
+      "compiled": true,
+      "backup": "backups\\v19_89_8_required_fields_no_pytest_repair\\governed_live_fetch_validation_s170_s176.py.20260516_033537.bak"
+    },
+    {
+      "path": "claire\\api\\governed_operational_cockpit_binding_s156_s162.py",
+      "patched": true,
+      "compiled": true,
+      "backup": "backups\\v19_89_8_required_fields_no_pytest_repair\\governed_operational_cockpit_binding_s156_s162.py.20260516_033537.bak"
+    },
+    {
+      "path": "claire\\api\\governed_operator_actions_s163_s169.py",
+      "patched": true,
+      "compiled": true,
+      "backup": "backups\\v19_89_8_required_fields_no_pytest_repair\\governed_operator_actions_s163_s169.py.20260516_033537.bak"
+    }
+  ],
+  "finished_at": "2026-05-16T03:35:37.780595Z"
+}

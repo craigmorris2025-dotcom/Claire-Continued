@@ -1,0 +1,22 @@
+{
+  "version": "v19.82B.9",
+  "timestamp": "2026-05-11T13:21:31",
+  "status": "go",
+  "route_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\routes_source_universes.py",
+  "test_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_v19_82B_9_source_universe_backend.py",
+  "app_patch": {
+    "patched": true,
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\source_universe_backend\\v19.82B.9\\app.py.20260511_132131.bak",
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py"
+  },
+  "endpoints": [
+    "GET /universes",
+    "GET /universes/{universe_id}",
+    "POST /universes/{universe_id}/probe"
+  ],
+  "artifacts": [
+    "data/source_universes/universe_index.json",
+    "data/source_universes/{universe_id}.json",
+    "data/source_universes/{universe_id}_probe.json"
+  ]
+}

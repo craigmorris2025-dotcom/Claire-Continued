@@ -1,0 +1,73 @@
+{
+  "architecture_rule": {
+    "legacy_dashboard_rule": "frozen reference only until cockpit parity is proven",
+    "new_root": "frontend/cockpit/",
+    "payload_rule": "single shared payload adapter in later build",
+    "runtime_truth_rule": "backend owns truth, frontend presents it",
+    "search_rule": "permanent Claire Command Surface"
+  },
+  "created_at": "2026-05-11T09:42:37.774350Z",
+  "next_recommended_build": {
+    "name": "Cockpit Shell + Workspace Manager",
+    "scope": [
+      "create cockpit shell html/css/js",
+      "create workspace manager",
+      "create panel registry",
+      "create route state model",
+      "render empty truthful shell only",
+      "do not wire fetches yet except static markers if needed"
+    ],
+    "version": "v19.67"
+  },
+  "pack": "Cockpit Root + Legacy Dashboard Freeze Marker",
+  "result": {
+    "cockpit": {
+      "cockpit_root": "frontend/cockpit",
+      "created_dirs": [
+        "frontend/cockpit/shell",
+        "frontend/cockpit/shared",
+        "frontend/cockpit/runtime",
+        "frontend/cockpit/intelligence",
+        "frontend/cockpit/design",
+        "frontend/cockpit/package",
+        "frontend/cockpit/system",
+        "frontend/cockpit/docs"
+      ],
+      "created_files": [
+        "frontend/cockpit/README.md",
+        "frontend/cockpit/cockpit_contract.json",
+        "frontend/cockpit/shell/README.md",
+        "frontend/cockpit/shared/README.md",
+        "frontend/cockpit/runtime/README.md",
+        "frontend/cockpit/intelligence/README.md",
+        "frontend/cockpit/design/README.md",
+        "frontend/cockpit/package/README.md",
+        "frontend/cockpit/system/README.md",
+        "frontend/cockpit/docs/README.md"
+      ],
+      "existing_dirs": []
+    },
+    "cockpit_root_created_or_confirmed": true,
+    "legacy_dashboard_freeze": {
+      "already_marked_or_existing_marker_folders": [],
+      "marked_legacy_dashboard_folders": [
+        "frontend/command_center/modern",
+        "frontend/internet_operations_dashboard"
+      ],
+      "missing_legacy_dashboard_candidates": []
+    },
+    "prior_contracts": {
+      "v19_64_architecture_exists": true,
+      "v19_65_search_contract_exists": true
+    }
+  },
+  "safety": {
+    "deleted_files": [],
+    "launcher_rewired": false,
+    "modified_runtime_files": [],
+    "moved_files": [],
+    "routes_modified": false,
+    "runtime_behavior_changed": false
+  },
+  "version": "v19.66"
+}

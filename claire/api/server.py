@@ -1,17 +1,44 @@
-from fastapi import FastAPI
-from .router import router
+from __future__ import annotations
 
-app = FastAPI(title="Claire API")
-app.include_router(router)
+"""
+Claire API Server Compatibility Owner.
+
+This module intentionally delegates FastAPI application construction to
+claire.app.create_app. It replaces a broken legacy inline-dashboard mutation
+file with a clean import-safe ASGI entry point.
+
+No runtime truth mutation, dashboard HTML patching, network activity, or
+automatic update behavior is performed here.
+"""
+
+from typing import Any
+
+from claire.app import create_app
 
 
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
-import os
+app = create_app()
 
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
 
-@app.get("/", response_class=HTMLResponse)
-def serve_dashboard():
-    with open("frontend/index.html", "r", encoding="utf-8") as f:
-        return f.read()
+def get_app() -> Any:
+    """Return the Claire FastAPI ASGI application."""
+    return app
+
+
+def build_server_status() -> dict[str, Any]:
+    return {
+        "status": "ready",
+        "ready": True,
+        "app_owner": "claire.app.create_app",
+        "compatibility_module": "claire.api.server",
+        "runtime_truth_mutation_enabled": False,
+        "automatic_updates_enabled": False,
+        "autonomous_execution_enabled": False,
+        "live_web_execution_enabled": False,
+        "network_request_performed": False,
+    }
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run("claire.api.server:app", host="127.0.0.1", port=8000, reload=True)

@@ -1,0 +1,77 @@
+.canonical-browser-session-card {
+  margin: 16px 0;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.canonical-browser-session-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.canonical-browser-session-kicker {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.canonical-browser-session-header h2 {
+  margin: 4px 0 0;
+  font-size: 20px;
+}
+
+.canonical-browser-session-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  background: rgba(14, 165, 233, 0.10);
+  color: rgba(186, 230, 253, 0.96);
+  white-space: nowrap;
+}
+
+.canonical-browser-session-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.canonical-browser-session-summary span,
+.canonical-browser-session-stored-grid span {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.canonical-browser-session-stored {
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(2, 6, 23, 0.24);
+}
+
+.canonical-browser-session-stored-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(125, 211, 252, 0.95);
+  margin-bottom: 8px;
+}
+
+.canonical-browser-session-stored-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+}

@@ -1,0 +1,87 @@
+{
+  "stage": "S985-S1012",
+  "version": "v19.89.8-S985-S1012-active-cockpit-control-surface-force-mount",
+  "timestamp_utc": "2026-05-17T15:03:14.061374+00:00",
+  "status": "installed",
+  "purpose": "Force visible cockpit operation buttons into active dashboard shell and register backend-owned preview-only operation controls.",
+  "app_registration": {
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "found": true,
+    "inserted": true,
+    "already_present": false
+  },
+  "frontend_patch": {
+    "html_patched": [
+      "frontend\\cockpit\\active_authority_probe.html",
+      "frontend\\cockpit\\modern\\claire_cockpit_shell.html",
+      "frontend\\cockpit\\modern_shell\\claire_consolidated_cockpit.html",
+      "frontend\\cockpit\\modern_shell\\claire_modern_cockpit_shell.html",
+      "frontend\\cockpit\\s45_bridge\\cockpit_shell_bridge.html",
+      "frontend\\cockpit\\shell\\cockpit_shell.html",
+      "frontend\\command_center\\modern\\index.html",
+      "frontend\\command_center\\modern\\internet_operations_dashboard.html",
+      "frontend\\export_dashboard\\index.html",
+      "frontend\\internet_operations_dashboard\\internet_operations_dashboard.html"
+    ],
+    "js_patched": [
+      "frontend\\cockpit\\assets\\claire_cockpit_control_surface_force_mount.js",
+      "frontend\\cockpit\\assets\\claire_cockpit_operation_controls.js",
+      "frontend\\cockpit\\assets\\claire_cockpit_operation_visual_controls.js",
+      "frontend\\cockpit\\assets\\claire_cockpit_web_search_convergence.js",
+      "frontend\\cockpit\\assets\\claire_governed_evidence_cards.js",
+      "frontend\\cockpit\\assets\\claire_governed_quarantine_and_metadata_results.js",
+      "frontend\\cockpit\\shell\\assets\\claire_modern_cockpit.js"
+    ]
+  },
+  "button_count": 16,
+  "buttons": [
+    "run_readiness_audit",
+    "inspect_providers",
+    "open_source_policy",
+    "compile_search_plan",
+    "preview_metadata_search",
+    "view_metadata_contract",
+    "open_quarantine_review",
+    "build_evidence_cards",
+    "score_source_confidence",
+    "show_review_actions",
+    "build_body_read_request",
+    "run_body_read_preflight",
+    "draft_source_ingestion",
+    "preview_truth_promotion",
+    "verify_s900_gate",
+    "verify_button_mount"
+  ],
+  "endpoints": [
+    "/api/cockpit/control-surface/payload",
+    "/api/cockpit/control-surface/buttons",
+    "/api/cockpit/control-surface/actions",
+    "/api/cockpit/control-surface/status",
+    "/api/cockpit/control-surface/preview/{operation_key}",
+    "/api/cockpit/control-surface/assets/js",
+    "/api/cockpit/control-surface/assets/css",
+    "/api/internet/control-surface/payload",
+    "/api/internet/s1012-stop-gate"
+  ],
+  "blocked_flags": {
+    "live_web_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  },
+  "dangerous_authority_preserved": true,
+  "expected_visual_result": [
+    "A Governed Operation Buttons panel appears below/near the command bar on the active cockpit page.",
+    "Actions chip updates from 0 to the preview-action count when the script mounts.",
+    "Actions tab empty-message text is replaced by a registered-controls message.",
+    "Buttons produce preview packets only; no execution authority is unlocked."
+  ]
+}

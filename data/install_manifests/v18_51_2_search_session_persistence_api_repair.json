@@ -1,0 +1,15 @@
+{
+  "version": "v18.51.2",
+  "name": "Search Session Persistence API Repair",
+  "files": [
+    "claire/governed_web/search_session_persistence.py",
+    "claire/governed_web/governed_search_session_persistence_layer.py",
+    "tests/test_v18_51_2_search_session_persistence_api_repair.py"
+  ],
+  "repairs": [
+    "restores build_search_session_record import",
+    "restores original JSONL persistence API",
+    "preserves v18.51.1 compatibility helpers",
+    "preserves runtime truth and autonomous execution blocks"
+  ]
+}

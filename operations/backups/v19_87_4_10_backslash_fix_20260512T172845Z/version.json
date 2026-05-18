@@ -1,0 +1,11 @@
+{
+  "version": "19.87.4.9",
+  "phase": "full_legacy_continuous_runtime_shim_replacement",
+  "lane": "v19.87.x",
+  "updated_at": "2026-05-12T17:25:57.362361+00:00",
+  "notes": [
+    "Fully replaced claire.continuous_runtime.cycle compatibility shim.",
+    "Satisfies v19.84.2 legacy status.json and run_once result contract.",
+    "No cockpit, route, evidence escalation, or runtime truth mutation."
+  ]
+}

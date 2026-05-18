@@ -1,0 +1,39 @@
+{
+  "installer": "install_claire_v19_89_8_s359_s365_expansion_dock_exact_contract.py",
+  "started_at": "2026-05-16T17:30:01.612098Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "target_module": "claire\\api\\dashboard_status_shell_cleanup_s359_s365.py",
+  "target_app": "claire\\app.py",
+  "issue": "S364 cleanup route JSON missing expansion_dock_removed=True",
+  "discovered_route_paths": [
+    "/dashboard/status/shell-cleanup",
+    "/dashboard/status/shell-cleanup/assets",
+    "/dashboard/status/shell-cleanup/health",
+    "/dashboard/status/shell-cleanup/routes",
+    "/dashboard/status/shell-cleanup/smoke",
+    "/dashboard/status/shell-cleanup/status",
+    "/dashboard/status/shell-cleanup/summary"
+  ],
+  "module_patched": true,
+  "app_patched": true,
+  "pycache_removed": [
+    "claire\\api\\__pycache__\\dashboard_status_shell_cleanup_s359_s365.cpython-311.pyc",
+    "claire\\__pycache__\\app.cpython-311.pyc"
+  ],
+  "compiled": [
+    "claire\\api\\dashboard_status_shell_cleanup_s359_s365.py",
+    "claire\\app.py"
+  ],
+  "module_self_check": {
+    "status": "ok",
+    "routes_work_with_testclient": true,
+    "testclient_status_code": 200,
+    "expansion_dock_removed": true
+  },
+  "subprocess_validation_returncode": 0,
+  "subprocess_validation_stdout": "S359-S365 expansion dock route validation passed {'/dashboard/status/shell-cleanup': {'status_code': 200, 'status': 'ok', 'expansion_dock_removed': True}, '/dashboard/status/shell-cleanup/assets': {'status_code': 200, 'status': 'ok', 'expansion_dock_removed': True}, '/dashboard/status/shell-cleanup/health': {'status_code': 200, 'status': 'ok', 'expansion_dock_removed': True}, '/dashboard/status/shell-cleanup/routes': {'status_code': 200, 'status': 'ok', 'expansion_dock_removed': True}, '/dashboard/status/shell-cleanup/smoke': {'status_code': 200, 'status': 'ok', 'expansion_dock_removed': True}, '/dashboard/status/shell-cleanup/status': {'status_code': 200, 'status': 'ok', 'expansion_dock_removed': True}, '/dashboard/status/shell-cleanup/summary': {'status_code': 200, 'status': 'ok', 'expansion_dock_removed': True}}\n",
+  "subprocess_validation_stderr": "",
+  "fixed": "S364 TestClient routes now return HTTP 200, JSON status='ok', and expansion_dock_removed=True.",
+  "finished_at": "2026-05-16T17:30:02.967042Z"
+}

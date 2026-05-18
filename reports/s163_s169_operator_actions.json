@@ -1,0 +1,610 @@
+{
+  "action": {
+    "action": "approve",
+    "decision": {
+      "decided_at": "2026-05-15T14:44:18.991172+00:00",
+      "decided_by": "s169_gate",
+      "decision": "approved",
+      "export_allowed": true,
+      "note": "S169 stop-gate approval proof.",
+      "review_item_id": "review_out_accec4f4355924d4",
+      "runtime_truth_write": "blocked"
+    },
+    "export": {
+      "derived_artifact": true,
+      "export_id": "export_08d39b673201d751",
+      "export_version": "S88",
+      "format": "json",
+      "path": "exports\\s163_s169\\export_08d39b673201d751.json",
+      "review_item_id": "review_out_accec4f4355924d4",
+      "runtime_truth_write": "blocked",
+      "status": "exported"
+    },
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "review_item": {
+      "allowed_decisions": [
+        "approved",
+        "archived",
+        "export_only",
+        "rejected"
+      ],
+      "authority": {
+        "automatic_updates": "blocked",
+        "manual_promotion_mandatory": true,
+        "runtime_truth_write": "blocked"
+      },
+      "created_at": "2026-05-15T14:44:18.982171+00:00",
+      "decided_at": "2026-05-15T14:44:18.991172+00:00",
+      "decided_by": "s169_gate",
+      "decision_note": "S169 stop-gate approval proof.",
+      "headline": "Portfolio candidate: operator action proof signal",
+      "operator": "s164_preview",
+      "output_candidate_id": "out_accec4f4355924d4",
+      "payload": {
+        "authority": {
+          "automatic_update": "blocked",
+          "autonomous_execution": "blocked",
+          "export_allowed_after_approval": true,
+          "manual_review_required": true,
+          "runtime_truth": "blocked",
+          "runtime_truth_write": "blocked"
+        },
+        "candidate_version": "S86",
+        "confidence": 0.648,
+        "created_at": "2026-05-15T14:44:18.982171+00:00",
+        "headline": "Portfolio candidate: operator action proof signal",
+        "lineage": {
+          "discovery_candidate_id": "disc_97fb3d2354aeb44c",
+          "evidence_basket_id": "s163_action_basket"
+        },
+        "output_candidate_id": "out_accec4f4355924d4",
+        "output_type": "portfolio_observation",
+        "recommended_operator_action": "review",
+        "route": "portfolio",
+        "signals": [
+          {
+            "confidence": 0.82,
+            "kind": "portfolio",
+            "label": "operator action proof signal",
+            "signal_id": "signal_1"
+          }
+        ],
+        "source_discovery_candidate_id": "disc_97fb3d2354aeb44c",
+        "source_evidence_ids": [
+          "s163_ev_001"
+        ],
+        "status": "review_required",
+        "summary": "Route-aware useful output candidate derived from a quarantined discovery candidate. Manual approval is required before export.",
+        "trust_score": 0.84
+      },
+      "review_item_id": "review_out_accec4f4355924d4",
+      "route": "portfolio",
+      "source_evidence_ids": [
+        "s163_ev_001"
+      ],
+      "status": "approved"
+    },
+    "runtime_truth_mutation": "blocked",
+    "runtime_truth_write": "blocked",
+    "stage_version": "S165",
+    "status": "guarded_operator_action_complete"
+  },
+  "audit": {
+    "action": {
+      "action": "approve",
+      "decision": {
+        "decided_at": "2026-05-15T14:44:18.999172+00:00",
+        "decided_by": "s166_audit",
+        "decision": "approved",
+        "export_allowed": true,
+        "note": "S166 audit-trail approval proof.",
+        "review_item_id": "review_out_accec4f4355924d4",
+        "runtime_truth_write": "blocked"
+      },
+      "export": {
+        "derived_artifact": true,
+        "export_id": "export_4c05cea087e93872",
+        "export_version": "S88",
+        "format": "json",
+        "path": "exports\\s163_s169\\export_4c05cea087e93872.json",
+        "review_item_id": "review_out_accec4f4355924d4",
+        "runtime_truth_write": "blocked",
+        "status": "exported"
+      },
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "review_item": {
+        "allowed_decisions": [
+          "approved",
+          "archived",
+          "export_only",
+          "rejected"
+        ],
+        "authority": {
+          "automatic_updates": "blocked",
+          "manual_promotion_mandatory": true,
+          "runtime_truth_write": "blocked"
+        },
+        "created_at": "2026-05-15T14:44:18.982171+00:00",
+        "decided_at": "2026-05-15T14:44:18.999172+00:00",
+        "decided_by": "s166_audit",
+        "decision_note": "S166 audit-trail approval proof.",
+        "headline": "Portfolio candidate: operator action proof signal",
+        "operator": "s164_preview",
+        "output_candidate_id": "out_accec4f4355924d4",
+        "payload": {
+          "authority": {
+            "automatic_update": "blocked",
+            "autonomous_execution": "blocked",
+            "export_allowed_after_approval": true,
+            "manual_review_required": true,
+            "runtime_truth": "blocked",
+            "runtime_truth_write": "blocked"
+          },
+          "candidate_version": "S86",
+          "confidence": 0.648,
+          "created_at": "2026-05-15T14:44:18.982171+00:00",
+          "headline": "Portfolio candidate: operator action proof signal",
+          "lineage": {
+            "discovery_candidate_id": "disc_97fb3d2354aeb44c",
+            "evidence_basket_id": "s163_action_basket"
+          },
+          "output_candidate_id": "out_accec4f4355924d4",
+          "output_type": "portfolio_observation",
+          "recommended_operator_action": "review",
+          "route": "portfolio",
+          "signals": [
+            {
+              "confidence": 0.82,
+              "kind": "portfolio",
+              "label": "operator action proof signal",
+              "signal_id": "signal_1"
+            }
+          ],
+          "source_discovery_candidate_id": "disc_97fb3d2354aeb44c",
+          "source_evidence_ids": [
+            "s163_ev_001"
+          ],
+          "status": "review_required",
+          "summary": "Route-aware useful output candidate derived from a quarantined discovery candidate. Manual approval is required before export.",
+          "trust_score": 0.84
+        },
+        "review_item_id": "review_out_accec4f4355924d4",
+        "route": "portfolio",
+        "source_evidence_ids": [
+          "s163_ev_001"
+        ],
+        "status": "approved"
+      },
+      "runtime_truth_mutation": "blocked",
+      "runtime_truth_write": "blocked",
+      "stage_version": "S165",
+      "status": "guarded_operator_action_complete"
+    },
+    "audit_events": [
+      {
+        "event": "review_item_created",
+        "review_item_id": "review_out_accec4f4355924d4"
+      },
+      {
+        "decision": "approved",
+        "event": "operator_decision_recorded"
+      },
+      {
+        "event": "derived_export_created",
+        "export": true
+      }
+    ],
+    "decision_total": 2,
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "preview": {
+      "available_actions": [
+        "approve",
+        "reject",
+        "archive",
+        "export_only"
+      ],
+      "execution_performed": false,
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "queue_total": 1,
+      "review_item": {
+        "allowed_decisions": [
+          "approved",
+          "archived",
+          "export_only",
+          "rejected"
+        ],
+        "authority": {
+          "automatic_updates": "blocked",
+          "manual_promotion_mandatory": true,
+          "runtime_truth_write": "blocked"
+        },
+        "created_at": "2026-05-15T14:44:18.982171+00:00",
+        "decided_at": "2026-05-15T14:44:18.991172+00:00",
+        "decided_by": "s169_gate",
+        "decision_note": "S169 stop-gate approval proof.",
+        "headline": "Portfolio candidate: operator action proof signal",
+        "operator": "s164_preview",
+        "output_candidate_id": "out_accec4f4355924d4",
+        "payload": {
+          "authority": {
+            "automatic_update": "blocked",
+            "autonomous_execution": "blocked",
+            "export_allowed_after_approval": true,
+            "manual_review_required": true,
+            "runtime_truth": "blocked",
+            "runtime_truth_write": "blocked"
+          },
+          "candidate_version": "S86",
+          "confidence": 0.648,
+          "created_at": "2026-05-15T14:44:18.982171+00:00",
+          "headline": "Portfolio candidate: operator action proof signal",
+          "lineage": {
+            "discovery_candidate_id": "disc_97fb3d2354aeb44c",
+            "evidence_basket_id": "s163_action_basket"
+          },
+          "output_candidate_id": "out_accec4f4355924d4",
+          "output_type": "portfolio_observation",
+          "recommended_operator_action": "review",
+          "route": "portfolio",
+          "signals": [
+            {
+              "confidence": 0.82,
+              "kind": "portfolio",
+              "label": "operator action proof signal",
+              "signal_id": "signal_1"
+            }
+          ],
+          "source_discovery_candidate_id": "disc_97fb3d2354aeb44c",
+          "source_evidence_ids": [
+            "s163_ev_001"
+          ],
+          "status": "review_required",
+          "summary": "Route-aware useful output candidate derived from a quarantined discovery candidate. Manual approval is required before export.",
+          "trust_score": 0.84
+        },
+        "review_item_id": "review_out_accec4f4355924d4",
+        "route": "portfolio",
+        "source_evidence_ids": [
+          "s163_ev_001"
+        ],
+        "status": "approved"
+      },
+      "runtime_truth_write": "blocked",
+      "stage_version": "S164",
+      "status": "operator_review_action_preview_ready"
+    },
+    "queue_total": 1,
+    "stage_version": "S166",
+    "status": "operator_action_audit_trail_ready"
+  },
+  "checks": {
+    "export_exists": true,
+    "governed_search_still_blocked": true,
+    "previous_gate_ok": true,
+    "runtime_truth_write_blocked": true,
+    "s163_contract_ready": true,
+    "s164_preview_ready": true,
+    "s165_action_complete": true,
+    "s166_audit_ready": true,
+    "s167_export_lifecycle_ok": true,
+    "s168_rollback_ready": true
+  },
+  "export_proof": {
+    "audit": {
+      "action": {
+        "action": "approve",
+        "decision": {
+          "decided_at": "2026-05-15T14:44:19.007172+00:00",
+          "decided_by": "s166_audit",
+          "decision": "approved",
+          "export_allowed": true,
+          "note": "S166 audit-trail approval proof.",
+          "review_item_id": "review_out_accec4f4355924d4",
+          "runtime_truth_write": "blocked"
+        },
+        "export": {
+          "derived_artifact": true,
+          "export_id": "export_c782271bc978900c",
+          "export_version": "S88",
+          "format": "json",
+          "path": "exports\\s163_s169\\export_c782271bc978900c.json",
+          "review_item_id": "review_out_accec4f4355924d4",
+          "runtime_truth_write": "blocked",
+          "status": "exported"
+        },
+        "locks": {
+          "automatic_updates_blocked": true,
+          "autonomous_execution_blocked": true,
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "manual_promotion_mandatory": true,
+          "quarantine_mandatory": true,
+          "runtime_truth_mutation_blocked": true,
+          "runtime_truth_write_blocked": true
+        },
+        "review_item": {
+          "allowed_decisions": [
+            "approved",
+            "archived",
+            "export_only",
+            "rejected"
+          ],
+          "authority": {
+            "automatic_updates": "blocked",
+            "manual_promotion_mandatory": true,
+            "runtime_truth_write": "blocked"
+          },
+          "created_at": "2026-05-15T14:44:18.982171+00:00",
+          "decided_at": "2026-05-15T14:44:19.007172+00:00",
+          "decided_by": "s166_audit",
+          "decision_note": "S166 audit-trail approval proof.",
+          "headline": "Portfolio candidate: operator action proof signal",
+          "operator": "s164_preview",
+          "output_candidate_id": "out_accec4f4355924d4",
+          "payload": {
+            "authority": {
+              "automatic_update": "blocked",
+              "autonomous_execution": "blocked",
+              "export_allowed_after_approval": true,
+              "manual_review_required": true,
+              "runtime_truth": "blocked",
+              "runtime_truth_write": "blocked"
+            },
+            "candidate_version": "S86",
+            "confidence": 0.648,
+            "created_at": "2026-05-15T14:44:18.982171+00:00",
+            "headline": "Portfolio candidate: operator action proof signal",
+            "lineage": {
+              "discovery_candidate_id": "disc_97fb3d2354aeb44c",
+              "evidence_basket_id": "s163_action_basket"
+            },
+            "output_candidate_id": "out_accec4f4355924d4",
+            "output_type": "portfolio_observation",
+            "recommended_operator_action": "review",
+            "route": "portfolio",
+            "signals": [
+              {
+                "confidence": 0.82,
+                "kind": "portfolio",
+                "label": "operator action proof signal",
+                "signal_id": "signal_1"
+              }
+            ],
+            "source_discovery_candidate_id": "disc_97fb3d2354aeb44c",
+            "source_evidence_ids": [
+              "s163_ev_001"
+            ],
+            "status": "review_required",
+            "summary": "Route-aware useful output candidate derived from a quarantined discovery candidate. Manual approval is required before export.",
+            "trust_score": 0.84
+          },
+          "review_item_id": "review_out_accec4f4355924d4",
+          "route": "portfolio",
+          "source_evidence_ids": [
+            "s163_ev_001"
+          ],
+          "status": "approved"
+        },
+        "runtime_truth_mutation": "blocked",
+        "runtime_truth_write": "blocked",
+        "stage_version": "S165",
+        "status": "guarded_operator_action_complete"
+      },
+      "audit_events": [
+        {
+          "event": "review_item_created",
+          "review_item_id": "review_out_accec4f4355924d4"
+        },
+        {
+          "decision": "approved",
+          "event": "operator_decision_recorded"
+        },
+        {
+          "event": "derived_export_created",
+          "export": true
+        }
+      ],
+      "decision_total": 3,
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "preview": {
+        "available_actions": [
+          "approve",
+          "reject",
+          "archive",
+          "export_only"
+        ],
+        "execution_performed": false,
+        "locks": {
+          "automatic_updates_blocked": true,
+          "autonomous_execution_blocked": true,
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "manual_promotion_mandatory": true,
+          "quarantine_mandatory": true,
+          "runtime_truth_mutation_blocked": true,
+          "runtime_truth_write_blocked": true
+        },
+        "queue_total": 1,
+        "review_item": {
+          "allowed_decisions": [
+            "approved",
+            "archived",
+            "export_only",
+            "rejected"
+          ],
+          "authority": {
+            "automatic_updates": "blocked",
+            "manual_promotion_mandatory": true,
+            "runtime_truth_write": "blocked"
+          },
+          "created_at": "2026-05-15T14:44:18.982171+00:00",
+          "decided_at": "2026-05-15T14:44:18.999172+00:00",
+          "decided_by": "s166_audit",
+          "decision_note": "S166 audit-trail approval proof.",
+          "headline": "Portfolio candidate: operator action proof signal",
+          "operator": "s164_preview",
+          "output_candidate_id": "out_accec4f4355924d4",
+          "payload": {
+            "authority": {
+              "automatic_update": "blocked",
+              "autonomous_execution": "blocked",
+              "export_allowed_after_approval": true,
+              "manual_review_required": true,
+              "runtime_truth": "blocked",
+              "runtime_truth_write": "blocked"
+            },
+            "candidate_version": "S86",
+            "confidence": 0.648,
+            "created_at": "2026-05-15T14:44:18.982171+00:00",
+            "headline": "Portfolio candidate: operator action proof signal",
+            "lineage": {
+              "discovery_candidate_id": "disc_97fb3d2354aeb44c",
+              "evidence_basket_id": "s163_action_basket"
+            },
+            "output_candidate_id": "out_accec4f4355924d4",
+            "output_type": "portfolio_observation",
+            "recommended_operator_action": "review",
+            "route": "portfolio",
+            "signals": [
+              {
+                "confidence": 0.82,
+                "kind": "portfolio",
+                "label": "operator action proof signal",
+                "signal_id": "signal_1"
+              }
+            ],
+            "source_discovery_candidate_id": "disc_97fb3d2354aeb44c",
+            "source_evidence_ids": [
+              "s163_ev_001"
+            ],
+            "status": "review_required",
+            "summary": "Route-aware useful output candidate derived from a quarantined discovery candidate. Manual approval is required before export.",
+            "trust_score": 0.84
+          },
+          "review_item_id": "review_out_accec4f4355924d4",
+          "route": "portfolio",
+          "source_evidence_ids": [
+            "s163_ev_001"
+          ],
+          "status": "approved"
+        },
+        "runtime_truth_write": "blocked",
+        "stage_version": "S164",
+        "status": "operator_review_action_preview_ready"
+      },
+      "queue_total": 1,
+      "stage_version": "S166",
+      "status": "operator_action_audit_trail_ready"
+    },
+    "derived_artifact_only": true,
+    "export": {
+      "derived_artifact": true,
+      "export_id": "export_c782271bc978900c",
+      "export_version": "S88",
+      "format": "json",
+      "path": "exports\\s163_s169\\export_c782271bc978900c.json",
+      "review_item_id": "review_out_accec4f4355924d4",
+      "runtime_truth_write": "blocked",
+      "status": "exported"
+    },
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "ok": true,
+    "runtime_truth_write": "blocked",
+    "stage_version": "S167",
+    "status": "export_lifecycle_proof_ready"
+  },
+  "forward_motion_allowed": true,
+  "functional_coverage": {
+    "S163": "operator action contract",
+    "S164": "operator review action preview",
+    "S165": "guarded operator action execution",
+    "S166": "operator action audit trail",
+    "S167": "export lifecycle proof",
+    "S168": "rollback contract",
+    "S169": "operator action stop gate"
+  },
+  "generated_at": "2026-05-15T14:44:19.015172+00:00",
+  "next_allowed_phase": "S170 controlled live fetch validation",
+  "ok": true,
+  "remaining_countdown": {
+    "next_pack": "S170-S176 controlled live fetch validation",
+    "packs_remaining_after_this": 1
+  },
+  "rollback": {
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "rollback_scope": {
+      "exports": "derived artifact can be archived or ignored without mutating runtime truth",
+      "review_queue": "decision records are append-only audit events",
+      "runtime_truth": "no rollback required because no runtime truth write is performed"
+    },
+    "rollback_supported": true,
+    "runtime_truth_write": "blocked",
+    "stage_version": "S168",
+    "status": "operator_action_rollback_contract_ready"
+  },
+  "stage_version": "S169",
+  "status": "s163_s169_operator_actions_passed"
+}

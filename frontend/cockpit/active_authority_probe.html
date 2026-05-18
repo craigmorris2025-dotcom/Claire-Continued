@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Claire A5 Active Cockpit Authority Probe</title>
+  <style>
+    body { font-family: Consolas, monospace; background: #07101f; color: #eaf2ff; padding: 24px; }
+    h1 { color: #62f3ff; }
+    pre { background: #0b1324; border: 1px solid #244267; border-radius: 12px; padding: 18px; white-space: pre-wrap; }
+    button { padding: 12px 18px; border-radius: 10px; border: 1px solid #38c9ff; background: #0b3450; color: white; font-weight: bold; }
+  </style>
+\n<link rel="stylesheet" href="cockpit/safe_workflow_panel.css">\n<script src="cockpit/safe_workflow_panel.js" defer></script>\n  <!-- CLAIRE_S985_S1012_ACTIVE_CONTROL_SURFACE -->
+  <link rel="stylesheet" href="/api/cockpit/control-surface/assets/css" data-claire-s985-s1012="active-control-surface">
+</head>
+<body>
+  <h1>Claire A5 Active Cockpit Authority Probe</h1>
+  <p>Diagnostic only. Does not expand runtime authority.</p>
+  <button onclick="window.ClaireActiveCockpitAuthorityTools.run()">Run Probe</button>
+  <pre id="claire-active-authority-report">Waiting...</pre>
+  <script src="../js/claire_canonical_fetch_client.js"></script>
+  <script src="../js/claire_active_cockpit_authority.js"></script>
+  <script src="/api/cockpit/control-surface/assets/js" defer data-claire-s985-s1012="active-control-surface"></script>
+</body>
+</html>

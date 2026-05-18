@@ -1,0 +1,295 @@
+/*
+Claire Syntalion v19.82B.10
+Source Universe Cockpit Workspace styling.
+Enterprise cockpit surface; not a dev endpoint dashboard.
+*/
+
+.claire-source-universe-workspace {
+  margin: 24px 0;
+  padding: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.10), transparent 28%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(2, 6, 23, 0.98));
+  color: #e5eefc;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.30);
+}
+
+.claire-su-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.claire-su-kicker {
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #7dd3fc;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.claire-su-header h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+.claire-su-subtitle {
+  margin: 8px 0 0 0;
+  max-width: 820px;
+  color: #a8b7cc;
+  line-height: 1.5;
+}
+
+.claire-su-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.claire-su-button {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(15, 23, 42, 0.86);
+  color: #e5eefc;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.claire-su-button:hover {
+  border-color: rgba(125, 211, 252, 0.60);
+}
+
+.claire-su-button:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+}
+
+.claire-su-button-primary {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.92), rgba(37, 99, 235, 0.92));
+  border-color: rgba(125, 211, 252, 0.45);
+}
+
+.claire-su-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(360px, 1.2fr) minmax(340px, 1fr);
+  gap: 16px;
+}
+
+.claire-su-card {
+  min-height: 260px;
+  padding: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.claire-su-card-title {
+  margin-bottom: 12px;
+  color: #cbd5e1;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.claire-su-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.claire-su-list-item {
+  text-align: left;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(2, 6, 23, 0.42);
+  border-radius: 16px;
+  color: #e5eefc;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.claire-su-list-item:hover,
+.claire-su-list-item.active {
+  border-color: rgba(125, 211, 252, 0.65);
+  background: rgba(14, 165, 233, 0.14);
+}
+
+.claire-su-list-name {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.claire-su-list-meta {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.84rem;
+}
+
+.claire-su-detail-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.claire-su-detail-heading h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.claire-su-detail-heading span {
+  color: #7dd3fc;
+  font-size: 0.82rem;
+}
+
+.claire-su-purpose {
+  color: #b6c4d6;
+  line-height: 1.5;
+}
+
+.claire-su-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(110px, 1fr));
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.claire-su-metrics div {
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 14px;
+  padding: 10px;
+  background: rgba(2, 6, 23, 0.36);
+}
+
+.claire-su-metrics span {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  margin-bottom: 4px;
+}
+
+.claire-su-metrics strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 0.92rem;
+  word-break: break-word;
+}
+
+.claire-su-section {
+  margin-top: 14px;
+}
+
+.claire-su-section h4 {
+  margin: 0 0 8px 0;
+  color: #dbeafe;
+  font-size: 0.92rem;
+}
+
+.claire-su-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.claire-su-pills span {
+  padding: 7px 9px;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(125, 211, 252, 0.20);
+  color: #bae6fd;
+  font-size: 0.8rem;
+}
+
+.claire-su-muted,
+.claire-su-empty {
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+.claire-su-warning,
+.claire-su-success {
+  border-radius: 16px;
+  padding: 12px;
+  line-height: 1.45;
+}
+
+.claire-su-warning {
+  border: 1px solid rgba(251, 191, 36, 0.32);
+  background: rgba(251, 191, 36, 0.10);
+  color: #fde68a;
+}
+
+.claire-su-success {
+  border: 1px solid rgba(34, 197, 94, 0.32);
+  background: rgba(34, 197, 94, 0.10);
+  color: #bbf7d0;
+}
+
+.claire-su-warning span,
+.claire-su-success span {
+  display: block;
+  margin-top: 6px;
+  color: #cbd5e1;
+  font-size: 0.82rem;
+}
+
+.claire-su-large-number {
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  color: #f8fafc;
+}
+
+.claire-su-section pre {
+  max-height: 220px;
+  overflow: auto;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.62);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  color: #cbd5e1;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.claire-su-lockline {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  color: #93c5fd;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 1180px) {
+  .claire-su-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .claire-su-header {
+    flex-direction: column;
+  }
+
+  .claire-su-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .claire-source-universe-workspace {
+    padding: 16px;
+  }
+
+  .claire-su-metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+}

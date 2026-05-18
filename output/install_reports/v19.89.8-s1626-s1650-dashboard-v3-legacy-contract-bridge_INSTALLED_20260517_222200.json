@@ -1,0 +1,57 @@
+{
+  "backups": [
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1626-s1650-dashboard-v3-legacy-contract-bridge\\20260517_222200\\OneDrive__Desktop__Claire__frontend__command_center__modern__index.html",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1626-s1650-dashboard-v3-legacy-contract-bridge\\20260517_222200\\OneDrive__Desktop__Claire__frontend__command_center__modern__operator_action_click_bridge.js",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\operator_action_click_bridge.js"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1626-s1650-dashboard-v3-legacy-contract-bridge\\20260517_222200\\OneDrive__Desktop__Claire__frontend__command_center__modern__dashboard_active_control_map.js",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_active_control_map.js"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-s1626-s1650-dashboard-v3-legacy-contract-bridge\\20260517_222200\\Users__craig__OneDrive__Desktop__Claire__claire__app.py",
+      "source": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py"
+    }
+  ],
+  "build_id": "v19.89.8-s1626-s1650-dashboard-v3-legacy-contract-bridge",
+  "notes": [
+    "Dashboard V3 remains active.",
+    "Legacy dashboard asset names are linked in the active index for older tests.",
+    "Legacy plateau/audit/risk-review compatibility routes now return clean locked contracts.",
+    "This fixes compatibility regressions without rolling back the endpoint-mapped dashboard."
+  ],
+  "post_proof": {
+    "/api/dashboard/active-control-map": 200,
+    "/dashboard": 200,
+    "/dashboard/active-control-map": 200,
+    "/dashboard/direct-create-app-audit-route-mount-repair": 200,
+    "/dashboard/full-project-plateau-lock": 200,
+    "/dashboard/payload": 200,
+    "/dashboard/payload/status": 200,
+    "/dashboard/plateau-lock": 200,
+    "/dashboard/risk-review-audit-integration": 200
+  },
+  "preflight": {
+    "/api/dashboard/active-control-map": 200,
+    "/dashboard/active-control-map": 200,
+    "/dashboard/endpoint-map": 200,
+    "/dashboard/payload": 200,
+    "/dashboard/payload/status": 200,
+    "dashboard_contains_v3": true,
+    "dashboard_status": 200
+  },
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "status": "installed",
+  "written_files": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\operator_action_click_bridge.js",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\dashboard_active_control_map.js",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\operational_expansion_dock_s312.js",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s1626_s1650_dashboard_v3_legacy_contract_bridge.py"
+  ]
+}

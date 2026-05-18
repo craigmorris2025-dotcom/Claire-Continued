@@ -1,0 +1,20 @@
+{
+  "version": "v18.55",
+  "name": "Dashboard Search Bar Real Result Binding",
+  "scope": [
+    "bind governed search results into dashboard visible result payload",
+    "verify google -> Google visible result contract",
+    "preserve manual-enable governance",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates"
+  ],
+  "files_written": [
+    "claire/governed_web/dashboard_search_result_binding.py",
+    "tests/test_v18_55_dashboard_search_bar_real_result_binding.py",
+    "data/install_manifests/v18_55_dashboard_search_bar_real_result_binding.json"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_55_dashboard_search_bar_real_result_binding.py -q"
+  ]
+}

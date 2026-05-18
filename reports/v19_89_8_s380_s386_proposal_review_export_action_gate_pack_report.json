@@ -1,0 +1,31 @@
+{
+  "installer": "install_claire_v19_89_8_s380_s386_proposal_review_export_action_gate_pack.py",
+  "started_at": "2026-05-16T13:29:48.591997Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "files": [
+    {
+      "path": "claire/api/internet_proposal_review_export_action_s380_s386.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "tests/test_s380_s386_proposal_review_export_action_gate.py",
+      "written": true,
+      "compiled": true
+    }
+  ],
+  "backups": {
+    "claire/api/internet_proposal_review_export_action_s380_s386.py": null,
+    "tests/test_s380_s386_proposal_review_export_action_gate.py": null
+  },
+  "patches": [
+    {
+      "path": "claire\\app.py",
+      "exists": true,
+      "patched": true,
+      "marker": "BEGIN CLAIRE_S366_S386_PROPOSAL_REVIEW_EXPORT_ACTION_ROUTES"
+    }
+  ],
+  "finished_at": "2026-05-16T13:29:48.632997Z"
+}

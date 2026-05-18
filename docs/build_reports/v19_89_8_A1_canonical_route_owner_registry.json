@@ -1,0 +1,59 @@
+{
+  "version": "v19.89.8-A1",
+  "build": "Canonical Route Owner Registry",
+  "installed_at": "2026-05-13T22:16:32.008331+00:00",
+  "intent": "Create canonical route owner registry before duplicate route fail tests and cockpit fetch map lock.",
+  "new_endpoints": [
+    "/system/route-owner-registry",
+    "/system/route-owner-registry/summary",
+    "/system/route-owner-registry/critical",
+    "/system/route-owner-registry/duplicates",
+    "/system/route-owner-registry/registration-proof"
+  ],
+  "duplicate_route_count": 30,
+  "critical_route_owners": {
+    "/dashboard/payload": {
+      "owner": "canonical_dashboard_payload_bridge",
+      "authority": "backend_truth_payload",
+      "status": "locked",
+      "reason": "Cockpit must consume backend-owned canonical dashboard payload only."
+    },
+    "/dashboard/payload/status": {
+      "owner": "canonical_dashboard_payload_bridge",
+      "authority": "backend_truth_payload_status",
+      "status": "locked",
+      "reason": "Cockpit status must come from backend-owned payload status."
+    },
+    "/runtime/continuous/status": {
+      "owner": "continuous_runtime_status_contract",
+      "authority": "governed_runtime_status",
+      "status": "pending_reconciliation",
+      "reason": "Continuous runtime status must be governed and fail-closed before activation."
+    },
+    "/runtime/continuous/review-queue": {
+      "owner": "review_queue_runtime_ingestion",
+      "authority": "governed_review_queue",
+      "status": "pending_reconciliation",
+      "reason": "Review queue now exists, but continuous runtime candidate writer still needs validation."
+    },
+    "/runs/start": {
+      "owner": "run_start_contract",
+      "authority": "operator_initiated_runtime_start",
+      "status": "pending_reconciliation",
+      "reason": "Run start must not bypass evidence, scheduler, or review gates."
+    },
+    "/universes": {
+      "owner": "source_universe_contract",
+      "authority": "source_universe_selection",
+      "status": "pending_reconciliation",
+      "reason": "Universe selection and universe-to-lifecycle handoff remain incomplete."
+    }
+  },
+  "files": {
+    "registry_file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\authority\\canonical_route_owner_registry.json",
+    "backend_route_module": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\canonical_route_owner_registry_routes.py",
+    "app_file_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "version_json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version.json"
+  },
+  "next_phase": "v19.89.8-A2 Duplicate Route Fail Test"
+}

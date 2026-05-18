@@ -1,0 +1,29 @@
+{
+  "version": "v19.86.0-v19.86.4",
+  "build": "Source Universe Evidence Lineage Pack",
+  "installed_at": "2026-05-12T16:43:48.468573+00:00",
+  "runtime_mutation": "none",
+  "files_written": [
+    "docs/builds/v19_86_0_to_v19_86_4_source_universe_evidence_pack.md",
+    "tests/test_v19_86_0_source_universe_evidence_lineage.py",
+    "tests/test_v19_86_1_source_probe_result_schema.py",
+    "tests/test_v19_86_2_probe_to_evidence_basket_builder.py",
+    "tests/test_v19_86_3_source_trust_rejection_reasons.py",
+    "tests/test_v19_86_4_source_universe_evidence_plateau_gate.py",
+    "tools/probe_to_evidence_basket_builder.py",
+    "tools/source_probe_result_schema.py",
+    "tools/source_trust_rejection_reasons.py",
+    "tools/source_universe_evidence_lineage.py",
+    "tools/source_universe_evidence_plateau_gate.py",
+    "data/build_artifacts/v19_86_0_to_v19_86_4_source_universe_evidence_pack.json"
+  ],
+  "commands": [
+    "python tools/source_universe_evidence_lineage.py",
+    "python tools/source_probe_result_schema.py",
+    "python tools/probe_to_evidence_basket_builder.py",
+    "python tools/source_trust_rejection_reasons.py",
+    "python tools/source_universe_evidence_plateau_gate.py",
+    "pytest tests/test_v19_86_0_source_universe_evidence_lineage.py tests/test_v19_86_1_source_probe_result_schema.py tests/test_v19_86_2_probe_to_evidence_basket_builder.py tests/test_v19_86_3_source_trust_rejection_reasons.py tests/test_v19_86_4_source_universe_evidence_plateau_gate.py -q"
+  ],
+  "next_build": "v19.87.0 Continuous Governed Runtime Scheduler"
+}

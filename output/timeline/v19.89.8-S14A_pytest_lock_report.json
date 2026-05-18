@@ -1,0 +1,18 @@
+{
+  "version": "v19.89.8-S14A-FIXED",
+  "installed_at_utc": "2026-05-14T02:17:21.120596+00:00",
+  "status": "installed",
+  "files_written": [
+    "tests\\test_governed_runtime_timeline_s14.py",
+    "docs\\build_notes\\v19.89.8-S14A_timeline_pytest_lock.md",
+    "output\\timeline\\v19.89.8-S14A_pytest_lock_report.json"
+  ],
+  "run": "python -m pytest tests/test_governed_runtime_timeline_s14.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

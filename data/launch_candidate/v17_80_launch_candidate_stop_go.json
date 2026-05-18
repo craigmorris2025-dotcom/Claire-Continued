@@ -1,0 +1,17 @@
+{
+  "blockers": [
+    "missing_protected_path:OPEN_CLAIRE_PROOF_URLS.bat",
+    "missing_protected_path:START_CLAIRE_SAFE.bat",
+    "missing_protected_path:VERIFY_CLAIRE_STARTUP.bat"
+  ],
+  "generated_at": "2026-05-13T11:19:01.038870Z",
+  "recommendation": "Do not freeze as launch candidate until blockers are fixed.",
+  "status": "STOP",
+  "version": "v17.80",
+  "warnings": [
+    "manual_browser_swagger_evidence_not_complete",
+    "prior_report_stop:v17_76_platform_smoke",
+    "prior_report_stop:v17_77_launch_hardening",
+    "prior_report_stop:v17_78_desktop_startup"
+  ]
+}

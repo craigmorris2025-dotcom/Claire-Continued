@@ -1,0 +1,20 @@
+{
+  "version": "v19.89.8-A7",
+  "build": "HTTP Cockpit Launcher Reconciliation",
+  "timestamp": "2026-05-13T23:09:16.818099+00:00",
+  "changes": [
+    "Backed up existing LAUNCH_CLAIRE_RESTORED_WORKING.bat to LAUNCH_CLAIRE_RESTORED_WORKING.bat.pre_A7_20260513_180916",
+    "Wrote LAUNCH_CLAIRE_RESTORED_WORKING.bat",
+    "Wrote LAUNCH_CLAIRE_HTTP_COCKPIT.bat",
+    "Wrote CHECK_CLAIRE_HTTP_COCKPIT_ORIGIN.bat"
+  ],
+  "runtime_authority_expanded": false,
+  "safe_to_expand_runtime_authority": false,
+  "notes": [
+    "Opens cockpit through http://127.0.0.1:8000/ instead of file:///",
+    "Preserves backend truth ownership",
+    "Preserves cockpit presentation-only role",
+    "Does not enable autonomous runtime",
+    "Does not remove compatibility routes"
+  ]
+}

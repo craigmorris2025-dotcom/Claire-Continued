@@ -1,0 +1,18 @@
+{
+  "version": "v19.89.8-S149-S155-resilient-legacy-exports-repair",
+  "installed_at": "2026-05-15T18:03:18.415543+00:00",
+  "repair_only": true,
+  "purpose": "Stop repeated one-name-at-a-time import failures by restoring explicit and fallback legacy exports.",
+  "authority_locks": {
+    "runtime_truth_write": false,
+    "runtime_mutation": false,
+    "automatic_updates": false,
+    "autonomous_execution": false,
+    "continuous_crawling": false
+  },
+  "recommended_commands": [
+    "pytest tests/test_s149_s155_resilient_legacy_exports_repair.py -q",
+    "pytest tests/test_s149_s155_live_payload_visibility.py -q",
+    "pytest"
+  ]
+}

@@ -1,0 +1,102 @@
+.claire-s653-panel {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 18px;
+  padding: 18px;
+  margin: 18px 0;
+  background: rgba(15, 23, 42, 0.72);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
+}
+.claire-s653-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+.claire-s653-kicker {
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  opacity: 0.72;
+}
+.claire-s653-header h3 {
+  margin: 0 0 6px;
+}
+.claire-s653-header p {
+  margin: 0;
+  opacity: 0.82;
+}
+.claire-s653-status {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 999px;
+  padding: 8px 12px;
+  white-space: nowrap;
+  font-size: 0.82rem;
+  opacity: 0.9;
+}
+.claire-s653-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 16px;
+}
+.claire-s653-proof span {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  background: rgba(2, 6, 23, 0.32);
+}
+.claire-s653-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.claire-s653-card {
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(2, 6, 23, 0.28);
+}
+.claire-s653-card h4 {
+  margin: 6px 0 8px;
+}
+.claire-s653-card p {
+  margin: 0;
+  opacity: 0.78;
+  line-height: 1.42;
+}
+.claire-s653-card-topline {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.68;
+}
+.claire-s653-actions-title {
+  margin: 18px 0 8px;
+}
+.claire-s653-actions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.claire-s653-action {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(15, 23, 42, 0.42);
+}
+.claire-s653-action strong {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.claire-s653-panel-error {
+  border-color: rgba(248, 113, 113, 0.45);
+}

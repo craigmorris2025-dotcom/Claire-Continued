@@ -1,0 +1,70 @@
+{
+  "build": "Evidence Escalation Hardening",
+  "evaluation": {
+    "blocker_count": 0,
+    "blockers": [],
+    "status": "locked_clean",
+    "warning_count": 0,
+    "warnings": []
+  },
+  "generated_at": "2026-05-13T11:22:15.810711+00:00",
+  "next_build": "v19.85.1 Evidence Basket Contract",
+  "policy": {
+    "backend_owns_truth": true,
+    "build": "Evidence Escalation Hardening",
+    "cockpit_owns_presentation_only": true,
+    "escalation_targets": {
+      "acquisition": {
+        "minimum_confidence": 0.88,
+        "minimum_evidence_items": 7,
+        "minimum_source_universes": 4
+      },
+      "breakthrough": {
+        "minimum_confidence": 0.82,
+        "minimum_evidence_items": 5,
+        "minimum_source_universes": 3
+      },
+      "design": {
+        "minimum_confidence": 0.85,
+        "minimum_evidence_items": 6,
+        "minimum_source_universes": 3
+      },
+      "portfolio": {
+        "minimum_confidence": 0.7,
+        "minimum_evidence_items": 3,
+        "minimum_source_universes": 2
+      }
+    },
+    "frontend_truth_generation_allowed": false,
+    "generated_at": "2026-05-13T11:22:15.809711+00:00",
+    "rules": [
+      "Thin inputs may not escalate directly into discoveries, breakthroughs, portfolios, or designs.",
+      "All escalation routes require evidence baskets with lineage.",
+      "Source universe diversity is mandatory for escalation.",
+      "Confidence scores must be backend-generated.",
+      "Cockpit may render pending or unavailable states without synthesizing conclusions.",
+      "Operator review remains mandatory before promotion into runtime truth."
+    ],
+    "terminal_evidence_states": [
+      "pending_evidence",
+      "insufficient_data",
+      "blocked_evidence",
+      "review_required",
+      "candidate_ready",
+      "validated_candidate"
+    ],
+    "thin_input_patterns": [
+      "additionalprop1",
+      "",
+      "{}",
+      "test",
+      "hello",
+      "run",
+      "go"
+    ],
+    "version": "v19.85.0"
+  },
+  "policy_path": "data\\evidence_governance\\evidence_escalation_policy.json",
+  "read_only": true,
+  "version": "v19.85.0"
+}

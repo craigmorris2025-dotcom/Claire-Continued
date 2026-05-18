@@ -1,0 +1,358 @@
+{
+  "surface": "review_queue",
+  "version": "v19.89.8",
+  "build": "Review Queue Runtime Ingestion Layer",
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "runtime_truth_over_ui_assumptions": true,
+  "fail_closed_governance": true,
+  "autonomous_loop_enabled": false,
+  "queue_mode": "governed_runtime_review",
+  "enabled": true,
+  "pending_items": 1,
+  "acknowledged_items": 0,
+  "rejected_items": 0,
+  "items": [
+    {
+      "id": "runtime-review-2026-05-13T220034-707873+0000",
+      "type": "runtime_propagation_review",
+      "status": "pending_review",
+      "created_at": "2026-05-13T22:00:34.707873+00:00",
+      "updated_at": "2026-05-13T22:00:34.707873+00:00",
+      "requires_operator_review": true,
+      "source": "runtime_execution_propagation",
+      "summary": {
+        "terminal_state": "not_started",
+        "selected_route": "not_started",
+        "current_stage_name": null,
+        "completed_stage_count": 0,
+        "stage_count": 30,
+        "execution_active": false,
+        "autonomous_loop_enabled": false
+      },
+      "review_questions": [
+        "Does the runtime propagation state match expected lifecycle behavior?",
+        "Is the current terminal state acceptable for the next governed handoff?",
+        "Should this runtime state be acknowledged, rejected, or held for deeper inspection?"
+      ],
+      "snapshot": {
+        "runtime_state": {
+          "surface": "runtime_state",
+          "version": "v19.89.6",
+          "build": "Runtime State Emitter Layer",
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_over_ui_assumptions": true,
+          "fail_closed_governance": true,
+          "autonomous_loop_enabled": false,
+          "execution_mode": "state_emission_only",
+          "runtime_session": {
+            "session_id": "runtime-state-emitter",
+            "state": "idle_waiting_for_runtime_execution",
+            "started_at": null,
+            "last_emitted_at": "2026-05-13T20:37:08.573913+00:00",
+            "last_transition_at": "2026-05-13T20:00:33.571644+00:00"
+          },
+          "runtime_truth": {
+            "runtime_truth_available": false,
+            "runtime_truth_source": null,
+            "terminal_state": "no_runtime_output_loaded",
+            "route": "not_started",
+            "confidence": null,
+            "headline": "Runtime state emitted from contract layer",
+            "summary": "Runtime state exists, but no core_run_output.json has supplied active execution truth yet."
+          },
+          "route_state": {
+            "selected_route": "not_started",
+            "terminal_state": "no_runtime_output_loaded",
+            "confidence": null,
+            "review_required": true,
+            "reason": "Runtime state emitter is active; execution output has not yet been propagated into a live run session."
+          },
+          "lifecycle_state": {
+            "current_stage_index": null,
+            "current_stage_name": null,
+            "stage_count": 30,
+            "stage_source": "runtime_execution_contract",
+            "stage_execution_active": false
+          },
+          "review_queue_state": {
+            "enabled": false,
+            "pending_items": 0,
+            "reason": "Review queue wiring is the next build layer after runtime state emission."
+          },
+          "checked_at": "2026-05-13T20:37:08.573913+00:00"
+        },
+        "propagation": {
+          "surface": "runtime_execution_propagation",
+          "version": "v19.89.7.1",
+          "build": "Runtime Propagation Router Registration Repair",
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "autonomous_loop_enabled": false,
+          "propagation_mode": "manual_governed_step",
+          "execution_active": false,
+          "current_stage_index": 0,
+          "current_stage_name": null,
+          "completed_stage_count": 0,
+          "stage_count": 30,
+          "terminal_state": "not_started",
+          "selected_route": "not_started",
+          "last_transition": null,
+          "created_at": "2026-05-13T21:49:59.776863+00:00",
+          "updated_at": "2026-05-13T21:49:59.776863+00:00",
+          "stages": [
+            {
+              "index": 1,
+              "name": "Signal Ingestion",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 2,
+              "name": "Signal Normalization",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 3,
+              "name": "Source Validation & Weighting",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 4,
+              "name": "Context Expansion",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 5,
+              "name": "Signal Consolidation",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 6,
+              "name": "Entity Extraction",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 7,
+              "name": "Relationship Mapping",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 8,
+              "name": "Trend Discovery",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 9,
+              "name": "Cluster Formation",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 10,
+              "name": "Insight/Thesis Structuring",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 11,
+              "name": "Gap Detection",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 12,
+              "name": "Gap Qualification",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 13,
+              "name": "Discovery Generation",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 14,
+              "name": "Breakthrough Identification & Classification",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 15,
+              "name": "Advancement Path Selection",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 16,
+              "name": "Auto Invention/Solution Generation",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 17,
+              "name": "Solution Structuring",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 18,
+              "name": "Buildability Assessment",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 19,
+              "name": "Viability Assessment",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 20,
+              "name": "Manufacturability/Deployability Assessment",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 21,
+              "name": "Feasibility Validation",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 22,
+              "name": "Design Portal Output/Blueprints/Specs",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 23,
+              "name": "Market Positioning",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 24,
+              "name": "Moat & Differentiation",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 25,
+              "name": "Business Model & Value Capture",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 26,
+              "name": "Competitor Analysis",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 27,
+              "name": "Portfolio Creation/Optimization",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 28,
+              "name": "Acquirer Identification",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 29,
+              "name": "Acquisition Fit & Rationale",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            },
+            {
+              "index": 30,
+              "name": "Final Package Construction",
+              "status": "pending",
+              "started_at": null,
+              "completed_at": null,
+              "reason": "Waiting for governed propagation."
+            }
+          ]
+        }
+      },
+      "fingerprint": {
+        "terminal_state": "not_started",
+        "selected_route": "not_started",
+        "completed_stage_count": 0,
+        "propagation_updated_at": "2026-05-13T21:49:59.776863+00:00"
+      }
+    }
+  ],
+  "created_at": "2026-05-13T21:59:21.018512+00:00",
+  "updated_at": "2026-05-13T22:00:34.707873+00:00"
+}

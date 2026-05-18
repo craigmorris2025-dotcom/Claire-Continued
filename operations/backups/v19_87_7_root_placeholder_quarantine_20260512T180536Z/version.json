@@ -1,0 +1,12 @@
+{
+  "version": "19.87.6",
+  "phase": "runtime_cleanroom_quarantine_repair",
+  "lane": "v19.87.x",
+  "updated_at": "2026-05-12T18:01:04.679961+00:00",
+  "notes": [
+    "Excluded tests/placeholder_disabled from active pytest collection.",
+    "Added placeholder_disabled quarantine guard.",
+    "Preserved v19.84.2 compatibility contract.",
+    "No cockpit, route, scheduler, evidence, live web, or runtime truth mutation."
+  ]
+}

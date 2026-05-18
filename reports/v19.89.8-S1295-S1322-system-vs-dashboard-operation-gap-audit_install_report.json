@@ -1,0 +1,165 @@
+{
+  "version": "v19.89.8-S1295-S1322-system-vs-dashboard-operation-gap-audit",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "written": [
+    "claire/audit/system_dashboard_gap_audit.py",
+    "tests/test_s1295_s1322_system_dashboard_gap_audit.py"
+  ],
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-S1295-S1322-system-vs-dashboard-operation-gap-audit",
+  "audit_reports": {
+    "json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\S1295_S1322_SYSTEM_DASHBOARD_GAP_AUDIT_20260517_225312.json",
+    "markdown": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\S1295_S1322_SYSTEM_DASHBOARD_GAP_AUDIT_20260517_225312.md"
+  },
+  "summary": {
+    "backend_route_count": 585,
+    "backend_get_route_count": 515,
+    "backend_post_route_count": 70,
+    "frontend_file_count": 51,
+    "frontend_fetch_count": 0,
+    "frontend_button_count": 35,
+    "frontend_click_handler_count": 73,
+    "capability_count": 15,
+    "required_capability_count": 15,
+    "bound_required_capability_count": 0,
+    "lagging_required_capability_count": 15,
+    "dashboard_operational_binding_score": 0.0,
+    "system_has_operational_backend": true,
+    "dashboard_lagging_backend": true,
+    "audit_status": "dashboard_lagging_backend"
+  },
+  "lagging_capabilities": [
+    {
+      "key": "system_health_plateau",
+      "label": "System health, plateau lock, and audit proof",
+      "status": "mentioned_but_not_fetch_bound",
+      "backend_route_count": 7,
+      "frontend_fetch_bound": false,
+      "button_present": false
+    },
+    {
+      "key": "dashboard_payload",
+      "label": "Canonical dashboard payload and status",
+      "status": "button_without_fetch_binding",
+      "backend_route_count": 4,
+      "frontend_fetch_bound": false,
+      "button_present": true
+    },
+    {
+      "key": "dashboard_actions",
+      "label": "Dashboard action registry, summary, preview, and result",
+      "status": "button_without_fetch_binding",
+      "backend_route_count": 28,
+      "frontend_fetch_bound": false,
+      "button_present": true
+    },
+    {
+      "key": "operator_console",
+      "label": "Operator console controls and action result binding",
+      "status": "mentioned_but_not_fetch_bound",
+      "backend_route_count": 20,
+      "frontend_fetch_bound": false,
+      "button_present": false
+    },
+    {
+      "key": "cockpit_operations",
+      "label": "Cockpit operations, control surface, and visual operations",
+      "status": "button_without_fetch_binding",
+      "backend_route_count": 31,
+      "frontend_fetch_bound": false,
+      "button_present": true
+    },
+    {
+      "key": "command_bar",
+      "label": "Command bar operation payload, buttons, and preview",
+      "status": "button_without_fetch_binding",
+      "backend_route_count": 7,
+      "frontend_fetch_bound": false,
+      "button_present": true
+    },
+    {
+      "key": "governed_search",
+      "label": "Governed search planning and search result surfaces",
+      "status": "button_without_fetch_binding",
+      "backend_route_count": 36,
+      "frontend_fetch_bound": false,
+      "button_present": true
+    },
+    {
+      "key": "provider_readiness",
+      "label": "Search provider readiness, configuration, manual probe, and stop gates",
+      "status": "button_without_fetch_binding",
+      "backend_route_count": 27,
+      "frontend_fetch_bound": false,
+      "button_present": true
+    },
+    {
+      "key": "metadata_live_probe",
+      "label": "Metadata probe, controlled live probe, and governed web probe boundaries",
+      "status": "button_without_fetch_binding",
+      "backend_route_count": 34,
+      "frontend_fetch_bound": false,
+      "button_present": true
+    },
+    {
+      "key": "evidence_review",
+      "label": "Evidence quarantine, evidence cards, review, and promotion preview",
+      "status": "mentioned_but_not_fetch_bound",
+      "backend_route_count": 37,
+      "frontend_fetch_bound": false,
+      "button_present": false
+    },
+    {
+      "key": "source_registry_policy",
+      "label": "Source registry, source policy, gaps, intake, and live source catalog",
+      "status": "mentioned_but_not_fetch_bound",
+      "backend_route_count": 34,
+      "frontend_fetch_bound": false,
+      "button_present": false
+    },
+    {
+      "key": "body_read_gates",
+      "label": "Body-read authorization, extraction scope, sanitizer, manual gate, and stop gate",
+      "status": "mentioned_but_not_fetch_bound",
+      "backend_route_count": 41,
+      "frontend_fetch_bound": false,
+      "button_present": false
+    },
+    {
+      "key": "runtime_spine_lifecycle",
+      "label": "Runtime spine, evidence lifecycle, routing preview, and operator control",
+      "status": "mentioned_but_not_fetch_bound",
+      "backend_route_count": 20,
+      "frontend_fetch_bound": false,
+      "button_present": false
+    },
+    {
+      "key": "update_truth_promotion",
+      "label": "Update proposal, runtime truth promotion preview, and source ingestion draft",
+      "status": "button_without_fetch_binding",
+      "backend_route_count": 7,
+      "frontend_fetch_bound": false,
+      "button_present": true
+    },
+    {
+      "key": "live_intelligence_catalog",
+      "label": "Live intelligence status and live source catalog health",
+      "status": "button_without_fetch_binding",
+      "backend_route_count": 3,
+      "frontend_fetch_bound": false,
+      "button_present": true
+    }
+  ],
+  "blocked_authority_preserved": [
+    "live_web_execution",
+    "search_provider_execution",
+    "browser_execution",
+    "network_requests",
+    "body_reads",
+    "autonomous_crawling",
+    "automatic_updates",
+    "runtime_mutation",
+    "runtime_truth_mutation",
+    "package_download_install",
+    "command_execution"
+  ]
+}

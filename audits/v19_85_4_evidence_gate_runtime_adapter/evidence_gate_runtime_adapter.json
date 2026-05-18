@@ -1,0 +1,138 @@
+{
+  "build": "Evidence Gate Runtime Adapter",
+  "contract": {
+    "adapter_function": "evaluate_runtime_evidence_gate",
+    "backend_owns_truth": true,
+    "build": "Evidence Gate Runtime Adapter",
+    "cockpit_owns_presentation_only": true,
+    "gate_order": [
+      "thin_input_gate",
+      "route_specific_evidence_gate",
+      "operator_review_gate"
+    ],
+    "generated_at": "2026-05-13T11:22:15.861710+00:00",
+    "runtime_mutation": "none",
+    "valid_terminal_states": [
+      "pending_evidence",
+      "insufficient_data",
+      "blocked_evidence",
+      "review_required",
+      "candidate_ready",
+      "validated_candidate"
+    ],
+    "version": "v19.85.4"
+  },
+  "contract_path": "data\\evidence_governance\\evidence_gate_runtime_adapter.json",
+  "generated_at": "2026-05-13T11:22:15.861710+00:00",
+  "next_build": "v19.85.5 Evidence Lineage Propagation Contract",
+  "read_only": true,
+  "self_checks": {
+    "empty_discovery": {
+      "allowed_to_escalate": false,
+      "backend_owns_truth": true,
+      "cockpit_owns_presentation_only": true,
+      "gate": "thin_input_gate",
+      "operator_review_required": true,
+      "reasons": [
+        "empty_input",
+        "raw_input_too_short",
+        "token_count_too_low",
+        "unique_token_count_too_low",
+        "placeholder_ratio_too_high",
+        "specificity_score_too_low",
+        "semantic_density_score_too_low"
+      ],
+      "route_type": "discovery",
+      "status": "pending_evidence",
+      "terminal_state": "pending_evidence",
+      "thin_input": {
+        "allowed_to_escalate": false,
+        "backend_owns_truth": true,
+        "cockpit_owns_presentation_only": true,
+        "profile": {
+          "has_substantive_input": false,
+          "placeholder_ratio": 1.0,
+          "placeholder_token_count": 0,
+          "placeholder_tokens": [],
+          "raw_character_count": 0,
+          "semantic_density_score": 0.0,
+          "specificity_score": 0.0,
+          "token_count": 0,
+          "tokens": [],
+          "unique_token_count": 0
+        },
+        "reasons": [
+          "empty_input",
+          "raw_input_too_short",
+          "token_count_too_low",
+          "unique_token_count_too_low",
+          "placeholder_ratio_too_high",
+          "specificity_score_too_low",
+          "semantic_density_score_too_low"
+        ],
+        "route_type": "discovery",
+        "status": "pending_evidence",
+        "terminal_state": "pending_evidence",
+        "thin_input": true,
+        "version": "v19.85.3"
+      },
+      "version": "v19.85.4"
+    },
+    "placeholder_breakthrough": {
+      "allowed_to_escalate": false,
+      "backend_owns_truth": true,
+      "cockpit_owns_presentation_only": true,
+      "gate": "thin_input_gate",
+      "operator_review_required": true,
+      "reasons": [
+        "raw_input_too_short",
+        "token_count_too_low",
+        "unique_token_count_too_low",
+        "placeholder_ratio_too_high",
+        "specificity_score_too_low",
+        "semantic_density_score_too_low"
+      ],
+      "route_type": "breakthrough",
+      "status": "blocked_thin_input",
+      "terminal_state": "blocked_evidence",
+      "thin_input": {
+        "allowed_to_escalate": false,
+        "backend_owns_truth": true,
+        "cockpit_owns_presentation_only": true,
+        "profile": {
+          "has_substantive_input": false,
+          "placeholder_ratio": 1.0,
+          "placeholder_token_count": 2,
+          "placeholder_tokens": [
+            "string",
+            "additionalprop1"
+          ],
+          "raw_character_count": 22,
+          "semantic_density_score": 0.0,
+          "specificity_score": 0.0,
+          "token_count": 2,
+          "tokens": [
+            "string",
+            "additionalprop1"
+          ],
+          "unique_token_count": 2
+        },
+        "reasons": [
+          "raw_input_too_short",
+          "token_count_too_low",
+          "unique_token_count_too_low",
+          "placeholder_ratio_too_high",
+          "specificity_score_too_low",
+          "semantic_density_score_too_low"
+        ],
+        "route_type": "breakthrough",
+        "status": "blocked_thin_input",
+        "terminal_state": "blocked_evidence",
+        "thin_input": true,
+        "version": "v19.85.3"
+      },
+      "version": "v19.85.4"
+    }
+  },
+  "version": "v19.85.4"
+}

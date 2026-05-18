@@ -1,0 +1,112 @@
+:root {
+  --claire-v18-74-card-radius: 18px;
+  --claire-v18-74-card-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.claire-v18-74-panel {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: var(--claire-v18-74-card-radius);
+  padding: 18px;
+  margin: 16px 0;
+  box-shadow: var(--claire-v18-74-card-shadow);
+  background: rgba(15, 23, 42, 0.78);
+  color: inherit;
+}
+
+.claire-v18-74-panel-header,
+.claire-v18-74-search-row,
+.claire-v18-74-probe-actions,
+.claire-v18-74-card-topline {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.claire-v18-74-panel-header {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.claire-v18-74-eyebrow,
+.claire-v18-74-muted {
+  opacity: 0.76;
+}
+
+.claire-v18-74-eyebrow {
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+}
+
+.claire-v18-74-search-form {
+  margin-top: 14px;
+}
+
+.claire-v18-74-input-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.claire-v18-74-search-row input {
+  flex: 1 1 auto;
+  min-width: 220px;
+  border-radius: 12px;
+  padding: 11px 13px;
+  border: 1px solid rgba(148, 163, 184, 0.34);
+}
+
+.claire-v18-74-search-row button,
+.claire-v18-74-probe-actions button {
+  border-radius: 12px;
+  padding: 11px 14px;
+  cursor: pointer;
+}
+
+.claire-v18-74-probe-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.claire-v18-74-results {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.claire-v18-74-live-result-card {
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(2, 6, 23, 0.34);
+}
+
+.claire-v18-74-status-pill,
+.claire-v18-74-source-pill,
+.claire-v18-74-route-pill {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.claire-v18-74-url {
+  word-break: break-word;
+}
+
+.claire-v18-74-checkbox-row {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.claire-v18-74-output {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(2, 6, 23, 0.48);
+}

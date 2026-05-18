@@ -1,0 +1,30 @@
+{
+  "version": "v19.89.8-S29",
+  "installed_at_utc": "2026-05-14T04:20:06.283346+00:00",
+  "status": "installed",
+  "safety_note": "S29 intentionally did not patch claire/app.py.",
+  "files_written": [
+    "claire\\api\\governed_runtime_workspace_continuity.py",
+    "frontend\\cockpit\\assets\\js\\governed_runtime_workspace_continuity.js",
+    "frontend\\cockpit\\assets\\css\\governed_runtime_workspace_continuity.css",
+    "tests\\test_governed_runtime_workspace_continuity_s29.py",
+    "docs\\build_notes\\v19.89.8-S29_governed_runtime_workspace_continuity.md",
+    "output\\cockpit\\v19.89.8-S29_install_report.json"
+  ],
+  "link_report": [
+    "linked S29 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S29 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_governed_runtime_workspace_continuity_s29.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "operator_mutation_enabled": false,
+    "runtime_mutation_enabled": false,
+    "workspace_mutation_enabled": false,
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

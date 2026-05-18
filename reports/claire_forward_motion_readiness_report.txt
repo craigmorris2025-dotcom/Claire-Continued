@@ -1,0 +1,38 @@
+CLAIRE FORWARD MOTION READINESS REPORT
+================================================================================
+Project root: C:\Users\craig\OneDrive\Desktop\Claire
+Ready for S450-S456: True
+Required failures: 0
+Warnings: 0
+
+[PASS] active_top_level_claire_exists
+[PASS] active_top_level_frontend_exists
+[PASS] active_top_level_tests_exists
+[PASS] no_active_src_tree
+      Current known layout should not use active src/
+[PASS] root_file_exists_main.py
+      main.py
+[PASS] root_file_exists_pytest.ini
+      pytest.ini
+[PASS] python_compile_claire_and_tests
+[PASS] import_claire_app
+[PASS] endpoint_/docs
+[PASS] endpoint_/openapi.json
+[PASS] endpoint_/dashboard/payload
+[PASS] endpoint_/dashboard/payload/status
+[PASS] dashboard_payload_json
+[PASS] dashboard_payload_required_keys_present
+[PASS] dashboard_payload_safety_flags_false
+[PASS] dashboard_payload_has_30_lifecycle_stages
+[PASS] import_claire.api.dashboard_operational_action_console_s436_s442
+[PASS] claire.api.dashboard_operational_action_console_s436_s442_build_s442_stop_gate_exists
+[PASS] claire.api.dashboard_operational_action_console_s436_s442_build_s442_stop_gate_passes
+[PASS] import_claire.api.dashboard_governed_web_workflow_s443_s449
+[PASS] claire.api.dashboard_governed_web_workflow_s443_s449_build_s449_stop_gate_exists
+[PASS] claire.api.dashboard_governed_web_workflow_s443_s449_build_s449_stop_gate_passes
+[PASS] frontend_asset_exists_frontend/cockpit/shell/assets/claire_action_console.js
+[PASS] frontend_asset_exists_frontend/cockpit/shell/assets/claire_action_console.css
+[PASS] frontend_asset_exists_frontend/cockpit/shell/assets/claire_governed_web_workflow.js
+[PASS] frontend_asset_exists_frontend/cockpit/shell/assets/claire_governed_web_workflow.css
+[PASS] no_recursive_s32r2r1_global_wrapper_patterns
+[PASS] dashboard_bridge_s31r6_marker_count_one

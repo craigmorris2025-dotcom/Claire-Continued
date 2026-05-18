@@ -1,0 +1,580 @@
+{
+  "installer": "install_claire_v19_89_8_s492_s498_claire_useful_output_package_preview.py",
+  "version": "v19.89.8-S492-S498",
+  "created_at": "2026-05-17T01:12:03.304786+00:00",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_dir": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19_89_8_s492_s498_claire_useful_output_package_preview\\20260517T011203Z",
+  "written_files": [
+    "claire\\api\\claire_useful_output_package_preview_s492_s498.py",
+    "frontend\\cockpit\\shell\\assets\\claire_useful_output_package_preview.js",
+    "frontend\\cockpit\\shell\\assets\\claire_useful_output_package_preview.css",
+    "tests\\test_s492_s498_claire_useful_output_package_preview.py"
+  ],
+  "compile_results": {
+    "claire\\api\\claire_useful_output_package_preview_s492_s498.py": {
+      "ok": true,
+      "detail": "ok"
+    },
+    "tests\\test_s492_s498_claire_useful_output_package_preview.py": {
+      "ok": true,
+      "detail": "ok"
+    }
+  },
+  "forbidden_pattern_scan": {
+    "claire\\api\\claire_useful_output_package_preview_s492_s498.py": [],
+    "tests\\test_s492_s498_claire_useful_output_package_preview.py": []
+  },
+  "stop_gate": {
+    "version": "v19.89.8-S492-S498",
+    "phase": "S492-S498",
+    "stage_version": "S498",
+    "status": "claire_useful_output_package_preview_passed",
+    "ready": true,
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "created_at": "2026-05-17T01:12:03.303784+00:00",
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_allowed": false,
+    "runtime_truth_write_allowed": false,
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "autonomous_execution_enabled": false,
+    "autonomous_agent_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "package_execution_enabled": false,
+    "package_export_performed": false,
+    "ok": true,
+    "checks": {
+      "s492_schema_ready": true,
+      "s493_package_types_ready": true,
+      "s494_builder_ready": true,
+      "s495_review_gate_ready": true,
+      "s496_export_manifest_ready": true,
+      "s497_assets_exist": true,
+      "market_preview_safe": true,
+      "engineering_preview_safe": true,
+      "update_preview_blocks_export": true,
+      "breakthrough_preview_has_route_candidate_field": true,
+      "all_previews_review_only": true
+    },
+    "sample_previews": {
+      "market": {
+        "package_id": "useful_package_preview_4239759",
+        "version": "v19.89.8-S492-S498",
+        "created_at": "2026-05-17T01:12:03.296784+00:00",
+        "package_type": "market_brief",
+        "label": "Market Intelligence Brief",
+        "question": "Can Claire build a market trend brief with portfolio implications?",
+        "summary": "Market Intelligence Brief generated as a governed review-only preview from Claire's Market Intelligence Route.",
+        "sections": {
+          "market_read": "Assess the question through trend strength, demand logic, competition, timing, and portfolio implication.",
+          "trend_signal": "Use signal governance and trend-discovery anchors before treating a market observation as actionable.",
+          "demand_logic": "Check whether the signal implies latent demand, rising demand, pricing power, or customer behavior change.",
+          "competitive_pressure": "Map visible competitors, category pressure, displacement risk, and timing windows.",
+          "timing_window": "Preview content pending stronger evidence or a specialized downstream route.",
+          "portfolio_implication": "Translate the market read into exposure, weighting, watchlist, or action recommendation only after evidence passes threshold.",
+          "verification_needed": []
+        },
+        "evidence_summary": {
+          "strong_count": 10,
+          "usable_count": 10,
+          "weak_count": 0,
+          "insufficient_count": 0,
+          "support_level": "strong",
+          "confidence": 0.92
+        },
+        "knowledge_result_count": 6,
+        "route_candidate": {
+          "candidate_key": "portfolio_optimization",
+          "label": "Portfolio Optimization Route",
+          "route_id": "portfolio_creation_or_optimization",
+          "composite_score": 0.848,
+          "qualifies_for_review": true,
+          "requires": [
+            "trend_or_thesis_context",
+            "risk_notes",
+            "evidence_basket"
+          ],
+          "trigger_categories": [
+            "portfolio",
+            "market_gap"
+          ]
+        },
+        "assumptions": [
+          "This response is a governed answer contract, not a live external research result.",
+          "No runtime mutation, live web action, or autonomous execution was performed."
+        ],
+        "verification_needed": [],
+        "readiness_score": 0.929,
+        "review_status": "review_ready",
+        "export_manifest": {
+          "export_id": "export_manifest_market_brief",
+          "package_type": "market_brief",
+          "label": "Market Intelligence Brief",
+          "review_status": "review_ready",
+          "export_ready": false,
+          "export_performed": false,
+          "allowed_future_formats": [
+            "json",
+            "markdown",
+            "operator_report"
+          ],
+          "requires_operator_review": true,
+          "blocked_until": [
+            "operator_review_market_brief",
+            "verification_needs_resolved_or_disclosed",
+            "governance_check_passed"
+          ]
+        },
+        "safe_next_operator_actions": [
+          "review_package_preview",
+          "inspect_evidence_summary",
+          "resolve_verification_needs",
+          "approve_export_only_after_review"
+        ],
+        "governance": {
+          "review_only": true,
+          "execution_allowed": false,
+          "export_allowed_without_review": false,
+          "review_gate": "operator_review_market_brief",
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false,
+          "package_execution_enabled": false,
+          "package_export_performed": false
+        },
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false
+      },
+      "engineering": {
+        "package_id": "useful_package_preview_3675241",
+        "version": "v19.89.8-S492-S498",
+        "created_at": "2026-05-17T01:12:03.298784+00:00",
+        "package_type": "engineering_feasibility_preview",
+        "label": "Engineering Feasibility Preview",
+        "question": "Can Claire build an engineering feasibility preview for this system architecture?",
+        "summary": "Engineering Feasibility Preview generated as a governed review-only preview from Claire's Engineering Intelligence Route.",
+        "sections": {
+          "buildability_read": "Assess whether the concept can be structured into components, dependencies, constraints, and implementation phases.",
+          "architecture_implications": "Use lifecycle stages 16-22 and technology-intelligence references before calling the design route ready.",
+          "dependencies": "Identify missing components, technology stack requirements, compatibility constraints, and integration complexity.",
+          "constraints": "Evaluate feasibility, manufacturability/deployability, regulatory constraints, cost, and proof requirements.",
+          "feasibility_questions": "Preview content pending stronger evidence or a specialized downstream route.",
+          "design_route_potential": true,
+          "verification_needed": []
+        },
+        "evidence_summary": {
+          "strong_count": 13,
+          "usable_count": 13,
+          "weak_count": 0,
+          "insufficient_count": 0,
+          "support_level": "strong",
+          "confidence": 0.92
+        },
+        "knowledge_result_count": 6,
+        "route_candidate": {
+          "candidate_key": "breakthrough_escalation",
+          "label": "Breakthrough Escalation Route",
+          "route_id": "breakthrough_identification_and_classification",
+          "composite_score": 0.762,
+          "qualifies_for_review": true,
+          "requires": [
+            "structural_gap",
+            "non_obvious_advancement",
+            "evidence_basket"
+          ],
+          "trigger_categories": [
+            "breakthrough",
+            "market_gap",
+            "engineering"
+          ]
+        },
+        "assumptions": [
+          "This response is a governed answer contract, not a live external research result.",
+          "No runtime mutation, live web action, or autonomous execution was performed."
+        ],
+        "verification_needed": [],
+        "readiness_score": 0.96,
+        "review_status": "review_ready",
+        "export_manifest": {
+          "export_id": "export_manifest_engineering_feasibility_preview",
+          "package_type": "engineering_feasibility_preview",
+          "label": "Engineering Feasibility Preview",
+          "review_status": "review_ready",
+          "export_ready": false,
+          "export_performed": false,
+          "allowed_future_formats": [
+            "json",
+            "markdown",
+            "operator_report"
+          ],
+          "requires_operator_review": true,
+          "blocked_until": [
+            "operator_review_engineering_preview",
+            "verification_needs_resolved_or_disclosed",
+            "governance_check_passed"
+          ]
+        },
+        "safe_next_operator_actions": [
+          "review_package_preview",
+          "inspect_evidence_summary",
+          "resolve_verification_needs",
+          "approve_export_only_after_review"
+        ],
+        "governance": {
+          "review_only": true,
+          "execution_allowed": false,
+          "export_allowed_without_review": false,
+          "review_gate": "operator_review_engineering_preview",
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false,
+          "package_execution_enabled": false,
+          "package_export_performed": false
+        },
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false
+      },
+      "update": {
+        "package_id": "useful_package_preview_0202452",
+        "version": "v19.89.8-S492-S498",
+        "created_at": "2026-05-17T01:12:03.299784+00:00",
+        "package_type": "governed_update_preview",
+        "label": "Governed Update Package Preview",
+        "question": "Can Claire evaluate an online update package with rollback validation and approval?",
+        "summary": "Governed Update Package Preview generated as a governed review-only preview from Claire's Cross-Domain Synthesis Route.",
+        "sections": {
+          "update_goal": "Governed update preview is for staged inspection and validation only.",
+          "zero_trust_checks": [
+            "hash_or_signature_check_required",
+            "source_trust_check_required",
+            "protected_path_check_required"
+          ],
+          "validation_plan": [
+            "static_scan",
+            "dependency_check",
+            "targeted_tests",
+            "rollback_validation",
+            "operator_review"
+          ],
+          "rollback_plan": "Rollback must be proven before active update application.",
+          "approval_gate": "Operator approval required. Automatic update application remains blocked.",
+          "blocked_authority": {
+            "runtime_mutation_enabled": false,
+            "runtime_truth_mutation_allowed": false,
+            "runtime_truth_write_allowed": false,
+            "automatic_updates_enabled": false,
+            "autonomous_crawling_enabled": false,
+            "autonomous_execution_enabled": false,
+            "autonomous_agent_execution_enabled": false,
+            "live_web_execution_enabled": false,
+            "browser_execution_enabled": false,
+            "network_request_performed": false,
+            "body_read_allowed": false,
+            "package_execution_enabled": false,
+            "package_export_performed": false
+          }
+        },
+        "evidence_summary": {
+          "strong_count": 12,
+          "usable_count": 12,
+          "weak_count": 0,
+          "insufficient_count": 0,
+          "support_level": "strong",
+          "confidence": 0.92
+        },
+        "knowledge_result_count": 6,
+        "route_candidate": {
+          "candidate_key": "update_governance",
+          "label": "Governed Update Readiness Route",
+          "route_id": "online_update_readiness_to_staged_validation",
+          "composite_score": 0.942,
+          "qualifies_for_review": true,
+          "requires": [
+            "zero_trust_scan",
+            "rollback_plan",
+            "operator_approval"
+          ],
+          "trigger_categories": [
+            "update_governance"
+          ]
+        },
+        "assumptions": [
+          "This response is a governed answer contract, not a live external research result.",
+          "No runtime mutation, live web action, or autonomous execution was performed."
+        ],
+        "verification_needed": [],
+        "readiness_score": 0.942,
+        "review_status": "review_ready",
+        "export_manifest": {
+          "export_id": "export_manifest_governed_update_preview",
+          "package_type": "governed_update_preview",
+          "label": "Governed Update Package Preview",
+          "review_status": "review_ready",
+          "export_ready": false,
+          "export_performed": false,
+          "allowed_future_formats": [
+            "json",
+            "markdown",
+            "operator_report"
+          ],
+          "requires_operator_review": true,
+          "blocked_until": [
+            "operator_review_update_preview",
+            "verification_needs_resolved_or_disclosed",
+            "governance_check_passed"
+          ]
+        },
+        "safe_next_operator_actions": [
+          "review_package_preview",
+          "inspect_evidence_summary",
+          "resolve_verification_needs",
+          "approve_export_only_after_review"
+        ],
+        "governance": {
+          "review_only": true,
+          "execution_allowed": false,
+          "export_allowed_without_review": false,
+          "review_gate": "operator_review_update_preview",
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false,
+          "package_execution_enabled": false,
+          "package_export_performed": false
+        },
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false
+      },
+      "breakthrough": {
+        "package_id": "useful_package_preview_2461806",
+        "version": "v19.89.8-S492-S498",
+        "created_at": "2026-05-17T01:12:03.301784+00:00",
+        "package_type": "breakthrough_candidate_preview",
+        "label": "Breakthrough Candidate Preview",
+        "question": "Can Claire create a breakthrough candidate preview from this non-obvious market gap?",
+        "summary": "Breakthrough Candidate Preview generated as a governed review-only preview from Claire's Market Intelligence Route.",
+        "sections": {
+          "structural_gap": {
+            "score": 0.46,
+            "matched_terms": [
+              "gap",
+              "latent demand"
+            ]
+          },
+          "non_obvious_advancement": {
+            "score": 0.9,
+            "matched_terms": [
+              "breakthrough",
+              "non-obvious",
+              "invention",
+              "invent",
+              "category creation"
+            ]
+          },
+          "route_candidate": {
+            "candidate_key": "breakthrough_escalation",
+            "label": "Breakthrough Escalation Route",
+            "route_id": "breakthrough_identification_and_classification",
+            "composite_score": 0.922,
+            "qualifies_for_review": true,
+            "requires": [
+              "structural_gap",
+              "non_obvious_advancement",
+              "evidence_basket"
+            ],
+            "trigger_categories": [
+              "breakthrough",
+              "market_gap",
+              "engineering"
+            ]
+          },
+          "evidence_basis": {
+            "strong_count": 10,
+            "usable_count": 10,
+            "weak_count": 0,
+            "insufficient_count": 0,
+            "support_level": "strong",
+            "confidence": 0.92
+          },
+          "buildability_or_market_notes": {
+            "direct_market_read": "Assess the question through trend strength, demand logic, competition, timing, and portfolio implication.",
+            "trend_signal_read": "Use signal governance and trend-discovery anchors before treating a market observation as actionable.",
+            "demand_logic": "Check whether the signal implies latent demand, rising demand, pricing power, or customer behavior change.",
+            "competitive_pressure": "Map visible competitors, category pressure, displacement risk, and timing windows.",
+            "portfolio_implication": "Translate the market read into exposure, weighting, watchlist, or action recommendation only after evidence passes threshold.",
+            "verification_needs": [],
+            "knowledge_sources": [
+              "Claire Syntalion Unified Platform Definition v1",
+              "Breakthrough Categories",
+              "Branching Master Pipeline",
+              "Claire Connected Intelligence Mode"
+            ],
+            "support_level": "strong",
+            "route_hint": "breakthrough_escalation_gate"
+          },
+          "verification_needed": []
+        },
+        "evidence_summary": {
+          "strong_count": 10,
+          "usable_count": 10,
+          "weak_count": 0,
+          "insufficient_count": 0,
+          "support_level": "strong",
+          "confidence": 0.92
+        },
+        "knowledge_result_count": 6,
+        "route_candidate": {
+          "candidate_key": "breakthrough_escalation",
+          "label": "Breakthrough Escalation Route",
+          "route_id": "breakthrough_identification_and_classification",
+          "composite_score": 0.922,
+          "qualifies_for_review": true,
+          "requires": [
+            "structural_gap",
+            "non_obvious_advancement",
+            "evidence_basket"
+          ],
+          "trigger_categories": [
+            "breakthrough",
+            "market_gap",
+            "engineering"
+          ]
+        },
+        "assumptions": [
+          "This response is a governed answer contract, not a live external research result.",
+          "No runtime mutation, live web action, or autonomous execution was performed."
+        ],
+        "verification_needed": [],
+        "readiness_score": 0.968,
+        "review_status": "review_ready",
+        "export_manifest": {
+          "export_id": "export_manifest_breakthrough_candidate_preview",
+          "package_type": "breakthrough_candidate_preview",
+          "label": "Breakthrough Candidate Preview",
+          "review_status": "review_ready",
+          "export_ready": false,
+          "export_performed": false,
+          "allowed_future_formats": [
+            "json",
+            "markdown",
+            "operator_report"
+          ],
+          "requires_operator_review": true,
+          "blocked_until": [
+            "operator_review_breakthrough_candidate",
+            "verification_needs_resolved_or_disclosed",
+            "governance_check_passed"
+          ]
+        },
+        "safe_next_operator_actions": [
+          "review_package_preview",
+          "inspect_evidence_summary",
+          "resolve_verification_needs",
+          "approve_export_only_after_review"
+        ],
+        "governance": {
+          "review_only": true,
+          "execution_allowed": false,
+          "export_allowed_without_review": false,
+          "review_gate": "operator_review_breakthrough_candidate",
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false,
+          "package_execution_enabled": false,
+          "package_export_performed": false
+        },
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false
+      }
+    },
+    "forward_motion_allowed": true,
+    "next_phase": "S499-S505 Claire answer memory and replay"
+  },
+  "ok": true,
+  "fast_test": "python -X utf8 -m pytest tests/test_s492_s498_claire_useful_output_package_preview.py -q --tb=short",
+  "next": [
+    "python -X utf8 -m pytest tests/test_s492_s498_claire_useful_output_package_preview.py -q --tb=short",
+    "python -X utf8 -m pytest --lf -q --tb=short",
+    "python -X utf8 -m pytest -vv --tb=short",
+    "If clean, continue to S499-S505 Claire answer memory and replay."
+  ]
+}

@@ -1,0 +1,358 @@
+Claire Syntalion v19.89.8-S31R8 Whole-System Reconciliation Audit
+Generated: 2026-05-14T08:39:49
+Project root: C:\Users\craig\OneDrive\Desktop\Claire
+
+LOCKED AUTHORITY STATUS
+- backend owns truth
+- cockpit presentation only
+- runtime authority blocked
+- browser execution authority blocked
+- fail-closed governance active
+- audit only; no feature expansion performed
+
+HIGH-LEVEL COUNTS
+- files scanned: 1856
+- python routes discovered: 317
+- include_router references discovered: 68
+- frontend fetch references discovered: 16
+- dashboard/payload references discovered: 151
+
+ROUTE PROBE
+  ROUTE / 200
+  ROUTE /health 200
+  ROUTE /docs 200
+  ROUTE /dashboard/payload 200
+  PAYLOAD_KEYS ['automatic_updates_enabled', 'autonomous_agent_execution_enabled', 'contract', 'dashboard_ready', 'generated_at', 'live_web_execution_enabled', 'panels', 'read_only', 'runtime_truth_mutation_enabled', 'sections', 'summary', 'version']
+  HAS_GOVERNED_RECONCILIATION False
+  ROUTE /dashboard/payload/status 200
+
+KEY LIVE ROUTES FOUND
+- GET /surface-health -> claire/api/canonical_cockpit_surface_health.py::get_surface_health
+- GET /surface-health/status -> claire/api/canonical_cockpit_surface_health.py::get_surface_health_status
+- GET /operator/search/capabilities -> claire/api/operator_dashboard_compat_routes.py::operator_search_capabilities
+- GET /operator/dashboard/state -> claire/api/operator_dashboard_compat_routes.py::operator_dashboard_state
+- GET /operator/search/smoke/google -> claire/api/operator_dashboard_compat_routes.py::operator_search_smoke_google
+- GET /operator/search -> claire/api/operator_dashboard_compat_routes.py::operator_search_get
+- POST /operator/search -> claire/api/operator_dashboard_compat_routes.py::operator_search_post
+- GET /operator/search/live -> claire/api/operator_dashboard_compat_routes.py::operator_search_live_get
+- POST /operator/search/live -> claire/api/operator_dashboard_compat_routes.py::operator_search_live_post
+- POST /operator/search/query -> claire/api/operator_dashboard_compat_routes.py::operator_search_query_post
+- POST /operator/search/run -> claire/api/operator_dashboard_compat_routes.py::operator_search_run_post
+- GET /innovation/search -> claire/api/routes_dashboard.py::innovation_search
+- GET /patents/search -> claire/api/routes_dashboard.py::patents_search
+- GET /dashboard/payload -> claire/api/routes_enterprise_cockpit_payload.py::dashboard_payload
+- GET /dashboard/payload/status -> claire/api/routes_enterprise_cockpit_payload.py::dashboard_payload_status
+- POST /operator/search/web/run-governed-probe -> claire/api/routes_governed_live_probe.py::post_operator_search_web_run_governed_probe
+- GET /internet/provider-gate -> claire/api/routes_internet_provider_gate.py::get_internet_provider_gate
+- GET /internet/provider-gate/summary -> claire/api/routes_internet_provider_gate.py::get_internet_provider_gate_summary
+- POST /internet/provider-gate/rebuild -> claire/api/routes_internet_provider_gate.py::rebuild_internet_provider_gate
+- GET /internet/search/provider/status -> claire/api/routes_internet_provider_gate.py::get_internet_search_provider_status
+- GET /search/dashboard-smoke -> claire/api/routes_live_search_dashboard_smoke.py::governed_live_search_dashboard_smoke
+- GET /operator/dashboard/state -> claire/api/routes_operator_dashboard.py::get_operator_dashboard_state
+- GET /dashboard/state -> claire/api/routes_operator_dashboard.py::get_dashboard_state
+- GET /api/dashboard/state -> claire/api/routes_operator_dashboard.py::get_api_dashboard_state
+- GET /operator/dashboard/summary -> claire/api/routes_operator_dashboard.py::get_operator_dashboard_summary
+- POST /operator/dashboard/refresh -> claire/api/routes_operator_dashboard.py::refresh_operator_dashboard_state
+- GET /operator/search/capabilities -> claire/api/routes_operator_search_command.py::get_operator_search_capabilities
+- POST /operator/search/query -> claire/api/routes_operator_search_command.py::post_operator_search_query
+- GET /operator/search/web/status -> claire/api/routes_operator_search_command.py::get_operator_web_search_status
+- POST /operator/search/web -> claire/api/routes_operator_search_command.py::post_operator_web_search
+- GET /operator/search/layer -> claire/api/routes_operator_search_command.py::get_operator_search_layer
+- GET /dashboard/runtime-truth -> claire/api/routes_runtime_truth.py::get_dashboard_runtime_truth
+- GET /health -> claire/api/routes_system.py::health_check
+- GET /health -> claire/api/routes_v19_25_search_execution.py::search_execution_health
+- GET /search/visible-result-verification -> claire/api/routes_visible_query_result_verification.py::governed_visible_query_result_verification
+- POST /dashboard -> claire/api/search_bar_dashboard_api.py::search_bar_dashboard_submit
+- GET /health -> claire/app.py::health
+- GET /dashboard -> claire/internet_operations_dashboard/api_routes.py::dashboard_page
+- POST /dashboard -> claire/internet_runtime_integration/api_routes.py::build_runtime_internet_dashboard
+- GET /health -> claire/internet_runtime_stability/api_routes.py::health
+- GET /dashboard/payload -> claire/routes/authored_cockpit_compat_routes.py::authored_dashboard_payload
+- GET /dashboard/payload/status -> claire/routes/authored_cockpit_payload_binding_routes.py::dashboard_payload_status
+- GET /api/dashboard/payload -> claire/routes/authored_cockpit_payload_binding_routes.py::api_dashboard_payload
+- GET /api/dashboard/payload/status -> claire/routes/authored_cockpit_payload_binding_routes.py::api_dashboard_payload_status
+
+APP ROUTER INCLUDES
+- claire/api/canonical_cockpit_surface_health.py:153 include_router(router)
+- claire/api/canonical_cockpit_surface_registry.py:183 include_router(router)
+- claire/api/governed_route_activity_overlay.py:128 include_router(router)
+- claire/api/governed_runtime_timeline.py:181 include_router(router)
+- claire/api/router.py:11 include_router(commands_router, prefix="/api")
+- claire/api/router.py:15 include_router(update_router, prefix="/api")
+- claire/api/server.py:365 include_router(router)
+- claire/app.py:122 include_router(pipeline_router)
+- claire/app.py:123 include_router(dashboard_alignment_router)
+- claire/app.py:125 include_router(enterprise_runs_router)
+- claire/app.py:126 include_router(continuous_runtime_router)
+- claire/app.py:127 include_router(enterprise_cockpit_payload_router)
+- claire/app.py:128 include_router(source_universes_router)
+- claire/app.py:130 include_router(authored_cockpit_compat_routes.router)
+- claire/app.py:132 include_router(authored_cockpit_payload_binding_routes.router)
+- claire/app.py:134 include_router(active_route_truth_routes.router)
+- claire/app.py:135 include_router(cockpit_operational_status_router)
+- claire/app.py:137 include_router(live_intelligence_status_router)
+- claire/app.py:139 include_router(operational_proof_router)
+- claire/app.py:141 include_router(cockpit_operational_proof_router)
+- claire/app.py:147 include_router(cockpit_runtime_sync_router)
+- claire/app.py:154 include_router(operator_runtime_execution_router)
+- claire/app.py:155 include_router(runtime_state_emitter_router)
+- claire/app.py:166 include_router(runtime_truth_router)
+- claire/app.py:176 include_router(operator_dashboard_router)
+- claire/app.py:186 include_router(route_audit_router)
+- claire/app.py:196 include_router(autodesign_handoff_router)
+- claire/app.py:206 include_router(design_portal_output_router)
+- claire/app.py:216 include_router(buildability_validation_router)
+- claire/app.py:226 include_router(internet_readiness_router)
+- claire/app.py:236 include_router(update_pack_staging_router)
+- claire/app.py:246 include_router(rollback_update_plan_router)
+- claire/app.py:256 include_router(automatic_update_runner_gate_router)
+- claire/app.py:266 include_router(update_governance_regression_lock_router)
+- claire/app.py:276 include_router(full_e2e_proof_pack_router)
+- claire/app.py:286 include_router(operator_search_command_router)
+- claire/app.py:296 include_router(platform_endpoint_smoke_proof_router)
+- claire/app.py:306 include_router(platform_launch_hardening_router)
+- claire/app.py:316 include_router(desktop_startup_reliability_router)
+- claire/app.py:326 include_router(manual_browser_swagger_proof_router)
+- claire/app.py:336 include_router(launch_candidate_freeze_router)
+- claire/app.py:346 include_router(cleanup_proof_router)
+- claire/app.py:356 include_router(archive_approval_gate_router)
+- claire/app.py:366 include_router(internet_provider_gate_router)
+- claire/app.py:376 include_router(governed_live_probe_router)
+- claire/app.py:386 include_router(evidence_promotion_gate_router)
+- claire/app.py:390 include_router(governed_dashboard_live_search_router)
+- claire/app.py:392 include_router(real_provider_operator_probe_router)
+- claire/app.py:408 include_router(_v18_72_2_live_router)
+- claire/app.py:413 include_router(_v18_72_2_provider_router)
+- claire/app.py:434 include_router(_v18_73_1_operator_compat_router)
+- claire/app.py:456 include_router(_v19_dashboard_payload_bridge_router)
+- claire/app.py:457 include_router(live_source_catalog_router)
+- claire/app.py:1307 include_router(runtime_execution_propagation_router)
+- claire/app.py:1308 include_router(review_queue_runtime_ingestion_router)
+- claire/app.py:1309 include_router(plan_reconciliation_router)
+- claire/app.py:1310 include_router(canonical_route_owner_registry_router)
+- claire/app.py:1311 include_router(duplicate_route_fail_test_router)
+- claire/app.py:1312 include_router(canonical_cockpit_fetch_map_router)
+- claire/governed_web/dashboard_live_search_route_mount_adapter.py:212 include_router(router)
+- claire/governed_web/live_search_active_app_mount_gate.py:220 include_router(router)
+- claire/governed_web/operator_probe_active_app_mount.py:197 include_router(router)
+- claire/governed_web/real_provider_operator_probe_route.py:262 include_router(create_real_provider_operator_probe_router()
+- claire/platform/resolver.py:381 include_router(proxy_router, prefix="", tags=["Proxy"])
+- claire/platform/resolver.py:382 include_router(proxy_router, prefix="", tags=["Proxy"])
+- claire/platform/resolver.py:383 include_router(platform_router, prefix="", tags=["Platform"])
+- claire/search_bar/governed_web_simulation_fastapi_route.py:120 include_router(router)
+- claire/search_bar/governed_web_simulation_route_mount_verifier.py:33 include_router(self, router: Any)
+
+FRONTEND FETCH MAP
+- frontend/cockpit/assets/js/canonical_browser_session_persistence.js:140 -> /dashboard/payload
+- frontend/cockpit/assets/js/continuous_browser_runtime_loop.js:131 -> /dashboard/payload
+- frontend/cockpit/assets/js/continuous_runtime_presence.js:116 -> /dashboard/payload
+- frontend/cockpit/assets/js/governed_evidence_basket.js:123 -> /dashboard/payload
+- frontend/cockpit/assets/js/governed_multi_workspace_orchestration.js:178 -> /dashboard/payload
+- frontend/cockpit/assets/js/governed_operational_session_orchestration.js:143 -> /dashboard/payload
+- frontend/cockpit/assets/js/governed_operational_topology_continuity.js:151 -> /dashboard/payload
+- frontend/cockpit/assets/js/governed_operator_workflow.js:150 -> /dashboard/payload
+- frontend/cockpit/assets/js/governed_route_activity_overlay.js:95 -> /dashboard/payload
+- frontend/cockpit/assets/js/governed_runtime_timeline.js:137 -> /dashboard/payload
+- frontend/cockpit/assets/js/governed_runtime_workspace_continuity.js:148 -> /dashboard/payload
+- frontend/cockpit/assets/js/governed_search_session.js:121 -> /dashboard/payload
+- frontend/cockpit/assets/js/multi_panel_runtime_cohesion.js:161 -> /dashboard/payload
+- frontend/cockpit/assets/js/operational_expansion_dock_s31r2.js:98 -> /dashboard/payload
+- frontend/cockpit/assets/js/runtime_continuity_visualization.js:135 -> /dashboard/payload
+- frontend/cockpit/runtime/autonomous_lifecycle_graph.js:19 -> ../cockpit_autonomous_lifecycle_contract.json
+
+KEY TERM SURFACE VISIBILITY
+- governed_payload_reconciliation: 5 file(s)
+    claire/api/governed_payload_reconciliation.py lines [67, 94]
+    claire/app.py lines [3]
+    tests/test_s31r3_payload_attachment_reconciliation.py lines [7, 25, 33, 35, 45, 49]
+    tests/test_s31r4_safe_dashboard_payload_handoff.py lines [21]
+    tests/test_s31r6_dashboard_payload_bridge_reconciliation.py lines [23, 25, 27]
+- governed_operator_workflow: 23 file(s)
+    claire/api/canonical_browser_session_persistence.py lines [19]
+    claire/api/governed_multi_workspace_orchestration.py lines [22]
+    claire/api/governed_operational_session_orchestration.py lines [19]
+    claire/api/governed_operator_workflow.py lines [82, 114, 116]
+    claire/api/governed_payload_reconciliation.py lines [19]
+    claire/api/governed_runtime_workspace_continuity.py lines [19]
+    claire/api/multi_panel_runtime_cohesion.py lines [22]
+    frontend/cockpit/assets/js/canonical_browser_session_persistence.js lines [19]
+    frontend/cockpit/assets/js/governed_multi_workspace_orchestration.js lines [17]
+    frontend/cockpit/assets/js/governed_operational_session_orchestration.js lines [14]
+    ... 13 more
+- operator_event_trail: 2 file(s)
+    claire/app.py lines [1220]
+    frontend/cockpit/shell/cockpit_shell.html lines [255]
+- dashboard_payload_bridge: 4 file(s)
+    claire/app.py lines [449, 452, 454, 455, 456]
+    frontend/command_center/modern/index.html lines [12, 236]
+    tests/test_s31r6_dashboard_payload_bridge_reconciliation.py lines [9]
+    tools/v19_82A_origin_regression_audit.py lines [157, 171, 196]
+- dashboard_payload: 51 file(s)
+    claire/api/canonical_cockpit_surface_registry.py lines [13]
+    claire/api/cockpit_operational_proof_routes.py lines [14, 15]
+    claire/api/dashboard_payload_bridge.py lines [250, 330, 354, 355, 358, 359]
+    claire/api/operational_proof_routes.py lines [14, 15]
+    claire/api/routes_enterprise_cockpit_payload.py lines [175, 180]
+    claire/app.py lines [449, 452, 454, 455, 456, 475, 476, 487]
+    claire/autodesign/handoff_contract.py lines [327, 336]
+    claire/cleanup/archive_approval_gate.py lines [438, 449]
+    claire/cleanup/cleanup_proof.py lines [474, 486]
+    claire/design_portal/output_contract.py lines [366, 377]
+    ... 41 more
+- /dashboard/payload: 99 file(s)
+    claire/api/cockpit_operational_proof_routes.py lines [14, 15]
+    claire/api/dashboard_payload_bridge.py lines [365]
+    claire/api/live_intelligence_status_routes.py lines [13]
+    claire/api/live_source_catalog_routes.py lines [28]
+    claire/api/operational_proof_routes.py lines [14, 15]
+    claire/api/routes_cockpit_operational_status.py lines [14]
+    claire/api/routes_enterprise_cockpit_payload.py lines [174, 179]
+    claire/api/server.py lines [40, 81, 302]
+    claire/app.py lines [475, 476, 486, 487, 811, 812, 847, 848]
+    claire/duplicate_route_fail_test_routes.py lines [15, 16]
+    ... 89 more
+- /dashboard/payload/status: 62 file(s)
+    claire/api/cockpit_operational_proof_routes.py lines [15]
+    claire/api/live_intelligence_status_routes.py lines [13]
+    claire/api/live_source_catalog_routes.py lines [28]
+    claire/api/operational_proof_routes.py lines [15]
+    claire/api/routes_cockpit_operational_status.py lines [14]
+    claire/api/routes_enterprise_cockpit_payload.py lines [179]
+    claire/api/server.py lines [40, 81, 302]
+    claire/app.py lines [476, 486, 811, 812, 1376]
+    claire/duplicate_route_fail_test_routes.py lines [15, 16]
+    claire/middleware/cockpit_beacon_injector.py lines [58]
+    ... 52 more
+- runtime_authority: 87 file(s)
+    claire/api/canonical_browser_session_persistence.py lines [40]
+    claire/api/canonical_cockpit_surface_health.py lines [22, 32, 35, 38, 39, 41, 50, 59]
+    claire/api/canonical_cockpit_surface_registry.py lines [19, 30, 41, 52, 63, 74, 85, 96]
+    claire/api/continuous_browser_runtime_loop.py lines [51]
+    claire/api/continuous_runtime_presence.py lines [59]
+    claire/api/governed_evidence_basket.py lines [28, 42, 64]
+    claire/api/governed_multi_workspace_orchestration.py lines [47, 58, 82]
+    claire/api/governed_operational_session_orchestration.py lines [67]
+    claire/api/governed_operational_topology_continuity.py lines [86]
+    claire/api/governed_operator_workflow.py lines [35, 45, 55, 66, 76, 98]
+    ... 77 more
+- browser_execution_authority: 27 file(s)
+    claire/api/canonical_browser_session_persistence.py lines [41]
+    claire/api/continuous_browser_runtime_loop.py lines [54]
+    claire/api/governed_multi_workspace_orchestration.py lines [83]
+    claire/api/governed_operational_session_orchestration.py lines [68]
+    claire/api/governed_operational_topology_continuity.py lines [87]
+    claire/api/governed_operator_workflow.py lines [99]
+    claire/api/governed_payload_reconciliation.py lines [74]
+    claire/api/governed_runtime_workspace_continuity.py lines [92]
+    claire/api/multi_panel_runtime_cohesion.py lines [86]
+    frontend/cockpit/assets/js/canonical_browser_session_persistence.js lines [35]
+    ... 17 more
+- continuous: 100 file(s)
+    claire/api/canonical_browser_session_persistence.py lines [17]
+    claire/api/cockpit_operational_proof_routes.py lines [16, 17, 18]
+    claire/api/continuous_browser_runtime_loop.py lines [14, 18, 34, 35, 67, 69]
+    claire/api/continuous_runtime_presence.py lines [25, 80, 82]
+    claire/api/governed_operational_session_orchestration.py lines [22]
+    claire/api/governed_operational_topology_continuity.py lines [21, 38]
+    claire/api/governed_payload_reconciliation.py lines [14, 18]
+    claire/api/governed_runtime_workspace_continuity.py lines [44]
+    claire/api/governed_search_session.py lines [18]
+    claire/api/live_intelligence_status_routes.py lines [14]
+    ... 90 more
+- evidence_basket: 48 file(s)
+    claire/api/canonical_browser_session_persistence.py lines [20]
+    claire/api/governed_evidence_basket.py lines [48, 80, 82]
+    claire/api/governed_multi_workspace_orchestration.py lines [21]
+    claire/api/governed_operational_session_orchestration.py lines [21]
+    claire/api/governed_operator_workflow.py lines [17]
+    claire/api/governed_payload_reconciliation.py lines [16]
+    claire/api/governed_runtime_workspace_continuity.py lines [20]
+    claire/api/multi_panel_runtime_cohesion.py lines [19]
+    claire/api/runtime_continuity_visualization.py lines [20]
+    claire/governed_web/dashboard_search_query_execution_bridge.py lines [295]
+    ... 38 more
+- source_lineage: 7 file(s)
+    claire/api/canonical_cockpit_surface_registry.py lines [60]
+    claire/live_data/live_ingestion_contract.py lines [24, 25]
+    claire/pilot/pilot_deliverables_generator.py lines [33]
+    claire/proof/evidence_binder_generator.py lines [29]
+    claire/proof/proof_record_store.py lines [16]
+    frontend/cockpit/runtime/route_workspace_manifest.json lines [64]
+    tools/route_specific_evidence_thresholds.py lines [40, 48, 56, 64, 72, 214, 215]
+- route_owner: 16 file(s)
+    claire/api/canonical_cockpit_surface_health.py lines [17]
+    claire/api/canonical_cockpit_surface_registry.py lines [14, 25, 36, 47, 58, 69, 80, 91]
+    claire/api/governed_route_activity_overlay.py lines [39]
+    claire/api/server.py lines [83, 207, 304]
+    claire/app.py lines [76, 494, 548, 560, 578, 580, 1310, 1361]
+    claire/canonical_route_owner_registry_routes.py lines [22, 34, 37, 45, 49, 58, 67, 70]
+    frontend/cockpit/shell/claire_canonical_surface_wiring_pass.js lines [152, 158, 215]
+    frontend/js/claire_active_cockpit_authority.js lines [93]
+    frontend/js/claire_active_route_truth_direct_binding.js lines [14, 138]
+    tests/test_canonical_cockpit_surface_health_s18.py lines [31, 55]
+    ... 6 more
+- threshold: 47 file(s)
+    claire/analysis/bridge/masterpass.py lines [114]
+    claire/autonomous/self_escalator.py lines [9, 22, 31]
+    claire/autonomy/autonomous_escalation_engine.py lines [27, 28, 33, 53]
+    claire/autonomy/recursive_orchestration_controller.py lines [25, 44, 76]
+    claire/breakthrough/maturity/category_validator.py lines [6]
+    claire/breakthrough/maturity/compound_scorer.py lines [6]
+    claire/breakthrough/maturity/cross_category_detector.py lines [6]
+    claire/breakthrough/maturity/evidence_thresholds.py lines [2, 6, 20]
+    claire/bridge/masterpass.py lines [114]
+    claire/design/portal.py lines [72, 75, 78]
+    ... 37 more
+- escalation: 47 file(s)
+    claire/autonomous/governance/autonomous_decision_auditor.py lines [25]
+    claire/autonomous/governance/autonomy_maturity_scorer.py lines [52]
+    claire/autonomous/self_escalator.py lines [2, 9, 20, 22, 31]
+    claire/autonomy/autonomous_escalation_engine.py lines [12, 15, 21, 27, 35, 46, 47, 54]
+    claire/autonomy/recursive_orchestration_controller.py lines [9, 44, 45, 49, 50, 60, 62, 63]
+    claire/breakthrough/maturity/category_validator.py lines [2, 20]
+    claire/breakthrough/maturity/evidence_thresholds.py lines [9, 22, 31]
+    claire/continuous_autonomous_intelligence/__init__.py lines [10]
+    claire/continuous_autonomous_intelligence/campaign_continuity.py lines [31, 33]
+    claire/continuous_autonomous_intelligence/continuous_regression_lock.py lines [17, 22, 23]
+    ... 37 more
+- search: 299 file(s)
+    claire/acquirers/dataset.py lines [57]
+    claire/api/canonical_cockpit_surface_registry.py lines [66, 68, 69]
+    claire/api/cockpit_operational_proof_routes.py lines [19, 20, 21, 22]
+    claire/api/commands.py lines [12]
+    claire/api/continuous_browser_runtime_loop.py lines [19, 23, 27, 30, 32, 59, 60]
+    claire/api/dashboard_payload_bridge.py lines [42, 43, 46]
+    claire/api/governed_dashboard_live_search_routes.py lines [9, 10, 23, 46, 71, 76, 84, 86]
+    claire/api/governed_operator_workflow.py lines [19, 24, 38, 40]
+    claire/api/governed_payload_reconciliation.py lines [15]
+    claire/api/governed_route_activity_overlay.py lines [15]
+    ... 289 more
+- provider: 115 file(s)
+    claire/api/cockpit_operational_proof_routes.py lines [19, 20]
+    claire/api/live_intelligence_status_routes.py lines [15]
+    claire/api/live_source_catalog_routes.py lines [30, 41, 101, 118, 119, 120, 210]
+    claire/api/operational_proof_routes.py lines [19, 20]
+    claire/api/operator_dashboard_compat_routes.py lines [98, 101, 118, 128, 129]
+    claire/api/real_provider_operator_probe_routes.py lines [9, 10, 21, 22, 28, 56, 60, 65]
+    claire/api/routes_cockpit_operational_status.py lines [16]
+    claire/api/routes_internet_provider_gate.py lines [6, 7, 8, 14, 15, 16, 19, 20]
+    claire/api/routes_source_universes.py lines [154]
+    claire/app.py lines [51, 53, 365, 366, 367, 369, 391, 392]
+    ... 105 more
+- live: 338 file(s)
+    claire/api/canonical_browser_session_persistence.py lines [60]
+    claire/api/cockpit_operational_proof_routes.py lines [21, 24, 25, 26]
+    claire/api/dashboard_payload_bridge.py lines [49, 50, 286, 333]
+    claire/api/governed_dashboard_live_search_routes.py lines [9, 10, 23, 70, 71, 75, 76, 86]
+    claire/api/governed_search_session.py lines [48]
+    claire/api/live_intelligence_status_routes.py lines [9, 16, 17, 26, 39, 44]
+    claire/api/live_source_catalog_routes.py lines [6, 23, 37, 143, 152, 156, 157, 177]
+    claire/api/operational_proof_routes.py lines [21, 24, 25, 26]
+    claire/api/operator_dashboard_compat_routes.py lines [42, 60, 66, 90, 93, 125, 126, 150]
+    claire/api/routes_cockpit_operational_status.py lines [50]
+    ... 328 more
+
+PRELIMINARY INTERPRETATION
+- /dashboard/payload returns 200, but governed_payload_reconciliation is not visible yet.
+- Frontend fetch references exist; compare these against live backend routes before dashboard redesign.
+- Next correct move: use this audit to build a route/payload/surface reconciliation matrix before adding S32+ features.

@@ -1,0 +1,111 @@
+(function () {
+  "use strict";
+
+  const PANEL_ID = "claire-governed-controlled-metadata-search-panel";
+  const ENDPOINT = "/api/cockpit/search/consolidated-payload";
+
+  function text(value) {
+    if (value === null || value === undefined) return "";
+    return String(value);
+  }
+
+  function mountTarget() {
+    return (
+      document.querySelector("[data-panel='governed-web']") ||
+      document.querySelector("[data-tab='governed-web']") ||
+      document.querySelector("#governed-web") ||
+      document.querySelector("main") ||
+      document.body
+    );
+  }
+
+  function renderCard(card) {
+    const node = document.createElement("article");
+    node.className = "claire-s653-card";
+    node.innerHTML = `
+      <div class="claire-s653-card-topline">
+        <span>${text(card.status || "review")}</span>
+      </div>
+      <h4>${text(card.title || card.card_id || "Governed card")}</h4>
+      <p>${text(card.summary || card.reason || "Ready for governed review.")}</p>
+    `;
+    return node;
+  }
+
+  function renderAction(action) {
+    const node = document.createElement("li");
+    node.className = "claire-s653-action";
+    node.innerHTML = `
+      <span>${text(action.label || action.action_id)}</span>
+      <strong>${action.executable ? "enabled" : text(action.status || "blocked")}</strong>
+    `;
+    return node;
+  }
+
+  function render(payload) {
+    let panel = document.getElementById(PANEL_ID);
+    if (!panel) {
+      panel = document.createElement("section");
+      panel.id = PANEL_ID;
+      panel.className = "claire-s653-panel";
+      mountTarget().appendChild(panel);
+    }
+
+    const cards = Array.isArray(payload.cards) ? payload.cards.slice(0, 8) : [];
+    const actions = Array.isArray(payload.actions) ? payload.actions.slice(0, 8) : [];
+    const proof = payload.proof || {};
+
+    panel.innerHTML = `
+      <header class="claire-s653-header">
+        <div>
+          <p class="claire-s653-kicker">S653-S680</p>
+          <h3>Controlled Metadata Search Cockpit</h3>
+          <p>${text(payload.milestone || "Cockpit source/search consolidation")}</p>
+        </div>
+        <div class="claire-s653-status">${text(payload.status || "ready_blocked")}</div>
+      </header>
+      <div class="claire-s653-proof">
+        <span>Live web: ${proof.live_web_execution_enabled ? "enabled" : "blocked"}</span>
+        <span>Network: ${proof.network_request_performed ? "performed" : "not performed"}</span>
+        <span>Body read: ${proof.body_read_allowed ? "allowed" : "blocked"}</span>
+        <span>Mutation: ${proof.runtime_mutation_enabled ? "enabled" : "blocked"}</span>
+      </div>
+      <div class="claire-s653-grid" data-s653-cards></div>
+      <h4 class="claire-s653-actions-title">Governed Actions</h4>
+      <ul class="claire-s653-actions" data-s653-actions></ul>
+    `;
+
+    const cardGrid = panel.querySelector("[data-s653-cards]");
+    cards.forEach((card) => cardGrid.appendChild(renderCard(card)));
+
+    const actionList = panel.querySelector("[data-s653-actions]");
+    actions.forEach((action) => actionList.appendChild(renderAction(action)));
+  }
+
+  function renderError(error) {
+    let panel = document.getElementById(PANEL_ID);
+    if (!panel) {
+      panel = document.createElement("section");
+      panel.id = PANEL_ID;
+      panel.className = "claire-s653-panel claire-s653-panel-error";
+      mountTarget().appendChild(panel);
+    }
+    panel.innerHTML = `<h3>Controlled Metadata Search Cockpit</h3><p>Payload unavailable: ${text(error && error.message ? error.message : error)}</p>`;
+  }
+
+  function load() {
+    fetch(ENDPOINT, { headers: { Accept: "application/json" } })
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then(render)
+      .catch(renderError);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", load);
+  } else {
+    load();
+  }
+})();

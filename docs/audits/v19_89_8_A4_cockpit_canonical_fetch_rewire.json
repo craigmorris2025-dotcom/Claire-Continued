@@ -1,0 +1,29 @@
+{
+  "version": "v19.89.8-A4",
+  "build": "Cockpit Canonical Fetch Rewire",
+  "timestamp": "2026-05-13T17:42:52.276935",
+  "canonical_routes": [
+    "/dashboard/payload",
+    "/dashboard/payload/status",
+    "/system/runtime-execution/summary",
+    "/system/runtime-state/summary",
+    "/system/runtime-propagation/summary",
+    "/system/review-queue/summary",
+    "/system/route-owner-registry/summary",
+    "/system/duplicate-route-fail-test/summary"
+  ],
+  "legacy_route_map": {
+    "/api/command": "/dashboard/payload",
+    "/api/platform/status": "/dashboard/payload/status",
+    "/api/platform/resolve": "/system/runtime-state/summary"
+  },
+  "changes": [
+    "Wrote frontend/js/claire_canonical_fetch_client.js",
+    "Wrote frontend/js/claire_canonical_fetch_probe.js",
+    "Injected canonical fetch scripts into frontend\\cockpit\\shell\\cockpit_shell.html",
+    "Injected canonical fetch scripts into frontend\\command_center\\modern\\index.html",
+    "Wrapped unauthorized fetch calls in frontend/js/api.js",
+    "Wrapped unauthorized fetch calls in frontend/js/platform.js"
+  ],
+  "warnings": []
+}

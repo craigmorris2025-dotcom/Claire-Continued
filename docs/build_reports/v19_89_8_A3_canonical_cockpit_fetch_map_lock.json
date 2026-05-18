@@ -1,0 +1,27 @@
+{
+  "version": "v19.89.8-A3",
+  "build": "Canonical Cockpit Fetch Map Lock",
+  "installed_at": "2026-05-13T22:32:07.718198+00:00",
+  "intent": "Lock cockpit fetch targets to approved backend-owned routes.",
+  "new_endpoints": [
+    "/system/cockpit-fetch-map",
+    "/system/cockpit-fetch-map/summary",
+    "/system/cockpit-fetch-map/audit",
+    "/system/cockpit-fetch-map/approved",
+    "/system/cockpit-fetch-map/registration-proof"
+  ],
+  "approved_route_count": 15,
+  "fetch_route_count": 3,
+  "unauthorized_count": 3,
+  "required_missing_count": 8,
+  "safe_to_expand_runtime_authority": false,
+  "files": {
+    "fetch_map": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\authority\\canonical_cockpit_fetch_map.json",
+    "frontend_lock": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\claire_canonical_fetch_map_lock.js",
+    "cockpit_html_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html",
+    "backend_route_module": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\canonical_cockpit_fetch_map_routes.py",
+    "app_file_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "version_json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version.json"
+  },
+  "next_phase": "v19.89.8-B1 Evidence Basket Contract"
+}

@@ -1,0 +1,37 @@
+{
+  "version": "v19.89.8-S576-S582",
+  "installed_at": "2026-05-17T02:51:49+00:00",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "installed": [
+    "claire\\governance\\governed_source_registry.py",
+    "claire\\api\\governed_source_registry_routes.py",
+    "frontend\\cockpit\\assets\\claire_governed_source_registry.js",
+    "frontend\\cockpit\\assets\\claire_governed_source_registry.css",
+    "tests\\test_s576_s582_governed_source_registry.py",
+    "claire/app.py [router registration inserted]",
+    "frontend\\cockpit\\shell\\cockpit_shell.html [asset links inserted]",
+    "frontend\\command_center\\modern\\index.html [asset links inserted]"
+  ],
+  "notes": [],
+  "preserved_blocks": {
+    "live_web_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  },
+  "new_endpoints": [
+    "/api/sources/registry",
+    "/api/sources/cards",
+    "/api/sources/actions",
+    "/api/sources/policy",
+    "/api/sources/status"
+  ],
+  "test_file": "tests/test_s576_s582_governed_source_registry.py",
+  "next_phase": "S583-S589 Search Plan + Query Governance"
+}

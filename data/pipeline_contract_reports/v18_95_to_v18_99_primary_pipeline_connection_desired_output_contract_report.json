@@ -1,0 +1,258 @@
+{
+  "contract": {
+    "contract_name": "primary_pipeline_desired_output_contract",
+    "dashboard_surfaces": [
+      "main_result",
+      "portfolio",
+      "runtime_truth"
+    ],
+    "desired_output_fields": [
+      "run_id",
+      "query",
+      "terminal_state",
+      "route",
+      "confidence",
+      "evidence",
+      "ordered_outputs",
+      "dashboard_surfaces",
+      "insufficient_data_reason",
+      "blocked_reason",
+      "next_best_action"
+    ],
+    "must_emit_user_facing_main_result": true,
+    "must_not_stop_at_metadata": true,
+    "must_preserve_route_awareness": true,
+    "ordered_outputs": [
+      {
+        "dashboard_visible": true,
+        "index": 1,
+        "key": "signal_ingestion",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 2,
+        "key": "signal_governance",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 3,
+        "key": "trend_discovery",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 4,
+        "key": "thesis_formation",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 5,
+        "key": "portfolio_intelligence",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 6,
+        "key": "breakthrough_escalation",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 7,
+        "key": "advancement_path_selection",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 8,
+        "key": "autodesign_handoff",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 9,
+        "key": "design_portal_output",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 10,
+        "key": "validation_stack",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 11,
+        "key": "acquisition_readiness",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 12,
+        "key": "final_package",
+        "output_required": true,
+        "required": true
+      }
+    ],
+    "pack_version": "v18.95-v18.99",
+    "primary_purpose": "governed_discovery_breakthrough_portfolio_autodesign_acquisition_readiness",
+    "route": "discovery_to_portfolio",
+    "stage_16_to_22_design_route_required": true,
+    "terminal_state": "portfolio_action_ready",
+    "terminal_states_allowed": [
+      "trend_thesis_ready",
+      "portfolio_action_ready",
+      "portfolio_optimization_ready",
+      "discovery_ready",
+      "breakthrough_classified",
+      "advancement_path_selected",
+      "design_output_ready",
+      "acquisition_package_ready",
+      "final_package_ready",
+      "insufficient_data",
+      "blocked",
+      "failed",
+      "max_iterations_reached"
+    ],
+    "updated_at": "2026-05-10T15:26:31.389264Z",
+    "web_search_is_input_capability_not_primary_output": true
+  },
+  "errors": [],
+  "pack_name": "Primary Pipeline Connection + Desired Output Contract Pack",
+  "pack_version": "v18.95-v18.99",
+  "proofs": {
+    "desired_output_contract_present": true,
+    "main_result_required": true,
+    "metadata_only_output_forbidden": true,
+    "primary_pipeline_order_locked": true,
+    "route_awareness_required": true,
+    "stage_16_to_22_required": true,
+    "web_search_is_input_capability": true
+  },
+  "sample_result": {
+    "blocked_reason": null,
+    "confidence": 0.72,
+    "dashboard_surfaces": [
+      "main_result",
+      "portfolio",
+      "runtime_truth"
+    ],
+    "evidence": [
+      {
+        "source_type": "governed_live_web_search",
+        "title": "Google",
+        "trusted": true,
+        "url": "https://www.google.com"
+      }
+    ],
+    "insufficient_data_reason": null,
+    "next_best_action": "review_portfolio_action_ready_output",
+    "ordered_outputs": [
+      {
+        "dashboard_visible": true,
+        "index": 1,
+        "key": "signal_ingestion",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 2,
+        "key": "signal_governance",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 3,
+        "key": "trend_discovery",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 4,
+        "key": "thesis_formation",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 5,
+        "key": "portfolio_intelligence",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 6,
+        "key": "breakthrough_escalation",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 7,
+        "key": "advancement_path_selection",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 8,
+        "key": "autodesign_handoff",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 9,
+        "key": "design_portal_output",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 10,
+        "key": "validation_stack",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 11,
+        "key": "acquisition_readiness",
+        "output_required": true,
+        "required": true
+      },
+      {
+        "dashboard_visible": true,
+        "index": 12,
+        "key": "final_package",
+        "output_required": true,
+        "required": true
+      }
+    ],
+    "query": "google signal test",
+    "route": "discovery_to_portfolio",
+    "run_id": "v18_95_to_v18_99_sample_run",
+    "terminal_state": "portfolio_action_ready",
+    "updated_at": "2026-05-10T15:26:31.389264Z"
+  },
+  "status": "pass",
+  "updated_at": "2026-05-10T15:26:31.389264Z"
+}

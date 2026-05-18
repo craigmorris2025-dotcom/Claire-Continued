@@ -1,0 +1,32 @@
+{
+  "installer": "install_claire_v19_89_8_s401_s407_live_metadata_quarantine_pack.py",
+  "started_at": "2026-05-16T14:12:17.660851Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "files": [
+    {
+      "path": "claire/api/internet_live_metadata_quarantine_s401_s407.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "tests/test_s401_s407_live_metadata_quarantine.py",
+      "written": true,
+      "compiled": true
+    }
+  ],
+  "backups": {
+    "claire/api/internet_live_metadata_quarantine_s401_s407.py": null,
+    "tests/test_s401_s407_live_metadata_quarantine.py": null
+  },
+  "patches": [
+    {
+      "path": "claire\\app.py",
+      "exists": true,
+      "patched": false,
+      "marker": "BEGIN CLAIRE_S387_S407",
+      "skipped_reason": "marker_already_present"
+    }
+  ],
+  "finished_at": "2026-05-16T14:12:17.693853Z"
+}

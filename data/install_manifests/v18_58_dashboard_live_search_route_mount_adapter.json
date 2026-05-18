@@ -1,0 +1,17 @@
+
+{
+  "version": "v18.58",
+  "name": "Dashboard Live Search Route Mount Adapter",
+  "scope": [
+    "provide explicit governed adapter for mounting dashboard live-search routes",
+    "block route mutation unless explicit_enable=True",
+    "verify route paths for POST /api/dashboard/search/live and GET /api/dashboard/search/smoke/google",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_58_dashboard_live_search_route_mount_adapter.py -q"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "backup_dir": "backups/v17_66_discovery_breakthrough_innovation_route_audit/20260509_184204",
+  "build_name": "Discovery / Breakthrough / Innovation Route Audit",
+  "files_written": [
+    "claire/routing/discovery_breakthrough_innovation_route_audit.py",
+    "claire/api/routes_route_audit.py",
+    "tests/test_v17_66_discovery_breakthrough_innovation_route_audit.py",
+    "docs/routing/v17.66_discovery_breakthrough_innovation_route_audit.md",
+    "data/routes/discovery_breakthrough_innovation_route_audit.json",
+    "data/dashboard/discovery_breakthrough_innovation_route_payload.json",
+    "data/routes/v17_66_route_audit_validation.json"
+  ],
+  "installed_at": "2026-05-09T23:42:08.008888Z",
+  "next": [
+    "v17.67 AutoDesign Handoff Contract",
+    "v17.68 Design Portal Output Contract",
+    "v17.69 Buildability / Viability / Manufacturability Validation Stack"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "audit_status": "passed",
+    "errors": [],
+    "invention_required": true,
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.64.1",
+      "source": {
+        "invalid_candidate_count": 0,
+        "invalid_candidates_sample": [],
+        "raw_available": true,
+        "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+      },
+      "status": "rebuilt"
+    },
+    "route_family": "autodesign",
+    "status": "passed"
+  },
+  "version": "v17.66"
+}

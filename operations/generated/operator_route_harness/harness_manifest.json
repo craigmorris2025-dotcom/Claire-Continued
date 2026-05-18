@@ -1,0 +1,112 @@
+{
+  "manifest": {
+    "app_factory_patch_required": false,
+    "app_patch_required": false,
+    "authority_exposed": false,
+    "auto_update_authority": false,
+    "auto_update_routes_exposed": false,
+    "automatic_updates": false,
+    "autonomous_execution": false,
+    "backend_owns_truth": true,
+    "browser_execution": false,
+    "cockpit_presentation_only": true,
+    "continuous_live_crawling": false,
+    "direct_app_patch": false,
+    "evidence_quarantine_required": true,
+    "fail_closed_governance": true,
+    "idempotent": true,
+    "included": true,
+    "javascript_execution": false,
+    "live_crawling": false,
+    "manifest": "operator-router-include-adapter",
+    "manifest_available": true,
+    "manifest_name": "operator-router-include-adapter",
+    "manual_promotion_required": true,
+    "mounted": true,
+    "mounted_route_count": 4,
+    "mounted_routes": [
+      "/operator/evidence/review",
+      "/operator/payload/status",
+      "/operator/routes/status",
+      "/operator/runtime/status"
+    ],
+    "mutation_authority": false,
+    "mutation_routes_exposed": false,
+    "non_invasive": true,
+    "passed": true,
+    "read_only": true,
+    "route_count": 4,
+    "routes": [
+      "/operator/evidence/review",
+      "/operator/payload/status",
+      "/operator/routes/status",
+      "/operator/runtime/status"
+    ],
+    "runtime_authority": false,
+    "runtime_mutation": false,
+    "runtime_truth_mutation": false,
+    "uncontrolled_app_patching": false,
+    "verified": true
+  },
+  "probe": {
+    "all_passed": true,
+    "automatic_updates": false,
+    "autonomous_execution": false,
+    "browser_execution": false,
+    "javascript_execution": false,
+    "mutation_authority": false,
+    "non_invasive": true,
+    "passed": true,
+    "probe_count": 4,
+    "probes": [
+      {
+        "ok": true,
+        "path": "/operator/runtime/status",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/evidence/review",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/routes/status",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/payload/status",
+        "status_code": 200
+      }
+    ],
+    "read_only": true,
+    "routes": [
+      {
+        "ok": true,
+        "path": "/operator/runtime/status",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/evidence/review",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/routes/status",
+        "status_code": 200
+      },
+      {
+        "ok": true,
+        "path": "/operator/payload/status",
+        "status_code": 200
+      }
+    ],
+    "runtime_authority": false,
+    "runtime_truth_mutation": false,
+    "verified": true
+  },
+  "read_only": true,
+  "runtime_truth_mutation": false
+}

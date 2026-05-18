@@ -1,0 +1,18 @@
+
+{
+  "version": "v18.57",
+  "name": "Dashboard Search Endpoint Result Return Contract",
+  "scope": [
+    "convert governed live-search bridge output into stable endpoint response contract",
+    "return result_cards for visible dashboard rendering",
+    "verify google endpoint smoke response returns a visible Google result",
+    "provide optional FastAPI router factory without automatic mounting",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_57_dashboard_search_endpoint_result_return_contract.py -q"
+  ]
+}

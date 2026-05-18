@@ -1,0 +1,16 @@
+Claire Syntalion v19.89.8-S32R2 proven-anchor web safety payload
+Started: 2026-05-14T09:18:31
+Project root: C:\Users\craig\OneDrive\Desktop\Claire
+Backup created: C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S32R2\dashboard_payload_bridge.py
+Backup created: C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S32R2\governed_payload_reconciliation.py
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -c from fastapi.testclient import TestClient; from claire.app import create_app; c=TestClient(create_app()); r=c.get('/dashboard/payload'); print(r.status_code)
+200
+exit_code=0
+Wrote safety module: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_web_safety_activation.py
+ERROR: Expected proven anchor not found in dashboard_payload_bridge.py: return build_payload()
+Restored C:\Users\craig\OneDrive\Desktop\Claire\claire\api\dashboard_payload_bridge.py from C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S32R2\dashboard_payload_bridge.py
+Restored C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_payload_reconciliation.py from C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S32R2\governed_payload_reconciliation.py
+Removed newly-created file after rollback: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_web_safety_activation.py
+
+S32R2 RESULT: FAILED AND ROLLED BACK

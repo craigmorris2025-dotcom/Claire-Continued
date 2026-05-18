@@ -1,0 +1,160 @@
+Claire Syntalion v19.89.8-S33R2 explicit one-shot metadata probe runner
+Started: 2026-05-14T10:10:06
+Project root: C:\Users\craig\OneDrive\Desktop\Claire
+Backup created: C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S33R2\governed_payload_reconciliation.py
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -c from fastapi.testclient import TestClient; from claire.app import create_app; c=TestClient(create_app()); r=c.get('/dashboard/payload'); print(r.status_code); d=r.json(); print('controlled_metadata_probe_executor' in d)
+200
+True
+exit_code=0
+Wrote runner module: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\explicit_one_shot_metadata_probe_runner.py
+Patched reconciliation before return composed line 181.
+Updated reconciliation module: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_payload_reconciliation.py
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m py_compile C:\Users\craig\OneDrive\Desktop\Claire\claire\api\explicit_one_shot_metadata_probe_runner.py
+exit_code=0
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m py_compile C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_payload_reconciliation.py
+exit_code=0
+Wrote tests: C:\Users\craig\OneDrive\Desktop\Claire\tests\test_s33r2_explicit_one_shot_metadata_probe_runner.py
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m pytest C:\Users\craig\OneDrive\Desktop\Claire\tests\test_s33r2_explicit_one_shot_metadata_probe_runner.py -q
+..                                                                       [100%]
+exit_code=0
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -c import json
+from fastapi.testclient import TestClient
+from claire.app import create_app
+client = TestClient(create_app())
+response = client.get('/dashboard/payload')
+payload = response.json() if response.status_code == 200 else {}
+runner = payload.get('explicit_one_shot_metadata_probe_runner', {})
+checks = {
+    'status_200': response.status_code == 200,
+    'metadata_executor_present': 'controlled_metadata_probe_executor' in payload,
+    'one_shot_runner_present': 'explicit_one_shot_metadata_probe_runner' in payload,
+    'runner_no_network_install': runner.get('network_request_performed_during_install') is False,
+    'runner_no_body_read': runner.get('body_read_performed') is False,
+    'browser_execution_blocked': runner.get('authority', {}).get('browser_execution_authority') == 'blocked',
+    'runtime_authority_blocked': runner.get('authority', {}).get('runtime_authority') == 'blocked',
+    'manual_promotion_required': runner.get('quarantine', {}).get('manual_promotion_required') is True,
+    'response_body_forbidden': 'response_body' in runner.get('forbidden_capture_fields', []),
+}
+print(json.dumps(checks, sort_keys=True))
+raise SystemExit(0 if all(checks.values()) else 2)
+
+{"browser_execution_blocked": true, "manual_promotion_required": true, "metadata_executor_present": true, "one_shot_runner_present": true, "response_body_forbidden": true, "runner_no_body_read": true, "runner_no_network_install": true, "runtime_authority_blocked": true, "status_200": true}
+exit_code=0
+CHECK browser_execution_blocked: True
+CHECK manual_promotion_required: True
+CHECK metadata_executor_present: True
+CHECK one_shot_runner_present: True
+CHECK response_body_forbidden: True
+CHECK runner_no_body_read: True
+CHECK runner_no_network_install: True
+CHECK runtime_authority_blocked: True
+CHECK status_200: True
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m pytest -q
+........................................................................ [ 66%]
+.FFF.......F...F....................                                     [100%]
+================================== FAILURES ===================================
+_________ test_s28_session_orchestration_preserves_blocked_authority __________
+
+    def test_s28_session_orchestration_preserves_blocked_authority():
+        module = importlib.import_module("claire.api.governed_operational_session_orchestration")
+    
+>       result = module.build_governed_operational_session_orchestration({})
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'claire.api.governed_operational_session_orchestration' has no attribute 'build_governed_operational_session_orchestration'
+
+tests\test_s28_governed_operational_session_orchestration.py:9: AttributeError
+___________ test_s28_detects_stale_and_degraded_session_visibility ____________
+
+    def test_s28_detects_stale_and_degraded_session_visibility():
+        module = importlib.import_module("claire.api.governed_operational_session_orchestration")
+    
+>       result = module.build_governed_operational_session_orchestration(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            {
+                "browser_session_persistence": {
+                    "session_id": "test-session",
+                    "stale": True,
+                },
+                "runtime_continuity_visualization": {
+                    "degraded": True,
+                },
+            }
+        )
+E       AttributeError: module 'claire.api.governed_operational_session_orchestration' has no attribute 'build_governed_operational_session_orchestration'
+
+tests\test_s28_governed_operational_session_orchestration.py:24: AttributeError
+___________ test_s28_route_module_imports_without_app_factory_patch ___________
+
+    def test_s28_route_module_imports_without_app_factory_patch():
+>       module = importlib.import_module("claire.api.governed_operational_session_orchestration_routes")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_s28_governed_operational_session_orchestration.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1204: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1176: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1147: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:690: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:940: in exec_module
+    ???
+<frozen importlib._bootstrap>:241: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    from __future__ import annotations
+    
+    from typing import Any, Dict
+    
+    from fastapi import APIRouter
+    
+>   from claire.api.governed_operational_session_orchestration import (
+        build_governed_operational_session_orchestration,
+    )
+E   ImportError: cannot import name 'build_governed_operational_session_orchestration' from 'claire.api.governed_operational_session_orchestration' (C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_operational_session_orchestration.py)
+
+claire\api\governed_operational_session_orchestration_routes.py:7: ImportError
+_______________ test_s31r4_app_contains_single_payload_handoff ________________
+
+    def test_s31r4_app_contains_single_payload_handoff():
+        text = (ROOT / "claire" / "app.py").read_text(encoding="utf-8")
+>       assert text.count("Claire v19.89.8-S31R4 governed dashboard payload handoff") == 1
+E       assert 0 == 1
+E        +  where 0 = <built-in method count of str object at 0x000001368C657050>('Claire v19.89.8-S31R4 governed dashboard payload handoff')
+E        +    where <built-in method count of str object at 0x000001368C657050> = '# Claire v19.89.8-S31R4 governed payload reconciliation import\ntry:\n    from claire.api.governed_payload_reconcilia...    headers=headers,\n            media_type="text/html",\n        )\n    except Exception:\n        return response\n'.count
+
+tests\test_s31r4_safe_dashboard_payload_handoff.py:16: AssertionError
+__________________ test_s31r6_bridge_contains_single_handoff __________________
+
+    def test_s31r6_bridge_contains_single_handoff():
+        text = BRIDGE.read_text(encoding="utf-8")
+>       assert text.count("Claire v19.89.8-S31R6 governed dashboard payload bridge handoff") == 1
+E       assert 0 == 1
+E        +  where 0 = <built-in method count of str object at 0x000001368B40BCC0>('Claire v19.89.8-S31R6 governed dashboard payload bridge handoff')
+E        +    where <built-in method count of str object at 0x000001368B40BCC0> = '"""\nClaire Syntalion v19\nCanonical Dashboard Payload Bridge\n\nThis module gives the dashboard one stable read-only...}),\n            "read_only": True,\n            "route": "/dashboard/payload",\n        }\nelse:\n    router = None\n'.count
+
+tests\test_s31r6_dashboard_payload_bridge_reconciliation.py:18: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_s28_governed_operational_session_orchestration.py::test_s28_session_orchestration_preserves_blocked_authority
+FAILED tests/test_s28_governed_operational_session_orchestration.py::test_s28_detects_stale_and_degraded_session_visibility
+FAILED tests/test_s28_governed_operational_session_orchestration.py::test_s28_route_module_imports_without_app_factory_patch
+FAILED tests/test_s31r4_safe_dashboard_payload_handoff.py::test_s31r4_app_contains_single_payload_handoff
+FAILED tests/test_s31r6_dashboard_payload_bridge_reconciliation.py::test_s31r6_bridge_contains_single_handoff
+exit_code=1
+
+S33R2 RESULT: PASS
+Explicit one-shot metadata probe runner is now visible in /dashboard/payload.
+No network request, body read, browser/runtime/autonomous/automatic-update execution was performed during install.
+Next safe step: S33R3 operator-triggered one-shot metadata probe endpoint, gated and quarantine-only.

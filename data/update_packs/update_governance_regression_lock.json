@@ -1,0 +1,92 @@
+{
+  "contract_name": "Update Governance Regression Lock",
+  "forbidden_execution_flags": {
+    "checks": {
+      "internet_readiness_automatic_updates_enabled": false,
+      "internet_readiness_live_internet_enabled": false,
+      "internet_readiness_safe_for_automatic_updates": false,
+      "latest_pack_automatic_execution_enabled": false,
+      "latest_pack_execution_enabled": false,
+      "latest_plan_automatic_execution_enabled": false,
+      "latest_plan_execution_enabled": false,
+      "rollback_governance_automatic_execution_enabled": false,
+      "rollback_governance_execution_enabled": false,
+      "runner_contract_automatic_execution_enabled": false,
+      "runner_contract_background_execution_enabled": false,
+      "runner_contract_execution_enabled": false,
+      "runner_contract_runner_executes_updates": false,
+      "runner_state_automatic_execution_enabled": false,
+      "runner_state_runner_can_execute_now": false,
+      "staging_governance_automatic_execution_enabled": false,
+      "staging_governance_execution_enabled": false
+    },
+    "unknown": [],
+    "violations": []
+  },
+  "generated_at": "2026-05-13T11:18:57.633156Z",
+  "input_sources": {
+    "internet_readiness": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+      "status": "loaded"
+    },
+    "rollback_index": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json",
+      "status": "loaded"
+    },
+    "runner_gate": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/automatic_update_runner_gate.json",
+      "status": "loaded"
+    },
+    "staging_index": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json",
+      "status": "loaded"
+    }
+  },
+  "lock_state": {
+    "automatic_execution_enabled": false,
+    "automatic_updates_enabled": false,
+    "background_execution_enabled": false,
+    "blockers": [],
+    "execution_enabled": false,
+    "regression_lock_active": true,
+    "status": "locked_passed",
+    "warnings": []
+  },
+  "locked_endpoints": {
+    "internet_readiness": "/internet/readiness",
+    "rollback_plan": "/updates/rollback-plan",
+    "runner_gate": "/updates/runner-gate",
+    "staging": "/updates/staging"
+  },
+  "next": [
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "regression_rules": {
+    "automatic_updates_remain_disabled": true,
+    "internet_live_execution_remains_disabled": true,
+    "no_background_execution": true,
+    "no_hidden_updates": true,
+    "no_uncontrolled_self_modification": true,
+    "no_update_execution_without_operator_review": true,
+    "no_update_execution_without_rollback": true,
+    "no_update_execution_without_source_trust": true,
+    "no_update_execution_without_validation": true
+  },
+  "required_governance_flags": {
+    "checks": {
+      "internet_quarantine_required": true,
+      "internet_source_trust_required": true,
+      "rollback_operator_review_required": true,
+      "rollback_validation_after_restore_required": true,
+      "runner_operator_review_required": true,
+      "runner_rollback_required": true,
+      "runner_source_trust_required": true,
+      "runner_validation_required": true,
+      "staging_operator_review_required": true,
+      "staging_rollback_required": true,
+      "staging_validation_required": true
+    },
+    "missing": []
+  },
+  "version": "v17.74"
+}

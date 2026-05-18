@@ -1,0 +1,129 @@
+{
+  "decisions": [
+    {
+      "decided_at": "2026-05-15T13:11:18.911050+00:00",
+      "decided_by": "s115_contract",
+      "decision": "approved",
+      "export_allowed": true,
+      "note": "S115 approved evidence run contract; export only, no runtime truth write.",
+      "review_item_id": "review_out_af37f1f7c280b7df",
+      "runtime_truth_write": "blocked"
+    },
+    {
+      "decided_at": "2026-05-15T13:11:18.919050+00:00",
+      "decided_by": "s115_contract",
+      "decision": "approved",
+      "export_allowed": true,
+      "note": "S115 approved evidence run contract; export only, no runtime truth write.",
+      "review_item_id": "review_out_af37f1f7c280b7df",
+      "runtime_truth_write": "blocked"
+    },
+    {
+      "decided_at": "2026-05-15T13:11:18.927050+00:00",
+      "decided_by": "s115_contract",
+      "decision": "approved",
+      "export_allowed": true,
+      "note": "S115 approved evidence run contract; export only, no runtime truth write.",
+      "review_item_id": "review_out_af37f1f7c280b7df",
+      "runtime_truth_write": "blocked"
+    },
+    {
+      "decided_at": "2026-05-15T13:11:18.959140+00:00",
+      "decided_by": "s115_contract",
+      "decision": "approved",
+      "export_allowed": true,
+      "note": "S115 approved evidence run contract; export only, no runtime truth write.",
+      "review_item_id": "review_out_af37f1f7c280b7df",
+      "runtime_truth_write": "blocked"
+    },
+    {
+      "decided_at": "2026-05-15T13:11:18.965141+00:00",
+      "decided_by": "s115_contract",
+      "decision": "approved",
+      "export_allowed": true,
+      "note": "S115 approved evidence run contract; export only, no runtime truth write.",
+      "review_item_id": "review_out_af37f1f7c280b7df",
+      "runtime_truth_write": "blocked"
+    },
+    {
+      "decided_at": "2026-05-15T13:11:18.973141+00:00",
+      "decided_by": "s115_contract",
+      "decision": "approved",
+      "export_allowed": true,
+      "note": "S115 approved evidence run contract; export only, no runtime truth write.",
+      "review_item_id": "review_out_af37f1f7c280b7df",
+      "runtime_truth_write": "blocked"
+    }
+  ],
+  "queue": [
+    {
+      "allowed_decisions": [
+        "approved",
+        "archived",
+        "export_only",
+        "rejected"
+      ],
+      "authority": {
+        "automatic_updates": "blocked",
+        "manual_promotion_mandatory": true,
+        "runtime_truth_write": "blocked"
+      },
+      "created_at": "2026-05-15T13:11:18.899051+00:00",
+      "decided_at": "2026-05-15T13:11:18.973141+00:00",
+      "decided_by": "s115_contract",
+      "decision_note": "S115 approved evidence run contract; export only, no runtime truth write.",
+      "headline": "Portfolio candidate: approved evidence run signal",
+      "operator": "s115_contract",
+      "output_candidate_id": "out_af37f1f7c280b7df",
+      "payload": {
+        "authority": {
+          "automatic_update": "blocked",
+          "autonomous_execution": "blocked",
+          "export_allowed_after_approval": true,
+          "manual_review_required": true,
+          "runtime_truth": "blocked",
+          "runtime_truth_write": "blocked"
+        },
+        "candidate_version": "S86",
+        "confidence": 0.722,
+        "created_at": "2026-05-15T13:11:18.899051+00:00",
+        "headline": "Portfolio candidate: approved evidence run signal",
+        "lineage": {
+          "discovery_candidate_id": "disc_1e5c4663435e929c",
+          "evidence_basket_id": "s114_s120_evidence_basket"
+        },
+        "output_candidate_id": "out_af37f1f7c280b7df",
+        "output_type": "portfolio_observation",
+        "recommended_operator_action": "review",
+        "route": "portfolio",
+        "signals": [
+          {
+            "confidence": 0.84,
+            "kind": "portfolio",
+            "label": "approved evidence run signal",
+            "signal_id": "signal_1"
+          },
+          {
+            "confidence": 0.76,
+            "kind": "design",
+            "label": "governed search management signal",
+            "signal_id": "signal_2"
+          }
+        ],
+        "source_discovery_candidate_id": "disc_1e5c4663435e929c",
+        "source_evidence_ids": [
+          "s114_ev_001"
+        ],
+        "status": "review_required",
+        "summary": "Route-aware useful output candidate derived from a quarantined discovery candidate. Manual approval is required before export.",
+        "trust_score": 0.86
+      },
+      "review_item_id": "review_out_af37f1f7c280b7df",
+      "route": "portfolio",
+      "source_evidence_ids": [
+        "s114_ev_001"
+      ],
+      "status": "approved"
+    }
+  ]
+}

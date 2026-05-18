@@ -1,0 +1,157 @@
+(function () {
+  "use strict";
+
+  const ENDPOINTS = {
+    providerPayload: "/api/search/providers/capability/payload",
+    policyPayload: "/api/sources/policy/payload"
+  };
+
+  function rootNode() {
+    return document.querySelector("[data-claire-cockpit-root]") ||
+      document.querySelector("main") ||
+      document.body;
+  }
+
+  function ensureSection(id, title, subtitle) {
+    let section = document.getElementById(id);
+    if (section) return section;
+    section = document.createElement("section");
+    section.id = id;
+    section.className = "claire-source-policy-panel";
+    section.innerHTML = `
+      <div class="claire-source-policy-panel__header">
+        <div>
+          <p class="claire-source-policy-panel__eyebrow">Governed source/search controls</p>
+          <h2>${title}</h2>
+          <p>${subtitle}</p>
+        </div>
+        <span class="claire-source-policy-panel__chip">execution blocked</span>
+      </div>
+      <div class="claire-source-policy-panel__grid" data-panel-grid></div>
+    `;
+    rootNode().appendChild(section);
+    return section;
+  }
+
+  function cardHtml(card) {
+    const rules = card.rules || card.allowed_capabilities || [];
+    const blocked = card.blocked_capabilities || [];
+    const ruleList = rules.slice(0, 4).map((item) => `<li>${escapeHtml(String(item))}</li>`).join("");
+    const blockedList = blocked.slice(0, 4).map((item) => `<li>${escapeHtml(String(item))}</li>`).join("");
+    return `
+      <article class="claire-source-policy-card">
+        <div class="claire-source-policy-card__topline">
+          <span>${escapeHtml(card.card_type || "card")}</span>
+          <strong>${escapeHtml(card.status || "ready")}</strong>
+        </div>
+        <h3>${escapeHtml(card.title || card.card_id || "Source card")}</h3>
+        <p>${escapeHtml(card.summary || "Governed cockpit card")}</p>
+        ${ruleList ? `<h4>Allowed / policy</h4><ul>${ruleList}</ul>` : ""}
+        ${blockedList ? `<h4>Blocked</h4><ul>${blockedList}</ul>` : ""}
+        <div class="claire-source-policy-card__footer">
+          <span>${escapeHtml(card.trust_tier || card.control_type || "policy")}</span>
+          <span>network: blocked</span>
+        </div>
+      </article>
+    `;
+  }
+
+  function actionHtml(action) {
+    return `
+      <article class="claire-source-policy-card claire-source-policy-card--action">
+        <div class="claire-source-policy-card__topline">
+          <span>governed action</span>
+          <strong>${escapeHtml(action.status || "planned")}</strong>
+        </div>
+        <h3>${escapeHtml(action.label || action.action_id || "Action")}</h3>
+        <p>${escapeHtml(action.blocked_reason || "Action descriptor only; execution remains blocked.")}</p>
+        <div class="claire-source-policy-card__footer">
+          <span>${action.executable ? "executable" : "non-executable"}</span>
+          <span>${escapeHtml(action.target_endpoint || "")}</span>
+        </div>
+      </article>
+    `;
+  }
+
+  function escapeHtml(value) {
+    return value.replace(/[&<>'"]/g, function (char) {
+      return ({"&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"})[char];
+    });
+  }
+
+  async function fetchJson(url) {
+    const response = await fetch(url, { headers: { "Accept": "application/json" } });
+    if (!response.ok) throw new Error(`${url} returned ${response.status}`);
+    return response.json();
+  }
+
+  async function renderProviderCapability() {
+    const section = ensureSection(
+      "claire-provider-capability-panel",
+      "Provider Capability Map",
+      "Shows which source/search providers are mapped, which trust tier applies, and why execution remains blocked."
+    );
+    const grid = section.querySelector("[data-panel-grid]");
+    try {
+      const payload = await fetchJson(ENDPOINTS.providerPayload);
+      const cards = payload.cards || [];
+      const actions = payload.actions || [];
+      grid.innerHTML = cards.map(cardHtml).join("") + actions.map(actionHtml).join("");
+    } catch (error) {
+      grid.innerHTML = `<article class="claire-source-policy-card"><h3>Provider capability unavailable</h3><p>${escapeHtml(error.message)}</p></article>`;
+    }
+  }
+
+  async function renderSourcePolicy() {
+    const section = ensureSection(
+      "claire-source-policy-controls-panel",
+      "Source Policy Controls",
+      "Displays allowlist, denylist, quarantine, trust-tier, body-read, and update/mutation policy controls."
+    );
+    const grid = section.querySelector("[data-panel-grid]");
+    try {
+      const payload = await fetchJson(ENDPOINTS.policyPayload);
+      const cards = payload.cards || [];
+      const actions = payload.actions || [];
+      grid.innerHTML = cards.map(cardHtml).join("") + actions.map(actionHtml).join("");
+    } catch (error) {
+      grid.innerHTML = `<article class="claire-source-policy-card"><h3>Source policy unavailable</h3><p>${escapeHtml(error.message)}</p></article>`;
+    }
+  }
+
+  function start() {
+    renderProviderCapability();
+    renderSourcePolicy();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
+
+;(function(){
+  if (window.__CLAIRE_OPERATOR_EXPERIENCE_LOADER__) return;
+  window.__CLAIRE_OPERATOR_EXPERIENCE_LOADER__ = true;
+  function loadOperatorExperience(){
+    if (window.ClaireOperatorExperienceConsole && window.ClaireOperatorExperienceConsole.init) {
+      window.ClaireOperatorExperienceConsole.init();
+      return;
+    }
+    var existing = document.querySelector('script[data-claire-operator-experience="true"]');
+    if (existing) return;
+    var script = document.createElement('script');
+    script.defer = true;
+    script.dataset.claireOperatorExperience = 'true';
+    script.src = '/api/cockpit/operator-experience/assets/js';
+    script.onerror = function(){ script.src = 'assets/claire_operator_experience_console.js'; };
+    document.head.appendChild(script);
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/api/cockpit/operator-experience/assets/css';
+    document.head.appendChild(link);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadOperatorExperience);
+  else setTimeout(loadOperatorExperience, 0);
+})();

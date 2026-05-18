@@ -1,0 +1,20 @@
+{
+  "version": "v19.89.8-S289-S295-compat-repair",
+  "started_at": "2026-05-15T19:13:49.219046+00:00",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "actions": [
+    "appended compatibility exports to C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+    "appended compatibility exports to C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+    "wrote tests/test_s289_s295_compat_repair_import_contracts.py"
+  ],
+  "authority_locks": {
+    "runtime_truth_write_allowed": false,
+    "runtime_mutation_allowed": false,
+    "automatic_updates_allowed": false,
+    "autonomous_execution_allowed": false,
+    "continuous_crawling_allowed": false,
+    "workflow_actions_mode": "proposal_only"
+  },
+  "root_cause": "Missing exported S149-S155 compatibility contract names used by S149-S183 collection imports.",
+  "completed_at": "2026-05-15T19:13:49.222047+00:00"
+}

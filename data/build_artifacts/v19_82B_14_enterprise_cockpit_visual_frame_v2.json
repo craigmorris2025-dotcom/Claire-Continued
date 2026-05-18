@@ -1,0 +1,27 @@
+{
+  "version": "v19.82B.14",
+  "build_name": "Enterprise Cockpit Visual Frame v2",
+  "installed_at": "2026-05-11T20:09:13.836856+00:00",
+  "primary_cockpit_path": "frontend/cockpit/shell/cockpit_shell.html",
+  "reason": [
+    "Continue dashboard repair after v19.82B.13 workspace router.",
+    "Reduce portal/patch appearance.",
+    "Hide raw plain-button Runtime Actions strip from operator-facing view.",
+    "Make router compact and make Runtime remain the default operational surface."
+  ],
+  "created_or_updated": [
+    "frontend/cockpit/shell/assets/claire_enterprise_cockpit_visual_frame_v2.css",
+    "frontend/cockpit/shell/assets/claire_enterprise_cockpit_visual_frame_v2.js",
+    "tests/test_v19_82B_14_enterprise_cockpit_visual_frame_v2.py",
+    "data/build_artifacts/v19_82B_14_enterprise_cockpit_visual_frame_v2.json"
+  ],
+  "scope": [
+    "visual frame only",
+    "raw action strip cleanup",
+    "router compaction",
+    "workspace surface polish",
+    "no backend calls",
+    "no runtime truth mutation"
+  ],
+  "next_recommended_build": "v19.82B.15 Cockpit Runtime Availability Route Repair"
+}

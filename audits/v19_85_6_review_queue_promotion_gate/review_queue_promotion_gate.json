@@ -1,0 +1,32 @@
+{
+  "build": "Review Queue Promotion Gate Repair",
+  "contract": {
+    "backend_owns_truth": true,
+    "build": "Review Queue Promotion Gate",
+    "generated_at": "2026-05-13T11:22:15.878711+00:00",
+    "operator_review_required_before_promotion": true,
+    "promotion_allowed_states": [
+      "review_required",
+      "validated_candidate"
+    ],
+    "promotion_blocked_states": [
+      "pending_evidence",
+      "insufficient_data",
+      "blocked_evidence"
+    ],
+    "required_fields": [
+      "candidate_id",
+      "route_type",
+      "terminal_state",
+      "evidence_basket_id",
+      "lineage_refs",
+      "operator_review_required"
+    ],
+    "version": "v19.85.6.1"
+  },
+  "contract_path": "data\\evidence_governance\\review_queue_promotion_gate.json",
+  "generated_at": "2026-05-13T11:22:15.879711+00:00",
+  "next_build": "v19.85.7 Runtime Artifact Integrity Check",
+  "read_only": true,
+  "version": "v19.85.6.1"
+}

@@ -1,0 +1,22 @@
+{
+  "version": "v19.89.8-S31R6-ROLLBACK",
+  "repaired_at_utc": "2026-05-14T13:24:13.699351+00:00",
+  "status": "PASS",
+  "restored_from": "claire\\api\\dashboard_payload_bridge.py.v19_89_8_S31R6_backup",
+  "broken_copy_saved": "claire\\api\\dashboard_payload_bridge.py.S31R6_broken_copy",
+  "compile_ok": true,
+  "compile_message": "compile_ok",
+  "next_checks": [
+    "python -m py_compile claire/api/dashboard_payload_bridge.py",
+    "restart backend/launcher",
+    "open http://127.0.0.1:8000/dashboard/payload and confirm 200"
+  ],
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "runtime_mutation_enabled": false,
+    "autonomous_execution_expansion": false
+  }
+}

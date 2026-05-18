@@ -1,0 +1,132 @@
+{
+  "blocked_operations": [
+    "apply_update_pack",
+    "execute_file_operations",
+    "run_remote_code",
+    "enable_background_updates",
+    "bypass_operator_review",
+    "bypass_rollback_plan",
+    "bypass_validation"
+  ],
+  "checks": {
+    "automatic_execution_disabled_until_approved": {
+      "detail": "Automatic execution is disabled by current staging and rollback contracts.",
+      "name": "automatic_execution_disabled_until_approved",
+      "passed": true,
+      "severity": "blocker"
+    },
+    "internet_readiness_checked": {
+      "detail": "Internet readiness status: warning",
+      "name": "internet_readiness_checked",
+      "passed": true,
+      "severity": "warning"
+    },
+    "operator_review_required": {
+      "detail": "Operator review is required by staging and rollback contracts.",
+      "name": "operator_review_required",
+      "passed": true,
+      "severity": "blocker"
+    },
+    "rollback_plan_exists": {
+      "detail": "Latest rollback plan found.",
+      "name": "rollback_plan_exists",
+      "passed": true,
+      "severity": "blocker"
+    },
+    "rollback_required": {
+      "detail": "Rollback is required and rollback plans are required.",
+      "name": "rollback_required",
+      "passed": true,
+      "severity": "blocker"
+    },
+    "source_trust_required": {
+      "detail": "Source trust / allowlist governance detected.",
+      "name": "source_trust_required",
+      "passed": true,
+      "severity": "blocker"
+    },
+    "staged_update_pack_exists": {
+      "detail": "Latest staged update pack found.",
+      "name": "staged_update_pack_exists",
+      "passed": true,
+      "severity": "blocker"
+    },
+    "validation_required": {
+      "detail": "Validation is required before update execution.",
+      "name": "validation_required",
+      "passed": true,
+      "severity": "blocker"
+    }
+  },
+  "contract_name": "Automatic Update Runner Gate",
+  "gate_state": {
+    "all_checks_passed": true,
+    "automatic_execution_enabled": false,
+    "blockers": [],
+    "manual_operator_approval_required": true,
+    "runner_can_execute_now": false,
+    "status": "gate_ready_but_execution_disabled",
+    "warnings": []
+  },
+  "generated_at": "2026-05-13T11:18:57.609157Z",
+  "governance": {
+    "execution_still_disabled": true,
+    "no_background_execution": true,
+    "no_hidden_updates": true,
+    "no_uncontrolled_self_modification": true,
+    "operator_review_required": true,
+    "rollback_required": true,
+    "source_trust_required": true,
+    "validation_required": true
+  },
+  "linked_rollback_plan": {
+    "automatic_execution_enabled": false,
+    "created_at": "2026-05-13T11:18:57.575157Z",
+    "execution_enabled": false,
+    "linked_pack_id": "update_pack_20260513_111857_update_governance_patch",
+    "path": "data/update_packs/rollback_plans/rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch.json",
+    "plan_id": "rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch",
+    "status": "rollback_plan_ready"
+  },
+  "linked_update_pack": {
+    "automatic_execution_enabled": false,
+    "created_at": "2026-05-13T11:18:57.528157Z",
+    "execution_enabled": false,
+    "pack_hash": "5be1dff4dc44c99e344eb41b90fcde616278af2e37bf0021468a85cb874332d6",
+    "pack_id": "update_pack_20260513_111857_update_governance_patch",
+    "pack_type": "update_governance_patch",
+    "path": "data/update_packs/staging/update_pack_20260513_111857_update_governance_patch.json",
+    "status": "warning"
+  },
+  "next": [
+    "v17.74 Update Governance Regression Lock",
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "runner_contract": {
+    "automatic_execution_enabled": false,
+    "background_execution_enabled": false,
+    "execution_enabled": false,
+    "requires_operator_approval_token": true,
+    "requires_rollback_plan": true,
+    "requires_source_trust": true,
+    "requires_validation_gauntlet": true,
+    "runner_executes_updates": false,
+    "runner_mode": "gate_only_no_execution",
+    "runner_registered": true
+  },
+  "sources": {
+    "internet_readiness": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+      "status": "loaded"
+    },
+    "rollback_index": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json",
+      "status": "loaded"
+    },
+    "staging_index": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json",
+      "status": "loaded"
+    }
+  },
+  "version": "v17.73"
+}

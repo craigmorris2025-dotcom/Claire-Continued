@@ -1,0 +1,16 @@
+{
+  "backend_owns_truth": true,
+  "build": "Runtime Artifact Integrity Check",
+  "generated_at": "2026-05-13T11:22:15.885710+00:00",
+  "hash_algorithm": "sha256",
+  "required_artifact_keys": [
+    "manifest",
+    "status",
+    "lifecycle",
+    "gates",
+    "missing_evidence",
+    "enrichment"
+  ],
+  "rule": "Runtime artifacts must exist and be hashable before promotion or replay.",
+  "version": "v19.85.7"
+}

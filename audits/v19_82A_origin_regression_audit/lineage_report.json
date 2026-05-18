@@ -1,0 +1,31 @@
+{
+  "version": "v19.82A.1",
+  "build_name": "Origin Regression Audit Regex Repair",
+  "created_at": "2026-05-13T11:22:14.694732Z",
+  "file_count_scanned": 11895,
+  "path_status": {
+    "version_json": true,
+    "main_py": true,
+    "launcher": true,
+    "backend_app": true,
+    "payload_bridge": true,
+    "new_cockpit": true,
+    "old_dashboard": true,
+    "endpoint_contract": false,
+    "autonomous_contract": true
+  },
+  "launcher_report": {
+    "exists": true,
+    "mentions_new_cockpit": true,
+    "mentions_old_dashboard": false,
+    "uses_main_py": true
+  },
+  "version_report": {
+    "exists": true,
+    "raw": "{\n  \"architecture_direction\": {\n    \"backend_owns_truth\": true,\n    \"cockpit_presentation_only\": true,\n    \"convergence_over_expansion\": true,\n    \"fail_closed_governance\": true,\n    \"runtime_truth_over_ui_assumptions\": true\n  },\n  \"build\": \"Cockpit Runtime Synchronization Surface\",\n  \"lane\": \"v19.87.x\",\n  \"last_build\": \"v19.88.6 Cockpit Operational Proof Binding\",\n  \"notes\": [\n    \"Added backend-owned cockpit operational status endpoint.\",\n    \"Bound cockpit status truth to mounted canonical routes.\",\n    \"No runtime truth mutation, dashboard redesign, live internet enablement, or quarantine restoration.\"\n  ],\n  \"phase\": \"Operational Restoration\",\n  \"updated_at\": \"2026-05-13T04:17:32.969502+00:00\",\n  \"updated_utc\": \"2026-05-13T10:35:01.195346+00:00\",\n  \"version\": \"v19.88.7\"\n}\n"
+  },
+  "hard_blockers": [],
+  "warnings": [
+    "Duplicate or multi-file route definitions detected"
+  ]
+}

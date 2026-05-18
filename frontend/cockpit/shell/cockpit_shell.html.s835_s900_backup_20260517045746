@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Claire Syntalion · Enterprise Intelligence Cockpit</title>
+  <link rel="stylesheet" href="assets/claire_modern_cockpit.css" />
+  <!-- CLAIRE_S429_S435_S16_RUNTIME_TIMELINE_COMPAT -->
+  <link rel="stylesheet" href="assets/governed_runtime_timeline.css" data-claire-compat="s16-runtime-timeline" />
+  <!-- CLAIRE_S429_S435_S16_EXACT_RUNTIME_TIMELINE_COMPAT -->
+  <link rel="stylesheet" href="assets/governed_runtime_timeline_s16.css" data-claire-compat="s16-runtime-timeline-exact" />
+  <!-- CLAIRE_S429_S435_S31R_ASSET_LINK_COMPAT CSS -->
+  <link rel="stylesheet" href="assets/continuous_runtime_presence.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/runtime_continuity_visualization.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/browser_observation_loop.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/canonical_browser_session.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/cockpit_cohesion.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/governed_session_orchestration.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/governed_workspace.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/operational_workspace_topology.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/topology_continuity.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/safe_workflow_operations.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/canonical_runtime_event_stream.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/canonical_runtime_telemetry.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/governed_continuous_cockpit_monitoring.css" data-claire-compat="s31r-asset-link" />
+  <link rel="stylesheet" href="assets/cockpit_visibility_bridge.css" data-claire-compat="s31r-asset-link" />
+  <!-- CLAIRE_S429_S435_SEARCH_SESSION_ASSET_COMPAT CSS -->
+  <link rel="stylesheet" href="assets/governed_search_session.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/governed_evidence_basket.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/governed_review_queue.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/governed_route_activity.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/governed_operator_workflow.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/governed_source_universes.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/governed_search_provider_status.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/governed_search_command_surface.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/source_universe_inventory.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/operator_surface_coverage.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/operator_control_contracts.css" data-claire-compat="search-session-asset-link" />
+  <link rel="stylesheet" href="assets/operator_event_trail.css" data-claire-compat="search-session-asset-link" />
+  <!-- CLAIRE_S429_S435_CONTINUOUS_BROWSER_LOOP_ASSET_COMPAT CSS -->
+  <link rel="stylesheet" href="assets/continuous_browser_runtime_loop.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <link rel="stylesheet" href="assets/governed_browser_runtime_loop.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <link rel="stylesheet" href="assets/browser_runtime_presence.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <link rel="stylesheet" href="assets/continuous_search_session.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <link rel="stylesheet" href="assets/canonical_search_session.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <link rel="stylesheet" href="assets/search_session_control.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <link rel="stylesheet" href="assets/browser_session_control.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <link rel="stylesheet" href="assets/governed_browser_session.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <link rel="stylesheet" href="assets/runtime_browser_observation.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <link rel="stylesheet" href="assets/browser_runtime_observation.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <link rel="stylesheet" href="assets/continuous_browser_observation.css" data-claire-compat="legacy-dashboard-asset-link" />
+  <!-- CLAIRE_LEGACY_DASHBOARD_ASSET_CONTRACT_CSS -->
+  <link rel="stylesheet" href="assets/canonical_browser_session_persistence.css" data-claire-compat="legacy-asset-contract" />
+  <link rel="stylesheet" href="assets/claire_consolidated_cockpit.css" data-claire-compat="legacy-asset-contract" />
+  <link rel="stylesheet" href="assets/claire_modern_cockpit_shell.css" data-claire-compat="legacy-asset-contract" />
+  <link rel="stylesheet" href="assets/claire_useful_output_browser.css" data-claire-compat="legacy-asset-contract" />
+  <link rel="stylesheet" href="assets/governed_runtime_workspace_continuity.css" data-claire-compat="legacy-asset-contract" />
+  <link rel="stylesheet" href="assets/multi_panel_runtime_cohesion.css" data-claire-compat="legacy-asset-contract" />
+  <link rel="stylesheet" href="assets/s45_shell_mount.css" data-claire-compat="legacy-asset-contract" />
+    <!-- CLAIRE-S576-S582-SOURCE-REGISTRY-CSS -->
+    <link rel="stylesheet" href="../assets/claire_governed_source_registry.css">
+    <!-- CLAIRE-S583-S589-GOVERNED-SEARCH-PLAN-CSS -->
+    <link rel="stylesheet" href="../assets/claire_governed_search_plan.css">
+    <!-- CLAIRE-S590-S596-GOVERNED-EVIDENCE-CARDS-CSS -->
+    <link rel="stylesheet" href="../assets/claire_governed_evidence_cards.css">
+  <link rel="stylesheet" href="../assets/claire_governed_provider_readiness.css">
+  <link rel="stylesheet" href="../assets/claire_governed_source_gap_matrix.css">
+  <link rel="stylesheet" href="../assets/claire_governed_search_intake_and_query_compiler.css">
+  <link rel="stylesheet" href="/assets/claire_governed_provider_capability_and_source_policy.css">
+  <link rel="stylesheet" href="/assets/claire_governed_quarantine_and_metadata_results.css">
+    <link rel="stylesheet" href="../assets/claire_governed_controlled_metadata_search.css" data-claire-s653-s680="true">
+    <link rel="stylesheet" href="../assets/claire_governed_metadata_activation_preflight.css" data-claire-s681-s708="true">
+  <link rel="stylesheet" href="/assets/claire_governed_search_result_review.css">
+  <link rel="stylesheet" href="/assets/claire_governed_web_search_body_read_planning.css">
+  <link rel="stylesheet" href="/assets/claire_governed_body_read_gate.css">
+</head>
+<body>
+<div id="claire-app" class="app">
+  <aside class="sidebar">
+    <div class="brand"><b>Claire Syntalion</b><span>Enterprise Intelligence Cockpit</span></div>
+    <button data-section="overview" class="active">Overview</button>
+    <button data-section="web">Governed Web</button>
+    <button data-section="evidence">Evidence & Review</button>
+    <button data-section="actions">Actions</button>
+    <button data-section="system">System</button>
+    <p class="note">Backend-owned truth · dashboard presentation only.</p>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <div><p class="eyebrow">Governed Runtime</p><h1>Claire Operator Cockpit</h1></div>
+      <div id="status-chips" class="chips"><span class="chip">Loading backend…</span></div>
+    </header>
+    <section class="command">
+      <input id="claire-command-input" placeholder="Ask Claire or run a governed web operation..." />
+      <button id="claire-command-button">Command</button>
+    </section>
+    <section id="section-overview" class="section active">
+      <div class="hero"><div><p class="eyebrow">Current State</p><h2 id="overview-title">Loading Claire…</h2><p id="overview-subtitle">Reading backend-owned dashboard state.</p></div><button id="refresh-all">Refresh</button></div>
+      <div id="overview-metrics" class="grid"></div>
+    </section>
+    <section id="section-web" class="section"><h2>Governed Web Workflow</h2><div id="web-workflow-root" class="panel"></div></section>
+    <section id="section-evidence" class="section"><h2>Evidence & Review</h2><div class="grid"><article class="card"><h3>Evidence</h3><pre id="evidence-card">{}</pre></article><article class="card"><h3>Proposals</h3><pre id="proposal-card">{}</pre></article></div></section>
+    <section id="section-actions" class="section"><h2>Governed Actions</h2><div id="action-console-root" class="panel"></div><pre id="action-result" class="result">No action run yet.</pre></section>
+    <section id="section-system" class="section"><h2>System</h2><button id="toggle-debug">Toggle Debug Payload</button><div class="grid"><article class="card"><h3>Status</h3><pre id="system-status">{}</pre></article><article id="debug-panel" class="card hidden"><h3>Raw Payload</h3><pre id="raw-payload">{}</pre></article></div></section>
+  </main>
+</div>
+  <!-- CLAIRE_S429_S435_S16_RUNTIME_TIMELINE_COMPAT -->
+  <script src="assets/governed_runtime_timeline.js" defer data-claire-compat="s16-runtime-timeline"></script>
+    <!-- CLAIRE_S429_S435_S16_EXACT_RUNTIME_TIMELINE_COMPAT -->
+  <script src="assets/governed_runtime_timeline_s16.js" defer data-claire-compat="s16-runtime-timeline-exact"></script>
+    <!-- CLAIRE_S429_S435_S31R_ASSET_LINK_COMPAT JS -->
+  <script src="assets/continuous_runtime_presence.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/runtime_continuity_visualization.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/browser_observation_loop.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/canonical_browser_session.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/cockpit_cohesion.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/governed_session_orchestration.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/governed_workspace.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/operational_workspace_topology.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/topology_continuity.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/safe_workflow_operations.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/canonical_runtime_event_stream.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/canonical_runtime_telemetry.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/governed_continuous_cockpit_monitoring.js" defer data-claire-compat="s31r-asset-link"></script>
+  <script src="assets/cockpit_visibility_bridge.js" defer data-claire-compat="s31r-asset-link"></script>
+    <!-- CLAIRE_S429_S435_SEARCH_SESSION_ASSET_COMPAT JS -->
+  <script src="assets/governed_search_session.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/governed_evidence_basket.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/governed_review_queue.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/governed_route_activity.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/governed_operator_workflow.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/governed_source_universes.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/governed_search_provider_status.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/governed_search_command_surface.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/source_universe_inventory.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/operator_surface_coverage.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/operator_control_contracts.js" defer data-claire-compat="search-session-asset-link"></script>
+  <script src="assets/operator_event_trail.js" defer data-claire-compat="search-session-asset-link"></script>
+    <!-- CLAIRE_S429_S435_CONTINUOUS_BROWSER_LOOP_ASSET_COMPAT JS -->
+  <script src="assets/continuous_browser_runtime_loop.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+  <script src="assets/governed_browser_runtime_loop.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+  <script src="assets/browser_runtime_presence.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+  <script src="assets/continuous_search_session.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+  <script src="assets/canonical_search_session.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+  <script src="assets/search_session_control.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+  <script src="assets/browser_session_control.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+  <script src="assets/governed_browser_session.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+  <script src="assets/runtime_browser_observation.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+  <script src="assets/browser_runtime_observation.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+  <script src="assets/continuous_browser_observation.js" defer data-claire-compat="legacy-dashboard-asset-link"></script>
+    <!-- CLAIRE_LEGACY_DASHBOARD_ASSET_CONTRACT_JS -->
+  <script src="assets/_review.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/backend_truth_surface_payload.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/backend_truth_surface_status.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/binding_manifest.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/canonical_browser_session_persistence.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/claire_consolidated_cockpit.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/claire_governed_web_panels.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/claire_modern_cockpit_shell.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/claire_route_payload_browser.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/claire_useful_output_browser.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/cleanup.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/governed_multi_workspace_orchestration.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/governed_operational_session_orchestration.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/governed_operational_topology_continuity.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/governed_runtime_workspace_continuity.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/manifest.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/manual_promotion_package_index.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/multi_panel_runtime_cohesion.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/openapi.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/registry.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/response.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/review.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/s39_manual_promotion_plateau_report.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/s45_shell_mount.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/smoke.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/summary.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/unified_backend_operator_payload.js" defer data-claire-compat="legacy-asset-contract"></script>
+  <script src="assets/claire_modern_cockpit.js" defer></script>
+
+<!-- CLAIRE_S359_S365_STATUS_SHELL_CLEANUP_SAFE_INJECTION -->
+<script src="assets/dashboard_status_shell_cleanup_s359_s365.js" defer data-claire-compat="s359-s365-shell-cleanup"></script>
+<link rel="stylesheet" href="assets/dashboard_status_shell_cleanup_s359_s365.css" data-claire-compat="s359-s365-shell-cleanup" />
+    <!-- CLAIRE-S576-S582-SOURCE-REGISTRY-JS -->
+    <script defer src="../assets/claire_governed_source_registry.js"></script>
+    <!-- CLAIRE-S583-S589-GOVERNED-SEARCH-PLAN-JS -->
+    <script defer src="../assets/claire_governed_search_plan.js"></script>
+    <!-- CLAIRE-S590-S596-GOVERNED-EVIDENCE-CARDS-JS -->
+    <script defer src="../assets/claire_governed_evidence_cards.js"></script>
+  <script src="../assets/claire_governed_provider_readiness.js" defer></script>
+  <script src="../assets/claire_governed_source_gap_matrix.js" defer></script>
+  <script src="../assets/claire_governed_search_intake_and_query_compiler.js" defer></script>
+  <script src="/assets/claire_governed_provider_capability_and_source_policy.js" defer></script>
+  <script src="/assets/claire_governed_quarantine_and_metadata_results.js" defer></script>
+    <script src="../assets/claire_governed_controlled_metadata_search.js" defer data-claire-s653-s680="true"></script>
+    <script src="../assets/claire_governed_metadata_activation_preflight.js" defer data-claire-s681-s708="true"></script>
+  <script src="/assets/claire_governed_search_result_review.js" defer></script>
+  <script src="/assets/claire_governed_web_search_body_read_planning.js" defer></script>
+  <script src="/assets/claire_governed_body_read_gate.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "version": "v18.68",
+  "name": "Real Provider Operator Probe Route",
+  "scope": [
+    "add operator-facing provider probe status route contract",
+    "add explicit provider probe route contract",
+    "block probe execution unless explicit_real_provider_probe=True",
+    "support deterministic injected provider proof for validation",
+    "normalize probe results into dashboard result cards",
+    "prove google can return Google / https://www.google.com through operator probe layer",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_68_real_provider_operator_probe_route.py -q"
+  ]
+}

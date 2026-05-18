@@ -1,0 +1,20 @@
+{
+  "installer": "install_claire_v19_89_8_s338_s344_dashboard_payload_integration_pack.py",
+  "started_at": "2026-05-16T05:16:02.185346Z",
+  "pytest_inside_installer": false,
+  "ok": false,
+  "files": [
+    {
+      "path": "claire/api/dashboard_payload_live_integration_s338_s344.py",
+      "written": true,
+      "compiled": true
+    }
+  ],
+  "backups": {
+    "claire/api/dashboard_payload_live_integration_s338_s344.py": null,
+    "tests/test_s338_s344_dashboard_payload_live_integration.py": null
+  },
+  "patches": [],
+  "error": "PyCompileError('  File \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\tests\\\\test_s338_s344_dashboard_payload_live_integration.py\", line 26\\n    def test_s339_payload_merge_owner_has_internet_dashboard_keys:\\n                                                                 ^\\nSyntaxError: expected \\'(\\'\\n', 'SyntaxError', SyntaxError(\"expected '('\", ('C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\tests\\\\test_s338_s344_dashboard_payload_live_integration.py', 26, 62, 'def test_s339_payload_merge_owner_has_internet_dashboard_keys:\\n', 26, 63)), 'C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\tests\\\\test_s338_s344_dashboard_payload_live_integration.py')",
+  "finished_at": "2026-05-16T05:16:02.207346Z"
+}

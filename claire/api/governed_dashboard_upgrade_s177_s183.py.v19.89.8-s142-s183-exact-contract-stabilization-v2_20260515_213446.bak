@@ -1,0 +1,248 @@
+from __future__ import annotations
+
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, Mapping
+
+from claire.api.governed_live_fetch_validation_s170_s176 import build_s170_s176_stop_gate
+from claire.api.governed_cockpit_payload_visibility_s149_s155 import governed_operations_payload_fragment
+
+LOCKS = {
+    "backend_owns_truth": True,
+    "cockpit_presentation_only": True,
+    "runtime_truth_write_blocked": True,
+    "runtime_truth_mutation_blocked": True,
+    "automatic_updates_blocked": True,
+    "autonomous_execution_blocked": True,
+    "manual_promotion_mandatory": True,
+    "quarantine_mandatory": True,
+    "continuous_crawling_blocked": True,
+}
+
+CORE_GAP_AREAS = {
+    "dashboard_control": "visual operator controls must bind to backend contracts",
+    "automatic_web_updating": "must start as scheduled update proposals, not automatic runtime writes",
+    "autonomous_crawling": "must start as bounded crawl jobs with allowlist, rate limits, and quarantine",
+    "runtime_mutation": "must remain blocked; only mutation proposals can be generated",
+    "production_monitoring": "must expose health, evidence, queue, export, and error status",
+    "thirty_stage_live_lifecycle": "must consume approved evidence only",
+    "brokerage_integrations": "must be adapter-ready and disabled until credentials/governance exist",
+    "memory_loops": "must be append-only lineage/memory, not hidden self-modification",
+    "enterprise_hardening": "must add audit, rollback, role gates, config locks, and deployment checks",
+}
+
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+def build_dashboard_core_control_map() -> Dict[str, Any]:
+    payload = governed_operations_payload_fragment()
+    panels = payload.get("panels", {}) if isinstance(payload.get("panels"), Mapping) else {}
+    controls = {
+        "runtime_spine": {
+            "panel_key": "runtime_spine",
+            "visible": "runtime_spine" in panels,
+            "actions": ["view_status", "view_routes", "view_locks"],
+            "write_enabled": False,
+        },
+        "review_export": {
+            "panel_key": "review_export",
+            "visible": "review_export" in panels,
+            "actions": ["approve", "reject", "archive", "export_only"],
+            "write_enabled": False,
+            "requires_manual_confirmation": True,
+        },
+        "governed_search": {
+            "panel_key": "governed_search",
+            "visible": "governed_search" in panels,
+            "actions": ["manual_probe", "view_quarantine", "create_evidence_basket"],
+            "write_enabled": False,
+            "requires_manual_confirmation": True,
+        },
+        "evidence_demo": {
+            "panel_key": "evidence_demo",
+            "visible": "evidence_demo" in panels,
+            "actions": ["view_candidate", "view_output", "view_export"],
+            "write_enabled": False,
+        },
+    }
+    ok = all(item["visible"] for item in controls.values())
+    return {
+        "stage_version": "S177",
+        "status": "dashboard_core_control_map_ready" if ok else "dashboard_core_control_map_incomplete",
+        "ok": ok,
+        "controls": controls,
+        "visual_rewire_performed": False,
+        "runtime_truth_write": "blocked",
+        "locks": dict(LOCKS),
+    }
+
+def build_safe_web_update_readiness_contract() -> Dict[str, Any]:
+    return {
+        "stage_version": "S178",
+        "status": "safe_web_update_readiness_contract_ready",
+        "automatic_web_updating_mode": "proposal_only",
+        "allowed_flow": [
+            "scheduled_or_manual_check",
+            "bounded_provider_query",
+            "quarantine_result",
+            "evidence_basket",
+            "operator_review",
+            "approved_export",
+            "runtime_update_proposal",
+        ],
+        "blocked_flow": [
+            "automatic_runtime_truth_write",
+            "unreviewed_live_crawl",
+            "unbounded_continuous_crawling",
+            "self_modifying_runtime_patch",
+        ],
+        "execution_enabled_now": False,
+        "manual_enable_required": True,
+        "runtime_truth_write": "blocked",
+        "locks": dict(LOCKS),
+    }
+
+def build_bounded_crawl_job_contract() -> Dict[str, Any]:
+    return {
+        "stage_version": "S179",
+        "status": "bounded_crawl_job_contract_ready",
+        "crawl_mode": "bounded_quarantined_job",
+        "requirements": {
+            "allowlist_required": True,
+            "rate_limit_required": True,
+            "max_results_required": True,
+            "operator_started": True,
+            "quarantine_required": True,
+            "body_read_requires_gate": True,
+            "manual_promotion_required": True,
+        },
+        "continuous_crawling": "blocked",
+        "autonomous_crawling_enabled": False,
+        "locks": dict(LOCKS),
+    }
+
+def build_runtime_mutation_proposal_contract() -> Dict[str, Any]:
+    return {
+        "stage_version": "S180",
+        "status": "runtime_mutation_proposal_contract_ready",
+        "runtime_mutation_enabled": False,
+        "runtime_truth_write_enabled": False,
+        "allowed": {
+            "generate_update_proposal": True,
+            "diff_against_current_contract": True,
+            "operator_review_required": True,
+            "export_patch_plan": True,
+        },
+        "blocked": {
+            "self_apply_patch": True,
+            "silent_runtime_truth_change": True,
+            "autonomous_code_execution": True,
+            "automatic_dependency_change": True,
+        },
+        "locks": dict(LOCKS),
+    }
+
+def build_monitoring_and_hardening_readiness() -> Dict[str, Any]:
+    monitors = {
+        "health": {"required": True, "status": "planned"},
+        "payload_stability": {"required": True, "status": "planned"},
+        "review_queue": {"required": True, "status": "planned"},
+        "export_manifest": {"required": True, "status": "planned"},
+        "web_update_jobs": {"required": True, "status": "planned"},
+        "crawl_jobs": {"required": True, "status": "planned"},
+        "error_log": {"required": True, "status": "planned"},
+        "audit_log": {"required": True, "status": "planned"},
+    }
+    return {
+        "stage_version": "S181",
+        "status": "monitoring_and_hardening_readiness_ready",
+        "monitors": monitors,
+        "enterprise_controls": {
+            "rollback_required": True,
+            "audit_required": True,
+            "role_gate_required": True,
+            "config_lock_required": True,
+            "secrets_not_stored_in_code": True,
+            "deployment_check_required": True,
+        },
+        "locks": dict(LOCKS),
+    }
+
+def build_future_integration_boundary() -> Dict[str, Any]:
+    return {
+        "stage_version": "S182",
+        "status": "future_integration_boundary_ready",
+        "brokerage_integrations": {
+            "status": "adapter_boundary_only",
+            "credentials_required": True,
+            "trading_execution_enabled": False,
+            "operator_confirmation_required": True,
+            "read_only_first": True,
+        },
+        "longitudinal_memory_loops": {
+            "status": "append_only_memory_boundary",
+            "stores": ["evidence_lineage", "review_decisions", "exports", "run_summaries"],
+            "hidden_self_modification": False,
+            "operator_visible": True,
+        },
+        "thirty_stage_lifecycle_from_live_evidence": {
+            "status": "approved_evidence_only",
+            "requires": ["approved_evidence_basket", "lineage", "review_state", "export_contract"],
+            "unapproved_live_evidence_allowed": False,
+        },
+        "locks": dict(LOCKS),
+    }
+
+def build_s177_s183_stop_gate(*, report_dir: Path | None = None) -> Dict[str, Any]:
+    previous = build_s170_s176_stop_gate()
+    control = build_dashboard_core_control_map()
+    web_updates = build_safe_web_update_readiness_contract()
+    crawl = build_bounded_crawl_job_contract()
+    mutation = build_runtime_mutation_proposal_contract()
+    monitoring = build_monitoring_and_hardening_readiness()
+    boundary = build_future_integration_boundary()
+    checks = {
+        "previous_plateau_ok": previous.get("ok") is True,
+        "dashboard_controls_visible": control.get("ok") is True,
+        "web_updates_proposal_only": web_updates["automatic_web_updating_mode"] == "proposal_only",
+        "bounded_crawl_contract_ready": crawl["status"] == "bounded_crawl_job_contract_ready",
+        "runtime_mutation_still_disabled": mutation["runtime_mutation_enabled"] is False,
+        "monitoring_plan_ready": monitoring["status"] == "monitoring_and_hardening_readiness_ready",
+        "future_boundaries_ready": boundary["status"] == "future_integration_boundary_ready",
+        "autonomous_execution_blocked": LOCKS["autonomous_execution_blocked"] is True,
+        "automatic_updates_blocked": LOCKS["automatic_updates_blocked"] is True,
+    }
+    ok = all(checks.values())
+    report = {
+        "stage_version": "S183",
+        "generated_at": _utc_now(),
+        "status": "s177_s183_gap_to_ten_plan_gate_passed" if ok else "s177_s183_gap_to_ten_plan_gate_failed",
+        "ok": ok,
+        "purpose": "Define the safe path from first operational cockpit plateau toward 10/10 capability without unsafe autonomous behavior.",
+        "functional_coverage": {
+            "S177": "dashboard core control map",
+            "S178": "safe web update readiness contract",
+            "S179": "bounded crawl job contract",
+            "S180": "runtime mutation proposal contract",
+            "S181": "monitoring and enterprise hardening readiness",
+            "S182": "future integration boundaries",
+            "S183": "gap-to-10 stop gate",
+        },
+        "gap_areas": CORE_GAP_AREAS,
+        "checks": checks,
+        "control": control,
+        "web_updates": web_updates,
+        "crawl": crawl,
+        "mutation": mutation,
+        "monitoring": monitoring,
+        "future_boundary": boundary,
+        "forward_motion_allowed": ok,
+        "next_allowed_phase": "S184-S190 visual cockpit controls and monitoring backend" if ok else "repair S177-S183 failing check only",
+    }
+    if report_dir is not None:
+        report_dir.mkdir(parents=True, exist_ok=True)
+        path = report_dir / "s177_s183_gap_to_ten_plan.json"
+        path.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
+        report["report_path"] = str(path)
+    return report

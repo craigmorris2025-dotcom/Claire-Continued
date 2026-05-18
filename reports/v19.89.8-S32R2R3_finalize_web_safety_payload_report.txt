@@ -1,0 +1,45 @@
+Claire Syntalion v19.89.8-S32R2R3 finalize web safety payload
+Started: 2026-05-14T09:38:32
+Project root: C:\Users\craig\OneDrive\Desktop\Claire
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -c from fastapi.testclient import TestClient; from claire.app import create_app; c=TestClient(create_app()); r=c.get('/dashboard/payload'); print(r.status_code)
+200
+exit_code=0
+Runtime /dashboard/payload owner: claire.api.dashboard_payload_bridge.get_dashboard_payload
+Runtime owner source file: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\dashboard_payload_bridge.py
+Backup created: C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S32R2R3\dashboard_payload_bridge.py
+Backup created: C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S32R2R3\governed_payload_reconciliation.py
+Wrote safety module: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_web_safety_activation.py
+Patched runtime owner return line 356: build_canonical_dashboard_payload()
+Patched reconciliation before return composed line 91.
+Updated reconciliation module: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_payload_reconciliation.py
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m py_compile C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_web_safety_activation.py
+exit_code=0
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m py_compile C:\Users\craig\OneDrive\Desktop\Claire\claire\api\dashboard_payload_bridge.py
+exit_code=0
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m py_compile C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_payload_reconciliation.py
+exit_code=0
+Wrote tests: C:\Users\craig\OneDrive\Desktop\Claire\tests\test_s32r2r3_finalize_web_safety_payload.py
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m pytest C:\Users\craig\OneDrive\Desktop\Claire\tests\test_s32r2r3_finalize_web_safety_payload.py -q
+..                                                                       [100%]
+exit_code=0
+Object validation /dashboard/payload status: 200
+CHECK governed_payload_reconciliation_present: False
+CHECK governed_web_safety_activation_present: False
+CHECK live_web_execution_enabled_false: True
+CHECK autonomous_agent_execution_enabled_false: True
+CHECK runtime_truth_mutation_enabled_false: True
+CHECK automatic_updates_enabled_false: True
+CHECK network_request_performed_false: False
+CHECK browser_execution_blocked: False
+CHECK runtime_authority_blocked: False
+ERROR: Payload object validation failed: ['governed_payload_reconciliation_present', 'governed_web_safety_activation_present', 'network_request_performed_false', 'browser_execution_blocked', 'runtime_authority_blocked']
+Restored C:\Users\craig\OneDrive\Desktop\Claire\claire\api\dashboard_payload_bridge.py from C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S32R2R3\dashboard_payload_bridge.py
+Restored C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_payload_reconciliation.py from C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S32R2R3\governed_payload_reconciliation.py
+Removed newly-created file after rollback: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_web_safety_activation.py
+
+S32R2R3 RESULT: FAILED AND ROLLED BACK

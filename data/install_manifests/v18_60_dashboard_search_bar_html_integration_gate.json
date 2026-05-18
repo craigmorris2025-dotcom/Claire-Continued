@@ -1,0 +1,19 @@
+
+{
+  "version": "v18.60",
+  "name": "Dashboard Search Bar HTML Integration Gate",
+  "scope": [
+    "add governed live-search search form to frontend/command_center/modern/index.html",
+    "insert governed_live_search_ui_binding.js script tag",
+    "create backup before modifying existing dashboard HTML",
+    "verify required search bar IDs are present",
+    "preserve manual-enable search execution",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_60_dashboard_search_bar_html_integration_gate.py -q"
+  ]
+}

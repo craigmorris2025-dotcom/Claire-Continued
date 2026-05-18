@@ -1,0 +1,865 @@
+{
+  "app_type": "FastAPI",
+  "ok": true,
+  "routes": [
+    {
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "openapi",
+      "path": "/openapi.json"
+    },
+    {
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "swagger_ui_html",
+      "path": "/docs"
+    },
+    {
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "swagger_ui_redirect",
+      "path": "/docs/oauth2-redirect"
+    },
+    {
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "redoc_html",
+      "path": "/redoc"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "root",
+      "path": "/"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "health",
+      "path": "/health"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "evaluate",
+      "path": "/pipeline/evaluate"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "evaluate_alias",
+      "path": "/evaluate"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_alignment_status",
+      "path": "/dashboard/alignment/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_alignment_capabilities",
+      "path": "/dashboard/alignment/capabilities"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_alignment_buttons",
+      "path": "/dashboard/alignment/buttons"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_alignment_verify",
+      "path": "/dashboard/alignment/verify"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_latest_run",
+      "path": "/runs/latest"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_run_status",
+      "path": "/runs/{run_id}/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_run_lifecycle",
+      "path": "/runs/{run_id}/lifecycle"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_run_gates",
+      "path": "/runs/{run_id}/gates"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_run_missing_evidence",
+      "path": "/runs/{run_id}/missing-evidence"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "enrich_run",
+      "path": "/runs/{run_id}/enrich"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "continuous_cycles",
+      "path": "/runtime/continuous/cycles"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "universe",
+      "path": "/universes/{universe_id}"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "probe_universe",
+      "path": "/universes/{universe_id}/probe"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "authored_continuous_status",
+      "path": "/runtime/continuous/status"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "authored_continuous_start",
+      "path": "/runtime/continuous/start"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "authored_continuous_pause",
+      "path": "/runtime/continuous/pause"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "authored_review_queue",
+      "path": "/runtime/continuous/review-queue"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "authored_universes",
+      "path": "/universes"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "authored_start_run",
+      "path": "/runs/start"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_payload",
+      "path": "/api/dashboard/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_payload_status",
+      "path": "/api/dashboard/payload/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "active_route_truth",
+      "path": "/system/route-truth"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "active_required_route_truth",
+      "path": "/system/route-truth/required"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "active_cockpit_truth",
+      "path": "/system/cockpit-truth"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "api_cockpit_operational_status",
+      "path": "/api/cockpit/operational-status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_operational_status",
+      "path": "/cockpit/operational-status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "live_intelligence_status",
+      "path": "/api/live-intelligence/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operational_proof_status",
+      "path": "/api/operational-proof/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "api_cockpit_operational_proof",
+      "path": "/api/cockpit/operational-proof"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_operational_proof",
+      "path": "/cockpit/operational-proof"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_runtime_sync_status",
+      "path": "/api/cockpit/runtime-sync/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_runtime_sync_heartbeat",
+      "path": "/api/cockpit/runtime-sync/heartbeat"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_runtime_sync_page",
+      "path": "/cockpit/runtime-sync"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_execution",
+      "path": "/system/runtime-execution"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_execution_summary",
+      "path": "/system/runtime-execution/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_execution_stages",
+      "path": "/system/runtime-execution/stages"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_state",
+      "path": "/system/runtime-state"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_state_summary",
+      "path": "/system/runtime-state/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_state_emit",
+      "path": "/system/runtime-state/emit"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "google_smoke",
+      "path": "/api/dashboard/search/smoke/google"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "live_search",
+      "path": "/api/dashboard/search/live"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "live_search_get",
+      "path": "/api/dashboard/search/live"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "provider_probe_status",
+      "path": "/api/dashboard/search/provider/status"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "provider_probe",
+      "path": "/api/dashboard/search/provider/probe"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_search_capabilities",
+      "path": "/operator/search/capabilities"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_dashboard_state",
+      "path": "/operator/dashboard/state"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_search_smoke_google",
+      "path": "/operator/search/smoke/google"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_search_get",
+      "path": "/operator/search"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "operator_search_post",
+      "path": "/operator/search"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_search_live_get",
+      "path": "/operator/search/live"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "operator_search_live_post",
+      "path": "/operator/search/live"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "operator_search_query_post",
+      "path": "/operator/search/query"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "operator_search_run_post",
+      "path": "/operator/search/run"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "live_source_catalog_status",
+      "path": "/api/feeds/live-source-catalog/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "live_source_catalog_health",
+      "path": "/api/feeds/live-source-catalog/health"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_88_8B_canonical_route_owners",
+      "path": "/system/canonical-route-owners"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_88_8B_cockpit_fetch_map",
+      "path": "/system/cockpit-fetch-map"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_88_8B_project_connection_status",
+      "path": "/system/project-connection/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_0_project_inventory",
+      "path": "/system/project-inventory"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_0_project_inventory_summary",
+      "path": "/system/project-inventory/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_0_source_surface_status",
+      "path": "/system/source-surface/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_1_operator_surfaces",
+      "path": "/system/operator-surfaces"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_1_operator_surfaces_summary",
+      "path": "/system/operator-surfaces/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_1_operator_surfaces_missing",
+      "path": "/system/operator-surfaces/missing"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_2_operator_controls",
+      "path": "/system/operator-controls"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_2_operator_controls_summary",
+      "path": "/system/operator-controls/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_2_operator_controls_unavailable",
+      "path": "/system/operator-controls/unavailable"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_4_operator_events",
+      "path": "/system/operator-events"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_v19_89_4_operator_events_summary",
+      "path": "/system/operator-events/summary"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "claire_v19_89_4_operator_events_record",
+      "path": "/system/operator-events/record"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_propagation",
+      "path": "/system/runtime-propagation"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_propagation_summary",
+      "path": "/system/runtime-propagation/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_propagation_advance",
+      "path": "/system/runtime-propagation/advance"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_propagation_history",
+      "path": "/system/runtime-propagation/history"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_propagation_registration_proof",
+      "path": "/system/runtime-propagation/registration-proof"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "review_queue",
+      "path": "/system/review-queue"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "review_queue_summary",
+      "path": "/system/review-queue/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "review_queue_ingest_runtime",
+      "path": "/system/review-queue/ingest-runtime"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "review_queue_history",
+      "path": "/system/review-queue/history"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "review_queue_registration_proof",
+      "path": "/system/review-queue/registration-proof"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "plan_reconciliation",
+      "path": "/system/plan-reconciliation"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "plan_reconciliation_summary",
+      "path": "/system/plan-reconciliation/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "plan_reconciliation_missing",
+      "path": "/system/plan-reconciliation/missing"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "plan_reconciliation_partial",
+      "path": "/system/plan-reconciliation/partial"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "plan_reconciliation_registration_proof",
+      "path": "/system/plan-reconciliation/registration-proof"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "route_owner_registry",
+      "path": "/system/route-owner-registry"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "route_owner_registry_summary",
+      "path": "/system/route-owner-registry/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "route_owner_registry_critical",
+      "path": "/system/route-owner-registry/critical"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "route_owner_registry_duplicates",
+      "path": "/system/route-owner-registry/duplicates"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "route_owner_registry_registration_proof",
+      "path": "/system/route-owner-registry/registration-proof"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "duplicate_route_fail_test",
+      "path": "/system/duplicate-route-fail-test"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "duplicate_route_fail_test_report",
+      "path": "/system/duplicate-route-fail-test/report"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "duplicate_route_fail_test_summary",
+      "path": "/system/duplicate-route-fail-test/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "duplicate_route_fail_test_critical_failures",
+      "path": "/system/duplicate-route-fail-test/critical-failures"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "duplicate_route_fail_test_grandfathered",
+      "path": "/system/duplicate-route-fail-test/grandfathered"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "duplicate_route_fail_test_registration_proof",
+      "path": "/system/duplicate-route-fail-test/registration-proof"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map",
+      "path": "/system/cockpit-fetch-map"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_summary",
+      "path": "/system/cockpit-fetch-map/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_audit",
+      "path": "/system/cockpit-fetch-map/audit"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_approved",
+      "path": "/system/cockpit-fetch-map/approved"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_registration_proof",
+      "path": "/system/cockpit-fetch-map/registration-proof"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "governed_live_probe_status",
+      "path": "/api/governed/live-probe/status"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "run_governed_head_probe",
+      "path": "/api/governed/live-probe/head"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_payload",
+      "path": "/operator/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_payload_status",
+      "path": "/operator/payload/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_runtime_status",
+      "path": "/operator/runtime/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_evidence_review",
+      "path": "/operator/evidence/review"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_evidence_status",
+      "path": "/operator/evidence/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_review_status",
+      "path": "/operator/review/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_routes_status",
+      "path": "/operator/routes/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_routes",
+      "path": "/operator/routes"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_alerts",
+      "path": "/operator/alerts"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_s43_fix6_dashboard_payload",
+      "path": "/dashboard/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "claire_s43_fix6_dashboard_payload_status",
+      "path": "/dashboard/payload/status"
+    }
+  ],
+  "routes_count": 122
+}

@@ -1,0 +1,174 @@
+{
+  "version": "v19.89.8-S31R",
+  "installed_at_utc": "2026-05-14T04:38:56.362917+00:00",
+  "status": "installed",
+  "active_shell": "frontend\\cockpit\\shell\\cockpit_shell.html",
+  "what_changed": "Linked existing S20-S31 cockpit assets into the active cockpit shell.",
+  "link_report": [
+    {
+      "asset": "continuous_runtime_presence.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "continuous_runtime_presence.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_search_session.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_search_session.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_evidence_basket.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_evidence_basket.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "runtime_continuity_visualization.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "runtime_continuity_visualization.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "continuous_browser_runtime_loop.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "continuous_browser_runtime_loop.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_operator_workflow.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_operator_workflow.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "canonical_browser_session_persistence.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "canonical_browser_session_persistence.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "multi_panel_runtime_cohesion.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "multi_panel_runtime_cohesion.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_operational_session_orchestration.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_operational_session_orchestration.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_runtime_workspace_continuity.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_runtime_workspace_continuity.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_multi_workspace_orchestration.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_multi_workspace_orchestration.js",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_operational_topology_continuity.css",
+      "action": "already_linked"
+    },
+    {
+      "asset": "governed_operational_topology_continuity.js",
+      "action": "already_linked"
+    }
+  ],
+  "payload_attachment_report": [
+    {
+      "check": "attach_continuous_runtime_presence(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_governed_search_session(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_evidence_basket(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_runtime_continuity(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_continuous_browser_runtime_loop(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_governed_operator_workflow(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_browser_session_persistence(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_multi_panel_runtime_cohesion(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_operational_session_orchestration(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_runtime_workspace_continuity(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_multi_workspace_orchestration(payload)",
+      "status": "not_attached"
+    },
+    {
+      "check": "attach_operational_topology_continuity(payload)",
+      "status": "not_attached"
+    }
+  ],
+  "diagnosis": {
+    "missing_asset_files": 0,
+    "payload_functions_not_attached_to_app": 12,
+    "likely_reason_dashboard_did_not_change": "frontend assets were not linked to the active shell and/or later backend modules were not attached to /dashboard/payload"
+  },
+  "next_checks": [
+    "python -m pytest tests/test_s31r_cockpit_visibility_bridge.py -q",
+    "python -m py_compile claire/app.py",
+    "restart launcher/backend",
+    "hard refresh browser Ctrl+F5"
+  ],
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "runtime_mutation_enabled": false,
+    "autonomous_execution_expansion": false
+  }
+}

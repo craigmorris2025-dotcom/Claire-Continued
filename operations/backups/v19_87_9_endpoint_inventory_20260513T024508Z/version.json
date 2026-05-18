@@ -1,0 +1,12 @@
+{
+  "version": "19.87.7",
+  "phase": "root_placeholder_test_quarantine_repair",
+  "lane": "v19.87.x",
+  "updated_at": "2026-05-12T18:05:36.096965+00:00",
+  "notes": [
+    "Quarantined root-level placeholder/scaffold test twins into archive/quarantined_tests.",
+    "Preserved placeholder files instead of deleting them.",
+    "Kept tests/placeholder_disabled and archive excluded from active pytest collection.",
+    "No runtime, cockpit, route, scheduler, evidence, live web, or runtime truth mutation."
+  ]
+}

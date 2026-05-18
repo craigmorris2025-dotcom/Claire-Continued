@@ -1,0 +1,44 @@
+{
+  "backup_dir": "backups/v17_74_update_governance_regression_lock/20260509_190627",
+  "build_name": "Update Governance Regression Lock",
+  "files_written": [
+    "claire/update_governance/update_governance_regression_lock.py",
+    "claire/api/routes_update_governance_regression_lock.py",
+    "tests/test_v17_74_update_governance_regression_lock.py",
+    "docs/update_governance/v17.74_update_governance_regression_lock.md",
+    "data/update_packs/update_governance_regression_lock.json",
+    "data/dashboard/update_governance_regression_lock_payload.json",
+    "data/update_packs/v17_74_update_governance_regression_lock_validation_result.json"
+  ],
+  "installed_at": "2026-05-10T00:06:31.052887Z",
+  "next": [
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "blockers": [],
+    "errors": [],
+    "lock_status": "locked_passed",
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.64.1",
+      "source": {
+        "invalid_candidate_count": 0,
+        "invalid_candidates_sample": [],
+        "raw_available": true,
+        "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+      },
+      "status": "rebuilt"
+    },
+    "regression_lock_active": true,
+    "status": "passed",
+    "warnings": []
+  },
+  "version": "v17.74"
+}

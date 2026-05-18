@@ -1,0 +1,25 @@
+{
+  "archive_before_modify": true,
+  "dashboards_patched_if_present": [
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "delete_policy": "delete_nothing",
+  "files_written": [
+    "claire\\live_web_evidence_pipeline_ingestion.py",
+    "tests\\test_v19_10_to_v19_14_live_web_evidence_pipeline_ingestion_pack.py",
+    "data\\evidence_pipeline_reports\\v19_10_to_v19_14_live_web_evidence_pipeline_ingestion_report.json",
+    "data\\evidence_pipeline_reports\\v19_10_to_v19_14_live_web_evidence_pipeline_ingestion_manifest.json"
+  ],
+  "installed_at": "2026-05-10T18:04:50.204208Z",
+  "installer": "install_claire_v19_10_to_v19_14_live_web_evidence_pipeline_ingestion_pack.py",
+  "pack_name": "Live Web Search to Governed Evidence to Pipeline Ingestion Pack",
+  "pack_version": "v19.10-v19.14",
+  "purpose": [
+    "convert live web search output into governed evidence",
+    "prove source trust, allowlist, and rate-limit checks",
+    "promote governed evidence into pipeline ingestion",
+    "keep web search as input capability, not final platform output",
+    "keep dashboard current during live connectivity and pipeline connection"
+  ],
+  "pytest_command": "python -m pytest tests/test_v19_10_to_v19_14_live_web_evidence_pipeline_ingestion_pack.py -q"
+}

@@ -1,0 +1,63 @@
+{
+  "created_at": "2026-05-11T09:35:06.036203Z",
+  "implementation_goal": "Prepare v19.66+ cockpit shell to include search as permanent top-level command surface.",
+  "minimum_first_render": {
+    "initial_behavior_allowed": [
+      "render mode tabs",
+      "render query field",
+      "render disabled/unavailable states when backend route is not yet wired",
+      "fetch /dashboard/payload/status through shared adapter once adapter exists",
+      "show provider readiness placeholder from mapped backend route availability"
+    ],
+    "initial_behavior_not_allowed": [
+      "fake live web results",
+      "fake autonomous agent execution",
+      "bypass governed web controls",
+      "scatter fetch logic across panels"
+    ],
+    "placeholder_modes": [
+      "normal_web_search",
+      "governed_research",
+      "runtime_project_search",
+      "command_recognition",
+      "future_ai_agent_entry"
+    ],
+    "visible_name": "Claire Command Surface"
+  },
+  "must_create_after_this_contract": {
+    "first": [
+      "frontend/cockpit/",
+      "frontend/cockpit/shell/",
+      "frontend/cockpit/shared/",
+      "frontend/cockpit/intelligence/"
+    ],
+    "search_files": [
+      "frontend/cockpit/intelligence/command_surface.js",
+      "frontend/cockpit/intelligence/search_panel.js",
+      "frontend/cockpit/intelligence/governed_research_panel.js",
+      "frontend/cockpit/intelligence/search_results_view.js",
+      "frontend/cockpit/intelligence/search_mode_router.js",
+      "frontend/cockpit/intelligence/search_state_model.js",
+      "frontend/cockpit/intelligence/source_trust_badges.js",
+      "frontend/cockpit/intelligence/provider_status_view.js",
+      "frontend/cockpit/intelligence/command_suggestions.js",
+      "frontend/cockpit/intelligence/search_panel.css"
+    ],
+    "shared_files": [
+      "frontend/cockpit/shared/api_client.js",
+      "frontend/cockpit/shared/payload_adapter.js",
+      "frontend/cockpit/shared/state_store.js",
+      "frontend/cockpit/shared/error_state.js",
+      "frontend/cockpit/shared/loading_state.js"
+    ]
+  },
+  "test_requirements_for_future_build": [
+    "search surface file exists",
+    "search mode router exists",
+    "search panel is registered in panel registry",
+    "search panel is default-visible/top-level",
+    "no direct fetch calls outside shared api_client/payload_adapter after consolidation",
+    "blocked/unavailable states render truthfully"
+  ],
+  "version": "v19.65"
+}

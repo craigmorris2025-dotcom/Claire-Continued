@@ -1,0 +1,21 @@
+{
+  "api_client": "frontend/cockpit/shared/api_client.js",
+  "backend_routes_modified": false,
+  "canonical_fetch_owner": "frontend/cockpit/shared/payload_adapter.js",
+  "canonical_routes": [
+    "/dashboard/payload/status",
+    "/dashboard/payload"
+  ],
+  "created_at": "2026-05-11T10:06:49.345787Z",
+  "fetches_enabled": true,
+  "launcher_rewired": false,
+  "legacy_dashboard_modified": false,
+  "runtime_behavior_changed": false,
+  "truthful_states": [
+    "online",
+    "unavailable",
+    "timeout",
+    "status_unavailable_payload_not_fetched"
+  ],
+  "version": "v19.68"
+}

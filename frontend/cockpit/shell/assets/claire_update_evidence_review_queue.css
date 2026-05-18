@@ -1,0 +1,61 @@
+.claire-update-evidence-review-queue-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+  margin: 14px 0;
+  background: rgba(7, 13, 24, 0.84);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+.claire-review-queue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.claire-review-queue-header small,
+.claire-update-evidence-review-queue-panel footer {
+  opacity: 0.7;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.claire-review-queue-body {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.claire-review-queue-badges,
+.claire-review-packet-topline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.claire-review-queue-badges span,
+.claire-review-packet-topline span {
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+}
+
+.claire-review-packet-card {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.claire-review-packet-card p {
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.claire-review-packet-card small {
+  opacity: 0.72;
+}

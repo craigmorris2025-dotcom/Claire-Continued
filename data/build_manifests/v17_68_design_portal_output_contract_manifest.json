@@ -1,0 +1,49 @@
+{
+  "backup_dir": "backups/v17_68_design_portal_output_contract/20260509_184933",
+  "build_name": "Design Portal Output Contract",
+  "files_written": [
+    "claire/design_portal/output_contract.py",
+    "claire/api/routes_design_portal_output.py",
+    "tests/test_v17_68_design_portal_output_contract.py",
+    "docs/design_portal/v17.68_design_portal_output_contract.md",
+    "data/design_portal/design_portal_output_contract.json",
+    "data/dashboard/design_portal_output_payload.json",
+    "data/design_portal/v17_68_design_portal_output_validation.json"
+  ],
+  "installed_at": "2026-05-09T23:49:36.650436Z",
+  "next": [
+    "v17.69 Buildability / Viability / Manufacturability Validation Stack",
+    "v17.70 Internet Readiness Verification",
+    "v17.71-v17.74 Governed update-pack staging and rollback-aware automatic update preparation"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "design_portal_status": "contract_ready",
+    "errors": [],
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.64.1",
+      "source": {
+        "invalid_candidate_count": 0,
+        "invalid_candidates_sample": [],
+        "raw_available": true,
+        "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+      },
+      "status": "rebuilt"
+    },
+    "route": {
+      "family": "autodesign",
+      "handoff_status": "already_satisfied",
+      "invention_required": true,
+      "selected": "solution_design"
+    },
+    "status": "passed"
+  },
+  "version": "v17.68"
+}

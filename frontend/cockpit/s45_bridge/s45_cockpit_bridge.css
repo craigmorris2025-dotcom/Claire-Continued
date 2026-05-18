@@ -1,0 +1,18 @@
+/*
+ * Claire S45 cockpit bridge styles.
+ * Presentation only. No runtime authority.
+ */
+
+.s45-operator-card {
+  border: 1px solid currentColor;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 12px 0;
+}
+
+.s45-operator-card pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 320px;
+  overflow: auto;
+}

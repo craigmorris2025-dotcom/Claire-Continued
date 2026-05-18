@@ -1,0 +1,30 @@
+{
+  "version": "v19.89.8-S19",
+  "installed_at_utc": "2026-05-14T02:43:30.724437+00:00",
+  "status": "installed",
+  "files_written": [
+    "claire\\api\\governed_route_activity_overlay.py",
+    "frontend\\cockpit\\assets\\js\\governed_route_activity_overlay.js",
+    "frontend\\cockpit\\assets\\css\\governed_route_activity_overlay.css",
+    "tests\\test_governed_route_activity_overlay_s19.py",
+    "docs\\build_notes\\v19.89.8-S19_governed_route_activity_overlay.md",
+    "output\\cockpit\\v19.89.8-S19_install_report.json"
+  ],
+  "patch_report": [
+    "added S19 import guard to claire\\app.py",
+    "registered S19 API routes in claire\\app.py",
+    "attached S19 overlay to dashboard payload in claire\\app.py"
+  ],
+  "link_report": [
+    "linked S19 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S19 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_governed_route_activity_overlay_s19.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

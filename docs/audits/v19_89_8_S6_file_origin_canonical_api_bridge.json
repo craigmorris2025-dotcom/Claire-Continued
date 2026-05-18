@@ -1,0 +1,16 @@
+{
+  "version": "v19.89.8-S6",
+  "build": "File-Origin Canonical API Bridge",
+  "timestamp": "2026-05-14T01:39:44.634411+00:00",
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "frontend_truth_allowed": false,
+  "runtime_authority_expanded": false,
+  "safe_to_expand_runtime_authority": false,
+  "changes": [
+    "Wrote frontend\\cockpit\\shell\\claire_file_origin_canonical_api_bridge.js",
+    "Injected S6 file-origin API bridge into cockpit_shell.html"
+  ],
+  "warnings": [],
+  "purpose": "Rewrite approved file-origin canonical fetches to http://127.0.0.1:8000"
+}

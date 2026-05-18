@@ -1,0 +1,16 @@
+{
+  "version": "v19.85.0",
+  "build": "Evidence Escalation Hardening",
+  "installed_at": "2026-05-12T15:29:20.655602+00:00",
+  "runtime_mutation": "none",
+  "files_written": [
+    "tools/evidence_escalation_hardening.py",
+    "tests/test_v19_85_0_evidence_escalation_hardening.py",
+    "docs/builds/v19_85_0_evidence_escalation_hardening.md",
+    "data/build_artifacts/v19_85_0_evidence_escalation_hardening.json"
+  ],
+  "commands": [
+    "python tools/evidence_escalation_hardening.py",
+    "pytest tests/test_v19_85_0_evidence_escalation_hardening.py -q"
+  ]
+}

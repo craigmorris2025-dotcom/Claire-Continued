@@ -1,0 +1,40 @@
+{
+  "blockers": [],
+  "generated_at": "2026-05-13T11:19:00.838871Z",
+  "manual_required_slots_not_checked": [
+    "swagger_docs",
+    "operator_dashboard_state",
+    "search_capabilities",
+    "runtime_truth",
+    "route_audit",
+    "autodesign_handoff",
+    "design_portal_output",
+    "internet_readiness",
+    "update_regression_lock",
+    "platform_smoke",
+    "desktop_startup",
+    "search_runtime_query",
+    "command_parse_autodesign",
+    "proof_platform_rebuild",
+    "desktop_startup_rebuild",
+    "dashboard_step_01",
+    "dashboard_step_02",
+    "dashboard_step_03",
+    "dashboard_step_04",
+    "dashboard_step_05",
+    "dashboard_step_06",
+    "dashboard_step_07",
+    "dashboard_step_08",
+    "dashboard_step_09",
+    "dashboard_step_10"
+  ],
+  "recommendation": "Open the URLs, complete the dashboard walkthrough, and run Swagger Try it out tests. Automatic web/update/agent execution remains disabled.",
+  "status": "READY_FOR_MANUAL_BROWSER_SWAGGER_PROOF",
+  "version": "v17.79",
+  "warnings": [
+    "manual_evidence_not_yet_completed:25_required_slots",
+    "prior_report_stop:v17_76_platform_smoke",
+    "prior_report_stop:v17_77_launch_hardening",
+    "prior_report_stop:v17_78_desktop_startup"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "installer": "install_claire_v19_89_8_s32r2r1_recursion_and_agent_key_repair.py",
+  "started_at": "2026-05-16T17:40:24.643311Z",
+  "pytest_inside_installer": false,
+  "ok": false,
+  "issue": "Recursive S32R2R1 wrapper in governed_web_safety_activation plus missing autonomous_agent_execution_enabled key.",
+  "target_module": "claire\\api\\governed_web_safety_activation.py",
+  "bridge_module": "claire\\api\\dashboard_payload_bridge.py",
+  "mode": "full_target_module_rewrite_plus_nonrecursive_dashboard_payload_bridge_normalizer",
+  "target_backup": "backups\\v19_89_8_s32r2r1_recursion_and_safety_key_repair\\governed_web_safety_activation.py.20260516_174024.bak",
+  "target_rewritten": true,
+  "bridge_patched": true,
+  "pycache_removed": [
+    "claire\\api\\__pycache__\\governed_web_safety_activation.cpython-311.pyc",
+    "claire\\api\\__pycache__\\dashboard_payload_bridge.cpython-311.pyc"
+  ],
+  "compiled": [
+    "claire\\api\\governed_web_safety_activation.py",
+    "claire\\api\\dashboard_payload_bridge.py"
+  ],
+  "subprocess_validation_returncode": 1,
+  "subprocess_validation_stdout": "",
+  "subprocess_validation_stderr": "Traceback (most recent call last):\n  File \"<string>\", line 3, in <module>\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py\", line 192, in build_governed_web_safety_activation\n    return normalize_s32r2r1_safety_payload(payload)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py\", line 131, in normalize_s32r2r1_safety_payload\n    normalize_s32r2r1_safety_payload(nested, _seen)\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py\", line 131, in normalize_s32r2r1_safety_payload\n    normalize_s32r2r1_safety_payload(nested, _seen)\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py\", line 131, in normalize_s32r2r1_safety_payload\n    normalize_s32r2r1_safety_payload(nested, _seen)\n  [Previous line repeated 993 more times]\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py\", line 103, in normalize_s32r2r1_safety_payload\n    for key, value in safety_keys().items():\n                      ^^^^^^^^^^^^^\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py\", line 67, in safety_keys\n    payload.update(SAFETY_FALSE_KEYS)\nRecursionError: maximum recursion depth exceeded while calling a Python object\n",
+  "error": "RuntimeError('Fresh subprocess S32R2R1 validation failed')",
+  "finished_at": "2026-05-16T17:40:24.726288Z"
+}

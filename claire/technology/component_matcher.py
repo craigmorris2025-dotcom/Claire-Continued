@@ -1,67 +1,46 @@
 """
-Matches technology components to requirements
-=============================================
-ACS2-Claire / Syntalion
+Claire Syntalion structural placeholder repair.
 
-Module: src.claire.technology.component_matcher
-Role: Matches technology components to requirements
+This module was syntactically invalid and was neutralized by
+v19 Structural Repair Pack 1.1 so project-wide syntax checks and backend startup
+can proceed.
+
+This is not a production implementation.
+
+Original syntax error:
+- line: 38
+- message: invalid syntax
+- text: raise NotImplementedError
 """
 
-import json
-import logging
-from datetime import datetime
-from pathlib import Path
-from dataclasses import dataclass, field
-from typing import Any, Optional
+from __future__ import annotations
 
-logger = logging.getLogger(__name__)
+from typing import Any
 
 
 class ComponentMatcher:
-    """
-    Matches technology components to requirements
+    """Non-executing placeholder pending real implementation."""
 
-    Uses technology catalog for component discovery.
-    Scoring based on functional fit, maturity, community support, licensing..
-    """
+    implemented = False
+    structural_placeholder = True
 
-    def __init__(self):
-        self.logger = logging.getLogger(self.__class__.__name__)
-        self.logger.info(f"{self.__class__.__name__} initialized")
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        self.args = args
+        self.kwargs = kwargs
 
-    def match_components(requirements):
-        """Returns list[ComponentMatch]."""
-        raise NotImplementedError
+    def run(self, *args: Any, **kwargs: Any) -> dict[str, Any]:
+        return build_placeholder_status()
 
-    def score_match(component:
-        """Returns Any."""
-        raise NotImplementedError
 
-    def requirement):
-        """Returns float."""
-        raise NotImplementedError
+def build_placeholder_status() -> dict[str, Any]:
+    return {
+        "status": "not_implemented",
+        "module": __name__,
+        "structural_placeholder": True,
+        "implemented": False,
+        "message": "Placeholder repaired for syntax stability only.",
+    }
 
-    def find_alternatives(component):
-        """Returns list[Alternative]."""
-        raise NotImplementedError
 
-    def compare_components(comp_a:
-        """Returns Any."""
-        raise NotImplementedError
-
-    def comp_b):
-        """Returns ComparisonReport."""
-        raise NotImplementedError
-
-    def validate_match(match:
-        """Returns Any."""
-        raise NotImplementedError
-
-    def constraints):
-        """Returns ValidationResult."""
-        raise NotImplementedError
-
-    def export_matches(matches):
-        """Returns dict."""
-        raise NotImplementedError
-
+def run(*args: Any, **kwargs: Any) -> dict[str, Any]:
+    return build_placeholder_status()

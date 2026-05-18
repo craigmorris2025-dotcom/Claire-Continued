@@ -1,0 +1,23 @@
+{
+  "version": "v19.89.8-S15-FIXED",
+  "installed_at_utc": "2026-05-14T02:20:13.128144+00:00",
+  "status": "installed",
+  "files_written": [
+    "claire\\api\\governed_timeline_classification.py",
+    "tests\\test_governed_runtime_timeline_s15.py",
+    "docs\\build_notes\\v19.89.8-S15_timeline_classification.md",
+    "output\\timeline\\v19.89.8-S15_install_report.json"
+  ],
+  "patch_report": [
+    "added S15 classifier import guard to S14 module",
+    "attached S15 classification before timeline state write"
+  ],
+  "run_tests": "python -m pytest tests/test_governed_runtime_timeline_s15.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

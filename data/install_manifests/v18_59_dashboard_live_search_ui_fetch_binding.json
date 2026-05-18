@@ -1,0 +1,18 @@
+
+{
+  "version": "v18.59",
+  "name": "Dashboard Live Search UI Fetch Binding",
+  "scope": [
+    "define governed dashboard live-search UI fetch contract",
+    "write safe frontend JavaScript binding for /api/dashboard/search/live",
+    "render endpoint result_cards into review-required result cards",
+    "do not auto-wire existing dashboard HTML yet",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_59_dashboard_live_search_ui_fetch_binding.py -q"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "v19.89.8-S25",
+  "installed_at_utc": "2026-05-14T03:34:05.638069+00:00",
+  "status": "installed",
+  "safety_note": "S25 intentionally did not patch claire/app.py.",
+  "files_written": [
+    "claire\\api\\governed_operator_workflow.py",
+    "frontend\\cockpit\\assets\\js\\governed_operator_workflow.js",
+    "frontend\\cockpit\\assets\\css\\governed_operator_workflow.css",
+    "tests\\test_governed_operator_workflow_s25.py",
+    "docs\\build_notes\\v19.89.8-S25_governed_operator_workflow.md",
+    "output\\cockpit\\v19.89.8-S25_install_report.json"
+  ],
+  "link_report": [
+    "linked S25 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S25 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_governed_operator_workflow_s25.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "operator_mutation_enabled": false,
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

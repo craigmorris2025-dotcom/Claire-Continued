@@ -1,0 +1,626 @@
+{
+  "checks": {
+    "autonomous_execution_blocked": true,
+    "export_exists": true,
+    "no_app_patch": true,
+    "no_live_rewire": true,
+    "no_route_registration": true,
+    "runtime_truth_write_blocked": true,
+    "s114_bridge_ready": true,
+    "s115_approved_run_ready": true,
+    "s116_fetch_map_locked": true,
+    "s117_review_export_ready": true,
+    "s118_search_control_ready": true,
+    "s119_demo_ready": true
+  },
+  "demo": {
+    "app_patch_performed": false,
+    "approved_run": {
+      "bridge": {
+        "discovery_candidate": {
+          "authority": {
+            "manual_review_required": true,
+            "promotion_allowed": false,
+            "quarantine_required": true,
+            "runtime_truth": "blocked",
+            "runtime_truth_write": "blocked"
+          },
+          "candidate_id": "disc_1e5c4663435e929c",
+          "candidate_type": "portfolio",
+          "candidate_version": "S85",
+          "confidence": 0.722,
+          "created_at": "2026-05-15T03:48:18.307929+00:00",
+          "governance": {
+            "automatic_updates_blocked": true,
+            "autonomous_execution_blocked": true,
+            "backend_owns_truth": true,
+            "cockpit_presentation_only": true,
+            "continuous_crawling_blocked": true,
+            "live_web_execution_requires_explicit_gate": true,
+            "manual_promotion_mandatory": true,
+            "quarantine_mandatory": true,
+            "runtime_truth_mutation_blocked": true,
+            "runtime_truth_write_blocked": true
+          },
+          "headline": "Portfolio candidate: approved evidence run signal",
+          "lineage": {
+            "evidence_basket_id": "s114_s120_evidence_basket",
+            "extraction_id": "s114_s120_extraction",
+            "source": "governed_evidence_basket"
+          },
+          "signals": [
+            {
+              "confidence": 0.84,
+              "kind": "portfolio",
+              "label": "approved evidence run signal",
+              "signal_id": "signal_1"
+            },
+            {
+              "confidence": 0.76,
+              "kind": "design",
+              "label": "governed search management signal",
+              "signal_id": "signal_2"
+            }
+          ],
+          "source_evidence_ids": [
+            "s114_ev_001"
+          ],
+          "status": "quarantined_candidate",
+          "summary": "Structured discovery candidate generated from quarantined governed evidence. This is not runtime truth and requires manual operator review.",
+          "trust_score": 0.86
+        },
+        "locks": {
+          "automatic_updates_blocked": true,
+          "autonomous_execution_blocked": true,
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "continuous_crawling_blocked": true,
+          "manual_promotion_mandatory": true,
+          "quarantine_mandatory": true,
+          "runtime_truth_mutation_blocked": true,
+          "runtime_truth_write_blocked": true
+        },
+        "mapping": {
+          "discovery_candidate": "Discovery Generation",
+          "evidence_basket": "Signal Ingestion / Source Validation",
+          "export": "Final Package Construction",
+          "extraction": "Entity Extraction / Relationship Mapping",
+          "review_queue": "Operator Review Gate",
+          "useful_output_candidate": "Advancement Path Selection"
+        },
+        "runtime_truth_write": "blocked",
+        "stage_version": "S114",
+        "status": "evidence_to_lifecycle_bridge_ready",
+        "useful_output_candidate": {
+          "authority": {
+            "automatic_update": "blocked",
+            "autonomous_execution": "blocked",
+            "export_allowed_after_approval": true,
+            "manual_review_required": true,
+            "runtime_truth": "blocked",
+            "runtime_truth_write": "blocked"
+          },
+          "candidate_version": "S86",
+          "confidence": 0.722,
+          "created_at": "2026-05-15T03:48:18.307929+00:00",
+          "headline": "Portfolio candidate: approved evidence run signal",
+          "lineage": {
+            "discovery_candidate_id": "disc_1e5c4663435e929c",
+            "evidence_basket_id": "s114_s120_evidence_basket"
+          },
+          "output_candidate_id": "out_af37f1f7c280b7df",
+          "output_type": "portfolio_observation",
+          "recommended_operator_action": "review",
+          "route": "portfolio",
+          "signals": [
+            {
+              "confidence": 0.84,
+              "kind": "portfolio",
+              "label": "approved evidence run signal",
+              "signal_id": "signal_1"
+            },
+            {
+              "confidence": 0.76,
+              "kind": "design",
+              "label": "governed search management signal",
+              "signal_id": "signal_2"
+            }
+          ],
+          "source_discovery_candidate_id": "disc_1e5c4663435e929c",
+          "source_evidence_ids": [
+            "s114_ev_001"
+          ],
+          "status": "review_required",
+          "summary": "Route-aware useful output candidate derived from a quarantined discovery candidate. Manual approval is required before export.",
+          "trust_score": 0.86
+        }
+      },
+      "decision": {
+        "decided_at": "2026-05-15T03:48:18.314930+00:00",
+        "decided_by": "s115_contract",
+        "decision": "approved",
+        "export_allowed": true,
+        "note": "S115 approved evidence run contract; export only, no runtime truth write.",
+        "review_item_id": "review_out_af37f1f7c280b7df",
+        "runtime_truth_write": "blocked"
+      },
+      "export": {
+        "derived_artifact": true,
+        "export_id": "export_efd0cc0bf82e6880",
+        "export_version": "S88",
+        "format": "json",
+        "path": "exports\\s114_s120\\export_efd0cc0bf82e6880.json",
+        "review_item_id": "review_out_af37f1f7c280b7df",
+        "runtime_truth_write": "blocked",
+        "status": "exported"
+      },
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_blocked": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "review_item": {
+        "allowed_decisions": [
+          "approved",
+          "archived",
+          "export_only",
+          "rejected"
+        ],
+        "authority": {
+          "automatic_updates": "blocked",
+          "manual_promotion_mandatory": true,
+          "runtime_truth_write": "blocked"
+        },
+        "created_at": "2026-05-15T03:48:18.307929+00:00",
+        "decided_at": "2026-05-15T03:48:18.314930+00:00",
+        "decided_by": "s115_contract",
+        "decision_note": "S115 approved evidence run contract; export only, no runtime truth write.",
+        "headline": "Portfolio candidate: approved evidence run signal",
+        "operator": "s115_contract",
+        "output_candidate_id": "out_af37f1f7c280b7df",
+        "payload": {
+          "authority": {
+            "automatic_update": "blocked",
+            "autonomous_execution": "blocked",
+            "export_allowed_after_approval": true,
+            "manual_review_required": true,
+            "runtime_truth": "blocked",
+            "runtime_truth_write": "blocked"
+          },
+          "candidate_version": "S86",
+          "confidence": 0.722,
+          "created_at": "2026-05-15T03:48:18.307929+00:00",
+          "headline": "Portfolio candidate: approved evidence run signal",
+          "lineage": {
+            "discovery_candidate_id": "disc_1e5c4663435e929c",
+            "evidence_basket_id": "s114_s120_evidence_basket"
+          },
+          "output_candidate_id": "out_af37f1f7c280b7df",
+          "output_type": "portfolio_observation",
+          "recommended_operator_action": "review",
+          "route": "portfolio",
+          "signals": [
+            {
+              "confidence": 0.84,
+              "kind": "portfolio",
+              "label": "approved evidence run signal",
+              "signal_id": "signal_1"
+            },
+            {
+              "confidence": 0.76,
+              "kind": "design",
+              "label": "governed search management signal",
+              "signal_id": "signal_2"
+            }
+          ],
+          "source_discovery_candidate_id": "disc_1e5c4663435e929c",
+          "source_evidence_ids": [
+            "s114_ev_001"
+          ],
+          "status": "review_required",
+          "summary": "Route-aware useful output candidate derived from a quarantined discovery candidate. Manual approval is required before export.",
+          "trust_score": 0.86
+        },
+        "review_item_id": "review_out_af37f1f7c280b7df",
+        "route": "portfolio",
+        "source_evidence_ids": [
+          "s114_ev_001"
+        ],
+        "status": "approved"
+      },
+      "runtime_truth_write": "blocked",
+      "stage_version": "S115",
+      "status": "approved_evidence_run_contract_ready"
+    },
+    "demo_path": [
+      "runtime_spine",
+      "evidence_to_lifecycle_bridge",
+      "approved_evidence_run_contract",
+      "dashboard_operations_fetch_map",
+      "review_export_control_backend",
+      "governed_search_control_backend",
+      "export_artifact"
+    ],
+    "evidence_bridge": {
+      "discovery_candidate": {
+        "authority": {
+          "manual_review_required": true,
+          "promotion_allowed": false,
+          "quarantine_required": true,
+          "runtime_truth": "blocked",
+          "runtime_truth_write": "blocked"
+        },
+        "candidate_id": "disc_1e5c4663435e929c",
+        "candidate_type": "portfolio",
+        "candidate_version": "S85",
+        "confidence": 0.722,
+        "created_at": "2026-05-15T03:48:18.307929+00:00",
+        "governance": {
+          "automatic_updates_blocked": true,
+          "autonomous_execution_blocked": true,
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "continuous_crawling_blocked": true,
+          "live_web_execution_requires_explicit_gate": true,
+          "manual_promotion_mandatory": true,
+          "quarantine_mandatory": true,
+          "runtime_truth_mutation_blocked": true,
+          "runtime_truth_write_blocked": true
+        },
+        "headline": "Portfolio candidate: approved evidence run signal",
+        "lineage": {
+          "evidence_basket_id": "s114_s120_evidence_basket",
+          "extraction_id": "s114_s120_extraction",
+          "source": "governed_evidence_basket"
+        },
+        "signals": [
+          {
+            "confidence": 0.84,
+            "kind": "portfolio",
+            "label": "approved evidence run signal",
+            "signal_id": "signal_1"
+          },
+          {
+            "confidence": 0.76,
+            "kind": "design",
+            "label": "governed search management signal",
+            "signal_id": "signal_2"
+          }
+        ],
+        "source_evidence_ids": [
+          "s114_ev_001"
+        ],
+        "status": "quarantined_candidate",
+        "summary": "Structured discovery candidate generated from quarantined governed evidence. This is not runtime truth and requires manual operator review.",
+        "trust_score": 0.86
+      },
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_blocked": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "mapping": {
+        "discovery_candidate": "Discovery Generation",
+        "evidence_basket": "Signal Ingestion / Source Validation",
+        "export": "Final Package Construction",
+        "extraction": "Entity Extraction / Relationship Mapping",
+        "review_queue": "Operator Review Gate",
+        "useful_output_candidate": "Advancement Path Selection"
+      },
+      "runtime_truth_write": "blocked",
+      "stage_version": "S114",
+      "status": "evidence_to_lifecycle_bridge_ready",
+      "useful_output_candidate": {
+        "authority": {
+          "automatic_update": "blocked",
+          "autonomous_execution": "blocked",
+          "export_allowed_after_approval": true,
+          "manual_review_required": true,
+          "runtime_truth": "blocked",
+          "runtime_truth_write": "blocked"
+        },
+        "candidate_version": "S86",
+        "confidence": 0.722,
+        "created_at": "2026-05-15T03:48:18.307929+00:00",
+        "headline": "Portfolio candidate: approved evidence run signal",
+        "lineage": {
+          "discovery_candidate_id": "disc_1e5c4663435e929c",
+          "evidence_basket_id": "s114_s120_evidence_basket"
+        },
+        "output_candidate_id": "out_af37f1f7c280b7df",
+        "output_type": "portfolio_observation",
+        "recommended_operator_action": "review",
+        "route": "portfolio",
+        "signals": [
+          {
+            "confidence": 0.84,
+            "kind": "portfolio",
+            "label": "approved evidence run signal",
+            "signal_id": "signal_1"
+          },
+          {
+            "confidence": 0.76,
+            "kind": "design",
+            "label": "governed search management signal",
+            "signal_id": "signal_2"
+          }
+        ],
+        "source_discovery_candidate_id": "disc_1e5c4663435e929c",
+        "source_evidence_ids": [
+          "s114_ev_001"
+        ],
+        "status": "review_required",
+        "summary": "Route-aware useful output candidate derived from a quarantined discovery candidate. Manual approval is required before export.",
+        "trust_score": 0.86
+      }
+    },
+    "fetch_map": {
+      "app_patch_performed": false,
+      "fetch_map": {
+        "approved_run": "backend:function:build_approved_evidence_run_contract",
+        "dashboard_demo": "backend:function:build_dashboard_managed_demo_backend",
+        "evidence_bridge": "backend:function:build_evidence_to_lifecycle_bridge",
+        "governed_search_control": "backend:function:build_governed_search_control_backend",
+        "review_export_control": "backend:function:build_review_export_control_backend",
+        "runtime_spine": "backend:function:build_runtime_spine_state"
+      },
+      "live_dashboard_rewire_performed": false,
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_blocked": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "read_only": true,
+      "route_registration_performed": false,
+      "stage_version": "S116",
+      "status": "dashboard_operations_fetch_map_locked"
+    },
+    "governed_search_control": {
+      "automatic_updates": "blocked",
+      "autonomous_execution": "blocked",
+      "continuous_crawling": "blocked",
+      "live_web_execution": "blocked_unless_explicitly_gated",
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_blocked": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "manual_probe_required": true,
+      "manual_promotion_required": true,
+      "operator_review_required": true,
+      "quarantine_required": true,
+      "stage_version": "S118",
+      "status": "governed_search_control_backend_ready"
+    },
+    "live_dashboard_rewire_performed": false,
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "continuous_crawling_blocked": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "review_export_control": {
+      "available_actions": [
+        "approve",
+        "reject",
+        "archive",
+        "export_only"
+      ],
+      "decision_total": 2,
+      "latest_export": {
+        "derived_artifact": true,
+        "export_id": "export_7ebf3557d89d7ef4",
+        "export_version": "S88",
+        "format": "json",
+        "path": "exports\\s114_s120\\export_7ebf3557d89d7ef4.json",
+        "review_item_id": "review_out_af37f1f7c280b7df",
+        "runtime_truth_write": "blocked",
+        "status": "exported"
+      },
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_blocked": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "manual_operator_only": true,
+      "queue_total": 1,
+      "runtime_truth_write": "blocked",
+      "stage_version": "S117",
+      "status": "review_export_control_backend_ready"
+    },
+    "route_registration_performed": false,
+    "runtime_spine": {
+      "app_patch_performed": false,
+      "authority_model": {
+        "cockpit": "presentation_only",
+        "operator_actions": "manual_only",
+        "single_evidence_authority": "backend",
+        "single_route_state_authority": "backend",
+        "single_runtime_state_authority": "backend"
+      },
+      "automatic_route_registration": false,
+      "backend_module_only": true,
+      "created_at": "2026-05-15T03:48:18.307929+00:00",
+      "export_count": 0,
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_blocked": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "proof_status": "ready",
+      "review_queue_total": 0,
+      "route_count": 3,
+      "route_state": {
+        "breakthrough": {
+          "automatic_update": "blocked",
+          "manual_review_required": true,
+          "route": "breakthrough",
+          "runtime_truth_write": "blocked",
+          "status": "available"
+        },
+        "design": {
+          "automatic_update": "blocked",
+          "manual_review_required": true,
+          "route": "design",
+          "runtime_truth_write": "blocked",
+          "status": "available"
+        },
+        "portfolio": {
+          "automatic_update": "blocked",
+          "manual_review_required": true,
+          "route": "portfolio",
+          "runtime_truth_write": "blocked",
+          "status": "available"
+        }
+      },
+      "spine_id": "spine_406c0d0f0cb3ed69",
+      "spine_version": "S106R1",
+      "stage_count": 12,
+      "stage_state": {
+        "cockpit_read_model": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "cockpit_read_model",
+          "status": "available"
+        },
+        "discovery_candidate": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "discovery_candidate",
+          "status": "available"
+        },
+        "evidence_basket": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "evidence_basket",
+          "status": "available"
+        },
+        "export_manifest": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "export_manifest",
+          "status": "available"
+        },
+        "extraction": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "extraction",
+          "status": "available"
+        },
+        "governed_intake": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "governed_intake",
+          "status": "available"
+        },
+        "operator_decision": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "operator_decision",
+          "status": "available"
+        },
+        "quarantine": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "quarantine",
+          "status": "available"
+        },
+        "review_queue": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "review_queue",
+          "status": "available"
+        },
+        "route_state": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "route_state",
+          "status": "available"
+        },
+        "system_proof": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "system_proof",
+          "status": "available"
+        },
+        "useful_output_candidate": {
+          "backend_owned": true,
+          "cockpit_presentation_only": true,
+          "runtime_truth_write": "blocked",
+          "stage": "useful_output_candidate",
+          "status": "available"
+        }
+      },
+      "status": "runtime_spine_contract_ready"
+    },
+    "stage_version": "S119",
+    "status": "dashboard_managed_demo_backend_ready"
+  },
+  "forward_motion_allowed": true,
+  "functional_plan_coverage": {
+    "S114": "evidence-to-lifecycle bridge",
+    "S115": "approved evidence run contract",
+    "S116": "dashboard operations fetch-map lock",
+    "S117": "cockpit review/export control backend",
+    "S118": "cockpit governed search control backend",
+    "S119": "end-to-end dashboard-managed demo backend",
+    "S120": "stop-gate proof"
+  },
+  "generated_at": "2026-05-15T03:48:18.329929+00:00",
+  "next_allowed_phase": "S121 controlled read-only cockpit integration",
+  "ok": true,
+  "stage_version": "S120",
+  "status": "s114_s120_stop_gate_passed"
+}

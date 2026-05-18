@@ -1,0 +1,39 @@
+{
+  "version": "v19.89.8-S583-S589",
+  "installed_at": "2026-05-17T03:03:27+00:00",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "installed": [
+    "claire\\governance\\governed_search_plan.py",
+    "claire\\api\\governed_search_plan_routes.py",
+    "frontend\\cockpit\\assets\\claire_governed_search_plan.js",
+    "frontend\\cockpit\\assets\\claire_governed_search_plan.css",
+    "tests\\test_s583_s589_governed_search_plan.py",
+    "claire/app.py [router registration inserted]",
+    "frontend\\cockpit\\shell\\cockpit_shell.html [asset links inserted]",
+    "frontend\\command_center\\modern\\index.html [asset links inserted]"
+  ],
+  "notes": [],
+  "preserved_blocks": {
+    "live_web_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  },
+  "new_endpoints": [
+    "/api/search/governed/plans",
+    "/api/search/governed/plans/sample",
+    "/api/search/governed/cards",
+    "/api/search/governed/actions",
+    "/api/search/governed/policy",
+    "/api/search/governed/status"
+  ],
+  "test_file": "tests/test_s583_s589_governed_search_plan.py",
+  "next_phase": "S590-S596 Evidence Card Normalization + Review Surface"
+}

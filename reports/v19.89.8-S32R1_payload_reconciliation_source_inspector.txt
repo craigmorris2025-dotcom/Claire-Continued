@@ -1,0 +1,97 @@
+Claire Syntalion v19.89.8-S32R1 Payload/Reconciliation Source Inspector
+Generated: 2026-05-14T09:09:18
+Project root: C:\Users\craig\OneDrive\Desktop\Claire
+
+MODE: INSPECTION ONLY — NO CLAIRE SOURCE FILES WRITTEN
+
+LIVE ROUTE PROBE
+ROUTE / 200
+ROUTE /health 200
+ROUTE /docs 200
+ROUTE /dashboard/payload 200
+PAYLOAD_KEYS ['automatic_updates_enabled', 'autonomous_agent_execution_enabled', 'contract', 'dashboard_ready', 'generated_at', 'live_web_execution_enabled', 'panels', 'read_only', 'runtime_truth_mutation_enabled', 'sections', 'summary', 'version']
+HAS_GOVERNED_PAYLOAD_RECONCILIATION False
+HAS_GOVERNED_INTERNET_READINESS False
+HAS_GOVERNED_WEB_SAFETY_ACTIVATION False
+PANELS_COUNT 9
+ROUTE /dashboard/payload/status 200
+ROUTE /internet/provider-gate 404
+ROUTE /internet/search/provider/status 404
+ROUTE /operator/search/web/status 404
+
+OPENAPI ROUTE OWNERS
+APP_ROUTE ['GET'] /api/dashboard/payload claire.routes.authored_cockpit_payload_binding_routes api_dashboard_payload
+APP_ROUTE ['GET'] /api/dashboard/payload/status claire.routes.authored_cockpit_payload_binding_routes api_dashboard_payload_status
+APP_ROUTE ['GET'] /operator/search/capabilities claire.api.operator_dashboard_compat_routes operator_search_capabilities
+APP_ROUTE ['GET'] /operator/search/smoke/google claire.api.operator_dashboard_compat_routes operator_search_smoke_google
+APP_ROUTE ['GET'] /operator/search claire.api.operator_dashboard_compat_routes operator_search_get
+APP_ROUTE ['POST'] /operator/search claire.api.operator_dashboard_compat_routes operator_search_post
+APP_ROUTE ['GET'] /operator/search/live claire.api.operator_dashboard_compat_routes operator_search_live_get
+APP_ROUTE ['POST'] /operator/search/live claire.api.operator_dashboard_compat_routes operator_search_live_post
+APP_ROUTE ['POST'] /operator/search/query claire.api.operator_dashboard_compat_routes operator_search_query_post
+APP_ROUTE ['POST'] /operator/search/run claire.api.operator_dashboard_compat_routes operator_search_run_post
+APP_ROUTE ['GET'] /dashboard/payload claire.api.dashboard_payload_bridge get_dashboard_payload
+APP_ROUTE ['GET'] /dashboard/payload/status claire.api.dashboard_payload_bridge get_dashboard_payload_status
+
+FILE: canonical_payload_owner -> claire/api/routes_enterprise_cockpit_payload.py
+  exists: True
+  parse_ok: True
+  functions: 9
+  route functions: 2
+  returns: 14
+  compose calls: 0
+  SAFE ANCHOR: canonical_payload_route dashboard_payload line 175
+    return line 176: build_payload()
+
+FILE: payload_bridge -> claire/api/dashboard_payload_bridge.py
+  exists: True
+  parse_ok: True
+  functions: 9
+  route functions: 0
+  returns: 13
+  compose calls: 0
+
+FILE: reconciliation_module -> claire/api/governed_payload_reconciliation.py
+  exists: True
+  parse_ok: True
+  functions: 3
+  route functions: 0
+  returns: 3
+  compose calls: 1
+  SAFE ANCHOR: compose_governed_payload_function compose_governed_payload line 38
+    return line 90: composed
+
+FILE: app -> claire/app.py
+  exists: True
+  parse_ok: True
+  functions: 51
+  route functions: 0
+  returns: 81
+  compose calls: 2
+
+RECOMMENDATIONS
+S32R1 FINDINGS / NEXT SAFE ACTION
+
+1. Do not continue blind S32 writes.
+2. Use this report to patch only detected anchors.
+3. S32R2 should be generated from these exact return statements.
+
+- /dashboard/payload is healthy before S32R2.
+- governed_payload_reconciliation is NOT visible in live payload; payload owner attachment remains missing.
+- OpenAPI/app route ownership was captured; use JSON report for exact endpoint owner modules.
+
+Canonical payload owner safe anchors:
+- canonical_payload_route dashboard_payload line 175
+  return line 176: build_payload()
+
+Reconciliation module safe anchors:
+- compose_governed_payload_function compose_governed_payload line 38
+  return line 90: composed
+
+S32R2 write rule:
+- If compose_governed_payload exists, insert safety activation immediately before its actual return line.
+- If canonical payload owner returns a variable/expression, wrap the actual returned value only after confirming route owner.
+- Do not patch app.py unless route owner inspection proves a new route include is necessary.
+
+JSON report: C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-S32R1_payload_reconciliation_source_inspector.json
+Text report: C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-S32R1_payload_reconciliation_source_inspector.txt

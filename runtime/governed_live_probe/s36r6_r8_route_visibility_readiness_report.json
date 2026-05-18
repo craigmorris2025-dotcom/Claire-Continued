@@ -1,0 +1,22 @@
+{
+  "automatic_updates_allowed": false,
+  "autonomous_execution_allowed": false,
+  "body_reads_allowed": false,
+  "browser_execution_allowed": false,
+  "continuous_crawling_allowed": false,
+  "expected_routes": [
+    "/api/governed/live-probe/status",
+    "/api/governed/live-probe/head"
+  ],
+  "installed_at": "2026-05-14T17:33:43.686688+00:00",
+  "installed_files": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\audit_s36_route_visibility.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s36r6_r8_route_visibility_readiness.py"
+  ],
+  "live_network_execution_during_install": false,
+  "manual_promotion_required": true,
+  "purpose": "route visibility proof and first-probe readiness audit",
+  "quarantine_required": true,
+  "runtime_truth_mutation_allowed": false,
+  "version": "v19.89.8-S36R6-R8-route-visibility-readiness"
+}

@@ -1,0 +1,23 @@
+{
+  "builds": [
+    {
+      "range": "v19.42-v19.51",
+      "name": "Web Pipeline Stabilization Pack",
+      "purpose": "10-build acceleration pack proving governed web-to-pipeline runtime stabilization after v19.37-v19.41.",
+      "files": [
+        "claire/runtime/web_pipeline_stabilization.py",
+        "tests/test_v19_42_to_v19_51_web_pipeline_stabilization_pack.py"
+      ]
+    },
+    {
+      "range": "v19.42-v19.51.1",
+      "name": "Route Priority Repair",
+      "purpose": "Repairs web pipeline stabilization route priority so market trend queries produce trend_thesis_ready unless portfolio intent is explicit.",
+      "files": [
+        "claire/runtime/web_pipeline_stabilization.py",
+        "tests/test_v19_42_to_v19_51_1_route_priority_repair.py"
+      ]
+    }
+  ],
+  "latest_pack": "v19.42-v19.51.1 Route Priority Repair"
+}

@@ -1,0 +1,31 @@
+{
+  "version": "v19.89.8-S1125-S1152-operator-action-click-result-bridge",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "written": [
+    "claire/api/operator_action_click_result_surface.py",
+    "frontend/command_center/modern/operator_action_click_bridge.js",
+    "frontend/command_center/modern/operator_action_click_bridge.css",
+    "tests/test_s1125_s1152_operator_action_click_result_bridge.py"
+  ],
+  "index_injected": true,
+  "index_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-S1125-S1152-operator-action-click-result-bridge",
+  "routes_verified": {
+    "/dashboard/operator-action/result/plan_search": 200,
+    "/dashboard/actions/result/plan_search": 200,
+    "/api/dashboard/operator-action/result/plan_search": 200
+  },
+  "blocked_authority_preserved": [
+    "live_web_execution",
+    "search_provider_execution",
+    "browser_execution",
+    "network_requests",
+    "body_reads",
+    "autonomous_crawling",
+    "automatic_updates",
+    "runtime_mutation",
+    "runtime_truth_mutation",
+    "package_download_install",
+    "command_execution"
+  ]
+}

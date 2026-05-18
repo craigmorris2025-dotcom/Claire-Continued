@@ -1,0 +1,43 @@
+{
+  "errors": [],
+  "pack_name": "Dashboard Runtime Governed Search Pack",
+  "pack_version": "v18.85-v18.89",
+  "proofs": {
+    "google_card_present": true,
+    "normal_search_is_live_endpoint": true,
+    "provider_probe_is_manual_gated": true,
+    "provider_probe_is_separate": true
+  },
+  "state": {
+    "normal_search_endpoint": "/api/dashboard/search/live",
+    "normal_search_label": "Governed Live Web Search",
+    "pack_version": "v18.85-v18.89",
+    "primary_result": {
+      "provider": "google",
+      "route": "/api/dashboard/search/live",
+      "source": "governed_live_web",
+      "status": "ready",
+      "title": "Google",
+      "url": "https://www.google.com"
+    },
+    "provider_probe_endpoint": "/api/dashboard/search/provider/probe",
+    "provider_probe_label": "Provider Probe \u2014 Advanced / Manual",
+    "provider_probe_requires_explicit_enable": true,
+    "provider_status_endpoint": "/api/dashboard/search/provider/status",
+    "query": "google",
+    "results": [
+      {
+        "provider": "google",
+        "route": "/api/dashboard/search/live",
+        "source": "governed_live_web",
+        "status": "ready",
+        "title": "Google",
+        "url": "https://www.google.com"
+      }
+    ],
+    "status": "dashboard_live_search_ready",
+    "updated_at": "2026-05-10T14:49:16.596481Z"
+  },
+  "status": "pass",
+  "updated_at": "2026-05-10T14:49:16.596481Z"
+}

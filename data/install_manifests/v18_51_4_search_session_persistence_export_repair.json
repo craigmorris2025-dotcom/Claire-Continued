@@ -1,0 +1,14 @@
+{
+  "version": "v18.51.4",
+  "name": "Search Session Persistence Export/API Repair",
+  "files": [
+    "claire/governed_web/search_session_persistence.py",
+    "tests/test_v18_51_4_search_session_persistence_export_repair.py"
+  ],
+  "safety": {
+    "runtime_truth_mutation": false,
+    "autonomous_execution": false,
+    "automatic_updates": false,
+    "manual_enable_required": true
+  }
+}

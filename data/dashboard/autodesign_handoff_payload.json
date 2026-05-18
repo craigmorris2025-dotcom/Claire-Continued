@@ -1,0 +1,4057 @@
+{
+  "autodesign_request": {
+    "buildability_questions": [
+      "What must be built for this discovery to become a viable solution?",
+      "Which components, dependencies, data, models, interfaces, or infrastructure are required?",
+      "What evidence is still missing before design output can be trusted?"
+    ],
+    "component_targets": [],
+    "design_portal_required": true,
+    "intended_function": "to_be_derived_from_discovery_and_advancement_path",
+    "invention_need": "{\"design_portal\": {\"domain\": \"insurance\", \"inputs\": {\"domain\": \"insurance\", \"keywords\": [\"evaluate\", \"climate\", \"insurance\", \"repricing\", \"risk-transfer\", \"demand\"], \"market_gap\": {\"acquirer_categories\": [\"insurance analytics platforms\", \"catastrophe modeling companies\", \"reinsurers\", \"risk data providers\", \"climate risk intelligence companies\", \"insurance core software platforms\", \"insurance brokers\"], \"buyer_segments\": [\"insurers\", \"reinsurers\", \"underwriting teams\", \"catastrophe-risk teams\", \"property risk carriers\", \"insurance brokers\", \"public risk pools\"], \"confidence\": \"0.8432\", \"design_implications\": [\"weather loss ingestion\", \"proper...",
+    "problem_statement": "{\"confidence\": \"0.6681000400745148\", \"opportunity_discovery\": {\"confidence\": \"0.7248\", \"discovery_vector\": {\"best_entry_wedge\": \"climate exposure and underwriting repricing pilot\", \"expansion_path\": [\"weather-loss backtesting\", \"exposure benchmarks\", \"catastrophe scenario modules\", \"risk-transfer planning\", \"enterprise risk platform\"], \"opportunity_type\": \"validated_gap_opportunity\", \"primary_vector\": \"climate exposure and underwriting repricing opportunity\", \"secondary_vectors\": [\"buyer-pain validation\", \"workflow wedge validation\", \"proprietary data-loop validation\"]}, \"domain\": \"insurance\",...",
+    "required": true,
+    "solution_concept": {
+      "components": [
+        "ingestion",
+        "semantic_processing",
+        "analysis_engines",
+        "decision_layer",
+        "api_gateway"
+      ],
+      "concept": "",
+      "constraints": [
+        "route_gated_design_only",
+        "local_desktop_stability",
+        "traceable_outputs_required"
+      ],
+      "dependencies": [
+        "structured_pipeline_contracts",
+        "run_history_store",
+        "export_writer",
+        "dashboard_api"
+      ],
+      "design_type": "ai_platform",
+      "implementation_phases": [
+        "contract alignment",
+        "component mapping",
+        "technology selection",
+        "validation and package export"
+      ],
+      "intended_function": "route-aware intelligence/design execution",
+      "risks": [
+        "over-routing portfolio outputs into design",
+        "technology recommendations without sufficient context"
+      ],
+      "selected_advancement_path": "solution_design",
+      "selected_stack": {
+        "backend_technologies": [
+          {
+            "category": "backend",
+            "compatible_with": [
+              "react",
+              "postgresql",
+              "redis",
+              "prometheus"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Python API framework for typed local service routes.",
+            "documentation": "Use standard FastAPI documentation.",
+            "id": "fastapi",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "FastAPI",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "python"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "api",
+              "backend",
+              "local_service",
+              "contracts"
+            ],
+            "use_cases": [
+              "pipeline_api",
+              "export_api",
+              "lifecycle_service"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "cloud_services": [],
+        "complexity_score": "0.48",
+        "database_technologies": [
+          {
+            "category": "database",
+            "compatible_with": [
+              "fastapi"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Embedded database for portable desktop and local-first state.",
+            "documentation": "Use standard SQLite documentation.",
+            "id": "sqlite",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "SQLite",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "sql"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "database",
+              "local_first",
+              "portable",
+              "desktop"
+            ],
+            "use_cases": [
+              "portable_state",
+              "run_history",
+              "catalog_cache"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "database",
+            "compatible_with": [
+              "fastapi",
+              "redis"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Relational database for structured run, artifact, and catalog records.",
+            "documentation": "Use standard PostgreSQL documentation.",
+            "id": "postgresql",
+            "integration_complexity": "medium",
+            "learning_curve": "moderate",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "PostgreSQL",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [
+              "sql"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "database",
+              "structured",
+              "audit",
+              "portfolio"
+            ],
+            "use_cases": [
+              "run_history",
+              "portfolio_records",
+              "technology_catalog"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "devops_tools": [
+          {
+            "category": "devops",
+            "compatible_with": [
+              "fastapi",
+              "postgresql",
+              "redis"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Container runtime for repeatable deployment and packaging.",
+            "documentation": "Use standard Docker documentation.",
+            "id": "docker",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "Docker",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "devops",
+              "deployment",
+              "packaging"
+            ],
+            "use_cases": [
+              "deployment",
+              "portable_runtime",
+              "test_environment"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "estimated_cost": "low_for_local_desktop; moderate_for_cloud_scale",
+        "estimated_development_time": "2-6 weeks for minimum viable route-aware module",
+        "frontend_technologies": [
+          {
+            "category": "frontend",
+            "compatible_with": [
+              "fastapi",
+              "postgresql",
+              "prometheus"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Component UI framework for interactive web workspaces.",
+            "documentation": "Use standard React documentation.",
+            "id": "react",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "React",
+            "performance_metrics": {},
+            "platforms": [
+              "web",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "javascript",
+              "typescript"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "frontend",
+              "dashboard",
+              "workspace",
+              "portal"
+            ],
+            "use_cases": [
+              "dashboard",
+              "command_center",
+              "design_portal"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "maintainability_score": "0.74",
+        "monitoring_tools": [
+          {
+            "category": "monitoring",
+            "compatible_with": [
+              "fastapi"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Metrics collection for runtime and pipeline observability.",
+            "documentation": "Use standard Prometheus documentation.",
+            "id": "prometheus",
+            "integration_complexity": "medium",
+            "learning_curve": "moderate",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "Prometheus",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "monitoring",
+              "metrics",
+              "health"
+            ],
+            "use_cases": [
+              "system_health",
+              "pipeline_metrics",
+              "scan_monitoring"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "scalability_score": "0.72",
+        "security_score": "0.68",
+        "security_tools": [
+          {
+            "category": "api_contract",
+            "compatible_with": [
+              "fastapi",
+              "react"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Machine-readable API contract for service and connector boundaries.",
+            "documentation": "Use standard OpenAPI documentation.",
+            "id": "openapi",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "OpenAPI",
+            "performance_metrics": {},
+            "platforms": [
+              "web",
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [
+              "json",
+              "yaml"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "api",
+              "contract",
+              "integration",
+              "documentation"
+            ],
+            "use_cases": [
+              "service_contract",
+              "export_contract",
+              "connector_boundary"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ]
+      },
+      "selected_technologies": [
+        {
+          "category": "frontend",
+          "compatible_with": [
+            "fastapi",
+            "postgresql",
+            "prometheus"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Component UI framework for interactive web workspaces.",
+          "documentation": "Use standard React documentation.",
+          "id": "react",
+          "integration_complexity": "low",
+          "learning_curve": "low",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "React",
+          "performance_metrics": {},
+          "platforms": [
+            "web",
+            "desktop_shell"
+          ],
+          "programming_languages": [
+            "javascript",
+            "typescript"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "frontend",
+            "dashboard",
+            "workspace",
+            "portal"
+          ],
+          "use_cases": [
+            "dashboard",
+            "command_center",
+            "design_portal"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "backend",
+          "compatible_with": [
+            "react",
+            "postgresql",
+            "redis",
+            "prometheus"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Python API framework for typed local service routes.",
+          "documentation": "Use standard FastAPI documentation.",
+          "id": "fastapi",
+          "integration_complexity": "low",
+          "learning_curve": "low",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "FastAPI",
+          "performance_metrics": {},
+          "platforms": [
+            "local",
+            "cloud",
+            "desktop_shell"
+          ],
+          "programming_languages": [
+            "python"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "api",
+            "backend",
+            "local_service",
+            "contracts"
+          ],
+          "use_cases": [
+            "pipeline_api",
+            "export_api",
+            "lifecycle_service"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "database",
+          "compatible_with": [
+            "fastapi",
+            "redis"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Relational database for structured run, artifact, and catalog records.",
+          "documentation": "Use standard PostgreSQL documentation.",
+          "id": "postgresql",
+          "integration_complexity": "medium",
+          "learning_curve": "moderate",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "PostgreSQL",
+          "performance_metrics": {},
+          "platforms": [
+            "local",
+            "cloud"
+          ],
+          "programming_languages": [
+            "sql"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "database",
+            "structured",
+            "audit",
+            "portfolio"
+          ],
+          "use_cases": [
+            "run_history",
+            "portfolio_records",
+            "technology_catalog"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "database",
+          "compatible_with": [
+            "fastapi"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Embedded database for portable desktop and local-first state.",
+          "documentation": "Use standard SQLite documentation.",
+          "id": "sqlite",
+          "integration_complexity": "low",
+          "learning_curve": "low",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "SQLite",
+          "performance_metrics": {},
+          "platforms": [
+            "local",
+            "desktop_shell"
+          ],
+          "programming_languages": [
+            "sql"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "database",
+            "local_first",
+            "portable",
+            "desktop"
+          ],
+          "use_cases": [
+            "portable_state",
+            "run_history",
+            "catalog_cache"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "backend",
+          "compatible_with": [
+            "fastapi",
+            "postgresql"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "In-memory queue/cache for scan jobs and execution state.",
+          "documentation": "Use standard Redis documentation.",
+          "id": "redis",
+          "integration_complexity": "medium",
+          "learning_curve": "moderate",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "Redis",
+          "performance_metrics": {},
+          "platforms": [
+            "local",
+            "cloud"
+          ],
+          "programming_languages": [
+            "python",
+            "javascript"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "queue",
+            "cache",
+            "jobs",
+            "monitoring"
+          ],
+          "use_cases": [
+            "scan_queue",
+            "job_state",
+            "live_monitor"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "monitoring",
+          "compatible_with": [
+            "fastapi"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Metrics collection for runtime and pipeline observability.",
+          "documentation": "Use standard Prometheus documentation.",
+          "id": "prometheus",
+          "integration_complexity": "medium",
+          "learning_curve": "moderate",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "Prometheus",
+          "performance_metrics": {},
+          "platforms": [
+            "local",
+            "cloud"
+          ],
+          "programming_languages": [],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "monitoring",
+            "metrics",
+            "health"
+          ],
+          "use_cases": [
+            "system_health",
+            "pipeline_metrics",
+            "scan_monitoring"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "api_contract",
+          "compatible_with": [
+            "fastapi",
+            "react"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Machine-readable API contract for service and connector boundaries.",
+          "documentation": "Use standard OpenAPI documentation.",
+          "id": "openapi",
+          "integration_complexity": "low",
+          "learning_curve": "low",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "OpenAPI",
+          "performance_metrics": {},
+          "platforms": [
+            "web",
+            "local",
+            "cloud"
+          ],
+          "programming_languages": [
+            "json",
+            "yaml"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "api",
+            "contract",
+            "integration",
+            "documentation"
+          ],
+          "use_cases": [
+            "service_contract",
+            "export_contract",
+            "connector_boundary"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        }
+      ],
+      "status": "complete",
+      "system_type": "ai_platform",
+      "trigger_source": "climate exposure / underwriting repricing / market withdrawal",
+      "triggered": "True"
+    },
+    "status": "already_satisfied",
+    "system_type": "to_be_selected_by_autodesign",
+    "technology_stack_constraints": {
+      "buildability_notes": [
+        "ingestion can be implemented with the matched stack components.",
+        "semantic_processing can be implemented with the matched stack components.",
+        "analysis_engines can be implemented with the matched stack components.",
+        "decision_layer can be implemented with the matched stack components.",
+        "api_gateway can be implemented with the matched stack components."
+      ],
+      "compatibility_notes": [
+        "Frontend and backend stack can communicate through OpenAPI-defined routes.",
+        "Backend stack supports local-first SQLite and scalable PostgreSQL persistence.",
+        "Technology stack is advisory and route-gated; it should not activate portfolio-only outputs."
+      ],
+      "component_matches": [
+        {
+          "buildability_note": "ingestion can be implemented with the matched stack components.",
+          "component": "ingestion",
+          "integration_complexity": "low",
+          "matched_technologies": [
+            {
+              "category": "backend",
+              "compatible_with": [
+                "react",
+                "postgresql",
+                "redis",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Python API framework for typed local service routes.",
+              "documentation": "Use standard FastAPI documentation.",
+              "id": "fastapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "FastAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "python"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "backend",
+                "local_service",
+                "contracts"
+              ],
+              "use_cases": [
+                "pipeline_api",
+                "export_api",
+                "lifecycle_service"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            },
+            {
+              "category": "database",
+              "compatible_with": [
+                "fastapi"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Embedded database for portable desktop and local-first state.",
+              "documentation": "Use standard SQLite documentation.",
+              "id": "sqlite",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "SQLite",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "sql"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "database",
+                "local_first",
+                "portable",
+                "desktop"
+              ],
+              "use_cases": [
+                "portable_state",
+                "run_history",
+                "catalog_cache"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ]
+        },
+        {
+          "buildability_note": "semantic_processing can be implemented with the matched stack components.",
+          "component": "semantic_processing",
+          "integration_complexity": "medium",
+          "matched_technologies": [
+            {
+              "category": "search",
+              "compatible_with": [
+                "fastapi",
+                "postgresql"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Semantic retrieval layer for evidence, technology, and design references.",
+              "documentation": "Use standard Vector Index documentation.",
+              "id": "vector_index",
+              "integration_complexity": "medium",
+              "learning_curve": "moderate",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "Vector Index",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [
+                "python"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "search",
+                "semantic",
+                "retrieval",
+                "evidence"
+              ],
+              "use_cases": [
+                "technology_search",
+                "evidence_retrieval",
+                "design_reference"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            },
+            {
+              "category": "backend",
+              "compatible_with": [
+                "react",
+                "postgresql",
+                "redis",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Python API framework for typed local service routes.",
+              "documentation": "Use standard FastAPI documentation.",
+              "id": "fastapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "FastAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "python"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "backend",
+                "local_service",
+                "contracts"
+              ],
+              "use_cases": [
+                "pipeline_api",
+                "export_api",
+                "lifecycle_service"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ]
+        },
+        {
+          "buildability_note": "analysis_engines can be implemented with the matched stack components.",
+          "component": "analysis_engines",
+          "integration_complexity": "medium",
+          "matched_technologies": [
+            {
+              "category": "backend",
+              "compatible_with": [
+                "react",
+                "postgresql",
+                "redis",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Python API framework for typed local service routes.",
+              "documentation": "Use standard FastAPI documentation.",
+              "id": "fastapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "FastAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "python"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "backend",
+                "local_service",
+                "contracts"
+              ],
+              "use_cases": [
+                "pipeline_api",
+                "export_api",
+                "lifecycle_service"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            },
+            {
+              "category": "database",
+              "compatible_with": [
+                "fastapi",
+                "redis"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Relational database for structured run, artifact, and catalog records.",
+              "documentation": "Use standard PostgreSQL documentation.",
+              "id": "postgresql",
+              "integration_complexity": "medium",
+              "learning_curve": "moderate",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "PostgreSQL",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [
+                "sql"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "database",
+                "structured",
+                "audit",
+                "portfolio"
+              ],
+              "use_cases": [
+                "run_history",
+                "portfolio_records",
+                "technology_catalog"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ]
+        },
+        {
+          "buildability_note": "decision_layer can be implemented with the matched stack components.",
+          "component": "decision_layer",
+          "integration_complexity": "low",
+          "matched_technologies": [
+            {
+              "category": "backend",
+              "compatible_with": [
+                "react",
+                "postgresql",
+                "redis",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Python API framework for typed local service routes.",
+              "documentation": "Use standard FastAPI documentation.",
+              "id": "fastapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "FastAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "python"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "backend",
+                "local_service",
+                "contracts"
+              ],
+              "use_cases": [
+                "pipeline_api",
+                "export_api",
+                "lifecycle_service"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            },
+            {
+              "category": "api_contract",
+              "compatible_with": [
+                "fastapi",
+                "react"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Machine-readable API contract for service and connector boundaries.",
+              "documentation": "Use standard OpenAPI documentation.",
+              "id": "openapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "OpenAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "web",
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [
+                "json",
+                "yaml"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "contract",
+                "integration",
+                "documentation"
+              ],
+              "use_cases": [
+                "service_contract",
+                "export_contract",
+                "connector_boundary"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ]
+        },
+        {
+          "buildability_note": "api_gateway can be implemented with the matched stack components.",
+          "component": "api_gateway",
+          "integration_complexity": "low",
+          "matched_technologies": [
+            {
+              "category": "backend",
+              "compatible_with": [
+                "react",
+                "postgresql",
+                "redis",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Python API framework for typed local service routes.",
+              "documentation": "Use standard FastAPI documentation.",
+              "id": "fastapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "FastAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "python"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "backend",
+                "local_service",
+                "contracts"
+              ],
+              "use_cases": [
+                "pipeline_api",
+                "export_api",
+                "lifecycle_service"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            },
+            {
+              "category": "api_contract",
+              "compatible_with": [
+                "fastapi",
+                "react"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Machine-readable API contract for service and connector boundaries.",
+              "documentation": "Use standard OpenAPI documentation.",
+              "id": "openapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "OpenAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "web",
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [
+                "json",
+                "yaml"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "contract",
+                "integration",
+                "documentation"
+              ],
+              "use_cases": [
+                "service_contract",
+                "export_contract",
+                "connector_boundary"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ]
+        }
+      ],
+      "confidence": "0.765",
+      "dependency_notes": [
+        "frontend_technologies: React",
+        "backend_technologies: FastAPI",
+        "database_technologies: SQLite, PostgreSQL",
+        "devops_tools: Docker",
+        "monitoring_tools: Prometheus",
+        "security_tools: OpenAPI",
+        "semantic_processing integration complexity: medium",
+        "analysis_engines integration complexity: medium"
+      ],
+      "integration_complexity": "medium",
+      "required": "True",
+      "search_queries": [
+        "evaluate",
+        "climate",
+        "insurance",
+        "repricing",
+        "risk-transfer",
+        "demand",
+        "dashboard",
+        "api",
+        "database",
+        "monitoring"
+      ],
+      "selected_stack": {
+        "backend_technologies": [
+          {
+            "category": "backend",
+            "compatible_with": [
+              "react",
+              "postgresql",
+              "redis",
+              "prometheus"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Python API framework for typed local service routes.",
+            "documentation": "Use standard FastAPI documentation.",
+            "id": "fastapi",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "FastAPI",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "python"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "api",
+              "backend",
+              "local_service",
+              "contracts"
+            ],
+            "use_cases": [
+              "pipeline_api",
+              "export_api",
+              "lifecycle_service"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "cloud_services": [],
+        "complexity_score": "0.48",
+        "database_technologies": [
+          {
+            "category": "database",
+            "compatible_with": [
+              "fastapi"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Embedded database for portable desktop and local-first state.",
+            "documentation": "Use standard SQLite documentation.",
+            "id": "sqlite",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "SQLite",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "sql"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "database",
+              "local_first",
+              "portable",
+              "desktop"
+            ],
+            "use_cases": [
+              "portable_state",
+              "run_history",
+              "catalog_cache"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "database",
+            "compatible_with": [
+              "fastapi",
+              "redis"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Relational database for structured run, artifact, and catalog records.",
+            "documentation": "Use standard PostgreSQL documentation.",
+            "id": "postgresql",
+            "integration_complexity": "medium",
+            "learning_curve": "moderate",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "PostgreSQL",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [
+              "sql"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "database",
+              "structured",
+              "audit",
+              "portfolio"
+            ],
+            "use_cases": [
+              "run_history",
+              "portfolio_records",
+              "technology_catalog"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "devops_tools": [
+          {
+            "category": "devops",
+            "compatible_with": [
+              "fastapi",
+              "postgresql",
+              "redis"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Container runtime for repeatable deployment and packaging.",
+            "documentation": "Use standard Docker documentation.",
+            "id": "docker",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "Docker",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "devops",
+              "deployment",
+              "packaging"
+            ],
+            "use_cases": [
+              "deployment",
+              "portable_runtime",
+              "test_environment"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "estimated_cost": "low_for_local_desktop; moderate_for_cloud_scale",
+        "estimated_development_time": "2-6 weeks for minimum viable route-aware module",
+        "frontend_technologies": [
+          {
+            "category": "frontend",
+            "compatible_with": [
+              "fastapi",
+              "postgresql",
+              "prometheus"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Component UI framework for interactive web workspaces.",
+            "documentation": "Use standard React documentation.",
+            "id": "react",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "React",
+            "performance_metrics": {},
+            "platforms": [
+              "web",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "javascript",
+              "typescript"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "frontend",
+              "dashboard",
+              "workspace",
+              "portal"
+            ],
+            "use_cases": [
+              "dashboard",
+              "command_center",
+              "design_portal"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "maintainability_score": "0.74",
+        "monitoring_tools": [
+          {
+            "category": "monitoring",
+            "compatible_with": [
+              "fastapi"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Metrics collection for runtime and pipeline observability.",
+            "documentation": "Use standard Prometheus documentation.",
+            "id": "prometheus",
+            "integration_complexity": "medium",
+            "learning_curve": "moderate",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "Prometheus",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "monitoring",
+              "metrics",
+              "health"
+            ],
+            "use_cases": [
+              "system_health",
+              "pipeline_metrics",
+              "scan_monitoring"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "scalability_score": "0.72",
+        "security_score": "0.68",
+        "security_tools": [
+          {
+            "category": "api_contract",
+            "compatible_with": [
+              "fastapi",
+              "react"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Machine-readable API contract for service and connector boundaries.",
+            "documentation": "Use standard OpenAPI documentation.",
+            "id": "openapi",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "maturity_level": "established",
+            "name": "OpenAPI",
+            "performance_metrics": {},
+            "platforms": [
+              "web",
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [
+              "json",
+              "yaml"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "api",
+              "contract",
+              "integration",
+              "documentation"
+            ],
+            "use_cases": [
+              "service_contract",
+              "export_contract",
+              "connector_boundary"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ]
+      },
+      "status": "success",
+      "technologies_considered": [
+        {
+          "category": "frontend",
+          "compatible_with": [
+            "fastapi",
+            "postgresql",
+            "prometheus"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Component UI framework for interactive web workspaces.",
+          "documentation": "Use standard React documentation.",
+          "id": "react",
+          "integration_complexity": "low",
+          "learning_curve": "low",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "React",
+          "performance_metrics": {},
+          "platforms": [
+            "web",
+            "desktop_shell"
+          ],
+          "programming_languages": [
+            "javascript",
+            "typescript"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "frontend",
+            "dashboard",
+            "workspace",
+            "portal"
+          ],
+          "use_cases": [
+            "dashboard",
+            "command_center",
+            "design_portal"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "backend",
+          "compatible_with": [
+            "react",
+            "postgresql",
+            "redis",
+            "prometheus"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Python API framework for typed local service routes.",
+          "documentation": "Use standard FastAPI documentation.",
+          "id": "fastapi",
+          "integration_complexity": "low",
+          "learning_curve": "low",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "FastAPI",
+          "performance_metrics": {},
+          "platforms": [
+            "local",
+            "cloud",
+            "desktop_shell"
+          ],
+          "programming_languages": [
+            "python"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "api",
+            "backend",
+            "local_service",
+            "contracts"
+          ],
+          "use_cases": [
+            "pipeline_api",
+            "export_api",
+            "lifecycle_service"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "database",
+          "compatible_with": [
+            "fastapi",
+            "redis"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Relational database for structured run, artifact, and catalog records.",
+          "documentation": "Use standard PostgreSQL documentation.",
+          "id": "postgresql",
+          "integration_complexity": "medium",
+          "learning_curve": "moderate",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "PostgreSQL",
+          "performance_metrics": {},
+          "platforms": [
+            "local",
+            "cloud"
+          ],
+          "programming_languages": [
+            "sql"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "database",
+            "structured",
+            "audit",
+            "portfolio"
+          ],
+          "use_cases": [
+            "run_history",
+            "portfolio_records",
+            "technology_catalog"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "database",
+          "compatible_with": [
+            "fastapi"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Embedded database for portable desktop and local-first state.",
+          "documentation": "Use standard SQLite documentation.",
+          "id": "sqlite",
+          "integration_complexity": "low",
+          "learning_curve": "low",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "SQLite",
+          "performance_metrics": {},
+          "platforms": [
+            "local",
+            "desktop_shell"
+          ],
+          "programming_languages": [
+            "sql"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "database",
+            "local_first",
+            "portable",
+            "desktop"
+          ],
+          "use_cases": [
+            "portable_state",
+            "run_history",
+            "catalog_cache"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "backend",
+          "compatible_with": [
+            "fastapi",
+            "postgresql"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "In-memory queue/cache for scan jobs and execution state.",
+          "documentation": "Use standard Redis documentation.",
+          "id": "redis",
+          "integration_complexity": "medium",
+          "learning_curve": "moderate",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "Redis",
+          "performance_metrics": {},
+          "platforms": [
+            "local",
+            "cloud"
+          ],
+          "programming_languages": [
+            "python",
+            "javascript"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "queue",
+            "cache",
+            "jobs",
+            "monitoring"
+          ],
+          "use_cases": [
+            "scan_queue",
+            "job_state",
+            "live_monitor"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "monitoring",
+          "compatible_with": [
+            "fastapi"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Metrics collection for runtime and pipeline observability.",
+          "documentation": "Use standard Prometheus documentation.",
+          "id": "prometheus",
+          "integration_complexity": "medium",
+          "learning_curve": "moderate",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "Prometheus",
+          "performance_metrics": {},
+          "platforms": [
+            "local",
+            "cloud"
+          ],
+          "programming_languages": [],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "monitoring",
+            "metrics",
+            "health"
+          ],
+          "use_cases": [
+            "system_health",
+            "pipeline_metrics",
+            "scan_monitoring"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        },
+        {
+          "category": "api_contract",
+          "compatible_with": [
+            "fastapi",
+            "react"
+          ],
+          "cost_model": "low_to_moderate_operational_cost",
+          "dependencies": [],
+          "description": "Machine-readable API contract for service and connector boundaries.",
+          "documentation": "Use standard OpenAPI documentation.",
+          "id": "openapi",
+          "integration_complexity": "low",
+          "learning_curve": "low",
+          "license_type": "open_source_or_standard_commercial",
+          "match_score": 0.0909,
+          "maturity_level": "established",
+          "name": "OpenAPI",
+          "performance_metrics": {},
+          "platforms": [
+            "web",
+            "local",
+            "cloud"
+          ],
+          "programming_languages": [
+            "json",
+            "yaml"
+          ],
+          "scalability_limits": "depends_on_deployment_topology",
+          "security_features": [
+            "role_based_access_possible",
+            "audit_integration_possible"
+          ],
+          "tags": [
+            "api",
+            "contract",
+            "integration",
+            "documentation"
+          ],
+          "use_cases": [
+            "service_contract",
+            "export_contract",
+            "connector_boundary"
+          ],
+          "vendor": "community_or_multiple_vendors"
+        }
+      ]
+    },
+    "validation_questions": [
+      "Is the concept technically feasible?",
+      "Is the route supported by evidence?",
+      "Is the design deployable or manufacturable?",
+      "Should the output proceed to Design Portal?"
+    ]
+  },
+  "existing_outputs": {
+    "autodesign": {
+      "available": true,
+      "name": "autodesign",
+      "source": "autodesign",
+      "status": "complete",
+      "summary": {
+        "components": [
+          "ingestion",
+          "semantic_processing",
+          "analysis_engines",
+          "decision_layer",
+          "api_gateway"
+        ],
+        "concept": "",
+        "constraints": [
+          "route_gated_design_only",
+          "local_desktop_stability",
+          "traceable_outputs_required"
+        ],
+        "dependencies": [
+          "structured_pipeline_contracts",
+          "run_history_store",
+          "export_writer",
+          "dashboard_api"
+        ],
+        "design_type": "ai_platform",
+        "implementation_phases": [
+          "contract alignment",
+          "component mapping",
+          "technology selection",
+          "validation and package export"
+        ],
+        "intended_function": "route-aware intelligence/design execution",
+        "risks": [
+          "over-routing portfolio outputs into design",
+          "technology recommendations without sufficient context"
+        ],
+        "selected_advancement_path": "solution_design",
+        "selected_stack": {
+          "backend_technologies": [
+            {
+              "category": "backend",
+              "compatible_with": [
+                "react",
+                "postgresql",
+                "redis",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Python API framework for typed local service routes.",
+              "documentation": "Use standard FastAPI documentation.",
+              "id": "fastapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "FastAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "python"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "backend",
+                "local_service",
+                "contracts"
+              ],
+              "use_cases": [
+                "pipeline_api",
+                "export_api",
+                "lifecycle_service"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "cloud_services": [],
+          "complexity_score": "0.48",
+          "database_technologies": [
+            {
+              "category": "database",
+              "compatible_with": [
+                "fastapi"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Embedded database for portable desktop and local-first state.",
+              "documentation": "Use standard SQLite documentation.",
+              "id": "sqlite",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "SQLite",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "sql"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "database",
+                "local_first",
+                "portable",
+                "desktop"
+              ],
+              "use_cases": [
+                "portable_state",
+                "run_history",
+                "catalog_cache"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            },
+            {
+              "category": "database",
+              "compatible_with": [
+                "fastapi",
+                "redis"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Relational database for structured run, artifact, and catalog records.",
+              "documentation": "Use standard PostgreSQL documentation.",
+              "id": "postgresql",
+              "integration_complexity": "medium",
+              "learning_curve": "moderate",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "PostgreSQL",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [
+                "sql"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "database",
+                "structured",
+                "audit",
+                "portfolio"
+              ],
+              "use_cases": [
+                "run_history",
+                "portfolio_records",
+                "technology_catalog"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "devops_tools": [
+            {
+              "category": "devops",
+              "compatible_with": [
+                "fastapi",
+                "postgresql",
+                "redis"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Container runtime for repeatable deployment and packaging.",
+              "documentation": "Use standard Docker documentation.",
+              "id": "docker",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "Docker",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "devops",
+                "deployment",
+                "packaging"
+              ],
+              "use_cases": [
+                "deployment",
+                "portable_runtime",
+                "test_environment"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "estimated_cost": "low_for_local_desktop; moderate_for_cloud_scale",
+          "estimated_development_time": "2-6 weeks for minimum viable route-aware module",
+          "frontend_technologies": [
+            {
+              "category": "frontend",
+              "compatible_with": [
+                "fastapi",
+                "postgresql",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Component UI framework for interactive web workspaces.",
+              "documentation": "Use standard React documentation.",
+              "id": "react",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "React",
+              "performance_metrics": {},
+              "platforms": [
+                "web",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "javascript",
+                "typescript"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "frontend",
+                "dashboard",
+                "workspace",
+                "portal"
+              ],
+              "use_cases": [
+                "dashboard",
+                "command_center",
+                "design_portal"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "maintainability_score": "0.74",
+          "monitoring_tools": [
+            {
+              "category": "monitoring",
+              "compatible_with": [
+                "fastapi"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Metrics collection for runtime and pipeline observability.",
+              "documentation": "Use standard Prometheus documentation.",
+              "id": "prometheus",
+              "integration_complexity": "medium",
+              "learning_curve": "moderate",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "Prometheus",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "monitoring",
+                "metrics",
+                "health"
+              ],
+              "use_cases": [
+                "system_health",
+                "pipeline_metrics",
+                "scan_monitoring"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "scalability_score": "0.72",
+          "security_score": "0.68",
+          "security_tools": [
+            {
+              "category": "api_contract",
+              "compatible_with": [
+                "fastapi",
+                "react"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Machine-readable API contract for service and connector boundaries.",
+              "documentation": "Use standard OpenAPI documentation.",
+              "id": "openapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "OpenAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "web",
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [
+                "json",
+                "yaml"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "contract",
+                "integration",
+                "documentation"
+              ],
+              "use_cases": [
+                "service_contract",
+                "export_contract",
+                "connector_boundary"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ]
+        },
+        "selected_technologies": [
+          {
+            "category": "frontend",
+            "compatible_with": [
+              "fastapi",
+              "postgresql",
+              "prometheus"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Component UI framework for interactive web workspaces.",
+            "documentation": "Use standard React documentation.",
+            "id": "react",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "React",
+            "performance_metrics": {},
+            "platforms": [
+              "web",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "javascript",
+              "typescript"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "frontend",
+              "dashboard",
+              "workspace",
+              "portal"
+            ],
+            "use_cases": [
+              "dashboard",
+              "command_center",
+              "design_portal"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "backend",
+            "compatible_with": [
+              "react",
+              "postgresql",
+              "redis",
+              "prometheus"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Python API framework for typed local service routes.",
+            "documentation": "Use standard FastAPI documentation.",
+            "id": "fastapi",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "FastAPI",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "python"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "api",
+              "backend",
+              "local_service",
+              "contracts"
+            ],
+            "use_cases": [
+              "pipeline_api",
+              "export_api",
+              "lifecycle_service"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "database",
+            "compatible_with": [
+              "fastapi",
+              "redis"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Relational database for structured run, artifact, and catalog records.",
+            "documentation": "Use standard PostgreSQL documentation.",
+            "id": "postgresql",
+            "integration_complexity": "medium",
+            "learning_curve": "moderate",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "PostgreSQL",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [
+              "sql"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "database",
+              "structured",
+              "audit",
+              "portfolio"
+            ],
+            "use_cases": [
+              "run_history",
+              "portfolio_records",
+              "technology_catalog"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "database",
+            "compatible_with": [
+              "fastapi"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Embedded database for portable desktop and local-first state.",
+            "documentation": "Use standard SQLite documentation.",
+            "id": "sqlite",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "SQLite",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "sql"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "database",
+              "local_first",
+              "portable",
+              "desktop"
+            ],
+            "use_cases": [
+              "portable_state",
+              "run_history",
+              "catalog_cache"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "backend",
+            "compatible_with": [
+              "fastapi",
+              "postgresql"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "In-memory queue/cache for scan jobs and execution state.",
+            "documentation": "Use standard Redis documentation.",
+            "id": "redis",
+            "integration_complexity": "medium",
+            "learning_curve": "moderate",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "Redis",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [
+              "python",
+              "javascript"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "queue",
+              "cache",
+              "jobs",
+              "monitoring"
+            ],
+            "use_cases": [
+              "scan_queue",
+              "job_state",
+              "live_monitor"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "monitoring",
+            "compatible_with": [
+              "fastapi"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Metrics collection for runtime and pipeline observability.",
+            "documentation": "Use standard Prometheus documentation.",
+            "id": "prometheus",
+            "integration_complexity": "medium",
+            "learning_curve": "moderate",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "Prometheus",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "monitoring",
+              "metrics",
+              "health"
+            ],
+            "use_cases": [
+              "system_health",
+              "pipeline_metrics",
+              "scan_monitoring"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "api_contract",
+            "compatible_with": [
+              "fastapi",
+              "react"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Machine-readable API contract for service and connector boundaries.",
+            "documentation": "Use standard OpenAPI documentation.",
+            "id": "openapi",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "OpenAPI",
+            "performance_metrics": {},
+            "platforms": [
+              "web",
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [
+              "json",
+              "yaml"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "api",
+              "contract",
+              "integration",
+              "documentation"
+            ],
+            "use_cases": [
+              "service_contract",
+              "export_contract",
+              "connector_boundary"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ],
+        "status": "complete",
+        "system_type": "ai_platform",
+        "trigger_source": "climate exposure / underwriting repricing / market withdrawal",
+        "triggered": "True"
+      }
+    },
+    "design_portal": {
+      "available": true,
+      "name": "design_portal",
+      "source": "design_portal",
+      "status": "complete",
+      "summary": {
+        "architecture_summary": "",
+        "available": "True",
+        "blueprint_summary": "",
+        "build_phases": [
+          {
+            "deliverables": [
+              "domain contracts",
+              "pipeline routing",
+              "input validation",
+              "baseline scoring trace",
+              "structured result schema"
+            ],
+            "name": "Foundation",
+            "objective": "Establish contracts, ingestion, routing, traceability, and result schema.",
+            "phase": 1
+          },
+          {
+            "deliverables": [
+              "weather-loss ingestion connector",
+              "property exposure schema",
+              "peril and region taxonomy",
+              "underwriting decision context map",
+              "catastrophe scenario input contract"
+            ],
+            "name": "Sector Data Foundation",
+            "objective": "Establish climate-loss, exposure, underwriting, and catastrophe-risk data foundations.",
+            "phase": 2
+          },
+          {
+            "deliverables": [
+              "semantic processing",
+              "signal extraction",
+              "trend and gap analysis",
+              "market formation scoring",
+              "breakthrough detection"
+            ],
+            "name": "Core Intelligence",
+            "objective": "Implement sector-aware analysis engines and signal propagation.",
+            "phase": 3
+          },
+          {
+            "deliverables": [
+              "exposure model design",
+              "catastrophe scenario engine design",
+              "underwriting repricing detector",
+              "market withdrawal risk map",
+              "risk-transfer recommendation layer",
+              "underwriter review console"
+            ],
+            "name": "Sector Design Layer",
+            "objective": "Generate the climate-insurance risk intelligence design layer.",
+            "phase": 4
+          },
+          {
+            "deliverables": [
+              "historical weather-loss backtest",
+              "repricing signal validation",
+              "catastrophe scenario calibration report",
+              "false-positive / false-negative review",
+              "underwriter workflow acceptance test"
+            ],
+            "name": "Validation",
+            "objective": "Validate underwriting, repricing, exposure, and catastrophe-risk outputs before operational deployment.",
+            "phase": 5
+          },
+          {
+            "deliverables": [
+              "system summary",
+              "opportunity thesis",
+              "technical appendix",
+              "strategic positioning memo",
+              "acquirer-ready overview"
+            ],
+            "name": "Portfolio Packaging",
+            "objective": "Prepare artifacts for portfolio, binder, strategic review, and buyer-specific diligence.",
+            "phase": 6
+          },
+          {
+            "deliverables": [
+              "prototype underwriting review console",
+              "climate exposure benchmark appendix",
+              "catastrophe scenario validation memo",
+              "reinsurance and risk-transfer use-case package",
+              "strategic acquirer rationale pack"
+            ],
+            "name": "Breakthrough Acceleration",
+            "objective": "Prioritize advanced validation for the climate insurance risk intelligence platform.",
+            "phase": 7
+          }
+        ],
+        "component_map": [],
+        "dependency_map": [],
+        "export_path": "",
+        "required": "True",
+        "specifications": [],
+        "status": "complete",
+        "technology_stack": {
+          "backend_technologies": [
+            {
+              "category": "backend",
+              "compatible_with": [
+                "react",
+                "postgresql",
+                "redis",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Python API framework for typed local service routes.",
+              "documentation": "Use standard FastAPI documentation.",
+              "id": "fastapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "FastAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "python"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "backend",
+                "local_service",
+                "contracts"
+              ],
+              "use_cases": [
+                "pipeline_api",
+                "export_api",
+                "lifecycle_service"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "cloud_services": [],
+          "complexity_score": "0.48",
+          "database_technologies": [
+            {
+              "category": "database",
+              "compatible_with": [
+                "fastapi"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Embedded database for portable desktop and local-first state.",
+              "documentation": "Use standard SQLite documentation.",
+              "id": "sqlite",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "SQLite",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "sql"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "database",
+                "local_first",
+                "portable",
+                "desktop"
+              ],
+              "use_cases": [
+                "portable_state",
+                "run_history",
+                "catalog_cache"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            },
+            {
+              "category": "database",
+              "compatible_with": [
+                "fastapi",
+                "redis"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Relational database for structured run, artifact, and catalog records.",
+              "documentation": "Use standard PostgreSQL documentation.",
+              "id": "postgresql",
+              "integration_complexity": "medium",
+              "learning_curve": "moderate",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "PostgreSQL",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [
+                "sql"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "database",
+                "structured",
+                "audit",
+                "portfolio"
+              ],
+              "use_cases": [
+                "run_history",
+                "portfolio_records",
+                "technology_catalog"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "devops_tools": [
+            {
+              "category": "devops",
+              "compatible_with": [
+                "fastapi",
+                "postgresql",
+                "redis"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Container runtime for repeatable deployment and packaging.",
+              "documentation": "Use standard Docker documentation.",
+              "id": "docker",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "Docker",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "devops",
+                "deployment",
+                "packaging"
+              ],
+              "use_cases": [
+                "deployment",
+                "portable_runtime",
+                "test_environment"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "estimated_cost": "low_for_local_desktop; moderate_for_cloud_scale",
+          "estimated_development_time": "2-6 weeks for minimum viable route-aware module",
+          "frontend_technologies": [
+            {
+              "category": "frontend",
+              "compatible_with": [
+                "fastapi",
+                "postgresql",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Component UI framework for interactive web workspaces.",
+              "documentation": "Use standard React documentation.",
+              "id": "react",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "React",
+              "performance_metrics": {},
+              "platforms": [
+                "web",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "javascript",
+                "typescript"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "frontend",
+                "dashboard",
+                "workspace",
+                "portal"
+              ],
+              "use_cases": [
+                "dashboard",
+                "command_center",
+                "design_portal"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "maintainability_score": "0.74",
+          "monitoring_tools": [
+            {
+              "category": "monitoring",
+              "compatible_with": [
+                "fastapi"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Metrics collection for runtime and pipeline observability.",
+              "documentation": "Use standard Prometheus documentation.",
+              "id": "prometheus",
+              "integration_complexity": "medium",
+              "learning_curve": "moderate",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "Prometheus",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "monitoring",
+                "metrics",
+                "health"
+              ],
+              "use_cases": [
+                "system_health",
+                "pipeline_metrics",
+                "scan_monitoring"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "scalability_score": "0.72",
+          "security_score": "0.68",
+          "security_tools": [
+            {
+              "category": "api_contract",
+              "compatible_with": [
+                "fastapi",
+                "react"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Machine-readable API contract for service and connector boundaries.",
+              "documentation": "Use standard OpenAPI documentation.",
+              "id": "openapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "OpenAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "web",
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [
+                "json",
+                "yaml"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "contract",
+                "integration",
+                "documentation"
+              ],
+              "use_cases": [
+                "service_contract",
+                "export_contract",
+                "connector_boundary"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ]
+        },
+        "validation_status": "success"
+      }
+    },
+    "technology_intelligence": {
+      "available": true,
+      "name": "technology_intelligence",
+      "source": "technology_intelligence",
+      "status": "success",
+      "summary": {
+        "buildability_notes": [
+          "ingestion can be implemented with the matched stack components.",
+          "semantic_processing can be implemented with the matched stack components.",
+          "analysis_engines can be implemented with the matched stack components.",
+          "decision_layer can be implemented with the matched stack components.",
+          "api_gateway can be implemented with the matched stack components."
+        ],
+        "compatibility_notes": [
+          "Frontend and backend stack can communicate through OpenAPI-defined routes.",
+          "Backend stack supports local-first SQLite and scalable PostgreSQL persistence.",
+          "Technology stack is advisory and route-gated; it should not activate portfolio-only outputs."
+        ],
+        "component_matches": [
+          {
+            "buildability_note": "ingestion can be implemented with the matched stack components.",
+            "component": "ingestion",
+            "integration_complexity": "low",
+            "matched_technologies": [
+              {
+                "category": "backend",
+                "compatible_with": [
+                  "react",
+                  "postgresql",
+                  "redis",
+                  "prometheus"
+                ],
+                "cost_model": "low_to_moderate_operational_cost",
+                "dependencies": [],
+                "description": "Python API framework for typed local service routes.",
+                "documentation": "Use standard FastAPI documentation.",
+                "id": "fastapi",
+                "integration_complexity": "low",
+                "learning_curve": "low",
+                "license_type": "open_source_or_standard_commercial",
+                "maturity_level": "established",
+                "name": "FastAPI",
+                "performance_metrics": {},
+                "platforms": [
+                  "local",
+                  "cloud",
+                  "desktop_shell"
+                ],
+                "programming_languages": [
+                  "python"
+                ],
+                "scalability_limits": "depends_on_deployment_topology",
+                "security_features": [
+                  "role_based_access_possible",
+                  "audit_integration_possible"
+                ],
+                "tags": [
+                  "api",
+                  "backend",
+                  "local_service",
+                  "contracts"
+                ],
+                "use_cases": [
+                  "pipeline_api",
+                  "export_api",
+                  "lifecycle_service"
+                ],
+                "vendor": "community_or_multiple_vendors"
+              },
+              {
+                "category": "database",
+                "compatible_with": [
+                  "fastapi"
+                ],
+                "cost_model": "low_to_moderate_operational_cost",
+                "dependencies": [],
+                "description": "Embedded database for portable desktop and local-first state.",
+                "documentation": "Use standard SQLite documentation.",
+                "id": "sqlite",
+                "integration_complexity": "low",
+                "learning_curve": "low",
+                "license_type": "open_source_or_standard_commercial",
+                "maturity_level": "established",
+                "name": "SQLite",
+                "performance_metrics": {},
+                "platforms": [
+                  "local",
+                  "desktop_shell"
+                ],
+                "programming_languages": [
+                  "sql"
+                ],
+                "scalability_limits": "depends_on_deployment_topology",
+                "security_features": [
+                  "role_based_access_possible",
+                  "audit_integration_possible"
+                ],
+                "tags": [
+                  "database",
+                  "local_first",
+                  "portable",
+                  "desktop"
+                ],
+                "use_cases": [
+                  "portable_state",
+                  "run_history",
+                  "catalog_cache"
+                ],
+                "vendor": "community_or_multiple_vendors"
+              }
+            ]
+          },
+          {
+            "buildability_note": "semantic_processing can be implemented with the matched stack components.",
+            "component": "semantic_processing",
+            "integration_complexity": "medium",
+            "matched_technologies": [
+              {
+                "category": "search",
+                "compatible_with": [
+                  "fastapi",
+                  "postgresql"
+                ],
+                "cost_model": "low_to_moderate_operational_cost",
+                "dependencies": [],
+                "description": "Semantic retrieval layer for evidence, technology, and design references.",
+                "documentation": "Use standard Vector Index documentation.",
+                "id": "vector_index",
+                "integration_complexity": "medium",
+                "learning_curve": "moderate",
+                "license_type": "open_source_or_standard_commercial",
+                "maturity_level": "established",
+                "name": "Vector Index",
+                "performance_metrics": {},
+                "platforms": [
+                  "local",
+                  "cloud"
+                ],
+                "programming_languages": [
+                  "python"
+                ],
+                "scalability_limits": "depends_on_deployment_topology",
+                "security_features": [
+                  "role_based_access_possible",
+                  "audit_integration_possible"
+                ],
+                "tags": [
+                  "search",
+                  "semantic",
+                  "retrieval",
+                  "evidence"
+                ],
+                "use_cases": [
+                  "technology_search",
+                  "evidence_retrieval",
+                  "design_reference"
+                ],
+                "vendor": "community_or_multiple_vendors"
+              },
+              {
+                "category": "backend",
+                "compatible_with": [
+                  "react",
+                  "postgresql",
+                  "redis",
+                  "prometheus"
+                ],
+                "cost_model": "low_to_moderate_operational_cost",
+                "dependencies": [],
+                "description": "Python API framework for typed local service routes.",
+                "documentation": "Use standard FastAPI documentation.",
+                "id": "fastapi",
+                "integration_complexity": "low",
+                "learning_curve": "low",
+                "license_type": "open_source_or_standard_commercial",
+                "maturity_level": "established",
+                "name": "FastAPI",
+                "performance_metrics": {},
+                "platforms": [
+                  "local",
+                  "cloud",
+                  "desktop_shell"
+                ],
+                "programming_languages": [
+                  "python"
+                ],
+                "scalability_limits": "depends_on_deployment_topology",
+                "security_features": [
+                  "role_based_access_possible",
+                  "audit_integration_possible"
+                ],
+                "tags": [
+                  "api",
+                  "backend",
+                  "local_service",
+                  "contracts"
+                ],
+                "use_cases": [
+                  "pipeline_api",
+                  "export_api",
+                  "lifecycle_service"
+                ],
+                "vendor": "community_or_multiple_vendors"
+              }
+            ]
+          },
+          {
+            "buildability_note": "analysis_engines can be implemented with the matched stack components.",
+            "component": "analysis_engines",
+            "integration_complexity": "medium",
+            "matched_technologies": [
+              {
+                "category": "backend",
+                "compatible_with": [
+                  "react",
+                  "postgresql",
+                  "redis",
+                  "prometheus"
+                ],
+                "cost_model": "low_to_moderate_operational_cost",
+                "dependencies": [],
+                "description": "Python API framework for typed local service routes.",
+                "documentation": "Use standard FastAPI documentation.",
+                "id": "fastapi",
+                "integration_complexity": "low",
+                "learning_curve": "low",
+                "license_type": "open_source_or_standard_commercial",
+                "maturity_level": "established",
+                "name": "FastAPI",
+                "performance_metrics": {},
+                "platforms": [
+                  "local",
+                  "cloud",
+                  "desktop_shell"
+                ],
+                "programming_languages": [
+                  "python"
+                ],
+                "scalability_limits": "depends_on_deployment_topology",
+                "security_features": [
+                  "role_based_access_possible",
+                  "audit_integration_possible"
+                ],
+                "tags": [
+                  "api",
+                  "backend",
+                  "local_service",
+                  "contracts"
+                ],
+                "use_cases": [
+                  "pipeline_api",
+                  "export_api",
+                  "lifecycle_service"
+                ],
+                "vendor": "community_or_multiple_vendors"
+              },
+              {
+                "category": "database",
+                "compatible_with": [
+                  "fastapi",
+                  "redis"
+                ],
+                "cost_model": "low_to_moderate_operational_cost",
+                "dependencies": [],
+                "description": "Relational database for structured run, artifact, and catalog records.",
+                "documentation": "Use standard PostgreSQL documentation.",
+                "id": "postgresql",
+                "integration_complexity": "medium",
+                "learning_curve": "moderate",
+                "license_type": "open_source_or_standard_commercial",
+                "maturity_level": "established",
+                "name": "PostgreSQL",
+                "performance_metrics": {},
+                "platforms": [
+                  "local",
+                  "cloud"
+                ],
+                "programming_languages": [
+                  "sql"
+                ],
+                "scalability_limits": "depends_on_deployment_topology",
+                "security_features": [
+                  "role_based_access_possible",
+                  "audit_integration_possible"
+                ],
+                "tags": [
+                  "database",
+                  "structured",
+                  "audit",
+                  "portfolio"
+                ],
+                "use_cases": [
+                  "run_history",
+                  "portfolio_records",
+                  "technology_catalog"
+                ],
+                "vendor": "community_or_multiple_vendors"
+              }
+            ]
+          },
+          {
+            "buildability_note": "decision_layer can be implemented with the matched stack components.",
+            "component": "decision_layer",
+            "integration_complexity": "low",
+            "matched_technologies": [
+              {
+                "category": "backend",
+                "compatible_with": [
+                  "react",
+                  "postgresql",
+                  "redis",
+                  "prometheus"
+                ],
+                "cost_model": "low_to_moderate_operational_cost",
+                "dependencies": [],
+                "description": "Python API framework for typed local service routes.",
+                "documentation": "Use standard FastAPI documentation.",
+                "id": "fastapi",
+                "integration_complexity": "low",
+                "learning_curve": "low",
+                "license_type": "open_source_or_standard_commercial",
+                "maturity_level": "established",
+                "name": "FastAPI",
+                "performance_metrics": {},
+                "platforms": [
+                  "local",
+                  "cloud",
+                  "desktop_shell"
+                ],
+                "programming_languages": [
+                  "python"
+                ],
+                "scalability_limits": "depends_on_deployment_topology",
+                "security_features": [
+                  "role_based_access_possible",
+                  "audit_integration_possible"
+                ],
+                "tags": [
+                  "api",
+                  "backend",
+                  "local_service",
+                  "contracts"
+                ],
+                "use_cases": [
+                  "pipeline_api",
+                  "export_api",
+                  "lifecycle_service"
+                ],
+                "vendor": "community_or_multiple_vendors"
+              },
+              {
+                "category": "api_contract",
+                "compatible_with": [
+                  "fastapi",
+                  "react"
+                ],
+                "cost_model": "low_to_moderate_operational_cost",
+                "dependencies": [],
+                "description": "Machine-readable API contract for service and connector boundaries.",
+                "documentation": "Use standard OpenAPI documentation.",
+                "id": "openapi",
+                "integration_complexity": "low",
+                "learning_curve": "low",
+                "license_type": "open_source_or_standard_commercial",
+                "maturity_level": "established",
+                "name": "OpenAPI",
+                "performance_metrics": {},
+                "platforms": [
+                  "web",
+                  "local",
+                  "cloud"
+                ],
+                "programming_languages": [
+                  "json",
+                  "yaml"
+                ],
+                "scalability_limits": "depends_on_deployment_topology",
+                "security_features": [
+                  "role_based_access_possible",
+                  "audit_integration_possible"
+                ],
+                "tags": [
+                  "api",
+                  "contract",
+                  "integration",
+                  "documentation"
+                ],
+                "use_cases": [
+                  "service_contract",
+                  "export_contract",
+                  "connector_boundary"
+                ],
+                "vendor": "community_or_multiple_vendors"
+              }
+            ]
+          },
+          {
+            "buildability_note": "api_gateway can be implemented with the matched stack components.",
+            "component": "api_gateway",
+            "integration_complexity": "low",
+            "matched_technologies": [
+              {
+                "category": "backend",
+                "compatible_with": [
+                  "react",
+                  "postgresql",
+                  "redis",
+                  "prometheus"
+                ],
+                "cost_model": "low_to_moderate_operational_cost",
+                "dependencies": [],
+                "description": "Python API framework for typed local service routes.",
+                "documentation": "Use standard FastAPI documentation.",
+                "id": "fastapi",
+                "integration_complexity": "low",
+                "learning_curve": "low",
+                "license_type": "open_source_or_standard_commercial",
+                "maturity_level": "established",
+                "name": "FastAPI",
+                "performance_metrics": {},
+                "platforms": [
+                  "local",
+                  "cloud",
+                  "desktop_shell"
+                ],
+                "programming_languages": [
+                  "python"
+                ],
+                "scalability_limits": "depends_on_deployment_topology",
+                "security_features": [
+                  "role_based_access_possible",
+                  "audit_integration_possible"
+                ],
+                "tags": [
+                  "api",
+                  "backend",
+                  "local_service",
+                  "contracts"
+                ],
+                "use_cases": [
+                  "pipeline_api",
+                  "export_api",
+                  "lifecycle_service"
+                ],
+                "vendor": "community_or_multiple_vendors"
+              },
+              {
+                "category": "api_contract",
+                "compatible_with": [
+                  "fastapi",
+                  "react"
+                ],
+                "cost_model": "low_to_moderate_operational_cost",
+                "dependencies": [],
+                "description": "Machine-readable API contract for service and connector boundaries.",
+                "documentation": "Use standard OpenAPI documentation.",
+                "id": "openapi",
+                "integration_complexity": "low",
+                "learning_curve": "low",
+                "license_type": "open_source_or_standard_commercial",
+                "maturity_level": "established",
+                "name": "OpenAPI",
+                "performance_metrics": {},
+                "platforms": [
+                  "web",
+                  "local",
+                  "cloud"
+                ],
+                "programming_languages": [
+                  "json",
+                  "yaml"
+                ],
+                "scalability_limits": "depends_on_deployment_topology",
+                "security_features": [
+                  "role_based_access_possible",
+                  "audit_integration_possible"
+                ],
+                "tags": [
+                  "api",
+                  "contract",
+                  "integration",
+                  "documentation"
+                ],
+                "use_cases": [
+                  "service_contract",
+                  "export_contract",
+                  "connector_boundary"
+                ],
+                "vendor": "community_or_multiple_vendors"
+              }
+            ]
+          }
+        ],
+        "confidence": "0.765",
+        "dependency_notes": [
+          "frontend_technologies: React",
+          "backend_technologies: FastAPI",
+          "database_technologies: SQLite, PostgreSQL",
+          "devops_tools: Docker",
+          "monitoring_tools: Prometheus",
+          "security_tools: OpenAPI",
+          "semantic_processing integration complexity: medium",
+          "analysis_engines integration complexity: medium"
+        ],
+        "integration_complexity": "medium",
+        "required": "True",
+        "search_queries": [
+          "evaluate",
+          "climate",
+          "insurance",
+          "repricing",
+          "risk-transfer",
+          "demand",
+          "dashboard",
+          "api",
+          "database",
+          "monitoring"
+        ],
+        "selected_stack": {
+          "backend_technologies": [
+            {
+              "category": "backend",
+              "compatible_with": [
+                "react",
+                "postgresql",
+                "redis",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Python API framework for typed local service routes.",
+              "documentation": "Use standard FastAPI documentation.",
+              "id": "fastapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "FastAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "python"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "backend",
+                "local_service",
+                "contracts"
+              ],
+              "use_cases": [
+                "pipeline_api",
+                "export_api",
+                "lifecycle_service"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "cloud_services": [],
+          "complexity_score": "0.48",
+          "database_technologies": [
+            {
+              "category": "database",
+              "compatible_with": [
+                "fastapi"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Embedded database for portable desktop and local-first state.",
+              "documentation": "Use standard SQLite documentation.",
+              "id": "sqlite",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "SQLite",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "sql"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "database",
+                "local_first",
+                "portable",
+                "desktop"
+              ],
+              "use_cases": [
+                "portable_state",
+                "run_history",
+                "catalog_cache"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            },
+            {
+              "category": "database",
+              "compatible_with": [
+                "fastapi",
+                "redis"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Relational database for structured run, artifact, and catalog records.",
+              "documentation": "Use standard PostgreSQL documentation.",
+              "id": "postgresql",
+              "integration_complexity": "medium",
+              "learning_curve": "moderate",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "PostgreSQL",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [
+                "sql"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "database",
+                "structured",
+                "audit",
+                "portfolio"
+              ],
+              "use_cases": [
+                "run_history",
+                "portfolio_records",
+                "technology_catalog"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "devops_tools": [
+            {
+              "category": "devops",
+              "compatible_with": [
+                "fastapi",
+                "postgresql",
+                "redis"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Container runtime for repeatable deployment and packaging.",
+              "documentation": "Use standard Docker documentation.",
+              "id": "docker",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "Docker",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "devops",
+                "deployment",
+                "packaging"
+              ],
+              "use_cases": [
+                "deployment",
+                "portable_runtime",
+                "test_environment"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "estimated_cost": "low_for_local_desktop; moderate_for_cloud_scale",
+          "estimated_development_time": "2-6 weeks for minimum viable route-aware module",
+          "frontend_technologies": [
+            {
+              "category": "frontend",
+              "compatible_with": [
+                "fastapi",
+                "postgresql",
+                "prometheus"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Component UI framework for interactive web workspaces.",
+              "documentation": "Use standard React documentation.",
+              "id": "react",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "React",
+              "performance_metrics": {},
+              "platforms": [
+                "web",
+                "desktop_shell"
+              ],
+              "programming_languages": [
+                "javascript",
+                "typescript"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "frontend",
+                "dashboard",
+                "workspace",
+                "portal"
+              ],
+              "use_cases": [
+                "dashboard",
+                "command_center",
+                "design_portal"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "maintainability_score": "0.74",
+          "monitoring_tools": [
+            {
+              "category": "monitoring",
+              "compatible_with": [
+                "fastapi"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Metrics collection for runtime and pipeline observability.",
+              "documentation": "Use standard Prometheus documentation.",
+              "id": "prometheus",
+              "integration_complexity": "medium",
+              "learning_curve": "moderate",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "Prometheus",
+              "performance_metrics": {},
+              "platforms": [
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "monitoring",
+                "metrics",
+                "health"
+              ],
+              "use_cases": [
+                "system_health",
+                "pipeline_metrics",
+                "scan_monitoring"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ],
+          "scalability_score": "0.72",
+          "security_score": "0.68",
+          "security_tools": [
+            {
+              "category": "api_contract",
+              "compatible_with": [
+                "fastapi",
+                "react"
+              ],
+              "cost_model": "low_to_moderate_operational_cost",
+              "dependencies": [],
+              "description": "Machine-readable API contract for service and connector boundaries.",
+              "documentation": "Use standard OpenAPI documentation.",
+              "id": "openapi",
+              "integration_complexity": "low",
+              "learning_curve": "low",
+              "license_type": "open_source_or_standard_commercial",
+              "maturity_level": "established",
+              "name": "OpenAPI",
+              "performance_metrics": {},
+              "platforms": [
+                "web",
+                "local",
+                "cloud"
+              ],
+              "programming_languages": [
+                "json",
+                "yaml"
+              ],
+              "scalability_limits": "depends_on_deployment_topology",
+              "security_features": [
+                "role_based_access_possible",
+                "audit_integration_possible"
+              ],
+              "tags": [
+                "api",
+                "contract",
+                "integration",
+                "documentation"
+              ],
+              "use_cases": [
+                "service_contract",
+                "export_contract",
+                "connector_boundary"
+              ],
+              "vendor": "community_or_multiple_vendors"
+            }
+          ]
+        },
+        "status": "success",
+        "technologies_considered": [
+          {
+            "category": "frontend",
+            "compatible_with": [
+              "fastapi",
+              "postgresql",
+              "prometheus"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Component UI framework for interactive web workspaces.",
+            "documentation": "Use standard React documentation.",
+            "id": "react",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "React",
+            "performance_metrics": {},
+            "platforms": [
+              "web",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "javascript",
+              "typescript"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "frontend",
+              "dashboard",
+              "workspace",
+              "portal"
+            ],
+            "use_cases": [
+              "dashboard",
+              "command_center",
+              "design_portal"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "backend",
+            "compatible_with": [
+              "react",
+              "postgresql",
+              "redis",
+              "prometheus"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Python API framework for typed local service routes.",
+            "documentation": "Use standard FastAPI documentation.",
+            "id": "fastapi",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "FastAPI",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "python"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "api",
+              "backend",
+              "local_service",
+              "contracts"
+            ],
+            "use_cases": [
+              "pipeline_api",
+              "export_api",
+              "lifecycle_service"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "database",
+            "compatible_with": [
+              "fastapi",
+              "redis"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Relational database for structured run, artifact, and catalog records.",
+            "documentation": "Use standard PostgreSQL documentation.",
+            "id": "postgresql",
+            "integration_complexity": "medium",
+            "learning_curve": "moderate",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "PostgreSQL",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [
+              "sql"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "database",
+              "structured",
+              "audit",
+              "portfolio"
+            ],
+            "use_cases": [
+              "run_history",
+              "portfolio_records",
+              "technology_catalog"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "database",
+            "compatible_with": [
+              "fastapi"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Embedded database for portable desktop and local-first state.",
+            "documentation": "Use standard SQLite documentation.",
+            "id": "sqlite",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "SQLite",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "desktop_shell"
+            ],
+            "programming_languages": [
+              "sql"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "database",
+              "local_first",
+              "portable",
+              "desktop"
+            ],
+            "use_cases": [
+              "portable_state",
+              "run_history",
+              "catalog_cache"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "backend",
+            "compatible_with": [
+              "fastapi",
+              "postgresql"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "In-memory queue/cache for scan jobs and execution state.",
+            "documentation": "Use standard Redis documentation.",
+            "id": "redis",
+            "integration_complexity": "medium",
+            "learning_curve": "moderate",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "Redis",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [
+              "python",
+              "javascript"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "queue",
+              "cache",
+              "jobs",
+              "monitoring"
+            ],
+            "use_cases": [
+              "scan_queue",
+              "job_state",
+              "live_monitor"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "monitoring",
+            "compatible_with": [
+              "fastapi"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Metrics collection for runtime and pipeline observability.",
+            "documentation": "Use standard Prometheus documentation.",
+            "id": "prometheus",
+            "integration_complexity": "medium",
+            "learning_curve": "moderate",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "Prometheus",
+            "performance_metrics": {},
+            "platforms": [
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "monitoring",
+              "metrics",
+              "health"
+            ],
+            "use_cases": [
+              "system_health",
+              "pipeline_metrics",
+              "scan_monitoring"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          },
+          {
+            "category": "api_contract",
+            "compatible_with": [
+              "fastapi",
+              "react"
+            ],
+            "cost_model": "low_to_moderate_operational_cost",
+            "dependencies": [],
+            "description": "Machine-readable API contract for service and connector boundaries.",
+            "documentation": "Use standard OpenAPI documentation.",
+            "id": "openapi",
+            "integration_complexity": "low",
+            "learning_curve": "low",
+            "license_type": "open_source_or_standard_commercial",
+            "match_score": 0.0909,
+            "maturity_level": "established",
+            "name": "OpenAPI",
+            "performance_metrics": {},
+            "platforms": [
+              "web",
+              "local",
+              "cloud"
+            ],
+            "programming_languages": [
+              "json",
+              "yaml"
+            ],
+            "scalability_limits": "depends_on_deployment_topology",
+            "security_features": [
+              "role_based_access_possible",
+              "audit_integration_possible"
+            ],
+            "tags": [
+              "api",
+              "contract",
+              "integration",
+              "documentation"
+            ],
+            "use_cases": [
+              "service_contract",
+              "export_contract",
+              "connector_boundary"
+            ],
+            "vendor": "community_or_multiple_vendors"
+          }
+        ]
+      }
+    }
+  },
+  "generated_at": "2026-05-13T11:18:48.222272Z",
+  "missing_required_inputs": [],
+  "route": {
+    "family": "autodesign",
+    "handoff_status": "already_satisfied",
+    "invention_required": true,
+    "selected": "solution_design"
+  },
+  "version": "v17.67",
+  "warnings": []
+}

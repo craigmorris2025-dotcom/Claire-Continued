@@ -1,0 +1,102 @@
+{
+  "backup_dir": "backups/v17_77_platform_launch_hardening/20260509_193754",
+  "build_name": "Platform Launch Hardening",
+  "files_written": [
+    "claire/platform/launch_hardening.py",
+    "claire/api/routes_platform_launch_hardening.py",
+    "tests/test_v17_77_platform_launch_hardening.py",
+    "docs/platform/v17.77_platform_launch_hardening.md",
+    "LAUNCH_CLAIRE.bat",
+    "data/launch_hardening/platform_launch_hardening_report.json",
+    "data/launch_hardening/v17_77_launch_hardening_stop_go.json",
+    "data/launch_hardening/v17_77_launch_hardening_stop_go.md",
+    "data/dashboard/platform_launch_hardening_payload.json",
+    "data/launch_hardening/v17_77_platform_launch_hardening_validation_result.json"
+  ],
+  "installed_at": "2026-05-10T00:37:55.837866Z",
+  "next": [
+    "v17.78 Desktop Packaging / Startup Reliability",
+    "v17.79 Manual Browser + Swagger Proof Binder",
+    "v17.80 Launch Candidate Freeze"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "blockers": [],
+    "errors": [],
+    "hardening_status": "GO_TO_MANUAL_BROWSER_AND_SWAGGER_PROOF",
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.75.1",
+      "source": {
+        "inputs": {
+          "autodesign_handoff": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/autodesign/autodesign_handoff_contract.json",
+            "status": "loaded"
+          },
+          "buildability_validation": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/validation/buildability_viability_manufacturability_validation.json",
+            "status": "loaded"
+          },
+          "dashboard_runtime_truth": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/dashboard_runtime_truth.json",
+            "status": "loaded"
+          },
+          "design_portal": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/design_portal_output_contract.json",
+            "status": "loaded"
+          },
+          "internet_readiness": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+            "status": "loaded"
+          },
+          "proof_pack": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/full_end_to_end_proof_pack.json",
+            "status": "loaded"
+          },
+          "regression_lock": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_governance_regression_lock.json",
+            "status": "loaded"
+          },
+          "rollback_plan": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json",
+            "status": "loaded"
+          },
+          "route_audit": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/routes/discovery_breakthrough_innovation_route_audit.json",
+            "status": "loaded"
+          },
+          "runner_gate": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/automatic_update_runner_gate.json",
+            "status": "loaded"
+          },
+          "runtime_truth": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json",
+            "status": "loaded"
+          },
+          "stop_go": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/v17_75_stop_go_report.json",
+            "status": "loaded"
+          },
+          "update_pack_staging": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json",
+            "status": "loaded"
+          }
+        },
+        "missing_data_stays_missing": true,
+        "proof_pack_loaded": true,
+        "runtime_truth_loaded": true
+      },
+      "status": "rebuilt"
+    },
+    "recommendation": "Launch hardening checks passed. Run manual browser and Swagger proof next.",
+    "status": "passed",
+    "warnings": []
+  },
+  "version": "v17.77"
+}

@@ -1,0 +1,57 @@
+{
+  "domain_status": {
+    "autodesign_handoff": "passed",
+    "buildability_validation": "passed",
+    "dashboard_functionality": "passed",
+    "design_portal": "passed",
+    "internet_readiness": "passed",
+    "route_integrity": "passed",
+    "runtime_truth": "passed",
+    "safety_locks": "passed",
+    "update_governance": "passed"
+  },
+  "generated_at": "2026-05-13T11:18:57.897156Z",
+  "governance": {
+    "autodesign_design_portal_first_class": true,
+    "automatic_updates_disabled": true,
+    "discovery_breakthrough_innovation_first_class": true,
+    "live_internet_disabled_until_review": true,
+    "missing_outputs_remain_visible": true,
+    "no_background_execution": true,
+    "no_fake_data": true,
+    "no_hidden_updates": true,
+    "operator_review_required": true
+  },
+  "launch_readiness": {
+    "automatic_updates_enabled": false,
+    "automatic_updates_ready": false,
+    "background_execution_enabled": false,
+    "dashboard_ready_for_manual_review": true,
+    "internet_static_readiness_reviewable": true,
+    "live_internet_enabled": false,
+    "route_contract_ready_for_manual_review": true,
+    "runtime_truth_ready_for_manual_review": true
+  },
+  "status": "GO_WITH_WARNINGS",
+  "stop_go": {
+    "blocked_domains": [],
+    "recommendation": "Proceed only to manual review. Do not enable automatic updates.",
+    "status": "GO_WITH_WARNINGS",
+    "warnings": [
+      {
+        "domain": "buildability_validation",
+        "warnings": [
+          "invention_route_requires_higher_feasibility_threshold",
+          "package_not_ready_for_final_package"
+        ]
+      },
+      {
+        "domain": "internet_readiness",
+        "warnings": [
+          "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+        ]
+      }
+    ]
+  },
+  "version": "v17.75"
+}

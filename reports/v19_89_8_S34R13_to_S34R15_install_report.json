@@ -1,0 +1,22 @@
+{
+  "version": "v19.89.8-S34R13_to_S34R15",
+  "payload_keys": [
+    "provider_gate_diagnostic",
+    "provider_environment_setup_guide",
+    "first_metadata_probe_dry_run_simulator"
+  ],
+  "changed_files": [
+    "claire/api/provider_gate_diagnostic.py",
+    "claire/api/provider_environment_setup_guide.py",
+    "claire/api/first_metadata_probe_dry_run_simulator.py",
+    "claire/api/governed_payload_reconciliation.py"
+  ],
+  "changed_app_py": false,
+  "route_registered": false,
+  "network_request_during_install": false,
+  "response_body_read_during_install": false,
+  "browser_execution_enabled": false,
+  "runtime_truth_mutation_enabled": false,
+  "autonomous_execution_enabled": false,
+  "automatic_updates_enabled": false
+}

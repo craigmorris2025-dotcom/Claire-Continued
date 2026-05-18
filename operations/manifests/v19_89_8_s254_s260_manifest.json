@@ -1,0 +1,22 @@
+{
+  "version": "v19.89.8-S254-S260",
+  "installed_at": "2026-05-15T16:33:39.193815+00:00",
+  "stage_pack": "S254-S260",
+  "purpose": "Operator workflow display binding, action intents, governance banners, and workflow readiness.",
+  "files": [
+    "claire/api/cockpit_action_intent_contract.py",
+    "claire/api/cockpit_workflow_card_payloads.py",
+    "claire/api/cockpit_live_governance_banners.py",
+    "claire/api/cockpit_workflow_binding_readiness.py",
+    "frontend/cockpit/modern/claire_cockpit_shell.html",
+    "frontend/cockpit/modern/claire_cockpit_shell.css",
+    "frontend/cockpit/modern/claire_cockpit_shell.js",
+    "tests/test_s254_s260_action_intents_and_workflow_cards.py",
+    "tests/test_s254_s260_governance_banners_and_readiness.py",
+    "tests/test_s254_s260_shell_workflow_binding_files.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s254_s260_action_intents_and_workflow_cards.py tests/test_s254_s260_governance_banners_and_readiness.py tests/test_s254_s260_shell_workflow_binding_files.py -q",
+    "pytest"
+  ]
+}

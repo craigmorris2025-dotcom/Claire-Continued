@@ -1,0 +1,47 @@
+{
+  "accepted_body_examples": [
+    {
+      "confirm_text": "RUN GOVERNED WEB PROBE",
+      "query": "OpenAI latest research"
+    },
+    {
+      "confirm_text": "RUN GOVERNED WEB PROBE",
+      "raw_input": "OpenAI latest research"
+    }
+  ],
+  "contract_name": "Live Probe Body Compatibility Repair",
+  "probe_contract_status": "BLOCKED_PROVIDER_NOT_READY",
+  "probe_summary": {
+    "automatic_execution_enabled": false,
+    "background_execution_enabled": false,
+    "confirm_text_required": "RUN GOVERNED WEB PROBE",
+    "contract_status": "BLOCKED_PROVIDER_NOT_READY",
+    "generated_at": "2026-05-10T01:54:26.779416Z",
+    "last_executed": false,
+    "last_result_source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_live_probe/last_live_probe_result.json",
+      "status": "loaded"
+    },
+    "last_result_status": "blocked",
+    "provider": {
+      "key_name": "",
+      "key_present": false,
+      "key_redacted": "",
+      "known": false,
+      "provider": "none"
+    },
+    "recommendation": "Configure CLAIRE_SEARCH_PROVIDER and its API key locally, then rerun v17.83/v17.84 gates.",
+    "version": "v17.84"
+  },
+  "reason": "Use /internet/live-probe/run-confirmed for the governed probe body. It accepts query or raw_input.",
+  "required_confirm_text": "RUN GOVERNED WEB PROBE",
+  "safe_defaults": {
+    "automatic_updates_disabled": true,
+    "does_not_run_on_install": true,
+    "no_runtime_truth_auto_ingestion": true,
+    "requires_operator_confirm_text": true,
+    "single_query_only": true
+  },
+  "status": "ready",
+  "version": "v17.84.1"
+}

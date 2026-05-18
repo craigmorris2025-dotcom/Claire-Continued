@@ -1,0 +1,12 @@
+{
+  "version": "19.87.4.12",
+  "phase": "v19_84_2_compatibility_lockdown",
+  "lane": "v19.87.x",
+  "updated_at": "2026-05-12T17:38:02.417467+00:00",
+  "notes": [
+    "Replaced claire.continuous_runtime.cycle with exact v19.84.2 compatibility contract.",
+    "Removed generated failed-repair compatibility tests from tests directory.",
+    "Expected candidate.status is pending_operator_review.",
+    "No scheduler, cockpit, route, evidence, or runtime truth mutation."
+  ]
+}

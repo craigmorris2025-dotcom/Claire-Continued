@@ -1,0 +1,37 @@
+/* BEGIN CLAIRE_S422_S428_ACTION_WIRING */
+.claire-action-wiring-panel {
+  margin: 16px;
+  padding: 14px;
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: 16px;
+}
+.claire-action-summary {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.claire-action-summary span {
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+.claire-action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.claire-action-button {
+  text-align: left;
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: 14px;
+  padding: 10px;
+  cursor: pointer;
+}
+.claire-action-button small {
+  display: block;
+  margin-top: 4px;
+  opacity: 0.75;
+}
+/* END CLAIRE_S422_S428_ACTION_WIRING */

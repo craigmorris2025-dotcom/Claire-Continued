@@ -1,0 +1,55 @@
+{
+  "errors": [],
+  "governance": {
+    "agent_command_surface_prepared": true,
+    "live_web_disabled_until_governed": true,
+    "no_automatic_update_execution": true,
+    "no_fake_search_results": true,
+    "no_hidden_background_browsing": true,
+    "normal_web_search_prepared": true,
+    "runtime_search_enabled": true,
+    "search_bar_permanent": true
+  },
+  "modes": {
+    "agent_command_mode": {
+      "enabled": false,
+      "label": "AI Agent Command Mode",
+      "prepared": true,
+      "reason": "Command parsing is prepared. Autonomous execution remains disabled until later governed agent runtime builds."
+    },
+    "governed_research_search": {
+      "enabled": false,
+      "label": "Governed Research Search",
+      "prepared": true,
+      "reason": "Requires source trust, allowlist/quarantine, evidence capture, rate limits, and operator-visible results."
+    },
+    "normal_web_search": {
+      "enabled": false,
+      "label": "Normal Web Search",
+      "prepared": true,
+      "reason": "Prepared as a normal search-engine mode, but live search remains gated until governed provider and internet readiness are verified."
+    },
+    "runtime_system_search": {
+      "enabled": true,
+      "label": "Claire Runtime/System Search",
+      "prepared": true,
+      "reason": "Searches local runtime truth, proof, route, AutoDesign, Design Portal, validation, internet readiness, and update governance outputs."
+    }
+  },
+  "mount_report": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "status": "passed",
+  "web_search_status": {
+    "automatic_updates_enabled": false,
+    "generated_at": "2026-05-10T00:25:29.833439Z",
+    "governed_research_enabled": false,
+    "live_internet_enabled": false,
+    "normal_web_search_enabled": false,
+    "normal_web_search_prepared": true,
+    "reason": "Normal web search mode is prepared, but live web calls remain disabled until governed provider, source trust, quarantine, rate limits, and operator review are active.",
+    "safe_to_attempt_live_probe_after_operator_review": false,
+    "version": "v17.75.2"
+  }
+}

@@ -1,0 +1,57 @@
+.claire-staged-update-sandbox-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+  margin: 14px 0;
+  background: rgba(7, 13, 25, 0.82);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+.claire-sandbox-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.claire-sandbox-panel-header small,
+.claire-staged-update-sandbox-panel footer {
+  opacity: 0.7;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.claire-sandbox-panel-body {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.claire-sandbox-card {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.claire-sandbox-card-topline,
+.claire-sandbox-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.claire-sandbox-card-topline span,
+.claire-sandbox-badges span {
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+}
+
+.claire-sandbox-card p {
+  line-height: 1.5;
+  margin: 10px 0;
+}

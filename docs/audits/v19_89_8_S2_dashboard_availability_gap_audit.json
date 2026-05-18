@@ -1,0 +1,7172 @@
+{
+  "version": "v19.89.8-S2",
+  "build": "Dashboard Availability Gap Audit",
+  "timestamp": "2026-05-14T00:38:39.061148+00:00",
+  "runtime_authority_expanded": false,
+  "safe_to_expand_runtime_authority": false,
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "summary": {
+    "frontend_files_scanned": 244,
+    "backend_files_scanned": 1228,
+    "frontend_files_with_fetches_markers_or_panels": 238,
+    "backend_files_with_routes_or_route_literals": 718
+  },
+  "panel_to_route_map": {
+    "payload": {
+      "expected_routes": [
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ],
+      "route_literal_found_in_backend_scan": {
+        "/dashboard/payload": true,
+        "/dashboard/payload/status": true
+      },
+      "route_literal_found_in_frontend_scan": {
+        "/dashboard/payload": true,
+        "/dashboard/payload/status": true
+      },
+      "status": "audit_only_unknown_until_http_checked"
+    },
+    "runtime_execution": {
+      "expected_routes": [
+        "/system/runtime-execution/summary"
+      ],
+      "route_literal_found_in_backend_scan": {
+        "/system/runtime-execution/summary": true
+      },
+      "route_literal_found_in_frontend_scan": {
+        "/system/runtime-execution/summary": true
+      },
+      "status": "audit_only_unknown_until_http_checked"
+    },
+    "runtime_state": {
+      "expected_routes": [
+        "/system/runtime-state/summary"
+      ],
+      "route_literal_found_in_backend_scan": {
+        "/system/runtime-state/summary": true
+      },
+      "route_literal_found_in_frontend_scan": {
+        "/system/runtime-state/summary": true
+      },
+      "status": "audit_only_unknown_until_http_checked"
+    },
+    "runtime_propagation": {
+      "expected_routes": [
+        "/system/runtime-propagation/summary"
+      ],
+      "route_literal_found_in_backend_scan": {
+        "/system/runtime-propagation/summary": true
+      },
+      "route_literal_found_in_frontend_scan": {
+        "/system/runtime-propagation/summary": true
+      },
+      "status": "audit_only_unknown_until_http_checked"
+    },
+    "review_queue": {
+      "expected_routes": [
+        "/system/review-queue/summary"
+      ],
+      "route_literal_found_in_backend_scan": {
+        "/system/review-queue/summary": true
+      },
+      "route_literal_found_in_frontend_scan": {
+        "/system/review-queue/summary": true
+      },
+      "status": "audit_only_unknown_until_http_checked"
+    },
+    "route_owner_registry": {
+      "expected_routes": [
+        "/system/route-owner-registry/summary"
+      ],
+      "route_literal_found_in_backend_scan": {
+        "/system/route-owner-registry/summary": true
+      },
+      "route_literal_found_in_frontend_scan": {
+        "/system/route-owner-registry/summary": true
+      },
+      "status": "audit_only_unknown_until_http_checked"
+    },
+    "duplicate_route_fail_test": {
+      "expected_routes": [
+        "/system/duplicate-route-fail-test/summary"
+      ],
+      "route_literal_found_in_backend_scan": {
+        "/system/duplicate-route-fail-test/summary": true
+      },
+      "route_literal_found_in_frontend_scan": {
+        "/system/duplicate-route-fail-test/summary": true
+      },
+      "status": "audit_only_unknown_until_http_checked"
+    },
+    "cockpit_fetch_map": {
+      "expected_routes": [
+        "/system/cockpit-fetch-map/summary"
+      ],
+      "route_literal_found_in_backend_scan": {
+        "/system/cockpit-fetch-map/summary": true
+      },
+      "route_literal_found_in_frontend_scan": {
+        "/system/cockpit-fetch-map/summary": true
+      },
+      "status": "audit_only_unknown_until_http_checked"
+    },
+    "active_route_truth": {
+      "expected_routes": [
+        "/dashboard/payload/status",
+        "/system/cockpit-fetch-map/summary",
+        "/system/route-owner-registry/summary",
+        "/system/duplicate-route-fail-test/summary"
+      ],
+      "route_literal_found_in_backend_scan": {
+        "/dashboard/payload/status": true,
+        "/system/cockpit-fetch-map/summary": true,
+        "/system/route-owner-registry/summary": true,
+        "/system/duplicate-route-fail-test/summary": true
+      },
+      "route_literal_found_in_frontend_scan": {
+        "/dashboard/payload/status": true,
+        "/system/cockpit-fetch-map/summary": true,
+        "/system/route-owner-registry/summary": true,
+        "/system/duplicate-route-fail-test/summary": true
+      },
+      "status": "audit_only_unknown_until_http_checked"
+    }
+  },
+  "frontend_findings": [
+    {
+      "file": "frontend\\claire_dashboard_actions.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\active_authority_probe.html",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\assets\\enterprise_cockpit_actions.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\assets\\enterprise_cockpit_continuous_runtime.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "review_queue",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\assets\\enterprise_cockpit_payload_map.js",
+      "fetches_or_route_literals": [],
+      "unavailable_markers": [
+        "missing"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\assets\\enterprise_cockpit_workspace_shell.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "offline"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\assets\\enterprise_cockpit_workspace_shell.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ],
+      "unavailable_markers": [
+        "offline",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "review_queue"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\design\\design_route_surface.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\intelligence\\command_suggestions.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\intelligence\\command_surface.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\intelligence\\governed_research_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\intelligence\\provider_status_view.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\intelligence\\search_mode_router.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload"
+      ],
+      "unavailable_markers": [
+        "not wired",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\intelligence\\search_panel.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\intelligence\\search_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Unavailable",
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\intelligence\\search_results_view.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Unavailable",
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\intelligence\\search_state_model.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "not wired",
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\intelligence\\source_trust_badges.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\runtime\\autonomous_lifecycle_graph.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\runtime\\lifecycle_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Missing",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\runtime\\route_workspace_renderer.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Unavailable",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\runtime\\run_history_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\runtime\\runtime_panel.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\runtime\\runtime_payload_gate.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload"
+      ],
+      "unavailable_markers": [
+        "missing",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\runtime\\runtime_render_gate.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\runtime\\runtime_status_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\runtime\\runtime_truth_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\runtime\\runtime_workspace.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shared\\api_client.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shared\\canonical_payload_adapter.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "review_queue",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shared\\error_state.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shared\\loading_state.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shared\\payload_adapter.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "cockpit_fetch_map",
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shared\\payload_route_guard.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shared\\status_model.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Unavailable",
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_active_route_truth_panel.css",
+      "fetches_or_route_literals": [],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "active_route_truth"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_active_route_truth_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "active_route_truth",
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_authored_enterprise_cockpit_shell.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "review_queue",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_canonical_cockpit_renderer.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "review_queue",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_cockpit_layout_containment_repair.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_cockpit_layout_containment_repair.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_cockpit_shell_layout_normalization.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_cockpit_shell_layout_normalization.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_cockpit_workspace_anchor_consolidation.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_cockpit_workspace_anchor_consolidation.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_discovery_candidate_surface.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_discovery_candidate_surface.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload"
+      ],
+      "unavailable_markers": [
+        "Unavailable",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "review_queue"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_enterprise_cockpit_visual_frame_v2.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_enterprise_cockpit_visual_frame_v2.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_enterprise_cockpit_workspace_router.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_enterprise_cockpit_workspace_router.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "review_queue"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_probe_review_queue_bridge.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "review_queue"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_probe_review_queue_bridge.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Unavailable",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "review_queue"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_source_universe_workspace.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\assets\\claire_source_universe_workspace.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Unavailable",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_canonical_fetch_map_lock.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/cockpit-fetch-map/summary",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/review-queue/summary",
+        "/system/route-owner-registry/summary",
+        "/system/runtime-execution/summary",
+        "/system/runtime-propagation/summary",
+        "/system/runtime-state/summary"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "cockpit_fetch_map",
+        "duplicate_route_fail_test",
+        "payload",
+        "review_queue",
+        "route_owner_registry",
+        "runtime_execution",
+        "runtime_propagation",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_cockpit_runtime_surface.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "cockpit_fetch_map",
+        "payload",
+        "review_queue",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_live_backend_bridge.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/docs"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_operator_control_contracts.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_operator_event_trail.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_operator_surface_map.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing",
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_project_inventory_surface.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing",
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_review_queue_surface.css",
+      "fetches_or_route_literals": [],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "review_queue"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_review_queue_surface.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/system/review-queue/summary"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "review_queue",
+        "runtime_propagation"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_runtime_execution_surface.css",
+      "fetches_or_route_literals": [],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "runtime_execution"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_runtime_execution_surface.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/system/runtime-execution/summary"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "runtime_execution"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_runtime_state_surface.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_runtime_state_surface.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/system/runtime-state/summary"
+      ],
+      "unavailable_markers": [
+        "not wired",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload",
+        "review_queue",
+        "runtime_execution",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\claire_safe_operator_action_console.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Unavailable",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "review_queue"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\cockpit_bootstrap.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\cockpit_shell.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\cockpit_shell.html",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/cockpit-fetch-map/summary",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/route-owner-registry/summary"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "active_route_truth",
+        "cockpit_fetch_map",
+        "duplicate_route_fail_test",
+        "payload",
+        "review_queue",
+        "route_owner_registry",
+        "runtime_execution",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\panel_registry.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\route_state.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\shell\\workspace_manager.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\cockpit\\system\\cockpit_ux_diagnostics.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\ClaireCommandCenter.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\core\\CommandCenterLayout.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\core\\CommandCenterRouter.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\core\\PanelRegistry.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\data_readiness\\DataQualityPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\data_readiness\\DataReadinessScorePanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\data_readiness\\HistoricalBenchmarksPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\data_readiness\\OutcomeLabelsPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\data_readiness\\SourceLineagePanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\data_readiness\\WorkflowTelemetryPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\evidence_ops\\EvidencePacketPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\evidence_ops\\IngestionPipelinePanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\evidence_ops\\ReplayBenchmarkPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\evidence_ops\\SourceTrustPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\evidence_ops\\TelemetryPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\governance\\AutonomyGovernancePanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\governance\\CompletionLockPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\governance\\ProductionReadinessPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\live\\LiveConnectionPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\live\\LiveIngestionPreviewPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\live\\LiveRefreshControls.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\live\\LiveRiskConsole.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\live\\LiveSourceStatusPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\live_ops\\LiveBenchmarkGrowthPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\live_ops\\LiveReplayDriftPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\live_ops\\LiveSourcePilotPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\live_ops\\ROIProofPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\live_ops\\WorkflowInstrumentationPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\maturity\\EnterpriseReadinessPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\maturity\\FeasibilityMaturityPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\maturity\\LiveDataMaturityPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\maturity\\ProductizationMaturityPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\maturity\\RecursiveIntelligencePanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\maturity\\RecursiveTransformationPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\assets\\js\\claire_v18_74_dashboard_live_web_search_final_binding.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_clean_shell.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_clean_shell.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_connected_operator_dashboard.css",
+      "fetches_or_route_literals": [],
+      "unavailable_markers": [
+        "missing",
+        "offline"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_connected_operator_dashboard.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Missing",
+        "Offline",
+        "missing",
+        "offline"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_dashboard_decongestion.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_dashboard_payload_bridge.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_dashboard_payload_bridge.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload"
+      ],
+      "unavailable_markers": [
+        "offline",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_dashboard_reset_v17_62_5.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_dashboard_reset_v17_62_5.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_dashboard_search.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_functional_operator_dashboard.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Missing",
+        "Offline",
+        "missing",
+        "offline"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_operating_environment.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_operating_environment.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload",
+        "runtime_execution"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_operator_shell.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_operator_shell.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_overlap_fix.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_portal_responsive_layout.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_runtime_truth_backbone.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_search_relocation.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_single_screen_operator.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Offline",
+        "missing"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_strategic_cockpit.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_strategic_cockpit.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_validation_authority.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_verified_memory.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "missing"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_workspace_agent_dashboard.css",
+      "fetches_or_route_literals": [],
+      "unavailable_markers": [
+        "missing",
+        "offline"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_workspace_agent_dashboard.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Offline",
+        "missing",
+        "offline",
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_workspace_stack_fix.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\claire_workspace_stack_fix.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\dashboard_file_origin_fetch_bridge.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\dashboard_primary_web_search_binding.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\modern\\governed_live_search_ui_binding.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\modern\\governed_provider_probe_ui_binding.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\modern\\index.html",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/cockpit-fetch-map/summary",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/route-owner-registry/summary"
+      ],
+      "unavailable_markers": [
+        "offline"
+      ],
+      "likely_panels": [
+        "active_route_truth",
+        "cockpit_fetch_map",
+        "duplicate_route_fail_test",
+        "payload",
+        "route_owner_registry"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\modern\\internet_operations_dashboard.html",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\live_search_visible_result_contract.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\modern\\modern_dashboard.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\modern_dashboard.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\operator_dashboard.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\operator_dashboard.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Missing",
+        "Unavailable",
+        "missing",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\command_center\\modern\\product_dashboard.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\modern\\product_dashboard.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Missing",
+        "Unavailable",
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\panels\\BreakthroughDesignPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\panels\\LifecycleTimelinePanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\panels\\PortfolioAcquirerPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\panels\\RuntimeOverviewPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\panels\\ThesisOpportunityPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\proof\\BenchmarkValidationPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\proof\\EvidenceLineagePanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\proof\\MarketValidationPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\proof\\ProofBinderPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\proof\\RecursiveMemoryPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\state\\DashboardEventBus.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\state\\DashboardStateStore.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\state\\RuntimeOutputAdapter.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\styles\\command_center.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\utils\\formatters.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\widgets\\KeyValueGrid.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\widgets\\ScoreCard.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\widgets\\StageTimeline.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\command_center\\widgets\\StatusBadge.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\css\\dashboard.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\css\\theme.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\discover\\ClusterPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\discover\\DiscoverPipeline.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\discover\\GapPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\discover\\SignalPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\discover\\SolutionPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\enterprise\\AutonomyGovernanceView.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\enterprise\\BenchmarkWorkbench.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\enterprise\\CompletionCommandCenter.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\enterprise\\EnterpriseShell.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\enterprise\\EvidenceWorkbench.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\enterprise\\MarketValidationView.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\enterprise\\ProductionReadinessView.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\enterprise\\RecursiveMemoryView.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\export_dashboard\\dashboard.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "offline"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\export_dashboard\\dashboard.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Missing",
+        "Offline",
+        "Unavailable",
+        "missing",
+        "offline",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\export_dashboard\\index.html",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\internet_operations_dashboard\\internet_operations_dashboard.html",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\api.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\app.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "Offline"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\claire_a8_http_root_cockpit_beacon.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/cockpit-fetch-map/summary",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/route-owner-registry/summary"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "active_route_truth",
+        "cockpit_fetch_map",
+        "duplicate_route_fail_test",
+        "payload",
+        "route_owner_registry"
+      ]
+    },
+    {
+      "file": "frontend\\js\\claire_active_cockpit_authority.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/cockpit-fetch-map/summary",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/route-owner-registry/summary"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": [
+        "active_route_truth",
+        "cockpit_fetch_map",
+        "duplicate_route_fail_test",
+        "payload",
+        "route_owner_registry"
+      ]
+    },
+    {
+      "file": "frontend\\js\\claire_active_route_truth_direct_binding.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/cockpit-fetch-map/summary",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/route-owner-registry/summary"
+      ],
+      "unavailable_markers": [
+        "missing",
+        "unavailable"
+      ],
+      "likely_panels": [
+        "active_route_truth",
+        "cockpit_fetch_map",
+        "duplicate_route_fail_test",
+        "payload",
+        "route_owner_registry"
+      ]
+    },
+    {
+      "file": "frontend\\js\\claire_canonical_fetch_client.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/review-queue/summary",
+        "/system/route-owner-registry/summary",
+        "/system/runtime-execution/summary",
+        "/system/runtime-propagation/summary",
+        "/system/runtime-state/summary"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "cockpit_fetch_map",
+        "duplicate_route_fail_test",
+        "payload",
+        "review_queue",
+        "route_owner_registry",
+        "runtime_execution",
+        "runtime_propagation",
+        "runtime_state"
+      ]
+    },
+    {
+      "file": "frontend\\js\\claire_canonical_fetch_probe.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "cockpit_fetch_map"
+      ]
+    },
+    {
+      "file": "frontend\\js\\claire_live_cockpit_authority_beacon.js",
+      "fetches_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/cockpit-fetch-map/summary",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/route-owner-registry/summary"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "active_route_truth",
+        "cockpit_fetch_map",
+        "duplicate_route_fail_test",
+        "payload",
+        "route_owner_registry"
+      ]
+    },
+    {
+      "file": "frontend\\js\\dashboard.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\engines.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\history.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\modes.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\pipeline.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\platform.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\update_ui.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\updater.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\js\\web_connector.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": [
+        "payload"
+      ]
+    },
+    {
+      "file": "frontend\\monitor\\MonitorDetailPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\monitor\\MonitorStatusBar.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\monitor\\MonitorSurface.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [
+        "unavailable"
+      ],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\monitor\\MonitorTimeline.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\system\\EvolutionMemoryPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\system\\RegressionGuardPanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\system\\UpdateGovernancePanel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\master_shell.css",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\master_shell.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\breakthrough_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\design_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\discover_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\lifecycle_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\monitor_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\packages_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\portfolio_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\research_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\run_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\system_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\technology_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\panels\\trend_panel.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\state\\api_client.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\state\\event_bus.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\state\\state_manager.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\widgets\\acquirer_card.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\widgets\\engine_accordion.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\widgets\\evidence_card.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\widgets\\export_browser.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\widgets\\lifecycle_stage_card.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\widgets\\radar_chart.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    },
+    {
+      "file": "frontend\\unified\\widgets\\score_badge.js",
+      "fetches_or_route_literals": [
+        "/"
+      ],
+      "unavailable_markers": [],
+      "likely_panels": []
+    }
+  ],
+  "backend_route_findings": [
+    {
+      "file": "claire\\acquirers\\dataset.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\acquirers\\scoring.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\acquisition\\acquirer_identification.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\acquisition\\final_package.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\acquisition\\fit_rationale.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\agi\\consensus_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\agi\\decision_scaler.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\agi\\knowledge_graph.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\agi\\meta_learning\\strategy_optimizer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\agi\\meta_learning\\transfer_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\agi\\reasoning_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\analysis\\bridge\\masterpass.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\analysis\\entity_extraction.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\analysis\\relationship_mapping.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\cockpit_operational_proof_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/cockpit/operational-proof",
+        "/cockpit/operational-proof",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\commands.py",
+      "routes_or_route_literals": [
+        "/",
+        "/command"
+      ]
+    },
+    {
+      "file": "claire\\api\\dashboard_payload_bridge.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard",
+        "/dashboard/payload",
+        "/payload",
+        "/payload/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\endpoints.py",
+      "routes_or_route_literals": [
+        "/",
+        "/run"
+      ]
+    },
+    {
+      "file": "claire\\api\\governed_dashboard_live_search_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/dashboard/search",
+        "/live",
+        "/smoke/google"
+      ]
+    },
+    {
+      "file": "claire\\api\\live_intelligence_status_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/live-intelligence",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\live_source_catalog_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/feeds/live-source-catalog",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/health",
+        "/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\operational_proof_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/operational-proof",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\operator_dashboard_compat_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/operator/dashboard/state",
+        "/operator/search",
+        "/operator/search/capabilities",
+        "/operator/search/live",
+        "/operator/search/query",
+        "/operator/search/run",
+        "/operator/search/smoke/google"
+      ]
+    },
+    {
+      "file": "claire\\api\\real_provider_operator_probe_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/dashboard/search/provider",
+        "/probe",
+        "/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\router.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_acquirers.py",
+      "routes_or_route_literals": [
+        "/",
+        "/acquirers",
+        "/acquirers/{ticker}"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_archive_approval_gate.py",
+      "routes_or_route_literals": [
+        "/",
+        "/cleanup/archive-approval",
+        "/cleanup/archive-approval/rebuild",
+        "/cleanup/archive-approval/summary",
+        "/cleanup/archive/execute-approved",
+        "/cleanup/archive/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_autodesign_handoff.py",
+      "routes_or_route_literals": [
+        "/",
+        "/autodesign/handoff",
+        "/autodesign/handoff/rebuild",
+        "/autodesign/handoff/summary",
+        "/design/autodesign/handoff"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_automatic_update_runner_gate.py",
+      "routes_or_route_literals": [
+        "/",
+        "/updates/automatic/status",
+        "/updates/runner-gate",
+        "/updates/runner-gate/rebuild",
+        "/updates/runner-gate/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_buildability_validation.py",
+      "routes_or_route_literals": [
+        "/",
+        "/design-portal/validation",
+        "/validation/buildability",
+        "/validation/buildability/rebuild",
+        "/validation/buildability/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_cleanup_proof.py",
+      "routes_or_route_literals": [
+        "/",
+        "/cleanup/archive-plan",
+        "/cleanup/proof",
+        "/cleanup/proof/rebuild",
+        "/cleanup/proof/summary",
+        "/cleanup/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_cockpit_operational_status.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/cockpit/operational-status",
+        "/cockpit/operational-status",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_command.py",
+      "routes_or_route_literals": [
+        "/",
+        "/command"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_connectors.py",
+      "routes_or_route_literals": [
+        "/",
+        "/connectors",
+        "/fetch",
+        "/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_continuous_runtime.py",
+      "routes_or_route_literals": [
+        "/",
+        "/runtime/continuous/cycles",
+        "/runtime/continuous/pause",
+        "/runtime/continuous/review-queue",
+        "/runtime/continuous/start",
+        "/runtime/continuous/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_dashboard.py",
+      "routes_or_route_literals": [
+        "/",
+        "/buyer/matching",
+        "/company/intel",
+        "/dashboard",
+        "/deals/pipeline",
+        "/discovery/live",
+        "/financial/markets",
+        "/innovation/search",
+        "/market/overview",
+        "/news/intel",
+        "/patents/search",
+        "/portfolio/active",
+        "/system/settings"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_dashboard_alignment.py",
+      "routes_or_route_literals": [
+        "/",
+        "/buttons",
+        "/capabilities",
+        "/dashboard/alignment",
+        "/status",
+        "/verify"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_dashboard_e2e.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/e2e",
+        "/first-use/latest",
+        "/first-use/manifest",
+        "/first-use/run"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_design_portal_output.py",
+      "routes_or_route_literals": [
+        "/",
+        "/design-portal/output",
+        "/design-portal/output/rebuild",
+        "/design-portal/output/summary",
+        "/design/portal/output"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_desktop_startup_reliability.py",
+      "routes_or_route_literals": [
+        "/",
+        "/desktop/launch/status",
+        "/desktop/package-manifest",
+        "/desktop/startup",
+        "/desktop/startup/rebuild",
+        "/desktop/startup/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_enterprise_cockpit_payload.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_enterprise_runs.py",
+      "routes_or_route_literals": [
+        "/",
+        "/runs/latest",
+        "/runs/start",
+        "/runs/{run_id}/enrich",
+        "/runs/{run_id}/gates",
+        "/runs/{run_id}/lifecycle",
+        "/runs/{run_id}/missing-evidence",
+        "/runs/{run_id}/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_evidence_promotion_gate.py",
+      "routes_or_route_literals": [
+        "/",
+        "/internet/evidence-promotion",
+        "/internet/evidence-promotion/promote-approved",
+        "/internet/evidence-promotion/rebuild",
+        "/internet/evidence-promotion/status",
+        "/internet/evidence-promotion/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_full_e2e_proof_pack.py",
+      "routes_or_route_literals": [
+        "/",
+        "/proof/e2e",
+        "/proof/e2e/rebuild",
+        "/proof/e2e/summary",
+        "/system/stop-go"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_governed_live_probe.py",
+      "routes_or_route_literals": [
+        "/",
+        "/internet/live-probe/adapter/status",
+        "/internet/live-probe/contract",
+        "/internet/live-probe/last",
+        "/internet/live-probe/run",
+        "/internet/live-probe/run-adapter",
+        "/internet/live-probe/run-confirmed",
+        "/internet/live-probe/status",
+        "/operator/search/web/run-governed-probe"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_history.py",
+      "routes_or_route_literals": [
+        "/",
+        "/history",
+        "/history/{run_id}",
+        "/stats"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_internet_provider_gate.py",
+      "routes_or_route_literals": [
+        "/",
+        "/internet/provider-gate",
+        "/internet/provider-gate/rebuild",
+        "/internet/provider-gate/summary",
+        "/internet/search/provider/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_internet_readiness.py",
+      "routes_or_route_literals": [
+        "/",
+        "/internet/operations/status",
+        "/internet/readiness",
+        "/internet/readiness/rebuild",
+        "/internet/readiness/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_launch_candidate_freeze.py",
+      "routes_or_route_literals": [
+        "/",
+        "/platform/freeze/status",
+        "/platform/launch-candidate",
+        "/platform/launch-candidate/freeze",
+        "/platform/launch-candidate/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_live_search_dashboard_smoke.py",
+      "routes_or_route_literals": [
+        "/",
+        "/governed-web",
+        "/search/dashboard-smoke"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_manual_browser_swagger_proof.py",
+      "routes_or_route_literals": [
+        "/",
+        "/proof/manual-browser-swagger",
+        "/proof/manual-browser-swagger/checklist",
+        "/proof/manual-browser-swagger/rebuild",
+        "/proof/manual-browser-swagger/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_operator_dashboard.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/dashboard/state",
+        "/dashboard/state",
+        "/operator/dashboard/refresh",
+        "/operator/dashboard/state",
+        "/operator/dashboard/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_operator_search_command.py",
+      "routes_or_route_literals": [
+        "/",
+        "/operator/command/parse",
+        "/operator/search/capabilities",
+        "/operator/search/layer",
+        "/operator/search/query",
+        "/operator/search/web",
+        "/operator/search/web/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_pipeline.py",
+      "routes_or_route_literals": [
+        "/",
+        "/evaluate",
+        "/pipeline/evaluate"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_platform.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/platform/current",
+        "/api/platform/resolve",
+        "/api/platform/resolve/{component}",
+        "/api/platform/status",
+        "/api/platform/target"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_platform_endpoint_smoke_proof.py",
+      "routes_or_route_literals": [
+        "/",
+        "/platform/stop-go",
+        "/proof/platform-smoke",
+        "/proof/platform-smoke/rebuild",
+        "/proof/platform-smoke/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_platform_launch_hardening.py",
+      "routes_or_route_literals": [
+        "/",
+        "/platform/launch-hardening",
+        "/platform/launch-hardening/rebuild",
+        "/platform/launch-hardening/summary",
+        "/platform/launch/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_proxy.py",
+      "routes_or_route_literals": [
+        "/",
+        "/history",
+        "/history/{run_id}",
+        "/stats"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_rollback_update_plan.py",
+      "routes_or_route_literals": [
+        "/",
+        "/updates/rollback-plan",
+        "/updates/rollback-plan/create",
+        "/updates/rollback-plan/summary",
+        "/updates/rollback/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_route_audit.py",
+      "routes_or_route_literals": [
+        "/",
+        "/discovery/route-audit",
+        "/routes/audit",
+        "/routes/audit/rebuild",
+        "/routes/audit/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_runtime_truth.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/runtime-truth",
+        "/runtime/state",
+        "/runtime/truth",
+        "/runtime/truth/rebuild"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_source_universes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/universes",
+        "/universes/{universe_id}",
+        "/universes/{universe_id}/probe"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_system.py",
+      "routes_or_route_literals": [
+        "/",
+        "/engines",
+        "/health",
+        "/modes"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_update.py",
+      "routes_or_route_literals": [
+        "/",
+        "/update/check",
+        "/update/install",
+        "/update/prepare"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_update_governance.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_update_governance_regression_lock.py",
+      "routes_or_route_literals": [
+        "/",
+        "/updates/governance/lock",
+        "/updates/regression-lock",
+        "/updates/regression-lock/rebuild",
+        "/updates/regression-lock/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_update_pack_staging.py",
+      "routes_or_route_literals": [
+        "/",
+        "/updates/governance/status",
+        "/updates/staging",
+        "/updates/staging/create",
+        "/updates/staging/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_v19_25_search_execution.py",
+      "routes_or_route_literals": [
+        "/",
+        "/execute",
+        "/health",
+        "/runtime/search"
+      ]
+    },
+    {
+      "file": "claire\\api\\routes_visible_query_result_verification.py",
+      "routes_or_route_literals": [
+        "/",
+        "/governed-web",
+        "/search/visible-result-verification"
+      ]
+    },
+    {
+      "file": "claire\\api\\runtime_truth_read_api.py",
+      "routes_or_route_literals": [
+        "/",
+        "/read",
+        "/records",
+        "/runtime-truth"
+      ]
+    },
+    {
+      "file": "claire\\api\\schemas.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\search_bar_dashboard_api.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard",
+        "/search-bar",
+        "/status"
+      ]
+    },
+    {
+      "file": "claire\\api\\server.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/cockpit-fetch-map/summary",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/route-owner-registry/summary"
+      ]
+    },
+    {
+      "file": "claire\\api\\unified\\intelligence_routes.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\unified\\lifecycle_routes.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\unified\\middleware.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\unified\\platform_routes.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\unified\\router.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\v2\\auth.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\v2\\endpoints.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\api\\v2\\webhooks.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\app.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/health",
+        "/system/canonical-route-owners",
+        "/system/cockpit-fetch-map",
+        "/system/cockpit-fetch-map/summary",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/operator-controls",
+        "/system/operator-controls/summary",
+        "/system/operator-controls/unavailable",
+        "/system/operator-events",
+        "/system/operator-events/record",
+        "/system/operator-events/summary",
+        "/system/operator-surfaces",
+        "/system/operator-surfaces/missing",
+        "/system/operator-surfaces/summary",
+        "/system/project-connection/status",
+        "/system/project-inventory",
+        "/system/project-inventory/summary",
+        "/system/route-owner-registry/summary",
+        "/system/source-surface/status"
+      ]
+    },
+    {
+      "file": "claire\\audit\\audit_report_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\audit\\duplicate_route_detector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\audit\\import_health_checker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\audit\\lifecycle_coherence_auditor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\audit\\module_overlap_detector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\audit\\system_integrity_auditor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\audit\\unused_file_detector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\autodesign\\handoff_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\autonomous\\governance\\autonomous_decision_auditor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\autonomous\\governance\\autonomy_maturity_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\autonomous\\governance_boundary.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\autonomous\\self_corrector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\autonomy\\adaptive_runtime_reprioritization.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\autonomy\\autonomous_escalation_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\autonomy\\recursive_orchestration_controller.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\autonomy\\runtime_cycle_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\breakthrough\\classification.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\breakthrough\\discovery_generation.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\breakthrough\\gap_detection.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\breakthrough\\gap_qualification.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\breakthrough\\path_selection.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\bridge\\masterpass.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\buyer\\acquisition_narrative_binder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\buyer\\buyer_readiness_checklist.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\canonical_cockpit_fetch_map_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/system/cockpit-fetch-map",
+        "/system/cockpit-fetch-map/approved",
+        "/system/cockpit-fetch-map/audit",
+        "/system/cockpit-fetch-map/registration-proof",
+        "/system/cockpit-fetch-map/summary"
+      ]
+    },
+    {
+      "file": "claire\\canonical_route_owner_registry_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/system/route-owner-registry",
+        "/system/route-owner-registry/critical",
+        "/system/route-owner-registry/duplicates",
+        "/system/route-owner-registry/registration-proof",
+        "/system/route-owner-registry/summary"
+      ]
+    },
+    {
+      "file": "claire\\cleanup\\archive_approval_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\cleanup\\cleanup_proof.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\completion\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\completion\\capability_closure_checker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\completion\\completion_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\completion\\completion_scorecard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\completion\\final_proof_binder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\completion\\maturity_gap_analyzer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\completion\\v10_completion_reporter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\connectors\\academic.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\connectors\\base.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\connectors\\market.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\connectors\\news.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\connectors\\web_fetcher.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\continuous_autonomous_intelligence\\continuous_regression_lock.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\continuous_autonomous_intelligence\\state_recovery.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\continuous_runtime\\cycle.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\continuous_runtime\\routes.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\control\\master_control_state.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\core\\semantic.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\core\\signal_amplifier.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\cross_system\\integration_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\cross_system\\pattern_transfer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\actual_run_output_dashboard_binding.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\button_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\dashboard_currency_runtime_order_lock.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\dashboard_live_search_binding.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\dashboard_snapshot_writer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\dashboard_state_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\generator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\live_dashboard_adapter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\live_runtime_state.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\operator_dashboard_state.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\render_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\runtime_alignment.py",
+      "routes_or_route_literals": [
+        "/",
+        "/docs"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\runtime_control_center.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard\\unified_runtime_dashboard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard_intelligence\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dashboard_intelligence\\local_index.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_lineage\\citation_anchor_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_lineage\\provenance_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_lineage\\source_record_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_lineage\\source_rights_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_lineage\\transformation_chain.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_quality\\data_readiness_regression.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_quality\\dataset_quality_monitor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_quality\\missing_lineage_checker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_quality\\replay_depth_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_quality\\stale_data_detector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_readiness\\data_gap_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_readiness\\data_readiness_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_readiness\\data_readiness_scorecard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\data_readiness\\readiness_report_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\demo\\demo_scenario_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\demo\\guided_demo_runner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\deployment\\network_policy.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\deployment_hardening\\environment_manifest_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\deployment_hardening\\rollback_point_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\design\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\design\\generators\\architecture_generator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\design\\portal.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\design\\proof\\architecture_feasibility_proof.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\design\\proof\\dependency_risk_proof.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\design\\proof\\design_maturity_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\design\\renderers\\blueprint_formatter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\design\\renderers\\graph_renderer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\design_portal\\output_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\desktop\\startup_reliability.py",
+      "routes_or_route_literals": [
+        "/",
+        "/docs"
+      ]
+    },
+    {
+      "file": "claire\\discovery\\discovery_campaign_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\discovery\\governed_research_synthesis_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\discovery\\opportunity_landscape_generator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\discovery\\thesis_graph_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\distributed_production_runtime\\cross_campaign_fusion.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\domain\\contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\duplicate_route_fail_test_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/duplicate-route-fail-test",
+        "/system/duplicate-route-fail-test/critical-failures",
+        "/system/duplicate-route-fail-test/grandfathered",
+        "/system/duplicate-route-fail-test/registration-proof",
+        "/system/duplicate-route-fail-test/report",
+        "/system/duplicate-route-fail-test/summary"
+      ]
+    },
+    {
+      "file": "claire\\dynamic_source_trust\\api_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/events",
+        "/internet/source-trust",
+        "/profiles",
+        "/quarantine/{domain}",
+        "/release/{domain}",
+        "/weight",
+        "/weight-batch"
+      ]
+    },
+    {
+      "file": "claire\\dynamic_source_trust\\quarantine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\dynamic_source_trust\\store.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\acquirer_matching.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\base.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\breakthrough_synthesis_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\business_model_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\deal.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\deal_exit_modeling_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\decision.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\discovery.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\export_package_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\fusion.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\ingestion.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\knowledge_ingestion_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\lifecycle_stage_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\market_formation_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\market_gap_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\moat_defensibility_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\operational.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\opportunity_discovery_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\productization_path_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\risk_regulation_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\semantic.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\signal_extraction_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\strategic_positioning_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\system_design_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\technical_feasibility_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\engines\\trend_trajectory_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enrichment\\connected_opportunity_enricher.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise\\dependency_governance_snapshot.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise\\enterprise_deployment_manifest.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise\\enterprise_readiness_assessor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise\\externalization_plan_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise\\install_environment_verification.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise\\runtime_health_recovery_diagnostics.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise_readiness\\deployment_gate_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise_readiness\\enterprise_readiness_scorecard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise_readiness\\externalization_readiness_planner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise_readiness\\service_contract_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\enterprise_readiness\\support_model_planner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evidence_population\\population_report_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evidence_population\\proof_record_seeder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evidence_replay\\benchmark_dataset_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evidence_replay\\benchmark_manifest.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evidence_replay\\evidence_snapshotter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evidence_replay\\regression_evidence_pack.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evidence_replay\\replay_comparator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evidence_replay\\replay_session_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evolution\\capability_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evolution\\evolution_memory.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evolution\\forward_motion_policy.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evolution\\master_document_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evolution\\project_identity.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evolution\\regression_guard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evolution\\target_state.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evolution\\verified_state_store.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\evolution\\version_timeline.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\export\\acquisition_export_artifacts.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\export\\binder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\export\\connected_export_artifacts.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\export\\export_writer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\export\\portfolio_export.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feasibility\\blocker_burndown_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feasibility\\buildability.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feasibility\\control_validation_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feasibility\\dependency_proof_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feasibility\\feasibility_scorecard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feasibility\\manufacturability.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feasibility\\prototype_harness_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feasibility\\validation.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feasibility\\viability.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\feed_result_contracts.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\governed_feed_activation.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\live_fetcher.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\market_universe_feeds.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\public_company_live_scan.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\public_signal_contracts.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\signal_normalizer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\signal_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\signal_scoring.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\source_catalogs\\live_source_catalog.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\source_catalogs\\offline_universe_resolver.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\feeds\\source_catalogs\\public_company_sources.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\final_stability\\health_check_runner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\final_stability\\recovery_point_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\fusion\\hybrid_opportunity_fusion.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\audit.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\defense_risk_taxonomy.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\feed_activation_policy.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\feed_audit_log.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\governance_decision.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\governed_web\\controlled_head_transport_executor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\governed_web\\first_real_controlled_head_handshake.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\governed_web\\provider_adapter_preview_bridge.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\launch_regression_lock.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\legal_audit_log.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\mode_guard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\policy_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\redline_classifier.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\runtime_truth_consumption_firewall.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\safe_concurrent_probe_governance.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governance\\source_allowlist.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_campaign_scheduler\\api_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/internet/scheduler",
+        "/lock",
+        "/reports",
+        "/run-due",
+        "/schedule",
+        "/schedules"
+      ]
+    },
+    {
+      "file": "claire\\governed_campaign_scheduler\\lock.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_campaign_scheduler\\store.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\accelerated_governed_live_web_activation_pack.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\active_app_final_web_activation_mount_verification.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\active_app_mounted_route_verification.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\consolidated_web_activation_packs.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\controlled_limited_body_fetch.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\controlled_metadata_probe.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\dashboard_live_search_route_mount_adapter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\dashboard_live_search_ui_fetch_binding.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\dashboard_search_bar_html_integration_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\dashboard_search_endpoint_result_contract.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/dashboard/search",
+        "/live",
+        "/smoke/google"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\dashboard_search_provider_probe_separation_repair.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\dashboard_search_query_execution_bridge.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\dashboard_to_endpoint_fetch_proof.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\first_active_dashboard_google_result_proof.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\live_search_active_app_mount_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\live_search_dashboard_smoke.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\mounted_live_search_endpoint_smoke_test.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\operator_probe_active_app_mount.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\provider_health_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\real_controlled_provider_result_proof.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\real_provider_operator_probe_route.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/dashboard/search/provider",
+        "/probe",
+        "/status"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\real_search_provider_adapter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\root_consolidation_single_dashboard_launcher.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\search_session_persistence.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\governed_web\\visible_query_result_verification.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\historical_benchmarks\\benchmark_seed_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\historical_benchmarks\\curated_case_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\historical_benchmarks\\historical_event_record.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\historical_benchmarks\\holdout_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\historical_benchmarks\\validation_example_catalog.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ingestion\\deduplication_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ingestion\\ingestion_approval_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ingestion\\ingestion_audit_logger.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ingestion\\ingestion_queue.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ingestion\\live_ingestion_adapter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ingestion\\normalization_pipeline.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ingestion\\quarantine_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ingestion\\source_intake.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\install_safety\\current_state_cleaner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\install_safety\\simple_manifest_installer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\intelligence\\analysis_loop.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\intelligence\\autonomous_decision.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\intelligence\\discovery_loop.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\intelligence\\lifecycle_quality.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\intelligence\\loop_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\intelligence\\portfolio_breakthrough_routing.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\intelligence\\synthesis_loop.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\intelligence\\trend_thesis_intelligence.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet\\evidence_promotion_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet\\governed_live_probe.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet\\live_probe_request_adapter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet\\provider_configuration_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_activation\\api_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/internet",
+        "/internet/evidence",
+        "/internet/evidence/{evidence_id}",
+        "/research"
+      ]
+    },
+    {
+      "file": "claire\\internet_activation\\config.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_activation\\evidence.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_activation\\http_fetcher.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_activation\\normalizer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_activation\\persistence.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_activation\\search.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_operations_dashboard\\api_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/campaigns/{campaign_id}/refresh",
+        "/dashboard",
+        "/internet/ops",
+        "/run-due",
+        "/snapshot"
+      ]
+    },
+    {
+      "file": "claire\\internet_operations_dashboard\\static_page.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_readiness\\readiness_verifier.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_runtime_integration\\api_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard",
+        "/enrich",
+        "/runtime/internet"
+      ]
+    },
+    {
+      "file": "claire\\internet_runtime_integration\\evidence_continuity.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_runtime_stability\\api_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/campaigns/{campaign_id}/refresh",
+        "/failures",
+        "/health",
+        "/internet/stability",
+        "/reports",
+        "/scheduler/run-due"
+      ]
+    },
+    {
+      "file": "claire\\internet_runtime_stability\\health.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\internet_runtime_stability\\journal.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\invention\\auto_invention.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\invention\\autonomous\\experiment_runner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\invention\\autonomous\\hypothesis_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\invention\\multi_domain\\category_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\invention\\multi_domain\\cross_pollinator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\invention\\portfolio\\manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\invention\\portfolio\\pipeline_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\invention\\solution_structuring.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\invention\\validation\\impact_assessor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\invention\\validation\\novelty_checker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\lifecycle\\lifecycle_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\lifecycle\\stage_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\lifecycle\\threshold_provenance.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live\\governed_async_ingestion_queue.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live\\live_ingestion_quarantine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live\\source_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_activation\\live_activation_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_activation\\live_session_recorder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_activation\\live_source_pilot.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_activation\\source_allowlist_policy.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_activation\\source_decision_log.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_benchmarks\\benchmark_pack_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_benchmarks\\benchmark_readiness_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_benchmarks\\dataset_growth_planner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_benchmarks\\holdout_set_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_benchmarks\\label_accumulation_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_connectivity\\connectivity_probe.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_connectivity\\internet_audit_log.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_data\\connector_approval_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_data\\deterministic_cache.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_data\\live_ingestion_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_data\\live_normalizer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_data\\live_replay_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_data\\live_snapshot_writer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_data\\source_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_intelligence\\gap_detection.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_intelligence\\trend_clustering.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_replay\\evidence_drift_monitor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_replay\\live_replay_session.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_replay\\output_drift_analyzer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_replay\\replay_validation_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\live_replay\\source_drift_detector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\market_validation\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\market_validation\\buyer_signal_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\market_validation\\interview_evidence_model.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\market_validation\\pricing_signal_analyzer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\market_validation\\roi_validation_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\market_validation\\validation_readiness_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\market_validation\\workflow_adoption_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\maturation\\maturity_scorecard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\maturation\\operational_completion_auditor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\maturation\\platform_maturity_reporter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\maturation\\readiness_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\maturation\\regression_recheck_runner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\memory\\compound\\assumption_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\memory\\cross_run_evidence_linker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\memory\\indexer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\memory\\lifecycle_memory.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\memory\\longitudinal_confidence_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\memory\\operator_reinforcement_feedback.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\memory\\recursive_ingestion.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\memory\\store.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\memory\\strategic_memory_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\middleware\\cockpit_beacon_injector.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/system/cockpit-fetch-map/summary",
+        "/system/duplicate-route-fail-test/summary",
+        "/system/route-owner-registry/summary"
+      ]
+    },
+    {
+      "file": "claire\\online\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\online\\connector_activation_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\online\\external_network_guard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\online\\online_mode_policy.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\online\\online_research_session.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\online\\online_risk_monitor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\online\\online_update_session.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_evidence\\evidence_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_evidence\\evidence_event.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_evidence\\evidence_indexer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_evidence\\evidence_packet.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_evidence\\evidence_store.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_evidence\\lineage_record.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_proof\\benchmark_replay_accumulator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_proof\\confidence_calibration_reporter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_proof\\drift_false_positive_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_proof\\governance_deployment_lock.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_proof\\operational_proof_plateau.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_proof\\operator_review_capture.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_proof\\outcome_label_adjudicator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operational_proof\\pilot_readiness_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operator\\search_command_layer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\operator_runtime_execution_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/system/runtime-execution",
+        "/system/runtime-execution/stages",
+        "/system/runtime-execution/summary"
+      ]
+    },
+    {
+      "file": "claire\\ops_closeout\\archive_index_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ops_closeout\\freeze_manifest_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ops_closeout\\release_notes_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ops_closeout\\resume_point_writer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\orchestration\\bounded_orchestration_scheduler.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\orchestration\\evidence_fusion_coordinator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\orchestration\\intelligence_task_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\orchestration\\strategic_priority_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\orchestrator\\desking.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\orchestrator\\fettio.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\orchestrator\\pattern_recognition.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\orchestrator\\pipeline_v4.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\outcome_labels\\benchmark_label_exporter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\outcome_labels\\label_adjudicator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\outcome_labels\\label_coverage_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\outcome_labels\\label_queue_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\outcome_labels\\outcome_label_schema.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\output\\core_output_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\output\\design_portal.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\package_update_governance\\dependency_snapshot.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\package_update_governance\\pip_audit_runner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\persistent_internet_campaigns\\api_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/internet/campaigns",
+        "/{campaign_id}/refresh",
+        "/{campaign_id}/reports"
+      ]
+    },
+    {
+      "file": "claire\\persistent_internet_campaigns\\drift.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\persistent_internet_campaigns\\service.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\persistent_internet_campaigns\\store.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\pilot\\pilot_deliverables_generator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\pilot\\pilot_offer_definition.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\pilot_operations\\buyer_feedback_collector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\pilot_operations\\operator_session_logger.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\pilot_operations\\pilot_run_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\pilot_operations\\roi_observation_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\pipeline\\primary_pipeline_desired_output_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\plan_reconciliation_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/system/plan-reconciliation",
+        "/system/plan-reconciliation/missing",
+        "/system/plan-reconciliation/partial",
+        "/system/plan-reconciliation/registration-proof",
+        "/system/plan-reconciliation/summary"
+      ]
+    },
+    {
+      "file": "claire\\platform\\launch_candidate_freeze.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\launch_hardening.py",
+      "routes_or_route_literals": [
+        "/",
+        "/docs"
+      ]
+    },
+    {
+      "file": "claire\\platform\\manifest.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\resolver.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/platform/current",
+        "/api/platform/resolve",
+        "/api/platform/resolve/{component}",
+        "/api/platform/status",
+        "/api/platform/target"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\approval_policy.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\audit_writer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\authority_map.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\capability_diff.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\dependency_impact_analyzer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\evolution_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\migration_planner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\package_inspector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\protected_path_guard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\rollback_orchestrator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\runtime_risk_classifier.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\signature_verifier.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\source_trust.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\staged_installer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\target_alignment.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_governance\\update_orchestrator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform\\update_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform_lock\\capability_freeze_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform_lock\\final_state_manifest.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform_lock\\lock_state_writer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform_lock\\release_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\platform_lock\\v10_completion_report.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\portfolio\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\portfolio\\binder_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\portfolio\\competitor_analysis.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\portfolio\\live_optimizer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\portfolio\\market_feed.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\portfolio\\market_positioning.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\portfolio\\optimization.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\portfolio\\optimization_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\portfolio\\reporting.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\production\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\production\\backup_policy.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\production\\deployment_readiness_checker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\production\\environment_validator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\production\\recovery_drill.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\production\\security_readiness.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\production\\service_health_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\productization\\gtm_readiness_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\productization\\package_strategy_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\productization\\pilot_gate_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\productization\\pricing_model_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\productization\\workflow_wedge_mapper.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\proof\\contract_pass_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\proof\\evidence_binder_generator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\proof\\evidence_trace_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\proof\\full_e2e_proof_pack.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\proof\\manual_browser_swagger_proof.py",
+      "routes_or_route_literals": [
+        "/",
+        "/docs"
+      ]
+    },
+    {
+      "file": "claire\\proof\\platform_endpoint_smoke_proof.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\proof\\proof_binder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\proof\\proof_exporter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\proof\\proof_record_store.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\proof\\runtime_proof_collector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\proof\\validation_snapshotter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\real_governed_live_connectivity\\evidence_persistence.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\real_governed_live_connectivity\\http_client_adapter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive\\longitudinal\\recurring_gap_detector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive\\longitudinal\\recursive_quality_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive\\optimizer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive\\safety_governor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive_intelligence\\cross_run_memory_index.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive_intelligence\\quality_delta_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive_intelligence\\recurring_blocker_miner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive_intelligence\\recursive_improvement_planner.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive_intelligence\\thesis_compounding_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive_transformation\\autonomy_ceiling_policy.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive_transformation\\recursive_safety_case_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive_transformation\\self_ingestion_review_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive_transformation\\transformation_human_review_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\recursive_transformation\\transformation_readiness_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\research\\evidence_basket.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\research\\live\\evidence_quality_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\research\\research_service.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\research\\source_governance.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\research\\web_search_adapter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\review_queue_runtime_ingestion_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/system/review-queue",
+        "/system/review-queue/history",
+        "/system/review-queue/ingest-runtime",
+        "/system/review-queue/registration-proof",
+        "/system/review-queue/summary"
+      ]
+    },
+    {
+      "file": "claire\\roi_proof\\impact_event_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\roi_proof\\outcome_label_schema.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\roi_proof\\pilot_scorecard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\roi_proof\\roi_baseline_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\roi_proof\\value_proof_packet.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\routes\\active_route_truth_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status",
+        "/docs",
+        "/system/cockpit-truth",
+        "/system/route-truth",
+        "/system/route-truth/required"
+      ]
+    },
+    {
+      "file": "claire\\routes\\authored_cockpit_compat_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/runs/start",
+        "/runtime/continuous/pause",
+        "/runtime/continuous/review-queue",
+        "/runtime/continuous/start",
+        "/runtime/continuous/status",
+        "/universes"
+      ]
+    },
+    {
+      "file": "claire\\routes\\authored_cockpit_payload_binding_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/dashboard/payload",
+        "/api/dashboard/payload/status",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ]
+    },
+    {
+      "file": "claire\\routes\\cockpit_runtime_sync.py",
+      "routes_or_route_literals": [
+        "/",
+        "/api/cockpit/runtime-sync/heartbeat",
+        "/api/cockpit/runtime-sync/status",
+        "/cockpit/runtime-sync",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ]
+    },
+    {
+      "file": "claire\\routing\\confidence_calibrator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\routing\\depth_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\routing\\discovery_breakthrough_innovation_route_audit.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\routing\\multi_route_evaluator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\routing\\route_evidence.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\routing\\route_history.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\autonomous_runtime_escalation.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\command_catalog.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\dashboard_e2e_first_use.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\dashboard_layout_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\dashboard_system_status.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\desktop_app_shell.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\desktop_service_status.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\enhanced_interface_bridge.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\export_browser.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\failure_handler.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\governed_command_result_writer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\market_universe_taxonomy.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\master_control_action_log.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\memory_guard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\merge_zone.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\models.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\opportunity_seed_generator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\portable_desktop_readiness.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\production_readiness.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\route_aware_autonomous_execution.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\route_enforcer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\run_history.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\runtime_command_dashboard.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\runtime_intelligence.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\runtime_state_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\search_suggestions.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\stale_path_audit.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\validation_authority.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime\\web_pipeline_stabilization.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_contracts\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_contracts\\contract_validator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_contracts\\core_run_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_contracts\\dashboard_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_contracts\\export_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_contracts\\lifecycle_output_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_contracts\\proof_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_contracts\\route_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_execution_propagation_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/system/runtime-propagation",
+        "/system/runtime-propagation/advance",
+        "/system/runtime-propagation/history",
+        "/system/runtime-propagation/registration-proof",
+        "/system/runtime-propagation/summary"
+      ]
+    },
+    {
+      "file": "claire\\runtime_graph\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_graph\\integration.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ]
+    },
+    {
+      "file": "claire\\runtime_graph\\orchestrator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_graph\\state.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_state_emitter_routes.py",
+      "routes_or_route_literals": [
+        "/",
+        "/system/runtime-state",
+        "/system/runtime-state/emit",
+        "/system/runtime-state/summary"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\evidence_truth.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\graph.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\integration.py",
+      "routes_or_route_literals": [
+        "/",
+        "/dashboard/payload",
+        "/dashboard/payload/status"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\route_truth.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\runtime_health_truth.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\runtime_truth_builder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\runtime_truth_contract.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\runtime_truth_contract_repair.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\runtime_truth_reader.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\stage_truth.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\store.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\runtime_truth\\validation_truth.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\scan\\scan_continuation.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\scoring\\calibrator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search\\search_bar_governed_execution_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search\\search_bar_governed_web_review_controls.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search\\search_bar_governed_web_review_queue.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search\\search_bar_mode_router.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search\\search_bar_runtime_bridge.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search\\search_bar_session_state.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search_bar\\governed_web_execution_simulation.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search_bar\\governed_web_read_only_dry_run_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search_bar\\governed_web_read_only_dry_run_simulator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search_bar\\governed_web_read_only_live_adapter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search_bar\\governed_web_simulation_dashboard_route_adapter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\search_bar\\governed_web_simulation_route_mount_verifier.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\self_analysis\\improvement_engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\self_analysis\\introspector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\adapters\\live_feed.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\adapters\\structured.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\consolidation.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\context_expansion.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\detection\\signal_lifecycle.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\detection\\weak_signal_detector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\ingestion.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\normalization.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\signal_governance.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\signal_scoring.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\signals\\source_validation.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\singularity\\architecture_synthesizer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\singularity\\platform\\consciousness_bridge.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\singularity\\platform\\orchestrator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\singularity\\safety_framework.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\singularity\\self_improvement\\engine.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\singularity\\self_improvement\\guardrails.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\singularity\\system_generator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\source_trust\\citation_extractor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\source_trust\\conflict_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\source_trust\\source_audit_reporter.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\source_trust\\source_reliability_registry.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\source_trust\\source_trust_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\strategic_decision_intelligence\\bounded_outcome_simulator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\strategy\\business_model.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\strategy\\moat_analysis.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\system_ingestion\\analyzer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\system_ingestion\\comparator.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\technology\\manufacturability_assessor.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\telemetry\\feedback_loop_bridge.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\telemetry\\outcome_label_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\telemetry\\runtime_event_logger.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\telemetry\\user_feedback_collector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\telemetry\\workflow_event_logger.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\thesis\\route_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\thesis\\structuring.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\trends\\cluster_formation.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\trends\\discovery.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\ui\\master_control_ui.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\update_governance\\automatic_update_runner_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\update_governance\\rollback_update_plan.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\update_governance\\update_governance_regression_lock.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\update_governance\\update_pack_staging.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\updater\\package_downloader.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\updater\\package_installer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\updater\\package_verifier.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\updater\\rollback_manager.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\updater\\update_audit_log.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\updater\\update_health.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\updater\\update_manifest.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\validation\\authority.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\validation\\benchmarks\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\validation\\evidence_collector.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\validation\\proof_binder.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\validation\\qccp.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\validation_authority\\__init__.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\validation_authority\\io.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\validation_authority\\validation_authority.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\validation_authority\\validation_report.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\validation_stack\\buildability_validation_stack.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\verified_memory\\io.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\verified_memory\\recursive_feedback_gate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\web\\live_web_evidence_pipeline_ingestion.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\web\\runtime_expansion.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\web\\web_to_pipeline_launch_candidate.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\workflow_instrumentation\\adoption_signal_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\workflow_instrumentation\\panel_event_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\workflow_instrumentation\\review_action_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\workflow_instrumentation\\user_path_mapper.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\workflow_instrumentation\\workflow_run_logger.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\workflow_telemetry\\adoption_evidence_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\workflow_telemetry\\operator_review_capture.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\workflow_telemetry\\telemetry_density_scorer.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\workflow_telemetry\\workflow_event_schema.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    },
+    {
+      "file": "claire\\workflow_telemetry\\workflow_session_tracker.py",
+      "routes_or_route_literals": [
+        "/"
+      ]
+    }
+  ],
+  "manual_http_checks_required": [
+    "/",
+    "/docs",
+    "/dashboard/payload",
+    "/dashboard/payload/status",
+    "/system/cockpit-fetch-map/summary",
+    "/system/route-owner-registry/summary",
+    "/system/duplicate-route-fail-test/summary",
+    "/system/runtime-execution/summary",
+    "/system/runtime-state/summary",
+    "/system/runtime-propagation/summary",
+    "/system/review-queue/summary"
+  ],
+  "next_build_rule": "Patch only the panel-route bindings that this audit and manual HTTP checks prove are missing."
+}

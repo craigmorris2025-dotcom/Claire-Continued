@@ -1,0 +1,22 @@
+{
+  "blocked_domains": [],
+  "generated_at": "2026-05-13T11:18:57.897156Z",
+  "recommendation": "Proceed only to manual review. Do not enable automatic updates.",
+  "status": "GO_WITH_WARNINGS",
+  "version": "v17.75",
+  "warnings": [
+    {
+      "domain": "buildability_validation",
+      "warnings": [
+        "invention_route_requires_higher_feasibility_threshold",
+        "package_not_ready_for_final_package"
+      ]
+    },
+    {
+      "domain": "internet_readiness",
+      "warnings": [
+        "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+      ]
+    }
+  ]
+}

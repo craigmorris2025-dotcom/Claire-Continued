@@ -1,0 +1,26 @@
+{
+  "version": "v19.89.8-S14",
+  "installed_at_utc": "2026-05-14T02:14:27.386996+00:00",
+  "status": "installed",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  },
+  "backend_changes": [
+    "claire\\api\\governed_runtime_timeline.py",
+    "patched import guard in claire\\app.py",
+    "registered optional timeline route in claire\\app.py",
+    "attached timeline projection to dashboard payload in claire\\app.py"
+  ],
+  "frontend_changes": [
+    "frontend\\cockpit\\assets\\js\\governed_runtime_timeline.js",
+    "frontend\\cockpit\\assets\\css\\governed_runtime_timeline.css",
+    "linked timeline CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked timeline JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "state_file": "output\\timeline\\governed_runtime_timeline_state.json",
+  "build_note": "docs\\build_notes\\v19.89.8-S14_governed_runtime_timeline.md"
+}

@@ -1,0 +1,18 @@
+{
+  "assertions": [
+    "combined installer covers five builds",
+    "normal dashboard search endpoint is /api/dashboard/search/live",
+    "google result card contract is Google / https://www.google.com",
+    "provider probe remains advanced/manual and checkbox gated",
+    "dashboard pack registry records current pack"
+  ],
+  "browser_checks_to_run_after_launch": [
+    "/api/dashboard/search/live?q=google",
+    "/api/dashboard/search/smoke/google",
+    "/api/dashboard/search/provider/status"
+  ],
+  "created_at": "2026-05-10T14:39:25.983836Z",
+  "pack_id": "v18.80_to_v18.84",
+  "report_id": "v18_80_to_v18_84_dashboard_live_search_smoke_report",
+  "status": "installed_pending_runtime_browser_verification"
+}

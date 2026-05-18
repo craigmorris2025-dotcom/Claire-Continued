@@ -1,0 +1,41 @@
+{
+  "version": "v19.89.8-S275-S281",
+  "installed_at": "2026-05-15T18:53:35.074272+00:00",
+  "stage_pack": "S275-S281",
+  "completion_report": {
+    "previous_repair": "S149-S155 missing contract fields repaired and pytest 100%",
+    "current_pack": "Safe workflow API route contracts and dashboard live count readiness",
+    "new_capabilities": [
+      "operator workflow route contracts",
+      "read-only workflow count route contract",
+      "read-only review/bounded job/export/audit list contracts",
+      "proposal-only review decision and bounded job request contracts",
+      "dashboard live count payload",
+      "route readiness report for frontend binding"
+    ],
+    "authority_locks_preserved": {
+      "runtime_truth_write_enabled": false,
+      "runtime_mutation_enabled": false,
+      "automatic_updates_enabled": false,
+      "autonomous_execution_enabled": false,
+      "continuous_crawling_enabled": false
+    },
+    "next_safe_direction": [
+      "mount safe workflow route handlers",
+      "bind dashboard count cards",
+      "add proposal-only write semantics",
+      "add live refresh loop for monitoring cards"
+    ]
+  },
+  "files": [
+    "claire/api/operator_workflow_route_contracts.py",
+    "claire/api/operator_workflow_dashboard_count_payload.py",
+    "claire/api/operator_workflow_route_readiness.py",
+    "tests/test_s275_s281_operator_workflow_route_contracts.py",
+    "tests/test_s275_s281_dashboard_count_payload.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s275_s281_operator_workflow_route_contracts.py tests/test_s275_s281_dashboard_count_payload.py -q",
+    "pytest"
+  ]
+}

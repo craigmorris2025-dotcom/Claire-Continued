@@ -1,0 +1,32 @@
+{
+  "allowed_methods": [
+    "GET"
+  ],
+  "automatic_updates_enabled": false,
+  "autonomous_execution_enabled": false,
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "continuous_crawling_enabled": false,
+  "endpoints": [
+    "/dashboard/payload",
+    "/dashboard/payload/status",
+    "/health"
+  ],
+  "gate_id": "s149_s155_stop_gate",
+  "manual_promotion_required": true,
+  "ok": true,
+  "passed": true,
+  "quarantine_required": true,
+  "read_only": true,
+  "required_endpoints": [
+    "/dashboard/payload",
+    "/dashboard/payload/status",
+    "/health"
+  ],
+  "runtime_mutation_enabled": false,
+  "runtime_truth_write_enabled": false,
+  "safe_to_continue": true,
+  "stage_version": "S155",
+  "status": "s149_s155_stop_gate_passed",
+  "stop_go": "GO"
+}

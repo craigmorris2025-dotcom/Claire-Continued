@@ -1,0 +1,16 @@
+{
+  "version": "v19.84.9",
+  "build": "Cockpit Binding Contract Lock",
+  "installed_at": "2026-05-12T15:19:01.610555+00:00",
+  "runtime_mutation": "none",
+  "files_written": [
+    "tools/cockpit_binding_contract_lock.py",
+    "tests/test_v19_84_9_cockpit_binding_contract_lock.py",
+    "docs/builds/v19_84_9_cockpit_binding_contract_lock.md",
+    "data/build_artifacts/v19_84_9_cockpit_binding_contract_lock.json"
+  ],
+  "commands": [
+    "python tools/cockpit_binding_contract_lock.py",
+    "pytest tests/test_v19_84_9_cockpit_binding_contract_lock.py -q"
+  ]
+}

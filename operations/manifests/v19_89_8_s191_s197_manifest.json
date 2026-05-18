@@ -1,0 +1,24 @@
+{
+  "version": "v19.89.8-S191-S197",
+  "installed_at": "2026-05-15T15:52:55.502839+00:00",
+  "stage_pack": "S191-S197",
+  "purpose": "Cockpit execution-readiness contracts plus fast validation lane definitions.",
+  "safe_authority": {
+    "runtime_truth_write": false,
+    "runtime_mutation": false,
+    "automatic_updates": false,
+    "autonomous_execution": false,
+    "continuous_crawling": false
+  },
+  "files": [
+    "claire/api/cockpit_validation_lanes.py",
+    "claire/api/cockpit_operator_control_readiness.py",
+    "claire/api/cockpit_monitoring_snapshot.py",
+    "tests/test_s191_s197_cockpit_validation_lanes.py",
+    "tests/test_s191_s197_operator_control_safety.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s191_s197_cockpit_validation_lanes.py tests/test_s191_s197_operator_control_safety.py -q",
+    "pytest"
+  ]
+}

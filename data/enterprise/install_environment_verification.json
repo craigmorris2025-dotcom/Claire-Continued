@@ -1,13 +1,13 @@
 {
   "version": "16.78",
-  "generated_at": "2026-05-09T01:46:35.212853+00:00",
-  "status": "ready",
+  "generated_at": "2026-05-13T11:18:25.483920+00:00",
+  "status": "partial_or_blocked",
   "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
   "platform": "Windows-10-10.0.26200-SP0",
   "path_checks": [
     {
       "path": "src/claire",
-      "exists": true
+      "exists": false
     },
     {
       "path": "tests",
@@ -40,7 +40,7 @@
       "available": true
     }
   ],
-  "missing_path_count": 0,
+  "missing_path_count": 1,
   "missing_module_count": 0,
   "notes": [
     "This verification checks local environment readiness.",

@@ -1,0 +1,196 @@
+{
+  "run_id": "run_20260512_120340_c123da4d",
+  "generated_at": "2026-05-12T12:03:40.509054+00:00",
+  "stage_count": 30,
+  "stages": [
+    {
+      "stage_number": 1,
+      "stage_name": "Signal Ingestion",
+      "status": "initialized",
+      "reason": "Run accepted by enterprise cockpit start action."
+    },
+    {
+      "stage_number": 2,
+      "stage_name": "Signal Normalization",
+      "status": "waiting",
+      "reason": "Awaiting source universe and governed enrichment inputs."
+    },
+    {
+      "stage_number": 3,
+      "stage_name": "Source Validation & Weighting",
+      "status": "waiting",
+      "reason": "Awaiting source universe and governed enrichment inputs."
+    },
+    {
+      "stage_number": 4,
+      "stage_name": "Context Expansion",
+      "status": "waiting",
+      "reason": "Awaiting source universe and governed enrichment inputs."
+    },
+    {
+      "stage_number": 5,
+      "stage_name": "Signal Consolidation",
+      "status": "waiting",
+      "reason": "Awaiting source universe and governed enrichment inputs."
+    },
+    {
+      "stage_number": 6,
+      "stage_name": "Entity Extraction",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 7,
+      "stage_name": "Relationship Mapping",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 8,
+      "stage_name": "Trend Discovery",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 9,
+      "stage_name": "Cluster Formation",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 10,
+      "stage_name": "Insight / Thesis Structuring",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 11,
+      "stage_name": "Gap Detection",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 12,
+      "stage_name": "Gap Qualification",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 13,
+      "stage_name": "Discovery Generation",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 14,
+      "stage_name": "Breakthrough Identification & Classification",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 15,
+      "stage_name": "Advancement Path Selection",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 16,
+      "stage_name": "Auto Invention / Solution Generation",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 17,
+      "stage_name": "Solution Structuring",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 18,
+      "stage_name": "Buildability Assessment",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 19,
+      "stage_name": "Viability Assessment",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 20,
+      "stage_name": "Manufacturability / Deployability Assessment",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 21,
+      "stage_name": "Feasibility Validation",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 22,
+      "stage_name": "Design Portal Output / Blueprints / Specs",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 23,
+      "stage_name": "Market Positioning",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 24,
+      "stage_name": "Moat & Differentiation",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 25,
+      "stage_name": "Business Model & Value Capture",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 26,
+      "stage_name": "Competitor Analysis",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 27,
+      "stage_name": "Portfolio Creation / Optimization",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 28,
+      "stage_name": "Acquirer Identification",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 29,
+      "stage_name": "Acquisition Fit & Rationale",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    },
+    {
+      "stage_number": 30,
+      "stage_name": "Final Package Construction",
+      "status": "not_started",
+      "reason": "Stage is preserved in canonical lifecycle and awaits runtime execution."
+    }
+  ],
+  "protected_design_stages": {
+    "16": "Auto Invention / Solution Generation",
+    "17": "Solution Structuring",
+    "18": "Buildability Assessment",
+    "19": "Viability Assessment",
+    "20": "Manufacturability / Deployability Assessment",
+    "21": "Feasibility Validation",
+    "22": "Design Portal Output / Blueprints / Specs"
+  }
+}

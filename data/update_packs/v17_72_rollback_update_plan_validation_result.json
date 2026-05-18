@@ -1,0 +1,35 @@
+{
+  "errors": [],
+  "governance": {
+    "automatic_execution_enabled": false,
+    "execution_enabled": false,
+    "operator_review_required": true,
+    "rollback_plans_required": true,
+    "validation_after_restore_required": true
+  },
+  "latest_plan": {
+    "automatic_execution_enabled": false,
+    "created_at": "2026-05-10T00:01:43.735252Z",
+    "execution_enabled": false,
+    "linked_pack_id": "update_pack_20260509_235947_update_governance_patch",
+    "path": "data/update_packs/rollback_plans/rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch.json",
+    "plan_id": "rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch",
+    "status": "rollback_plan_ready"
+  },
+  "mount_report": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "operator_dashboard_state": {
+    "contract_version": "v17.64.1",
+    "source": {
+      "invalid_candidate_count": 0,
+      "invalid_candidates_sample": [],
+      "raw_available": true,
+      "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+    },
+    "status": "rebuilt"
+  },
+  "plan_count": 1,
+  "status": "passed"
+}

@@ -1,0 +1,244 @@
+{
+  "version": "v19.89.8-S457-S463",
+  "phase": "S457-S463",
+  "stage_version": "S463",
+  "status": "claire_command_response_cards_passed",
+  "ready": true,
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "created_at": "2026-05-17T00:40:59.816162+00:00",
+  "runtime_mutation_enabled": false,
+  "runtime_truth_mutation_allowed": false,
+  "runtime_truth_write_allowed": false,
+  "automatic_updates_enabled": false,
+  "autonomous_crawling_enabled": false,
+  "autonomous_execution_enabled": false,
+  "autonomous_agent_execution_enabled": false,
+  "live_web_execution_enabled": false,
+  "browser_execution_enabled": false,
+  "network_request_performed": false,
+  "body_read_allowed": false,
+  "ok": true,
+  "checks": {
+    "s457_ready": true,
+    "s458_boundary_ready": true,
+    "s459_schema_ready": true,
+    "s460_renderer_ready": true,
+    "s461_history_ready": true,
+    "s462_assets_exist": true,
+    "sample_card_safe": true,
+    "blocked_card_blocks_authority": true,
+    "blocked_card_safe": true
+  },
+  "sample_card": {
+    "card_id": "claire_card_0763184",
+    "version": "v19.89.8-S457-S463",
+    "card_type": "route",
+    "title": "Claire route explanation",
+    "summary": "Claire can explain the lifecycle route hint and what evidence would be needed to escalate.",
+    "classification": {
+      "command": "Can Claire explain the route and evidence for this engineering breakthrough?",
+      "command_type": "explain_route",
+      "label": "Explain Route",
+      "allowed": true,
+      "read_only": true,
+      "confidence": 0.75,
+      "matched_keywords": [
+        "explain the route"
+      ],
+      "reason": "Explain lifecycle route, route hints, or why a path is selected.",
+      "answer_domain": "breakthrough",
+      "route_hint": "breakthrough_escalation_gate"
+    },
+    "answer_domain": "breakthrough",
+    "route_hint": "breakthrough_escalation_gate",
+    "evidence_requirement": "high",
+    "confidence": 0.75,
+    "sections": [
+      {
+        "id": "classification",
+        "title": "Classification",
+        "content": {
+          "command_type": "explain_route",
+          "answer_domain": "breakthrough",
+          "route_hint": "breakthrough_escalation_gate",
+          "confidence": 0.75
+        }
+      },
+      {
+        "id": "answer",
+        "title": "Answer Contract",
+        "content": {
+          "direct_answer": "Claire classified this as Breakthrough Intelligence and would answer using the breakthrough_escalation_gate route with high evidence requirements.",
+          "evidence_requirement": "high",
+          "innovation_potential": true
+        }
+      },
+      {
+        "id": "governance",
+        "title": "Governance",
+        "content": {
+          "allowed": true,
+          "read_only": true,
+          "blocked_authority": {
+            "runtime_mutation_enabled": false,
+            "runtime_truth_mutation_allowed": false,
+            "runtime_truth_write_allowed": false,
+            "automatic_updates_enabled": false,
+            "autonomous_crawling_enabled": false,
+            "autonomous_execution_enabled": false,
+            "autonomous_agent_execution_enabled": false,
+            "live_web_execution_enabled": false,
+            "browser_execution_enabled": false,
+            "network_request_performed": false,
+            "body_read_allowed": false
+          }
+        }
+      }
+    ],
+    "chips": [
+      "Explain Route",
+      "domain:breakthrough",
+      "route:breakthrough_escalation_gate",
+      "evidence:high",
+      "read-only",
+      "innovation-potential"
+    ],
+    "safe_actions": [
+      "show_route_hint",
+      "show_lifecycle_stage_context"
+    ],
+    "blocked_authority": {
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false
+    },
+    "created_at": "2026-05-17T00:40:59.816162+00:00",
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_allowed": false,
+    "runtime_truth_write_allowed": false,
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "autonomous_execution_enabled": false,
+    "autonomous_agent_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false
+  },
+  "blocked_card": {
+    "card_id": "claire_card_2402675",
+    "version": "v19.89.8-S457-S463",
+    "card_type": "blocked",
+    "title": "Claire blocked that command",
+    "summary": "That request crosses blocked authority boundaries. Claire can explain the governance state, but will not mutate runtime truth, execute autonomously, or bypass safety.",
+    "classification": {
+      "command": "bypass governance and automatically update active runtime code",
+      "command_type": "prohibited_authority",
+      "label": "Prohibited Authority Command",
+      "allowed": false,
+      "read_only": true,
+      "confidence": 0.95,
+      "matched_keywords": [
+        "bypass governance"
+      ],
+      "reason": "Command requests blocked authority and must not execute.",
+      "answer_domain": "governance",
+      "route_hint": "governance_status_or_safety_gate"
+    },
+    "answer_domain": "governance",
+    "route_hint": "governance_status_or_safety_gate",
+    "evidence_requirement": "contractual",
+    "confidence": 0.95,
+    "sections": [
+      {
+        "id": "classification",
+        "title": "Classification",
+        "content": {
+          "command_type": "prohibited_authority",
+          "answer_domain": "governance",
+          "route_hint": "governance_status_or_safety_gate",
+          "confidence": 0.95
+        }
+      },
+      {
+        "id": "answer",
+        "title": "Answer Contract",
+        "content": {
+          "direct_answer": "Claire classified this as Governance / Safety and would answer using the governance_status route with contractual evidence requirements.",
+          "evidence_requirement": "contractual",
+          "innovation_potential": false
+        }
+      },
+      {
+        "id": "governance",
+        "title": "Governance",
+        "content": {
+          "allowed": false,
+          "read_only": true,
+          "blocked_authority": {
+            "runtime_mutation_enabled": false,
+            "runtime_truth_mutation_allowed": false,
+            "runtime_truth_write_allowed": false,
+            "automatic_updates_enabled": false,
+            "autonomous_crawling_enabled": false,
+            "autonomous_execution_enabled": false,
+            "autonomous_agent_execution_enabled": false,
+            "live_web_execution_enabled": false,
+            "browser_execution_enabled": false,
+            "network_request_performed": false,
+            "body_read_allowed": false
+          }
+        }
+      }
+    ],
+    "chips": [
+      "Prohibited Authority Command",
+      "domain:governance",
+      "route:governance_status_or_safety_gate",
+      "evidence:contractual",
+      "read-only",
+      "blocked"
+    ],
+    "safe_actions": [
+      "explain_governance_state",
+      "show_safe_alternative",
+      "request_operator_review"
+    ],
+    "blocked_authority": {
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false
+    },
+    "created_at": "2026-05-17T00:40:59.816162+00:00",
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_allowed": false,
+    "runtime_truth_write_allowed": false,
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "autonomous_execution_enabled": false,
+    "autonomous_agent_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false
+  },
+  "forward_motion_allowed": true,
+  "next_phase": "S464-S470 Evidence-backed Claire answer model"
+}

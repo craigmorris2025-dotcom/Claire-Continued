@@ -1,0 +1,18 @@
+
+{
+  "version": "v18.56",
+  "name": "Live Search Dashboard Query Execution Bridge",
+  "scope": [
+    "bridge dashboard search query payloads to governed live search execution",
+    "bind returned results into visible dashboard result cards",
+    "verify google query can produce a visible Google result through the bridge",
+    "preserve manual enable requirements",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_56_live_search_dashboard_query_execution_bridge.py -q"
+  ]
+}

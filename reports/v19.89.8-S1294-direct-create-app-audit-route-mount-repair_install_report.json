@@ -1,0 +1,39 @@
+{
+  "version": "v19.89.8-S1294-direct-create-app-audit-route-mount-repair",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "modified": [
+    "claire/app.py"
+  ],
+  "written": [
+    "tests/test_s1294_direct_create_app_audit_route_mount_repair.py"
+  ],
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-S1294-direct-create-app-audit-route-mount-repair",
+  "app_patch": {
+    "changed": true,
+    "already_present": false,
+    "insertion": "before_create_app_return_app",
+    "return_app_line_before_patch": 606
+  },
+  "routes_verified": {
+    "/api/audit/risk-pattern-review": 200,
+    "/dashboard/audit/risk-pattern-review": 200,
+    "/api/audit/plateau-lock": 200,
+    "/dashboard/audit/plateau-lock": 200
+  },
+  "risk_status": "reviewed",
+  "plateau_status": "locked",
+  "forward_motion_allowed": true,
+  "blocked_authority_preserved": [
+    "live_web_execution",
+    "search_provider_execution",
+    "browser_execution",
+    "network_requests",
+    "body_reads",
+    "autonomous_crawling",
+    "automatic_updates",
+    "runtime_mutation",
+    "runtime_truth_mutation",
+    "package_download_install",
+    "command_execution"
+  ]
+}

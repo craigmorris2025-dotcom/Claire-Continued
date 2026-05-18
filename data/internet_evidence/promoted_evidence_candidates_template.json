@@ -1,0 +1,15 @@
+{
+  "candidates": [],
+  "created_at": "2026-05-13T11:20:33.083038Z",
+  "instructions": [
+    "This file is a review template. Nothing is promoted automatically.",
+    "Set approved_for_promotion=true only after manually reviewing the URL/source.",
+    "Add operator_notes for every approved item.",
+    "Quarantined items should not be promoted unless a later trust-review build explicitly clears them.",
+    "Promotion here writes only to reviewed web evidence store, not runtime truth."
+  ],
+  "operator_confirm_text": "",
+  "required_confirm_text": "PROMOTE REVIEWED EVIDENCE",
+  "runtime_truth_ingestion_enabled": false,
+  "version": "v17.85"
+}

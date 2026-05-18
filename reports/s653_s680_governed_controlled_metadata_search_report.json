@@ -1,0 +1,81 @@
+{
+  "version": "v19.89.8",
+  "build_range": "S653-S680",
+  "title": "Governed controlled metadata search, evidence bridge, lifecycle preview, and cockpit consolidation",
+  "created_at": "2026-05-17T04:08:21.104600+00:00",
+  "files_created_or_replaced": [
+    "claire/governance/governed_manual_provider_probe.py",
+    "claire/governance/governed_search_evidence_bridge.py",
+    "claire/governance/governed_evidence_lifecycle_preview.py",
+    "claire/governance/governed_cockpit_search_consolidation.py",
+    "claire/api/governed_controlled_metadata_search_routes.py",
+    "frontend/cockpit/assets/claire_governed_controlled_metadata_search.js",
+    "frontend/cockpit/assets/claire_governed_controlled_metadata_search.css",
+    "tests/test_s653_s680_governed_controlled_metadata_search.py"
+  ],
+  "app_registration": {
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py.bak_s653_s680",
+    "registration_inserted": true
+  },
+  "html_patched": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html"
+  ],
+  "verification": {
+    "imported_modules": [
+      "claire.governance.governed_manual_provider_probe",
+      "claire.governance.governed_search_evidence_bridge",
+      "claire.governance.governed_evidence_lifecycle_preview",
+      "claire.governance.governed_cockpit_search_consolidation",
+      "claire.api.governed_controlled_metadata_search_routes"
+    ],
+    "app_check": {
+      "create_app_imported": true,
+      "routes_registered": true,
+      "route_count": 255
+    }
+  },
+  "blocked_authority_preserved": {
+    "live_web_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  },
+  "new_endpoints": [
+    "/api/search/provider/manual-probe/preflight",
+    "/api/search/provider/manual-probe/cards",
+    "/api/search/provider/manual-probe/actions",
+    "/api/search/provider/manual-probe/policy",
+    "/api/search/provider/manual-probe/status",
+    "/api/search/provider/manual-probe/payload",
+    "/api/search/provider/manual-probe/stop-gate",
+    "/api/internet/provider/manual-probe/preflight",
+    "/api/search/evidence/bridge/preview",
+    "/api/search/evidence/bridge/cards",
+    "/api/search/evidence/bridge/actions",
+    "/api/search/evidence/bridge/status",
+    "/api/search/evidence/bridge/payload",
+    "/api/search/evidence/bridge/stop-gate",
+    "/api/evidence/lifecycle/routing-preview",
+    "/api/evidence/lifecycle/cards",
+    "/api/evidence/lifecycle/actions",
+    "/api/evidence/lifecycle/status",
+    "/api/evidence/lifecycle/payload",
+    "/api/evidence/lifecycle/stop-gate",
+    "/api/cockpit/search/consolidated-payload",
+    "/api/cockpit/search/cards",
+    "/api/cockpit/search/actions",
+    "/api/cockpit/search/status",
+    "/api/cockpit/search/stop-gate",
+    "/api/internet/search/consolidated-payload"
+  ],
+  "next_phase": "S681-S694 search/web readiness audit and provider configuration inspector"
+}

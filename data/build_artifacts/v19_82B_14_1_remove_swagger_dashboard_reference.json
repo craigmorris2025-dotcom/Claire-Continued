@@ -1,0 +1,22 @@
+{
+  "version": "v19.82B.14.1",
+  "build_name": "Remove Swagger Dashboard Reference",
+  "installed_at": "2026-05-11T20:13:20.885343+00:00",
+  "reason": [
+    "v19.82B.14 test failed because visual frame CSS still contained a Swagger-related selector.",
+    "Operator cockpit must not include Swagger/docs/dev-surface references.",
+    "Swagger can be launched manually outside the operator dashboard when needed."
+  ],
+  "updated": [
+    "frontend/cockpit/shell/assets/claire_enterprise_cockpit_visual_frame_v2.css",
+    "frontend/cockpit/shell/assets/claire_enterprise_cockpit_visual_frame_v2.js",
+    "tests/test_v19_82B_14_1_remove_swagger_dashboard_reference.py",
+    "data/build_artifacts/v19_82B_14_1_remove_swagger_dashboard_reference.json"
+  ],
+  "scope": [
+    "remove dev-surface references from cockpit visual-frame assets",
+    "no backend changes",
+    "no runtime truth changes"
+  ],
+  "next_recommended_build": "v19.82B.15 Cockpit Runtime Availability Route Repair"
+}

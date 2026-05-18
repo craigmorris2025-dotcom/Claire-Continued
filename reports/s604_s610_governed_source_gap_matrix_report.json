@@ -1,0 +1,79 @@
+{
+  "installer": "install_claire_v19_89_8_s604_s610_governed_source_gap_matrix.py",
+  "version": "v19.89.8-S604-S610",
+  "installed_at": "2026-05-17T03:33:04.253443+00:00",
+  "phase": "Governed Source Gap Matrix + Search Scope Planner",
+  "created_or_replaced": [
+    "claire\\governance\\governed_source_gap_matrix.py",
+    "claire\\api\\governed_source_gap_routes.py",
+    "frontend\\cockpit\\assets\\claire_governed_source_gap_matrix.js",
+    "frontend\\cockpit\\assets\\claire_governed_source_gap_matrix.css",
+    "tests\\test_s604_s610_governed_source_gap_matrix.py"
+  ],
+  "app_patch": {
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "exists": true,
+    "backup": "reports\\backups\\app.py.before_s604_s610_source_gap.20260517T033303Z",
+    "changed": true,
+    "compile_before": "ok",
+    "compile_after_cleanup": "ok",
+    "compile_after_patch": "ok",
+    "cleanup_counts": {
+      "misplaced_import_lines_removed": 0,
+      "old_local_blocks_removed": 0,
+      "standalone_include_lines_removed": 0
+    },
+    "inserted": true,
+    "reason": "inserted local guarded router import/include before create_app return app",
+    "create_app_probe_ok": true,
+    "route_registered": true
+  },
+  "html_patches": [
+    {
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html",
+      "exists": true,
+      "patched": true,
+      "reason": "source gap cockpit assets linked"
+    },
+    {
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\index.html",
+      "exists": false,
+      "patched": false,
+      "reason": "html file not found"
+    },
+    {
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html",
+      "exists": true,
+      "patched": true,
+      "reason": "source gap cockpit assets linked"
+    }
+  ],
+  "endpoints": [
+    "/api/sources/gaps/matrix",
+    "/api/sources/gaps/cards",
+    "/api/sources/gaps/actions",
+    "/api/sources/gaps/policy",
+    "/api/sources/gaps/status",
+    "/api/sources/gaps/payload",
+    "/api/sources/gaps/stop-gate",
+    "/api/search/scope/plans",
+    "/api/search/scope/cards",
+    "/api/search/scope/actions",
+    "/api/search/scope/status",
+    "/api/search/scope/payload"
+  ],
+  "blocked_flags_preserved": {
+    "live_web_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  },
+  "next_recommended_phase": "S611-S617 governed metadata probe authorization surfaces"
+}

@@ -1,0 +1,31 @@
+{
+  "installer": "install_claire_forward_motion_readiness_repair_s450_gate.py",
+  "created_at": "2026-05-17T00:07:34.824727+00:00",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_dir": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\forward_motion_readiness_repair_s450_gate\\20260517T000734Z",
+  "written_files": [
+    "claire\\api\\governed_payload_registry_s142_s148.py",
+    "claire\\api\\server.py",
+    "claire\\api\\s35_post_install_payload_verifier.py"
+  ],
+  "compile_results": {
+    "claire\\api\\governed_payload_registry_s142_s148.py": {
+      "ok": true,
+      "detail": "ok"
+    },
+    "claire\\api\\server.py": {
+      "ok": true,
+      "detail": "ok"
+    },
+    "claire\\api\\s35_post_install_payload_verifier.py": {
+      "ok": true,
+      "detail": "ok"
+    }
+  },
+  "recursive_wrapper_hits_after_repair": [],
+  "ok": true,
+  "next": [
+    "python .\\diagnose_claire_forward_motion_readiness.py",
+    "python -X utf8 -m pytest -vv --tb=short"
+  ]
+}

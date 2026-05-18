@@ -1,0 +1,387 @@
+{
+  "installer": "install_claire_v19_89_8_s506_s512_claire_governed_update_inspector.py",
+  "version": "v19.89.8-S506-S512",
+  "created_at": "2026-05-17T01:22:29.046096+00:00",
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "backup_dir": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19_89_8_s506_s512_claire_governed_update_inspector\\20260517T012229Z",
+  "written_files": [
+    "claire\\api\\claire_governed_update_inspector_s506_s512.py",
+    "frontend\\cockpit\\shell\\assets\\claire_governed_update_inspector.js",
+    "frontend\\cockpit\\shell\\assets\\claire_governed_update_inspector.css",
+    "tests\\test_s506_s512_claire_governed_update_inspector.py"
+  ],
+  "compile_results": {
+    "claire\\api\\claire_governed_update_inspector_s506_s512.py": {
+      "ok": true,
+      "detail": "ok"
+    },
+    "tests\\test_s506_s512_claire_governed_update_inspector.py": {
+      "ok": true,
+      "detail": "ok"
+    }
+  },
+  "forbidden_pattern_scan": {
+    "claire\\api\\claire_governed_update_inspector_s506_s512.py": [],
+    "tests\\test_s506_s512_claire_governed_update_inspector.py": []
+  },
+  "stop_gate": {
+    "version": "v19.89.8-S506-S512",
+    "phase": "S506-S512",
+    "stage_version": "S512",
+    "status": "claire_governed_update_inspector_passed",
+    "ready": true,
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "created_at": "2026-05-17T01:22:29.045096+00:00",
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_allowed": false,
+    "runtime_truth_write_allowed": false,
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "autonomous_execution_enabled": false,
+    "autonomous_agent_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "package_execution_enabled": false,
+    "package_export_performed": false,
+    "persistent_memory_write_performed": false,
+    "recursive_self_ingestion_executed": false,
+    "ok": true,
+    "checks": {
+      "s506_schema_ready": true,
+      "s507_zero_trust_ready": true,
+      "s508_validation_plan_ready": true,
+      "s509_rollback_ready": true,
+      "s510_approval_gate_ready": true,
+      "s511_assets_exist": true,
+      "inspection_metadata_only": true,
+      "blocked_candidate_blocked": true,
+      "no_download_or_apply": true,
+      "all_authority_blocked": true
+    },
+    "sample_outputs": {
+      "inspection": {
+        "inspection_id": "update_inspection_0320365",
+        "version": "v19.89.8-S506-S512",
+        "created_at": "2026-05-17T01:22:29.045096+00:00",
+        "candidate": {
+          "package_id": "update_candidate_demo_001",
+          "name": "Claire governed update metadata demo",
+          "version": "v19.89.8-demo",
+          "source": "operator_provided_metadata_only",
+          "source_type": "operator_provided_local_metadata",
+          "declared_purpose": "Demonstrate governed update package inspection readiness without downloading or applying updates.",
+          "target_paths": [
+            "claire/api/example_future_update.py",
+            "tests/test_example_future_update.py"
+          ],
+          "expected_hash": "sha256:demo-metadata-only-not-a-real-package",
+          "signature_present": true,
+          "rollback_plan_present": true,
+          "tests_declared": [
+            "python -X utf8 -m pytest tests/test_example_future_update.py -q --tb=short",
+            "python -X utf8 -m pytest --lf -q --tb=short"
+          ],
+          "operator_notes": "Metadata-only candidate for S506-S512 readiness checks.",
+          "network_source_allowed": false,
+          "download_allowed": false,
+          "install_allowed": false,
+          "apply_allowed": false
+        },
+        "missing_fields": [],
+        "allowed_source_type": true,
+        "hash_present": true,
+        "signature_present": true,
+        "rollback_plan_present": true,
+        "tests_declared": true,
+        "protected_path_hits": [
+          "tests/test_example_future_update.py"
+        ],
+        "forbidden_authority_requested": {
+          "network_source_allowed": false,
+          "download_allowed": false,
+          "install_allowed": false,
+          "apply_allowed": false
+        },
+        "score_components": {
+          "required_fields_present": 0.18,
+          "allowed_source_type": 0.14,
+          "hash_present": 0.14,
+          "signature_present": 0.14,
+          "rollback_plan_present": 0.14,
+          "tests_declared": 0.12,
+          "protected_path_penalty": -0.08,
+          "forbidden_authority_penalty": 0.0
+        },
+        "readiness_score": 0.78,
+        "risk_level": "moderate",
+        "approval_required": true,
+        "download_allowed": false,
+        "install_allowed": false,
+        "apply_allowed": false,
+        "operator_review_required": true,
+        "inspection_scope": "metadata_only",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_download_performed": false,
+        "package_install_performed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false,
+        "persistent_memory_write_performed": false,
+        "recursive_self_ingestion_executed": false
+      },
+      "blocked_inspection": {
+        "inspection_id": "update_inspection_7614659",
+        "version": "v19.89.8-S506-S512",
+        "created_at": "2026-05-17T01:22:29.045096+00:00",
+        "candidate": {
+          "package_id": "blocked_missing_safety",
+          "name": "Claire governed update metadata demo",
+          "version": "v19.89.8-demo",
+          "source": "operator_provided_metadata_only",
+          "source_type": "operator_provided_local_metadata",
+          "declared_purpose": "Demonstrate governed update package inspection readiness without downloading or applying updates.",
+          "target_paths": [
+            "claire/api/example_future_update.py",
+            "tests/test_example_future_update.py"
+          ],
+          "expected_hash": "",
+          "signature_present": false,
+          "rollback_plan_present": false,
+          "tests_declared": [
+            "python -X utf8 -m pytest tests/test_example_future_update.py -q --tb=short",
+            "python -X utf8 -m pytest --lf -q --tb=short"
+          ],
+          "operator_notes": "Metadata-only candidate for S506-S512 readiness checks.",
+          "network_source_allowed": true,
+          "download_allowed": true,
+          "install_allowed": true,
+          "apply_allowed": true
+        },
+        "missing_fields": [],
+        "allowed_source_type": true,
+        "hash_present": false,
+        "signature_present": false,
+        "rollback_plan_present": false,
+        "tests_declared": true,
+        "protected_path_hits": [
+          "tests/test_example_future_update.py"
+        ],
+        "forbidden_authority_requested": {
+          "network_source_allowed": true,
+          "download_allowed": true,
+          "install_allowed": true,
+          "apply_allowed": true
+        },
+        "score_components": {
+          "required_fields_present": 0.18,
+          "allowed_source_type": 0.14,
+          "hash_present": 0.0,
+          "signature_present": 0.0,
+          "rollback_plan_present": 0.0,
+          "tests_declared": 0.12,
+          "protected_path_penalty": -0.08,
+          "forbidden_authority_penalty": -0.5
+        },
+        "readiness_score": 0.0,
+        "risk_level": "blocked",
+        "approval_required": true,
+        "download_allowed": false,
+        "install_allowed": false,
+        "apply_allowed": false,
+        "operator_review_required": true,
+        "inspection_scope": "metadata_only",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_download_performed": false,
+        "package_install_performed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false,
+        "persistent_memory_write_performed": false,
+        "recursive_self_ingestion_executed": false
+      },
+      "validation_plan": {
+        "plan_id": "update_validation_plan_4363070",
+        "version": "v19.89.8-S506-S512",
+        "created_at": "2026-05-17T01:22:29.045096+00:00",
+        "inspection_id": "update_inspection_0320365",
+        "risk_level": "moderate",
+        "validation_steps": [
+          {
+            "step_id": "metadata_review",
+            "label": "Review package metadata",
+            "required": true,
+            "status": "pending_operator_review"
+          },
+          {
+            "step_id": "hash_verification",
+            "label": "Verify expected hash",
+            "required": true,
+            "status": "not_performed"
+          },
+          {
+            "step_id": "signature_verification",
+            "label": "Verify signature",
+            "required": true,
+            "status": "not_performed"
+          },
+          {
+            "step_id": "static_safety_scan",
+            "label": "Static safety scan",
+            "required": true,
+            "status": "not_performed"
+          },
+          {
+            "step_id": "protected_path_review",
+            "label": "Protected path review",
+            "required": true,
+            "status": "pending_operator_review",
+            "paths": [
+              "tests/test_example_future_update.py"
+            ]
+          },
+          {
+            "step_id": "targeted_test_plan",
+            "label": "Run declared targeted tests",
+            "required": true,
+            "status": "not_performed"
+          },
+          {
+            "step_id": "rollback_validation",
+            "label": "Validate rollback plan",
+            "required": true,
+            "status": "not_performed"
+          },
+          {
+            "step_id": "operator_approval",
+            "label": "Operator approval gate",
+            "required": true,
+            "status": "not_approved"
+          }
+        ],
+        "can_advance_to_staged_validation": true,
+        "can_apply_update": false,
+        "network_required": false,
+        "download_required": false,
+        "operator_review_required": true,
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_download_performed": false,
+        "package_install_performed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false,
+        "persistent_memory_write_performed": false,
+        "recursive_self_ingestion_executed": false
+      },
+      "rollback": {
+        "rollback_id": "rollback_readiness_4363070",
+        "version": "v19.89.8-S506-S512",
+        "created_at": "2026-05-17T01:22:29.045096+00:00",
+        "inspection_id": "update_inspection_0320365",
+        "rollback_plan_present": true,
+        "target_path_count": 2,
+        "protected_path_count": 1,
+        "rollback_required": true,
+        "rollback_validated": false,
+        "can_apply_without_rollback_validation": false,
+        "rollback_requirements": [
+          "backup_active_files_before_apply",
+          "prove_restore_command_or_file_map",
+          "validate_tests_after_rollback",
+          "record_operator_approval"
+        ],
+        "status": "rollback_plan_declared_not_validated",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_download_performed": false,
+        "package_install_performed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false,
+        "persistent_memory_write_performed": false,
+        "recursive_self_ingestion_executed": false
+      },
+      "approval_gate": {
+        "approval_gate_id": "operator_approval_gate_4363070",
+        "version": "v19.89.8-S506-S512",
+        "created_at": "2026-05-17T01:22:29.045096+00:00",
+        "inspection_id": "update_inspection_0320365",
+        "plan_id": "update_validation_plan_4363070",
+        "approval_required": true,
+        "operator_approved": false,
+        "blockers": [],
+        "approval_state": "awaiting_operator_review",
+        "can_apply_update": false,
+        "can_download_package": false,
+        "can_mutate_runtime": false,
+        "future_required_approval_text": "I approve this staged update after validation and rollback proof.",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "package_download_performed": false,
+        "package_install_performed": false,
+        "package_execution_enabled": false,
+        "package_export_performed": false,
+        "persistent_memory_write_performed": false,
+        "recursive_self_ingestion_executed": false
+      }
+    },
+    "forward_motion_allowed": true,
+    "next_phase": "S513-S519 Staged update validation sandbox contract"
+  },
+  "ok": true,
+  "fast_test": "python -X utf8 -m pytest tests/test_s506_s512_claire_governed_update_inspector.py -q --tb=short",
+  "next": [
+    "python -X utf8 -m pytest tests/test_s506_s512_claire_governed_update_inspector.py -q --tb=short",
+    "python -X utf8 -m pytest --lf -q --tb=short",
+    "python -X utf8 -m pytest -vv --tb=short",
+    "If clean, continue to S513-S519 Staged update validation sandbox contract."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "allowlist_source": {
+    "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_provider/source_allowlist_template.json",
+    "status": "loaded"
+  },
+  "candidate_count": 0,
+  "contract_name": "Governed Web Evidence Promotion Gate",
+  "execution_defaults": {
+    "agent_execution_enabled": false,
+    "automatic_promotion_enabled": false,
+    "automatic_updates_enabled": false,
+    "promotion_runs_on_install": false,
+    "runtime_truth_ingestion_enabled": false
+  },
+  "generated_at": "2026-05-13T11:20:33.085039Z",
+  "governance": {
+    "domain_trust_status_required": true,
+    "manual_review_required": true,
+    "no_automatic_update_execution": true,
+    "no_autonomous_agent_execution": true,
+    "no_runtime_truth_auto_ingestion": true,
+    "no_unreviewed_quarantine_promotion": true,
+    "operator_notes_required_for_promotion": true,
+    "promotion_gate_only": true,
+    "retrieval_timestamp_required": true,
+    "source_url_required": true
+  },
+  "live_probe_sources": {
+    "evidence_log": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_live_probe/live_probe_evidence_log.json",
+      "status": "missing"
+    },
+    "last_result": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_live_probe/last_live_probe_result.json",
+      "status": "loaded"
+    },
+    "quarantine_log": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_live_probe/live_probe_quarantine_log.json",
+      "status": "missing"
+    }
+  },
+  "next": [
+    "Manually review promoted_evidence_candidates_template.json",
+    "Set approved_for_promotion=true and operator_notes for approved non-quarantined records",
+    "Use POST /internet/evidence-promotion/promote-approved with confirm text",
+    "Later build: reviewed evidence to runtime truth gate"
+  ],
+  "promoted_store_path": "data/internet_evidence/promoted_evidence_store.json",
+  "promotion_template_path": "data/internet_evidence/promoted_evidence_candidates_template.json",
+  "provider_gate_source": {
+    "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_provider/provider_configuration_gate.json",
+    "status": "loaded"
+  },
+  "quarantine_count": 0,
+  "quarantine_policy_source": {
+    "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_provider/quarantine_policy.json",
+    "status": "loaded"
+  },
+  "quarantine_queue_path": "data/internet_evidence/quarantine_review_queue.json",
+  "status": "PROMOTION_REVIEW_READY_WITH_WARNINGS",
+  "stop_go": {
+    "blockers": [],
+    "recommendation": "Review evidence candidates. Do not promote quarantined or unreviewed records. Runtime truth ingestion remains disabled.",
+    "status": "PROMOTION_REVIEW_READY_WITH_WARNINGS",
+    "warnings": [
+      "last_live_probe_not_executed_or_missing",
+      "no_promotion_candidates_created"
+    ]
+  },
+  "version": "v17.85"
+}

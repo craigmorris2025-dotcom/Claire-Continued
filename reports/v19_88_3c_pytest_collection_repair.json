@@ -1,0 +1,17 @@
+{
+  "version": "19.88.3c",
+  "phase": "Operational Restoration",
+  "action": "pytest collection repair",
+  "timestamp_utc": "2026-05-13T04:32:49.447062+00:00",
+  "moved_unparseable_tests": [],
+  "installed_safe_test": "tests\\test_v19_88_3c_live_source_catalog_contract.py",
+  "runtime_files_modified": false,
+  "architecture_rules_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "speculative_outputs": false,
+    "fail_closed_governance": true,
+    "runtime_truth_over_ui_assumptions": true,
+    "convergence_over_expansion": true
+  }
+}

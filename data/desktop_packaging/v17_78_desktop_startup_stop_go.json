@@ -1,0 +1,17 @@
+{
+  "blockers": [
+    "missing_startup_file:safe_launcher",
+    "missing_startup_file:startup_verifier",
+    "package_group_missing:launch:safe_launcher,startup_verifier",
+    "primary_launcher_does_not_start_uvicorn_claire_app",
+    "safe_launcher_does_not_start_uvicorn_claire_app"
+  ],
+  "generated_at": "2026-05-13T11:19:00.433094Z",
+  "recommendation": "Fix desktop startup blockers before packaging or launch-candidate freeze.",
+  "status": "STOP",
+  "version": "v17.78",
+  "warnings": [
+    "prior_launch_hardening_stop_go_is_STOP",
+    "prior_platform_smoke_is_STOP"
+  ]
+}

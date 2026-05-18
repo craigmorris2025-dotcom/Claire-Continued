@@ -1,0 +1,82 @@
+{
+  "version": "v19.89.8-S19R2",
+  "repaired_at_utc": "2026-05-14T02:49:04.277128+00:00",
+  "status": "compile_ok",
+  "app_file": "claire\\app.py",
+  "backup_file": "claire\\app.py.v19_89_8_S19R2_backup",
+  "removed_count": 12,
+  "removed_fragments": [
+    {
+      "line": 6,
+      "content": "    register_route_activity_overlay_routes = None",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 14,
+      "content": "    register_surface_health_routes = None",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 22,
+      "content": "    register_cockpit_surface_registry_routes = None",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 30,
+      "content": "    register_governed_runtime_timeline_routes = None",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 1311,
+      "content": "    if register_governed_runtime_timeline_routes:",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 1312,
+      "content": "        register_governed_runtime_timeline_routes(app)",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 1313,
+      "content": "    if register_cockpit_surface_registry_routes:",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 1314,
+      "content": "        register_cockpit_surface_registry_routes(app)",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 1315,
+      "content": "    if register_surface_health_routes:",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 1316,
+      "content": "        register_surface_health_routes(app)",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 1317,
+      "content": "    if register_route_activity_overlay_routes:",
+      "reason": "orphaned_register_fragment"
+    },
+    {
+      "line": 1318,
+      "content": "        register_route_activity_overlay_routes(app)",
+      "reason": "orphaned_register_fragment"
+    }
+  ],
+  "compile_message": "compile_ok",
+  "next_checks": [
+    "python -m py_compile claire/app.py",
+    "python main.py"
+  ],
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "version": "v18.73",
+  "name": "Root Consolidation + Single Dashboard Launcher + File-Origin Fetch Bridge",
+  "scope": [
+    "archive excess root BAT review files instead of deleting them",
+    "archive root v18 installer scripts instead of deleting them",
+    "move root audit TXT files to audits/v18_73_root_consolidation",
+    "replace LAUNCH_CLAIRE.bat with the single canonical dashboard launcher",
+    "install dashboard file-origin fetch bridge so file-opened dashboard calls localhost:8000",
+    "preserve active launcher backend route proof",
+    "verify only LAUNCH_CLAIRE.bat remains as root BAT launcher"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_73_root_consolidation_single_dashboard_launcher.py -q"
+  ]
+}

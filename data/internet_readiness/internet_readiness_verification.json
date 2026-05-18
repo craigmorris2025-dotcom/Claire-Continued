@@ -1,0 +1,566 @@
+{
+  "blockers": [],
+  "contract_name": "Internet Readiness Verification",
+  "environment": {
+    "allow_unknown_domains_value": "false",
+    "env_files_present": {
+      ".env": true,
+      ".env.example": true
+    },
+    "keys": {
+      "BING_SEARCH_API_KEY": {
+        "declared_in_env_example": true,
+        "declared_in_env_or_process": false,
+        "safe_to_print_value": false,
+        "value_present": false
+      },
+      "BRAVE_SEARCH_API_KEY": {
+        "declared_in_env_example": true,
+        "declared_in_env_or_process": false,
+        "safe_to_print_value": false,
+        "value_present": false
+      },
+      "CLAIRE_INTERNET_ALLOW_UNKNOWN_DOMAINS": {
+        "declared_in_env_example": true,
+        "declared_in_env_or_process": false,
+        "safe_to_print_value": false,
+        "value_present": false
+      },
+      "CLAIRE_INTERNET_MAX_BYTES": {
+        "declared_in_env_example": true,
+        "declared_in_env_or_process": false,
+        "safe_to_print_value": false,
+        "value_present": false
+      },
+      "CLAIRE_INTERNET_MAX_RESULTS": {
+        "declared_in_env_example": true,
+        "declared_in_env_or_process": false,
+        "safe_to_print_value": false,
+        "value_present": false
+      },
+      "CLAIRE_INTERNET_TIMEOUT_SECONDS": {
+        "declared_in_env_example": true,
+        "declared_in_env_or_process": false,
+        "safe_to_print_value": false,
+        "value_present": false
+      },
+      "CLAIRE_SEARCH_PROVIDER": {
+        "declared_in_env_example": true,
+        "declared_in_env_or_process": false,
+        "safe_to_print_value": false,
+        "value_present": false
+      },
+      "SERPAPI_API_KEY": {
+        "declared_in_env_example": true,
+        "declared_in_env_or_process": false,
+        "safe_to_print_value": false,
+        "value_present": false
+      },
+      "TAVILY_API_KEY": {
+        "declared_in_env_example": true,
+        "declared_in_env_or_process": false,
+        "safe_to_print_value": false,
+        "value_present": false
+      }
+    },
+    "provider_declared": true,
+    "provider_key_present": false,
+    "unknown_domains_blocked_or_unspecified": true
+  },
+  "generated_at": "2026-05-13T11:18:57.470157Z",
+  "governance": {
+    "degraded_mode_required": true,
+    "no_hidden_background_updates": true,
+    "no_uncontrolled_browsing": true,
+    "operator_review_required": true,
+    "quarantine_required": true,
+    "rollback_required_before_automatic_updates": true,
+    "source_allowlist_required": true,
+    "source_trust_required": true
+  },
+  "governance_signals": {
+    "allowlist": {
+      "present": true,
+      "sample_paths": [
+        "claire/api/live_source_catalog_routes.py",
+        "claire/autonomous_research_ecosystem/source_policy_gate.py",
+        "claire/buyer/buyer_readiness_checklist.py",
+        "claire/feeds/public_company_live_scan.py",
+        "claire/governance/feed_activation_policy.py",
+        "claire/governance/governance_init.py",
+        "claire/governance/governed_web/live_attempt_planner.py",
+        "claire/governance/governed_web/live_connectivity_handshake.py",
+        "claire/governance/governed_web/live_connectivity_handshake_review_record.py",
+        "claire/governance/governed_web/network_probe_adapter_shell.py",
+        "claire/governance/governed_web/pre_live_probe_authorization_audit.py",
+        "claire/governance/governed_web/probe_execution_gate.py",
+        "claire/governance/governed_web/provider_adapter_preview_bridge.py",
+        "claire/governance/governed_web/read_only_probe_executor_null_transport.py",
+        "claire/governance/governed_web/search_request_envelope.py",
+        "claire/governance/source_allowlist.py",
+        "claire/governed_internet_connectivity/source_policy.py",
+        "claire/internet/evidence_promotion_gate.py",
+        "claire/internet/governed_live_probe.py",
+        "claire/internet/provider_configuration_gate.py",
+        "claire/internet_activation/policy.py",
+        "claire/internet_readiness/readiness_verifier.py",
+        "claire/live_activation/source_allowlist_policy.py",
+        "claire/live_connectivity/live_ingestion_gate.py",
+        "claire/live_connectivity/source_allowlist.py"
+      ]
+    },
+    "degraded": {
+      "present": true,
+      "sample_paths": [
+        "claire/api/cockpit_operational_proof_routes.py",
+        "claire/api/live_intelligence_status_routes.py",
+        "claire/api/operational_proof_routes.py",
+        "claire/api/routes_cockpit_operational_status.py",
+        "claire/api/routes_system.py",
+        "claire/dashboard/runtime_alignment.py",
+        "claire/deployment/health_contract.py",
+        "claire/deployment/runtime_hardening.py",
+        "claire/distributed_production_runtime/health_dashboard.py",
+        "claire/distributed_production_runtime/worker_pool.py",
+        "claire/dynamic_source_trust/quarantine.py",
+        "claire/dynamic_source_trust/scorer.py",
+        "claire/governance/launch_regression_lock.py",
+        "claire/governed_web/provider_health_registry.py",
+        "claire/internet_operations_dashboard/payloads.py",
+        "claire/internet_operations_dashboard/static_page.py",
+        "claire/internet_readiness/readiness_verifier.py",
+        "claire/internet_runtime_stability/health.py",
+        "claire/internet_runtime_stability/models.py",
+        "claire/internet_runtime_stability/service.py",
+        "claire/platform/update_governance/capability_diff.py",
+        "claire/production/service_health_contract.py",
+        "claire/runtime_graph/state.py",
+        "claire/runtime_proof_exit_policy.py",
+        "claire/runtime_truth/store.py"
+      ]
+    },
+    "operator_review": {
+      "present": true,
+      "sample_paths": [
+        "claire/api/cockpit_operational_proof_routes.py",
+        "claire/api/dashboard_payload_bridge.py",
+        "claire/api/governed_dashboard_live_search_routes.py",
+        "claire/api/operational_proof_routes.py",
+        "claire/api/operator_dashboard_compat_routes.py",
+        "claire/api/real_provider_operator_probe_routes.py",
+        "claire/api/routes_continuous_runtime.py",
+        "claire/api/routes_enterprise_runs.py",
+        "claire/autodesign/handoff_contract.py",
+        "claire/autonomy/adaptive_runtime_reprioritization.py",
+        "claire/autonomy/autonomous_escalation_engine.py",
+        "claire/autonomy/recursive_orchestration_controller.py",
+        "claire/buyer/acquisition_narrative_binder.py",
+        "claire/buyer/buyer_readiness_checklist.py",
+        "claire/cleanup/cleanup_proof.py",
+        "claire/continuous_autonomous_intelligence/continuous_regression_lock.py",
+        "claire/continuous_runtime/cycle.py",
+        "claire/dashboard/actual_run_output_dashboard_binding.py",
+        "claire/demo/guided_demo_runner.py",
+        "claire/design_portal/output_contract.py",
+        "claire/desktop/startup_reliability.py",
+        "claire/discovery/discovery_campaign_manager.py",
+        "claire/discovery/governed_research_synthesis_engine.py",
+        "claire/discovery/opportunity_landscape_generator.py",
+        "claire/engines/breakthrough_synthesis_engine.py"
+      ]
+    },
+    "quarantine": {
+      "present": true,
+      "sample_paths": [
+        "claire/buyer/buyer_readiness_checklist.py",
+        "claire/cleanup/cleanup_proof.py",
+        "claire/dashboard/runtime_alignment.py",
+        "claire/deployment/runtime_hardening.py",
+        "claire/discovery/discovery_campaign_manager.py",
+        "claire/discovery/governed_research_synthesis_engine.py",
+        "claire/dynamic_source_trust/__init__.py",
+        "claire/dynamic_source_trust/api_routes.py",
+        "claire/dynamic_source_trust/cli.py",
+        "claire/dynamic_source_trust/quarantine.py",
+        "claire/dynamic_source_trust/scorer.py",
+        "claire/dynamic_source_trust/service.py",
+        "claire/ingestion/quarantine_manager.py",
+        "claire/install_safety/current_state_cleaner.py",
+        "claire/internet/evidence_promotion_gate.py",
+        "claire/internet/governed_live_probe.py",
+        "claire/internet/provider_configuration_gate.py",
+        "claire/internet_operations_dashboard/payloads.py",
+        "claire/internet_readiness/readiness_verifier.py",
+        "claire/live/governed_async_ingestion_queue.py",
+        "claire/live/live_ingestion_quarantine.py",
+        "claire/live/source_registry.py",
+        "claire/live_activation/source_decision_log.py",
+        "claire/live_connectivity/live_ingestion_gate.py",
+        "claire/live_connectivity/quarantine_record.py"
+      ]
+    },
+    "retry": {
+      "present": true,
+      "sample_paths": [
+        "claire/connectors/web_fetcher.py",
+        "claire/dashboard/runtime_alignment.py",
+        "claire/deployment/production_profile.py",
+        "claire/deployment/runtime_hardening.py",
+        "claire/governed_web/controlled_retry_timeout_governance.py",
+        "claire/internet_readiness/readiness_verifier.py",
+        "claire/internet_runtime_stability/__init__.py",
+        "claire/internet_runtime_stability/classifier.py",
+        "claire/internet_runtime_stability/models.py",
+        "claire/internet_runtime_stability/service.py",
+        "claire/real_governed_live_connectivity/__init__.py",
+        "claire/real_governed_live_connectivity/live_ingestion_worker.py",
+        "claire/real_governed_live_connectivity/retry_deadletter.py",
+        "claire/real_governed_live_connectivity/runtime.py",
+        "data/dashboard/dashboard_capability_manifest.json",
+        "data/internet_readiness/internet_readiness_verification.json",
+        "data/internet_runtime_stability/internet_runtime_stability_manifest.json",
+        "data/real_governed_live_connectivity/real_live_connectivity_manifest.json",
+        "data/runtime/runtime_manifest.json",
+        "docs/audits/v19_87_9_endpoint_capability_inventory/LIVE_WEB_SOURCE_CATALOG_SURFACES.json",
+        "docs/internet_runtime_stability/v17_45_internet_runtime_stability.md",
+        "docs/real_governed_live_connectivity/v17_11_to_v17_20_real_governed_live_connectivity.md"
+      ]
+    },
+    "rollback": {
+      "present": true,
+      "sample_paths": [
+        "claire/api/routes_rollback_update_plan.py",
+        "claire/api/routes_update_governance.py",
+        "claire/app.py",
+        "claire/buyer/buyer_readiness_checklist.py",
+        "claire/cleanup/archive_approval_gate.py",
+        "claire/dashboard/operator_dashboard_state.py",
+        "claire/dashboard/unified_runtime_dashboard.py",
+        "claire/deployment/runtime_hardening.py",
+        "claire/deployment_hardening/preflight_checklist.py",
+        "claire/deployment_hardening/release_gate_evaluator.py",
+        "claire/deployment_hardening/rollback_point_registry.py",
+        "claire/governance/launch_regression_lock.py",
+        "claire/internet_readiness/readiness_verifier.py",
+        "claire/online/online_update_session.py",
+        "claire/package_update_governance/package_update_policy.py",
+        "claire/package_update_governance/update_plan_builder.py",
+        "claire/platform/launch_hardening.py",
+        "claire/platform/update_governance/approval_policy.py",
+        "claire/platform/update_governance/audit_writer.py",
+        "claire/platform/update_governance/migration_planner.py",
+        "claire/platform/update_governance/rollback_orchestrator.py",
+        "claire/platform/update_governance/update_orchestrator.py",
+        "claire/proof/full_e2e_proof_pack.py",
+        "claire/proof/platform_endpoint_smoke_proof.py",
+        "claire/runtime/dashboard_e2e_first_use.py"
+      ]
+    },
+    "scheduler_lock": {
+      "present": true,
+      "sample_paths": [
+        "claire/governed_campaign_scheduler/lock.py",
+        "claire/internet_readiness/readiness_verifier.py",
+        "data/internet_readiness/internet_readiness_verification.json",
+        "docs/internet_readiness/v17.70_internet_readiness_verification.md",
+        "docs/update_governance/v17.74_update_governance_regression_lock.md"
+      ]
+    },
+    "source_trust": {
+      "present": true,
+      "sample_paths": [
+        "claire/api/routes_source_universes.py",
+        "claire/dashboard/button_registry.py",
+        "claire/dashboard/runtime_alignment.py",
+        "claire/deployment/health_contract.py",
+        "claire/deployment/runtime_hardening.py",
+        "claire/dynamic_source_trust/api_routes.py",
+        "claire/dynamic_source_trust/cli.py",
+        "claire/dynamic_source_trust/service.py",
+        "claire/dynamic_source_trust/store.py",
+        "claire/governance/governed_web/live_attempt_planner.py",
+        "claire/governance/governed_web/live_connectivity_handshake.py",
+        "claire/governance/governed_web/live_connectivity_handshake_review_record.py",
+        "claire/governance/governed_web/network_probe_adapter_shell.py",
+        "claire/governance/governed_web/pre_live_probe_authorization_audit.py",
+        "claire/governance/governed_web/probe_execution_gate.py",
+        "claire/governance/governed_web/provider_adapter_preview_bridge.py",
+        "claire/governance/governed_web/read_only_probe_executor_null_transport.py",
+        "claire/governance/governed_web/search_request_envelope.py",
+        "claire/governance/launch_regression_lock.py",
+        "claire/governed_web/dashboard_search_api_adapter.py",
+        "claire/governed_web/governed_live_search_orchestrator.py",
+        "claire/governed_web/live_dashboard_result_rendering_contract.py",
+        "claire/governed_web/multi_result_aggregation.py",
+        "claire/governed_web/real_search_provider_adapter.py",
+        "claire/governed_web/search_result_parser_contract.py"
+      ]
+    },
+    "validation": {
+      "present": true,
+      "sample_paths": [
+        "claire/api/dashboard_payload_bridge.py",
+        "claire/api/routes_buildability_validation.py",
+        "claire/api/routes_dashboard_alignment.py",
+        "claire/api/routes_enterprise_runs.py",
+        "claire/api/routes_pipeline.py",
+        "claire/api/unified/intelligence_routes.py",
+        "claire/api/unified/lifecycle_routes.py",
+        "claire/api/unified/middleware.py",
+        "claire/api/unified/platform_routes.py",
+        "claire/api/unified/router.py",
+        "claire/app.py",
+        "claire/autodesign/handoff_contract.py",
+        "claire/autonomous/governance_boundary.py",
+        "claire/autonomous/research_director.py",
+        "claire/autonomous/self_corrector.py",
+        "claire/autonomous/self_enricher.py",
+        "claire/autonomous/self_escalator.py",
+        "claire/autonomous/self_invalidator.py",
+        "claire/autonomous/self_optimizer.py",
+        "claire/breakthrough/maturity/category_validator.py",
+        "claire/breakthrough/maturity/compound_scorer.py",
+        "claire/breakthrough/maturity/cross_category_detector.py",
+        "claire/breakthrough/maturity/evidence_thresholds.py",
+        "claire/buyer/buyer_readiness_checklist.py",
+        "claire/completion/completion_contract.py"
+      ]
+    }
+  },
+  "internet_layers": {
+    "dynamic_source_trust": {
+      "missing": [],
+      "out_of": 2,
+      "present": [
+        "claire/dynamic_source_trust/store.py",
+        "data/dynamic_source_trust/dynamic_source_trust_manifest.json"
+      ],
+      "score": 2,
+      "status": "present"
+    },
+    "governed_campaign_scheduler": {
+      "missing": [],
+      "out_of": 3,
+      "present": [
+        "claire/governed_campaign_scheduler/lock.py",
+        "claire/governed_campaign_scheduler/store.py",
+        "data/governed_campaign_scheduler/governed_campaign_scheduler_manifest.json"
+      ],
+      "score": 3,
+      "status": "present"
+    },
+    "governed_connectivity": {
+      "missing": [],
+      "out_of": 2,
+      "present": [
+        "claire/governed_internet_connectivity/runtime.py",
+        "data/governed_internet_connectivity/connectivity_manifest.json"
+      ],
+      "score": 2,
+      "status": "present"
+    },
+    "internet_activation": {
+      "missing": [],
+      "out_of": 3,
+      "present": [
+        "claire/internet_activation/config.py",
+        "claire/internet_activation/service.py",
+        "data/internet_activation/internet_activation_manifest.json"
+      ],
+      "score": 3,
+      "status": "present"
+    },
+    "internet_operations_dashboard": {
+      "missing": [],
+      "out_of": 2,
+      "present": [
+        "claire/internet_operations_dashboard/service.py",
+        "data/internet_operations_dashboard/internet_operations_dashboard_manifest.json"
+      ],
+      "score": 2,
+      "status": "present"
+    },
+    "internet_runtime_integration": {
+      "missing": [],
+      "out_of": 4,
+      "present": [
+        "claire/internet_runtime_integration/bridge.py",
+        "claire/internet_runtime_integration/dashboard_payload.py",
+        "claire/internet_runtime_integration/output_merger.py",
+        "data/internet_runtime_integration/internet_runtime_integration_manifest.json"
+      ],
+      "score": 4,
+      "status": "present"
+    },
+    "internet_runtime_stability": {
+      "missing": [],
+      "out_of": 3,
+      "present": [
+        "claire/internet_runtime_stability/health.py",
+        "claire/internet_runtime_stability/service.py",
+        "data/internet_runtime_stability/internet_runtime_stability_manifest.json"
+      ],
+      "score": 3,
+      "status": "present"
+    },
+    "live_connectivity": {
+      "missing": [
+        "data/real_governed_live_connectivity/live_connectivity_manifest.json"
+      ],
+      "out_of": 2,
+      "present": [
+        "claire/real_governed_live_connectivity/runtime.py"
+      ],
+      "score": 1,
+      "status": "present"
+    },
+    "persistent_internet_campaigns": {
+      "missing": [],
+      "out_of": 2,
+      "present": [
+        "claire/persistent_internet_campaigns/service.py",
+        "data/persistent_internet_campaigns/persistent_internet_campaigns_manifest.json"
+      ],
+      "score": 2,
+      "status": "present"
+    }
+  },
+  "mode": "static_verification_no_internet_calls",
+  "next": [
+    "v17.71 Governed Update Pack Staging",
+    "v17.72 Rollback-Aware Update Plan Contract",
+    "v17.73 Automatic Update Runner Gate",
+    "v17.74 Update Governance Regression Lock",
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "readiness": {
+    "automatic_updates_enabled": false,
+    "live_internet_enabled": false,
+    "requires_v17_71_to_v17_74_update_pack_governance": true,
+    "safe_for_automatic_updates": false,
+    "safe_to_attempt_live_probe_after_operator_review": false,
+    "static_internet_readiness": true
+  },
+  "scheduler": {
+    "lock_candidates": [
+      "claire/governed_campaign_scheduler/__pycache__/lock.cpython-311.pyc",
+      "claire/governed_campaign_scheduler/lock.py",
+      "claire/governed_internet_connectivity/__pycache__/connectivity_regression_lock.cpython-311.pyc",
+      "claire/governed_internet_connectivity/connectivity_regression_lock.py"
+    ],
+    "schedule_candidates": [
+      "claire/continuous_autonomous_intelligence/__pycache__/campaign_continuity.cpython-311.pyc",
+      "claire/continuous_autonomous_intelligence/campaign_continuity.py",
+      "claire/discovery/__pycache__/discovery_campaign_manager.cpython-311.pyc",
+      "claire/discovery/discovery_campaign_manager.py",
+      "claire/distributed_production_runtime/__pycache__/cross_campaign_fusion.cpython-311.pyc",
+      "claire/distributed_production_runtime/cross_campaign_fusion.py",
+      "claire/governed_campaign_scheduler",
+      "claire/governed_campaign_scheduler/__init__.py",
+      "claire/governed_campaign_scheduler/__pycache__",
+      "claire/governed_campaign_scheduler/__pycache__/__init__.cpython-311.pyc",
+      "claire/governed_campaign_scheduler/__pycache__/api_routes.cpython-311.pyc",
+      "claire/governed_campaign_scheduler/__pycache__/due.cpython-311.pyc",
+      "claire/governed_campaign_scheduler/__pycache__/lock.cpython-311.pyc",
+      "claire/governed_campaign_scheduler/__pycache__/models.cpython-311.pyc",
+      "claire/governed_campaign_scheduler/__pycache__/service.cpython-311.pyc",
+      "claire/governed_campaign_scheduler/__pycache__/store.cpython-311.pyc",
+      "claire/governed_campaign_scheduler/__pycache__/time_utils.cpython-311.pyc",
+      "claire/governed_campaign_scheduler/api_routes.py",
+      "claire/governed_campaign_scheduler/cli.py",
+      "claire/governed_campaign_scheduler/due.py",
+      "claire/governed_campaign_scheduler/lock.py",
+      "claire/governed_campaign_scheduler/models.py",
+      "claire/governed_campaign_scheduler/service.py",
+      "claire/governed_campaign_scheduler/store.py",
+      "claire/governed_campaign_scheduler/time_utils.py",
+      "claire/governed_internet_connectivity/__pycache__/signal_refresh_scheduler.cpython-311.pyc",
+      "claire/governed_internet_connectivity/signal_refresh_scheduler.py",
+      "claire/orchestration/__pycache__/bounded_orchestration_scheduler.cpython-311.pyc",
+      "claire/orchestration/bounded_orchestration_scheduler.py",
+      "claire/persistent_internet_campaigns",
+      "claire/persistent_internet_campaigns/__init__.py",
+      "claire/persistent_internet_campaigns/__pycache__",
+      "claire/persistent_internet_campaigns/__pycache__/__init__.cpython-311.pyc",
+      "claire/persistent_internet_campaigns/__pycache__/api_routes.cpython-311.pyc",
+      "claire/persistent_internet_campaigns/__pycache__/drift.cpython-311.pyc",
+      "claire/persistent_internet_campaigns/__pycache__/models.cpython-311.pyc",
+      "claire/persistent_internet_campaigns/__pycache__/service.cpython-311.pyc",
+      "claire/persistent_internet_campaigns/__pycache__/store.cpython-311.pyc",
+      "claire/persistent_internet_campaigns/api_routes.py",
+      "claire/persistent_internet_campaigns/cli.py",
+      "claire/persistent_internet_campaigns/drift.py",
+      "claire/persistent_internet_campaigns/models.py",
+      "claire/persistent_internet_campaigns/service.py",
+      "claire/persistent_internet_campaigns/store.py",
+      "claire/recursive/ingestion_scheduler.py",
+      "claire/runtime/__pycache__/continuous_runtime_scheduler.cpython-311.pyc",
+      "claire/runtime/continuous_runtime_scheduler.py",
+      "data/discovery/discovery_campaigns.json",
+      "data/governed_campaign_scheduler",
+      "data/governed_campaign_scheduler/audit",
+      "data/governed_campaign_scheduler/governed_campaign_scheduler_manifest.json",
+      "data/governed_campaign_scheduler/run_reports",
+      "data/governed_campaign_scheduler/schedules",
+      "data/orchestration/bounded_orchestration_scheduler.json",
+      "data/persistent_internet_campaigns",
+      "data/persistent_internet_campaigns/audit",
+      "data/persistent_internet_campaigns/campaigns",
+      "data/persistent_internet_campaigns/persistent_internet_campaigns_manifest.json",
+      "data/persistent_internet_campaigns/refresh_reports",
+      "docs/governed_campaign_scheduler",
+      "docs/governed_campaign_scheduler/v17_44_governed_campaign_scheduler.md",
+      "docs/persistent_internet_campaigns",
+      "docs/persistent_internet_campaigns/v17_43_persistent_internet_campaigns.md"
+    ],
+    "schedule_evidence": true,
+    "scheduler_lock_evidence": true
+  },
+  "status": "warning",
+  "update_governance": {
+    "rollback": {
+      "missing": [
+        "claire/platform/update_governance/rollback_policy.py"
+      ],
+      "out_of": 2,
+      "present": [
+        "claire/platform/update_governance/rollback_orchestrator.py"
+      ],
+      "score": 1,
+      "status": "present"
+    },
+    "safe_installer": {
+      "missing": [],
+      "out_of": 1,
+      "present": [
+        "safe_install_claire_version.py"
+      ],
+      "score": 1,
+      "status": "present"
+    },
+    "update_orchestrator": {
+      "missing": [
+        "claire/platform/update_governance/update_plan.py"
+      ],
+      "out_of": 2,
+      "present": [
+        "claire/platform/update_governance/update_orchestrator.py"
+      ],
+      "score": 1,
+      "status": "present"
+    },
+    "validation_gauntlet": {
+      "missing": [],
+      "out_of": 1,
+      "present": [
+        "claire/platform/update_governance/validation_gauntlet.py"
+      ],
+      "score": 1,
+      "status": "present"
+    }
+  },
+  "version": "v17.70",
+  "warnings": [
+    "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+  ]
+}

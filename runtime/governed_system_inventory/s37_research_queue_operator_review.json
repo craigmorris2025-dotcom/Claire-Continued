@@ -1,0 +1,64 @@
+{
+  "automatic_action_allowed": false,
+  "generated_at": "2026-05-18T22:37:50.323215+00:00",
+  "items": [
+    {
+      "allowed_domains": [
+        "docs.python.org"
+      ],
+      "allowed_source_type": "official_python_docs",
+      "automatic_action_allowed": false,
+      "classification": "official_docs_needed",
+      "manual_promotion_required": true,
+      "operator_must_select_target": false,
+      "quarantine_required": true,
+      "queue_id": "S37-WEB-NEED-001",
+      "reason": "Validate HEAD-only metadata behavior against official docs before expanding providers.",
+      "requires_official_source": true,
+      "runtime_truth_mutation_allowed": false,
+      "status": "queued_for_manual_governed_research",
+      "topic": "Python stdlib http.client HEAD request behavior and header-only metadata handling",
+      "web_search_executed": false
+    },
+    {
+      "allowed_domains": [
+        "fastapi.tiangolo.com"
+      ],
+      "allowed_source_type": "official_fastapi_docs",
+      "automatic_action_allowed": false,
+      "classification": "framework_behavior_uncertain",
+      "manual_promotion_required": true,
+      "operator_must_select_target": false,
+      "quarantine_required": true,
+      "queue_id": "S37-WEB-NEED-002",
+      "reason": "Validate route mounting behavior from official docs only.",
+      "requires_official_source": true,
+      "runtime_truth_mutation_allowed": false,
+      "status": "queued_for_manual_governed_research",
+      "topic": "FastAPI APIRouter nested include_router behavior and OpenAPI visibility",
+      "web_search_executed": false
+    },
+    {
+      "allowed_domains": [],
+      "allowed_source_type": "official_target_or_provider_policy",
+      "automatic_action_allowed": false,
+      "classification": "provider_policy_check",
+      "manual_promotion_required": true,
+      "operator_must_select_target": true,
+      "quarantine_required": true,
+      "queue_id": "S37-WEB-NEED-003",
+      "reason": "Before expanding beyond one-shot probes, policy evidence should be quarantined.",
+      "requires_official_source": true,
+      "runtime_truth_mutation_allowed": false,
+      "status": "queued_for_manual_governed_research",
+      "topic": "Target site robots and provider policy checks before broader metadata probing",
+      "web_search_executed": false
+    }
+  ],
+  "manual_promotion_required": true,
+  "review_required": true,
+  "runtime_truth_mutation_allowed": false,
+  "source_queue": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime\\governed_system_inventory\\s37_governed_research_queue.json",
+  "version": "v19.89.8-S37R9-R16-review-export-fetch-capsule",
+  "web_search_executed": false
+}

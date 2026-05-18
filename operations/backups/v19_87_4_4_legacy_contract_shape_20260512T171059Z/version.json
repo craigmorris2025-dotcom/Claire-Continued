@@ -1,0 +1,11 @@
+{
+  "version": "19.87.4.3",
+  "phase": "continuous_runtime_legacy_api_lockdown",
+  "lane": "v19.87.x",
+  "updated_at": "2026-05-12T17:08:12.404918+00:00",
+  "notes": [
+    "Restored legacy v19.84.2 API names ensure_continuous_runtime_files and run_once.",
+    "Locked compatibility bridge to fail-closed governed scheduler behavior.",
+    "No dashboard, route, evidence escalation, or runtime truth mutation."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "repaired_at_utc": "2026-05-14T04:10:23.657601+00:00",
+  "status": "PASS",
+  "target": "claire\\api\\governed_runtime_timeline.py",
+  "backup": "claire\\api\\governed_runtime_timeline.py.future_import_repair_backup",
+  "stats": {
+    "removed_future_import_count": 1,
+    "preserved_shebang": false,
+    "preserved_encoding": false
+  },
+  "compile_message": "compile_ok",
+  "next_checks": [
+    "python -m py_compile claire/api/governed_runtime_timeline.py",
+    "python -m pytest tests/test_governed_runtime_timeline_s14.py -q",
+    "python -m py_compile claire/app.py"
+  ],
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "autonomous_execution_expansion": false
+  }
+}

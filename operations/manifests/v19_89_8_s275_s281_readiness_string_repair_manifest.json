@@ -1,0 +1,15 @@
+{
+  "version": "v19.89.8-S275-S281-readiness-string-repair",
+  "installed_at": "2026-05-15T18:56:31.005733+00:00",
+  "repair_only": true,
+  "purpose": "Fix exact remaining_before_daily_use string expected by S275-S281 test.",
+  "changed": {
+    "from": "add monitoring panel live refresh",
+    "to": "monitoring panel live refresh"
+  },
+  "recommended_commands": [
+    "pytest tests/test_s275_s281_readiness_string_repair.py -q",
+    "pytest tests/test_s275_s281_operator_workflow_route_contracts.py tests/test_s275_s281_dashboard_count_payload.py -q",
+    "pytest"
+  ]
+}

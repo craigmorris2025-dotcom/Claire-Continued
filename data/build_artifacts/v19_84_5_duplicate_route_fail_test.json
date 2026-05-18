@@ -1,0 +1,18 @@
+{
+  "version": "v19.84.5",
+  "build": "Duplicate Route Fail Test",
+  "installed_at": "2026-05-12T14:57:58.254855+00:00",
+  "purpose": "Fail if critical canonical routes are missing or duplicate-mounted.",
+  "runtime_mutation": "none",
+  "files_written": [
+    "tools/duplicate_route_fail_test.py",
+    "tests/test_v19_84_5_duplicate_route_fail_test.py",
+    "docs/builds/v19_84_5_duplicate_route_fail_test.md",
+    "data/build_artifacts/v19_84_5_duplicate_route_fail_test.json"
+  ],
+  "commands": [
+    "python tools/duplicate_route_fail_test.py",
+    "pytest tests/test_v19_84_5_duplicate_route_fail_test.py -q"
+  ],
+  "next_build": "v19.84.6 Critical Route Consolidation or Cockpit Binding Lock depending on report"
+}

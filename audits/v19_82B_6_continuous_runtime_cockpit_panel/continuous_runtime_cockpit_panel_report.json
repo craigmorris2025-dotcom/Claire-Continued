@@ -1,0 +1,21 @@
+{
+  "version": "v19.82B.6",
+  "timestamp": "2026-05-11T12:58:49",
+  "status": "go",
+  "continuous_js": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\assets\\enterprise_cockpit_continuous_runtime.js",
+  "html_patch": {
+    "patched": true,
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\cockpit_shell\\v19.82B.6\\cockpit_shell.html.20260511_125849.bak"
+  },
+  "css_patch": {
+    "patched": true,
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\cockpit_assets\\v19.82B.6\\enterprise_cockpit_workspace_shell.css.20260511_125849.bak"
+  },
+  "endpoints_consumed": [
+    "GET /runtime/continuous/status",
+    "POST /runtime/continuous/start",
+    "POST /runtime/continuous/pause",
+    "GET /runtime/continuous/review-queue"
+  ],
+  "rule": "continuous runtime panel displays backend truth only"
+}

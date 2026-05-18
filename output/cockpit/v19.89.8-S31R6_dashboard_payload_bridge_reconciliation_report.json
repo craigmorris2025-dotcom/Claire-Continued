@@ -1,0 +1,37 @@
+{
+  "version": "v19.89.8-S31R6",
+  "installed_at_utc": "2026-05-14T13:16:51.790415+00:00",
+  "status": "installed",
+  "bridge_file": "claire\\api\\dashboard_payload_bridge.py",
+  "backup_file": "claire\\api\\dashboard_payload_bridge.py.v19_89_8_S31R6_backup",
+  "pre_compile_ok": true,
+  "pre_compile_message": "compile_ok",
+  "post_compile_ok": true,
+  "post_compile_message": "compile_ok",
+  "rolled_back": false,
+  "changes": {
+    "import_added": true,
+    "handoff_added": true,
+    "handoff_status": "inserted_before_line_362"
+  },
+  "files_written": [
+    "tests\\test_s31r6_dashboard_payload_bridge_reconciliation.py",
+    "docs\\build_notes\\v19.89.8-S31R6_dashboard_payload_bridge_reconciliation.md",
+    "output\\cockpit\\v19.89.8-S31R6_dashboard_payload_bridge_reconciliation_report.json"
+  ],
+  "next_checks": [
+    "python -m py_compile claire/api/dashboard_payload_bridge.py",
+    "python -m pytest tests/test_s31r6_dashboard_payload_bridge_reconciliation.py -q",
+    "restart backend/launcher",
+    "open http://127.0.0.1:8000/dashboard/payload and search for governed_payload_reconciliation",
+    "hard refresh cockpit Ctrl+F5"
+  ],
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "runtime_mutation_enabled": false,
+    "autonomous_execution_expansion": false
+  }
+}

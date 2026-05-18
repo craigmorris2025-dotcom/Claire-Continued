@@ -1,0 +1,33 @@
+{
+  "blockers": [],
+  "errors": [],
+  "gate_status": "gate_ready_but_execution_disabled",
+  "mount_report": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "operator_dashboard_state": {
+    "contract_version": "v17.64.1",
+    "source": {
+      "invalid_candidate_count": 0,
+      "invalid_candidates_sample": [],
+      "raw_available": true,
+      "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+    },
+    "status": "rebuilt"
+  },
+  "runner_contract": {
+    "automatic_execution_enabled": false,
+    "background_execution_enabled": false,
+    "execution_enabled": false,
+    "requires_operator_approval_token": true,
+    "requires_rollback_plan": true,
+    "requires_source_trust": true,
+    "requires_validation_gauntlet": true,
+    "runner_executes_updates": false,
+    "runner_mode": "gate_only_no_execution",
+    "runner_registered": true
+  },
+  "status": "passed",
+  "warnings": []
+}

@@ -1,0 +1,36 @@
+{
+  "version": "v19.89.8-S1041-S1068-dashboard-s36-contract-repair-r5",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "written": [
+    "claire/app.py",
+    "claire/api/dashboard_actions_registry_routes.py",
+    "claire/api/dashboard_actions_registry.py",
+    "tests/test_s1041_s1068_dashboard_actions_registry_convergence_repair.py"
+  ],
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-S1041-S1068-dashboard-s36-contract-repair-r5",
+  "checks": {
+    "/dashboard/actions/registry": 200,
+    "/dashboard/actions/summary": 200,
+    "/dashboard/actions/preview/plan_search": 200,
+    "/api/dashboard/actions/registry": 200,
+    "/dashboard/payload": 200,
+    "/dashboard/payload/status": 200,
+    "/api/governed/live-probe/status": 200,
+    "/api/governed/live-probe/head": 403
+  },
+  "action_count": 15,
+  "payload_action_count": 15,
+  "blocked_authority_preserved": [
+    "live_web_execution",
+    "search_provider_execution",
+    "browser_execution",
+    "network_requests",
+    "body_reads",
+    "autonomous_crawling",
+    "automatic_updates",
+    "runtime_mutation",
+    "runtime_truth_mutation",
+    "package_download_install",
+    "command_execution"
+  ]
+}

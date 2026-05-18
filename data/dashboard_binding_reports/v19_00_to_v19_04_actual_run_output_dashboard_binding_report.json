@@ -1,0 +1,167 @@
+{
+  "binding": {
+    "bindings": [
+      {
+        "panel": "main_result",
+        "source_key": "terminal_state",
+        "status": "bound",
+        "visible": true
+      },
+      {
+        "panel": "governed_live_web_search",
+        "source_key": "evidence",
+        "status": "bound",
+        "visible": true
+      },
+      {
+        "panel": "runtime_truth",
+        "source_key": "ordered_outputs",
+        "status": "bound",
+        "visible": true
+      },
+      {
+        "panel": "trend_thesis",
+        "source_key": "trend_thesis",
+        "status": "bound",
+        "visible": true
+      },
+      {
+        "panel": "portfolio",
+        "source_key": "portfolio",
+        "status": "bound",
+        "visible": true
+      },
+      {
+        "panel": "breakthrough",
+        "source_key": "breakthrough",
+        "status": "bound",
+        "visible": false
+      },
+      {
+        "panel": "advancement_path",
+        "source_key": "advancement_path",
+        "status": "bound",
+        "visible": false
+      },
+      {
+        "panel": "autodesign",
+        "source_key": "autodesign",
+        "status": "bound",
+        "visible": false
+      },
+      {
+        "panel": "design_portal",
+        "source_key": "design_portal",
+        "status": "bound",
+        "visible": false
+      },
+      {
+        "panel": "validation",
+        "source_key": "validation",
+        "status": "bound",
+        "visible": false
+      },
+      {
+        "panel": "acquisition",
+        "source_key": "acquisition",
+        "status": "bound",
+        "visible": false
+      },
+      {
+        "panel": "final_package",
+        "source_key": "final_package",
+        "status": "bound",
+        "visible": false
+      },
+      {
+        "panel": "system_health",
+        "source_key": "system_health",
+        "status": "bound",
+        "visible": true
+      }
+    ],
+    "bound_panels": [
+      "main_result",
+      "governed_live_web_search",
+      "runtime_truth",
+      "trend_thesis",
+      "portfolio",
+      "system_health"
+    ],
+    "hidden_panels": [
+      "breakthrough",
+      "advancement_path",
+      "autodesign",
+      "design_portal",
+      "validation",
+      "acquisition",
+      "final_package"
+    ],
+    "main_result_never_blank": true,
+    "metadata_only_output": false,
+    "pack_version": "v19.00-v19.04",
+    "route": "discovery_to_portfolio",
+    "run_id": "v19_00_to_v19_04_sample_run",
+    "run_output": {
+      "blocked_reason": "not_applicable",
+      "confidence": 0.76,
+      "dashboard_surfaces": [
+        "main_result",
+        "governed_live_web_search",
+        "runtime_truth",
+        "trend_thesis",
+        "portfolio",
+        "system_health"
+      ],
+      "evidence": [
+        {
+          "source_type": "governed_live_web_search",
+          "title": "Google",
+          "trusted": true,
+          "url": "https://www.google.com",
+          "used_as_input_evidence": true
+        }
+      ],
+      "insufficient_data_reason": "not_applicable",
+      "next_best_action": "review_bound_dashboard_panels",
+      "ordered_outputs": [
+        {
+          "key": "signal_governance",
+          "status": "complete"
+        },
+        {
+          "key": "trend_discovery",
+          "status": "complete"
+        },
+        {
+          "key": "thesis_formation",
+          "status": "complete"
+        },
+        {
+          "key": "portfolio_intelligence",
+          "status": "ready"
+        }
+      ],
+      "query": "governed signal to portfolio output test",
+      "route": "discovery_to_portfolio",
+      "run_id": "v19_00_to_v19_04_sample_run",
+      "terminal_state": "portfolio_action_ready",
+      "updated_at": "2026-05-10T15:28:57.137499Z"
+    },
+    "status": "dashboard_panels_bound",
+    "terminal_state": "portfolio_action_ready",
+    "updated_at": "2026-05-10T15:28:57.137499Z"
+  },
+  "errors": [],
+  "pack_name": "Actual Run Output Binding into Dashboard Panels Pack",
+  "pack_version": "v19.00-v19.04",
+  "proofs": {
+    "dashboard_panels_bound": true,
+    "main_result_never_blank": true,
+    "metadata_only_output_forbidden": true,
+    "route_panels_present": true,
+    "run_output_has_required_fields": true
+  },
+  "status": "pass",
+  "updated_at": "2026-05-10T15:28:57.137499Z"
+}

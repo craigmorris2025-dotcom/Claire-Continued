@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire Syntalion · Enterprise Intelligence Cockpit</title>
+  <link rel="stylesheet" href="./assets/claire_authored_enterprise_cockpit_shell.css">
+  <link rel="stylesheet" href="./assets/claire_active_route_truth_panel.css">
+  <link rel="stylesheet" href="claire_runtime_execution_surface.css">
+  <link rel="stylesheet" href="claire_runtime_state_surface.css">
+  <link rel="stylesheet" href="claire_review_queue_surface.css">
+  <script src="claire_canonical_cockpit_authority_loader.js"></script>
+  <script src="claire_file_origin_canonical_api_bridge.js"></script>
+</head>
+<body data-claire-cockpit-version="v19.82B.15">
+  <div id="claire-enterprise-cockpit" class="claire-enterprise-cockpit">
+    <header class="claire-topbar">
+      <section class="claire-brand-block" aria-label="Claire Syntalion">
+        <p class="claire-kicker">Claire Syntalion</p>
+        <h1>Enterprise Intelligence Cockpit</h1>
+        <p>Backend truth · governed runtime · autonomous lifecycle · acquisition-ready outputs</p>
+      </section>
+
+      <form id="claire-command-form" class="claire-command-form" autocomplete="off">
+        <label class="sr-only" for="claire-command-input">Command or search</label>
+        <input id="claire-command-input" type="search" placeholder="Search web, sources, runs, portfolios, designs, packages">
+        <button type="submit">Command</button>
+      </form>
+
+      <section class="claire-status-rail" aria-label="System status">
+        <article class="claire-status-chip">
+          <span>Backend</span>
+          <strong id="claire-status-backend">checking</strong>
+        </article>
+        <article class="claire-status-chip">
+          <span>Payload</span>
+          <strong id="claire-status-payload">checking</strong>
+        </article>
+        <article class="claire-status-chip">
+          <span>Run</span>
+          <strong id="claire-status-run">none</strong>
+        </article>
+      </section>
+    </header>
+
+    <div class="claire-shell-grid">
+      <aside class="claire-workspace-rail" aria-label="Workspaces">
+        <p class="claire-rail-title">Workspaces</p>
+        <button class="claire-nav-item active" data-workspace="runtime">Runtime</button>
+        <button class="claire-nav-item" data-workspace="intelligence">Intelligence</button>
+        <button class="claire-nav-item" data-workspace="portfolio">Portfolio</button>
+        <button class="claire-nav-item" data-workspace="breakthrough">Breakthrough</button>
+        <button class="claire-nav-item" data-workspace="design">Design</button>
+        <button class="claire-nav-item" data-workspace="sources">Sources</button>
+        <button class="claire-nav-item" data-workspace="review">Review Queue</button>
+        <button class="claire-nav-item" data-workspace="system">System</button>
+      </aside>
+
+      <main class="claire-main-stage" aria-live="polite">
+        <section class="claire-hero-panel">
+          <div>
+            <p class="claire-kicker">Enterprise Operations Surface</p>
+            <h2 id="claire-workspace-title">Runtime</h2>
+            <p id="claire-workspace-subtitle">Operate manual and continuous intelligence runs from backend-owned state.</p>
+          </div>
+          <span class="claire-truth-badge">Backend-owned truth</span>
+        </section>
+
+        <section id="workspace-runtime" class="claire-workspace active" data-workspace-panel="runtime">
+          <div class="claire-dashboard-grid">
+            <article class="claire-card claire-card-strong">
+              <p class="claire-card-kicker">Continuous Runtime</p>
+              <h3 id="claire-continuous-state">checking</h3>
+              <p>24/7 governed monitoring for gaps, discoveries, breakthroughs, solutions, portfolios, designs, and packages.</p>
+            </article>
+
+            <article class="claire-card claire-card-strong">
+              <p class="claire-card-kicker">Active Manual Run</p>
+              <h3 id="claire-active-run">no active run</h3>
+              <p>Manual operator runs remain separate from the always-on intelligence runtime.</p>
+            </article>
+
+            <article class="claire-card claire-card-strong">
+              <p class="claire-card-kicker">Route State</p>
+              <h3 id="claire-route-state">pending evidence</h3>
+              <p>Route state is backend-owned and cannot be selected by the cockpit.</p>
+            </article>
+
+            <article class="claire-card">
+              <p class="claire-card-kicker">Review Queue</p>
+              <h3 id="claire-review-count">0</h3>
+              <p>Items awaiting operator review before promotion.</p>
+            </article>
+
+            <article class="claire-card">
+              <p class="claire-card-kicker">Candidate Counts</p>
+              <h3 id="claire-candidate-counts">0 D · 0 B · 0 P · 0 DS · 0 PKG</h3>
+              <p>Counts come from backend cycle artifacts only.</p>
+            </article>
+
+            <article class="claire-card">
+              <p class="claire-card-kicker">Lifecycle</p>
+              <h3 id="claire-lifecycle-state">30-stage runtime</h3>
+              <p id="claire-lifecycle-note">Stages 16–22 remain protected for AutoDesign, buildability, viability, manufacturability, validation, and design portal output.</p>
+            </article>
+          </div>
+
+          <section class="claire-operational-band">
+            <article class="claire-runtime-panel">
+              <div class="claire-panel-heading">
+                <div>
+                  <h3>Continuous Intelligence Runtime</h3>
+                  <p>Always-on governed discovery engine.</p>
+                </div>
+                <span id="claire-continuous-badge">checking</span>
+              </div>
+              <div class="claire-runtime-row">
+                <div>
+                  <h4>24/7 Discovery Engine</h4>
+                  <p>Scans for discoveries, gaps, breakthroughs, technological solutions, portfolio opportunities, design candidates, and package candidates.</p>
+                </div>
+                <div class="claire-action-cluster">
+                  <button id="claire-start-continuous" type="button">Start Continuous Runtime</button>
+                  <button id="claire-pause-continuous" type="button">Pause</button>
+                  <button id="claire-refresh-runtime" type="button">Refresh</button>
+                </div>
+              </div>
+              <pre id="claire-continuous-json">{ "status": "checking_continuous_runtime" }</pre>
+            </article>
+
+            <article class="claire-runtime-panel">
+              <div class="claire-panel-heading">
+                <div>
+                  <h3>Manual Operator Run</h3>
+                  <p>Launch bounded manual runs without affecting continuous intelligence.</p>
+                </div>
+                <span id="claire-manual-run-badge">ready</span>
+              </div>
+              <div class="claire-runtime-row">
+                <div>
+                  <h4>Manual run control</h4>
+                  <p>Start and refresh manual runtime state. Results remain backend-owned.</p>
+                </div>
+                <div class="claire-action-cluster">
+                  <button id="claire-start-run" type="button">Start Run</button>
+                  <button id="claire-refresh-run" type="button">Refresh Run</button>
+                </div>
+              </div>
+              <pre id="claire-run-json">{ "status": "manual_run_ready" }</pre>
+            </article>
+          </section>
+        </section>
+
+        <section id="workspace-intelligence" class="claire-workspace" data-workspace-panel="intelligence">
+          <div class="claire-dashboard-grid">
+            <article class="claire-card"><p class="claire-card-kicker">Discovery</p><h3 id="intel-discovery-count">0</h3><p>Backend-governed discovery candidates.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Gaps</p><h3 id="intel-gap-count">0</h3><p>Unfilled needs and market/system gaps.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Trend Thesis</p><h3 id="intel-thesis-state">waiting</h3><p>Thesis formation appears only when backend state exists.</p></article>
+          </div>
+          <section class="claire-list-panel">
+            <h3>Discovery Candidates</h3>
+            <div id="claire-discovery-list" class="claire-list-empty">No backend discovery candidates exposed yet.</div>
+          </section>
+        </section>
+
+        <section id="workspace-portfolio" class="claire-workspace" data-workspace-panel="portfolio">
+          <div class="claire-dashboard-grid">
+            <article class="claire-card"><p class="claire-card-kicker">Portfolio Candidates</p><h3 id="portfolio-count">0</h3><p>Backend-generated portfolio opportunities.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Optimization</p><h3 id="portfolio-optimization-state">waiting</h3><p>Portfolio optimization requires backend evidence.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Risk</p><h3 id="portfolio-risk-state">not evaluated</h3><p>Risk state is not fabricated by the cockpit.</p></article>
+          </div>
+        </section>
+
+        <section id="workspace-breakthrough" class="claire-workspace" data-workspace-panel="breakthrough">
+          <div class="claire-dashboard-grid">
+            <article class="claire-card"><p class="claire-card-kicker">Breakthrough Candidates</p><h3 id="breakthrough-count">0</h3><p>Qualified breakthrough signals from backend cycles.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Classification</p><h3 id="breakthrough-classification-state">waiting</h3><p>Classification can be technological, financial, operational, market-structure, or other route.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Promotion</p><h3>operator gated</h3><p>No automatic promotion from the cockpit.</p></article>
+          </div>
+        </section>
+
+        <section id="workspace-design" class="claire-workspace" data-workspace-panel="design">
+          <div class="claire-dashboard-grid">
+            <article class="claire-card"><p class="claire-card-kicker">AutoDesign</p><h3 id="design-count">0</h3><p>Design candidates routed from validated backend conditions.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Stages 16–22</p><h3>protected</h3><p>Auto invention, structuring, buildability, viability, manufacturability, feasibility, portal output.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Blueprints</p><h3 id="blueprint-state">waiting</h3><p>Blueprints appear only from backend artifacts.</p></article>
+          </div>
+        </section>
+
+        <section id="workspace-sources" class="claire-workspace" data-workspace-panel="sources">
+          <div class="claire-dashboard-grid">
+            <article class="claire-card"><p class="claire-card-kicker">Source Universes</p><h3 id="source-universe-count">0</h3><p>Governed source scopes from backend registry.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Probe Status</p><h3 id="source-probe-state">waiting</h3><p>Probe execution remains governed.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Truth Promotion</p><h3>manual review</h3><p>No direct mutation from source probes.</p></article>
+          </div>
+          <section class="claire-list-panel">
+            <h3>Source Universe Registry</h3>
+            <div id="claire-source-list" class="claire-list-empty">No source universes loaded yet.</div>
+          </section>
+        </section>
+
+        <section id="workspace-review" class="claire-workspace" data-workspace-panel="review">
+          <div class="claire-dashboard-grid">
+            <article class="claire-card"><p class="claire-card-kicker">Review Queue</p><h3 id="review-workspace-count">0</h3><p>Items awaiting operator action.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Promotion</p><h3>backend-owned</h3><p>The cockpit does not promote truth by itself.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Evidence</p><h3 id="review-evidence-state">waiting</h3><p>Evidence requirements are backend-owned.</p></article>
+          </div>
+          <section class="claire-list-panel">
+            <h3>Review Items</h3>
+            <div id="claire-review-list" class="claire-list-empty">No review items exposed yet.</div>
+          </section>
+        </section>
+
+        <section id="workspace-system" class="claire-workspace" data-workspace-panel="system">
+          <div class="claire-dashboard-grid">
+            <article class="claire-card"><p class="claire-card-kicker">Payload</p><h3 id="system-payload-state">checking</h3><p>Canonical dashboard payload availability.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Runtime</p><h3 id="system-runtime-state">checking</h3><p>Continuous and manual runtime route availability.</p></article>
+            <article class="claire-card"><p class="claire-card-kicker">Diagnostics</p><h3>hidden by default</h3><p>System diagnostics live here, not in the operator workspace.</p></article>
+          </div>
+          <section class="claire-list-panel">
+            <h3>System Payload Snapshot</h3>
+            <pre id="claire-system-json">{ "status": "checking" }</pre>
+          </section>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="./assets/claire_authored_enterprise_cockpit_shell.js" defer></script>
+  <script src="./assets/claire_active_route_truth_panel.js" defer></script>
+  <script src="../shared/canonical_payload_adapter.js" defer></script>
+  <script src="./assets/claire_canonical_cockpit_renderer.js" defer></script>
+  <script src="./claire_live_backend_bridge.js"></script>
+  <script src="./claire_cockpit_runtime_surface.js"></script>
+  <script src="./claire_project_inventory_surface.js"></script>
+  <script src="./claire_operator_surface_map.js"></script>
+  <script src="./claire_operator_control_contracts.js"></script>
+  <script src="./claire_safe_operator_action_console.js"></script>
+  <script src="./claire_operator_event_trail.js"></script>
+  <script src="claire_runtime_execution_surface.js"></script>
+  <script src="claire_runtime_state_surface.js"></script>
+  <script src="claire_review_queue_surface.js"></script>
+  <script src="claire_canonical_fetch_map_lock.js"></script>
+  <script src="../../js/claire_canonical_fetch_client.js"></script>
+  <script src="../../js/claire_canonical_fetch_probe.js"></script>
+  <script src="../../js/claire_active_cockpit_authority.js"></script>
+  <script src="../../js/claire_live_cockpit_authority_beacon.js"></script>
+
+<script id="CLAIRE_A8_HTTP_ROOT_COCKPIT_BEACON">
+(function () {
+  "use strict";
+  var VERSION = "v19.89.8-A8";
+
+  function listScripts() {
+    return Array.from(document.scripts || []).map(function (s) {
+      return s.src || s.getAttribute("src") || "[inline:" + (s.id || "anonymous") + "]";
+    });
+  }
+
+  function payload() {
+    var loadedScripts = listScripts();
+    return {
+      version: VERSION,
+      reported_at: new Date().toISOString(),
+      backend_owns_truth: true,
+      cockpit_presentation_only: true,
+      frontend_truth_allowed: false,
+      runtime_authority_expanded: false,
+      autonomous_runtime_enabled: false,
+      shell: {
+        href: window.location.href,
+        protocol: window.location.protocol,
+        pathname: window.location.pathname,
+        title: document.title || "",
+        body_class: document.body ? Array.from(document.body.classList || []) : []
+      },
+      loaded_scripts: loadedScripts,
+      detected: {
+        http_origin: window.location.protocol === "http:" || window.location.protocol === "https:",
+        active_route_truth_text_present: document.documentElement.innerText.indexOf("Active Route Truth") >= 0,
+        live_backend_widget_text_present: document.documentElement.innerText.indexOf("Claire Live Backend") >= 0,
+        canonical_fetch_client_present: !!window.ClaireCanonicalFetch,
+        likely_payload_bridge_loaded: loadedScripts.some(function (s) {
+          var low = String(s).toLowerCase();
+          return low.indexOf("payload") >= 0 || low.indexOf("bridge") >= 0;
+        }),
+        a8_inline_beacon_loaded: true
+      }
+    };
+  }
+
+  async function probeBackend() {
+    var routes = [
+      "/dashboard/payload",
+      "/dashboard/payload/status",
+      "/system/cockpit-fetch-map/summary",
+      "/system/route-owner-registry/summary",
+      "/system/duplicate-route-fail-test/summary"
+    ];
+    var out = {};
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      try {
+        var res = await fetch(route, {
+          method: "GET",
+          headers: { "Accept": "application/json" },
+          cache: "no-store"
+        });
+        out[route] = { ok: res.ok, status: res.status };
+      } catch (err) {
+        out[route] = { ok: false, error: String(err && err.message ? err.message : err) };
+      }
+    }
+    return out;
+  }
+
+  async function run() {
+    var p = payload();
+    p.backend_probe = await probeBackend();
+    window.ClaireLiveCockpitAuthorityBeacon = p;
+    window.ClaireA8HttpRootCockpitBeacon = p;
+    window.dispatchEvent(new CustomEvent("claire:a8-http-root-cockpit-beacon", { detail: p }));
+    return p;
+  }
+
+  window.ClaireLiveCockpitAuthorityBeaconTools = {
+    version: VERSION,
+    payload: payload,
+    probeBackend: probeBackend,
+    run: run
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", run);
+  } else {
+    run();
+  }
+})();
+</script>
+
+  <script src="../../js/claire_active_route_truth_direct_binding.js"></script>
+  <script src="claire_canonical_surface_wiring_pass.js"></script>
+  <script src="claire_surface_availability_reconciliation.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+{
+  "backup_dir": "backups/v17_65_runtime_truth_contract_repair/20260509_183932",
+  "build_name": "Runtime Truth Contract Repair",
+  "files_written": [
+    "claire/runtime_truth/runtime_truth_contract_repair.py",
+    "claire/api/routes_runtime_truth.py",
+    "tests/test_v17_65_runtime_truth_contract_repair.py",
+    "docs/runtime_truth/v17.65_runtime_truth_contract_repair.md",
+    "data/runtime/runtime_truth_canonical.json",
+    "data/runtime/dashboard_runtime_truth.json",
+    "data/runtime/latest_core_run_output_pointer.json",
+    "data/runtime/runtime_truth_repair_report.json",
+    "data/runtime/v17_65_runtime_truth_validation.json"
+  ],
+  "installed_at": "2026-05-09T23:39:40.143790Z",
+  "next": [
+    "v17.66 Discovery / Breakthrough / Innovation Route Audit",
+    "v17.67 AutoDesign Handoff Contract",
+    "v17.68 Design Portal Output Contract"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "already_mounted"
+  },
+  "validation": {
+    "errors": [],
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "already_mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.64.1",
+      "source": {
+        "invalid_candidate_count": 0,
+        "invalid_candidates_sample": [],
+        "raw_available": true,
+        "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+      },
+      "status": "rebuilt"
+    },
+    "runtime_truth_report": {
+      "canonical_path": "data/runtime/runtime_truth_canonical.json",
+      "contract_version": "v17.65",
+      "dashboard_truth_path": "data/runtime/dashboard_runtime_truth.json",
+      "generated_at": "2026-05-09T23:39:36.378790Z",
+      "invalid_candidate_count": 0,
+      "invalid_candidates_sample": [],
+      "readiness": {
+        "dashboard_safe": true,
+        "present_surface_count": 20,
+        "runtime_truth": true,
+        "surface_count": 20
+      },
+      "route": {
+        "acquisition_available": true,
+        "autodesign_available": true,
+        "autodesign_required": true,
+        "breakthrough_route_available": true,
+        "design_portal_available": true,
+        "invention_required": true,
+        "portfolio_route_available": true,
+        "selected": "solution_design",
+        "terminal_state": "complete"
+      },
+      "selected_runtime_truth": "exports/claire_run_20260505_063434_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "status": "passed",
+      "top_candidates": [
+        {
+          "path": "exports/claire_run_20260505_063434_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 1185287
+        },
+        {
+          "path": "exports/claire_run_20260505_063434_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 1181619
+        },
+        {
+          "path": "exports/claire_run_20260505_063524_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 1185287
+        },
+        {
+          "path": "exports/claire_run_20260505_063524_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 739534
+        },
+        {
+          "path": "exports/claire_run_20260505_072704_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 1185287
+        },
+        {
+          "path": "exports/claire_run_20260505_131934_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 855296
+        },
+        {
+          "path": "exports/claire_run_20260505_143844_climate_insurance_climate_insurance_risk_intelligence_run_6d3a19ed1ecd/core_run_output.json",
+          "score": 217,
+          "size_bytes": 882078
+        },
+        {
+          "path": "exports/claire_run_20260506_110614_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 889773
+        },
+        {
+          "path": "exports/claire_run_20260506_110614_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 859596
+        },
+        {
+          "path": "exports/claire_run_20260507_042819_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 859596
+        },
+        {
+          "path": "exports/claire_run_20260507_064704_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 884106
+        },
+        {
+          "path": "exports/claire_run_20260507_064909_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 889773
+        },
+        {
+          "path": "exports/claire_run_20260507_064909_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 859596
+        },
+        {
+          "path": "exports/claire_run_20260509_014639_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 217,
+          "size_bytes": 884106
+        },
+        {
+          "path": "exports/claire_run_20260505_063433_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 1202147
+        },
+        {
+          "path": "exports/claire_run_20260505_063433_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 1181619
+        },
+        {
+          "path": "exports/claire_run_20260505_063523_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 1202147
+        },
+        {
+          "path": "exports/claire_run_20260505_063523_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 1181619
+        },
+        {
+          "path": "exports/claire_run_20260505_072702_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 1181619
+        },
+        {
+          "path": "exports/claire_run_20260505_072703_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 1202147
+        },
+        {
+          "path": "exports/claire_run_20260505_072703_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 1181619
+        },
+        {
+          "path": "exports/claire_run_20260505_101522_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 744289
+        },
+        {
+          "path": "exports/claire_run_20260505_101523_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 744289
+        },
+        {
+          "path": "exports/claire_run_20260505_101523_general_intelligence_opportunity_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 1043310
+        },
+        {
+          "path": "exports/claire_run_20260505_131933_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 884548
+        },
+        {
+          "path": "exports/claire_run_20260505_131933_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 855296
+        },
+        {
+          "path": "exports/claire_run_20260506_110613_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 889773
+        },
+        {
+          "path": "exports/claire_run_20260506_110613_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 859596
+        },
+        {
+          "path": "exports/claire_run_20260507_042817_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 859596
+        },
+        {
+          "path": "exports/claire_run_20260507_042818_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 889773
+        },
+        {
+          "path": "exports/claire_run_20260507_042818_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 216,
+          "size_bytes": 859596
+        },
+        {
+          "path": "exports/claire_run_20260505_063432_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1198981
+        },
+        {
+          "path": "exports/claire_run_20260505_063522_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1202147
+        },
+        {
+          "path": "exports/claire_run_20260505_063522_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1181619
+        },
+        {
+          "path": "exports/claire_run_20260505_063727_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1185287
+        },
+        {
+          "path": "exports/claire_run_20260505_063727_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1181619
+        },
+        {
+          "path": "exports/claire_run_20260505_063752_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1185287
+        },
+        {
+          "path": "exports/claire_run_20260505_063752_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1181619
+        },
+        {
+          "path": "exports/claire_run_20260505_072701_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1198981
+        },
+        {
+          "path": "exports/claire_run_20260505_072702_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1202147
+        },
+        {
+          "path": "exports/claire_run_20260505_101521_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1187524
+        },
+        {
+          "path": "exports/claire_run_20260505_101522_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 1190136
+        },
+        {
+          "path": "exports/claire_run_20260505_131932_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 881378
+        },
+        {
+          "path": "exports/claire_run_20260505_131932_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 855296
+        },
+        {
+          "path": "exports/claire_run_20260505_144202_climate_insurance_climate_insurance_risk_intelligence_run_96631e689668/core_run_output.json",
+          "score": 215,
+          "size_bytes": 878290
+        },
+        {
+          "path": "exports/claire_run_20260506_110612_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 884106
+        },
+        {
+          "path": "exports/claire_run_20260507_042817_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 889773
+        },
+        {
+          "path": "exports/claire_run_20260507_064907_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 215,
+          "size_bytes": 884106
+        },
+        {
+          "path": "exports/claire_run_20260505_063726_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+          "score": 214,
+          "size_bytes": 1198981
+        },
+        {
+          "path": "exports/claire_run_20260505_063726_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+          "score": 214,
+          "size_bytes": 1181619
+        }
+      ],
+      "valid_candidate_count": 50
+    },
+    "status": "passed"
+  },
+  "version": "v17.65"
+}

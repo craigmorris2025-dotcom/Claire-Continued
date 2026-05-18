@@ -1,0 +1,19 @@
+
+{
+  "version": "v18.63",
+  "name": "Active App Mounted Route Verification",
+  "scope": [
+    "create active app mounted route verification harness",
+    "verify live-search routes appear in mounted route table",
+    "verify mounted GET /api/dashboard/search/smoke/google returns visible Google result",
+    "verify mounted POST /api/dashboard/search/live remains blocked without manual enable",
+    "avoid real internet calls",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_63_active_app_mounted_route_verification.py -q"
+  ]
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claire Consolidated Modern Cockpit</title>
+    <link rel="stylesheet" href="./claire_consolidated_cockpit.css" />
+  \n<link rel="stylesheet" href="cockpit/safe_workflow_panel.css">\n<script src="cockpit/safe_workflow_panel.js" defer></script>\n  <!-- CLAIRE_S985_S1012_ACTIVE_CONTROL_SURFACE -->
+  <link rel="stylesheet" href="/api/cockpit/control-surface/assets/css" data-claire-s985-s1012="active-control-surface">
+</head>
+  <body
+    data-backend-owns-truth="true"
+    data-cockpit-presentation-only="true"
+    data-runtime-truth-mutation-allowed="false"
+    data-operator-mutation-enabled="false"
+    data-live-web-execution-enabled="false"
+  >
+    <main class="claire-consolidated-cockpit">
+      <header class="claire-cockpit-header">
+        <h1>Claire Syntalion</h1>
+        <p>Consolidated modern cockpit: operator panels, route browser, governed web, evidence review.</p>
+      </header>
+
+      <section id="command-status" class="claire-cockpit-section"></section>
+      <section id="operator-panels" class="claire-cockpit-section"></section>
+      <section id="route-payload-browser" class="claire-cockpit-section"></section>
+      <section id="governed-web" class="claire-cockpit-section"></section>
+      <section id="evidence-review" class="claire-cockpit-section"></section>
+    </main>
+
+    <script type="module" src="./claire_consolidated_cockpit.js"></script>
+    <script src="/api/cockpit/control-surface/assets/js" defer data-claire-s985-s1012="active-control-surface"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+S36 FIRST LIVE METADATA PROBE - OPERATOR COMMANDS
+
+NO automatic execution.
+NO loop.
+NO body read.
+NO browser.
+NO runtime truth mutation.
+NO automatic update.
+NO continuous crawl.
+
+1) Final preflight:
+python tools/s36_first_live_preflight.py
+
+2) Run exactly one governed live metadata HEAD-only probe:
+python tools/run_s36_single_head_probe.py --url https://example.com --operator-ack YES
+
+3) Verify quarantine:
+python tools/verify_s36_probe_quarantine.py
+
+4) Compile operator report:
+python tools/compile_s36_first_probe_report.py
+
+Expected output files:
+runtime/governed_live_probe/last_single_head_probe_manifest.json
+data/quarantine/governed_live_metadata/head_probe_<timestamp>.json
+runtime/governed_live_probe/s36_first_probe_operator_report.json

@@ -1,0 +1,270 @@
+{
+  "audit": "Claire v19 Git / Repo Isolation Audit",
+  "contamination_snapshot": {
+    "backend": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false
+    },
+    "quarantine_legacy_placeholders": {
+      "exists": true,
+      "file_count": 2338,
+      "is_dir": true
+    },
+    "quarantine_root_contamination_manual": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false
+    },
+    "src": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false
+    }
+  },
+  "decision_reasons": [
+    "Very high dirty file count: 515. Clean upload should wait until generated/audit/quarantine files are ignored or excluded."
+  ],
+  "generated_at": "2026-05-11T07:55:00.937826Z",
+  "git": {
+    "branch": {
+      "command": "git branch --show-current",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "main"
+    },
+    "inside_work_tree": {
+      "command": "git rev-parse --is-inside-work-tree",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "true"
+    },
+    "last_commit": {
+      "command": "git log -1 --oneline",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "3330cb6 Update schemas.py"
+    },
+    "remote_v": {
+      "command": "git remote -v",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "origin\thttps://github.com/craigmorris2025-dotcom/Claire-Continued.git (fetch)\norigin\thttps://github.com/craigmorris2025-dotcom/Claire-Continued.git (push)"
+    },
+    "status_short": {
+      "command": "git status --short",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "D .claire_version\n D .claire_version.bak_20260506_170125\n D .sync_backups/20260509_013619/LAUNCH_CLAIRE.bat\n D .sync_backups/20260509_013619/claire/api/server.py\n D .sync_backups/20260509_013619/claire/runtime/portable_desktop_readiness.py\n D .sync_backups/20260509_013619/manifests/v17_54_persistent_workspace_operational_flow.json\n D .sync_backups/20260509_013619/tests/test_v17_54_persistent_workspace_operational_flow.py\n D .sync_backups/20260509_013619/tools/current_state_inventory.py\n D .sync_backups/20260509_013619/tools/safe_install_claire_version_v2.py\n D CONTRIBUTING.md\n D Claire-Syntalion-Comp\n M LAUNCH_CLAIRE.bat\n D LAUNCH_CLAIRE.bat.bak_20260506_165618\n D LAUNCH_CLAIRE.bat.bak_20260506_170125\n D README.md\n D \"Swagger ui docs responses/response_1777984185517.json\"\n D \"Swagger ui docs responses/response_1777984341972.json\"\n D \"Swagger ui docs responses/response_1777984872334.json\"\n D \"Swagger ui docs responses/response_1777985395022.json\"\n D \"Swagger ui docs responses/response_1777987415266.json\"\n D \"Swagger ui docs responses/response_1777988435372.json\"\n D \"Swagger ui docs responses/response_1777989279222.json\"\n D \"Swagger ui docs responses/response_1777990247997.json\"\n D \"Swagger ui docs responses/response_1777991936802.json\"\n D \"Swagger ui docs responses/response_1777993269912.json\"\n D \"Swagger ui docs responses/response_1777996070632.json\"\n D \"Swagger ui docs responses/response_1777996671595.json\"\n D \"Swagger ui docs responses/response_1777996966310.json\"\n D \"Swagger ui docs responses/response_1778043956645.json\"\n D \"Swagger ui docs responses/response_1778059345898.json\"\n D \"Swagger ui docs responses/response_1778060623387.json\"\n D \"Swagger ui docs responses/response_1778062721317.json\"\n D \"Swagger ui docs responses/response_1778068669651.json\"\n D \"Swagger ui docs responses/response_1778074434149.json\"\n D \"Swagger ui docs responses/response_1778078993402.json\"\n D \"Swagger ui docs responses/response_1778079764170.json\"\n D \"Swagger ui docs responses/response_1778080920030.json\"\n D backend/__init__.py\n D backend/api/__init__.py\n D backend/api/schemas.py\n D backend/claire/__init__.py\n D backend/claire/contract.py\n D backend/engines/__init__.py\n D backend/engines/base.py\n D backend/orchestrator/__init__.py\n D backend/orchestrator/pipeline.py\n D backend/routes/backend_export_browser_route.py\n D backend/scoring/__init__.py\n D backend/scoring/calibrator.py\n D backend/scoring/scorecard.py\n M claire/__init__.py\n M claire/app.py\n M claire/autonomous/governance/autonomous_action_policy.py\n M claire/autonomous/governance/escalation_boundary.py\n M claire/autonomous/governance/human_review_gate.py\n M claire/autonomous/governance/self_change_permission_model.py\n M claire/design/proof/build_sequence_validator.py\n M claire/design/proof/deployment_model_validator.py\n M claire/design/proof/implementation_cost_model.py\n M claire/design/renderers/architecture_graph_formatter.py\n M claire/design/renderers/blueprint_summary_formatter.py\n M claire/design/renderers/dependency_graph_formatter.py\n M claire/design/renderers/design_export_formatter.py\n M claire/governance/__init__.py\n M claire/recursive/longitudinal/learning_signal_extractor.py\n M claire/recursive/longitudinal/run_pattern_miner.py\n M claire/recursive/longitudinal/strategy_memory_synthesizer.py\n M claire/recursive/longitudinal/thesis_evolution_tracker.py\n M claire/research/live/citation_lineage_engine.py\n M claire/research/live/claim_verifier.py\n M claire/research/live/evidence_conflict_resolver.py\n M claire/research/live/governed_live_research.py\n M claire/research/live/research_packet_builder.py\n M claire/research/live/source_verification_engine.py\n M claire/runtime/__init__.py\n M claire/technology/compatibility_engine.py\n M claire/technology/component_matcher.py\n M claire/technology/enterprise_stack_recommender.py\n M claire/technology/integration_complexity.py\n M claire/technology/model_governance_assessor.py\n M claire/technology/technology_catalog.py\n M claire/validation/benchmarks/benchmark_dataset_loader.py\n M claire/validation/benchmarks/benchmark_reporter.py\n M claire/validation/benchmarks/false_negative_analyzer.py\n M claire/validation/benchmarks/false_positive_analyzer.py\n M claire/validation/benchmarks/outcome_label_manager.py\n M claire/validation/benchmarks/regime_backtester.py\n M claire/validation/benchmarks/signal_backtester.py\n M data/memory/run_history.json\n M data/runs/run_history.json\n M exports/index.json\n M frontend/command_center/modern/claire_single_screen_operator.css\n M frontend/command_center/modern/claire_single_screen_operator.js\n M frontend/command_center/modern/index.html\n M frontend/command_center/modern/operator_dashboard.js\n D sync_claire_desktop.ps1\n M tests/regression/test_runtime_cleanroom.py\n M tests/regression/test_runtime_smoke.py\n M tools/master_control_layer_builder.py\n M tools/pytest_consistency_audit.py\n?? _claire_archives/\n?? artifacts/\n?? audits/_claire_audit_v19_backend_bootproof/\n?? audits/_claire_audit_v19_canonical_dashboard_payload_bridge/\n?? audits/_claire_audit_v19_dashboard_fetch_wiring_pack/\n?? audits/_claire_audit_v19_dashboard_payload_contract/\n?? audits/_claire_audit_v19_structural_repair_pack_1_1/\n?? audits/_claire_audit_v19_structural_repair_pack_1_2/\n?? audits/_claire_audit_v19_structural_repair_plan/\n?? audits/v17_63_active_state_proof_20260509_132540/\n?? backups/v17_64_1_functional_operator_dashboard_wiring/\n?? backups/v17_64_dashboard_decongestion_single_cockpit/\n?? backups/v17_65_runtime_truth_contract_repair/\n?? backups/v17_66_discovery_breakthrough_innovation_route_audit/\n?? backups/v17_67_autodesign_handoff_contract/\n?? backups/v17_68_design_portal_output_contract/\n?? backups/v17_69_buildability_validation_stack/\n?? backups/v17_70_internet_readiness_verification/\n?? backups/v17_71_governed_update_pack_staging/\n?? backups/v17_72_rollback_aware_update_plan_contract/\n?? backups/v17_73_automatic_update_runner_gate/\n?? backups/v17_74_update_governance_regression_lock/\n?? backups/v17_75_1_dashboard_backend_bridge_repair/\n?? backups/v17_75_2_workspace_dashboard_search_command_prep/\n?? backups/v17_75_full_end_to_end_proof_pack/\n?? backups/v17_76_platform_endpoint_smoke_proof/\n?? backups/v17_77_platform_launch_hardening/\n?? backups/v17_78_desktop_packaging_startup_reliability/\n?? backups/v17_79_manual_browser_swagger_proof_binder/\n?? backups/v17_80_launch_candidate_freeze/\n?? backups/v17_81_cleanup_proof_before_archive_delete/\n?? backups/v17_82_archive_approval_gate/\n?? backups/v17_83_internet_provider_configuration_gate/\n?? backups/v17_84_1_live_probe_body_compatibility_repair/\n?? backups/v17_84_governed_single_query_live_search_probe/\n?? backups/v17_85_governed_web_evidence_promotion_gate/\n?? backups/v18_72_1_active_launcher_web_mount_patch_repair/\n?? backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/\n?? backups/v18_72_active_launcher_runtime_web_route_mount_patch/\n?? backups/v18_73_1_operator_dashboard_compat_endpoint_repair/\n?? backups/v18_73_2_dashboard_search_provider_probe_separation_repair/\n?? backups/v18_73_root_consolidation_single_dashboard_launcher/\n?? backups/v19_canonical_dashboard_payload_bridge/\n?? backups/v19_dashboard_fetch_wiring_pack/\n?? backups/v19_structural_repair_pack_1_1_backend_syntax/\n?? backups/v19_structural_repair_pack_1_2_remaining_syntax_cleanup/\n?? claire/api/dashboard_payload_bridge.py\n?? claire/api/governed_dashboard_live_search_routes.py\n?? claire/api/operator_dashboard_compat_routes.py\n?? claire/api/real_provider_operator_probe_routes.py\n?? claire/api/routes_archive_approval_gate.py\n?? claire/api/routes_autodesign_handoff.py\n?? claire/api/routes_automatic_update_runner_gate.py\n?? claire/api/routes_buildability_validation.py\n?? claire/api/routes_cleanup_proof.py\n?? claire/api/routes_design_portal_output.py\n?? claire/api/routes_desktop_startup_reliability.py\n?? claire/api/routes_evidence_promotion_gate.py\n?? claire/api/routes_full_e2e_proof_pack.py\n?? claire/api/routes_governed_live_probe.py\n?? claire/api/routes_internet_provider_gate.py\n?? claire/api/routes_internet_readiness.py\n?? claire/api/routes_launch_candidate_freeze.py\n?? claire/api/routes_live_search_dashboard_smoke.py\n?? claire/api/routes_manual_browser_swagger_proof.py\n?? claire/api/routes_operator_dashboard.py\n?? claire/api/routes_operator_search_command.py\n?? claire/api/routes_platform_endpoint_smoke_proof.py\n?? claire/api/routes_platform_launch_hardening.py\n?? claire/api/routes_rollback_update_plan.py\n?? claire/api/routes_route_audit.py\n?? claire/api/routes_runtime_truth.py\n?? claire/api/routes_update_governance_regression_lock.py\n?? claire/api/routes_update_pack_staging.py\n?? claire/api/routes_v19_25_search_execution.py\n?? claire/api/routes_visible_query_result_verification.py\n?? claire/api/runtime_truth_read_api.py\n?? claire/api/search_bar_dashboard_api.py\n?? claire/autodesign/\n?? claire/cleanup/\n?? claire/dashboard/actual_run_output_dashboard_binding.py\n?? claire/dashboard/dashboard_currency_runtime_order_lock.py\n?? claire/dashboard/dashboard_live_search_binding.py\n?? claire/dashboard/dashboard_sophistication_contract.py\n?? claire/dashboard/operator_dashboard_state.py\n?? claire/design_portal/\n?? claire/desktop/\n?? claire/governance/governed_web/\n?? claire/governance/runtime_truth_consumption_firewall.py\n?? claire/governance/runtime_truth_ingestion_gate.py\n?? claire/governance/safe_concurrent_probe_governance.py\n?? claire/governed_web/\n?? claire/internet/\n?? claire/internet_readiness/\n?? claire/operator/\n?? claire/pipeline/\n?? claire/platform/launch_candidate_freeze.py\n?? claire/platform/launch_hardening.py\n?? claire/proof/full_e2e_proof_pack.py\n?? claire/proof/manual_browser_swagger_proof.py\n?? claire/proof/platform_endpoint_smoke_proof.py\n?? claire/routing/discovery_breakthrough_innovation_route_audit.py\n?? claire/runtime/autonomous_runtime_escalation.py\n?? claire/runtime/route_aware_autonomous_execution.py\n?? claire/runtime/search_execution_contract.py\n?? claire/runtime/web_pipeline_stabilization.py\n?? claire/runtime_truth/runtime_truth_contract_repair.py\n?? claire/search/\n?? claire/search_bar/\n?? claire/update_governance/\n?? claire/validation_stack/\n?? claire/version_builds/\n?? claire/web/\n?? claire_build_manifest.json\n?? data/autodesign/\n?? data/build_manifests/v17_63_active_state_proof_manifest.json\n?? data/build_manifests/v17_64_1_functional_operator_dashboard_wiring_manifest.json\n?? data/build_manifests/v17_64_dashboard_decongestion_single_cockpit_manifest.json\n?? data/build_manifests/v17_65_runtime_truth_contract_repair_manifest.json\n?? data/build_manifests/v17_66_discovery_breakthrough_innovation_route_audit_manifest.json\n?? data/build_manifests/v17_67_autodesign_handoff_contract_manifest.json\n?? data/build_manifests/v17_68_design_portal_output_contract_manifest.json\n?? data/build_manifests/v17_69_buildability_viability_manufacturability_validation_stack_manifest.json\n?? data/build_manifests/v17_70_internet_readiness_verification_manifest.json\n?? data/build_manifests/v17_71_governed_update_pack_staging_manifest.json\n?? data/build_manifests/v17_72_rollback_aware_update_plan_contract_manifest.json\n?? data/build_manifests/v17_73_automatic_update_runner_gate_manifest.json\n?? data/build_manifests/v17_74_update_governance_regression_lock_manifest.json\n?? data/build_manifests/v17_75_1_dashboard_backend_bridge_repair_manifest.json\n?? data/build_manifests/v17_75_2_workspace_dashboard_web_search_agent_command_prep_manifest.json\n?? data/build_manifests/v17_75_full_end_to_end_proof_pack_manifest.json\n?? data/build_manifests/v17_76_platform_endpoint_smoke_proof_manifest.json\n?? data/build_manifests/v17_77_platform_launch_hardening_manifest.json\n?? data/build_manifests/v17_78_desktop_packaging_startup_reliability_manifest.json\n?? data/build_manifests/v17_79_manual_browser_swagger_proof_binder_manifest.json\n?? data/build_manifests/v17_80_launch_candidate_freeze_manifest.json\n?? data/build_manifests/v17_82_archive_approval_gate_manifest.json\n?? data/build_manifests/v17_83_internet_provider_configuration_gate_manifest.json\n?? data/build_manifests/v17_84_1_live_probe_body_compatibility_repair_manifest.json\n?? data/build_manifests/v17_84_governed_single_query_live_search_probe_manifest.json\n?? data/build_manifests/v17_85_governed_web_evidence_promotion_gate_manifest.json\n?? data/claire_installer_packs/\n?? data/cleanup/\n?? data/dashboard/archive_approval_gate_payload.json\n?? data/dashboard/autodesign_handoff_payload.json\n?? data/dashboard/automatic_update_runner_gate_payload.json\n?? data/dashboard/buildability_validation_payload.json\n?? data/dashboard/cleanup_proof_payload.json\n?? data/dashboard/design_portal_output_payload.json\n?? data/dashboard/desktop_startup_reliability_payload.json\n?? data/dashboard/discovery_breakthrough_innovation_route_payload.json\n?? data/dashboard/full_e2e_proof_pack_payload.json\n?? data/dashboard/governed_live_probe_payload.json\n?? data/dashboard/internet_evidence_promotion_payload.json\n?? data/dashboard/internet_provider_gate_payload.json\n?? data/dashboard/internet_readiness_payload.json\n?? data/dashboard/launch_candidate_freeze_payload.json\n?? data/dashboard/manual_browser_swagger_proof_payload.json\n?? data/dashboard/operator_dashboard_state.json\n?? data/dashboard/platform_endpoint_smoke_payload.json\n?? data/dashboard/platform_launch_hardening_payload.json\n?? data/dashboard/rollback_update_plan_payload.json\n?? data/dashboard/search_command_bar_payload.json\n?? data/dashboard/update_governance_regression_lock_payload.json\n?? data/dashboard/update_pack_staging_payload.json\n?? data/dashboard/v17_64_1_functional_dashboard_validation.json\n?? data/dashboard/v17_64_dashboard_validation.json\n?? data/dashboard/v17_75_1_dashboard_backend_bridge_repair_validation.json\n?? data/dashboard_binding_reports/\n?? data/dashboard_currency_reports/\n?? data/dashboard_search_reports/\n?? data/dashboard_sophistication_reports/\n?? data/design_portal/\n?? data/desktop_packaging/\n?? data/evidence_pipeline_reports/\n?? data/install_manifests/\n?? data/internet_evidence/\n?? data/internet_live_probe/\n?? data/internet_provider/\n?? data/internet_readiness/\n?? data/launch_candidate/\n?? data/launch_hardening/\n?? data/memory/runs/run-195774b13fcb.json\n?? data/operator/\n?? data/pipeline_contract_reports/\n?? data/pipeline_quality_reports/\n?? data/proof/full_end_to_end_proof_pack.json\n?? data/proof/manual_browser_swagger_checklist.md\n?? data/proof/manual_browser_swagger_evidence_template.json\n?? data/proof/manual_browser_swagger_proof_binder.json\n?? data/proof/manual_browser_swagger_proof_binder.md\n?? data/proof/platform_endpoint_smoke_proof.json\n?? data/proof/v17_75_full_e2e_proof_pack_validation_result.json\n?? data/proof/v17_75_stop_go_report.json\n?? data/proof/v17_75_stop_go_report.md\n?? data/proof/v17_76_platform_endpoint_smoke_validation_result.json\n?? data/proof/v17_76_platform_stop_go_report.json\n?? data/proof/v17_76_platform_stop_go_report.md\n?? data/proof/v17_79_manual_browser_swagger_proof_validation_result.json\n?? data/proof/v17_79_manual_browser_swagger_stop_go.json\n?? data/proof/v17_79_manual_browser_swagger_stop_go.md\n?? data/route_execution_reports/\n?? data/routes/\n?? data/runtime/dashboard_runtime_truth.json\n?? data/runtime/latest_core_run_output_pointer.json\n?? data/runtime/runtime_truth_canonical.json\n?? data/runtime/runtime_truth_repair_report.json\n?? data/runtime/v17_65_runtime_truth_validation.json\n?? data/runtime_truth/\n?? data/search/\n?? data/update_packs/\n?? data/validation/buildability_viability_manufacturability_validation.json\n?? data/validation/v17_69_buildability_validation_result.json\n?? docs/autodesign/\n?? docs/cleanup/\n?? docs/dashboard/v17.64.1_functional_operator_dashboard_wiring.md\n?? docs/dashboard/v17.64_dashboard_decongestion_single_cockpit.md\n?? docs/dashboard/v17.75.1_dashboard_backend_bridge_repair.md\n?? docs/dashboard/v17.75.2_workspace_dashboard_web_search_agent_command_prep.md\n?? docs/design_portal/\n?? docs/desktop/\n?? docs/governance/\n?? docs/internet/\n?? docs/internet_readiness/\n?? docs/platform/\n?? docs/proof/\n?? docs/routing/\n?? docs/runtime_truth/\n?? docs/update_governance/\n?? docs/validation/\n?? exports/claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb/\n?? frontend/command_center/modern/assets/\n?? frontend/command_center/modern/claire_connected_operator_dashboard.css\n?? frontend/command_center/modern/claire_connected_operator_dashboard.js\n?? frontend/command_center/modern/claire_dashboard_payload_bridge.css\n?? frontend/command_center/modern/claire_dashboard_payload_bridge.js\n?? frontend/command_center/modern/claire_functional_operator_dashboard.css\n?? frontend/command_center/modern/claire_functional_operator_dashboard.js\n?? frontend/command_center/modern/claire_workspace_agent_dashboard.css\n?? frontend/command_center/modern/claire_workspace_agent_dashboard.js\n?? frontend/command_center/modern/dashboard_file_origin_fetch_bridge.js\n?? frontend/command_center/modern/dashboard_primary_web_search_binding.js\n?? frontend/command_center/modern/dashboard_source_of_truth_v17_64.json\n?? frontend/command_center/modern/governed_live_search_ui_binding.js\n?? frontend/command_center/modern/governed_provider_probe_ui_binding.js\n?? frontend/command_center/modern/inactive_dashboard_assets_do_not_delete.json\n?? frontend/command_center/modern/index.html.v18_60_backup\n?? frontend/command_center/modern/live_search_visible_result_contract.js\n?? install_claire_v19_git_repo_isolation_audit_no_delete.py\n?? install_manifests/\n?? manifests/v18_48_safe_concurrent_probe_governance.json\n?? quarantine_legacy_placeholders/archive/\n?? quarantine_legacy_placeholders/backend/\n?? \"quarantine_legacy_placeholders/claire live/\"\n?? quarantine_legacy_placeholders/src/\n?? reports/\n?? runtime/\n?? tests/test_v17_64_1_functional_operator_dashboard_wiring.py\n?? tests/test_v17_64_dashboard_single_cockpit.py\n?? tests/test_v17_65_runtime_truth_contract_repair.py\n?? tests/test_v17_66_discovery_breakthrough_innovation_route_audit.py\n?? tests/test_v17_67_autodesign_handoff_contract.py\n?? tests/test_v17_68_design_portal_output_contract.py\n?? tests/test_v17_69_buildability_validation_stack.py\n?? tests/test_v17_70_internet_readiness_verification.py\n?? tests/test_v17_71_governed_update_pack_staging.py\n?? tests/test_v17_72_rollback_aware_update_plan_contract.py\n?? tests/test_v17_73_automatic_update_runner_gate.py\n?? tests/test_v17_74_update_governance_regression_lock.py\n?? tests/test_v17_75_1_dashboard_backend_bridge_repair.py\n?? tests/test_v17_75_2_workspace_dashboard_search_command_prep.py\n?? tests/test_v17_75_full_end_to_end_proof_pack.py\n?? tests/test_v17_76_platform_endpoint_smoke_proof.py\n?? tests/test_v17_77_platform_launch_hardening.py\n?? tests/test_v17_78_desktop_packaging_startup_reliability.py\n?? tests/test_v17_79_manual_browser_swagger_proof_binder.py\n?? tests/test_v17_80_launch_candidate_freeze.py\n?? tests/test_v17_81_cleanup_proof_before_archive_delete.py\n?? tests/test_v17_82_archive_approval_gate.py\n?? tests/test_v17_83_internet_provider_configuration_gate.py\n?? tests/test_v17_84_1_live_probe_body_compatibility_repair.py\n?? tests/test_v17_84_governed_single_query_live_search_probe.py\n?? tests/test_v17_85_governed_web_evidence_promotion_gate.py\n?? tests/test_v17_86_reviewed_evidence_to_runtime_truth_ingestion_gate.py\n?? tests/test_v17_87_runtime_truth_consumption_firewall.py\n?? tests/test_v17_88_runtime_truth_read_api_adapter.py\n?? tests/test_v17_89_runtime_truth_search_adapter.py\n?? tests/test_v17_90_search_bar_mode_router.py\n?? tests/test_v17_91_search_bar_governance_layer.py\n?? tests/test_v17_92_search_bar_session_state.py\n?? tests/test_v17_93_search_bar_runtime_bridge.py\n?? tests/test_v17_94_search_bar_capability_registry.py\n?? tests/test_v17_95_search_bar_runtime_policy_layer.py\n?? tests/test_v17_96_search_bar_dashboard_contract.py\n?? tests/test_v17_97_search_bar_dashboard_api_adapter.py\n?? tests/test_v17_98_search_bar_unified_context_layer.py\n?? tests/test_v17_99_search_bar_operator_surface.py\n?? tests/test_v18_00_search_bar_system_state_gateway.py\n?? tests/test_v18_01_search_bar_governed_web_stub.py\n?? tests/test_v18_02_search_bar_governed_web_review_queue.py\n?? tests/test_v18_03_search_bar_governed_web_review_controls.py\n?? tests/test_v18_04_search_bar_governed_execution_gate.py\n?? tests/test_v18_05_governed_web_execution_simulation_layer.py\n?? tests/test_v18_06_governed_web_execution_simulation_audit_trail.py\n?? tests/test_v18_07_governed_web_simulation_result_viewer_contract.py\n?? tests/test_v18_08_governed_web_simulation_dashboard_api_contract.py\n?? tests/test_v18_09_governed_web_simulation_dashboard_route_adapter.py\n?? tests/test_v18_10_governed_web_simulation_fastapi_route_registration.py\n?? tests/test_v18_11_1_governed_web_simulation_route_mount_verifier_repair.py\n?? tests/test_v18_11_governed_web_simulation_route_mount_verifier.py\n?? tests/test_v18_12_governed_web_provider_readiness_contract.py\n?? tests/test_v18_13_governed_web_allowlist_registry.py\n?? tests/test_v18_14_governed_web_rate_limit_policy.py\n?? tests/test_v18_15_governed_web_source_trust_policy.py\n?? tests/test_v18_16_governed_web_read_only_dry_run_gate.py\n?? tests/test_v18_17_1_governed_web_read_only_dry_run_simulator_repair.py\n?? tests/test_v18_17_governed_web_read_only_dry_run_simulator.py\n?? tests/test_v18_18_governed_web_read_only_live_adapter_boundary.py\n?? tests/test_v18_19_controlled_read_only_live_connectivity_handshake_stub.py\n?? tests/test_v18_20_controlled_live_connectivity_handshake_review_record.py\n?? tests/test_v18_21_accelerated_governed_web_search_request_envelope.py\n?? tests/test_v18_22_governed_web_provider_adapter_preview_bridge.py\n?? tests/test_v18_23_controlled_read_only_live_attempt_planner.py\n?? tests/test_v18_24_controlled_network_probe_adapter_shell.py\n?? tests/test_v18_25_controlled_probe_execution_gate.py\n?? tests/test_v18_26_pre_live_probe_authorization_audit.py\n?? tests/test_v18_27_1_read_only_probe_executor_null_transport_repair.py\n?? tests/test_v18_27_2_null_transport_empty_query_order_repair.py\n?? tests/test_v18_28_read_only_transport_selection_gate.py\n?? tests/test_v18_29_real_http_transport_dry_activation_shell.py\n?? tests/test_v18_30_first_live_probe_permission_switch.py\n?? tests/test_v18_31_first_controlled_read_only_live_probe_executor.py\n?? tests/test_v18_32_first_real_controlled_head_handshake.py\n?? tests/test_v18_33_controlled_head_transport_executor_manual_enable.py\n?? tests/test_v18_34_real_head_probe_review_result_capture.py\n?? tests/test_v18_35_controlled_get_metadata_only_probe.py\n?? tests/test_v18_36_controlled_get_limited_body_fetch.py\n?? tests/test_v18_37_search_result_parser_contract.py\n?? tests/test_v18_38_dashboard_search_api_adapter.py\n?? tests/test_v18_39_search_bar_live_web_ui_wiring.py\n?? tests/test_v18_40_governance_error_state_hardening.py\n?? tests/test_v18_41_governed_live_search_orchestrator_foundation.py\n?? tests/test_v18_42_real_live_search_session_lifecycle.py\n?? tests/test_v18_43_governed_multi_result_aggregation.py\n?? tests/test_v18_44_search_trust_scoring_normalization.py\n?? tests/test_v18_45_live_dashboard_result_rendering_contract.py\n?? tests/test_v18_46_real_controlled_internet_search_provider_adapter.py\n?? tests/test_v18_47_controlled_search_retry_timeout_governance.py\n?? tests/test_v18_48_safe_concurrent_probe_governance.py\n?? tests/test_v18_49_1_evidence_basket_import_path_repair.py\n?? tests/test_v18_49_governed_search_evidence_basket.py\n?? tests/test_v18_50_first_fully_governed_end_to_end_live_search_flow.py\n?? tests/test_v18_51_1_search_session_persistence_policy_repair.py\n?? tests/test_v18_51_2_search_session_persistence_api_repair.py\n?? tests/test_v18_51_3_persistence_policy_decision_code_repair.py\n?? tests/test_v18_51_4_search_session_persistence_export_repair.py\n?? tests/test_v18_51_5_persistence_payload_guard_ledger_repair.py\n?? tests/test_v18_51_6_search_session_persistence_consolidated_repair.py\n?? tests/test_v18_51_governed_search_session_persistence_layer.py\n?? tests/test_v18_52_governed_provider_health_registry.py\n?? tests/test_v18_53_live_search_dashboard_smoke_test.py\n?? tests/test_v18_54_first_visible_query_result_verification.py\n?? tests/test_v18_55_2_dashboard_result_binding_init_repair_installer_fix.py\n?? tests/test_v18_55_dashboard_search_bar_real_result_binding.py\n?? tests/test_v18_56_live_search_dashboard_query_execution_bridge.py\n?? tests/test_v18_57_dashboard_search_endpoint_result_return_contract.py\n?? tests/test_v18_58_dashboard_live_search_route_mount_adapter.py\n?? tests/test_v18_59_dashboard_live_search_ui_fetch_binding.py\n?? tests/test_v18_60_1_dashboard_search_html_idempotency_test_repair.py\n?? tests/test_v18_60_dashboard_search_bar_html_integration_gate.py\n?? tests/test_v18_61_1_mounted_live_search_post_blocking_smoke_repair.py\n?? tests/test_v18_61_mounted_live_search_endpoint_smoke_test.py\n?? tests/test_v18_62_live_search_endpoint_mounted_into_active_app_gate.py\n?? tests/test_v18_63_1_active_app_mounted_route_verification_assertion_repair.py\n?? tests/test_v18_63_active_app_mounted_route_verification.py\n?? tests/test_v18_64_dashboard_to_endpoint_fetch_proof.py\n?? tests/test_v18_65_first_active_dashboard_google_result_proof.py\n?? tests/test_v18_66_accelerated_governed_live_web_activation_pack.py\n?? tests/test_v18_67_real_controlled_provider_result_proof.py\n?? tests/test_v18_68_1_operator_probe_route_smoke_assertion_repair.py\n?? tests/test_v18_68_real_provider_operator_probe_route.py\n?? tests/test_v18_69_operator_probe_route_mount_into_active_app.py\n?? tests/test_v18_70_consolidated_web_activation_packs.py\n?? tests/test_v18_71_active_app_final_web_activation_mount_verification.py\n?? tests/test_v18_72_1_active_launcher_web_mount_patch_repair.py\n?? tests/test_v18_72_2_active_launcher_web_route_module_wrapper_repair.py\n?? tests/test_v18_72_active_launcher_runtime_web_route_mount_patch.py\n?? tests/test_v18_73_1_operator_dashboard_compat_endpoint_repair.py\n?? tests/test_v18_73_2_dashboard_search_provider_probe_separation_repair.py\n?? tests/test_v18_73_root_consolidation_single_dashboard_launcher.py\n?? tests/test_v18_74_dashboard_live_web_search_final_binding_result_card_proof.py\n?? tests/test_v18_75_dashboard_search_result_card_renderer_lock.py\n?? tests/test_v18_76_dashboard_current_state_banner_smoke_report.py\n?? tests/test_v18_77_normal_search_manual_probe_route_guard.py\n?? tests/test_v18_78_google_result_card_regression_proof.py\n?? tests/test_v18_79_dashboard_pack_status_registry.py\n?? tests/test_v18_80_to_v18_84_dashboard_live_search_pack.py\n?? tests/test_v18_85_to_v18_89_dashboard_runtime_governed_search_pack.py\n?? tests/test_v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack.py\n?? tests/test_v18_95_to_v18_99_primary_pipeline_connection_desired_output_contract_pack.py\n?? tests/test_v19_00_to_v19_04_actual_run_output_dashboard_binding_pack.py\n?? tests/test_v19_05_to_v19_09_route_aware_autonomous_execution_proof_pack.py\n?? tests/test_v19_10_to_v19_14_live_web_evidence_pipeline_ingestion_pack.py\n?? tests/test_v19_15_to_v19_19_pipeline_result_quality_blocked_state_pack.py\n?? tests/test_v19_20_to_v19_24_dashboard_sophistication_no_restructure_pack.py\n?? tests/test_v19_25_end_to_end_search_execution_contract.py\n?? tests/test_v19_26_to_v19_31_web_to_pipeline_launch_candidate.py\n?? tests/test_v19_32_to_v19_36_runtime_quality_proof_pack.py\n?? tests/test_v19_37_to_v19_41_governed_runtime_expansion_pack.py\n?? tests/test_v19_42_to_v19_51_1_route_priority_repair.py\n?? tests/test_v19_42_to_v19_51_web_pipeline_stabilization_pack.py\n?? tests/test_v19_52_to_v19_61_autonomous_runtime_escalation_pack.py\n?? tests/test_v19_canonical_dashboard_payload_bridge.py\n?? tests/test_v19_dashboard_fetch_wiring_pack.py\n?? tools/root_archive/"
+    },
+    "status_summary": {
+      "dirty_count": 515,
+      "sample": [
+        "D .claire_version",
+        " D .claire_version.bak_20260506_170125",
+        " D .sync_backups/20260509_013619/LAUNCH_CLAIRE.bat",
+        " D .sync_backups/20260509_013619/claire/api/server.py",
+        " D .sync_backups/20260509_013619/claire/runtime/portable_desktop_readiness.py",
+        " D .sync_backups/20260509_013619/manifests/v17_54_persistent_workspace_operational_flow.json",
+        " D .sync_backups/20260509_013619/tests/test_v17_54_persistent_workspace_operational_flow.py",
+        " D .sync_backups/20260509_013619/tools/current_state_inventory.py",
+        " D .sync_backups/20260509_013619/tools/safe_install_claire_version_v2.py",
+        " D CONTRIBUTING.md",
+        " D Claire-Syntalion-Comp",
+        " M LAUNCH_CLAIRE.bat",
+        " D LAUNCH_CLAIRE.bat.bak_20260506_165618",
+        " D LAUNCH_CLAIRE.bat.bak_20260506_170125",
+        " D README.md",
+        " D \"Swagger ui docs responses/response_1777984185517.json\"",
+        " D \"Swagger ui docs responses/response_1777984341972.json\"",
+        " D \"Swagger ui docs responses/response_1777984872334.json\"",
+        " D \"Swagger ui docs responses/response_1777985395022.json\"",
+        " D \"Swagger ui docs responses/response_1777987415266.json\"",
+        " D \"Swagger ui docs responses/response_1777988435372.json\"",
+        " D \"Swagger ui docs responses/response_1777989279222.json\"",
+        " D \"Swagger ui docs responses/response_1777990247997.json\"",
+        " D \"Swagger ui docs responses/response_1777991936802.json\"",
+        " D \"Swagger ui docs responses/response_1777993269912.json\"",
+        " D \"Swagger ui docs responses/response_1777996070632.json\"",
+        " D \"Swagger ui docs responses/response_1777996671595.json\"",
+        " D \"Swagger ui docs responses/response_1777996966310.json\"",
+        " D \"Swagger ui docs responses/response_1778043956645.json\"",
+        " D \"Swagger ui docs responses/response_1778059345898.json\"",
+        " D \"Swagger ui docs responses/response_1778060623387.json\"",
+        " D \"Swagger ui docs responses/response_1778062721317.json\"",
+        " D \"Swagger ui docs responses/response_1778068669651.json\"",
+        " D \"Swagger ui docs responses/response_1778074434149.json\"",
+        " D \"Swagger ui docs responses/response_1778078993402.json\"",
+        " D \"Swagger ui docs responses/response_1778079764170.json\"",
+        " D \"Swagger ui docs responses/response_1778080920030.json\"",
+        " D backend/__init__.py",
+        " D backend/api/__init__.py",
+        " D backend/api/schemas.py",
+        " D backend/claire/__init__.py",
+        " D backend/claire/contract.py",
+        " D backend/engines/__init__.py",
+        " D backend/engines/base.py",
+        " D backend/orchestrator/__init__.py",
+        " D backend/orchestrator/pipeline.py",
+        " D backend/routes/backend_export_browser_route.py",
+        " D backend/scoring/__init__.py",
+        " D backend/scoring/calibrator.py",
+        " D backend/scoring/scorecard.py",
+        " M claire/__init__.py",
+        " M claire/app.py",
+        " M claire/autonomous/governance/autonomous_action_policy.py",
+        " M claire/autonomous/governance/escalation_boundary.py",
+        " M claire/autonomous/governance/human_review_gate.py",
+        " M claire/autonomous/governance/self_change_permission_model.py",
+        " M claire/design/proof/build_sequence_validator.py",
+        " M claire/design/proof/deployment_model_validator.py",
+        " M claire/design/proof/implementation_cost_model.py",
+        " M claire/design/renderers/architecture_graph_formatter.py",
+        " M claire/design/renderers/blueprint_summary_formatter.py",
+        " M claire/design/renderers/dependency_graph_formatter.py",
+        " M claire/design/renderers/design_export_formatter.py",
+        " M claire/governance/__init__.py",
+        " M claire/recursive/longitudinal/learning_signal_extractor.py",
+        " M claire/recursive/longitudinal/run_pattern_miner.py",
+        " M claire/recursive/longitudinal/strategy_memory_synthesizer.py",
+        " M claire/recursive/longitudinal/thesis_evolution_tracker.py",
+        " M claire/research/live/citation_lineage_engine.py",
+        " M claire/research/live/claim_verifier.py",
+        " M claire/research/live/evidence_conflict_resolver.py",
+        " M claire/research/live/governed_live_research.py",
+        " M claire/research/live/research_packet_builder.py",
+        " M claire/research/live/source_verification_engine.py",
+        " M claire/runtime/__init__.py",
+        " M claire/technology/compatibility_engine.py",
+        " M claire/technology/component_matcher.py",
+        " M claire/technology/enterprise_stack_recommender.py",
+        " M claire/technology/integration_complexity.py",
+        " M claire/technology/model_governance_assessor.py",
+        " M claire/technology/technology_catalog.py",
+        " M claire/validation/benchmarks/benchmark_dataset_loader.py",
+        " M claire/validation/benchmarks/benchmark_reporter.py",
+        " M claire/validation/benchmarks/false_negative_analyzer.py",
+        " M claire/validation/benchmarks/false_positive_analyzer.py",
+        " M claire/validation/benchmarks/outcome_label_manager.py",
+        " M claire/validation/benchmarks/regime_backtester.py",
+        " M claire/validation/benchmarks/signal_backtester.py",
+        " M data/memory/run_history.json",
+        " M data/runs/run_history.json",
+        " M exports/index.json",
+        " M frontend/command_center/modern/claire_single_screen_operator.css",
+        " M frontend/command_center/modern/claire_single_screen_operator.js",
+        " M frontend/command_center/modern/index.html",
+        " M frontend/command_center/modern/operator_dashboard.js",
+        " D sync_claire_desktop.ps1",
+        " M tests/regression/test_runtime_cleanroom.py",
+        " M tests/regression/test_runtime_smoke.py",
+        " M tools/master_control_layer_builder.py",
+        " M tools/pytest_consistency_audit.py"
+      ]
+    },
+    "toplevel": {
+      "command": "git rev-parse --show-toplevel",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "C:/Users/craig/OneDrive/Desktop/Claire"
+    }
+  },
+  "gitignore": {
+    "exists": true,
+    "recommended": [
+      {
+        "pattern": ".venv/",
+        "present": false
+      },
+      {
+        "pattern": "__pycache__/",
+        "present": true
+      },
+      {
+        "pattern": ".pytest_cache/",
+        "present": false
+      },
+      {
+        "pattern": "backups/",
+        "present": true
+      },
+      {
+        "pattern": "quarantine_",
+        "present": false
+      },
+      {
+        "pattern": "_claire_audit",
+        "present": false
+      },
+      {
+        "pattern": "*.pyc",
+        "present": true
+      },
+      {
+        "pattern": ".DS_Store",
+        "present": true
+      }
+    ]
+  },
+  "parent_git_scan": [
+    {
+      "dot_git_is_dir": true,
+      "has_dot_git": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire"
+    },
+    {
+      "dot_git_is_dir": false,
+      "has_dot_git": false,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop"
+    },
+    {
+      "dot_git_is_dir": false,
+      "has_dot_git": false,
+      "path": "C:\\Users\\craig\\OneDrive"
+    },
+    {
+      "dot_git_is_dir": false,
+      "has_dot_git": false,
+      "path": "C:\\Users\\craig"
+    },
+    {
+      "dot_git_is_dir": false,
+      "has_dot_git": false,
+      "path": "C:\\Users"
+    },
+    {
+      "dot_git_is_dir": false,
+      "has_dot_git": false,
+      "path": "C:\\"
+    }
+  ],
+  "root_markers": {
+    "is_probable_claire_root": true,
+    "markers": [
+      {
+        "exists": true,
+        "path": "main.py"
+      },
+      {
+        "exists": true,
+        "path": "pyproject.toml"
+      },
+      {
+        "exists": true,
+        "path": "claire/app.py"
+      },
+      {
+        "exists": true,
+        "path": "frontend/command_center/modern/index.html"
+      }
+    ],
+    "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire"
+  },
+  "stop_go": "CONDITIONAL_GO_REPO_ROOT_OK_BUT_TOO_MANY_PENDING_CHANGES"
+}

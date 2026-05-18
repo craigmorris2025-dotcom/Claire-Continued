@@ -1,0 +1,100 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0f1117;
+  color: #eef2ff;
+}
+
+#claire-cockpit {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-areas:
+    "top top"
+    "banners monitor"
+    "runtime monitor"
+    "ops monitor"
+    "workspace monitor"
+    "diagnostics diagnostics";
+  gap: 12px;
+  padding: 12px;
+}
+
+.cockpit-region {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.045);
+  padding: 12px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+#top_command_bar { grid-area: top; display: grid; grid-template-columns: 1fr auto auto; gap: 10px; }
+#primary_runtime_panel { grid-area: runtime; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+#operations_strip { grid-area: ops; display: flex; gap: 8px; flex-wrap: wrap; }
+#monitoring_column { grid-area: monitor; display: grid; gap: 10px; align-content: start; }
+#lifecycle_evidence_workspace { grid-area: workspace; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+#diagnostics_drawer { grid-area: diagnostics; }
+
+.card,
+button {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  color: inherit;
+  padding: 10px;
+}
+
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+[data-state="blocked"] {
+  outline: 1px solid rgba(255, 120, 120, 0.8);
+}
+
+@media (max-width: 900px) {
+  #claire-cockpit {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "top"
+      "banners"
+      "runtime"
+      "ops"
+      "monitor"
+      "workspace"
+      "diagnostics";
+  }
+
+  #primary_runtime_panel,
+  #lifecycle_evidence_workspace,
+  #top_command_bar {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+#governance_banner_stack {
+  grid-area: banners;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+#governance_banner_stack [data-card-id*="blocked"] {
+  border-color: rgba(255, 120, 120, 0.7);
+}
+
+@media (max-width: 900px) {
+  #governance_banner_stack {
+    grid-template-columns: 1fr;
+  }
+}

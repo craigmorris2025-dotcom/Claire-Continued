@@ -1,0 +1,16 @@
+{
+  "version": "19.88.6",
+  "timestamp_utc": "2026-05-13T10:29:40.612240+00:00",
+  "route_file": "claire\\api\\cockpit_operational_proof_routes.py",
+  "test_file": "tests\\test_v19_88_6_cockpit_operational_proof_binding.py",
+  "endpoints": [
+    "/api/cockpit/operational-proof",
+    "/cockpit/operational-proof"
+  ],
+  "source_of_truth": "/api/operational-proof/status",
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "creates_new_truth": false,
+  "uncontrolled_browsing_enabled": false,
+  "runtime_truth_mutation": false
+}

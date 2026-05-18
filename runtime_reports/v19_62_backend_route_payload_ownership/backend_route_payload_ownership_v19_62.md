@@ -1,0 +1,1099 @@
+# Claire Syntalion v19.62
+## Backend Route + Payload Ownership Map
+
+Generated: 2026-05-11T09:19:07.716657Z
+
+## Canonical Dashboard Payload Status
+
+- Status: `not_found_by_static_scan`
+- Expected surfaces: `/dashboard/payload, /dashboard/payload/status`
+- Owner files: `none found by static scan`
+
+## Route Counts
+
+| Category | Count |
+|---|---:|
+| `dashboard_payload` | 8 |
+| `governed_web_probe` | 25 |
+| `health_boot` | 64 |
+| `other` | 150 |
+| `runtime_pipeline` | 27 |
+| `search_provider` | 22 |
+
+## Route Ownership by Category
+
+### dashboard_payload (8)
+- `GET /dashboard/runtime-truth` — `backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py:L29`
+- `GET /dashboard/runtime-truth` — `backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py:L30`
+- `GET /dashboard/state` — `backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/api/routes_operator_dashboard.py:L16`
+- `GET /dashboard/state` — `claire/api/routes_operator_dashboard.py:L19`
+- `GET /dashboard/runtime-truth` — `claire/api/routes_runtime_truth.py:L30`
+- `POST /dashboard` — `claire/api/search_bar_dashboard_api.py:L52`
+- `GET /dashboard` — `claire/internet_operations_dashboard/api_routes.py:L33`
+- `POST /dashboard` — `claire/internet_runtime_integration/api_routes.py:L34`
+
+### governed_web_probe (25)
+- `GET /internet/live-probe/status` — `backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py:L17`
+- `GET /internet/live-probe/contract` — `backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py:L22`
+- `POST /internet/live-probe/run` — `backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py:L27`
+- `GET /internet/live-probe/last` — `backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py:L35`
+- `POST /probe` — `claire/api/real_provider_operator_probe_routes.py:L72`
+- `GET /internet/evidence-promotion` — `claire/api/routes_evidence_promotion_gate.py:L17`
+- `GET /internet/evidence-promotion/summary` — `claire/api/routes_evidence_promotion_gate.py:L22`
+- `POST /internet/evidence-promotion/rebuild` — `claire/api/routes_evidence_promotion_gate.py:L27`
+- `POST /internet/evidence-promotion/promote-approved` — `claire/api/routes_evidence_promotion_gate.py:L32`
+- `GET /internet/evidence-promotion/status` — `claire/api/routes_evidence_promotion_gate.py:L37`
+- `GET /internet/live-probe/status` — `claire/api/routes_governed_live_probe.py:L18`
+- `GET /internet/live-probe/contract` — `claire/api/routes_governed_live_probe.py:L23`
+- `POST /internet/live-probe/run` — `claire/api/routes_governed_live_probe.py:L28`
+- `POST /internet/live-probe/run-confirmed` — `claire/api/routes_governed_live_probe.py:L37`
+- `POST /internet/live-probe/run-adapter` — `claire/api/routes_governed_live_probe.py:L42`
+- `GET /internet/live-probe/adapter/status` — `claire/api/routes_governed_live_probe.py:L52`
+- `GET /internet/live-probe/last` — `claire/api/routes_governed_live_probe.py:L57`
+- `GET /internet/readiness` — `claire/api/routes_internet_readiness.py:L14`
+- `GET /internet/readiness/summary` — `claire/api/routes_internet_readiness.py:L19`
+- `POST /internet/readiness/rebuild` — `claire/api/routes_internet_readiness.py:L24`
+- `GET /internet/operations/status` — `claire/api/routes_internet_readiness.py:L29`
+- `POST /probe` — `claire/governed_web/real_provider_operator_probe_route.py:L236`
+- `POST /internet` — `claire/internet_activation/api_routes.py:L19`
+- `GET /internet/evidence` — `claire/internet_activation/api_routes.py:L28`
+- `GET /internet/evidence/{evidence_id}` — `claire/internet_activation/api_routes.py:L33`
+
+### health_boot (64)
+- `GET /` — `backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242/claire/app.py:L44`
+- `GET /health` — `backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242/claire/app.py:L48`
+- `GET /` — `backups/v17_65_runtime_truth_contract_repair/20260509_181910/claire/app.py:L44`
+- `GET /health` — `backups/v17_65_runtime_truth_contract_repair/20260509_181910/claire/app.py:L48`
+- `GET /` — `backups/v17_66_discovery_breakthrough_innovation_route_audit/20260509_184204/claire/app.py:L44`
+- `GET /health` — `backups/v17_66_discovery_breakthrough_innovation_route_audit/20260509_184204/claire/app.py:L48`
+- `GET /` — `backups/v17_67_autodesign_handoff_contract/20260509_184735/claire/app.py:L44`
+- `GET /health` — `backups/v17_67_autodesign_handoff_contract/20260509_184735/claire/app.py:L48`
+- `GET /` — `backups/v17_68_design_portal_output_contract/20260509_184933/claire/app.py:L44`
+- `GET /health` — `backups/v17_68_design_portal_output_contract/20260509_184933/claire/app.py:L48`
+- `GET /` — `backups/v17_69_buildability_validation_stack/20260509_185332/claire/app.py:L44`
+- `GET /health` — `backups/v17_69_buildability_validation_stack/20260509_185332/claire/app.py:L48`
+- `GET /` — `backups/v17_70_internet_readiness_verification/20260509_185527/claire/app.py:L44`
+- `GET /health` — `backups/v17_70_internet_readiness_verification/20260509_185527/claire/app.py:L48`
+- `GET /` — `backups/v17_71_governed_update_pack_staging/20260509_185929/claire/app.py:L44`
+- `GET /health` — `backups/v17_71_governed_update_pack_staging/20260509_185929/claire/app.py:L48`
+- `GET /` — `backups/v17_72_rollback_aware_update_plan_contract/20260509_190143/claire/app.py:L44`
+- `GET /health` — `backups/v17_72_rollback_aware_update_plan_contract/20260509_190143/claire/app.py:L48`
+- `GET /` — `backups/v17_73_automatic_update_runner_gate/20260509_190409/claire/app.py:L44`
+- `GET /health` — `backups/v17_73_automatic_update_runner_gate/20260509_190409/claire/app.py:L48`
+- `GET /` — `backups/v17_74_update_governance_regression_lock/20260509_190627/claire/app.py:L44`
+- `GET /health` — `backups/v17_74_update_governance_regression_lock/20260509_190627/claire/app.py:L48`
+- `GET /` — `backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/claire/app.py:L44`
+- `GET /health` — `backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/claire/app.py:L48`
+- `GET /` — `backups/v17_75_full_end_to_end_proof_pack/20260509_190836/claire/app.py:L44`
+- `GET /health` — `backups/v17_75_full_end_to_end_proof_pack/20260509_190836/claire/app.py:L48`
+- `GET /` — `backups/v17_76_platform_endpoint_smoke_proof/20260509_193317/claire/app.py:L44`
+- `GET /health` — `backups/v17_76_platform_endpoint_smoke_proof/20260509_193317/claire/app.py:L48`
+- `GET /` — `backups/v17_77_platform_launch_hardening/20260509_193754/claire/app.py:L44`
+- `GET /health` — `backups/v17_77_platform_launch_hardening/20260509_193754/claire/app.py:L48`
+- `GET /` — `backups/v17_78_desktop_packaging_startup_reliability/20260509_200739/claire/app.py:L44`
+- `GET /health` — `backups/v17_78_desktop_packaging_startup_reliability/20260509_200739/claire/app.py:L48`
+- `GET /` — `backups/v17_79_manual_browser_swagger_proof_binder/20260509_201440/claire/app.py:L44`
+- `GET /health` — `backups/v17_79_manual_browser_swagger_proof_binder/20260509_201440/claire/app.py:L48`
+- `GET /` — `backups/v17_80_launch_candidate_freeze/20260509_202028/claire/app.py:L44`
+- `GET /health` — `backups/v17_80_launch_candidate_freeze/20260509_202028/claire/app.py:L48`
+- `GET /` — `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202649/claire/app.py:L44`
+- `GET /health` — `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202649/claire/app.py:L48`
+- `GET /` — `backups/v17_82_archive_approval_gate/20260509_203610/claire/app.py:L44`
+- `GET /health` — `backups/v17_82_archive_approval_gate/20260509_203610/claire/app.py:L48`
+- `GET /` — `backups/v17_83_internet_provider_configuration_gate/20260509_203928/claire/app.py:L44`
+- `GET /health` — `backups/v17_83_internet_provider_configuration_gate/20260509_203928/claire/app.py:L48`
+- `GET /` — `backups/v17_84_governed_single_query_live_search_probe/20260509_204207/claire/app.py:L44`
+- `GET /health` — `backups/v17_84_governed_single_query_live_search_probe/20260509_204207/claire/app.py:L48`
+- `GET /` — `backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004/claire/app.py:L44`
+- `GET /health` — `backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004/claire/app.py:L48`
+- `GET /` — `backups/v18_72_1_active_launcher_web_mount_patch_repair/20260510_080210/__Users__craig__OneDrive__Desktop__Claire__claire__app.py:L44`
+- `GET /health` — `backups/v18_72_1_active_launcher_web_mount_patch_repair/20260510_080210/__Users__craig__OneDrive__Desktop__Claire__claire__app.py:L48`
+- `GET /` — `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__app.py:L56`
+- `GET /health` — `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__app.py:L60`
+- `GET /` — `backups/v18_72_active_launcher_runtime_web_route_mount_patch/20260510_075931/__Users__craig__OneDrive__Desktop__Claire__claire__app.py:L44`
+- `GET /health` — `backups/v18_72_active_launcher_runtime_web_route_mount_patch/20260510_075931/__Users__craig__OneDrive__Desktop__Claire__claire__app.py:L48`
+- `GET /` — `backups/v18_73_1_operator_dashboard_compat_endpoint_repair/20260510_084238/__Users__craig__OneDrive__Desktop__Claire__claire__app.py:L56`
+- `GET /health` — `backups/v18_73_1_operator_dashboard_compat_endpoint_repair/20260510_084238/__Users__craig__OneDrive__Desktop__Claire__claire__app.py:L60`
+- `GET /` — `backups/v19_canonical_dashboard_payload_bridge/20260510_151548/claire/app.py:L57`
+- `GET /health` — `backups/v19_canonical_dashboard_payload_bridge/20260510_151548/claire/app.py:L61`
+- `GET /` — `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/app.py:L57`
+- `GET /health` — `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/app.py:L61`
+- `GET /health` — `claire/api/routes_system.py:L22`
+- `GET /health` — `claire/api/routes_v19_25_search_execution.py:L49`
+- `GET /` — `claire/api/server.py:L14`
+- `GET /` — `claire/app.py:L57`
+- `GET /health` — `claire/app.py:L61`
+- `GET /health` — `claire/internet_runtime_stability/api_routes.py:L13`
+
+### other (150)
+- `GET /operator/dashboard/state` — `backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/api/routes_operator_dashboard.py:L11`
+- `GET /api/dashboard/state` — `backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/api/routes_operator_dashboard.py:L21`
+- `POST /operator/dashboard/refresh` — `backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/api/routes_operator_dashboard.py:L26`
+- `GET /cleanup/proof` — `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py:L11`
+- `GET /cleanup/proof/summary` — `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py:L16`
+- `POST /cleanup/proof/rebuild` — `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py:L21`
+- `GET /cleanup/archive-plan` — `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py:L26`
+- `GET /cleanup/status` — `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py:L31`
+- `POST /command` — `claire/api/commands.py:L9`
+- `GET /payload` — `claire/api/dashboard_payload_bridge.py:L353`
+- `GET /payload/status` — `claire/api/dashboard_payload_bridge.py:L357`
+- `GET /smoke/google` — `claire/api/governed_dashboard_live_search_routes.py:L65`
+- `POST /live` — `claire/api/governed_dashboard_live_search_routes.py:L70`
+- `GET /live` — `claire/api/governed_dashboard_live_search_routes.py:L75`
+- `GET /operator/dashboard/state` — `claire/api/operator_dashboard_compat_routes.py:L110`
+- `GET /status` — `claire/api/real_provider_operator_probe_routes.py:L55`
+- `GET /acquirers` — `claire/api/routes_acquirers.py:L16`
+- `GET /acquirers/{ticker}` — `claire/api/routes_acquirers.py:L43`
+- `GET /cleanup/archive-approval` — `claire/api/routes_archive_approval_gate.py:L17`
+- `GET /cleanup/archive-approval/summary` — `claire/api/routes_archive_approval_gate.py:L22`
+- `POST /cleanup/archive-approval/rebuild` — `claire/api/routes_archive_approval_gate.py:L27`
+- `POST /cleanup/archive/execute-approved` — `claire/api/routes_archive_approval_gate.py:L32`
+- `GET /cleanup/archive/status` — `claire/api/routes_archive_approval_gate.py:L37`
+- `GET /autodesign/handoff` — `claire/api/routes_autodesign_handoff.py:L14`
+- `GET /autodesign/handoff/summary` — `claire/api/routes_autodesign_handoff.py:L19`
+- `POST /autodesign/handoff/rebuild` — `claire/api/routes_autodesign_handoff.py:L24`
+- `GET /design/autodesign/handoff` — `claire/api/routes_autodesign_handoff.py:L29`
+- `GET /updates/automatic/status` — `claire/api/routes_automatic_update_runner_gate.py:L29`
+- `GET /validation/buildability` — `claire/api/routes_buildability_validation.py:L14`
+- `GET /validation/buildability/summary` — `claire/api/routes_buildability_validation.py:L19`
+- `POST /validation/buildability/rebuild` — `claire/api/routes_buildability_validation.py:L24`
+- `GET /design-portal/validation` — `claire/api/routes_buildability_validation.py:L29`
+- `GET /cleanup/proof` — `claire/api/routes_cleanup_proof.py:L11`
+- `GET /cleanup/proof/summary` — `claire/api/routes_cleanup_proof.py:L16`
+- `POST /cleanup/proof/rebuild` — `claire/api/routes_cleanup_proof.py:L21`
+- `GET /cleanup/archive-plan` — `claire/api/routes_cleanup_proof.py:L26`
+- `GET /cleanup/status` — `claire/api/routes_cleanup_proof.py:L31`
+- `POST /command` — `claire/api/routes_command.py:L9`
+- `GET /status` — `claire/api/routes_connectors.py:L26`
+- `POST /fetch` — `claire/api/routes_connectors.py:L36`
+- `GET /discovery/live` — `claire/api/routes_dashboard.py:L6`
+- `GET /market/overview` — `claire/api/routes_dashboard.py:L9`
+- `GET /financial/markets` — `claire/api/routes_dashboard.py:L15`
+- `GET /news/intel` — `claire/api/routes_dashboard.py:L18`
+- `GET /company/intel` — `claire/api/routes_dashboard.py:L24`
+- `GET /portfolio/active` — `claire/api/routes_dashboard.py:L27`
+- `GET /buyer/matching` — `claire/api/routes_dashboard.py:L30`
+- `GET /system/settings` — `claire/api/routes_dashboard.py:L36`
+- `GET /status` — `claire/api/routes_dashboard_alignment.py:L15`
+- `GET /capabilities` — `claire/api/routes_dashboard_alignment.py:L20`
+- `GET /buttons` — `claire/api/routes_dashboard_alignment.py:L25`
+- `GET /verify` — `claire/api/routes_dashboard_alignment.py:L34`
+- `GET /first-use/manifest` — `claire/api/routes_dashboard_e2e.py:L20`
+- `GET /first-use/latest` — `claire/api/routes_dashboard_e2e.py:L24`
+- `GET /design-portal/output` — `claire/api/routes_design_portal_output.py:L14`
+- `GET /design-portal/output/summary` — `claire/api/routes_design_portal_output.py:L19`
+- `POST /design-portal/output/rebuild` — `claire/api/routes_design_portal_output.py:L24`
+- `GET /design/portal/output` — `claire/api/routes_design_portal_output.py:L29`
+- `GET /desktop/startup` — `claire/api/routes_desktop_startup_reliability.py:L15`
+- `GET /desktop/startup/summary` — `claire/api/routes_desktop_startup_reliability.py:L20`
+- `POST /desktop/startup/rebuild` — `claire/api/routes_desktop_startup_reliability.py:L25`
+- `GET /desktop/package-manifest` — `claire/api/routes_desktop_startup_reliability.py:L30`
+- `GET /desktop/launch/status` — `claire/api/routes_desktop_startup_reliability.py:L35`
+- `GET /proof/e2e` — `claire/api/routes_full_e2e_proof_pack.py:L14`
+- `GET /proof/e2e/summary` — `claire/api/routes_full_e2e_proof_pack.py:L19`
+- `POST /proof/e2e/rebuild` — `claire/api/routes_full_e2e_proof_pack.py:L24`
+- `GET /system/stop-go` — `claire/api/routes_full_e2e_proof_pack.py:L29`
+- `GET /history` — `claire/api/routes_history.py:L16`
+- `GET /stats` — `claire/api/routes_history.py:L62`
+- `GET /platform/launch-candidate` — `claire/api/routes_launch_candidate_freeze.py:L14`
+- `GET /platform/launch-candidate/summary` — `claire/api/routes_launch_candidate_freeze.py:L19`
+- `POST /platform/launch-candidate/freeze` — `claire/api/routes_launch_candidate_freeze.py:L24`
+- `GET /platform/freeze/status` — `claire/api/routes_launch_candidate_freeze.py:L29`
+- `GET /proof/manual-browser-swagger` — `claire/api/routes_manual_browser_swagger_proof.py:L14`
+- `GET /proof/manual-browser-swagger/summary` — `claire/api/routes_manual_browser_swagger_proof.py:L19`
+- `POST /proof/manual-browser-swagger/rebuild` — `claire/api/routes_manual_browser_swagger_proof.py:L24`
+- `GET /proof/manual-browser-swagger/checklist` — `claire/api/routes_manual_browser_swagger_proof.py:L29`
+- `GET /operator/dashboard/state` — `claire/api/routes_operator_dashboard.py:L14`
+- `GET /api/dashboard/state` — `claire/api/routes_operator_dashboard.py:L24`
+- `GET /operator/dashboard/summary` — `claire/api/routes_operator_dashboard.py:L29`
+- ... 70 more
+
+### runtime_pipeline (27)
+- `GET /runtime/truth` — `backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py:L14`
+- `GET /runtime/state` — `backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py:L19`
+- `POST /runtime/truth/rebuild` — `backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py:L24`
+- `GET /runtime/truth` — `backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py:L15`
+- `GET /runtime/state` — `backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py:L20`
+- `POST /runtime/truth/rebuild` — `backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py:L25`
+- `POST /run` — `claire/api/endpoints.py:L7`
+- `GET /updates/runner-gate` — `claire/api/routes_automatic_update_runner_gate.py:L14`
+- `GET /updates/runner-gate/summary` — `claire/api/routes_automatic_update_runner_gate.py:L19`
+- `POST /updates/runner-gate/rebuild` — `claire/api/routes_automatic_update_runner_gate.py:L24`
+- `GET /deals/pipeline` — `claire/api/routes_dashboard.py:L33`
+- `POST /first-use/run` — `claire/api/routes_dashboard_e2e.py:L28`
+- `GET /history/{run_id}` — `claire/api/routes_history.py:L47`
+- `POST /pipeline/evaluate` — `claire/api/routes_pipeline.py:L318`
+- `POST /evaluate` — `claire/api/routes_pipeline.py:L323`
+- `GET /history/{run_id}` — `claire/api/routes_proxy.py:L47`
+- `GET /runtime/truth` — `claire/api/routes_runtime_truth.py:L15`
+- `GET /runtime/state` — `claire/api/routes_runtime_truth.py:L20`
+- `POST /runtime/truth/rebuild` — `claire/api/routes_runtime_truth.py:L25`
+- `POST /run-due` — `claire/governed_campaign_scheduler/api_routes.py:L41`
+- `POST /run-due` — `claire/internet_operations_dashboard/api_routes.py:L21`
+- `POST /scheduler/run-due` — `claire/internet_runtime_stability/api_routes.py:L25`
+- `GET /runs` — `quarantine_legacy_placeholders/backend/routes/backend_export_browser_route.py:L29`
+- `POST /runs/rescan` — `quarantine_legacy_placeholders/backend/routes/backend_export_browser_route.py:L34`
+- `GET /runs/{run_id}` — `quarantine_legacy_placeholders/backend/routes/backend_export_browser_route.py:L39`
+- `GET /runs/{run_id}/files` — `quarantine_legacy_placeholders/backend/routes/backend_export_browser_route.py:L47`
+- `GET /runs/{run_id}/files/{filename}` — `quarantine_legacy_placeholders/backend/routes/backend_export_browser_route.py:L55`
+
+### search_provider (22)
+- `GET /operator/search/capabilities` — `claire/api/operator_dashboard_compat_routes.py:L79`
+- `GET /operator/search/smoke/google` — `claire/api/operator_dashboard_compat_routes.py:L135`
+- `GET /operator/search` — `claire/api/operator_dashboard_compat_routes.py:L140`
+- `POST /operator/search` — `claire/api/operator_dashboard_compat_routes.py:L145`
+- `GET /operator/search/live` — `claire/api/operator_dashboard_compat_routes.py:L150`
+- `POST /operator/search/live` — `claire/api/operator_dashboard_compat_routes.py:L155`
+- `POST /operator/search/query` — `claire/api/operator_dashboard_compat_routes.py:L160`
+- `POST /operator/search/run` — `claire/api/operator_dashboard_compat_routes.py:L165`
+- `GET /innovation/search` — `claire/api/routes_dashboard.py:L12`
+- `GET /patents/search` — `claire/api/routes_dashboard.py:L21`
+- `POST /operator/search/web/run-governed-probe` — `claire/api/routes_governed_live_probe.py:L47`
+- `GET /internet/provider-gate` — `claire/api/routes_internet_provider_gate.py:L14`
+- `GET /internet/provider-gate/summary` — `claire/api/routes_internet_provider_gate.py:L19`
+- `POST /internet/provider-gate/rebuild` — `claire/api/routes_internet_provider_gate.py:L24`
+- `GET /internet/search/provider/status` — `claire/api/routes_internet_provider_gate.py:L29`
+- `GET /search/dashboard-smoke` — `claire/api/routes_live_search_dashboard_smoke.py:L25`
+- `GET /operator/search/capabilities` — `claire/api/routes_operator_search_command.py:L20`
+- `POST /operator/search/query` — `claire/api/routes_operator_search_command.py:L25`
+- `GET /operator/search/web/status` — `claire/api/routes_operator_search_command.py:L39`
+- `POST /operator/search/web` — `claire/api/routes_operator_search_command.py:L44`
+- `GET /operator/search/layer` — `claire/api/routes_operator_search_command.py:L52`
+- `GET /search/visible-result-verification` — `claire/api/routes_visible_query_result_verification.py:L23`
+
+## File Roles
+
+### app_factory_or_fastapi_boot (56)
+- `backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242/claire/app.py` — routes: 2, includes: 3
+- `backups/v17_65_runtime_truth_contract_repair/20260509_181910/claire/app.py` — routes: 2, includes: 2
+- `backups/v17_66_discovery_breakthrough_innovation_route_audit/20260509_184204/claire/app.py` — routes: 2, includes: 4
+- `backups/v17_67_autodesign_handoff_contract/20260509_184735/claire/app.py` — routes: 2, includes: 5
+- `backups/v17_68_design_portal_output_contract/20260509_184933/claire/app.py` — routes: 2, includes: 6
+- `backups/v17_69_buildability_validation_stack/20260509_185332/claire/app.py` — routes: 2, includes: 7
+- `backups/v17_70_internet_readiness_verification/20260509_185527/claire/app.py` — routes: 2, includes: 8
+- `backups/v17_71_governed_update_pack_staging/20260509_185929/claire/app.py` — routes: 2, includes: 9
+- `backups/v17_72_rollback_aware_update_plan_contract/20260509_190143/claire/app.py` — routes: 2, includes: 10
+- `backups/v17_73_automatic_update_runner_gate/20260509_190409/claire/app.py` — routes: 2, includes: 11
+- `backups/v17_74_update_governance_regression_lock/20260509_190627/claire/app.py` — routes: 2, includes: 12
+- `backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/claire/app.py` — routes: 2, includes: 14
+- `backups/v17_75_full_end_to_end_proof_pack/20260509_190836/claire/app.py` — routes: 2, includes: 13
+- `backups/v17_76_platform_endpoint_smoke_proof/20260509_193317/claire/app.py` — routes: 2, includes: 15
+- `backups/v17_77_platform_launch_hardening/20260509_193754/claire/app.py` — routes: 2, includes: 16
+- `backups/v17_78_desktop_packaging_startup_reliability/20260509_200739/claire/app.py` — routes: 2, includes: 17
+- `backups/v17_79_manual_browser_swagger_proof_binder/20260509_201440/claire/app.py` — routes: 2, includes: 18
+- `backups/v17_80_launch_candidate_freeze/20260509_202028/claire/app.py` — routes: 2, includes: 19
+- `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202649/claire/app.py` — routes: 2, includes: 20
+- `backups/v17_82_archive_approval_gate/20260509_203610/claire/app.py` — routes: 2, includes: 21
+- `backups/v17_83_internet_provider_configuration_gate/20260509_203928/claire/app.py` — routes: 2, includes: 22
+- `backups/v17_84_governed_single_query_live_search_probe/20260509_204207/claire/app.py` — routes: 2, includes: 23
+- `backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004/claire/app.py` — routes: 2, includes: 24
+- `backups/v18_72_1_active_launcher_web_mount_patch_repair/20260510_080210/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 27
+- `backups/v18_72_active_launcher_runtime_web_route_mount_patch/20260510_075931/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v18_73_1_operator_dashboard_compat_endpoint_repair/20260510_084238/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 29
+- `backups/v18_73_root_consolidation_single_dashboard_launcher/20260510_083818/__Users__craig__OneDrive__Desktop__Claire__install_claire_v18_73_root_consolidation_single_dashboard_launcher.py` — routes: 0, includes: 0
+- `backups/v19_canonical_dashboard_payload_bridge/20260510_151548/claire/app.py` — routes: 2, includes: 30
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/app.py` — routes: 2, includes: 31
+- `claire/api/server.py` — routes: 1, includes: 1
+- `claire/app.py` — routes: 2, includes: 31
+- `claire/dashboard/runtime_alignment.py` — routes: 0, includes: 0
+- `claire/governed_web/active_app_final_web_activation_mount_verification.py` — routes: 0, includes: 0
+- `claire/governed_web/active_app_mounted_route_verification.py` — routes: 0, includes: 0
+- `claire/governed_web/consolidated_web_activation_packs.py` — routes: 0, includes: 0
+- `claire/governed_web/mounted_live_search_endpoint_smoke_test.py` — routes: 0, includes: 0
+- `claire/governed_web/operator_probe_active_app_mount.py` — routes: 0, includes: 1
+- `claire/governed_web/real_provider_operator_probe_route.py` — routes: 2, includes: 1
+- `install_claire_v19_62_backend_route_payload_ownership_map.py` — routes: 0, includes: 0
+- `main.py` — routes: 0, includes: 0
+- `tests/dynamic_source_trust/test_dynamic_source_trust_api.py` — routes: 0, includes: 1
+- `tests/governed_campaign_scheduler/test_governed_campaign_scheduler_api.py` — routes: 0, includes: 1
+- `tests/internet_activation/test_internet_activation_api.py` — routes: 0, includes: 1
+- `tests/internet_operations_dashboard/test_internet_operations_dashboard_api.py` — routes: 0, includes: 2
+- `tests/internet_runtime_integration/test_internet_runtime_integration_api.py` — routes: 0, includes: 1
+- `tests/internet_runtime_stability/test_internet_runtime_stability_api.py` — routes: 0, includes: 1
+- `tests/persistent_internet_campaigns/test_persistent_internet_campaigns_api.py` — routes: 0, includes: 1
+- `tests/test_v18_69_operator_probe_route_mount_into_active_app.py` — routes: 0, includes: 0
+- `tests/test_v18_71_active_app_final_web_activation_mount_verification.py` — routes: 0, includes: 0
+- `tests/test_v18_72_1_active_launcher_web_mount_patch_repair.py` — routes: 0, includes: 0
+- `tests/test_v18_72_2_active_launcher_web_route_module_wrapper_repair.py` — routes: 0, includes: 0
+- `tests/test_v18_72_active_launcher_runtime_web_route_mount_patch.py` — routes: 0, includes: 0
+- `tests/test_v18_73_1_operator_dashboard_compat_endpoint_repair.py` — routes: 0, includes: 0
+- `tests/test_v18_73_2_dashboard_search_provider_probe_separation_repair.py` — routes: 0, includes: 0
+- `tests/test_v18_73_root_consolidation_single_dashboard_launcher.py` — routes: 0, includes: 0
+
+### router_mount_owner (60)
+- `backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242/claire/app.py` — routes: 2, includes: 3
+- `backups/v17_65_runtime_truth_contract_repair/20260509_181910/claire/app.py` — routes: 2, includes: 2
+- `backups/v17_66_discovery_breakthrough_innovation_route_audit/20260509_184204/claire/app.py` — routes: 2, includes: 4
+- `backups/v17_67_autodesign_handoff_contract/20260509_184735/claire/app.py` — routes: 2, includes: 5
+- `backups/v17_68_design_portal_output_contract/20260509_184933/claire/app.py` — routes: 2, includes: 6
+- `backups/v17_69_buildability_validation_stack/20260509_185332/claire/app.py` — routes: 2, includes: 7
+- `backups/v17_70_internet_readiness_verification/20260509_185527/claire/app.py` — routes: 2, includes: 8
+- `backups/v17_71_governed_update_pack_staging/20260509_185929/claire/app.py` — routes: 2, includes: 9
+- `backups/v17_72_rollback_aware_update_plan_contract/20260509_190143/claire/app.py` — routes: 2, includes: 10
+- `backups/v17_73_automatic_update_runner_gate/20260509_190409/claire/app.py` — routes: 2, includes: 11
+- `backups/v17_74_update_governance_regression_lock/20260509_190627/claire/app.py` — routes: 2, includes: 12
+- `backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/claire/app.py` — routes: 2, includes: 14
+- `backups/v17_75_full_end_to_end_proof_pack/20260509_190836/claire/app.py` — routes: 2, includes: 13
+- `backups/v17_76_platform_endpoint_smoke_proof/20260509_193317/claire/app.py` — routes: 2, includes: 15
+- `backups/v17_77_platform_launch_hardening/20260509_193754/claire/app.py` — routes: 2, includes: 16
+- `backups/v17_78_desktop_packaging_startup_reliability/20260509_200739/claire/app.py` — routes: 2, includes: 17
+- `backups/v17_79_manual_browser_swagger_proof_binder/20260509_201440/claire/app.py` — routes: 2, includes: 18
+- `backups/v17_80_launch_candidate_freeze/20260509_202028/claire/app.py` — routes: 2, includes: 19
+- `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202649/claire/app.py` — routes: 2, includes: 20
+- `backups/v17_82_archive_approval_gate/20260509_203610/claire/app.py` — routes: 2, includes: 21
+- `backups/v17_83_internet_provider_configuration_gate/20260509_203928/claire/app.py` — routes: 2, includes: 22
+- `backups/v17_84_governed_single_query_live_search_probe/20260509_204207/claire/app.py` — routes: 2, includes: 23
+- `backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004/claire/app.py` — routes: 2, includes: 24
+- `backups/v18_72_1_active_launcher_web_mount_patch_repair/20260510_080210/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 27
+- `backups/v18_72_active_launcher_runtime_web_route_mount_patch/20260510_075931/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v18_73_1_operator_dashboard_compat_endpoint_repair/20260510_084238/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 29
+- `backups/v19_canonical_dashboard_payload_bridge/20260510_151548/claire/app.py` — routes: 2, includes: 30
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/app.py` — routes: 2, includes: 31
+- `claire/api/router.py` — routes: 0, includes: 2
+- `claire/api/server.py` — routes: 1, includes: 1
+- `claire/app.py` — routes: 2, includes: 31
+- `claire/dashboard/runtime_alignment.py` — routes: 0, includes: 0
+- `claire/governed_web/active_app_final_web_activation_mount_verification.py` — routes: 0, includes: 0
+- `claire/governed_web/consolidated_web_activation_packs.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_live_search_route_mount_adapter.py` — routes: 0, includes: 1
+- `claire/governed_web/live_search_active_app_mount_gate.py` — routes: 0, includes: 1
+- `claire/governed_web/operator_probe_active_app_mount.py` — routes: 0, includes: 1
+- `claire/governed_web/real_provider_operator_probe_route.py` — routes: 2, includes: 1
+- `claire/platform/resolver.py` — routes: 5, includes: 3
+- `claire/search_bar/governed_web_simulation_fastapi_route.py` — routes: 0, includes: 1
+- `claire/search_bar/governed_web_simulation_route_mount_verifier.py` — routes: 0, includes: 0
+- `install_claire_v19_62_backend_route_payload_ownership_map.py` — routes: 0, includes: 0
+- `quarantine_legacy_placeholders/backend/routes/backend_export_browser_route.py` — routes: 6, includes: 1
+- `tests/dynamic_source_trust/test_dynamic_source_trust_api.py` — routes: 0, includes: 1
+- `tests/governed_campaign_scheduler/test_governed_campaign_scheduler_api.py` — routes: 0, includes: 1
+- `tests/internet_activation/test_internet_activation_api.py` — routes: 0, includes: 1
+- `tests/internet_operations_dashboard/test_internet_operations_dashboard_api.py` — routes: 0, includes: 2
+- `tests/internet_runtime_integration/test_internet_runtime_integration_api.py` — routes: 0, includes: 1
+- `tests/internet_runtime_stability/test_internet_runtime_stability_api.py` — routes: 0, includes: 1
+- `tests/persistent_internet_campaigns/test_persistent_internet_campaigns_api.py` — routes: 0, includes: 1
+- `tests/test_v18_10_governed_web_simulation_fastapi_route_registration.py` — routes: 0, includes: 0
+- `tests/test_v18_11_1_governed_web_simulation_route_mount_verifier_repair.py` — routes: 0, includes: 0
+- `tests/test_v18_11_governed_web_simulation_route_mount_verifier.py` — routes: 0, includes: 1
+- `tests/test_v18_58_dashboard_live_search_route_mount_adapter.py` — routes: 0, includes: 0
+- `tests/test_v18_62_live_search_endpoint_mounted_into_active_app_gate.py` — routes: 0, includes: 0
+- `tests/test_v18_69_operator_probe_route_mount_into_active_app.py` — routes: 0, includes: 0
+- `tests/test_v18_70_consolidated_web_activation_packs.py` — routes: 0, includes: 0
+- `tests/test_v18_71_active_app_final_web_activation_mount_verification.py` — routes: 0, includes: 0
+- `tests/test_v18_72_1_active_launcher_web_mount_patch_repair.py` — routes: 0, includes: 0
+
+### route_declaration_owner (108)
+- `backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242/claire/app.py` — routes: 2, includes: 3
+- `backups/v17_65_runtime_truth_contract_repair/20260509_181910/claire/app.py` — routes: 2, includes: 2
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py` — routes: 4, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py` — routes: 4, includes: 0
+- `backups/v17_66_discovery_breakthrough_innovation_route_audit/20260509_184204/claire/app.py` — routes: 2, includes: 4
+- `backups/v17_67_autodesign_handoff_contract/20260509_184735/claire/app.py` — routes: 2, includes: 5
+- `backups/v17_68_design_portal_output_contract/20260509_184933/claire/app.py` — routes: 2, includes: 6
+- `backups/v17_69_buildability_validation_stack/20260509_185332/claire/app.py` — routes: 2, includes: 7
+- `backups/v17_70_internet_readiness_verification/20260509_185527/claire/app.py` — routes: 2, includes: 8
+- `backups/v17_71_governed_update_pack_staging/20260509_185929/claire/app.py` — routes: 2, includes: 9
+- `backups/v17_72_rollback_aware_update_plan_contract/20260509_190143/claire/app.py` — routes: 2, includes: 10
+- `backups/v17_73_automatic_update_runner_gate/20260509_190409/claire/app.py` — routes: 2, includes: 11
+- `backups/v17_74_update_governance_regression_lock/20260509_190627/claire/app.py` — routes: 2, includes: 12
+- `backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/api/routes_operator_dashboard.py` — routes: 4, includes: 0
+- `backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/claire/app.py` — routes: 2, includes: 14
+- `backups/v17_75_full_end_to_end_proof_pack/20260509_190836/claire/app.py` — routes: 2, includes: 13
+- `backups/v17_76_platform_endpoint_smoke_proof/20260509_193317/claire/app.py` — routes: 2, includes: 15
+- `backups/v17_77_platform_launch_hardening/20260509_193754/claire/app.py` — routes: 2, includes: 16
+- `backups/v17_78_desktop_packaging_startup_reliability/20260509_200739/claire/app.py` — routes: 2, includes: 17
+- `backups/v17_79_manual_browser_swagger_proof_binder/20260509_201440/claire/app.py` — routes: 2, includes: 18
+- `backups/v17_80_launch_candidate_freeze/20260509_202028/claire/app.py` — routes: 2, includes: 19
+- `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202649/claire/app.py` — routes: 2, includes: 20
+- `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py` — routes: 5, includes: 0
+- `backups/v17_82_archive_approval_gate/20260509_203610/claire/app.py` — routes: 2, includes: 21
+- `backups/v17_83_internet_provider_configuration_gate/20260509_203928/claire/app.py` — routes: 2, includes: 22
+- `backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py` — routes: 4, includes: 0
+- `backups/v17_84_governed_single_query_live_search_probe/20260509_204207/claire/app.py` — routes: 2, includes: 23
+- `backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004/claire/app.py` — routes: 2, includes: 24
+- `backups/v18_72_1_active_launcher_web_mount_patch_repair/20260510_080210/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 27
+- `backups/v18_72_active_launcher_runtime_web_route_mount_patch/20260510_075931/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v18_73_1_operator_dashboard_compat_endpoint_repair/20260510_084238/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 29
+- `backups/v19_canonical_dashboard_payload_bridge/20260510_151548/claire/app.py` — routes: 2, includes: 30
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/app.py` — routes: 2, includes: 31
+- `claire/api/commands.py` — routes: 1, includes: 0
+- `claire/api/dashboard_payload_bridge.py` — routes: 2, includes: 0
+- `claire/api/endpoints.py` — routes: 1, includes: 0
+- `claire/api/governed_dashboard_live_search_routes.py` — routes: 3, includes: 0
+- `claire/api/operator_dashboard_compat_routes.py` — routes: 9, includes: 0
+- `claire/api/real_provider_operator_probe_routes.py` — routes: 2, includes: 0
+- `claire/api/router.py` — routes: 0, includes: 2
+- `claire/api/routes_acquirers.py` — routes: 2, includes: 0
+- `claire/api/routes_archive_approval_gate.py` — routes: 5, includes: 0
+- `claire/api/routes_autodesign_handoff.py` — routes: 4, includes: 0
+- `claire/api/routes_automatic_update_runner_gate.py` — routes: 4, includes: 0
+- `claire/api/routes_buildability_validation.py` — routes: 4, includes: 0
+- `claire/api/routes_cleanup_proof.py` — routes: 5, includes: 0
+- `claire/api/routes_command.py` — routes: 1, includes: 0
+- `claire/api/routes_connectors.py` — routes: 2, includes: 0
+- `claire/api/routes_dashboard.py` — routes: 11, includes: 0
+- `claire/api/routes_dashboard_alignment.py` — routes: 4, includes: 0
+- `claire/api/routes_dashboard_e2e.py` — routes: 3, includes: 0
+- `claire/api/routes_design_portal_output.py` — routes: 4, includes: 0
+- `claire/api/routes_desktop_startup_reliability.py` — routes: 5, includes: 0
+- `claire/api/routes_evidence_promotion_gate.py` — routes: 5, includes: 0
+- `claire/api/routes_full_e2e_proof_pack.py` — routes: 4, includes: 0
+- `claire/api/routes_governed_live_probe.py` — routes: 8, includes: 0
+- `claire/api/routes_history.py` — routes: 3, includes: 0
+- `claire/api/routes_internet_provider_gate.py` — routes: 4, includes: 0
+- `claire/api/routes_internet_readiness.py` — routes: 4, includes: 0
+- `claire/api/routes_launch_candidate_freeze.py` — routes: 4, includes: 0
+- `claire/api/routes_live_search_dashboard_smoke.py` — routes: 1, includes: 0
+- `claire/api/routes_manual_browser_swagger_proof.py` — routes: 4, includes: 0
+- `claire/api/routes_operator_dashboard.py` — routes: 5, includes: 0
+- `claire/api/routes_operator_search_command.py` — routes: 6, includes: 0
+- `claire/api/routes_pipeline.py` — routes: 2, includes: 0
+- `claire/api/routes_platform.py` — routes: 5, includes: 0
+- `claire/api/routes_platform_endpoint_smoke_proof.py` — routes: 4, includes: 0
+- `claire/api/routes_platform_launch_hardening.py` — routes: 4, includes: 0
+- `claire/api/routes_proxy.py` — routes: 3, includes: 0
+- `claire/api/routes_rollback_update_plan.py` — routes: 4, includes: 0
+- `claire/api/routes_route_audit.py` — routes: 4, includes: 0
+- `claire/api/routes_runtime_truth.py` — routes: 4, includes: 0
+- `claire/api/routes_system.py` — routes: 3, includes: 0
+- `claire/api/routes_update.py` — routes: 3, includes: 0
+- `claire/api/routes_update_governance_regression_lock.py` — routes: 4, includes: 0
+- `claire/api/routes_update_pack_staging.py` — routes: 4, includes: 0
+- `claire/api/routes_v19_25_search_execution.py` — routes: 2, includes: 0
+- `claire/api/routes_visible_query_result_verification.py` — routes: 1, includes: 0
+- `claire/api/runtime_truth_read_api.py` — routes: 2, includes: 0
+- `claire/api/search_bar_dashboard_api.py` — routes: 2, includes: 0
+- `claire/api/server.py` — routes: 1, includes: 1
+- `claire/app.py` — routes: 2, includes: 31
+- `claire/dynamic_source_trust/api_routes.py` — routes: 7, includes: 0
+- `claire/governed_campaign_scheduler/api_routes.py` — routes: 5, includes: 0
+- `claire/governed_web/dashboard_live_search_route_mount_adapter.py` — routes: 0, includes: 1
+- `claire/governed_web/dashboard_search_endpoint_result_contract.py` — routes: 2, includes: 0
+- `claire/governed_web/live_search_active_app_mount_gate.py` — routes: 0, includes: 1
+- `claire/governed_web/operator_probe_active_app_mount.py` — routes: 0, includes: 1
+- `claire/governed_web/real_provider_operator_probe_route.py` — routes: 2, includes: 1
+- `claire/internet_activation/api_routes.py` — routes: 3, includes: 0
+- `claire/internet_operations_dashboard/api_routes.py` — routes: 4, includes: 0
+- `claire/internet_runtime_integration/api_routes.py` — routes: 2, includes: 0
+- `claire/internet_runtime_stability/api_routes.py` — routes: 5, includes: 0
+- `claire/persistent_internet_campaigns/api_routes.py` — routes: 2, includes: 0
+- `claire/platform/resolver.py` — routes: 5, includes: 3
+- `claire/search_bar/governed_web_simulation_fastapi_route.py` — routes: 0, includes: 1
+- `install_claire_v19_62_backend_route_payload_ownership_map.py` — routes: 0, includes: 0
+- `quarantine_legacy_placeholders/backend/routes/backend_export_browser_route.py` — routes: 6, includes: 1
+- `tests/dynamic_source_trust/test_dynamic_source_trust_api.py` — routes: 0, includes: 1
+- ... 8 more
+
+### dashboard_payload_owner_candidate (127)
+- `_claire_archives/v18_85_to_v18_89_dashboard_runtime_governed_search_pack/claire/dashboard_live_search_binding.py` — routes: 0, includes: 0
+- `_claire_archives/v18_85_to_v18_89_dashboard_runtime_governed_search_pack/tests/test_v18_85_to_v18_89_dashboard_runtime_governed_search_pack.py` — routes: 0, includes: 0
+- `_claire_archives/v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack/claire/dashboard_currency_runtime_order_lock.py` — routes: 0, includes: 0
+- `_claire_archives/v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack/tests/test_v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack.py` — routes: 0, includes: 0
+- `backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242/claire/app.py` — routes: 2, includes: 3
+- `backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/api/routes_operator_dashboard.py` — routes: 4, includes: 0
+- `backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/dashboard/operator_dashboard_state.py` — routes: 0, includes: 0
+- `backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/claire/app.py` — routes: 2, includes: 14
+- `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__api__governed_dashboard_live_search_routes.py` — routes: 0, includes: 0
+- `backups/v18_73_1_operator_dashboard_compat_endpoint_repair/20260510_084238/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 29
+- `backups/v18_73_root_consolidation_single_dashboard_launcher/20260510_083818/__Users__craig__OneDrive__Desktop__Claire__install_claire_v18_73_root_consolidation_single_dashboard_launcher.py` — routes: 0, includes: 0
+- `backups/v19_canonical_dashboard_payload_bridge/20260510_151548/claire/app.py` — routes: 2, includes: 30
+- `claire/api/dashboard_payload_bridge.py` — routes: 2, includes: 0
+- `claire/api/governed_dashboard_live_search_routes.py` — routes: 3, includes: 0
+- `claire/api/operator_dashboard_compat_routes.py` — routes: 9, includes: 0
+- `claire/api/routes_dashboard.py` — routes: 11, includes: 0
+- `claire/api/routes_dashboard_alignment.py` — routes: 4, includes: 0
+- `claire/api/routes_dashboard_e2e.py` — routes: 3, includes: 0
+- `claire/api/routes_live_search_dashboard_smoke.py` — routes: 1, includes: 0
+- `claire/api/routes_operator_dashboard.py` — routes: 5, includes: 0
+- `claire/api/search_bar_dashboard_api.py` — routes: 2, includes: 0
+- `claire/dashboard/__init__.py` — routes: 0, includes: 0
+- `claire/dashboard/actual_run_output_dashboard_binding.py` — routes: 0, includes: 0
+- `claire/dashboard/button_registry.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_currency_runtime_order_lock.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_live_search_binding.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_snapshot_writer.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_sophistication_contract.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_state_builder.py` — routes: 0, includes: 0
+- `claire/dashboard/generator.py` — routes: 0, includes: 0
+- `claire/dashboard/live_dashboard_adapter.py` — routes: 0, includes: 0
+- `claire/dashboard/live_runtime_state.py` — routes: 0, includes: 0
+- `claire/dashboard/operator_dashboard_state.py` — routes: 0, includes: 0
+- `claire/dashboard/render_contract.py` — routes: 0, includes: 0
+- `claire/dashboard/runtime_alignment.py` — routes: 0, includes: 0
+- `claire/dashboard/runtime_control_center.py` — routes: 0, includes: 0
+- `claire/dashboard/unified_runtime_dashboard.py` — routes: 0, includes: 0
+- `claire/dashboard_intelligence/__init__.py` — routes: 0, includes: 0
+- `claire/dashboard_intelligence/local_index.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/health_dashboard.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_live_search_route_mount_adapter.py` — routes: 0, includes: 1
+- `claire/governed_web/dashboard_live_search_ui_fetch_binding.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_search_api_adapter.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_search_bar_html_integration_gate.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_search_endpoint_result_contract.py` — routes: 2, includes: 0
+- `claire/governed_web/dashboard_search_provider_probe_separation_repair.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_search_query_execution_bridge.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_search_result_binding.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_to_endpoint_fetch_proof.py` — routes: 0, includes: 0
+- `claire/governed_web/first_active_dashboard_google_result_proof.py` — routes: 0, includes: 0
+- `claire/governed_web/live_dashboard_result_rendering_contract.py` — routes: 0, includes: 0
+- `claire/governed_web/live_search_dashboard_smoke.py` — routes: 0, includes: 0
+- `claire/governed_web/root_consolidation_single_dashboard_launcher.py` — routes: 0, includes: 0
+- `claire/internet_operations_dashboard/__init__.py` — routes: 0, includes: 0
+- `claire/internet_operations_dashboard/api_routes.py` — routes: 4, includes: 0
+- `claire/internet_operations_dashboard/models.py` — routes: 0, includes: 0
+- `claire/internet_operations_dashboard/payloads.py` — routes: 0, includes: 0
+- `claire/internet_operations_dashboard/service.py` — routes: 0, includes: 0
+- `claire/internet_operations_dashboard/static_page.py` — routes: 0, includes: 0
+- `claire/internet_runtime_integration/dashboard_payload.py` — routes: 0, includes: 0
+- `claire/runtime/dashboard_e2e_first_use.py` — routes: 0, includes: 0
+- `claire/runtime/dashboard_layout_registry.py` — routes: 0, includes: 0
+- `claire/runtime/dashboard_system_status.py` — routes: 0, includes: 0
+- `claire/runtime/runtime_command_dashboard.py` — routes: 0, includes: 0
+- `claire/runtime_contracts/dashboard_contract.py` — routes: 0, includes: 0
+- `claire/search/search_bar_dashboard_contract.py` — routes: 0, includes: 0
+- `claire/search_bar/governed_web_simulation_dashboard_api.py` — routes: 0, includes: 0
+- `claire/search_bar/governed_web_simulation_dashboard_route_adapter.py` — routes: 0, includes: 0
+- `claire/services/dashboard_services.py` — routes: 0, includes: 0
+- `claire/updater/dashboard_update_workflow.py` — routes: 0, includes: 0
+- `install_claire_v19_62_backend_route_payload_ownership_map.py` — routes: 0, includes: 0
+- `quarantine_legacy_placeholders/old_regression_suite/regression/test_dashboard_contract_stability.py` — routes: 0, includes: 0
+- `quarantine_legacy_placeholders/src/claire/governed_web/dashboard_search_api_adapter.py` — routes: 0, includes: 0
+- `quarantine_legacy_placeholders/src/claire/governed_web/live_dashboard_result_rendering_contract.py` — routes: 0, includes: 0
+- `tests/dashboard/test_command_center_assets.py` — routes: 0, includes: 0
+- `tests/dashboard/test_dashboard_state_builder.py` — routes: 0, includes: 0
+- `tests/dashboard/test_render_contract.py` — routes: 0, includes: 0
+- `tests/internet_operations_dashboard/test_internet_operations_dashboard.py` — routes: 0, includes: 0
+- `tests/internet_operations_dashboard/test_internet_operations_dashboard_api.py` — routes: 0, includes: 2
+- `tests/regression/test_dashboard_contract_stability.py` — routes: 0, includes: 0
+- `tests/regression/test_install_governance_dashboard.py` — routes: 0, includes: 0
+- `tests/regression/test_live_runtime_dashboard.py` — routes: 0, includes: 0
+- `tests/regression/test_unified_runtime_dashboard.py` — routes: 0, includes: 0
+- `tests/test_v17_50_dashboard_runtime_alignment.py` — routes: 0, includes: 0
+- `tests/test_v17_51_dashboard_e2e_use_test.py` — routes: 0, includes: 0
+- `tests/test_v17_52_modern_operator_dashboard.py` — routes: 0, includes: 0
+- `tests/test_v17_53_product_dashboard_experience_layer.py` — routes: 0, includes: 0
+- `tests/test_v17_64_1_functional_operator_dashboard_wiring.py` — routes: 0, includes: 0
+- `tests/test_v17_64_dashboard_single_cockpit.py` — routes: 0, includes: 0
+- `tests/test_v17_75_1_dashboard_backend_bridge_repair.py` — routes: 0, includes: 0
+- `tests/test_v17_75_2_workspace_dashboard_search_command_prep.py` — routes: 0, includes: 0
+- `tests/test_v17_96_search_bar_dashboard_contract.py` — routes: 0, includes: 0
+- `tests/test_v17_97_search_bar_dashboard_api_adapter.py` — routes: 0, includes: 0
+- `tests/test_v18_08_governed_web_simulation_dashboard_api_contract.py` — routes: 0, includes: 0
+- `tests/test_v18_09_governed_web_simulation_dashboard_route_adapter.py` — routes: 0, includes: 0
+- `tests/test_v18_38_dashboard_search_api_adapter.py` — routes: 0, includes: 0
+- `tests/test_v18_45_live_dashboard_result_rendering_contract.py` — routes: 0, includes: 0
+- `tests/test_v18_53_live_search_dashboard_smoke_test.py` — routes: 0, includes: 0
+- `tests/test_v18_55_2_dashboard_result_binding_init_repair_installer_fix.py` — routes: 0, includes: 0
+- `tests/test_v18_55_dashboard_search_bar_real_result_binding.py` — routes: 0, includes: 0
+- ... 27 more
+
+### payload_owner_candidate (590)
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/runtime_truth/runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/runtime_truth/runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/dashboard/operator_dashboard_state.py` — routes: 0, includes: 0
+- `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/cleanup/cleanup_proof.py` — routes: 0, includes: 0
+- `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/tests/test_v17_81_cleanup_proof_before_archive_delete.py` — routes: 0, includes: 0
+- `backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py` — routes: 4, includes: 0
+- `backups/v18_73_root_consolidation_single_dashboard_launcher/20260510_083818/__Users__craig__OneDrive__Desktop__Claire__install_claire_v18_73_root_consolidation_single_dashboard_launcher.py` — routes: 0, includes: 0
+- `backups/v19_canonical_dashboard_payload_bridge/20260510_151548/claire/app.py` — routes: 2, includes: 30
+- `backups/v19_structural_repair_pack_1_2_remaining_syntax_cleanup/20260510_151029/tools/master_control_layer_builder.py` — routes: 0, includes: 0
+- `claire/acquisition/acquirer_identification.py` — routes: 0, includes: 0
+- `claire/acquisition/final_package.py` — routes: 0, includes: 0
+- `claire/acquisition/fit_rationale.py` — routes: 0, includes: 0
+- `claire/agi/consensus_engine.py` — routes: 0, includes: 0
+- `claire/agi/decision_scaler.py` — routes: 0, includes: 0
+- `claire/agi/knowledge_graph.py` — routes: 0, includes: 0
+- `claire/agi/meta_learning/strategy_optimizer.py` — routes: 0, includes: 0
+- `claire/agi/meta_learning/transfer_engine.py` — routes: 0, includes: 0
+- `claire/agi/reasoning_engine.py` — routes: 0, includes: 0
+- `claire/analysis/bridge/masterpass.py` — routes: 0, includes: 0
+- `claire/analysis/entity_extraction.py` — routes: 0, includes: 0
+- `claire/analysis/relationship_mapping.py` — routes: 0, includes: 0
+- `claire/api/commands.py` — routes: 1, includes: 0
+- `claire/api/dashboard_payload_bridge.py` — routes: 2, includes: 0
+- `claire/api/endpoints.py` — routes: 1, includes: 0
+- `claire/api/routes_archive_approval_gate.py` — routes: 5, includes: 0
+- `claire/api/routes_command.py` — routes: 1, includes: 0
+- `claire/api/routes_dashboard_e2e.py` — routes: 3, includes: 0
+- `claire/api/routes_evidence_promotion_gate.py` — routes: 5, includes: 0
+- `claire/api/routes_governed_live_probe.py` — routes: 8, includes: 0
+- `claire/api/routes_operator_search_command.py` — routes: 6, includes: 0
+- `claire/api/routes_pipeline.py` — routes: 2, includes: 0
+- `claire/api/routes_update.py` — routes: 3, includes: 0
+- `claire/api/routes_v19_25_search_execution.py` — routes: 2, includes: 0
+- `claire/api/runtime_truth_read_api.py` — routes: 2, includes: 0
+- `claire/api/v2/auth.py` — routes: 0, includes: 0
+- `claire/api/v2/endpoints.py` — routes: 0, includes: 0
+- `claire/api/v2/webhooks.py` — routes: 0, includes: 0
+- `claire/app.py` — routes: 2, includes: 31
+- `claire/audit/audit_report_builder.py` — routes: 0, includes: 0
+- `claire/audit/duplicate_route_detector.py` — routes: 0, includes: 0
+- `claire/audit/import_health_checker.py` — routes: 0, includes: 0
+- `claire/audit/lifecycle_coherence_auditor.py` — routes: 0, includes: 0
+- `claire/audit/module_overlap_detector.py` — routes: 0, includes: 0
+- `claire/audit/system_integrity_auditor.py` — routes: 0, includes: 0
+- `claire/audit/unused_file_detector.py` — routes: 0, includes: 0
+- `claire/autodesign/handoff_contract.py` — routes: 0, includes: 0
+- `claire/autonomy/recursive_orchestration_controller.py` — routes: 0, includes: 0
+- `claire/breakthrough/classification.py` — routes: 0, includes: 0
+- `claire/breakthrough/discovery_generation.py` — routes: 0, includes: 0
+- `claire/breakthrough/gap_detection.py` — routes: 0, includes: 0
+- `claire/breakthrough/gap_qualification.py` — routes: 0, includes: 0
+- `claire/breakthrough/path_selection.py` — routes: 0, includes: 0
+- `claire/bridge/masterpass.py` — routes: 0, includes: 0
+- `claire/cleanup/archive_approval_gate.py` — routes: 0, includes: 0
+- `claire/cleanup/cleanup_proof.py` — routes: 0, includes: 0
+- `claire/connectors/web_fetcher.py` — routes: 0, includes: 0
+- `claire/continuous_autonomous_intelligence/event_bus.py` — routes: 0, includes: 0
+- `claire/continuous_autonomous_intelligence/models.py` — routes: 0, includes: 0
+- `claire/continuous_autonomous_intelligence/runtime.py` — routes: 0, includes: 0
+- `claire/cross_system/integration_engine.py` — routes: 0, includes: 0
+- `claire/cross_system/pattern_transfer.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_snapshot_writer.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_state_builder.py` — routes: 0, includes: 0
+- `claire/dashboard/generator.py` — routes: 0, includes: 0
+- `claire/dashboard/live_dashboard_adapter.py` — routes: 0, includes: 0
+- `claire/dashboard/operator_dashboard_state.py` — routes: 0, includes: 0
+- `claire/dashboard/render_contract.py` — routes: 0, includes: 0
+- `claire/data_lineage/citation_anchor_registry.py` — routes: 0, includes: 0
+- `claire/data_lineage/provenance_tracker.py` — routes: 0, includes: 0
+- `claire/data_lineage/source_record_builder.py` — routes: 0, includes: 0
+- `claire/data_lineage/source_rights_registry.py` — routes: 0, includes: 0
+- `claire/data_lineage/transformation_chain.py` — routes: 0, includes: 0
+- `claire/data_quality/data_readiness_regression.py` — routes: 0, includes: 0
+- `claire/data_quality/dataset_quality_monitor.py` — routes: 0, includes: 0
+- `claire/data_quality/missing_lineage_checker.py` — routes: 0, includes: 0
+- `claire/data_quality/replay_depth_scorer.py` — routes: 0, includes: 0
+- `claire/data_quality/stale_data_detector.py` — routes: 0, includes: 0
+- `claire/data_readiness/data_gap_registry.py` — routes: 0, includes: 0
+- `claire/data_readiness/data_readiness_contract.py` — routes: 0, includes: 0
+- `claire/data_readiness/data_readiness_scorecard.py` — routes: 0, includes: 0
+- `claire/data_readiness/readiness_report_builder.py` — routes: 0, includes: 0
+- `claire/demo/demo_scenario_registry.py` — routes: 0, includes: 0
+- `claire/deployment/health_contract.py` — routes: 0, includes: 0
+- `claire/design_portal/output_contract.py` — routes: 0, includes: 0
+- `claire/desktop/startup_reliability.py` — routes: 0, includes: 0
+- `claire/discovery/thesis_graph_engine.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/models.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/runtime.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/streaming_pipeline.py` — routes: 0, includes: 0
+- `claire/domain/contract.py` — routes: 0, includes: 0
+- `claire/dynamic_source_trust/store.py` — routes: 0, includes: 0
+- `claire/engines/export_package_engine.py` — routes: 0, includes: 0
+- `claire/engines/knowledge_ingestion_engine.py` — routes: 0, includes: 0
+- `claire/engines/signal_extraction_engine.py` — routes: 0, includes: 0
+- `claire/engines/system_design_engine.py` — routes: 0, includes: 0
+- `claire/enterprise/enterprise_readiness_assessor.py` — routes: 0, includes: 0
+- `claire/enterprise/externalization_plan_builder.py` — routes: 0, includes: 0
+- `claire/enterprise_readiness/deployment_gate_engine.py` — routes: 0, includes: 0
+- `claire/enterprise_readiness/enterprise_readiness_scorecard.py` — routes: 0, includes: 0
+- `claire/enterprise_readiness/externalization_readiness_planner.py` — routes: 0, includes: 0
+- ... 490 more
+
+### runtime_lifecycle_owner_candidate (262)
+- `_claire_archives/v18_85_to_v18_89_dashboard_runtime_governed_search_pack/claire/dashboard_live_search_binding.py` — routes: 0, includes: 0
+- `_claire_archives/v18_85_to_v18_89_dashboard_runtime_governed_search_pack/tests/test_v18_85_to_v18_89_dashboard_runtime_governed_search_pack.py` — routes: 0, includes: 0
+- `_claire_archives/v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack/claire/dashboard_currency_runtime_order_lock.py` — routes: 0, includes: 0
+- `_claire_archives/v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack/tests/test_v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack.py` — routes: 0, includes: 0
+- `backups/claire_v17_59_20260507_230959/src/claire/runtime_truth/__init__.py` — routes: 0, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_181910/claire/app.py` — routes: 2, includes: 2
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py` — routes: 4, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/runtime_truth/runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183718/tests/test_v17_65_runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py` — routes: 4, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/runtime_truth/runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183932/tests/test_v17_65_runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `backups/v18_72_active_launcher_runtime_web_route_mount_patch/20260510_075931/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v19_structural_repair_pack_1_2_remaining_syntax_cleanup/20260510_151029/tests/regression/test_runtime_cleanroom.py` — routes: 0, includes: 0
+- `backups/v19_structural_repair_pack_1_2_remaining_syntax_cleanup/20260510_151029/tests/regression/test_runtime_smoke.py` — routes: 0, includes: 0
+- `claire/api/routes_pipeline.py` — routes: 2, includes: 0
+- `claire/api/routes_runtime_truth.py` — routes: 4, includes: 0
+- `claire/api/runtime_truth_read_api.py` — routes: 2, includes: 0
+- `claire/api/unified/lifecycle_routes.py` — routes: 0, includes: 0
+- `claire/audit/lifecycle_coherence_auditor.py` — routes: 0, includes: 0
+- `claire/autonomy/adaptive_runtime_reprioritization.py` — routes: 0, includes: 0
+- `claire/autonomy/runtime_cycle_manager.py` — routes: 0, includes: 0
+- `claire/continuous_autonomous_intelligence/runtime.py` — routes: 0, includes: 0
+- `claire/continuous_autonomous_intelligence/runtime_supervisor.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_currency_runtime_order_lock.py` — routes: 0, includes: 0
+- `claire/dashboard/live_runtime_state.py` — routes: 0, includes: 0
+- `claire/dashboard/runtime_alignment.py` — routes: 0, includes: 0
+- `claire/dashboard/runtime_control_center.py` — routes: 0, includes: 0
+- `claire/dashboard/unified_runtime_dashboard.py` — routes: 0, includes: 0
+- `claire/deployment/runtime_hardening.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/__init__.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/cross_campaign_fusion.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/daemon_contract.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/health_dashboard.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/models.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/production_regression_lock.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/queue_partitioning.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/runtime.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/runtime_sharding.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/streaming_pipeline.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/telemetry.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/worker_pool.py` — routes: 0, includes: 0
+- `claire/distributed_production_runtime/workload_balancer.py` — routes: 0, includes: 0
+- `claire/engines/lifecycle_stage_engine.py` — routes: 0, includes: 0
+- `claire/enterprise/runtime_health_recovery_diagnostics.py` — routes: 0, includes: 0
+- `claire/evolution/evolution_orchestrator.py` — routes: 0, includes: 0
+- `claire/feeds/live_source_orchestrator.py` — routes: 0, includes: 0
+- `claire/governance/runtime_truth_consumption_firewall.py` — routes: 0, includes: 0
+- `claire/governance/runtime_truth_ingestion_gate.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/runtime.py` — routes: 0, includes: 0
+- `claire/governed_web/governed_live_search_orchestrator.py` — routes: 0, includes: 0
+- `claire/governed_web/live_search_session_lifecycle.py` — routes: 0, includes: 0
+- `claire/ingestion/normalization_pipeline.py` — routes: 0, includes: 0
+- `claire/intelligence/lifecycle_quality.py` — routes: 0, includes: 0
+- `claire/internet_runtime_integration/__init__.py` — routes: 0, includes: 0
+- `claire/internet_runtime_integration/api_routes.py` — routes: 2, includes: 0
+- `claire/internet_runtime_integration/bridge.py` — routes: 0, includes: 0
+- `claire/internet_runtime_integration/dashboard_payload.py` — routes: 0, includes: 0
+- `claire/internet_runtime_integration/evidence_continuity.py` — routes: 0, includes: 0
+- `claire/internet_runtime_integration/integration_service.py` — routes: 0, includes: 0
+- `claire/internet_runtime_integration/lifecycle_adapter.py` — routes: 0, includes: 0
+- `claire/internet_runtime_integration/models.py` — routes: 0, includes: 0
+- `claire/internet_runtime_integration/output_merger.py` — routes: 0, includes: 0
+- `claire/internet_runtime_stability/__init__.py` — routes: 0, includes: 0
+- `claire/internet_runtime_stability/api_routes.py` — routes: 5, includes: 0
+- `claire/internet_runtime_stability/classifier.py` — routes: 0, includes: 0
+- `claire/internet_runtime_stability/cli.py` — routes: 0, includes: 0
+- `claire/internet_runtime_stability/health.py` — routes: 0, includes: 0
+- `claire/internet_runtime_stability/journal.py` — routes: 0, includes: 0
+- `claire/internet_runtime_stability/models.py` — routes: 0, includes: 0
+- `claire/internet_runtime_stability/service.py` — routes: 0, includes: 0
+- `claire/internet_runtime_stability/sync_helpers.py` — routes: 0, includes: 0
+- `claire/invention/portfolio/pipeline_tracker.py` — routes: 0, includes: 0
+- `claire/lifecycle/__init__.py` — routes: 0, includes: 0
+- `claire/lifecycle/completion_gate.py` — routes: 0, includes: 0
+- `claire/lifecycle/contract_validator.py` — routes: 0, includes: 0
+- `claire/lifecycle/lifecycle_context.py` — routes: 0, includes: 0
+- `claire/lifecycle/lifecycle_registry.py` — routes: 0, includes: 0
+- `claire/lifecycle/lifecycle_runner.py` — routes: 0, includes: 0
+- `claire/lifecycle/stage_contracts.py` — routes: 0, includes: 0
+- `claire/lifecycle/stage_registry.py` — routes: 0, includes: 0
+- `claire/lifecycle/stage_status.py` — routes: 0, includes: 0
+- `claire/lifecycle/threshold_provenance.py` — routes: 0, includes: 0
+- `claire/loops/loop_orchestrator.py` — routes: 0, includes: 0
+- `claire/memory/lifecycle_memory.py` — routes: 0, includes: 0
+- `claire/online_ops_endgame/online_research_pipeline_contract.py` — routes: 0, includes: 0
+- `claire/orchestrator/__init__.py` — routes: 0, includes: 0
+- `claire/orchestrator/desking.py` — routes: 0, includes: 0
+- `claire/orchestrator/fettio.py` — routes: 0, includes: 0
+- `claire/orchestrator/pattern_recognition.py` — routes: 0, includes: 0
+- `claire/orchestrator/pipeline_v4.py` — routes: 0, includes: 0
+- `claire/pipeline/pipeline_result_quality.py` — routes: 0, includes: 0
+- `claire/pipeline/primary_pipeline_desired_output_contract.py` — routes: 0, includes: 0
+- `claire/platform/update_governance/lifecycle_stage_impact.py` — routes: 0, includes: 0
+- `claire/platform/update_governance/rollback_orchestrator.py` — routes: 0, includes: 0
+- `claire/platform/update_governance/runtime_risk_classifier.py` — routes: 0, includes: 0
+- `claire/platform/update_governance/staged_installer.py` — routes: 0, includes: 0
+- `claire/platform/update_governance/update_orchestrator.py` — routes: 0, includes: 0
+- `claire/proof/runtime_proof_collector.py` — routes: 0, includes: 0
+- `claire/real_governed_live_connectivity/runtime.py` — routes: 0, includes: 0
+- ... 162 more
+
+### search_provider_owner_candidate (409)
+- `_claire_archives/v18_85_to_v18_89_dashboard_runtime_governed_search_pack/claire/dashboard_live_search_binding.py` — routes: 0, includes: 0
+- `_claire_archives/v18_85_to_v18_89_dashboard_runtime_governed_search_pack/tests/test_v18_85_to_v18_89_dashboard_runtime_governed_search_pack.py` — routes: 0, includes: 0
+- `_claire_archives/v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack/claire/dashboard_currency_runtime_order_lock.py` — routes: 0, includes: 0
+- `_claire_archives/v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack/tests/test_v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack.py` — routes: 0, includes: 0
+- `backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/claire/app.py` — routes: 2, includes: 14
+- `backups/v17_76_platform_endpoint_smoke_proof/20260509_193317/claire/app.py` — routes: 2, includes: 15
+- `backups/v17_77_platform_launch_hardening/20260509_193754/claire/app.py` — routes: 2, includes: 16
+- `backups/v17_78_desktop_packaging_startup_reliability/20260509_200739/claire/app.py` — routes: 2, includes: 17
+- `backups/v17_79_manual_browser_swagger_proof_binder/20260509_201440/claire/app.py` — routes: 2, includes: 18
+- `backups/v17_80_launch_candidate_freeze/20260509_202028/claire/app.py` — routes: 2, includes: 19
+- `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202649/claire/app.py` — routes: 2, includes: 20
+- `backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/cleanup/cleanup_proof.py` — routes: 0, includes: 0
+- `backups/v17_82_archive_approval_gate/20260509_203610/claire/app.py` — routes: 2, includes: 21
+- `backups/v17_83_internet_provider_configuration_gate/20260509_203928/claire/app.py` — routes: 2, includes: 22
+- `backups/v17_84_governed_single_query_live_search_probe/20260509_204207/claire/app.py` — routes: 2, includes: 23
+- `backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004/claire/app.py` — routes: 2, includes: 24
+- `backups/v18_72_1_active_launcher_web_mount_patch_repair/20260510_080210/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__api__governed_dashboard_live_search_routes.py` — routes: 0, includes: 0
+- `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__api__real_provider_operator_probe_routes.py` — routes: 0, includes: 0
+- `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 27
+- `backups/v18_72_active_launcher_runtime_web_route_mount_patch/20260510_075931/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v18_73_1_operator_dashboard_compat_endpoint_repair/20260510_084238/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 29
+- `backups/v18_73_root_consolidation_single_dashboard_launcher/20260510_083818/__Users__craig__OneDrive__Desktop__Claire__install_claire_v18_73_root_consolidation_single_dashboard_launcher.py` — routes: 0, includes: 0
+- `backups/v19_canonical_dashboard_payload_bridge/20260510_151548/claire/app.py` — routes: 2, includes: 30
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/app.py` — routes: 2, includes: 31
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/recursive/longitudinal/thesis_evolution_tracker.py` — routes: 0, includes: 0
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/research/live/citation_lineage_engine.py` — routes: 0, includes: 0
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/research/live/claim_verifier.py` — routes: 0, includes: 0
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/research/live/evidence_conflict_resolver.py` — routes: 0, includes: 0
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/research/live/governed_live_research.py` — routes: 0, includes: 0
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/research/live/research_packet_builder.py` — routes: 0, includes: 0
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/research/live/source_verification_engine.py` — routes: 0, includes: 0
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/technology/technology_catalog.py` — routes: 0, includes: 0
+- `claire/acquirers/dataset.py` — routes: 0, includes: 0
+- `claire/api/commands.py` — routes: 1, includes: 0
+- `claire/api/dashboard_payload_bridge.py` — routes: 2, includes: 0
+- `claire/api/governed_dashboard_live_search_routes.py` — routes: 3, includes: 0
+- `claire/api/operator_dashboard_compat_routes.py` — routes: 9, includes: 0
+- `claire/api/real_provider_operator_probe_routes.py` — routes: 2, includes: 0
+- `claire/api/router.py` — routes: 0, includes: 2
+- `claire/api/routes_dashboard.py` — routes: 11, includes: 0
+- `claire/api/routes_governed_live_probe.py` — routes: 8, includes: 0
+- `claire/api/routes_internet_provider_gate.py` — routes: 4, includes: 0
+- `claire/api/routes_live_search_dashboard_smoke.py` — routes: 1, includes: 0
+- `claire/api/routes_operator_search_command.py` — routes: 6, includes: 0
+- `claire/api/routes_v19_25_search_execution.py` — routes: 2, includes: 0
+- `claire/api/routes_visible_query_result_verification.py` — routes: 1, includes: 0
+- `claire/api/search_bar_dashboard_api.py` — routes: 2, includes: 0
+- `claire/app.py` — routes: 2, includes: 31
+- `claire/autonomous/research_director.py` — routes: 0, includes: 0
+- `claire/autonomous/self_enricher.py` — routes: 0, includes: 0
+- `claire/autonomous_research_ecosystem/__init__.py` — routes: 0, includes: 0
+- `claire/autonomous_research_ecosystem/research_task_contract.py` — routes: 0, includes: 0
+- `claire/autonomous_research_ecosystem/source_policy_gate.py` — routes: 0, includes: 0
+- `claire/autonomous_research_ecosystem/synthesis_review_queue.py` — routes: 0, includes: 0
+- `claire/buyer/acquisition_narrative_binder.py` — routes: 0, includes: 0
+- `claire/cleanup/cleanup_proof.py` — routes: 0, includes: 0
+- `claire/connectors/academic.py` — routes: 0, includes: 0
+- `claire/dashboard/actual_run_output_dashboard_binding.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_currency_runtime_order_lock.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_live_search_binding.py` — routes: 0, includes: 0
+- `claire/dashboard/dashboard_sophistication_contract.py` — routes: 0, includes: 0
+- `claire/dashboard/runtime_alignment.py` — routes: 0, includes: 0
+- `claire/dashboard_intelligence/__init__.py` — routes: 0, includes: 0
+- `claire/dashboard_intelligence/local_index.py` — routes: 0, includes: 0
+- `claire/deployment/runtime_hardening.py` — routes: 0, includes: 0
+- `claire/deployment/secret_scanner.py` — routes: 0, includes: 0
+- `claire/desktop/startup_reliability.py` — routes: 0, includes: 0
+- `claire/discovery/governed_research_synthesis_engine.py` — routes: 0, includes: 0
+- `claire/engines/acquirer_matching.py` — routes: 0, includes: 0
+- `claire/engines/breakthrough_synthesis_engine.py` — routes: 0, includes: 0
+- `claire/engines/business_model_engine.py` — routes: 0, includes: 0
+- `claire/engines/deal_exit_modeling_engine.py` — routes: 0, includes: 0
+- `claire/engines/engineering.py` — routes: 0, includes: 0
+- `claire/engines/innovation.py` — routes: 0, includes: 0
+- `claire/engines/market_formation_engine.py` — routes: 0, includes: 0
+- `claire/engines/market_gap_engine.py` — routes: 0, includes: 0
+- `claire/engines/moat_defensibility_engine.py` — routes: 0, includes: 0
+- `claire/engines/opportunity_discovery_engine.py` — routes: 0, includes: 0
+- `claire/engines/productization_path_engine.py` — routes: 0, includes: 0
+- `claire/engines/risk_regulation_engine.py` — routes: 0, includes: 0
+- `claire/engines/signal_extraction_engine.py` — routes: 0, includes: 0
+- `claire/engines/strategic_positioning_engine.py` — routes: 0, includes: 0
+- `claire/engines/system_design_engine.py` — routes: 0, includes: 0
+- `claire/engines/technical_feasibility_engine.py` — routes: 0, includes: 0
+- `claire/feeds/live_fetcher.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/controlled_head_transport_executor.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/first_controlled_read_only_live_probe_executor.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/first_live_probe_permission_switch.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/first_real_controlled_head_handshake.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/live_attempt_planner.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/network_probe_adapter_shell.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/pre_live_probe_authorization_audit.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/probe_execution_gate.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/provider_adapter_preview_bridge.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/read_only_probe_executor_null_transport.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/read_only_transport_selection_gate.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/real_http_transport_dry_activation_shell.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/search_request_envelope.py` — routes: 0, includes: 0
+- `claire/governance/redline_classifier.py` — routes: 0, includes: 0
+- ... 309 more
+
+### governed_web_owner_candidate (297)
+- `backups/v17_70_internet_readiness_verification/20260509_185527/claire/app.py` — routes: 2, includes: 8
+- `backups/v17_83_internet_provider_configuration_gate/20260509_203928/claire/app.py` — routes: 2, includes: 22
+- `backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py` — routes: 4, includes: 0
+- `backups/v17_84_governed_single_query_live_search_probe/20260509_204207/claire/app.py` — routes: 2, includes: 23
+- `backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004/claire/app.py` — routes: 2, includes: 24
+- `backups/v18_72_1_active_launcher_web_mount_patch_repair/20260510_080210/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__api__governed_dashboard_live_search_routes.py` — routes: 0, includes: 0
+- `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__api__real_provider_operator_probe_routes.py` — routes: 0, includes: 0
+- `backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 27
+- `backups/v18_72_active_launcher_runtime_web_route_mount_patch/20260510_075931/__Users__craig__OneDrive__Desktop__Claire__claire__app.py` — routes: 2, includes: 25
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/recursive/longitudinal/strategy_memory_synthesizer.py` — routes: 0, includes: 0
+- `claire/agi/meta_learning/strategy_optimizer.py` — routes: 0, includes: 0
+- `claire/api/real_provider_operator_probe_routes.py` — routes: 2, includes: 0
+- `claire/api/routes_governed_live_probe.py` — routes: 8, includes: 0
+- `claire/api/routes_internet_provider_gate.py` — routes: 4, includes: 0
+- `claire/api/routes_internet_readiness.py` — routes: 4, includes: 0
+- `claire/api/v2/webhooks.py` — routes: 0, includes: 0
+- `claire/connectors/web_fetcher.py` — routes: 0, includes: 0
+- `claire/dynamic_source_trust/__init__.py` — routes: 0, includes: 0
+- `claire/dynamic_source_trust/api_routes.py` — routes: 7, includes: 0
+- `claire/dynamic_source_trust/cli.py` — routes: 0, includes: 0
+- `claire/dynamic_source_trust/defaults.py` — routes: 0, includes: 0
+- `claire/dynamic_source_trust/models.py` — routes: 0, includes: 0
+- `claire/dynamic_source_trust/quarantine.py` — routes: 0, includes: 0
+- `claire/dynamic_source_trust/scorer.py` — routes: 0, includes: 0
+- `claire/dynamic_source_trust/service.py` — routes: 0, includes: 0
+- `claire/dynamic_source_trust/store.py` — routes: 0, includes: 0
+- `claire/engines/strategic_positioning_engine.py` — routes: 0, includes: 0
+- `claire/engines/strategy.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/__init__.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/controlled_head_transport_executor.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/first_controlled_read_only_live_probe_executor.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/first_live_probe_permission_switch.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/first_real_controlled_head_handshake.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/live_attempt_planner.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/live_connectivity_handshake.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/live_connectivity_handshake_review_record.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/network_probe_adapter_shell.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/pre_live_probe_authorization_audit.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/probe_execution_gate.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/provider_adapter_preview_bridge.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/read_only_probe_executor_null_transport.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/read_only_transport_selection_gate.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/real_http_transport_dry_activation_shell.py` — routes: 0, includes: 0
+- `claire/governance/governed_web/search_request_envelope.py` — routes: 0, includes: 0
+- `claire/governance/safe_concurrent_probe_governance.py` — routes: 0, includes: 0
+- `claire/governance/source_allowlist.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/__init__.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/async_ingestion_queue.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/connectivity_regression_lock.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/continuous_monitor.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/evidence_extractor.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/fetch_request_engine.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/models.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/runtime.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/signal_refresh_scheduler.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/source_policy.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/source_reliability.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/watchlist_engine.py` — routes: 0, includes: 0
+- `claire/governed_web/__init__.py` — routes: 0, includes: 0
+- `claire/governed_web/accelerated_governed_live_web_activation_pack.py` — routes: 0, includes: 0
+- `claire/governed_web/active_app_final_web_activation_mount_verification.py` — routes: 0, includes: 0
+- `claire/governed_web/active_app_mounted_route_verification.py` — routes: 0, includes: 0
+- `claire/governed_web/consolidated_web_activation_packs.py` — routes: 0, includes: 0
+- `claire/governed_web/controlled_limited_body_fetch.py` — routes: 0, includes: 0
+- `claire/governed_web/controlled_metadata_probe.py` — routes: 0, includes: 0
+- `claire/governed_web/controlled_retry_timeout_governance.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_live_search_route_mount_adapter.py` — routes: 0, includes: 1
+- `claire/governed_web/dashboard_live_search_ui_fetch_binding.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_search_api_adapter.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_search_bar_html_integration_gate.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_search_endpoint_result_contract.py` — routes: 2, includes: 0
+- `claire/governed_web/dashboard_search_provider_probe_separation_repair.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_search_query_execution_bridge.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_search_result_binding.py` — routes: 0, includes: 0
+- `claire/governed_web/dashboard_to_endpoint_fetch_proof.py` — routes: 0, includes: 0
+- `claire/governed_web/end_to_end_live_search_flow.py` — routes: 0, includes: 0
+- `claire/governed_web/first_active_dashboard_google_result_proof.py` — routes: 0, includes: 0
+- `claire/governed_web/governance_error_state_hardening.py` — routes: 0, includes: 0
+- `claire/governed_web/governed_live_search_orchestrator.py` — routes: 0, includes: 0
+- `claire/governed_web/governed_provider_health_registry.py` — routes: 0, includes: 0
+- `claire/governed_web/governed_search_session_persistence_layer.py` — routes: 0, includes: 0
+- `claire/governed_web/head_probe_review_capture.py` — routes: 0, includes: 0
+- `claire/governed_web/live_dashboard_result_rendering_contract.py` — routes: 0, includes: 0
+- `claire/governed_web/live_search_active_app_mount_gate.py` — routes: 0, includes: 1
+- `claire/governed_web/live_search_dashboard_smoke.py` — routes: 0, includes: 0
+- `claire/governed_web/live_search_session_lifecycle.py` — routes: 0, includes: 0
+- `claire/governed_web/mounted_live_search_endpoint_smoke_test.py` — routes: 0, includes: 0
+- `claire/governed_web/multi_result_aggregation.py` — routes: 0, includes: 0
+- `claire/governed_web/operator_probe_active_app_mount.py` — routes: 0, includes: 1
+- `claire/governed_web/provider_health_registry.py` — routes: 0, includes: 0
+- `claire/governed_web/real_controlled_provider_result_proof.py` — routes: 0, includes: 0
+- `claire/governed_web/real_provider_operator_probe_route.py` — routes: 2, includes: 1
+- `claire/governed_web/real_search_provider_adapter.py` — routes: 0, includes: 0
+- `claire/governed_web/root_consolidation_single_dashboard_launcher.py` — routes: 0, includes: 0
+- `claire/governed_web/search_bar_live_web_ui_wiring.py` — routes: 0, includes: 0
+- `claire/governed_web/search_evidence_basket.py` — routes: 0, includes: 0
+- `claire/governed_web/search_result_parser_contract.py` — routes: 0, includes: 0
+- `claire/governed_web/search_session_persistence.py` — routes: 0, includes: 0
+- `claire/governed_web/search_trust_scoring_normalization.py` — routes: 0, includes: 0
+- ... 197 more
+
+### runtime_truth_evidence_owner_candidate (94)
+- `backups/claire_v17_59_20260507_230959/src/claire/runtime_truth/__init__.py` — routes: 0, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_181910/claire/app.py` — routes: 2, includes: 2
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py` — routes: 4, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/runtime_truth/runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183718/tests/test_v17_65_runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py` — routes: 4, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/runtime_truth/runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `backups/v17_65_runtime_truth_contract_repair/20260509_183932/tests/test_v17_65_runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004/claire/app.py` — routes: 2, includes: 24
+- `backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/research/live/evidence_conflict_resolver.py` — routes: 0, includes: 0
+- `claire/api/routes_evidence_promotion_gate.py` — routes: 5, includes: 0
+- `claire/api/routes_runtime_truth.py` — routes: 4, includes: 0
+- `claire/api/runtime_truth_read_api.py` — routes: 2, includes: 0
+- `claire/breakthrough/maturity/evidence_thresholds.py` — routes: 0, includes: 0
+- `claire/evidence_population/__init__.py` — routes: 0, includes: 0
+- `claire/evidence_population/batch_intake_manifest.py` — routes: 0, includes: 0
+- `claire/evidence_population/evidence_quality_checker.py` — routes: 0, includes: 0
+- `claire/evidence_population/evidence_template_builder.py` — routes: 0, includes: 0
+- `claire/evidence_population/population_report_builder.py` — routes: 0, includes: 0
+- `claire/evidence_population/proof_record_seeder.py` — routes: 0, includes: 0
+- `claire/evidence_replay/__init__.py` — routes: 0, includes: 0
+- `claire/evidence_replay/benchmark_dataset_builder.py` — routes: 0, includes: 0
+- `claire/evidence_replay/benchmark_manifest.py` — routes: 0, includes: 0
+- `claire/evidence_replay/evidence_snapshotter.py` — routes: 0, includes: 0
+- `claire/evidence_replay/regression_evidence_pack.py` — routes: 0, includes: 0
+- `claire/evidence_replay/replay_comparator.py` — routes: 0, includes: 0
+- `claire/evidence_replay/replay_session_manager.py` — routes: 0, includes: 0
+- `claire/governance/runtime_truth_consumption_firewall.py` — routes: 0, includes: 0
+- `claire/governance/runtime_truth_ingestion_gate.py` — routes: 0, includes: 0
+- `claire/governed_internet_connectivity/evidence_extractor.py` — routes: 0, includes: 0
+- `claire/governed_web/search_evidence_basket.py` — routes: 0, includes: 0
+- `claire/internet/evidence_promotion_gate.py` — routes: 0, includes: 0
+- `claire/internet_activation/evidence.py` — routes: 0, includes: 0
+- `claire/internet_runtime_integration/evidence_continuity.py` — routes: 0, includes: 0
+- `claire/live_replay/evidence_drift_monitor.py` — routes: 0, includes: 0
+- `claire/market_validation/interview_evidence_model.py` — routes: 0, includes: 0
+- `claire/memory/cross_run_evidence_linker.py` — routes: 0, includes: 0
+- `claire/operational_evidence/__init__.py` — routes: 0, includes: 0
+- `claire/operational_evidence/evidence_contract.py` — routes: 0, includes: 0
+- `claire/operational_evidence/evidence_event.py` — routes: 0, includes: 0
+- `claire/operational_evidence/evidence_indexer.py` — routes: 0, includes: 0
+- `claire/operational_evidence/evidence_packet.py` — routes: 0, includes: 0
+- `claire/operational_evidence/evidence_store.py` — routes: 0, includes: 0
+- `claire/operational_evidence/lineage_record.py` — routes: 0, includes: 0
+- `claire/orchestration/evidence_fusion_coordinator.py` — routes: 0, includes: 0
+- `claire/portfolio/evidence.py` — routes: 0, includes: 0
+- `claire/proof/evidence_binder_generator.py` — routes: 0, includes: 0
+- `claire/proof/evidence_trace_builder.py` — routes: 0, includes: 0
+- `claire/real_governed_live_connectivity/evidence_persistence.py` — routes: 0, includes: 0
+- `claire/research/evidence_basket.py` — routes: 0, includes: 0
+- `claire/research/live/evidence_conflict_resolver.py` — routes: 0, includes: 0
+- `claire/research/live/evidence_quality_scorer.py` — routes: 0, includes: 0
+- `claire/routing/route_evidence.py` — routes: 0, includes: 0
+- `claire/runtime_truth/__init__.py` — routes: 0, includes: 0
+- `claire/runtime_truth/evidence_truth.py` — routes: 0, includes: 0
+- `claire/runtime_truth/memory_truth.py` — routes: 0, includes: 0
+- `claire/runtime_truth/route_truth.py` — routes: 0, includes: 0
+- `claire/runtime_truth/run_truth.py` — routes: 0, includes: 0
+- `claire/runtime_truth/runtime_health_truth.py` — routes: 0, includes: 0
+- `claire/runtime_truth/runtime_truth_builder.py` — routes: 0, includes: 0
+- `claire/runtime_truth/runtime_truth_contract.py` — routes: 0, includes: 0
+- `claire/runtime_truth/runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `claire/runtime_truth/runtime_truth_reader.py` — routes: 0, includes: 0
+- `claire/runtime_truth/stage_truth.py` — routes: 0, includes: 0
+- `claire/runtime_truth/terminal_truth.py` — routes: 0, includes: 0
+- `claire/runtime_truth/validation_truth.py` — routes: 0, includes: 0
+- `claire/search/runtime_truth_search_adapter.py` — routes: 0, includes: 0
+- `claire/validation/evidence_collector.py` — routes: 0, includes: 0
+- `claire/validation_authority/evidence_index.py` — routes: 0, includes: 0
+- `claire/validation_authority/evidence_traceability.py` — routes: 0, includes: 0
+- `claire/valuation_demo_binder/demo_evidence_binder.py` — routes: 0, includes: 0
+- `claire/web/live_web_evidence_pipeline_ingestion.py` — routes: 0, includes: 0
+- `claire/workflow_telemetry/adoption_evidence_tracker.py` — routes: 0, includes: 0
+- `quarantine_legacy_placeholders/live/evidence_conflict_resolver.py` — routes: 0, includes: 0
+- `quarantine_legacy_placeholders/live/evidence_quality_scorer.py` — routes: 0, includes: 0
+- `quarantine_legacy_placeholders/src/claire/governed_web/search_evidence_basket.py` — routes: 0, includes: 0
+- `tests/evidence_ops/test_evidence_replay.py` — routes: 0, includes: 0
+- `tests/evidence_ops/test_governed_ingestion.py` — routes: 0, includes: 0
+- `tests/evidence_ops/test_operational_evidence_core.py` — routes: 0, includes: 0
+- `tests/evidence_ops/test_source_trust.py` — routes: 0, includes: 0
+- `tests/evidence_ops/test_telemetry_feedback.py` — routes: 0, includes: 0
+- `tests/evidence_population/test_evidence_population.py` — routes: 0, includes: 0
+- `tests/test_v17_65_runtime_truth_contract_repair.py` — routes: 0, includes: 0
+- `tests/test_v17_85_governed_web_evidence_promotion_gate.py` — routes: 0, includes: 0
+- `tests/test_v17_86_reviewed_evidence_to_runtime_truth_ingestion_gate.py` — routes: 0, includes: 0
+- `tests/test_v17_87_runtime_truth_consumption_firewall.py` — routes: 0, includes: 0
+- `tests/test_v17_88_runtime_truth_read_api_adapter.py` — routes: 0, includes: 0
+- `tests/test_v17_89_runtime_truth_search_adapter.py` — routes: 0, includes: 0
+- `tests/test_v18_49_1_evidence_basket_import_path_repair.py` — routes: 0, includes: 0
+- `tests/test_v18_49_governed_search_evidence_basket.py` — routes: 0, includes: 0
+- `tests/test_v19_10_to_v19_14_live_web_evidence_pipeline_ingestion_pack.py` — routes: 0, includes: 0
+- `tools/claire_build_runtime_truth.py` — routes: 0, includes: 0
+- `tools/claire_runtime_truth_probe.py` — routes: 0, includes: 0
+- `tools/claire_validate_runtime_truth.py` — routes: 0, includes: 0
+

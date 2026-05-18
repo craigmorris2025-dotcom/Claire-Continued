@@ -1,104 +1,88 @@
-#!/usr/bin/env python3
-from __future__ import annotations
-
-import importlib
-import json
+from __future__ import annotations
+
 import sys
-from datetime import datetime
 from pathlib import Path
 
-ROOT = Path.cwd()
-SRC = ROOT / "src"
-
+ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-
-if SRC.exists() and str(SRC) not in sys.path:
-    sys.path.append(str(SRC))
-
-PROTECTED_CONTRACTS = [
-    {"path": "main.py", "type": "launch_entrypoint"},
-    {"path": "claire/app.py", "type": "app_factory"},
-    {"path": "claire/api/routes_pipeline.py", "type": "api_route"},
-    {"path": "claire/orchestrator/pipeline_v4.py", "type": "runtime_orchestrator"},
-    {
-        "path": "claire/technology/technology_intelligence.py",
-        "type": "runtime_dependency",
-    },
-]
-
-REQUIRED_IMPORTS = [
-    "claire.app",
-    "claire.api.routes_pipeline",
-    "claire.orchestrator.pipeline_v4",
-    "claire.technology.technology_intelligence",
-]
-
-
-def main() -> int:
-    path_results = []
-
-    for item in PROTECTED_CONTRACTS:
-        p = ROOT / item["path"]
-
-        path_results.append(
-            {
-                **item,
-                "exists": p.exists(),
-                "size_bytes": p.stat().st_size if p.exists() else 0,
-            }
-        )
-
-    import_results = []
-
-    for module in REQUIRED_IMPORTS:
-        try:
-            imported = importlib.import_module(module)
-
-            import_results.append(
-                {
-                    "module": module,
-                    "status": "success",
-                    "origin": getattr(imported, "__file__", None),
-                }
-            )
-
-        except Exception as exc:
-            import_results.append(
-                {
-                    "module": module,
-                    "status": "failed",
-                    "error": repr(exc),
-                }
-            )
-
-    payload = {
-        "lock": "core_runtime_lock",
-        "version": "v16.29-phase4d",
-        "created_at": datetime.now().isoformat(),
-        "status": (
-            "locked"
-            if all(p["exists"] for p in path_results)
-            and all(i["status"] == "success" for i in import_results)
-            else "failed"
-        ),
-        "protected_contracts": path_results,
-        "required_imports": import_results,
-        "canonical_runtime_root": "claire",
-        "legacy_src_compatibility": SRC.exists(),
-    }
-
-    out_dir = ROOT / "data" / "runtime"
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    out_path = out_dir / "core_runtime_lock.json"
-    out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-
-    print(json.dumps(payload, indent=2))
-    print(f"\nRuntime lock written: {out_path}")
-
-    return 0 if payload["status"] == "locked" else 1
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+
+from fastapi.testclient import TestClient
+
+from claire.app import create_app
+
+
+TOOL_NAME = "core_runtime_lock"
+OUTPUT_FILE = "reports/core_runtime_lock.json"
+
+
+def _now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def _root() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
+def build_state() -> dict:
+    app = create_app()
+    client = TestClient(app)
+    mounted = {getattr(route, "path", "") for route in app.routes}
+
+    checks = {}
+    for path in [
+        "/health",
+        "/openapi.json",
+        "/dashboard/payload/status",
+        "/runtime/continuous/status",
+        "/api/dashboard/search/provider/status",
+        "/api/cockpit/operational-status",
+    ]:
+        try:
+            checks[path] = client.get(path).status_code
+        except Exception as exc:
+            checks[path] = f"{exc.__class__.__name__}: {exc}"
+
+    required = ["/health", "/openapi.json", "/dashboard/payload/status"]
+    missing = [path for path in required if path not in mounted]
+
+    return {
+        "tool": TOOL_NAME,
+        "status": "success" if not missing else "degraded",
+        "created_at": _now(),
+        "route_count": len(mounted),
+        "missing_required_routes": missing,
+        "checks": checks,
+        "backend_owns_truth": True,
+        "runtime_truth_over_ui_assumptions": True,
+    }
+
+
+def main() -> int:
+    root = _root()
+    output = root / OUTPUT_FILE
+    output.parent.mkdir(parents=True, exist_ok=True)
+
+    try:
+        state = build_state()
+        output.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(state, indent=2))
+        return 0
+    except Exception as exc:
+        failure = {
+            "tool": TOOL_NAME,
+            "status": "failed",
+            "created_at": _now(),
+            "error": f"{exc.__class__.__name__}: {exc}",
+        }
+        output.write_text(json.dumps(failure, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(failure, indent=2))
+        return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+

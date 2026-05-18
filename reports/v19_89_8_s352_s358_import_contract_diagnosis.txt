@@ -1,0 +1,51 @@
+CLAIRE S352-S358 IMPORT CONTRACT DIAGNOSIS
+========================================================
+Root: C:\Users\craig\OneDrive\Desktop\Claire
+Target module: claire\api\dashboard_live_visibility_smoke_s352_s358.py
+
+Tests scanned:
+  - tests\test_s352_s358_dashboard_live_visibility_smoke.py
+
+Imported names required by tests:
+  - build_live_dashboard_visibility_smoke_s352_s358
+  - build_s352_payload_endpoint_visibility_smoke
+  - build_s353_frontend_asset_visibility_smoke
+  - build_s354_panel_content_projection_smoke
+  - build_s355_action_disabled_smoke_proof
+  - build_s356_no_fake_connected_state_proof
+  - build_s357_dashboard_launch_readiness_summary
+  - build_s358_stop_gate
+  - register_s352_s358_dashboard_visibility_routes
+
+Called names detected in tests:
+  - build_live_dashboard_visibility_smoke_s352_s358
+  - build_s352_payload_endpoint_visibility_smoke
+  - build_s353_frontend_asset_visibility_smoke
+  - build_s354_panel_content_projection_smoke
+  - build_s355_action_disabled_smoke_proof
+  - build_s356_no_fake_connected_state_proof
+  - build_s357_dashboard_launch_readiness_summary
+  - build_s358_stop_gate
+
+Missing from runtime public names:
+  - build_s354_panel_content_projection_smoke
+  - build_s354_panel_projection_smoke
+  - build_s354_panel_projection_visibility_smoke
+  - build_s355_action_disabled_smoke_proof
+  - build_s356_no_fake_connected_state_proof
+  - build_s357_dashboard_launch_readiness_summary
+
+Compile check:
+  compiled: True
+
+Import check:
+  imported: True
+
+Diagnosis:
+  The failing collection error is an import contract mismatch. The test imports names that the current module does not define/export. Root pytest is stopping during collection before any dashboard runtime behavior is tested.
+
+Recommendation:
+  Rewrite only claire/api/dashboard_live_visibility_smoke_s352_s358.py with every missing import name.
+  Do not touch launcher, main.py, or the cockpit shell until this import contract is green.
+
+JSON report: C:\Users\craig\OneDrive\Desktop\Claire\reports\v19_89_8_s352_s358_import_contract_diagnosis.json

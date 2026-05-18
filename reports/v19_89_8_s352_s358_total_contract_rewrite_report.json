@@ -1,0 +1,47 @@
+{
+  "installer": "install_claire_v19_89_8_s352_s358_total_contract_rewrite_fix.py",
+  "started_at": "2026-05-16T16:50:05.019022Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "target_module": "claire\\api\\dashboard_live_visibility_smoke_s352_s358.py",
+  "mode": "total_full_rewrite_with_all_known_legacy_and_current_exports",
+  "assets": [
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.css",
+      "written": true
+    }
+  ],
+  "expected_exports": [
+    "build_live_dashboard_visibility_smoke_s352_s358",
+    "build_s352_payload_endpoint_visibility_smoke",
+    "build_s353_frontend_asset_visibility_smoke",
+    "build_s354_payload_visibility_smoke",
+    "build_s355_panel_content_projection_smoke",
+    "build_s356_dashboard_action_visibility_smoke",
+    "build_s357_dashboard_visibility_summary",
+    "build_s358_stop_gate"
+  ],
+  "module_backup": "backups\\v19_89_8_s352_s358_total_contract_rewrite\\dashboard_live_visibility_smoke_s352_s358.py.20260516_165005.bak",
+  "module_compiled": true,
+  "missing_expected_exports": [],
+  "self_check": {
+    "s352_payload_visibility_ok": true,
+    "s353_asset_visibility_ok": true,
+    "rollup_stage_version": "S358",
+    "rollup_ok": true
+  },
+  "fixed": "Total S352-S358 rewrite with all known old/new export names, no appended future imports, modern cockpit asset visibility support, and self-check imports.",
+  "finished_at": "2026-05-16T16:50:05.326021Z"
+}

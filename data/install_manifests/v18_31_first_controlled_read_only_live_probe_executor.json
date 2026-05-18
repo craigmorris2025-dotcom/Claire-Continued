@@ -1,0 +1,24 @@
+{
+  "version": "v18.31",
+  "name": "First Controlled Read-Only Live Probe Executor",
+  "files": [
+    "SEARCH_BAR_FIRST_CONTROLLED_READ_ONLY_LIVE_PROBE_EXECUTOR_REVIEW.bat",
+    "claire/governance/governed_web/first_controlled_read_only_live_probe_executor.py",
+    "tests/test_v18_31_first_controlled_read_only_live_probe_executor.py"
+  ],
+  "invariants": {
+    "transport_guard_active": true,
+    "outbound_network_blocked": true,
+    "live_probe_execution_allowed": false,
+    "live_probe_execution_performed": false,
+    "probe_attempted": false,
+    "execution_performed": false,
+    "network_call_performed": false,
+    "external_request_performed": false,
+    "response_headers_received": false,
+    "response_body_fetched": false,
+    "runtime_truth_mutated": false,
+    "automatic_update_performed": false,
+    "fail_closed": true
+  }
+}

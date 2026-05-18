@@ -1,0 +1,45 @@
+{
+  "version": "19.88.3e",
+  "timestamp_utc": "2026-05-13T05:02:30.015122+00:00",
+  "policy_file": "claire\\runtime_proof_exit_policy.py",
+  "test_file": "tests\\test_v19_88_3e_runtime_proof_exit_policy.py",
+  "patch_results": [
+    {
+      "path": "tools\\runtime_state_engine.py",
+      "exists": true,
+      "patched": false
+    },
+    {
+      "path": "tools\\run_claire_baseline.py",
+      "exists": true,
+      "patched": false
+    },
+    {
+      "path": "tools\\core_runtime_lock.py",
+      "exists": true,
+      "patched": false
+    },
+    {
+      "path": "tools\\runtime_manifest_system.py",
+      "exists": false,
+      "patched": false
+    },
+    {
+      "path": "tools\\runtime_smoke.py",
+      "exists": false,
+      "patched": false
+    },
+    {
+      "path": "tools\\unified_runtime_dashboard_builder.py",
+      "exists": true,
+      "patched": false
+    },
+    {
+      "path": "tools\\live_runtime_dashboard.py",
+      "exists": false,
+      "patched": false
+    }
+  ],
+  "truth_preserved": true,
+  "note": "JSON/runtime status may remain degraded; process exit code now represents script execution success."
+}

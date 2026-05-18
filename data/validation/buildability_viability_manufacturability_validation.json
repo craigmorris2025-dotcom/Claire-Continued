@@ -1,0 +1,179 @@
+{
+  "blockers": [],
+  "contract_name": "Buildability / Viability / Manufacturability Validation Stack",
+  "design_input": {
+    "buildability_validation_required": true,
+    "design_contract_available": true,
+    "design_status": "contract_ready",
+    "missing_design_sections": [],
+    "no_fake_blueprints": true,
+    "route": {
+      "family": "autodesign",
+      "handoff_status": "already_satisfied",
+      "invention_required": true,
+      "selected": "solution_design"
+    }
+  },
+  "dimensions": {
+    "buildability": {
+      "blockers": [],
+      "dimension": "buildability",
+      "evidence": [
+        "architecture_summary_present",
+        "component_map_present",
+        "dependency_map_present",
+        "implementation_plan_present"
+      ],
+      "required_next": [
+        "Detailed AutoDesign-generated component and dependency proof"
+      ],
+      "status": "passed",
+      "warnings": []
+    },
+    "dependency_readiness": {
+      "blockers": [],
+      "dimension": "dependency_readiness",
+      "evidence": [
+        "dependency_map_present",
+        "technology_stack_present"
+      ],
+      "required_next": [
+        "Dependencies must be classified as known, unknown, blocker, or optional"
+      ],
+      "status": "passed",
+      "warnings": []
+    },
+    "evidence_readiness": {
+      "blockers": [],
+      "dimension": "evidence_readiness",
+      "evidence": [
+        "evidence_available",
+        "runtime_validation_surface_available"
+      ],
+      "required_next": [
+        "Evidence trace must support any build-readiness claim"
+      ],
+      "status": "passed",
+      "warnings": []
+    },
+    "implementation_readiness": {
+      "blockers": [],
+      "dimension": "implementation_readiness",
+      "evidence": [
+        "implementation_plan_present",
+        "package_readiness_present"
+      ],
+      "required_next": [
+        "Implementation phases must be validated against constraints"
+      ],
+      "status": "passed",
+      "warnings": []
+    },
+    "manufacturability_deployability": {
+      "blockers": [],
+      "dimension": "manufacturability_deployability",
+      "evidence": [
+        "technology_stack_present",
+        "dependency_map_present"
+      ],
+      "required_next": [
+        "Deployment/manufacturing constraints must be proven before package readiness"
+      ],
+      "status": "passed",
+      "warnings": []
+    },
+    "package_readiness": {
+      "blockers": [],
+      "dimension": "package_readiness",
+      "evidence": [
+        "v17_69_validation_required_flag_present"
+      ],
+      "required_next": [
+        "Package readiness remains false until validation passes"
+      ],
+      "status": "warning",
+      "warnings": [
+        "package_not_ready_for_final_package"
+      ]
+    },
+    "technical_feasibility": {
+      "blockers": [],
+      "dimension": "technical_feasibility",
+      "evidence": [
+        "technology_stack_present",
+        "buildability_requirements_present"
+      ],
+      "required_next": [
+        "Prototype or architecture proof may be required"
+      ],
+      "status": "warning",
+      "warnings": [
+        "invention_route_requires_higher_feasibility_threshold"
+      ]
+    },
+    "viability": {
+      "blockers": [],
+      "dimension": "viability",
+      "evidence": [
+        "validation_requirements_present",
+        "risks_present",
+        "evidence_trace_present"
+      ],
+      "required_next": [
+        "Operator review of viability assumptions"
+      ],
+      "status": "passed",
+      "warnings": []
+    }
+  },
+  "generated_at": "2026-05-13T11:18:48.429270Z",
+  "governance": {
+    "autodesign_design_portal_outputs_required_for_invention_routes": true,
+    "build_readiness_requires_all_dimensions_passed": true,
+    "missing_inputs_remain_visible": true,
+    "no_fake_validation": true,
+    "operator_review_required": true
+  },
+  "next": [
+    "v17.70 Internet Readiness Verification",
+    "v17.71-v17.74 Governed update-pack staging and rollback-aware automatic update preparation",
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "readiness": {
+    "build_ready": false,
+    "package_ready": false,
+    "requires_internet_readiness_before_live_updates": true,
+    "requires_operator_review": true,
+    "requires_update_governance_before_automatic_updates": true
+  },
+  "route": {
+    "family": "autodesign",
+    "handoff_status": "already_satisfied",
+    "invention_required": true,
+    "selected": "solution_design"
+  },
+  "sources": {
+    "autodesign_handoff": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/autodesign/autodesign_handoff_contract.json",
+      "status": "loaded"
+    },
+    "design_portal": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/design_portal_output_contract.json",
+      "status": "loaded"
+    },
+    "route_audit": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/routes/discovery_breakthrough_innovation_route_audit.json",
+      "status": "loaded"
+    },
+    "runtime_truth": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json",
+      "status": "loaded"
+    }
+  },
+  "status": "warning",
+  "version": "v17.69",
+  "warnings": [
+    "invention_route_requires_higher_feasibility_threshold",
+    "package_not_ready_for_final_package"
+  ]
+}

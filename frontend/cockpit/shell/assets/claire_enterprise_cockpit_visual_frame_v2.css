@@ -1,0 +1,212 @@
+/*
+Claire Syntalion v19.82B.14
+Enterprise Cockpit Visual Frame v2
+
+Visual/dashboard structure only.
+No backend truth ownership.
+No fake runtime output.
+*/
+
+/* Core visual tokens */
+:root {
+  --claire-v2-bg: #020611;
+  --claire-v2-panel: rgba(15, 23, 42, 0.84);
+  --claire-v2-panel-strong: rgba(15, 23, 42, 0.94);
+  --claire-v2-border: rgba(148, 163, 184, 0.18);
+  --claire-v2-border-strong: rgba(96, 165, 250, 0.32);
+  --claire-v2-text: #e5eefc;
+  --claire-v2-muted: #98abc5;
+  --claire-v2-cyan: #67e8f9;
+  --claire-v2-green: #86efac;
+  --claire-v2-radius: 24px;
+  --claire-v2-main-max: 1360px;
+}
+
+html,
+body {
+  background: var(--claire-v2-bg) !important;
+  color: var(--claire-v2-text);
+  overflow-x: hidden !important;
+}
+
+body.claire-visual-frame-v2 {
+  font-feature-settings: "kern";
+}
+
+/* Header/search/status: make it look intentional and enterprise, not patched. */
+body.claire-visual-frame-v2 header,
+body.claire-visual-frame-v2 .cockpit-header,
+body.claire-visual-frame-v2 .claire-cockpit-header,
+body.claire-visual-frame-v2 .enterprise-cockpit-header,
+body.claire-visual-frame-v2 #cockpit-header,
+body.claire-visual-frame-v2 #claire-cockpit-header {
+  background:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.98), rgba(2, 6, 23, 0.88)) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14) !important;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.24);
+}
+
+/* Main content lane */
+body.claire-visual-frame-v2 main,
+body.claire-visual-frame-v2 [role="main"],
+body.claire-visual-frame-v2 .claire-cockpit-main,
+body.claire-visual-frame-v2 .cockpit-main,
+body.claire-visual-frame-v2 .enterprise-cockpit-main,
+body.claire-visual-frame-v2 #claire-cockpit-main,
+body.claire-visual-frame-v2 #cockpit-main {
+  max-width: var(--claire-v2-main-max) !important;
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+}
+
+/* Workspace rail polish */
+body.claire-visual-frame-v2 aside,
+body.claire-visual-frame-v2 nav,
+body.claire-visual-frame-v2 .sidebar,
+body.claire-visual-frame-v2 .side-nav,
+body.claire-visual-frame-v2 .cockpit-sidebar,
+body.claire-visual-frame-v2 .claire-sidebar,
+body.claire-visual-frame-v2 .workspace-sidebar,
+body.claire-visual-frame-v2 .workspace-nav,
+body.claire-visual-frame-v2 #sidebar,
+body.claire-visual-frame-v2 #side-nav,
+body.claire-visual-frame-v2 #claire-sidebar {
+  background: rgba(2, 6, 23, 0.58) !important;
+  border-right: 1px solid rgba(148, 163, 184, 0.10);
+}
+
+/* Router becomes the cockpit mode switch, not another big portal. */
+body.claire-visual-frame-v2 #claire-enterprise-workspace-router {
+  margin: 0 0 20px !important;
+  border-radius: 20px !important;
+  background:
+    radial-gradient(circle at top left, rgba(103, 232, 249, 0.07), transparent 34%),
+    rgba(15, 23, 42, 0.62) !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  box-shadow: none !important;
+}
+
+body.claire-visual-frame-v2 .claire-router-header {
+  padding: 16px 18px 12px !important;
+}
+
+body.claire-visual-frame-v2 .claire-router-header h2 {
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem) !important;
+}
+
+body.claire-visual-frame-v2 .claire-router-subtitle {
+  font-size: 0.94rem !important;
+}
+
+body.claire-visual-frame-v2 .claire-router-tabs {
+  padding: 12px 18px !important;
+  gap: 8px !important;
+}
+
+body.claire-visual-frame-v2 .claire-router-tab {
+  padding: 9px 12px !important;
+  border-radius: 12px !important;
+}
+
+/* Runtime default: router is compact, native runtime cards lead the screen. */
+body.claire-router-active-runtime.claire-visual-frame-v2 #claire-enterprise-workspace-router {
+  margin-bottom: 16px !important;
+}
+
+body.claire-router-active-runtime.claire-visual-frame-v2 #claire-enterprise-workspace-router .claire-router-header {
+  display: none !important;
+}
+
+body.claire-router-active-runtime.claire-visual-frame-v2 #claire-enterprise-workspace-router .claire-router-tabs {
+  border-bottom: none !important;
+  background: rgba(15, 23, 42, 0.50) !important;
+}
+
+/* Remove/soft-hide raw dev-looking action rows, while keeping real router/operator surfaces. */
+body.claire-visual-frame-v2 .claire-raw-action-strip,
+body.claire-visual-frame-v2 .claire-dev-action-strip,
+body.claire-visual-frame-v2 .debug-actions,
+body.claire-visual-frame-v2 [data-claire-raw-actions="true"] {
+  display: none !important;
+}
+
+/*
+The screenshot showed a raw "Runtime Actions" section with plain HTML buttons.
+This visual frame hides that strip if JS marks it as raw. Backend functionality remains unchanged.
+*/
+body.claire-visual-frame-v2 .claire-runtime-actions-raw {
+  display: none !important;
+}
+
+/* Existing operational cards: consistent enterprise styling. */
+body.claire-visual-frame-v2 .runtime-card,
+body.claire-visual-frame-v2 .operator-card,
+body.claire-visual-frame-v2 .dashboard-card,
+body.claire-visual-frame-v2 .cockpit-card,
+body.claire-visual-frame-v2 .panel,
+body.claire-visual-frame-v2 article {
+  border-color: var(--claire-v2-border) !important;
+  background:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.05), transparent 28%),
+    var(--claire-v2-panel) !important;
+}
+
+/* Continuous runtime panel and large payload areas should be readable but not dominate. */
+body.claire-visual-frame-v2 pre,
+body.claire-visual-frame-v2 code {
+  max-width: 100% !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  overflow-x: auto !important;
+}
+
+/* Status pills */
+body.claire-visual-frame-v2 [class*="status"],
+body.claire-visual-frame-v2 [class*="badge"],
+body.claire-visual-frame-v2 [class*="pill"] {
+  max-width: 100%;
+}
+
+/* Routed non-runtime workspaces are clean single-view workspaces, not separate portals. */
+body.claire-visual-frame-v2:not(.claire-router-active-runtime) #claire-enterprise-workspace-router {
+  background:
+    radial-gradient(circle at top right, rgba(34, 197, 94, 0.07), transparent 28%),
+    rgba(15, 23, 42, 0.78) !important;
+}
+
+body.claire-visual-frame-v2:not(.claire-router-active-runtime) #claire-router-stage {
+  padding: 18px !important;
+}
+
+/* Source/review/discovery inner headers get less oversized. */
+body.claire-visual-frame-v2 #claire-router-stage .claire-su-header,
+body.claire-visual-frame-v2 #claire-router-stage .claire-prb-header,
+body.claire-visual-frame-v2 #claire-router-stage .claire-dcs-header {
+  margin-bottom: 14px !important;
+}
+
+body.claire-visual-frame-v2 #claire-router-stage .claire-su-header h2,
+body.claire-visual-frame-v2 #claire-router-stage .claire-prb-header h2,
+body.claire-visual-frame-v2 #claire-router-stage .claire-dcs-header h2 {
+  font-size: clamp(1.25rem, 1.8vw, 1.65rem) !important;
+}
+
+/* Prevent accidental wide lanes from previous layout attempts. */
+body.claire-visual-frame-v2 #claire-cockpit-workspace-stack {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: contents !important;
+}
+
+/* Mobile polish */
+@media (max-width: 900px) {
+  body.claire-visual-frame-v2 .claire-router-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  body.claire-visual-frame-v2 .claire-router-tab {
+    white-space: nowrap;
+  }
+}

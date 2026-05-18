@@ -1,0 +1,39 @@
+{
+  "version": "v19.89.8-S1323-S1350-dashboard-active-control-map",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "written": [
+    "claire/api/dashboard_active_control_map.py",
+    "frontend/command_center/modern/dashboard_active_control_map.js",
+    "frontend/command_center/modern/dashboard_active_control_map.css",
+    "tests/test_s1323_s1350_dashboard_active_control_map.py"
+  ],
+  "modified": [
+    "claire/app.py",
+    "frontend/command_center/modern/index.html"
+  ],
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-S1323-S1350-dashboard-active-control-map",
+  "index_injected": true,
+  "app_patch": {
+    "changed": true,
+    "already_present": false,
+    "insertion": "before_create_app_return_app"
+  },
+  "control_count": 15,
+  "routes_verified": {
+    "/api/dashboard/active-control-map": 200,
+    "/dashboard/active-control-map": 200
+  },
+  "blocked_authority_preserved": {
+    "live_web_execution": "blocked",
+    "search_provider_execution": "blocked",
+    "browser_execution": "blocked",
+    "network_requests": "blocked",
+    "body_reads": "blocked",
+    "autonomous_crawling": "blocked",
+    "automatic_updates": "blocked",
+    "runtime_mutation": "blocked",
+    "runtime_truth_mutation": "blocked",
+    "package_download_install": "blocked",
+    "command_execution": "blocked"
+  }
+}

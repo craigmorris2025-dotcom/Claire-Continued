@@ -1,0 +1,22 @@
+{
+  "version": "v19.89.8-S268-S274-repair",
+  "installed_at": "2026-05-15T16:49:59.158064+00:00",
+  "repair_only": true,
+  "repairs": [
+    "Fixed malformed S268-S274 collection test files.",
+    "Fixed newline handling in operator_workflow_storage_adapter.py.",
+    "Added compatibility module claire.api.governed_payload_bridge_live_patch_s142_s148."
+  ],
+  "authority_locks": {
+    "runtime_truth_write": false,
+    "runtime_mutation": false,
+    "automatic_updates": false,
+    "autonomous_execution": false,
+    "continuous_crawling": false
+  },
+  "recommended_commands": [
+    "pytest tests/test_s268_s274_storage_adapter.py tests/test_s268_s274_dashboard_counts_and_readiness.py -q",
+    "pytest tests/test_s149_s155_live_payload_visibility.py -q",
+    "pytest"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "v19.89.8-S205-S211",
+  "installed_at": "2026-05-15T16:03:12.721960+00:00",
+  "stage_pack": "S205-S211",
+  "purpose": "Governed internet-operation readiness contracts: web job lifecycle, evidence checkpoints, update proposals, and readiness snapshot.",
+  "files": [
+    "claire/api/governed_web_job_lifecycle.py",
+    "claire/api/governed_evidence_intake_checkpoints.py",
+    "claire/api/governed_update_proposal_flow.py",
+    "claire/api/internet_operation_readiness_snapshot.py",
+    "tests/test_s205_s211_web_job_lifecycle.py",
+    "tests/test_s205_s211_evidence_intake_checkpoints.py",
+    "tests/test_s205_s211_update_proposal_flow.py",
+    "tests/test_s205_s211_internet_operation_readiness.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s205_s211_web_job_lifecycle.py tests/test_s205_s211_evidence_intake_checkpoints.py tests/test_s205_s211_update_proposal_flow.py tests/test_s205_s211_internet_operation_readiness.py -q",
+    "pytest"
+  ]
+}

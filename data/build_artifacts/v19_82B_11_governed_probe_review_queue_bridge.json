@@ -1,0 +1,27 @@
+{
+  "version": "v19.82B.11",
+  "build_name": "Governed Probe Result Review Queue Bridge",
+  "installed_at": "2026-05-11T19:47:29.130319+00:00",
+  "primary_cockpit_path": "frontend/cockpit/shell/cockpit_shell.html",
+  "depends_on": "v19.82B.10 Source Universe Cockpit Workspace",
+  "created_or_updated": [
+    "frontend/cockpit/shell/assets/claire_probe_review_queue_bridge.js",
+    "frontend/cockpit/shell/assets/claire_probe_review_queue_bridge.css",
+    "tests/test_v19_82B_11_governed_probe_review_queue_bridge.py",
+    "data/build_artifacts/v19_82B_11_governed_probe_review_queue_bridge.json"
+  ],
+  "backend_truth_routes_consumed": [
+    "GET /runtime/continuous/review-queue"
+  ],
+  "observes_frontend_workspace_state": [
+    "window.ClaireSourceUniverseWorkspace.state.lastProbe"
+  ],
+  "locked_rules": [
+    "frontend may capture display-only probe snapshots",
+    "frontend may not promote probe results",
+    "frontend may not create discoveries, breakthroughs, portfolios, or route scores",
+    "backend remains promotion owner",
+    "operator review required before promotion"
+  ],
+  "next_recommended_build": "v19.82B.12 Discovery Candidate Cockpit Surface"
+}

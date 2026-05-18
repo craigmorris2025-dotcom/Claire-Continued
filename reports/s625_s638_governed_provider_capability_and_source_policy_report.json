@@ -1,0 +1,73 @@
+{
+  "app_patch_status": "patched: claire\\app.py backup=app.py.bak_s625_s638",
+  "blocked_execution_flags": {
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "body_read_allowed": false,
+    "browser_execution_enabled": false,
+    "command_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "network_request_performed": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "runtime_mutation_enabled": false,
+    "search_provider_execution_enabled": false
+  },
+  "compiled_python_files": [
+    "claire\\governance\\governed_provider_capability_map.py",
+    "claire\\governance\\governed_source_policy_controls.py",
+    "claire\\api\\governed_provider_capability_routes.py",
+    "claire\\api\\governed_source_policy_control_routes.py",
+    "tests\\test_s625_s638_governed_provider_capability_and_source_policy.py",
+    "claire\\app.py"
+  ],
+  "description": "Governed Provider Capability Map + Source Policy Cockpit Controls double-pack.",
+  "forward_motion": {
+    "allowed_after_targeted_pytest": true,
+    "authority_unlock_allowed": false,
+    "next_expected_pack": "S639-S652 Quarantine Evidence Store + Metadata-Only Result Contract double-pack"
+  },
+  "html_assets_injected": [
+    "frontend\\cockpit\\shell\\cockpit_shell.html",
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "installed_at": "2026-05-17T03:48:24+00:00",
+  "installer": "install_claire_v19_89_8_s625_s638_governed_provider_capability_and_source_policy.py",
+  "new_endpoints": [
+    "/api/search/providers/capability-map",
+    "/api/search/providers/capability/cards",
+    "/api/search/providers/capability/actions",
+    "/api/search/providers/capability/policy",
+    "/api/search/providers/capability/status",
+    "/api/search/providers/capability/payload",
+    "/api/search/providers/capability/stop-gate",
+    "/api/sources/providers/capability-map",
+    "/api/sources/providers/capability/cards",
+    "/api/sources/providers/capability/actions",
+    "/api/sources/policy/controls",
+    "/api/sources/policy/cards",
+    "/api/sources/policy/actions",
+    "/api/sources/policy/rules",
+    "/api/sources/policy/status",
+    "/api/sources/policy/payload",
+    "/api/sources/policy/stop-gate",
+    "/api/search/policy/controls",
+    "/api/search/policy/cards",
+    "/api/search/policy/actions"
+  ],
+  "package_markers_created": [],
+  "packs": [
+    "S625-S631 Provider Capability Map + Probe Readiness Hardening",
+    "S632-S638 Source Policy Cockpit Controls"
+  ],
+  "phase": "S625-S638",
+  "written_files": [
+    "claire\\governance\\governed_provider_capability_map.py",
+    "claire\\governance\\governed_source_policy_controls.py",
+    "claire\\api\\governed_provider_capability_routes.py",
+    "claire\\api\\governed_source_policy_control_routes.py",
+    "frontend\\cockpit\\assets\\claire_governed_provider_capability_and_source_policy.js",
+    "frontend\\cockpit\\assets\\claire_governed_provider_capability_and_source_policy.css",
+    "tests\\test_s625_s638_governed_provider_capability_and_source_policy.py"
+  ]
+}

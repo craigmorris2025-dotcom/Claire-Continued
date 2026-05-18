@@ -1,0 +1,18 @@
+{
+  "version": "v19.89.8-S149-S155-payload-visibility-repair",
+  "installed_at": "2026-05-15T16:57:29.910278+00:00",
+  "repair_only": true,
+  "purpose": "Restore governed_operations_payload_fragment and S149-S155 payload visibility compatibility exports.",
+  "authority_locks": {
+    "runtime_truth_write": false,
+    "runtime_mutation": false,
+    "automatic_updates": false,
+    "autonomous_execution": false,
+    "continuous_crawling": false
+  },
+  "recommended_commands": [
+    "pytest tests/test_s149_s155_payload_visibility_exports_repair.py -q",
+    "pytest tests/test_s149_s155_live_payload_visibility.py -q",
+    "pytest"
+  ]
+}

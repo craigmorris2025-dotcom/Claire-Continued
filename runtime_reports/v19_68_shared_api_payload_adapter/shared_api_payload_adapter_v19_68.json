@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-05-11T10:06:49.346786Z",
+  "next_recommended_build": {
+    "name": "Permanent Search Command Surface",
+    "scope": [
+      "create command_surface.js",
+      "create search_panel.js",
+      "create search_mode_router.js",
+      "register search panel behavior",
+      "use shared api_client only",
+      "do not fake web results"
+    ],
+    "version": "v19.69"
+  },
+  "pack": "Shared API Client + Canonical Payload Adapter",
+  "result": {
+    "manifest": {
+      "api_client": "frontend/cockpit/shared/api_client.js",
+      "backend_routes_modified": false,
+      "canonical_fetch_owner": "frontend/cockpit/shared/payload_adapter.js",
+      "canonical_routes": [
+        "/dashboard/payload/status",
+        "/dashboard/payload"
+      ],
+      "created_at": "2026-05-11T10:06:49.345787Z",
+      "fetches_enabled": true,
+      "launcher_rewired": false,
+      "legacy_dashboard_modified": false,
+      "runtime_behavior_changed": false,
+      "truthful_states": [
+        "online",
+        "unavailable",
+        "timeout",
+        "status_unavailable_payload_not_fetched"
+      ],
+      "version": "v19.68"
+    },
+    "written_files": [
+      "frontend/cockpit/shared/api_client.js",
+      "frontend/cockpit/shared/error_state.js",
+      "frontend/cockpit/shared/loading_state.js",
+      "frontend/cockpit/shared/payload_adapter.js",
+      "frontend/cockpit/shared/shared_adapter_manifest.json",
+      "frontend/cockpit/shared/status_model.js",
+      "frontend/cockpit/shell/cockpit_bootstrap.js",
+      "frontend/cockpit/shell/cockpit_shell.css",
+      "frontend/cockpit/shell/cockpit_shell.html"
+    ]
+  },
+  "safety": {
+    "deleted_files": [],
+    "launcher_rewired": false,
+    "modified_backend_files": [],
+    "modified_runtime_files": [],
+    "moved_files": [],
+    "old_dashboard_modified": false,
+    "routes_modified": false,
+    "runtime_behavior_changed": false
+  },
+  "version": "v19.68"
+}

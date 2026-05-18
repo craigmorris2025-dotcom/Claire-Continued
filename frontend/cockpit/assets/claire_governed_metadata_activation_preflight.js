@@ -1,0 +1,66 @@
+(function () {
+  const endpoints = ["/api/search/readiness/preflight", "/api/search/providers/configuration/payload", "/api/search/metadata/adapter/payload", "/api/search/metadata/probe/manual/payload", "/api/cockpit/metadata-search/payload"];
+  async function fetchJson(url) {
+    const response = await fetch(url, { headers: { "Accept": "application/json" } });
+    if (!response.ok) throw new Error(`${url} returned ${response.status}`);
+    return response.json();
+  }
+  function ensurePanel() {
+    let panel = document.querySelector("[data-claire-metadata-activation-panel]");
+    if (panel) return panel;
+    panel = document.createElement("section");
+    panel.className = "claire-metadata-activation-panel";
+    panel.setAttribute("data-claire-metadata-activation-panel", "true");
+    panel.innerHTML = `<div class="claire-metadata-activation-head"><div><p class="eyebrow">Governed Metadata Search</p><h2>S681-S708 Activation Preflight</h2></div><span class="claire-metadata-activation-pill">execution blocked</span></div><div class="claire-metadata-activation-grid" data-claire-metadata-activation-grid></div>`;
+    const main = document.querySelector("main") || document.body;
+    main.appendChild(panel);
+    return panel;
+  }
+  function card(title, status, summary) {
+    return `<article class="claire-metadata-activation-card"><div class="claire-metadata-activation-card-title">${title}</div><div class="claire-metadata-activation-card-status">${status}</div><p>${summary}</p></article>`;
+  }
+  async function render() {
+    const panel = ensurePanel();
+    const grid = panel.querySelector("[data-claire-metadata-activation-grid]");
+    if (!grid) return;
+    try {
+      const payload = await fetchJson("/api/cockpit/metadata-search/payload");
+      const cards = [
+        card("Readiness audit", payload.readiness.audit.status, "Source/search readiness is visible, but no network request is allowed."),
+        card("Provider configuration", payload.provider_configuration.status.status, `${payload.provider_configuration.status.providers_configured}/${payload.provider_configuration.status.providers_total} configured; secrets hidden.`),
+        card("Adapter boundary", payload.adapter_boundary.status.status, "Only metadata fields can cross the future provider boundary."),
+        card("Manual probe gate", payload.manual_probe.status.status, "Local preview records can render; real provider execution remains blocked.")
+      ];
+      grid.innerHTML = cards.join("");
+    } catch (error) {
+      grid.innerHTML = card("Metadata activation", "unavailable", String(error));
+    }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", render); else render();
+  window.ClaireMetadataActivationPreflight = { endpoints, render };
+})();
+
+;(function(){
+  if (window.__CLAIRE_OPERATOR_EXPERIENCE_LOADER__) return;
+  window.__CLAIRE_OPERATOR_EXPERIENCE_LOADER__ = true;
+  function loadOperatorExperience(){
+    if (window.ClaireOperatorExperienceConsole && window.ClaireOperatorExperienceConsole.init) {
+      window.ClaireOperatorExperienceConsole.init();
+      return;
+    }
+    var existing = document.querySelector('script[data-claire-operator-experience="true"]');
+    if (existing) return;
+    var script = document.createElement('script');
+    script.defer = true;
+    script.dataset.claireOperatorExperience = 'true';
+    script.src = '/api/cockpit/operator-experience/assets/js';
+    script.onerror = function(){ script.src = 'assets/claire_operator_experience_console.js'; };
+    document.head.appendChild(script);
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/api/cockpit/operator-experience/assets/css';
+    document.head.appendChild(link);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadOperatorExperience);
+  else setTimeout(loadOperatorExperience, 0);
+})();

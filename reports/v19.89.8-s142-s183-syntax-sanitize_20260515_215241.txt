@@ -1,0 +1,26 @@
+Claire S142-S183 syntax sanitize report
+Version: v19.89.8-s142-s183-syntax-sanitize
+Root: C:\Users\craig\OneDrive\Desktop\Claire
+
+Mode: syntax sanitation only. No launcher/main/dashboard/runtime route changes.
+
+Actions:
+- replaced 4 literal backslash-n sequences in claire/api/governed_cockpit_payload_visibility_s149_s155.py
+- replaced 3 literal backslash-n sequences in claire/api/governed_operational_cockpit_binding_s156_s162.py
+- replaced 3 literal backslash-n sequences in claire/api/governed_operator_actions_s163_s169.py
+- replaced 3 literal backslash-n sequences in claire/api/governed_live_fetch_validation_s170_s176.py
+- replaced 3 literal backslash-n sequences in claire/api/governed_dashboard_upgrade_s177_s183.py
+
+Compile results:
+- claire/api/governed_cockpit_payload_visibility_s149_s155.py: FAIL PyCompileError('  File "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py", line 161\n    output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n                                                                      ^\nSyntaxError: unterminated string literal (detected at line 161)\n', 'SyntaxError', SyntaxError('unterminated string literal (detected at line 161)', ('C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py', 161, 75, '        output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "', 161, 75)), 'C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py')
+- claire/api/governed_operational_cockpit_binding_s156_s162.py: OK 
+- claire/api/governed_operator_actions_s163_s169.py: OK 
+- claire/api/governed_live_fetch_validation_s170_s176.py: OK 
+- claire/api/governed_dashboard_upgrade_s177_s183.py: OK 
+
+pytest collect returncode: 2
+
+If collect passes, run:
+python -m pytest -q
+
+JSON report: C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-s142-s183-syntax-sanitize_20260515_215241.json

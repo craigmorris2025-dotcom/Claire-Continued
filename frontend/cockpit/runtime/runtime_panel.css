@@ -1,0 +1,131 @@
+/* Claire Syntalion v19.70 — Runtime + Lifecycle Panels */
+.runtime-workspace {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+}
+.runtime-panel {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 18px;
+  padding: 18px;
+  background: rgba(15, 23, 42, 0.72);
+  color: #e5e7eb;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+}
+.runtime-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.runtime-panel__eyebrow {
+  margin: 0 0 4px;
+  color: #93c5fd;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.runtime-panel h2 { margin: 0; font-size: 1.15rem; }
+.truth-badge {
+  border: 1px solid rgba(147, 197, 253, 0.35);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #bfdbfe;
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+.runtime-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+.runtime-kpi, .evidence-card, .lifecycle-stage, .run-history-row {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.42);
+}
+.runtime-kpi { padding: 14px; }
+.runtime-kpi span { display: block; color: #94a3b8; font-size: 0.8rem; margin-bottom: 6px; }
+.runtime-kpi strong { color: #f8fafc; word-break: break-word; }
+.runtime-empty, .runtime-alert {
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(30, 41, 59, 0.58);
+  color: #cbd5e1;
+}
+.runtime-alert--error { background: rgba(127, 29, 29, 0.35); color: #fecaca; }
+.lifecycle-stage-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.lifecycle-stage { display: flex; gap: 12px; padding: 12px; }
+.lifecycle-stage__index {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(59, 130, 246, 0.18);
+  color: #bfdbfe;
+  flex: 0 0 auto;
+}
+.lifecycle-stage strong { display: block; margin-bottom: 3px; }
+.lifecycle-stage p { margin: 0; color: #cbd5e1; }
+.run-history-table { display: grid; gap: 8px; }
+.run-history-row { display: grid; grid-template-columns: 1.2fr 0.8fr 1fr 1fr; gap: 10px; padding: 10px; overflow-wrap: anywhere; }
+.run-history-row--head { color: #93c5fd; font-weight: 700; }
+.evidence-list { display: grid; gap: 10px; }
+.evidence-card { padding: 12px; }
+.evidence-card span { display: inline-block; margin-left: 8px; color: #93c5fd; font-size: 0.82rem; }
+.evidence-card p { color: #cbd5e1; margin: 8px 0 0; }
+
+/* Claire v19.73 Runtime Payload Gate */
+.runtime-gate-summary {
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px 0;
+  background: rgba(255,255,255,0.04);
+}
+.runtime-gate-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+.runtime-gate-header h3 {
+  margin: 0;
+}
+.runtime-gate-header span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+.runtime-gate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.runtime-gate-grid div {
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 10px;
+  padding: 10px;
+}
+.runtime-gate-grid strong,
+.runtime-gate-grid span {
+  display: block;
+}
+.runtime-gate-grid span {
+  margin-top: 6px;
+  opacity: 0.75;
+}
+@media (max-width: 900px) {
+  .runtime-gate-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .runtime-gate-grid {
+    grid-template-columns: 1fr;
+  }
+}

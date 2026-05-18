@@ -1,0 +1,83 @@
+.governed-search-session-card {
+  margin: 16px 0;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.governed-search-session-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.governed-search-session-kicker {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.governed-search-session-header h2 {
+  margin: 4px 0 0;
+  font-size: 20px;
+}
+
+.governed-search-session-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  background: rgba(14, 165, 233, 0.10);
+  color: rgba(186, 230, 253, 0.96);
+  white-space: nowrap;
+}
+
+.governed-search-session-query-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.governed-search-session-query-row input,
+.governed-search-session-query-row button {
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(2, 6, 23, 0.32);
+  color: rgba(226, 232, 240, 0.72);
+  padding: 10px 12px;
+}
+
+.governed-search-session-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.governed-search-session-body span {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.search-session-active {
+  border-color: rgba(52, 211, 153, 0.42);
+}
+
+.search-session-degraded {
+  border-color: rgba(251, 191, 36, 0.48);
+  background: rgba(251, 191, 36, 0.07);
+}
+
+.search-session-recovering {
+  border-color: rgba(125, 211, 252, 0.48);
+  background: rgba(14, 165, 233, 0.07);
+}

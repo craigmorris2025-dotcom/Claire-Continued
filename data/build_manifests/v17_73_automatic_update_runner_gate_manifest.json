@@ -1,0 +1,56 @@
+{
+  "backup_dir": "backups/v17_73_automatic_update_runner_gate/20260509_190409",
+  "build_name": "Automatic Update Runner Gate",
+  "files_written": [
+    "claire/update_governance/automatic_update_runner_gate.py",
+    "claire/api/routes_automatic_update_runner_gate.py",
+    "tests/test_v17_73_automatic_update_runner_gate.py",
+    "docs/update_governance/v17.73_automatic_update_runner_gate.md",
+    "data/update_packs/automatic_update_runner_gate.json",
+    "data/dashboard/automatic_update_runner_gate_payload.json",
+    "data/update_packs/v17_73_automatic_update_runner_gate_validation_result.json"
+  ],
+  "installed_at": "2026-05-10T00:04:12.958422Z",
+  "next": [
+    "v17.74 Update Governance Regression Lock",
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "blockers": [],
+    "errors": [],
+    "gate_status": "gate_ready_but_execution_disabled",
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.64.1",
+      "source": {
+        "invalid_candidate_count": 0,
+        "invalid_candidates_sample": [],
+        "raw_available": true,
+        "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+      },
+      "status": "rebuilt"
+    },
+    "runner_contract": {
+      "automatic_execution_enabled": false,
+      "background_execution_enabled": false,
+      "execution_enabled": false,
+      "requires_operator_approval_token": true,
+      "requires_rollback_plan": true,
+      "requires_source_trust": true,
+      "requires_validation_gauntlet": true,
+      "runner_executes_updates": false,
+      "runner_mode": "gate_only_no_execution",
+      "runner_registered": true
+    },
+    "status": "passed",
+    "warnings": []
+  },
+  "version": "v17.73"
+}

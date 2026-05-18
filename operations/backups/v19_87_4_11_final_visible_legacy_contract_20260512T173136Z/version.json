@@ -1,0 +1,10 @@
+{
+  "version": "19.87.4.10",
+  "phase": "legacy_shim_backslash_syntax_repair",
+  "lane": "v19.87.x",
+  "updated_at": "2026-05-12T17:28:45.322937+00:00",
+  "notes": [
+    "Fixed malformed Windows backslash path check in claire.continuous_runtime.cycle.",
+    "Preserved exact v19.84.2 legacy test contract."
+  ]
+}

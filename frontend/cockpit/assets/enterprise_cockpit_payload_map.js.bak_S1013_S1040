@@ -1,0 +1,320 @@
+window.ClaireCockpitPayloadMap = {
+  "version": "v19.82B.2",
+  "rule": "cockpit_interprets_backend_truth_but_never_invents_it",
+  "workspace_payload_fields": {
+    "runtime": {
+      "summary_fields": [
+        "run_id",
+        "active_run_id",
+        "terminal_state",
+        "selected_route",
+        "route",
+        "status"
+      ],
+      "object_fields": [
+        "runtime",
+        "run",
+        "lifecycle",
+        "gates",
+        "missing_evidence",
+        "enrichment",
+        "artifacts"
+      ],
+      "completion_signals": [
+        "lifecycle_state",
+        "gate_decisions",
+        "missing_evidence",
+        "enrichment_log"
+      ]
+    },
+    "intelligence": {
+      "summary_fields": [
+        "source_universe",
+        "trend",
+        "thesis",
+        "discovery",
+        "cluster"
+      ],
+      "object_fields": [
+        "sources",
+        "universes",
+        "signals",
+        "trend_discovery",
+        "clusters",
+        "thesis",
+        "discovery"
+      ],
+      "completion_signals": [
+        "discovery_brief",
+        "source_universes",
+        "trend_thesis"
+      ]
+    },
+    "portfolio": {
+      "summary_fields": [
+        "portfolio_action",
+        "portfolio",
+        "weights",
+        "risk",
+        "exposure"
+      ],
+      "object_fields": [
+        "portfolio",
+        "portfolio_recommendation",
+        "risk_notes",
+        "exposure_notes",
+        "opportunity_map"
+      ],
+      "completion_signals": [
+        "portfolio_recommendation"
+      ]
+    },
+    "breakthrough": {
+      "summary_fields": [
+        "breakthrough",
+        "breakthrough_category",
+        "breakthrough_confidence",
+        "advancement_path"
+      ],
+      "object_fields": [
+        "breakthrough",
+        "breakthrough_assessment",
+        "advancement_path",
+        "evidence"
+      ],
+      "completion_signals": [
+        "breakthrough_assessment"
+      ]
+    },
+    "design": {
+      "summary_fields": [
+        "design",
+        "autodesign",
+        "blueprint",
+        "buildability",
+        "viability",
+        "feasibility"
+      ],
+      "object_fields": [
+        "design",
+        "design_package",
+        "autodesign",
+        "blueprints",
+        "component_map",
+        "dependency_map"
+      ],
+      "completion_signals": [
+        "design_package",
+        "blueprints",
+        "stage_16",
+        "stage_17",
+        "stage_18",
+        "stage_19",
+        "stage_20",
+        "stage_21",
+        "stage_22"
+      ]
+    },
+    "existing_system": {
+      "summary_fields": [
+        "existing_system",
+        "replacement",
+        "migration_feasibility"
+      ],
+      "object_fields": [
+        "existing_system",
+        "existing_system_replacement",
+        "decomposition",
+        "weakness_map",
+        "superior_system_design"
+      ],
+      "completion_signals": [
+        "existing_system_replacement"
+      ]
+    },
+    "acquisition": {
+      "summary_fields": [
+        "acquisition",
+        "acquirer",
+        "package",
+        "package_readiness"
+      ],
+      "object_fields": [
+        "acquisition",
+        "acquirers",
+        "acquirer_map",
+        "package",
+        "proof_package"
+      ],
+      "completion_signals": [
+        "acquirer_map",
+        "package_manifest"
+      ]
+    },
+    "sources": {
+      "summary_fields": [
+        "source_trust",
+        "provider_status",
+        "probe",
+        "evidence"
+      ],
+      "object_fields": [
+        "sources",
+        "source_universes",
+        "provider_status",
+        "probe_reports",
+        "source_trust_policy"
+      ],
+      "completion_signals": [
+        "universe_index",
+        "source_trust_policy",
+        "probe_report"
+      ]
+    },
+    "memory": {
+      "summary_fields": [
+        "memory",
+        "recursive",
+        "self_ingestion",
+        "prior_output"
+      ],
+      "object_fields": [
+        "memory",
+        "recursive_memory",
+        "self_ingestion",
+        "prior_output_comparison"
+      ],
+      "completion_signals": [
+        "recursive_memory"
+      ]
+    },
+    "governance": {
+      "summary_fields": [
+        "governance",
+        "update_governance",
+        "rollback",
+        "audit"
+      ],
+      "object_fields": [
+        "governance",
+        "update_governance",
+        "protected_paths",
+        "rollback",
+        "validation_gauntlet",
+        "audit_reports"
+      ],
+      "completion_signals": [
+        "update_governance_status",
+        "rollback_points",
+        "audit_report"
+      ]
+    },
+    "system": {
+      "summary_fields": [
+        "health",
+        "version",
+        "payload_status",
+        "endpoint_registry",
+        "regression"
+      ],
+      "object_fields": [
+        "health",
+        "system",
+        "payload_status",
+        "endpoint_registry",
+        "artifact_registry",
+        "lineage",
+        "regression_status"
+      ],
+      "completion_signals": [
+        "health",
+        "version",
+        "payload_status"
+      ]
+    }
+  }
+};
+
+window.ClaireCockpitTruthAdapter = {
+  getWorkspaceMap(workspaceId) {
+    const map = window.ClaireCockpitPayloadMap || {};
+    const fields = map.workspace_payload_fields || {};
+    return fields[workspaceId] || null;
+  },
+
+  findField(payload, fieldName) {
+    if (!payload || typeof payload !== "object") return undefined;
+    if (Object.prototype.hasOwnProperty.call(payload, fieldName)) return payload[fieldName];
+
+    const queue = [payload];
+    const seen = new Set();
+
+    while (queue.length) {
+      const current = queue.shift();
+      if (!current || typeof current !== "object" || seen.has(current)) continue;
+      seen.add(current);
+
+      if (Object.prototype.hasOwnProperty.call(current, fieldName)) {
+        return current[fieldName];
+      }
+
+      Object.keys(current).forEach((key) => {
+        const value = current[key];
+        if (value && typeof value === "object") queue.push(value);
+      });
+    }
+
+    return undefined;
+  },
+
+  summarizeWorkspacePayload(workspaceId, payload) {
+    const workspaceMap = this.getWorkspaceMap(workspaceId);
+    if (!workspaceMap) {
+      return {
+        state: "workspace_map_missing",
+        found: [],
+        missing: [],
+        objects: [],
+        completion_signals: []
+      };
+    }
+
+    const found = [];
+    const missing = [];
+    const objects = [];
+    const completionSignals = [];
+
+    (workspaceMap.summary_fields || []).forEach((field) => {
+      const value = this.findField(payload, field);
+      if (value === undefined || value === null || value === "") missing.push(field);
+      else found.push({ field, value });
+    });
+
+    (workspaceMap.object_fields || []).forEach((field) => {
+      const value = this.findField(payload, field);
+      if (value !== undefined && value !== null) {
+        objects.push({
+          field,
+          type: Array.isArray(value) ? "array" : typeof value,
+          count: Array.isArray(value) ? value.length : undefined
+        });
+      }
+    });
+
+    (workspaceMap.completion_signals || []).forEach((field) => {
+      const value = this.findField(payload, field);
+      completionSignals.push({
+        field,
+        present: !(value === undefined || value === null || value === "")
+      });
+    });
+
+    return {
+      state: found.length || objects.length ? "backend_truth_detected" : "not_yet_exposed",
+      found,
+      missing,
+      objects,
+      completion_signals: completionSignals
+    };
+  }
+};

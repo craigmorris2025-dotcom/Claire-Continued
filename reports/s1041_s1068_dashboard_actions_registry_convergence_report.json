@@ -1,0 +1,40 @@
+{
+  "stage_range": "S1041-S1068",
+  "status": "installed",
+  "purpose": "Repair active dashboard 404s for /dashboard/actions/registry and /dashboard/actions/summary so operator controls are visible to the existing cockpit fetch layer.",
+  "files_written": [
+    "claire/api/dashboard_actions_registry_routes.py",
+    "tests/test_s1041_s1068_dashboard_actions_registry_convergence.py"
+  ],
+  "app_patched": true,
+  "endpoints": [
+    "/dashboard/actions/registry",
+    "/dashboard/actions/summary",
+    "/dashboard/actions/preview/{action_key}",
+    "/api/dashboard/actions/registry",
+    "/api/dashboard/actions/summary",
+    "/api/cockpit/actions/registry",
+    "/api/cockpit/actions/summary",
+    "/api/internet/s1068-stop-gate"
+  ],
+  "expected_visual_result": [
+    "The server log should stop showing 404 for /dashboard/actions/registry and /dashboard/actions/summary.",
+    "Actions chip should be able to show a nonzero governed action count.",
+    "Actions tab should be able to show operator controls instead of the empty state."
+  ],
+  "blocked_authorities": {
+    "live_web_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  },
+  "unlock_allowed": false
+}

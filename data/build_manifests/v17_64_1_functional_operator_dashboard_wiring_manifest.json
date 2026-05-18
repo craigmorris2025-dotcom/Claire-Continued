@@ -1,0 +1,59 @@
+{
+  "backup_dir": "backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242",
+  "build_name": "Functional Operator Dashboard Wiring",
+  "files_written": [
+    "claire/dashboard/operator_dashboard_state.py",
+    "claire/api/routes_operator_dashboard.py",
+    "frontend/command_center/modern/index.html",
+    "frontend/command_center/modern/claire_functional_operator_dashboard.css",
+    "frontend/command_center/modern/claire_functional_operator_dashboard.js",
+    "LAUNCH_CLAIRE.bat",
+    "tests/test_v17_64_1_functional_operator_dashboard_wiring.py",
+    "docs/dashboard/v17.64.1_functional_operator_dashboard_wiring.md",
+    "data/dashboard/operator_dashboard_state.json",
+    "data/dashboard/v17_64_1_functional_dashboard_validation.json"
+  ],
+  "installed_at": "2026-05-09T23:32:46.447044Z",
+  "next": [
+    "v17.65 Runtime Truth Contract Repair",
+    "v17.66 Discovery / Breakthrough / Innovation Route Audit",
+    "v17.67 AutoDesign Handoff Contract"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "errors": [],
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "readiness": {
+      "autodesign_installed_out_of": 5,
+      "autodesign_installed_score": 5,
+      "dashboard_wired": true,
+      "internet_installed_out_of": 7,
+      "internet_installed_score": 7,
+      "runtime_truth": true
+    },
+    "route": {
+      "acquisition_available": true,
+      "autodesign_available": true,
+      "breakthrough_route_available": true,
+      "design_portal_available": true,
+      "invention_required": false,
+      "portfolio_route_available": true,
+      "selected": "portfolio_creation_optimization",
+      "terminal_state": "complete"
+    },
+    "state_source": {
+      "invalid_candidate_count": 0,
+      "invalid_candidates_sample": [],
+      "raw_available": true,
+      "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+    },
+    "status": "passed"
+  },
+  "version": "v17.64.1"
+}

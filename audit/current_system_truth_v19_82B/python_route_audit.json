@@ -1,0 +1,4147 @@
+{
+  "app_candidates": [
+    "main.py",
+    "claire/app.py"
+  ],
+  "files": [
+    {
+      "path": "claire/app.py",
+      "size_bytes": 16086,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/health"
+        },
+        {
+          "kind": "include_router",
+          "raw": "pipeline_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "dashboard_alignment_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "enterprise_runs_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "continuous_runtime_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "enterprise_cockpit_payload_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "source_universes_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "authored_cockpit_compat_routes.router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "authored_cockpit_payload_binding_routes.router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "runtime_truth_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "operator_dashboard_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "route_audit_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "autodesign_handoff_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "design_portal_output_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "buildability_validation_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "internet_readiness_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "update_pack_staging_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "rollback_update_plan_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "automatic_update_runner_gate_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "update_governance_regression_lock_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "full_e2e_proof_pack_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "operator_search_command_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "platform_endpoint_smoke_proof_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "platform_launch_hardening_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "desktop_startup_reliability_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "manual_browser_swagger_proof_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "launch_candidate_freeze_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "cleanup_proof_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "archive_approval_gate_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "internet_provider_gate_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "governed_live_probe_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "evidence_promotion_gate_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "governed_dashboard_live_search_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "real_provider_operator_probe_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "_v18_72_2_live_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "_v18_72_2_provider_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "_v18_73_1_operator_compat_router"
+        },
+        {
+          "kind": "include_router",
+          "raw": "_v19_dashboard_payload_bridge_router"
+        }
+      ],
+      "contains_create_app": true,
+      "contains_fastapi": true,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/commands.py",
+      "size_bytes": 628,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/command"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/dashboard_payload_bridge.py",
+      "size_bytes": 14720,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/payload"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/payload/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": true,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/endpoints.py",
+      "size_bytes": 273,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/run"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/governed_dashboard_live_search_routes.py",
+      "size_bytes": 3220,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/smoke/google"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/live"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/live"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/operator_dashboard_compat_routes.py",
+      "size_bytes": 6703,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/operator/search/capabilities"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/operator/dashboard/state"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/operator/search/smoke/google"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/operator/search"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/operator/search"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/operator/search/live"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/operator/search/live"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/operator/search/query"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/operator/search/run"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/real_provider_operator_probe_routes.py",
+      "size_bytes": 4823,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/status"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/probe"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/router.py",
+      "size_bytes": 397,
+      "route_hits": [
+        {
+          "kind": "include_router",
+          "raw": "commands_router, prefix=\"/api\""
+        },
+        {
+          "kind": "include_router",
+          "raw": "update_router, prefix=\"/api\""
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_acquirers.py",
+      "size_bytes": 1619,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/acquirers"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/acquirers/{ticker}"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_archive_approval_gate.py",
+      "size_bytes": 1010,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/cleanup/archive-approval"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/cleanup/archive-approval/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/cleanup/archive-approval/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/cleanup/archive/execute-approved"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/cleanup/archive/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_autodesign_handoff.py",
+      "size_bytes": 718,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/autodesign/handoff"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/autodesign/handoff/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/autodesign/handoff/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/design/autodesign/handoff"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_automatic_update_runner_gate.py",
+      "size_bytes": 836,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/runner-gate"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/runner-gate/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/updates/runner-gate/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/automatic/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_buildability_validation.py",
+      "size_bytes": 766,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/validation/buildability"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/validation/buildability/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/validation/buildability/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/design-portal/validation"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_cleanup_proof.py",
+      "size_bytes": 753,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/cleanup/proof"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/cleanup/proof/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/cleanup/proof/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/cleanup/archive-plan"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/cleanup/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_command.py",
+      "size_bytes": 600,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/command"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_connectors.py",
+      "size_bytes": 1419,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/status"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/fetch"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_continuous_runtime.py",
+      "size_bytes": 7336,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runtime/continuous/status"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/runtime/continuous/start"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/runtime/continuous/pause"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runtime/continuous/cycles"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runtime/continuous/review-queue"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": true,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_dashboard.py",
+      "size_bytes": 1083,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/discovery/live"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/market/overview"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/innovation/search"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/financial/markets"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/news/intel"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/patents/search"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/company/intel"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/portfolio/active"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/buyer/matching"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/deals/pipeline"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/system/settings"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_dashboard_alignment.py",
+      "size_bytes": 1407,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/status"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/capabilities"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/buttons"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/verify"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": true,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_dashboard_e2e.py",
+      "size_bytes": 1080,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/first-use/manifest"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/first-use/latest"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/first-use/run"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": true,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_design_portal_output.py",
+      "size_bytes": 743,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/design-portal/output"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/design-portal/output/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/design-portal/output/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/design/portal/output"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_desktop_startup_reliability.py",
+      "size_bytes": 958,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/desktop/startup"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/desktop/startup/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/desktop/startup/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/desktop/package-manifest"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/desktop/launch/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_enterprise_cockpit_payload.py",
+      "size_bytes": 6893,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/dashboard/payload"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/dashboard/payload/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": true,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_enterprise_runs.py",
+      "size_bytes": 9899,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/runs/start"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runs/latest"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runs/{run_id}/status"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runs/{run_id}/lifecycle"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runs/{run_id}/gates"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runs/{run_id}/missing-evidence"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/runs/{run_id}/enrich"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": true
+    },
+    {
+      "path": "claire/api/routes_evidence_promotion_gate.py",
+      "size_bytes": 1075,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/evidence-promotion"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/evidence-promotion/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/internet/evidence-promotion/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/internet/evidence-promotion/promote-approved"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/evidence-promotion/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_full_e2e_proof_pack.py",
+      "size_bytes": 678,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/proof/e2e"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/proof/e2e/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/proof/e2e/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/system/stop-go"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_governed_live_probe.py",
+      "size_bytes": 1643,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/live-probe/status"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/live-probe/contract"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/internet/live-probe/run"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/internet/live-probe/run-confirmed"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/internet/live-probe/run-adapter"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/operator/search/web/run-governed-probe"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/live-probe/adapter/status"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/live-probe/last"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_history.py",
+      "size_bytes": 2305,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/history"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/history/{run_id}"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/stats"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_internet_provider_gate.py",
+      "size_bytes": 796,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/provider-gate"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/provider-gate/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/internet/provider-gate/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/search/provider/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_internet_readiness.py",
+      "size_bytes": 740,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/readiness"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/readiness/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/internet/readiness/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/operations/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_launch_candidate_freeze.py",
+      "size_bytes": 782,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/platform/launch-candidate"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/platform/launch-candidate/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/platform/launch-candidate/freeze"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/platform/freeze/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_live_search_dashboard_smoke.py",
+      "size_bytes": 868,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/search/dashboard-smoke"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": true,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_manual_browser_swagger_proof.py",
+      "size_bytes": 904,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/proof/manual-browser-swagger"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/proof/manual-browser-swagger/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/proof/manual-browser-swagger/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/proof/manual-browser-swagger/checklist"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_operator_dashboard.py",
+      "size_bytes": 885,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/operator/dashboard/state"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/dashboard/state"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/api/dashboard/state"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/operator/dashboard/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/operator/dashboard/refresh"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_operator_search_command.py",
+      "size_bytes": 1388,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/operator/search/capabilities"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/operator/search/query"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/operator/command/parse"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/operator/search/web/status"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/operator/search/web"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/operator/search/layer"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_pipeline.py",
+      "size_bytes": 10401,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/pipeline/evaluate"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/evaluate"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_platform.py",
+      "size_bytes": 1815,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/api/platform/status"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/api/platform/target"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/api/platform/current"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/api/platform/resolve"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/api/platform/resolve/{component}"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_platform_endpoint_smoke_proof.py",
+      "size_bytes": 795,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/proof/platform-smoke"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/proof/platform-smoke/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/proof/platform-smoke/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/platform/stop-go"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_platform_launch_hardening.py",
+      "size_bytes": 801,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/platform/launch-hardening"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/platform/launch-hardening/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/platform/launch-hardening/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/platform/launch/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_proxy.py",
+      "size_bytes": 2305,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/history"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/history/{run_id}"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/stats"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_rollback_update_plan.py",
+      "size_bytes": 751,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/rollback-plan"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/rollback-plan/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/updates/rollback-plan/create"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/rollback/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_route_audit.py",
+      "size_bytes": 656,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/routes/audit"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/routes/audit/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/routes/audit/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/discovery/route-audit"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_runtime_truth.py",
+      "size_bytes": 700,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runtime/truth"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runtime/state"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/runtime/truth/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/dashboard/runtime-truth"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_source_universes.py",
+      "size_bytes": 7161,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/universes"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/universes/{universe_id}"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/universes/{universe_id}/probe"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": true,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_system.py",
+      "size_bytes": 5719,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/health"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/modes"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/engines"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_update.py",
+      "size_bytes": 898,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/update/check"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/update/prepare"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/update/install"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_update_governance_regression_lock.py",
+      "size_bytes": 902,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/regression-lock"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/regression-lock/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/updates/regression-lock/rebuild"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/governance/lock"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_update_pack_staging.py",
+      "size_bytes": 734,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/staging"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/staging/summary"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/updates/staging/create"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/updates/governance/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_v19_25_search_execution.py",
+      "size_bytes": 1891,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/execute"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/health"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/routes_visible_query_result_verification.py",
+      "size_bytes": 859,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/search/visible-result-verification"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": true,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/runtime_truth_read_api.py",
+      "size_bytes": 2357,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/read"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/records"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/search_bar_dashboard_api.py",
+      "size_bytes": 2230,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/dashboard"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/api/server.py",
+      "size_bytes": 462,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/"
+        },
+        {
+          "kind": "include_router",
+          "raw": "router"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": true,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/dynamic_source_trust/api_routes.py",
+      "size_bytes": 2216,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/events"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/weight"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/weight-batch"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/quarantine/{domain}"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/release/{domain}"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/profiles"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/events"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/governed_campaign_scheduler/api_routes.py",
+      "size_bytes": 1620,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/schedule"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/schedules"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/run-due"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/reports"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/lock"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/governed_web/dashboard_live_search_route_mount_adapter.py",
+      "size_bytes": 8703,
+      "route_hits": [
+        {
+          "kind": "include_router",
+          "raw": "router"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/governed_web/dashboard_search_endpoint_result_contract.py",
+      "size_bytes": 10683,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/live"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/smoke/google"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/governed_web/live_search_active_app_mount_gate.py",
+      "size_bytes": 10637,
+      "route_hits": [
+        {
+          "kind": "include_router",
+          "raw": "router"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": true,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/governed_web/operator_probe_active_app_mount.py",
+      "size_bytes": 12482,
+      "route_hits": [
+        {
+          "kind": "include_router",
+          "raw": "router"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": true,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/governed_web/real_provider_operator_probe_route.py",
+      "size_bytes": 13563,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/status"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/probe"
+        },
+        {
+          "kind": "include_router",
+          "raw": "create_real_provider_operator_probe_router("
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": true,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/internet_activation/api_routes.py",
+      "size_bytes": 1243,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/internet"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/evidence"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/internet/evidence/{evidence_id}"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/internet_operations_dashboard/api_routes.py",
+      "size_bytes": 985,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/snapshot"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/run-due"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/campaigns/{campaign_id}/refresh"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/dashboard"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/internet_runtime_integration/api_routes.py",
+      "size_bytes": 1615,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/enrich"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/dashboard"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/internet_runtime_stability/api_routes.py",
+      "size_bytes": 1175,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/health"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/campaigns/{campaign_id}/refresh"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/scheduler/run-due"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/failures"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/reports"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/persistent_internet_campaigns/api_routes.py",
+      "size_bytes": 1765,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/{campaign_id}/refresh"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/{campaign_id}/reports"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/platform/resolver.py",
+      "size_bytes": 22160,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/api/platform/status"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/api/platform/target"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/api/platform/current"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/api/platform/resolve"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/api/platform/resolve/{component}"
+        },
+        {
+          "kind": "include_router",
+          "raw": "proxy_router, prefix=\"\", tags=[\"Proxy\"]"
+        },
+        {
+          "kind": "include_router",
+          "raw": "proxy_router, prefix=\"\", tags=[\"Proxy\"]"
+        },
+        {
+          "kind": "include_router",
+          "raw": "platform_router, prefix=\"\", tags=[\"Platform\"]"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/routes/authored_cockpit_compat_routes.py",
+      "size_bytes": 10885,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/dashboard/payload"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runtime/continuous/status"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/runtime/continuous/start"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/runtime/continuous/pause"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/runtime/continuous/review-queue"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/universes"
+        },
+        {
+          "kind": "route",
+          "method": "POST",
+          "path": "/runs/start"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": true,
+      "contains_continuous_runtime": true,
+      "contains_universes": true,
+      "contains_runs_start": true
+    },
+    {
+      "path": "claire/routes/authored_cockpit_payload_binding_routes.py",
+      "size_bytes": 5917,
+      "route_hits": [
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/dashboard/payload/status"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/api/dashboard/payload"
+        },
+        {
+          "kind": "route",
+          "method": "GET",
+          "path": "/api/dashboard/payload/status"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": true,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/search_bar/governed_web_simulation_fastapi_route.py",
+      "size_bytes": 6394,
+      "route_hits": [
+        {
+          "kind": "include_router",
+          "raw": "router"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": true,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    },
+    {
+      "path": "claire/search_bar/governed_web_simulation_route_mount_verifier.py",
+      "size_bytes": 5853,
+      "route_hits": [
+        {
+          "kind": "include_router",
+          "raw": "self, router: Any"
+        }
+      ],
+      "contains_create_app": false,
+      "contains_fastapi": false,
+      "contains_dashboard_payload": false,
+      "contains_continuous_runtime": false,
+      "contains_universes": false,
+      "contains_runs_start": false
+    }
+  ],
+  "routes": [
+    {
+      "file": "claire/app.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "pipeline_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "dashboard_alignment_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "enterprise_runs_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "continuous_runtime_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "enterprise_cockpit_payload_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "source_universes_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "authored_cockpit_compat_routes.router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "authored_cockpit_payload_binding_routes.router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "runtime_truth_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "operator_dashboard_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "route_audit_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "autodesign_handoff_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "design_portal_output_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "buildability_validation_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "internet_readiness_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "update_pack_staging_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "rollback_update_plan_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "automatic_update_runner_gate_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "update_governance_regression_lock_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "full_e2e_proof_pack_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "operator_search_command_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "platform_endpoint_smoke_proof_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "platform_launch_hardening_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "desktop_startup_reliability_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "manual_browser_swagger_proof_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "launch_candidate_freeze_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "cleanup_proof_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "archive_approval_gate_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "internet_provider_gate_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "governed_live_probe_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "evidence_promotion_gate_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "governed_dashboard_live_search_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "real_provider_operator_probe_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "_v18_72_2_live_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "_v18_72_2_provider_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "_v18_73_1_operator_compat_router"
+    },
+    {
+      "file": "claire/app.py",
+      "kind": "include_router",
+      "raw": "_v19_dashboard_payload_bridge_router"
+    },
+    {
+      "file": "claire/api/commands.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/command"
+    },
+    {
+      "file": "claire/api/dashboard_payload_bridge.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/payload"
+    },
+    {
+      "file": "claire/api/dashboard_payload_bridge.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/payload/status"
+    },
+    {
+      "file": "claire/api/endpoints.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/run"
+    },
+    {
+      "file": "claire/api/governed_dashboard_live_search_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/smoke/google"
+    },
+    {
+      "file": "claire/api/governed_dashboard_live_search_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/live"
+    },
+    {
+      "file": "claire/api/governed_dashboard_live_search_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/live"
+    },
+    {
+      "file": "claire/api/operator_dashboard_compat_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/operator/search/capabilities"
+    },
+    {
+      "file": "claire/api/operator_dashboard_compat_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/operator/dashboard/state"
+    },
+    {
+      "file": "claire/api/operator_dashboard_compat_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/operator/search/smoke/google"
+    },
+    {
+      "file": "claire/api/operator_dashboard_compat_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/operator/search"
+    },
+    {
+      "file": "claire/api/operator_dashboard_compat_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/operator/search"
+    },
+    {
+      "file": "claire/api/operator_dashboard_compat_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/operator/search/live"
+    },
+    {
+      "file": "claire/api/operator_dashboard_compat_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/operator/search/live"
+    },
+    {
+      "file": "claire/api/operator_dashboard_compat_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/operator/search/query"
+    },
+    {
+      "file": "claire/api/operator_dashboard_compat_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/operator/search/run"
+    },
+    {
+      "file": "claire/api/real_provider_operator_probe_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/status"
+    },
+    {
+      "file": "claire/api/real_provider_operator_probe_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/probe"
+    },
+    {
+      "file": "claire/api/router.py",
+      "kind": "include_router",
+      "raw": "commands_router, prefix=\"/api\""
+    },
+    {
+      "file": "claire/api/router.py",
+      "kind": "include_router",
+      "raw": "update_router, prefix=\"/api\""
+    },
+    {
+      "file": "claire/api/routes_acquirers.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/acquirers"
+    },
+    {
+      "file": "claire/api/routes_acquirers.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/acquirers/{ticker}"
+    },
+    {
+      "file": "claire/api/routes_archive_approval_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/cleanup/archive-approval"
+    },
+    {
+      "file": "claire/api/routes_archive_approval_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/cleanup/archive-approval/summary"
+    },
+    {
+      "file": "claire/api/routes_archive_approval_gate.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/cleanup/archive-approval/rebuild"
+    },
+    {
+      "file": "claire/api/routes_archive_approval_gate.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/cleanup/archive/execute-approved"
+    },
+    {
+      "file": "claire/api/routes_archive_approval_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/cleanup/archive/status"
+    },
+    {
+      "file": "claire/api/routes_autodesign_handoff.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/autodesign/handoff"
+    },
+    {
+      "file": "claire/api/routes_autodesign_handoff.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/autodesign/handoff/summary"
+    },
+    {
+      "file": "claire/api/routes_autodesign_handoff.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/autodesign/handoff/rebuild"
+    },
+    {
+      "file": "claire/api/routes_autodesign_handoff.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/design/autodesign/handoff"
+    },
+    {
+      "file": "claire/api/routes_automatic_update_runner_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/runner-gate"
+    },
+    {
+      "file": "claire/api/routes_automatic_update_runner_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/runner-gate/summary"
+    },
+    {
+      "file": "claire/api/routes_automatic_update_runner_gate.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/updates/runner-gate/rebuild"
+    },
+    {
+      "file": "claire/api/routes_automatic_update_runner_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/automatic/status"
+    },
+    {
+      "file": "claire/api/routes_buildability_validation.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/validation/buildability"
+    },
+    {
+      "file": "claire/api/routes_buildability_validation.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/validation/buildability/summary"
+    },
+    {
+      "file": "claire/api/routes_buildability_validation.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/validation/buildability/rebuild"
+    },
+    {
+      "file": "claire/api/routes_buildability_validation.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/design-portal/validation"
+    },
+    {
+      "file": "claire/api/routes_cleanup_proof.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/cleanup/proof"
+    },
+    {
+      "file": "claire/api/routes_cleanup_proof.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/cleanup/proof/summary"
+    },
+    {
+      "file": "claire/api/routes_cleanup_proof.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/cleanup/proof/rebuild"
+    },
+    {
+      "file": "claire/api/routes_cleanup_proof.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/cleanup/archive-plan"
+    },
+    {
+      "file": "claire/api/routes_cleanup_proof.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/cleanup/status"
+    },
+    {
+      "file": "claire/api/routes_command.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/command"
+    },
+    {
+      "file": "claire/api/routes_connectors.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/status"
+    },
+    {
+      "file": "claire/api/routes_connectors.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/fetch"
+    },
+    {
+      "file": "claire/api/routes_continuous_runtime.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runtime/continuous/status"
+    },
+    {
+      "file": "claire/api/routes_continuous_runtime.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/runtime/continuous/start"
+    },
+    {
+      "file": "claire/api/routes_continuous_runtime.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/runtime/continuous/pause"
+    },
+    {
+      "file": "claire/api/routes_continuous_runtime.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runtime/continuous/cycles"
+    },
+    {
+      "file": "claire/api/routes_continuous_runtime.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runtime/continuous/review-queue"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/discovery/live"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/market/overview"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/innovation/search"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/financial/markets"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/news/intel"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/patents/search"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/company/intel"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/portfolio/active"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/buyer/matching"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/deals/pipeline"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/system/settings"
+    },
+    {
+      "file": "claire/api/routes_dashboard_alignment.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/status"
+    },
+    {
+      "file": "claire/api/routes_dashboard_alignment.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/capabilities"
+    },
+    {
+      "file": "claire/api/routes_dashboard_alignment.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/buttons"
+    },
+    {
+      "file": "claire/api/routes_dashboard_alignment.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/verify"
+    },
+    {
+      "file": "claire/api/routes_dashboard_e2e.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/first-use/manifest"
+    },
+    {
+      "file": "claire/api/routes_dashboard_e2e.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/first-use/latest"
+    },
+    {
+      "file": "claire/api/routes_dashboard_e2e.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/first-use/run"
+    },
+    {
+      "file": "claire/api/routes_design_portal_output.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/design-portal/output"
+    },
+    {
+      "file": "claire/api/routes_design_portal_output.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/design-portal/output/summary"
+    },
+    {
+      "file": "claire/api/routes_design_portal_output.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/design-portal/output/rebuild"
+    },
+    {
+      "file": "claire/api/routes_design_portal_output.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/design/portal/output"
+    },
+    {
+      "file": "claire/api/routes_desktop_startup_reliability.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/desktop/startup"
+    },
+    {
+      "file": "claire/api/routes_desktop_startup_reliability.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/desktop/startup/summary"
+    },
+    {
+      "file": "claire/api/routes_desktop_startup_reliability.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/desktop/startup/rebuild"
+    },
+    {
+      "file": "claire/api/routes_desktop_startup_reliability.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/desktop/package-manifest"
+    },
+    {
+      "file": "claire/api/routes_desktop_startup_reliability.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/desktop/launch/status"
+    },
+    {
+      "file": "claire/api/routes_enterprise_cockpit_payload.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/dashboard/payload"
+    },
+    {
+      "file": "claire/api/routes_enterprise_cockpit_payload.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/dashboard/payload/status"
+    },
+    {
+      "file": "claire/api/routes_enterprise_runs.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/runs/start"
+    },
+    {
+      "file": "claire/api/routes_enterprise_runs.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runs/latest"
+    },
+    {
+      "file": "claire/api/routes_enterprise_runs.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runs/{run_id}/status"
+    },
+    {
+      "file": "claire/api/routes_enterprise_runs.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runs/{run_id}/lifecycle"
+    },
+    {
+      "file": "claire/api/routes_enterprise_runs.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runs/{run_id}/gates"
+    },
+    {
+      "file": "claire/api/routes_enterprise_runs.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runs/{run_id}/missing-evidence"
+    },
+    {
+      "file": "claire/api/routes_enterprise_runs.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/runs/{run_id}/enrich"
+    },
+    {
+      "file": "claire/api/routes_evidence_promotion_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/evidence-promotion"
+    },
+    {
+      "file": "claire/api/routes_evidence_promotion_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/evidence-promotion/summary"
+    },
+    {
+      "file": "claire/api/routes_evidence_promotion_gate.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/internet/evidence-promotion/rebuild"
+    },
+    {
+      "file": "claire/api/routes_evidence_promotion_gate.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/internet/evidence-promotion/promote-approved"
+    },
+    {
+      "file": "claire/api/routes_evidence_promotion_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/evidence-promotion/status"
+    },
+    {
+      "file": "claire/api/routes_full_e2e_proof_pack.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/proof/e2e"
+    },
+    {
+      "file": "claire/api/routes_full_e2e_proof_pack.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/proof/e2e/summary"
+    },
+    {
+      "file": "claire/api/routes_full_e2e_proof_pack.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/proof/e2e/rebuild"
+    },
+    {
+      "file": "claire/api/routes_full_e2e_proof_pack.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/system/stop-go"
+    },
+    {
+      "file": "claire/api/routes_governed_live_probe.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/live-probe/status"
+    },
+    {
+      "file": "claire/api/routes_governed_live_probe.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/live-probe/contract"
+    },
+    {
+      "file": "claire/api/routes_governed_live_probe.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/internet/live-probe/run"
+    },
+    {
+      "file": "claire/api/routes_governed_live_probe.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/internet/live-probe/run-confirmed"
+    },
+    {
+      "file": "claire/api/routes_governed_live_probe.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/internet/live-probe/run-adapter"
+    },
+    {
+      "file": "claire/api/routes_governed_live_probe.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/operator/search/web/run-governed-probe"
+    },
+    {
+      "file": "claire/api/routes_governed_live_probe.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/live-probe/adapter/status"
+    },
+    {
+      "file": "claire/api/routes_governed_live_probe.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/live-probe/last"
+    },
+    {
+      "file": "claire/api/routes_history.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/history"
+    },
+    {
+      "file": "claire/api/routes_history.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/history/{run_id}"
+    },
+    {
+      "file": "claire/api/routes_history.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/stats"
+    },
+    {
+      "file": "claire/api/routes_internet_provider_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/provider-gate"
+    },
+    {
+      "file": "claire/api/routes_internet_provider_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/provider-gate/summary"
+    },
+    {
+      "file": "claire/api/routes_internet_provider_gate.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/internet/provider-gate/rebuild"
+    },
+    {
+      "file": "claire/api/routes_internet_provider_gate.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/search/provider/status"
+    },
+    {
+      "file": "claire/api/routes_internet_readiness.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/readiness"
+    },
+    {
+      "file": "claire/api/routes_internet_readiness.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/readiness/summary"
+    },
+    {
+      "file": "claire/api/routes_internet_readiness.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/internet/readiness/rebuild"
+    },
+    {
+      "file": "claire/api/routes_internet_readiness.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/operations/status"
+    },
+    {
+      "file": "claire/api/routes_launch_candidate_freeze.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/platform/launch-candidate"
+    },
+    {
+      "file": "claire/api/routes_launch_candidate_freeze.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/platform/launch-candidate/summary"
+    },
+    {
+      "file": "claire/api/routes_launch_candidate_freeze.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/platform/launch-candidate/freeze"
+    },
+    {
+      "file": "claire/api/routes_launch_candidate_freeze.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/platform/freeze/status"
+    },
+    {
+      "file": "claire/api/routes_live_search_dashboard_smoke.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/search/dashboard-smoke"
+    },
+    {
+      "file": "claire/api/routes_manual_browser_swagger_proof.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/proof/manual-browser-swagger"
+    },
+    {
+      "file": "claire/api/routes_manual_browser_swagger_proof.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/proof/manual-browser-swagger/summary"
+    },
+    {
+      "file": "claire/api/routes_manual_browser_swagger_proof.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/proof/manual-browser-swagger/rebuild"
+    },
+    {
+      "file": "claire/api/routes_manual_browser_swagger_proof.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/proof/manual-browser-swagger/checklist"
+    },
+    {
+      "file": "claire/api/routes_operator_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/operator/dashboard/state"
+    },
+    {
+      "file": "claire/api/routes_operator_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/dashboard/state"
+    },
+    {
+      "file": "claire/api/routes_operator_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/api/dashboard/state"
+    },
+    {
+      "file": "claire/api/routes_operator_dashboard.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/operator/dashboard/summary"
+    },
+    {
+      "file": "claire/api/routes_operator_dashboard.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/operator/dashboard/refresh"
+    },
+    {
+      "file": "claire/api/routes_operator_search_command.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/operator/search/capabilities"
+    },
+    {
+      "file": "claire/api/routes_operator_search_command.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/operator/search/query"
+    },
+    {
+      "file": "claire/api/routes_operator_search_command.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/operator/command/parse"
+    },
+    {
+      "file": "claire/api/routes_operator_search_command.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/operator/search/web/status"
+    },
+    {
+      "file": "claire/api/routes_operator_search_command.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/operator/search/web"
+    },
+    {
+      "file": "claire/api/routes_operator_search_command.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/operator/search/layer"
+    },
+    {
+      "file": "claire/api/routes_pipeline.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/pipeline/evaluate"
+    },
+    {
+      "file": "claire/api/routes_pipeline.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/evaluate"
+    },
+    {
+      "file": "claire/api/routes_platform.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/api/platform/status"
+    },
+    {
+      "file": "claire/api/routes_platform.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/api/platform/target"
+    },
+    {
+      "file": "claire/api/routes_platform.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/api/platform/current"
+    },
+    {
+      "file": "claire/api/routes_platform.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/api/platform/resolve"
+    },
+    {
+      "file": "claire/api/routes_platform.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/api/platform/resolve/{component}"
+    },
+    {
+      "file": "claire/api/routes_platform_endpoint_smoke_proof.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/proof/platform-smoke"
+    },
+    {
+      "file": "claire/api/routes_platform_endpoint_smoke_proof.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/proof/platform-smoke/summary"
+    },
+    {
+      "file": "claire/api/routes_platform_endpoint_smoke_proof.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/proof/platform-smoke/rebuild"
+    },
+    {
+      "file": "claire/api/routes_platform_endpoint_smoke_proof.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/platform/stop-go"
+    },
+    {
+      "file": "claire/api/routes_platform_launch_hardening.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/platform/launch-hardening"
+    },
+    {
+      "file": "claire/api/routes_platform_launch_hardening.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/platform/launch-hardening/summary"
+    },
+    {
+      "file": "claire/api/routes_platform_launch_hardening.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/platform/launch-hardening/rebuild"
+    },
+    {
+      "file": "claire/api/routes_platform_launch_hardening.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/platform/launch/status"
+    },
+    {
+      "file": "claire/api/routes_proxy.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/history"
+    },
+    {
+      "file": "claire/api/routes_proxy.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/history/{run_id}"
+    },
+    {
+      "file": "claire/api/routes_proxy.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/stats"
+    },
+    {
+      "file": "claire/api/routes_rollback_update_plan.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/rollback-plan"
+    },
+    {
+      "file": "claire/api/routes_rollback_update_plan.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/rollback-plan/summary"
+    },
+    {
+      "file": "claire/api/routes_rollback_update_plan.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/updates/rollback-plan/create"
+    },
+    {
+      "file": "claire/api/routes_rollback_update_plan.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/rollback/status"
+    },
+    {
+      "file": "claire/api/routes_route_audit.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/routes/audit"
+    },
+    {
+      "file": "claire/api/routes_route_audit.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/routes/audit/summary"
+    },
+    {
+      "file": "claire/api/routes_route_audit.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/routes/audit/rebuild"
+    },
+    {
+      "file": "claire/api/routes_route_audit.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/discovery/route-audit"
+    },
+    {
+      "file": "claire/api/routes_runtime_truth.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runtime/truth"
+    },
+    {
+      "file": "claire/api/routes_runtime_truth.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runtime/state"
+    },
+    {
+      "file": "claire/api/routes_runtime_truth.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/runtime/truth/rebuild"
+    },
+    {
+      "file": "claire/api/routes_runtime_truth.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/dashboard/runtime-truth"
+    },
+    {
+      "file": "claire/api/routes_source_universes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/universes"
+    },
+    {
+      "file": "claire/api/routes_source_universes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/universes/{universe_id}"
+    },
+    {
+      "file": "claire/api/routes_source_universes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/universes/{universe_id}/probe"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/modes"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/engines"
+    },
+    {
+      "file": "claire/api/routes_update.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/update/check"
+    },
+    {
+      "file": "claire/api/routes_update.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/update/prepare"
+    },
+    {
+      "file": "claire/api/routes_update.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/update/install"
+    },
+    {
+      "file": "claire/api/routes_update_governance_regression_lock.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/regression-lock"
+    },
+    {
+      "file": "claire/api/routes_update_governance_regression_lock.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/regression-lock/summary"
+    },
+    {
+      "file": "claire/api/routes_update_governance_regression_lock.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/updates/regression-lock/rebuild"
+    },
+    {
+      "file": "claire/api/routes_update_governance_regression_lock.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/governance/lock"
+    },
+    {
+      "file": "claire/api/routes_update_pack_staging.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/staging"
+    },
+    {
+      "file": "claire/api/routes_update_pack_staging.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/staging/summary"
+    },
+    {
+      "file": "claire/api/routes_update_pack_staging.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/updates/staging/create"
+    },
+    {
+      "file": "claire/api/routes_update_pack_staging.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/updates/governance/status"
+    },
+    {
+      "file": "claire/api/routes_v19_25_search_execution.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/execute"
+    },
+    {
+      "file": "claire/api/routes_v19_25_search_execution.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "file": "claire/api/routes_visible_query_result_verification.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/search/visible-result-verification"
+    },
+    {
+      "file": "claire/api/runtime_truth_read_api.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/read"
+    },
+    {
+      "file": "claire/api/runtime_truth_read_api.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/records"
+    },
+    {
+      "file": "claire/api/search_bar_dashboard_api.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/dashboard"
+    },
+    {
+      "file": "claire/api/search_bar_dashboard_api.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/status"
+    },
+    {
+      "file": "claire/api/server.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/"
+    },
+    {
+      "file": "claire/api/server.py",
+      "kind": "include_router",
+      "raw": "router"
+    },
+    {
+      "file": "claire/dynamic_source_trust/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/events"
+    },
+    {
+      "file": "claire/dynamic_source_trust/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/weight"
+    },
+    {
+      "file": "claire/dynamic_source_trust/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/weight-batch"
+    },
+    {
+      "file": "claire/dynamic_source_trust/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/quarantine/{domain}"
+    },
+    {
+      "file": "claire/dynamic_source_trust/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/release/{domain}"
+    },
+    {
+      "file": "claire/dynamic_source_trust/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/profiles"
+    },
+    {
+      "file": "claire/dynamic_source_trust/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/events"
+    },
+    {
+      "file": "claire/governed_campaign_scheduler/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/schedule"
+    },
+    {
+      "file": "claire/governed_campaign_scheduler/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/schedules"
+    },
+    {
+      "file": "claire/governed_campaign_scheduler/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/run-due"
+    },
+    {
+      "file": "claire/governed_campaign_scheduler/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/reports"
+    },
+    {
+      "file": "claire/governed_campaign_scheduler/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/lock"
+    },
+    {
+      "file": "claire/governed_web/dashboard_live_search_route_mount_adapter.py",
+      "kind": "include_router",
+      "raw": "router"
+    },
+    {
+      "file": "claire/governed_web/dashboard_search_endpoint_result_contract.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/live"
+    },
+    {
+      "file": "claire/governed_web/dashboard_search_endpoint_result_contract.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/smoke/google"
+    },
+    {
+      "file": "claire/governed_web/live_search_active_app_mount_gate.py",
+      "kind": "include_router",
+      "raw": "router"
+    },
+    {
+      "file": "claire/governed_web/operator_probe_active_app_mount.py",
+      "kind": "include_router",
+      "raw": "router"
+    },
+    {
+      "file": "claire/governed_web/real_provider_operator_probe_route.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/status"
+    },
+    {
+      "file": "claire/governed_web/real_provider_operator_probe_route.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/probe"
+    },
+    {
+      "file": "claire/governed_web/real_provider_operator_probe_route.py",
+      "kind": "include_router",
+      "raw": "create_real_provider_operator_probe_router("
+    },
+    {
+      "file": "claire/internet_activation/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/internet"
+    },
+    {
+      "file": "claire/internet_activation/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/evidence"
+    },
+    {
+      "file": "claire/internet_activation/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/internet/evidence/{evidence_id}"
+    },
+    {
+      "file": "claire/internet_operations_dashboard/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/snapshot"
+    },
+    {
+      "file": "claire/internet_operations_dashboard/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/run-due"
+    },
+    {
+      "file": "claire/internet_operations_dashboard/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/refresh"
+    },
+    {
+      "file": "claire/internet_operations_dashboard/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/dashboard"
+    },
+    {
+      "file": "claire/internet_runtime_integration/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/enrich"
+    },
+    {
+      "file": "claire/internet_runtime_integration/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/dashboard"
+    },
+    {
+      "file": "claire/internet_runtime_stability/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "file": "claire/internet_runtime_stability/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/refresh"
+    },
+    {
+      "file": "claire/internet_runtime_stability/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/scheduler/run-due"
+    },
+    {
+      "file": "claire/internet_runtime_stability/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/failures"
+    },
+    {
+      "file": "claire/internet_runtime_stability/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/reports"
+    },
+    {
+      "file": "claire/persistent_internet_campaigns/api_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/{campaign_id}/refresh"
+    },
+    {
+      "file": "claire/persistent_internet_campaigns/api_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/{campaign_id}/reports"
+    },
+    {
+      "file": "claire/platform/resolver.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/api/platform/status"
+    },
+    {
+      "file": "claire/platform/resolver.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/api/platform/target"
+    },
+    {
+      "file": "claire/platform/resolver.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/api/platform/current"
+    },
+    {
+      "file": "claire/platform/resolver.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/api/platform/resolve"
+    },
+    {
+      "file": "claire/platform/resolver.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/api/platform/resolve/{component}"
+    },
+    {
+      "file": "claire/platform/resolver.py",
+      "kind": "include_router",
+      "raw": "proxy_router, prefix=\"\", tags=[\"Proxy\"]"
+    },
+    {
+      "file": "claire/platform/resolver.py",
+      "kind": "include_router",
+      "raw": "proxy_router, prefix=\"\", tags=[\"Proxy\"]"
+    },
+    {
+      "file": "claire/platform/resolver.py",
+      "kind": "include_router",
+      "raw": "platform_router, prefix=\"\", tags=[\"Platform\"]"
+    },
+    {
+      "file": "claire/routes/authored_cockpit_compat_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/dashboard/payload"
+    },
+    {
+      "file": "claire/routes/authored_cockpit_compat_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runtime/continuous/status"
+    },
+    {
+      "file": "claire/routes/authored_cockpit_compat_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/runtime/continuous/start"
+    },
+    {
+      "file": "claire/routes/authored_cockpit_compat_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/runtime/continuous/pause"
+    },
+    {
+      "file": "claire/routes/authored_cockpit_compat_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/runtime/continuous/review-queue"
+    },
+    {
+      "file": "claire/routes/authored_cockpit_compat_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/universes"
+    },
+    {
+      "file": "claire/routes/authored_cockpit_compat_routes.py",
+      "kind": "route",
+      "method": "POST",
+      "path": "/runs/start"
+    },
+    {
+      "file": "claire/routes/authored_cockpit_payload_binding_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/dashboard/payload/status"
+    },
+    {
+      "file": "claire/routes/authored_cockpit_payload_binding_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/api/dashboard/payload"
+    },
+    {
+      "file": "claire/routes/authored_cockpit_payload_binding_routes.py",
+      "kind": "route",
+      "method": "GET",
+      "path": "/api/dashboard/payload/status"
+    },
+    {
+      "file": "claire/search_bar/governed_web_simulation_fastapi_route.py",
+      "kind": "include_router",
+      "raw": "router"
+    },
+    {
+      "file": "claire/search_bar/governed_web_simulation_route_mount_verifier.py",
+      "kind": "include_router",
+      "raw": "self, router: Any"
+    }
+  ],
+  "imports_of_interest": [
+    {
+      "file": "claire/app.py",
+      "line": "from claire.api.governed_dashboard_live_search_routes import router as governed_dashboard_live_search_router"
+    },
+    {
+      "file": "claire/app.py",
+      "line": "from claire.api.routes_dashboard_alignment import router as dashboard_alignment_router"
+    },
+    {
+      "file": "claire/app.py",
+      "line": "from claire.api.routes_continuous_runtime import router as continuous_runtime_router"
+    },
+    {
+      "file": "claire/app.py",
+      "line": "from claire.routes import authored_cockpit_compat_routes"
+    },
+    {
+      "file": "claire/app.py",
+      "line": "from claire.routes import authored_cockpit_payload_binding_routes"
+    },
+    {
+      "file": "claire/app.py",
+      "line": "from claire.api.routes_operator_dashboard import router as operator_dashboard_router"
+    },
+    {
+      "file": "claire/app.py",
+      "line": "from claire.api.governed_dashboard_live_search_routes import router as _v18_72_2_live_router"
+    },
+    {
+      "file": "claire/app.py",
+      "line": "from claire.api.operator_dashboard_compat_routes import router as _v18_73_1_operator_compat_router"
+    },
+    {
+      "file": "claire/app.py",
+      "line": "from claire.api.dashboard_payload_bridge import router as _v19_dashboard_payload_bridge_router"
+    },
+    {
+      "file": "claire/api/routes_dashboard.py",
+      "line": "from ..services.dashboard_services import *"
+    },
+    {
+      "file": "claire/api/routes_dashboard_alignment.py",
+      "line": "from claire.dashboard.button_registry import get_button_registry, validate_button_registry"
+    },
+    {
+      "file": "claire/api/routes_dashboard_alignment.py",
+      "line": "from claire.dashboard.runtime_alignment import build_capability_manifest, get_alignment_status, write_capability_manifest"
+    },
+    {
+      "file": "claire/api/routes_dashboard_e2e.py",
+      "line": "from claire.runtime.dashboard_e2e_first_use import ("
+    },
+    {
+      "file": "claire/api/routes_live_search_dashboard_smoke.py",
+      "line": "from claire.governed_web.live_search_dashboard_smoke import ("
+    },
+    {
+      "file": "claire/api/routes_operator_dashboard.py",
+      "line": "from claire.dashboard.operator_dashboard_state import ("
+    },
+    {
+      "file": "claire/api/search_bar_dashboard_api.py",
+      "line": "from claire.search.search_bar_dashboard_contract import SearchBarDashboardContract"
+    },
+    {
+      "file": "claire/continuous_autonomous_intelligence/runtime.py",
+      "line": "from .continuous_regression_lock import ContinuousIntelligenceRegressionLock"
+    },
+    {
+      "file": "claire/continuous_autonomous_intelligence/__init__.py",
+      "line": "from .continuous_regression_lock import ContinuousIntelligenceRegressionLock"
+    },
+    {
+      "file": "claire/dashboard_intelligence/__init__.py",
+      "line": "from .local_index import build_dashboard_intelligence_index"
+    },
+    {
+      "file": "claire/distributed_production_runtime/runtime.py",
+      "line": "from .health_dashboard import RuntimeHealthDashboard"
+    },
+    {
+      "file": "claire/distributed_production_runtime/__init__.py",
+      "line": "from .health_dashboard import RuntimeHealthDashboard"
+    },
+    {
+      "file": "claire/governed_internet_connectivity/runtime.py",
+      "line": "from .continuous_monitor import ContinuousMonitor"
+    },
+    {
+      "file": "claire/governed_internet_connectivity/__init__.py",
+      "line": "from .continuous_monitor import ContinuousMonitor"
+    },
+    {
+      "file": "claire/governed_web/accelerated_governed_live_web_activation_pack.py",
+      "line": "from .first_active_dashboard_google_result_proof import inspect_active_dashboard_google_search_surface"
+    },
+    {
+      "file": "claire/governed_web/accelerated_governed_live_web_activation_pack.py",
+      "line": "from .dashboard_to_endpoint_fetch_proof import ("
+    },
+    {
+      "file": "claire/governed_web/accelerated_governed_live_web_activation_pack.py",
+      "line": "from .first_active_dashboard_google_result_proof import run_first_active_dashboard_google_result_proof"
+    },
+    {
+      "file": "claire/governed_web/active_app_mounted_route_verification.py",
+      "line": "from .dashboard_search_endpoint_result_contract import google_endpoint_smoke_response"
+    },
+    {
+      "file": "claire/governed_web/active_app_mounted_route_verification.py",
+      "line": "from .dashboard_search_endpoint_result_contract import execute_dashboard_search_endpoint_request"
+    },
+    {
+      "file": "claire/governed_web/dashboard_live_search_route_mount_adapter.py",
+      "line": "from .dashboard_search_endpoint_result_contract import create_dashboard_search_router"
+    },
+    {
+      "file": "claire/governed_web/dashboard_search_endpoint_result_contract.py",
+      "line": "from .dashboard_search_query_execution_bridge import ("
+    },
+    {
+      "file": "claire/governed_web/dashboard_search_query_execution_bridge.py",
+      "line": "from .dashboard_search_result_binding import bind_dashboard_search_results"
+    },
+    {
+      "file": "claire/governed_web/dashboard_to_endpoint_fetch_proof.py",
+      "line": "from .dashboard_live_search_ui_fetch_binding import build_dashboard_live_search_request_payload"
+    },
+    {
+      "file": "claire/governed_web/dashboard_to_endpoint_fetch_proof.py",
+      "line": "from .dashboard_search_endpoint_result_contract import execute_dashboard_search_endpoint_request"
+    },
+    {
+      "file": "claire/governed_web/first_active_dashboard_google_result_proof.py",
+      "line": "from .dashboard_to_endpoint_fetch_proof import ("
+    },
+    {
+      "file": "claire/governed_web/live_search_active_app_mount_gate.py",
+      "line": "from claire.api.governed_dashboard_live_search_routes import ("
+    },
+    {
+      "file": "claire/governed_web/mounted_live_search_endpoint_smoke_test.py",
+      "line": "from .dashboard_live_search_route_mount_adapter import mount_dashboard_live_search_routes"
+    },
+    {
+      "file": "claire/governed_web/mounted_live_search_endpoint_smoke_test.py",
+      "line": "from .dashboard_search_endpoint_result_contract import execute_dashboard_search_endpoint_request"
+    },
+    {
+      "file": "claire/governed_web/real_controlled_provider_result_proof.py",
+      "line": "from .dashboard_search_endpoint_result_contract import execute_dashboard_search_endpoint_request"
+    },
+    {
+      "file": "claire/governed_web/visible_query_result_verification.py",
+      "line": "from claire.governed_web.live_search_dashboard_smoke import execute_live_search_dashboard_smoke"
+    },
+    {
+      "file": "claire/governed_web/__init__.py",
+      "line": "from .live_search_dashboard_smoke import ("
+    },
+    {
+      "file": "claire/governed_web/__init__.py",
+      "line": "from .dashboard_search_result_binding import ("
+    },
+    {
+      "file": "claire/governed_web/__init__.py",
+      "line": "from .dashboard_search_query_execution_bridge import ("
+    },
+    {
+      "file": "claire/governed_web/__init__.py",
+      "line": "from .dashboard_search_endpoint_result_contract import ("
+    },
+    {
+      "file": "claire/governed_web/__init__.py",
+      "line": "from .dashboard_live_search_route_mount_adapter import ("
+    },
+    {
+      "file": "claire/governed_web/__init__.py",
+      "line": "from .dashboard_live_search_ui_fetch_binding import ("
+    },
+    {
+      "file": "claire/governed_web/__init__.py",
+      "line": "from .dashboard_search_bar_html_integration_gate import ("
+    },
+    {
+      "file": "claire/governed_web/__init__.py",
+      "line": "from .dashboard_to_endpoint_fetch_proof import ("
+    },
+    {
+      "file": "claire/governed_web/__init__.py",
+      "line": "from .first_active_dashboard_google_result_proof import ("
+    },
+    {
+      "file": "claire/governed_web/__init__.py",
+      "line": "from .dashboard_search_provider_probe_separation_repair import ("
+    },
+    {
+      "file": "claire/internet_runtime_integration/integration_service.py",
+      "line": "from .dashboard_payload import InternetDashboardPayloadBuilder"
+    },
+    {
+      "file": "claire/internet_runtime_integration/__init__.py",
+      "line": "from .dashboard_payload import InternetDashboardPayloadBuilder"
+    },
+    {
+      "file": "claire/runtime_contracts/contract_validator.py",
+      "line": "from claire.runtime_contracts.dashboard_contract import DashboardContract"
+    },
+    {
+      "file": "claire/runtime_contracts/__init__.py",
+      "line": "from claire.runtime_contracts.dashboard_contract import DashboardContract"
+    },
+    {
+      "file": "claire/search/search_bar_unified_context_layer.py",
+      "line": "from claire.search.search_bar_dashboard_contract import SearchBarDashboardContract"
+    },
+    {
+      "file": "claire/search_bar/governed_web_simulation_dashboard_route_adapter.py",
+      "line": "from .governed_web_simulation_dashboard_api import ("
+    },
+    {
+      "file": "claire/search_bar/governed_web_simulation_fastapi_route.py",
+      "line": "from .governed_web_simulation_dashboard_route_adapter import ("
+    },
+    {
+      "file": "claire/search_bar/__init__.py",
+      "line": "from .governed_web_simulation_dashboard_api import ("
+    },
+    {
+      "file": "claire/search_bar/__init__.py",
+      "line": "from .governed_web_simulation_dashboard_route_adapter import ("
+    },
+    {
+      "file": "claire/services/dashboard_services.py",
+      "line": "from ..models.dashboard import *"
+    }
+  ]
+}

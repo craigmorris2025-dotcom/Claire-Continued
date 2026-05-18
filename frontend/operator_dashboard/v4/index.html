@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-claire-dashboard="v4">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Claire Operator Dashboard V4</title>
+  <link rel="stylesheet" href="/dashboard/v4/assets/dashboard_v4.css" />
+</head>
+<body>
+  <main class="shell">
+    <aside class="rail" aria-label="Claire runtime domains">
+      <div class="brand">
+        <span>Claire</span>
+        <strong>Operator V4</strong>
+      </div>
+      <nav id="domain-nav" class="domain-nav"></nav>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Backend-owned runtime truth</p>
+          <h1>Lifecycle Operating Surface</h1>
+        </div>
+        <div class="scorecard">
+          <span id="completion-score">--%</span>
+          <small id="completion-label">Loading</small>
+        </div>
+      </header>
+
+      <section class="status-grid" id="status-grid"></section>
+
+      <section class="main-panels">
+        <article class="panel active-domain">
+          <div class="panel-head">
+            <p class="eyebrow">Selected domain</p>
+            <h2 id="domain-title">Waiting for payload</h2>
+          </div>
+          <p id="domain-headline" class="headline"></p>
+          <dl id="domain-signals" class="signal-list"></dl>
+        </article>
+
+        <article class="panel timeline">
+          <div class="panel-head">
+            <p class="eyebrow">Canonical path</p>
+            <h2>Signal to Portfolio</h2>
+          </div>
+          <ol id="default-path" class="path-list"></ol>
+        </article>
+
+        <article class="panel locks">
+          <div class="panel-head">
+            <p class="eyebrow">Authority locks</p>
+            <h2>Governance</h2>
+          </div>
+          <dl id="authority-locks" class="signal-list"></dl>
+        </article>
+      </section>
+
+      <section class="panel payload-panel">
+        <div class="panel-head">
+          <p class="eyebrow">Future payload compatibility</p>
+          <h2>Normalized Envelope</h2>
+        </div>
+        <pre id="payload-preview">{}</pre>
+      </section>
+    </section>
+  </main>
+  <script src="/dashboard/v4/assets/dashboard_v4.js"></script>
+</body>
+</html>

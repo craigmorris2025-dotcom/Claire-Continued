@@ -1,0 +1,48 @@
+{
+  "archives_before_modifying": true,
+  "builds": [
+    {
+      "name": "Dashboard Live Search Result Contract Lock",
+      "proof": "normal dashboard search remains bound to /api/dashboard/search/live",
+      "version": "v18.80"
+    },
+    {
+      "name": "Dashboard Result Card Visual Contract",
+      "proof": "Google result cards require title and url fields",
+      "version": "v18.81"
+    },
+    {
+      "name": "Manual Provider Probe Isolation Lock",
+      "proof": "provider probe remains advanced/manual and separate from normal search",
+      "version": "v18.82"
+    },
+    {
+      "name": "Dashboard Smoke Report Consolidation",
+      "proof": "dashboard smoke report records live search, probe, and result-card proof",
+      "version": "v18.83"
+    },
+    {
+      "name": "Five-Pack Install Registry Contract",
+      "proof": "single installer pack records five build steps and one pytest gate",
+      "version": "v18.84"
+    }
+  ],
+  "deletes_files": false,
+  "expected_google_result": {
+    "title": "Google",
+    "url": "https://www.google.com"
+  },
+  "installed_at": "2026-05-10T14:39:25.983836Z",
+  "mode": "combined_five_build_installer_pack",
+  "normal_search_endpoint": "/api/dashboard/search/live",
+  "pack_id": "v18.80_to_v18.84",
+  "provider_probe_endpoint": "/api/dashboard/search/provider/probe",
+  "provider_probe_policy": {
+    "fail_closed": true,
+    "label": "Provider Probe \u2014 Advanced / Manual",
+    "requires_explicit_enable_checkbox": true,
+    "separate_from_normal_dashboard_search": true
+  },
+  "pytest_gate": "tests/test_v18_80_to_v18_84_dashboard_live_search_pack.py",
+  "title": "Dashboard Live Web Search Continuity Pack"
+}

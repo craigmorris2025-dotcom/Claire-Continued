@@ -1,0 +1,45 @@
+{
+  "backup_dir": "backups/v17_67_autodesign_handoff_contract/20260509_184735",
+  "build_name": "AutoDesign Handoff Contract",
+  "files_written": [
+    "claire/autodesign/handoff_contract.py",
+    "claire/api/routes_autodesign_handoff.py",
+    "tests/test_v17_67_autodesign_handoff_contract.py",
+    "docs/autodesign/v17.67_autodesign_handoff_contract.md",
+    "data/autodesign/autodesign_handoff_contract.json",
+    "data/dashboard/autodesign_handoff_payload.json",
+    "data/autodesign/v17_67_autodesign_handoff_validation.json"
+  ],
+  "installed_at": "2026-05-09T23:47:38.848495Z",
+  "next": [
+    "v17.68 Design Portal Output Contract",
+    "v17.69 Buildability / Viability / Manufacturability Validation Stack",
+    "v17.70 Internet Readiness Verification"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "errors": [],
+    "handoff_status": "already_satisfied",
+    "invention_required": true,
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.64.1",
+      "source": {
+        "invalid_candidate_count": 0,
+        "invalid_candidates_sample": [],
+        "raw_available": true,
+        "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+      },
+      "status": "rebuilt"
+    },
+    "route_family": "autodesign",
+    "status": "passed"
+  },
+  "version": "v17.67"
+}

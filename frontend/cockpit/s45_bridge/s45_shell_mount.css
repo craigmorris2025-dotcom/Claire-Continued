@@ -1,0 +1,23 @@
+/*
+ * S45 shell mount styles.
+ * Presentation-only. No runtime mutation authority.
+ */
+
+.s45-shell-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.s45-shell-mounted-panel {
+  border: 1px solid currentColor;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.s45-shell-mounted-panel pre {
+  max-height: 360px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

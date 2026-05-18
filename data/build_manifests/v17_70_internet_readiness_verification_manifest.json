@@ -1,0 +1,57 @@
+{
+  "backup_dir": "backups/v17_70_internet_readiness_verification/20260509_185527",
+  "build_name": "Internet Readiness Verification",
+  "files_written": [
+    "claire/internet_readiness/readiness_verifier.py",
+    "claire/api/routes_internet_readiness.py",
+    "tests/test_v17_70_internet_readiness_verification.py",
+    "docs/internet_readiness/v17.70_internet_readiness_verification.md",
+    "data/internet_readiness/internet_readiness_verification.json",
+    "data/dashboard/internet_readiness_payload.json",
+    "data/internet_readiness/v17_70_internet_readiness_validation_result.json"
+  ],
+  "installed_at": "2026-05-09T23:55:35.491305Z",
+  "next": [
+    "v17.71 Governed Update Pack Staging",
+    "v17.72 Rollback-Aware Update Plan Contract",
+    "v17.73 Automatic Update Runner Gate",
+    "v17.74 Update Governance Regression Lock",
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "blockers": [],
+    "errors": [],
+    "internet_status": "warning",
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.64.1",
+      "source": {
+        "invalid_candidate_count": 0,
+        "invalid_candidates_sample": [],
+        "raw_available": true,
+        "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+      },
+      "status": "rebuilt"
+    },
+    "readiness": {
+      "automatic_updates_enabled": false,
+      "live_internet_enabled": false,
+      "requires_v17_71_to_v17_74_update_pack_governance": true,
+      "safe_for_automatic_updates": false,
+      "safe_to_attempt_live_probe_after_operator_review": false,
+      "static_internet_readiness": true
+    },
+    "status": "passed",
+    "warnings": [
+      "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+    ]
+  },
+  "version": "v17.70"
+}

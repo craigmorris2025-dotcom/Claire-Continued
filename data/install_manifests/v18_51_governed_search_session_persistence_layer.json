@@ -1,0 +1,16 @@
+{
+  "version": "v18.51",
+  "name": "Governed Search Session Persistence Layer",
+  "files": [
+    "claire/governed_web/search_session_persistence.py",
+    "tests/test_v18_51_governed_search_session_persistence_layer.py"
+  ],
+  "manual_enable_env": "CLAIRE_ALLOW_SEARCH_SESSION_PERSISTENCE",
+  "safety_invariants": [
+    "fail_closed_without_manual_enable",
+    "runtime_truth_immutable",
+    "no_autonomous_execution",
+    "review_required",
+    "bounded_jsonl_persistence"
+  ]
+}

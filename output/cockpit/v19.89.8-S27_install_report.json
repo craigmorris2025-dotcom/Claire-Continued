@@ -1,0 +1,28 @@
+{
+  "version": "v19.89.8-S27",
+  "installed_at_utc": "2026-05-14T03:51:42.650287+00:00",
+  "status": "installed",
+  "safety_note": "S27 intentionally did not patch claire/app.py.",
+  "files_written": [
+    "claire\\api\\multi_panel_runtime_cohesion.py",
+    "frontend\\cockpit\\assets\\js\\multi_panel_runtime_cohesion.js",
+    "frontend\\cockpit\\assets\\css\\multi_panel_runtime_cohesion.css",
+    "tests\\test_multi_panel_runtime_cohesion_s27.py",
+    "docs\\build_notes\\v19.89.8-S27_multi_panel_runtime_cohesion.md",
+    "output\\cockpit\\v19.89.8-S27_install_report.json"
+  ],
+  "link_report": [
+    "linked S27 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S27 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_multi_panel_runtime_cohesion_s27.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "runtime_mutation_enabled": false,
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

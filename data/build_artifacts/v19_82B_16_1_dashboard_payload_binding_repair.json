@@ -1,0 +1,31 @@
+{
+  "version": "v19.82B.16.1",
+  "build_name": "Dashboard Payload Binding Repair",
+  "installed_at": "2026-05-11T20:46:39.909344+00:00",
+  "reason": [
+    "User reported cockpit payload still stuck on checking.",
+    "Added explicit payload status and API fallback routes.",
+    "Patched authored cockpit JS to use fallback chain and truthful available/unavailable state."
+  ],
+  "created_or_updated": [
+    "claire\\routes\\authored_cockpit_payload_binding_routes.py",
+    "tests\\test_v19_82B_16_1_dashboard_payload_binding_repair.py",
+    "data\\build_artifacts\\v19_82B_16_1_dashboard_payload_binding_repair.json"
+  ],
+  "patched": [
+    "claire\\app.py",
+    "frontend\\cockpit\\shell\\assets\\claire_authored_enterprise_cockpit_shell.js"
+  ],
+  "routes_added": [
+    "GET /dashboard/payload/status",
+    "GET /api/dashboard/payload",
+    "GET /api/dashboard/payload/status"
+  ],
+  "locked_rules": [
+    "payload available does not mean candidates exist",
+    "no fake runtime output",
+    "no fake discoveries",
+    "backend truth ownership preserved"
+  ],
+  "next_recommended_build": "v19.82B.17 Continuous Runtime Executor Binding"
+}

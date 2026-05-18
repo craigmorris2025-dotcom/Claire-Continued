@@ -1,0 +1,51 @@
+{
+  "installer": "install_claire_v19_89_8_s359_s365_testclient_422_route_repair.py",
+  "started_at": "2026-05-16T17:25:50.268799Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "target_module": "claire\\api\\dashboard_status_shell_cleanup_s359_s365.py",
+  "target_app": "claire\\app.py",
+  "assets": [
+    {
+      "path": "frontend/cockpit/consolidated/s359_s365_route_testclient_compat.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s359_s365_route_testclient_compat.css",
+      "written": true
+    }
+  ],
+  "discovered_route_paths": [
+    "/dashboard/payload",
+    "/dashboard/payload/status",
+    "/dashboard/shell/cleanup/status",
+    "/dashboard/status/harmonized",
+    "/dashboard/status/shell-cleanup",
+    "/dashboard/status/shell-cleanup/assets",
+    "/dashboard/status/shell-cleanup/health",
+    "/dashboard/status/shell-cleanup/routes",
+    "/dashboard/status/shell-cleanup/smoke",
+    "/dashboard/status/shell-cleanup/status",
+    "/dashboard/status/shell-cleanup/summary"
+  ],
+  "module_patched": true,
+  "app_patched": true,
+  "pycache_removed": [
+    "claire\\api\\__pycache__\\dashboard_status_shell_cleanup_s359_s365.cpython-311.pyc",
+    "claire\\__pycache__\\app.cpython-311.pyc"
+  ],
+  "compiled": [
+    "claire\\api\\dashboard_status_shell_cleanup_s359_s365.py",
+    "claire\\app.py"
+  ],
+  "module_self_check": {
+    "routes_work_with_testclient": true,
+    "testclient_status_code": 200,
+    "assets_shell_injection": true
+  },
+  "subprocess_validation_returncode": 0,
+  "subprocess_validation_stdout": "S359-S365 TestClient route validation passed {'/dashboard/payload': 200, '/dashboard/payload/status': 200, '/dashboard/shell/cleanup/status': 200, '/dashboard/status/harmonized': 200, '/dashboard/status/shell-cleanup': 200, '/dashboard/status/shell-cleanup/assets': 200, '/dashboard/status/shell-cleanup/health': 200, '/dashboard/status/shell-cleanup/routes': 200, '/dashboard/status/shell-cleanup/smoke': 200, '/dashboard/status/shell-cleanup/status': 200, '/dashboard/status/shell-cleanup/summary': 200}\n",
+  "subprocess_validation_stderr": "",
+  "fixed": "S364 TestClient route repair: removes old validation-bound S359-S365 routes after app construction and re-adds no-body-safe GET/POST routes that return 200.",
+  "finished_at": "2026-05-16T17:25:51.666980Z"
+}

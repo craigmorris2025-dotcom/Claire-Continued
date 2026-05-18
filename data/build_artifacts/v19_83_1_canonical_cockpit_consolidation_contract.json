@@ -1,0 +1,19 @@
+{
+  "version": "v19.83.1",
+  "build_name": "Canonical Cockpit Consolidation Contract",
+  "installed_at": "2026-05-11T21:44:13.809021+00:00",
+  "created_or_updated": [
+    "data/cockpit_consolidation/canonical_cockpit_consolidation_contract_v19_83_1.json",
+    "docs/cockpit/canonical_cockpit_consolidation_contract_v19_83_1.md",
+    "tests/test_v19_83_1_canonical_cockpit_consolidation_contract.py",
+    "data/build_artifacts/v19_83_1_canonical_cockpit_consolidation_contract.json"
+  ],
+  "scope": [
+    "contract only",
+    "no backend route mutation",
+    "no cockpit UI mutation",
+    "locks canonical cockpit direction",
+    "locks lifecycle/endgame requirements"
+  ],
+  "next_recommended_build": "v19.83.2 Active Route Truth Verification Harness"
+}

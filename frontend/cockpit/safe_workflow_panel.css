@@ -1,0 +1,44 @@
+.safe-workflow-panel {
+  border: 1px solid rgba(140, 140, 140, 0.35);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 16px 0;
+}
+.safe-workflow-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+.safe-workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 14px 0;
+}
+.safe-workflow-grid div {
+  border: 1px solid rgba(140, 140, 140, 0.25);
+  border-radius: 12px;
+  padding: 12px;
+}
+.safe-workflow-grid span {
+  display: block;
+  font-size: 1.45rem;
+  margin-top: 6px;
+}
+.safe-workflow-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+.safe-workflow-locks {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+.safe-workflow-json {
+  white-space: pre-wrap;
+  max-height: 260px;
+  overflow: auto;
+  font-size: 0.85rem;
+}

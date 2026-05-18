@@ -1,0 +1,17 @@
+{
+  "approval_phrase_required": "ARCHIVE APPROVED",
+  "archive_root": "archive_review_pending/v17_82",
+  "automatic_execution_allowed": false,
+  "created_at": "2026-05-13T11:20:32.933036Z",
+  "delete_allowed": false,
+  "execution_enabled": false,
+  "instructions": [
+    "This file is a template. Nothing will move until operator_confirm_text equals ARCHIVE APPROVED.",
+    "Set approved=true only for paths you reviewed manually.",
+    "Do not approve protected paths, backend, claire, data/runtime, launchers, or active dashboard files.",
+    "After any move, immediately run endpoint smoke proof and desktop startup proof."
+  ],
+  "moves": [],
+  "operator_confirm_text": "",
+  "version": "v17.82"
+}

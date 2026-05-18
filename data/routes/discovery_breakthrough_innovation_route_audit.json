@@ -1,0 +1,154 @@
+{
+  "audit_name": "Discovery / Breakthrough / Innovation Route Audit",
+  "contract": {
+    "failures": [],
+    "first_class_surfaces": {
+      "acquisition": {
+        "available": true,
+        "source": "surfaces",
+        "status": "present",
+        "surface": "acquisition"
+      },
+      "advancement_path": {
+        "available": true,
+        "source": "surfaces",
+        "status": "present",
+        "surface": "advancement_path"
+      },
+      "autodesign": {
+        "available": true,
+        "source": "surfaces",
+        "status": "complete",
+        "surface": "autodesign"
+      },
+      "breakthrough": {
+        "available": true,
+        "source": "surfaces",
+        "status": "present",
+        "surface": "breakthrough"
+      },
+      "design_output": {
+        "available": true,
+        "source": "surfaces",
+        "status": "success",
+        "surface": "design_output"
+      },
+      "design_portal": {
+        "available": true,
+        "source": "surfaces",
+        "status": "complete",
+        "surface": "design_portal"
+      },
+      "discovery": {
+        "available": true,
+        "source": "surfaces",
+        "status": "present",
+        "surface": "discovery"
+      },
+      "evidence": {
+        "available": true,
+        "source": "surfaces",
+        "status": "present",
+        "surface": "evidence"
+      },
+      "failures": {
+        "available": true,
+        "source": "surfaces",
+        "status": "empty",
+        "surface": "failures"
+      },
+      "final_package": {
+        "available": true,
+        "source": "surfaces",
+        "status": "success",
+        "surface": "final_package"
+      },
+      "next_actions": {
+        "available": true,
+        "source": "surfaces",
+        "status": "present",
+        "surface": "next_actions"
+      },
+      "portfolio": {
+        "available": true,
+        "source": "surfaces",
+        "status": "present",
+        "surface": "portfolio"
+      },
+      "signal_basis": {
+        "available": true,
+        "source": "surfaces",
+        "status": "present",
+        "surface": "signal_basis"
+      },
+      "strategy": {
+        "available": true,
+        "source": "surfaces",
+        "status": "present",
+        "surface": "strategy"
+      },
+      "technology_intelligence": {
+        "available": true,
+        "source": "surfaces",
+        "status": "success",
+        "surface": "technology_intelligence"
+      },
+      "thesis": {
+        "available": true,
+        "source": "surfaces",
+        "status": "success",
+        "surface": "thesis"
+      },
+      "trend_discovery": {
+        "available": true,
+        "source": "surfaces",
+        "status": "success",
+        "surface": "trend_discovery"
+      },
+      "validation": {
+        "available": true,
+        "source": "surfaces",
+        "status": "present",
+        "surface": "validation"
+      }
+    },
+    "invention_required": true,
+    "missing_required_surfaces": [],
+    "required_surfaces": [
+      "discovery",
+      "breakthrough",
+      "advancement_path",
+      "autodesign",
+      "design_portal",
+      "technology_intelligence"
+    ],
+    "route_family": "autodesign",
+    "selected_route": "solution_design",
+    "status": "passed",
+    "terminal_state": "complete",
+    "warnings": []
+  },
+  "generated_at": "2026-05-13T11:18:48.147269Z",
+  "next": [
+    "v17.67 AutoDesign Handoff Contract",
+    "v17.68 Design Portal Output Contract",
+    "v17.69 Buildability / Viability / Manufacturability Validation Stack"
+  ],
+  "route_rule": {
+    "autodesign_required_when_invention_required": true,
+    "design_portal_required_when_invention_required": true,
+    "discovery_breakthrough_innovation_first_class": true,
+    "missing_outputs_are_not_faked": true,
+    "portfolio_default_is_preserved": true
+  },
+  "source": {
+    "attempts": [
+      {
+        "path": "data/runtime/runtime_truth_canonical.json",
+        "status": "loaded"
+      }
+    ],
+    "selected": "data/runtime/runtime_truth_canonical.json"
+  },
+  "version": "v17.66"
+}

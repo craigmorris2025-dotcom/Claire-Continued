@@ -1,0 +1,23 @@
+{
+  "installer": "install_claire_v19_89_8_s429_s435_s16_exact_css_compat_fix.py",
+  "started_at": "2026-05-16T16:18:35.053656Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "targets": [
+    "frontend\\cockpit\\shell\\cockpit_shell.html",
+    "frontend\\cockpit\\shell\\assets\\governed_runtime_timeline_s16.css",
+    "frontend\\cockpit\\shell\\assets\\governed_runtime_timeline_s16.js"
+  ],
+  "backups": {},
+  "html_patch": {
+    "html_exists": true,
+    "patched": true,
+    "already_had_css": false,
+    "already_had_js": false
+  },
+  "html_contains_governed_runtime_timeline_s16_css": true,
+  "html_contains_governed_runtime_timeline_s16_js": true,
+  "css_exists": true,
+  "js_exists": true,
+  "finished_at": "2026-05-16T16:18:35.064656Z"
+}

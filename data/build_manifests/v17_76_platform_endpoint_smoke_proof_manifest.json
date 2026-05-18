@@ -1,0 +1,130 @@
+{
+  "backup_dir": "backups/v17_76_platform_endpoint_smoke_proof/20260509_193317",
+  "build_name": "Platform Endpoint Smoke Proof + Launch Hardening Gate",
+  "files_written": [
+    "claire/proof/platform_endpoint_smoke_proof.py",
+    "claire/api/routes_platform_endpoint_smoke_proof.py",
+    "tests/test_v17_76_platform_endpoint_smoke_proof.py",
+    "docs/proof/v17.76_platform_endpoint_smoke_proof.md",
+    "data/proof/platform_endpoint_smoke_proof.json",
+    "data/proof/v17_76_platform_stop_go_report.json",
+    "data/proof/v17_76_platform_stop_go_report.md",
+    "data/dashboard/platform_endpoint_smoke_payload.json",
+    "data/proof/v17_76_platform_endpoint_smoke_validation_result.json"
+  ],
+  "installed_at": "2026-05-10T00:33:25.292070Z",
+  "next": [
+    "v17.77 Platform Launch Hardening",
+    "v17.78 Desktop Packaging / Startup Reliability",
+    "v17.79 Manual Browser + Swagger Proof Binder"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "app_import": {
+      "error": null,
+      "status": "loaded"
+    },
+    "domain_status": {
+      "autodesign": "passed",
+      "core": "passed",
+      "dashboard": "passed",
+      "design_portal": "passed",
+      "internet": "passed",
+      "proof": "passed",
+      "routes": "passed",
+      "runtime_truth": "passed",
+      "search": "passed",
+      "updates": "passed",
+      "validation": "passed"
+    },
+    "errors": [],
+    "launch_hardening_readiness": {
+      "ready_for_automatic_updates": false,
+      "ready_for_launch_hardening": true,
+      "ready_for_live_internet": false,
+      "requires_manual_browser_proof": true,
+      "requires_packaging_after_smoke_pass": true,
+      "requires_swagger_proof": true
+    },
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.75.1",
+      "source": {
+        "inputs": {
+          "autodesign_handoff": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/autodesign/autodesign_handoff_contract.json",
+            "status": "loaded"
+          },
+          "buildability_validation": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/validation/buildability_viability_manufacturability_validation.json",
+            "status": "loaded"
+          },
+          "dashboard_runtime_truth": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/dashboard_runtime_truth.json",
+            "status": "loaded"
+          },
+          "design_portal": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/design_portal_output_contract.json",
+            "status": "loaded"
+          },
+          "internet_readiness": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+            "status": "loaded"
+          },
+          "proof_pack": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/full_end_to_end_proof_pack.json",
+            "status": "loaded"
+          },
+          "regression_lock": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_governance_regression_lock.json",
+            "status": "loaded"
+          },
+          "rollback_plan": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json",
+            "status": "loaded"
+          },
+          "route_audit": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/routes/discovery_breakthrough_innovation_route_audit.json",
+            "status": "loaded"
+          },
+          "runner_gate": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/automatic_update_runner_gate.json",
+            "status": "loaded"
+          },
+          "runtime_truth": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json",
+            "status": "loaded"
+          },
+          "stop_go": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/v17_75_stop_go_report.json",
+            "status": "loaded"
+          },
+          "update_pack_staging": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json",
+            "status": "loaded"
+          }
+        },
+        "missing_data_stays_missing": true,
+        "proof_pack_loaded": true,
+        "runtime_truth_loaded": true
+      },
+      "status": "rebuilt"
+    },
+    "proof_status": "GO_TO_PLATFORM_LAUNCH_HARDENING",
+    "status": "passed",
+    "stop_go": {
+      "blocked_domains": [],
+      "blockers": [],
+      "missing_files": [],
+      "recommendation": "Platform endpoint smoke proof passed. Continue to launch hardening, packaging, and manual browser/Swagger proof.",
+      "status": "GO_TO_PLATFORM_LAUNCH_HARDENING"
+    }
+  },
+  "version": "v17.76"
+}

@@ -1,0 +1,142 @@
+window.ClaireContinuousRuntimePanel = {
+  async fetchJson(path, options) {
+    const response = await fetch(path, Object.assign({ cache: "no-store" }, options || {}));
+    const text = await response.text();
+    let body = null;
+    try {
+      body = text ? JSON.parse(text) : null;
+    } catch (error) {
+      body = { raw: text };
+    }
+    if (!response.ok) {
+      const err = new Error(path + " returned " + response.status);
+      err.status = response.status;
+      err.body = body;
+      throw err;
+    }
+    return body;
+  },
+
+  setPanel(payload) {
+    const panel = document.getElementById("continuousRuntimeState");
+    if (!panel) return;
+    panel.textContent = JSON.stringify(payload, null, 2);
+  },
+
+  setStatusText(status) {
+    const node = document.getElementById("continuousRuntimeStatus");
+    if (node) node.textContent = status || "unknown";
+  },
+
+  summarizeStatus(payload) {
+    const status = payload || {};
+    return {
+      runtime: status.runtime || "continuous_intelligence",
+      status: status.status || "unknown",
+      mode: status.mode || "governed_24_7_discovery_monitoring",
+      last_cycle_id: status.last_cycle_id || null,
+      last_cycle_at: status.last_cycle_at || null,
+      objectives: status.continuous_objectives || [],
+      guardrails: status.guardrails || [],
+      artifact_paths: status.artifact_paths || {},
+      rule: "continuous_runtime_panel_displays_backend_truth_only"
+    };
+  },
+
+  async refresh() {
+    try {
+      const status = await this.fetchJson("/runtime/continuous/status");
+      const review = await this.fetchJson("/runtime/continuous/review-queue");
+      const summary = this.summarizeStatus(status);
+      summary.review_queue_count = Array.isArray(review.items) ? review.items.length : 0;
+      summary.review_queue = review.items || [];
+      this.setStatusText(summary.status);
+      this.setPanel(summary);
+    } catch (error) {
+      this.setStatusText("unavailable");
+      this.setPanel({
+        status: "continuous_runtime_unavailable",
+        message: error.message,
+        required_next_layer: "Ensure routes_continuous_runtime is mounted in claire/app.py.",
+        rule: "do_not_fake_continuous_runtime_state"
+      });
+    }
+  },
+
+  async start() {
+    this.setPanel({ status: "continuous_start_requested", endpoint: "POST /runtime/continuous/start" });
+    try {
+      const payload = await this.fetchJson("/runtime/continuous/start", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ trigger: "enterprise_cockpit" })
+      });
+      this.setStatusText((payload.continuous_runtime && payload.continuous_runtime.status) || payload.status);
+      this.setPanel(payload);
+    } catch (error) {
+      this.setStatusText("start_unavailable");
+      this.setPanel({
+        status: "continuous_start_not_yet_wired",
+        message: error.message,
+        required_next_layer: "Mount POST /runtime/continuous/start and artifact writer.",
+        rule: "no_fake_cycle_creation"
+      });
+    }
+  },
+
+  async pause() {
+    this.setPanel({ status: "continuous_pause_requested", endpoint: "POST /runtime/continuous/pause" });
+    try {
+      const payload = await this.fetchJson("/runtime/continuous/pause", { method: "POST" });
+      this.setStatusText(payload.status || "paused");
+      this.setPanel(payload);
+    } catch (error) {
+      this.setStatusText("pause_unavailable");
+      this.setPanel({
+        status: "continuous_pause_not_yet_wired",
+        message: error.message,
+        rule: "no_fake_pause_state"
+      });
+    }
+  },
+
+  bind() {
+    const refresh = document.getElementById("continuousRefresh");
+    const start = document.getElementById("continuousStart");
+    const pause = document.getElementById("continuousPause");
+
+    if (refresh) refresh.addEventListener("click", () => this.refresh());
+    if (start) start.addEventListener("click", () => this.start());
+    if (pause) pause.addEventListener("click", () => this.pause());
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  window.ClaireContinuousRuntimePanel.bind();
+  window.ClaireContinuousRuntimePanel.refresh();
+});
+
+;(function(){
+  if (window.__CLAIRE_OPERATOR_EXPERIENCE_LOADER__) return;
+  window.__CLAIRE_OPERATOR_EXPERIENCE_LOADER__ = true;
+  function loadOperatorExperience(){
+    if (window.ClaireOperatorExperienceConsole && window.ClaireOperatorExperienceConsole.init) {
+      window.ClaireOperatorExperienceConsole.init();
+      return;
+    }
+    var existing = document.querySelector('script[data-claire-operator-experience="true"]');
+    if (existing) return;
+    var script = document.createElement('script');
+    script.defer = true;
+    script.dataset.claireOperatorExperience = 'true';
+    script.src = '/api/cockpit/operator-experience/assets/js';
+    script.onerror = function(){ script.src = 'assets/claire_operator_experience_console.js'; };
+    document.head.appendChild(script);
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/api/cockpit/operator-experience/assets/css';
+    document.head.appendChild(link);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadOperatorExperience);
+  else setTimeout(loadOperatorExperience, 0);
+})();

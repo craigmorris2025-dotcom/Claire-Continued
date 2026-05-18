@@ -1,0 +1,102 @@
+{
+  "backend_owns_truth": true,
+  "build": "Route-Specific Evidence Thresholds",
+  "cockpit_owns_presentation_only": true,
+  "failure_terminal_states": {
+    "confidence_below_threshold": "review_required",
+    "insufficient_source_diversity": "insufficient_data",
+    "missing_lineage": "blocked_evidence",
+    "thin_input": "pending_evidence|insufficient_data|blocked_evidence"
+  },
+  "frontend_truth_generation_allowed": false,
+  "generated_at": "2026-05-13T11:22:15.834710+00:00",
+  "operator_review_required_before_promotion": true,
+  "route_thresholds": {
+    "acquisition": {
+      "allowed_terminal_states": [
+        "review_required",
+        "validated_candidate"
+      ],
+      "minimum_confidence": 0.88,
+      "minimum_evidence_items": 7,
+      "minimum_source_universes": 4,
+      "required_dimensions": [
+        "buyer_fit",
+        "market_signal",
+        "strategic_rationale",
+        "source_lineage",
+        "validation_signal"
+      ],
+      "thin_input_terminal_state": "blocked_evidence"
+    },
+    "breakthrough": {
+      "allowed_terminal_states": [
+        "review_required",
+        "validated_candidate"
+      ],
+      "minimum_confidence": 0.82,
+      "minimum_evidence_items": 5,
+      "minimum_source_universes": 3,
+      "required_dimensions": [
+        "novelty_signal",
+        "non_obviousness",
+        "source_lineage",
+        "validation_signal"
+      ],
+      "thin_input_terminal_state": "blocked_evidence"
+    },
+    "design": {
+      "allowed_terminal_states": [
+        "review_required",
+        "validated_candidate"
+      ],
+      "minimum_confidence": 0.85,
+      "minimum_evidence_items": 6,
+      "minimum_source_universes": 3,
+      "required_dimensions": [
+        "technical_feasibility",
+        "buildability",
+        "source_lineage",
+        "validation_signal"
+      ],
+      "thin_input_terminal_state": "blocked_evidence"
+    },
+    "discovery": {
+      "allowed_terminal_states": [
+        "candidate_ready",
+        "review_required"
+      ],
+      "minimum_confidence": 0.62,
+      "minimum_evidence_items": 2,
+      "minimum_source_universes": 1,
+      "required_dimensions": [
+        "signal_quality",
+        "source_lineage"
+      ],
+      "thin_input_terminal_state": "pending_evidence"
+    },
+    "portfolio": {
+      "allowed_terminal_states": [
+        "candidate_ready",
+        "review_required"
+      ],
+      "minimum_confidence": 0.7,
+      "minimum_evidence_items": 3,
+      "minimum_source_universes": 2,
+      "required_dimensions": [
+        "market_signal",
+        "source_lineage",
+        "portfolio_relevance"
+      ],
+      "thin_input_terminal_state": "insufficient_data"
+    }
+  },
+  "rules": [
+    "Route escalation must pass the threshold for its selected route.",
+    "Higher-risk routes require more evidence, more source universes, and higher confidence.",
+    "Thin input cannot produce breakthrough, design, acquisition, or final package outputs.",
+    "Every accepted evidence item must carry lineage.",
+    "Operator review remains required before runtime truth promotion."
+  ],
+  "version": "v19.85.2"
+}

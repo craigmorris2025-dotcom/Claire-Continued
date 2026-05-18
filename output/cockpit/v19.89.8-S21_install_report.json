@@ -1,0 +1,27 @@
+{
+  "version": "v19.89.8-S21",
+  "installed_at_utc": "2026-05-14T03:01:53.123901+00:00",
+  "status": "installed",
+  "safety_note": "S21 intentionally did not patch claire/app.py after S19 recovery.",
+  "files_written": [
+    "claire\\api\\governed_search_session.py",
+    "frontend\\cockpit\\assets\\js\\governed_search_session.js",
+    "frontend\\cockpit\\assets\\css\\governed_search_session.css",
+    "tests\\test_governed_search_session_s21.py",
+    "docs\\build_notes\\v19.89.8-S21_governed_search_session.md",
+    "output\\cockpit\\v19.89.8-S21_install_report.json"
+  ],
+  "link_report": [
+    "linked S21 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S21 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_governed_search_session_s21.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false,
+    "live_search_execution": "blocked_from_cockpit"
+  }
+}

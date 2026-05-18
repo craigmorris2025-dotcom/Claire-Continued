@@ -1,0 +1,359 @@
+{
+  "generated_at": "2026-05-12T09:49:51.896835+00:00",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "route_hits": 241,
+  "required": [
+    {
+      "method": "GET",
+      "path": "/dashboard/payload",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/dashboard/payload",
+          "file": "claire/api/routes_enterprise_cockpit_payload.py"
+        },
+        {
+          "method": "GET",
+          "path": "/dashboard/payload",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/dashboard/payload/status",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/dashboard/payload/status",
+          "file": "claire/api/routes_enterprise_cockpit_payload.py"
+        },
+        {
+          "method": "GET",
+          "path": "/dashboard/payload/status",
+          "file": "claire/routes/authored_cockpit_payload_binding_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/dashboard/payload",
+      "mounted_in_source": true,
+      "match_count": 1,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/api/dashboard/payload",
+          "file": "claire/routes/authored_cockpit_payload_binding_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/dashboard/payload/status",
+      "mounted_in_source": true,
+      "match_count": 1,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/api/dashboard/payload/status",
+          "file": "claire/routes/authored_cockpit_payload_binding_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/runtime/continuous/status",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/runtime/continuous/status",
+          "file": "claire/api/routes_continuous_runtime.py"
+        },
+        {
+          "method": "GET",
+          "path": "/runtime/continuous/status",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/runtime/continuous/start",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "POST",
+          "path": "/runtime/continuous/start",
+          "file": "claire/api/routes_continuous_runtime.py"
+        },
+        {
+          "method": "POST",
+          "path": "/runtime/continuous/start",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/runtime/continuous/pause",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "POST",
+          "path": "/runtime/continuous/pause",
+          "file": "claire/api/routes_continuous_runtime.py"
+        },
+        {
+          "method": "POST",
+          "path": "/runtime/continuous/pause",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/runtime/continuous/review-queue",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/runtime/continuous/review-queue",
+          "file": "claire/api/routes_continuous_runtime.py"
+        },
+        {
+          "method": "GET",
+          "path": "/runtime/continuous/review-queue",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/runs/start",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "POST",
+          "path": "/runs/start",
+          "file": "claire/api/routes_enterprise_runs.py"
+        },
+        {
+          "method": "POST",
+          "path": "/runs/start",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/runs/latest",
+      "mounted_in_source": true,
+      "match_count": 1,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/runs/latest",
+          "file": "claire/api/routes_enterprise_runs.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/universes",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/universes",
+          "file": "claire/api/routes_source_universes.py"
+        },
+        {
+          "method": "GET",
+          "path": "/universes",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    }
+  ],
+  "missing": [],
+  "duplicates": [
+    {
+      "method": "GET",
+      "path": "/dashboard/payload",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/dashboard/payload",
+          "file": "claire/api/routes_enterprise_cockpit_payload.py"
+        },
+        {
+          "method": "GET",
+          "path": "/dashboard/payload",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/dashboard/payload/status",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/dashboard/payload/status",
+          "file": "claire/api/routes_enterprise_cockpit_payload.py"
+        },
+        {
+          "method": "GET",
+          "path": "/dashboard/payload/status",
+          "file": "claire/routes/authored_cockpit_payload_binding_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/runtime/continuous/status",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/runtime/continuous/status",
+          "file": "claire/api/routes_continuous_runtime.py"
+        },
+        {
+          "method": "GET",
+          "path": "/runtime/continuous/status",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/runtime/continuous/start",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "POST",
+          "path": "/runtime/continuous/start",
+          "file": "claire/api/routes_continuous_runtime.py"
+        },
+        {
+          "method": "POST",
+          "path": "/runtime/continuous/start",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/runtime/continuous/pause",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "POST",
+          "path": "/runtime/continuous/pause",
+          "file": "claire/api/routes_continuous_runtime.py"
+        },
+        {
+          "method": "POST",
+          "path": "/runtime/continuous/pause",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/runtime/continuous/review-queue",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/runtime/continuous/review-queue",
+          "file": "claire/api/routes_continuous_runtime.py"
+        },
+        {
+          "method": "GET",
+          "path": "/runtime/continuous/review-queue",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/runs/start",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "POST",
+          "path": "/runs/start",
+          "file": "claire/api/routes_enterprise_runs.py"
+        },
+        {
+          "method": "POST",
+          "path": "/runs/start",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/universes",
+      "mounted_in_source": true,
+      "match_count": 2,
+      "matches": [
+        {
+          "method": "GET",
+          "path": "/universes",
+          "file": "claire/api/routes_source_universes.py"
+        },
+        {
+          "method": "GET",
+          "path": "/universes",
+          "file": "claire/routes/authored_cockpit_compat_routes.py"
+        }
+      ]
+    }
+  ],
+  "cockpit": {
+    "shell": {
+      "path": "frontend/cockpit/shell/cockpit_shell.html",
+      "exists": true,
+      "contains_authored_cockpit": true,
+      "contains_dev_terms": false
+    },
+    "authored_js": {
+      "path": "frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.js",
+      "exists": true,
+      "contains_dashboard_payload": true,
+      "contains_api_payload_fallback": true,
+      "contains_continuous_runtime": true,
+      "contains_dev_terms": false
+    },
+    "launcher": {
+      "path": "LAUNCH_CLAIRE.bat",
+      "exists": true,
+      "mentions_cockpit_shell": true,
+      "mentions_port_8000": true
+    }
+  }
+}

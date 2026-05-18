@@ -1,0 +1,62 @@
+{
+  "backup_dir": "backups/v17_71_governed_update_pack_staging/20260509_185929",
+  "build_name": "Governed Update Pack Staging",
+  "files_written": [
+    "claire/update_governance/update_pack_staging.py",
+    "claire/api/routes_update_pack_staging.py",
+    "tests/test_v17_71_governed_update_pack_staging.py",
+    "docs/update_governance/v17.71_governed_update_pack_staging.md",
+    "data/update_packs/update_pack_staging_index.json",
+    "data/dashboard/update_pack_staging_payload.json",
+    "data/update_packs/v17_71_update_pack_staging_validation_result.json"
+  ],
+  "installed_at": "2026-05-09T23:59:32.774015Z",
+  "next": [
+    "v17.72 Rollback-Aware Update Plan Contract",
+    "v17.73 Automatic Update Runner Gate",
+    "v17.74 Update Governance Regression Lock",
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "errors": [],
+    "governance": {
+      "automatic_execution_enabled": false,
+      "execution_enabled": false,
+      "operator_review_required": true,
+      "rollback_required": true,
+      "staging_only": true,
+      "validation_required": true
+    },
+    "latest_pack": {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-09T23:59:29.215017Z",
+      "execution_enabled": false,
+      "pack_hash": "94f024a29bf464d03b93e42a7b73c08875f1747fb4ce086cf1c893de0084a06c",
+      "pack_id": "update_pack_20260509_235929_update_governance_patch",
+      "pack_type": "update_governance_patch",
+      "path": "data/update_packs/staging/update_pack_20260509_235929_update_governance_patch.json",
+      "status": "warning"
+    },
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.64.1",
+      "source": {
+        "invalid_candidate_count": 0,
+        "invalid_candidates_sample": [],
+        "raw_available": true,
+        "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+      },
+      "status": "rebuilt"
+    },
+    "pack_count": 1,
+    "status": "passed"
+  },
+  "version": "v17.71"
+}

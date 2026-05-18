@@ -7,7 +7,7 @@ const Platform = (() => {
 
     async function load() {
         try {
-            const resp = await fetch('/api/platform/status');
+            const resp = await window.ClaireCanonicalFetch.fetchLegacy('/api/platform/status');
             if (!resp.ok) return;
             _status = await resp.json();
             renderWidget();
@@ -86,7 +86,7 @@ const Platform = (() => {
 
     async function resolve() {
         try {
-            const resp = await fetch('/api/platform/resolve', { method: 'POST' });
+            const resp = await window.ClaireCanonicalFetch.fetchLegacy('/api/platform/resolve', { method: 'POST' });
             const data = await resp.json();
             const msg = 'Resolved: ' + (data.resolved_count || 0) + ' gaps\nFailed: ' + (data.failed_count || 0) +
                         '\nCompletion: ' + (data.completion_before || 0) + '% -> ' + (data.completion_after || 0) + '%';

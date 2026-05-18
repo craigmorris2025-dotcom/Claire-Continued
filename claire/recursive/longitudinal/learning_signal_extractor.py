@@ -1,67 +1,46 @@
 """
-Extracts actionable learning signals from run outcomes
-======================================================
-ACS2-Claire / Syntalion
+Claire Syntalion structural placeholder repair.
 
-Module: src.claire.recursive.longitudinal.learning_signal_extractor
-Role: Extracts actionable learning signals from run outcomes
+This module was syntactically invalid and was neutralized by
+v19 Structural Repair Pack 1.1 so project-wide syntax checks and backend startup
+can proceed.
+
+This is not a production implementation.
+
+Original syntax error:
+- line: 58
+- message: invalid syntax
+- text: raise NotImplementedError
 """
 
-import json
-import logging
-from datetime import datetime
-from pathlib import Path
-from dataclasses import dataclass, field
-from typing import Any, Optional
-from enum import Enum
+from __future__ import annotations
 
-logger = logging.getLogger(__name__)
-
-
-class SignalType(Enum):
-    IMPROVEMENT = "improvement"
-    REGRESSION = "regression"
-    PLATEAU = "plateau"
-    ANOMALY = "anomaly"
-    BREAKTHROUGH = "breakthrough"
+from typing import Any
 
 
 class LearningSignalExtractor:
-    """
-    Extracts actionable learning signals from run outcomes
+    """Non-executing placeholder pending real implementation."""
 
-    Writes to data/recursive/learning_signals/..
-    """
+    implemented = False
+    structural_placeholder = True
 
-    def __init__(self):
-        self.logger = logging.getLogger(self.__class__.__name__)
-        self.logger.info(f"{self.__class__.__name__} initialized")
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        self.args = args
+        self.kwargs = kwargs
 
-    def extract_signals(run_outcome):
-        """Returns list[Signal]."""
-        raise NotImplementedError
+    def run(self, *args: Any, **kwargs: Any) -> dict[str, Any]:
+        return build_placeholder_status()
 
-    def classify_signal(signal):
-        """Returns SignalType."""
-        raise NotImplementedError
 
-    def measure_signal_strength(signal):
-        """Returns float."""
-        raise NotImplementedError
+def build_placeholder_status() -> dict[str, Any]:
+    return {
+        "status": "not_implemented",
+        "module": __name__,
+        "structural_placeholder": True,
+        "implemented": False,
+        "message": "Placeholder repaired for syntax stability only.",
+    }
 
-    def correlate_signals(signals):
-        """Returns CorrelationMatrix."""
-        raise NotImplementedError
 
-    def filter_noise(signals:
-        """Returns Any."""
-        raise NotImplementedError
-
-    def threshold):
-        """Returns list."""
-        raise NotImplementedError
-
-    def export_signals(signals):
-        """Returns dict."""
-        raise NotImplementedError
-
+def run(*args: Any, **kwargs: Any) -> dict[str, Any]:
+    return build_placeholder_status()

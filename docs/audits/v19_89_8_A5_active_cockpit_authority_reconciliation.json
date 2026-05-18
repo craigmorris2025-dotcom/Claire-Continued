@@ -1,0 +1,22 @@
+{
+  "version": "v19.89.8-A5",
+  "build": "Active Cockpit Authority Surface Reconciliation",
+  "timestamp": "2026-05-13T17:52:03.078745",
+  "changes": [
+    "Wrote frontend/js/claire_active_cockpit_authority.js",
+    "Wrote frontend/cockpit/active_authority_probe.html",
+    "Injected active authority diagnostic into frontend\\cockpit\\shell\\cockpit_shell.html",
+    "Injected active authority diagnostic into frontend\\command_center\\modern\\index.html"
+  ],
+  "warnings": [
+    "HTML candidate not found: frontend\\index.html"
+  ],
+  "preserved": [
+    "launcher",
+    "backend",
+    "working cockpit",
+    "compatibility routes",
+    "runtime authority blocked",
+    "autonomous runtime disabled"
+  ]
+}

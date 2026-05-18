@@ -1,0 +1,17 @@
+
+{
+  "version": "v18.60.1",
+  "name": "Dashboard Search Bar HTML Idempotency Test Repair",
+  "scope": [
+    "repair v18.60 idempotency assertion that falsely matched substring old inside placeholder",
+    "preserve governed live-search HTML integration module",
+    "preserve manual-enable search execution",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_60_dashboard_search_bar_html_integration_gate.py tests/test_v18_60_1_dashboard_search_html_idempotency_test_repair.py -q"
+  ]
+}

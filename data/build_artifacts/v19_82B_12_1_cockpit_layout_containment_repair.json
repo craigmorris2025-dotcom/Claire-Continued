@@ -1,0 +1,21 @@
+{
+  "version": "v19.82B.12.1",
+  "build_name": "Cockpit Layout Containment Repair",
+  "installed_at": "2026-05-11T19:52:55.626051+00:00",
+  "primary_cockpit_path": "frontend/cockpit/shell/cockpit_shell.html",
+  "reason": "User reported sidebar/nav overlap with main cockpit displays after v19.82B.10-B.12 surfaces.",
+  "created_or_updated": [
+    "frontend/cockpit/shell/assets/claire_cockpit_layout_containment_repair.css",
+    "frontend/cockpit/shell/assets/claire_cockpit_layout_containment_repair.js",
+    "tests/test_v19_82B_12_1_cockpit_layout_containment_repair.py",
+    "data/build_artifacts/v19_82B_12_1_cockpit_layout_containment_repair.json"
+  ],
+  "scope": [
+    "layout containment only",
+    "sidebar/nav safe spacing",
+    "surface overflow prevention",
+    "responsive cockpit stacking",
+    "no runtime truth changes"
+  ],
+  "next_recommended_build": "v19.82B.12.2 Cockpit Workspace Stack and Anchor Normalization"
+}

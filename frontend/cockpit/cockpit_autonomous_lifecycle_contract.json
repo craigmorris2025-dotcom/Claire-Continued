@@ -1,0 +1,400 @@
+{
+  "version": "v19.78",
+  "name": "Claire Autonomous Lifecycle Cockpit Contract",
+  "created_at": "2026-05-11T11:58:58.055364Z",
+  "principle": "The cockpit is the runtime operating environment for autonomous lifecycle routing, not a static dashboard.",
+  "truth_ownership": {
+    "backend_owns_truth": true,
+    "frontend_fabricates_runtime_truth": false,
+    "canonical_payload_routes": [
+      "/dashboard/payload/status",
+      "/dashboard/payload"
+    ]
+  },
+  "lifecycle": {
+    "mode": "autonomous_conditional_branching",
+    "stage_count": 30,
+    "stages": [
+      {
+        "id": 1,
+        "name": "Signal Ingestion",
+        "group": "signal_governance"
+      },
+      {
+        "id": 2,
+        "name": "Signal Normalization",
+        "group": "signal_governance"
+      },
+      {
+        "id": 3,
+        "name": "Source Validation & Weighting",
+        "group": "signal_governance"
+      },
+      {
+        "id": 4,
+        "name": "Context Expansion",
+        "group": "signal_governance"
+      },
+      {
+        "id": 5,
+        "name": "Signal Consolidation",
+        "group": "signal_governance"
+      },
+      {
+        "id": 6,
+        "name": "Entity Extraction",
+        "group": "entity_intelligence"
+      },
+      {
+        "id": 7,
+        "name": "Relationship Mapping",
+        "group": "entity_intelligence"
+      },
+      {
+        "id": 8,
+        "name": "Trend Discovery",
+        "group": "trend_discovery"
+      },
+      {
+        "id": 9,
+        "name": "Cluster Formation",
+        "group": "trend_discovery"
+      },
+      {
+        "id": 10,
+        "name": "Insight / Thesis Structuring",
+        "group": "thesis_formation"
+      },
+      {
+        "id": 11,
+        "name": "Gap Detection",
+        "group": "breakthrough_escalation"
+      },
+      {
+        "id": 12,
+        "name": "Gap Qualification",
+        "group": "breakthrough_escalation"
+      },
+      {
+        "id": 13,
+        "name": "Discovery Generation",
+        "group": "discovery"
+      },
+      {
+        "id": 14,
+        "name": "Breakthrough Identification & Classification",
+        "group": "breakthrough_escalation"
+      },
+      {
+        "id": 15,
+        "name": "Advancement Path Selection",
+        "group": "route_selection"
+      },
+      {
+        "id": 16,
+        "name": "Auto Invention / Solution Generation",
+        "group": "design_engine"
+      },
+      {
+        "id": 17,
+        "name": "Solution Structuring",
+        "group": "design_engine"
+      },
+      {
+        "id": 18,
+        "name": "Buildability Assessment",
+        "group": "design_validation"
+      },
+      {
+        "id": 19,
+        "name": "Viability Assessment",
+        "group": "design_validation"
+      },
+      {
+        "id": 20,
+        "name": "Manufacturability / Deployability Assessment",
+        "group": "design_validation"
+      },
+      {
+        "id": 21,
+        "name": "Feasibility Validation",
+        "group": "design_validation"
+      },
+      {
+        "id": 22,
+        "name": "Design Portal Output / Blueprints / Specs",
+        "group": "design_portal"
+      },
+      {
+        "id": 23,
+        "name": "Market Positioning",
+        "group": "market_positioning"
+      },
+      {
+        "id": 24,
+        "name": "Moat & Differentiation",
+        "group": "strategy"
+      },
+      {
+        "id": 25,
+        "name": "Business Model & Value Capture",
+        "group": "strategy"
+      },
+      {
+        "id": 26,
+        "name": "Competitor Analysis",
+        "group": "competitive_intelligence"
+      },
+      {
+        "id": 27,
+        "name": "Portfolio Creation / Optimization",
+        "group": "portfolio_intelligence"
+      },
+      {
+        "id": 28,
+        "name": "Acquirer Identification",
+        "group": "acquisition_intelligence"
+      },
+      {
+        "id": 29,
+        "name": "Acquisition Fit & Rationale",
+        "group": "acquisition_intelligence"
+      },
+      {
+        "id": 30,
+        "name": "Final Package Construction",
+        "group": "package_construction"
+      }
+    ],
+    "must_show": [
+      "current_stage",
+      "active_route",
+      "active_gate",
+      "stage_scores",
+      "route_confidence",
+      "evidence_basis",
+      "selected_route_reason",
+      "rejected_routes",
+      "skipped_stages_with_reasons",
+      "terminal_state",
+      "next_gate",
+      "output_package_path"
+    ]
+  },
+  "routes": {
+    "portfolio_intelligence": {
+      "label": "Portfolio Intelligence Path",
+      "trigger": "trend or thesis is actionable but not breakthrough-qualified",
+      "stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        23,
+        26,
+        27
+      ],
+      "outputs": [
+        "portfolio_action",
+        "portfolio_optimization",
+        "risk_exposure_notes",
+        "updated_thesis"
+      ]
+    },
+    "acquisition_intelligence": {
+      "label": "Acquisition Intelligence Path",
+      "trigger": "strategic discovery, moat/value-capture signal, or acquirer-fit signal",
+      "stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30
+      ],
+      "outputs": [
+        "acquirer_map",
+        "fit_rationale",
+        "moat_positioning",
+        "package_readiness"
+      ]
+    },
+    "breakthrough_design": {
+      "label": "Breakthrough / Design Path",
+      "trigger": "breakthrough threshold crossed and advancement path selected",
+      "stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "outputs": [
+        "breakthrough_classification",
+        "solution_design",
+        "blueprints",
+        "feasibility",
+        "final_package"
+      ]
+    },
+    "existing_system_replacement": {
+      "label": "Existing-System Ingestion / Replacement Path",
+      "trigger": "existing system is ingested and qualifies for superior replacement design",
+      "stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "outputs": [
+        "system_decomposition",
+        "superior_system_design",
+        "component_map",
+        "replacement_package"
+      ]
+    },
+    "governance_update": {
+      "label": "Enterprise Update Governance Path",
+      "trigger": "online update, package, or code modification is discovered",
+      "stages": [],
+      "outputs": [
+        "source_trust",
+        "risk_classification",
+        "migration_plan",
+        "rollback_point",
+        "approval_state"
+      ]
+    },
+    "recursive_learning": {
+      "label": "Recursive Learning / Self-Ingestion Path",
+      "trigger": "completed run output is stored and re-ingested for future strengthening",
+      "stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        22,
+        27,
+        30
+      ],
+      "outputs": [
+        "lifecycle_memory",
+        "prior_output_comparison",
+        "future_run_strengthening"
+      ]
+    }
+  },
+  "design_engine": {
+    "first_class": true,
+    "stages": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "required_surfaces": [
+      "AutoDesign runtime",
+      "Solution structure",
+      "Buildability",
+      "Viability",
+      "Manufacturability/deployability",
+      "Feasibility",
+      "Design Portal blueprints/specs",
+      "Component map",
+      "Dependency map",
+      "Implementation phases"
+    ]
+  },
+  "cockpit_surfaces": [
+    "mission_runtime_command",
+    "autonomous_lifecycle_graph",
+    "route_decision_panel",
+    "portfolio_workspace",
+    "acquisition_workspace",
+    "breakthrough_design_workspace",
+    "governance_workspace",
+    "recursive_memory_workspace",
+    "evidence_traceability_workspace",
+    "system_health_workspace"
+  ]
+}

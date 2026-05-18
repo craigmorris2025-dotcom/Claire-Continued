@@ -1,0 +1,29 @@
+{
+  "version": "v19.82B.4",
+  "timestamp": "2026-05-11T12:43:17",
+  "status": "go",
+  "route_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\routes_enterprise_runs.py",
+  "test_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_v19_82B_4_enterprise_runtime_runs_backend.py",
+  "app_patch": {
+    "patched": true,
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\runtime_runs_backend\\v19.82B.4\\app.py.20260511_124317.bak",
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py"
+  },
+  "endpoints": [
+    "POST /runs/start",
+    "GET /runs/latest",
+    "GET /runs/{run_id}/status",
+    "GET /runs/{run_id}/lifecycle",
+    "GET /runs/{run_id}/gates",
+    "GET /runs/{run_id}/missing-evidence",
+    "POST /runs/{run_id}/enrich"
+  ],
+  "artifacts": [
+    "run_manifest.json",
+    "status.json",
+    "lifecycle_state.json",
+    "gate_decisions.json",
+    "missing_evidence.json",
+    "enrichment_log.json"
+  ]
+}

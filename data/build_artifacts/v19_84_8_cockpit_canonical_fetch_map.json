@@ -1,0 +1,16 @@
+{
+  "version": "v19.84.8",
+  "build": "Cockpit Canonical Fetch Map",
+  "installed_at": "2026-05-12T15:13:40.952141+00:00",
+  "runtime_mutation": "none",
+  "files_written": [
+    "tools/cockpit_canonical_fetch_map.py",
+    "tests/test_v19_84_8_cockpit_canonical_fetch_map.py",
+    "docs/builds/v19_84_8_cockpit_canonical_fetch_map.md",
+    "data/build_artifacts/v19_84_8_cockpit_canonical_fetch_map.json"
+  ],
+  "commands": [
+    "python tools/cockpit_canonical_fetch_map.py",
+    "pytest tests/test_v19_84_8_cockpit_canonical_fetch_map.py -q"
+  ]
+}

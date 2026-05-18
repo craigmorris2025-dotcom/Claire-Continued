@@ -1,0 +1,18 @@
+{
+  "version": "v18.32",
+  "name": "First Real Controlled HEAD Handshake",
+  "files": [
+    "SEARCH_BAR_FIRST_REAL_CONTROLLED_HEAD_HANDSHAKE_REVIEW.bat",
+    "claire/governance/governed_web/first_real_controlled_head_handshake.py",
+    "tests/test_v18_32_first_real_controlled_head_handshake.py"
+  ],
+  "invariants": {
+    "head_only": true,
+    "response_body_fetch_forbidden": true,
+    "runtime_truth_mutation_forbidden": true,
+    "automatic_updates_forbidden": true,
+    "execution_performed": false,
+    "network_call_performed": false,
+    "fail_closed": true
+  }
+}

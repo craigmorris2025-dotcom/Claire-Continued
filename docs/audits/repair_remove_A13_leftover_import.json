@@ -1,0 +1,15 @@
+{
+  "repair": "remove_A13_leftover_import",
+  "timestamp": "2026-05-14T00:06:25.330873+00:00",
+  "target": "claire/app.py",
+  "removed_lines": [
+    "from starlette.responses import HTMLResponse as _ClaireA13HTMLResponse",
+    "_CLAIRE_A13_SCRIPT_MARKER = \"CLAIRE_A13_EARLY_HTML_BINDING\"",
+    "<script id=\"CLAIRE_A13_EARLY_HTML_BINDING\">",
+    "def _claire_a13_inject_html(html: str) -> str:",
+    "async def claire_a13_early_html_binding_middleware(request, call_next):",
+    "        updated = _claire_a13_inject_html(html)",
+    "        return _ClaireA13HTMLResponse("
+  ],
+  "removed_count": 7
+}

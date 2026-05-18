@@ -1,0 +1,44 @@
+{
+  "build": "Source Probe Result Schema Repair",
+  "read_only": true,
+  "schema": {
+    "allowed_statuses": [
+      "success",
+      "empty",
+      "failed",
+      "blocked_by_governance"
+    ],
+    "backend_owns_truth": true,
+    "build": "Source Probe Result Schema",
+    "generated_at": "2026-05-13T11:22:15.908712+00:00",
+    "lineage_fields": [
+      "probe_id",
+      "source_universe_id",
+      "provider",
+      "retrieval_path",
+      "retrieved_at"
+    ],
+    "required_probe_fields": [
+      "probe_id",
+      "source_universe_id",
+      "requested_at",
+      "provider",
+      "query",
+      "status",
+      "results",
+      "source_trust_score",
+      "lineage"
+    ],
+    "result_item_fields": [
+      "result_id",
+      "title",
+      "summary",
+      "source_identifier",
+      "source_url",
+      "retrieved_at"
+    ],
+    "version": "v19.86.1.1"
+  },
+  "schema_path": "data\\source_universes\\source_probe_result_schema.json",
+  "version": "v19.86.1.1"
+}

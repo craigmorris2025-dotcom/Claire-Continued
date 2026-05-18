@@ -1,0 +1,404 @@
+{
+  "surface": "canonical_route_owner_registry",
+  "version": "v19.89.8-A1",
+  "build": "Canonical Route Owner Registry",
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "convergence_over_expansion": true,
+  "created_at": "2026-05-13T22:16:31.986330+00:00",
+  "updated_at": "2026-05-13T22:16:31.986330+00:00",
+  "critical_route_owners": {
+    "/dashboard/payload": {
+      "owner": "canonical_dashboard_payload_bridge",
+      "authority": "backend_truth_payload",
+      "status": "locked",
+      "reason": "Cockpit must consume backend-owned canonical dashboard payload only."
+    },
+    "/dashboard/payload/status": {
+      "owner": "canonical_dashboard_payload_bridge",
+      "authority": "backend_truth_payload_status",
+      "status": "locked",
+      "reason": "Cockpit status must come from backend-owned payload status."
+    },
+    "/runtime/continuous/status": {
+      "owner": "continuous_runtime_status_contract",
+      "authority": "governed_runtime_status",
+      "status": "pending_reconciliation",
+      "reason": "Continuous runtime status must be governed and fail-closed before activation."
+    },
+    "/runtime/continuous/review-queue": {
+      "owner": "review_queue_runtime_ingestion",
+      "authority": "governed_review_queue",
+      "status": "pending_reconciliation",
+      "reason": "Review queue now exists, but continuous runtime candidate writer still needs validation."
+    },
+    "/runs/start": {
+      "owner": "run_start_contract",
+      "authority": "operator_initiated_runtime_start",
+      "status": "pending_reconciliation",
+      "reason": "Run start must not bypass evidence, scheduler, or review gates."
+    },
+    "/universes": {
+      "owner": "source_universe_contract",
+      "authority": "source_universe_selection",
+      "status": "pending_reconciliation",
+      "reason": "Universe selection and universe-to-lifecycle handoff remain incomplete."
+    }
+  },
+  "discovered_route_count": 244,
+  "duplicate_route_count": 30,
+  "duplicates_detected": {
+    "/": [
+      {
+        "method": "GET",
+        "file": "claire\\app.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\server.py"
+      }
+    ],
+    "/health": [
+      {
+        "method": "GET",
+        "file": "claire\\app.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\live_source_catalog_routes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_system.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_v19_25_search_execution.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\internet_runtime_stability\\api_routes.py"
+      }
+    ],
+    "/command": [
+      {
+        "method": "POST",
+        "file": "claire\\api\\commands.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\api\\routes_command.py"
+      }
+    ],
+    "/smoke/google": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\governed_dashboard_live_search_routes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\governed_web\\dashboard_search_endpoint_result_contract.py"
+      }
+    ],
+    "/live": [
+      {
+        "method": "POST",
+        "file": "claire\\api\\governed_dashboard_live_search_routes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\governed_dashboard_live_search_routes.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\governed_web\\dashboard_search_endpoint_result_contract.py"
+      }
+    ],
+    "/status": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\live_intelligence_status_routes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\live_source_catalog_routes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\operational_proof_routes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\real_provider_operator_probe_routes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_connectors.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_dashboard_alignment.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\search_bar_dashboard_api.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\governed_web\\real_provider_operator_probe_route.py"
+      }
+    ],
+    "/operator/search/capabilities": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\operator_dashboard_compat_routes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_operator_search_command.py"
+      }
+    ],
+    "/operator/dashboard/state": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\operator_dashboard_compat_routes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_operator_dashboard.py"
+      }
+    ],
+    "/operator/search/query": [
+      {
+        "method": "POST",
+        "file": "claire\\api\\operator_dashboard_compat_routes.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\api\\routes_operator_search_command.py"
+      }
+    ],
+    "/probe": [
+      {
+        "method": "POST",
+        "file": "claire\\api\\real_provider_operator_probe_routes.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\governed_web\\real_provider_operator_probe_route.py"
+      }
+    ],
+    "/runtime/continuous/status": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_continuous_runtime.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+      }
+    ],
+    "/runtime/continuous/start": [
+      {
+        "method": "POST",
+        "file": "claire\\api\\routes_continuous_runtime.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+      }
+    ],
+    "/runtime/continuous/pause": [
+      {
+        "method": "POST",
+        "file": "claire\\api\\routes_continuous_runtime.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+      }
+    ],
+    "/runtime/continuous/review-queue": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_continuous_runtime.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+      }
+    ],
+    "/dashboard/payload": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_enterprise_cockpit_payload.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+      }
+    ],
+    "/dashboard/payload/status": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_enterprise_cockpit_payload.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\routes\\authored_cockpit_payload_binding_routes.py"
+      }
+    ],
+    "/runs/start": [
+      {
+        "method": "POST",
+        "file": "claire\\api\\routes_enterprise_runs.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+      }
+    ],
+    "/history": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_history.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_proxy.py"
+      }
+    ],
+    "/history/{run_id}": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_history.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_proxy.py"
+      }
+    ],
+    "/stats": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_history.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_proxy.py"
+      }
+    ],
+    "/api/platform/status": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_platform.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\platform\\resolver.py"
+      }
+    ],
+    "/api/platform/target": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_platform.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\platform\\resolver.py"
+      }
+    ],
+    "/api/platform/current": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_platform.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\platform\\resolver.py"
+      }
+    ],
+    "/api/platform/resolve": [
+      {
+        "method": "POST",
+        "file": "claire\\api\\routes_platform.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\platform\\resolver.py"
+      }
+    ],
+    "/api/platform/resolve/{component}": [
+      {
+        "method": "POST",
+        "file": "claire\\api\\routes_platform.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\platform\\resolver.py"
+      }
+    ],
+    "/universes": [
+      {
+        "method": "GET",
+        "file": "claire\\api\\routes_source_universes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+      }
+    ],
+    "/dashboard": [
+      {
+        "method": "POST",
+        "file": "claire\\api\\search_bar_dashboard_api.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\internet_operations_dashboard\\api_routes.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\internet_runtime_integration\\api_routes.py"
+      }
+    ],
+    "/run-due": [
+      {
+        "method": "POST",
+        "file": "claire\\governed_campaign_scheduler\\api_routes.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\internet_operations_dashboard\\api_routes.py"
+      }
+    ],
+    "/reports": [
+      {
+        "method": "GET",
+        "file": "claire\\governed_campaign_scheduler\\api_routes.py"
+      },
+      {
+        "method": "GET",
+        "file": "claire\\internet_runtime_stability\\api_routes.py"
+      }
+    ],
+    "/campaigns/{campaign_id}/refresh": [
+      {
+        "method": "POST",
+        "file": "claire\\internet_operations_dashboard\\api_routes.py"
+      },
+      {
+        "method": "POST",
+        "file": "claire\\internet_runtime_stability\\api_routes.py"
+      }
+    ]
+  },
+  "authority_status": {
+    "canonical_registry_exists": true,
+    "duplicate_routes_detected": 30,
+    "duplicate_route_fail_test_installed": false,
+    "route_removal_performed": false,
+    "safe_to_expand_runtime_authority": false,
+    "reason": "Canonical route owner registry exists, but duplicate fail tests and duplicate owner reconciliation must follow."
+  }
+}

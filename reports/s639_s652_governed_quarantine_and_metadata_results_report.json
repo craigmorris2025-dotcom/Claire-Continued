@@ -1,0 +1,48 @@
+{
+  "app_registration_patched": true,
+  "blocked_capabilities_preserved": {
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "body_read_allowed": false,
+    "browser_execution_enabled": false,
+    "command_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "network_request_performed": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "runtime_mutation_enabled": false,
+    "search_provider_execution_enabled": false
+  },
+  "compiled_python_files": [
+    "claire/governance/governed_quarantine_evidence_store.py",
+    "claire/governance/governed_metadata_result_contract.py",
+    "claire/api/governed_quarantine_evidence_routes.py",
+    "claire/api/governed_metadata_result_routes.py",
+    "tests/test_s639_s652_governed_quarantine_and_metadata_results.py",
+    "claire/app.py"
+  ],
+  "completed_at": "2026-05-17T03:59:45.286231+00:00",
+  "create_app_probe": {
+    "has_metadata_status": true,
+    "has_quarantine_status": true,
+    "ok": true
+  },
+  "frontend_assets_patched": [
+    "frontend/cockpit/shell/cockpit_shell.html",
+    "frontend/command_center/modern/index.html"
+  ],
+  "installer": "install_claire_v19_89_8_s639_s652_governed_quarantine_and_metadata_results.py",
+  "phase": "S639-S652",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "started_at": "2026-05-17T03:59:44.237148+00:00",
+  "status": "installed",
+  "written_files": [
+    "claire/governance/governed_quarantine_evidence_store.py",
+    "claire/governance/governed_metadata_result_contract.py",
+    "claire/api/governed_quarantine_evidence_routes.py",
+    "claire/api/governed_metadata_result_routes.py",
+    "frontend/cockpit/assets/claire_governed_quarantine_and_metadata_results.js",
+    "frontend/cockpit/assets/claire_governed_quarantine_and_metadata_results.css",
+    "tests/test_s639_s652_governed_quarantine_and_metadata_results.py"
+  ]
+}

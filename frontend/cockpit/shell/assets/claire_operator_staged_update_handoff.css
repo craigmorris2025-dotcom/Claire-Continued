@@ -1,0 +1,57 @@
+.claire-operator-staged-update-handoff-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+  margin: 14px 0;
+  background: rgba(7, 13, 24, 0.84);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+.claire-handoff-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.claire-handoff-header small,
+.claire-operator-staged-update-handoff-panel footer {
+  opacity: 0.7;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.claire-handoff-body {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.claire-handoff-card {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.claire-handoff-topline,
+.claire-handoff-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.claire-handoff-topline span,
+.claire-handoff-badges span {
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+}
+
+.claire-handoff-card p {
+  line-height: 1.5;
+  margin: 10px 0;
+}

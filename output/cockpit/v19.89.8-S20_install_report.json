@@ -1,0 +1,26 @@
+{
+  "version": "v19.89.8-S20",
+  "installed_at_utc": "2026-05-14T02:55:56.503707+00:00",
+  "status": "installed",
+  "safety_note": "S20 intentionally did not patch claire/app.py after S19 recovery.",
+  "files_written": [
+    "claire\\api\\continuous_runtime_presence.py",
+    "frontend\\cockpit\\assets\\js\\continuous_runtime_presence.js",
+    "frontend\\cockpit\\assets\\css\\continuous_runtime_presence.css",
+    "tests\\test_continuous_runtime_presence_s20.py",
+    "docs\\build_notes\\v19.89.8-S20_continuous_runtime_presence.md",
+    "output\\cockpit\\v19.89.8-S20_install_report.json"
+  ],
+  "link_report": [
+    "linked S20 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S20 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_continuous_runtime_presence_s20.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": "v19.89.8-A11",
+  "build": "Recovery Server Root Patch",
+  "timestamp": "2026-05-13T23:48:37.706548+00:00",
+  "target": "claire/api/server.py",
+  "changes": [
+    "Prepended A11 beacon helper to claire/api/server.py",
+    "Appended A11 HTML beacon middleware to claire/api/server.py"
+  ],
+  "warnings": [],
+  "runtime_authority_expanded": false,
+  "safe_to_expand_runtime_authority": false
+}

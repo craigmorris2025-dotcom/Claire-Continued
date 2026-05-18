@@ -1,0 +1,1314 @@
+{
+  "archive_plan_path": "data/cleanup/archive_plan_do_not_execute.json",
+  "candidate_count": 12,
+  "candidate_sources": [
+    {
+      "path": "cleanup_candidates_do_not_delete_yet.json",
+      "status": "missing"
+    },
+    {
+      "path": "cleanup_candidates_do_not_delete_yet.txt",
+      "status": "missing"
+    },
+    {
+      "path": "data/cleanup/cleanup_candidates_do_not_delete_yet.json",
+      "status": "missing"
+    },
+    {
+      "path": "data/cleanup/cleanup_candidates_do_not_delete_yet.txt",
+      "status": "missing"
+    }
+  ],
+  "classified_candidates": [
+    {
+      "archive_allowed_now": false,
+      "classification": "review_only",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "backend",
+      "path_info": {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "backend"
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "backend_folder_locked_until_manual_import_and_runtime_proof",
+        "path_not_found"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "install_v19_88_7A_legacy_backend_test_import_repair.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "install_v19_88_7B_legacy_api_schema_compat_completion.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "install_v19_88_7C_legacy_request_mode_compat.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "install_v19_88_7D_legacy_request_source_compat.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "install_v19_88_7E_legacy_request_min_length_compat.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "install_v19_88_7F_legacy_request_mode_validation.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "install_v19_88_7G_legacy_response_field_compat.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "install_v19_88_7H_canonical_api_test_realignment.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "install_v19_88_7_cockpit_runtime_sync.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "install_v19_88_7_cockpit_runtime_sync_FIXED.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "install_v19_88_8_regression_suite_canonicalization.py",
+            "matched_terms": [
+              "backend"
+            ]
+          },
+          {
+            "file": "LAUNCH_CLAIRE.bat",
+            "matched_terms": [
+              "backend"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "not_found",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "src",
+      "path_info": {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "src"
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "path_not_found"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "install_v19_88_7_cockpit_runtime_sync.py",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "install_v19_88_7_cockpit_runtime_sync_FIXED.py",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "main.py",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "pyproject.toml",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "pytest.ini",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "pytest_runtime.ini",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "safe_install_claire_version.py",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "archive/cockpit_shell_backups/cockpit_shell_before_v19_82B_15_20260511_202013.html",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "archive/quarantined/legacy_dashboard_expectation_tests/test_v17_52_1_launcher_rewire.py",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "archive/quarantined/legacy_dashboard_expectation_tests/test_v17_52_modern_operator_dashboard.py",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "archive/quarantined/legacy_dashboard_expectation_tests/test_v17_53_product_dashboard_experience_layer.py",
+            "matched_terms": [
+              "src"
+            ]
+          },
+          {
+            "file": "archive/quarantined/pytest_broken_collection_fast/test_v18_73_1_operator_dashboard_compat_endpoint_repair.py",
+            "matched_terms": [
+              "src"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "not_found",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "claire live",
+      "path_info": {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "claire live"
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "path_not_found"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "audit/current_system_truth_v19_82B/file_manifest.json",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/project_tree_limited.txt",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/active_state_summary.json",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_git_repo_isolation/git_repo_isolation_audit.json",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "claire/cleanup/cleanup_proof.py",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "claire/feeds/feed_registry.py",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "claire/feeds/feed_result_contracts.py",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "claire/governed_web/provider_health_registry.py",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "claire/live_intelligence/gap_detection.py",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "claire/live_intelligence/signal_extraction.py",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "claire/live_intelligence/solution_synthesis.py",
+            "matched_terms": [
+              "claire live"
+            ]
+          },
+          {
+            "file": "claire/live_intelligence/trend_clustering.py",
+            "matched_terms": [
+              "claire live"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "review_only",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "quarantine_legacy_placeholders",
+      "path_info": {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 1899,
+        "is_dir": true,
+        "is_file": false,
+        "path": "quarantine_legacy_placeholders",
+        "total_size_bytes_limited": 29243023
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "references_found"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "audit/current_system_truth_v19_82B/dashboard_payload_audit.json",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/file_manifest.json",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/project_tree_limited.txt",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/active_state_summary.json",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audits/v19_82A_origin_regression_audit/legacy_dependency_report.json",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audits/v19_82A_origin_regression_audit/scoring_origin_report.json",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_payload_contract/dashboard_payload_contract_audit.json",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_payload_contract/dashboard_payload_contract_audit.md",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_git_repo_isolation/git_repo_isolation_audit.json",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_git_repo_isolation/git_repo_isolation_audit.md",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_structural_repair_plan/structural_repair_plan.json",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_structural_repair_plan/structural_repair_plan.md",
+            "matched_terms": [
+              "quarantine_legacy_placeholders"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "review_only",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "frontend/internet_operations_dashboard",
+      "path_info": {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 3,
+        "is_dir": true,
+        "is_file": false,
+        "path": "frontend/internet_operations_dashboard",
+        "total_size_bytes_limited": 1036
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "references_found"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "archive/quarantined/legacy_dashboard_expectation_tests/test_v17_52_modern_operator_dashboard.py",
+            "matched_terms": [
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/current_system_truth_report.md",
+            "matched_terms": [
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/file_manifest.json",
+            "matched_terms": [
+              "frontend/internet_operations_dashboard",
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/project_tree_limited.txt",
+            "matched_terms": [
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/python_route_audit.json",
+            "matched_terms": [
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/active_state_summary.json",
+            "matched_terms": [
+              "frontend/internet_operations_dashboard",
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/cleanup_candidates_do_not_delete_yet.json",
+            "matched_terms": [
+              "frontend/internet_operations_dashboard",
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/cleanup_candidates_do_not_delete_yet.txt",
+            "matched_terms": [
+              "frontend/internet_operations_dashboard",
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/dashboard_conflict_map.json",
+            "matched_terms": [
+              "frontend/internet_operations_dashboard",
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/internet_update_readiness.json",
+            "matched_terms": [
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/routes_and_imports.json",
+            "matched_terms": [
+              "internet_operations_dashboard"
+            ]
+          },
+          {
+            "file": "audits/v19_82A_origin_regression_audit/endpoint_conflict_report.json",
+            "matched_terms": [
+              "internet_operations_dashboard"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "review_only",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "frontend/command_center/modern/internet_operations_dashboard.html",
+      "path_info": {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "frontend/command_center/modern/internet_operations_dashboard.html",
+        "size_bytes": 349
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "always_review_only_path"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "archive/quarantined/legacy_dashboard_expectation_tests/test_v17_52_modern_operator_dashboard.py",
+            "matched_terms": [
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/file_manifest.json",
+            "matched_terms": [
+              "frontend/command_center/modern/internet_operations_dashboard.html",
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/project_tree_limited.txt",
+            "matched_terms": [
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/active_state_summary.json",
+            "matched_terms": [
+              "frontend/command_center/modern/internet_operations_dashboard.html",
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/cleanup_candidates_do_not_delete_yet.json",
+            "matched_terms": [
+              "frontend/command_center/modern/internet_operations_dashboard.html",
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/cleanup_candidates_do_not_delete_yet.txt",
+            "matched_terms": [
+              "frontend/command_center/modern/internet_operations_dashboard.html",
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/dashboard_conflict_map.json",
+            "matched_terms": [
+              "frontend/command_center/modern/internet_operations_dashboard.html",
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_fetch_wiring_pack/dashboard_fetch_wiring_report.json",
+            "matched_terms": [
+              "frontend/command_center/modern/internet_operations_dashboard.html",
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_structural_repair_plan/structural_repair_plan.json",
+            "matched_terms": [
+              "frontend/command_center/modern/internet_operations_dashboard.html",
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "claire/cleanup/cleanup_proof.py",
+            "matched_terms": [
+              "frontend/command_center/modern/internet_operations_dashboard.html",
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "data/cleanup/archive_plan_do_not_execute.json",
+            "matched_terms": [
+              "frontend/command_center/modern/internet_operations_dashboard.html",
+              "internet_operations_dashboard.html"
+            ]
+          },
+          {
+            "file": "data/cleanup/cleanup_proof_before_archive_delete.json",
+            "matched_terms": [
+              "frontend/command_center/modern/internet_operations_dashboard.html",
+              "internet_operations_dashboard.html"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "review_only",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "path_info": {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "frontend/command_center/modern/claire_single_screen_operator.js",
+        "size_bytes": 14497
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "always_review_only_path"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "audit/current_system_truth_v19_82B/file_manifest.json",
+            "matched_terms": [
+              "claire_single_screen_operator.js",
+              "frontend/command_center/modern/claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/frontend_cockpit_audit.json",
+            "matched_terms": [
+              "claire_single_screen_operator.js",
+              "frontend/command_center/modern/claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/project_tree_limited.txt",
+            "matched_terms": [
+              "claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/active_state_summary.json",
+            "matched_terms": [
+              "claire_single_screen_operator.js",
+              "frontend/command_center/modern/claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/autodesign_design_portal_route_readiness.json",
+            "matched_terms": [
+              "claire_single_screen_operator.js",
+              "frontend/command_center/modern/claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/cleanup_candidates_do_not_delete_yet.json",
+            "matched_terms": [
+              "claire_single_screen_operator.js",
+              "frontend/command_center/modern/claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/cleanup_candidates_do_not_delete_yet.txt",
+            "matched_terms": [
+              "claire_single_screen_operator.js",
+              "frontend/command_center/modern/claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/dashboard_conflict_map.json",
+            "matched_terms": [
+              "claire_single_screen_operator.js",
+              "frontend/command_center/modern/claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audits/v19_82A_origin_regression_audit/dashboard_regression_report.json",
+            "matched_terms": [
+              "claire_single_screen_operator.js",
+              "frontend/command_center/modern/claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audits/v19_82A_origin_regression_audit/legacy_dependency_report.json",
+            "matched_terms": [
+              "claire_single_screen_operator.js",
+              "frontend/command_center/modern/claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audits/v19_84_3_canonical_route_mount_audit/canonical_route_mount_audit_report.json",
+            "matched_terms": [
+              "claire_single_screen_operator.js"
+            ]
+          },
+          {
+            "file": "audits/v19_84_3_canonical_route_mount_audit/canonical_route_mount_audit_report.md",
+            "matched_terms": [
+              "claire_single_screen_operator.js",
+              "frontend\\command_center\\modern\\claire_single_screen_operator.js"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "review_only",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "frontend/command_center/modern/claire_single_screen_operator.css",
+      "path_info": {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "frontend/command_center/modern/claire_single_screen_operator.css",
+        "size_bytes": 7533
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "always_review_only_path"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "audit/current_system_truth_v19_82B/file_manifest.json",
+            "matched_terms": [
+              "claire_single_screen_operator.css",
+              "frontend/command_center/modern/claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/project_tree_limited.txt",
+            "matched_terms": [
+              "claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "audits/claire_index_head_audit.txt",
+            "matched_terms": [
+              "claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "audits/claire_index_load_audit.txt",
+            "matched_terms": [
+              "claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/active_state_summary.json",
+            "matched_terms": [
+              "claire_single_screen_operator.css",
+              "frontend/command_center/modern/claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/cleanup_candidates_do_not_delete_yet.json",
+            "matched_terms": [
+              "claire_single_screen_operator.css",
+              "frontend/command_center/modern/claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/cleanup_candidates_do_not_delete_yet.txt",
+            "matched_terms": [
+              "claire_single_screen_operator.css",
+              "frontend/command_center/modern/claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "audits/v17_63_active_state_proof_20260509_132540/dashboard_conflict_map.json",
+            "matched_terms": [
+              "claire_single_screen_operator.css",
+              "frontend/command_center/modern/claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_payload_contract/dashboard_payload_contract_audit.json",
+            "matched_terms": [
+              "claire_single_screen_operator.css",
+              "frontend/command_center/modern/claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_git_repo_isolation/git_repo_isolation_audit.json",
+            "matched_terms": [
+              "claire_single_screen_operator.css",
+              "frontend/command_center/modern/claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_structural_repair_plan/structural_repair_plan.json",
+            "matched_terms": [
+              "claire_single_screen_operator.css",
+              "frontend/command_center/modern/claire_single_screen_operator.css"
+            ]
+          },
+          {
+            "file": "claire/cleanup/cleanup_proof.py",
+            "matched_terms": [
+              "claire_single_screen_operator.css",
+              "frontend/command_center/modern/claire_single_screen_operator.css"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "review_only",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "frontend/command_center/modern/claire_functional_operator_dashboard.js",
+      "path_info": {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "frontend/command_center/modern/claire_functional_operator_dashboard.js",
+        "size_bytes": 9656
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "always_review_only_path"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "audit/current_system_truth_v19_82B/file_manifest.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/project_tree_limited.txt",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/v19_84_3_canonical_route_mount_audit/canonical_route_mount_audit_report.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/v19_84_3_canonical_route_mount_audit/canonical_route_mount_audit_report.md",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js",
+              "frontend\\command_center\\modern\\claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/v19_84_8_cockpit_canonical_fetch_map/cockpit_canonical_fetch_map.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/v19_84_9_cockpit_binding_contract_lock/cockpit_binding_contract_lock.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_fetch_wiring_pack/dashboard_fetch_wiring_report.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_fetch_wiring_pack/dashboard_fetch_wiring_report.md",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_payload_coverage/dashboard_payload_coverage_audit.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_payload_coverage/dashboard_payload_coverage_audit.md",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_git_repo_isolation/git_repo_isolation_audit.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_structural_repair_plan/structural_repair_plan.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.js",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.js"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "review_only",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "frontend/command_center/modern/claire_functional_operator_dashboard.css",
+      "path_info": {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "frontend/command_center/modern/claire_functional_operator_dashboard.css",
+        "size_bytes": 3720
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "always_review_only_path"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "audit/current_system_truth_v19_82B/file_manifest.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/project_tree_limited.txt",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_git_repo_isolation/git_repo_isolation_audit.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_structural_repair_plan/structural_repair_plan.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "claire/cleanup/cleanup_proof.py",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/build_manifests/v17_64_1_functional_operator_dashboard_wiring_manifest.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/cleanup/archive_plan_do_not_execute.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/cleanup/cleanup_proof_before_archive_delete.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/cleanup/CLEANUP_REVIEW_ONLY.md",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/cleanup/v17_81_cleanup_stop_go.md",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/runtime/runtime_manifest.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "docs/audits/v19_88_0_canonical_runtime_reassembly/CANONICAL_RUNTIME_REASSEMBLY_MAP.json",
+            "matched_terms": [
+              "claire_functional_operator_dashboard.css",
+              "frontend/command_center/modern/claire_functional_operator_dashboard.css"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "review_only",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "frontend/command_center/modern/claire_connected_operator_dashboard.js",
+      "path_info": {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "frontend/command_center/modern/claire_connected_operator_dashboard.js",
+        "size_bytes": 8927
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "always_review_only_path"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "audit/current_system_truth_v19_82B/file_manifest.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/project_tree_limited.txt",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/v19_84_3_canonical_route_mount_audit/canonical_route_mount_audit_report.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/v19_84_3_canonical_route_mount_audit/canonical_route_mount_audit_report.md",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js",
+              "frontend\\command_center\\modern\\claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_fetch_wiring_pack/dashboard_fetch_wiring_report.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_fetch_wiring_pack/dashboard_fetch_wiring_report.md",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_payload_coverage/dashboard_payload_coverage_audit.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_dashboard_payload_coverage/dashboard_payload_coverage_audit.md",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_git_repo_isolation/git_repo_isolation_audit.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_structural_repair_plan/structural_repair_plan.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "claire/cleanup/cleanup_proof.py",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.js"
+            ]
+          },
+          {
+            "file": "data/build_manifests/v17_75_1_dashboard_backend_bridge_repair_manifest.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.js",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.js"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "archive_allowed_now": false,
+      "classification": "review_only",
+      "delete_allowed": false,
+      "operator_review_required": true,
+      "path": "frontend/command_center/modern/claire_connected_operator_dashboard.css",
+      "path_info": {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "frontend/command_center/modern/claire_connected_operator_dashboard.css",
+        "size_bytes": 4644
+      },
+      "protected_conflict": {
+        "conflicts": [],
+        "has_conflict": false
+      },
+      "reason": [
+        "always_review_only_path"
+      ],
+      "reference_scan": {
+        "hit_count": 12,
+        "hits": [
+          {
+            "file": "audit/current_system_truth_v19_82B/file_manifest.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "audit/current_system_truth_v19_82B/project_tree_limited.txt",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_git_repo_isolation/git_repo_isolation_audit.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "audits/_claire_audit_v19_structural_repair_plan/structural_repair_plan.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "claire/cleanup/cleanup_proof.py",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/build_manifests/v17_75_1_dashboard_backend_bridge_repair_manifest.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/cleanup/archive_plan_do_not_execute.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/cleanup/cleanup_proof_before_archive_delete.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/cleanup/CLEANUP_REVIEW_ONLY.md",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/cleanup/v17_81_cleanup_stop_go.md",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "data/runtime/runtime_manifest.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          },
+          {
+            "file": "docs/audits/v19_88_0_canonical_runtime_reassembly/CANONICAL_RUNTIME_REASSEMBLY_MAP.json",
+            "matched_terms": [
+              "claire_connected_operator_dashboard.css",
+              "frontend/command_center/modern/claire_connected_operator_dashboard.css"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "contract_name": "Cleanup Proof Before Archive/Delete",
+  "freeze": {
+    "source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/launch_candidate/v17_80_launch_candidate_freeze.json",
+      "status": "loaded"
+    },
+    "status": "STOP"
+  },
+  "generated_at": "2026-05-13T11:20:32.879037Z",
+  "next": [
+    "Manual review cleanup classifications",
+    "v17.82 Archive-Only Move Plan if approved",
+    "Run endpoint smoke proof after any archive movement",
+    "Run desktop startup proof after any archive movement"
+  ],
+  "protected_conflict_report_path": "data/cleanup/protected_path_conflict_report.json",
+  "rules": {
+    "archive_execution_allowed": false,
+    "backend_folder_delete_allowed": false,
+    "delete_allowed": false,
+    "desktop_startup_required_after_archive": true,
+    "endpoint_smoke_required_after_archive": true,
+    "operator_review_required": true,
+    "protected_paths_must_not_be_moved": true
+  },
+  "status": "CLEANUP_REVIEW_READY_NO_DELETE",
+  "stop_go": {
+    "archive_review_candidate_count": 0,
+    "blockers": [],
+    "protected_conflict_count": 0,
+    "recommendation": "Review archive candidates manually. Do not delete anything. Archive only after manual approval and another endpoint/startup proof pass.",
+    "review_only_count": 10,
+    "status": "CLEANUP_REVIEW_READY_NO_DELETE",
+    "warnings": [
+      "review_only_paths_present:10"
+    ]
+  },
+  "version": "v17.81"
+}

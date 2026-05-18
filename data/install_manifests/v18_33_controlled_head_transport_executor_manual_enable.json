@@ -1,0 +1,21 @@
+{
+  "version": "v18.33",
+  "name": "Controlled HEAD Transport Executor with Manual Enable Flag",
+  "files": [
+    "SEARCH_BAR_CONTROLLED_HEAD_TRANSPORT_EXECUTOR_MANUAL_ENABLE_REVIEW.bat",
+    "claire/governance/governed_web/controlled_head_transport_executor.py",
+    "tests/test_v18_33_controlled_head_transport_executor_manual_enable.py"
+  ],
+  "safe_default": {
+    "requires_env_var": "CLAIRE_ALLOW_CONTROLLED_HEAD_PROBE=1",
+    "normal_pytest_network_call_performed": false
+  },
+  "invariants": {
+    "head_only": true,
+    "response_body_fetch_forbidden": true,
+    "runtime_truth_mutation_forbidden": true,
+    "automatic_updates_forbidden": true,
+    "manual_enable_required": true,
+    "fail_closed": true
+  }
+}

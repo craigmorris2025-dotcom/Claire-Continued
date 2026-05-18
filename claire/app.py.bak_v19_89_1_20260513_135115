@@ -1,0 +1,755 @@
+from claire.api.routes_v19_25_search_execution import router as v19_25_search_execution_router
+import logging
+
+from contextlib import asynccontextmanager
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+# v18.72 active launcher web route imports
+try:
+    from claire.api.governed_dashboard_live_search_routes import router as governed_dashboard_live_search_router
+except Exception:
+    governed_dashboard_live_search_router = None
+
+try:
+    from claire.api.real_provider_operator_probe_routes import router as real_provider_operator_probe_router
+except Exception:
+    real_provider_operator_probe_router = None
+# v18.72 active launcher web route imports end
+from claire.config.logging import setup_logging
+
+# ?? import routers at top (cleaner + safer)
+from claire.api.routes_pipeline import router as pipeline_router
+from claire.api.routes_dashboard_alignment import router as dashboard_alignment_router
+from claire.api.routes_enterprise_runs import router as enterprise_runs_router
+from claire.api.routes_continuous_runtime import router as continuous_runtime_router
+from claire.api.routes_enterprise_cockpit_payload import router as enterprise_cockpit_payload_router
+from claire.api.routes_source_universes import router as source_universes_router
+from claire.routes import authored_cockpit_compat_routes
+from claire.routes import authored_cockpit_payload_binding_routes
+from claire.routes import active_route_truth_routes
+from claire.api.routes_cockpit_operational_status import router as cockpit_operational_status_router
+from claire.api.live_source_catalog_routes import router as live_source_catalog_router
+from claire.api.live_intelligence_status_routes import router as live_intelligence_status_router
+from claire.api.operational_proof_routes import router as operational_proof_router
+from claire.api.cockpit_operational_proof_routes import router as cockpit_operational_proof_router
+
+
+logger = logging.getLogger("claire.server")
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Startup + shutdown lifecycle."""
+    setup_logging()
+    logger.info("Claire starting (recovery mode)")
+    yield
+    logger.info("Claire shutting down")
+
+
+def create_app() -> FastAPI:
+    """Create a minimal FastAPI app with one safe route attached."""
+
+    app = FastAPI(
+        title="Claire (Recovery Mode)",
+        version="0.1",
+        lifespan=lifespan,
+    )
+
+    # CORS (wide open for now)
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+    # ? Health routes
+    @app.get("/")
+    async def root():
+        return {"status": "ok", "mode": "recovery"}
+
+    @app.get("/health")
+    async def health():
+        return {"status": "healthy"}
+
+    # ? Attach first working router
+    app.include_router(pipeline_router)
+    app.include_router(dashboard_alignment_router)
+
+    app.include_router(enterprise_runs_router)
+    app.include_router(continuous_runtime_router)
+    app.include_router(enterprise_cockpit_payload_router)
+    app.include_router(source_universes_router)
+    # v19.82B.16 authored cockpit compatibility routes
+    app.include_router(authored_cockpit_compat_routes.router)
+    # v19.82B.16.1 dashboard payload binding routes
+    app.include_router(authored_cockpit_payload_binding_routes.router)
+    # v19.83.2 active route truth verification
+    app.include_router(active_route_truth_routes.router)
+    app.include_router(cockpit_operational_status_router)
+
+    app.include_router(live_intelligence_status_router)
+
+    app.include_router(operational_proof_router)
+
+    app.include_router(cockpit_operational_proof_router)
+
+
+    # CLAIRE_V19_88_7_COCKPIT_RUNTIME_SYNC_MOUNT
+    try:
+        from .routes.cockpit_runtime_sync import router as cockpit_runtime_sync_router
+        app.include_router(cockpit_runtime_sync_router)
+    except Exception as cockpit_runtime_sync_error:  # pragma: no cover
+        try:
+            app.state.cockpit_runtime_sync_mount_error = str(cockpit_runtime_sync_error)
+        except Exception:
+            pass
+
+    return app
+
+
+# App instance for Uvicorn
+app = create_app()
+
+# Claire v17.65 Runtime Truth Contract Repair route mount
+try:
+    from claire.api.routes_runtime_truth import router as runtime_truth_router
+    app.include_router(runtime_truth_router)
+except Exception as _claire_v17_65_runtime_truth_route_error:
+    try:
+        logger.warning("Claire v17.65 runtime truth router not mounted: %s", _claire_v17_65_runtime_truth_route_error)
+    except Exception:
+        pass
+
+# Claire v17.64.1 Functional Operator Dashboard route mount
+try:
+    from claire.api.routes_operator_dashboard import router as operator_dashboard_router
+    app.include_router(operator_dashboard_router)
+except Exception as _claire_v17_64_1_operator_dashboard_route_error:
+    try:
+        logger.warning("Claire v17.64.1 operator dashboard router not mounted: %s", _claire_v17_64_1_operator_dashboard_route_error)
+    except Exception:
+        pass
+
+# Claire v17.66 Discovery / Breakthrough / Innovation Route Audit mount
+try:
+    from claire.api.routes_route_audit import router as route_audit_router
+    app.include_router(route_audit_router)
+except Exception as _claire_v17_66_route_audit_error:
+    try:
+        logger.warning("Claire v17.66 route audit router not mounted: %s", _claire_v17_66_route_audit_error)
+    except Exception:
+        pass
+
+# Claire v17.67 AutoDesign Handoff Contract mount
+try:
+    from claire.api.routes_autodesign_handoff import router as autodesign_handoff_router
+    app.include_router(autodesign_handoff_router)
+except Exception as _claire_v17_67_autodesign_handoff_error:
+    try:
+        logger.warning("Claire v17.67 AutoDesign handoff router not mounted: %s", _claire_v17_67_autodesign_handoff_error)
+    except Exception:
+        pass
+
+# Claire v17.68 Design Portal Output Contract mount
+try:
+    from claire.api.routes_design_portal_output import router as design_portal_output_router
+    app.include_router(design_portal_output_router)
+except Exception as _claire_v17_68_design_portal_output_error:
+    try:
+        logger.warning("Claire v17.68 Design Portal output router not mounted: %s", _claire_v17_68_design_portal_output_error)
+    except Exception:
+        pass
+
+# Claire v17.69 Buildability / Viability / Manufacturability Validation mount
+try:
+    from claire.api.routes_buildability_validation import router as buildability_validation_router
+    app.include_router(buildability_validation_router)
+except Exception as _claire_v17_69_buildability_validation_error:
+    try:
+        logger.warning("Claire v17.69 buildability validation router not mounted: %s", _claire_v17_69_buildability_validation_error)
+    except Exception:
+        pass
+
+# Claire v17.70 Internet Readiness Verification mount
+try:
+    from claire.api.routes_internet_readiness import router as internet_readiness_router
+    app.include_router(internet_readiness_router)
+except Exception as _claire_v17_70_internet_readiness_error:
+    try:
+        logger.warning("Claire v17.70 internet readiness router not mounted: %s", _claire_v17_70_internet_readiness_error)
+    except Exception:
+        pass
+
+# Claire v17.71 Governed Update Pack Staging mount
+try:
+    from claire.api.routes_update_pack_staging import router as update_pack_staging_router
+    app.include_router(update_pack_staging_router)
+except Exception as _claire_v17_71_update_pack_staging_error:
+    try:
+        logger.warning("Claire v17.71 update pack staging router not mounted: %s", _claire_v17_71_update_pack_staging_error)
+    except Exception:
+        pass
+
+# Claire v17.72 Rollback-Aware Update Plan Contract mount
+try:
+    from claire.api.routes_rollback_update_plan import router as rollback_update_plan_router
+    app.include_router(rollback_update_plan_router)
+except Exception as _claire_v17_72_rollback_update_plan_error:
+    try:
+        logger.warning("Claire v17.72 rollback update plan router not mounted: %s", _claire_v17_72_rollback_update_plan_error)
+    except Exception:
+        pass
+
+# Claire v17.73 Automatic Update Runner Gate mount
+try:
+    from claire.api.routes_automatic_update_runner_gate import router as automatic_update_runner_gate_router
+    app.include_router(automatic_update_runner_gate_router)
+except Exception as _claire_v17_73_automatic_update_runner_gate_error:
+    try:
+        logger.warning("Claire v17.73 automatic update runner gate router not mounted: %s", _claire_v17_73_automatic_update_runner_gate_error)
+    except Exception:
+        pass
+
+# Claire v17.74 Update Governance Regression Lock mount
+try:
+    from claire.api.routes_update_governance_regression_lock import router as update_governance_regression_lock_router
+    app.include_router(update_governance_regression_lock_router)
+except Exception as _claire_v17_74_update_governance_regression_lock_error:
+    try:
+        logger.warning("Claire v17.74 update governance regression lock router not mounted: %s", _claire_v17_74_update_governance_regression_lock_error)
+    except Exception:
+        pass
+
+# Claire v17.75 Full End-to-End Proof Pack mount
+try:
+    from claire.api.routes_full_e2e_proof_pack import router as full_e2e_proof_pack_router
+    app.include_router(full_e2e_proof_pack_router)
+except Exception as _claire_v17_75_full_e2e_proof_pack_error:
+    try:
+        logger.warning("Claire v17.75 full e2e proof pack router not mounted: %s", _claire_v17_75_full_e2e_proof_pack_error)
+    except Exception:
+        pass
+
+# Claire v17.75.2 Workspace Dashboard + Search/Command Layer mount
+try:
+    from claire.api.routes_operator_search_command import router as operator_search_command_router
+    app.include_router(operator_search_command_router)
+except Exception as _claire_v17_75_2_search_command_error:
+    try:
+        logger.warning("Claire v17.75.2 search command router not mounted: %s", _claire_v17_75_2_search_command_error)
+    except Exception:
+        pass
+
+# Claire v17.76 Platform Endpoint Smoke Proof mount
+try:
+    from claire.api.routes_platform_endpoint_smoke_proof import router as platform_endpoint_smoke_proof_router
+    app.include_router(platform_endpoint_smoke_proof_router)
+except Exception as _claire_v17_76_platform_smoke_error:
+    try:
+        logger.warning("Claire v17.76 platform endpoint smoke proof router not mounted: %s", _claire_v17_76_platform_smoke_error)
+    except Exception:
+        pass
+
+# Claire v17.77 Platform Launch Hardening mount
+try:
+    from claire.api.routes_platform_launch_hardening import router as platform_launch_hardening_router
+    app.include_router(platform_launch_hardening_router)
+except Exception as _claire_v17_77_platform_launch_hardening_error:
+    try:
+        logger.warning("Claire v17.77 platform launch hardening router not mounted: %s", _claire_v17_77_platform_launch_hardening_error)
+    except Exception:
+        pass
+
+# Claire v17.78 Desktop Startup Reliability mount
+try:
+    from claire.api.routes_desktop_startup_reliability import router as desktop_startup_reliability_router
+    app.include_router(desktop_startup_reliability_router)
+except Exception as _claire_v17_78_desktop_startup_error:
+    try:
+        logger.warning("Claire v17.78 desktop startup reliability router not mounted: %s", _claire_v17_78_desktop_startup_error)
+    except Exception:
+        pass
+
+# Claire v17.79 Manual Browser + Swagger Proof Binder mount
+try:
+    from claire.api.routes_manual_browser_swagger_proof import router as manual_browser_swagger_proof_router
+    app.include_router(manual_browser_swagger_proof_router)
+except Exception as _claire_v17_79_manual_browser_swagger_error:
+    try:
+        logger.warning("Claire v17.79 manual browser/swagger proof router not mounted: %s", _claire_v17_79_manual_browser_swagger_error)
+    except Exception:
+        pass
+
+# Claire v17.80 Launch Candidate Freeze mount
+try:
+    from claire.api.routes_launch_candidate_freeze import router as launch_candidate_freeze_router
+    app.include_router(launch_candidate_freeze_router)
+except Exception as _claire_v17_80_launch_candidate_freeze_error:
+    try:
+        logger.warning("Claire v17.80 launch candidate freeze router not mounted: %s", _claire_v17_80_launch_candidate_freeze_error)
+    except Exception:
+        pass
+
+# Claire v17.81 Cleanup Proof mount
+try:
+    from claire.api.routes_cleanup_proof import router as cleanup_proof_router
+    app.include_router(cleanup_proof_router)
+except Exception as _claire_v17_81_cleanup_proof_error:
+    try:
+        logger.warning("Claire v17.81 cleanup proof router not mounted: %s", _claire_v17_81_cleanup_proof_error)
+    except Exception:
+        pass
+
+# Claire v17.82 Archive Approval Gate mount
+try:
+    from claire.api.routes_archive_approval_gate import router as archive_approval_gate_router
+    app.include_router(archive_approval_gate_router)
+except Exception as _claire_v17_82_archive_approval_error:
+    try:
+        logger.warning("Claire v17.82 archive approval gate router not mounted: %s", _claire_v17_82_archive_approval_error)
+    except Exception:
+        pass
+
+# Claire v17.83 Internet Provider Configuration Gate mount
+try:
+    from claire.api.routes_internet_provider_gate import router as internet_provider_gate_router
+    app.include_router(internet_provider_gate_router)
+except Exception as _claire_v17_83_internet_provider_error:
+    try:
+        logger.warning("Claire v17.83 internet provider gate router not mounted: %s", _claire_v17_83_internet_provider_error)
+    except Exception:
+        pass
+
+# Claire v17.84 Governed Single-Query Live Search Probe mount
+try:
+    from claire.api.routes_governed_live_probe import router as governed_live_probe_router
+    app.include_router(governed_live_probe_router)
+except Exception as _claire_v17_84_governed_live_probe_error:
+    try:
+        logger.warning("Claire v17.84 governed live probe router not mounted: %s", _claire_v17_84_governed_live_probe_error)
+    except Exception:
+        pass
+
+# Claire v17.85 Governed Web Evidence Promotion Gate mount
+try:
+    from claire.api.routes_evidence_promotion_gate import router as evidence_promotion_gate_router
+    app.include_router(evidence_promotion_gate_router)
+
+    # v18.72 active launcher web route mounts
+    if governed_dashboard_live_search_router is not None:
+        app.include_router(governed_dashboard_live_search_router)
+    if real_provider_operator_probe_router is not None:
+        app.include_router(real_provider_operator_probe_router)
+    # v18.72 active launcher web route mounts end
+except Exception as _claire_v17_85_evidence_promotion_error:
+    try:
+        logger.warning("Claire v17.85 evidence promotion gate router not mounted: %s", _claire_v17_85_evidence_promotion_error)
+    except Exception:
+        pass
+
+# v18.72.2 active launcher create_app web activation wrapper
+try:
+    _claire_original_create_app_before_v18_72_2 = create_app
+
+    def create_app() -> FastAPI:
+        app = _claire_original_create_app_before_v18_72_2()
+        try:
+            from claire.api.governed_dashboard_live_search_routes import router as _v18_72_2_live_router
+            app.include_router(_v18_72_2_live_router)
+        except Exception:
+            pass
+        try:
+            from claire.api.real_provider_operator_probe_routes import router as _v18_72_2_provider_router
+            app.include_router(_v18_72_2_provider_router)
+        except Exception:
+            pass
+        return app
+
+    try:
+        app = create_app()
+    except Exception:
+        pass
+except Exception:
+    pass
+# v18.72.2 active launcher create_app web activation wrapper end
+
+# v18.73.1 operator dashboard compatibility endpoint wrapper
+try:
+    _claire_original_create_app_before_v18_73_1 = create_app
+
+    def create_app() -> FastAPI:
+        app = _claire_original_create_app_before_v18_73_1()
+        try:
+            from claire.api.operator_dashboard_compat_routes import router as _v18_73_1_operator_compat_router
+            app.include_router(_v18_73_1_operator_compat_router)
+        except Exception:
+            pass
+        return app
+
+    try:
+        app = create_app()
+    except Exception:
+        pass
+except Exception:
+    pass
+# v18.73.1 operator dashboard compatibility endpoint wrapper end
+
+# v19 canonical dashboard payload bridge wrapper
+try:
+    _claire_original_create_app_before_v19_dashboard_payload_bridge = create_app
+
+    def create_app():
+        app = _claire_original_create_app_before_v19_dashboard_payload_bridge()
+        try:
+            from claire.api.dashboard_payload_bridge import router as _v19_dashboard_payload_bridge_router
+            if _v19_dashboard_payload_bridge_router is not None:
+                app.include_router(_v19_dashboard_payload_bridge_router)
+                app.include_router(live_source_catalog_router)
+        except Exception:
+            pass
+        return app
+
+    try:
+        app = create_app()
+    except Exception:
+        pass
+except Exception:
+    pass
+# v19 canonical dashboard payload bridge wrapper end
+
+# === CLAIRE_V19_88_8B_CANONICAL_ROUTE_OWNER_LOCK_START ===
+try:
+    _claire_create_app_before_v19_88_8B = create_app
+
+    _CLAIRE_V19_88_8B_CANONICAL_ROUTE_OWNERS = {
+        "/dashboard/payload": ["get_dashboard_payload", "authored_dashboard_payload", "dashboard_payload"],
+        "/dashboard/payload/status": ["get_dashboard_payload_status", "dashboard_payload_status"],
+        "/runtime/continuous/status": ["authored_continuous_status", "continuous_status"],
+        "/runtime/continuous/review-queue": ["authored_review_queue", "continuous_review_queue"],
+        "/runtime/continuous/start": ["authored_continuous_start", "continuous_start"],
+        "/runtime/continuous/pause": ["authored_continuous_pause", "continuous_pause"],
+        "/runs/start": ["authored_start_run", "start_run"],
+        "/universes": ["authored_universes", "universes"],
+    }
+
+    _CLAIRE_V19_88_8B_COCKPIT_FETCH_MAP = {
+        "backend_status": "/dashboard/payload/status",
+        "dashboard_payload": "/dashboard/payload",
+        "continuous_status": "/runtime/continuous/status",
+        "review_queue": "/runtime/continuous/review-queue",
+        "runs_start": "/runs/start",
+        "universes": "/universes",
+        "route_truth": "/system/route-truth",
+        "cockpit_truth": "/system/cockpit-truth",
+        "canonical_route_owners": "/system/canonical-route-owners",
+        "project_connection_status": "/system/project-connection/status",
+    }
+
+    def _claire_v19_88_8B_endpoint_name(route):
+        endpoint = getattr(route, "endpoint", None)
+        return getattr(endpoint, "__name__", "") or getattr(route, "name", "") or ""
+
+    def _claire_v19_88_8B_route_methods(route):
+        try:
+            return sorted(list(getattr(route, "methods", []) or []))
+        except Exception:
+            return []
+
+    def _claire_v19_88_8B_select(routes, names):
+        for preferred in names:
+            for route in routes:
+                if _claire_v19_88_8B_endpoint_name(route) == preferred or getattr(route, "name", "") == preferred:
+                    return route
+        return routes[-1] if routes else None
+
+    def _claire_v19_88_8B_lock_routes(app):
+        grouped = {}
+        for route in list(getattr(app, "routes", []) or []):
+            path = getattr(route, "path", None)
+            if path in _CLAIRE_V19_88_8B_CANONICAL_ROUTE_OWNERS:
+                grouped.setdefault(path, []).append(route)
+
+        selected = {}
+        removed = {}
+
+        for path, routes in grouped.items():
+            chosen = _claire_v19_88_8B_select(routes, _CLAIRE_V19_88_8B_CANONICAL_ROUTE_OWNERS[path])
+            if chosen:
+                selected[path] = chosen
+                removed[path] = []
+                for route in routes:
+                    if route is not chosen:
+                        removed[path].append({
+                            "name": getattr(route, "name", ""),
+                            "endpoint": _claire_v19_88_8B_endpoint_name(route),
+                            "methods": _claire_v19_88_8B_route_methods(route),
+                        })
+
+        locked = []
+        for route in list(getattr(app.router, "routes", []) or []):
+            path = getattr(route, "path", None)
+            if path in selected:
+                if route is selected[path]:
+                    locked.append(route)
+            else:
+                locked.append(route)
+
+        app.router.routes = locked
+        app.state.claire_v19_88_8B_route_owner_lock = {
+            "enabled": True,
+            "canonical_paths": sorted(list(_CLAIRE_V19_88_8B_CANONICAL_ROUTE_OWNERS.keys())),
+            "removed_duplicates": removed,
+        }
+        return app
+
+    def create_app():
+        app = _claire_create_app_before_v19_88_8B()
+        app = _claire_v19_88_8B_lock_routes(app)
+
+        @app.get("/system/canonical-route-owners")
+        async def claire_v19_88_8B_canonical_route_owners():
+            live = []
+            for route in getattr(app, "routes", []) or []:
+                path = getattr(route, "path", "")
+                if path in _CLAIRE_V19_88_8B_CANONICAL_ROUTE_OWNERS:
+                    live.append({
+                        "path": path,
+                        "name": getattr(route, "name", ""),
+                        "endpoint": _claire_v19_88_8B_endpoint_name(route),
+                        "methods": _claire_v19_88_8B_route_methods(route),
+                    })
+            return {
+                "version": "v19.88.8B",
+                "status": "locked",
+                "backend_owns_truth": True,
+                "desired_target_tree": ["claire/", "backend/", "frontend/"],
+                "tree_note": "Current backend lives in claire/. backend/ is a desired future boundary target, not a current failure.",
+                "cockpit_presentation_only": True,
+                "canonical_route_owners": _CLAIRE_V19_88_8B_CANONICAL_ROUTE_OWNERS,
+                "live_locked_routes": live,
+                "duplicate_owner_removal": getattr(app.state, "claire_v19_88_8B_route_owner_lock", {}),
+            }
+
+        @app.get("/system/cockpit-fetch-map")
+        async def claire_v19_88_8B_cockpit_fetch_map():
+            return {
+                "version": "v19.88.8B",
+                "status": "ready",
+                "rule": "Cockpit reads only approved backend routes. Backend owns truth.",
+                "fetch_map": _CLAIRE_V19_88_8B_COCKPIT_FETCH_MAP,
+            }
+
+        @app.get("/system/project-connection/status")
+        async def claire_v19_88_8B_project_connection_status():
+            from pathlib import Path as _Path
+            from datetime import datetime as _datetime, timezone as _timezone
+            root = _Path(__file__).resolve().parents[1]
+            expected = [
+                "main.py",
+                "version.json",
+                "claire",
+                "frontend",
+                "frontend/cockpit/shell/cockpit_shell.html",
+                "data",
+                "output",
+                "docs",
+                "tests",
+            ]
+            items = []
+            for rel in expected:
+                p = root / rel
+                items.append({
+                    "path": rel,
+                    "exists": p.exists(),
+                    "type": "directory" if p.is_dir() else "file" if p.is_file() else "missing",
+                })
+            return {
+                "version": "v19.88.8B",
+                "status": "connected" if all(i["exists"] for i in items[:5]) else "partial",
+                "project_root": str(root),
+                "backend_owns_truth": True,
+                "cockpit_presentation_only": True,
+                "items": items,
+                "timestamp_utc": _datetime.now(_timezone.utc).isoformat(),
+            }
+
+        return app
+
+except Exception:
+    pass
+# === CLAIRE_V19_88_8B_CANONICAL_ROUTE_OWNER_LOCK_END ===
+
+# === CLAIRE_V19_89_0_PROJECT_INVENTORY_BACKEND_START ===
+try:
+    _claire_create_app_before_v19_89_0 = create_app
+
+    def _claire_v19_89_0_project_root():
+        from pathlib import Path as _Path
+        return _Path(__file__).resolve().parents[1]
+
+    def _claire_v19_89_0_count_tree(path, max_files=5000):
+        from pathlib import Path as _Path
+        path = _Path(path)
+        result = {
+            "exists": path.exists(),
+            "type": "directory" if path.is_dir() else "file" if path.is_file() else "missing",
+            "files": 0,
+            "directories": 0,
+            "bytes": 0,
+            "truncated": False,
+            "sample": [],
+        }
+        if not path.exists():
+            return result
+        if path.is_file():
+            result["files"] = 1
+            try:
+                result["bytes"] = path.stat().st_size
+            except Exception:
+                result["bytes"] = 0
+            result["sample"] = [path.name]
+            return result
+
+        ignored = {".git", ".venv", "venv", "__pycache__", ".pytest_cache", "node_modules"}
+        seen = 0
+        try:
+            for item in path.rglob("*"):
+                if any(part in ignored for part in item.parts):
+                    continue
+                seen += 1
+                if seen > max_files:
+                    result["truncated"] = True
+                    break
+                try:
+                    if item.is_dir():
+                        result["directories"] += 1
+                    elif item.is_file():
+                        result["files"] += 1
+                        result["bytes"] += item.stat().st_size
+                        if len(result["sample"]) < 12:
+                            result["sample"].append(str(item.relative_to(path)))
+                except Exception:
+                    continue
+        except Exception as exc:
+            result["error"] = str(exc)
+        return result
+
+    def _claire_v19_89_0_project_inventory():
+        from pathlib import Path as _Path
+        from datetime import datetime as _dt, timezone as _tz
+        root = _claire_v19_89_0_project_root()
+
+        watched = [
+            {"key": "backend_package", "path": "claire", "purpose": "active backend/runtime application package"},
+            {"key": "frontend", "path": "frontend", "purpose": "cockpit and presentation layer"},
+            {"key": "cockpit_shell", "path": "frontend/cockpit/shell", "purpose": "local cockpit shell and scripts"},
+            {"key": "data", "path": "data", "purpose": "data inputs and durable local stores"},
+            {"key": "output", "path": "output", "purpose": "runtime outputs and generated results"},
+            {"key": "docs", "path": "docs", "purpose": "documentation and architecture records"},
+            {"key": "tests", "path": "tests", "purpose": "test coverage and proof checks"},
+            {"key": "exports", "path": "exports", "purpose": "exported run/package artifacts"},
+            {"key": "tools", "path": "tools", "purpose": "operator and validation tools"},
+            {"key": "backend_target", "path": "backend", "purpose": "desired future backend boundary target; optional/not migrated yet"},
+            {"key": "archive", "path": "archive", "purpose": "archived/quarantined legacy material"},
+        ]
+
+        items = []
+        totals = {"files": 0, "directories": 0, "bytes": 0, "existing_surfaces": 0, "missing_surfaces": 0}
+
+        for spec in watched:
+            p = root / spec["path"]
+            stats = _claire_v19_89_0_count_tree(p)
+            if stats["exists"]:
+                totals["existing_surfaces"] += 1
+            else:
+                totals["missing_surfaces"] += 1
+            totals["files"] += stats.get("files", 0)
+            totals["directories"] += stats.get("directories", 0)
+            totals["bytes"] += stats.get("bytes", 0)
+            items.append({
+                "key": spec["key"],
+                "path": spec["path"],
+                "purpose": spec["purpose"],
+                **stats,
+            })
+
+        important_files = []
+        for rel in ["main.py", "version.json", "pyproject.toml", "requirements.txt", "pytest.ini"]:
+            p = root / rel
+            important_files.append({
+                "path": rel,
+                "exists": p.exists(),
+                "bytes": p.stat().st_size if p.exists() and p.is_file() else 0,
+                "type": "file" if p.is_file() else "missing",
+            })
+
+        readiness = "connected"
+        if totals["existing_surfaces"] < 5:
+            readiness = "partial"
+        if not (root / "frontend" / "cockpit" / "shell" / "cockpit_shell.html").exists():
+            readiness = "blocked"
+
+        return {
+            "version": "v19.89.0",
+            "status": readiness,
+            "project_root": str(root),
+            "backend_owns_truth": True,
+            "cockpit_presentation_only": True,
+            "inventory": items,
+            "important_files": important_files,
+            "totals": totals,
+            "timestamp_utc": _dt.now(_tz.utc).isoformat(),
+        }
+
+    def create_app():
+        app = _claire_create_app_before_v19_89_0()
+
+        @app.get("/system/project-inventory")
+        async def claire_v19_89_0_project_inventory():
+            return _claire_v19_89_0_project_inventory()
+
+        @app.get("/system/project-inventory/summary")
+        async def claire_v19_89_0_project_inventory_summary():
+            inv = _claire_v19_89_0_project_inventory()
+            return {
+                "version": inv["version"],
+                "status": inv["status"],
+                "project_root": inv["project_root"],
+                "totals": inv["totals"],
+                "surfaces": [
+                    {
+                        "key": item["key"],
+                        "path": item["path"],
+                        "exists": item["exists"],
+                        "type": item["type"],
+                        "files": item["files"],
+                        "directories": item["directories"],
+                        "purpose": item["purpose"],
+                    }
+                    for item in inv["inventory"]
+                ],
+                "timestamp_utc": inv["timestamp_utc"],
+            }
+
+        @app.get("/system/source-surface/status")
+        async def claire_v19_89_0_source_surface_status():
+            inv = _claire_v19_89_0_project_inventory()
+            source_keys = {"data", "output", "docs", "exports", "tools"}
+            sources = [item for item in inv["inventory"] if item["key"] in source_keys]
+            return {
+                "version": "v19.89.0",
+                "status": "connected" if any(s["exists"] for s in sources) else "empty",
+                "backend_owns_truth": True,
+                "surfaces": sources,
+                "note": "Project source surfaces are visible to backend inventory. Evidence promotion remains governed.",
+                "timestamp_utc": inv["timestamp_utc"],
+            }
+
+        return app
+
+except Exception:
+    pass
+# === CLAIRE_V19_89_0_PROJECT_INVENTORY_BACKEND_END ===

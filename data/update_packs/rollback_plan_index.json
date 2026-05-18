@@ -1,0 +1,326 @@
+{
+  "contract_name": "Rollback-Aware Update Plan Contract",
+  "generated_at": "2026-05-13T11:18:57.588156Z",
+  "governance": {
+    "automatic_execution_enabled": false,
+    "execution_enabled": false,
+    "operator_review_required": true,
+    "rollback_plans_required": true,
+    "validation_after_restore_required": true
+  },
+  "latest_plan": {
+    "automatic_execution_enabled": false,
+    "created_at": "2026-05-13T11:18:57.575157Z",
+    "execution_enabled": false,
+    "linked_pack_id": "update_pack_20260513_111857_update_governance_patch",
+    "path": "data/update_packs/rollback_plans/rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch.json",
+    "plan_id": "rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch",
+    "status": "rollback_plan_ready"
+  },
+  "next": [
+    "v17.73 Automatic Update Runner Gate",
+    "v17.74 Update Governance Regression Lock",
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "plans": [
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:01:43.735252Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260509_235947_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:01:52.327041Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260509_235947_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260510_000152_update_pack_20260509_235947_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260510_000152_update_pack_20260509_235947_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:01:52.346041Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260509_235947_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260510_000152_update_pack_20260509_235947_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260510_000152_update_pack_20260509_235947_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:01:52.364041Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260509_235947_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260510_000152_update_pack_20260509_235947_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260510_000152_update_pack_20260509_235947_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:33:25.195071Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260510_003325_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260510_003325_update_pack_20260510_003325_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260510_003325_update_pack_20260510_003325_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:33:38.334796Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260510_003338_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260510_003338_update_pack_20260510_003338_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260510_003338_update_pack_20260510_003338_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:33:44.985960Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260510_003344_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260510_003344_update_pack_20260510_003344_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260510_003344_update_pack_20260510_003344_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:33:51.669094Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260510_003351_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260510_003351_update_pack_20260510_003351_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260510_003351_update_pack_20260510_003351_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-10T00:33:58.177917Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260510_003358_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260510_003358_update_pack_20260510_003358_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260510_003358_update_pack_20260510_003358_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:42:14.909744Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260512_174214_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260512_174214_update_pack_20260512_174214_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260512_174214_update_pack_20260512_174214_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:42:14.921745Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260512_174214_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260512_174214_update_pack_20260512_174214_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260512_174214_update_pack_20260512_174214_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:42:14.938744Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260512_174214_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260512_174214_update_pack_20260512_174214_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260512_174214_update_pack_20260512_174214_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:51:56.145986Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260512_175156_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260512_175156_update_pack_20260512_175156_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260512_175156_update_pack_20260512_175156_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:51:56.155984Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260512_175156_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260512_175156_update_pack_20260512_175156_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260512_175156_update_pack_20260512_175156_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T17:51:56.171985Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260512_175156_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260512_175156_update_pack_20260512_175156_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260512_175156_update_pack_20260512_175156_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T18:03:15.276876Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260512_180315_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260512_180315_update_pack_20260512_180315_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260512_180315_update_pack_20260512_180315_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T18:03:15.286877Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260512_180315_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260512_180315_update_pack_20260512_180315_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260512_180315_update_pack_20260512_180315_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-12T18:03:15.302877Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260512_180315_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260512_180315_update_pack_20260512_180315_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260512_180315_update_pack_20260512_180315_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:36:56.659735Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_043656_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_043656_update_pack_20260513_043656_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_043656_update_pack_20260513_043656_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:36:56.670737Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_043656_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_043656_update_pack_20260513_043656_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_043656_update_pack_20260513_043656_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:36:56.686737Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_043656_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_043656_update_pack_20260513_043656_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_043656_update_pack_20260513_043656_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:42:18.267128Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_044218_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_044218_update_pack_20260513_044218_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_044218_update_pack_20260513_044218_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:42:18.277132Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_044218_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_044218_update_pack_20260513_044218_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_044218_update_pack_20260513_044218_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T04:42:18.292132Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_044218_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_044218_update_pack_20260513_044218_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_044218_update_pack_20260513_044218_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:35:44.577819Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_103544_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_103544_update_pack_20260513_103544_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_103544_update_pack_20260513_103544_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:35:44.588820Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_103544_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_103544_update_pack_20260513_103544_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_103544_update_pack_20260513_103544_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:35:44.604820Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_103544_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_103544_update_pack_20260513_103544_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_103544_update_pack_20260513_103544_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:45:17.024583Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_104517_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_104517_update_pack_20260513_104517_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_104517_update_pack_20260513_104517_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:45:17.034582Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_104517_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_104517_update_pack_20260513_104517_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_104517_update_pack_20260513_104517_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T10:45:17.051582Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_104517_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_104517_update_pack_20260513_104517_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_104517_update_pack_20260513_104517_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T11:18:57.548160Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_111857_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T11:18:57.559157Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_111857_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch",
+      "status": "rollback_plan_ready"
+    },
+    {
+      "automatic_execution_enabled": false,
+      "created_at": "2026-05-13T11:18:57.575157Z",
+      "execution_enabled": false,
+      "linked_pack_id": "update_pack_20260513_111857_update_governance_patch",
+      "path": "data/update_packs/rollback_plans/rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch.json",
+      "plan_id": "rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch",
+      "status": "rollback_plan_ready"
+    }
+  ],
+  "rollback_dir": "data/update_packs/rollback_plans",
+  "version": "v17.72"
+}

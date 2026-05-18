@@ -1,0 +1,186 @@
+(function () {
+  const ROOT_ID = "claire-governed-evidence-cards-root";
+  const ACTIONS_ID = "claire-governed-evidence-actions-root";
+  const STATUS_ID = "claire-governed-evidence-status-root";
+
+  function asArray(value) {
+    return Array.isArray(value) ? value : [];
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function findSectionByText(labels) {
+    const lowered = labels.map((label) => label.toLowerCase());
+    const candidates = Array.from(document.querySelectorAll("section, main, article, div"));
+    return candidates.find((node) => {
+      const text = (node.textContent || "").slice(0, 500).toLowerCase();
+      return lowered.some((label) => text.includes(label));
+    });
+  }
+
+  function ensurePanel(id, labels, fallbackTitle) {
+    let node = document.getElementById(id);
+    if (node) return node;
+    node = document.createElement("section");
+    node.id = id;
+    node.className = "claire-evidence-panel";
+    const target = findSectionByText(labels) || document.querySelector("main") || document.body;
+    const title = document.createElement("h2");
+    title.textContent = fallbackTitle;
+    title.className = "claire-evidence-panel-title";
+    node.appendChild(title);
+    target.appendChild(node);
+    return node;
+  }
+
+  function renderStatus(panel, payload) {
+    const status = payload?.readiness || "evidence_surface_unavailable";
+    const summary = payload?.summary || {};
+    panel.innerHTML = `
+      <div class="claire-evidence-header">
+        <div>
+          <div class="claire-evidence-kicker">Governed evidence normalization</div>
+          <h3>Evidence cards ready for review</h3>
+          <p>Source/search evidence is rendered for cockpit review only. Network execution, body reads, runtime mutation, and automatic updates remain blocked.</p>
+        </div>
+        <span class="claire-evidence-status">${escapeHtml(status)}</span>
+      </div>
+      <div class="claire-evidence-metrics">
+        <span>${escapeHtml(summary.total_evidence_cards || 0)} cards</span>
+        <span>${escapeHtml(summary.operator_review_items || 0)} review items</span>
+        <span>${escapeHtml(summary.network_requests_performed || 0)} network requests</span>
+        <span>${escapeHtml(summary.body_reads_performed || 0)} body reads</span>
+        <span>${escapeHtml(summary.runtime_truth_mutations || 0)} runtime mutations</span>
+      </div>
+    `;
+  }
+
+  function renderCards(panel, cards) {
+    const items = asArray(cards);
+    if (!items.length) {
+      panel.insertAdjacentHTML("beforeend", `<div class="claire-evidence-empty">No evidence cards available yet.</div>`);
+      return;
+    }
+    const html = items.slice(0, 18).map((card) => `
+      <article class="claire-evidence-card">
+        <div class="claire-evidence-card-top">
+          <span class="claire-evidence-type">${escapeHtml(card.card_type)}</span>
+          <span class="claire-evidence-review">${escapeHtml(card.review_state)}</span>
+        </div>
+        <h4>${escapeHtml(card.title || card.headline || "Evidence card")}</h4>
+        <p>${escapeHtml(card.summary || "No summary provided.")}</p>
+        <div class="claire-evidence-tags">
+          <span>${escapeHtml(card.trust_tier || "tier review")}</span>
+          <span>${escapeHtml(card.source_status || "pending")}</span>
+          <span>network false</span>
+          <span>body false</span>
+          <span>mutation false</span>
+        </div>
+      </article>
+    `).join("");
+    panel.insertAdjacentHTML("beforeend", `<div class="claire-evidence-grid">${html}</div>`);
+  }
+
+  function renderActions(panel, actions) {
+    const items = asArray(actions);
+    const html = items.map((action) => `
+      <article class="claire-evidence-action">
+        <div class="claire-evidence-card-top">
+          <span class="claire-evidence-type">${escapeHtml(action.id)}</span>
+          <span class="claire-evidence-review">blocked</span>
+        </div>
+        <h4>${escapeHtml(action.label)}</h4>
+        <p>${escapeHtml(action.description)}</p>
+        <button type="button" disabled>${escapeHtml(action.label)}</button>
+        <small>${escapeHtml(action.reason || "Execution remains blocked.")}</small>
+      </article>
+    `).join("");
+    panel.innerHTML = `
+      <div class="claire-evidence-header">
+        <div>
+          <div class="claire-evidence-kicker">Governed actions</div>
+          <h3>Actions visible, execution blocked</h3>
+          <p>These are cockpit action descriptors only. They do not execute commands, mutate runtime truth, or touch the network.</p>
+        </div>
+      </div>
+      <div class="claire-evidence-grid">${html || `<div class="claire-evidence-empty">No governed evidence actions available.</div>`}</div>
+    `;
+  }
+
+  async function fetchJson(url) {
+    const response = await fetch(url, { headers: { Accept: "application/json" } });
+    if (!response.ok) throw new Error(`${url} returned ${response.status}`);
+    return response.json();
+  }
+
+  async function bootEvidenceCards() {
+    const statusPanel = ensurePanel(STATUS_ID, ["Governed Web", "Overview"], "Governed Evidence Status");
+    const cardsPanel = ensurePanel(ROOT_ID, ["Evidence & Review", "evidence"], "Evidence & Review Cards");
+    const actionsPanel = ensurePanel(ACTIONS_ID, ["Actions", "governed actions"], "Governed Evidence Actions");
+    try {
+      const [status, cards, actions] = await Promise.all([
+        fetchJson("/api/evidence/governed/status"),
+        fetchJson("/api/evidence/governed/cards"),
+        fetchJson("/api/evidence/governed/actions"),
+      ]);
+      renderStatus(statusPanel, status);
+      cardsPanel.innerHTML = "";
+      renderStatus(cardsPanel, cards);
+      renderCards(cardsPanel, cards.evidence_cards || []);
+      renderActions(actionsPanel, actions.governed_actions || []);
+    } catch (error) {
+      statusPanel.innerHTML = `
+        <div class="claire-evidence-header">
+          <div>
+            <div class="claire-evidence-kicker">Governed evidence normalization</div>
+            <h3>Evidence card surface unavailable</h3>
+            <p>${escapeHtml(error.message || error)}</p>
+          </div>
+          <span class="claire-evidence-status">fail closed</span>
+        </div>
+      `;
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootEvidenceCards, { once: true });
+  } else {
+    bootEvidenceCards();
+  }
+})();
+
+/* CLAIRE_S985_S1012_JS_FORCE_MOUNT: force visible cockpit operation controls into active JS-rendered shell. */
+(function () {
+  function loadClaireS985S1012ControlSurface() {
+    if (window.__CLAIRE_S985_S1012_CONTROL_SURFACE_LOADING__) return;
+    window.__CLAIRE_S985_S1012_CONTROL_SURFACE_LOADING__ = true;
+    if (!document.querySelector('link[data-claire-s985-s1012="active-control-surface"]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/api/cockpit/control-surface/assets/css';
+      link.setAttribute('data-claire-s985-s1012', 'active-control-surface');
+      document.head.appendChild(link);
+    }
+    if (!document.querySelector('script[data-claire-s985-s1012="active-control-surface"]')) {
+      var script = document.createElement('script');
+      script.src = '/api/cockpit/control-surface/assets/js';
+      script.defer = true;
+      script.setAttribute('data-claire-s985-s1012', 'active-control-surface');
+      document.body.appendChild(script);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadClaireS985S1012ControlSurface);
+  } else {
+    loadClaireS985S1012ControlSurface();
+  }
+  setTimeout(loadClaireS985S1012ControlSurface, 800);
+  setTimeout(loadClaireS985S1012ControlSurface, 2000);
+})();

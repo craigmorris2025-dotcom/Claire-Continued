@@ -1,0 +1,26 @@
+{
+  "version": "v19.89.8-S23",
+  "installed_at_utc": "2026-05-14T03:19:29.930357+00:00",
+  "status": "installed",
+  "safety_note": "S23 intentionally did not patch claire/app.py.",
+  "files_written": [
+    "claire\\api\\runtime_continuity_visualization.py",
+    "frontend\\cockpit\\assets\\js\\runtime_continuity_visualization.js",
+    "frontend\\cockpit\\assets\\css\\runtime_continuity_visualization.css",
+    "tests\\test_runtime_continuity_visualization_s23.py",
+    "docs\\build_notes\\v19.89.8-S23_runtime_continuity_visualization.md",
+    "output\\cockpit\\v19.89.8-S23_install_report.json"
+  ],
+  "link_report": [
+    "linked S23 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S23 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_runtime_continuity_visualization_s23.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

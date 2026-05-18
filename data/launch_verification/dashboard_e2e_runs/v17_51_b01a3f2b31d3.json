@@ -1,0 +1,258 @@
+{
+  "actions_requested": [
+    "dashboard_capability_check",
+    "governed_runtime_health_check",
+    "internet_operations_state_check",
+    "campaign_state_check",
+    "source_trust_state_check",
+    "deployment_state_check",
+    "rollback_state_check",
+    "manifest_integrity_check"
+  ],
+  "build_name": "Dashboard End-to-End First-Use Test",
+  "checks": [
+    {
+      "evidence": {
+        "candidates": [
+          {
+            "exists": true,
+            "is_file": true,
+            "path": "data\\dashboard\\dashboard_capability_manifest.json",
+            "size_bytes": 15757
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\dashboard_runtime_alignment\\dashboard_capability_manifest.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": true,
+            "is_file": true,
+            "path": "manifests\\v17_50_dashboard_runtime_alignment_manifest.json",
+            "size_bytes": 1313
+          }
+        ],
+        "existing": [
+          "data\\dashboard\\dashboard_capability_manifest.json",
+          "manifests\\v17_50_dashboard_runtime_alignment_manifest.json"
+        ]
+      },
+      "name": "dashboard_capability_check",
+      "notes": [],
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "paths": [
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\runtime\\runtime_health.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\internet_runtime\\runtime_health.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\operations\\runtime_health.json",
+            "size_bytes": 0
+          }
+        ]
+      },
+      "name": "governed_runtime_health_check",
+      "notes": [
+        "Runtime health state file not found yet; start the API/dashboard once to populate live runtime health."
+      ],
+      "status": "warning"
+    },
+    {
+      "evidence": {
+        "paths": [
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\internet_operations\\operations_dashboard.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\internet_operations_dashboard\\state.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\operations\\internet_operations.json",
+            "size_bytes": 0
+          }
+        ]
+      },
+      "name": "internet_operations_state_check",
+      "notes": [
+        "Internet operations state file not found yet; run one governed internet operation after dashboard launch."
+      ],
+      "status": "warning"
+    },
+    {
+      "evidence": {
+        "paths": [
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\campaigns\\campaign_state.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\internet_campaigns\\campaign_state.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\campaign_scheduler\\scheduler_state.json",
+            "size_bytes": 0
+          }
+        ]
+      },
+      "name": "campaign_state_check",
+      "notes": [
+        "Campaign state file not found yet; create or refresh one governed campaign from the dashboard."
+      ],
+      "status": "warning"
+    },
+    {
+      "evidence": {
+        "paths": [
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\source_trust\\source_trust_state.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\source_reputation\\trust_memory.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\internet_operations\\source_trust.json",
+            "size_bytes": 0
+          }
+        ]
+      },
+      "name": "source_trust_state_check",
+      "notes": [
+        "Source trust state file not found yet; source scoring will populate during real governed search/campaign use."
+      ],
+      "status": "warning"
+    },
+    {
+      "evidence": {
+        "paths": [
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\deployment\\production_state.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\deployment_hardening\\production_state.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "manifests\\v17_48_deployment_production_hardening_manifest.json",
+            "size_bytes": 0
+          }
+        ]
+      },
+      "name": "deployment_state_check",
+      "notes": [
+        "Deployment hardening state file not found, but manifest fallback may exist from v17.48."
+      ],
+      "status": "warning"
+    },
+    {
+      "evidence": {
+        "paths": [
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\rollback\\rollback_state.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\deployment\\rollback_state.json",
+            "size_bytes": 0
+          },
+          {
+            "exists": false,
+            "is_file": false,
+            "path": "data\\runtime_recovery\\rollback_state.json",
+            "size_bytes": 0
+          }
+        ]
+      },
+      "name": "rollback_state_check",
+      "notes": [
+        "Rollback state file not found yet; rollback proof should be generated before external launch."
+      ],
+      "status": "warning"
+    },
+    {
+      "evidence": {
+        "build_name": "Dashboard End-to-End First-Use Test",
+        "exists": true,
+        "manifest_path": "manifests\\v17_51_dashboard_e2e_first_use_manifest.json",
+        "required_actions": [
+          "dashboard_capability_check",
+          "governed_runtime_health_check",
+          "internet_operations_state_check",
+          "campaign_state_check",
+          "source_trust_state_check",
+          "deployment_state_check",
+          "rollback_state_check",
+          "manifest_integrity_check"
+        ],
+        "version": "17.51"
+      },
+      "name": "manifest_integrity_check",
+      "notes": [],
+      "status": "pass"
+    }
+  ],
+  "completed_at": "2026-05-12T17:41:52.658824Z",
+  "governance": {
+    "action_payload_keys": [
+      "action",
+      "source"
+    ],
+    "bounded_orchestration_preserved": true,
+    "dashboard_action_payload_recorded": true,
+    "external_network_required": false,
+    "runtime_isolation_preserved": true,
+    "writes_only_launch_verification_state": true
+  },
+  "output_path": "data\\launch_verification\\dashboard_e2e_runs\\v17_51_b01a3f2b31d3.json",
+  "run_id": "v17_51_b01a3f2b31d3",
+  "started_at": "2026-05-12T17:41:52.656826Z",
+  "status": "passed_with_launch_warnings",
+  "version": "17.51"
+}

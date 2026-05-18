@@ -1,0 +1,288 @@
+{
+  "bridge_contract": {
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "merge_contract": {
+      "key": "governed_operations",
+      "mode": "read_only_append",
+      "overwrite_existing_keys": false,
+      "preserve_existing_payload": true,
+      "rollback_supported": true
+    },
+    "requires_app_patch": false,
+    "requires_dashboard_rewrite": false,
+    "runtime_truth_write": "blocked",
+    "stage_version": "S137",
+    "status": "existing_payload_bridge_contract_ready"
+  },
+  "checks": {
+    "no_app_patch": true,
+    "previous_gate_ok": true,
+    "rollback_supported": true,
+    "s135_entry_ready": true,
+    "s136_registry_preview_ready": true,
+    "s137_bridge_contract_ready": true,
+    "s138_stability_ok": true,
+    "s139_nonbreak_ready": true,
+    "s140_readonly_ok": true
+  },
+  "forward_motion_allowed": true,
+  "functional_coverage": {
+    "S135": "governed_operations registry entry",
+    "S136": "payload registry preview",
+    "S137": "existing payload bridge contract",
+    "S138": "payload stability probe",
+    "S139": "existing cockpit nonbreak contract",
+    "S140": "readonly surface validation",
+    "S141": "payload registry integration stop gate"
+  },
+  "generated_at": "2026-05-15T13:39:33.766841+00:00",
+  "next_allowed_phase": "S142 controlled live payload bridge adapter patch",
+  "nonbreak_contract": {
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "rules": {
+      "append_only_under_governed_operations": true,
+      "no_app_patch": true,
+      "no_dom_rewrite": true,
+      "no_js_fetch_replacement": true,
+      "preserve_existing_dashboard_payload": true,
+      "rollback_before_visual_integration": true
+    },
+    "stage_version": "S139",
+    "status": "existing_cockpit_nonbreak_contract_ready"
+  },
+  "ok": true,
+  "readonly_validation": {
+    "checks": {
+      "no_app_patch": true,
+      "no_live_registry_write": true,
+      "no_route_registration": true,
+      "panels_read_only": true,
+      "payload_read_only": true,
+      "registry_preview_ready": true,
+      "runtime_truth_write_blocked": true
+    },
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "ok": true,
+    "stage_version": "S140",
+    "status": "readonly_surface_validation_passed"
+  },
+  "registry_preview": {
+    "app_patch_performed": false,
+    "live_registry_write_performed": false,
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "registered_keys": [
+      "governed_operations"
+    ],
+    "registry": {
+      "governed_operations": {
+        "app_patch_performed": false,
+        "cockpit_payload_version": "S121-S127",
+        "fetch_map": {
+          "app_patch_performed": false,
+          "fetch_map": {
+            "approved_run": "backend:function:build_approved_evidence_run_contract",
+            "dashboard_demo": "backend:function:build_dashboard_managed_demo_backend",
+            "evidence_bridge": "backend:function:build_evidence_to_lifecycle_bridge",
+            "governed_search_control": "backend:function:build_governed_search_control_backend",
+            "review_export_control": "backend:function:build_review_export_control_backend",
+            "runtime_spine": "backend:function:build_runtime_spine_state"
+          },
+          "live_dashboard_rewire_performed": false,
+          "locks": {
+            "automatic_updates_blocked": true,
+            "autonomous_execution_blocked": true,
+            "backend_owns_truth": true,
+            "cockpit_presentation_only": true,
+            "continuous_crawling_blocked": true,
+            "manual_promotion_mandatory": true,
+            "quarantine_mandatory": true,
+            "runtime_truth_mutation_blocked": true,
+            "runtime_truth_write_blocked": true
+          },
+          "read_only": true,
+          "route_registration_performed": false,
+          "stage_version": "S116",
+          "status": "dashboard_operations_fetch_map_locked"
+        },
+        "generated_at": "2026-05-15T13:39:33.610840+00:00",
+        "live_dashboard_rewire_performed": false,
+        "locks": {
+          "automatic_updates_blocked": true,
+          "autonomous_execution_blocked": true,
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "continuous_crawling_blocked": true,
+          "manual_promotion_mandatory": true,
+          "quarantine_mandatory": true,
+          "runtime_truth_mutation_blocked": true,
+          "runtime_truth_write_blocked": true
+        },
+        "panel_order": [
+          "runtime_spine",
+          "review_export",
+          "governed_search",
+          "evidence_demo"
+        ],
+        "panels": {
+          "evidence_demo": {
+            "backend_owned": true,
+            "cockpit_presentation_only": true,
+            "data": {
+              "approved_run_status": "approved_evidence_run_contract_ready",
+              "bridge_status": "evidence_to_lifecycle_bridge_ready",
+              "discovery_candidate_id": "disc_1e5c4663435e929c",
+              "export_path": "exports\\s135_s141\\export_42926654131d7c59.json",
+              "export_status": "exported",
+              "output_candidate_id": "out_af37f1f7c280b7df"
+            },
+            "panel_id": "evidence_demo",
+            "read_only": true,
+            "runtime_truth_write": "blocked",
+            "status": "ready",
+            "title": "Evidence To Output Demo"
+          },
+          "governed_search": {
+            "backend_owned": true,
+            "cockpit_presentation_only": true,
+            "data": {
+              "automatic_updates": "blocked",
+              "continuous_crawling": "blocked",
+              "live_web_execution": "blocked_unless_explicitly_gated",
+              "manual_probe_required": true,
+              "manual_promotion_required": true,
+              "operator_review_required": true,
+              "quarantine_required": true
+            },
+            "panel_id": "governed_search",
+            "read_only": true,
+            "runtime_truth_write": "blocked",
+            "status": "ready",
+            "title": "Governed Search Control"
+          },
+          "review_export": {
+            "backend_owned": true,
+            "cockpit_presentation_only": true,
+            "data": {
+              "available_actions": [
+                "approve",
+                "reject",
+                "archive",
+                "export_only"
+              ],
+              "decision_total": 27,
+              "latest_export": {
+                "derived_artifact": true,
+                "export_id": "export_083a4ce53f379ba3",
+                "export_version": "S88",
+                "format": "json",
+                "path": "exports\\s135_s141\\export_083a4ce53f379ba3.json",
+                "review_item_id": "review_out_af37f1f7c280b7df",
+                "runtime_truth_write": "blocked",
+                "status": "exported"
+              },
+              "manual_operator_only": true,
+              "queue_total": 1
+            },
+            "panel_id": "review_export",
+            "read_only": true,
+            "runtime_truth_write": "blocked",
+            "status": "ready",
+            "title": "Review / Export"
+          },
+          "runtime_spine": {
+            "backend_owned": true,
+            "cockpit_presentation_only": true,
+            "data": {
+              "authority_model": {
+                "cockpit": "presentation_only",
+                "operator_actions": "manual_only",
+                "single_evidence_authority": "backend",
+                "single_route_state_authority": "backend",
+                "single_runtime_state_authority": "backend"
+              },
+              "proof_status": "ready",
+              "route_count": 3,
+              "spine_version": "S106R1",
+              "stage_count": 12
+            },
+            "panel_id": "runtime_spine",
+            "read_only": true,
+            "runtime_truth_write": "blocked",
+            "status": "ready",
+            "title": "Runtime Spine"
+          }
+        },
+        "read_only": true,
+        "route_registration_performed": false,
+        "runtime_truth_write": "blocked",
+        "status": "readonly_cockpit_payload_ready",
+        "stop_gate": {
+          "forward_motion_allowed": true,
+          "ok": true,
+          "status": "s114_s120_stop_gate_passed"
+        }
+      }
+    },
+    "route_registration_performed": false,
+    "stage_version": "S136",
+    "status": "payload_registry_preview_ready"
+  },
+  "stability_probe": {
+    "live_fetch_required": false,
+    "locks": {
+      "automatic_updates_blocked": true,
+      "autonomous_execution_blocked": true,
+      "backend_owns_truth": true,
+      "cockpit_presentation_only": true,
+      "manual_promotion_mandatory": true,
+      "quarantine_mandatory": true,
+      "runtime_truth_mutation_blocked": true,
+      "runtime_truth_write_blocked": true
+    },
+    "ok": true,
+    "registry_keys": [
+      "governed_operations"
+    ],
+    "stable_registry_keys": true,
+    "stage_version": "S138",
+    "status": "payload_stability_probe_passed"
+  },
+  "stage_version": "S141",
+  "status": "s135_s141_payload_registry_integration_passed"
+}

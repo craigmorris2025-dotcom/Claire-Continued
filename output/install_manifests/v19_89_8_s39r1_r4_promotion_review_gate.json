@@ -1,0 +1,22 @@
+{
+  "files": [
+    "claire/api/governed_promotion_review_gate.py",
+    "tools/s39_build_promotion_review_gate.py",
+    "tools/s39_create_operator_decision_record.py",
+    "tools/s39_seal_manual_promotion_candidate.py",
+    "tools/s39_build_promotion_status_index.py",
+    "tests/test_s39r1_r4_promotion_review_gate.py"
+  ],
+  "forbidden_actions_preserved": [
+    "runtime truth mutation",
+    "automatic update",
+    "autonomous loop",
+    "browser execution",
+    "JavaScript execution",
+    "continuous live crawling",
+    "direct app.py patching"
+  ],
+  "installed_at": "2026-05-14T19:00:08.249907+00:00",
+  "installer": "install_claire_v19_89_8_s39r1_r4_promotion_review_gate.py",
+  "version": "v19.89.8-S39R4"
+}

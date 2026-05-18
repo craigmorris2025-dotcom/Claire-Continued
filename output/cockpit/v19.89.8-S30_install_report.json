@@ -1,0 +1,31 @@
+{
+  "version": "v19.89.8-S30",
+  "installed_at_utc": "2026-05-14T04:27:46.329864+00:00",
+  "status": "installed",
+  "safety_note": "S30 intentionally did not patch claire/app.py.",
+  "files_written": [
+    "claire\\api\\governed_multi_workspace_orchestration.py",
+    "frontend\\cockpit\\assets\\js\\governed_multi_workspace_orchestration.js",
+    "frontend\\cockpit\\assets\\css\\governed_multi_workspace_orchestration.css",
+    "tests\\test_governed_multi_workspace_orchestration_s30.py",
+    "docs\\build_notes\\v19.89.8-S30_governed_multi_workspace_orchestration.md",
+    "output\\cockpit\\v19.89.8-S30_install_report.json"
+  ],
+  "link_report": [
+    "linked S30 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S30 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_governed_multi_workspace_orchestration_s30.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "operator_mutation_enabled": false,
+    "runtime_mutation_enabled": false,
+    "workspace_mutation_enabled": false,
+    "multi_workspace_mutation_enabled": false,
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

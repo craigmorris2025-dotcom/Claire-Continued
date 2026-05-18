@@ -1,0 +1,23 @@
+{
+  "version": "v18.27.1",
+  "name": "Read-Only Probe Executor Null Transport Repair",
+  "repairs": "v18.27 broken installer path string",
+  "files": [
+    "SEARCH_BAR_READ_ONLY_PROBE_EXECUTOR_NULL_TRANSPORT_REPAIR_REVIEW.bat",
+    "claire/governance/governed_web/read_only_probe_executor_null_transport.py",
+    "tests/test_v18_27_1_read_only_probe_executor_null_transport_repair.py"
+  ],
+  "invariants": {
+    "null_transport_active": true,
+    "real_transport_active": false,
+    "socket_creation_forbidden": true,
+    "http_client_forbidden": true,
+    "probe_attempted": false,
+    "execution_performed": false,
+    "network_call_performed": false,
+    "external_request_performed": false,
+    "response_body_fetched": false,
+    "runtime_truth_mutated": false,
+    "fail_closed": true
+  }
+}

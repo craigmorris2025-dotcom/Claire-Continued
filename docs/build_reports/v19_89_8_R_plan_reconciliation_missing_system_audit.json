@@ -1,0 +1,28 @@
+{
+  "version": "v19.89.8-R",
+  "build": "Plan Reconciliation + Missing-System Audit",
+  "installed_at": "2026-05-13T22:04:54.708715+00:00",
+  "intent": "Reconcile actual project state against locked v19.84.3 to v20 build plan before continuing feature expansion.",
+  "new_endpoints": [
+    "/system/plan-reconciliation",
+    "/system/plan-reconciliation/summary",
+    "/system/plan-reconciliation/missing",
+    "/system/plan-reconciliation/partial",
+    "/system/plan-reconciliation/registration-proof"
+  ],
+  "files": {
+    "audit_report": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\docs\\audits\\v19_89_8_R_plan_reconciliation_missing_system_audit.json",
+    "backend_route_module": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\plan_reconciliation_routes.py",
+    "app_file_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "version_json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version.json"
+  },
+  "preserved": [
+    "launcher stability",
+    "backend owns truth",
+    "cockpit presentation only",
+    "fail-closed governance",
+    "convergence over expansion",
+    "no autonomous loop activation",
+    "no dashboard redesign"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "version": "v19.74",
+  "build_name": "Visible Cockpit Runtime Gate Mount",
+  "created_at": "2026-05-11T11:30:13.771409Z",
+  "non_destructive": true,
+  "launcher_rewired": false,
+  "legacy_deleted": false,
+  "backend_rewritten": false,
+  "required": {
+    "cockpit_shell": true,
+    "cockpit_bootstrap": true,
+    "cockpit_shell_css": true,
+    "runtime_payload_gate": true,
+    "api_client": true,
+    "payload_adapter": true
+  },
+  "blockers": [],
+  "changed": {
+    "shell_html": true,
+    "bootstrap": true,
+    "shell_css": true
+  },
+  "next_gate": "Open cockpit shell directly and verify Runtime Payload Gate displays waiting/blocked/unblocked truthfully."
+}

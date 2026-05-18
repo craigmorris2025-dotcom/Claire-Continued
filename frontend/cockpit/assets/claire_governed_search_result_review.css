@@ -1,0 +1,75 @@
+.claire-s709-panel {
+  margin: 18px 0;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.72);
+  color: #e5e7eb;
+}
+.claire-s709-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+.claire-s709-header h2 {
+  margin: 2px 0 4px;
+  font-size: 1.15rem;
+}
+.claire-s709-header p {
+  margin: 0;
+  color: #94a3b8;
+}
+.claire-s709-eyebrow {
+  color: #38bdf8;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.claire-s709-chip,
+.claire-s709-kind,
+.claire-s709-state {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 0.72rem;
+  color: #cbd5e1;
+  background: rgba(2, 6, 23, 0.35);
+}
+.claire-s709-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+.claire-s709-card,
+.claire-s709-action {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(2, 6, 23, 0.35);
+}
+.claire-s709-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+.claire-s709-title {
+  font-weight: 650;
+  margin-bottom: 5px;
+}
+.claire-s709-subtitle,
+.claire-s709-summary {
+  color: #94a3b8;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+.claire-s709-actions {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+}

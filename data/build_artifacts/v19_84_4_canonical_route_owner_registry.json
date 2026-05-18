@@ -1,0 +1,18 @@
+{
+  "version": "v19.84.4",
+  "build": "Canonical Route Owner Registry",
+  "installed_at": "2026-05-12T14:54:42.673287+00:00",
+  "purpose": "Declare canonical route ownership before enforcement or route demotion.",
+  "runtime_mutation": "none",
+  "files_written": [
+    "tools/canonical_route_owner_registry.py",
+    "tests/test_v19_84_4_canonical_route_owner_registry.py",
+    "docs/builds/v19_84_4_canonical_route_owner_registry.md",
+    "data/build_artifacts/v19_84_4_canonical_route_owner_registry.json"
+  ],
+  "commands": [
+    "python tools/canonical_route_owner_registry.py",
+    "pytest tests/test_v19_84_4_canonical_route_owner_registry.py -q"
+  ],
+  "next_build": "v19.84.5 Duplicate Route Fail Test"
+}

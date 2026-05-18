@@ -1,0 +1,30 @@
+{
+  "installer": "install_claire_v19_89_8_s31r6_handoff_marker_active_file_repair.py",
+  "started_at": "2026-05-16T18:52:01.188512Z",
+  "ok": false,
+  "target_test": "tests\\test_s31r6_dashboard_payload_bridge_reconciliation.py",
+  "handoff_marker": "Claire v19.89.8-S31R6 governed dashboard payload bridge handoff",
+  "pytest_inside_installer": true,
+  "discovered_targets": [
+    "claire\\api\\dashboard_payload_bridge.py"
+  ],
+  "patched": [
+    {
+      "path": "claire\\api\\dashboard_payload_bridge.py",
+      "backup": "backups\\v19_89_8_s31r6_handoff_marker_active_file_repair\\dashboard_payload_bridge.py.20260516_185201.bak",
+      "before_count": 1,
+      "after_count": 1,
+      "post_write_count": 1,
+      "compiled": true
+    }
+  ],
+  "pycache_removed": [
+    "claire\\api\\__pycache__\\dashboard_payload_bridge.cpython-311.pyc"
+  ],
+  "canonical_marker_count": 1,
+  "targeted_pytest_returncode": 1,
+  "targeted_pytest_stdout": ".F..                                                                     [100%]\n================================== FAILURES ===================================\n__________________ test_s31r6_bridge_contains_single_handoff __________________\ntests\\test_s31r6_dashboard_payload_bridge_reconciliation.py:19: in test_s31r6_bridge_contains_single_handoff\n    assert text.count(\"compose_governed_payload(payload)\") == 1\nE   assert 0 == 1\nE    +  where 0 = <built-in method count of str object at 0x000001C83C9521A0>('compose_governed_payload(payload)')\nE    +    where <built-in method count of str object at 0x000001C83C9521A0> = '\"\"\"\\nClaire dashboard payload bridge.\\n\\nAuthoritative full replacement.\\n\\nThis bridge is intentionally non-recursiv...load_bridge_routes\",\\n    \"register_canonical_dashboard_payload_routes\",\\n    \"install_dashboard_payload_routes\",\\n]\\n'.count\n=========================== short test summary info ===========================\nFAILED tests/test_s31r6_dashboard_payload_bridge_reconciliation.py::test_s31r6_bridge_contains_single_handoff\n",
+  "targeted_pytest_stderr": "",
+  "error": "RuntimeError('Targeted S31R6 pytest still failed')",
+  "finished_at": "2026-05-16T18:52:02.468764Z"
+}

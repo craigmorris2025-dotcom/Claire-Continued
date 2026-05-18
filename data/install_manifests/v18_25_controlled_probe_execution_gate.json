@@ -1,0 +1,27 @@
+{
+  "version": "v18.25",
+  "name": "Controlled Probe Execution Gate",
+  "files": [
+    "SEARCH_BAR_CONTROLLED_PROBE_EXECUTION_GATE_REVIEW.bat",
+    "claire/governance/governed_web/probe_execution_gate.py",
+    "tests/test_v18_25_controlled_probe_execution_gate.py"
+  ],
+  "accelerated_safely": true,
+  "invariants": {
+    "gate_locked": true,
+    "execution_gate_passed": false,
+    "execution_permitted": false,
+    "probe_executor_enabled": false,
+    "no_http_client_invoked": true,
+    "planned_url_not_fetched": true,
+    "probe_attempted": false,
+    "execution_performed": false,
+    "network_call_performed": false,
+    "external_request_performed": false,
+    "runtime_truth_mutated": false,
+    "automatic_update_performed": false,
+    "response_body_fetched": false,
+    "review_gated": true,
+    "fail_closed": true
+  }
+}

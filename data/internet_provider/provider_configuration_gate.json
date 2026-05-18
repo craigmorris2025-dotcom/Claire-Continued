@@ -1,0 +1,145 @@
+{
+  "allowlist_template_path": "data/internet_provider/source_allowlist_template.json",
+  "contract_name": "Internet Provider Configuration Gate",
+  "env_example_path": "data/internet_provider/.env.internet.example",
+  "environment": {
+    "configured_keys": {
+      "BING_SEARCH_API_KEY": {
+        "present": false,
+        "redacted": ""
+      },
+      "BRAVE_SEARCH_API_KEY": {
+        "present": false,
+        "redacted": ""
+      },
+      "SERPAPI_API_KEY": {
+        "present": false,
+        "redacted": ""
+      },
+      "TAVILY_API_KEY": {
+        "present": false,
+        "redacted": ""
+      }
+    },
+    "provider_known": true,
+    "provider_label": "No Provider Configured",
+    "provider_note": "Runtime/system search remains available. Live web remains disabled.",
+    "required_key_name": "",
+    "required_key_present": false,
+    "selected_provider": "none"
+  },
+  "generated_at": "2026-05-13T11:20:32.970039Z",
+  "governance": {
+    "agent_execution_disabled": true,
+    "allowlist_or_quarantine_required": true,
+    "automatic_updates_disabled": true,
+    "evidence_capture_required": true,
+    "governed_research_execution_enabled": false,
+    "live_search_enabled": false,
+    "no_automatic_update_execution": true,
+    "no_autonomous_agent_execution": true,
+    "no_fake_web_results": true,
+    "no_hidden_background_browsing": true,
+    "normal_web_search_execution_enabled": false,
+    "operator_visible_results_required": true,
+    "provider_configuration_gate_only": true,
+    "rate_limits_required": true,
+    "single_query_probe_enabled": false,
+    "source_trust_required": true
+  },
+  "limits": {
+    "max_bytes_per_result": 250000,
+    "max_queries_per_minute": 6,
+    "max_queries_per_session": 30,
+    "max_results_per_query": 8,
+    "request_timeout_seconds": 12,
+    "require_operator_visible_results": true
+  },
+  "next": [
+    "Set CLAIRE_SEARCH_PROVIDER and matching API key locally if desired",
+    "Rerun this provider gate",
+    "v17.84 Governed Single-Query Live Search Probe only after provider is configured"
+  ],
+  "prior_readiness": {
+    "internet_readiness": {
+      "readiness": {
+        "automatic_updates_enabled": false,
+        "live_internet_enabled": false,
+        "requires_v17_71_to_v17_74_update_pack_governance": true,
+        "safe_for_automatic_updates": false,
+        "safe_to_attempt_live_probe_after_operator_review": false,
+        "static_internet_readiness": true
+      },
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+        "status": "loaded"
+      },
+      "status": "warning"
+    },
+    "launch_candidate_freeze": {
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/launch_candidate/v17_80_launch_candidate_freeze.json",
+        "status": "loaded"
+      },
+      "status": "STOP"
+    },
+    "search_command_capabilities": {
+      "live_web_conditions": {
+        "allowlist_or_quarantine_required": true,
+        "current_automatic_updates_enabled": false,
+        "current_live_web_enabled": false,
+        "evidence_capture_required": true,
+        "operator_visible_results_required": true,
+        "provider_key_required": true,
+        "rate_limits_required": true,
+        "source_trust_required": true
+      },
+      "modes": {
+        "agent_command_mode": {
+          "enabled": false,
+          "label": "AI Agent Command Mode",
+          "prepared": true,
+          "reason": "Command parsing is prepared. Autonomous execution remains disabled until later governed agent runtime builds."
+        },
+        "governed_research_search": {
+          "enabled": false,
+          "label": "Governed Research Search",
+          "prepared": true,
+          "reason": "Requires source trust, allowlist/quarantine, evidence capture, rate limits, and operator-visible results."
+        },
+        "normal_web_search": {
+          "enabled": false,
+          "label": "Normal Web Search",
+          "prepared": true,
+          "reason": "Prepared as a normal search-engine mode, but live search remains gated until governed provider and internet readiness are verified."
+        },
+        "runtime_system_search": {
+          "enabled": true,
+          "label": "Claire Runtime/System Search",
+          "prepared": true,
+          "reason": "Searches local runtime truth, proof, route, AutoDesign, Design Portal, validation, internet readiness, and update governance outputs."
+        }
+      },
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/operator/search_command/search_command_capabilities.json",
+        "status": "loaded"
+      },
+      "status": "missing"
+    }
+  },
+  "provider_template_path": "data/internet_provider/provider_config_template.json",
+  "quarantine_policy_path": "data/internet_provider/quarantine_policy.json",
+  "status": "PROVIDER_NOT_CONFIGURED_RUNTIME_SEARCH_ONLY",
+  "stop_go": {
+    "blockers": [],
+    "governed_probe_allowed_now": false,
+    "live_search_enabled_now": false,
+    "normal_web_search_execution_enabled": false,
+    "recommendation": "Runtime/system search remains available. Configure a provider later for normal web search.",
+    "status": "PROVIDER_NOT_CONFIGURED_RUNTIME_SEARCH_ONLY",
+    "warnings": [
+      "no_search_provider_selected"
+    ]
+  },
+  "version": "v17.83"
+}

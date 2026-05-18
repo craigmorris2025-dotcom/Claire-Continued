@@ -1,0 +1,63 @@
+{
+  "checks": [
+    {
+      "message": "LAUNCH_CLAIRE.bat exists.",
+      "name": "primary_launcher_exists",
+      "next_action": "Restore root launcher.",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "message": "Launcher target exists.",
+      "name": "launcher_dashboard_target_exists",
+      "next_action": "v17.64 must bind launcher to one cockpit.",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "message": "Likely code root: root_claire.",
+      "name": "active_code_root_detected",
+      "next_action": "Resolve root claire vs src/claire before cleanup.",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "message": "Route/API evidence found.",
+      "name": "route_layer_detected",
+      "next_action": "Find active app and route files.",
+      "passed": true,
+      "severity": "high"
+    },
+    {
+      "message": "Runtime truth files: 334.",
+      "name": "runtime_truth_detected",
+      "next_action": "v17.65 repairs runtime truth contract if weak.",
+      "passed": true,
+      "severity": "medium"
+    },
+    {
+      "message": "AutoDesign/Design Portal markers: 22/22.",
+      "name": "autodesign_route_evidence",
+      "next_action": "v17.66-v17.68 must prove invention route.",
+      "passed": true,
+      "severity": "high"
+    },
+    {
+      "message": "Internet markers: 11/11.",
+      "name": "internet_layer_evidence",
+      "next_action": "v17.70 must verify safe internet readiness.",
+      "passed": true,
+      "severity": "medium"
+    },
+    {
+      "message": "Dashboard assets mapped: 147.",
+      "name": "dashboard_conflict_mapped",
+      "next_action": "v17.64 decongests to one cockpit.",
+      "passed": true,
+      "severity": "medium"
+    }
+  ],
+  "generated_at": "2026-05-09T18:26:08.466989Z",
+  "recommendation": "GO_TO_V17_64",
+  "version": "v17.63"
+}

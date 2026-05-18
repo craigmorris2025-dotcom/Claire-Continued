@@ -1,0 +1,21 @@
+{
+  "version": "v19.89.8-S268-S274",
+  "installed_at": "2026-05-15T16:43:46.100066+00:00",
+  "stage_pack": "S268-S274",
+  "purpose": "Safe local workflow storage adapter and dashboard queue count surfaces.",
+  "files": [
+    "claire/api/operator_workflow_storage_adapter.py",
+    "claire/api/operator_workflow_dashboard_counts.py",
+    "claire/api/operator_workflow_storage_readiness.py",
+    "tests/test_s268_s274_storage_adapter.py",
+    "tests/test_s268_s274_dashboard_counts_and_readiness.py",
+    "data/operator_workflows/review_queue.json",
+    "data/operator_workflows/bounded_web_jobs.json",
+    "data/operator_workflows/exports.json",
+    "data/operator_workflows/audit_trail.json"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s268_s274_storage_adapter.py tests/test_s268_s274_dashboard_counts_and_readiness.py -q",
+    "pytest"
+  ]
+}

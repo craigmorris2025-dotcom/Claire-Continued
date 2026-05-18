@@ -1,0 +1,23 @@
+/*
+ * Claire S50 consolidated cockpit.
+ * Presentation-only, backend-owned truth, no runtime mutation authority.
+ */
+
+.claire-consolidated-cockpit {
+  display: grid;
+  gap: 18px;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.claire-cockpit-header,
+.claire-cockpit-section {
+  border: 1px solid currentColor;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.claire-cockpit-section {
+  min-height: 140px;
+}

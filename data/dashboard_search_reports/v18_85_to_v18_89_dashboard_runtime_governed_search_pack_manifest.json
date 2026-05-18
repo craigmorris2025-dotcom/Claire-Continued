@@ -1,0 +1,25 @@
+{
+  "archive_before_modify": true,
+  "dashboards_patched_if_present": [
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "delete_policy": "delete_nothing",
+  "files_written": [
+    "claire\\dashboard_live_search_binding.py",
+    "tests\\test_v18_85_to_v18_89_dashboard_runtime_governed_search_pack.py",
+    "data\\dashboard_search_reports\\v18_85_to_v18_89_dashboard_runtime_governed_search_pack_report.json",
+    "data\\dashboard_search_reports\\v18_85_to_v18_89_dashboard_runtime_governed_search_pack_manifest.json"
+  ],
+  "google_result_expected": {
+    "title": "Google",
+    "url": "https://www.google.com"
+  },
+  "installed_at": "2026-05-10T14:49:16.602480Z",
+  "installer": "install_claire_v18_85_to_v18_89_dashboard_runtime_governed_search_pack_REPAIRED.py",
+  "normal_search_endpoint": "/api/dashboard/search/live",
+  "pack_name": "Dashboard Runtime Governed Search Pack",
+  "pack_version": "v18.85-v18.89",
+  "provider_probe_endpoint": "/api/dashboard/search/provider/probe",
+  "provider_probe_requires_explicit_enable": true,
+  "pytest_command": "python -m pytest tests/test_v18_85_to_v18_89_dashboard_runtime_governed_search_pack.py -q"
+}

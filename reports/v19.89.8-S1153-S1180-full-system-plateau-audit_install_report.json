@@ -1,0 +1,36 @@
+{
+  "version": "v19.89.8-S1153-S1180-full-system-plateau-audit",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "written": [
+    "claire/audit/__init__.py",
+    "claire/audit/system_plateau_audit.py",
+    "tests/test_s1153_s1180_system_plateau_audit.py"
+  ],
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-S1153-S1180-full-system-plateau-audit",
+  "audit_summary": {
+    "audit_version": "v19.89.8-S1153-S1180-system-plateau-audit",
+    "generated_at": "2026-05-17T21:04:45.887820+00:00",
+    "blocker_count": 2,
+    "warning_count": 1,
+    "plateau_status": "blocked",
+    "forward_motion_allowed": false,
+    "next_step": "Repair blockers before forward builds."
+  },
+  "audit_reports": {
+    "json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\S1153_S1180_SYSTEM_PLATEAU_AUDIT_20260517_210509.json",
+    "markdown": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\S1153_S1180_SYSTEM_PLATEAU_AUDIT_20260517_210509.md"
+  },
+  "blocked_authority_preserved": [
+    "live_web_execution",
+    "search_provider_execution",
+    "browser_execution",
+    "network_requests",
+    "body_reads",
+    "autonomous_crawling",
+    "automatic_updates",
+    "runtime_mutation",
+    "runtime_truth_mutation",
+    "package_download_install",
+    "command_execution"
+  ]
+}

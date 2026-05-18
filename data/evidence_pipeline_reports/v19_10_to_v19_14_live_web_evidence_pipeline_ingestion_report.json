@@ -1,0 +1,93 @@
+{
+  "errors": [],
+  "ingestion": {
+    "dashboard_surfaces": [
+      "governed_live_web_search",
+      "runtime_truth",
+      "trend_thesis",
+      "main_result",
+      "system_health"
+    ],
+    "evidence_count": 1,
+    "ingested_evidence": [
+      {
+        "allowlisted": true,
+        "final_output": false,
+        "promoted_to_pipeline": true,
+        "provider": "google",
+        "rate_limit_checked": true,
+        "source_trust_checked": true,
+        "source_type": "governed_live_web_search",
+        "title": "Google",
+        "url": "https://www.google.com"
+      }
+    ],
+    "next_best_action": "continue_pipeline_route_selection",
+    "pack_version": "v19.10-v19.14",
+    "query": "google",
+    "status": "pipeline_ingestion_complete",
+    "target_stages": [
+      "signal_ingestion",
+      "source_validation_weighting",
+      "context_expansion",
+      "entity_extraction",
+      "relationship_mapping",
+      "trend_discovery"
+    ],
+    "terminal_candidate": "trend_discovery_ready",
+    "updated_at": "2026-05-10T18:04:50.198205Z",
+    "web_search_is_final_output": false
+  },
+  "pack_name": "Live Web Search to Governed Evidence to Pipeline Ingestion Pack",
+  "pack_version": "v19.10-v19.14",
+  "packet": {
+    "evidence": [
+      {
+        "allowlisted": true,
+        "final_output": false,
+        "promoted_to_pipeline": true,
+        "provider": "google",
+        "rate_limit_checked": true,
+        "source_trust_checked": true,
+        "source_type": "governed_live_web_search",
+        "title": "Google",
+        "url": "https://www.google.com"
+      }
+    ],
+    "evidence_states": [
+      "raw_search_result",
+      "source_trust_checked",
+      "allowlist_checked",
+      "rate_limit_checked",
+      "evidence_normalized",
+      "evidence_promoted",
+      "pipeline_ingested"
+    ],
+    "live_search_endpoint": "/api/dashboard/search/live",
+    "pack_version": "v19.10-v19.14",
+    "pipeline_ingestion_targets": [
+      "signal_ingestion",
+      "source_validation_weighting",
+      "context_expansion",
+      "entity_extraction",
+      "relationship_mapping",
+      "trend_discovery"
+    ],
+    "query": "google",
+    "smoke_endpoint": "/api/dashboard/search/smoke/google",
+    "status": "evidence_packet_ready",
+    "updated_at": "2026-05-10T18:04:50.197205Z",
+    "web_search_is_final_output": false,
+    "web_search_role": "input_evidence_capability"
+  },
+  "proofs": {
+    "evidence_promoted_to_pipeline": true,
+    "google_evidence_present": true,
+    "governance_checks_present": true,
+    "live_search_endpoint_locked": true,
+    "pipeline_ingestion_complete": true,
+    "web_search_not_final_output": true
+  },
+  "status": "pass",
+  "updated_at": "2026-05-10T18:04:50.198205Z"
+}

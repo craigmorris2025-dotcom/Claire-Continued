@@ -1,0 +1,306 @@
+{
+  "browser_urls": [
+    {
+      "expected": "Swagger UI opens and shows Claire API routes.",
+      "id": "swagger_docs",
+      "proof_type": "browser",
+      "required": true,
+      "url": "http://127.0.0.1:8000/docs"
+    },
+    {
+      "expected": "JSON response includes contract_version, mission, route_gate, surfaces, proof, updates.",
+      "id": "operator_dashboard_state",
+      "proof_type": "browser_json",
+      "required": true,
+      "url": "http://127.0.0.1:8000/operator/dashboard/state"
+    },
+    {
+      "expected": "JSON response shows permanent search bar, normal web search prepared, runtime search enabled, agent command prepared.",
+      "id": "search_capabilities",
+      "proof_type": "browser_json",
+      "required": true,
+      "url": "http://127.0.0.1:8000/operator/search/capabilities"
+    },
+    {
+      "expected": "Runtime truth endpoint responds with canonical truth data or visible missing state.",
+      "id": "runtime_truth",
+      "proof_type": "browser_json",
+      "required": true,
+      "url": "http://127.0.0.1:8000/runtime/truth"
+    },
+    {
+      "expected": "Route audit confirms discovery/breakthrough/innovation and AutoDesign/Design Portal route rules.",
+      "id": "route_audit",
+      "proof_type": "browser_json",
+      "required": true,
+      "url": "http://127.0.0.1:8000/routes/audit"
+    },
+    {
+      "expected": "AutoDesign handoff contract responds and does not fake missing design data.",
+      "id": "autodesign_handoff",
+      "proof_type": "browser_json",
+      "required": true,
+      "url": "http://127.0.0.1:8000/autodesign/handoff"
+    },
+    {
+      "expected": "Design Portal output contract responds with design sections or visible missing state.",
+      "id": "design_portal_output",
+      "proof_type": "browser_json",
+      "required": true,
+      "url": "http://127.0.0.1:8000/design-portal/output"
+    },
+    {
+      "expected": "Internet readiness responds; live uncontrolled web remains disabled.",
+      "id": "internet_readiness",
+      "proof_type": "browser_json",
+      "required": true,
+      "url": "http://127.0.0.1:8000/internet/readiness"
+    },
+    {
+      "expected": "Update governance lock responds; automatic/background execution remains disabled.",
+      "id": "update_regression_lock",
+      "proof_type": "browser_json",
+      "required": true,
+      "url": "http://127.0.0.1:8000/updates/regression-lock"
+    },
+    {
+      "expected": "Platform smoke proof responds with domain status and Stop/Go.",
+      "id": "platform_smoke",
+      "proof_type": "browser_json",
+      "required": true,
+      "url": "http://127.0.0.1:8000/proof/platform-smoke"
+    },
+    {
+      "expected": "Desktop startup reliability report responds.",
+      "id": "desktop_startup",
+      "proof_type": "browser_json",
+      "required": true,
+      "url": "http://127.0.0.1:8000/desktop/startup"
+    }
+  ],
+  "contract_name": "Manual Browser + Swagger Proof Binder",
+  "dashboard_proof_steps": [
+    "Run START_CLAIRE_SAFE.bat.",
+    "Confirm Swagger opens at http://127.0.0.1:8000/docs.",
+    "Confirm the dashboard opens from frontend/command_center/modern/index.html.",
+    "Wait for backend startup, then press dashboard Refresh/Search if Backend Offline appears.",
+    "Confirm dashboard top status says Backend Online.",
+    "Confirm the permanent search bar remains visible.",
+    "Switch through workspaces: Mission, Routes, Discovery, AutoDesign, Design Portal, Portfolio, Acquisition, Internet, Updates, Proof, Diagnostics.",
+    "Run Runtime search in the command/search bar with query: runtime truth.",
+    "Run Command mode with query: open autodesign.",
+    "Run Web mode with query: test web search gate. Confirm it returns prepared_not_executed, not fake web results."
+  ],
+  "evidence_template_path": "data/proof/manual_browser_swagger_evidence_template.json",
+  "generated_at": "2026-05-13T11:19:00.838871Z",
+  "governance": {
+    "automatic_updates_disabled": true,
+    "autonomous_agent_execution_disabled": true,
+    "background_execution_disabled": true,
+    "live_internet_disabled": true,
+    "manual_browser_proof_required": true,
+    "manual_dashboard_walkthrough_required": true,
+    "manual_swagger_proof_required": true,
+    "no_fake_manual_proof": true,
+    "normal_web_search_prepared_but_not_live": true,
+    "screenshots_recommended": true
+  },
+  "manual_checklist_path": "data/proof/manual_browser_swagger_checklist.md",
+  "next": [
+    "Run START_CLAIRE_SAFE.bat",
+    "Run OPEN_CLAIRE_PROOF_URLS.bat",
+    "Complete Swagger Try it out tests",
+    "Fill data/proof/manual_browser_swagger_evidence_template.json or upload screenshots",
+    "v17.80 Launch Candidate Freeze after manual proof is acceptable"
+  ],
+  "prior_reports": {
+    "v17_75_e2e_proof": {
+      "recommendation": "Proceed only to manual review. Do not enable automatic updates.",
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/full_end_to_end_proof_pack.json",
+        "status": "loaded"
+      },
+      "status": "GO_WITH_WARNINGS",
+      "stop_go": {
+        "blocked_domains": [],
+        "recommendation": "Proceed only to manual review. Do not enable automatic updates.",
+        "status": "GO_WITH_WARNINGS",
+        "warnings": [
+          {
+            "domain": "buildability_validation",
+            "warnings": [
+              "invention_route_requires_higher_feasibility_threshold",
+              "package_not_ready_for_final_package"
+            ]
+          },
+          {
+            "domain": "internet_readiness",
+            "warnings": [
+              "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+            ]
+          }
+        ]
+      }
+    },
+    "v17_76_platform_smoke": {
+      "recommendation": "Do not proceed to launch hardening until blocked endpoint, output, or safety domains are fixed.",
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/platform_endpoint_smoke_proof.json",
+        "status": "loaded"
+      },
+      "status": "STOP",
+      "stop_go": {
+        "blocked_domains": [
+          "dashboard",
+          "search",
+          "runtime_truth",
+          "routes",
+          "autodesign",
+          "design_portal",
+          "validation",
+          "internet",
+          "updates",
+          "proof"
+        ],
+        "blockers": [
+          "domain_blocked:autodesign",
+          "domain_blocked:dashboard",
+          "domain_blocked:design_portal",
+          "domain_blocked:internet",
+          "domain_blocked:proof",
+          "domain_blocked:routes",
+          "domain_blocked:runtime_truth",
+          "domain_blocked:search",
+          "domain_blocked:updates",
+          "domain_blocked:validation"
+        ],
+        "missing_files": [],
+        "recommendation": "Do not proceed to launch hardening until blocked endpoint, output, or safety domains are fixed.",
+        "status": "STOP"
+      }
+    },
+    "v17_77_launch_hardening": {
+      "recommendation": "Fix launch blockers before using Claire as a platform launch candidate.",
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/launch_hardening/platform_launch_hardening_report.json",
+        "status": "loaded"
+      },
+      "status": "STOP",
+      "stop_go": {
+        "blockers": [
+          "launcher_check_failed"
+        ],
+        "recommendation": "Fix launch blockers before using Claire as a platform launch candidate.",
+        "status": "STOP",
+        "warnings": [
+          "launcher_contains_legacy_pattern:python main.py",
+          "some_expected_endpoints_not_registered:/runtime/truth,/routes/audit,/autodesign/handoff,/design-portal/output,/validation/buildability,/internet/readiness,/updates/regression-lock,/proof/e2e,/proof/platform-smoke",
+          "v17_76_platform_smoke_report_is_STOP_review_before_launch"
+        ]
+      }
+    },
+    "v17_78_desktop_startup": {
+      "recommendation": "Fix desktop startup blockers before packaging or launch-candidate freeze.",
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/desktop_packaging/startup_reliability_report.json",
+        "status": "loaded"
+      },
+      "status": "STOP",
+      "stop_go": {
+        "blockers": [
+          "missing_startup_file:safe_launcher",
+          "missing_startup_file:startup_verifier",
+          "package_group_missing:launch:safe_launcher,startup_verifier",
+          "primary_launcher_does_not_start_uvicorn_claire_app",
+          "safe_launcher_does_not_start_uvicorn_claire_app"
+        ],
+        "recommendation": "Fix desktop startup blockers before packaging or launch-candidate freeze.",
+        "status": "STOP",
+        "warnings": [
+          "prior_launch_hardening_stop_go_is_STOP",
+          "prior_platform_smoke_is_STOP"
+        ]
+      }
+    }
+  },
+  "status": "READY_FOR_MANUAL_BROWSER_SWAGGER_PROOF",
+  "stop_go": {
+    "blockers": [],
+    "manual_required_slots_not_checked": [
+      "swagger_docs",
+      "operator_dashboard_state",
+      "search_capabilities",
+      "runtime_truth",
+      "route_audit",
+      "autodesign_handoff",
+      "design_portal_output",
+      "internet_readiness",
+      "update_regression_lock",
+      "platform_smoke",
+      "desktop_startup",
+      "search_runtime_query",
+      "command_parse_autodesign",
+      "proof_platform_rebuild",
+      "desktop_startup_rebuild",
+      "dashboard_step_01",
+      "dashboard_step_02",
+      "dashboard_step_03",
+      "dashboard_step_04",
+      "dashboard_step_05",
+      "dashboard_step_06",
+      "dashboard_step_07",
+      "dashboard_step_08",
+      "dashboard_step_09",
+      "dashboard_step_10"
+    ],
+    "recommendation": "Open the URLs, complete the dashboard walkthrough, and run Swagger Try it out tests. Automatic web/update/agent execution remains disabled.",
+    "status": "READY_FOR_MANUAL_BROWSER_SWAGGER_PROOF",
+    "warnings": [
+      "manual_evidence_not_yet_completed:25_required_slots",
+      "prior_report_stop:v17_76_platform_smoke",
+      "prior_report_stop:v17_77_launch_hardening",
+      "prior_report_stop:v17_78_desktop_startup"
+    ]
+  },
+  "swagger_post_tests": [
+    {
+      "body": {
+        "limit": 5,
+        "mode": "runtime",
+        "query": "runtime truth"
+      },
+      "expected": "Returns completed runtime/system search response with result list shape.",
+      "id": "search_runtime_query",
+      "method": "POST",
+      "path": "/operator/search/query",
+      "required": true
+    },
+    {
+      "body": {
+        "query": "open autodesign"
+      },
+      "expected": "Returns command parse result; execution_enabled remains false.",
+      "id": "command_parse_autodesign",
+      "method": "POST",
+      "path": "/operator/command/parse",
+      "required": true
+    },
+    {
+      "body": {},
+      "expected": "Rebuilds platform smoke proof and returns domain status.",
+      "id": "proof_platform_rebuild",
+      "method": "POST",
+      "path": "/proof/platform-smoke/rebuild",
+      "required": true
+    },
+    {
+      "body": {},
+      "expected": "Rebuilds desktop startup report and returns Stop/Go status.",
+      "id": "desktop_startup_rebuild",
+      "method": "POST",
+      "path": "/desktop/startup/rebuild",
+      "required": true
+    }
+  ],
+  "version": "v17.79"
+}

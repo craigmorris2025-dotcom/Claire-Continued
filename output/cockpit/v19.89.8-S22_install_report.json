@@ -1,0 +1,27 @@
+{
+  "version": "v19.89.8-S22",
+  "installed_at_utc": "2026-05-14T03:14:30.538548+00:00",
+  "status": "installed",
+  "safety_note": "S22 intentionally did not patch claire/app.py.",
+  "files_written": [
+    "claire\\api\\governed_evidence_basket.py",
+    "frontend\\cockpit\\assets\\js\\governed_evidence_basket.js",
+    "frontend\\cockpit\\assets\\css\\governed_evidence_basket.css",
+    "tests\\test_governed_evidence_basket_s22.py",
+    "docs\\build_notes\\v19.89.8-S22_evidence_basket_visualization.md",
+    "output\\cockpit\\v19.89.8-S22_install_report.json"
+  ],
+  "link_report": [
+    "linked S22 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S22 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_governed_evidence_basket_s22.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false,
+    "evidence_promotion": "manual_review_required"
+  }
+}

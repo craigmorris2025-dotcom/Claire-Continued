@@ -1,0 +1,19 @@
+{
+  "version": "v18.71",
+  "name": "Active App Final Web Activation Mount Verification",
+  "scope": [
+    "verify final combined web activation route mount into an app",
+    "verify /api/dashboard/search/live route is present",
+    "verify /api/dashboard/search/smoke/google returns Google / https://www.google.com",
+    "verify /api/dashboard/search/provider/status route is present and responds",
+    "verify /api/dashboard/search/provider/probe route remains blocked without explicit operator enable",
+    "produce operator final web activation report",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_71_active_app_final_web_activation_mount_verification.py -q"
+  ]
+}

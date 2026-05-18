@@ -1,0 +1,209 @@
+{
+  "surface": "canonical_cockpit_fetch_map",
+  "version": "v19.89.8-A3",
+  "build": "Canonical Cockpit Fetch Map Lock",
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "frontend_truth_allowed": false,
+  "convergence_over_expansion": true,
+  "created_at": "2026-05-13T22:32:07.701200+00:00",
+  "updated_at": "2026-05-13T22:32:07.701200+00:00",
+  "canonical_fetch_map": {
+    "dashboard_payload": {
+      "canonical_route": "/dashboard/payload",
+      "owner": "canonical_dashboard_payload_bridge",
+      "surface": "main cockpit truth payload",
+      "compatibility_routes": [],
+      "required": true
+    },
+    "dashboard_payload_status": {
+      "canonical_route": "/dashboard/payload/status",
+      "owner": "canonical_dashboard_payload_bridge",
+      "surface": "cockpit backend connection status",
+      "compatibility_routes": [],
+      "required": true
+    },
+    "runtime_execution_summary": {
+      "canonical_route": "/system/runtime-execution/summary",
+      "owner": "runtime_execution_contract",
+      "surface": "runtime execution truth",
+      "compatibility_routes": [],
+      "required": true
+    },
+    "runtime_state_summary": {
+      "canonical_route": "/system/runtime-state/summary",
+      "owner": "runtime_state_emitter",
+      "surface": "runtime state truth",
+      "compatibility_routes": [],
+      "required": true
+    },
+    "runtime_propagation_summary": {
+      "canonical_route": "/system/runtime-propagation/summary",
+      "owner": "runtime_execution_propagation",
+      "surface": "runtime lifecycle propagation",
+      "compatibility_routes": [],
+      "required": true
+    },
+    "review_queue_summary": {
+      "canonical_route": "/system/review-queue/summary",
+      "owner": "review_queue_runtime_ingestion",
+      "surface": "governed runtime review queue",
+      "compatibility_routes": [
+        "/runtime/continuous/review-queue"
+      ],
+      "required": true
+    },
+    "route_owner_registry_summary": {
+      "canonical_route": "/system/route-owner-registry/summary",
+      "owner": "canonical_route_owner_registry",
+      "surface": "authority lock visibility",
+      "compatibility_routes": [],
+      "required": true
+    },
+    "duplicate_route_fail_test_summary": {
+      "canonical_route": "/system/duplicate-route-fail-test/summary",
+      "owner": "duplicate_route_fail_test",
+      "surface": "duplicate authority gate",
+      "compatibility_routes": [],
+      "required": true
+    },
+    "project_inventory": {
+      "canonical_route": "/system/project-inventory/summary",
+      "owner": "project_inventory",
+      "surface": "project connection truth",
+      "compatibility_routes": [],
+      "required": false
+    },
+    "operator_events": {
+      "canonical_route": "/system/operator-events/summary",
+      "owner": "operator_event_trail",
+      "surface": "operator event trail",
+      "compatibility_routes": [],
+      "required": false
+    },
+    "operator_controls": {
+      "canonical_route": "/system/operator-controls/summary",
+      "owner": "operator_control_contracts",
+      "surface": "operator controls",
+      "compatibility_routes": [],
+      "required": false
+    },
+    "runtime_continuous_status": {
+      "canonical_route": "/runtime/continuous/status",
+      "owner": "continuous_runtime_status_contract",
+      "surface": "continuous runtime status",
+      "compatibility_routes": [],
+      "required": false,
+      "transitional": true
+    },
+    "run_start": {
+      "canonical_route": "/runs/start",
+      "owner": "run_start_contract",
+      "surface": "operator initiated run start",
+      "compatibility_routes": [],
+      "required": false,
+      "transitional": true
+    },
+    "universes": {
+      "canonical_route": "/universes",
+      "owner": "source_universe_contract",
+      "surface": "source universe selection",
+      "compatibility_routes": [],
+      "required": false,
+      "transitional": true
+    }
+  },
+  "approved_fetch_routes": [
+    "/dashboard/payload",
+    "/dashboard/payload/status",
+    "/runs/start",
+    "/runtime/continuous/review-queue",
+    "/runtime/continuous/status",
+    "/system/duplicate-route-fail-test/summary",
+    "/system/operator-controls/summary",
+    "/system/operator-events/summary",
+    "/system/project-inventory/summary",
+    "/system/review-queue/summary",
+    "/system/route-owner-registry/summary",
+    "/system/runtime-execution/summary",
+    "/system/runtime-propagation/summary",
+    "/system/runtime-state/summary",
+    "/universes"
+  ],
+  "frontend_fetch_audit": {
+    "fetch_route_count": 3,
+    "approved_found_count": 0,
+    "unauthorized_count": 3,
+    "required_missing_count": 8,
+    "approved_found": {},
+    "unauthorized": {
+      "/api/command": [
+        "frontend\\js\\api.js"
+      ],
+      "/api/platform/status": [
+        "frontend\\js\\platform.js"
+      ],
+      "/api/platform/resolve": [
+        "frontend\\js\\platform.js"
+      ]
+    },
+    "required_missing": [
+      {
+        "key": "dashboard_payload",
+        "canonical_route": "/dashboard/payload",
+        "owner": "canonical_dashboard_payload_bridge",
+        "surface": "main cockpit truth payload"
+      },
+      {
+        "key": "dashboard_payload_status",
+        "canonical_route": "/dashboard/payload/status",
+        "owner": "canonical_dashboard_payload_bridge",
+        "surface": "cockpit backend connection status"
+      },
+      {
+        "key": "runtime_execution_summary",
+        "canonical_route": "/system/runtime-execution/summary",
+        "owner": "runtime_execution_contract",
+        "surface": "runtime execution truth"
+      },
+      {
+        "key": "runtime_state_summary",
+        "canonical_route": "/system/runtime-state/summary",
+        "owner": "runtime_state_emitter",
+        "surface": "runtime state truth"
+      },
+      {
+        "key": "runtime_propagation_summary",
+        "canonical_route": "/system/runtime-propagation/summary",
+        "owner": "runtime_execution_propagation",
+        "surface": "runtime lifecycle propagation"
+      },
+      {
+        "key": "review_queue_summary",
+        "canonical_route": "/system/review-queue/summary",
+        "owner": "review_queue_runtime_ingestion",
+        "surface": "governed runtime review queue"
+      },
+      {
+        "key": "route_owner_registry_summary",
+        "canonical_route": "/system/route-owner-registry/summary",
+        "owner": "canonical_route_owner_registry",
+        "surface": "authority lock visibility"
+      },
+      {
+        "key": "duplicate_route_fail_test_summary",
+        "canonical_route": "/system/duplicate-route-fail-test/summary",
+        "owner": "duplicate_route_fail_test",
+        "surface": "duplicate authority gate"
+      }
+    ]
+  },
+  "authority_status": {
+    "fetch_map_locked": true,
+    "unauthorized_fetches_detected": 3,
+    "required_fetches_missing": 8,
+    "safe_to_retire_compatibility_routes": false,
+    "safe_to_expand_runtime_authority": false,
+    "reason": "Cockpit fetch map exists; reconcile unauthorized or missing fetches before expanding runtime authority."
+  }
+}

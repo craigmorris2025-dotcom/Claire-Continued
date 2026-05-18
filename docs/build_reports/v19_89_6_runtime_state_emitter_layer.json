@@ -1,0 +1,35 @@
+{
+  "version": "v19.89.6",
+  "build": "Runtime State Emitter Layer",
+  "installed_at": "2026-05-13T19:59:26.397869+00:00",
+  "intent": "Create backend-owned runtime state emission without activating autonomous runtime loops.",
+  "new_endpoints": [
+    "/system/runtime-state",
+    "/system/runtime-state/summary",
+    "/system/runtime-state/emit"
+  ],
+  "files": {
+    "backend_route_module": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\runtime_state_emitter_routes.py",
+    "app_file_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "runtime_state_file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\runtime\\runtime_state.json",
+    "frontend_js": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\claire_runtime_state_surface.js",
+    "frontend_css": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\claire_runtime_state_surface.css",
+    "cockpit_html_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html",
+    "version_json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version.json"
+  },
+  "preserved": [
+    "launcher stability",
+    "backend owns truth",
+    "cockpit presentation only",
+    "fail-closed governance",
+    "runtime truth over UI assumptions",
+    "convergence over expansion"
+  ],
+  "not_enabled": [
+    "autonomous looping",
+    "uncontrolled live execution",
+    "runtime truth mutation from cockpit",
+    "fake execution output"
+  ],
+  "next_phase": "review queue and runtime execution propagation wiring"
+}

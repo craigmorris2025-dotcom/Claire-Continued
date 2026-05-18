@@ -1,0 +1,22 @@
+{
+  "version": "v19.89.8-S34R7_to_S34R9",
+  "payload_keys": [
+    "guarded_endpoint_non_mutating_registration_plan",
+    "router_integration_adapter_contract",
+    "guarded_route_rollback_proof_validator"
+  ],
+  "changed_files": [
+    "claire/api/guarded_endpoint_non_mutating_registration_plan.py",
+    "claire/api/router_integration_adapter_contract.py",
+    "claire/api/guarded_route_rollback_proof_validator.py",
+    "claire/api/governed_payload_reconciliation.py"
+  ],
+  "changed_app_py": false,
+  "route_registered": false,
+  "network_request_during_install": false,
+  "response_body_read_during_install": false,
+  "browser_execution_enabled": false,
+  "runtime_truth_mutation_enabled": false,
+  "autonomous_execution_enabled": false,
+  "automatic_updates_enabled": false
+}

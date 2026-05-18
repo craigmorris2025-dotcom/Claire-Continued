@@ -1,0 +1,109 @@
+{
+  "backup_dir": "backups/v17_80_launch_candidate_freeze/20260509_202028",
+  "build_name": "Launch Candidate Freeze",
+  "files_written": [
+    "claire/platform/launch_candidate_freeze.py",
+    "claire/api/routes_launch_candidate_freeze.py",
+    "FREEZE_CLAIRE_LAUNCH_CANDIDATE.bat",
+    "tests/test_v17_80_launch_candidate_freeze.py",
+    "docs/platform/v17.80_launch_candidate_freeze.md",
+    "data/launch_candidate/v17_80_launch_candidate_freeze.json",
+    "data/launch_candidate/launch_candidate_manifest.json",
+    "data/launch_candidate/protected_paths_manifest.json",
+    "data/launch_candidate/v17_80_launch_candidate_stop_go.json",
+    "data/launch_candidate/v17_80_launch_candidate_stop_go.md",
+    "data/launch_candidate/README_LAUNCH_CANDIDATE_FREEZE.md",
+    "data/dashboard/launch_candidate_freeze_payload.json",
+    "data/launch_candidate/v17_80_launch_candidate_freeze_validation_result.json"
+  ],
+  "installed_at": "2026-05-10T01:20:29.141852Z",
+  "next": [
+    "v17.81 Cleanup Proof Before Archive/Delete",
+    "v17.82 Launch Candidate Repair Pack if manual proof finds blockers",
+    "v17.83 Internet Provider Configuration Gate"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "blockers": [],
+    "errors": [],
+    "freeze_status": "FROZEN_WITH_WARNINGS_MANUAL_PROOF_REQUIRED",
+    "manual_proof_status": "incomplete",
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.75.1",
+      "source": {
+        "inputs": {
+          "autodesign_handoff": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/autodesign/autodesign_handoff_contract.json",
+            "status": "loaded"
+          },
+          "buildability_validation": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/validation/buildability_viability_manufacturability_validation.json",
+            "status": "loaded"
+          },
+          "dashboard_runtime_truth": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/dashboard_runtime_truth.json",
+            "status": "loaded"
+          },
+          "design_portal": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/design_portal_output_contract.json",
+            "status": "loaded"
+          },
+          "internet_readiness": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+            "status": "loaded"
+          },
+          "proof_pack": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/full_end_to_end_proof_pack.json",
+            "status": "loaded"
+          },
+          "regression_lock": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_governance_regression_lock.json",
+            "status": "loaded"
+          },
+          "rollback_plan": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json",
+            "status": "loaded"
+          },
+          "route_audit": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/routes/discovery_breakthrough_innovation_route_audit.json",
+            "status": "loaded"
+          },
+          "runner_gate": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/automatic_update_runner_gate.json",
+            "status": "loaded"
+          },
+          "runtime_truth": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json",
+            "status": "loaded"
+          },
+          "stop_go": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/v17_75_stop_go_report.json",
+            "status": "loaded"
+          },
+          "update_pack_staging": {
+            "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json",
+            "status": "loaded"
+          }
+        },
+        "missing_data_stays_missing": true,
+        "proof_pack_loaded": true,
+        "runtime_truth_loaded": true
+      },
+      "status": "rebuilt"
+    },
+    "recommendation": "Launch candidate freeze is created, but manual proof/warnings must be resolved before public launch.",
+    "status": "passed",
+    "warnings": [
+      "manual_browser_swagger_evidence_not_complete",
+      "prior_report_stop:v17_76_platform_smoke"
+    ]
+  },
+  "version": "v17.80"
+}

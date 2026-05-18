@@ -1,0 +1,62 @@
+.claire-intelligence-answer-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+  margin: 14px 0;
+  background: rgba(12, 18, 32, 0.72);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+.claire-answer-panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.claire-answer-panel-header small {
+  opacity: 0.72;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.claire-answer-panel-body {
+  margin-top: 12px;
+}
+
+.claire-answer-card {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.claire-answer-card-topline,
+.claire-answer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.claire-answer-domain,
+.claire-answer-confidence,
+.claire-answer-meta span {
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+}
+
+.claire-answer-direct {
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+.claire-answer-panel-footer {
+  margin-top: 10px;
+  opacity: 0.7;
+  font-size: 0.78rem;
+}

@@ -1,0 +1,45 @@
+.s16-renderer-lock .governed-runtime-classification-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 2px 0 14px;
+}
+
+.timeline-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 9px;
+  font-size: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.20);
+  background: rgba(15, 23, 42, 0.48);
+  color: rgba(226, 232, 240, 0.86);
+}
+
+.timeline-severity-info {
+  border-color: rgba(148, 163, 184, 0.20);
+}
+
+.timeline-severity-warning {
+  border-color: rgba(251, 191, 36, 0.42);
+  background: rgba(251, 191, 36, 0.08);
+}
+
+.timeline-severity-recovered {
+  border-color: rgba(52, 211, 153, 0.42);
+  background: rgba(52, 211, 153, 0.08);
+}
+
+.timeline-severity-guarded {
+  border-color: rgba(125, 211, 252, 0.42);
+  background: rgba(14, 165, 233, 0.08);
+}
+
+.governed-runtime-timeline-event-type small {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(203, 213, 225, 0.66);
+}

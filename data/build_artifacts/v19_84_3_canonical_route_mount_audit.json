@@ -1,0 +1,18 @@
+{
+  "version": "v19.84.3",
+  "build": "Canonical Route Mount Audit",
+  "installed_at": "2026-05-12T14:43:09.687649+00:00",
+  "purpose": "Discover live route ownership and cockpit endpoint dependencies before route consolidation.",
+  "read_only_runtime": true,
+  "files_written": [
+    "tools/canonical_route_mount_audit.py",
+    "tests/test_v19_84_3_canonical_route_mount_audit.py",
+    "docs/builds/v19_84_3_canonical_route_mount_audit.md",
+    "data/build_artifacts/v19_84_3_canonical_route_mount_audit.json"
+  ],
+  "commands": [
+    "python tools/canonical_route_mount_audit.py",
+    "pytest tests/test_v19_84_3_canonical_route_mount_audit.py -q"
+  ],
+  "next_build": "v19.84.4 Canonical Route Owner Registry"
+}

@@ -1,0 +1,18 @@
+{
+  "version": "v18.69",
+  "name": "Operator Probe Route Mount Into Active App",
+  "scope": [
+    "mount operator provider probe routes into FastAPI app only when explicitly enabled",
+    "verify status and probe paths appear in mounted route table",
+    "verify status route responds through TestClient",
+    "verify probe route remains blocked without explicit real provider probe",
+    "do not trigger real provider probe during mount",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_69_operator_probe_route_mount_into_active_app.py -q"
+  ]
+}

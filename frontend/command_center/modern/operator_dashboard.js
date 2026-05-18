@@ -292,3 +292,88 @@ document.getElementById("open-guide").addEventListener("click", () => {
 });
 
 refresh();
+
+// CLAIRE_V18_75_JS
+window.ClaireDashboardPacks = window.ClaireDashboardPacks || {};
+window.ClaireDashboardPacks["v18.75"] = {
+  version: "v18.75",
+  title: "Dashboard Search Result Card Renderer Lock",
+  normalSearchEndpoint: "/api/dashboard/search/live",
+  providerStatusEndpoint: "/api/dashboard/search/provider/status",
+  providerProbeEndpoint: "/api/dashboard/search/smoke/google",
+  dashboardCurrent: true,
+  providerProbeManualOnly: true,
+  explicitEnableRequired: true,
+  proof: "result-card",
+  expectedResult: { title: "Google", url: "https://www.google.com" }
+};
+window.ClaireDashboardLatestPack = "v18.75";
+// /CLAIRE_V18_75_JS
+
+// CLAIRE_V18_76_JS
+window.ClaireDashboardPacks = window.ClaireDashboardPacks || {};
+window.ClaireDashboardPacks["v18.76"] = {
+  version: "v18.76",
+  title: "Dashboard Current-State Banner and Smoke Report",
+  normalSearchEndpoint: "/api/dashboard/search/live",
+  providerStatusEndpoint: "/api/dashboard/search/provider/status",
+  providerProbeEndpoint: "/api/dashboard/search/smoke/google",
+  dashboardCurrent: true,
+  providerProbeManualOnly: true,
+  explicitEnableRequired: true,
+  proof: "current-state",
+  expectedResult: { title: "Google", url: "https://www.google.com" }
+};
+window.ClaireDashboardLatestPack = "v18.76";
+// /CLAIRE_V18_76_JS
+
+// CLAIRE_V18_77_JS
+window.ClaireDashboardPacks = window.ClaireDashboardPacks || {};
+window.ClaireDashboardPacks["v18.77"] = {
+  version: "v18.77",
+  title: "Normal Search vs Manual Probe Route Guard",
+  normalSearchEndpoint: "/api/dashboard/search/live",
+  providerStatusEndpoint: "/api/dashboard/search/provider/status",
+  providerProbeEndpoint: "/api/dashboard/search/smoke/google",
+  dashboardCurrent: true,
+  providerProbeManualOnly: true,
+  explicitEnableRequired: true,
+  proof: "route-guard",
+  expectedResult: { title: "Google", url: "https://www.google.com" }
+};
+window.ClaireDashboardLatestPack = "v18.77";
+// /CLAIRE_V18_77_JS
+
+// CLAIRE_V18_78_JS
+window.ClaireDashboardPacks = window.ClaireDashboardPacks || {};
+window.ClaireDashboardPacks["v18.78"] = {
+  version: "v18.78",
+  title: "Google Result Card Regression Proof",
+  normalSearchEndpoint: "/api/dashboard/search/live",
+  providerStatusEndpoint: "/api/dashboard/search/provider/status",
+  providerProbeEndpoint: "/api/dashboard/search/smoke/google",
+  dashboardCurrent: true,
+  providerProbeManualOnly: true,
+  explicitEnableRequired: true,
+  proof: "google-proof",
+  expectedResult: { title: "Google", url: "https://www.google.com" }
+};
+window.ClaireDashboardLatestPack = "v18.78";
+// /CLAIRE_V18_78_JS
+
+// CLAIRE_V18_79_JS
+window.ClaireDashboardPacks = window.ClaireDashboardPacks || {};
+window.ClaireDashboardPacks["v18.79"] = {
+  version: "v18.79",
+  title: "Dashboard Pack Status Registry",
+  normalSearchEndpoint: "/api/dashboard/search/live",
+  providerStatusEndpoint: "/api/dashboard/search/provider/status",
+  providerProbeEndpoint: "/api/dashboard/search/smoke/google",
+  dashboardCurrent: true,
+  providerProbeManualOnly: true,
+  explicitEnableRequired: true,
+  proof: "pack-registry",
+  expectedResult: { title: "Google", url: "https://www.google.com" }
+};
+window.ClaireDashboardLatestPack = "v18.79";
+// /CLAIRE_V18_79_JS

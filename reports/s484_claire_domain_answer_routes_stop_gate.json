@@ -1,0 +1,3112 @@
+{
+  "version": "v19.89.8-S478-S484",
+  "phase": "S478-S484",
+  "stage_version": "S484",
+  "status": "claire_domain_answer_routes_passed",
+  "ready": true,
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "created_at": "2026-05-17T01:01:00.468684+00:00",
+  "runtime_mutation_enabled": false,
+  "runtime_truth_mutation_allowed": false,
+  "runtime_truth_write_allowed": false,
+  "automatic_updates_enabled": false,
+  "autonomous_crawling_enabled": false,
+  "autonomous_execution_enabled": false,
+  "autonomous_agent_execution_enabled": false,
+  "live_web_execution_enabled": false,
+  "browser_execution_enabled": false,
+  "network_request_performed": false,
+  "body_read_allowed": false,
+  "ok": true,
+  "checks": {
+    "s478_market_route_ready": true,
+    "s479_research_route_ready": true,
+    "s480_engineering_route_ready": true,
+    "s481_cross_domain_ready": true,
+    "s482_builder_ready": true,
+    "s483_assets_exist": true,
+    "market_output_safe": true,
+    "research_output_safe": true,
+    "engineering_output_safe": true,
+    "cross_domain_output_safe": true
+  },
+  "sample_outputs": {
+    "market": {
+      "version": "v19.89.8-S478-S484",
+      "created_at": "2026-05-17T01:01:00.466684+00:00",
+      "question": "Can Claire analyze this market trend and demand signal?",
+      "route_selection": {
+        "selected_domain_route": "market",
+        "route_id": "market_intelligence_route",
+        "label": "Market Intelligence Route",
+        "knowledge_domains": [
+          "market",
+          "trend_discovery",
+          "portfolio",
+          "acquisition"
+        ],
+        "primary_goal": "Translate signals into market reality, timing, competitive pressure, demand logic, and portfolio implication."
+      },
+      "route_profile": {
+        "label": "Market Intelligence Route",
+        "route_id": "market_intelligence_route",
+        "primary_goal": "Translate signals into market reality, timing, competitive pressure, demand logic, and portfolio implication.",
+        "knowledge_domains": [
+          "market",
+          "trend_discovery",
+          "portfolio",
+          "acquisition"
+        ],
+        "route_outputs": [
+          "market_reality",
+          "trend_signal_read",
+          "competitive_pressure",
+          "timing_window",
+          "portfolio_implication",
+          "verification_needs"
+        ]
+      },
+      "evidence_answer": {
+        "answer_id": "claire_answer_0952953",
+        "version": "v19.89.8-S464-S470",
+        "created_at": "2026-05-17T01:01:00.465684+00:00",
+        "question": "Can Claire analyze this market trend and demand signal?",
+        "classification": {
+          "question": "Can Claire analyze this market trend and demand signal?",
+          "domain": "market",
+          "label": "Market Intelligence",
+          "confidence": 0.86,
+          "matched_keywords": [
+            "market",
+            "demand",
+            "trend"
+          ],
+          "evidence_requirement": "moderate_to_high",
+          "default_route": "trend_or_portfolio_path",
+          "innovation_potential": false,
+          "answer_mode": "governed_intelligence_answer"
+        },
+        "response_card": {
+          "card_id": "claire_card_5387196",
+          "card_type": "answer",
+          "title": "Claire intelligence answer",
+          "chips": [
+            "Ask Claire",
+            "domain:market",
+            "route:trend_or_portfolio_path",
+            "evidence:moderate_to_high",
+            "read-only"
+          ]
+        },
+        "direct_answer": "Claire classified this as Market Intelligence and would answer using the trend_or_portfolio_path route with moderate_to_high evidence requirements.",
+        "evidence_basket": {
+          "version": "v19.89.8-S464-S470",
+          "phase": "S464-S470",
+          "stage_version": "S466",
+          "status": "evidence_basket_ready",
+          "ready": true,
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "created_at": "2026-05-17T01:01:00.465684+00:00",
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false,
+          "question": "Can Claire analyze this market trend and demand signal?",
+          "classification": {
+            "question": "Can Claire analyze this market trend and demand signal?",
+            "domain": "market",
+            "label": "Market Intelligence",
+            "confidence": 0.86,
+            "matched_keywords": [
+              "market",
+              "demand",
+              "trend"
+            ],
+            "evidence_requirement": "moderate_to_high",
+            "default_route": "trend_or_portfolio_path",
+            "innovation_potential": false,
+            "answer_mode": "governed_intelligence_answer"
+          },
+          "context_keys": [],
+          "source_count": 10,
+          "scored_sources": [
+            {
+              "source": {
+                "source_id": "claire_unified_platform_definition_v1",
+                "title": "Claire Syntalion Unified Platform Definition v1",
+                "source_type": "uploaded_master_document",
+                "summary": "Current compact platform definition consolidating Claire identity, specs, operations, functionality, governance, lifecycle, and roadmap.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.96,
+                "recency": 0.78,
+                "supports": [
+                  "Claire is a governed lifecycle intelligence platform.",
+                  "The 30-stage lifecycle is canonical.",
+                  "Q&A should be intelligence-routed and evidence-aware."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_unified_platform_definition_v1",
+                "source_type": "uploaded_master_document",
+                "score": 0.925,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.96,
+                  "recency": 0.78,
+                  "type_weight": 0.88,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_master_system_build_plan",
+                "title": "Claire Master System Build Plan - Singularity-Aligned Edition",
+                "source_type": "uploaded_master_document",
+                "summary": "Master governing document defining Claire as a recursive trend-discovery, portfolio-construction, breakthrough-escalation, system-transformation, and acquisition-readiness platform.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.96,
+                "recency": 0.78,
+                "supports": [
+                  "Claire's root system is signal governance to trend discovery to thesis formation to portfolio creation or optimization.",
+                  "Breakthrough escalation is conditional and governed.",
+                  "Auto invention and design output are route-dependent."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_master_system_build_plan",
+                "source_type": "uploaded_master_document",
+                "score": 0.925,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.96,
+                  "recency": 0.78,
+                  "type_weight": 0.88,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_core_pipeline_architecture",
+                "title": "Core Pipeline Architecture",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines inputs, signal governance, trend discovery, thesis formation, portfolio creation, breakthrough escalation, advancement routing, lifecycle memory, and recursive self-ingestion.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Portfolio action is the normal early path.",
+                  "Breakthrough escalation selects the correct downstream route.",
+                  "Lifecycle memory enables stronger future runs."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_core_pipeline_architecture",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.906,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_branching_master_pipeline",
+                "title": "Branching Master Pipeline",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines split paths for market/portfolio intelligence and breakthrough/design intelligence after thesis formation.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Market and portfolio routes do not require full invention routing.",
+                  "Breakthrough/design paths continue through buildability, viability, manufacturability, and feasibility."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_branching_master_pipeline",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.886,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_breakthrough_categories",
+                "title": "Breakthrough Categories",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines broad breakthrough categories across technology, market, finance, operations, regulation, acquisition, system architecture, evidence, learning loops, and category creation.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Breakthroughs are structural, not only technological.",
+                  "Breakthrough classification can drive portfolio, strategy, acquisition, design, or system routes."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_breakthrough_categories",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.886,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_full_data_model_map",
+                "title": "Claire AI Full Data Model Map",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines Breakthrough Object, Portfolio Candidate Object, Portfolio Item, signal objects, score objects, safety objects, cluster objects, and mode state.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.62,
+                "supports": [
+                  "Claire intelligence should use structured objects rather than untyped text blobs.",
+                  "BO, PCO, and PI are key internal primitives."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_full_data_model_map",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.87,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.62,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_execution_flow_specification",
+                "title": "Claire AI Execution Flow Specification",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines mode initialization, ingestion, semantic processing, hybrid fusion, breakthrough detection, safety pre-validation, scoring, promotion, portfolio creation, and dashboard output.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Safety and governance override every execution stage.",
+                  "Connected and hybrid modes activate external ingestion only through governed pathways."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_execution_flow_specification",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_hybrid_mode",
+                "title": "Claire AI Hybrid Mode",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines Claire's dual-core maximum capability state combining deterministic engine and connected intelligence engine.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Hybrid mode fuses first-principles reasoning with live intelligence.",
+                  "Hybrid mode supports cross-validated invention, market, deal, and portfolio intelligence."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_hybrid_mode",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_connected_intelligence_mode",
+                "title": "Claire Connected Intelligence Mode",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines Claire's live market-aware intelligence mode with governed technology, market, competitor, regulatory, and acquisition signals.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Connected mode uses governed external signal ingestion.",
+                  "Connected mode supports real-time strategic intelligence and dynamic portfolio optimization."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_connected_intelligence_mode",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_subsystem_dependency_graph",
+                "title": "Claire AI Subsystem Dependency Graph",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines dependencies among deterministic engine, connected engine, semantic layer, ingestion layer, hybrid fusion, scoring, portfolio engine, and safety governance.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Connected engine cannot run without the safety layer.",
+                  "Breakthrough detection is the central convergence point."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_subsystem_dependency_graph",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            }
+          ],
+          "support_summary": {
+            "strong_count": 10,
+            "usable_count": 10,
+            "weak_count": 0,
+            "insufficient_count": 0,
+            "support_level": "strong",
+            "confidence": 0.92
+          }
+        },
+        "claims": [
+          {
+            "claim_id": "claim_4413124",
+            "text": "Claire classified this as Market Intelligence and would answer using the trend_or_portfolio_path route with moderate_to_high evidence requirements.",
+            "status": "supported",
+            "support_level": 0.92,
+            "evidence_ids": [
+              "claire_unified_platform_definition_v1",
+              "claire_master_system_build_plan",
+              "claire_core_pipeline_architecture",
+              "claire_branching_master_pipeline"
+            ],
+            "assumptions": [],
+            "verification_needed": []
+          }
+        ],
+        "confidence": 0.89,
+        "confidence_basis": {
+          "base_answer_confidence": 0.86,
+          "evidence_confidence": 0.92,
+          "support_level": "strong"
+        },
+        "assumptions": [
+          "This response is a governed answer contract, not a live external research result.",
+          "No runtime mutation, live web action, or autonomous execution was performed."
+        ],
+        "verification_needed": [],
+        "innovation_potential": false,
+        "route_hint": "trend_or_portfolio_path",
+        "evidence_requirement": "moderate_to_high",
+        "answer_quality_state": "evidence_backed",
+        "governance_state": {
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false
+        },
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false
+      },
+      "knowledge_results": {
+        "version": "v19.89.8-S471-S477",
+        "phase": "S471-S477",
+        "stage_version": "S473",
+        "status": "knowledge_registry_search_complete",
+        "ready": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "created_at": "2026-05-17T01:01:00.466684+00:00",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "query": "Can Claire analyze this market trend and demand signal?",
+        "domains": [
+          "acquisition",
+          "market",
+          "portfolio",
+          "trend_discovery"
+        ],
+        "result_count": 6,
+        "results": [
+          {
+            "doc_id": "claire_connected_intelligence_mode",
+            "title": "Claire Connected Intelligence Mode",
+            "trust_tier": "architectural",
+            "score": 0.822,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "market",
+              "trend",
+              "and"
+            ],
+            "matched_domains": [
+              "portfolio",
+              "trend_discovery",
+              "acquisition"
+            ],
+            "summary": "Defines Claire's live market-aware intelligence mode with governed technology, market, competitor, regulatory, and acquisition signals.",
+            "route_anchors": [
+              "live_signal_ingestion",
+              "real_time_scanning",
+              "connected_intelligence"
+            ],
+            "key_claims": [
+              "Connected mode uses governed external signal ingestion.",
+              "Connected mode supports real-time strategic intelligence and dynamic portfolio optimization."
+            ]
+          },
+          {
+            "doc_id": "claire_breakthrough_categories",
+            "title": "Breakthrough Categories",
+            "trust_tier": "canonical",
+            "score": 0.75,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "market",
+              "and"
+            ],
+            "matched_domains": [
+              "portfolio",
+              "acquisition"
+            ],
+            "summary": "Defines broad breakthrough categories across technology, market, finance, operations, regulation, acquisition, system architecture, evidence, learning loops, and category creation.",
+            "route_anchors": [
+              "breakthrough_classification",
+              "advancement_path_selection"
+            ],
+            "key_claims": [
+              "Breakthroughs are structural, not only technological.",
+              "Breakthrough classification can drive portfolio, strategy, acquisition, design, or system routes."
+            ]
+          },
+          {
+            "doc_id": "claire_core_pipeline_architecture",
+            "title": "Core Pipeline Architecture",
+            "trust_tier": "canonical",
+            "score": 0.7,
+            "matched_tokens": [
+              "claire",
+              "trend",
+              "and"
+            ],
+            "matched_domains": [
+              "portfolio",
+              "trend_discovery",
+              "acquisition"
+            ],
+            "summary": "Defines inputs, signal governance, trend discovery, thesis formation, portfolio creation, breakthrough escalation, advancement routing, lifecycle memory, and recursive self-ingestion.",
+            "route_anchors": [
+              "signal_to_thesis",
+              "portfolio_path",
+              "breakthrough_gate",
+              "recursive_memory"
+            ],
+            "key_claims": [
+              "Portfolio action is the normal early path.",
+              "Breakthrough escalation selects the correct downstream route.",
+              "Lifecycle memory enables stronger future runs."
+            ]
+          },
+          {
+            "doc_id": "claire_unified_platform_definition_v1",
+            "title": "Claire Syntalion Unified Platform Definition v1",
+            "trust_tier": "governing",
+            "score": 0.672,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "and"
+            ],
+            "matched_domains": [
+              "portfolio",
+              "acquisition"
+            ],
+            "summary": "Current compact platform definition consolidating Claire identity, specs, operations, functionality, governance, lifecycle, and roadmap.",
+            "route_anchors": [
+              "all_routes",
+              "operator_reference"
+            ],
+            "key_claims": [
+              "Claire is a governed lifecycle intelligence platform.",
+              "The 30-stage lifecycle is canonical.",
+              "Q&A should be intelligence-routed and evidence-aware."
+            ]
+          },
+          {
+            "doc_id": "claire_master_system_build_plan",
+            "title": "Claire Master System Build Plan - Singularity-Aligned Edition",
+            "trust_tier": "governing",
+            "score": 0.672,
+            "matched_tokens": [
+              "claire",
+              "trend",
+              "and"
+            ],
+            "matched_domains": [
+              "portfolio",
+              "acquisition"
+            ],
+            "summary": "Master governing document defining Claire as a recursive trend-discovery, portfolio-construction, breakthrough-escalation, system-transformation, and acquisition-readiness platform.",
+            "route_anchors": [
+              "signal_to_portfolio",
+              "breakthrough_escalation",
+              "final_package",
+              "recursive_self_ingestion"
+            ],
+            "key_claims": [
+              "Claire's root system is signal governance to trend discovery to thesis formation to portfolio creation or optimization.",
+              "Breakthrough escalation is conditional and governed.",
+              "Auto invention and design output are route-dependent."
+            ]
+          },
+          {
+            "doc_id": "claire_branching_master_pipeline",
+            "title": "Branching Master Pipeline",
+            "trust_tier": "canonical",
+            "score": 0.66,
+            "matched_tokens": [
+              "claire",
+              "market",
+              "and"
+            ],
+            "matched_domains": [
+              "portfolio",
+              "acquisition"
+            ],
+            "summary": "Defines split paths for market/portfolio intelligence and breakthrough/design intelligence after thesis formation.",
+            "route_anchors": [
+              "portfolio_path",
+              "breakthrough_design_path",
+              "final_package"
+            ],
+            "key_claims": [
+              "Market and portfolio routes do not require full invention routing.",
+              "Breakthrough/design paths continue through buildability, viability, manufacturability, and feasibility."
+            ]
+          }
+        ]
+      },
+      "route_sections": {
+        "direct_market_read": "Assess the question through trend strength, demand logic, competition, timing, and portfolio implication.",
+        "trend_signal_read": "Use signal governance and trend-discovery anchors before treating a market observation as actionable.",
+        "demand_logic": "Check whether the signal implies latent demand, rising demand, pricing power, or customer behavior change.",
+        "competitive_pressure": "Map visible competitors, category pressure, displacement risk, and timing windows.",
+        "portfolio_implication": "Translate the market read into exposure, weighting, watchlist, or action recommendation only after evidence passes threshold.",
+        "verification_needs": [],
+        "knowledge_sources": [
+          "Claire Connected Intelligence Mode",
+          "Breakthrough Categories",
+          "Core Pipeline Architecture",
+          "Claire Syntalion Unified Platform Definition v1"
+        ],
+        "support_level": "strong",
+        "route_hint": "trend_or_portfolio_path"
+      },
+      "answer_quality_state": "evidence_backed",
+      "confidence": 0.89,
+      "safe_next_operator_actions": [
+        "review_evidence_basket",
+        "inspect_knowledge_sources",
+        "request_governed_research_if_needed",
+        "route_to_lifecycle_runtime_only_after_operator_review"
+      ],
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false
+    },
+    "research": {
+      "version": "v19.89.8-S478-S484",
+      "created_at": "2026-05-17T01:01:00.466684+00:00",
+      "question": "Can Claire review the research evidence and source quality?",
+      "route_selection": {
+        "selected_domain_route": "research",
+        "route_id": "research_intelligence_route",
+        "label": "Research Intelligence Route",
+        "knowledge_domains": [
+          "research",
+          "evidence",
+          "technology_intelligence",
+          "governance"
+        ],
+        "primary_goal": "Separate evidence, assumptions, inference, uncertainty, and verification requirements."
+      },
+      "route_profile": {
+        "label": "Research Intelligence Route",
+        "route_id": "research_intelligence_route",
+        "primary_goal": "Separate evidence, assumptions, inference, uncertainty, and verification requirements.",
+        "knowledge_domains": [
+          "research",
+          "evidence",
+          "technology_intelligence",
+          "governance"
+        ],
+        "route_outputs": [
+          "evidence_summary",
+          "source_quality",
+          "knowns_unknowns",
+          "claim_support",
+          "verification_plan"
+        ]
+      },
+      "evidence_answer": {
+        "answer_id": "claire_answer_2244155",
+        "version": "v19.89.8-S464-S470",
+        "created_at": "2026-05-17T01:01:00.466684+00:00",
+        "question": "Can Claire review the research evidence and source quality?",
+        "classification": {
+          "question": "Can Claire review the research evidence and source quality?",
+          "domain": "research",
+          "label": "Research Intelligence",
+          "confidence": 0.86,
+          "matched_keywords": [
+            "research",
+            "evidence",
+            "source"
+          ],
+          "evidence_requirement": "high",
+          "default_route": "research_answer",
+          "innovation_potential": false,
+          "answer_mode": "governed_intelligence_answer"
+        },
+        "response_card": {
+          "card_id": "claire_card_9247461",
+          "card_type": "evidence",
+          "title": "Claire evidence explanation",
+          "chips": [
+            "Explain Evidence",
+            "domain:research",
+            "route:research_answer",
+            "evidence:high",
+            "read-only"
+          ]
+        },
+        "direct_answer": "Claire classified this as Research Intelligence and would answer using the research_answer route with high evidence requirements.",
+        "evidence_basket": {
+          "version": "v19.89.8-S464-S470",
+          "phase": "S464-S470",
+          "stage_version": "S466",
+          "status": "evidence_basket_ready",
+          "ready": true,
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "created_at": "2026-05-17T01:01:00.466684+00:00",
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false,
+          "question": "Can Claire review the research evidence and source quality?",
+          "classification": {
+            "question": "Can Claire review the research evidence and source quality?",
+            "domain": "research",
+            "label": "Research Intelligence",
+            "confidence": 0.86,
+            "matched_keywords": [
+              "research",
+              "evidence",
+              "source"
+            ],
+            "evidence_requirement": "high",
+            "default_route": "research_answer",
+            "innovation_potential": false,
+            "answer_mode": "governed_intelligence_answer"
+          },
+          "context_keys": [],
+          "source_count": 10,
+          "scored_sources": [
+            {
+              "source": {
+                "source_id": "claire_unified_platform_definition_v1",
+                "title": "Claire Syntalion Unified Platform Definition v1",
+                "source_type": "uploaded_master_document",
+                "summary": "Current compact platform definition consolidating Claire identity, specs, operations, functionality, governance, lifecycle, and roadmap.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.96,
+                "recency": 0.78,
+                "supports": [
+                  "Claire is a governed lifecycle intelligence platform.",
+                  "The 30-stage lifecycle is canonical.",
+                  "Q&A should be intelligence-routed and evidence-aware."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_unified_platform_definition_v1",
+                "source_type": "uploaded_master_document",
+                "score": 0.925,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.96,
+                  "recency": 0.78,
+                  "type_weight": 0.88,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_governance_and_safety",
+                "title": "Claire AI Governance and Safety Documentation",
+                "source_type": "uploaded_master_document",
+                "summary": "Defines Claire governance model, redline detection, compliance boundaries, oversight, intervention, mode-switching safety, and auditability.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.96,
+                "recency": 0.78,
+                "supports": [
+                  "Governance overrides unsafe behavior.",
+                  "Mode isolation and auditability are foundational.",
+                  "Redline scenarios must block or require review."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_governance_and_safety",
+                "source_type": "uploaded_master_document",
+                "score": 0.925,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.96,
+                  "recency": 0.78,
+                  "type_weight": 0.88,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_lifecycle_spine",
+                "title": "Claire 30-Stage Lifecycle / Lifecycle Spine",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines the 30-stage lifecycle from Signal Ingestion through Final Package Construction.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Every signal must be processable through the canonical stage contract spine.",
+                  "Stages 16-22 are critical for route-aware design and buildability outputs.",
+                  "Stage 30 constructs final packages."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_lifecycle_spine",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.906,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_enterprise_update_governance",
+                "title": "Claire Enterprise Online Update Governance System",
+                "source_type": "uploaded_master_document",
+                "summary": "Defines safe online update discovery, inspection, scoring, staging, validation, rollback, approval, and refusal rules.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.96,
+                "recency": 0.78,
+                "supports": [
+                  "Claire may discover and stage updates online but may not modify active runtime code without validation and approval.",
+                  "Update flow must be zero-trust, rollback-capable, audit-aware, and regression-resistant."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_enterprise_update_governance",
+                "source_type": "uploaded_master_document",
+                "score": 0.905,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.96,
+                  "recency": 0.78,
+                  "type_weight": 0.88,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_recursive_learning_pipeline",
+                "title": "Recursive Learning Pipeline",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines completed run output storage, lifecycle memory, self-ingestion, pattern comparison, prior output comparison, and stronger future outputs.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Completed runs become future inputs.",
+                  "Recursive self-ingestion strengthens trend discovery, breakthrough detection, design, portfolio, and package construction."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_recursive_learning_pipeline",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.886,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_full_data_model_map",
+                "title": "Claire AI Full Data Model Map",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines Breakthrough Object, Portfolio Candidate Object, Portfolio Item, signal objects, score objects, safety objects, cluster objects, and mode state.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.62,
+                "supports": [
+                  "Claire intelligence should use structured objects rather than untyped text blobs.",
+                  "BO, PCO, and PI are key internal primitives."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_full_data_model_map",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.87,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.62,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_execution_flow_specification",
+                "title": "Claire AI Execution Flow Specification",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines mode initialization, ingestion, semantic processing, hybrid fusion, breakthrough detection, safety pre-validation, scoring, promotion, portfolio creation, and dashboard output.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Safety and governance override every execution stage.",
+                  "Connected and hybrid modes activate external ingestion only through governed pathways."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_execution_flow_specification",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_mode_switching_architecture",
+                "title": "Claire AI Mode Switching Architecture",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines explicit governed transitions between deterministic, connected, and hybrid modes.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Claire never switches modes automatically.",
+                  "Mode transitions require validation and governance checks."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_mode_switching_architecture",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_subsystem_dependency_graph",
+                "title": "Claire AI Subsystem Dependency Graph",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines dependencies among deterministic engine, connected engine, semantic layer, ingestion layer, hybrid fusion, scoring, portfolio engine, and safety governance.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Connected engine cannot run without the safety layer.",
+                  "Breakthrough detection is the central convergence point."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_subsystem_dependency_graph",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_technology_database",
+                "title": "Technology Database and Search Dictionary",
+                "source_type": "technology_database_document",
+                "summary": "Defines technology categories, maturity levels, dependencies, compatibility, cost, complexity, learning curve, performance, and recommendation structures.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.82,
+                "recency": 0.62,
+                "supports": [
+                  "Claire engineering answers should consider maturity, compatibility, dependency, cost, and integration complexity.",
+                  "Technology search is a structured intelligence layer, not generic text search."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_technology_database",
+                "source_type": "technology_database_document",
+                "score": 0.846,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.82,
+                  "recency": 0.62,
+                  "type_weight": 0.82,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            }
+          ],
+          "support_summary": {
+            "strong_count": 10,
+            "usable_count": 10,
+            "weak_count": 0,
+            "insufficient_count": 0,
+            "support_level": "strong",
+            "confidence": 0.92
+          }
+        },
+        "claims": [
+          {
+            "claim_id": "claim_7846033",
+            "text": "Claire classified this as Research Intelligence and would answer using the research_answer route with high evidence requirements.",
+            "status": "supported",
+            "support_level": 0.92,
+            "evidence_ids": [
+              "claire_unified_platform_definition_v1",
+              "claire_governance_and_safety",
+              "claire_lifecycle_spine",
+              "claire_enterprise_update_governance"
+            ],
+            "assumptions": [],
+            "verification_needed": []
+          }
+        ],
+        "confidence": 0.89,
+        "confidence_basis": {
+          "base_answer_confidence": 0.86,
+          "evidence_confidence": 0.92,
+          "support_level": "strong"
+        },
+        "assumptions": [
+          "This response is a governed answer contract, not a live external research result.",
+          "No runtime mutation, live web action, or autonomous execution was performed."
+        ],
+        "verification_needed": [],
+        "innovation_potential": false,
+        "route_hint": "research_answer",
+        "evidence_requirement": "high",
+        "answer_quality_state": "evidence_backed",
+        "governance_state": {
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false
+        },
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false
+      },
+      "knowledge_results": {
+        "version": "v19.89.8-S471-S477",
+        "phase": "S471-S477",
+        "stage_version": "S473",
+        "status": "knowledge_registry_search_complete",
+        "ready": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "created_at": "2026-05-17T01:01:00.466684+00:00",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "query": "Can Claire review the research evidence and source quality?",
+        "domains": [
+          "evidence",
+          "governance",
+          "research",
+          "technology_intelligence"
+        ],
+        "result_count": 6,
+        "results": [
+          {
+            "doc_id": "claire_full_data_model_map",
+            "title": "Claire AI Full Data Model Map",
+            "trust_tier": "canonical",
+            "score": 0.79,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "the",
+              "evidence",
+              "and"
+            ],
+            "matched_domains": [
+              "governance",
+              "evidence"
+            ],
+            "summary": "Defines Breakthrough Object, Portfolio Candidate Object, Portfolio Item, signal objects, score objects, safety objects, cluster objects, and mode state.",
+            "route_anchors": [
+              "bo",
+              "pco",
+              "portfolio_item",
+              "signal_objects",
+              "safety_objects"
+            ],
+            "key_claims": [
+              "Claire intelligence should use structured objects rather than untyped text blobs.",
+              "BO, PCO, and PI are key internal primitives."
+            ]
+          },
+          {
+            "doc_id": "claire_unified_platform_definition_v1",
+            "title": "Claire Syntalion Unified Platform Definition v1",
+            "trust_tier": "governing",
+            "score": 0.772,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "the",
+              "evidence",
+              "and"
+            ],
+            "matched_domains": [
+              "governance"
+            ],
+            "summary": "Current compact platform definition consolidating Claire identity, specs, operations, functionality, governance, lifecycle, and roadmap.",
+            "route_anchors": [
+              "all_routes",
+              "operator_reference"
+            ],
+            "key_claims": [
+              "Claire is a governed lifecycle intelligence platform.",
+              "The 30-stage lifecycle is canonical.",
+              "Q&A should be intelligence-routed and evidence-aware."
+            ]
+          },
+          {
+            "doc_id": "claire_governance_and_safety",
+            "title": "Claire AI Governance and Safety Documentation",
+            "trust_tier": "governing",
+            "score": 0.762,
+            "matched_tokens": [
+              "claire",
+              "review",
+              "evidence",
+              "and"
+            ],
+            "matched_domains": [
+              "governance",
+              "evidence"
+            ],
+            "summary": "Defines Claire governance model, redline detection, compliance boundaries, oversight, intervention, mode-switching safety, and auditability.",
+            "route_anchors": [
+              "governance_gate",
+              "redline_review",
+              "mode_switching"
+            ],
+            "key_claims": [
+              "Governance overrides unsafe behavior.",
+              "Mode isolation and auditability are foundational.",
+              "Redline scenarios must block or require review."
+            ]
+          },
+          {
+            "doc_id": "claire_lifecycle_spine",
+            "title": "Claire 30-Stage Lifecycle / Lifecycle Spine",
+            "trust_tier": "canonical",
+            "score": 0.76,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "the",
+              "evidence",
+              "and"
+            ],
+            "matched_domains": [
+              "evidence"
+            ],
+            "summary": "Defines the 30-stage lifecycle from Signal Ingestion through Final Package Construction.",
+            "route_anchors": [
+              "all_lifecycle_stages"
+            ],
+            "key_claims": [
+              "Every signal must be processable through the canonical stage contract spine.",
+              "Stages 16-22 are critical for route-aware design and buildability outputs.",
+              "Stage 30 constructs final packages."
+            ]
+          },
+          {
+            "doc_id": "claire_enterprise_update_governance",
+            "title": "Claire Enterprise Online Update Governance System",
+            "trust_tier": "governing",
+            "score": 0.672,
+            "matched_tokens": [
+              "claire",
+              "evidence",
+              "and"
+            ],
+            "matched_domains": [
+              "governance",
+              "evidence"
+            ],
+            "summary": "Defines safe online update discovery, inspection, scoring, staging, validation, rollback, approval, and refusal rules.",
+            "route_anchors": [
+              "online_update_readiness",
+              "staged_update",
+              "rollback",
+              "approval_gate"
+            ],
+            "key_claims": [
+              "Claire may discover and stage updates online but may not modify active runtime code without validation and approval.",
+              "Update flow must be zero-trust, rollback-capable, audit-aware, and regression-resistant."
+            ]
+          },
+          {
+            "doc_id": "claire_recursive_learning_pipeline",
+            "title": "Recursive Learning Pipeline",
+            "trust_tier": "canonical",
+            "score": 0.67,
+            "matched_tokens": [
+              "claire",
+              "the",
+              "evidence",
+              "and"
+            ],
+            "matched_domains": [
+              "evidence"
+            ],
+            "summary": "Defines completed run output storage, lifecycle memory, self-ingestion, pattern comparison, prior output comparison, and stronger future outputs.",
+            "route_anchors": [
+              "lifecycle_memory",
+              "recursive_self_ingestion"
+            ],
+            "key_claims": [
+              "Completed runs become future inputs.",
+              "Recursive self-ingestion strengthens trend discovery, breakthrough detection, design, portfolio, and package construction."
+            ]
+          }
+        ]
+      },
+      "route_sections": {
+        "evidence_summary": "Use the evidence basket to identify which claims are supported, partially supported, inferred, assumed, or unverified.",
+        "source_quality": "Prioritize governing, canonical, architectural, and technical-reference sources over legacy context.",
+        "knowns_unknowns": "Separate known platform facts from open verification questions.",
+        "claim_support": [
+          {
+            "claim_id": "claim_7846033",
+            "text": "Claire classified this as Research Intelligence and would answer using the research_answer route with high evidence requirements.",
+            "status": "supported",
+            "support_level": 0.92,
+            "evidence_ids": [
+              "claire_unified_platform_definition_v1",
+              "claire_governance_and_safety",
+              "claire_lifecycle_spine",
+              "claire_enterprise_update_governance"
+            ],
+            "assumptions": [],
+            "verification_needed": []
+          }
+        ],
+        "verification_plan": [],
+        "knowledge_sources": [
+          "Claire AI Full Data Model Map",
+          "Claire Syntalion Unified Platform Definition v1",
+          "Claire AI Governance and Safety Documentation",
+          "Claire 30-Stage Lifecycle / Lifecycle Spine"
+        ],
+        "support_level": "strong",
+        "route_hint": "research_answer"
+      },
+      "answer_quality_state": "evidence_backed",
+      "confidence": 0.89,
+      "safe_next_operator_actions": [
+        "review_evidence_basket",
+        "inspect_knowledge_sources",
+        "request_governed_research_if_needed",
+        "route_to_lifecycle_runtime_only_after_operator_review"
+      ],
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false
+    },
+    "engineering": {
+      "version": "v19.89.8-S478-S484",
+      "created_at": "2026-05-17T01:01:00.467684+00:00",
+      "question": "Can Claire assess if this system architecture is buildable?",
+      "route_selection": {
+        "selected_domain_route": "engineering",
+        "route_id": "engineering_intelligence_route",
+        "label": "Engineering Intelligence Route",
+        "knowledge_domains": [
+          "engineering",
+          "technology_intelligence",
+          "design_portal",
+          "lifecycle",
+          "breakthrough"
+        ],
+        "primary_goal": "Assess buildability, dependencies, constraints, feasibility, implementation path, and design-route potential."
+      },
+      "route_profile": {
+        "label": "Engineering Intelligence Route",
+        "route_id": "engineering_intelligence_route",
+        "primary_goal": "Assess buildability, dependencies, constraints, feasibility, implementation path, and design-route potential.",
+        "knowledge_domains": [
+          "engineering",
+          "technology_intelligence",
+          "design_portal",
+          "lifecycle",
+          "breakthrough"
+        ],
+        "route_outputs": [
+          "buildability_read",
+          "dependency_map",
+          "constraint_notes",
+          "feasibility_questions",
+          "design_route_potential",
+          "verification_needs"
+        ]
+      },
+      "evidence_answer": {
+        "answer_id": "claire_answer_8506056",
+        "version": "v19.89.8-S464-S470",
+        "created_at": "2026-05-17T01:01:00.467684+00:00",
+        "question": "Can Claire assess if this system architecture is buildable?",
+        "classification": {
+          "question": "Can Claire assess if this system architecture is buildable?",
+          "domain": "engineering",
+          "label": "Engineering Intelligence",
+          "confidence": 0.86,
+          "matched_keywords": [
+            "build",
+            "buildable",
+            "architecture"
+          ],
+          "evidence_requirement": "moderate_to_high",
+          "default_route": "engineering_feasibility_path",
+          "innovation_potential": true,
+          "answer_mode": "governed_intelligence_answer"
+        },
+        "response_card": {
+          "card_id": "claire_card_3396926",
+          "card_type": "answer",
+          "title": "Claire intelligence answer",
+          "chips": [
+            "Ask Claire",
+            "domain:engineering",
+            "route:engineering_feasibility_path",
+            "evidence:moderate_to_high",
+            "read-only",
+            "innovation-potential"
+          ]
+        },
+        "direct_answer": "Claire classified this as Engineering Intelligence and would answer using the engineering_feasibility_path route with moderate_to_high evidence requirements.",
+        "evidence_basket": {
+          "version": "v19.89.8-S464-S470",
+          "phase": "S464-S470",
+          "stage_version": "S466",
+          "status": "evidence_basket_ready",
+          "ready": true,
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "created_at": "2026-05-17T01:01:00.467684+00:00",
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false,
+          "question": "Can Claire assess if this system architecture is buildable?",
+          "classification": {
+            "question": "Can Claire assess if this system architecture is buildable?",
+            "domain": "engineering",
+            "label": "Engineering Intelligence",
+            "confidence": 0.86,
+            "matched_keywords": [
+              "build",
+              "buildable",
+              "architecture"
+            ],
+            "evidence_requirement": "moderate_to_high",
+            "default_route": "engineering_feasibility_path",
+            "innovation_potential": true,
+            "answer_mode": "governed_intelligence_answer"
+          },
+          "context_keys": [],
+          "source_count": 13,
+          "scored_sources": [
+            {
+              "source": {
+                "source_id": "claire_unified_platform_definition_v1",
+                "title": "Claire Syntalion Unified Platform Definition v1",
+                "source_type": "uploaded_master_document",
+                "summary": "Current compact platform definition consolidating Claire identity, specs, operations, functionality, governance, lifecycle, and roadmap.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.96,
+                "recency": 0.78,
+                "supports": [
+                  "Claire is a governed lifecycle intelligence platform.",
+                  "The 30-stage lifecycle is canonical.",
+                  "Q&A should be intelligence-routed and evidence-aware."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_unified_platform_definition_v1",
+                "source_type": "uploaded_master_document",
+                "score": 0.925,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.96,
+                  "recency": 0.78,
+                  "type_weight": 0.88,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_master_system_build_plan",
+                "title": "Claire Master System Build Plan - Singularity-Aligned Edition",
+                "source_type": "uploaded_master_document",
+                "summary": "Master governing document defining Claire as a recursive trend-discovery, portfolio-construction, breakthrough-escalation, system-transformation, and acquisition-readiness platform.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.96,
+                "recency": 0.78,
+                "supports": [
+                  "Claire's root system is signal governance to trend discovery to thesis formation to portfolio creation or optimization.",
+                  "Breakthrough escalation is conditional and governed.",
+                  "Auto invention and design output are route-dependent."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_master_system_build_plan",
+                "source_type": "uploaded_master_document",
+                "score": 0.925,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.96,
+                  "recency": 0.78,
+                  "type_weight": 0.88,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_core_pipeline_architecture",
+                "title": "Core Pipeline Architecture",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines inputs, signal governance, trend discovery, thesis formation, portfolio creation, breakthrough escalation, advancement routing, lifecycle memory, and recursive self-ingestion.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Portfolio action is the normal early path.",
+                  "Breakthrough escalation selects the correct downstream route.",
+                  "Lifecycle memory enables stronger future runs."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_core_pipeline_architecture",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.906,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_lifecycle_spine",
+                "title": "Claire 30-Stage Lifecycle / Lifecycle Spine",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines the 30-stage lifecycle from Signal Ingestion through Final Package Construction.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Every signal must be processable through the canonical stage contract spine.",
+                  "Stages 16-22 are critical for route-aware design and buildability outputs.",
+                  "Stage 30 constructs final packages."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_lifecycle_spine",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.906,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_branching_master_pipeline",
+                "title": "Branching Master Pipeline",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines split paths for market/portfolio intelligence and breakthrough/design intelligence after thesis formation.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Market and portfolio routes do not require full invention routing.",
+                  "Breakthrough/design paths continue through buildability, viability, manufacturability, and feasibility."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_branching_master_pipeline",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.886,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_breakthrough_categories",
+                "title": "Breakthrough Categories",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines broad breakthrough categories across technology, market, finance, operations, regulation, acquisition, system architecture, evidence, learning loops, and category creation.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Breakthroughs are structural, not only technological.",
+                  "Breakthrough classification can drive portfolio, strategy, acquisition, design, or system routes."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_breakthrough_categories",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.886,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_recursive_learning_pipeline",
+                "title": "Recursive Learning Pipeline",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines completed run output storage, lifecycle memory, self-ingestion, pattern comparison, prior output comparison, and stronger future outputs.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Completed runs become future inputs.",
+                  "Recursive self-ingestion strengthens trend discovery, breakthrough detection, design, portfolio, and package construction."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_recursive_learning_pipeline",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.886,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_full_data_model_map",
+                "title": "Claire AI Full Data Model Map",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines Breakthrough Object, Portfolio Candidate Object, Portfolio Item, signal objects, score objects, safety objects, cluster objects, and mode state.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.62,
+                "supports": [
+                  "Claire intelligence should use structured objects rather than untyped text blobs.",
+                  "BO, PCO, and PI are key internal primitives."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_full_data_model_map",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.87,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.62,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_execution_flow_specification",
+                "title": "Claire AI Execution Flow Specification",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines mode initialization, ingestion, semantic processing, hybrid fusion, breakthrough detection, safety pre-validation, scoring, promotion, portfolio creation, and dashboard output.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Safety and governance override every execution stage.",
+                  "Connected and hybrid modes activate external ingestion only through governed pathways."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_execution_flow_specification",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_hybrid_mode",
+                "title": "Claire AI Hybrid Mode",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines Claire's dual-core maximum capability state combining deterministic engine and connected intelligence engine.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Hybrid mode fuses first-principles reasoning with live intelligence.",
+                  "Hybrid mode supports cross-validated invention, market, deal, and portfolio intelligence."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_hybrid_mode",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_deterministic_mode",
+                "title": "Claire AI Deterministic Mode",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines Claire's air-gapped, reproducible, patent-safe, internal reasoning mode.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Deterministic mode has no external access.",
+                  "Deterministic mode is patent-safe and reproducible."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_deterministic_mode",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_subsystem_dependency_graph",
+                "title": "Claire AI Subsystem Dependency Graph",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines dependencies among deterministic engine, connected engine, semantic layer, ingestion layer, hybrid fusion, scoring, portfolio engine, and safety governance.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Connected engine cannot run without the safety layer.",
+                  "Breakthrough detection is the central convergence point."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_subsystem_dependency_graph",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_technology_database",
+                "title": "Technology Database and Search Dictionary",
+                "source_type": "technology_database_document",
+                "summary": "Defines technology categories, maturity levels, dependencies, compatibility, cost, complexity, learning curve, performance, and recommendation structures.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.82,
+                "recency": 0.62,
+                "supports": [
+                  "Claire engineering answers should consider maturity, compatibility, dependency, cost, and integration complexity.",
+                  "Technology search is a structured intelligence layer, not generic text search."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_technology_database",
+                "source_type": "technology_database_document",
+                "score": 0.846,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.82,
+                  "recency": 0.62,
+                  "type_weight": 0.82,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            }
+          ],
+          "support_summary": {
+            "strong_count": 13,
+            "usable_count": 13,
+            "weak_count": 0,
+            "insufficient_count": 0,
+            "support_level": "strong",
+            "confidence": 0.92
+          }
+        },
+        "claims": [
+          {
+            "claim_id": "claim_7793103",
+            "text": "Claire classified this as Engineering Intelligence and would answer using the engineering_feasibility_path route with moderate_to_high evidence requirements.",
+            "status": "supported",
+            "support_level": 0.92,
+            "evidence_ids": [
+              "claire_unified_platform_definition_v1",
+              "claire_master_system_build_plan",
+              "claire_core_pipeline_architecture",
+              "claire_lifecycle_spine"
+            ],
+            "assumptions": [],
+            "verification_needed": []
+          }
+        ],
+        "confidence": 0.89,
+        "confidence_basis": {
+          "base_answer_confidence": 0.86,
+          "evidence_confidence": 0.92,
+          "support_level": "strong"
+        },
+        "assumptions": [
+          "This response is a governed answer contract, not a live external research result.",
+          "No runtime mutation, live web action, or autonomous execution was performed."
+        ],
+        "verification_needed": [],
+        "innovation_potential": true,
+        "route_hint": "engineering_feasibility_path",
+        "evidence_requirement": "moderate_to_high",
+        "answer_quality_state": "evidence_backed",
+        "governance_state": {
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false
+        },
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false
+      },
+      "knowledge_results": {
+        "version": "v19.89.8-S471-S477",
+        "phase": "S471-S477",
+        "stage_version": "S473",
+        "status": "knowledge_registry_search_complete",
+        "ready": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "created_at": "2026-05-17T01:01:00.467684+00:00",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "query": "Can Claire assess if this system architecture is buildable?",
+        "domains": [
+          "breakthrough",
+          "design_portal",
+          "engineering",
+          "lifecycle",
+          "technology_intelligence"
+        ],
+        "result_count": 6,
+        "results": [
+          {
+            "doc_id": "claire_breakthrough_categories",
+            "title": "Breakthrough Categories",
+            "trust_tier": "canonical",
+            "score": 0.75,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "system",
+              "architecture"
+            ],
+            "matched_domains": [
+              "engineering",
+              "breakthrough"
+            ],
+            "summary": "Defines broad breakthrough categories across technology, market, finance, operations, regulation, acquisition, system architecture, evidence, learning loops, and category creation.",
+            "route_anchors": [
+              "breakthrough_classification",
+              "advancement_path_selection"
+            ],
+            "key_claims": [
+              "Breakthroughs are structural, not only technological.",
+              "Breakthrough classification can drive portfolio, strategy, acquisition, design, or system routes."
+            ]
+          },
+          {
+            "doc_id": "claire_subsystem_dependency_graph",
+            "title": "Claire AI Subsystem Dependency Graph",
+            "trust_tier": "architectural",
+            "score": 0.692,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "system",
+              "architecture"
+            ],
+            "matched_domains": [
+              "lifecycle",
+              "breakthrough"
+            ],
+            "summary": "Defines dependencies among deterministic engine, connected engine, semantic layer, ingestion layer, hybrid fusion, scoring, portfolio engine, and safety governance.",
+            "route_anchors": [
+              "dependency_graph",
+              "engine_activation",
+              "safety_layer"
+            ],
+            "key_claims": [
+              "Connected engine cannot run without the safety layer.",
+              "Breakthrough detection is the central convergence point."
+            ]
+          },
+          {
+            "doc_id": "claire_unified_platform_definition_v1",
+            "title": "Claire Syntalion Unified Platform Definition v1",
+            "trust_tier": "governing",
+            "score": 0.622,
+            "matched_tokens": [
+              "can",
+              "claire"
+            ],
+            "matched_domains": [
+              "engineering",
+              "lifecycle",
+              "breakthrough"
+            ],
+            "summary": "Current compact platform definition consolidating Claire identity, specs, operations, functionality, governance, lifecycle, and roadmap.",
+            "route_anchors": [
+              "all_routes",
+              "operator_reference"
+            ],
+            "key_claims": [
+              "Claire is a governed lifecycle intelligence platform.",
+              "The 30-stage lifecycle is canonical.",
+              "Q&A should be intelligence-routed and evidence-aware."
+            ]
+          },
+          {
+            "doc_id": "claire_master_system_build_plan",
+            "title": "Claire Master System Build Plan - Singularity-Aligned Edition",
+            "trust_tier": "governing",
+            "score": 0.582,
+            "matched_tokens": [
+              "claire",
+              "system"
+            ],
+            "matched_domains": [
+              "lifecycle",
+              "breakthrough"
+            ],
+            "summary": "Master governing document defining Claire as a recursive trend-discovery, portfolio-construction, breakthrough-escalation, system-transformation, and acquisition-readiness platform.",
+            "route_anchors": [
+              "signal_to_portfolio",
+              "breakthrough_escalation",
+              "final_package",
+              "recursive_self_ingestion"
+            ],
+            "key_claims": [
+              "Claire's root system is signal governance to trend discovery to thesis formation to portfolio creation or optimization.",
+              "Breakthrough escalation is conditional and governed.",
+              "Auto invention and design output are route-dependent."
+            ]
+          },
+          {
+            "doc_id": "claire_execution_flow_specification",
+            "title": "Claire AI Execution Flow Specification",
+            "trust_tier": "architectural",
+            "score": 0.512,
+            "matched_tokens": [
+              "claire",
+              "architecture"
+            ],
+            "matched_domains": [
+              "lifecycle",
+              "breakthrough"
+            ],
+            "summary": "Defines mode initialization, ingestion, semantic processing, hybrid fusion, breakthrough detection, safety pre-validation, scoring, promotion, portfolio creation, and dashboard output.",
+            "route_anchors": [
+              "mode_initialization",
+              "scoring_validation",
+              "portfolio_creation",
+              "dashboard_output"
+            ],
+            "key_claims": [
+              "Safety and governance override every execution stage.",
+              "Connected and hybrid modes activate external ingestion only through governed pathways."
+            ]
+          },
+          {
+            "doc_id": "claire_core_pipeline_architecture",
+            "title": "Core Pipeline Architecture",
+            "trust_tier": "canonical",
+            "score": 0.49,
+            "matched_tokens": [
+              "claire",
+              "architecture"
+            ],
+            "matched_domains": [
+              "breakthrough"
+            ],
+            "summary": "Defines inputs, signal governance, trend discovery, thesis formation, portfolio creation, breakthrough escalation, advancement routing, lifecycle memory, and recursive self-ingestion.",
+            "route_anchors": [
+              "signal_to_thesis",
+              "portfolio_path",
+              "breakthrough_gate",
+              "recursive_memory"
+            ],
+            "key_claims": [
+              "Portfolio action is the normal early path.",
+              "Breakthrough escalation selects the correct downstream route.",
+              "Lifecycle memory enables stronger future runs."
+            ]
+          }
+        ]
+      },
+      "route_sections": {
+        "buildability_read": "Assess whether the concept can be structured into components, dependencies, constraints, and implementation phases.",
+        "architecture_implications": "Use lifecycle stages 16-22 and technology-intelligence references before calling the design route ready.",
+        "dependencies": "Identify missing components, technology stack requirements, compatibility constraints, and integration complexity.",
+        "constraints": "Evaluate feasibility, manufacturability/deployability, regulatory constraints, cost, and proof requirements.",
+        "design_route_potential": true,
+        "verification_needs": [],
+        "knowledge_sources": [
+          "Breakthrough Categories",
+          "Claire AI Subsystem Dependency Graph",
+          "Claire Syntalion Unified Platform Definition v1",
+          "Claire Master System Build Plan - Singularity-Aligned Edition"
+        ],
+        "support_level": "strong",
+        "route_hint": "engineering_feasibility_path"
+      },
+      "answer_quality_state": "evidence_backed",
+      "confidence": 0.89,
+      "safe_next_operator_actions": [
+        "review_evidence_basket",
+        "inspect_knowledge_sources",
+        "request_governed_research_if_needed",
+        "route_to_lifecycle_runtime_only_after_operator_review"
+      ],
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false
+    },
+    "cross_domain": {
+      "version": "v19.89.8-S478-S484",
+      "created_at": "2026-05-17T01:01:00.468684+00:00",
+      "question": "Can Claire compare market demand, research evidence, and engineering feasibility?",
+      "route_selection": {
+        "selected_domain_route": "cross_domain",
+        "route_id": "cross_domain_synthesis_route",
+        "label": "Cross-Domain Synthesis Route",
+        "knowledge_domains": [
+          "market",
+          "research",
+          "engineering",
+          "portfolio",
+          "breakthrough",
+          "acquisition"
+        ],
+        "primary_goal": "Combine market, research, and engineering intelligence into a route-aware synthesis."
+      },
+      "route_profile": {
+        "label": "Cross-Domain Synthesis Route",
+        "route_id": "cross_domain_synthesis_route",
+        "primary_goal": "Combine market, research, and engineering intelligence into a route-aware synthesis.",
+        "knowledge_domains": [
+          "market",
+          "research",
+          "engineering",
+          "portfolio",
+          "breakthrough",
+          "acquisition"
+        ],
+        "route_outputs": [
+          "synthesis",
+          "conflicts",
+          "alignment",
+          "innovation_angle",
+          "route_recommendation",
+          "verification_needs"
+        ]
+      },
+      "evidence_answer": {
+        "answer_id": "claire_answer_6754040",
+        "version": "v19.89.8-S464-S470",
+        "created_at": "2026-05-17T01:01:00.468684+00:00",
+        "question": "Can Claire compare market demand, research evidence, and engineering feasibility?",
+        "classification": {
+          "question": "Can Claire compare market demand, research evidence, and engineering feasibility?",
+          "domain": "engineering",
+          "label": "Engineering Intelligence",
+          "confidence": 0.78,
+          "matched_keywords": [
+            "engineering",
+            "feasibility"
+          ],
+          "evidence_requirement": "moderate_to_high",
+          "default_route": "engineering_feasibility_path",
+          "innovation_potential": false,
+          "answer_mode": "governed_intelligence_answer"
+        },
+        "response_card": {
+          "card_id": "claire_card_1644910",
+          "card_type": "answer",
+          "title": "Claire intelligence answer",
+          "chips": [
+            "Ask Claire",
+            "domain:engineering",
+            "route:engineering_feasibility_path",
+            "evidence:moderate_to_high",
+            "read-only"
+          ]
+        },
+        "direct_answer": "Claire classified this as Engineering Intelligence and would answer using the engineering_feasibility_path route with moderate_to_high evidence requirements.",
+        "evidence_basket": {
+          "version": "v19.89.8-S464-S470",
+          "phase": "S464-S470",
+          "stage_version": "S466",
+          "status": "evidence_basket_ready",
+          "ready": true,
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "created_at": "2026-05-17T01:01:00.468684+00:00",
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false,
+          "question": "Can Claire compare market demand, research evidence, and engineering feasibility?",
+          "classification": {
+            "question": "Can Claire compare market demand, research evidence, and engineering feasibility?",
+            "domain": "engineering",
+            "label": "Engineering Intelligence",
+            "confidence": 0.78,
+            "matched_keywords": [
+              "engineering",
+              "feasibility"
+            ],
+            "evidence_requirement": "moderate_to_high",
+            "default_route": "engineering_feasibility_path",
+            "innovation_potential": false,
+            "answer_mode": "governed_intelligence_answer"
+          },
+          "context_keys": [],
+          "source_count": 12,
+          "scored_sources": [
+            {
+              "source": {
+                "source_id": "claire_unified_platform_definition_v1",
+                "title": "Claire Syntalion Unified Platform Definition v1",
+                "source_type": "uploaded_master_document",
+                "summary": "Current compact platform definition consolidating Claire identity, specs, operations, functionality, governance, lifecycle, and roadmap.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.96,
+                "recency": 0.78,
+                "supports": [
+                  "Claire is a governed lifecycle intelligence platform.",
+                  "The 30-stage lifecycle is canonical.",
+                  "Q&A should be intelligence-routed and evidence-aware."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_unified_platform_definition_v1",
+                "source_type": "uploaded_master_document",
+                "score": 0.925,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.96,
+                  "recency": 0.78,
+                  "type_weight": 0.88,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_master_system_build_plan",
+                "title": "Claire Master System Build Plan - Singularity-Aligned Edition",
+                "source_type": "uploaded_master_document",
+                "summary": "Master governing document defining Claire as a recursive trend-discovery, portfolio-construction, breakthrough-escalation, system-transformation, and acquisition-readiness platform.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.96,
+                "recency": 0.78,
+                "supports": [
+                  "Claire's root system is signal governance to trend discovery to thesis formation to portfolio creation or optimization.",
+                  "Breakthrough escalation is conditional and governed.",
+                  "Auto invention and design output are route-dependent."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_master_system_build_plan",
+                "source_type": "uploaded_master_document",
+                "score": 0.925,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.96,
+                  "recency": 0.78,
+                  "type_weight": 0.88,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_core_pipeline_architecture",
+                "title": "Core Pipeline Architecture",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines inputs, signal governance, trend discovery, thesis formation, portfolio creation, breakthrough escalation, advancement routing, lifecycle memory, and recursive self-ingestion.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Portfolio action is the normal early path.",
+                  "Breakthrough escalation selects the correct downstream route.",
+                  "Lifecycle memory enables stronger future runs."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_core_pipeline_architecture",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.906,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.06,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_branching_master_pipeline",
+                "title": "Branching Master Pipeline",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines split paths for market/portfolio intelligence and breakthrough/design intelligence after thesis formation.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Market and portfolio routes do not require full invention routing.",
+                  "Breakthrough/design paths continue through buildability, viability, manufacturability, and feasibility."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_branching_master_pipeline",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.886,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_breakthrough_categories",
+                "title": "Breakthrough Categories",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines broad breakthrough categories across technology, market, finance, operations, regulation, acquisition, system architecture, evidence, learning loops, and category creation.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.78,
+                "supports": [
+                  "Breakthroughs are structural, not only technological.",
+                  "Breakthrough classification can drive portfolio, strategy, acquisition, design, or system routes."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_breakthrough_categories",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.886,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.78,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_full_data_model_map",
+                "title": "Claire AI Full Data Model Map",
+                "source_type": "uploaded_pipeline_document",
+                "summary": "Defines Breakthrough Object, Portfolio Candidate Object, Portfolio Item, signal objects, score objects, safety objects, cluster objects, and mode state.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.9,
+                "recency": 0.62,
+                "supports": [
+                  "Claire intelligence should use structured objects rather than untyped text blobs.",
+                  "BO, PCO, and PI are key internal primitives."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_full_data_model_map",
+                "source_type": "uploaded_pipeline_document",
+                "score": 0.87,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.9,
+                  "recency": 0.62,
+                  "type_weight": 0.84,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_execution_flow_specification",
+                "title": "Claire AI Execution Flow Specification",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines mode initialization, ingestion, semantic processing, hybrid fusion, breakthrough detection, safety pre-validation, scoring, promotion, portfolio creation, and dashboard output.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Safety and governance override every execution stage.",
+                  "Connected and hybrid modes activate external ingestion only through governed pathways."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_execution_flow_specification",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_hybrid_mode",
+                "title": "Claire AI Hybrid Mode",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines Claire's dual-core maximum capability state combining deterministic engine and connected intelligence engine.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Hybrid mode fuses first-principles reasoning with live intelligence.",
+                  "Hybrid mode supports cross-validated invention, market, deal, and portfolio intelligence."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_hybrid_mode",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_deterministic_mode",
+                "title": "Claire AI Deterministic Mode",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines Claire's air-gapped, reproducible, patent-safe, internal reasoning mode.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Deterministic mode has no external access.",
+                  "Deterministic mode is patent-safe and reproducible."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_deterministic_mode",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_connected_intelligence_mode",
+                "title": "Claire Connected Intelligence Mode",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines Claire's live market-aware intelligence mode with governed technology, market, competitor, regulatory, and acquisition signals.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Connected mode uses governed external signal ingestion.",
+                  "Connected mode supports real-time strategic intelligence and dynamic portfolio optimization."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_connected_intelligence_mode",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_subsystem_dependency_graph",
+                "title": "Claire AI Subsystem Dependency Graph",
+                "source_type": "uploaded_architecture_document",
+                "summary": "Defines dependencies among deterministic engine, connected engine, semantic layer, ingestion layer, hybrid fusion, scoring, portfolio engine, and safety governance.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.86,
+                "recency": 0.62,
+                "supports": [
+                  "Connected engine cannot run without the safety layer.",
+                  "Breakthrough detection is the central convergence point."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_subsystem_dependency_graph",
+                "source_type": "uploaded_architecture_document",
+                "score": 0.86,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.86,
+                  "recency": 0.62,
+                  "type_weight": 0.86,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            },
+            {
+              "source": {
+                "source_id": "claire_technology_database",
+                "title": "Technology Database and Search Dictionary",
+                "source_type": "technology_database_document",
+                "summary": "Defines technology categories, maturity levels, dependencies, compatibility, cost, complexity, learning curve, performance, and recommendation structures.",
+                "relevance": 0.84,
+                "specificity": 0.82,
+                "trust": 0.82,
+                "recency": 0.62,
+                "supports": [
+                  "Claire engineering answers should consider maturity, compatibility, dependency, cost, and integration complexity.",
+                  "Technology search is a structured intelligence layer, not generic text search."
+                ],
+                "limitations": []
+              },
+              "score": {
+                "source_id": "claire_technology_database",
+                "source_type": "technology_database_document",
+                "score": 0.846,
+                "grade": "strong",
+                "components": {
+                  "relevance": 0.84,
+                  "specificity": 0.82,
+                  "trust": 0.82,
+                  "recency": 0.62,
+                  "type_weight": 0.82,
+                  "support_bonus": 0.04,
+                  "limitation_penalty": 0.0
+                }
+              }
+            }
+          ],
+          "support_summary": {
+            "strong_count": 12,
+            "usable_count": 12,
+            "weak_count": 0,
+            "insufficient_count": 0,
+            "support_level": "strong",
+            "confidence": 0.92
+          }
+        },
+        "claims": [
+          {
+            "claim_id": "claim_7416905",
+            "text": "Claire classified this as Engineering Intelligence and would answer using the engineering_feasibility_path route with moderate_to_high evidence requirements.",
+            "status": "supported",
+            "support_level": 0.92,
+            "evidence_ids": [
+              "claire_unified_platform_definition_v1",
+              "claire_master_system_build_plan",
+              "claire_core_pipeline_architecture",
+              "claire_branching_master_pipeline"
+            ],
+            "assumptions": [],
+            "verification_needed": []
+          }
+        ],
+        "confidence": 0.86,
+        "confidence_basis": {
+          "base_answer_confidence": 0.78,
+          "evidence_confidence": 0.92,
+          "support_level": "strong"
+        },
+        "assumptions": [
+          "This response is a governed answer contract, not a live external research result.",
+          "No runtime mutation, live web action, or autonomous execution was performed."
+        ],
+        "verification_needed": [],
+        "innovation_potential": false,
+        "route_hint": "engineering_feasibility_path",
+        "evidence_requirement": "moderate_to_high",
+        "answer_quality_state": "evidence_backed",
+        "governance_state": {
+          "backend_owns_truth": true,
+          "cockpit_presentation_only": true,
+          "runtime_mutation_enabled": false,
+          "runtime_truth_mutation_allowed": false,
+          "runtime_truth_write_allowed": false,
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "autonomous_execution_enabled": false,
+          "autonomous_agent_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "browser_execution_enabled": false,
+          "network_request_performed": false,
+          "body_read_allowed": false
+        },
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false
+      },
+      "knowledge_results": {
+        "version": "v19.89.8-S471-S477",
+        "phase": "S471-S477",
+        "stage_version": "S473",
+        "status": "knowledge_registry_search_complete",
+        "ready": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "created_at": "2026-05-17T01:01:00.468684+00:00",
+        "runtime_mutation_enabled": false,
+        "runtime_truth_mutation_allowed": false,
+        "runtime_truth_write_allowed": false,
+        "automatic_updates_enabled": false,
+        "autonomous_crawling_enabled": false,
+        "autonomous_execution_enabled": false,
+        "autonomous_agent_execution_enabled": false,
+        "live_web_execution_enabled": false,
+        "browser_execution_enabled": false,
+        "network_request_performed": false,
+        "body_read_allowed": false,
+        "query": "Can Claire compare market demand, research evidence, and engineering feasibility?",
+        "domains": [
+          "acquisition",
+          "breakthrough",
+          "engineering",
+          "market",
+          "portfolio",
+          "research"
+        ],
+        "result_count": 6,
+        "results": [
+          {
+            "doc_id": "claire_breakthrough_categories",
+            "title": "Breakthrough Categories",
+            "trust_tier": "canonical",
+            "score": 0.97,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "market",
+              "evidence,",
+              "and",
+              "engineering"
+            ],
+            "matched_domains": [
+              "engineering",
+              "breakthrough",
+              "portfolio",
+              "acquisition"
+            ],
+            "summary": "Defines broad breakthrough categories across technology, market, finance, operations, regulation, acquisition, system architecture, evidence, learning loops, and category creation.",
+            "route_anchors": [
+              "breakthrough_classification",
+              "advancement_path_selection"
+            ],
+            "key_claims": [
+              "Breakthroughs are structural, not only technological.",
+              "Breakthrough classification can drive portfolio, strategy, acquisition, design, or system routes."
+            ]
+          },
+          {
+            "doc_id": "claire_unified_platform_definition_v1",
+            "title": "Claire Syntalion Unified Platform Definition v1",
+            "trust_tier": "governing",
+            "score": 0.802,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "and",
+              "engineering"
+            ],
+            "matched_domains": [
+              "engineering",
+              "breakthrough",
+              "portfolio",
+              "acquisition"
+            ],
+            "summary": "Current compact platform definition consolidating Claire identity, specs, operations, functionality, governance, lifecycle, and roadmap.",
+            "route_anchors": [
+              "all_routes",
+              "operator_reference"
+            ],
+            "key_claims": [
+              "Claire is a governed lifecycle intelligence platform.",
+              "The 30-stage lifecycle is canonical.",
+              "Q&A should be intelligence-routed and evidence-aware."
+            ]
+          },
+          {
+            "doc_id": "claire_branching_master_pipeline",
+            "title": "Branching Master Pipeline",
+            "trust_tier": "canonical",
+            "score": 0.79,
+            "matched_tokens": [
+              "claire",
+              "market",
+              "and",
+              "engineering"
+            ],
+            "matched_domains": [
+              "engineering",
+              "breakthrough",
+              "portfolio",
+              "acquisition"
+            ],
+            "summary": "Defines split paths for market/portfolio intelligence and breakthrough/design intelligence after thesis formation.",
+            "route_anchors": [
+              "portfolio_path",
+              "breakthrough_design_path",
+              "final_package"
+            ],
+            "key_claims": [
+              "Market and portfolio routes do not require full invention routing.",
+              "Breakthrough/design paths continue through buildability, viability, manufacturability, and feasibility."
+            ]
+          },
+          {
+            "doc_id": "claire_hybrid_mode",
+            "title": "Claire AI Hybrid Mode",
+            "trust_tier": "architectural",
+            "score": 0.732,
+            "matched_tokens": [
+              "claire",
+              "market",
+              "and",
+              "engineering"
+            ],
+            "matched_domains": [
+              "engineering",
+              "portfolio",
+              "market",
+              "acquisition"
+            ],
+            "summary": "Defines Claire's dual-core maximum capability state combining deterministic engine and connected intelligence engine.",
+            "route_anchors": [
+              "hybrid_fusion",
+              "cross_validation",
+              "maximum_capability"
+            ],
+            "key_claims": [
+              "Hybrid mode fuses first-principles reasoning with live intelligence.",
+              "Hybrid mode supports cross-validated invention, market, deal, and portfolio intelligence."
+            ]
+          },
+          {
+            "doc_id": "claire_connected_intelligence_mode",
+            "title": "Claire Connected Intelligence Mode",
+            "trust_tier": "architectural",
+            "score": 0.692,
+            "matched_tokens": [
+              "can",
+              "claire",
+              "market",
+              "and"
+            ],
+            "matched_domains": [
+              "portfolio",
+              "acquisition"
+            ],
+            "summary": "Defines Claire's live market-aware intelligence mode with governed technology, market, competitor, regulatory, and acquisition signals.",
+            "route_anchors": [
+              "live_signal_ingestion",
+              "real_time_scanning",
+              "connected_intelligence"
+            ],
+            "key_claims": [
+              "Connected mode uses governed external signal ingestion.",
+              "Connected mode supports real-time strategic intelligence and dynamic portfolio optimization."
+            ]
+          },
+          {
+            "doc_id": "claire_master_system_build_plan",
+            "title": "Claire Master System Build Plan - Singularity-Aligned Edition",
+            "trust_tier": "governing",
+            "score": 0.622,
+            "matched_tokens": [
+              "claire",
+              "and"
+            ],
+            "matched_domains": [
+              "portfolio",
+              "breakthrough",
+              "acquisition"
+            ],
+            "summary": "Master governing document defining Claire as a recursive trend-discovery, portfolio-construction, breakthrough-escalation, system-transformation, and acquisition-readiness platform.",
+            "route_anchors": [
+              "signal_to_portfolio",
+              "breakthrough_escalation",
+              "final_package",
+              "recursive_self_ingestion"
+            ],
+            "key_claims": [
+              "Claire's root system is signal governance to trend discovery to thesis formation to portfolio creation or optimization.",
+              "Breakthrough escalation is conditional and governed.",
+              "Auto invention and design output are route-dependent."
+            ]
+          }
+        ]
+      },
+      "route_sections": {
+        "synthesis": "Combine market timing, research evidence, and engineering feasibility before selecting an advancement path.",
+        "conflicts": "Flag cases where market opportunity is high but evidence or buildability is weak.",
+        "alignment": "A strong route requires demand logic, source support, and feasibility to point in the same direction.",
+        "innovation_angle": false,
+        "route_recommendation": "engineering_feasibility_path",
+        "verification_needs": [],
+        "knowledge_sources": [
+          "Breakthrough Categories",
+          "Claire Syntalion Unified Platform Definition v1",
+          "Branching Master Pipeline",
+          "Claire AI Hybrid Mode"
+        ],
+        "support_level": "strong"
+      },
+      "answer_quality_state": "evidence_backed",
+      "confidence": 0.86,
+      "safe_next_operator_actions": [
+        "review_evidence_basket",
+        "inspect_knowledge_sources",
+        "request_governed_research_if_needed",
+        "route_to_lifecycle_runtime_only_after_operator_review"
+      ],
+      "runtime_mutation_enabled": false,
+      "runtime_truth_mutation_allowed": false,
+      "runtime_truth_write_allowed": false,
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "autonomous_execution_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "browser_execution_enabled": false,
+      "network_request_performed": false,
+      "body_read_allowed": false
+    }
+  },
+  "forward_motion_allowed": true,
+  "next_phase": "S485-S491 Innovation potential detection and route escalation"
+}

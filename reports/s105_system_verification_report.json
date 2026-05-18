@@ -1,0 +1,268 @@
+{
+  "forward_motion_allowed": true,
+  "generated_at": "2026-05-18T22:35:55.649757+00:00",
+  "next_allowed_phase": "S106 canonical runtime spine map",
+  "ok": true,
+  "report_version": "v19.89.8-S105-CHECK",
+  "sections": {
+    "demo_contracts": {
+      "authority": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_blocked": true,
+        "live_web_execution_blocked_unless_explicitly_gated": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "export_count": 78,
+      "export_dir_exists": true,
+      "ok": true,
+      "proof_status": "ready",
+      "review_queue_total": 3,
+      "review_store_exists": true
+    },
+    "existing_app_import": {
+      "ok": true,
+      "results": [
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+          "has_app": true,
+          "has_create_app": true,
+          "module": "claire.app",
+          "ok": true
+        },
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\main.py",
+          "has_app": true,
+          "has_create_app": true,
+          "module": "main",
+          "ok": true
+        }
+      ]
+    },
+    "fastapi_operator_routes": {
+      "endpoint_checks": {
+        "/api/governed/operator/api-demo-proof": {
+          "ok": true,
+          "status_code": 200
+        },
+        "/api/governed/operator/cockpit-card": {
+          "ok": true,
+          "status_code": 200
+        },
+        "/api/governed/operator/export-manifest": {
+          "ok": true,
+          "status_code": 200
+        },
+        "/api/governed/operator/fetch-map": {
+          "ok": true,
+          "status_code": 200
+        },
+        "/api/governed/operator/proof-panel": {
+          "ok": true,
+          "status_code": 200
+        },
+        "/api/governed/operator/review-queue": {
+          "ok": true,
+          "status_code": 200
+        },
+        "/api/governed/operator/swagger-proof": {
+          "ok": true,
+          "status_code": 200
+        }
+      },
+      "mounted_route_count": 9,
+      "ok": true,
+      "required_operator_route_count": 9,
+      "routes": [
+        {
+          "mounted": true,
+          "route": "/api/governed/operator/proof-panel"
+        },
+        {
+          "mounted": true,
+          "route": "/api/governed/operator/review-queue"
+        },
+        {
+          "mounted": true,
+          "route": "/api/governed/operator/review-action"
+        },
+        {
+          "mounted": true,
+          "route": "/api/governed/operator/route-demo"
+        },
+        {
+          "mounted": true,
+          "route": "/api/governed/operator/export-manifest"
+        },
+        {
+          "mounted": true,
+          "route": "/api/governed/operator/cockpit-card"
+        },
+        {
+          "mounted": true,
+          "route": "/api/governed/operator/fetch-map"
+        },
+        {
+          "mounted": true,
+          "route": "/api/governed/operator/swagger-proof"
+        },
+        {
+          "mounted": true,
+          "route": "/api/governed/operator/api-demo-proof"
+        }
+      ]
+    },
+    "files": {
+      "files": [
+        {
+          "exists": true,
+          "path": "claire/api/governed_discovery_candidates.py",
+          "size_bytes": 7548
+        },
+        {
+          "exists": true,
+          "path": "claire/api/governed_useful_outputs.py",
+          "size_bytes": 2714
+        },
+        {
+          "exists": true,
+          "path": "claire/api/governed_review_queue.py",
+          "size_bytes": 7614
+        },
+        {
+          "exists": true,
+          "path": "claire/api/governed_reviewed_exports.py",
+          "size_bytes": 2770
+        },
+        {
+          "exists": true,
+          "path": "claire/api/governed_route_repeat.py",
+          "size_bytes": 1344
+        },
+        {
+          "exists": true,
+          "path": "claire/api/governed_demo_run.py",
+          "size_bytes": 3955
+        },
+        {
+          "exists": true,
+          "path": "claire/api/governed_s85_s91_payload.py",
+          "size_bytes": 1638
+        },
+        {
+          "exists": true,
+          "path": "claire/api/governed_s92_s98_cockpit_contracts.py",
+          "size_bytes": 9233
+        },
+        {
+          "exists": true,
+          "path": "claire/api/governed_s99_s105_routes.py",
+          "size_bytes": 6822
+        }
+      ],
+      "ok": true,
+      "required_count": 9
+    },
+    "governance_locks": {
+      "dangerous_flags": {
+        "automatic_updates_enabled": false,
+        "autonomous_execution_enabled": false,
+        "runtime_truth_mutation_enabled": false,
+        "runtime_truth_write_enabled": false
+      },
+      "locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "continuous_crawling_blocked": true,
+        "live_web_execution_blocked_unless_explicitly_gated": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      },
+      "ok": true,
+      "required_locks": {
+        "automatic_updates_blocked": true,
+        "autonomous_execution_blocked": true,
+        "backend_owns_truth": true,
+        "cockpit_presentation_only": true,
+        "manual_promotion_mandatory": true,
+        "quarantine_mandatory": true,
+        "runtime_truth_mutation_blocked": true,
+        "runtime_truth_write_blocked": true
+      }
+    },
+    "imports": {
+      "imports": [
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\__init__.py",
+          "module": "claire",
+          "ok": true
+        },
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_discovery_candidates.py",
+          "module": "claire.api.governed_discovery_candidates",
+          "ok": true
+        },
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_useful_outputs.py",
+          "module": "claire.api.governed_useful_outputs",
+          "ok": true
+        },
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_review_queue.py",
+          "module": "claire.api.governed_review_queue",
+          "ok": true
+        },
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_reviewed_exports.py",
+          "module": "claire.api.governed_reviewed_exports",
+          "ok": true
+        },
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_route_repeat.py",
+          "module": "claire.api.governed_route_repeat",
+          "ok": true
+        },
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_demo_run.py",
+          "module": "claire.api.governed_demo_run",
+          "ok": true
+        },
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_s85_s91_payload.py",
+          "module": "claire.api.governed_s85_s91_payload",
+          "ok": true
+        },
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_s92_s98_cockpit_contracts.py",
+          "module": "claire.api.governed_s92_s98_cockpit_contracts",
+          "ok": true
+        },
+        {
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_s99_s105_routes.py",
+          "module": "claire.api.governed_s99_s105_routes",
+          "ok": true
+        }
+      ],
+      "ok": true,
+      "required_count": 10
+    }
+  },
+  "status": "system_check_passed",
+  "stop_gate": "S105-CHECK",
+  "summary": {
+    "demo_contract_ok": true,
+    "governance_locks_ok": true,
+    "imports_ok": true,
+    "operator_routes_ok": true,
+    "required_files_ok": true
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "app_registration": {
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\backups\\s957_s984\\app.py.20260517_094302.bak",
+    "exists": true,
+    "message": "guarded router registration inserted before return app",
+    "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "registered": true
+  },
+  "blocked_authority_preserved": {
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "body_read_allowed": false,
+    "browser_execution_enabled": false,
+    "command_execution_enabled": false,
+    "external_network_request_performed": false,
+    "live_web_execution_enabled": false,
+    "network_request_performed": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_enabled": false,
+    "search_provider_execution_enabled": false
+  },
+  "expected_visual_result": [
+    "A visible Governed operation buttons panel appears near the command bar.",
+    "Actions chip count should become greater than zero after asset load.",
+    "Actions tab should show visual action cards instead of only 'No governed actions registered'.",
+    "Governed Web should show operation controls for readiness, provider inspection, query planning, metadata preview, body-read preflight, and source ingestion.",
+    "Button clicks only return local preview packets; they do not execute internet/search/body-read/mutation/install/command operations."
+  ],
+  "files_written": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\governance\\governed_cockpit_operation_visuals.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_operation_visual_routes.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\assets\\claire_cockpit_operation_visual_controls.js",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\assets\\claire_cockpit_operation_visual_controls.css",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s957_s984_cockpit_operation_visual_mount.py"
+  ],
+  "html_results": [
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\backups\\s957_s984\\cockpit_shell.html.20260517_094302.bak",
+      "message": "visual operation controls css/js/mount inserted",
+      "patched": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\backups\\s957_s984\\index.html.20260517_094302.bak",
+      "message": "visual operation controls css/js/mount inserted",
+      "patched": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html"
+    }
+  ],
+  "html_targets": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html"
+  ],
+  "installed_at": "2026-05-17T14:43:02.760627+00:00",
+  "new_endpoints": [
+    "/api/cockpit/operation-visuals/payload",
+    "/api/cockpit/operation-visuals/buttons",
+    "/api/cockpit/operation-visuals/cards",
+    "/api/cockpit/operation-visuals/actions",
+    "/api/cockpit/operation-visuals/status",
+    "/api/cockpit/operation-visuals/stop-gate",
+    "/api/cockpit/operation-visuals/preview/{operation_key}",
+    "/api/command-bar/visual-operations/payload",
+    "/api/internet/s984-operation-visual-mount"
+  ],
+  "phase": "S957-S984",
+  "purpose": "Force visible operator controls/buttons into the cockpit UI, not just backend action descriptors.",
+  "version": "v19.89.8-S957-S984-cockpit-operation-button-visual-mount"
+}

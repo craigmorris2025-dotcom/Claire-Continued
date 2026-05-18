@@ -1,0 +1,289 @@
+{
+  "version": "v19.82B.0",
+  "contract_name": "Claire Enterprise Cockpit End-State Contract",
+  "generated_at": "2026-05-11T12:06:35",
+  "platform_identity": {
+    "name": "Claire Syntalion",
+    "definition": "Governed autonomous discovery, breakthrough, innovation, AutoDesign/Design Portal, portfolio, acquisition-readiness, internet-connected, recursive-memory platform."
+  },
+  "authority_rules": {
+    "backend_owns_truth": true,
+    "cockpit_owns_presentation_only": true,
+    "old_dashboard_status": "fallback_reference_only",
+    "frontend_must_not_compute_routes": true,
+    "frontend_must_not_compute_scores": true,
+    "frontend_must_not_fake_outputs": true,
+    "missing_evidence_enrichment_required_before_failure": true,
+    "runtime_truth_over_downstream_assumptions": true
+  },
+  "feature_completion_rule": [
+    "backend_endpoint",
+    "saved_artifact",
+    "canonical_payload_field",
+    "cockpit_render",
+    "pytest_coverage"
+  ],
+  "protected_design_stages": {
+    "16": "Auto Invention / Solution Generation",
+    "17": "Solution Structuring",
+    "18": "Buildability Assessment",
+    "19": "Viability Assessment",
+    "20": "Manufacturability / Deployability Assessment",
+    "21": "Feasibility Validation",
+    "22": "Design Portal Output / Blueprints / Specs"
+  },
+  "workspaces": [
+    {
+      "id": "runtime",
+      "label": "Runtime",
+      "purpose": "Operate autonomous runs and expose lifecycle truth.",
+      "required_views": [
+        "start_run",
+        "active_run_status",
+        "terminal_state",
+        "selected_route",
+        "lifecycle_graph",
+        "gate_decisions",
+        "missing_evidence",
+        "enrichment_log",
+        "artifact_index",
+        "run_history"
+      ],
+      "required_endpoints": [
+        "POST /runs/start",
+        "GET /runs/{run_id}/status",
+        "GET /runs/{run_id}/lifecycle",
+        "GET /runs/{run_id}/gates",
+        "GET /runs/{run_id}/missing-evidence",
+        "POST /runs/{run_id}/enrich"
+      ],
+      "required_artifacts": [
+        "data/runs/{run_id}/run_manifest.json",
+        "data/runs/{run_id}/status.json",
+        "data/runs/{run_id}/lifecycle_state.json",
+        "data/runs/{run_id}/gate_decisions.json",
+        "data/runs/{run_id}/missing_evidence.json",
+        "data/runs/{run_id}/enrichment_log.json"
+      ]
+    },
+    {
+      "id": "intelligence",
+      "label": "Intelligence",
+      "purpose": "Show signal governance, source universe, trend discovery, clusters, thesis formation, and discovery outputs.",
+      "required_views": [
+        "source_universe",
+        "signal_ingestion",
+        "source_validation",
+        "trend_discovery",
+        "cluster_map",
+        "thesis_formation",
+        "gap_detection",
+        "discovery_generation"
+      ],
+      "required_endpoints": [
+        "GET /universes",
+        "GET /universes/{universe_id}",
+        "POST /universes/{universe_id}/probe",
+        "GET /runs/{run_id}/discovery"
+      ],
+      "required_artifacts": [
+        "data/source_universes/universe_index.json",
+        "data/source_universes/{universe_id}.json",
+        "data/source_universes/{universe_id}_probe.json",
+        "data/runs/{run_id}/discovery_brief.json"
+      ]
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio",
+      "purpose": "Render portfolio creation, optimization, risk, exposure, opportunity map, and action recommendations.",
+      "required_views": [
+        "trend_thesis",
+        "market_positioning",
+        "competitor_analysis",
+        "portfolio_weights",
+        "risk_notes",
+        "exposure_notes",
+        "opportunity_map",
+        "action_recommendations"
+      ],
+      "required_endpoints": [
+        "GET /runs/{run_id}/portfolio"
+      ],
+      "required_artifacts": [
+        "data/runs/{run_id}/portfolio_recommendation.json"
+      ]
+    },
+    {
+      "id": "breakthrough",
+      "label": "Breakthrough",
+      "purpose": "Expose breakthrough gate, classification, evidence, confidence, route effect, and escalation decision.",
+      "required_views": [
+        "breakthrough_gate",
+        "classification",
+        "category",
+        "confidence",
+        "evidence_refs",
+        "route_effect",
+        "advancement_path_selection"
+      ],
+      "required_endpoints": [
+        "GET /runs/{run_id}/breakthrough"
+      ],
+      "required_artifacts": [
+        "data/runs/{run_id}/breakthrough_assessment.json"
+      ]
+    },
+    {
+      "id": "design",
+      "label": "Design",
+      "purpose": "Render stages 16-22 as first-class AutoDesign and Design Portal outputs.",
+      "required_views": [
+        "stage_16_auto_invention",
+        "stage_17_solution_structuring",
+        "stage_18_buildability",
+        "stage_19_viability",
+        "stage_20_manufacturability_deployability",
+        "stage_21_feasibility",
+        "stage_22_design_portal",
+        "blueprints",
+        "component_map",
+        "dependency_map",
+        "implementation_phases"
+      ],
+      "required_endpoints": [
+        "GET /runs/{run_id}/design"
+      ],
+      "required_artifacts": [
+        "data/runs/{run_id}/design_package.json"
+      ]
+    },
+    {
+      "id": "existing_system",
+      "label": "Existing System",
+      "purpose": "Support existing-system ingestion, decomposition, weakness map, superior replacement design, and migration feasibility.",
+      "required_views": [
+        "system_ingestion",
+        "decomposition",
+        "weakness_map",
+        "superior_system_design",
+        "replacement_rationale",
+        "migration_feasibility"
+      ],
+      "required_endpoints": [
+        "GET /runs/{run_id}/existing-system"
+      ],
+      "required_artifacts": [
+        "data/runs/{run_id}/existing_system_replacement.json"
+      ]
+    },
+    {
+      "id": "acquisition",
+      "label": "Acquisition",
+      "purpose": "Render acquirer candidates, fit score, strategic rationale, marketability, deal logic, and package readiness.",
+      "required_views": [
+        "acquirer_candidates",
+        "fit_scores",
+        "strategic_rationale",
+        "marketability",
+        "deal_logic",
+        "package_readiness"
+      ],
+      "required_endpoints": [
+        "GET /runs/{run_id}/acquirers",
+        "GET /runs/{run_id}/package"
+      ],
+      "required_artifacts": [
+        "data/runs/{run_id}/acquirer_map.json",
+        "data/runs/{run_id}/proof_package/package_manifest.json"
+      ]
+    },
+    {
+      "id": "sources",
+      "label": "Sources",
+      "purpose": "Govern source universes, web/research providers, trust policy, probes, and evidence promotion status.",
+      "required_views": [
+        "source_universes",
+        "provider_status",
+        "probe_reports",
+        "source_trust_policy",
+        "evidence_refs",
+        "quarantine_status"
+      ],
+      "required_endpoints": [
+        "GET /universes",
+        "GET /dashboard/payload",
+        "GET /dashboard/payload/status"
+      ],
+      "required_artifacts": [
+        "data/source_universes/universe_index.json",
+        "data/config/source_trust_policy.json"
+      ]
+    },
+    {
+      "id": "memory",
+      "label": "Memory",
+      "purpose": "Expose lifecycle memory, recursive self-ingestion, and prior-output comparison.",
+      "required_views": [
+        "lifecycle_memory",
+        "self_ingestion",
+        "prior_discovery_comparison",
+        "prior_blueprint_comparison",
+        "prior_package_comparison",
+        "future_run_strengthening"
+      ],
+      "required_endpoints": [
+        "GET /runs/{run_id}/memory"
+      ],
+      "required_artifacts": [
+        "data/runs/{run_id}/recursive_memory.json"
+      ]
+    },
+    {
+      "id": "governance",
+      "label": "Governance",
+      "purpose": "Render update governance, rollback, protected path guard, validation gauntlet, approvals, and audit reports.",
+      "required_views": [
+        "update_governance_status",
+        "protected_paths",
+        "rollback_points",
+        "approval_policy",
+        "validation_gauntlet",
+        "audit_reports"
+      ],
+      "required_endpoints": [
+        "GET /update-governance/status",
+        "POST /update-governance/probe",
+        "POST /update-governance/stage"
+      ],
+      "required_artifacts": [
+        "data/update_governance/update_governance_status.json",
+        "data/update_governance/update_probe_report.json",
+        "data/update_governance/staged_update_report.json"
+      ]
+    },
+    {
+      "id": "system",
+      "label": "System",
+      "purpose": "Show health, endpoint registry, payload status, artifact registry, version lineage, and regression status.",
+      "required_views": [
+        "health",
+        "payload_status",
+        "endpoint_registry",
+        "artifact_registry",
+        "version_lineage",
+        "regression_status",
+        "old_dashboard_fallback_status"
+      ],
+      "required_endpoints": [
+        "GET /health",
+        "GET /dashboard/payload",
+        "GET /dashboard/payload/status"
+      ],
+      "required_artifacts": [
+        "version.json",
+        "audits/v19_82A_origin_regression_audit/stop_go_report.json"
+      ]
+    }
+  ]
+}

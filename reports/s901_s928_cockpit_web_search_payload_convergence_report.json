@@ -1,0 +1,84 @@
+{
+  "app_registration": {
+    "app_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\backups\\s901_s928\\app.py.20260517_000928.bak",
+    "exists": true,
+    "message": "Inserted guarded local router registration before return app.",
+    "registered": true
+  },
+  "blocked_authority_preserved": {
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "body_read_allowed": false,
+    "browser_execution_enabled": false,
+    "command_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "network_request_performed": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "runtime_mutation_enabled": false,
+    "search_provider_execution_enabled": false
+  },
+  "compile_results": [
+    {
+      "compiled": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\governance\\governed_cockpit_web_search_convergence.py"
+    },
+    {
+      "compiled": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_web_search_convergence_routes.py"
+    },
+    {
+      "compiled": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s901_s928_cockpit_web_search_payload_convergence.py"
+    }
+  ],
+  "expected_visual_results": [
+    "Actions tab action count should be greater than zero.",
+    "Governed Web tab should show metadata search, body-read gate, and source-ingestion runway cards.",
+    "Evidence & Review should show normalized cards before raw JSON.",
+    "System should show S901-S928 synchronized status."
+  ],
+  "html_results": [
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\backups\\s901_s928\\cockpit_shell.html.20260517_000928.bak",
+      "exists": true,
+      "message": "asset tags inserted",
+      "patched": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html"
+    },
+    {
+      "exists": false,
+      "message": "missing",
+      "patched": false,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\index.html"
+    },
+    {
+      "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\reports\\backups\\s901_s928\\index.html.20260517_000928.bak",
+      "exists": true,
+      "message": "asset tags inserted",
+      "patched": true,
+      "path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html"
+    }
+  ],
+  "installed_at": "2026-05-17T05:09:28.066936+00:00",
+  "new_endpoints": [
+    "/api/cockpit/convergence/payload",
+    "/api/cockpit/convergence/cards",
+    "/api/cockpit/convergence/actions",
+    "/api/cockpit/convergence/status",
+    "/api/cockpit/convergence/stop-gate",
+    "/api/cockpit/web-search/readiness",
+    "/api/cockpit/dashboard-sync/payload",
+    "/api/internet/dashboard-sync/payload",
+    "/api/internet/s928-stop-gate"
+  ],
+  "paths_written": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\governance\\governed_cockpit_web_search_convergence.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_web_search_convergence_routes.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\assets\\claire_cockpit_web_search_convergence.js",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\assets\\claire_cockpit_web_search_convergence.css",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s901_s928_cockpit_web_search_payload_convergence.py"
+  ],
+  "version": "v19.89.8-S901-S928-cockpit-web-search-payload-convergence"
+}

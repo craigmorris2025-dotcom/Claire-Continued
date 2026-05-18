@@ -1,0 +1,93 @@
+{
+  "gate": "claire_final_operational_wiring_gate",
+  "generated_at": "2026-05-18T22:35:41.260454+00:00",
+  "status": "complete",
+  "completion_percent": 100,
+  "scores": {
+    "operational_control_plane_ready": 100,
+    "required_routes_mounted": 100,
+    "required_files_present": 100,
+    "dashboard_uses_operational_control_plane": 100,
+    "dashboard_has_callable_actions": 100,
+    "lifecycle_api_operational": 100,
+    "threshold_api_operational": 100,
+    "source_lineage_api_operational": 100,
+    "update_governance_safe_locked": 100,
+    "internet_authority_safe_locked": 100
+  },
+  "checks": {
+    "operational_control_plane_ready": true,
+    "required_routes_mounted": true,
+    "required_files_present": true,
+    "dashboard_uses_operational_control_plane": true,
+    "dashboard_has_callable_actions": true,
+    "lifecycle_api_operational": true,
+    "threshold_api_operational": true,
+    "source_lineage_api_operational": true,
+    "update_governance_safe_locked": true,
+    "internet_authority_safe_locked": true
+  },
+  "endpoint_checks": {
+    "/api/operational/control-plane": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/api/operational/route-health": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/runtime/continuous/start": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/runtime/continuous/review-queue": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/api/governed/runtime-spine": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/evaluate": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/api/lifecycle/stage-registry": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/api/lifecycle/threshold-provenance": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/api/source-lineage/status": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/api/search/governed/plans": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/api/governed/live-probe/status": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/api/update/status": {
+      "ok": true,
+      "status_code": 200
+    },
+    "/api/platform/update/plan": {
+      "ok": true,
+      "status_code": 200
+    }
+  },
+  "operational_summary": {
+    "status": "operational_ready",
+    "completion_percent": 100,
+    "route_health": "ready",
+    "file_readiness": "ready",
+    "source_lineage": "ready",
+    "update_governance": "locked_missing_policy_files",
+    "internet_authority": "provider_not_configured"
+  }
+}

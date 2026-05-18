@@ -1,0 +1,31 @@
+{
+  "version": "v19.89.8",
+  "build": "Review Queue Runtime Ingestion Layer",
+  "installed_at": "2026-05-13T21:59:21.039506+00:00",
+  "intent": "Add governed review queue ingestion for runtime propagation state.",
+  "new_endpoints": [
+    "/system/review-queue",
+    "/system/review-queue/summary",
+    "/system/review-queue/ingest-runtime",
+    "/system/review-queue/history",
+    "/system/review-queue/registration-proof"
+  ],
+  "files": {
+    "backend_route_module": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\review_queue_runtime_ingestion_routes.py",
+    "app_file_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "review_queue_file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\review_queue\\review_queue.json",
+    "frontend_js": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\claire_review_queue_surface.js",
+    "frontend_css": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\claire_review_queue_surface.css",
+    "cockpit_html_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html",
+    "version_json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version.json"
+  },
+  "preserved": [
+    "backend owns truth",
+    "cockpit presentation only",
+    "fail-closed governance",
+    "launcher stability",
+    "no autonomous looping",
+    "no cockpit truth mutation"
+  ],
+  "next_phase": "review acknowledgment and runtime handoff controls"
+}

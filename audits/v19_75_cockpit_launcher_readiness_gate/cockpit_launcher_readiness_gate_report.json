@@ -1,0 +1,33 @@
+{
+  "version": "v19.75",
+  "build_name": "Cockpit Launcher Readiness Gate",
+  "created_at": "2026-05-11T11:33:43.210927Z",
+  "non_destructive": true,
+  "launcher_rewired": false,
+  "legacy_deleted": false,
+  "backend_rewritten": false,
+  "path_status": {
+    "launcher": true,
+    "backend_app": true,
+    "payload_bridge": true,
+    "cockpit_shell": true,
+    "cockpit_bootstrap": true,
+    "cockpit_css": true,
+    "runtime_payload_gate": true,
+    "payload_route_guard": true,
+    "runtime_render_gate": true,
+    "legacy_dashboard": true
+  },
+  "signals": {
+    "launcher_mentions_old_dashboard": true,
+    "launcher_mentions_cockpit": false,
+    "cockpit_has_runtime_gate_mount": true,
+    "bootstrap_mounts_runtime_gate": true,
+    "app_mentions_payload_bridge_or_route": true,
+    "payload_bridge_mentions_status": true,
+    "payload_bridge_mentions_payload": true
+  },
+  "blockers": [],
+  "readiness": "ready_for_launcher_rewire_after_live_route_check",
+  "recommended_next_build": "v19.76 Launcher Rewire to Cockpit Shell"
+}

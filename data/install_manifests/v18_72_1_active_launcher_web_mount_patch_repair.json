@@ -1,0 +1,14 @@
+{
+  "version": "v18.72.1",
+  "name": "Active Launcher Runtime Web Route Mount Patch Repair",
+  "scope": [
+    "repair v18.72 patch failure caused by missing exact indented return app anchor",
+    "patch claire/app.py using the last app.include_router anchor instead",
+    "preserve backups",
+    "verify actual launcher create_app mounts live search and provider probe endpoints",
+    "verify launcher scripts include governed web activation flags"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_72_active_launcher_runtime_web_route_mount_patch.py tests/test_v18_72_1_active_launcher_web_mount_patch_repair.py -q"
+  ]
+}

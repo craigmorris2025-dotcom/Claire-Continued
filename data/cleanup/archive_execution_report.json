@@ -1,0 +1,15 @@
+{
+  "executed": false,
+  "generated_at": "2026-05-13T11:20:32.930037Z",
+  "moves": [],
+  "post_archive_proofs_required": [
+    "python -m pytest tests/test_v17_76_platform_endpoint_smoke_proof.py -q",
+    "python -m pytest tests/test_v17_78_desktop_packaging_startup_reliability.py -q",
+    "START_CLAIRE_SAFE.bat",
+    "VERIFY_CLAIRE_STARTUP.bat"
+  ],
+  "reason": "confirm_text_missing_or_wrong",
+  "required_confirm_text": "ARCHIVE APPROVED",
+  "status": "blocked",
+  "version": "v17.82"
+}

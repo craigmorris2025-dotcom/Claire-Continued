@@ -1,0 +1,68 @@
+{
+  "build": "v19.89.8 S835-S900",
+  "installed_at": "2026-05-17T04:57:46+00:00",
+  "written_files": [
+    "claire/governance/governed_manual_body_read_execution_envelope.py",
+    "claire/governance/governed_sanitized_extraction_preview.py",
+    "claire/governance/governed_source_update_ingestion.py",
+    "claire/governance/governed_runtime_truth_promotion_preview.py",
+    "claire/api/governed_body_read_source_ingestion_routes.py",
+    "tests/test_s835_s900_governed_body_read_to_source_ingestion.py",
+    "frontend/cockpit/assets/claire_governed_body_read_to_source_ingestion.js",
+    "frontend/cockpit/assets/claire_governed_body_read_to_source_ingestion.css",
+    "reports/s835_s900_governed_body_read_to_source_ingestion_report.json"
+  ],
+  "compiled_files": [
+    "claire/governance/governed_manual_body_read_execution_envelope.py",
+    "claire/governance/governed_sanitized_extraction_preview.py",
+    "claire/governance/governed_source_update_ingestion.py",
+    "claire/governance/governed_runtime_truth_promotion_preview.py",
+    "claire/api/governed_body_read_source_ingestion_routes.py",
+    "tests/test_s835_s900_governed_body_read_to_source_ingestion.py",
+    "claire/app.py"
+  ],
+  "app_registration": {
+    "attempted": true,
+    "registered": true,
+    "message": "route registration inserted before create_app return app"
+  },
+  "cockpit_assets_patched": [
+    "frontend\\cockpit\\shell\\cockpit_shell.html",
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "new_endpoints": [
+    "/api/web/body-read/execution-envelope/payload",
+    "/api/web/body-read/execution-envelope/cards",
+    "/api/web/body-read/execution-envelope/actions",
+    "/api/web/body-read/extraction-preview/payload",
+    "/api/web/body-read/extraction-preview/cards",
+    "/api/web/source-ingestion/draft",
+    "/api/web/source-ingestion/cards",
+    "/api/web/source-ingestion/lineage",
+    "/api/web/source-ingestion/validate",
+    "/api/web/update-proposal/payload",
+    "/api/web/operator-ingestion/actions",
+    "/api/web/runtime-truth/promotion-preview",
+    "/api/cockpit/source-ingestion/payload",
+    "/api/cockpit/source-ingestion/cards",
+    "/api/cockpit/source-ingestion/actions",
+    "/api/cockpit/source-ingestion/status",
+    "/api/cockpit/source-ingestion/stop-gate",
+    "/api/internet/source-ingestion/payload",
+    "/api/internet/s900-stop-gate"
+  ],
+  "blocked_capabilities_preserved": {
+    "live_web_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "body_read_performed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  }
+}

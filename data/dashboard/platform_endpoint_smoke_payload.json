@@ -1,0 +1,74 @@
+{
+  "domain_status": {
+    "autodesign": "blocked",
+    "core": "passed",
+    "dashboard": "blocked",
+    "design_portal": "blocked",
+    "internet": "blocked",
+    "proof": "blocked",
+    "routes": "blocked",
+    "runtime_truth": "blocked",
+    "search": "blocked",
+    "updates": "blocked",
+    "validation": "blocked"
+  },
+  "generated_at": "2026-05-13T11:18:58.127157Z",
+  "launch_hardening_readiness": {
+    "ready_for_automatic_updates": false,
+    "ready_for_launch_hardening": false,
+    "ready_for_live_internet": false,
+    "requires_manual_browser_proof": true,
+    "requires_packaging_after_smoke_pass": true,
+    "requires_swagger_proof": true
+  },
+  "safety": {
+    "checks": {
+      "automatic_updates_enabled_false": true,
+      "live_internet_enabled_false": true,
+      "regression_lock_active": true,
+      "runner_background_execution_false": true,
+      "runner_executes_updates_false": true,
+      "search_current_automatic_updates_disabled": true,
+      "search_current_live_web_disabled": true
+    },
+    "expected_flags": {
+      "automatic_updates_enabled": false,
+      "autonomous_agent_execution_enabled": false,
+      "background_execution_enabled": false,
+      "live_internet_enabled": false,
+      "uncontrolled_web_search_enabled": false
+    },
+    "status": "passed"
+  },
+  "status": "STOP",
+  "stop_go": {
+    "blocked_domains": [
+      "dashboard",
+      "search",
+      "runtime_truth",
+      "routes",
+      "autodesign",
+      "design_portal",
+      "validation",
+      "internet",
+      "updates",
+      "proof"
+    ],
+    "blockers": [
+      "domain_blocked:autodesign",
+      "domain_blocked:dashboard",
+      "domain_blocked:design_portal",
+      "domain_blocked:internet",
+      "domain_blocked:proof",
+      "domain_blocked:routes",
+      "domain_blocked:runtime_truth",
+      "domain_blocked:search",
+      "domain_blocked:updates",
+      "domain_blocked:validation"
+    ],
+    "missing_files": [],
+    "recommendation": "Do not proceed to launch hardening until blocked endpoint, output, or safety domains are fixed.",
+    "status": "STOP"
+  },
+  "version": "v17.76"
+}

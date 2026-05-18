@@ -1,0 +1,30 @@
+{
+  "installer": "install_claire_v19_89_8_s352_s358_full_module_rewrite_fix.py",
+  "started_at": "2026-05-16T16:43:42.804639Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "target_module": "claire\\api\\dashboard_live_visibility_smoke_s352_s358.py",
+  "mode": "full_module_rewrite_to_remove_bad_appended_future_import",
+  "assets": [
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.css",
+      "written": true
+    }
+  ],
+  "module_backup": "backups\\v19_89_8_s352_s358_full_module_rewrite\\dashboard_live_visibility_smoke_s352_s358.py.20260516_164342.bak",
+  "module_compiled": true,
+  "fixed": "Removed invalid appended future import by rewriting the S352-S358 module cleanly; asset_visibility_ok now supports the modern cockpit shell asset layout.",
+  "finished_at": "2026-05-16T16:43:42.852641Z"
+}

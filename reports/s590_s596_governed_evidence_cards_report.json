@@ -1,0 +1,39 @@
+{
+  "version": "v19.89.8-S590-S596",
+  "installed_at": "2026-05-17T03:10:14+00:00",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "installed": [
+    "claire\\governance\\governed_evidence_cards.py",
+    "claire\\api\\governed_evidence_card_routes.py",
+    "frontend\\cockpit\\assets\\claire_governed_evidence_cards.js",
+    "frontend\\cockpit\\assets\\claire_governed_evidence_cards.css",
+    "tests\\test_s590_s596_governed_evidence_cards.py",
+    "claire/app.py [router registration inserted]",
+    "frontend\\cockpit\\shell\\cockpit_shell.html [asset links inserted]",
+    "frontend\\command_center\\modern\\index.html [asset links inserted]"
+  ],
+  "notes": [],
+  "preserved_blocks": {
+    "live_web_execution_enabled": false,
+    "browser_execution_enabled": false,
+    "search_provider_execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "autonomous_crawling_enabled": false,
+    "automatic_updates_enabled": false,
+    "runtime_mutation_enabled": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "command_execution_enabled": false
+  },
+  "new_endpoints": [
+    "/api/evidence/governed/cards",
+    "/api/evidence/governed/review",
+    "/api/evidence/governed/actions",
+    "/api/evidence/governed/policy",
+    "/api/evidence/governed/status",
+    "/api/evidence/governed/payload"
+  ],
+  "test_file": "tests/test_s590_s596_governed_evidence_cards.py",
+  "next_phase": "S597-S603 Source Review Queue + Metadata Probe Gate Planning"
+}

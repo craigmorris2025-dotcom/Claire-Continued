@@ -1,0 +1,1317 @@
+{
+  "backend_import_count": 0,
+  "backend_imports_sample": [],
+  "claire_import_count": 237,
+  "claire_imports_sample": [
+    {
+      "file": "claire/app.py",
+      "import": "from claire.config.logging"
+    },
+    {
+      "file": "claire/app.py",
+      "import": "from claire.api.routes_pipeline"
+    },
+    {
+      "file": "claire/app.py",
+      "import": "from claire.api.routes_dashboard_alignment"
+    },
+    {
+      "file": "claire/acquirers/matcher.py",
+      "import": "from claire.acquirers.dataset"
+    },
+    {
+      "file": "claire/acquirers/matcher.py",
+      "import": "from claire.acquirers.scoring"
+    },
+    {
+      "file": "claire/api/commands.py",
+      "import": "from claire.orchestrator.pipeline"
+    },
+    {
+      "file": "claire/api/endpoints.py",
+      "import": "from claire.orchestrator.pipeline"
+    },
+    {
+      "file": "claire/api/routes_acquirers.py",
+      "import": "from claire.api.schemas"
+    },
+    {
+      "file": "claire/api/routes_acquirers.py",
+      "import": "from claire.core.data_engine"
+    },
+    {
+      "file": "claire/api/routes_connectors.py",
+      "import": "from claire.connectors.manager"
+    },
+    {
+      "file": "claire/api/routes_dashboard_alignment.py",
+      "import": "from claire.dashboard.button_registry"
+    },
+    {
+      "file": "claire/api/routes_dashboard_alignment.py",
+      "import": "from claire.dashboard.runtime_alignment"
+    },
+    {
+      "file": "claire/api/routes_dashboard_e2e.py",
+      "import": "from claire.runtime.dashboard_e2e_first_use"
+    },
+    {
+      "file": "claire/api/routes_history.py",
+      "import": "from claire.api.schemas"
+    },
+    {
+      "file": "claire/api/routes_history.py",
+      "import": "from claire.persistence.database"
+    },
+    {
+      "file": "claire/api/routes_pipeline.py",
+      "import": "from claire.orchestrator.pipeline_v4"
+    },
+    {
+      "file": "claire/api/routes_pipeline.py",
+      "import": "from claire.domain.contract"
+    },
+    {
+      "file": "claire/api/routes_pipeline.py",
+      "import": "from claire.memory.store"
+    },
+    {
+      "file": "claire/api/routes_pipeline.py",
+      "import": "from claire.validation.evidence_collector"
+    },
+    {
+      "file": "claire/api/routes_pipeline.py",
+      "import": "from claire.validation.proof_binder"
+    },
+    {
+      "file": "claire/api/routes_pipeline.py",
+      "import": "from claire.ingestion.live_ingestion_adapter"
+    },
+    {
+      "file": "claire/api/routes_platform.py",
+      "import": "from claire.platform.manifest"
+    },
+    {
+      "file": "claire/api/routes_platform.py",
+      "import": "from claire.platform.resolver"
+    },
+    {
+      "file": "claire/api/routes_proxy.py",
+      "import": "from claire.api.schemas"
+    },
+    {
+      "file": "claire/api/routes_proxy.py",
+      "import": "from claire.persistence.database"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "import": "from claire.api.schemas"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "import": "from claire.engines"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "import": "from claire.mode.controller"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "import": "from claire.connectors.manager"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "import": "from claire.core.data_engine"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "import": "from claire.core.semantic"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "import": "from claire.persistence.database"
+    },
+    {
+      "file": "claire/api/routes_system.py",
+      "import": "from claire.bridge.masterpass"
+    },
+    {
+      "file": "claire/api/routes_update.py",
+      "import": "from claire.platform.update_manager"
+    },
+    {
+      "file": "claire/autonomy/adaptive_runtime_reprioritization.py",
+      "import": "from claire.orchestration.strategic_priority_engine"
+    },
+    {
+      "file": "claire/autonomy/adaptive_runtime_reprioritization.py",
+      "import": "from claire.memory.operator_reinforcement_feedback"
+    },
+    {
+      "file": "claire/autonomy/autonomous_escalation_engine.py",
+      "import": "from claire.orchestration.strategic_priority_engine"
+    },
+    {
+      "file": "claire/autonomy/recursive_orchestration_controller.py",
+      "import": "from claire.autonomy.autonomous_escalation_engine"
+    },
+    {
+      "file": "claire/autonomy/recursive_orchestration_controller.py",
+      "import": "from claire.orchestration.intelligence_task_registry"
+    },
+    {
+      "file": "claire/connectors/connector_hub.py",
+      "import": "from claire.connectors.market_connector"
+    },
+    {
+      "file": "claire/connectors/connector_hub.py",
+      "import": "from claire.connectors.patent_connector"
+    },
+    {
+      "file": "claire/connectors/connector_hub.py",
+      "import": "from claire.connectors.financial_connector"
+    },
+    {
+      "file": "claire/connectors/connector_manager.py",
+      "import": "from claire.connectors.market"
+    },
+    {
+      "file": "claire/connectors/connector_manager.py",
+      "import": "from claire.connectors.patent"
+    },
+    {
+      "file": "claire/connectors/connector_manager.py",
+      "import": "from claire.connectors.financial"
+    },
+    {
+      "file": "claire/connectors/manager.py",
+      "import": "from claire.connectors.market"
+    },
+    {
+      "file": "claire/connectors/manager.py",
+      "import": "from claire.connectors.patent"
+    },
+    {
+      "file": "claire/connectors/manager.py",
+      "import": "from claire.connectors.financial"
+    },
+    {
+      "file": "claire/core/gateway.py",
+      "import": "from claire.domain.contract"
+    },
+    {
+      "file": "claire/core/interpreter.py",
+      "import": "from claire.domain.contract"
+    },
+    {
+      "file": "claire/core/orreadir.py",
+      "import": "from claire.domain.contract"
+    },
+    {
+      "file": "claire/core/planner.py",
+      "import": "from claire.domain.contract"
+    },
+    {
+      "file": "claire/core/__init__.py",
+      "import": "from claire.core.planner"
+    },
+    {
+      "file": "claire/core/__init__.py",
+      "import": "from claire.core.data_engine"
+    },
+    {
+      "file": "claire/core/__init__.py",
+      "import": "from claire.core.gateway"
+    },
+    {
+      "file": "claire/core/__init__.py",
+      "import": "from claire.core.semantic"
+    },
+    {
+      "file": "claire/demo/guided_demo_runner.py",
+      "import": "from claire.demo.demo_scenario_registry"
+    },
+    {
+      "file": "claire/design/__init__.py",
+      "import": "from claire.design.portal"
+    },
+    {
+      "file": "claire/discovery/governed_research_synthesis_engine.py",
+      "import": "from claire.discovery.discovery_campaign_manager"
+    },
+    {
+      "file": "claire/discovery/governed_research_synthesis_engine.py",
+      "import": "from claire.discovery.thesis_graph_engine"
+    },
+    {
+      "file": "claire/discovery/governed_research_synthesis_engine.py",
+      "import": "from claire.discovery.opportunity_landscape_generator"
+    },
+    {
+      "file": "claire/discovery/governed_research_synthesis_engine.py",
+      "import": "from claire.orchestration.evidence_fusion_coordinator"
+    },
+    {
+      "file": "claire/discovery/governed_research_synthesis_engine.py",
+      "import": "from claire.memory.longitudinal_confidence_engine"
+    },
+    {
+      "file": "claire/discovery/opportunity_landscape_generator.py",
+      "import": "from claire.discovery.thesis_graph_engine"
+    },
+    {
+      "file": "claire/domain/__init__.py",
+      "import": "from claire.domain.contract"
+    },
+    {
+      "file": "claire/engines/breakthrough.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/company.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/competitive.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/compliance.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/customer.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/deal.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/decision.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/discovery.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/engineering.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/financial.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/forecasting.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/fusion.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/ingestion.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/innovation.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/market.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/operational.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/portfolio.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/predictive.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/product.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/risk.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/semantic.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/strategy.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/engines/synergy.py",
+      "import": "from claire.engines.base"
+    },
+    {
+      "file": "claire/enrichment/connected_opportunity_enricher.py",
+      "import": "from claire.enrichment.enrichment_contracts"
+    },
+    {
+      "file": "claire/export/export_writer.py",
+      "import": "from claire.runtime.run_history"
+    },
+    {
+      "file": "claire/feeds/feed_registry.py",
+      "import": "from claire.feeds.market_universe_feeds"
+    },
+    {
+      "file": "claire/feeds/feed_registry.py",
+      "import": "from claire.feeds.public_company_universe"
+    },
+    {
+      "file": "claire/feeds/feed_registry.py",
+      "import": "from claire.feeds.private_establishment_universe"
+    },
+    {
+      "file": "claire/feeds/feed_registry.py",
+      "import": "from claire.feeds.government_defense_universe"
+    },
+    {
+      "file": "claire/feeds/feed_registry.py",
+      "import": "from claire.feeds.feed_result_contracts"
+    },
+    {
+      "file": "claire/feeds/governed_feed_activation.py",
+      "import": "from claire.mode.switch_controller"
+    },
+    {
+      "file": "claire/feeds/governed_feed_activation.py",
+      "import": "from claire.governance.feed_activation_policy"
+    },
+    {
+      "file": "claire/feeds/government_defense_universe.py",
+      "import": "from claire.feeds.feed_result_contracts"
+    },
+    {
+      "file": "claire/feeds/live_source_orchestrator.py",
+      "import": "from claire.feeds.public_company_live_scan"
+    },
+    {
+      "file": "claire/feeds/live_source_orchestrator.py",
+      "import": "from claire.feeds.source_catalogs.live_source_catalog"
+    },
+    {
+      "file": "claire/feeds/live_source_orchestrator.py",
+      "import": "from claire.feeds.source_catalogs.source_health"
+    },
+    {
+      "file": "claire/feeds/market_universe_feeds.py",
+      "import": "from claire.feeds.feed_result_contracts"
+    },
+    {
+      "file": "claire/feeds/private_establishment_universe.py",
+      "import": "from claire.feeds.feed_result_contracts"
+    },
+    {
+      "file": "claire/feeds/public_company_live_scan.py",
+      "import": "from claire.feeds.live_fetcher"
+    },
+    {
+      "file": "claire/feeds/public_company_live_scan.py",
+      "import": "from claire.feeds.public_signal_contracts"
+    },
+    {
+      "file": "claire/feeds/public_company_live_scan.py",
+      "import": "from claire.feeds.source_catalogs.live_source_catalog"
+    },
+    {
+      "file": "claire/feeds/public_company_live_scan.py",
+      "import": "from claire.feeds.source_catalogs.offline_universe_resolver"
+    },
+    {
+      "file": "claire/feeds/public_company_universe.py",
+      "import": "from claire.feeds.feed_result_contracts"
+    },
+    {
+      "file": "claire/feeds/public_company_universe.py",
+      "import": "from claire.feeds.source_catalogs.index_universe_registry"
+    },
+    {
+      "file": "claire/feeds/public_company_universe.py",
+      "import": "from claire.feeds.source_catalogs.offline_universe_resolver"
+    },
+    {
+      "file": "claire/feeds/public_company_universe.py",
+      "import": "from claire.feeds.public_company_live_scan"
+    },
+    {
+      "file": "claire/feeds/signal_normalizer.py",
+      "import": "from claire.feeds.signal_contracts"
+    },
+    {
+      "file": "claire/feeds/signal_normalizer.py",
+      "import": "from claire.feeds.signal_scoring"
+    },
+    {
+      "file": "claire/feeds/source_catalogs/index_universe_registry.py",
+      "import": "from claire.feeds.source_catalogs.public_company_sources"
+    },
+    {
+      "file": "claire/feeds/source_catalogs/offline_universe_resolver.py",
+      "import": "from claire.feeds.source_catalogs.index_universe_registry"
+    },
+    {
+      "file": "claire/feeds/source_catalogs/offline_universe_resolver.py",
+      "import": "from claire.feeds.source_catalogs.universe_resolution_contracts"
+    },
+    {
+      "file": "claire/feeds/source_catalogs/public_company_sources.py",
+      "import": "from claire.feeds.source_catalogs.source_contracts"
+    },
+    {
+      "file": "claire/feeds/source_catalogs/source_health.py",
+      "import": "from claire.feeds.live_fetcher"
+    },
+    {
+      "file": "claire/feeds/source_catalogs/source_health.py",
+      "import": "from claire.feeds.source_catalogs.live_source_catalog"
+    },
+    {
+      "file": "claire/fusion/hybrid_opportunity_fusion.py",
+      "import": "from claire.fusion.hybrid_fusion_contracts"
+    },
+    {
+      "file": "claire/governance/audit_trail.py",
+      "import": "from claire.persistence.database"
+    },
+    {
+      "file": "claire/governance/feed_activation_policy.py",
+      "import": "from claire.governance.redline_classifier"
+    },
+    {
+      "file": "claire/governance/feed_activation_policy.py",
+      "import": "from claire.governance.source_allowlist"
+    },
+    {
+      "file": "claire/governance/redline_classifier.py",
+      "import": "from claire.governance.defense_risk_taxonomy"
+    },
+    {
+      "file": "claire/governance/redline_classifier.py",
+      "import": "from claire.governance.governance_decision"
+    },
+    {
+      "file": "claire/governed_campaign_scheduler/service.py",
+      "import": "from claire.persistent_internet_campaigns.service"
+    },
+    {
+      "file": "claire/internet_operations_dashboard/service.py",
+      "import": "from claire.dynamic_source_trust.service"
+    },
+    {
+      "file": "claire/internet_operations_dashboard/service.py",
+      "import": "from claire.governed_campaign_scheduler.service"
+    },
+    {
+      "file": "claire/internet_operations_dashboard/service.py",
+      "import": "from claire.internet_runtime_stability.service"
+    },
+    {
+      "file": "claire/internet_operations_dashboard/service.py",
+      "import": "from claire.persistent_internet_campaigns.service"
+    },
+    {
+      "file": "claire/internet_runtime_integration/bridge.py",
+      "import": "from claire.internet_activation"
+    },
+    {
+      "file": "claire/internet_runtime_integration/bridge.py",
+      "import": "from claire.internet_activation.config"
+    },
+    {
+      "file": "claire/internet_runtime_stability/service.py",
+      "import": "from claire.governed_campaign_scheduler.service"
+    },
+    {
+      "file": "claire/internet_runtime_stability/service.py",
+      "import": "from claire.persistent_internet_campaigns.service"
+    },
+    {
+      "file": "claire/live/governed_async_ingestion_queue.py",
+      "import": "from claire.live.live_ingestion_quarantine"
+    },
+    {
+      "file": "claire/live/live_ingestion_quarantine.py",
+      "import": "from claire.live.source_registry"
+    },
+    {
+      "file": "claire/live_intelligence/gap_detection.py",
+      "import": "from claire.engines.market_gap_engine"
+    },
+    {
+      "file": "claire/live_intelligence/signal_extraction.py",
+      "import": "from claire.engines.signal_extraction_engine"
+    },
+    {
+      "file": "claire/live_intelligence/solution_synthesis.py",
+      "import": "from claire.engines.breakthrough_synthesis_engine"
+    },
+    {
+      "file": "claire/memory/longitudinal_confidence_engine.py",
+      "import": "from claire.memory.strategic_memory_registry"
+    },
+    {
+      "file": "claire/memory/longitudinal_confidence_engine.py",
+      "import": "from claire.memory.cross_run_evidence_linker"
+    },
+    {
+      "file": "claire/memory/operator_reinforcement_feedback.py",
+      "import": "from claire.memory.strategic_memory_registry"
+    },
+    {
+      "file": "claire/mode/switch_controller.py",
+      "import": "from claire.governance.feed_activation_policy"
+    },
+    {
+      "file": "claire/mode/switch_controller.py",
+      "import": "from claire.governance.redline_classifier"
+    },
+    {
+      "file": "claire/orchestration/bounded_orchestration_scheduler.py",
+      "import": "from claire.orchestration.intelligence_task_registry"
+    },
+    {
+      "file": "claire/orchestration/strategic_priority_engine.py",
+      "import": "from claire.orchestration.intelligence_task_registry"
+    },
+    {
+      "file": "claire/orchestration/strategic_priority_engine.py",
+      "import": "from claire.memory.strategic_memory_registry"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.domain.contract"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.connectors.connector_manager"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.auto_design"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.acquirer_matching"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.system_design_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.market_gap_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.knowledge_ingestion_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.signal_extraction_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.trend_trajectory_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.trend_thesis_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.market_formation_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.moat_defensibility_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.risk_regulation_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.business_model_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.opportunity_discovery_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.breakthrough_synthesis_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.technical_feasibility_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.productization_path_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.strategic_positioning_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.deal_exit_modeling_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.lifecycle_stage_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.engines.export_package_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.export.export_writer"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.lifecycle.lifecycle_runner"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.output.core_output_builder"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.design.portal"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.portfolio.binder_builder"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.portfolio.optimization_engine"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.signals.signal_governance"
+    },
+    {
+      "file": "claire/orchestrator/pipeline_v4.py",
+      "import": "from claire.technology.technology_intelligence"
+    },
+    {
+      "file": "claire/orchestrator/__init__.py",
+      "import": "from claire.orchestrator.pipeline_v4"
+    },
+    {
+      "file": "claire/persistence/database.py",
+      "import": "from claire.config.settings"
+    },
+    {
+      "file": "claire/persistence/__init__.py",
+      "import": "from claire.persistence.database"
+    },
+    {
+      "file": "claire/persistent_internet_campaigns/service.py",
+      "import": "from claire.internet_runtime_integration"
+    },
+    {
+      "file": "claire/pilot/pilot_deliverables_generator.py",
+      "import": "from claire.pilot.pilot_offer_definition"
+    },
+    {
+      "file": "claire/platform/resolver.py",
+      "import": "from claire.platform.manifest"
+    },
+    {
+      "file": "claire/portfolio/__init__.py",
+      "import": "from claire.portfolio.binder_builder"
+    },
+    {
+      "file": "claire/proof/evidence_binder_generator.py",
+      "import": "from claire.proof.proof_record_store"
+    },
+    {
+      "file": "claire/research/research_service.py",
+      "import": "from claire.runtime.export_browser"
+    },
+    {
+      "file": "claire/research/research_service.py",
+      "import": "from claire.technology"
+    },
+    {
+      "file": "claire/runtime/command_catalog.py",
+      "import": "from claire.runtime.market_universe_taxonomy"
+    },
+    {
+      "file": "claire/runtime/command_execution_guard.py",
+      "import": "from claire.runtime.runtime_command_contracts"
+    },
+    {
+      "file": "claire/runtime/export_browser.py",
+      "import": "from claire.runtime.run_history"
+    },
+    {
+      "file": "claire/runtime/governed_command_dispatcher.py",
+      "import": "from claire.runtime.command_execution_guard"
+    },
+    {
+      "file": "claire/runtime/governed_command_dispatcher.py",
+      "import": "from claire.runtime.governed_command_result_writer"
+    },
+    {
+      "file": "claire/runtime/governed_command_dispatcher.py",
+      "import": "from claire.runtime.master_control_action_log"
+    },
+    {
+      "file": "claire/runtime/governed_command_dispatcher.py",
+      "import": "from claire.runtime.runtime_command_contracts"
+    },
+    {
+      "file": "claire/runtime/governed_command_dispatcher.py",
+      "import": "from claire.runtime.runtime_command_dispatcher"
+    },
+    {
+      "file": "claire/runtime/opportunity_seed_generator.py",
+      "import": "from claire.runtime.command_catalog"
+    },
+    {
+      "file": "claire/runtime/opportunity_seed_generator.py",
+      "import": "from claire.runtime.search_suggestions"
+    },
+    {
+      "file": "claire/runtime/plateau_candidate.py",
+      "import": "from claire.runtime.production_readiness"
+    },
+    {
+      "file": "claire/runtime/plateau_candidate.py",
+      "import": "from claire.runtime.stale_path_audit"
+    },
+    {
+      "file": "claire/runtime/plateau_candidate.py",
+      "import": "from claire.updater.update_health"
+    },
+    {
+      "file": "claire/runtime/runtime_command_dispatcher.py",
+      "import": "from claire.runtime.runtime_command_contracts"
+    },
+    {
+      "file": "claire/runtime/runtime_command_dispatcher.py",
+      "import": "from claire.ui.master_control_ui"
+    },
+    {
+      "file": "claire/runtime_contracts/contract_validator.py",
+      "import": "from claire.runtime_contracts.core_run_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/contract_validator.py",
+      "import": "from claire.runtime_contracts.lifecycle_output_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/contract_validator.py",
+      "import": "from claire.runtime_contracts.route_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/contract_validator.py",
+      "import": "from claire.runtime_contracts.dashboard_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/contract_validator.py",
+      "import": "from claire.runtime_contracts.export_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/contract_validator.py",
+      "import": "from claire.runtime_contracts.proof_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/__init__.py",
+      "import": "from claire.runtime_contracts.core_run_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/__init__.py",
+      "import": "from claire.runtime_contracts.lifecycle_output_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/__init__.py",
+      "import": "from claire.runtime_contracts.route_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/__init__.py",
+      "import": "from claire.runtime_contracts.dashboard_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/__init__.py",
+      "import": "from claire.runtime_contracts.export_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/__init__.py",
+      "import": "from claire.runtime_contracts.proof_contract"
+    },
+    {
+      "file": "claire/runtime_contracts/__init__.py",
+      "import": "from claire.runtime_contracts.contract_validator"
+    },
+    {
+      "file": "claire/scoring/scorecard.py",
+      "import": "from claire.domain.contract"
+    },
+    {
+      "file": "claire/scoring/__init__.py",
+      "import": "from claire.scoring.calibrator"
+    },
+    {
+      "file": "claire/scoring/__init__.py",
+      "import": "from claire.scoring.scorecard"
+    },
+    {
+      "file": "claire/updater/dashboard_update_workflow.py",
+      "import": "from claire.updater.package_downloader"
+    },
+    {
+      "file": "claire/updater/dashboard_update_workflow.py",
+      "import": "from claire.updater.package_installer"
+    },
+    {
+      "file": "claire/updater/dashboard_update_workflow.py",
+      "import": "from claire.updater.package_verifier"
+    },
+    {
+      "file": "claire/updater/dashboard_update_workflow.py",
+      "import": "from claire.updater.rollback_manager"
+    },
+    {
+      "file": "claire/updater/dashboard_update_workflow.py",
+      "import": "from claire.updater.update_audit_log"
+    },
+    {
+      "file": "claire/updater/dashboard_update_workflow.py",
+      "import": "from claire.updater.update_health"
+    },
+    {
+      "file": "claire/updater/package_installer.py",
+      "import": "from claire.updater.rollback_manager"
+    },
+    {
+      "file": "claire/updater/package_installer.py",
+      "import": "from claire.updater.update_manifest"
+    },
+    {
+      "file": "claire/updater/package_verifier.py",
+      "import": "from claire.updater.update_manifest"
+    },
+    {
+      "file": "claire/updater/update_health.py",
+      "import": "from claire.updater.rollback_manager"
+    },
+    {
+      "file": "backend/claire/contract.py",
+      "import": "from claire.domain.contract"
+    },
+    {
+      "file": "backend/claire/contract.py",
+      "import": "from claire.domain.contract"
+    },
+    {
+      "file": "backend/orchestrator/pipeline.py",
+      "import": "from claire.orchestrator.pipeline_v4"
+    },
+    {
+      "file": "backend/routes/backend_export_browser_route.py",
+      "import": "from claire.runtime.export_browser"
+    },
+    {
+      "file": "backend/routes/backend_export_browser_route.py",
+      "import": "from claire.runtime.run_history"
+    },
+    {
+      "file": "backend/scoring/calibrator.py",
+      "import": "from claire.scoring.calibrator"
+    },
+    {
+      "file": "backend/scoring/scorecard.py",
+      "import": "from claire.scoring.scorecard"
+    },
+    {
+      "file": "backend/scoring/__init__.py",
+      "import": "from claire.scoring.scorecard"
+    },
+    {
+      "file": "main.py",
+      "import": "from claire.app"
+    }
+  ],
+  "fastapi_candidate_files": [
+    "backend/routes/backend_export_browser_route.py",
+    "claire/api/commands.py",
+    "claire/api/endpoints.py",
+    "claire/api/router.py",
+    "claire/api/routes_acquirers.py",
+    "claire/api/routes_command.py",
+    "claire/api/routes_connectors.py",
+    "claire/api/routes_dashboard.py",
+    "claire/api/routes_dashboard_alignment.py",
+    "claire/api/routes_dashboard_e2e.py",
+    "claire/api/routes_history.py",
+    "claire/api/routes_pipeline.py",
+    "claire/api/routes_platform.py",
+    "claire/api/routes_proxy.py",
+    "claire/api/routes_system.py",
+    "claire/api/routes_update.py",
+    "claire/api/server.py",
+    "claire/app.py",
+    "claire/dashboard/runtime_alignment.py",
+    "claire/dynamic_source_trust/api_routes.py",
+    "claire/governed_campaign_scheduler/api_routes.py",
+    "claire/internet_activation/api_routes.py",
+    "claire/internet_operations_dashboard/api_routes.py",
+    "claire/internet_runtime_integration/api_routes.py",
+    "claire/internet_runtime_stability/api_routes.py",
+    "claire/persistent_internet_campaigns/api_routes.py",
+    "claire/platform/manifest.py",
+    "claire/platform/resolver.py",
+    "claire/technology/technology_intelligence.py"
+  ],
+  "py_file_count_scanned": 1030,
+  "route_hits": {
+    "/acquisition": [
+      "claire/buyer/acquisition_narrative_binder.py",
+      "claire/evolution/capability_registry.py",
+      "claire/evolution/target_state.py",
+      "claire/lifecycle/threshold_provenance.py",
+      "claire/routing/depth_scorer.py",
+      "claire/runtime/enhanced_interface_bridge.py"
+    ],
+    "/breakthrough": [
+      "claire/evolution/capability_registry.py",
+      "claire/evolution/target_state.py",
+      "claire/routing/depth_scorer.py"
+    ],
+    "/dashboard": [
+      "claire/api/routes_dashboard.py",
+      "claire/api/routes_dashboard_alignment.py",
+      "claire/api/routes_dashboard_e2e.py",
+      "claire/api/unified/intelligence_routes.py",
+      "claire/api/unified/lifecycle_routes.py",
+      "claire/api/unified/middleware.py",
+      "claire/api/unified/platform_routes.py",
+      "claire/api/unified/router.py",
+      "claire/dashboard/button_registry.py",
+      "claire/dashboard/dashboard_snapshot_writer.py",
+      "claire/dashboard/dashboard_state_builder.py",
+      "claire/dashboard/live_dashboard_adapter.py",
+      "claire/dashboard/render_contract.py",
+      "claire/dashboard/runtime_alignment.py",
+      "claire/dashboard_intelligence/local_index.py",
+      "claire/internet_operations_dashboard/api_routes.py",
+      "claire/internet_runtime_integration/api_routes.py",
+      "claire/platform/manifest.py",
+      "claire/runtime/dashboard_e2e_first_use.py"
+    ],
+    "/design": [
+      "claire/design/proof/architecture_feasibility_proof.py",
+      "claire/design/proof/build_sequence_validator.py",
+      "claire/design/proof/dependency_risk_proof.py",
+      "claire/design/proof/design_maturity_scorer.py",
+      "claire/design/proof/implementation_cost_model.py",
+      "claire/output/core_output_builder.py"
+    ],
+    "/discovery": [
+      "claire/api/routes_dashboard.py",
+      "claire/discovery/discovery_campaign_manager.py",
+      "claire/discovery/governed_research_synthesis_engine.py",
+      "claire/discovery/opportunity_landscape_generator.py",
+      "claire/discovery/thesis_graph_engine.py"
+    ],
+    "/docs": [
+      "claire/dashboard/runtime_alignment.py"
+    ],
+    "/evaluate": [
+      "claire/api/routes_pipeline.py",
+      "claire/ingestion/live_ingestion_adapter.py",
+      "claire/platform/manifest.py",
+      "claire/runtime/enhanced_interface_bridge.py"
+    ],
+    "/health": [
+      "claire/api/routes_system.py",
+      "claire/app.py",
+      "claire/dashboard/button_registry.py",
+      "claire/dashboard/runtime_alignment.py",
+      "claire/internet_runtime_stability/api_routes.py",
+      "claire/platform/manifest.py",
+      "claire/production/service_health_contract.py"
+    ],
+    "/internet": [
+      "claire/dashboard/button_registry.py",
+      "claire/dashboard/runtime_alignment.py",
+      "claire/dynamic_source_trust/api_routes.py",
+      "claire/governed_campaign_scheduler/api_routes.py",
+      "claire/internet_activation/api_routes.py",
+      "claire/internet_operations_dashboard/api_routes.py",
+      "claire/internet_operations_dashboard/static_page.py",
+      "claire/internet_runtime_integration/api_routes.py",
+      "claire/internet_runtime_stability/api_routes.py",
+      "claire/internet_runtime_stability/health.py",
+      "claire/persistent_internet_campaigns/api_routes.py"
+    ],
+    "/internet/campaigns": [
+      "claire/dashboard/button_registry.py",
+      "claire/dashboard/runtime_alignment.py",
+      "claire/persistent_internet_campaigns/api_routes.py"
+    ],
+    "/internet/operations": [
+      "claire/dashboard/button_registry.py",
+      "claire/dashboard/runtime_alignment.py"
+    ],
+    "/internet/ops": [
+      "claire/internet_operations_dashboard/api_routes.py",
+      "claire/internet_operations_dashboard/static_page.py"
+    ],
+    "/internet/source-trust": [
+      "claire/dashboard/button_registry.py",
+      "claire/dashboard/runtime_alignment.py",
+      "claire/dynamic_source_trust/api_routes.py"
+    ],
+    "/launch": [
+      "claire/dashboard/button_registry.py",
+      "claire/dashboard/runtime_alignment.py"
+    ],
+    "/memory": [
+      "claire/evolution/capability_registry.py",
+      "claire/memory/cross_run_evidence_linker.py",
+      "claire/memory/longitudinal_confidence_engine.py",
+      "claire/memory/operator_reinforcement_feedback.py",
+      "claire/memory/store.py",
+      "claire/memory/strategic_memory_registry.py",
+      "claire/orchestration/evidence_fusion_coordinator.py"
+    ],
+    "/portfolio": [
+      "claire/api/routes_dashboard.py",
+      "claire/engines/productization_path_engine.py",
+      "claire/engines/strategic_positioning_engine.py",
+      "claire/enterprise/runtime_health_recovery_diagnostics.py",
+      "claire/intelligence/portfolio_breakthrough_routing.py",
+      "claire/ui/master_control_ui.py",
+      "claire/updater/package_installer.py"
+    ],
+    "/runtime": [
+      "claire/api/routes_dashboard_alignment.py",
+      "claire/autonomy/runtime_cycle_manager.py",
+      "claire/dashboard/runtime_alignment.py",
+      "claire/dashboard_intelligence/local_index.py",
+      "claire/data_readiness/data_readiness_contract.py",
+      "claire/enterprise/runtime_health_recovery_diagnostics.py",
+      "claire/internet_runtime_integration/api_routes.py",
+      "claire/proof/runtime_proof_collector.py",
+      "claire/runtime/dashboard_e2e_first_use.py",
+      "claire/runtime/governed_command_result_writer.py",
+      "claire/runtime/master_control_action_log.py",
+      "claire/runtime/runtime_command_dashboard.py",
+      "claire/runtime/runtime_intelligence.py",
+      "claire/runtime/runtime_state_engine.py",
+      "claire/telemetry/runtime_event_logger.py",
+      "claire/ui/master_control_ui.py",
+      "claire/validation/benchmarks/__init__.py"
+    ],
+    "/scorecard": [
+      "claire/completion/completion_scorecard.py",
+      "claire/data_readiness/data_readiness_scorecard.py",
+      "claire/maturation/maturity_scorecard.py",
+      "claire/platform/manifest.py"
+    ],
+    "/validation": [
+      "claire/dashboard_intelligence/local_index.py",
+      "claire/historical_benchmarks/validation_example_catalog.py",
+      "claire/proof/validation_snapshotter.py",
+      "claire/validation/benchmarks/benchmark_dataset_loader.py",
+      "claire/validation/benchmarks/benchmark_reporter.py",
+      "claire/validation/benchmarks/false_negative_analyzer.py",
+      "claire/validation/benchmarks/false_positive_analyzer.py",
+      "claire/validation/benchmarks/outcome_label_manager.py",
+      "claire/validation/benchmarks/regime_backtester.py",
+      "claire/validation/benchmarks/signal_backtester.py"
+    ]
+  },
+  "syntax_error_count": 34,
+  "syntax_errors_sample": [
+    {
+      "error": "invalid syntax (<unknown>, line 50)",
+      "file": "claire/autonomous/governance/autonomous_action_policy.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/autonomous/governance/escalation_boundary.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 42)",
+      "file": "claire/autonomous/governance/human_review_gate.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 43)",
+      "file": "claire/autonomous/governance/self_change_permission_model.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/design/proof/build_sequence_validator.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 41)",
+      "file": "claire/design/proof/deployment_model_validator.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 46)",
+      "file": "claire/design/proof/implementation_cost_model.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 46)",
+      "file": "claire/design/renderers/architecture_graph_formatter.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 33)",
+      "file": "claire/design/renderers/blueprint_summary_formatter.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 41)",
+      "file": "claire/design/renderers/dependency_graph_formatter.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/design/renderers/design_export_formatter.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 58)",
+      "file": "claire/recursive/longitudinal/learning_signal_extractor.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 43)",
+      "file": "claire/recursive/longitudinal/run_pattern_miner.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/recursive/longitudinal/strategy_memory_synthesizer.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/recursive/longitudinal/thesis_evolution_tracker.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/research/live/citation_lineage_engine.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 33)",
+      "file": "claire/research/live/claim_verifier.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 61)",
+      "file": "claire/research/live/evidence_conflict_resolver.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 35)",
+      "file": "claire/research/live/governed_live_research.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/research/live/research_packet_builder.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/research/live/source_verification_engine.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 33)",
+      "file": "claire/technology/compatibility_engine.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 38)",
+      "file": "claire/technology/component_matcher.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 37)",
+      "file": "claire/technology/enterprise_stack_recommender.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 42)",
+      "file": "claire/technology/integration_complexity.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 49)",
+      "file": "claire/technology/model_governance_assessor.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 45)",
+      "file": "claire/technology/technology_catalog.py"
+    },
+    {
+      "error": "unmatched ']' (<unknown>, line 52)",
+      "file": "claire/validation/benchmarks/benchmark_dataset_loader.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/validation/benchmarks/benchmark_reporter.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 41)",
+      "file": "claire/validation/benchmarks/false_negative_analyzer.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 42)",
+      "file": "claire/validation/benchmarks/false_positive_analyzer.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/validation/benchmarks/outcome_label_manager.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/validation/benchmarks/regime_backtester.py"
+    },
+    {
+      "error": "invalid syntax (<unknown>, line 34)",
+      "file": "claire/validation/benchmarks/signal_backtester.py"
+    }
+  ],
+  "top_import_roots": {
+    "__future__": 467,
+    "argparse": 6,
+    "asyncio": 11,
+    "claire": 237,
+    "collections": 7,
+    "config": 6,
+    "dataclasses": 187,
+    "datetime": 405,
+    "enum": 13,
+    "event_bus": 3,
+    "fastapi": 30,
+    "hashlib": 126,
+    "json": 307,
+    "logging": 347,
+    "models": 63,
+    "os": 10,
+    "pathlib": 321,
+    "pydantic": 10,
+    "re": 15,
+    "runtime": 5,
+    "runtime_truth_contract": 9,
+    "service": 17,
+    "store": 6,
+    "subprocess": 5,
+    "sys": 9,
+    "time_utils": 4,
+    "typing": 621,
+    "urllib": 24,
+    "uuid": 16,
+    "zipfile": 4
+  }
+}

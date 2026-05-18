@@ -1,0 +1,67 @@
+{
+  "installer": "install_claire_v19_89_8_s32r2r1_authoritative_full_replacement.py",
+  "started_at": "2026-05-16T18:18:53.354908Z",
+  "pytest_inside_installer": true,
+  "pytest_scope": "tests/test_s32r2r1_ast_bridge_web_safety_payload.py only",
+  "ok": true,
+  "issue": "S32R2R1 RecursionError persisted; full file replacement required.",
+  "modified_files": [
+    "claire\\api\\governed_web_safety_activation.py",
+    "claire\\api\\dashboard_payload_bridge.py",
+    "claire\\app.py"
+  ],
+  "governed_backup": "backups\\v19_89_8_s32r2r1_authoritative_full_replacement\\governed_web_safety_activation.py.20260516_181853.bak",
+  "bridge_backup": "backups\\v19_89_8_s32r2r1_authoritative_full_replacement\\dashboard_payload_bridge.py.20260516_181853.bak",
+  "governed_rewritten": true,
+  "bridge_rewritten": true,
+  "app_cleanup": {
+    "exists": true,
+    "changed": true,
+    "removed_blocks": [
+      {
+        "pattern": "\\n?# --- v19\\.89\\.8 recovery: normalize dashboard payload live_web_execution_enabled safety flag ---",
+        "count": 1
+      },
+      {
+        "pattern": "\\n?# --- v19\\.89\\.8 recovery: S32R2R1 clean final dashboard payload routes ---.*?# --- end v19\\.89\\.",
+        "count": 1
+      }
+    ]
+  },
+  "pycache_removed": [
+    "claire\\__pycache__\\app.cpython-311.pyc",
+    "claire\\api\\__pycache__\\dashboard_payload_bridge.cpython-311.pyc",
+    "claire\\api\\__pycache__\\governed_web_safety_activation.cpython-311.pyc",
+    "claire\\api\\__pycache__\\manual_update_approval_workflow_contract.cpython-311.pyc",
+    "claire\\api\\__pycache__\\routes_archive_approval_gate.cpython-311.pyc",
+    "claire\\api\\__pycache__\\s43_app_integration_probe.cpython-311.pyc",
+    "claire\\cleanup\\__pycache__\\archive_approval_gate.cpython-311.pyc",
+    "claire\\governed_web\\__pycache__\\active_app_final_web_activation_mount_verification.cpython-311.pyc",
+    "claire\\governed_web\\__pycache__\\active_app_mounted_route_verification.cpython-311.pyc",
+    "claire\\governed_web\\__pycache__\\live_search_active_app_mount_gate.cpython-311.pyc",
+    "claire\\governed_web\\__pycache__\\operator_probe_active_app_mount.cpython-311.pyc",
+    "tests\\__pycache__\\test_s31r6_dashboard_payload_bridge_reconciliation.cpython-311-pytest-9.0.3.pyc",
+    "tests\\__pycache__\\test_s32r2r1_ast_bridge_web_safety_payload.cpython-311-pytest-9.0.3.pyc",
+    "tests\\__pycache__\\test_s32r2r1_ast_bridge_web_safety_payload.cpython-311.pyc",
+    "tests\\__pycache__\\test_s38r1_r4_first_approved_source_fetch.cpython-311-pytest-9.0.3.pyc",
+    "tests\\__pycache__\\test_s38r1_r4_first_approved_source_fetch.cpython-311.pyc",
+    "tests\\__pycache__\\test_s43r1_r8_app_integration_probe.cpython-311-pytest-9.0.3.pyc"
+  ],
+  "compiled": [
+    "claire\\api\\governed_web_safety_activation.py",
+    "claire\\api\\dashboard_payload_bridge.py",
+    "claire\\app.py"
+  ],
+  "forbidden_hits_after_write": {
+    "governed": [],
+    "bridge": []
+  },
+  "subprocess_validation_returncode": 0,
+  "subprocess_validation_stdout": "authoritative S32R2R1 replacement validation passed\n",
+  "subprocess_validation_stderr": "",
+  "targeted_pytest_returncode": 0,
+  "targeted_pytest_stdout": "...                                                                      [100%]\n",
+  "targeted_pytest_stderr": "",
+  "fixed": "Full authoritative replacement of governed_web_safety_activation.py and dashboard_payload_bridge.py. S32/dashboard payload app recovery blocks removed and clean payload routes re-mounted.",
+  "finished_at": "2026-05-16T18:18:56.081973Z"
+}

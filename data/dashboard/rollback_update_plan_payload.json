@@ -1,0 +1,38 @@
+{
+  "execution_gate": {
+    "automatic_execution_enabled": false,
+    "blockers": [],
+    "execution_enabled": false,
+    "reason": "v17.72 defines rollback-aware planning only. Execution remains disabled until later gated builds.",
+    "rollback_execution_enabled": false,
+    "warnings": []
+  },
+  "generated_at": "2026-05-13T11:18:57.588156Z",
+  "governance": {
+    "automatic_execution_enabled": false,
+    "execution_enabled": false,
+    "operator_review_required": true,
+    "rollback_plans_required": true,
+    "validation_after_restore_required": true
+  },
+  "latest_plan": {
+    "automatic_execution_enabled": false,
+    "created_at": "2026-05-13T11:18:57.575157Z",
+    "execution_enabled": false,
+    "linked_pack_id": "update_pack_20260513_111857_update_governance_patch",
+    "path": "data/update_packs/rollback_plans/rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch.json",
+    "plan_id": "rollback_plan_20260513_111857_update_pack_20260513_111857_update_governance_patch",
+    "status": "rollback_plan_ready"
+  },
+  "linked_pack": {
+    "automatic_execution_enabled": false,
+    "execution_enabled": false,
+    "pack_hash": "5be1dff4dc44c99e344eb41b90fcde616278af2e37bf0021468a85cb874332d6",
+    "pack_id": "update_pack_20260513_111857_update_governance_patch",
+    "pack_path": "data/update_packs/staging/update_pack_20260513_111857_update_governance_patch.json",
+    "pack_status": "warning",
+    "pack_type": "update_governance_patch"
+  },
+  "plan_count": 33,
+  "version": "v17.72"
+}

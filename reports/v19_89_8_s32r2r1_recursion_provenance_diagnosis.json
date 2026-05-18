@@ -1,0 +1,1701 @@
+{
+  "diagnosis": [
+    "dashboard_payload_bridge.py still contains recursive S32R2R1 wrapper fragments.",
+    "Fresh subprocess call to build_governed_web_safety_activation() fails.",
+    "Fresh subprocess call to get_dashboard_payload() fails.",
+    "build_governed_web_safety_activation() does not expose live_web_execution_enabled=False.",
+    "build_governed_web_safety_activation() does not expose autonomous_agent_execution_enabled=False.",
+    "get_dashboard_payload() does not expose live_web_execution_enabled=False.",
+    "get_dashboard_payload() does not expose autonomous_agent_execution_enabled=False."
+  ],
+  "diagnostic": "diagnose_claire_v19_89_8_s32r2r1_recursion_provenance_v2.py",
+  "finished_at": "2026-05-16T17:54:38.856142Z",
+  "fresh_subprocess_probe": {
+    "parsed_stdout": {
+      "bridge_call_error": "RecursionError('maximum recursion depth exceeded while calling a Python object')",
+      "bridge_call_ok": false,
+      "bridge_call_traceback": "Traceback (most recent call last):\n  File \"<string>\", line 44, in <module>\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\dashboard_payload_bridge.py\", line 886, in get_dashboard_payload\n    return _v19898_s32r2r1_clean_normalize_payload(payload)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\dashboard_payload_bridge.py\", line 851, in _v19898_s32r2r1_clean_normalize_payload\n    _v19898_s32r2r1_clean_normalize_payload(value, seen)\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\dashboard_payload_bridge.py\", line 851, in _v19898_s32r2r1_clean_normalize_payload\n    _v19898_s32r2r1_clean_normalize_payload(value, seen)\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\dashboard_payload_bridge.py\", line 851, in _v19898_s32r2r1_clean_normalize_payload\n    _v19898_s32r2r1_clean_normalize_payload(value, seen)\n  [Previous line repeated 115 more times]\nRecursionError: maximum recursion depth exceeded while calling a Python object\n",
+      "bridge_module_file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\dashboard_payload_bridge.py",
+      "build_call_error": "RecursionError('maximum recursion depth exceeded while calling a Python object')",
+      "build_call_ok": false,
+      "build_call_traceback": "Traceback (most recent call last):\n  File \"<string>\", line 19, in <module>\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py\", line 192, in build_governed_web_safety_activation\n    return normalize_s32r2r1_safety_payload(payload)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py\", line 131, in normalize_s32r2r1_safety_payload\n    normalize_s32r2r1_safety_payload(nested, seen)\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py\", line 131, in normalize_s32r2r1_safety_payload\n    normalize_s32r2r1_safety_payload(nested, seen)\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py\", line 131, in normalize_s32r2r1_safety_payload\n    normalize_s32r2r1_safety_payload(nested, seen)\n  [Previous line repeated 115 more times]\nRecursionError: maximum recursion depth exceeded while calling a Python object\n",
+      "build_function_file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py",
+      "build_function_firstlineno": 152,
+      "build_function_repr": "<function build_governed_web_safety_activation at 0x0000021E1CB971A0>",
+      "get_dashboard_payload_file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\dashboard_payload_bridge.py",
+      "get_dashboard_payload_firstlineno": 873,
+      "get_dashboard_payload_repr": "<function get_dashboard_payload at 0x0000021E1FF55DA0>",
+      "governed_module_file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_web_safety_activation.py",
+      "governed_public_names": [
+        "Any",
+        "Dict",
+        "FALSE_FLAGS",
+        "PHASE",
+        "STATUS_FLAGS",
+        "VERSION",
+        "annotations",
+        "build_governed_web_safety_activation",
+        "build_s32r2r1_ast_bridge_web_safety_payload",
+        "build_s32r2r1_dashboard_payload_exposes_safety_activation",
+        "build_s32r2r1_safety_activation",
+        "build_s32r2r1_web_safety_payload",
+        "build_web_safety_activation",
+        "datetime",
+        "get_governed_web_safety_activation",
+        "get_s32r2r1_web_safety_payload",
+        "get_web_safety_activation",
+        "governed_web_safety_activation_payload",
+        "normalize_s32r2r1_safety_payload",
+        "register_governed_web_safety_activation_routes",
+        "register_s32r2r1_web_safety_routes",
+        "safety_key_contract",
+        "timezone"
+      ]
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"bridge_call_error\": \"RecursionError('maximum recursion depth exceeded while calling a Python object')\",\n  \"bridge_call_ok\": false,\n  \"bridge_call_traceback\": \"Traceback (most recent call last):\\n  File \\\"<string>\\\", line 44, in <module>\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\dashboard_payload_bridge.py\\\", line 886, in get_dashboard_payload\\n    return _v19898_s32r2r1_clean_normalize_payload(payload)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\dashboard_payload_bridge.py\\\", line 851, in _v19898_s32r2r1_clean_normalize_payload\\n    _v19898_s32r2r1_clean_normalize_payload(value, seen)\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\dashboard_payload_bridge.py\\\", line 851, in _v19898_s32r2r1_clean_normalize_payload\\n    _v19898_s32r2r1_clean_normalize_payload(value, seen)\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\dashboard_payload_bridge.py\\\", line 851, in _v19898_s32r2r1_clean_normalize_payload\\n    _v19898_s32r2r1_clean_normalize_payload(value, seen)\\n  [Previous line repeated 115 more times]\\nRecursionError: maximum recursion depth exceeded while calling a Python object\\n\",\n  \"bridge_module_file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\dashboard_payload_bridge.py\",\n  \"build_call_error\": \"RecursionError('maximum recursion depth exceeded while calling a Python object')\",\n  \"build_call_ok\": false,\n  \"build_call_traceback\": \"Traceback (most recent call last):\\n  File \\\"<string>\\\", line 19, in <module>\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\governed_web_safety_activation.py\\\", line 192, in build_governed_web_safety_activation\\n    return normalize_s32r2r1_safety_payload(payload)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\governed_web_safety_activation.py\\\", line 131, in normalize_s32r2r1_safety_payload\\n    normalize_s32r2r1_safety_payload(nested, seen)\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\governed_web_safety_activation.py\\\", line 131, in normalize_s32r2r1_safety_payload\\n    normalize_s32r2r1_safety_payload(nested, seen)\\n  File \\\"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\governed_web_safety_activation.py\\\", line 131, in normalize_s32r2r1_safety_payload\\n    normalize_s32r2r1_safety_payload(nested, seen)\\n  [Previous line repeated 115 more times]\\nRecursionError: maximum recursion depth exceeded while calling a Python object\\n\",\n  \"build_function_file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\governed_web_safety_activation.py\",\n  \"build_function_firstlineno\": 152,\n  \"build_function_repr\": \"<function build_governed_web_safety_activation at 0x0000021E1CB971A0>\",\n  \"get_dashboard_payload_file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\dashboard_payload_bridge.py\",\n  \"get_dashboard_payload_firstlineno\": 873,\n  \"get_dashboard_payload_repr\": \"<function get_dashboard_payload at 0x0000021E1FF55DA0>\",\n  \"governed_module_file\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\governed_web_safety_activation.py\",\n  \"governed_public_names\": [\n    \"Any\",\n    \"Dict\",\n    \"FALSE_FLAGS\",\n    \"PHASE\",\n    \"STATUS_FLAGS\",\n    \"VERSION\",\n    \"annotations\",\n    \"build_governed_web_safety_activation\",\n    \"build_s32r2r1_ast_bridge_web_safety_payload\",\n    \"build_s32r2r1_dashboard_payload_exposes_safety_activation\",\n    \"build_s32r2r1_safety_activation\",\n    \"build_s32r2r1_web_safety_payload\",\n    \"build_web_safety_activation\",\n    \"datetime\",\n    \"get_governed_web_safety_activation\",\n    \"get_s32r2r1_web_safety_payload\",\n    \"get_web_safety_activation\",\n    \"governed_web_safety_activation_payload\",\n    \"normalize_s32r2r1_safety_payload\",\n    \"register_governed_web_safety_activation_routes\",\n    \"register_s32r2r1_web_safety_routes\",\n    \"safety_key_contract\",\n    \"timezone\"\n  ]\n}\n"
+  },
+  "modified_code": false,
+  "pytest_inside_diagnostic": false,
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "started_at": "2026-05-16T17:54:38.445012Z",
+  "targets": {
+    "app": {
+      "compiled": true,
+      "contains_fragments": {
+        "_v19898_original_get_dashboard_payload_s32r2r1": false,
+        "_v19898_s32r2r1_clean_previous_get_dashboard_payload": false,
+        "_v19898_s32r2r1_wrap": false,
+        "def _wrapped": false,
+        "return _v19898_s32r2r1_normalize_payload(fn(": false,
+        "return _v19898_s32r2r1_normalize_payload(fn(*args, **kwargs))": false
+      },
+      "def_counts": {
+        "build_governed_web_safety_activation": 0,
+        "create_app": 21,
+        "get_dashboard_payload": 0,
+        "normalize_s32r2r1_safety_payload": 0
+      },
+      "exists": true,
+      "line_count": 1956,
+      "markers": [
+        "# --- v19.89.8 recovery: force S359-S365 route override after app construction ---",
+        "# --- end v19.89.8 recovery: force S359-S365 route override after app construction ---",
+        "# --- v19.89.8 recovery: force S359-S365 route status ok after app construction ---",
+        "# --- end v19.89.8 recovery: force S359-S365 route status ok after app construction ---",
+        "# --- v19.89.8 recovery: force S359-S365 expansion dock contract after app construction ---",
+        "# --- end v19.89.8 recovery: force S359-S365 expansion dock contract after app construction ---",
+        "# --- v19.89.8 recovery: normalize dashboard payload live_web_execution_enabled safety flag ---",
+        "# --- end v19.89.8 recovery: normalize dashboard payload live_web_execution_enabled safety flag ---",
+        "# --- v19.89.8 recovery: S32R2R1 clean final dashboard payload routes ---",
+        "# --- end v19.89.8 recovery: S32R2R1 clean final dashboard payload routes ---"
+      ],
+      "path": "claire\\app.py",
+      "recursive_fragment_count": 0,
+      "safety_key_presence": {
+        "automatic_updates_enabled": true,
+        "autonomous_agent_execution_enabled": true,
+        "autonomous_crawling_enabled": true,
+        "body_read_allowed": true,
+        "browser_execution_enabled": true,
+        "live_web_execution_enabled": true,
+        "network_performed": true,
+        "runtime_mutation_enabled": true,
+        "web_execution_enabled": true
+      },
+      "sha256": "760a440f5d36f4a8871037c45f3ede9c0b49e99379f2220d1002ccdad3bb972b",
+      "size_bytes": 76136,
+      "suspicious_context": [
+        {
+          "context": [
+            {
+              "line": 1813,
+              "text": "# nested safety sections."
+            },
+            {
+              "line": 1814,
+              "text": ""
+            },
+            {
+              "line": 1815,
+              "text": "def _v19898_s32r2r1_payload_safety_keys():"
+            },
+            {
+              "line": 1816,
+              "text": "    return {"
+            },
+            {
+              "line": 1817,
+              "text": "        \"live_web_execution_enabled\": False,"
+            }
+          ],
+          "line": 1815
+        },
+        {
+          "context": [
+            {
+              "line": 1834,
+              "text": ""
+            },
+            {
+              "line": 1835,
+              "text": ""
+            },
+            {
+              "line": 1836,
+              "text": "def _v19898_s32r2r1_normalize_dashboard_payload(payload):"
+            },
+            {
+              "line": 1837,
+              "text": "    if isinstance(payload, dict):"
+            },
+            {
+              "line": 1838,
+              "text": "        for _key, _value in _v19898_s32r2r1_payload_safety_keys().items():"
+            }
+          ],
+          "line": 1836
+        },
+        {
+          "context": [
+            {
+              "line": 1836,
+              "text": "def _v19898_s32r2r1_normalize_dashboard_payload(payload):"
+            },
+            {
+              "line": 1837,
+              "text": "    if isinstance(payload, dict):"
+            },
+            {
+              "line": 1838,
+              "text": "        for _key, _value in _v19898_s32r2r1_payload_safety_keys().items():"
+            },
+            {
+              "line": 1839,
+              "text": "            payload.setdefault(_key, _value)"
+            },
+            {
+              "line": 1840,
+              "text": "        payload.setdefault(\"backend_owns_truth\", True)"
+            }
+          ],
+          "line": 1838
+        },
+        {
+          "context": [
+            {
+              "line": 1853,
+              "text": "            _nested = payload.get(_nested_key)"
+            },
+            {
+              "line": 1854,
+              "text": "            if isinstance(_nested, dict):"
+            },
+            {
+              "line": 1855,
+              "text": "                for _key, _value in _v19898_s32r2r1_payload_safety_keys().items():"
+            },
+            {
+              "line": 1856,
+              "text": "                    _nested.setdefault(_key, _value)"
+            },
+            {
+              "line": 1857,
+              "text": "                _nested.setdefault(\"backend_owns_truth\", True)"
+            }
+          ],
+          "line": 1855
+        },
+        {
+          "context": [
+            {
+              "line": 1860,
+              "text": "        for _value in list(payload.values()):"
+            },
+            {
+              "line": 1861,
+              "text": "            if isinstance(_value, dict):"
+            },
+            {
+              "line": 1862,
+              "text": "                _v19898_s32r2r1_normalize_dashboard_payload(_value)"
+            },
+            {
+              "line": 1863,
+              "text": "            elif isinstance(_value, list):"
+            },
+            {
+              "line": 1864,
+              "text": "                for _item in _value:"
+            }
+          ],
+          "line": 1862
+        },
+        {
+          "context": [
+            {
+              "line": 1864,
+              "text": "                for _item in _value:"
+            },
+            {
+              "line": 1865,
+              "text": "                    if isinstance(_item, dict):"
+            },
+            {
+              "line": 1866,
+              "text": "                        _v19898_s32r2r1_normalize_dashboard_payload(_item)"
+            },
+            {
+              "line": 1867,
+              "text": "    return payload"
+            },
+            {
+              "line": 1868,
+              "text": ""
+            }
+          ],
+          "line": 1866
+        },
+        {
+          "context": [
+            {
+              "line": 1874,
+              "text": "        app = _v19898_previous_create_app_s32r2r1_payload_safety(*args, **kwargs)"
+            },
+            {
+              "line": 1875,
+              "text": ""
+            },
+            {
+              "line": 1876,
+              "text": "        async def _v19898_s32r2r1_safety_payload_route():"
+            },
+            {
+              "line": 1877,
+              "text": "            try:"
+            },
+            {
+              "line": 1878,
+              "text": "                from claire.api.dashboard_payload_bridge import get_dashboard_payload"
+            }
+          ],
+          "line": 1876
+        },
+        {
+          "context": [
+            {
+              "line": 1884,
+              "text": "                    \"governed_web_safety_activation\": {},"
+            },
+            {
+              "line": 1885,
+              "text": "                }"
+            },
+            {
+              "line": 1886,
+              "text": "            return _v19898_s32r2r1_normalize_dashboard_payload(payload)"
+            },
+            {
+              "line": 1887,
+              "text": ""
+            },
+            {
+              "line": 1888,
+              "text": "        _paths = {"
+            }
+          ],
+          "line": 1886
+        },
+        {
+          "context": [
+            {
+              "line": 1897,
+              "text": "            app.add_api_route("
+            },
+            {
+              "line": 1898,
+              "text": "                _path,"
+            },
+            {
+              "line": 1899,
+              "text": "                _v19898_s32r2r1_safety_payload_route,"
+            },
+            {
+              "line": 1900,
+              "text": "                methods=[\"GET\"],"
+            },
+            {
+              "line": 1901,
+              "text": "                name=(\"claire_s32r2r1_payload_safety_\" + _path.strip(\"/\").replace(\"/\", \"_\").replace(\"-\", \"_\"))[:120],"
+            }
+          ],
+          "line": 1899
+        },
+        {
+          "context": [
+            {
+              "line": 1921,
+              "text": "        app = _v19898_previous_create_app_s32r2r1_clean_payload_routes(*args, **kwargs)"
+            },
+            {
+              "line": 1922,
+              "text": ""
+            },
+            {
+              "line": 1923,
+              "text": "        async def _v19898_s32r2r1_payload_route():"
+            },
+            {
+              "line": 1924,
+              "text": "            try:"
+            },
+            {
+              "line": 1925,
+              "text": "                from claire.api.dashboard_payload_bridge import get_dashboard_payload"
+            }
+          ],
+          "line": 1923
+        },
+        {
+          "context": [
+            {
+              "line": 1946,
+              "text": "            app.add_api_route("
+            },
+            {
+              "line": 1947,
+              "text": "                _path,"
+            },
+            {
+              "line": 1948,
+              "text": "                _v19898_s32r2r1_payload_route,"
+            },
+            {
+              "line": 1949,
+              "text": "                methods=[\"GET\"],"
+            },
+            {
+              "line": 1950,
+              "text": "                name=(\"claire_s32r2r1_clean_payload_\" + _path.strip(\"/\").replace(\"/\", \"_\").replace(\"-\", \"_\"))[:120],"
+            }
+          ],
+          "line": 1948
+        }
+      ]
+    },
+    "dashboard_payload_bridge": {
+      "compiled": true,
+      "contains_fragments": {
+        "_v19898_original_get_dashboard_payload_s32r2r1": true,
+        "_v19898_s32r2r1_clean_previous_get_dashboard_payload": true,
+        "_v19898_s32r2r1_wrap": true,
+        "def _wrapped": true,
+        "return _v19898_s32r2r1_normalize_payload(fn(": true,
+        "return _v19898_s32r2r1_normalize_payload(fn(*args, **kwargs))": true
+      },
+      "def_counts": {
+        "build_governed_web_safety_activation": 0,
+        "create_app": 0,
+        "get_dashboard_payload": 13,
+        "normalize_s32r2r1_safety_payload": 0
+      },
+      "exists": true,
+      "line_count": 916,
+      "markers": [
+        "# --- v19.89.8 recovery: S32R2R1 live_web_execution_enabled exact safety contract ---",
+        "# --- end v19.89.8 recovery: S32R2R1 live_web_execution_enabled exact safety contract ---",
+        "# --- v19.89.8 recovery: dashboard payload S32R2R1 safety key normalization ---",
+        "# --- end v19.89.8 recovery: dashboard payload S32R2R1 safety key normalization ---",
+        "# --- v19.89.8 recovery: S32R2R1 clean final dashboard payload safety normalizer ---",
+        "# --- end v19.89.8 recovery: S32R2R1 clean final dashboard payload safety normalizer ---"
+      ],
+      "path": "claire\\api\\dashboard_payload_bridge.py",
+      "recursive_fragment_count": 12,
+      "safety_key_presence": {
+        "automatic_updates_enabled": true,
+        "autonomous_agent_execution_enabled": true,
+        "autonomous_crawling_enabled": true,
+        "body_read_allowed": true,
+        "browser_execution_enabled": true,
+        "live_web_execution_enabled": true,
+        "network_performed": true,
+        "runtime_mutation_enabled": true,
+        "web_execution_enabled": true
+      },
+      "sha256": "ce2b7a889af31601c4d9a60ba7a9b499afa2011ef24e1c2900eee6a4e98442ef",
+      "size_bytes": 32621,
+      "suspicious_context": [
+        {
+          "context": [
+            {
+              "line": 556,
+              "text": "# live_web_execution_enabled == False instead of omitting the key."
+            },
+            {
+              "line": 557,
+              "text": ""
+            },
+            {
+              "line": 558,
+              "text": "def _v19898_s32r2r1_safety_keys():"
+            },
+            {
+              "line": 559,
+              "text": "    return {"
+            },
+            {
+              "line": 560,
+              "text": "        \"live_web_execution_enabled\": False,"
+            }
+          ],
+          "line": 558
+        },
+        {
+          "context": [
+            {
+              "line": 577,
+              "text": ""
+            },
+            {
+              "line": 578,
+              "text": ""
+            },
+            {
+              "line": 579,
+              "text": "def _v19898_s32r2r1_normalize_payload(payload):"
+            },
+            {
+              "line": 580,
+              "text": "    if isinstance(payload, dict):"
+            },
+            {
+              "line": 581,
+              "text": "        for _key, _value in _v19898_s32r2r1_safety_keys().items():"
+            }
+          ],
+          "line": 579
+        },
+        {
+          "context": [
+            {
+              "line": 579,
+              "text": "def _v19898_s32r2r1_normalize_payload(payload):"
+            },
+            {
+              "line": 580,
+              "text": "    if isinstance(payload, dict):"
+            },
+            {
+              "line": 581,
+              "text": "        for _key, _value in _v19898_s32r2r1_safety_keys().items():"
+            },
+            {
+              "line": 582,
+              "text": "            payload.setdefault(_key, _value)"
+            },
+            {
+              "line": 583,
+              "text": ""
+            }
+          ],
+          "line": 581
+        },
+        {
+          "context": [
+            {
+              "line": 597,
+              "text": "            _nested = payload.get(_nested_key)"
+            },
+            {
+              "line": 598,
+              "text": "            if isinstance(_nested, dict):"
+            },
+            {
+              "line": 599,
+              "text": "                for _key, _value in _v19898_s32r2r1_safety_keys().items():"
+            },
+            {
+              "line": 600,
+              "text": "                    _nested.setdefault(_key, _value)"
+            },
+            {
+              "line": 601,
+              "text": "                _nested.setdefault(\"backend_owns_truth\", True)"
+            }
+          ],
+          "line": 599
+        },
+        {
+          "context": [
+            {
+              "line": 604,
+              "text": "        for _value in list(payload.values()):"
+            },
+            {
+              "line": 605,
+              "text": "            if isinstance(_value, dict):"
+            },
+            {
+              "line": 606,
+              "text": "                _v19898_s32r2r1_normalize_payload(_value)"
+            },
+            {
+              "line": 607,
+              "text": "            elif isinstance(_value, list):"
+            },
+            {
+              "line": 608,
+              "text": "                for _item in _value:"
+            }
+          ],
+          "line": 606
+        },
+        {
+          "context": [
+            {
+              "line": 608,
+              "text": "                for _item in _value:"
+            },
+            {
+              "line": 609,
+              "text": "                    if isinstance(_item, dict):"
+            },
+            {
+              "line": 610,
+              "text": "                        _v19898_s32r2r1_normalize_payload(_item)"
+            },
+            {
+              "line": 611,
+              "text": "    return payload"
+            },
+            {
+              "line": 612,
+              "text": ""
+            }
+          ],
+          "line": 610
+        },
+        {
+          "context": [
+            {
+              "line": 613,
+              "text": ""
+            },
+            {
+              "line": 614,
+              "text": "def build_s32r2r1_web_safety_payload():"
+            },
+            {
+              "line": 615,
+              "text": "    return _v19898_s32r2r1_normalize_payload({"
+            },
+            {
+              "line": 616,
+              "text": "        \"stage_version\": \"S32R2R1\","
+            },
+            {
+              "line": 617,
+              "text": "        \"phase\": \"S32R2R1\","
+            }
+          ],
+          "line": 615
+        },
+        {
+          "context": [
+            {
+              "line": 641,
+              "text": ""
+            },
+            {
+              "line": 642,
+              "text": ""
+            },
+            {
+              "line": 643,
+              "text": "def _v19898_s32r2r1_wrap(fn):"
+            },
+            {
+              "line": 644,
+              "text": "    def _wrapped(*args, **kwargs):"
+            },
+            {
+              "line": 645,
+              "text": "        return _v19898_s32r2r1_normalize_payload(fn(*args, **kwargs))"
+            }
+          ],
+          "line": 643
+        },
+        {
+          "context": [
+            {
+              "line": 642,
+              "text": ""
+            },
+            {
+              "line": 643,
+              "text": "def _v19898_s32r2r1_wrap(fn):"
+            },
+            {
+              "line": 644,
+              "text": "    def _wrapped(*args, **kwargs):"
+            },
+            {
+              "line": 645,
+              "text": "        return _v19898_s32r2r1_normalize_payload(fn(*args, **kwargs))"
+            },
+            {
+              "line": 646,
+              "text": "    _wrapped.__name__ = getattr(fn, \"__name__\", \"wrapped\")"
+            }
+          ],
+          "line": 644
+        },
+        {
+          "context": [
+            {
+              "line": 643,
+              "text": "def _v19898_s32r2r1_wrap(fn):"
+            },
+            {
+              "line": 644,
+              "text": "    def _wrapped(*args, **kwargs):"
+            },
+            {
+              "line": 645,
+              "text": "        return _v19898_s32r2r1_normalize_payload(fn(*args, **kwargs))"
+            },
+            {
+              "line": 646,
+              "text": "    _wrapped.__name__ = getattr(fn, \"__name__\", \"wrapped\")"
+            },
+            {
+              "line": 647,
+              "text": "    _wrapped.__doc__ = getattr(fn, \"__doc__\", None)"
+            }
+          ],
+          "line": 645
+        },
+        {
+          "context": [
+            {
+              "line": 646,
+              "text": "    _wrapped.__name__ = getattr(fn, \"__name__\", \"wrapped\")"
+            },
+            {
+              "line": 647,
+              "text": "    _wrapped.__doc__ = getattr(fn, \"__doc__\", None)"
+            },
+            {
+              "line": 648,
+              "text": "    _wrapped._v19898_s32r2r1_wrapped = True"
+            },
+            {
+              "line": 649,
+              "text": "    return _wrapped"
+            },
+            {
+              "line": 650,
+              "text": ""
+            }
+          ],
+          "line": 648
+        },
+        {
+          "context": [
+            {
+              "line": 653,
+              "text": "    if not callable(_v19898_value):"
+            },
+            {
+              "line": 654,
+              "text": "        continue"
+            },
+            {
+              "line": 655,
+              "text": "    if getattr(_v19898_value, \"_v19898_s32r2r1_wrapped\", False):"
+            },
+            {
+              "line": 656,
+              "text": "        continue"
+            },
+            {
+              "line": 657,
+              "text": "    if _v19898_name.startswith((\"build_\", \"get_\")) or \"payload\" in _v19898_name.lower() or \"safety\" in _v19898_name.lower():"
+            }
+          ],
+          "line": 655
+        },
+        {
+          "context": [
+            {
+              "line": 656,
+              "text": "        continue"
+            },
+            {
+              "line": 657,
+              "text": "    if _v19898_name.startswith((\"build_\", \"get_\")) or \"payload\" in _v19898_name.lower() or \"safety\" in _v19898_name.lower():"
+            },
+            {
+              "line": 658,
+              "text": "        globals()[_v19898_name] = _v19898_s32r2r1_wrap(_v19898_value)"
+            },
+            {
+              "line": 659,
+              "text": ""
+            },
+            {
+              "line": 660,
+              "text": ""
+            }
+          ],
+          "line": 658
+        },
+        {
+          "context": [
+            {
+              "line": 676,
+              "text": "# Non-recursive dashboard payload normalization for exact web-safety flags."
+            },
+            {
+              "line": 677,
+              "text": ""
+            },
+            {
+              "line": 678,
+              "text": "def _v19898_s32r2r1_payload_safety_keys():"
+            },
+            {
+              "line": 679,
+              "text": "    return {"
+            },
+            {
+              "line": 680,
+              "text": "        \"live_web_execution_enabled\": False,"
+            }
+          ],
+          "line": 678
+        },
+        {
+          "context": [
+            {
+              "line": 710,
+              "text": ""
+            },
+            {
+              "line": 711,
+              "text": ""
+            },
+            {
+              "line": 712,
+              "text": "def _v19898_s32r2r1_normalize_dashboard_payload(payload, _seen=None):"
+            },
+            {
+              "line": 713,
+              "text": "    if _seen is None:"
+            },
+            {
+              "line": 714,
+              "text": "        _seen = set()"
+            }
+          ],
+          "line": 712
+        },
+        {
+          "context": [
+            {
+              "line": 720,
+              "text": "        _seen.add(_identity)"
+            },
+            {
+              "line": 721,
+              "text": ""
+            },
+            {
+              "line": 722,
+              "text": "        for _key, _value in _v19898_s32r2r1_payload_safety_keys().items():"
+            },
+            {
+              "line": 723,
+              "text": "            payload.setdefault(_key, _value)"
+            },
+            {
+              "line": 724,
+              "text": ""
+            }
+          ],
+          "line": 722
+        },
+        {
+          "context": [
+            {
+              "line": 730,
+              "text": "        _safety = payload.setdefault(\"governed_web_safety_activation\", {})"
+            },
+            {
+              "line": 731,
+              "text": "        if isinstance(_safety, dict):"
+            },
+            {
+              "line": 732,
+              "text": "            for _key, _value in _v19898_s32r2r1_payload_safety_keys().items():"
+            },
+            {
+              "line": 733,
+              "text": "                _safety.setdefault(_key, _value)"
+            },
+            {
+              "line": 734,
+              "text": "            _safety.setdefault(\"status\", \"locked\")"
+            }
+          ],
+          "line": 732
+        },
+        {
+          "context": [
+            {
+              "line": 736,
+              "text": "        for _value in list(payload.values()):"
+            },
+            {
+              "line": 737,
+              "text": "            if isinstance(_value, dict):"
+            },
+            {
+              "line": 738,
+              "text": "                _v19898_s32r2r1_normalize_dashboard_payload(_value, _seen)"
+            },
+            {
+              "line": 739,
+              "text": "            elif isinstance(_value, list):"
+            },
+            {
+              "line": 740,
+              "text": "                for _item in _value:"
+            }
+          ],
+          "line": 738
+        },
+        {
+          "context": [
+            {
+              "line": 740,
+              "text": "                for _item in _value:"
+            },
+            {
+              "line": 741,
+              "text": "                    if isinstance(_item, dict):"
+            },
+            {
+              "line": 742,
+              "text": "                        _v19898_s32r2r1_normalize_dashboard_payload(_item, _seen)"
+            },
+            {
+              "line": 743,
+              "text": "    return payload"
+            },
+            {
+              "line": 744,
+              "text": ""
+            }
+          ],
+          "line": 742
+        },
+        {
+          "context": [
+            {
+              "line": 745,
+              "text": ""
+            },
+            {
+              "line": 746,
+              "text": "if \"get_dashboard_payload\" in globals() and callable(globals()[\"get_dashboard_payload\"]):"
+            },
+            {
+              "line": 747,
+              "text": "    _v19898_original_get_dashboard_payload_s32r2r1 = globals()[\"get_dashboard_payload\"]"
+            },
+            {
+              "line": 748,
+              "text": ""
+            },
+            {
+              "line": 749,
+              "text": "    def get_dashboard_payload(*args, **kwargs):"
+            }
+          ],
+          "line": 747
+        },
+        {
+          "context": [
+            {
+              "line": 748,
+              "text": ""
+            },
+            {
+              "line": 749,
+              "text": "    def get_dashboard_payload(*args, **kwargs):"
+            },
+            {
+              "line": 750,
+              "text": "        return _v19898_s32r2r1_normalize_dashboard_payload("
+            },
+            {
+              "line": 751,
+              "text": "            _v19898_original_get_dashboard_payload_s32r2r1(*args, **kwargs)"
+            },
+            {
+              "line": 752,
+              "text": "        )"
+            }
+          ],
+          "line": 750
+        },
+        {
+          "context": [
+            {
+              "line": 749,
+              "text": "    def get_dashboard_payload(*args, **kwargs):"
+            },
+            {
+              "line": 750,
+              "text": "        return _v19898_s32r2r1_normalize_dashboard_payload("
+            },
+            {
+              "line": 751,
+              "text": "            _v19898_original_get_dashboard_payload_s32r2r1(*args, **kwargs)"
+            },
+            {
+              "line": 752,
+              "text": "        )"
+            },
+            {
+              "line": 753,
+              "text": "else:"
+            }
+          ],
+          "line": 751
+        },
+        {
+          "context": [
+            {
+              "line": 753,
+              "text": "else:"
+            },
+            {
+              "line": 754,
+              "text": "    def get_dashboard_payload(*args, **kwargs):"
+            },
+            {
+              "line": 755,
+              "text": "        return _v19898_s32r2r1_normalize_dashboard_payload({"
+            },
+            {
+              "line": 756,
+              "text": "            \"status\": \"ok\","
+            },
+            {
+              "line": 757,
+              "text": "            \"stage_version\": \"S32R2R1\","
+            }
+          ],
+          "line": 755
+        },
+        {
+          "context": [
+            {
+              "line": 764,
+              "text": ""
+            },
+            {
+              "line": 765,
+              "text": "    def build_dashboard_payload(*args, **kwargs):"
+            },
+            {
+              "line": 766,
+              "text": "        return _v19898_s32r2r1_normalize_dashboard_payload("
+            },
+            {
+              "line": 767,
+              "text": "            _v19898_original_build_dashboard_payload_s32r2r1(*args, **kwargs)"
+            },
+            {
+              "line": 768,
+              "text": "        )"
+            }
+          ],
+          "line": 766
+        },
+        {
+          "context": [
+            {
+              "line": 786,
+              "text": "# wrapper chain and always exposes the exact fail-closed keys required by tests."
+            },
+            {
+              "line": 787,
+              "text": ""
+            },
+            {
+              "line": 788,
+              "text": "def _v19898_s32r2r1_clean_safety_keys():"
+            },
+            {
+              "line": 789,
+              "text": "    return {"
+            },
+            {
+              "line": 790,
+              "text": "        \"live_web_execution_enabled\": False,"
+            }
+          ],
+          "line": 788
+        },
+        {
+          "context": [
+            {
+              "line": 820,
+              "text": ""
+            },
+            {
+              "line": 821,
+              "text": ""
+            },
+            {
+              "line": 822,
+              "text": "def _v19898_s32r2r1_clean_normalize_payload(payload, seen=None):"
+            },
+            {
+              "line": 823,
+              "text": "    if seen is None:"
+            },
+            {
+              "line": 824,
+              "text": "        seen = set()"
+            }
+          ],
+          "line": 822
+        },
+        {
+          "context": [
+            {
+              "line": 831,
+              "text": "    seen.add(marker)"
+            },
+            {
+              "line": 832,
+              "text": ""
+            },
+            {
+              "line": 833,
+              "text": "    for key, value in _v19898_s32r2r1_clean_safety_keys().items():"
+            },
+            {
+              "line": 834,
+              "text": "        payload[key] = value"
+            },
+            {
+              "line": 835,
+              "text": ""
+            }
+          ],
+          "line": 833
+        },
+        {
+          "context": [
+            {
+              "line": 843,
+              "text": "    safety = payload.setdefault(\"governed_web_safety_activation\", {})"
+            },
+            {
+              "line": 844,
+              "text": "    if isinstance(safety, dict):"
+            },
+            {
+              "line": 845,
+              "text": "        for key, value in _v19898_s32r2r1_clean_safety_keys().items():"
+            },
+            {
+              "line": 846,
+              "text": "            safety[key] = value"
+            },
+            {
+              "line": 847,
+              "text": "        safety.setdefault(\"status\", \"locked\")"
+            }
+          ],
+          "line": 845
+        },
+        {
+          "context": [
+            {
+              "line": 849,
+              "text": "    for value in list(payload.values()):"
+            },
+            {
+              "line": 850,
+              "text": "        if isinstance(value, dict):"
+            },
+            {
+              "line": 851,
+              "text": "            _v19898_s32r2r1_clean_normalize_payload(value, seen)"
+            },
+            {
+              "line": 852,
+              "text": "        elif isinstance(value, list):"
+            },
+            {
+              "line": 853,
+              "text": "            for item in value:"
+            }
+          ],
+          "line": 851
+        },
+        {
+          "context": [
+            {
+              "line": 853,
+              "text": "            for item in value:"
+            },
+            {
+              "line": 854,
+              "text": "                if isinstance(item, dict):"
+            },
+            {
+              "line": 855,
+              "text": "                    _v19898_s32r2r1_clean_normalize_payload(item, seen)"
+            },
+            {
+              "line": 856,
+              "text": "    return payload"
+            },
+            {
+              "line": 857,
+              "text": ""
+            }
+          ],
+          "line": 855
+        },
+        {
+          "context": [
+            {
+              "line": 857,
+              "text": ""
+            },
+            {
+              "line": 858,
+              "text": ""
+            },
+            {
+              "line": 859,
+              "text": "_v19898_s32r2r1_clean_previous_get_dashboard_payload = globals().get(\"get_dashboard_payload\")"
+            },
+            {
+              "line": 860,
+              "text": "_v19898_s32r2r1_clean_previous_build_dashboard_payload = globals().get(\"build_dashboard_payload\")"
+            },
+            {
+              "line": 861,
+              "text": ""
+            }
+          ],
+          "line": 859
+        },
+        {
+          "context": [
+            {
+              "line": 858,
+              "text": ""
+            },
+            {
+              "line": 859,
+              "text": "_v19898_s32r2r1_clean_previous_get_dashboard_payload = globals().get(\"get_dashboard_payload\")"
+            },
+            {
+              "line": 860,
+              "text": "_v19898_s32r2r1_clean_previous_build_dashboard_payload = globals().get(\"build_dashboard_payload\")"
+            },
+            {
+              "line": 861,
+              "text": ""
+            },
+            {
+              "line": 862,
+              "text": ""
+            }
+          ],
+          "line": 860
+        },
+        {
+          "context": [
+            {
+              "line": 861,
+              "text": ""
+            },
+            {
+              "line": 862,
+              "text": ""
+            },
+            {
+              "line": 863,
+              "text": "def _v19898_s32r2r1_emergency_payload():"
+            },
+            {
+              "line": 864,
+              "text": "    return {"
+            },
+            {
+              "line": 865,
+              "text": "        \"status\": \"ok\","
+            }
+          ],
+          "line": 863
+        },
+        {
+          "context": [
+            {
+              "line": 873,
+              "text": "def get_dashboard_payload(*args, **kwargs):"
+            },
+            {
+              "line": 874,
+              "text": "    payload = None"
+            },
+            {
+              "line": 875,
+              "text": "    if callable(_v19898_s32r2r1_clean_previous_get_dashboard_payload):"
+            },
+            {
+              "line": 876,
+              "text": "        try:"
+            },
+            {
+              "line": 877,
+              "text": "            payload = _v19898_s32r2r1_clean_previous_get_dashboard_payload(*args, **kwargs)"
+            }
+          ],
+          "line": 875
+        },
+        {
+          "context": [
+            {
+              "line": 875,
+              "text": "    if callable(_v19898_s32r2r1_clean_previous_get_dashboard_payload):"
+            },
+            {
+              "line": 876,
+              "text": "        try:"
+            },
+            {
+              "line": 877,
+              "text": "            payload = _v19898_s32r2r1_clean_previous_get_dashboard_payload(*args, **kwargs)"
+            },
+            {
+              "line": 878,
+              "text": "        except RecursionError:"
+            },
+            {
+              "line": 879,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            }
+          ],
+          "line": 877
+        },
+        {
+          "context": [
+            {
+              "line": 877,
+              "text": "            payload = _v19898_s32r2r1_clean_previous_get_dashboard_payload(*args, **kwargs)"
+            },
+            {
+              "line": 878,
+              "text": "        except RecursionError:"
+            },
+            {
+              "line": 879,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 880,
+              "text": "        except Exception:"
+            },
+            {
+              "line": 881,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            }
+          ],
+          "line": 879
+        },
+        {
+          "context": [
+            {
+              "line": 879,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 880,
+              "text": "        except Exception:"
+            },
+            {
+              "line": 881,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 882,
+              "text": "    else:"
+            },
+            {
+              "line": 883,
+              "text": "        payload = _v19898_s32r2r1_emergency_payload()"
+            }
+          ],
+          "line": 881
+        },
+        {
+          "context": [
+            {
+              "line": 881,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 882,
+              "text": "    else:"
+            },
+            {
+              "line": 883,
+              "text": "        payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 884,
+              "text": "    if not isinstance(payload, dict):"
+            },
+            {
+              "line": 885,
+              "text": "        payload = _v19898_s32r2r1_emergency_payload()"
+            }
+          ],
+          "line": 883
+        },
+        {
+          "context": [
+            {
+              "line": 883,
+              "text": "        payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 884,
+              "text": "    if not isinstance(payload, dict):"
+            },
+            {
+              "line": 885,
+              "text": "        payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 886,
+              "text": "    return _v19898_s32r2r1_clean_normalize_payload(payload)"
+            },
+            {
+              "line": 887,
+              "text": ""
+            }
+          ],
+          "line": 885
+        },
+        {
+          "context": [
+            {
+              "line": 884,
+              "text": "    if not isinstance(payload, dict):"
+            },
+            {
+              "line": 885,
+              "text": "        payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 886,
+              "text": "    return _v19898_s32r2r1_clean_normalize_payload(payload)"
+            },
+            {
+              "line": 887,
+              "text": ""
+            },
+            {
+              "line": 888,
+              "text": ""
+            }
+          ],
+          "line": 886
+        },
+        {
+          "context": [
+            {
+              "line": 889,
+              "text": "def build_dashboard_payload(*args, **kwargs):"
+            },
+            {
+              "line": 890,
+              "text": "    payload = None"
+            },
+            {
+              "line": 891,
+              "text": "    if callable(_v19898_s32r2r1_clean_previous_build_dashboard_payload):"
+            },
+            {
+              "line": 892,
+              "text": "        try:"
+            },
+            {
+              "line": 893,
+              "text": "            payload = _v19898_s32r2r1_clean_previous_build_dashboard_payload(*args, **kwargs)"
+            }
+          ],
+          "line": 891
+        },
+        {
+          "context": [
+            {
+              "line": 891,
+              "text": "    if callable(_v19898_s32r2r1_clean_previous_build_dashboard_payload):"
+            },
+            {
+              "line": 892,
+              "text": "        try:"
+            },
+            {
+              "line": 893,
+              "text": "            payload = _v19898_s32r2r1_clean_previous_build_dashboard_payload(*args, **kwargs)"
+            },
+            {
+              "line": 894,
+              "text": "        except RecursionError:"
+            },
+            {
+              "line": 895,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            }
+          ],
+          "line": 893
+        },
+        {
+          "context": [
+            {
+              "line": 893,
+              "text": "            payload = _v19898_s32r2r1_clean_previous_build_dashboard_payload(*args, **kwargs)"
+            },
+            {
+              "line": 894,
+              "text": "        except RecursionError:"
+            },
+            {
+              "line": 895,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 896,
+              "text": "        except Exception:"
+            },
+            {
+              "line": 897,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            }
+          ],
+          "line": 895
+        },
+        {
+          "context": [
+            {
+              "line": 895,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 896,
+              "text": "        except Exception:"
+            },
+            {
+              "line": 897,
+              "text": "            payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 898,
+              "text": "    else:"
+            },
+            {
+              "line": 899,
+              "text": "        payload = get_dashboard_payload(*args, **kwargs)"
+            }
+          ],
+          "line": 897
+        },
+        {
+          "context": [
+            {
+              "line": 899,
+              "text": "        payload = get_dashboard_payload(*args, **kwargs)"
+            },
+            {
+              "line": 900,
+              "text": "    if not isinstance(payload, dict):"
+            },
+            {
+              "line": 901,
+              "text": "        payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 902,
+              "text": "    return _v19898_s32r2r1_clean_normalize_payload(payload)"
+            },
+            {
+              "line": 903,
+              "text": ""
+            }
+          ],
+          "line": 901
+        },
+        {
+          "context": [
+            {
+              "line": 900,
+              "text": "    if not isinstance(payload, dict):"
+            },
+            {
+              "line": 901,
+              "text": "        payload = _v19898_s32r2r1_emergency_payload()"
+            },
+            {
+              "line": 902,
+              "text": "    return _v19898_s32r2r1_clean_normalize_payload(payload)"
+            },
+            {
+              "line": 903,
+              "text": ""
+            },
+            {
+              "line": 904,
+              "text": ""
+            }
+          ],
+          "line": 902
+        }
+      ]
+    },
+    "governed_web_safety_activation": {
+      "compiled": true,
+      "contains_fragments": {
+        "_v19898_original_get_dashboard_payload_s32r2r1": false,
+        "_v19898_s32r2r1_clean_previous_get_dashboard_payload": false,
+        "_v19898_s32r2r1_wrap": false,
+        "def _wrapped": false,
+        "return _v19898_s32r2r1_normalize_payload(fn(": false,
+        "return _v19898_s32r2r1_normalize_payload(fn(*args, **kwargs))": false
+      },
+      "def_counts": {
+        "build_governed_web_safety_activation": 1,
+        "create_app": 0,
+        "get_dashboard_payload": 0,
+        "normalize_s32r2r1_safety_payload": 1
+      },
+      "exists": true,
+      "line_count": 276,
+      "markers": [],
+      "path": "claire\\api\\governed_web_safety_activation.py",
+      "recursive_fragment_count": 0,
+      "safety_key_presence": {
+        "automatic_updates_enabled": true,
+        "autonomous_agent_execution_enabled": true,
+        "autonomous_crawling_enabled": true,
+        "body_read_allowed": true,
+        "browser_execution_enabled": true,
+        "live_web_execution_enabled": true,
+        "network_performed": true,
+        "runtime_mutation_enabled": true,
+        "web_execution_enabled": true
+      },
+      "sha256": "69569b39739d68b2222d35b31e65e69d1cfa230f2c6b5bbc45ca85fa3f40a595",
+      "size_bytes": 9217,
+      "suspicious_context": []
+    },
+    "test": {
+      "compiled": true,
+      "contains_fragments": {
+        "_v19898_original_get_dashboard_payload_s32r2r1": false,
+        "_v19898_s32r2r1_clean_previous_get_dashboard_payload": false,
+        "_v19898_s32r2r1_wrap": false,
+        "def _wrapped": false,
+        "return _v19898_s32r2r1_normalize_payload(fn(": false,
+        "return _v19898_s32r2r1_normalize_payload(fn(*args, **kwargs))": false
+      },
+      "def_counts": {
+        "build_governed_web_safety_activation": 0,
+        "create_app": 0,
+        "get_dashboard_payload": 0,
+        "normalize_s32r2r1_safety_payload": 0
+      },
+      "exists": true,
+      "line_count": 39,
+      "markers": [],
+      "path": "tests\\test_s32r2r1_ast_bridge_web_safety_payload.py",
+      "recursive_fragment_count": 0,
+      "safety_key_presence": {
+        "automatic_updates_enabled": true,
+        "autonomous_agent_execution_enabled": true,
+        "autonomous_crawling_enabled": false,
+        "body_read_allowed": false,
+        "browser_execution_enabled": false,
+        "live_web_execution_enabled": true,
+        "network_performed": false,
+        "runtime_mutation_enabled": false,
+        "web_execution_enabled": true
+      },
+      "sha256": "8e3bc53c7c9143feb708f260a5c7fbfc26be455fc5f3f71effa9b565ea78e171",
+      "size_bytes": 1615,
+      "suspicious_context": []
+    }
+  },
+  "test_contract": {
+    "assertions": [
+      "assert state[\"network_request_performed\"] is False",
+      "assert state[\"authority\"][\"browser_execution_authority\"] == \"blocked\"",
+      "assert state[\"authority\"][\"runtime_authority\"] == \"blocked\"",
+      "assert state[\"authority\"][\"runtime_truth_mutation\"] == \"blocked\"",
+      "assert response.status_code == 200",
+      "assert payload[\"live_web_execution_enabled\"] is False",
+      "assert payload[\"autonomous_agent_execution_enabled\"] is False",
+      "assert payload[\"runtime_truth_mutation_enabled\"] is False",
+      "assert payload[\"automatic_updates_enabled\"] is False",
+      "assert \"governed_payload_reconciliation\" in payload",
+      "assert \"governed_web_safety_activation\" in payload",
+      "assert safety[\"network_request_performed\"] is False",
+      "assert safety[\"authority\"][\"browser_execution_authority\"] == \"blocked\"",
+      "assert safety[\"authority\"][\"runtime_authority\"] == \"blocked\"",
+      "assert client.get(\"/dashboard/payload/status\").status_code == 200"
+    ],
+    "exists": true,
+    "imports": [
+      {
+        "module": "__future__",
+        "names": [
+          "annotations"
+        ]
+      },
+      {
+        "module": "fastapi.testclient",
+        "names": [
+          "TestClient"
+        ]
+      },
+      {
+        "module": "claire.app",
+        "names": [
+          "create_app"
+        ]
+      },
+      {
+        "module": "claire.api.governed_web_safety_activation",
+        "names": [
+          "build_governed_web_safety_activation"
+        ]
+      }
+    ],
+    "text_sha256": "8e3bc53c7c9143feb708f260a5c7fbfc26be455fc5f3f71effa9b565ea78e171"
+  }
+}

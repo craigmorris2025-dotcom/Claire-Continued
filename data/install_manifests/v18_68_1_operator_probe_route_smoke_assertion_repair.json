@@ -1,0 +1,17 @@
+{
+  "version": "v18.68.1",
+  "name": "Operator Probe Route Smoke Assertion Repair",
+  "scope": [
+    "repair v18.68 router smoke assertion",
+    "preserve strict status route confirmation",
+    "add route and direct blocked-probe diagnostics",
+    "accept blocked-probe confirmation when route or direct contract confirms the explicit probe gate",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_68_real_provider_operator_probe_route.py tests/test_v18_68_1_operator_probe_route_smoke_assertion_repair.py -q"
+  ]
+}

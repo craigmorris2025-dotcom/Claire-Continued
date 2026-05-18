@@ -1,0 +1,14 @@
+{
+  "version": "v19.89.8-A13",
+  "build": "Early HTML Binding Middleware",
+  "timestamp": "2026-05-14T00:02:58.141268+00:00",
+  "changes": [
+    "Inserted A13 middleware immediately after app = FastAPI in claire\\api\\server.py",
+    "Inserted A13 middleware immediately after app = FastAPI in claire\\app.py"
+  ],
+  "warnings": [
+    "Target not found: claire\\server.py"
+  ],
+  "runtime_authority_expanded": false,
+  "safe_to_expand_runtime_authority": false
+}

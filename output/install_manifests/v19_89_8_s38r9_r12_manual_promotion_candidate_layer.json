@@ -1,0 +1,22 @@
+{
+  "files": [
+    "claire/api/governed_manual_promotion_candidates.py",
+    "tools/s38_build_evidence_review_manifest.py",
+    "tools/s38_score_promotion_candidates.py",
+    "tools/s38_build_lineage_contradiction_registry.py",
+    "tools/s38_build_manual_promotion_package.py",
+    "tests/test_s38r9_r12_manual_promotion_candidate_layer.py"
+  ],
+  "forbidden_actions_preserved": [
+    "runtime truth mutation",
+    "automatic update",
+    "autonomous loop",
+    "browser execution",
+    "JavaScript execution",
+    "continuous live crawling",
+    "direct app.py patching"
+  ],
+  "installed_at": "2026-05-14T18:52:49.276288+00:00",
+  "installer": "install_claire_v19_89_8_s38r9_r12_manual_promotion_candidate_layer.py",
+  "version": "v19.89.8-S38R12"
+}

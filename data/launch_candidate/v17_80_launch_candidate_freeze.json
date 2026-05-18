@@ -1,0 +1,391 @@
+{
+  "allowed_next_builds": [
+    "v17.81 Cleanup Proof Before Archive/Delete",
+    "v17.82 Launch Candidate Repair Pack if manual proof finds blockers",
+    "v17.83 Internet Provider Configuration Gate"
+  ],
+  "contract_name": "Launch Candidate Freeze",
+  "freeze_rules": {
+    "manual_browser_swagger_proof_required_before_public_launch": true,
+    "no_automatic_update_execution": true,
+    "no_autonomous_agent_execution": true,
+    "no_backend_folder_delete_yet": true,
+    "no_cleanup_or_delete_without_freeze_review": true,
+    "no_dashboard_shell_replacement_without_bridge_test": true,
+    "no_launcher_rewrite_without_startup_test": true,
+    "no_route_removal_without_endpoint_smoke_test": true,
+    "no_runtime_truth_contract_change_without_dashboard_state_test": true,
+    "no_web_search_live_enablement": true
+  },
+  "generated_at": "2026-05-13T11:19:01.038870Z",
+  "governance": {
+    "automatic_updates_disabled": true,
+    "autonomous_agent_execution_disabled": true,
+    "cleanup_requires_freeze_review": true,
+    "deletion_requires_proof_pass": true,
+    "launch_candidate_frozen": true,
+    "live_internet_disabled": true,
+    "manual_browser_swagger_proof_required": true,
+    "public_launch_not_approved_by_freeze_alone": true
+  },
+  "manual_proof": {
+    "failed_slots": 0,
+    "manual_final_review_status": "not_checked",
+    "not_checked_slots": 25,
+    "passed_slots": 0,
+    "required_slots": 25,
+    "source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/manual_browser_swagger_evidence_template.json",
+      "status": "loaded"
+    },
+    "status": "incomplete",
+    "warning_slots": 0
+  },
+  "prior_reports": {
+    "v17_75_e2e_proof": {
+      "path": "data/proof/full_end_to_end_proof_pack.json",
+      "recommendation": "Proceed only to manual review. Do not enable automatic updates.",
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/full_end_to_end_proof_pack.json",
+        "status": "loaded"
+      },
+      "status": "GO_WITH_WARNINGS",
+      "stop_go_status": "GO_WITH_WARNINGS"
+    },
+    "v17_76_platform_smoke": {
+      "path": "data/proof/platform_endpoint_smoke_proof.json",
+      "recommendation": "Do not proceed to launch hardening until blocked endpoint, output, or safety domains are fixed.",
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/platform_endpoint_smoke_proof.json",
+        "status": "loaded"
+      },
+      "status": "STOP",
+      "stop_go_status": "STOP"
+    },
+    "v17_77_launch_hardening": {
+      "path": "data/launch_hardening/platform_launch_hardening_report.json",
+      "recommendation": "Fix launch blockers before using Claire as a platform launch candidate.",
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/launch_hardening/platform_launch_hardening_report.json",
+        "status": "loaded"
+      },
+      "status": "STOP",
+      "stop_go_status": "STOP"
+    },
+    "v17_78_desktop_startup": {
+      "path": "data/desktop_packaging/startup_reliability_report.json",
+      "recommendation": "Fix desktop startup blockers before packaging or launch-candidate freeze.",
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/desktop_packaging/startup_reliability_report.json",
+        "status": "loaded"
+      },
+      "status": "STOP",
+      "stop_go_status": "STOP"
+    },
+    "v17_79_manual_browser_swagger": {
+      "path": "data/proof/manual_browser_swagger_proof_binder.json",
+      "recommendation": "Open the URLs, complete the dashboard walkthrough, and run Swagger Try it out tests. Automatic web/update/agent execution remains disabled.",
+      "source": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/manual_browser_swagger_proof_binder.json",
+        "status": "loaded"
+      },
+      "status": "READY_FOR_MANUAL_BROWSER_SWAGGER_PROOF",
+      "stop_go_status": "READY_FOR_MANUAL_BROWSER_SWAGGER_PROOF"
+    }
+  },
+  "protected_paths_manifest": {
+    "generated_at": "2026-05-13T11:19:00.998873Z",
+    "protected_paths": [
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "claire/app.py",
+        "sha256": "a5a1dd568ee3fddefa0f47699d85fbaa98c4e8a566067b97082305dc28f8de3d",
+        "size_bytes": 17444
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 113,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/api",
+        "total_size_bytes": 329393
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 24,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/dashboard",
+        "total_size_bytes": 96196
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 4,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/operator",
+        "total_size_bytes": 38844
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 18,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/proof",
+        "total_size_bytes": 143603
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 29,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/platform",
+        "total_size_bytes": 150472
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 4,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/desktop",
+        "total_size_bytes": 43641
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 21,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/runtime_truth",
+        "total_size_bytes": 126266
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 9,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/routing",
+        "total_size_bytes": 37642
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 4,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/autodesign",
+        "total_size_bytes": 33980
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 4,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/design_portal",
+        "total_size_bytes": 34335
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 4,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/validation_stack",
+        "total_size_bytes": 36426
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 4,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/internet_readiness",
+        "total_size_bytes": 37012
+      },
+      {
+        "count_limited": false,
+        "exists": true,
+        "file_count": 10,
+        "is_dir": true,
+        "is_file": false,
+        "path": "claire/update_governance",
+        "total_size_bytes": 107138
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "frontend/command_center/modern/index.html",
+        "sha256": "3177a5eb1713b7e5ac09528a1d535f6362df9202fc76e785f7ac6a750df93af0",
+        "size_bytes": 20052
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "frontend/command_center/modern/claire_workspace_agent_dashboard.css",
+        "sha256": "23b74b8316c0e43a388cac9b9b185716c160ed2d43ab2185f70f53d98a406b43",
+        "size_bytes": 4900
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "frontend/command_center/modern/claire_workspace_agent_dashboard.js",
+        "sha256": "432ec58fde7d4c88ff01ed93ab89365f2be2b681f21b22427bf3824447ee119f",
+        "size_bytes": 11322
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "LAUNCH_CLAIRE.bat",
+        "sha256": "538f49f34416144af16e2c52bda5a699a0b82efc5f6098933c3737d597fe3698",
+        "size_bytes": 1794
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "START_CLAIRE_SAFE.bat"
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "VERIFY_CLAIRE_STARTUP.bat"
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "OPEN_CLAIRE_PROOF_URLS.bat"
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "data/runtime/runtime_truth_canonical.json",
+        "sha256": "704a4591737194e66b608ce95a882d887b8485f3f316e413a1ce1f933d9ae8c7",
+        "size_bytes": 1223058
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "data/dashboard/operator_dashboard_state.json",
+        "sha256": "48e2668594c7e0b251a9a76eb6717ec1282bcdeb946f037b77c6e8342a1cee5c",
+        "size_bytes": 20495
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "data/operator/search_command/search_command_capabilities.json",
+        "sha256": "30d3005c737e95f4b558de66ad13035f92766421c043919e6a75d65d06236ab5",
+        "size_bytes": 4637
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "data/proof/full_end_to_end_proof_pack.json",
+        "sha256": "5bc42c736f977f85e961d4d68fff82926ecc1ea51236b592a0ecf5bc2a7d747e",
+        "size_bytes": 10303
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "data/proof/platform_endpoint_smoke_proof.json",
+        "sha256": "22e3c8f60f32128abb522f02255437f946c9b199c73e989850b4f8fe69537940",
+        "size_bytes": 36956
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "data/proof/manual_browser_swagger_proof_binder.json",
+        "sha256": "8ef3c72e8aa3fc1bafe7a33c5cfb3fa63e34b4946a06a1152bc17e76da72e593",
+        "size_bytes": 11616
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "data/launch_hardening/platform_launch_hardening_report.json",
+        "sha256": "9d4b75d3a29104599202fbe3cd5460b4101a7f5ea2f0917fef8dffc5374cf1d0",
+        "size_bytes": 14619
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "data/desktop_packaging/startup_reliability_report.json",
+        "sha256": "6a4e3729b5105dacb1dce5791882c37253d261debddf7e480d755f8d63815a2b",
+        "size_bytes": 11604
+      },
+      {
+        "exists": true,
+        "is_dir": false,
+        "is_file": true,
+        "path": "data/update_packs/update_governance_regression_lock.json",
+        "sha256": "7eda101a4c89a691d73f0ecc557ded646664219aad414676cc9e4e66430fa0a0",
+        "size_bytes": 3537
+      }
+    ],
+    "purpose": "Paths protected by the launch-candidate freeze. Do not delete, archive, or replace these without a follow-up proof pass.",
+    "rules": {
+      "manual_browser_swagger_proof_required_before_public_launch": true,
+      "no_automatic_update_execution": true,
+      "no_autonomous_agent_execution": true,
+      "no_backend_folder_delete_yet": true,
+      "no_cleanup_or_delete_without_freeze_review": true,
+      "no_dashboard_shell_replacement_without_bridge_test": true,
+      "no_launcher_rewrite_without_startup_test": true,
+      "no_route_removal_without_endpoint_smoke_test": true,
+      "no_runtime_truth_contract_change_without_dashboard_state_test": true,
+      "no_web_search_live_enablement": true
+    },
+    "version": "v17.80"
+  },
+  "safety_locks": {
+    "checks": {
+      "automatic_updates_disabled": true,
+      "live_internet_disabled": true,
+      "regression_lock_active": true,
+      "runner_background_disabled": true,
+      "runner_execution_disabled": true,
+      "search_automatic_updates_disabled": true,
+      "search_live_web_disabled": true
+    },
+    "status": "passed"
+  },
+  "status": "STOP",
+  "stop_go": {
+    "blockers": [
+      "missing_protected_path:OPEN_CLAIRE_PROOF_URLS.bat",
+      "missing_protected_path:START_CLAIRE_SAFE.bat",
+      "missing_protected_path:VERIFY_CLAIRE_STARTUP.bat"
+    ],
+    "recommendation": "Do not freeze as launch candidate until blockers are fixed.",
+    "status": "STOP",
+    "warnings": [
+      "manual_browser_swagger_evidence_not_complete",
+      "prior_report_stop:v17_76_platform_smoke",
+      "prior_report_stop:v17_77_launch_hardening",
+      "prior_report_stop:v17_78_desktop_startup"
+    ]
+  },
+  "version": "v17.80"
+}

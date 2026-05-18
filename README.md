@@ -1,111 +1,35 @@
-# Claire-Syntalion v4.2 — Sovereign R&D Platform
+# Claire Syntalion
 
-**Web-Capable | Self-Healing | Auto-Bootstrap**
+Claire Syntalion is a governed lifecycle intelligence platform with an operator cockpit, backend-owned runtime truth, controlled live-web readiness, portfolio/acquisition intelligence, breakthrough/design escalation, recursive memory, and safety-first update governance.
 
-24-engine autonomous evaluation pipeline with CLAIRE cognitive architecture.
+## Current Runtime
 
-## Quick Start
+- Backend entrypoint: `main.py`
+- Backend boundary: `backend/`
+- Intelligence core: `claire/`
+- Operator cockpit: `frontend/`
+- Active dashboard route: `http://127.0.0.1:8000/dashboard`
 
-### Option A: Double-Click Launch (Recommended)
-1. Double-click `LAUNCH.bat` (Windows)
-2. Browser opens automatically to `http://localhost:8000/ui`
+## Local Start
 
-### Option B: Web Bootstrap
-1. Double-click `claire-bootstrap.html` in your browser
-2. Follow the on-screen steps
-3. Run `LAUNCH.bat` when prompted — the page auto-detects when the server starts
-
-### Option C: Manual Launch
-```bash
-python -m venv .venv
-.venv\Scripts\activate       # Windows
-# source .venv/bin/activate  # Linux/Mac
-pip install -r requirements.txt
-python -m src.backend
+```bat
+LAUNCH_CLAIRE.bat
 ```
 
-## What's New in v4.2
+The launcher starts the FastAPI backend and opens the backend-owned operational dashboard. Live web execution, body reads, automatic updates, runtime mutation, and autonomous execution remain blocked unless explicit governed gates are satisfied.
 
-### Web Capability
-- **WebFetcher** (`src/backend/connectors/web_fetcher.py`) — Universal HTTP client with caching, rate limiting, retry logic
-- **Web Proxy API** (`/api/proxy/get`, `/api/proxy/post`) — Frontend can make outbound requests through the backend (no CORS issues)
-- **Connectivity Check** (`/api/proxy/ping`) — Test internet connectivity from the UI
+## Verification
 
-### Self-Update System
-- **Update API** (`/api/update/status`, `/api/update/apply`) — Check for and apply updates from a remote manifest
-- **Frontend Updater** (`updater.js`) — Auto-checks hourly, shows notification badge when updates available
-- **Version Tracking** (`data/version.json`) — Local version hash for delta comparison
-
-### Self-Healing Bootstrap
-- **Enhanced LAUNCH.bat** — 7-step bootstrapper that finds Python, creates venv, installs deps, creates directories, launches server
-- **claire-bootstrap.html** — Browser-based launcher that polls for backend and auto-opens UI
-
-## Architecture
-
-```
-Claire-Syntalion v4.2
-├── claire-bootstrap.html          # Web-based installer/launcher
-├── LAUNCH.bat                     # Self-healing Windows launcher
-├── src/
-│   ├── backend/
-│   │   ├── server.py              # FastAPI app factory (v4.2)
-│   │   ├── api/
-│   │   │   ├── routes_pipeline.py # Pipeline evaluation API
-│   │   │   ├── routes_update.py   # ★ Self-update API
-│   │   │   ├── routes_proxy.py    # ★ Web proxy API
-│   │   │   └── ...
-│   │   ├── connectors/
-│   │   │   ├── web_fetcher.py     # ★ Universal HTTP client
-│   │   │   ├── market.py          # Market data connector
-│   │   │   ├── patent.py          # Patent data connector
-│   │   │   ├── financial.py       # Financial data connector
-│   │   │   └── ...
-│   │   ├── engines/               # 24 evaluation engines
-│   │   ├── claire/                # CLAIRE cognitive layers
-│   │   ├── orchestrator/          # Pipeline orchestration
-│   │   ├── governance/            # Audit & policy
-│   │   └── ...
-│   └── frontend/
-│       ├── index.html             # SPA dashboard
-│       └── js/
-│           ├── web_connector.js   # ★ Browser-side web access
-│           ├── updater.js         # ★ Self-update UI
-│           └── ...
-├── data/                          # Runtime data + cache
-├── docs/                          # API reference, architecture
-└── tests/                         # Test suite
+```bat
+.venv\Scripts\python.exe -B -m pytest tests\test_backend_boundary.py tests\test_operational_file_readiness_dashboard.py tests\test_s1125_s1152_operator_action_click_result_bridge.py tests\test_s1626_s1650_dashboard_v3_legacy_contract_bridge.py tests\test_s1501_s1600_endpoint_mapped_dashboard_v3.py tests\test_s36_governed_live_probe_contracts.py -q
 ```
 
-## Endpoints
+## Cleanup State
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/ui` | GET | Main dashboard UI |
-| `/docs` | GET | Swagger API documentation |
-| `/api/health` | GET | Health check |
-| `/api/pipeline/evaluate` | POST | Run evaluation pipeline |
-| `/api/connectors/status` | GET | Connector status |
-| `/api/proxy/get` | GET | Web proxy (GET) |
-| `/api/proxy/post` | POST | Web proxy (POST) |
-| `/api/proxy/ping` | GET | Connectivity test |
-| `/api/update/status` | GET | Check for updates |
-| `/api/update/apply` | POST | Apply available update |
+Large historical exports, backups, archives, and legacy placeholders were moved outside the product root to:
 
-## Configuration
-
-Copy `.env.example` to `.env` and configure:
-
-```env
-CLAIRE_ENV=development
-CLAIRE_PORT=8000
-CLAIRE_HOST=127.0.0.1
-CLAIRE_LOG_LEVEL=INFO
-CLAIRE_CORS_ORIGINS=*
-CLAIRE_MARKET_API_KEY=
-CLAIRE_PATENT_API_KEY=
-CLAIRE_FINANCIAL_API_KEY=
+```text
+C:\Users\craig\OneDrive\Desktop\Claire_Cleanup_Archive_20260518
 ```
 
-## License
-
-Proprietary — Craig Morris / SAISS-ACS2-Syntalion
+The active dashboard exposes file readiness at `/api/system/file-readiness` and route integrity at `/api/system/route-integrity`.

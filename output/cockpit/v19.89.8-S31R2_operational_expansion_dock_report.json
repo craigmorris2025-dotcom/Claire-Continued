@@ -1,0 +1,31 @@
+{
+  "version": "v19.89.8-S31R2",
+  "installed_at_utc": "2026-05-14T04:44:12.575091+00:00",
+  "status": "installed",
+  "purpose": "Visible proof that active browser shell can load new cockpit assets.",
+  "files_written": [
+    "frontend\\cockpit\\assets\\js\\operational_expansion_dock_s31r2.js",
+    "frontend\\cockpit\\assets\\css\\operational_expansion_dock_s31r2.css",
+    "tests\\test_s31r2_operational_expansion_dock.py",
+    "docs\\build_notes\\v19.89.8-S31R2_operational_expansion_dock.md",
+    "output\\cockpit\\v19.89.8-S31R2_operational_expansion_dock_report.json"
+  ],
+  "link_report": [
+    "linked: frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked: frontend\\command_center\\modern\\index.html"
+  ],
+  "next_steps": [
+    "python -m pytest tests/test_s31r2_operational_expansion_dock.py -q",
+    "python -m py_compile claire/app.py",
+    "restart backend/launcher",
+    "hard refresh browser Ctrl+F5"
+  ],
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "runtime_mutation_enabled": false,
+    "autonomous_execution_expansion": false
+  }
+}

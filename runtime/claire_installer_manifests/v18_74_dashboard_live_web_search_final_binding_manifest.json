@@ -1,0 +1,30 @@
+{
+  "version": "v18.74",
+  "installer": "Dashboard Live Web Search Final Binding + Result Card Proof",
+  "installed_at_utc": "2026-05-10T14:18:58Z",
+  "canonical_dashboard": "frontend/command_center/modern/index.html",
+  "javascript_asset": "frontend/command_center/modern/assets/js/claire_v18_74_dashboard_live_web_search_final_binding.js",
+  "css_asset": "frontend/command_center/modern/assets/css/claire_v18_74_dashboard_live_web_search_final_binding.css",
+  "dashboard_smoke_report": "runtime/dashboard_smoke_reports/v18_74_dashboard_live_web_search_final_binding_smoke_report.json",
+  "backup_root": "archive/claire_install_backups/v18_74_dashboard_live_web_search_final_binding/20260510T141858Z",
+  "touched_files": [
+    "frontend/command_center/modern/assets/js/claire_v18_74_dashboard_live_web_search_final_binding.js",
+    "frontend/command_center/modern/assets/css/claire_v18_74_dashboard_live_web_search_final_binding.css",
+    "frontend/command_center/modern/index.html",
+    "runtime/dashboard_smoke_reports/v18_74_dashboard_live_web_search_final_binding_smoke_report.json",
+    "tests/test_v18_74_dashboard_live_web_search_final_binding_result_card_proof.py"
+  ],
+  "live_endpoint": "/api/dashboard/search/live",
+  "provider_status_endpoint": "/api/dashboard/search/provider/status",
+  "provider_probe_endpoint": "/api/dashboard/search/smoke/google",
+  "normal_dashboard_search_bound_to_live_endpoint": true,
+  "provider_probe_explicit_enable_preserved": true,
+  "provider_probe_label": "Provider Probe \u2014 Advanced / Manual",
+  "normal_search_label": "Governed Live Web Search",
+  "safety": {
+    "deleted_files": false,
+    "archived_before_patch": true,
+    "fail_closed": true,
+    "provider_probe_manual_gate": true
+  }
+}

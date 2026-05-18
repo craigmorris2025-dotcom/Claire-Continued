@@ -1,0 +1,50 @@
+{
+  "installer": "install_claire_v19_89_8_s352_s358_exact_assertion_contract_repair.py",
+  "started_at": "2026-05-16T17:06:37.450105Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "target_module": "claire\\api\\dashboard_live_visibility_smoke_s352_s358.py",
+  "mode": "full_rewrite_for_exact_failed_assertion_keys",
+  "exact_test_import_names": [
+    "build_live_dashboard_visibility_smoke_s352_s358",
+    "build_s352_payload_endpoint_visibility_smoke",
+    "build_s353_frontend_asset_visibility_smoke",
+    "build_s354_panel_content_projection_smoke",
+    "build_s355_action_disabled_smoke_proof",
+    "build_s356_no_fake_connected_state_proof",
+    "build_s357_dashboard_launch_readiness_summary",
+    "build_s358_stop_gate",
+    "register_s352_s358_dashboard_visibility_routes"
+  ],
+  "assets": [
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s352_s358_dashboard_visibility_smoke.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.css",
+      "written": true
+    }
+  ],
+  "module_backup": "backups\\v19_89_8_s352_s358_exact_assertion_contract_repair\\dashboard_live_visibility_smoke_s352_s358.py.20260516_170637.bak",
+  "module_written": true,
+  "module_size": 20672,
+  "pycache_removed": [
+    "claire\\api\\__pycache__\\dashboard_live_visibility_smoke_s352_s358.cpython-311.pyc"
+  ],
+  "module_compiled": true,
+  "missing_import_names_in_runtime_after_import": [],
+  "subprocess_validation_returncode": 0,
+  "subprocess_validation_stdout": "S352-S358 exact assertion contract validation passed\n",
+  "subprocess_validation_stderr": "",
+  "fixed": "Full S352-S358 rewrite with exact assertion keys: visibility_ok, projection_ok, action_checks, and dashboard_visibility_state.",
+  "finished_at": "2026-05-16T17:06:37.569104Z"
+}

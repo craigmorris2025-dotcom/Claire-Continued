@@ -1,0 +1,132 @@
+{
+  "surface": "duplicate_route_fail_test",
+  "version": "v19.89.8-A2",
+  "status": "fail",
+  "critical_route_count": 6,
+  "discovered_route_count": 300,
+  "duplicate_route_count": 33,
+  "critical_failures": {
+    "/dashboard/payload": {
+      "status": "fail",
+      "owners": [
+        {
+          "method": "GET",
+          "file": "claire\\api\\dashboard_payload_bridge.py"
+        },
+        {
+          "method": "GET",
+          "file": "claire\\api\\routes_enterprise_cockpit_payload.py"
+        },
+        {
+          "method": "GET",
+          "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+        }
+      ],
+      "allowed_files": [
+        "claire\\api\\routes_enterprise_cockpit_payload.py",
+        "claire\\routes\\authored_cockpit_compat_routes.py"
+      ],
+      "reason": "Critical route has unapproved duplicate owners."
+    },
+    "/dashboard/payload/status": {
+      "status": "fail",
+      "owners": [
+        {
+          "method": "GET",
+          "file": "claire\\api\\dashboard_payload_bridge.py"
+        },
+        {
+          "method": "GET",
+          "file": "claire\\api\\routes_enterprise_cockpit_payload.py"
+        },
+        {
+          "method": "GET",
+          "file": "claire\\routes\\authored_cockpit_payload_binding_routes.py"
+        }
+      ],
+      "allowed_files": [
+        "claire\\api\\routes_enterprise_cockpit_payload.py",
+        "claire\\routes\\authored_cockpit_payload_binding_routes.py"
+      ],
+      "reason": "Critical route has unapproved duplicate owners."
+    }
+  },
+  "grandfathered_temporary_duplicates": {
+    "/runtime/continuous/status": {
+      "status": "grandfathered_temporary",
+      "owners": [
+        {
+          "method": "GET",
+          "file": "claire\\api\\routes_continuous_runtime.py"
+        },
+        {
+          "method": "GET",
+          "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+        }
+      ],
+      "allowed_files": [
+        "claire\\api\\routes_continuous_runtime.py",
+        "claire\\routes\\authored_cockpit_compat_routes.py"
+      ],
+      "reason": "Known temporary compatibility duplicate."
+    },
+    "/runtime/continuous/review-queue": {
+      "status": "grandfathered_temporary",
+      "owners": [
+        {
+          "method": "GET",
+          "file": "claire\\api\\routes_continuous_runtime.py"
+        },
+        {
+          "method": "GET",
+          "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+        }
+      ],
+      "allowed_files": [
+        "claire\\api\\routes_continuous_runtime.py",
+        "claire\\routes\\authored_cockpit_compat_routes.py"
+      ],
+      "reason": "Known temporary compatibility duplicate."
+    },
+    "/runs/start": {
+      "status": "grandfathered_temporary",
+      "owners": [
+        {
+          "method": "POST",
+          "file": "claire\\api\\routes_enterprise_runs.py"
+        },
+        {
+          "method": "POST",
+          "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+        }
+      ],
+      "allowed_files": [
+        "claire\\api\\routes_enterprise_runs.py",
+        "claire\\routes\\authored_cockpit_compat_routes.py"
+      ],
+      "reason": "Known temporary compatibility duplicate."
+    },
+    "/universes": {
+      "status": "grandfathered_temporary",
+      "owners": [
+        {
+          "method": "GET",
+          "file": "claire\\api\\routes_source_universes.py"
+        },
+        {
+          "method": "GET",
+          "file": "claire\\routes\\authored_cockpit_compat_routes.py"
+        }
+      ],
+      "allowed_files": [
+        "claire\\api\\routes_source_universes.py",
+        "claire\\routes\\authored_cockpit_compat_routes.py"
+      ],
+      "reason": "Known temporary compatibility duplicate."
+    }
+  },
+  "critical_passes": {},
+  "safe_to_expand_runtime_authority": false,
+  "reason": "Critical duplicate route ownership failure detected.",
+  "checked_at": "2026-05-16T14:45:03.696440+00:00"
+}

@@ -1,0 +1,19 @@
+
+{
+  "version": "v18.65",
+  "name": "First Active Dashboard Google Result Proof",
+  "scope": [
+    "prove active dashboard contains governed live-search UI elements",
+    "prove dashboard UI fetch binding exists and targets /api/dashboard/search/live",
+    "prove google query can produce visible Google / https://www.google.com result through endpoint proof path",
+    "prove manual-enable blocking remains active",
+    "avoid real internet calls",
+    "preserve immutable runtime truth",
+    "preserve no autonomous execution",
+    "preserve no automatic updates",
+    "preserve fail-closed behavior"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_65_first_active_dashboard_google_result_proof.py -q"
+  ]
+}

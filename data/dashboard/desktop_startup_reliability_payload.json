@@ -1,0 +1,68 @@
+{
+  "blockers": [
+    "missing_startup_file:safe_launcher",
+    "missing_startup_file:startup_verifier",
+    "package_group_missing:launch:safe_launcher,startup_verifier",
+    "primary_launcher_does_not_start_uvicorn_claire_app",
+    "safe_launcher_does_not_start_uvicorn_claire_app"
+  ],
+  "environment": {
+    "python_executable": "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "selected_launcher_python": "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "venv_exists": false,
+    "venv_python_exists": false,
+    "working_directory": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire"
+  },
+  "generated_at": "2026-05-13T11:19:00.433094Z",
+  "launcher_checks": {
+    "primary_launcher": {
+      "line_count": 58,
+      "opens_dashboard": false,
+      "opens_swagger": false,
+      "path": "LAUNCH_CLAIRE.bat",
+      "starts_uvicorn_claire_app": false,
+      "status": "warning"
+    },
+    "safe_launcher": {
+      "path": "START_CLAIRE_SAFE.bat",
+      "status": "missing"
+    },
+    "startup_verifier": {
+      "path": "VERIFY_CLAIRE_STARTUP.bat",
+      "status": "missing"
+    }
+  },
+  "port": {
+    "host": "127.0.0.1",
+    "message": "Port 8000 is available for startup.",
+    "occupied": false,
+    "port": 8000,
+    "status": "available"
+  },
+  "recommendation": "Fix desktop startup blockers before packaging or launch-candidate freeze.",
+  "safety_locks": {
+    "checks": {
+      "automatic_updates_disabled": true,
+      "live_internet_disabled": true,
+      "runner_background_disabled": true,
+      "runner_execution_disabled": true,
+      "search_automatic_updates_disabled": true,
+      "search_live_web_disabled": true
+    },
+    "status": "passed"
+  },
+  "status": "STOP",
+  "verify_urls": [
+    "http://127.0.0.1:8000/docs",
+    "http://127.0.0.1:8000/operator/dashboard/state",
+    "http://127.0.0.1:8000/operator/search/capabilities",
+    "http://127.0.0.1:8000/platform/launch-hardening",
+    "http://127.0.0.1:8000/desktop/startup"
+  ],
+  "version": "v17.78",
+  "warnings": [
+    "prior_launch_hardening_stop_go_is_STOP",
+    "prior_platform_smoke_is_STOP"
+  ]
+}

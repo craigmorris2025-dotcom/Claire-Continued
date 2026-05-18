@@ -1,0 +1,132 @@
+{
+  "allowlist": {
+    "allowlist_enabled": false,
+    "quarantine_unknown_domains": true,
+    "source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_provider/source_allowlist_template.json",
+      "status": "loaded"
+    },
+    "trusted_domains": [
+      "bls.gov",
+      "energy.gov",
+      "federalreserve.gov",
+      "sec.gov"
+    ]
+  },
+  "blockers": [
+    "no_provider_selected"
+  ],
+  "contract_name": "Governed Single-Query Live Search Probe",
+  "execution_defaults": {
+    "automatic_execution_enabled": false,
+    "background_execution_enabled": false,
+    "live_probe_runs_on_install": false,
+    "runtime_truth_auto_ingestion_enabled": false,
+    "updates_auto_execution_enabled": false
+  },
+  "generated_at": "2026-05-13T11:20:33.043036Z",
+  "governance": {
+    "allowlist_or_quarantine_required": true,
+    "evidence_capture_required": true,
+    "no_automatic_update_execution": true,
+    "no_autonomous_agent_execution": true,
+    "no_hidden_background_browsing": true,
+    "no_runtime_truth_auto_ingestion": true,
+    "operator_confirm_text_required": true,
+    "operator_visible_results_required": true,
+    "rate_limits_required": true,
+    "single_query_probe_only": true,
+    "source_trust_required": true,
+    "unknown_domains_quarantined": true
+  },
+  "limits": {
+    "max_query_chars": 240,
+    "max_response_bytes": 750000,
+    "max_results": 5,
+    "request_timeout_seconds": 12,
+    "single_query_only": true
+  },
+  "next": [
+    "Use Swagger POST /internet/live-probe/run with confirm_text if provider is configured",
+    "Review evidence and quarantine logs",
+    "Do not feed results into runtime truth until a later reviewed evidence-promotion build"
+  ],
+  "provider": {
+    "key_name": "",
+    "key_present": false,
+    "key_redacted": "",
+    "known": false,
+    "provider": "none"
+  },
+  "provider_gate": {
+    "environment": {
+      "configured_keys": {
+        "BING_SEARCH_API_KEY": {
+          "present": false,
+          "redacted": ""
+        },
+        "BRAVE_SEARCH_API_KEY": {
+          "present": false,
+          "redacted": ""
+        },
+        "SERPAPI_API_KEY": {
+          "present": false,
+          "redacted": ""
+        },
+        "TAVILY_API_KEY": {
+          "present": false,
+          "redacted": ""
+        }
+      },
+      "provider_known": true,
+      "provider_label": "No Provider Configured",
+      "provider_note": "Runtime/system search remains available. Live web remains disabled.",
+      "required_key_name": "",
+      "required_key_present": false,
+      "selected_provider": "none"
+    },
+    "governance": {
+      "agent_execution_disabled": true,
+      "allowlist_or_quarantine_required": true,
+      "automatic_updates_disabled": true,
+      "evidence_capture_required": true,
+      "governed_research_execution_enabled": false,
+      "live_search_enabled": false,
+      "no_automatic_update_execution": true,
+      "no_autonomous_agent_execution": true,
+      "no_fake_web_results": true,
+      "no_hidden_background_browsing": true,
+      "normal_web_search_execution_enabled": false,
+      "operator_visible_results_required": true,
+      "provider_configuration_gate_only": true,
+      "rate_limits_required": true,
+      "single_query_probe_enabled": false,
+      "source_trust_required": true
+    },
+    "source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_provider/provider_configuration_gate.json",
+      "status": "loaded"
+    },
+    "status": "PROVIDER_NOT_CONFIGURED_RUNTIME_SEARCH_ONLY",
+    "stop_go": {
+      "blockers": [],
+      "governed_probe_allowed_now": false,
+      "live_search_enabled_now": false,
+      "normal_web_search_execution_enabled": false,
+      "recommendation": "Runtime/system search remains available. Configure a provider later for normal web search.",
+      "status": "PROVIDER_NOT_CONFIGURED_RUNTIME_SEARCH_ONLY",
+      "warnings": [
+        "no_search_provider_selected"
+      ]
+    }
+  },
+  "quarantine_policy_source": {
+    "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_provider/quarantine_policy.json",
+    "status": "loaded"
+  },
+  "recommendation": "Configure CLAIRE_SEARCH_PROVIDER and its API key locally, then rerun v17.83/v17.84 gates.",
+  "required_confirm_text": "RUN GOVERNED WEB PROBE",
+  "status": "BLOCKED_PROVIDER_NOT_READY",
+  "version": "v17.84",
+  "warnings": []
+}

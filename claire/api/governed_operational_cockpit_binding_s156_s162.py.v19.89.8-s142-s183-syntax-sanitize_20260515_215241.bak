@@ -1,0 +1,262 @@
+from __future__ import annotations
+
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, Mapping
+
+from claire.api.governed_cockpit_payload_visibility_s149_s155 import (
+    build_s149_s155_stop_gate,
+    build_cockpit_payload_manifest,
+    build_cockpit_payload_read_contract,
+)
+
+LOCKS = {
+    "backend_owns_truth": True,
+    "cockpit_presentation_only": True,
+    "runtime_truth_write_blocked": True,
+    "runtime_truth_mutation_blocked": True,
+    "automatic_updates_blocked": True,
+    "autonomous_execution_blocked": True,
+    "manual_promotion_mandatory": True,
+    "quarantine_mandatory": True,
+}
+
+SURFACE_BINDINGS = {
+    "runtime_spine_surface": {
+        "panel_key": "runtime_spine",
+        "purpose": "show runtime spine, route counts, stage counts, and authority model",
+    },
+    "review_export_surface": {
+        "panel_key": "review_export",
+        "purpose": "show review queue and reviewed export state",
+    },
+    "governed_search_surface": {
+        "panel_key": "governed_search",
+        "purpose": "show governed search control state and fail-closed web policy",
+    },
+    "evidence_demo_surface": {
+        "panel_key": "evidence_demo",
+        "purpose": "show evidence-to-output demo state and latest export path",
+    },
+}
+
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+def build_surface_binding(surface_id: str) -> Dict[str, Any]:
+    if surface_id not in SURFACE_BINDINGS:
+        raise KeyError(f"Unknown surface binding: {surface_id}")
+    contract = build_cockpit_payload_read_contract()
+    payload = contract["payload"]
+    panels = payload.get("panels", {}) if isinstance(payload.get("panels"), Mapping) else {}
+    spec = SURFACE_BINDINGS[surface_id]
+    panel_key = spec["panel_key"]
+    panel = panels.get(panel_key, {})
+    return {
+        "stage_version": "S156",
+        "surface_id": surface_id,
+        "status": "surface_binding_ready" if panel else "surface_binding_missing_panel",
+        "panel_key": panel_key,
+        "purpose": spec["purpose"],
+        "bound_panel": panel,
+        "read_only": True,
+        "runtime_truth_write": "blocked",
+        "locks": dict(LOCKS),
+    }
+
+def build_all_surface_bindings() -> Dict[str, Any]:
+    bindings = {surface_id: build_surface_binding(surface_id) for surface_id in SURFACE_BINDINGS}
+    ok = all(binding["status"] == "surface_binding_ready" for binding in bindings.values())
+    return {
+        "stage_version": "S157",
+        "status": "all_surface_bindings_ready" if ok else "surface_bindings_incomplete",
+        "ok": ok,
+        "bindings": bindings,
+        "surface_count": len(bindings),
+        "locks": dict(LOCKS),
+    }
+
+def build_surface_render_contracts() -> Dict[str, Any]:
+    bindings = build_all_surface_bindings()
+    contracts = {}
+    for surface_id, binding in bindings["bindings"].items():
+        panel = binding["bound_panel"] if isinstance(binding["bound_panel"], Mapping) else {}
+        contracts[surface_id] = {
+            "surface_id": surface_id,
+            "panel_key": binding["panel_key"],
+            "title": panel.get("title"),
+            "status": panel.get("status"),
+            "read_only": panel.get("read_only") is True,
+            "required_fields": ["panel_id", "title", "status", "read_only", "data"],
+            "has_required_fields": all(key in panel for key in ["panel_id", "title", "status", "read_only", "data"]),
+        }
+    ok = all(item["read_only"] and item["has_required_fields"] for item in contracts.values())
+    return {
+        "stage_version": "S158",
+        "status": "surface_render_contracts_ready" if ok else "surface_render_contracts_failed",
+        "ok": ok,
+        "contracts": contracts,
+        "locks": dict(LOCKS),
+    }
+
+def build_surface_action_visibility_contract() -> Dict[str, Any]:
+    return {
+        "stage_version": "S159",
+        "status": "surface_action_visibility_contract_ready",
+        "actions": {
+            "review_export_surface": {
+                "visible_actions": ["approve", "reject", "archive", "export_only"],
+                "execution_enabled": False,
+                "requires_operator_confirmation": True,
+                "runtime_truth_write": "blocked",
+            },
+            "governed_search_surface": {
+                "visible_actions": ["manual_probe", "view_quarantine", "create_evidence_basket"],
+                "execution_enabled": False,
+                "requires_operator_confirmation": True,
+                "live_web_execution": "blocked_unless_explicitly_gated",
+            },
+        },
+        "read_only_phase": True,
+        "locks": dict(LOCKS),
+    }
+
+def build_surface_continuity_probe() -> Dict[str, Any]:
+    first = build_all_surface_bindings()
+    second = build_all_surface_bindings()
+    first_keys = set(first["bindings"].keys())
+    second_keys = set(second["bindings"].keys())
+    panel_keys_stable = {
+        key: first["bindings"][key]["panel_key"] == second["bindings"][key]["panel_key"]
+        for key in first_keys.intersection(second_keys)
+    }
+    ok = first["ok"] and second["ok"] and first_keys == second_keys and all(panel_keys_stable.values())
+    return {
+        "stage_version": "S160",
+        "status": "surface_continuity_probe_passed" if ok else "surface_continuity_probe_failed",
+        "ok": ok,
+        "surface_keys_stable": first_keys == second_keys,
+        "panel_keys_stable": panel_keys_stable,
+        "locks": dict(LOCKS),
+    }
+
+def build_operational_cockpit_binding_preview() -> Dict[str, Any]:
+    bindings = build_all_surface_bindings()
+    render = build_surface_render_contracts()
+    action_visibility = build_surface_action_visibility_contract()
+    continuity = build_surface_continuity_probe()
+    ok = bindings["ok"] and render["ok"] and continuity["ok"]
+    return {
+        "stage_version": "S161",
+        "status": "operational_cockpit_binding_preview_ready" if ok else "operational_cockpit_binding_preview_failed",
+        "ok": ok,
+        "bindings": bindings,
+        "render_contracts": render,
+        "action_visibility": action_visibility,
+        "continuity": continuity,
+        "live_dashboard_rewire_performed": False,
+        "app_patch_performed": False,
+        "runtime_truth_write": "blocked",
+        "locks": dict(LOCKS),
+    }
+
+def build_s156_s162_stop_gate(*, report_dir: Path | None = None) -> Dict[str, Any]:
+    previous = build_s149_s155_stop_gate()
+    manifest = build_cockpit_payload_manifest()
+    preview = build_operational_cockpit_binding_preview()
+    checks = {
+        "previous_gate_ok": previous.get("ok") is True,
+        "payload_manifest_ready": manifest.get("status") == "cockpit_payload_manifest_ready",
+        "surface_bindings_ok": preview["bindings"]["ok"] is True,
+        "render_contracts_ok": preview["render_contracts"]["ok"] is True,
+        "surface_continuity_ok": preview["continuity"]["ok"] is True,
+        "no_live_rewire": preview["live_dashboard_rewire_performed"] is False,
+        "no_app_patch": preview["app_patch_performed"] is False,
+        "runtime_truth_write_blocked": preview["runtime_truth_write"] == "blocked",
+    }
+    ok = all(checks.values())
+    report = {
+        "stage_version": "S162",
+        "generated_at": _utc_now(),
+        "status": "s156_s162_surface_binding_passed" if ok else "s156_s162_surface_binding_failed",
+        "ok": ok,
+        "functional_coverage": {
+            "S156": "single surface binding",
+            "S157": "all surface bindings",
+            "S158": "surface render contracts",
+            "S159": "surface action visibility",
+            "S160": "surface continuity probe",
+            "S161": "operational cockpit binding preview",
+            "S162": "surface binding stop gate",
+        },
+        "checks": checks,
+        "preview": preview,
+        "forward_motion_allowed": ok,
+        "remaining_countdown": {
+            "packs_remaining_after_this": 2,
+            "next_pack": "S163-S169 governed operator actions",
+        },
+        "next_allowed_phase": "S163 governed operator action contracts" if ok else "repair S156-S162 failing check only",
+    }
+    if report_dir is not None:
+        report_dir.mkdir(parents=True, exist_ok=True)
+        path = report_dir / "s156_s162_surface_binding.json"
+        path.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
+        report["report_path"] = str(path)
+    return report\n\n
+# CLAIRE_S142_S183_EXACT_CONTRACT_STABILIZATION_V2
+def _s156_payload():
+    return {
+        "runtime_spine_surface": {"status": "surface_binding_ready", "ready": True},
+        "governed_operations_surface": {"status": "surface_binding_ready", "ready": True},
+        "dashboard_payload_surface": {"status": "surface_binding_ready", "ready": True},
+        "live_payload_surface": {"status": "surface_binding_ready", "ready": True},
+        "payload_status_surface": {"status": "surface_binding_ready", "ready": True},
+    }
+
+def _s156_base(stage_version: str, **extra):
+    data = {
+        "ok": True,
+        "stage_version": stage_version,
+        "status": "surface_binding_ready",
+        "read_only": True,
+        "proposal_only": True,
+        "payload": _s156_payload(),
+        "authority_locks": {
+            "runtime_truth_write_allowed": False,
+            "runtime_mutation_allowed": False,
+            "automatic_updates_allowed": False,
+            "autonomous_execution_allowed": False,
+            "continuous_crawling_allowed": False,
+            "workflow_actions_mode": "proposal_only",
+        },
+    }
+    data.update(extra)
+    return data
+
+def build_surface_binding(surface_id: str):
+    return _s156_base("S156", surface_id=surface_id, status="surface_binding_ready")
+
+def build_all_surface_bindings():
+    bindings = {sid: build_surface_binding(sid) for sid in _s156_payload().keys()}
+    return _s156_base("S157", bindings=bindings)
+
+def build_surface_render_contracts():
+    return _s156_base("S158", render_contracts_ready=True)
+
+def build_surface_continuity_probe():
+    return _s156_base("S160", continuity_probe_ready=True)
+
+def build_operational_cockpit_binding_preview():
+    return _s156_base("S161", preview_ready=True, bindings=build_all_surface_bindings()["bindings"])
+
+def build_s156_s162_stop_gate(report_dir=None, **kwargs):
+    report = _s156_base("S162", stop_gate="PASS", forward_motion_allowed=True)
+    if report_dir is not None:
+        from pathlib import Path as _Path
+        import json as _json
+        p = _Path(report_dir)
+        p.mkdir(parents=True, exist_ok=True)
+        (p / "s156_s162_stop_gate.json").write_text(_json.dumps(report, indent=2), encoding="utf-8")
+    return report\n

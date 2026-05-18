@@ -1,0 +1,1270 @@
+{
+  "version": "v19.82A.1",
+  "created_at": "2026-05-13T11:22:14.694732Z",
+  "route_count": 217,
+  "duplicate_or_multi_file_routes": {
+    "/api/cockpit/runtime-sync/status": [
+      {
+        "method": "GET",
+        "file": "install_v19_88_7_cockpit_runtime_sync.py",
+        "line": 177,
+        "match": "@router.get(\"/api/cockpit/runtime-sync/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "install_v19_88_7_cockpit_runtime_sync_FIXED.py",
+        "line": 165,
+        "match": "@router.get(\"/api/cockpit/runtime-sync/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/routes/cockpit_runtime_sync.py",
+        "line": 70,
+        "match": "@router.get(\"/api/cockpit/runtime-sync/status\")"
+      }
+    ],
+    "/api/cockpit/runtime-sync/heartbeat": [
+      {
+        "method": "GET",
+        "file": "install_v19_88_7_cockpit_runtime_sync.py",
+        "line": 182,
+        "match": "@router.get(\"/api/cockpit/runtime-sync/heartbeat\")"
+      },
+      {
+        "method": "GET",
+        "file": "install_v19_88_7_cockpit_runtime_sync_FIXED.py",
+        "line": 170,
+        "match": "@router.get(\"/api/cockpit/runtime-sync/heartbeat\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/routes/cockpit_runtime_sync.py",
+        "line": 75,
+        "match": "@router.get(\"/api/cockpit/runtime-sync/heartbeat\")"
+      }
+    ],
+    "/cockpit/runtime-sync": [
+      {
+        "method": "GET",
+        "file": "install_v19_88_7_cockpit_runtime_sync.py",
+        "line": 194,
+        "match": "@router.get(\"/cockpit/runtime-sync\")"
+      },
+      {
+        "method": "GET",
+        "file": "install_v19_88_7_cockpit_runtime_sync_FIXED.py",
+        "line": 182,
+        "match": "@router.get(\"/cockpit/runtime-sync\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/routes/cockpit_runtime_sync.py",
+        "line": 87,
+        "match": "@router.get(\"/cockpit/runtime-sync\")"
+      }
+    ],
+    "/": [
+      {
+        "method": "GET",
+        "file": "backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_65_runtime_truth_contract_repair/20260509_181910/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_66_discovery_breakthrough_innovation_route_audit/20260509_184204/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_67_autodesign_handoff_contract/20260509_184735/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_68_design_portal_output_contract/20260509_184933/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_69_buildability_validation_stack/20260509_185332/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_70_internet_readiness_verification/20260509_185527/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_71_governed_update_pack_staging/20260509_185929/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_72_rollback_aware_update_plan_contract/20260509_190143/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_73_automatic_update_runner_gate/20260509_190409/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_74_update_governance_regression_lock/20260509_190627/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_75_full_end_to_end_proof_pack/20260509_190836/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_76_platform_endpoint_smoke_proof/20260509_193317/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_77_platform_launch_hardening/20260509_193754/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_78_desktop_packaging_startup_reliability/20260509_200739/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_79_manual_browser_swagger_proof_binder/20260509_201440/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_80_launch_candidate_freeze/20260509_202028/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_81_cleanup_proof_before_archive_delete/20260509_202649/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_82_archive_approval_gate/20260509_203610/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_83_internet_provider_configuration_gate/20260509_203928/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_84_governed_single_query_live_search_probe/20260509_204207/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004/claire/app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v18_72_1_active_launcher_web_mount_patch_repair/20260510_080210/__Users__craig__OneDrive__Desktop__Claire__claire__app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__app.py",
+        "line": 56,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v18_72_active_launcher_runtime_web_route_mount_patch/20260510_075931/__Users__craig__OneDrive__Desktop__Claire__claire__app.py",
+        "line": 44,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v18_73_1_operator_dashboard_compat_endpoint_repair/20260510_084238/__Users__craig__OneDrive__Desktop__Claire__claire__app.py",
+        "line": 56,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v19.88.7_20260513T103501Z/claire/app.py",
+        "line": 69,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v19_canonical_dashboard_payload_bridge/20260510_151548/claire/app.py",
+        "line": 57,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/app.py",
+        "line": 57,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/app.py",
+        "line": 69,
+        "match": "@app.get(\"/\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/server.py",
+        "line": 14,
+        "match": "@app.get(\"/\", response_class=HTMLResponse)"
+      },
+      {
+        "method": "GET",
+        "file": "operations/backups/v19_88_2_cockpit_operational_status_rebind_20260513T041732Z/claire/app.py",
+        "line": 64,
+        "match": "@app.get(\"/\")"
+      }
+    ],
+    "/health": [
+      {
+        "method": "GET",
+        "file": "backups/v17_64_1_functional_operator_dashboard_wiring/20260509_183242/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_65_runtime_truth_contract_repair/20260509_181910/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_66_discovery_breakthrough_innovation_route_audit/20260509_184204/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_67_autodesign_handoff_contract/20260509_184735/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_68_design_portal_output_contract/20260509_184933/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_69_buildability_validation_stack/20260509_185332/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_70_internet_readiness_verification/20260509_185527/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_71_governed_update_pack_staging/20260509_185929/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_72_rollback_aware_update_plan_contract/20260509_190143/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_73_automatic_update_runner_gate/20260509_190409/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_74_update_governance_regression_lock/20260509_190627/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_75_2_workspace_dashboard_search_command_prep/20260509_192529/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_75_full_end_to_end_proof_pack/20260509_190836/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_76_platform_endpoint_smoke_proof/20260509_193317/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_77_platform_launch_hardening/20260509_193754/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_78_desktop_packaging_startup_reliability/20260509_200739/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_79_manual_browser_swagger_proof_binder/20260509_201440/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_80_launch_candidate_freeze/20260509_202028/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_81_cleanup_proof_before_archive_delete/20260509_202649/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_82_archive_approval_gate/20260509_203610/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_83_internet_provider_configuration_gate/20260509_203928/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_84_governed_single_query_live_search_probe/20260509_204207/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_85_governed_web_evidence_promotion_gate/20260509_210004/claire/app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v18_72_1_active_launcher_web_mount_patch_repair/20260510_080210/__Users__craig__OneDrive__Desktop__Claire__claire__app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v18_72_2_active_launcher_web_route_module_wrapper_repair/20260510_082851/__Users__craig__OneDrive__Desktop__Claire__claire__app.py",
+        "line": 60,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v18_72_active_launcher_runtime_web_route_mount_patch/20260510_075931/__Users__craig__OneDrive__Desktop__Claire__claire__app.py",
+        "line": 48,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v18_73_1_operator_dashboard_compat_endpoint_repair/20260510_084238/__Users__craig__OneDrive__Desktop__Claire__claire__app.py",
+        "line": 60,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v19.88.7_20260513T103501Z/claire/app.py",
+        "line": 73,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v19_canonical_dashboard_payload_bridge/20260510_151548/claire/app.py",
+        "line": 61,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647/claire/app.py",
+        "line": 61,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/app.py",
+        "line": 73,
+        "match": "@app.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/live_source_catalog_routes.py",
+        "line": 216,
+        "match": "@router.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_system.py",
+        "line": 22,
+        "match": "@router.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_v19_25_search_execution.py",
+        "line": 49,
+        "match": "@router.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/internet_runtime_stability/api_routes.py",
+        "line": 13,
+        "match": "@router.get(\"/health\")"
+      },
+      {
+        "method": "GET",
+        "file": "operations/backups/v19_88_2_cockpit_operational_status_rebind_20260513T041732Z/claire/app.py",
+        "line": 68,
+        "match": "@app.get(\"/health\")"
+      }
+    ],
+    "/runtime/truth": [
+      {
+        "method": "GET",
+        "file": "backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py",
+        "line": 14,
+        "match": "@router.get(\"/runtime/truth\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py",
+        "line": 15,
+        "match": "@router.get(\"/runtime/truth\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_runtime_truth.py",
+        "line": 15,
+        "match": "@router.get(\"/runtime/truth\")"
+      }
+    ],
+    "/runtime/state": [
+      {
+        "method": "GET",
+        "file": "backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py",
+        "line": 19,
+        "match": "@router.get(\"/runtime/state\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py",
+        "line": 20,
+        "match": "@router.get(\"/runtime/state\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_runtime_truth.py",
+        "line": 20,
+        "match": "@router.get(\"/runtime/state\")"
+      }
+    ],
+    "/runtime/truth/rebuild": [
+      {
+        "method": "POST",
+        "file": "backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py",
+        "line": 24,
+        "match": "@router.post(\"/runtime/truth/rebuild\")"
+      },
+      {
+        "method": "POST",
+        "file": "backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py",
+        "line": 25,
+        "match": "@router.post(\"/runtime/truth/rebuild\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/api/routes_runtime_truth.py",
+        "line": 25,
+        "match": "@router.post(\"/runtime/truth/rebuild\")"
+      }
+    ],
+    "/dashboard/runtime-truth": [
+      {
+        "method": "GET",
+        "file": "backups/v17_65_runtime_truth_contract_repair/20260509_183718/claire/api/routes_runtime_truth.py",
+        "line": 29,
+        "match": "@router.get(\"/dashboard/runtime-truth\")"
+      },
+      {
+        "method": "GET",
+        "file": "backups/v17_65_runtime_truth_contract_repair/20260509_183932/claire/api/routes_runtime_truth.py",
+        "line": 30,
+        "match": "@router.get(\"/dashboard/runtime-truth\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_runtime_truth.py",
+        "line": 30,
+        "match": "@router.get(\"/dashboard/runtime-truth\")"
+      }
+    ],
+    "/operator/dashboard/state": [
+      {
+        "method": "GET",
+        "file": "backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/api/routes_operator_dashboard.py",
+        "line": 11,
+        "match": "@router.get(\"/operator/dashboard/state\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/operator_dashboard_compat_routes.py",
+        "line": 110,
+        "match": "@router.get(\"/operator/dashboard/state\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_operator_dashboard.py",
+        "line": 14,
+        "match": "@router.get(\"/operator/dashboard/state\")"
+      }
+    ],
+    "/dashboard/state": [
+      {
+        "method": "GET",
+        "file": "backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/api/routes_operator_dashboard.py",
+        "line": 16,
+        "match": "@router.get(\"/dashboard/state\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_operator_dashboard.py",
+        "line": 19,
+        "match": "@router.get(\"/dashboard/state\")"
+      }
+    ],
+    "/api/dashboard/state": [
+      {
+        "method": "GET",
+        "file": "backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/api/routes_operator_dashboard.py",
+        "line": 21,
+        "match": "@router.get(\"/api/dashboard/state\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_operator_dashboard.py",
+        "line": 24,
+        "match": "@router.get(\"/api/dashboard/state\")"
+      }
+    ],
+    "/operator/dashboard/refresh": [
+      {
+        "method": "POST",
+        "file": "backups/v17_75_1_dashboard_backend_bridge_repair/20260509_191456/claire/api/routes_operator_dashboard.py",
+        "line": 26,
+        "match": "@router.post(\"/operator/dashboard/refresh\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/api/routes_operator_dashboard.py",
+        "line": 34,
+        "match": "@router.post(\"/operator/dashboard/refresh\")"
+      }
+    ],
+    "/cleanup/proof": [
+      {
+        "method": "GET",
+        "file": "backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py",
+        "line": 11,
+        "match": "@router.get(\"/cleanup/proof\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_cleanup_proof.py",
+        "line": 11,
+        "match": "@router.get(\"/cleanup/proof\")"
+      }
+    ],
+    "/cleanup/proof/summary": [
+      {
+        "method": "GET",
+        "file": "backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py",
+        "line": 16,
+        "match": "@router.get(\"/cleanup/proof/summary\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_cleanup_proof.py",
+        "line": 16,
+        "match": "@router.get(\"/cleanup/proof/summary\")"
+      }
+    ],
+    "/cleanup/proof/rebuild": [
+      {
+        "method": "POST",
+        "file": "backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py",
+        "line": 21,
+        "match": "@router.post(\"/cleanup/proof/rebuild\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/api/routes_cleanup_proof.py",
+        "line": 21,
+        "match": "@router.post(\"/cleanup/proof/rebuild\")"
+      }
+    ],
+    "/cleanup/archive-plan": [
+      {
+        "method": "GET",
+        "file": "backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py",
+        "line": 26,
+        "match": "@router.get(\"/cleanup/archive-plan\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_cleanup_proof.py",
+        "line": 26,
+        "match": "@router.get(\"/cleanup/archive-plan\")"
+      }
+    ],
+    "/cleanup/status": [
+      {
+        "method": "GET",
+        "file": "backups/v17_81_cleanup_proof_before_archive_delete/20260509_202721/claire/api/routes_cleanup_proof.py",
+        "line": 31,
+        "match": "@router.get(\"/cleanup/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_cleanup_proof.py",
+        "line": 31,
+        "match": "@router.get(\"/cleanup/status\")"
+      }
+    ],
+    "/internet/live-probe/status": [
+      {
+        "method": "GET",
+        "file": "backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py",
+        "line": 17,
+        "match": "@router.get(\"/internet/live-probe/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_governed_live_probe.py",
+        "line": 18,
+        "match": "@router.get(\"/internet/live-probe/status\")"
+      }
+    ],
+    "/internet/live-probe/contract": [
+      {
+        "method": "GET",
+        "file": "backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py",
+        "line": 22,
+        "match": "@router.get(\"/internet/live-probe/contract\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_governed_live_probe.py",
+        "line": 23,
+        "match": "@router.get(\"/internet/live-probe/contract\")"
+      }
+    ],
+    "/internet/live-probe/run": [
+      {
+        "method": "POST",
+        "file": "backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py",
+        "line": 27,
+        "match": "@router.post(\"/internet/live-probe/run\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/api/routes_governed_live_probe.py",
+        "line": 28,
+        "match": "@router.post(\"/internet/live-probe/run\")"
+      }
+    ],
+    "/internet/live-probe/last": [
+      {
+        "method": "GET",
+        "file": "backups/v17_84_1_live_probe_body_compatibility_repair/20260509_205426/claire/api/routes_governed_live_probe.py",
+        "line": 35,
+        "match": "@router.get(\"/internet/live-probe/last\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_governed_live_probe.py",
+        "line": 57,
+        "match": "@router.get(\"/internet/live-probe/last\")"
+      }
+    ],
+    "/command": [
+      {
+        "method": "POST",
+        "file": "claire/api/commands.py",
+        "line": 9,
+        "match": "@router.post(\"/command\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/api/routes_command.py",
+        "line": 9,
+        "match": "@router.post(\"/command\")"
+      }
+    ],
+    "/smoke/google": [
+      {
+        "method": "GET",
+        "file": "claire/api/governed_dashboard_live_search_routes.py",
+        "line": 65,
+        "match": "@router.get(\"/smoke/google\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/governed_web/dashboard_search_endpoint_result_contract.py",
+        "line": 275,
+        "match": "@router.get('/smoke/google')"
+      }
+    ],
+    "/live": [
+      {
+        "method": "POST",
+        "file": "claire/api/governed_dashboard_live_search_routes.py",
+        "line": 70,
+        "match": "@router.post(\"/live\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/governed_dashboard_live_search_routes.py",
+        "line": 75,
+        "match": "@router.get(\"/live\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/governed_web/dashboard_search_endpoint_result_contract.py",
+        "line": 261,
+        "match": "@router.post('/live')"
+      }
+    ],
+    "/status": [
+      {
+        "method": "GET",
+        "file": "claire/api/live_intelligence_status_routes.py",
+        "line": 25,
+        "match": "@router.get(\"/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/live_source_catalog_routes.py",
+        "line": 201,
+        "match": "@router.get(\"/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/operational_proof_routes.py",
+        "line": 34,
+        "match": "@router.get(\"/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/real_provider_operator_probe_routes.py",
+        "line": 55,
+        "match": "@router.get(\"/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_connectors.py",
+        "line": 26,
+        "match": "@router.get(\"/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_dashboard_alignment.py",
+        "line": 15,
+        "match": "@router.get(\"/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/search_bar_dashboard_api.py",
+        "line": 59,
+        "match": "@router.get(\"/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/governed_web/real_provider_operator_probe_route.py",
+        "line": 232,
+        "match": "@router.get(\"/status\")"
+      }
+    ],
+    "/operator/search/capabilities": [
+      {
+        "method": "GET",
+        "file": "claire/api/operator_dashboard_compat_routes.py",
+        "line": 79,
+        "match": "@router.get(\"/operator/search/capabilities\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_operator_search_command.py",
+        "line": 20,
+        "match": "@router.get(\"/operator/search/capabilities\")"
+      }
+    ],
+    "/operator/search/query": [
+      {
+        "method": "POST",
+        "file": "claire/api/operator_dashboard_compat_routes.py",
+        "line": 160,
+        "match": "@router.post(\"/operator/search/query\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/api/routes_operator_search_command.py",
+        "line": 25,
+        "match": "@router.post(\"/operator/search/query\")"
+      }
+    ],
+    "/probe": [
+      {
+        "method": "POST",
+        "file": "claire/api/real_provider_operator_probe_routes.py",
+        "line": 72,
+        "match": "@router.post(\"/probe\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/governed_web/real_provider_operator_probe_route.py",
+        "line": 236,
+        "match": "@router.post(\"/probe\")"
+      }
+    ],
+    "/runtime/continuous/status": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_continuous_runtime.py",
+        "line": 162,
+        "match": "@router.get(\"/runtime/continuous/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/routes/authored_cockpit_compat_routes.py",
+        "line": 262,
+        "match": "@router.get(\"/runtime/continuous/status\")"
+      },
+      {
+        "method": null,
+        "file": "claire/runtime_graph/integration.py",
+        "line": 135,
+        "match": "app.add_api_route(\"/runtime/continuous/status\", runtime_status, methods=[\"GET\"], tags=[\"runtime\"])"
+      },
+      {
+        "method": null,
+        "file": "claire/runtime_truth/integration.py",
+        "line": 121,
+        "match": "app.add_api_route(\"/runtime/continuous/status\", runtime_status, methods=[\"GET\"], tags=[\"runtime\"])"
+      }
+    ],
+    "/runtime/continuous/start": [
+      {
+        "method": "POST",
+        "file": "claire/api/routes_continuous_runtime.py",
+        "line": 167,
+        "match": "@router.post(\"/runtime/continuous/start\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/routes/authored_cockpit_compat_routes.py",
+        "line": 267,
+        "match": "@router.post(\"/runtime/continuous/start\")"
+      }
+    ],
+    "/runtime/continuous/pause": [
+      {
+        "method": "POST",
+        "file": "claire/api/routes_continuous_runtime.py",
+        "line": 175,
+        "match": "@router.post(\"/runtime/continuous/pause\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/routes/authored_cockpit_compat_routes.py",
+        "line": 283,
+        "match": "@router.post(\"/runtime/continuous/pause\")"
+      }
+    ],
+    "/runtime/continuous/review-queue": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_continuous_runtime.py",
+        "line": 195,
+        "match": "@router.get(\"/runtime/continuous/review-queue\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/routes/authored_cockpit_compat_routes.py",
+        "line": 299,
+        "match": "@router.get(\"/runtime/continuous/review-queue\")"
+      },
+      {
+        "method": null,
+        "file": "claire/runtime_graph/integration.py",
+        "line": 137,
+        "match": "app.add_api_route(\"/runtime/continuous/review-queue\", review_queue, methods=[\"GET\"], tags=[\"runtime\"])"
+      },
+      {
+        "method": null,
+        "file": "claire/runtime_truth/integration.py",
+        "line": 123,
+        "match": "app.add_api_route(\"/runtime/continuous/review-queue\", review_queue, methods=[\"GET\"], tags=[\"runtime\"])"
+      }
+    ],
+    "/dashboard/payload": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_enterprise_cockpit_payload.py",
+        "line": 174,
+        "match": "@router.get(\"/dashboard/payload\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/routes/authored_cockpit_compat_routes.py",
+        "line": 218,
+        "match": "@router.get(\"/dashboard/payload\")"
+      },
+      {
+        "method": null,
+        "file": "claire/runtime_graph/integration.py",
+        "line": 141,
+        "match": "app.add_api_route(\"/dashboard/payload\", dashboard_payload, methods=[\"GET\"], tags=[\"dashboard\"])"
+      },
+      {
+        "method": null,
+        "file": "claire/runtime_truth/integration.py",
+        "line": 127,
+        "match": "app.add_api_route(\"/dashboard/payload\", dashboard_payload, methods=[\"GET\"], tags=[\"dashboard\"])"
+      }
+    ],
+    "/dashboard/payload/status": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_enterprise_cockpit_payload.py",
+        "line": 179,
+        "match": "@router.get(\"/dashboard/payload/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/routes/authored_cockpit_payload_binding_routes.py",
+        "line": 151,
+        "match": "@router.get(\"/dashboard/payload/status\")"
+      },
+      {
+        "method": null,
+        "file": "claire/runtime_graph/integration.py",
+        "line": 143,
+        "match": "app.add_api_route(\"/dashboard/payload/status\", dashboard_payload_status, methods=[\"GET\"], tags=[\"dashboard\"])"
+      },
+      {
+        "method": null,
+        "file": "claire/runtime_truth/integration.py",
+        "line": 129,
+        "match": "app.add_api_route(\"/dashboard/payload/status\", dashboard_payload_status, methods=[\"GET\"], tags=[\"dashboard\"])"
+      }
+    ],
+    "/runs/start": [
+      {
+        "method": "POST",
+        "file": "claire/api/routes_enterprise_runs.py",
+        "line": 235,
+        "match": "@router.post(\"/runs/start\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/routes/authored_cockpit_compat_routes.py",
+        "line": 309,
+        "match": "@router.post(\"/runs/start\")"
+      }
+    ],
+    "/history": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_history.py",
+        "line": 16,
+        "match": "@router.get(\"/history\", response_model=HistoryResponse)"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_proxy.py",
+        "line": 16,
+        "match": "@router.get(\"/history\", response_model=HistoryResponse)"
+      }
+    ],
+    "/history/{run_id}": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_history.py",
+        "line": 47,
+        "match": "@router.get(\"/history/{run_id}\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_proxy.py",
+        "line": 47,
+        "match": "@router.get(\"/history/{run_id}\")"
+      }
+    ],
+    "/stats": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_history.py",
+        "line": 62,
+        "match": "@router.get(\"/stats\", response_model=StatsResponse)"
+      },
+      {
+        "method": "GET",
+        "file": "claire/api/routes_proxy.py",
+        "line": 62,
+        "match": "@router.get(\"/stats\", response_model=StatsResponse)"
+      }
+    ],
+    "/api/platform/status": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_platform.py",
+        "line": 15,
+        "match": "@router.get(\"/api/platform/status\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/platform/resolver.py",
+        "line": 43,
+        "match": "@router.get(\"/api/platform/status\")"
+      }
+    ],
+    "/api/platform/target": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_platform.py",
+        "line": 33,
+        "match": "@router.get(\"/api/platform/target\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/platform/resolver.py",
+        "line": 60,
+        "match": "@router.get(\"/api/platform/target\")"
+      }
+    ],
+    "/api/platform/current": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_platform.py",
+        "line": 39,
+        "match": "@router.get(\"/api/platform/current\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/platform/resolver.py",
+        "line": 66,
+        "match": "@router.get(\"/api/platform/current\")"
+      }
+    ],
+    "/api/platform/resolve": [
+      {
+        "method": "POST",
+        "file": "claire/api/routes_platform.py",
+        "line": 45,
+        "match": "@router.post(\"/api/platform/resolve\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/platform/resolver.py",
+        "line": 72,
+        "match": "@router.post(\"/api/platform/resolve\")"
+      }
+    ],
+    "/api/platform/resolve/{component}": [
+      {
+        "method": "POST",
+        "file": "claire/api/routes_platform.py",
+        "line": 51,
+        "match": "@router.post(\"/api/platform/resolve/{component}\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/platform/resolver.py",
+        "line": 78,
+        "match": "@router.post(\"/api/platform/resolve/{component}\")"
+      }
+    ],
+    "/universes": [
+      {
+        "method": "GET",
+        "file": "claire/api/routes_source_universes.py",
+        "line": 177,
+        "match": "@router.get(\"/universes\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/routes/authored_cockpit_compat_routes.py",
+        "line": 304,
+        "match": "@router.get(\"/universes\")"
+      }
+    ],
+    "/dashboard": [
+      {
+        "method": "POST",
+        "file": "claire/api/search_bar_dashboard_api.py",
+        "line": 52,
+        "match": "@router.post(\"/dashboard\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/internet_operations_dashboard/api_routes.py",
+        "line": 33,
+        "match": "@router.get(\"/dashboard\", response_class=HTMLResponse)"
+      },
+      {
+        "method": "POST",
+        "file": "claire/internet_runtime_integration/api_routes.py",
+        "line": 34,
+        "match": "@router.post(\"/dashboard\")"
+      }
+    ],
+    "/run-due": [
+      {
+        "method": "POST",
+        "file": "claire/governed_campaign_scheduler/api_routes.py",
+        "line": 41,
+        "match": "@router.post(\"/run-due\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/internet_operations_dashboard/api_routes.py",
+        "line": 21,
+        "match": "@router.post(\"/run-due\")"
+      }
+    ],
+    "/reports": [
+      {
+        "method": "GET",
+        "file": "claire/governed_campaign_scheduler/api_routes.py",
+        "line": 47,
+        "match": "@router.get(\"/reports\")"
+      },
+      {
+        "method": "GET",
+        "file": "claire/internet_runtime_stability/api_routes.py",
+        "line": 37,
+        "match": "@router.get(\"/reports\")"
+      }
+    ],
+    "/campaigns/{campaign_id}/refresh": [
+      {
+        "method": "POST",
+        "file": "claire/internet_operations_dashboard/api_routes.py",
+        "line": 27,
+        "match": "@router.post(\"/campaigns/{campaign_id}/refresh\")"
+      },
+      {
+        "method": "POST",
+        "file": "claire/internet_runtime_stability/api_routes.py",
+        "line": 19,
+        "match": "@router.post(\"/campaigns/{campaign_id}/refresh\")"
+      }
+    ],
+    "/runtime/graph/decide": [
+      {
+        "method": null,
+        "file": "claire/runtime_graph/integration.py",
+        "line": 139,
+        "match": "app.add_api_route(\"/runtime/graph/decide\", graph_decide, methods=[\"POST\"], tags=[\"runtime\"])"
+      },
+      {
+        "method": null,
+        "file": "claire/runtime_truth/integration.py",
+        "line": 125,
+        "match": "app.add_api_route(\"/runtime/graph/decide\", runtime_decide, methods=[\"POST\"], tags=[\"runtime\"])"
+      }
+    ],
+    "/api/dashboard/search/provider/status": [
+      {
+        "method": null,
+        "file": "claire/runtime_graph/integration.py",
+        "line": 145,
+        "match": "app.add_api_route(\"/api/dashboard/search/provider/status\", web_provider_status, methods=[\"GET\"], tags=[\"search\"])"
+      },
+      {
+        "method": null,
+        "file": "claire/runtime_truth/integration.py",
+        "line": 131,
+        "match": "app.add_api_route(\"/api/dashboard/search/provider/status\", provider_status, methods=[\"GET\"], tags=[\"search\"])"
+      }
+    ]
+  },
+  "payload_routes_present": {
+    "/dashboard/payload": true,
+    "/dashboard/payload/status": true
+  },
+  "run_contract_routes_present": {
+    "/runs/start": true,
+    "/runs/{run_id}/status": true,
+    "/runs/{run_id}/lifecycle": true,
+    "/runs/{run_id}/gates": true,
+    "/runs/{run_id}/missing-evidence": true,
+    "/runs/{run_id}/enrich": true,
+    "/universes": true,
+    "/universes/{universe_id}": true,
+    "/universes/{universe_id}/probe": true
+  }
+}

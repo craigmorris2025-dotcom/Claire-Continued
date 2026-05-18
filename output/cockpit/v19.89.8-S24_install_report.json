@@ -1,0 +1,27 @@
+{
+  "version": "v19.89.8-S24",
+  "installed_at_utc": "2026-05-14T03:25:47.820456+00:00",
+  "status": "installed",
+  "safety_note": "S24 intentionally did not patch claire/app.py.",
+  "files_written": [
+    "claire\\api\\continuous_browser_runtime_loop.py",
+    "frontend\\cockpit\\assets\\js\\continuous_browser_runtime_loop.js",
+    "frontend\\cockpit\\assets\\css\\continuous_browser_runtime_loop.css",
+    "tests\\test_continuous_browser_runtime_loop_s24.py",
+    "docs\\build_notes\\v19.89.8-S24_continuous_browser_runtime_loop.md",
+    "output\\cockpit\\v19.89.8-S24_install_report.json"
+  ],
+  "link_report": [
+    "linked S24 CSS in frontend\\cockpit\\shell\\cockpit_shell.html",
+    "linked S24 JS in frontend\\cockpit\\shell\\cockpit_shell.html"
+  ],
+  "run_tests": "python -m pytest tests/test_continuous_browser_runtime_loop_s24.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "browser_execution_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

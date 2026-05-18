@@ -1,0 +1,147 @@
+{
+  "contract_name": "Workspace Dashboard + Web Search + Agent Command Bar Preparation",
+  "generated_at": "2026-05-13T11:18:57.707156Z",
+  "live_web_conditions": {
+    "allowlist_or_quarantine_required": true,
+    "current_automatic_updates_enabled": false,
+    "current_live_web_enabled": false,
+    "evidence_capture_required": true,
+    "operator_visible_results_required": true,
+    "provider_key_required": true,
+    "rate_limits_required": true,
+    "source_trust_required": true
+  },
+  "modes": {
+    "agent_command_mode": {
+      "enabled": false,
+      "label": "AI Agent Command Mode",
+      "prepared": true,
+      "reason": "Command parsing is prepared. Autonomous execution remains disabled until later governed agent runtime builds."
+    },
+    "governed_research_search": {
+      "enabled": false,
+      "label": "Governed Research Search",
+      "prepared": true,
+      "reason": "Requires source trust, allowlist/quarantine, evidence capture, rate limits, and operator-visible results."
+    },
+    "normal_web_search": {
+      "enabled": false,
+      "label": "Normal Web Search",
+      "prepared": true,
+      "reason": "Prepared as a normal search-engine mode, but live search remains gated until governed provider and internet readiness are verified."
+    },
+    "runtime_system_search": {
+      "enabled": true,
+      "label": "Claire Runtime/System Search",
+      "prepared": true,
+      "reason": "Searches local runtime truth, proof, route, AutoDesign, Design Portal, validation, internet readiness, and update governance outputs."
+    }
+  },
+  "prepared_commands": {
+    "open auto design": {
+      "action": "open_workspace",
+      "endpoint": "/autodesign/handoff",
+      "workspace": "autodesign"
+    },
+    "open autodesign": {
+      "action": "open_workspace",
+      "endpoint": "/autodesign/handoff",
+      "workspace": "autodesign"
+    },
+    "open design portal": {
+      "action": "open_workspace",
+      "endpoint": "/design-portal/output",
+      "workspace": "design_portal"
+    },
+    "open internet": {
+      "action": "open_workspace",
+      "endpoint": "/internet/readiness",
+      "workspace": "internet"
+    },
+    "open proof": {
+      "action": "open_workspace",
+      "endpoint": "/proof/e2e",
+      "workspace": "proof"
+    },
+    "open routes": {
+      "action": "open_workspace",
+      "endpoint": "/routes/audit",
+      "workspace": "routes"
+    },
+    "open updates": {
+      "action": "open_workspace",
+      "endpoint": "/updates/regression-lock",
+      "workspace": "updates"
+    },
+    "rebuild runtime truth": {
+      "action": "api_call_prepared",
+      "endpoint": "/runtime/truth/rebuild",
+      "method": "POST",
+      "requires_operator_confirmation": true
+    },
+    "refresh dashboard": {
+      "action": "api_call_prepared",
+      "endpoint": "/operator/dashboard/refresh",
+      "method": "POST",
+      "requires_operator_confirmation": false
+    },
+    "show internet readiness": {
+      "action": "open_workspace",
+      "endpoint": "/internet/readiness",
+      "workspace": "internet"
+    },
+    "show proof pack": {
+      "action": "open_workspace",
+      "endpoint": "/proof/e2e",
+      "workspace": "proof"
+    },
+    "show route audit": {
+      "action": "open_workspace",
+      "endpoint": "/routes/audit",
+      "workspace": "routes"
+    },
+    "show stop go": {
+      "action": "open_workspace",
+      "endpoint": "/system/stop-go",
+      "workspace": "proof"
+    },
+    "show stop/go": {
+      "action": "open_workspace",
+      "endpoint": "/system/stop-go",
+      "workspace": "proof"
+    },
+    "show updates": {
+      "action": "open_workspace",
+      "endpoint": "/updates/regression-lock",
+      "workspace": "updates"
+    }
+  },
+  "search_bar": {
+    "must_not_be_removed": true,
+    "permanent": true,
+    "placeholder": "Search web, ask Claire, run command, or find system output...",
+    "role": "normal web search + governed research + runtime search + future AI-agent command surface"
+  },
+  "unsafe_actions_disabled": {
+    "automatic_update_execution": true,
+    "autonomous_agent_execution": true,
+    "fake_search_results": true,
+    "hidden_background_browsing": true,
+    "uncontrolled_internet_search": true,
+    "uncontrolled_self_modification": true
+  },
+  "version": "v17.75.2",
+  "workspace_targets": [
+    "mission",
+    "routes",
+    "discovery",
+    "autodesign",
+    "design_portal",
+    "portfolio",
+    "acquisition",
+    "internet",
+    "updates",
+    "proof",
+    "diagnostics"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "version": "v19.82B.15",
+  "build_name": "Authored Enterprise Cockpit Shell",
+  "installed_at": "2026-05-11T20:20:13.162433+00:00",
+  "primary_cockpit_path": "frontend/cockpit/shell/cockpit_shell.html",
+  "reason": [
+    "User rejected shrink/portal-pile dashboard patches.",
+    "Dashboard needed a directly authored enterprise shell.",
+    "This build replaces the cockpit shell with a deliberate operational dashboard layout."
+  ],
+  "created_or_updated": [
+    "frontend/cockpit/shell/cockpit_shell.html",
+    "frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.css",
+    "frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.js",
+    "tests/test_v19_82B_15_authored_enterprise_cockpit_shell.py",
+    "data/build_artifacts/v19_82B_15_authored_enterprise_cockpit_shell.json"
+  ],
+  "operator_routes_consumed": [
+    "GET /dashboard/payload",
+    "GET /runtime/continuous/status",
+    "GET /runtime/continuous/review-queue",
+    "POST /runtime/continuous/start",
+    "POST /runtime/continuous/pause",
+    "POST /runs/start",
+    "GET /universes"
+  ],
+  "locked_rules": [
+    "no Swagger/docs/dev controls in operator cockpit",
+    "backend owns truth",
+    "frontend renders state only",
+    "no fake discoveries",
+    "no frontend route scoring",
+    "no frontend promotion"
+  ],
+  "next_recommended_build": "v19.82B.16 Authored Cockpit Backend Route Availability Repair"
+}

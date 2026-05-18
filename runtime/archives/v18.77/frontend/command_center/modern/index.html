@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Claire Syntalion — Workspace Operator Cockpit</title>
+  <link rel="stylesheet" href="claire_workspace_agent_dashboard.css" />
+<!-- CLAIRE_V18_74_DASHBOARD_LIVE_WEB_SEARCH_FINAL_BINDING -->
+<link rel="stylesheet" href="assets/css/claire_v18_74_dashboard_live_web_search_final_binding.css" data-claire-version="v18.74" data-claire-live-search-endpoint="/api/dashboard/search/live" />
+<script defer src="assets/js/claire_v18_74_dashboard_live_web_search_final_binding.js" data-claire-version="v18.74" data-claire-live-search-endpoint="/api/dashboard/search/live"></script>
+<!-- /CLAIRE_V18_74_DASHBOARD_LIVE_WEB_SEARCH_FINAL_BINDING -->
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">C</div>
+      <div>
+        <h1>Claire</h1>
+        <p>Workspace Operator Cockpit</p>
+      </div>
+    </div>
+
+    <nav>
+      <button data-workspace="mission" class="active">Mission</button>
+      <button data-workspace="routes">Routes</button>
+      <button data-workspace="discovery">Discovery</button>
+      <button data-workspace="autodesign">AutoDesign</button>
+      <button data-workspace="design_portal">Design Portal</button>
+      <button data-workspace="portfolio">Portfolio</button>
+      <button data-workspace="acquisition">Acquisition</button>
+      <button data-workspace="internet">Internet</button>
+      <button data-workspace="updates">Updates</button>
+      <button data-workspace="proof">Proof</button>
+      <button data-workspace="diagnostics">Diagnostics</button>
+    </nav>
+
+    <div class="lock-card">
+      <span>Agent path</span>
+      <strong>Prepared / governed</strong>
+      <p>Search bar stays permanent. Web + command + agent behavior remain gated by source trust, evidence, and operator review.</p>
+    </div>
+  </aside>
+
+  <main class="workspace">
+    <header class="topbar">
+      <div class="command-wrap">
+        <select id="modeSelect" title="Search mode">
+          <option value="runtime">Claire Runtime</option>
+          <option value="web">Web</option>
+          <option value="research">Governed Research</option>
+          <option value="command">Command</option>
+          <option value="agent">Agent</option>
+        </select>
+        <input id="commandSearch" placeholder="Search web, ask Claire, run command, or find system output..." />
+        <button id="runSearch">Search</button>
+      </div>
+      <div id="backendStatus" class="status-pill offline">Backend offline</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Main operator state</p>
+        <h2 id="missionTitle">Claire Syntalion</h2>
+        <p id="missionSummary">Dashboard is waiting for backend state.</p>
+      </div>
+      <div class="hero-actions">
+        <button data-action="refresh">Refresh</button>
+        <button data-workspace-jump="proof">Proof</button>
+        <button data-workspace-jump="internet">Internet</button>
+      </div>
+    </section>
+
+    <section id="searchResultsPanel" class="search-results hidden">
+      <div class="panel-head">
+        <p class="eyebrow">Command/Search Results</p>
+        <button id="closeSearch">Close</button>
+      </div>
+      <div id="searchResults"></div>
+    </section>
+
+    <section id="scorecards" class="scorecards"></section>
+
+    <section id="mission" class="panel visible" data-title="Mission">
+      <div class="panel-head"><p class="eyebrow">Mission</p><span id="stopGoStatus">not loaded</span></div>
+      <h3>Current route and next safe action</h3>
+      <div id="missionCards" class="cards"></div>
+    </section>
+
+    <section id="routes" class="panel" data-title="Routes">
+      <div class="panel-head"><p class="eyebrow">Route Gate</p><span id="routeFamily">not loaded</span></div>
+      <h3>Discovery → Thesis → Route</h3>
+      <div id="routeCards" class="cards"></div>
+    </section>
+
+    <section id="discovery" class="panel" data-title="Discovery">
+      <div class="panel-head"><p class="eyebrow">Discovery</p><span>first-class route</span></div>
+      <h3>Signals, trends, thesis, discovery, innovation</h3>
+      <div id="discoveryCards" class="cards"></div>
+    </section>
+
+    <section id="autodesign" class="panel" data-title="AutoDesign">
+      <div class="panel-head"><p class="eyebrow">AutoDesign</p><span id="autodesignStatus">not loaded</span></div>
+      <h3>Invention / system design handoff</h3>
+      <div id="autodesignCards" class="cards"></div>
+    </section>
+
+    <section id="design_portal" class="panel" data-title="Design Portal">
+      <div class="panel-head"><p class="eyebrow">Design Portal</p><span id="designPortalStatus">not loaded</span></div>
+      <h3>Blueprint, components, technology stack</h3>
+      <div id="designPortalCards" class="cards"></div>
+    </section>
+
+    <section id="portfolio" class="panel" data-title="Portfolio">
+      <div class="panel-head"><p class="eyebrow">Portfolio</p><span>route output</span></div>
+      <h3>Portfolio intelligence</h3>
+      <div id="portfolioCards" class="cards"></div>
+    </section>
+
+    <section id="acquisition" class="panel" data-title="Acquisition">
+      <div class="panel-head"><p class="eyebrow">Acquisition</p><span>package route</span></div>
+      <h3>Acquisition and final package</h3>
+      <div id="acquisitionCards" class="cards"></div>
+    </section>
+
+    <section id="internet" class="panel" data-title="Internet">
+      <div class="panel-head"><p class="eyebrow">Internet</p><span id="internetStatus">not loaded</span></div>
+      <h3>Web search readiness and governed research</h3>
+      <div id="internetCards" class="cards"></div>
+    </section>
+
+    <section id="updates" class="panel" data-title="Updates">
+      <div class="panel-head"><p class="eyebrow">Updates</p><span id="updatesStatus">guarded</span></div>
+      <h3>Governed update preparation</h3>
+      <div id="updatesCards" class="cards"></div>
+    </section>
+
+    <section id="proof" class="panel" data-title="Proof">
+      <div class="panel-head"><p class="eyebrow">Proof</p><span id="proofStatus">not loaded</span></div>
+      <h3>End-to-end proof and Stop/Go</h3>
+      <div id="proofCards" class="cards"></div>
+    </section>
+
+    <section id="diagnostics" class="panel" data-title="Diagnostics">
+      <div class="panel-head"><p class="eyebrow">Diagnostics</p><span id="diagnosticsStatus">waiting</span></div>
+      <h3>Raw dashboard state</h3>
+      <pre id="diagnosticsJson">{}</pre>
+    </section>
+  </main>
+
+  <aside id="contextDrawer" class="context">
+    <div class="panel-head">
+      <p class="eyebrow">Context Drawer</p>
+      <button id="drawerToggle">Hide</button>
+    </div>
+    <h3>Evidence / Details</h3>
+    <div id="contextBody">Select a workspace or run a search.</div>
+  </aside>
+
+  <script src="claire_workspace_agent_dashboard.js"></script>
+<!-- CLAIRE_GOVERNED_LIVE_SEARCH_START -->
+<section class="claire-governed-live-search-panel" data-claire-governed-live-search="true">
+  <div class="claire-governed-live-search-header">
+    <h2>Governed Live Web Search</h2>
+    <p>Review-gated live search. Manual enable is required before results render.</p>
+  </div>
+  <form id="claire-governed-live-search-form" class="claire-governed-live-search-form">
+    <label for="claire-governed-live-search-input">Search the web</label>
+    <div class="claire-governed-live-search-row">
+      <input id="claire-governed-live-search-input" name="query" type="search" placeholder="Type google and press Search" autocomplete="off" />
+      <button type="submit">Search</button>
+    </div>
+    <label class="claire-governed-live-search-enable">
+      <input id="claire-governed-live-search-manual-enable" type="checkbox" />
+      Manual governed live-search enable
+    </label>
+    <div id="claire-governed-live-search-status" class="claire-governed-live-search-status" role="status">Governed live search UI waiting.</div>
+  </form>
+  <div id="claire-governed-live-search-results" class="claire-governed-live-search-results" aria-live="polite"></div>
+</section>
+<!-- CLAIRE_GOVERNED_LIVE_SEARCH_END -->
+<!-- CLAIRE_GOVERNED_LIVE_SEARCH_SCRIPT -->
+<script src="governed_live_search_ui_binding.js" defer></script>
+<script src="governed_live_search_ui_binding.js" defer></script>
+<script src="governed_live_search_ui_binding.js" defer></script>
+
+<!-- CLAIRE_PROVIDER_PROBE_UI_START -->
+<!-- CLAIRE_PRIMARY_WEB_SEARCH_PANEL_START -->
+<section id="claire-primary-web-search-panel" class="claire-primary-web-search-panel" aria-label="Governed Live Web Search">
+  <h2>Governed Live Web Search</h2>
+  <p>Use this for normal web search. Results are routed through Claire governance and operator-visible review.</p>
+  <form id="claire-primary-web-search-form">
+    <label for="claire-primary-web-search-query">Search the web</label>
+    <input id="claire-primary-web-search-query" name="query" type="search" value="google" placeholder="Search the web" autocomplete="off" />
+    <button id="claire-primary-web-search-button" type="submit">Search Web</button>
+  </form>
+  <div id="claire-primary-web-search-status">Governed live web search ready.</div>
+  <div id="claire-primary-web-search-results"></div>
+</section>
+<!-- CLAIRE_PRIMARY_WEB_SEARCH_PANEL_END -->
+
+<section id="claire-provider-probe-panel" class="claire-provider-probe-panel" aria-label="Governed Provider Probe">
+<div id="claire-provider-probe-clarity-note" class="claire-provider-probe-clarity-note">
+  <strong>Advanced / Manual Provider Probe</strong>
+  <p>Normal searches should use Governed Live Web Search above.</p>
+  <p>This panel is only for explicit operator provider tests.</p>
+</div>
+  <h2>Governed Provider Probe</h2>
+  <p>Operator-controlled provider probe surface. Explicit enable is required before a real provider probe can run.</p>
+  <form id="claire-provider-probe-form">
+    <label for="claire-provider-probe-query">Provider probe query</label>
+    <input id="claire-provider-probe-query" name="query" type="search" value="google" placeholder="google" autocomplete="off" />
+    <label>
+      <input id="claire-provider-probe-explicit-enable" type="checkbox" />
+      Explicit real provider probe enable
+    </label>
+    <button type="submit">Run Provider Probe</button>
+    <button id="claire-provider-probe-refresh-status" type="button">Refresh Provider Status</button>
+  </form>
+  <div id="claire-provider-probe-status">Provider probe idle.</div>
+  <div id="claire-provider-probe-results"></div>
+</section>
+<!-- CLAIRE_PROVIDER_PROBE_UI_END -->
+<!-- CLAIRE_PROVIDER_PROBE_UI_SCRIPT -->
+<script src="governed_provider_probe_ui_binding.js"></script>
+<!-- CLAIRE_DASHBOARD_FILE_ORIGIN_FETCH_BRIDGE -->
+<script src="dashboard_file_origin_fetch_bridge.js"></script>
+<!-- CLAIRE_PRIMARY_WEB_SEARCH_SCRIPT -->
+<script src="dashboard_primary_web_search_binding.js"></script>
+</body>
+</html>
+
+<!-- CLAIRE_V18_75_HTML -->
+<section id="claire-live-web-result-card" data-claire-version="v18.75" data-dashboard-current="true">
+  <h2>Governed Live Web Search Result Card</h2>
+  <p>Locks normal search result card rendering to the governed live search endpoint.</p>
+  <div class="claire-proof-card" data-proof="result-card">
+    <strong>Dashboard binding:</strong>
+    <code>/api/dashboard/search/live</code>
+  </div>
+</section>
+<!-- /CLAIRE_V18_75_HTML -->
+
+<!-- CLAIRE_V18_76_HTML -->
+<section id="claire-dashboard-current-state-banner" data-claire-version="v18.76" data-dashboard-current="true">
+  <h2>Dashboard Current-State Proof</h2>
+  <p>Adds an operator-visible current-state proof banner and smoke report.</p>
+  <div class="claire-proof-card" data-proof="current-state">
+    <strong>Dashboard binding:</strong>
+    <code>/api/dashboard/search/live</code>
+  </div>
+</section>
+<!-- /CLAIRE_V18_76_HTML -->

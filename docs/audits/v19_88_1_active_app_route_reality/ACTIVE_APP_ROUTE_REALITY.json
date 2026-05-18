@@ -1,0 +1,599 @@
+{
+  "version": "19.88.1",
+  "generated_at": "2026-05-13T04:04:27.698907+00:00",
+  "policy": {
+    "audit_only": true,
+    "mutated_files": false,
+    "mounted_routes": false,
+    "rewired_dashboard": false,
+    "enabled_live_internet": false,
+    "runtime_truth_mutated": false
+  },
+  "active_app_loaded": true,
+  "source_module": "claire.app",
+  "source_attr": "create_app",
+  "routes": [
+    {
+      "path": "/",
+      "methods": [
+        "GET"
+      ],
+      "name": "root",
+      "endpoint": "claire.app.root"
+    },
+    {
+      "path": "/api/dashboard/payload",
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_payload",
+      "endpoint": "claire.routes.authored_cockpit_payload_binding_routes.api_dashboard_payload"
+    },
+    {
+      "path": "/api/dashboard/payload/status",
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_payload_status",
+      "endpoint": "claire.routes.authored_cockpit_payload_binding_routes.api_dashboard_payload_status"
+    },
+    {
+      "path": "/api/dashboard/search/live",
+      "methods": [
+        "GET"
+      ],
+      "name": "live_search_get",
+      "endpoint": "claire.api.governed_dashboard_live_search_routes.live_search_get"
+    },
+    {
+      "path": "/api/dashboard/search/live",
+      "methods": [
+        "POST"
+      ],
+      "name": "live_search",
+      "endpoint": "claire.api.governed_dashboard_live_search_routes.live_search"
+    },
+    {
+      "path": "/api/dashboard/search/provider/probe",
+      "methods": [
+        "POST"
+      ],
+      "name": "provider_probe",
+      "endpoint": "claire.api.real_provider_operator_probe_routes.provider_probe"
+    },
+    {
+      "path": "/api/dashboard/search/provider/status",
+      "methods": [
+        "GET"
+      ],
+      "name": "provider_probe_status",
+      "endpoint": "claire.api.real_provider_operator_probe_routes.provider_probe_status"
+    },
+    {
+      "path": "/api/dashboard/search/smoke/google",
+      "methods": [
+        "GET"
+      ],
+      "name": "google_smoke",
+      "endpoint": "claire.api.governed_dashboard_live_search_routes.google_smoke"
+    },
+    {
+      "path": "/dashboard/alignment/buttons",
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_alignment_buttons",
+      "endpoint": "claire.api.routes_dashboard_alignment.dashboard_alignment_buttons"
+    },
+    {
+      "path": "/dashboard/alignment/capabilities",
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_alignment_capabilities",
+      "endpoint": "claire.api.routes_dashboard_alignment.dashboard_alignment_capabilities"
+    },
+    {
+      "path": "/dashboard/alignment/status",
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_alignment_status",
+      "endpoint": "claire.api.routes_dashboard_alignment.dashboard_alignment_status"
+    },
+    {
+      "path": "/dashboard/alignment/verify",
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_alignment_verify",
+      "endpoint": "claire.api.routes_dashboard_alignment.dashboard_alignment_verify"
+    },
+    {
+      "path": "/dashboard/payload",
+      "methods": [
+        "GET"
+      ],
+      "name": "authored_dashboard_payload",
+      "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_dashboard_payload"
+    },
+    {
+      "path": "/dashboard/payload",
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_payload",
+      "endpoint": "claire.api.routes_enterprise_cockpit_payload.dashboard_payload"
+    },
+    {
+      "path": "/dashboard/payload",
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dashboard_payload",
+      "endpoint": "claire.api.dashboard_payload_bridge.get_dashboard_payload"
+    },
+    {
+      "path": "/dashboard/payload/status",
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_payload_status",
+      "endpoint": "claire.api.routes_enterprise_cockpit_payload.dashboard_payload_status"
+    },
+    {
+      "path": "/dashboard/payload/status",
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_payload_status",
+      "endpoint": "claire.routes.authored_cockpit_payload_binding_routes.dashboard_payload_status"
+    },
+    {
+      "path": "/dashboard/payload/status",
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dashboard_payload_status",
+      "endpoint": "claire.api.dashboard_payload_bridge.get_dashboard_payload_status"
+    },
+    {
+      "path": "/docs",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "swagger_ui_html",
+      "endpoint": "fastapi.applications.swagger_ui_html"
+    },
+    {
+      "path": "/docs/oauth2-redirect",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "swagger_ui_redirect",
+      "endpoint": "fastapi.applications.swagger_ui_redirect"
+    },
+    {
+      "path": "/evaluate",
+      "methods": [
+        "POST"
+      ],
+      "name": "evaluate_alias",
+      "endpoint": "claire.api.routes_pipeline.evaluate_alias"
+    },
+    {
+      "path": "/health",
+      "methods": [
+        "GET"
+      ],
+      "name": "health",
+      "endpoint": "claire.app.health"
+    },
+    {
+      "path": "/openapi.json",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "openapi",
+      "endpoint": "fastapi.applications.openapi"
+    },
+    {
+      "path": "/operator/dashboard/state",
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_dashboard_state",
+      "endpoint": "claire.api.operator_dashboard_compat_routes.operator_dashboard_state"
+    },
+    {
+      "path": "/operator/search",
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_search_get",
+      "endpoint": "claire.api.operator_dashboard_compat_routes.operator_search_get"
+    },
+    {
+      "path": "/operator/search",
+      "methods": [
+        "POST"
+      ],
+      "name": "operator_search_post",
+      "endpoint": "claire.api.operator_dashboard_compat_routes.operator_search_post"
+    },
+    {
+      "path": "/operator/search/capabilities",
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_search_capabilities",
+      "endpoint": "claire.api.operator_dashboard_compat_routes.operator_search_capabilities"
+    },
+    {
+      "path": "/operator/search/live",
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_search_live_get",
+      "endpoint": "claire.api.operator_dashboard_compat_routes.operator_search_live_get"
+    },
+    {
+      "path": "/operator/search/live",
+      "methods": [
+        "POST"
+      ],
+      "name": "operator_search_live_post",
+      "endpoint": "claire.api.operator_dashboard_compat_routes.operator_search_live_post"
+    },
+    {
+      "path": "/operator/search/query",
+      "methods": [
+        "POST"
+      ],
+      "name": "operator_search_query_post",
+      "endpoint": "claire.api.operator_dashboard_compat_routes.operator_search_query_post"
+    },
+    {
+      "path": "/operator/search/run",
+      "methods": [
+        "POST"
+      ],
+      "name": "operator_search_run_post",
+      "endpoint": "claire.api.operator_dashboard_compat_routes.operator_search_run_post"
+    },
+    {
+      "path": "/operator/search/smoke/google",
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_search_smoke_google",
+      "endpoint": "claire.api.operator_dashboard_compat_routes.operator_search_smoke_google"
+    },
+    {
+      "path": "/pipeline/evaluate",
+      "methods": [
+        "POST"
+      ],
+      "name": "evaluate",
+      "endpoint": "claire.api.routes_pipeline.evaluate"
+    },
+    {
+      "path": "/redoc",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "redoc_html",
+      "endpoint": "fastapi.applications.redoc_html"
+    },
+    {
+      "path": "/runs/latest",
+      "methods": [
+        "GET"
+      ],
+      "name": "get_latest_run",
+      "endpoint": "claire.api.routes_enterprise_runs.get_latest_run"
+    },
+    {
+      "path": "/runs/start",
+      "methods": [
+        "POST"
+      ],
+      "name": "authored_start_run",
+      "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_start_run"
+    },
+    {
+      "path": "/runs/start",
+      "methods": [
+        "POST"
+      ],
+      "name": "start_run",
+      "endpoint": "claire.api.routes_enterprise_runs.start_run"
+    },
+    {
+      "path": "/runs/{run_id}/enrich",
+      "methods": [
+        "POST"
+      ],
+      "name": "enrich_run",
+      "endpoint": "claire.api.routes_enterprise_runs.enrich_run"
+    },
+    {
+      "path": "/runs/{run_id}/gates",
+      "methods": [
+        "GET"
+      ],
+      "name": "get_run_gates",
+      "endpoint": "claire.api.routes_enterprise_runs.get_run_gates"
+    },
+    {
+      "path": "/runs/{run_id}/lifecycle",
+      "methods": [
+        "GET"
+      ],
+      "name": "get_run_lifecycle",
+      "endpoint": "claire.api.routes_enterprise_runs.get_run_lifecycle"
+    },
+    {
+      "path": "/runs/{run_id}/missing-evidence",
+      "methods": [
+        "GET"
+      ],
+      "name": "get_run_missing_evidence",
+      "endpoint": "claire.api.routes_enterprise_runs.get_run_missing_evidence"
+    },
+    {
+      "path": "/runs/{run_id}/status",
+      "methods": [
+        "GET"
+      ],
+      "name": "get_run_status",
+      "endpoint": "claire.api.routes_enterprise_runs.get_run_status"
+    },
+    {
+      "path": "/runtime/continuous/cycles",
+      "methods": [
+        "GET"
+      ],
+      "name": "continuous_cycles",
+      "endpoint": "claire.api.routes_continuous_runtime.continuous_cycles"
+    },
+    {
+      "path": "/runtime/continuous/pause",
+      "methods": [
+        "POST"
+      ],
+      "name": "authored_continuous_pause",
+      "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_continuous_pause"
+    },
+    {
+      "path": "/runtime/continuous/pause",
+      "methods": [
+        "POST"
+      ],
+      "name": "continuous_pause",
+      "endpoint": "claire.api.routes_continuous_runtime.continuous_pause"
+    },
+    {
+      "path": "/runtime/continuous/review-queue",
+      "methods": [
+        "GET"
+      ],
+      "name": "authored_review_queue",
+      "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_review_queue"
+    },
+    {
+      "path": "/runtime/continuous/review-queue",
+      "methods": [
+        "GET"
+      ],
+      "name": "continuous_review_queue",
+      "endpoint": "claire.api.routes_continuous_runtime.continuous_review_queue"
+    },
+    {
+      "path": "/runtime/continuous/start",
+      "methods": [
+        "POST"
+      ],
+      "name": "authored_continuous_start",
+      "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_continuous_start"
+    },
+    {
+      "path": "/runtime/continuous/start",
+      "methods": [
+        "POST"
+      ],
+      "name": "continuous_start",
+      "endpoint": "claire.api.routes_continuous_runtime.continuous_start"
+    },
+    {
+      "path": "/runtime/continuous/status",
+      "methods": [
+        "GET"
+      ],
+      "name": "authored_continuous_status",
+      "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_continuous_status"
+    },
+    {
+      "path": "/runtime/continuous/status",
+      "methods": [
+        "GET"
+      ],
+      "name": "continuous_status",
+      "endpoint": "claire.api.routes_continuous_runtime.continuous_status"
+    },
+    {
+      "path": "/system/cockpit-truth",
+      "methods": [
+        "GET"
+      ],
+      "name": "active_cockpit_truth",
+      "endpoint": "claire.routes.active_route_truth_routes.active_cockpit_truth"
+    },
+    {
+      "path": "/system/route-truth",
+      "methods": [
+        "GET"
+      ],
+      "name": "active_route_truth",
+      "endpoint": "claire.routes.active_route_truth_routes.active_route_truth"
+    },
+    {
+      "path": "/system/route-truth/required",
+      "methods": [
+        "GET"
+      ],
+      "name": "active_required_route_truth",
+      "endpoint": "claire.routes.active_route_truth_routes.active_required_route_truth"
+    },
+    {
+      "path": "/universes",
+      "methods": [
+        "GET"
+      ],
+      "name": "authored_universes",
+      "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_universes"
+    },
+    {
+      "path": "/universes",
+      "methods": [
+        "GET"
+      ],
+      "name": "universes",
+      "endpoint": "claire.api.routes_source_universes.universes"
+    },
+    {
+      "path": "/universes/{universe_id}",
+      "methods": [
+        "GET"
+      ],
+      "name": "universe",
+      "endpoint": "claire.api.routes_source_universes.universe"
+    },
+    {
+      "path": "/universes/{universe_id}/probe",
+      "methods": [
+        "POST"
+      ],
+      "name": "probe_universe",
+      "endpoint": "claire.api.routes_source_universes.probe_universe"
+    }
+  ],
+  "classification": {
+    "route_count": 58,
+    "required_missing": [
+      "/api/feeds/live-source-catalog/status",
+      "/api/feeds/live-source-catalog/health",
+      "/api/live-intelligence/status"
+    ],
+    "required_present": [
+      "/",
+      "/health",
+      "/docs",
+      "/openapi.json",
+      "/dashboard/payload/status",
+      "/dashboard/payload",
+      "/runtime/continuous/status",
+      "/runtime/continuous/start",
+      "/runtime/continuous/review-queue",
+      "/api/dashboard/search/provider/status",
+      "/api/dashboard/search/provider/probe",
+      "/api/dashboard/search/live",
+      "/api/dashboard/search/smoke/google"
+    ],
+    "surfaces": {
+      "boot_core": {
+        "required": [
+          "/",
+          "/health",
+          "/docs",
+          "/openapi.json"
+        ],
+        "present": [
+          "/",
+          "/health",
+          "/docs",
+          "/openapi.json"
+        ],
+        "missing": [],
+        "complete": true
+      },
+      "dashboard_payload": {
+        "required": [
+          "/dashboard/payload/status",
+          "/dashboard/payload"
+        ],
+        "present": [
+          "/dashboard/payload/status",
+          "/dashboard/payload"
+        ],
+        "missing": [],
+        "complete": true
+      },
+      "continuous_runtime": {
+        "required": [
+          "/runtime/continuous/status",
+          "/runtime/continuous/start",
+          "/runtime/continuous/review-queue"
+        ],
+        "present": [
+          "/runtime/continuous/status",
+          "/runtime/continuous/start",
+          "/runtime/continuous/review-queue"
+        ],
+        "missing": [],
+        "complete": true
+      },
+      "governed_search": {
+        "required": [
+          "/api/dashboard/search/provider/status",
+          "/api/dashboard/search/provider/probe",
+          "/api/dashboard/search/live",
+          "/api/dashboard/search/smoke/google"
+        ],
+        "present": [
+          "/api/dashboard/search/provider/status",
+          "/api/dashboard/search/provider/probe",
+          "/api/dashboard/search/live",
+          "/api/dashboard/search/smoke/google"
+        ],
+        "missing": [],
+        "complete": true
+      },
+      "live_source_catalog": {
+        "required": [
+          "/api/feeds/live-source-catalog/status",
+          "/api/feeds/live-source-catalog/health"
+        ],
+        "present": [],
+        "missing": [
+          "/api/feeds/live-source-catalog/status",
+          "/api/feeds/live-source-catalog/health"
+        ],
+        "complete": false
+      },
+      "live_intelligence": {
+        "required": [
+          "/api/live-intelligence/status"
+        ],
+        "present": [],
+        "missing": [
+          "/api/live-intelligence/status"
+        ],
+        "complete": false
+      }
+    },
+    "operational_readiness": {
+      "boot_core_ready": true,
+      "dashboard_payload_ready": true,
+      "continuous_runtime_ready": true,
+      "governed_search_ready": true,
+      "live_source_catalog_ready": false,
+      "live_intelligence_ready": false
+    },
+    "next_repair_rule": "Repair only missing required operational endpoints in the active create_app route stack. Do not restore archived routes blindly."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "app_py_touched": false,
+  "automatic_updates_allowed": false,
+  "autonomous_execution_allowed": false,
+  "body_reads_allowed": false,
+  "browser_execution_allowed": false,
+  "compile_report_command": "python tools/compile_s36_first_probe_report.py",
+  "continuous_crawling_allowed": false,
+  "installed_at": "2026-05-14T17:38:18.564444+00:00",
+  "installed_files": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\compile_s36_first_probe_report.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s36r12_r14_probe_guard_quarantine_report.py"
+  ],
+  "live_network_execution_during_install": false,
+  "manual_probe_command": "python tools/run_s36_single_head_probe.py --url https://example.com --operator-ack YES",
+  "metadata_only": true,
+  "payload_bridge_touched": false,
+  "router_touched": false,
+  "runtime_truth_mutation_allowed": false,
+  "verify_command": "python tools/verify_s36_probe_quarantine.py",
+  "version": "v19.89.8-S36R12-R14-probe-guard-quarantine-report"
+}

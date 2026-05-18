@@ -1,0 +1,25 @@
+{
+  "version": "v19.82B.3.1",
+  "timestamp": "2026-05-11T12:38:31",
+  "status": "go",
+  "html_patch": {
+    "patched": false,
+    "reason": "no dev-facing action labels found or already corrected"
+  },
+  "css_patch": {
+    "patched": true,
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\cockpit_assets\\v19.82B.3.1\\enterprise_cockpit_workspace_shell.css.20260511_123831.bak"
+  },
+  "actions_js": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\assets\\enterprise_cockpit_actions.js",
+  "removed_dev_actions": [
+    "Open Swagger",
+    "Open Health"
+  ],
+  "operator_actions": [
+    "Start Run",
+    "Refresh Runtime",
+    "System Status",
+    "Governance"
+  ],
+  "rule": "enterprise cockpit is an operator surface, not a developer dashboard"
+}

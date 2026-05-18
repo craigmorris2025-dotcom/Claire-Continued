@@ -1,0 +1,23 @@
+{
+  "version": "v19.89.7.2",
+  "build": "app.py Syntax Recovery + Safe Runtime Propagation Router Registration",
+  "installed_at": "2026-05-13T21:52:40.941768+00:00",
+  "intent": "Recover app.py syntax and safely register runtime propagation router.",
+  "patched_files": {
+    "app_file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "route_file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\runtime_execution_propagation_routes.py",
+    "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py.v19_89_7_2_syntax_recovery_backup",
+    "version_json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version.json"
+  },
+  "verify": [
+    "python main.py",
+    "http://127.0.0.1:8000/docs",
+    "http://127.0.0.1:8000/system/runtime-propagation/registration-proof"
+  ],
+  "preserved": [
+    "launcher unchanged",
+    "cockpit unchanged",
+    "backend owns truth",
+    "no autonomous loop activation"
+  ]
+}

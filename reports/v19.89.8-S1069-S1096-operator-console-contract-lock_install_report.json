@@ -1,0 +1,33 @@
+{
+  "version": "v19.89.8-S1069-S1096-operator-console-contract-lock",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "written": [
+    "claire/api/dashboard_operator_console_contract.py",
+    "frontend/command_center/modern/dashboard_operator_console_contract.js",
+    "frontend/command_center/modern/dashboard_operator_console_contract.css",
+    "tests/test_s1069_s1096_operator_console_contract_lock.py"
+  ],
+  "index_injected": true,
+  "index_path": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\command_center\\modern\\index.html",
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-S1069-S1096-operator-console-contract-lock",
+  "action_count": 15,
+  "routes_verified": [
+    "/dashboard/operator-console/contract",
+    "/dashboard/operator-console/summary",
+    "/dashboard/operator-console/actions",
+    "/dashboard/operator-console/preview/plan_search"
+  ],
+  "blocked_authority_preserved": [
+    "live_web_execution",
+    "search_provider_execution",
+    "browser_execution",
+    "network_requests",
+    "body_reads",
+    "autonomous_crawling",
+    "automatic_updates",
+    "runtime_mutation",
+    "runtime_truth_mutation",
+    "package_download_install",
+    "command_execution"
+  ]
+}

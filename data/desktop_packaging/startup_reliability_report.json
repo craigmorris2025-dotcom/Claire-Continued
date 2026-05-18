@@ -1,0 +1,387 @@
+{
+  "contract_name": "Desktop Packaging + Startup Reliability",
+  "environment": {
+    "python_executable": "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "selected_launcher_python": "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "venv_exists": false,
+    "venv_python_exists": false,
+    "working_directory": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire"
+  },
+  "files": {
+    "app": {
+      "exists": true,
+      "is_file": true,
+      "path": "claire/app.py",
+      "size_bytes": 17444
+    },
+    "dashboard": {
+      "exists": true,
+      "is_file": true,
+      "path": "frontend/command_center/modern/index.html",
+      "size_bytes": 20052
+    },
+    "dashboard_css": {
+      "exists": true,
+      "is_file": true,
+      "path": "frontend/command_center/modern/claire_workspace_agent_dashboard.css",
+      "size_bytes": 4900
+    },
+    "dashboard_js": {
+      "exists": true,
+      "is_file": true,
+      "path": "frontend/command_center/modern/claire_workspace_agent_dashboard.js",
+      "size_bytes": 11322
+    },
+    "dashboard_state": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/dashboard/operator_dashboard_state.json",
+      "size_bytes": 20495
+    },
+    "launch_hardening": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/launch_hardening/platform_launch_hardening_report.json",
+      "size_bytes": 14619
+    },
+    "launch_hardening_stop_go": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/launch_hardening/v17_77_launch_hardening_stop_go.json",
+      "size_bytes": 613
+    },
+    "platform_smoke": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/proof/platform_endpoint_smoke_proof.json",
+      "size_bytes": 36956
+    },
+    "primary_launcher": {
+      "exists": true,
+      "is_file": true,
+      "path": "LAUNCH_CLAIRE.bat",
+      "size_bytes": 1794
+    },
+    "pyproject": {
+      "exists": true,
+      "is_file": true,
+      "path": "pyproject.toml",
+      "size_bytes": 812
+    },
+    "requirements": {
+      "exists": true,
+      "is_file": true,
+      "path": "requirements.txt",
+      "size_bytes": 1506
+    },
+    "runtime_truth": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/runtime/runtime_truth_canonical.json",
+      "size_bytes": 1223058
+    },
+    "safe_launcher": {
+      "exists": false,
+      "is_file": false,
+      "path": "START_CLAIRE_SAFE.bat",
+      "size_bytes": null
+    },
+    "search_capabilities": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/operator/search_command/search_command_capabilities.json",
+      "size_bytes": 4637
+    },
+    "startup_verifier": {
+      "exists": false,
+      "is_file": false,
+      "path": "VERIFY_CLAIRE_STARTUP.bat",
+      "size_bytes": null
+    },
+    "version_json": {
+      "exists": true,
+      "is_file": true,
+      "path": "version.json",
+      "size_bytes": 809
+    }
+  },
+  "generated_at": "2026-05-13T11:19:00.433094Z",
+  "governance": {
+    "automatic_updates_disabled": true,
+    "background_execution_disabled": true,
+    "desktop_startup_reliability_only": true,
+    "live_internet_disabled": true,
+    "manual_startup_proof_required": true,
+    "manual_swagger_proof_required": true,
+    "operator_review_required": true,
+    "source_package_not_exe": true
+  },
+  "imports": {
+    "claire.app": {
+      "route_count": 69,
+      "status": "passed"
+    },
+    "fastapi": {
+      "status": "passed"
+    },
+    "pydantic": {
+      "status": "passed"
+    },
+    "uvicorn": {
+      "status": "passed"
+    }
+  },
+  "launcher_checks": {
+    "primary_launcher": {
+      "line_count": 58,
+      "opens_dashboard": false,
+      "opens_swagger": false,
+      "path": "LAUNCH_CLAIRE.bat",
+      "starts_uvicorn_claire_app": false,
+      "status": "warning"
+    },
+    "safe_launcher": {
+      "path": "START_CLAIRE_SAFE.bat",
+      "status": "missing"
+    },
+    "startup_verifier": {
+      "path": "VERIFY_CLAIRE_STARTUP.bat",
+      "status": "missing"
+    }
+  },
+  "next": [
+    "v17.79 Manual Browser + Swagger Proof Binder",
+    "v17.80 Launch Candidate Freeze",
+    "v17.81 Cleanup Proof Before Archive/Delete"
+  ],
+  "package_manifest": {
+    "contract_name": "Desktop Package Manifest",
+    "executable_packaging_prepared_later": true,
+    "files": {
+      "app": {
+        "exists": true,
+        "is_file": true,
+        "path": "claire/app.py",
+        "size_bytes": 17444
+      },
+      "dashboard": {
+        "exists": true,
+        "is_file": true,
+        "path": "frontend/command_center/modern/index.html",
+        "size_bytes": 20052
+      },
+      "dashboard_css": {
+        "exists": true,
+        "is_file": true,
+        "path": "frontend/command_center/modern/claire_workspace_agent_dashboard.css",
+        "size_bytes": 4900
+      },
+      "dashboard_js": {
+        "exists": true,
+        "is_file": true,
+        "path": "frontend/command_center/modern/claire_workspace_agent_dashboard.js",
+        "size_bytes": 11322
+      },
+      "dashboard_state": {
+        "exists": true,
+        "is_file": true,
+        "path": "data/dashboard/operator_dashboard_state.json",
+        "size_bytes": 20495
+      },
+      "launch_hardening": {
+        "exists": true,
+        "is_file": true,
+        "path": "data/launch_hardening/platform_launch_hardening_report.json",
+        "size_bytes": 14619
+      },
+      "launch_hardening_stop_go": {
+        "exists": true,
+        "is_file": true,
+        "path": "data/launch_hardening/v17_77_launch_hardening_stop_go.json",
+        "size_bytes": 613
+      },
+      "platform_smoke": {
+        "exists": true,
+        "is_file": true,
+        "path": "data/proof/platform_endpoint_smoke_proof.json",
+        "size_bytes": 36956
+      },
+      "primary_launcher": {
+        "exists": true,
+        "is_file": true,
+        "path": "LAUNCH_CLAIRE.bat",
+        "size_bytes": 1794
+      },
+      "pyproject": {
+        "exists": true,
+        "is_file": true,
+        "path": "pyproject.toml",
+        "size_bytes": 812
+      },
+      "requirements": {
+        "exists": true,
+        "is_file": true,
+        "path": "requirements.txt",
+        "size_bytes": 1506
+      },
+      "runtime_truth": {
+        "exists": true,
+        "is_file": true,
+        "path": "data/runtime/runtime_truth_canonical.json",
+        "size_bytes": 1223058
+      },
+      "safe_launcher": {
+        "exists": false,
+        "is_file": false,
+        "path": "START_CLAIRE_SAFE.bat",
+        "size_bytes": null
+      },
+      "search_capabilities": {
+        "exists": true,
+        "is_file": true,
+        "path": "data/operator/search_command/search_command_capabilities.json",
+        "size_bytes": 4637
+      },
+      "startup_verifier": {
+        "exists": false,
+        "is_file": false,
+        "path": "VERIFY_CLAIRE_STARTUP.bat",
+        "size_bytes": null
+      },
+      "version_json": {
+        "exists": true,
+        "is_file": true,
+        "path": "version.json",
+        "size_bytes": 809
+      }
+    },
+    "generated_at": "2026-05-13T11:19:00.432095Z",
+    "governance": {
+      "no_automatic_update_execution": true,
+      "no_background_execution": true,
+      "no_live_internet_enablement": true,
+      "operator_review_required": true,
+      "source_project_remains_editable": true
+    },
+    "groups": {
+      "app_runtime": [
+        "app",
+        "requirements",
+        "pyproject",
+        "version_json"
+      ],
+      "frontend": [
+        "dashboard",
+        "dashboard_js",
+        "dashboard_css"
+      ],
+      "launch": [
+        "primary_launcher",
+        "safe_launcher",
+        "startup_verifier"
+      ],
+      "truth_and_proof": [
+        "runtime_truth",
+        "dashboard_state",
+        "search_capabilities",
+        "platform_smoke",
+        "launch_hardening",
+        "launch_hardening_stop_go"
+      ]
+    },
+    "missing_by_group": {
+      "app_runtime": [],
+      "frontend": [],
+      "launch": [
+        "safe_launcher",
+        "startup_verifier"
+      ],
+      "truth_and_proof": []
+    },
+    "not_an_exe_yet": true,
+    "package_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+    "package_type": "local_desktop_source_package",
+    "required_startup_commands": [
+      "python -m pytest tests/test_v17_78_desktop_packaging_startup_reliability.py -q",
+      "START_CLAIRE_SAFE.bat",
+      "VERIFY_CLAIRE_STARTUP.bat"
+    ],
+    "verify_urls": [
+      "http://127.0.0.1:8000/docs",
+      "http://127.0.0.1:8000/operator/dashboard/state",
+      "http://127.0.0.1:8000/operator/search/capabilities",
+      "http://127.0.0.1:8000/platform/launch-hardening",
+      "http://127.0.0.1:8000/desktop/startup"
+    ],
+    "version": "v17.78"
+  },
+  "platform_continuity": {
+    "e2e_proof_source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/full_end_to_end_proof_pack.json",
+      "status": "loaded"
+    },
+    "e2e_proof_status": "GO_WITH_WARNINGS",
+    "launch_hardening_source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/launch_hardening/platform_launch_hardening_report.json",
+      "status": "loaded"
+    },
+    "launch_hardening_status": "STOP",
+    "launch_hardening_stop_go_source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/launch_hardening/v17_77_launch_hardening_stop_go.json",
+      "status": "loaded"
+    },
+    "launch_hardening_stop_go_status": "STOP",
+    "platform_smoke_source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/platform_endpoint_smoke_proof.json",
+      "status": "loaded"
+    },
+    "platform_smoke_status": "STOP"
+  },
+  "port": {
+    "host": "127.0.0.1",
+    "message": "Port 8000 is available for startup.",
+    "occupied": false,
+    "port": 8000,
+    "status": "available"
+  },
+  "safety_locks": {
+    "checks": {
+      "automatic_updates_disabled": true,
+      "live_internet_disabled": true,
+      "runner_background_disabled": true,
+      "runner_execution_disabled": true,
+      "search_automatic_updates_disabled": true,
+      "search_live_web_disabled": true
+    },
+    "status": "passed"
+  },
+  "startup_commands": [
+    "python -m pytest tests/test_v17_78_desktop_packaging_startup_reliability.py -q",
+    "START_CLAIRE_SAFE.bat",
+    "VERIFY_CLAIRE_STARTUP.bat"
+  ],
+  "stop_go": {
+    "blockers": [
+      "missing_startup_file:safe_launcher",
+      "missing_startup_file:startup_verifier",
+      "package_group_missing:launch:safe_launcher,startup_verifier",
+      "primary_launcher_does_not_start_uvicorn_claire_app",
+      "safe_launcher_does_not_start_uvicorn_claire_app"
+    ],
+    "recommendation": "Fix desktop startup blockers before packaging or launch-candidate freeze.",
+    "status": "STOP",
+    "warnings": [
+      "prior_launch_hardening_stop_go_is_STOP",
+      "prior_platform_smoke_is_STOP"
+    ]
+  },
+  "verify_urls": [
+    "http://127.0.0.1:8000/docs",
+    "http://127.0.0.1:8000/operator/dashboard/state",
+    "http://127.0.0.1:8000/operator/search/capabilities",
+    "http://127.0.0.1:8000/platform/launch-hardening",
+    "http://127.0.0.1:8000/desktop/startup"
+  ],
+  "version": "v17.78"
+}

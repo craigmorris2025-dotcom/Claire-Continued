@@ -1,64 +1,46 @@
 """
-Orchestrator for governed live research runs
-============================================
-ACS2-Claire / Syntalion
+Claire Syntalion structural placeholder repair.
 
-Module: src.claire.research.live.governed_live_research
-Role: Orchestrator for governed live research runs
+This module was syntactically invalid and was neutralized by
+v19 Structural Repair Pack 1.1 so project-wide syntax checks and backend startup
+can proceed.
+
+This is not a production implementation.
+
+Original syntax error:
+- line: 35
+- message: invalid syntax
+- text: raise NotImplementedError
 """
 
-import json
-import logging
-from datetime import datetime
-from pathlib import Path
-from dataclasses import dataclass, field
-from typing import Any, Optional
+from __future__ import annotations
 
-logger = logging.getLogger(__name__)
+from typing import Any
 
 
 class GovernedLiveResearch:
-    """
-    Orchestrator for governed live research runs
+    """Non-executing placeholder pending real implementation."""
 
-    Orchestrates full pipeline: source discovery -> verification -> evidence scoring -> conflict resolution -> claim verification -> packet assembly.
-    Depends on all sibling modules.
-    Emits structured JSON to data/research/live_packets/..
-    """
+    implemented = False
+    structural_placeholder = True
 
-    def __init__(self):
-        self.logger = logging.getLogger(self.__class__.__name__)
-        self.logger.info(f"{self.__class__.__name__} initialized")
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        self.args = args
+        self.kwargs = kwargs
 
-    def execute_research(query:
-        """Returns Any."""
-        raise NotImplementedError
+    def run(self, *args: Any, **kwargs: Any) -> dict[str, Any]:
+        return build_placeholder_status()
 
-    def config):
-        """Returns ResearchPacket."""
-        raise NotImplementedError
 
-    def validate_sources(sources):
-        """Returns VerificationResult."""
-        raise NotImplementedError
+def build_placeholder_status() -> dict[str, Any]:
+    return {
+        "status": "not_implemented",
+        "module": __name__,
+        "structural_placeholder": True,
+        "implemented": False,
+        "message": "Placeholder repaired for syntax stability only.",
+    }
 
-    def build_citation_chain(findings):
-        """Returns CitationLineage."""
-        raise NotImplementedError
 
-    def score_evidence(evidence_list):
-        """Returns QualityReport."""
-        raise NotImplementedError
-
-    def resolve_conflicts(conflicting_claims):
-        """Returns ResolutionReport."""
-        raise NotImplementedError
-
-    def verify_claims(claims):
-        """Returns VerificationReport."""
-        raise NotImplementedError
-
-    def package_results(results):
-        """Returns ResearchPacket."""
-        raise NotImplementedError
-
+def run(*args: Any, **kwargs: Any) -> dict[str, Any]:
+    return build_placeholder_status()

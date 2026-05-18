@@ -1,0 +1,33 @@
+{
+  "version": "v19.89.8-S149-S155-missing-contract-fields-repair",
+  "installed_at": "2026-05-15T18:46:31.951582+00:00",
+  "repair_only": true,
+  "purpose": "Adds exact missing fields identified by symptom report for tests/test_s149_s155_live_payload_visibility.py.",
+  "patched_files": [
+    "claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+    "src\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py"
+  ],
+  "fields_added": [
+    "payload_key",
+    "visible_panel_keys",
+    "rules",
+    "stable_top_level_keys",
+    "stable_panel_keys",
+    "panel_count",
+    "checks",
+    "forward_motion_allowed",
+    "remaining_countdown"
+  ],
+  "authority_locks": {
+    "runtime_truth_write": false,
+    "runtime_mutation": false,
+    "automatic_updates": false,
+    "autonomous_execution": false,
+    "continuous_crawling": false
+  },
+  "recommended_commands": [
+    "pytest tests/test_s149_s155_missing_contract_fields_repair.py -q",
+    "pytest tests/test_s149_s155_live_payload_visibility.py -q",
+    "pytest"
+  ]
+}

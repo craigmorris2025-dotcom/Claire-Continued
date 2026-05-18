@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claire Modern Cockpit Shell</title>
+    <link rel="stylesheet" href="./claire_modern_cockpit_shell.css" />
+  \n<link rel="stylesheet" href="cockpit/safe_workflow_panel.css">\n<script src="cockpit/safe_workflow_panel.js" defer></script>\n  <!-- CLAIRE_S985_S1012_ACTIVE_CONTROL_SURFACE -->
+  <link rel="stylesheet" href="/api/cockpit/control-surface/assets/css" data-claire-s985-s1012="active-control-surface">
+</head>
+  <body data-runtime-truth-mutation-allowed="false" data-operator-mutation-enabled="false">
+    <main class="claire-modern-cockpit-shell">
+      <header class="claire-command-status-zone">
+        <h1>Claire Syntalion</h1>
+        <p>Modern cockpit shell: backend-owned truth, presentation-only UI.</p>
+      </header>
+
+      <section id="modern-command-status" class="claire-modern-zone" data-zone-id="command_status"></section>
+      <section id="modern-operator-surfaces" class="claire-modern-zone" data-zone-id="operator_surfaces"></section>
+      <section id="modern-evidence-review" class="claire-modern-zone" data-zone-id="evidence_review"></section>
+      <section id="modern-system-health" class="claire-modern-zone" data-zone-id="system_health"></section>
+    </main>
+
+    <script type="module" src="./claire_modern_cockpit_shell.js"></script>
+    <script src="/api/cockpit/control-surface/assets/js" defer data-claire-s985-s1012="active-control-surface"></script>
+</body>
+</html>

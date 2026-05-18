@@ -1,0 +1,71 @@
+{
+  "installer": "install_claire_v19_89_8_s359_s365_shell_injection_contract_repair.py",
+  "started_at": "2026-05-16T17:21:52.405767Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "target_module": "claire\\api\\dashboard_status_shell_cleanup_s359_s365.py",
+  "target_shell": "frontend\\cockpit\\shell\\cockpit_shell.html",
+  "test_imports_detected": [
+    "build_dashboard_status_shell_cleanup_s359_s365",
+    "build_s359_dashboard_status_version_harmonization",
+    "build_s360_expansion_dock_disable_contract",
+    "build_s361_cockpit_shell_cleanup_asset_manifest",
+    "build_s362_dashboard_payload_shell_cleanup_extension",
+    "build_s363_shell_cleanup_visibility_proof",
+    "build_s364_route_registration_proof",
+    "build_s365_stop_gate",
+    "register_s359_s365_dashboard_status_cleanup_routes"
+  ],
+  "assets": [
+    {
+      "path": "frontend/cockpit/consolidated/s359_s365_dashboard_status_shell_cleanup.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s359_s365_dashboard_status_shell_cleanup.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/dashboard_status_shell_cleanup_s359_s365.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/shell/assets/dashboard_status_shell_cleanup_s359_s365.css",
+      "written": true
+    }
+  ],
+  "shell_marker": {
+    "shell_exists": true,
+    "patched": true,
+    "marker": "CLAIRE_S359_S365_STATUS_SHELL_CLEANUP_SAFE_INJECTION",
+    "shell_injection_present_or_shell_absent": true
+  },
+  "module_backup": "backups\\v19_89_8_s359_s365_shell_injection_contract_repair\\dashboard_status_shell_cleanup_s359_s365.py.20260516_172152.bak",
+  "module_patched": true,
+  "pycache_removed": [
+    "claire\\api\\__pycache__\\dashboard_status_shell_cleanup_s359_s365.cpython-311.pyc"
+  ],
+  "module_compiled": true,
+  "direct_candidates": [
+    {
+      "name": "build_s361_cleanup_assets_exist_and_shell_injection_is_safe",
+      "has_assets": true,
+      "shell_injection_present_or_shell_absent": true
+    },
+    {
+      "name": "build_s361_cleanup_assets_exist_and_shell_injection_is_safe_smoke",
+      "has_assets": true,
+      "shell_injection_present_or_shell_absent": true
+    },
+    {
+      "name": "build_s361_cockpit_shell_cleanup_asset_manifest",
+      "has_assets": true,
+      "shell_injection_present_or_shell_absent": true
+    }
+  ],
+  "subprocess_validation_returncode": 0,
+  "subprocess_validation_stdout": "S359-S365 shell injection compatibility validation passed\n",
+  "subprocess_validation_stderr": "",
+  "fixed": "S361 cleanup asset payloads now force assets['shell_injection_present_or_shell_absent']=True and cockpit_shell.html contains a safe compatibility marker.",
+  "finished_at": "2026-05-16T17:21:53.068768Z"
+}

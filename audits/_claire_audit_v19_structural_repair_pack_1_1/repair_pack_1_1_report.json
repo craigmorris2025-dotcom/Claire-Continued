@@ -1,0 +1,464 @@
+{
+  "after_app_syntax_failure_count": 38,
+  "app_repair": {
+    "action": "removed_malformed_router_mount",
+    "changed": true,
+    "exists": true,
+    "path": "claire/app.py",
+    "removed_lines": 1,
+    "syntax_after": "ok"
+  },
+  "backup_dir": "backups/v19_structural_repair_pack_1_1_backend_syntax/20260510_150647",
+  "build_name": "Backend Syntax Startup Repair + Placeholder Syntax Neutralization",
+  "final_syntax_failure_count": 4,
+  "generated_at": "2026-05-10T20:06:54.316834Z",
+  "initial_syntax_failure_count": 39,
+  "notes": [
+    "No feature build was performed.",
+    "Dashboard wiring was not changed.",
+    "Malformed v19.25 app router mount was removed, not re-mounted.",
+    "Generated placeholders were repaired for syntax only and remain non-executing."
+  ],
+  "placeholder_repairs": [
+    {
+      "changed": true,
+      "original_error": {
+        "line": 50,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/autonomous/governance/autonomous_action_policy.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/autonomous/governance/autonomous_action_policy.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/autonomous/governance/escalation_boundary.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/autonomous/governance/escalation_boundary.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 42,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/autonomous/governance/human_review_gate.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/autonomous/governance/human_review_gate.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 43,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/autonomous/governance/self_change_permission_model.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/autonomous/governance/self_change_permission_model.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/design/proof/build_sequence_validator.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/design/proof/build_sequence_validator.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 41,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/design/proof/deployment_model_validator.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/design/proof/deployment_model_validator.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 46,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/design/proof/implementation_cost_model.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/design/proof/implementation_cost_model.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 46,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/design/renderers/architecture_graph_formatter.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/design/renderers/architecture_graph_formatter.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 33,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/design/renderers/blueprint_summary_formatter.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/design/renderers/blueprint_summary_formatter.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 41,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/design/renderers/dependency_graph_formatter.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/design/renderers/dependency_graph_formatter.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/design/renderers/design_export_formatter.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/design/renderers/design_export_formatter.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 58,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/recursive/longitudinal/learning_signal_extractor.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/recursive/longitudinal/learning_signal_extractor.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 43,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/recursive/longitudinal/run_pattern_miner.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/recursive/longitudinal/run_pattern_miner.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/recursive/longitudinal/strategy_memory_synthesizer.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/recursive/longitudinal/strategy_memory_synthesizer.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/recursive/longitudinal/thesis_evolution_tracker.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/recursive/longitudinal/thesis_evolution_tracker.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/research/live/citation_lineage_engine.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/research/live/citation_lineage_engine.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 33,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/research/live/claim_verifier.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/research/live/claim_verifier.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 61,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/research/live/evidence_conflict_resolver.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/research/live/evidence_conflict_resolver.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 35,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/research/live/governed_live_research.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/research/live/governed_live_research.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/research/live/research_packet_builder.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/research/live/research_packet_builder.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/research/live/source_verification_engine.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/research/live/source_verification_engine.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 33,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/technology/compatibility_engine.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/technology/compatibility_engine.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 38,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/technology/component_matcher.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/technology/component_matcher.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 37,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/technology/enterprise_stack_recommender.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/technology/enterprise_stack_recommender.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 42,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/technology/integration_complexity.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/technology/integration_complexity.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 49,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/technology/model_governance_assessor.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/technology/model_governance_assessor.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 45,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/technology/technology_catalog.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/technology/technology_catalog.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 52,
+        "message": "unmatched ']'",
+        "offset": 16,
+        "path": "claire/validation/benchmarks/benchmark_dataset_loader.py",
+        "text": "def Dataset]:"
+      },
+      "path": "claire/validation/benchmarks/benchmark_dataset_loader.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/validation/benchmarks/benchmark_reporter.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/validation/benchmarks/benchmark_reporter.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 41,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/validation/benchmarks/false_negative_analyzer.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/validation/benchmarks/false_negative_analyzer.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 42,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/validation/benchmarks/false_positive_analyzer.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/validation/benchmarks/false_positive_analyzer.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/validation/benchmarks/outcome_label_manager.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/validation/benchmarks/outcome_label_manager.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/validation/benchmarks/regime_backtester.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/validation/benchmarks/regime_backtester.py",
+      "syntax_after": "ok"
+    },
+    {
+      "changed": true,
+      "original_error": {
+        "line": 34,
+        "message": "invalid syntax",
+        "offset": 9,
+        "path": "claire/validation/benchmarks/signal_backtester.py",
+        "text": "raise NotImplementedError"
+      },
+      "path": "claire/validation/benchmarks/signal_backtester.py",
+      "syntax_after": "ok"
+    }
+  ],
+  "remaining_syntax_failures": [
+    {
+      "line": 1,
+      "message": "invalid non-printable character U+FEFF",
+      "offset": 1,
+      "path": "tests/regression/test_runtime_cleanroom.py",
+      "text": "﻿from pathlib import Path"
+    },
+    {
+      "line": 1,
+      "message": "invalid non-printable character U+FEFF",
+      "offset": 1,
+      "path": "tests/regression/test_runtime_smoke.py",
+      "text": "﻿from tools.active_runtime_check import main as runtime_check_main"
+    },
+    {
+      "line": 1,
+      "message": "invalid non-printable character U+FEFF",
+      "offset": 1,
+      "path": "tools/master_control_layer_builder.py",
+      "text": "﻿#!/usr/bin/env python3"
+    },
+    {
+      "line": 71,
+      "message": "unterminated string literal (detected at line 71)",
+      "offset": 11,
+      "path": "tools/pytest_consistency_audit.py",
+      "text": "print(f\""
+    }
+  ],
+  "stop_go": "STOP_REMAINING_SYNTAX_FAILURES",
+  "version": "v19-structural-repair-pack-1.1"
+}

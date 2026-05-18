@@ -1,0 +1,18 @@
+{
+  "version": "v19.84.6",
+  "build": "Critical Route Consolidation Plan",
+  "installed_at": "2026-05-12T14:59:55.129417+00:00",
+  "purpose": "Convert duplicate/missing critical route findings into a safe route consolidation action plan.",
+  "runtime_mutation": "none",
+  "files_written": [
+    "tools/critical_route_consolidation_plan.py",
+    "tests/test_v19_84_6_critical_route_consolidation_plan.py",
+    "docs/builds/v19_84_6_critical_route_consolidation_plan.md",
+    "data/build_artifacts/v19_84_6_critical_route_consolidation_plan.json"
+  ],
+  "commands": [
+    "python tools/critical_route_consolidation_plan.py",
+    "pytest tests/test_v19_84_6_critical_route_consolidation_plan.py -q"
+  ],
+  "next_build": "v19.84.7 based on generated consolidation plan"
+}

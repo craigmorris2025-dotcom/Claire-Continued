@@ -1,0 +1,11 @@
+{
+  "version": "19.87.4.2",
+  "phase": "continuous_runtime_compatibility_bridge",
+  "lane": "v19.87.x",
+  "updated_at": "2026-05-12T17:04:09.922504+00:00",
+  "notes": [
+    "Restored claire.continuous_runtime.cycle compatibility path.",
+    "Bridged legacy cycle imports to v19.87 governed scheduler contracts.",
+    "No cockpit, route, evidence, or runtime truth mutation."
+  ]
+}

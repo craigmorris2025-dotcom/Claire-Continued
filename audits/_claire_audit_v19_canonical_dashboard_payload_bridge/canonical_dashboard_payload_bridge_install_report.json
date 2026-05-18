@@ -1,0 +1,32 @@
+{
+  "app_mount": {
+    "changed": true,
+    "exists": true,
+    "marker_present_before": false,
+    "path": "claire/app.py",
+    "syntax_after": "ok"
+  },
+  "backup_dir": "backups/v19_canonical_dashboard_payload_bridge/20260510_151548",
+  "build_name": "Canonical Dashboard Payload Bridge",
+  "files_written": [
+    {
+      "path": "claire/api/dashboard_payload_bridge.py",
+      "syntax": "ok",
+      "written": true
+    },
+    {
+      "path": "tests/test_v19_canonical_dashboard_payload_bridge.py",
+      "syntax": "ok",
+      "written": true
+    }
+  ],
+  "generated_at": "2026-05-10T20:15:48.936868Z",
+  "notes": [
+    "This pack adds a read-only canonical dashboard payload bridge.",
+    "No live web execution is enabled.",
+    "No runtime truth mutation is enabled.",
+    "No automatic update execution is enabled."
+  ],
+  "stop_go": "GO_DASHBOARD_PAYLOAD_BRIDGE_INSTALLED",
+  "version": "v19-canonical-dashboard-payload-bridge"
+}

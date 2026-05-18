@@ -1,0 +1,58 @@
+.claire-knowledge-base-registry-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+  margin: 14px 0;
+  background: rgba(9, 16, 28, 0.76);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+.claire-kb-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.claire-kb-panel-header small,
+.claire-knowledge-base-registry-panel footer {
+  opacity: 0.7;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.claire-kb-panel-body {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.claire-kb-source-card {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.claire-kb-card-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.claire-kb-card-topline span {
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+}
+
+.claire-kb-source-card p {
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.claire-kb-source-card small {
+  opacity: 0.72;
+}

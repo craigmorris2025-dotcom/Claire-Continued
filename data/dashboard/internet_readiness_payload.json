@@ -1,0 +1,89 @@
+{
+  "blockers": [],
+  "generated_at": "2026-05-13T11:18:57.470157Z",
+  "internet_layer_scores": {
+    "dynamic_source_trust": {
+      "out_of": 2,
+      "score": 2,
+      "status": "present"
+    },
+    "governed_campaign_scheduler": {
+      "out_of": 3,
+      "score": 3,
+      "status": "present"
+    },
+    "governed_connectivity": {
+      "out_of": 2,
+      "score": 2,
+      "status": "present"
+    },
+    "internet_activation": {
+      "out_of": 3,
+      "score": 3,
+      "status": "present"
+    },
+    "internet_operations_dashboard": {
+      "out_of": 2,
+      "score": 2,
+      "status": "present"
+    },
+    "internet_runtime_integration": {
+      "out_of": 4,
+      "score": 4,
+      "status": "present"
+    },
+    "internet_runtime_stability": {
+      "out_of": 3,
+      "score": 3,
+      "status": "present"
+    },
+    "live_connectivity": {
+      "out_of": 2,
+      "score": 1,
+      "status": "present"
+    },
+    "persistent_internet_campaigns": {
+      "out_of": 2,
+      "score": 2,
+      "status": "present"
+    }
+  },
+  "mode": "static_verification_no_internet_calls",
+  "provider_key_present": false,
+  "readiness": {
+    "automatic_updates_enabled": false,
+    "live_internet_enabled": false,
+    "requires_v17_71_to_v17_74_update_pack_governance": true,
+    "safe_for_automatic_updates": false,
+    "safe_to_attempt_live_probe_after_operator_review": false,
+    "static_internet_readiness": true
+  },
+  "status": "warning",
+  "unknown_domains_blocked_or_unspecified": true,
+  "update_governance_scores": {
+    "rollback": {
+      "out_of": 2,
+      "score": 1,
+      "status": "present"
+    },
+    "safe_installer": {
+      "out_of": 1,
+      "score": 1,
+      "status": "present"
+    },
+    "update_orchestrator": {
+      "out_of": 2,
+      "score": 1,
+      "status": "present"
+    },
+    "validation_gauntlet": {
+      "out_of": 1,
+      "score": 1,
+      "status": "present"
+    }
+  },
+  "version": "v17.70",
+  "warnings": [
+    "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+  ]
+}

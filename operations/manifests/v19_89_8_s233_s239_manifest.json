@@ -1,0 +1,19 @@
+{
+  "version": "v19.89.8-S233-S239",
+  "installed_at": "2026-05-15T16:16:01.167282+00:00",
+  "stage_pack": "S233-S239",
+  "purpose": "Safe frontend fetch map, card-region binding, disabled-button behavior, and endpoint health visibility.",
+  "files": [
+    "claire/api/cockpit_fetch_map_contract.py",
+    "claire/api/cockpit_card_region_binding.py",
+    "claire/api/cockpit_disabled_button_behavior.py",
+    "claire/api/cockpit_endpoint_health_visibility.py",
+    "tests/test_s233_s239_fetch_map_contract.py",
+    "tests/test_s233_s239_card_region_binding.py",
+    "tests/test_s233_s239_disabled_buttons_and_health.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s233_s239_fetch_map_contract.py tests/test_s233_s239_card_region_binding.py tests/test_s233_s239_disabled_buttons_and_health.py -q",
+    "pytest"
+  ]
+}

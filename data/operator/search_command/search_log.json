@@ -1,0 +1,1630 @@
+{
+  "records": [
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T00:25:46.529694Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 15098,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-08T20:46:44.402575\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 7510,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-08T20:46:42.971099\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"act",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 571,
+          "snippet": "{ \"dashboard\": \"live_runtime_dashboard_state\", \"version\": \"v16.30\", \"created_at\": \"2026-05-08T20:46:57.671187\", \"status\": \"degraded\", \"runtime_health\": { \"active_runtime_check\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-08T20:46:57.127319\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"impor",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 566,
+          "snippet": "{ \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-08T20:46:53.880662\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"imports\\\": [\\n {\\n",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 538,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-08T20:46:56.188659\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 8722, \"category_counts\": { \"supporting\": 3344, \"protected_runtime\": 1, \"install_record\": 218, \"disabled_or_archived\": 101, \"documentation\": 129, \"generated\": 4619, \"active_runtime\": 2, \"active_test\": 308 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\",",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 77,
+          "snippet": "y\", \"claire/online_ops_endgame/industry_standard_readiness_check.py\", \"claire/operational_proof/governance_deployment_lock.py\", \"claire/runtime/enhanced_interface_bridge.py\", \"claire/updater/package_downloader.py\", \"data/buyer/buyer_readiness_checklist.json\", \"data/internet_readiness/internet_readiness_verification.json\", \"data/runtime/live_runtime_dashboard_state.json\", \"data/runtime/master_control_state.json\", \"data/runtime/runtime_control_center.json\", \"data/runtime/runtime_manifest.json\", \"data/runtime/runtime_...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_governance_dashboard.json",
+          "score": 71,
+          "snippet": "\"version\": \"v16.37\", \"created_at\": \"2026-05-08T20:46:39.774122\", \"report_count\": 100, \"entries\": [ { \"report\": \".claire_install/reports/active_runtime_check_20260507_022630.json\", \"installer\": null, \"status\": \"success\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260507_022654.json\", \"installer\": null, \"status\": \"success\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260507_022656.json\", \"installer\": null, \"status\": \"success\" }, { \"report\": \".claire_install/reports/active_runtime_...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 45,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_manifest_index.json",
+          "score": 42,
+          "snippet": "eDrive\\\\Desktop\\\\Claire\\\\claire_v6_0_0_installer.py\", \"status\": null, \"created_at\": null }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013744.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:37:44.824787\" }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013830.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:38:30.255304\" }, { \"path\": \".claire_install/reports/active_runtime_check_202605...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T00:26:13.696046Z",
+      "mode": "runtime",
+      "query": "verify functionality",
+      "result_count": 8,
+      "results": [
+        {
+          "path": "data/dashboard/dashboard_capability_manifest.json",
+          "score": 2,
+          "snippet": "hardening\", \"launch_regression_lock\", \"dashboard_action_buttons\" ], \"dashboard_buttons\": [ { \"category\": \"Runtime\", \"description\": \"Verify the running backend health endpoint.\", \"governance_scope\": \"dashboard_runtime_alignment\", \"id\": \"health_check\", \"label\": \"Check Runtime Health\", \"method\": \"GET\", \"requires_confirmation\": false, \"route\": \"/health\" }, { \"category\": \"Dashboard\", \"description\": \"Compare dashboard surfaces to installed governed runtime capabilities.\", \"governance_scope\": \"dashboard_runtime_alignment\"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/proof/full_end_to_end_proof_pack.json",
+          "score": 2,
+          "snippet": "\"warnings\": [ \"invention_route_requires_higher_feasibility_threshold\", \"package_not_ready_for_final_package\" ] }, \"dashboard_functionality\": { \"api_wired\": true, \"dashboard_exists\": true, \"missing_surfaces\": [], \"status\": \"passed\", \"validation_report_passed\": true }, \"design_portal\": { \"design_portal_exists\": true, \"design_portal_status\": \"contract_ready\", \"status\": \"passed\", \"validation_report_passed\": true }, \"internet_readiness\": { \"automatic_updates_enabled\": false, \"blockers\": [], \"internet_status\": \"warning\",...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/full_e2e_proof_pack_payload.json",
+          "score": 1,
+          "snippet": "{ \"domain_status\": { \"autodesign_handoff\": \"passed\", \"buildability_validation\": \"passed\", \"dashboard_functionality\": \"passed\", \"design_portal\": \"passed\", \"internet_readiness\": \"passed\", \"route_integrity\": \"passed\", \"runtime_truth\": \"passed\", \"safety_locks\": \"passed\", \"update_governance\": \"passed\" }, \"generated_at\": \"2026-05-10T00:08:52.473809Z\", \"governance\": { \"autodesign_design_portal_first_class\": true, \"automatic_updates_disabled\": true, \"discovery_breakthrough_innovation_first_class\": true, \"live_internet_disa...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/operator_dashboard_state.json",
+          "score": 1,
+          "snippet": "on Operator Cockpit\" }, \"proof\": { \"domain_status\": { \"autodesign_handoff\": \"passed\", \"buildability_validation\": \"passed\", \"dashboard_functionality\": \"passed\", \"design_portal\": \"passed\", \"internet_readiness\": \"passed\", \"route_integrity\": \"passed\", \"runtime_truth\": \"passed\", \"safety_locks\": \"passed\", \"update_governance\": \"passed\" }, \"launch_readiness\": { \"automatic_updates_enabled\": false, \"automatic_updates_ready\": false, \"background_execution_enabled\": false, \"dashboard_ready_for_manual_review\": true, \"internet_st...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/update_packs/rollback_plans/rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch.json",
+          "score": 1,
+          "snippet": "}, { \"command\": \"dir backups/update_pack_rollbacks/rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch\", \"name\": \"Verify rollback backup exists\", \"required\": true, \"step\": 2 }, { \"command\": \"python tools/rollback_restore.py --plan rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch\", \"name\": \"Restore files from rollback backup\", \"required\": true, \"status\": \"contract_only_tool_may_not_exist_yet\", \"step\": 3 }, { \"command\": \"python -m pytest tests/test_v17_72...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/update_packs/rollback_plans/rollback_plan_20260510_000152_update_pack_20260509_235947_update_governance_patch.json",
+          "score": 1,
+          "snippet": "}, { \"command\": \"dir backups/update_pack_rollbacks/rollback_plan_20260510_000152_update_pack_20260509_235947_update_governance_patch\", \"name\": \"Verify rollback backup exists\", \"required\": true, \"step\": 2 }, { \"command\": \"python tools/rollback_restore.py --plan rollback_plan_20260510_000152_update_pack_20260509_235947_update_governance_patch\", \"name\": \"Restore files from rollback backup\", \"required\": true, \"status\": \"contract_only_tool_may_not_exist_yet\", \"step\": 3 }, { \"command\": \"python -m pytest tests/test_v17_72...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/proof/v17_75_full_e2e_proof_pack_validation_result.json",
+          "score": 1,
+          "snippet": "{ \"domain_status\": { \"autodesign_handoff\": \"passed\", \"buildability_validation\": \"passed\", \"dashboard_functionality\": \"passed\", \"design_portal\": \"passed\", \"internet_readiness\": \"passed\", \"route_integrity\": \"passed\", \"runtime_truth\": \"passed\", \"safety_locks\": \"passed\", \"update_governance\": \"passed\" }, \"errors\": [], \"launch_readiness\": { \"automatic_updates_enabled\": false, \"automatic_updates_ready\": false, \"background_execution_enabled\": false, \"dashboard_ready_for_manual_review\": true, \"internet_static_readiness_revi...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/proof/v17_75_stop_go_report.md",
+          "score": 1,
+          "snippet": "0:08:52.473809Z Status: **GO_WITH_WARNINGS** Recommendation: Proceed only to manual review. Do not enable automatic updates. ## Domain Status - **dashboard_functionality**: passed - **runtime_truth**: passed - **route_integrity**: passed - **autodesign_handoff**: passed - **design_portal**: passed - **buildability_validation**: passed - **internet_readiness**: passed - **update_governance**: passed - **safety_locks**: passed ## Safety Locks - Live internet remains disabled. - Automatic updates remain disabled. - Ba...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T00:33:18.477245Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 3,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 15098,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-08T20:46:44.402575\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 7510,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-08T20:46:42.971099\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"act",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T00:33:32.334796Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 3,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 15098,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-08T20:46:44.402575\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 7510,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-08T20:46:42.971099\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"act",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T00:33:38.771799Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 3,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 15098,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-08T20:46:44.402575\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 7510,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-08T20:46:42.971099\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"act",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T00:33:45.462955Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 3,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 15098,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-08T20:46:44.402575\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 7510,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-08T20:46:42.971099\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"act",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T00:33:52.096102Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 3,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 15098,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-08T20:46:44.402575\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 7510,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-08T20:46:42.971099\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"act",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T01:47:26.108594Z",
+      "mode": "runtime",
+      "query": "are you functional",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 1226,
+          "snippet": "chived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\",",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 612,
+          "snippet": "bled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 468,
+          "snippet": "bled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 311,
+          "snippet": "nderwriting\" ], \"name\": \"Verisk\", \"rationale\": [ \"matches market-gap acquirer category\", \"focus areas match opportunity requirements\", \"candidate sector is allowed for detected sector\", \"candidate likely sells into relevant buyer segment\" ], \"sector\": \"insurance analytics / risk data\", \"ticker\": \"VRSK\", \"type\": \"strategic\" }, { \"fit_dimensions\": { \"buyer_segment_fit\": 0.105, \"category_alignment\": 0.11, \"focus_alignment\": 0.108, \"sector_fit\": 0.1,",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 311,
+          "snippet": "nderwriting\" ], \"name\": \"Verisk\", \"rationale\": [ \"matches market-gap acquirer category\", \"focus areas match opportunity requirements\", \"candidate sector is allowed for detected sector\", \"candidate likely sells into relevant buyer segment\" ], \"sector\": \"insurance analytics / risk data\", \"ticker\": \"VRSK\", \"type\": \"strategic\" }, { \"fit_dimensions\": { \"buyer_segment_fit\": 0.105, \"category_alignment\": 0.11, \"focus_alignment\": 0.108, \"sector_fit\": 0.1,",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 156,
+          "snippet": "ry\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 156,
+          "snippet": "\"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 156,
+          "snippet": "ry\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 69,
+          "snippet": "\"What must be built for this discovery to become a viable solution?\", \"Which components, dependencies, data, models, interfaces, or infrastructure are required?\", \"What evidence is still missing before design output can be trusted?\" ], \"component_targets\": [], \"design_portal_required\": true, \"intended_function\": \"to_be_derived_from_discovery_and_advancement_path\", \"invention_need\": \"{\\\"design_portal\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"inputs\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"keywords\\\": [\\\"evaluate\\\", \\\"climate\\\", \\\"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/design_portal_output_payload.json",
+          "score": 49,
+          "snippet": "lytics platforms\\\", \\\"catastrophe modeling companies\\\", \\\"reinsurers\\\", \\\"risk data providers\\\", \\\"climate risk intelligence companies\\\", \\\"insurance core software platforms\\\", \\\"insurance brokers\\\"], \\\"buyer_segments\\\": [\\\"insurers\\\", \\\"reinsurers\\\", \\\"underwriting teams\\\", \\\"catastrophe-risk teams\\\", \\\"property risk carriers\\\", \\\"insurance brokers\\\", \\\"public risk pools\\\"], \\\"confidence\\\": \\\"0.8432\\\", \\\"design_implications\\\": [\\\"weather loss ingestion\\\", \\\"proper...\", \"problem_statement\": \"{\\\"confidence\\\": \\\"0.66...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/design_portal/design_portal_output_contract.json",
+          "score": 49,
+          "snippet": "lytics platforms\\\", \\\"catastrophe modeling companies\\\", \\\"reinsurers\\\", \\\"risk data providers\\\", \\\"climate risk intelligence companies\\\", \\\"insurance core software platforms\\\", \\\"insurance brokers\\\"], \\\"buyer_segments\\\": [\\\"insurers\\\", \\\"reinsurers\\\", \\\"underwriting teams\\\", \\\"catastrophe-risk teams\\\", \\\"property risk carriers\\\", \\\"insurance brokers\\\", \\\"public risk pools\\\"], \\\"confidence\\\": \\\"0.8432\\\", \\\"design_implications\\\": [\\\"weather loss ingestion\\\", \\\"proper...\", \"problem_statement\": \"{\\\"confidence\\\": \\\"0.66...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 21,
+          "snippet": "ins_value\": \"false\", \"env_files_present\": { \".env\": true, \".env.example\": true }, \"keys\": { \"BING_SEARCH_API_KEY\": { \"declared_in_env_example\": true, \"declared_in_env_or_process\": false, \"safe_to_print_value\": false, \"value_present\": false }, \"BRAVE_SEARCH_API_KEY\": { \"declared_in_env_example\": true, \"declared_in_env_or_process\": false, \"safe_to_print_value\": false, \"value_present\": false }, \"CLAIRE_INTERNET_ALLOW_UNKNOWN_DOMAINS\": { \"declared_in_env_example\": true, \"declared_in_env_or_process\": false, \"safe_to_pri...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T01:48:56.544401Z",
+      "mode": "runtime",
+      "query": "are you functional",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 1226,
+          "snippet": "chived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\",",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 612,
+          "snippet": "bled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 468,
+          "snippet": "bled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 311,
+          "snippet": "nderwriting\" ], \"name\": \"Verisk\", \"rationale\": [ \"matches market-gap acquirer category\", \"focus areas match opportunity requirements\", \"candidate sector is allowed for detected sector\", \"candidate likely sells into relevant buyer segment\" ], \"sector\": \"insurance analytics / risk data\", \"ticker\": \"VRSK\", \"type\": \"strategic\" }, { \"fit_dimensions\": { \"buyer_segment_fit\": 0.105, \"category_alignment\": 0.11, \"focus_alignment\": 0.108, \"sector_fit\": 0.1,",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 311,
+          "snippet": "nderwriting\" ], \"name\": \"Verisk\", \"rationale\": [ \"matches market-gap acquirer category\", \"focus areas match opportunity requirements\", \"candidate sector is allowed for detected sector\", \"candidate likely sells into relevant buyer segment\" ], \"sector\": \"insurance analytics / risk data\", \"ticker\": \"VRSK\", \"type\": \"strategic\" }, { \"fit_dimensions\": { \"buyer_segment_fit\": 0.105, \"category_alignment\": 0.11, \"focus_alignment\": 0.108, \"sector_fit\": 0.1,",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 156,
+          "snippet": "ry\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 156,
+          "snippet": "\"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 156,
+          "snippet": "ry\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 69,
+          "snippet": "\"What must be built for this discovery to become a viable solution?\", \"Which components, dependencies, data, models, interfaces, or infrastructure are required?\", \"What evidence is still missing before design output can be trusted?\" ], \"component_targets\": [], \"design_portal_required\": true, \"intended_function\": \"to_be_derived_from_discovery_and_advancement_path\", \"invention_need\": \"{\\\"design_portal\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"inputs\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"keywords\\\": [\\\"evaluate\\\", \\\"climate\\\", \\\"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/design_portal_output_payload.json",
+          "score": 49,
+          "snippet": "lytics platforms\\\", \\\"catastrophe modeling companies\\\", \\\"reinsurers\\\", \\\"risk data providers\\\", \\\"climate risk intelligence companies\\\", \\\"insurance core software platforms\\\", \\\"insurance brokers\\\"], \\\"buyer_segments\\\": [\\\"insurers\\\", \\\"reinsurers\\\", \\\"underwriting teams\\\", \\\"catastrophe-risk teams\\\", \\\"property risk carriers\\\", \\\"insurance brokers\\\", \\\"public risk pools\\\"], \\\"confidence\\\": \\\"0.8432\\\", \\\"design_implications\\\": [\\\"weather loss ingestion\\\", \\\"proper...\", \"problem_statement\": \"{\\\"confidence\\\": \\\"0.66...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/design_portal/design_portal_output_contract.json",
+          "score": 49,
+          "snippet": "lytics platforms\\\", \\\"catastrophe modeling companies\\\", \\\"reinsurers\\\", \\\"risk data providers\\\", \\\"climate risk intelligence companies\\\", \\\"insurance core software platforms\\\", \\\"insurance brokers\\\"], \\\"buyer_segments\\\": [\\\"insurers\\\", \\\"reinsurers\\\", \\\"underwriting teams\\\", \\\"catastrophe-risk teams\\\", \\\"property risk carriers\\\", \\\"insurance brokers\\\", \\\"public risk pools\\\"], \\\"confidence\\\": \\\"0.8432\\\", \\\"design_implications\\\": [\\\"weather loss ingestion\\\", \\\"proper...\", \"problem_statement\": \"{\\\"confidence\\\": \\\"0.66...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 21,
+          "snippet": "ins_value\": \"false\", \"env_files_present\": { \".env\": true, \".env.example\": true }, \"keys\": { \"BING_SEARCH_API_KEY\": { \"declared_in_env_example\": true, \"declared_in_env_or_process\": false, \"safe_to_print_value\": false, \"value_present\": false }, \"BRAVE_SEARCH_API_KEY\": { \"declared_in_env_example\": true, \"declared_in_env_or_process\": false, \"safe_to_print_value\": false, \"value_present\": false }, \"CLAIRE_INTERNET_ALLOW_UNKNOWN_DOMAINS\": { \"declared_in_env_example\": true, \"declared_in_env_or_process\": false, \"safe_to_pri...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T01:49:31.457148Z",
+      "mode": "runtime",
+      "query": "gaps for needed solutions for ai mission readiness",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 71980,
+          "snippet": "reated_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-07T02:59:09.811824\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"imports\\\": [\\n {\\n \\\"module\\\": \\\"claire.app\\\",\\n \\\"status\\\": \\\"success\\\"\\n },\\n {\\n \\\"module\\\": \\\"claire.api.routes_pipeline\\\"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 35632,
+          "snippet": "1\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-07T02:59:09.811824\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"imports\\\": [\\n {\\n \\\"module\\\": \\\"claire.app\\\",\\n \\\"status\\\": \\\"success\\\"\\n },\\n {\\n \\\"module\\\": \\\"claire.api.routes_pipe...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 29819,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-08T20:46:53.880662\\\",\\n \\\"status",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 9978,
+          "snippet": "on\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-08T20:46:53.880662\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"imports\\\": [\\n {\\n \\\"module\\\": \\\"claire.app\\\",\\n \\\"status\\\": \\\"success\\\"\\n },\\n {\\n \\\"module\\\": \\\"claire.api...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 9937,
+          "snippet": "\"created_at\": \"2026-05-08T20:46:57.671187\", \"status\": \"degraded\", \"runtime_health\": { \"active_runtime_check\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-08T20:46:57.127319\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"imports\\\": [\\n {\\n \\\"module\\\": \\\"claire.app\\\",\\n \\\"status\\\": \\\"success\\\"\\n },\\n {\\n \\\"module\\\": \\\"claire.api....",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 9858,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-08T20:46:56.188659\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 8722, \"category_counts\": { \"supporting\": 3344, \"protected_runtime\": 1, \"install_record\": 218, \"disabled_or_archived\": 101, \"documentation\": 129, \"generated\": 4619, \"active_runtime\": 2, \"active_test\": 308 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\", \"src/claire/lifecycle\", \"src/claire/engines\", \"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 4252,
+          "snippet": "{ \"contract_version\": \"v17.65\", \"generated_at\": \"2026-05-09T23:39:55.964401Z\", \"missing\": [], \"mission\": { \"confidence\": { \"acquisition\": 0.7660598511556528, \"breakthrough\": 0.9262686678652224, \"lifecycle_gate\": \"complete\", \"overall\": 0.8215113089708963, \"portfolio\": 0.8215113089708963, \"portfolio_optimization\": 0.8225, \"thesis\": 0.721, \"trend\": 0.7074, \"validation\": 0.7444918924393106 }, \"objective\": null, \"run_id\": \"unknown\", \"status\": \"complete\", \"version\": \"v5.90_core_output_contract\" }, \"proof\": { \"autodesign_...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 4252,
+          "snippet": "{ \"contract_version\": \"v17.65\", \"generated_at\": \"2026-05-09T23:39:55.964401Z\", \"missing\": [], \"mission\": { \"confidence\": { \"acquisition\": 0.7660598511556528, \"breakthrough\": 0.9262686678652224, \"lifecycle_gate\": \"complete\", \"overall\": 0.8215113089708963, \"portfolio\": 0.8215113089708963, \"portfolio_optimization\": 0.8225, \"thesis\": 0.721, \"trend\": 0.7074, \"validation\": 0.7444918924393106 }, \"objective\": null, \"run_id\": \"unknown\", \"status\": \"complete\", \"version\": \"v5.90_core_output_contract\" }, \"proof\": { \"autodesign_...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 1492,
+          "snippet": "{ \"autodesign_request\": { \"buildability_questions\": [ \"What must be built for this discovery to become a viable solution?\", \"Which components, dependencies, data, models, interfaces, or infrastructure are required?\", \"What evidence is still missing before design output can be trusted?\" ], \"component_targets\": [], \"design_portal_required\": true, \"intended_function\": \"to_be_derived_from_discovery_and_advancement_path\", \"invention_need\": \"{\\\"design_portal\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"inputs\\\": {\\\"domain\\\": \\\"insur...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/design_portal_output_payload.json",
+          "score": 824,
+          "snippet": "{ \"failures\": [], \"generated_at\": \"2026-05-10T01:17:20.143935Z\", \"package_readiness\": { \"ready_for_final_package\": false, \"requires_operator_review\": true, \"requires_v17_69_validation\": true, \"status\": \"contract_ready_for_validation\" }, \"route\": { \"family\": \"autodesign\", \"handoff_status\": \"already_satisfied\", \"invention_required\": true, \"selected\": \"solution_design\" }, \"section_status\": { \"architecture_summary\": \"ready_for_review\", \"blueprint_summary\": \"contract_defin",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/design_portal/design_portal_output_contract.json",
+          "score": 822,
+          "snippet": "{ \"contract_name\": \"Design Portal Output Contract\", \"failures\": [], \"generated_at\": \"2026-05-10T01:17:20.143935Z\", \"governance\": { \"buildability_validation_required\": true, \"design_portal_is_first_class_route_output\": true, \"missing_inputs_remain_visible\": true, \"no_fake_blueprints\": true, \"operator_review_required\": true }, \"next\": [ \"v17.69 Buildability / Viability / Manufacturability Validation Stack\", \"v17.70 Internet Readiness Verification\" ], \"required_output_sections\": [ \"architecture_summary\", \"blueprint_su...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/autodesign_handoff_payload.json",
+          "score": 587,
+          "snippet": "{ \"autodesign_request\": { \"buildability_questions\": [ \"What must be built for this discovery to become a viable solution?\", \"Which components, dependencies, data, models, interfaces, or infrastructure are required?\", \"What evidence is still missing before design output can be trusted?\" ], \"component_targets\": [], \"design_portal_required\": true, \"intended_function\": \"to_be_derived_from_discovery_and_advancement_path\", \"invention_need\": \"{\\\"design_portal\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"inputs\\\": {\\\"domain\\\": \\\"insur...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T01:49:33.535388Z",
+      "mode": "runtime",
+      "query": "gaps for needed solutions for ai mission readiness",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 71980,
+          "snippet": "reated_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-07T02:59:09.811824\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"imports\\\": [\\n {\\n \\\"module\\\": \\\"claire.app\\\",\\n \\\"status\\\": \\\"success\\\"\\n },\\n {\\n \\\"module\\\": \\\"claire.api.routes_pipeline\\\"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 35632,
+          "snippet": "1\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-07T02:59:09.811824\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"imports\\\": [\\n {\\n \\\"module\\\": \\\"claire.app\\\",\\n \\\"status\\\": \\\"success\\\"\\n },\\n {\\n \\\"module\\\": \\\"claire.api.routes_pipe...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 29819,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-08T20:46:53.880662\\\",\\n \\\"status",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 9978,
+          "snippet": "on\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-08T20:46:53.880662\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"imports\\\": [\\n {\\n \\\"module\\\": \\\"claire.app\\\",\\n \\\"status\\\": \\\"success\\\"\\n },\\n {\\n \\\"module\\\": \\\"claire.api...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 9937,
+          "snippet": "\"created_at\": \"2026-05-08T20:46:57.671187\", \"status\": \"degraded\", \"runtime_health\": { \"active_runtime_check\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-08T20:46:57.127319\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"imports\\\": [\\n {\\n \\\"module\\\": \\\"claire.app\\\",\\n \\\"status\\\": \\\"success\\\"\\n },\\n {\\n \\\"module\\\": \\\"claire.api....",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 9858,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-08T20:46:56.188659\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 8722, \"category_counts\": { \"supporting\": 3344, \"protected_runtime\": 1, \"install_record\": 218, \"disabled_or_archived\": 101, \"documentation\": 129, \"generated\": 4619, \"active_runtime\": 2, \"active_test\": 308 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\", \"src/claire/lifecycle\", \"src/claire/engines\", \"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 4252,
+          "snippet": "{ \"contract_version\": \"v17.65\", \"generated_at\": \"2026-05-09T23:39:55.964401Z\", \"missing\": [], \"mission\": { \"confidence\": { \"acquisition\": 0.7660598511556528, \"breakthrough\": 0.9262686678652224, \"lifecycle_gate\": \"complete\", \"overall\": 0.8215113089708963, \"portfolio\": 0.8215113089708963, \"portfolio_optimization\": 0.8225, \"thesis\": 0.721, \"trend\": 0.7074, \"validation\": 0.7444918924393106 }, \"objective\": null, \"run_id\": \"unknown\", \"status\": \"complete\", \"version\": \"v5.90_core_output_contract\" }, \"proof\": { \"autodesign_...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 4252,
+          "snippet": "{ \"contract_version\": \"v17.65\", \"generated_at\": \"2026-05-09T23:39:55.964401Z\", \"missing\": [], \"mission\": { \"confidence\": { \"acquisition\": 0.7660598511556528, \"breakthrough\": 0.9262686678652224, \"lifecycle_gate\": \"complete\", \"overall\": 0.8215113089708963, \"portfolio\": 0.8215113089708963, \"portfolio_optimization\": 0.8225, \"thesis\": 0.721, \"trend\": 0.7074, \"validation\": 0.7444918924393106 }, \"objective\": null, \"run_id\": \"unknown\", \"status\": \"complete\", \"version\": \"v5.90_core_output_contract\" }, \"proof\": { \"autodesign_...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 1492,
+          "snippet": "{ \"autodesign_request\": { \"buildability_questions\": [ \"What must be built for this discovery to become a viable solution?\", \"Which components, dependencies, data, models, interfaces, or infrastructure are required?\", \"What evidence is still missing before design output can be trusted?\" ], \"component_targets\": [], \"design_portal_required\": true, \"intended_function\": \"to_be_derived_from_discovery_and_advancement_path\", \"invention_need\": \"{\\\"design_portal\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"inputs\\\": {\\\"domain\\\": \\\"insur...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/design_portal_output_payload.json",
+          "score": 824,
+          "snippet": "{ \"failures\": [], \"generated_at\": \"2026-05-10T01:17:20.143935Z\", \"package_readiness\": { \"ready_for_final_package\": false, \"requires_operator_review\": true, \"requires_v17_69_validation\": true, \"status\": \"contract_ready_for_validation\" }, \"route\": { \"family\": \"autodesign\", \"handoff_status\": \"already_satisfied\", \"invention_required\": true, \"selected\": \"solution_design\" }, \"section_status\": { \"architecture_summary\": \"ready_for_review\", \"blueprint_summary\": \"contract_defin",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/design_portal/design_portal_output_contract.json",
+          "score": 822,
+          "snippet": "{ \"contract_name\": \"Design Portal Output Contract\", \"failures\": [], \"generated_at\": \"2026-05-10T01:17:20.143935Z\", \"governance\": { \"buildability_validation_required\": true, \"design_portal_is_first_class_route_output\": true, \"missing_inputs_remain_visible\": true, \"no_fake_blueprints\": true, \"operator_review_required\": true }, \"next\": [ \"v17.69 Buildability / Viability / Manufacturability Validation Stack\", \"v17.70 Internet Readiness Verification\" ], \"required_output_sections\": [ \"architecture_summary\", \"blueprint_su...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/autodesign_handoff_payload.json",
+          "score": 587,
+          "snippet": "{ \"autodesign_request\": { \"buildability_questions\": [ \"What must be built for this discovery to become a viable solution?\", \"Which components, dependencies, data, models, interfaces, or infrastructure are required?\", \"What evidence is still missing before design output can be trusted?\" ], \"component_targets\": [], \"design_portal_required\": true, \"intended_function\": \"to_be_derived_from_discovery_and_advancement_path\", \"invention_need\": \"{\\\"design_portal\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"inputs\\\": {\\\"domain\\\": \\\"insur...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T01:55:47.043193Z",
+      "mode": "runtime",
+      "query": "{   \"query\": \"OpenAI latest research\",   \"confirm_text\": \"RUN GOVERNED WEB PROBE\" }",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 61844,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-08T20:46:44.402575\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 30872,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-08T20:46:42.971099\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-07T02:59:13.137820\", \"status\": \"healthy\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"act",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 20226,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 6748,
+          "snippet": "{ \"dashboard\": \"live_runtime_dashboard_state\", \"version\": \"v16.30\", \"created_at\": \"2026-05-08T20:46:57.671187\", \"status\": \"degraded\", \"runtime_health\": { \"active_runtime_check\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-08T20:46:57.127319\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"impor",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 6745,
+          "snippet": "{ \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-08T20:46:53.880662\\\",\\n \\\"status\\\": \\\"success\\\",\\n \\\"failed_count\\\": 0,\\n \\\"imports\\\": [\\n {\\n",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 6713,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-08T20:46:56.188659\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 8722, \"category_counts\": { \"supporting\": 3344, \"protected_runtime\": 1, \"install_record\": 218, \"disabled_or_archived\": 101, \"documentation\": 129, \"generated\": 4619, \"active_runtime\": 2, \"active_test\": 308 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\",",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 311,
+          "snippet": "\"portfolio_optimization\": 0.8225, \"thesis\": 0.721, \"trend\": 0.7074, \"validation\": 0.7444918924393106 }, \"objective\": null, \"run_id\": \"unknown\", \"status\": \"complete\", \"version\": \"v5.90_core_output_contract\" }, \"proof\": { \"autodesign_design_portal_first_class\": true, \"discovery_breakthrough_innovation_first_class\": true, \"missing_is_visible\": true, \"no_fake_data\": true }, \"raw_keys\": [ \"acquisition\", \"advancement_path\", \"autodesign\", \"breakthrough\", \"confidence\", \"contract_validation\", \"design_output\", \"design_portal...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 311,
+          "snippet": "\"portfolio_optimization\": 0.8225, \"thesis\": 0.721, \"trend\": 0.7074, \"validation\": 0.7444918924393106 }, \"objective\": null, \"run_id\": \"unknown\", \"status\": \"complete\", \"version\": \"v5.90_core_output_contract\" }, \"proof\": { \"autodesign_design_portal_first_class\": true, \"discovery_breakthrough_innovation_first_class\": true, \"missing_is_visible\": true, \"no_fake_data\": true }, \"raw_keys\": [ \"acquisition\", \"advancement_path\", \"autodesign\", \"breakthrough\", \"confidence\", \"contract_validation\", \"design_output\", \"design_portal...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 161,
+          "snippet": "ly\", \"local_desktop_stability\", \"traceable_outputs_required\" ], \"dependencies\": [ \"structured_pipeline_contracts\", \"run_history_store\", \"export_writer\", \"dashboard_api\" ], \"design_type\": \"ai_platform\", \"implementation_phases\": [ \"contract alignment\", \"component mapping\", \"technology selection\", \"validation and package export\" ], \"intended_function\": \"route-aware intelligence/design execution\", \"risks\": [ \"over-routing portfolio outputs into design\", \"technology recommendations without sufficient context\" ], \"select...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 124,
+          "snippet": ", \"source_trust_required\": true }, \"governance_signals\": { \"allowlist\": { \"present\": true, \"sample_paths\": [ \"claire/autonomous_research_ecosystem/source_policy_gate.py\", \"claire/buyer/buyer_readiness_checklist.py\", \"claire/feeds/public_company_live_scan.py\", \"claire/governance/feed_activation_policy.py\", \"claire/governance/governance_init.py\", \"claire/governance/source_allowlist.py\", \"claire/governed_internet_connectivity/source_policy.py\", \"claire/internet_activation/policy.py\", \"claire/internet_readiness/readine...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/v17_65_runtime_truth_validation.json",
+          "score": 115,
+          "snippet": "t_version\": \"v17.64.1\", \"source\": { \"invalid_candidate_count\": 0, \"invalid_candidates_sample\": [], \"raw_available\": true, \"selected_runtime_truth\": \"exports\\\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\\\core_run_output.json\" }, \"status\": \"rebuilt\" }, \"runtime_truth_report\": { \"canonical_path\": \"data/runtime/runtime_truth_canonical.json\", \"contract_version\": \"v17.65\", \"dashboard_truth_path\": \"data/runtime/dashboard_runtime_truth.json\", \"generated_at\": \"2026...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_repair_report.json",
+          "score": 110,
+          "snippet": "{ \"canonical_path\": \"data/runtime/runtime_truth_canonical.json\", \"contract_version\": \"v17.65\", \"dashboard_truth_path\": \"data/runtime/dashboard_runtime_truth.json\", \"generated_at\": \"2026-05-09T23:39:56.034405Z\", \"invalid_candidate_count\": 0, \"invalid_candidates_sample\": [], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthr",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "executed": false,
+      "generated_at": "2026-05-10T04:10:34.492987Z",
+      "governance": {
+        "allowlist_or_quarantine_required": true,
+        "evidence_capture_required": true,
+        "no_hidden_background_browsing": true,
+        "operator_visible_results_required": true,
+        "rate_limits_required": true,
+        "source_trust_required": true
+      },
+      "mode": "web",
+      "query": "are you functional",
+      "reason": "Normal web search mode is prepared, but live web calls remain disabled until governed provider, source trust, quarantine, rate limits, and operator review are active.",
+      "results": [],
+      "status": "prepared_not_executed",
+      "type": "web_search_request",
+      "version": "v17.75.2"
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-10T04:34:23.337725Z",
+      "mode": "runtime",
+      "query": "are you functional",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 1226,
+          "snippet": "chived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\",",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 612,
+          "snippet": "bled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 468,
+          "snippet": "bled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 311,
+          "snippet": "nderwriting\" ], \"name\": \"Verisk\", \"rationale\": [ \"matches market-gap acquirer category\", \"focus areas match opportunity requirements\", \"candidate sector is allowed for detected sector\", \"candidate likely sells into relevant buyer segment\" ], \"sector\": \"insurance analytics / risk data\", \"ticker\": \"VRSK\", \"type\": \"strategic\" }, { \"fit_dimensions\": { \"buyer_segment_fit\": 0.105, \"category_alignment\": 0.11, \"focus_alignment\": 0.108, \"sector_fit\": 0.1,",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 311,
+          "snippet": "nderwriting\" ], \"name\": \"Verisk\", \"rationale\": [ \"matches market-gap acquirer category\", \"focus areas match opportunity requirements\", \"candidate sector is allowed for detected sector\", \"candidate likely sells into relevant buyer segment\" ], \"sector\": \"insurance analytics / risk data\", \"ticker\": \"VRSK\", \"type\": \"strategic\" }, { \"fit_dimensions\": { \"buyer_segment_fit\": 0.105, \"category_alignment\": 0.11, \"focus_alignment\": 0.108, \"sector_fit\": 0.1,",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 156,
+          "snippet": "ry\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 156,
+          "snippet": "\"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 156,
+          "snippet": "ry\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 544 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/prepare-commit-msg.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 1492 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/push-to-checkout.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size_bytes\": 2783 }, { \"path\": \"archive/nested_claire_repo/.git/hooks/sendemail-validate.sample\", \"category\": \"disabled_or_archived\", \"suffix\": \".sample\", \"size...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 69,
+          "snippet": "\"What must be built for this discovery to become a viable solution?\", \"Which components, dependencies, data, models, interfaces, or infrastructure are required?\", \"What evidence is still missing before design output can be trusted?\" ], \"component_targets\": [], \"design_portal_required\": true, \"intended_function\": \"to_be_derived_from_discovery_and_advancement_path\", \"invention_need\": \"{\\\"design_portal\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"inputs\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"keywords\\\": [\\\"evaluate\\\", \\\"climate\\\", \\\"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/design_portal_output_payload.json",
+          "score": 49,
+          "snippet": "lytics platforms\\\", \\\"catastrophe modeling companies\\\", \\\"reinsurers\\\", \\\"risk data providers\\\", \\\"climate risk intelligence companies\\\", \\\"insurance core software platforms\\\", \\\"insurance brokers\\\"], \\\"buyer_segments\\\": [\\\"insurers\\\", \\\"reinsurers\\\", \\\"underwriting teams\\\", \\\"catastrophe-risk teams\\\", \\\"property risk carriers\\\", \\\"insurance brokers\\\", \\\"public risk pools\\\"], \\\"confidence\\\": \\\"0.8432\\\", \\\"design_implications\\\": [\\\"weather loss ingestion\\\", \\\"proper...\", \"problem_statement\": \"{\\\"confidence\\\": \\\"0.66...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/design_portal/design_portal_output_contract.json",
+          "score": 49,
+          "snippet": "lytics platforms\\\", \\\"catastrophe modeling companies\\\", \\\"reinsurers\\\", \\\"risk data providers\\\", \\\"climate risk intelligence companies\\\", \\\"insurance core software platforms\\\", \\\"insurance brokers\\\"], \\\"buyer_segments\\\": [\\\"insurers\\\", \\\"reinsurers\\\", \\\"underwriting teams\\\", \\\"catastrophe-risk teams\\\", \\\"property risk carriers\\\", \\\"insurance brokers\\\", \\\"public risk pools\\\"], \\\"confidence\\\": \\\"0.8432\\\", \\\"design_implications\\\": [\\\"weather loss ingestion\\\", \\\"proper...\", \"problem_statement\": \"{\\\"confidence\\\": \\\"0.66...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 21,
+          "snippet": "ins_value\": \"false\", \"env_files_present\": { \".env\": true, \".env.example\": true }, \"keys\": { \"BING_SEARCH_API_KEY\": { \"declared_in_env_example\": true, \"declared_in_env_or_process\": false, \"safe_to_print_value\": false, \"value_present\": false }, \"BRAVE_SEARCH_API_KEY\": { \"declared_in_env_example\": true, \"declared_in_env_or_process\": false, \"safe_to_print_value\": false, \"value_present\": false }, \"CLAIRE_INTERNET_ALLOW_UNKNOWN_DOMAINS\": { \"declared_in_env_example\": true, \"declared_in_env_or_process\": false, \"safe_to_pri...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "executed": false,
+      "generated_at": "2026-05-10T04:42:25.511615Z",
+      "governance": {
+        "allowlist_or_quarantine_required": true,
+        "evidence_capture_required": true,
+        "no_hidden_background_browsing": true,
+        "operator_visible_results_required": true,
+        "rate_limits_required": true,
+        "source_trust_required": true
+      },
+      "mode": "web",
+      "query": "are you functional",
+      "reason": "Normal web search mode is prepared, but live web calls remain disabled until governed provider, source trust, quarantine, rate limits, and operator review are active.",
+      "results": [],
+      "status": "prepared_not_executed",
+      "type": "web_search_request",
+      "version": "v17.75.2"
+    },
+    {
+      "executed": false,
+      "generated_at": "2026-05-10T05:31:02.129461Z",
+      "governance": {
+        "allowlist_or_quarantine_required": true,
+        "evidence_capture_required": true,
+        "no_hidden_background_browsing": true,
+        "operator_visible_results_required": true,
+        "rate_limits_required": true,
+        "source_trust_required": true
+      },
+      "mode": "web",
+      "query": "google",
+      "reason": "Normal web search mode is prepared, but live web calls remain disabled until governed provider, source trust, quarantine, rate limits, and operator review are active.",
+      "results": [],
+      "status": "prepared_not_executed",
+      "type": "web_search_request",
+      "version": "v17.75.2"
+    },
+    {
+      "executed": false,
+      "generated_at": "2026-05-10T05:31:13.502107Z",
+      "governance": {
+        "allowlist_or_quarantine_required": true,
+        "evidence_capture_required": true,
+        "no_hidden_background_browsing": true,
+        "operator_visible_results_required": true,
+        "rate_limits_required": true,
+        "source_trust_required": true
+      },
+      "mode": "web",
+      "query": "google",
+      "reason": "Normal web search mode is prepared, but live web calls remain disabled until governed provider, source trust, quarantine, rate limits, and operator review are active.",
+      "results": [],
+      "status": "prepared_not_executed",
+      "type": "web_search_request",
+      "version": "v17.75.2"
+    },
+    {
+      "executed": false,
+      "generated_at": "2026-05-10T05:38:44.789335Z",
+      "governance": {
+        "allowlist_or_quarantine_required": true,
+        "evidence_capture_required": true,
+        "no_hidden_background_browsing": true,
+        "operator_visible_results_required": true,
+        "rate_limits_required": true,
+        "source_trust_required": true
+      },
+      "mode": "web",
+      "query": "google",
+      "reason": "Normal web search mode is prepared, but live web calls remain disabled until governed provider, source trust, quarantine, rate limits, and operator review are active.",
+      "results": [],
+      "status": "prepared_not_executed",
+      "type": "web_search_request",
+      "version": "v17.75.2"
+    },
+    {
+      "executed": false,
+      "generated_at": "2026-05-10T05:41:26.564222Z",
+      "governance": {
+        "allowlist_or_quarantine_required": true,
+        "evidence_capture_required": true,
+        "no_hidden_background_browsing": true,
+        "operator_visible_results_required": true,
+        "rate_limits_required": true,
+        "source_trust_required": true
+      },
+      "mode": "web",
+      "query": "google",
+      "reason": "Normal web search mode is prepared, but live web calls remain disabled until governed provider, source trust, quarantine, rate limits, and operator review are active.",
+      "results": [],
+      "status": "prepared_not_executed",
+      "type": "web_search_request",
+      "version": "v17.75.2"
+    },
+    {
+      "executed": false,
+      "generated_at": "2026-05-10T05:58:39.605275Z",
+      "governance": {
+        "allowlist_or_quarantine_required": true,
+        "evidence_capture_required": true,
+        "no_hidden_background_browsing": true,
+        "operator_visible_results_required": true,
+        "rate_limits_required": true,
+        "source_trust_required": true
+      },
+      "mode": "web",
+      "query": "google",
+      "reason": "Normal web search mode is prepared, but live web calls remain disabled until governed provider, source trust, quarantine, rate limits, and operator review are active.",
+      "results": [],
+      "status": "prepared_not_executed",
+      "type": "web_search_request",
+      "version": "v17.75.2"
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-12T17:42:15.314744Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 4511,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-12T12:41:34.063025\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 2247,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-12T12:41:32.661674\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"ac",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 880,
+          "snippet": "{ \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T12:41:51.314581\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-12T12:41:46.886749\\\",\\n \\\"status\\\": \\\"failed\\\",\\n \\\"failed_count\\\": 4,\\n \\\"imports\\\": [\\n {\\n",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 876,
+          "snippet": "{ \"dashboard\": \"live_runtime_dashboard_state\", \"version\": \"v16.30\", \"created_at\": \"2026-05-12T12:41:52.188580\", \"status\": \"degraded\", \"runtime_health\": { \"active_runtime_check\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-12T12:41:51.494582\\\",\\n \\\"status\\\": \\\"failed\\\",\\n \\\"failed_count\\\": 4,\\n \\\"import",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 851,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-12T12:41:51.199580\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 12661, \"category_counts\": { \"supporting\": 6688, \"protected_runtime\": 1, \"install_record\": 6, \"disabled_or_archived\": 17, \"documentation\": 172, \"generated\": 4994, \"active_test\": 783 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\", \"src/claire/lifecycle\",",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 69,
+          "snippet": "controller.py\" ] }, \"degraded\": { \"present\": true, \"sample_paths\": [ \"claire/api/routes_system.py\", \"claire/dashboard/runtime_alignment.py\", \"claire/deployment/health_contract.py\", \"claire/deployment/runtime_hardening.py\", \"claire/distributed_production_runtime/health_dashboard.py\", \"claire/distributed_production_runtime/worker_pool.py\", \"claire/dynamic_source_trust/quarantine.py\", \"claire/dynamic_source_trust/scorer.py\", \"claire/governance/launch_regression_lock.py\", \"claire/governed_web/provider_health_registry.p...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/dashboard_capability_manifest.json",
+          "score": 45,
+          "snippet": "d_aggregation\", \"deployment_hardening\", \"launch_regression_lock\", \"dashboard_action_buttons\" ], \"dashboard_buttons\": [ { \"category\": \"Runtime\", \"description\": \"Verify the running backend health endpoint.\", \"governance_scope\": \"dashboard_runtime_alignment\", \"id\": \"health_check\", \"label\": \"Check Runtime Health\", \"method\": \"GET\", \"requires_confirmation\": false, \"route\": \"/health\" }, { \"category\": \"Dashboard\", \"description\": \"Compare dashboard surfaces to installed governed runtime capabilities.\", \"governance_scope\": \"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 45,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_manifest_index.json",
+          "score": 42,
+          "snippet": "eDrive\\\\Desktop\\\\Claire\\\\claire_v6_0_0_installer.py\", \"status\": null, \"created_at\": null }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013744.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:37:44.824787\" }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013830.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:38:30.255304\" }, { \"path\": \".claire_install/reports/active_runtime_check_202605...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-12T17:51:56.757245Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 5131,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-12T12:51:26.000475\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T12:41:51.314581\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 2557,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-12T12:51:24.708582\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T12:41:51.314581\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"ac",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 891,
+          "snippet": "{ \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T12:51:39.713696\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-12T12:51:35.961103\\\",\\n \\\"status\\\": \\\"failed\\\",\\n \\\"failed_count\\\": 4,\\n \\\"imports\\\": [\\n {\\n",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 887,
+          "snippet": "{ \"dashboard\": \"live_runtime_dashboard_state\", \"version\": \"v16.30\", \"created_at\": \"2026-05-12T12:51:40.579042\", \"status\": \"degraded\", \"runtime_health\": { \"active_runtime_check\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-12T12:51:39.882448\\\",\\n \\\"status\\\": \\\"failed\\\",\\n \\\"failed_count\\\": 4,\\n \\\"import",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 862,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-12T12:51:39.595700\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 12784, \"category_counts\": { \"supporting\": 6695, \"protected_runtime\": 1, \"install_record\": 14, \"disabled_or_archived\": 17, \"documentation\": 172, \"generated\": 5102, \"active_test\": 783 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\", \"src/claire/lifecycle\"",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 72,
+          "snippet": "controller.py\" ] }, \"degraded\": { \"present\": true, \"sample_paths\": [ \"claire/api/routes_system.py\", \"claire/dashboard/runtime_alignment.py\", \"claire/deployment/health_contract.py\", \"claire/deployment/runtime_hardening.py\", \"claire/distributed_production_runtime/health_dashboard.py\", \"claire/distributed_production_runtime/worker_pool.py\", \"claire/dynamic_source_trust/quarantine.py\", \"claire/dynamic_source_trust/scorer.py\", \"claire/governance/launch_regression_lock.py\", \"claire/governed_web/provider_health_registry.p...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/dashboard_capability_manifest.json",
+          "score": 45,
+          "snippet": "d_aggregation\", \"deployment_hardening\", \"launch_regression_lock\", \"dashboard_action_buttons\" ], \"dashboard_buttons\": [ { \"category\": \"Runtime\", \"description\": \"Verify the running backend health endpoint.\", \"governance_scope\": \"dashboard_runtime_alignment\", \"id\": \"health_check\", \"label\": \"Check Runtime Health\", \"method\": \"GET\", \"requires_confirmation\": false, \"route\": \"/health\" }, { \"category\": \"Dashboard\", \"description\": \"Compare dashboard surfaces to installed governed runtime capabilities.\", \"governance_scope\": \"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 45,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_manifest_index.json",
+          "score": 42,
+          "snippet": "eDrive\\\\Desktop\\\\Claire\\\\claire_v6_0_0_installer.py\", \"status\": null, \"created_at\": null }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013744.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:37:44.824787\" }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013830.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:38:30.255304\" }, { \"path\": \".claire_install/reports/active_runtime_check_202605...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-12T18:03:15.655782Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 5177,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-12T13:02:45.456608\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T12:53:54.796395\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 2573,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-12T13:02:43.933247\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T12:53:54.796395\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"ac",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 912,
+          "snippet": "{ \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T13:02:58.873168\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-12T13:02:55.113166\\\",\\n \\\"status\\\": \\\"failed\\\",\\n \\\"failed_count\\\": 4,\\n \\\"imports\\\": [\\n {\\n",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 908,
+          "snippet": "{ \"dashboard\": \"live_runtime_dashboard_state\", \"version\": \"v16.30\", \"created_at\": \"2026-05-12T13:02:59.739907\", \"status\": \"degraded\", \"runtime_health\": { \"active_runtime_check\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-12T13:02:59.045167\\\",\\n \\\"status\\\": \\\"failed\\\",\\n \\\"failed_count\\\": 4,\\n \\\"import",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 883,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-12T13:02:58.751170\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 13028, \"category_counts\": { \"supporting\": 6706, \"protected_runtime\": 1, \"install_record\": 28, \"disabled_or_archived\": 18, \"documentation\": 172, \"generated\": 5318, \"active_test\": 785 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\", \"src/claire/lifecycle\"",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 72,
+          "snippet": "controller.py\" ] }, \"degraded\": { \"present\": true, \"sample_paths\": [ \"claire/api/routes_system.py\", \"claire/dashboard/runtime_alignment.py\", \"claire/deployment/health_contract.py\", \"claire/deployment/runtime_hardening.py\", \"claire/distributed_production_runtime/health_dashboard.py\", \"claire/distributed_production_runtime/worker_pool.py\", \"claire/dynamic_source_trust/quarantine.py\", \"claire/dynamic_source_trust/scorer.py\", \"claire/governance/launch_regression_lock.py\", \"claire/governed_web/provider_health_registry.p...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/dashboard_capability_manifest.json",
+          "score": 45,
+          "snippet": "d_aggregation\", \"deployment_hardening\", \"launch_regression_lock\", \"dashboard_action_buttons\" ], \"dashboard_buttons\": [ { \"category\": \"Runtime\", \"description\": \"Verify the running backend health endpoint.\", \"governance_scope\": \"dashboard_runtime_alignment\", \"id\": \"health_check\", \"label\": \"Check Runtime Health\", \"method\": \"GET\", \"requires_confirmation\": false, \"route\": \"/health\" }, { \"category\": \"Dashboard\", \"description\": \"Compare dashboard surfaces to installed governed runtime capabilities.\", \"governance_scope\": \"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 45,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_manifest_index.json",
+          "score": 42,
+          "snippet": "eDrive\\\\Desktop\\\\Claire\\\\claire_v6_0_0_installer.py\", \"status\": null, \"created_at\": null }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013744.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:37:44.824787\" }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013830.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:38:30.255304\" }, { \"path\": \".claire_install/reports/active_runtime_check_202605...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-13T04:36:57.031735Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 5235,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-12T23:36:10.005893\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T13:06:53.894716\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 2594,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-12T23:36:08.831281\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T13:06:53.894716\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"ac",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 936,
+          "snippet": "{ \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T23:36:24.618906\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-12T23:36:20.871684\\\",\\n \\\"status\\\": \\\"failed\\\",\\n \\\"failed_count\\\": 4,\\n \\\"imports\\\": [\\n {\\n",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 932,
+          "snippet": "{ \"dashboard\": \"live_runtime_dashboard_state\", \"version\": \"v16.30\", \"created_at\": \"2026-05-12T23:36:25.316362\", \"status\": \"degraded\", \"runtime_health\": { \"active_runtime_check\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-12T23:36:24.791909\\\",\\n \\\"status\\\": \\\"failed\\\",\\n \\\"failed_count\\\": 4,\\n \\\"import",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 907,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-12T23:36:24.502230\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 13308, \"category_counts\": { \"supporting\": 6725, \"protected_runtime\": 1, \"install_record\": 44, \"disabled_or_archived\": 35, \"documentation\": 186, \"generated\": 5534, \"active_test\": 783 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\", \"src/claire/lifecycle\"",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 70,
+          "snippet": "ent\": true, \"sample_paths\": [ \"claire/api/routes_cockpit_operational_status.py\", \"claire/api/routes_system.py\", \"claire/dashboard/runtime_alignment.py\", \"claire/deployment/health_contract.py\", \"claire/deployment/runtime_hardening.py\", \"claire/distributed_production_runtime/health_dashboard.py\", \"claire/distributed_production_runtime/worker_pool.py\", \"claire/dynamic_source_trust/quarantine.py\", \"claire/dynamic_source_trust/scorer.py\", \"claire/governance/launch_regression_lock.py\", \"claire/governed_web/provider_healt...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_governance_dashboard.json",
+          "score": 48,
+          "snippet": "\"version\": \"v16.37\", \"created_at\": \"2026-05-12T23:36:05.409967\", \"report_count\": 38, \"entries\": [ { \"report\": \".claire_install/reports/active_runtime_check_20260512_124133.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260512_124141.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260512_124146.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_chec...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/dashboard_capability_manifest.json",
+          "score": 45,
+          "snippet": "d_aggregation\", \"deployment_hardening\", \"launch_regression_lock\", \"dashboard_action_buttons\" ], \"dashboard_buttons\": [ { \"category\": \"Runtime\", \"description\": \"Verify the running backend health endpoint.\", \"governance_scope\": \"dashboard_runtime_alignment\", \"id\": \"health_check\", \"label\": \"Check Runtime Health\", \"method\": \"GET\", \"requires_confirmation\": false, \"route\": \"/health\" }, { \"category\": \"Dashboard\", \"description\": \"Compare dashboard surfaces to installed governed runtime capabilities.\", \"governance_scope\": \"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 45,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-13T04:42:18.614131Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 5279,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-12T23:41:47.327763\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T23:36:24.618906\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 2612,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-12T23:41:46.099760\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T23:36:24.618906\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"ac",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/unified_runtime_dashboard.json",
+          "score": 1673,
+          "snippet": "{ \"dashboard\": \"unified_runtime_dashboard\", \"status\": \"available\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-08T20:46:56.654512\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 0, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-0",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_state.json",
+          "score": 944,
+          "snippet": "{ \"engine\": \"runtime_state_engine\", \"version\": \"v16.31\", \"created_at\": \"2026-05-12T23:42:00.721796\", \"status\": \"degraded\", \"checks\": { \"active_runtime\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-12T23:41:56.984787\\\",\\n \\\"status\\\": \\\"failed\\\",\\n \\\"failed_count\\\": 4,\\n \\\"imports\\\": [\\n {\\n",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/live_runtime_dashboard_state.json",
+          "score": 940,
+          "snippet": "{ \"dashboard\": \"live_runtime_dashboard_state\", \"version\": \"v16.30\", \"created_at\": \"2026-05-12T23:42:01.426202\", \"status\": \"degraded\", \"runtime_health\": { \"active_runtime_check\": { \"cmd\": [ \"C:\\\\Users\\\\craig\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"tools/active_runtime_check.py\" ], \"returncode\": 1, \"stdout_tail\": \"{\\n \\\"check\\\": \\\"active_runtime_check\\\",\\n \\\"created_at\\\": \\\"2026-05-12T23:42:00.893045\\\",\\n \\\"status\\\": \\\"failed\\\",\\n \\\"failed_count\\\": 4,\\n \\\"import",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 915,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-12T23:42:00.606789\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 13428, \"category_counts\": { \"supporting\": 6729, \"protected_runtime\": 1, \"install_record\": 52, \"disabled_or_archived\": 35, \"documentation\": 186, \"generated\": 5642, \"active_test\": 783 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\", \"src/claire/lifecycle\"",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 70,
+          "snippet": "ent\": true, \"sample_paths\": [ \"claire/api/routes_cockpit_operational_status.py\", \"claire/api/routes_system.py\", \"claire/dashboard/runtime_alignment.py\", \"claire/deployment/health_contract.py\", \"claire/deployment/runtime_hardening.py\", \"claire/distributed_production_runtime/health_dashboard.py\", \"claire/distributed_production_runtime/worker_pool.py\", \"claire/dynamic_source_trust/quarantine.py\", \"claire/dynamic_source_trust/scorer.py\", \"claire/governance/launch_regression_lock.py\", \"claire/governed_web/provider_healt...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_governance_dashboard.json",
+          "score": 56,
+          "snippet": "\"version\": \"v16.37\", \"created_at\": \"2026-05-12T23:41:42.697331\", \"report_count\": 46, \"entries\": [ { \"report\": \".claire_install/reports/active_runtime_check_20260512_124133.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260512_124141.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260512_124146.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_chec...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/dashboard_capability_manifest.json",
+          "score": 45,
+          "snippet": "d_aggregation\", \"deployment_hardening\", \"launch_regression_lock\", \"dashboard_action_buttons\" ], \"dashboard_buttons\": [ { \"category\": \"Runtime\", \"description\": \"Verify the running backend health endpoint.\", \"governance_scope\": \"dashboard_runtime_alignment\", \"id\": \"health_check\", \"label\": \"Check Runtime Health\", \"method\": \"GET\", \"requires_confirmation\": false, \"route\": \"/health\" }, { \"category\": \"Dashboard\", \"description\": \"Compare dashboard surfaces to installed governed runtime capabilities.\", \"governance_scope\": \"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 45,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-13T10:35:44.945820Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 899,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-13T05:35:25.492621\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 13692, \"category_counts\": { \"supporting\": 5444, \"protected_runtime\": 1, \"install_record\": 107, \"disabled_or_archived\": 35, \"documentation\": 186, \"generated\": 7166, \"active_test\": 753 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\", \"src/claire/lifecycle",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 158,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-13T05:35:22.008624\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"status\": \"success\", \"created_at\": \"2026-05-13T10:30:29.162604+00:00\", \"route_count\": 53, \"missing_core_routes\": [], \"checks\": { \"/health\": 200, \"/openapi.json\": 200, \"/dashboard/payload/status\": 200, \"/runtime/continuous/status\": 200, \"/api/dashboard/search/provider/status\": 200, \"/api/cockpit/operational-status\": 200 }, \"backend_owns_truth\": tru...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_governance_dashboard.json",
+          "score": 110,
+          "snippet": "\"version\": \"v16.37\", \"created_at\": \"2026-05-13T05:35:18.069044\", \"report_count\": 100, \"entries\": [ { \"report\": \".claire_install/reports/active_runtime_check_20260512_125139.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260512_125344.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260512_125350.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_che...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 62,
+          "snippet": "e/api/operational_proof_routes.py\", \"claire/api/routes_cockpit_operational_status.py\", \"claire/api/routes_system.py\", \"claire/dashboard/runtime_alignment.py\", \"claire/deployment/health_contract.py\", \"claire/deployment/runtime_hardening.py\", \"claire/distributed_production_runtime/health_dashboard.py\", \"claire/distributed_production_runtime/worker_pool.py\", \"claire/dynamic_source_trust/quarantine.py\", \"claire/dynamic_source_trust/scorer.py\", \"claire/governance/launch_regression_lock.py\", \"claire/governed_web/provider...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/dashboard_capability_manifest.json",
+          "score": 45,
+          "snippet": "d_aggregation\", \"deployment_hardening\", \"launch_regression_lock\", \"dashboard_action_buttons\" ], \"dashboard_buttons\": [ { \"category\": \"Runtime\", \"description\": \"Verify the running backend health endpoint.\", \"governance_scope\": \"dashboard_runtime_alignment\", \"id\": \"health_check\", \"label\": \"Check Runtime Health\", \"method\": \"GET\", \"requires_confirmation\": false, \"route\": \"/health\" }, { \"category\": \"Dashboard\", \"description\": \"Compare dashboard surfaces to installed governed runtime capabilities.\", \"governance_scope\": \"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 45,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_manifest_index.json",
+          "score": 42,
+          "snippet": "eDrive\\\\Desktop\\\\Claire\\\\claire_v6_0_0_installer.py\", \"status\": null, \"created_at\": null }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013744.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:37:44.824787\" }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013830.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:38:30.255304\" }, { \"path\": \".claire_install/reports/active_runtime_check_202605...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/autodesign_handoff_payload.json",
+          "score": 29,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/design_portal/design_portal_output_contract.json",
+          "score": 28,
+          "snippet": "dis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ],",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_control_center.json",
+          "score": 27,
+          "snippet": "{ \"control_center\": \"live_runtime_control_center\", \"version\": \"v16.36\", \"created_at\": \"2026-05-13T05:35:21.883967\", \"runtime_state\": { \"engine\": \"runtime_state_engine\", \"status\": \"success\", \"created_at\": \"2026-05-13T10:30:29.162604+00:00\", \"route_count\": 53, \"missing_core_routes\": [], \"checks\": { \"/health\": 200, \"/openapi.json\": 200, \"/dashboard/payload/status\": 200, \"/runtime/continuous/status\": 200, \"/api/dashboard/search/provider/status\": 200, \"/api/cockpit/operational-sta",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-13T10:45:17.333427Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 907,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-13T05:44:57.931204\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 13874, \"category_counts\": { \"supporting\": 5489, \"protected_runtime\": 1, \"install_record\": 108, \"disabled_or_archived\": 35, \"documentation\": 186, \"generated\": 7298, \"active_test\": 757 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\", \"src/claire/lifecycle",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 158,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-13T05:44:54.464297\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"status\": \"success\", \"created_at\": \"2026-05-13T10:35:28.289675+00:00\", \"route_count\": 56, \"missing_core_routes\": [], \"checks\": { \"/health\": 200, \"/openapi.json\": 200, \"/dashboard/payload/status\": 200, \"/runtime/continuous/status\": 200, \"/api/dashboard/search/provider/status\": 200, \"/api/cockpit/operational-status\": 200 }, \"backend_owns_truth\": tru...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_governance_dashboard.json",
+          "score": 110,
+          "snippet": "\"version\": \"v16.37\", \"created_at\": \"2026-05-13T05:44:50.521617\", \"report_count\": 100, \"entries\": [ { \"report\": \".claire_install/reports/active_runtime_check_20260512_125344.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260512_125350.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260512_125355.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_che...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 62,
+          "snippet": "e/api/operational_proof_routes.py\", \"claire/api/routes_cockpit_operational_status.py\", \"claire/api/routes_system.py\", \"claire/dashboard/runtime_alignment.py\", \"claire/deployment/health_contract.py\", \"claire/deployment/runtime_hardening.py\", \"claire/distributed_production_runtime/health_dashboard.py\", \"claire/distributed_production_runtime/worker_pool.py\", \"claire/dynamic_source_trust/quarantine.py\", \"claire/dynamic_source_trust/scorer.py\", \"claire/governance/launch_regression_lock.py\", \"claire/governed_web/provider...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/dashboard_capability_manifest.json",
+          "score": 45,
+          "snippet": "d_aggregation\", \"deployment_hardening\", \"launch_regression_lock\", \"dashboard_action_buttons\" ], \"dashboard_buttons\": [ { \"category\": \"Runtime\", \"description\": \"Verify the running backend health endpoint.\", \"governance_scope\": \"dashboard_runtime_alignment\", \"id\": \"health_check\", \"label\": \"Check Runtime Health\", \"method\": \"GET\", \"requires_confirmation\": false, \"route\": \"/health\" }, { \"category\": \"Dashboard\", \"description\": \"Compare dashboard surfaces to installed governed runtime capabilities.\", \"governance_scope\": \"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 45,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_manifest_index.json",
+          "score": 42,
+          "snippet": "eDrive\\\\Desktop\\\\Claire\\\\claire_v6_0_0_installer.py\", \"status\": null, \"created_at\": null }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013744.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:37:44.824787\" }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013830.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:38:30.255304\" }, { \"path\": \".claire_install/reports/active_runtime_check_202605...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/proof/platform_endpoint_smoke_proof.json",
+          "score": 36,
+          "snippet": "atus\": \"failed\" } ], \"failed\": 2, \"optional_failed\": 0, \"passed\": 0, \"required\": 2, \"status\": \"blocked\" }, \"runtime_truth\": { \"endpoints\": [ { \"body_preview\": \"{\\\"detail\\\":\\\"Not Found\\\"}\", \"domain\": \"runtime_truth\", \"error\": \"Endpoint did not return 2xx JSON.\", \"http_status\": 404, \"json_ok\": true, \"json_root_type\": \"dict\", \"keys\": [ \"detail\" ], \"method\": \"GET\", \"name\": \"runtime_truth\", \"path\": \"/runtime/truth\", \"required\": true, \"status\": \"failed\" }, {",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/autodesign_handoff_payload.json",
+          "score": 29,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/design_portal/design_portal_output_contract.json",
+          "score": 28,
+          "snippet": "dis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ],",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    },
+    {
+      "agent_command_prepared": true,
+      "generated_at": "2026-05-13T11:18:57.856157Z",
+      "mode": "runtime",
+      "query": "runtime",
+      "result_count": 12,
+      "results": [
+        {
+          "path": "data/runtime/runtime_manifest.json",
+          "score": 915,
+          "snippet": "{ \"manifest\": \"runtime_manifest\", \"version\": \"v16.28\", \"created_at\": \"2026-05-13T06:18:36.778194\", \"root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\", \"file_count\": 14901, \"category_counts\": { \"supporting\": 5530, \"protected_runtime\": 1, \"install_record\": 116, \"disabled_or_archived\": 54, \"documentation\": 187, \"generated\": 8270, \"active_test\": 743 }, \"protected_paths\": [ \"main.py\", \"src/claire/app.py\", \"src/claire/api\", \"src/claire/orchestrator\", \"src/claire/lifecycle",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/master_control_state.json",
+          "score": 158,
+          "snippet": "{ \"layer\": \"master_control_state\", \"version\": \"v16.45\", \"created_at\": \"2026-05-13T06:18:33.127196\", \"runtime\": { \"runtime_state.json\": { \"engine\": \"runtime_state_engine\", \"status\": \"success\", \"created_at\": \"2026-05-13T11:10:19.755031+00:00\", \"route_count\": 56, \"missing_core_routes\": [], \"checks\": { \"/health\": 200, \"/openapi.json\": 200, \"/dashboard/payload/status\": 200, \"/runtime/continuous/status\": 200, \"/api/dashboard/search/provider/status\": 200, \"/api/cockpit/operational-status\": 200 }, \"backend_owns_truth\": tru...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_governance_dashboard.json",
+          "score": 110,
+          "snippet": "\"version\": \"v16.37\", \"created_at\": \"2026-05-13T06:18:28.814533\", \"report_count\": 100, \"entries\": [ { \"report\": \".claire_install/reports/active_runtime_check_20260512_130645.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260512_130650.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_check_20260512_130654.json\", \"installer\": null, \"status\": \"failed\" }, { \"report\": \".claire_install/reports/active_runtime_che...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/internet_readiness/internet_readiness_verification.json",
+          "score": 62,
+          "snippet": "e/api/operational_proof_routes.py\", \"claire/api/routes_cockpit_operational_status.py\", \"claire/api/routes_system.py\", \"claire/dashboard/runtime_alignment.py\", \"claire/deployment/health_contract.py\", \"claire/deployment/runtime_hardening.py\", \"claire/distributed_production_runtime/health_dashboard.py\", \"claire/distributed_production_runtime/worker_pool.py\", \"claire/dynamic_source_trust/quarantine.py\", \"claire/dynamic_source_trust/scorer.py\", \"claire/governance/launch_regression_lock.py\", \"claire/governed_web/provider...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/dashboard_runtime_truth.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_truth_canonical.json",
+          "score": 57,
+          "snippet": "d_discovery\", \"user_facing_result\", \"validation\", \"version\" ], \"readiness\": { \"dashboard_safe\": true, \"present_surface_count\": 20, \"runtime_truth\": true, \"surface_count\": 20 }, \"route\": { \"acquisition_available\": true, \"autodesign_available\": true, \"autodesign_required\": true, \"breakthrough_route_available\": true, \"design_portal_available\": true, \"invention_required\": true, \"portfolio_route_available\": true, \"selected\": \"solution_design\", \"terminal_state\": \"complete\" }, \"source\": { \"invalid_candidate_count\": 0, \"in...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/dashboard/dashboard_capability_manifest.json",
+          "score": 45,
+          "snippet": "d_aggregation\", \"deployment_hardening\", \"launch_regression_lock\", \"dashboard_action_buttons\" ], \"dashboard_buttons\": [ { \"category\": \"Runtime\", \"description\": \"Verify the running backend health endpoint.\", \"governance_scope\": \"dashboard_runtime_alignment\", \"id\": \"health_check\", \"label\": \"Check Runtime Health\", \"method\": \"GET\", \"requires_confirmation\": false, \"route\": \"/health\" }, { \"category\": \"Dashboard\", \"description\": \"Compare dashboard surfaces to installed governed runtime capabilities.\", \"governance_scope\": \"...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/autodesign/autodesign_handoff_contract.json",
+          "score": 45,
+          "snippet": "\"redis\" ], \"cost_model\": \"low_to_moderate_operational_cost\", \"dependencies\": [], \"description\": \"Container runtime for repeatable deployment and packaging.\", \"documentation\": \"Use standard Docker documentation.\", \"id\": \"docker\", \"integration_complexity\": \"low\", \"learning_curve\": \"low\", \"license_type\": \"open_source_or_standard_commercial\", \"maturity_level\": \"established\", \"name\": \"Docker\", \"performance_metrics\": {}, \"platforms\": [ \"local\", \"cloud\" ], \"programming_",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/install_manifest_index.json",
+          "score": 42,
+          "snippet": "eDrive\\\\Desktop\\\\Claire\\\\claire_v6_0_0_installer.py\", \"status\": null, \"created_at\": null }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013744.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:37:44.824787\" }, { \"path\": \".claire_install/reports/active_runtime_check_20260507_013830.json\", \"installer\": \"active_runtime_check\", \"status\": \"success\", \"created_at\": \"2026-05-07T01:38:30.255304\" }, { \"path\": \".claire_install/reports/active_runtime_check_202605...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/proof/platform_endpoint_smoke_proof.json",
+          "score": 36,
+          "snippet": "atus\": \"failed\" } ], \"failed\": 2, \"optional_failed\": 0, \"passed\": 0, \"required\": 2, \"status\": \"blocked\" }, \"runtime_truth\": { \"endpoints\": [ { \"body_preview\": \"{\\\"detail\\\":\\\"Not Found\\\"}\", \"domain\": \"runtime_truth\", \"error\": \"Endpoint did not return 2xx JSON.\", \"http_status\": 404, \"json_ok\": true, \"json_root_type\": \"dict\", \"keys\": [ \"detail\" ], \"method\": \"GET\", \"name\": \"runtime_truth\", \"path\": \"/runtime/truth\", \"required\": true, \"status\": \"failed\" }, {",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/master_control_action_log.json",
+          "score": 29,
+          "snippet": "[ { \"timestamp\": \"2026-05-07T08:32:35.901069+00:00\", \"status\": \"blocked\", \"command\": \"uncontrolled_recursive_install\", \"reason\": \"Blocked by runtime command contract.\", \"contract_reason\": \"Command is explicitly blocked by governance.\", \"stage\": \"execution_guard\" }, { \"timestamp\": \"2026-05-09T01:46:57.962184+00:00\", \"status\": \"blocked\", \"command\": \"uncontrolled_recursive_install\", \"reason\": \"Blocked by runtime command contract.\", \"contract_reason\": \"Command is explicitly blocked by governance.\", \"stage\": \"execution_...",
+          "type": "runtime_system_result"
+        },
+        {
+          "path": "data/runtime/runtime_command_results.json",
+          "score": 29,
+          "snippet": "[ { \"timestamp\": \"2026-05-07T08:32:35.900068+00:00\", \"status\": \"blocked\", \"command\": \"uncontrolled_recursive_install\", \"reason\": \"Blocked by runtime command contract.\", \"contract_reason\": \"Command is explicitly blocked by governance.\", \"stage\": \"execution_guard\" }, { \"timestamp\": \"2026-05-09T01:46:57.950185+00:00\", \"status\": \"blocked\", \"command\": \"uncontrolled_recursive_install\", \"reason\": \"Blocked by runtime command contract.\", \"contract_reason\": \"Command is explicitly blocked by governance.\", \"stage\": \"execution_...",
+          "type": "runtime_system_result"
+        }
+      ],
+      "status": "completed",
+      "version": "v17.75.2",
+      "web_search_available": false,
+      "web_search_prepared": true
+    }
+  ],
+  "updated_at": "2026-05-13T11:18:57.857157Z",
+  "version": "v17.75.2"
+}

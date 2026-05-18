@@ -1,0 +1,22 @@
+{
+  "approved_source_only": true,
+  "automatic_updates_allowed": false,
+  "autonomous_execution_allowed": false,
+  "browser_execution_allowed": false,
+  "example_fetch_command": "python tools/s38_single_approved_source_fetch.py --approval-id S37-WEB-NEED-001-APPROVED --operator-ack YES",
+  "installed_at": "2026-05-14T18:37:49.370371+00:00",
+  "installed_files": [
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\s38_single_approved_source_fetch.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\s38_verify_quarantined_fetch_evidence.py",
+    "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tests\\test_s38r1_r4_first_approved_source_fetch.py"
+  ],
+  "javascript_execution_allowed": false,
+  "manual_promotion_required": true,
+  "max_bytes": 65536,
+  "quarantine_required": true,
+  "runtime_truth_mutation_allowed": false,
+  "single_fetch_only": true,
+  "verify_command": "python tools/s38_verify_quarantined_fetch_evidence.py",
+  "version": "v19.89.8-S38R1-R4-first-approved-source-fetch",
+  "web_fetch_executed_during_install": false
+}

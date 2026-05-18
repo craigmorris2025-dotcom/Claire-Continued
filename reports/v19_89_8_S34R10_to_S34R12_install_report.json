@@ -1,0 +1,22 @@
+{
+  "version": "v19.89.8-S34R10_to_S34R12",
+  "payload_keys": [
+    "controlled_guarded_endpoint_registration_attempt",
+    "cockpit_metadata_probe_trigger_contract",
+    "s34_first_live_metadata_plateau_status"
+  ],
+  "changed_files": [
+    "claire/api/controlled_guarded_endpoint_registration_attempt.py",
+    "claire/api/cockpit_metadata_probe_trigger_contract.py",
+    "claire/api/s34_first_live_metadata_plateau_status.py",
+    "claire/api/governed_payload_reconciliation.py"
+  ],
+  "changed_app_py": false,
+  "route_registered": false,
+  "network_request_during_install": false,
+  "response_body_read_during_install": false,
+  "browser_execution_enabled": false,
+  "runtime_truth_mutation_enabled": false,
+  "autonomous_execution_enabled": false,
+  "automatic_updates_enabled": false
+}

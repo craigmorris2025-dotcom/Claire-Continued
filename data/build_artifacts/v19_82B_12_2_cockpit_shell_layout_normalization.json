@@ -1,0 +1,31 @@
+{
+  "version": "v19.82B.12.2",
+  "build_name": "Cockpit Shell Layout Normalization",
+  "installed_at": "2026-05-11T19:56:10.533509+00:00",
+  "primary_cockpit_path": "frontend/cockpit/shell/cockpit_shell.html",
+  "reason": [
+    "Screenshots showed workspace nav/rail occupying central viewport lane.",
+    "Main runtime content was pushed too far right.",
+    "Continuous runtime JSON panel had horizontal overflow.",
+    "Prior v19.82B.12.1 broad containment was removed from shell wiring and replaced with precise shell normalization."
+  ],
+  "created_or_updated": [
+    "frontend/cockpit/shell/assets/claire_cockpit_shell_layout_normalization.css",
+    "frontend/cockpit/shell/assets/claire_cockpit_shell_layout_normalization.js",
+    "tests/test_v19_82B_12_2_cockpit_shell_layout_normalization.py",
+    "data/build_artifacts/v19_82B_12_2_cockpit_shell_layout_normalization.json"
+  ],
+  "shell_wiring_removed": [
+    "frontend/cockpit/shell/assets/claire_cockpit_layout_containment_repair.css",
+    "frontend/cockpit/shell/assets/claire_cockpit_layout_containment_repair.js"
+  ],
+  "scope": [
+    "layout only",
+    "left workspace rail normalization",
+    "main content lane normalization",
+    "JSON/pre overflow containment",
+    "responsive collapse",
+    "no backend truth changes"
+  ],
+  "next_recommended_build": "v19.82B.12.3 Cockpit Workspace Anchor Consolidation"
+}

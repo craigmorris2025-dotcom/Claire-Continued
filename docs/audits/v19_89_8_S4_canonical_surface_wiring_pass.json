@@ -1,0 +1,24 @@
+{
+  "version": "v19.89.8-S4",
+  "build": "Canonical Surface Wiring Pass",
+  "timestamp": "2026-05-14T00:59:09.295614+00:00",
+  "backend_owns_truth": true,
+  "cockpit_presentation_only": true,
+  "frontend_truth_allowed": false,
+  "runtime_authority_expanded": false,
+  "safe_to_expand_runtime_authority": false,
+  "changes": [
+    "Wrote frontend\\cockpit\\shell\\claire_canonical_surface_wiring_pass.js",
+    "Injected S4 canonical surface wiring pass into cockpit_shell.html"
+  ],
+  "warnings": [],
+  "wiring_order": [
+    "payload_status_surfaces",
+    "runtime_execution_surfaces",
+    "runtime_state_surfaces",
+    "review_queue_surfaces",
+    "route_owner_registry_surfaces",
+    "duplicate_route_fail_test_surfaces",
+    "runtime_propagation_surfaces"
+  ]
+}

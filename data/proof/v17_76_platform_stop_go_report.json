@@ -1,0 +1,31 @@
+{
+  "blocked_domains": [
+    "dashboard",
+    "search",
+    "runtime_truth",
+    "routes",
+    "autodesign",
+    "design_portal",
+    "validation",
+    "internet",
+    "updates",
+    "proof"
+  ],
+  "blockers": [
+    "domain_blocked:autodesign",
+    "domain_blocked:dashboard",
+    "domain_blocked:design_portal",
+    "domain_blocked:internet",
+    "domain_blocked:proof",
+    "domain_blocked:routes",
+    "domain_blocked:runtime_truth",
+    "domain_blocked:search",
+    "domain_blocked:updates",
+    "domain_blocked:validation"
+  ],
+  "generated_at": "2026-05-13T11:18:58.127157Z",
+  "missing_files": [],
+  "recommendation": "Do not proceed to launch hardening until blocked endpoint, output, or safety domains are fixed.",
+  "status": "STOP",
+  "version": "v17.76"
+}

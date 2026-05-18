@@ -1,0 +1,135 @@
+{
+  "version": "v19.89.8-S1181-S1208-plateau-blocker-repair",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "written": [
+    "tests/test_s1181_s1208_plateau_blocker_repair.py"
+  ],
+  "modified": [
+    "claire/app.py",
+    "claire/api/live_intelligence_status_routes.py",
+    "claire/api/live_source_catalog_routes.py",
+    "claire/feeds/source_catalogs/live_source_catalog.py",
+    "claire/feeds/source_catalogs/source_health.py",
+    "tools/active_module_registry.py",
+    "tools/core_runtime_lock.py",
+    "tools/live_runtime_dashboard.py",
+    "tools/live_runtime_dashboard_state.py",
+    "tools/runtime_manifest_system.py",
+    "tools/runtime_state_engine.py",
+    "tools/run_claire_baseline.py",
+    "tools/unified_runtime_dashboard_builder.py"
+  ],
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-S1181-S1208-plateau-blocker-repair",
+  "bom_results": {
+    "claire/api/live_intelligence_status_routes.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 1410,
+      "bytes_after": 1457
+    },
+    "claire/api/live_source_catalog_routes.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 7561,
+      "bytes_after": 7788
+    },
+    "claire/feeds/source_catalogs/live_source_catalog.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 869,
+      "bytes_after": 893
+    },
+    "claire/feeds/source_catalogs/source_health.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 632,
+      "bytes_after": 644
+    },
+    "tools/active_module_registry.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 1738,
+      "bytes_after": 1787
+    },
+    "tools/core_runtime_lock.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 2398,
+      "bytes_after": 2483
+    },
+    "tools/live_runtime_dashboard.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 2413,
+      "bytes_after": 2498
+    },
+    "tools/live_runtime_dashboard_state.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 817,
+      "bytes_after": 844
+    },
+    "tools/runtime_manifest_system.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 2415,
+      "bytes_after": 2500
+    },
+    "tools/runtime_state_engine.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 2716,
+      "bytes_after": 2807
+    },
+    "tools/run_claire_baseline.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 1780,
+      "bytes_after": 1834
+    },
+    "tools/unified_runtime_dashboard_builder.py": {
+      "exists": true,
+      "changed": true,
+      "bytes_before": 739,
+      "bytes_after": 763
+    }
+  },
+  "app_patch": {
+    "changed": true,
+    "probe_block_changed": true,
+    "unlock_allowed": false
+  },
+  "live_probe_status_snapshot": {
+    "registered": true,
+    "operator_triggered_only": true,
+    "one_shot_only": true,
+    "method_allowed": "HEAD",
+    "unlock_allowed": false,
+    "execution_enabled": false,
+    "network_request_performed": false,
+    "body_read_allowed": false,
+    "runtime_truth_mutation_allowed": false
+  },
+  "audit_summary_after_repair": {
+    "audit_version": "v19.89.8-S1153-S1180-system-plateau-audit",
+    "generated_at": "2026-05-17T21:18:11.600333+00:00",
+    "blocker_count": 0,
+    "warning_count": 1,
+    "plateau_status": "ready",
+    "forward_motion_allowed": true,
+    "next_step": "Plateau is clean enough to continue to next dashboard/operator build."
+  },
+  "blocked_authority_preserved": [
+    "live_web_execution",
+    "search_provider_execution",
+    "browser_execution",
+    "network_requests",
+    "body_reads",
+    "autonomous_crawling",
+    "automatic_updates",
+    "runtime_mutation",
+    "runtime_truth_mutation",
+    "package_download_install",
+    "command_execution"
+  ]
+}

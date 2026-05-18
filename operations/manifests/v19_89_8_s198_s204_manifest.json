@@ -1,0 +1,18 @@
+{
+  "version": "v19.89.8-S198-S204",
+  "installed_at": "2026-05-15T15:54:23.939347+00:00",
+  "stage_pack": "S198-S204",
+  "purpose": "Operator workflow telemetry, consolidated cockpit layout contract, and safe next-action state.",
+  "files": [
+    "claire/api/cockpit_workflow_telemetry.py",
+    "claire/api/cockpit_state_consolidator.py",
+    "claire/api/cockpit_operator_next_actions.py",
+    "tests/test_s198_s204_cockpit_workflow_telemetry.py",
+    "tests/test_s198_s204_cockpit_state_consolidator.py",
+    "tests/test_s198_s204_operator_next_actions.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s198_s204_cockpit_workflow_telemetry.py tests/test_s198_s204_cockpit_state_consolidator.py tests/test_s198_s204_operator_next_actions.py -q",
+    "pytest"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": "v19.89.8-S1041-S1068-dashboard-payload-actions-precedence-repair-r4",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "written": [
+    "claire/app.py",
+    "claire/api/dashboard_actions_registry.py",
+    "tests/test_s1041_s1068_dashboard_actions_registry_convergence_repair.py"
+  ],
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-S1041-S1068-dashboard-payload-actions-precedence-repair-r4",
+  "required_routes_present": [
+    "/dashboard/actions/registry",
+    "/dashboard/actions/summary",
+    "/dashboard/payload",
+    "/dashboard/payload/status"
+  ],
+  "route_count": 502,
+  "payload_actions_count": 5,
+  "payload_operator_console": true,
+  "blocked_authority_preserved": [
+    "live_web_execution",
+    "search_provider_execution",
+    "browser_execution",
+    "network_requests",
+    "body_reads",
+    "autonomous_crawling",
+    "automatic_updates",
+    "runtime_mutation",
+    "runtime_truth_mutation",
+    "package_download_install",
+    "command_execution"
+  ]
+}

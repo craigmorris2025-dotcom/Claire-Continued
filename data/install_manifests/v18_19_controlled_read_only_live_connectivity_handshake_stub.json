@@ -1,0 +1,19 @@
+{
+  "version": "v18.19",
+  "name": "Controlled Read-Only Live Connectivity Handshake Stub",
+  "files": [
+    "SEARCH_BAR_CONTROLLED_READ_ONLY_LIVE_CONNECTIVITY_HANDSHAKE_STUB_REVIEW.bat",
+    "claire/governance/governed_web/live_connectivity_handshake.py",
+    "tests/test_v18_19_controlled_read_only_live_connectivity_handshake_stub.py"
+  ],
+  "invariants": {
+    "execution_performed": false,
+    "network_call_performed": false,
+    "runtime_truth_mutated": false,
+    "automatic_update_performed": false,
+    "live_web_execution_default": false,
+    "ai_agent_execution_default": false,
+    "review_gated": true,
+    "fail_closed": true
+  }
+}

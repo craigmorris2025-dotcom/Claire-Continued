@@ -1,62 +1,46 @@
 """
-Verifies individual claims against evidence base
-================================================
-ACS2-Claire / Syntalion
+Claire Syntalion structural placeholder repair.
 
-Module: src.claire.research.live.claim_verifier
-Role: Verifies individual claims against evidence base
+This module was syntactically invalid and was neutralized by
+v19 Structural Repair Pack 1.1 so project-wide syntax checks and backend startup
+can proceed.
+
+This is not a production implementation.
+
+Original syntax error:
+- line: 33
+- message: invalid syntax
+- text: raise NotImplementedError
 """
 
-import json
-import logging
-from datetime import datetime
-from pathlib import Path
-from dataclasses import dataclass, field
-from typing import Any, Optional
+from __future__ import annotations
 
-logger = logging.getLogger(__name__)
+from typing import Any
 
 
 class ClaimVerifier:
-    """
-    Verifies individual claims against evidence base
+    """Non-executing placeholder pending real implementation."""
 
-    ClaimVerdict contains: claim_text, verdict (VERIFIED|UNVERIFIED|CONTESTED|INSUFFICIENT), confidence, supporting_refs, contradicting_refs..
-    """
+    implemented = False
+    structural_placeholder = True
 
-    def __init__(self):
-        self.logger = logging.getLogger(self.__class__.__name__)
-        self.logger.info(f"{self.__class__.__name__} initialized")
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        self.args = args
+        self.kwargs = kwargs
 
-    def verify_claim(claim:
-        """Returns Any."""
-        raise NotImplementedError
+    def run(self, *args: Any, **kwargs: Any) -> dict[str, Any]:
+        return build_placeholder_status()
 
-    def evidence_base):
-        """Returns ClaimVerdict."""
-        raise NotImplementedError
 
-    def find_supporting_evidence(claim):
-        """Returns list."""
-        raise NotImplementedError
+def build_placeholder_status() -> dict[str, Any]:
+    return {
+        "status": "not_implemented",
+        "module": __name__,
+        "structural_placeholder": True,
+        "implemented": False,
+        "message": "Placeholder repaired for syntax stability only.",
+    }
 
-    def find_contradicting_evidence(claim):
-        """Returns list."""
-        raise NotImplementedError
 
-    def compute_confidence(claim:
-        """Returns Any."""
-        raise NotImplementedError
-
-    def evidence):
-        """Returns float."""
-        raise NotImplementedError
-
-    def flag_unverifiable(claim):
-        """Returns bool."""
-        raise NotImplementedError
-
-    def batch_verify(claims):
-        """Returns list[ClaimVerdict]."""
-        raise NotImplementedError
-
+def run(*args: Any, **kwargs: Any) -> dict[str, Any]:
+    return build_placeholder_status()

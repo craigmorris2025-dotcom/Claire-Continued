@@ -1,0 +1,203 @@
+{
+  "build": "Duplicate Route Fail Test",
+  "evaluation": {
+    "failure_count": 6,
+    "failures": [
+      {
+        "expected": "exactly_one_owner",
+        "failure": "duplicate_route_owner",
+        "key": "GET /dashboard/payload",
+        "method": "GET",
+        "owner_count": 3,
+        "owners": [
+          {
+            "endpoint": "claire.api.dashboard_payload_bridge.get_dashboard_payload",
+            "methods": [
+              "GET"
+            ],
+            "name": "get_dashboard_payload",
+            "path": "/dashboard/payload",
+            "route_class": "APIRoute"
+          },
+          {
+            "endpoint": "claire.api.routes_enterprise_cockpit_payload.dashboard_payload",
+            "methods": [
+              "GET"
+            ],
+            "name": "dashboard_payload",
+            "path": "/dashboard/payload",
+            "route_class": "APIRoute"
+          },
+          {
+            "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_dashboard_payload",
+            "methods": [
+              "GET"
+            ],
+            "name": "authored_dashboard_payload",
+            "path": "/dashboard/payload",
+            "route_class": "APIRoute"
+          }
+        ],
+        "route": "/dashboard/payload"
+      },
+      {
+        "expected": "exactly_one_owner",
+        "failure": "duplicate_route_owner",
+        "key": "GET /dashboard/payload/status",
+        "method": "GET",
+        "owner_count": 3,
+        "owners": [
+          {
+            "endpoint": "claire.api.dashboard_payload_bridge.get_dashboard_payload_status",
+            "methods": [
+              "GET"
+            ],
+            "name": "get_dashboard_payload_status",
+            "path": "/dashboard/payload/status",
+            "route_class": "APIRoute"
+          },
+          {
+            "endpoint": "claire.api.routes_enterprise_cockpit_payload.dashboard_payload_status",
+            "methods": [
+              "GET"
+            ],
+            "name": "dashboard_payload_status",
+            "path": "/dashboard/payload/status",
+            "route_class": "APIRoute"
+          },
+          {
+            "endpoint": "claire.routes.authored_cockpit_payload_binding_routes.dashboard_payload_status",
+            "methods": [
+              "GET"
+            ],
+            "name": "dashboard_payload_status",
+            "path": "/dashboard/payload/status",
+            "route_class": "APIRoute"
+          }
+        ],
+        "route": "/dashboard/payload/status"
+      },
+      {
+        "expected": "exactly_one_owner",
+        "failure": "duplicate_route_owner",
+        "key": "POST /runs/start",
+        "method": "POST",
+        "owner_count": 2,
+        "owners": [
+          {
+            "endpoint": "claire.api.routes_enterprise_runs.start_run",
+            "methods": [
+              "POST"
+            ],
+            "name": "start_run",
+            "path": "/runs/start",
+            "route_class": "APIRoute"
+          },
+          {
+            "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_start_run",
+            "methods": [
+              "POST"
+            ],
+            "name": "authored_start_run",
+            "path": "/runs/start",
+            "route_class": "APIRoute"
+          }
+        ],
+        "route": "/runs/start"
+      },
+      {
+        "expected": "exactly_one_owner",
+        "failure": "duplicate_route_owner",
+        "key": "GET /runtime/continuous/review-queue",
+        "method": "GET",
+        "owner_count": 2,
+        "owners": [
+          {
+            "endpoint": "claire.api.routes_continuous_runtime.continuous_review_queue",
+            "methods": [
+              "GET"
+            ],
+            "name": "continuous_review_queue",
+            "path": "/runtime/continuous/review-queue",
+            "route_class": "APIRoute"
+          },
+          {
+            "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_review_queue",
+            "methods": [
+              "GET"
+            ],
+            "name": "authored_review_queue",
+            "path": "/runtime/continuous/review-queue",
+            "route_class": "APIRoute"
+          }
+        ],
+        "route": "/runtime/continuous/review-queue"
+      },
+      {
+        "expected": "exactly_one_owner",
+        "failure": "duplicate_route_owner",
+        "key": "GET /runtime/continuous/status",
+        "method": "GET",
+        "owner_count": 2,
+        "owners": [
+          {
+            "endpoint": "claire.api.routes_continuous_runtime.continuous_status",
+            "methods": [
+              "GET"
+            ],
+            "name": "continuous_status",
+            "path": "/runtime/continuous/status",
+            "route_class": "APIRoute"
+          },
+          {
+            "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_continuous_status",
+            "methods": [
+              "GET"
+            ],
+            "name": "authored_continuous_status",
+            "path": "/runtime/continuous/status",
+            "route_class": "APIRoute"
+          }
+        ],
+        "route": "/runtime/continuous/status"
+      },
+      {
+        "expected": "exactly_one_owner",
+        "failure": "duplicate_route_owner",
+        "key": "GET /universes",
+        "method": "GET",
+        "owner_count": 2,
+        "owners": [
+          {
+            "endpoint": "claire.api.routes_source_universes.universes",
+            "methods": [
+              "GET"
+            ],
+            "name": "universes",
+            "path": "/universes",
+            "route_class": "APIRoute"
+          },
+          {
+            "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_universes",
+            "methods": [
+              "GET"
+            ],
+            "name": "authored_universes",
+            "path": "/universes",
+            "route_class": "APIRoute"
+          }
+        ],
+        "route": "/universes"
+      }
+    ],
+    "passing": [],
+    "passing_count": 0,
+    "status": "failed"
+  },
+  "generated_at": "2026-05-13T11:22:15.614711+00:00",
+  "mounted_route_count": 69,
+  "read_only": true,
+  "registry_path": "data\\runtime_authority\\canonical_route_owner_registry.json",
+  "status": "failed",
+  "version": "v19.84.5"
+}

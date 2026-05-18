@@ -1,0 +1,61 @@
+.claire-answer-memory-replay-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+  margin: 14px 0;
+  background: rgba(7, 14, 27, 0.80);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+.claire-memory-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.claire-memory-panel-header small,
+.claire-answer-memory-replay-panel footer {
+  opacity: 0.7;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.claire-memory-panel-body {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.claire-memory-record-card {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.claire-memory-card-topline,
+.claire-memory-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.claire-memory-card-topline span,
+.claire-memory-badges span {
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+}
+
+.claire-memory-record-card p {
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.claire-memory-record-card small {
+  opacity: 0.72;
+}

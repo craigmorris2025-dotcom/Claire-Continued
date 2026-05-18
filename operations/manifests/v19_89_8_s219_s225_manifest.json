@@ -1,0 +1,19 @@
+{
+  "version": "v19.89.8-S219-S225",
+  "installed_at": "2026-05-15T16:08:26.748671+00:00",
+  "stage_pack": "S219-S225",
+  "purpose": "Frontend-facing cockpit presentation schema, action ordering, warning banners, and diagnostics drawer payload.",
+  "files": [
+    "claire/api/cockpit_frontend_presentation_schema.py",
+    "claire/api/cockpit_action_card_ordering.py",
+    "claire/api/cockpit_warning_banner_contracts.py",
+    "claire/api/cockpit_diagnostics_drawer_payload.py",
+    "tests/test_s219_s225_frontend_presentation_schema.py",
+    "tests/test_s219_s225_action_cards_and_banners.py",
+    "tests/test_s219_s225_diagnostics_drawer.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s219_s225_frontend_presentation_schema.py tests/test_s219_s225_action_cards_and_banners.py tests/test_s219_s225_diagnostics_drawer.py -q",
+    "pytest"
+  ]
+}

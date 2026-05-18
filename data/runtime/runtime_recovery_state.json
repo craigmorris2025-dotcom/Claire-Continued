@@ -1,7 +1,7 @@
 {
   "engine": "runtime_recovery_engine",
   "version": "v16.34",
-  "created_at": "2026-05-08T20:46:49.629892",
+  "created_at": "2026-05-13T06:18:38.829727",
   "status": "recovery_needed",
   "checks": {
     "runtime_lock": {
@@ -9,18 +9,18 @@
         "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
         "tools/core_runtime_lock.py"
       ],
-      "returncode": 1,
-      "stdout_tail": "{\n  \"lock\": \"core_runtime_lock\",\n  \"version\": \"v16.29\",\n  \"created_at\": \"2026-05-08T20:46:49.023892\",\n  \"status\": \"failed\",\n  \"protected_contracts\": [\n    {\n      \"path\": \"main.py\",\n      \"type\": \"launch_entrypoint\",\n      \"exists\": true,\n      \"size_bytes\": 424\n    },\n    {\n      \"path\": \"src/claire/app.py\",\n      \"type\": \"app_factory\",\n      \"exists\": false,\n      \"size_bytes\": 0\n    },\n    {\n      \"path\": \"src/claire/api/routes_pipeline.py\",\n      \"type\": \"api_route\",\n      \"exists\": false,\n      \"size_bytes\": 0\n    },\n    {\n      \"path\": \"src/claire/orchestrator/pipeline_v4.py\",\n      \"type\": \"runtime_orchestrator\",\n      \"exists\": false,\n      \"size_bytes\": 0\n    },\n    {\n      \"path\": \"src/claire/technology/technology_intelligence.py\",\n      \"type\": \"runtime_dependency\",\n      \"exists\": false,\n      \"size_bytes\": 0\n    }\n  ],\n  \"required_imports\": [\n    {\n      \"module\": \"claire.app\",\n      \"status\": \"success\"\n    },\n    {\n      \"module\": \"claire.api.routes_pipeline\",\n      \"status\": \"success\"\n    },\n    {\n      \"module\": \"claire.orchestrator.pipeline_v4\",\n      \"status\": \"success\"\n    },\n    {\n      \"module\": \"claire.technology.technology_intelligence\",\n      \"status\": \"success\"\n    }\n  ]\n}\n\nRuntime lock written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\runtime\\core_runtime_lock.json\n",
-      "stderr_tail": ""
+      "returncode": 0,
+      "stdout_tail": "{\n  \"tool\": \"core_runtime_lock\",\n  \"status\": \"success\",\n  \"created_at\": \"2026-05-13T11:18:38.266714+00:00\",\n  \"route_count\": 56,\n  \"missing_required_routes\": [],\n  \"checks\": {\n    \"/health\": 200,\n    \"/openapi.json\": 200,\n    \"/dashboard/payload/status\": 200,\n    \"/runtime/continuous/status\": 200,\n    \"/api/dashboard/search/provider/status\": 200,\n    \"/api/cockpit/operational-status\": 200\n  },\n  \"backend_owns_truth\": true,\n  \"runtime_truth_over_ui_assumptions\": true\n}\n",
+      "stderr_tail": "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\fastapi\\openapi\\utils.py:252: UserWarning: Duplicate Operation ID dashboard_payload_status_dashboard_payload_status_get for function dashboard_payload_status at C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\routes\\authored_cockpit_payload_binding_routes.py\n  warnings.warn(message, stacklevel=1)\n"
     },
     "active_runtime": {
       "cmd": [
         "C:\\Users\\craig\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
         "tools/active_runtime_check.py"
       ],
-      "returncode": 0,
-      "stdout_tail": "{\n  \"check\": \"active_runtime_check\",\n  \"created_at\": \"2026-05-08T20:46:49.467890\",\n  \"status\": \"success\",\n  \"failed_count\": 0,\n  \"imports\": [\n    {\n      \"module\": \"claire.app\",\n      \"status\": \"success\"\n    },\n    {\n      \"module\": \"claire.api.routes_pipeline\",\n      \"status\": \"success\"\n    },\n    {\n      \"module\": \"claire.orchestrator.pipeline_v4\",\n      \"status\": \"success\"\n    },\n    {\n      \"module\": \"claire.technology.technology_intelligence\",\n      \"status\": \"success\"\n    }\n  ]\n}\n\nReport written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports\\active_runtime_check_20260508_204649.json\n",
-      "stderr_tail": ""
+      "returncode": 1,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\tools\\active_runtime_check.py\", line 9, in <module>\n    from claire.app import create_app\nModuleNotFoundError: No module named 'claire'\n"
     },
     "compile": {
       "cmd": [
@@ -28,7 +28,7 @@
         "tools/runtime_compile_check.py"
       ],
       "returncode": 0,
-      "stdout_tail": "{\n  \"check\": \"runtime_compile_check\",\n  \"created_at\": \"2026-05-08T20:46:49.566891\",\n  \"status\": \"success\",\n  \"failure_count\": 0,\n  \"failures\": []\n}\n\nReport written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports\\runtime_compile_check_20260508_204649.json\n",
+      "stdout_tail": "{\n  \"check\": \"runtime_compile_check\",\n  \"created_at\": \"2026-05-13T06:18:38.776724\",\n  \"status\": \"success\",\n  \"failure_count\": 0,\n  \"failures\": []\n}\n\nReport written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\.claire_install\\reports\\runtime_compile_check_20260513_061838.json\n",
       "stderr_tail": ""
     },
     "rollback": {
@@ -37,7 +37,7 @@
         "tools/rollback_validation.py"
       ],
       "returncode": 0,
-      "stdout_tail": ": 8\n    },\n    {\n      \"name\": \"v16.28_runtime_manifest_system_20260507_020435\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.29_core_runtime_lock_20260507_020502\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.30_live_runtime_dashboard_20260507_020516\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.31_runtime_state_engine_20260507_022601\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.32_unified_runtime_dashboard_20260507_022621\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.33_autonomous_install_validator_20260507_022643\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.34_runtime_recovery_engine_20260507_022653\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.35_runtime_intelligence_layer_20260507_022705\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.36_live_runtime_control_center_20260507_024420\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.37_install_governance_dashboard_20260507_024431\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.38_route_activity_monitor_20260507_024439\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.39_orphan_dormant_module_detector_20260507_024800\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.40_safe_archive_recommender_20260507_024809\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.41_recovery_rollback_selector_20260507_024817\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.42_lifecycle_quality_scorer_20260507_025540\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.43_trend_thesis_intelligence_upgrade_20260507_025549\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.44_portfolio_breakthrough_routing_upgrade_20260507_025558\",\n      \"file_count\": 0\n    },\n    {\n      \"name\": \"v16.45_runtime_intelligence_unified_control_layer_20260507_030752\",\n      \"file_count\": 0\n    }\n  ],\n  \"install_report_count\": 159\n}\n\nRollback validation written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\runtime\\rollback_validation.json\n",
+      "stdout_tail": "{\n  \"validation\": \"rollback_validation\",\n  \"version\": \"v16.29\",\n  \"created_at\": \"2026-05-13T06:18:38.823724\",\n  \"status\": \"success\",\n  \"backup_set_count\": 0,\n  \"backup_sets\": [],\n  \"install_report_count\": 117\n}\n\nRollback validation written: C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\runtime\\rollback_validation.json\n",
       "stderr_tail": ""
     }
   },

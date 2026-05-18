@@ -1,0 +1,38 @@
+
+.search-command-panel { display: grid; gap: 14px; }
+.search-panel-header, .search-input-row, .search-panel-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.search-provider-summary, .search-mode-note, .search-panel-footer { color: var(--muted); font-size: 12px; }
+.search-mode-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.search-mode-tab, .search-run-button { border: 1px solid var(--line); border-radius: 999px; padding: 9px 12px; color: var(--muted); background: rgba(255,255,255,.05); cursor: pointer; }
+.search-mode-tab.active, .search-run-button:hover { color: var(--text); border-color: rgba(159,199,255,.4); background: rgba(159,199,255,.12); }
+.search-panel-input { flex: 1; border: 1px solid var(--line); border-radius: 999px; padding: 12px 14px; background: rgba(255,255,255,.08); color: var(--text); }
+.source-trust-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.trust-badge { border: 1px solid var(--line); border-radius: 999px; padding: 6px 9px; font-size: 11px; color: var(--muted); }
+.search-results { display: grid; gap: 10px; }
+.search-response-summary, .search-result-card, .search-empty-state, .search-blocked-state { border: 1px solid var(--line); border-radius: 14px; padding: 12px; background: rgba(255,255,255,.05); }
+.search-result-type { color: var(--warn); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.search-result-card h4 { margin: 6px 0; }
+.search-result-card p, .search-blocked-state p { color: var(--muted); }\n\n/* Claire v19.77 Search Surface Stabilization */
+.claire-search-panel,
+.search-panel,
+.command-surface,
+.governed-research-panel {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.claire-search-results,
+.search-results {
+  max-height: min(62vh, 680px);
+  overflow: auto;
+}
+
+.claire-search-panel input,
+.claire-search-panel textarea,
+.search-panel input,
+.search-panel textarea,
+.command-surface input,
+.command-surface textarea {
+  max-width: 100%;
+}

@@ -1,0 +1,33 @@
+{
+  "version": "v19.78",
+  "workspace": "design",
+  "first_class_route": true,
+  "route_names": [
+    "breakthrough_design",
+    "existing_system_replacement"
+  ],
+  "stages": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "required_payload_fields": [
+    "autodesign",
+    "solution_structure",
+    "buildability",
+    "viability",
+    "manufacturability",
+    "deployability",
+    "feasibility",
+    "design_portal",
+    "blueprints",
+    "component_map",
+    "dependency_map",
+    "implementation_phases"
+  ],
+  "truth_rule": "Render unavailable/blocked if backend payload does not provide design route truth."
+}

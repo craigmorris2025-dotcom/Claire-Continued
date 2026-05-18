@@ -1,0 +1,29 @@
+{
+  "version": "v19.89.8-S1097-S1124-dashboard-status-visibility-aliases",
+  "root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "written": [
+    "claire/api/dashboard_status_visibility_aliases.py",
+    "tests/test_s1097_s1124_dashboard_status_visibility_aliases.py"
+  ],
+  "backup_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\v19.89.8-S1097-S1124-dashboard-status-visibility-aliases",
+  "routes_verified": {
+    "/dashboard/visibility/summary": 200,
+    "/dashboard/status/harmonized": 200,
+    "/api/dashboard/visibility/summary": 200,
+    "/api/dashboard/status/harmonized": 200
+  },
+  "action_count": 15,
+  "blocked_authority_preserved": [
+    "live_web_execution",
+    "search_provider_execution",
+    "browser_execution",
+    "network_requests",
+    "body_reads",
+    "autonomous_crawling",
+    "automatic_updates",
+    "runtime_mutation",
+    "runtime_truth_mutation",
+    "package_download_install",
+    "command_execution"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "v19.82B.1",
+  "timestamp": "2026-05-11T12:12:28",
+  "status": "go",
+  "cockpit_shell": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html",
+  "workspace_js": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\assets\\enterprise_cockpit_workspace_shell.js",
+  "workspace_css": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\assets\\enterprise_cockpit_workspace_shell.css",
+  "workspace_registry": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\config\\cockpit_workspace_registry.json",
+  "workspace_count": 11,
+  "backup": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\backups\\cockpit_shell\\v19.82B.1\\cockpit_shell.html.20260511_121228.bak",
+  "truth_rules": [
+    "backend owns truth",
+    "cockpit renders backend truth only",
+    "empty states must be truthful",
+    "no fake runtime outputs"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "automatic_updates_enabled": false,
+  "execution_enabled": false,
+  "generated_at": "2026-05-13T11:18:57.536163Z",
+  "governance": {
+    "automatic_execution_enabled": false,
+    "execution_enabled": false,
+    "operator_review_required": true,
+    "rollback_required": true,
+    "staging_only": true,
+    "validation_required": true
+  },
+  "latest_pack": {
+    "automatic_execution_enabled": false,
+    "created_at": "2026-05-13T11:18:57.528157Z",
+    "execution_enabled": false,
+    "pack_hash": "5be1dff4dc44c99e344eb41b90fcde616278af2e37bf0021468a85cb874332d6",
+    "pack_id": "update_pack_20260513_111857_update_governance_patch",
+    "pack_type": "update_governance_patch",
+    "path": "data/update_packs/staging/update_pack_20260513_111857_update_governance_patch.json",
+    "status": "warning"
+  },
+  "pack_count": 33,
+  "protected_paths": {
+    "missing": [],
+    "out_of": 8,
+    "present": [
+      "claire/app.py",
+      "claire/api/routes_pipeline.py",
+      "claire/orchestrator/pipeline_v4.py",
+      "claire/runtime_truth/runtime_truth_contract_repair.py",
+      "frontend/command_center/modern/index.html",
+      "LAUNCH_CLAIRE.bat",
+      "pyproject.toml",
+      "requirements.txt"
+    ],
+    "score": 8
+  },
+  "version": "v17.71"
+}

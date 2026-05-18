@@ -1,0 +1,431 @@
+{
+  "actions": [
+    {
+      "label": "Refresh Runtime Truth",
+      "method": "GET",
+      "path": "/operator/dashboard/state"
+    },
+    {
+      "label": "Rebuild Runtime Truth",
+      "method": "POST",
+      "path": "/runtime/truth/rebuild"
+    },
+    {
+      "label": "Route Audit",
+      "method": "GET",
+      "path": "/routes/audit"
+    },
+    {
+      "label": "Proof Pack",
+      "method": "GET",
+      "path": "/proof/e2e"
+    },
+    {
+      "label": "Stop/Go",
+      "method": "GET",
+      "path": "/system/stop-go"
+    }
+  ],
+  "autodesign": {
+    "design_portal_required": true,
+    "invention_need": "{\"design_portal\": {\"domain\": \"insurance\", \"inputs\": {\"domain\": \"insurance\", \"keywords\": [\"evaluate\", \"climate\", \"insurance\", \"repricing\", \"risk-transfer\", \"demand\"], \"market_gap\": {\"acquirer_categories\": [\"insurance analytics platforms\", \"catastrophe modeling companies\", \"reinsurers\", \"risk data providers\", \"climate risk intelligence companies\", \"insurance core software platforms\", \"insurance brokers\"], \"buyer_segmen...",
+    "problem_statement": "{\"confidence\": \"0.6681000400745148\", \"opportunity_discovery\": {\"confidence\": \"0.7248\", \"discovery_vector\": {\"best_entry_wedge\": \"climate exposure and underwriting repricing pilot\", \"expansion_path\": [\"weather-loss backtesting\", \"exposure benchmarks\", \"catastrophe scenario modules\", \"risk-transfer planning\", \"enterprise risk platform\"], \"opportunity_type\": \"validated_gap_opportunity\", \"primary_vector\": \"climate exposu...",
+    "required": true,
+    "status": "already_satisfied"
+  },
+  "backend": {
+    "message": "Backend is serving operator dashboard state.",
+    "online": true
+  },
+  "buildability": {
+    "blockers": [],
+    "dimensions": {
+      "buildability": {
+        "blockers": [],
+        "dimension": "buildability",
+        "evidence": [
+          "architecture_summary_present",
+          "component_map_present",
+          "dependency_map_present",
+          "implementation_plan_present"
+        ],
+        "required_next": [
+          "Detailed AutoDesign-generated component and dependency proof"
+        ],
+        "status": "passed",
+        "warnings": []
+      },
+      "dependency_readiness": {
+        "blockers": [],
+        "dimension": "dependency_readiness",
+        "evidence": [
+          "dependency_map_present",
+          "technology_stack_present"
+        ],
+        "required_next": [
+          "Dependencies must be classified as known, unknown, blocker, or optional"
+        ],
+        "status": "passed",
+        "warnings": []
+      },
+      "evidence_readiness": {
+        "blockers": [],
+        "dimension": "evidence_readiness",
+        "evidence": [
+          "evidence_available",
+          "runtime_validation_surface_available"
+        ],
+        "required_next": [
+          "Evidence trace must support any build-readiness claim"
+        ],
+        "status": "passed",
+        "warnings": []
+      },
+      "implementation_readiness": {
+        "blockers": [],
+        "dimension": "implementation_readiness",
+        "evidence": [
+          "implementation_plan_present",
+          "package_readiness_present"
+        ],
+        "required_next": [
+          "Implementation phases must be validated against constraints"
+        ],
+        "status": "passed",
+        "warnings": []
+      },
+      "manufacturability_deployability": {
+        "blockers": [],
+        "dimension": "manufacturability_deployability",
+        "evidence": [
+          "technology_stack_present",
+          "dependency_map_present"
+        ],
+        "required_next": [
+          "Deployment/manufacturing constraints must be proven before package readiness"
+        ],
+        "status": "passed",
+        "warnings": []
+      },
+      "package_readiness": {
+        "blockers": [],
+        "dimension": "package_readiness",
+        "evidence": [
+          "v17_69_validation_required_flag_present"
+        ],
+        "required_next": [
+          "Package readiness remains false until validation passes"
+        ],
+        "status": "warning",
+        "warnings": [
+          "package_not_ready_for_final_package"
+        ]
+      },
+      "technical_feasibility": {
+        "blockers": [],
+        "dimension": "technical_feasibility",
+        "evidence": [
+          "technology_stack_present",
+          "buildability_requirements_present"
+        ],
+        "required_next": [
+          "Prototype or architecture proof may be required"
+        ],
+        "status": "warning",
+        "warnings": [
+          "invention_route_requires_higher_feasibility_threshold"
+        ]
+      },
+      "viability": {
+        "blockers": [],
+        "dimension": "viability",
+        "evidence": [
+          "validation_requirements_present",
+          "risks_present",
+          "evidence_trace_present"
+        ],
+        "required_next": [
+          "Operator review of viability assumptions"
+        ],
+        "status": "passed",
+        "warnings": []
+      }
+    },
+    "readiness": {
+      "build_ready": false,
+      "package_ready": false,
+      "requires_internet_readiness_before_live_updates": true,
+      "requires_operator_review": true,
+      "requires_update_governance_before_automatic_updates": true
+    },
+    "status": "warning",
+    "warnings": [
+      "invention_route_requires_higher_feasibility_threshold",
+      "package_not_ready_for_final_package"
+    ]
+  },
+  "contract_name": "Dashboard Backend Bridge Repair",
+  "contract_version": "v17.75.1",
+  "design_portal": {
+    "architecture_summary": "{\"intended_function\": \"to_be_derived_from_discovery_and_advancement_path\", \"invention_need\": \"{\\\"design_portal\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"inputs\\\": {\\\"domain\\\": \\\"insurance\\\", \\\"keywords\\\": [\\\"evaluate\\\", \\\"climate\\\", \\\"insurance\\\", \\\"repricing\\\", \\\"risk-transfer\\\", \\\"demand\\\"], \\\"market_gap\\\": {\\\"acquirer_categories\\\": [\\\"insurance analytics platforms\\\", \\\"catastrophe modeling companies\\\", \\\"reinsurers\\\", \\\"ri...",
+    "blueprint_summary": "{\"blueprint_level\": \"conceptual_to_implementation_ready_after_autodesign_details\", \"must_include\": [\"architecture summary\", \"component map\", \"dependency map\", \"technology stack\", \"implementation phases\", \"validation gates\", \"risk and blocker register\"], \"status\": \"contract_defined\"}",
+    "component_map": "{\"components\": [{\"name\": \"core_system_component\", \"source\": \"contract_default\", \"status\": \"pending_autodesign_detail\"}, {\"name\": \"data_or_signal_interface\", \"source\": \"contract_default\", \"status\": \"pending_autodesign_detail\"}, {\"name\": \"validation_and_evidence_layer\", \"source\": \"contract_default\", \"status\": \"pending_autodesign_detail\"}, {\"name\": \"operator_review_surface\", \"source\": \"contract_default\", \"status\": \"pend...",
+    "package_readiness": "{\"ready_for_final_package\": false, \"requires_operator_review\": true, \"requires_v17_69_validation\": true, \"status\": \"contract_ready_for_validation\"}",
+    "status": "contract_ready",
+    "technology_stack": "{\"compatibility_required\": true, \"deployment_assessment_required\": true, \"manufacturability_assessment_required\": true, \"selected_stack\": {\"buildability_notes\": [\"ingestion can be implemented with the matched stack components.\", \"semantic_processing can be implemented with the matched stack components.\", \"analysis_engines can be implemented with the matched stack components.\", \"decision_layer can be implemented with ..."
+  },
+  "generated_at": "2026-05-13T11:18:57.700160Z",
+  "internet": {
+    "blockers": [],
+    "mode": "static_verification_no_internet_calls",
+    "readiness": {
+      "automatic_updates_enabled": false,
+      "live_internet_enabled": false,
+      "requires_v17_71_to_v17_74_update_pack_governance": true,
+      "safe_for_automatic_updates": false,
+      "safe_to_attempt_live_probe_after_operator_review": false,
+      "static_internet_readiness": true
+    },
+    "status": "warning",
+    "warnings": [
+      "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+    ]
+  },
+  "mission": {
+    "status": "GO_WITH_WARNINGS",
+    "summary": "Proceed only to manual review. Do not enable automatic updates.",
+    "title": "Claire Syntalion Operator Cockpit"
+  },
+  "proof": {
+    "domain_status": {
+      "autodesign_handoff": "passed",
+      "buildability_validation": "passed",
+      "dashboard_functionality": "passed",
+      "design_portal": "passed",
+      "internet_readiness": "passed",
+      "route_integrity": "passed",
+      "runtime_truth": "passed",
+      "safety_locks": "passed",
+      "update_governance": "passed"
+    },
+    "launch_readiness": {
+      "automatic_updates_enabled": false,
+      "automatic_updates_ready": false,
+      "background_execution_enabled": false,
+      "dashboard_ready_for_manual_review": true,
+      "internet_static_readiness_reviewable": true,
+      "live_internet_enabled": false,
+      "route_contract_ready_for_manual_review": true,
+      "runtime_truth_ready_for_manual_review": true
+    },
+    "status": "GO_WITH_WARNINGS",
+    "stop_go": {
+      "blocked_domains": [],
+      "recommendation": "Proceed only to manual review. Do not enable automatic updates.",
+      "status": "GO_WITH_WARNINGS",
+      "warnings": [
+        {
+          "domain": "buildability_validation",
+          "warnings": [
+            "invention_route_requires_higher_feasibility_threshold",
+            "package_not_ready_for_final_package"
+          ]
+        },
+        {
+          "domain": "internet_readiness",
+          "warnings": [
+            "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+          ]
+        }
+      ]
+    }
+  },
+  "route_gate": {
+    "invention_required": true,
+    "route_family": "autodesign",
+    "selected_route": "solution_design",
+    "status": "passed",
+    "summary": "Actual route surfaces are loaded from runtime truth, route audit, and proof contracts.",
+    "terminal_state": "complete"
+  },
+  "scorecards": {
+    "autodesign": {
+      "label": "AutoDesign",
+      "status": "present",
+      "value": "already_satisfied"
+    },
+    "backend": {
+      "label": "Backend",
+      "status": "present",
+      "value": "Online"
+    },
+    "internet": {
+      "label": "Internet",
+      "status": "present",
+      "value": "warning"
+    },
+    "route": {
+      "label": "Route",
+      "status": "present",
+      "value": "autodesign"
+    },
+    "runtime_truth": {
+      "label": "Runtime Truth",
+      "status": "present",
+      "value": "Loaded"
+    },
+    "updates": {
+      "label": "Updates",
+      "status": "present",
+      "value": "locked_passed"
+    }
+  },
+  "source": {
+    "inputs": {
+      "autodesign_handoff": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/autodesign/autodesign_handoff_contract.json",
+        "status": "loaded"
+      },
+      "buildability_validation": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/validation/buildability_viability_manufacturability_validation.json",
+        "status": "loaded"
+      },
+      "dashboard_runtime_truth": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/dashboard_runtime_truth.json",
+        "status": "loaded"
+      },
+      "design_portal": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/design_portal_output_contract.json",
+        "status": "loaded"
+      },
+      "internet_readiness": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+        "status": "loaded"
+      },
+      "proof_pack": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/full_end_to_end_proof_pack.json",
+        "status": "loaded"
+      },
+      "regression_lock": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_governance_regression_lock.json",
+        "status": "loaded"
+      },
+      "rollback_plan": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json",
+        "status": "loaded"
+      },
+      "route_audit": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/routes/discovery_breakthrough_innovation_route_audit.json",
+        "status": "loaded"
+      },
+      "runner_gate": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/automatic_update_runner_gate.json",
+        "status": "loaded"
+      },
+      "runtime_truth": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json",
+        "status": "loaded"
+      },
+      "stop_go": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/proof/v17_75_stop_go_report.json",
+        "status": "loaded"
+      },
+      "update_pack_staging": {
+        "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json",
+        "status": "loaded"
+      }
+    },
+    "missing_data_stays_missing": true,
+    "proof_pack_loaded": true,
+    "runtime_truth_loaded": true
+  },
+  "surfaces": {
+    "acquisition": {
+      "description": "",
+      "key": "acquisition",
+      "label": "Acquisition",
+      "status": "present",
+      "value": "{\"acquirer_matches\": [{\"fit_dimensions\": {\"buyer_segment_fit\": 0.105, \"category_alignment\": 0.11, \"focus_alignment\": 0.144, \"sector_fit\": 0.1, \"strategic_pressure\": 0.0244}, \"focus\": [\"insurance analytics\", \"catastrophe risk\", \"property data\", \"underwriting\", \"climate risk\"], \"match_score\": 0.98, \"matched_signals\": [\"analytics\", \"catastrophe\", \"climate\", \"data\", \"insurance\", \"property\", \"risk\", \"underwriting\"], \"name..."
+    },
+    "advancement_path": {
+      "description": "",
+      "key": "advancement_path",
+      "label": "Advancement Path",
+      "status": "present",
+      "value": "{\"design_portal\": {\"domain\": \"insurance\", \"inputs\": {\"domain\": \"insurance\", \"keywords\": [\"evaluate\", \"climate\", \"insurance\", \"repricing\", \"risk-transfer\", \"demand\"], \"market_gap\": {\"acquirer_categories\": [\"insurance analytics platforms\", \"catastrophe modeling companies\", \"reinsurers\", \"risk data providers\", \"climate risk intelligence companies\", \"insurance core software platforms\", \"insurance brokers\"], \"buyer_segmen..."
+    },
+    "breakthrough": {
+      "description": "",
+      "key": "breakthrough",
+      "label": "Breakthrough",
+      "status": "present",
+      "value": "{\"classification\": \"innovation_candidate\", \"classification_rationale\": \"Breakthrough qualification is based on trend/thesis evidence, market gap pressure, portfolio score 0.8215, and breakthrough score 0.9263. Breakthrough does not automatically imply invention.\", \"is_breakthrough\": \"True\", \"primary_type\": \"portfolio_optimization\", \"route_recommendation\": \"portfolio_intelligence\", \"score\": \"0.9262686678652224\", \"seco..."
+    },
+    "discovery": {
+      "description": "",
+      "key": "discovery",
+      "label": "Discovery",
+      "status": "present",
+      "value": "{\"confidence\": \"0.6681000400745148\", \"opportunity_discovery\": {\"confidence\": \"0.7248\", \"discovery_vector\": {\"best_entry_wedge\": \"climate exposure and underwriting repricing pilot\", \"expansion_path\": [\"weather-loss backtesting\", \"exposure benchmarks\", \"catastrophe scenario modules\", \"risk-transfer planning\", \"enterprise risk platform\"], \"opportunity_type\": \"validated_gap_opportunity\", \"primary_vector\": \"climate exposu..."
+    },
+    "final_package": {
+      "description": "",
+      "key": "final_package",
+      "label": "Final Package",
+      "status": "success",
+      "value": "{\"document_manifest\": [{\"character_count\": 3190, \"filename\": \"run_summary.md\", \"format\": \"markdown\", \"ready\": true, \"sha256_12\": \"1ddd392f6409\", \"title\": \"Run Summary\"}, {\"character_count\": 33163, \"filename\": \"portfolio_binder.md\", \"format\": \"markdown\", \"ready\": true, \"sha256_12\": \"bd7f7bb5319e\", \"title\": \"Portfolio Binder\"}, {\"character_count\": 6925, \"filename\": \"technical_feasibility.md\", \"format\": \"markdown\", \"rea..."
+    },
+    "next_actions": {
+      "description": "",
+      "key": "next_actions",
+      "label": "Next Actions",
+      "status": "present",
+      "value": "[{\"action\": \"review design output and validation gates\", \"priority\": \"high\", \"purpose\": \"confirm solution route is justified before build work\"}]"
+    },
+    "portfolio": {
+      "description": "",
+      "key": "portfolio",
+      "label": "Portfolio",
+      "status": "present",
+      "value": "{\"exposure_notes\": [\"risk blocker level: low\", \"commercial risk: low\"], \"opportunity_map\": {\"buyer_pain\": \"insurers and reinsurers need earlier detection of climate exposure concentration, repricing pressure, and market-withdrawal risk\", \"entry_wedge\": \"climate exposure and underwriting repricing pilot\", \"first_buyer_segment\": \"insurers\", \"proof_to_unlock\": \"weather-loss backtesting, repricing accuracy, underwriter w..."
+    },
+    "signal_basis": {
+      "description": "",
+      "key": "signal_basis",
+      "label": "Signal Basis",
+      "status": "present",
+      "value": "{\"governed_signals\": {\"accepted_signal_count\": \"1\", \"deduped_signal_count\": \"1\", \"noise_rejected_count\": \"0\", \"raw_signal_count\": \"1\", \"signals\": [{\"created_at\": \"2026-05-05T06:34:34.767877+00:00\", \"governance_status\": \"accepted\", \"metadata\": {\"domain\": \"insurance\", \"intent_id\": \"unknown\", \"keywords\": [\"evaluate\", \"climate\", \"insurance\", \"repricing\", \"risk-transfer\", \"demand\"]}, \"raw_input\": \"Evaluate climate insuran..."
+    },
+    "strategy": {
+      "description": "",
+      "key": "strategy",
+      "label": "Strategy",
+      "status": "present",
+      "value": "{\"business_model\": {\"business_model_thesis\": \"climate insurance supports a enterprise_subscription business model. Value capture is moderate with buyer ROI rated unproven. Commercial risk is low.\", \"buyer_roi\": {\"economic_benefits\": [\"improved underwriting precision\", \"better climate exposure pricing\", \"earlier market-withdrawal warning\", \"improved reinsurance and risk-transfer planning\", \"reduced portfolio concentra..."
+    },
+    "thesis": {
+      "description": "",
+      "key": "thesis",
+      "label": "Thesis",
+      "status": "success",
+      "value": "{\"confidence\": \"0.6761\", \"domain\": \"insurance\", \"missing_selections\": [], \"route_recommendation\": \"portfolio_intelligence\", \"sector\": \"climate_insurance\", \"status\": \"success\", \"supporting_points\": [\"Trend cluster formed around climate_insurance:climate insurance risk intelligence platform.\", \"Market gap is classified as climate exposure / underwriting repricing / market withdrawal.\", \"Opportunity type is {'type': 'va..."
+    },
+    "trend_discovery": {
+      "description": "",
+      "key": "trend_discovery",
+      "label": "Trend Discovery",
+      "status": "success",
+      "value": "{\"cluster_formation\": {\"accepted_signal_count\": \"1\", \"cluster\": \"climate_insurance:climate insurance risk intelligence platform\", \"cluster_basis\": [\"keyword:evaluate\", \"keyword:climate\", \"keyword:insurance\", \"keyword:repricing\", \"keyword:risk-transfer\", \"accepted_governed_signals\"]}, \"confidence\": \"0.6235\", \"discovered_trends\": [{\"direction\": \"rising\", \"momentum_score\": 0.6853, \"name\": \"climate insurance: evaluate cl..."
+    }
+  },
+  "updates": {
+    "automatic_updates_enabled": false,
+    "background_execution_enabled": false,
+    "execution_enabled": false,
+    "regression_lock_active": true,
+    "rollback_plan_count": 33,
+    "runner_gate": "gate_ready_but_execution_disabled",
+    "staged_pack_count": 33,
+    "status": "locked_passed"
+  }
+}

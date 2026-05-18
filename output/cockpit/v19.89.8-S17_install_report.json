@@ -1,0 +1,24 @@
+{
+  "version": "v19.89.8-S17",
+  "installed_at_utc": "2026-05-14T02:37:02.911845+00:00",
+  "status": "installed",
+  "files_written": [
+    "claire\\api\\canonical_cockpit_surface_registry.py",
+    "tests\\test_canonical_cockpit_surface_registry_s17.py",
+    "docs\\build_notes\\v19.89.8-S17_canonical_cockpit_surface_registry.md",
+    "output\\cockpit\\v19.89.8-S17_install_report.json"
+  ],
+  "patch_report": [
+    "added S17 import guard to claire\\app.py",
+    "registered S17 API routes in claire\\app.py",
+    "attached S17 registry to dashboard payload in claire\\app.py"
+  ],
+  "run_tests": "python -m pytest tests/test_canonical_cockpit_surface_registry_s17.py -q",
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

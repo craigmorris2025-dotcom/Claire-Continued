@@ -1,0 +1,1 @@
+# Claire v19.77 Cockpit UX Stabilization Report\n\n- Created: 2026-05-11T11:43:56.510399Z\n- Non-destructive: True\n- Launcher rewired in this build: False\n- Legacy deleted: False\n- Backend rewritten: False\n- Blockers: 0\n

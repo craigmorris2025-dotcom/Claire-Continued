@@ -1,0 +1,8 @@
+.claire-source-ingestion-panel { margin: 16px 0; padding: 16px; border: 1px solid rgba(148, 163, 184, 0.25); border-radius: 18px; background: rgba(15, 23, 42, 0.55); }
+.claire-source-ingestion-panel__header h2 { margin: 0 0 6px; font-size: 1rem; }
+.claire-source-ingestion-panel__header p { margin: 0 0 12px; color: rgba(226, 232, 240, 0.76); }
+.claire-source-ingestion-panel__cards { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.claire-source-ingestion-card { padding: 12px; border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 14px; background: rgba(2, 6, 23, 0.42); }
+.claire-source-ingestion-card__top { display: flex; justify-content: space-between; gap: 10px; }
+.claire-source-ingestion-card p { color: rgba(226, 232, 240, 0.78); }
+.claire-source-ingestion-card small { color: rgba(125, 211, 252, 0.84); }

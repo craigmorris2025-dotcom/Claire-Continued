@@ -1,0 +1,40 @@
+{
+  "version": "v19.89.8-S289-S295-s149-s155-catchall-compat-repair",
+  "started_at": "2026-05-15T19:22:25.991431+00:00",
+  "actions": [
+    "appended catchall compatibility repair to C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+    "appended project-discovered exports to C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+    "appended catchall compatibility repair to C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+    "appended project-discovered exports to C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\src\\claire\\api\\governed_cockpit_payload_visibility_s149_s155.py",
+    "wrote tests/test_s149_s155_catchall_compat_repair.py"
+  ],
+  "authority_locks": {
+    "runtime_truth_write_allowed": false,
+    "runtime_mutation_allowed": false,
+    "automatic_updates_allowed": false,
+    "autonomous_execution_allowed": false,
+    "continuous_crawling_allowed": false,
+    "workflow_actions_mode": "proposal_only"
+  },
+  "root_cause": "S149-S155 visibility module was missing multiple legacy exports used by tests and later modules during collection.",
+  "discovered_imports_from_s149_s155": [
+    "build_cockpit_live_visibility_readiness",
+    "build_cockpit_payload_manifest",
+    "build_cockpit_payload_read_contract",
+    "build_dashboard_payload_visibility_contract",
+    "build_existing_payload_nonbreak_probe",
+    "build_governed_cockpit_payload_visibility_s149_s155",
+    "build_governed_operations_visibility_contract",
+    "build_live_payload_visibility_contract",
+    "build_live_payload_visibility_probe",
+    "build_payload_status_visibility_contract",
+    "build_repeated_payload_fetch_stability_probe",
+    "build_s149_s155_live_payload_visibility",
+    "build_s149_s155_stop_gate",
+    "dashboard_payload_visibility_fragment",
+    "get_governed_cockpit_payload_visibility_s149_s155",
+    "governed_operations_payload_fragment",
+    "live_payload_visibility_fragment"
+  ],
+  "completed_at": "2026-05-15T19:22:27.068431+00:00"
+}

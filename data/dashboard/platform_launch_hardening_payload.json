@@ -1,0 +1,85 @@
+{
+  "blockers": [
+    "launcher_check_failed"
+  ],
+  "endpoint_presence": {
+    "required_missing": [
+      "/runtime/truth",
+      "/routes/audit",
+      "/autodesign/handoff",
+      "/design-portal/output",
+      "/validation/buildability",
+      "/internet/readiness",
+      "/updates/regression-lock",
+      "/proof/e2e",
+      "/proof/platform-smoke"
+    ],
+    "required_present": [
+      "/operator/dashboard/state",
+      "/operator/search/capabilities"
+    ],
+    "status": "warning"
+  },
+  "generated_at": "2026-05-13T11:18:59.291875Z",
+  "launcher": {
+    "errors": [
+      "launcher_missing_required_pattern:uvicorn claire.app:app",
+      "launcher_missing_required_pattern:127.0.0.1",
+      "launcher_missing_required_pattern:frontend\\command_center\\modern\\index.html"
+    ],
+    "line_count": 58,
+    "status": "failed",
+    "warnings": [
+      "launcher_contains_legacy_pattern:python main.py"
+    ]
+  },
+  "port": {
+    "host": "127.0.0.1",
+    "message": "Port is available for launch.",
+    "occupied": false,
+    "port": 8000,
+    "status": "available"
+  },
+  "recommendation": "Fix launch blockers before using Claire as a platform launch candidate.",
+  "route_registration": {
+    "expected_count": 14,
+    "missing": [],
+    "registered": [
+      "routes_operator_dashboard",
+      "routes_operator_search_command",
+      "routes_runtime_truth",
+      "routes_route_audit",
+      "routes_autodesign_handoff",
+      "routes_design_portal_output",
+      "routes_buildability_validation",
+      "routes_internet_readiness",
+      "routes_update_pack_staging",
+      "routes_rollback_update_plan",
+      "routes_automatic_update_runner_gate",
+      "routes_update_governance_regression_lock",
+      "routes_full_e2e_proof_pack",
+      "routes_platform_endpoint_smoke_proof"
+    ],
+    "registered_count": 14,
+    "status": "passed"
+  },
+  "safety": {
+    "checks": {
+      "automatic_updates_disabled": true,
+      "live_internet_disabled": true,
+      "regression_lock_active": true,
+      "runner_background_disabled": true,
+      "runner_execution_disabled": true,
+      "search_auto_updates_disabled": true,
+      "search_live_web_disabled": true
+    },
+    "status": "passed"
+  },
+  "status": "STOP",
+  "version": "v17.77",
+  "warnings": [
+    "launcher_contains_legacy_pattern:python main.py",
+    "some_expected_endpoints_not_registered:/runtime/truth,/routes/audit,/autodesign/handoff,/design-portal/output,/validation/buildability,/internet/readiness,/updates/regression-lock,/proof/e2e,/proof/platform-smoke",
+    "v17_76_platform_smoke_report_is_STOP_review_before_launch"
+  ]
+}

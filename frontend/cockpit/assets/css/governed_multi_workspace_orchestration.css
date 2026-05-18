@@ -1,0 +1,108 @@
+.governed-multi-workspace-orchestration-card {
+  margin: 16px 0;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.multi-workspace-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.multi-workspace-kicker {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.multi-workspace-header h2 {
+  margin: 4px 0 0;
+  font-size: 20px;
+}
+
+.multi-workspace-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  background: rgba(14, 165, 233, 0.10);
+  color: rgba(186, 230, 253, 0.96);
+  white-space: nowrap;
+}
+
+.multi-workspace-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.multi-workspace-summary span {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.multi-workspace-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+}
+
+.multi-workspace-node {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(2, 6, 23, 0.24);
+}
+
+.multi-workspace-node-id {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.multi-workspace-node-state {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(125, 211, 252, 0.95);
+}
+
+.multi-workspace-node-meta {
+  display: grid;
+  gap: 3px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: rgba(203, 213, 225, 0.78);
+}
+
+.workspace-node-active,
+.multi-workspace-coordinated {
+  border-color: rgba(52, 211, 153, 0.36);
+}
+
+.workspace-node-degraded,
+.multi-workspace-degraded,
+.multi-workspace-partial,
+.multi-workspace-review {
+  border-color: rgba(251, 191, 36, 0.48);
+}
+
+.workspace-node-recovering,
+.multi-workspace-recovering {
+  border-color: rgba(125, 211, 252, 0.48);
+}
+
+.multi-workspace-blocked {
+  border-color: rgba(248, 113, 113, 0.54);
+}

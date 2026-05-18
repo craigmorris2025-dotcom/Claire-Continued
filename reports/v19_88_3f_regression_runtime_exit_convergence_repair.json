@@ -1,0 +1,51 @@
+{
+  "version": "19.88.3f",
+  "timestamp_utc": "2026-05-13T05:08:39.538144+00:00",
+  "policy_path": "claire\\runtime_proof_exit_policy.py",
+  "test_path": "tests\\test_v19_88_3f_runtime_exit_policy.py",
+  "results": [
+    {
+      "path": "tools\\active_runtime_check.py",
+      "exists": true,
+      "patched": false,
+      "note": "No known exit-policy pattern matched; inspect manually if still failing."
+    },
+    {
+      "path": "tools\\runtime_state_engine.py",
+      "exists": true,
+      "patched": false,
+      "note": "No known exit-policy pattern matched; inspect manually if still failing."
+    },
+    {
+      "path": "tools\\run_claire_baseline.py",
+      "exists": true,
+      "patched": false,
+      "note": "No known exit-policy pattern matched; inspect manually if still failing."
+    },
+    {
+      "path": "tools\\core_runtime_lock.py",
+      "exists": true,
+      "patched": false,
+      "note": "No known exit-policy pattern matched; inspect manually if still failing."
+    },
+    {
+      "path": "tools\\runtime_manifest_system.py",
+      "exists": false,
+      "patched": false
+    },
+    {
+      "path": "tools\\unified_runtime_dashboard_builder.py",
+      "exists": true,
+      "patched": false,
+      "note": "No known exit-policy pattern matched; inspect manually if still failing."
+    },
+    {
+      "path": "tools\\live_runtime_dashboard.py",
+      "exists": false,
+      "patched": false
+    }
+  ],
+  "backend_shim_created": false,
+  "dashboard_redesigned": false,
+  "truth_preserved": true
+}

@@ -1,0 +1,41 @@
+{
+  "installer": "install_claire_v19_89_8_s345_s351_frontend_renderer_pack.py",
+  "started_at": "2026-05-16T05:26:29.425840Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "files": [
+    {
+      "path": "claire/api/dashboard_frontend_renderer_integration_s345_s351.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "tests/test_s345_s351_dashboard_frontend_renderer_integration.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.js",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.css",
+      "written": true
+    }
+  ],
+  "backups": {
+    "claire/api/dashboard_frontend_renderer_integration_s345_s351.py": null,
+    "tests/test_s345_s351_dashboard_frontend_renderer_integration.py": null,
+    "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.js": null,
+    "frontend/cockpit/consolidated/s345_s351_cockpit_renderer.css": null
+  },
+  "patches": [
+    {
+      "path": "frontend\\cockpit\\shell\\cockpit_shell.html",
+      "exists": true,
+      "patched": true,
+      "marker": "BEGIN CLAIRE_S345_S351"
+    }
+  ],
+  "finished_at": "2026-05-16T05:26:29.450843Z"
+}

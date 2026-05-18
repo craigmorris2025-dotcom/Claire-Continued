@@ -1,0 +1,145 @@
+(function () {
+  const API_BASE = window.CLAIRE_API_BASE || "http://127.0.0.1:8000";
+
+  function findMount() {
+    return document.querySelector("[data-panel='governed-web']") ||
+      document.querySelector("#governed-web") ||
+      document.querySelector("main") ||
+      document.body;
+  }
+
+  function findActionsMount() {
+    return document.querySelector("[data-panel='actions']") ||
+      document.querySelector("#actions") ||
+      findMount();
+  }
+
+  function ensurePanel(id, title, mount) {
+    let panel = document.getElementById(id);
+    if (!panel) {
+      panel = document.createElement("section");
+      panel.id = id;
+      panel.className = "claire-source-gap-panel";
+      panel.innerHTML = `<div class="claire-source-gap-header"><h2>${title}</h2><span data-source-gap-status>Loading</span></div><div class="claire-source-gap-grid" data-source-gap-grid></div>`;
+      mount.appendChild(panel);
+    }
+    return panel;
+  }
+
+  function chip(text) {
+    const span = document.createElement("span");
+    span.className = "claire-source-gap-chip";
+    span.textContent = text;
+    return span;
+  }
+
+  function renderList(values) {
+    const ul = document.createElement("ul");
+    (values || []).slice(0, 5).forEach((value) => {
+      const li = document.createElement("li");
+      li.textContent = value;
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+
+  function renderSourceCards(cards) {
+    const panel = ensurePanel("claire-source-gap-matrix-panel", "Source Gap Matrix", findMount());
+    const status = panel.querySelector("[data-source-gap-status]");
+    const grid = panel.querySelector("[data-source-gap-grid]");
+    grid.innerHTML = "";
+    status.textContent = `${cards.length} cards · execution blocked`;
+    cards.forEach((card) => {
+      const node = document.createElement("article");
+      node.className = "claire-source-gap-card";
+      node.innerHTML = `<h3>${card.title}</h3><p>${card.subtitle || card.status}</p>`;
+      const row = document.createElement("div");
+      row.className = "claire-source-gap-chip-row";
+      row.appendChild(chip(card.priority || "planned"));
+      row.appendChild(chip("network blocked"));
+      row.appendChild(chip("body read blocked"));
+      node.appendChild(row);
+      const missingTitle = document.createElement("strong");
+      missingTitle.textContent = "Missing before use";
+      node.appendChild(missingTitle);
+      node.appendChild(renderList(card.missing_before_use));
+      const blocked = document.createElement("p");
+      blocked.className = "claire-source-gap-muted";
+      blocked.textContent = card.blocked_reason || "planning only";
+      node.appendChild(blocked);
+      grid.appendChild(node);
+    });
+  }
+
+  function renderScopeCards(cards) {
+    const panel = ensurePanel("claire-search-scope-panel", "Search Scope Plans", findMount());
+    const status = panel.querySelector("[data-source-gap-status]");
+    const grid = panel.querySelector("[data-source-gap-grid]");
+    grid.innerHTML = "";
+    status.textContent = `${cards.length} plans · no provider execution`;
+    cards.forEach((card) => {
+      const node = document.createElement("article");
+      node.className = "claire-source-gap-card claire-search-scope-card";
+      node.innerHTML = `<h3>${card.title}</h3><p>${card.status}</p>`;
+      const row = document.createElement("div");
+      row.className = "claire-source-gap-chip-row";
+      row.appendChild(chip("plan only"));
+      row.appendChild(chip("provider blocked"));
+      row.appendChild(chip("review required"));
+      node.appendChild(row);
+      const pathTitle = document.createElement("strong");
+      pathTitle.textContent = "Evidence path";
+      node.appendChild(pathTitle);
+      node.appendChild(renderList(card.evidence_path));
+      grid.appendChild(node);
+    });
+  }
+
+  function renderActions(actions) {
+    const panel = ensurePanel("claire-source-gap-actions-panel", "Governed Source/Search Actions", findActionsMount());
+    const status = panel.querySelector("[data-source-gap-status]");
+    const grid = panel.querySelector("[data-source-gap-grid]");
+    grid.innerHTML = "";
+    status.textContent = `${actions.length} visible · all blocked`;
+    actions.forEach((action) => {
+      const node = document.createElement("article");
+      node.className = "claire-source-gap-card claire-source-action-card";
+      node.innerHTML = `<h3>${action.label}</h3><p>${action.blocked_reason}</p>`;
+      const row = document.createElement("div");
+      row.className = "claire-source-gap-chip-row";
+      row.appendChild(chip("non-executable"));
+      row.appendChild(chip("operator review"));
+      node.appendChild(row);
+      const req = document.createElement("strong");
+      req.textContent = "Would require";
+      node.appendChild(req);
+      node.appendChild(renderList(action.would_require));
+      grid.appendChild(node);
+    });
+  }
+
+  async function loadSourceGapPayload() {
+    try {
+      const response = await fetch(`${API_BASE}/api/sources/gaps/payload`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const payload = await response.json();
+      renderSourceCards((payload.source_gap_cards && payload.source_gap_cards.cards) || []);
+      renderScopeCards((payload.search_scope_cards && payload.search_scope_cards.cards) || []);
+      renderActions((payload.actions && payload.actions.actions) || []);
+    } catch (error) {
+      const panel = ensurePanel("claire-source-gap-matrix-panel", "Source Gap Matrix", findMount());
+      const status = panel.querySelector("[data-source-gap-status]");
+      status.textContent = "Unavailable";
+      const grid = panel.querySelector("[data-source-gap-grid]");
+      grid.innerHTML = `<article class="claire-source-gap-card"><h3>Source gap payload unavailable</h3><p>${String(error)}</p></article>`;
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", loadSourceGapPayload);
+  } else {
+    loadSourceGapPayload();
+  }
+
+  window.ClaireGovernedSourceGapMatrix = { load: loadSourceGapPayload };
+})();

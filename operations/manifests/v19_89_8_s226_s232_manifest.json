@@ -1,0 +1,19 @@
+{
+  "version": "v19.89.8-S226-S232",
+  "installed_at": "2026-05-15T16:11:18.216261+00:00",
+  "stage_pack": "S226-S232",
+  "purpose": "Single cockpit shell payload assembly, render safety, normalized card states, and shell readiness.",
+  "files": [
+    "claire/api/cockpit_shell_payload_assembler.py",
+    "claire/api/cockpit_render_safety_contract.py",
+    "claire/api/cockpit_card_state_normalizer.py",
+    "claire/api/cockpit_single_shell_readiness.py",
+    "tests/test_s226_s232_shell_payload_assembler.py",
+    "tests/test_s226_s232_render_safety_and_states.py",
+    "tests/test_s226_s232_single_shell_readiness.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s226_s232_shell_payload_assembler.py tests/test_s226_s232_render_safety_and_states.py tests/test_s226_s232_single_shell_readiness.py -q",
+    "pytest"
+  ]
+}

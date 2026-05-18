@@ -3,6 +3,11 @@
 __pycache__/
 *.pyc
 venv/
+.venv/
+.claire_install/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
 
 # Environment
 .env
@@ -10,6 +15,7 @@ config/env/*.env
 
 # Logs
 logs/
+exports/
 data/cache/
 data/backups/
 

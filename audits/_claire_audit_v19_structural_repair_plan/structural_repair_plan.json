@@ -1,0 +1,1132 @@
+{
+  "audit": "Claire v19 Structural Syntax Stabilization + Dashboard Wiring Audit Repair Plan",
+  "claire_app_context": {
+    "exists": true,
+    "include_router_lines": [
+      "app.include_router(pipeline_router)",
+      "app.include_router(dashboard_alignment_router)",
+      "app.include_router(runtime_truth_router)",
+      "app.include_router(operator_dashboard_router)",
+      "app.include_router(route_audit_router)",
+      "app.include_router(autodesign_handoff_router)",
+      "app.include_router(design_portal_output_router)",
+      "app.include_router(buildability_validation_router)",
+      "app.include_router(internet_readiness_router)",
+      "app.include_router(update_pack_staging_router)",
+      "app.include_router(rollback_update_plan_router)",
+      "app.include_router(automatic_update_runner_gate_router)",
+      "app.include_router(update_governance_regression_lock_router)",
+      "app.include_router(full_e2e_proof_pack_router)",
+      "app.include_router(operator_search_command_router)",
+      "app.include_router(platform_endpoint_smoke_proof_router)",
+      "app.include_router(platform_launch_hardening_router)",
+      "app.include_router(desktop_startup_reliability_router)",
+      "app.include_router(manual_browser_swagger_proof_router)",
+      "app.include_router(launch_candidate_freeze_router)",
+      "app.include_router(cleanup_proof_router)",
+      "app.include_router(archive_approval_gate_router)",
+      "app.include_router(internet_provider_gate_router)",
+      "app.include_router(governed_live_probe_router)",
+      "app.include_router(evidence_promotion_gate_router)",
+      "app.include_router(governed_dashboard_live_search_router)",
+      "app.include_router(real_provider_operator_probe_router)",
+      "app.include_router(_v18_72_2_live_router)",
+      "app.include_router(_v18_72_2_provider_router)",
+      "app.include_router(_v18_73_1_operator_compat_router)",
+      "app.include_router(v19_25_search_execution_router)"
+    ],
+    "line_347_context": [
+      {
+        "line": 336,
+        "text": "# v18.72.2 active launcher create_app web activation wrapper end"
+      },
+      {
+        "line": 337,
+        "text": ""
+      },
+      {
+        "line": 338,
+        "text": "# v18.73.1 operator dashboard compatibility endpoint wrapper"
+      },
+      {
+        "line": 339,
+        "text": "try:"
+      },
+      {
+        "line": 340,
+        "text": "    _claire_original_create_app_before_v18_73_1 = create_app"
+      },
+      {
+        "line": 341,
+        "text": ""
+      },
+      {
+        "line": 342,
+        "text": "    def create_app() -> FastAPI:"
+      },
+      {
+        "line": 343,
+        "text": "        app = _claire_original_create_app_before_v18_73_1()"
+      },
+      {
+        "line": 344,
+        "text": "        try:"
+      },
+      {
+        "line": 345,
+        "text": "            from claire.api.operator_dashboard_compat_routes import router as _v18_73_1_operator_compat_router"
+      },
+      {
+        "line": 346,
+        "text": "            app.include_router(_v18_73_1_operator_compat_router)"
+      },
+      {
+        "line": 347,
+        "text": "app.include_router(v19_25_search_execution_router)"
+      },
+      {
+        "line": 348,
+        "text": "        except Exception:"
+      },
+      {
+        "line": 349,
+        "text": "            pass"
+      },
+      {
+        "line": 350,
+        "text": "        return app"
+      },
+      {
+        "line": 351,
+        "text": ""
+      },
+      {
+        "line": 352,
+        "text": "    try:"
+      },
+      {
+        "line": 353,
+        "text": "        app = create_app()"
+      },
+      {
+        "line": 354,
+        "text": "    except Exception:"
+      },
+      {
+        "line": 355,
+        "text": "        pass"
+      },
+      {
+        "line": 356,
+        "text": "except Exception:"
+      },
+      {
+        "line": 357,
+        "text": "    pass"
+      },
+      {
+        "line": 358,
+        "text": "# v18.73.1 operator dashboard compatibility endpoint wrapper end"
+      }
+    ],
+    "size_bytes": 14479
+  },
+  "dashboard_fetch_scan": {
+    "fetch_count": 0,
+    "fetches": [],
+    "files": [
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_clean_shell.css",
+        "size_bytes": 10693
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_clean_shell.js",
+        "size_bytes": 16377
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_connected_operator_dashboard.css",
+        "size_bytes": 4644
+      },
+      {
+        "backend_offline_mentions": 2,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_connected_operator_dashboard.js",
+        "size_bytes": 8927
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_dashboard_decongestion.css",
+        "size_bytes": 8709
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_dashboard_reset_v17_62_5.css",
+        "size_bytes": 10786
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_dashboard_reset_v17_62_5.js",
+        "size_bytes": 25962
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_dashboard_search.js",
+        "size_bytes": 21851
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_functional_operator_dashboard.css",
+        "size_bytes": 3720
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_functional_operator_dashboard.js",
+        "size_bytes": 9656
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_operating_environment.css",
+        "size_bytes": 16437
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_operating_environment.js",
+        "size_bytes": 50956
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_operator_shell.css",
+        "size_bytes": 10697
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_operator_shell.js",
+        "size_bytes": 19168
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_overlap_fix.css",
+        "size_bytes": 5188
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_portal_responsive_layout.css",
+        "size_bytes": 5533
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_runtime_truth_backbone.js",
+        "size_bytes": 1705
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_search_relocation.css",
+        "size_bytes": 3200
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_single_screen_operator.css",
+        "size_bytes": 7533
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_single_screen_operator.js",
+        "size_bytes": 14497
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_strategic_cockpit.css",
+        "size_bytes": 10563
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_strategic_cockpit.js",
+        "size_bytes": 22497
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_validation_authority.js",
+        "size_bytes": 9964
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_verified_memory.js",
+        "size_bytes": 7998
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_workspace_agent_dashboard.css",
+        "size_bytes": 4900
+      },
+      {
+        "backend_offline_mentions": 1,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_workspace_agent_dashboard.js",
+        "size_bytes": 11322
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_workspace_stack_fix.css",
+        "size_bytes": 5655
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/claire_workspace_stack_fix.js",
+        "size_bytes": 4808
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/dashboard_file_origin_fetch_bridge.js",
+        "size_bytes": 1916
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/dashboard_primary_web_search_binding.js",
+        "size_bytes": 5799
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/governed_live_search_ui_binding.js",
+        "size_bytes": 4181
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/governed_provider_probe_ui_binding.js",
+        "size_bytes": 4651
+      },
+      {
+        "backend_offline_mentions": 1,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/index.html",
+        "size_bytes": 19650
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/intelligence_feed.js",
+        "size_bytes": 3247
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/internet_operations_dashboard.html",
+        "size_bytes": 349
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/live_search_visible_result_contract.js",
+        "size_bytes": 1267
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/modern_dashboard.css",
+        "size_bytes": 3954
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/modern_dashboard.js",
+        "size_bytes": 10358
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/operator_dashboard.css",
+        "size_bytes": 5635
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/operator_dashboard.js",
+        "size_bytes": 14699
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/product_dashboard.css",
+        "size_bytes": 5588
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/product_dashboard.js",
+        "size_bytes": 16272
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/workspace_persistence.js",
+        "size_bytes": 2530
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/assets/css/claire_v18_74_dashboard_live_web_search_final_binding.css",
+        "size_bytes": 2133
+      },
+      {
+        "backend_offline_mentions": 0,
+        "failed_fetch_mentions": 0,
+        "fetch_count": 0,
+        "fetches": [],
+        "path": "frontend/command_center/modern/assets/js/claire_v18_74_dashboard_live_web_search_final_binding.js",
+        "size_bytes": 16049
+      }
+    ]
+  },
+  "generated_at": "2026-05-10T19:57:48.380898Z",
+  "grouped_counts": {
+    "active_backend_startup_blocker": 1,
+    "generated_placeholder_or_incomplete_module": 34,
+    "quarantined_legacy_placeholder": 29,
+    "unknown": 4
+  },
+  "next_safe_build": "v19 structural repair pack should repair syntax only, not add features.",
+  "repair_order": [
+    "1. Repair claire/app.py syntax first; backend cannot start until this is fixed.",
+    "2. Separate active-runtime modules from placeholder/quarantined modules.",
+    "3. Repair or quarantine generated placeholder modules with invalid syntax.",
+    "4. Re-run syntax audit until zero active-runtime syntax failures.",
+    "5. Only then wire dashboard to one canonical payload API.",
+    "6. Build dashboard panels around runtime summary, 30-stage state, route selection, web evidence, quality gates, operator review."
+  ],
+  "stop_go": "STOP_BACKEND_SYNTAX_REPAIR_REQUIRED",
+  "syntax_failure_count": 68,
+  "syntax_failures": [
+    {
+      "category": "active_backend_startup_blocker",
+      "line": 347,
+      "message": "expected 'except' or 'finally' block",
+      "offset": 0,
+      "path": "claire/app.py",
+      "priority": "critical",
+      "text": "app.include_router(v19_25_search_execution_router)"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 50,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/autonomous/governance/autonomous_action_policy.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/autonomous/governance/escalation_boundary.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 42,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/autonomous/governance/human_review_gate.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 43,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/autonomous/governance/self_change_permission_model.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/proof/build_sequence_validator.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/proof/deployment_model_validator.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 46,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/proof/implementation_cost_model.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 46,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/renderers/architecture_graph_formatter.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 33,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/renderers/blueprint_summary_formatter.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/renderers/dependency_graph_formatter.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/renderers/design_export_formatter.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 58,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/recursive/longitudinal/learning_signal_extractor.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 43,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/recursive/longitudinal/run_pattern_miner.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/recursive/longitudinal/strategy_memory_synthesizer.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/recursive/longitudinal/thesis_evolution_tracker.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/citation_lineage_engine.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 33,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/claim_verifier.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 61,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/evidence_conflict_resolver.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 35,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/governed_live_research.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/research_packet_builder.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/source_verification_engine.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 33,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/compatibility_engine.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 38,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/component_matcher.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 37,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/enterprise_stack_recommender.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 42,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/integration_complexity.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 49,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/model_governance_assessor.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 45,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/technology_catalog.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 52,
+      "message": "unmatched ']'",
+      "offset": 16,
+      "path": "claire/validation/benchmarks/benchmark_dataset_loader.py",
+      "priority": "high",
+      "text": "def Dataset]:"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/benchmark_reporter.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/false_negative_analyzer.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 42,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/false_positive_analyzer.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/outcome_label_manager.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/regime_backtester.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "generated_placeholder_or_incomplete_module",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/signal_backtester.py",
+      "priority": "high",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 52,
+      "message": "unmatched ']'",
+      "offset": 16,
+      "path": "quarantine_legacy_placeholders/benchmarks/benchmark_dataset_loader.py",
+      "priority": "low",
+      "text": "def Dataset]:"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/benchmark_reporter.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/false_negative_analyzer.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 42,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/false_positive_analyzer.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/outcome_label_manager.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/regime_backtester.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/signal_backtester.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 46,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/final_remaining/architecture_graph_formatter.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 33,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/final_remaining/blueprint_summary_formatter.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/final_remaining/dependency_graph_formatter.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/final_remaining/design_export_formatter.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "expected '('",
+      "offset": 14,
+      "path": "quarantine_legacy_placeholders/final_remaining/uptime_monitor.py",
+      "priority": "low",
+      "text": "def mean time to recovery(self, *args, **kwargs):"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 50,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/governance/autonomous_action_policy.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/governance/escalation_boundary.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 42,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/governance/human_review_gate.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 43,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/governance/self_change_permission_model.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/citation_lineage_engine.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 33,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/claim_verifier.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 61,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/evidence_conflict_resolver.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 35,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/governed_live_research.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/research_packet_builder.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/source_verification_engine.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 58,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/longitudinal/learning_signal_extractor.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 43,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/longitudinal/run_pattern_miner.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/longitudinal/strategy_memory_synthesizer.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/longitudinal/thesis_evolution_tracker.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/proof/build_sequence_validator.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/proof/deployment_model_validator.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "quarantined_legacy_placeholder",
+      "line": 46,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/proof/implementation_cost_model.py",
+      "priority": "low",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "category": "unknown",
+      "line": 1,
+      "message": "invalid non-printable character U+FEFF",
+      "offset": 1,
+      "path": "tests/regression/test_runtime_cleanroom.py",
+      "priority": "medium",
+      "text": "﻿from pathlib import Path"
+    },
+    {
+      "category": "unknown",
+      "line": 1,
+      "message": "invalid non-printable character U+FEFF",
+      "offset": 1,
+      "path": "tests/regression/test_runtime_smoke.py",
+      "priority": "medium",
+      "text": "﻿from tools.active_runtime_check import main as runtime_check_main"
+    },
+    {
+      "category": "unknown",
+      "line": 1,
+      "message": "invalid non-printable character U+FEFF",
+      "offset": 1,
+      "path": "tools/master_control_layer_builder.py",
+      "priority": "medium",
+      "text": "﻿#!/usr/bin/env python3"
+    },
+    {
+      "category": "unknown",
+      "line": 71,
+      "message": "unterminated string literal (detected at line 71)",
+      "offset": 11,
+      "path": "tools/pytest_consistency_audit.py",
+      "priority": "medium",
+      "text": "print(f\""
+    }
+  ]
+}

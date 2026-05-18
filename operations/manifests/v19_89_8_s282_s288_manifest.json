@@ -1,0 +1,17 @@
+{
+  "version": "v19.89.8-S282-S288",
+  "installed_at": "2026-05-15T19:01:48.860258+00:00",
+  "stage_pack": "S282-S288",
+  "purpose": "Mount-ready workflow route handlers and cockpit count-binding metadata.",
+  "files": [
+    "claire/api/operator_workflow_route_handlers.py",
+    "claire/api/cockpit_count_binding_metadata.py",
+    "claire/api/operator_workflow_mount_readiness.py",
+    "tests/test_s282_s288_operator_workflow_handlers.py",
+    "tests/test_s282_s288_count_binding_and_mount_readiness.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s282_s288_operator_workflow_handlers.py tests/test_s282_s288_count_binding_and_mount_readiness.py -q",
+    "pytest"
+  ]
+}

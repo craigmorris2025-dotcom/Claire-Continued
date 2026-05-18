@@ -1,44 +1,44 @@
 {
   "version": "16.82",
-  "generated_at": "2026-05-09T01:46:35.748536+00:00",
+  "generated_at": "2026-05-13T11:18:26.013921+00:00",
   "status": "completed",
   "max_concurrent": 2,
   "selected_task_count": 5,
   "records": [
     {
-      "task_id": "task_20260507131843871733",
+      "task_id": "task_20260513111824541085",
       "title": "High priority recursive regression task",
       "task_type": "signal_analysis",
       "status": "completed",
       "priority": 10
     },
     {
-      "task_id": "task_20260509014633078266",
-      "title": "High priority recursive regression task",
-      "task_type": "signal_analysis",
-      "status": "completed",
-      "priority": 10
-    },
-    {
-      "task_id": "task_20260507131843886733",
+      "task_id": "task_20260513111824574085",
       "title": "Follow-on task from escalation: Regression signal analysis task",
       "task_type": "thesis_update",
       "status": "completed",
       "priority": 8
     },
     {
-      "task_id": "task_20260507131843887732",
+      "task_id": "task_20260513111824576084",
       "title": "Follow-on task from escalation: Regression evidence review task",
       "task_type": "evidence_review",
       "status": "completed",
       "priority": 8
     },
     {
-      "task_id": "task_20260509014633093263",
-      "title": "Follow-on task from escalation: Regression signal analysis task",
-      "task_type": "thesis_update",
+      "task_id": "task_20260513111825899919",
+      "title": "Regression signal analysis task",
+      "task_type": "signal_analysis",
       "status": "completed",
       "priority": 8
+    },
+    {
+      "task_id": "task_20260513110113245709",
+      "title": "Regression evidence review task",
+      "task_type": "evidence_review",
+      "status": "completed",
+      "priority": 7
     }
   ],
   "note": "Bounded scheduler uses controlled concurrency and placeholder execution only."

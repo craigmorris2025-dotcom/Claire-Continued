@@ -1,0 +1,27 @@
+{
+  "version": "v19.89.7.1",
+  "build": "Runtime Propagation Router Registration Repair",
+  "installed_at": "2026-05-13T21:49:59.785860+00:00",
+  "intent": "Repair Swagger/API registration for runtime propagation endpoints.",
+  "new_or_repaired_endpoints": [
+    "/system/runtime-propagation",
+    "/system/runtime-propagation/summary",
+    "/system/runtime-propagation/advance",
+    "/system/runtime-propagation/history",
+    "/system/runtime-propagation/registration-proof"
+  ],
+  "files": {
+    "app_file_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "backend_route_module": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\runtime_execution_propagation_routes.py",
+    "propagation_state_file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\data\\runtime\\runtime_execution_propagation.json",
+    "version_json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version.json"
+  },
+  "preserved": [
+    "launcher stability",
+    "backend owns truth",
+    "cockpit presentation only",
+    "fail-closed governance",
+    "no autonomous looping",
+    "no dashboard redesign"
+  ]
+}

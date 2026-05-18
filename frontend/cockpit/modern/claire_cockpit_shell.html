@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Claire Syntalion Cockpit</title>
+  <link rel="stylesheet" href="./claire_cockpit_shell.css" />
+\n<link rel="stylesheet" href="cockpit/safe_workflow_panel.css">\n<script src="cockpit/safe_workflow_panel.js" defer></script>\n  <!-- CLAIRE_S985_S1012_ACTIVE_CONTROL_SURFACE -->
+  <link rel="stylesheet" href="/api/cockpit/control-surface/assets/css" data-claire-s985-s1012="active-control-surface">
+</head>
+<body>
+  <main id="claire-cockpit" data-authority="presentation-only">
+    <header id="top_command_bar" class="cockpit-region sticky">
+      <section class="card" data-card-id="command_surface">Command Surface</section>
+      <section class="card" data-card-id="governance_locks">Governance Locks</section>
+      <section class="card" data-card-id="connection_state">Connection State</section>
+    </header>
+
+    <section id="governance_banner_stack" class="cockpit-region" aria-live="polite">
+      <section class="card" data-card-id="governance_banner_backend_owns_truth">Backend owns truth. Cockpit presentation only.</section>
+      <section class="card" data-card-id="governance_banner_manual_promotion">Manual promotion mandatory.</section>
+      <section class="card" data-card-id="governance_banner_quarantine">Quarantine mandatory.</section>
+      <section class="card" data-card-id="governance_banner_updates_blocked">Automatic updates blocked.</section>
+      <section class="card" data-card-id="governance_banner_mutation_blocked">Runtime mutation blocked.</section>
+    </section>
+
+    <section id="primary_runtime_panel" class="cockpit-region">
+      <section class="card" data-card-id="current_state">Current State</section>
+      <section class="card" data-card-id="selected_route">Selected Route</section>
+      <section class="card" data-card-id="terminal_state">Terminal State</section>
+      <section class="card" data-card-id="confidence">Confidence</section>
+      <section class="card" data-card-id="next_action">Next Action</section>
+    </section>
+
+    <section id="operations_strip" class="cockpit-region">
+      <button data-action-id="request_bounded_web_job">Request Bounded Web Job</button>
+      <button data-action-id="open_review_queue">Open Review Queue</button>
+      <button data-action-id="approve_promotion_candidate">Approve Promotion Candidate</button>
+      <button data-action-id="export_reviewed_package">Export Reviewed Package</button>
+      <button data-action-id="create_update_proposal">Create Update Proposal</button>
+      <button data-action-id="run_autonomous_update" disabled title="Automatic updates are blocked">Run Autonomous Update</button>
+      <button data-action-id="execute_runtime_mutation" disabled title="Runtime mutation is blocked">Execute Runtime Mutation</button>
+    </section>
+
+    <aside id="monitoring_column" class="cockpit-region">
+      <section class="card" data-card-id="payload_health">Payload Health</section>
+      <section class="card" data-card-id="web_job_state">Web Job State</section>
+      <section class="card" data-card-id="queue_state">Queue State</section>
+      <section class="card" data-card-id="warnings">Warnings</section>
+    </aside>
+
+    <section id="lifecycle_evidence_workspace" class="cockpit-region">
+      <section class="card" data-card-id="lifecycle_status">Lifecycle Status</section>
+      <section class="card" data-card-id="evidence_baskets">Evidence Baskets</section>
+      <section class="card" data-card-id="source_lineage">Source Lineage</section>
+      <section class="card" data-card-id="route_outputs">Route Outputs</section>
+    </section>
+
+    <details id="diagnostics_drawer" class="cockpit-region">
+      <summary>Diagnostics</summary>
+      <section class="card" data-card-id="raw_payload">Raw Payload</section>
+      <section class="card" data-card-id="endpoint_status">Endpoint Status</section>
+      <section class="card" data-card-id="contract_validation">Contract Validation</section>
+      <section class="card" data-card-id="blocked_capabilities">Blocked Capabilities</section>
+    </details>
+  </main>
+  <script src="./claire_cockpit_shell.js"></script>
+  <script src="/api/cockpit/control-surface/assets/js" defer data-claire-s985-s1012="active-control-surface"></script>
+</body>
+</html>

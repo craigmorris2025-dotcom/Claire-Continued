@@ -1,0 +1,25 @@
+{
+  "archive_before_modify": true,
+  "dashboards_patched_if_present": [
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "delete_policy": "delete_nothing",
+  "files_written": [
+    "claire\\actual_run_output_dashboard_binding.py",
+    "tests\\test_v19_00_to_v19_04_actual_run_output_dashboard_binding_pack.py",
+    "data\\dashboard_binding_reports\\v19_00_to_v19_04_actual_run_output_dashboard_binding_report.json",
+    "data\\dashboard_binding_reports\\v19_00_to_v19_04_actual_run_output_dashboard_binding_manifest.json"
+  ],
+  "installed_at": "2026-05-10T15:28:57.156500Z",
+  "installer": "install_claire_v19_00_to_v19_04_actual_run_output_dashboard_binding_pack.py",
+  "pack_name": "Actual Run Output Binding into Dashboard Panels Pack",
+  "pack_version": "v19.00-v19.04",
+  "purpose": [
+    "bind actual run-output shaped data into dashboard panels",
+    "make main result never blank",
+    "forbid metadata-only final dashboard state",
+    "map route-specific outputs to route-specific panels",
+    "keep dashboard current while pipeline and web connectivity continue"
+  ],
+  "pytest_command": "python -m pytest tests/test_v19_00_to_v19_04_actual_run_output_dashboard_binding_pack.py -q"
+}

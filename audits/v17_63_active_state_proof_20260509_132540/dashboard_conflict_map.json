@@ -1,0 +1,121 @@
+{
+  "active_dashboard_details": {
+    "css_links": [
+      "claire_single_screen_operator.css"
+    ],
+    "important_ids": [
+      "claire-search",
+      "refresh-button",
+      "diagnostics-button"
+    ],
+    "js_links": [
+      "claire_single_screen_operator.js"
+    ],
+    "path": "frontend/command_center/modern/index.html",
+    "title": "Claire Syntalion — Single-Screen Operator Cockpit"
+  },
+  "active_dashboard_exists": true,
+  "active_dashboard_from_launcher": "frontend/command_center/modern/index.html",
+  "dashboard_file_counts": {
+    "css": 19,
+    "html": 4,
+    "js": 124,
+    "total": 147
+  },
+  "dashboard_version_markers": {
+    "v17.50": 2,
+    "v17.54": 3,
+    "v17.55": 4,
+    "v17.57": 6,
+    "v17.58": 7,
+    "v17.58.1": 2,
+    "v17.59": 5,
+    "v17.60": 1,
+    "v17.61": 1,
+    "v17.62": 4,
+    "v17.62.1": 2,
+    "v17.62.2": 1,
+    "v17.62.3": 1,
+    "v17.62.4": 1,
+    "v17.62.5": 1,
+    "v17.62.6": 2
+  },
+  "diagnosis": "Multiple dashboard generations mapped. v17.64 must choose one active cockpit and remove old shells from the active path, not add another dashboard.",
+  "html_files": [
+    {
+      "css_links": [
+        "claire_single_screen_operator.css"
+      ],
+      "important_ids": [
+        "claire-search",
+        "refresh-button",
+        "diagnostics-button"
+      ],
+      "js_links": [
+        "claire_single_screen_operator.js"
+      ],
+      "path": "frontend/command_center/modern/index.html",
+      "title": "Claire Syntalion — Single-Screen Operator Cockpit"
+    },
+    {
+      "css_links": [],
+      "important_ids": [],
+      "js_links": [],
+      "path": "frontend/command_center/modern/internet_operations_dashboard.html",
+      "title": "Claire Internet Operations"
+    },
+    {
+      "css_links": [
+        "./dashboard.css"
+      ],
+      "important_ids": [],
+      "js_links": [
+        "./discover/DiscoverPipeline.js",
+        "./discover/SignalPanel.js",
+        "./discover/ClusterPanel.js",
+        "./discover/GapPanel.js",
+        "./discover/SolutionPanel.js",
+        "./monitor/MonitorSurface.js",
+        "./monitor/MonitorStatusBar.js",
+        "./monitor/MonitorTimeline.js",
+        "./monitor/MonitorDetailPanel.js",
+        "./dashboard.js",
+        "/claire_dashboard_actions.js"
+      ],
+      "path": "frontend/export_dashboard/index.html",
+      "title": "Claire Syntalion Dashboard"
+    },
+    {
+      "css_links": [],
+      "important_ids": [],
+      "js_links": [
+        "/claire_dashboard_actions.js"
+      ],
+      "path": "frontend/internet_operations_dashboard/internet_operations_dashboard.html",
+      "title": "Claire Internet Operations Dashboard"
+    }
+  ],
+  "likely_conflict_or_legacy_dashboard_assets": [
+    "frontend/command_center/modern/claire_clean_shell.css",
+    "frontend/command_center/modern/claire_clean_shell.js",
+    "frontend/command_center/modern/claire_dashboard_decongestion.css",
+    "frontend/command_center/modern/claire_dashboard_reset_v17_62_5.css",
+    "frontend/command_center/modern/claire_dashboard_reset_v17_62_5.js",
+    "frontend/command_center/modern/claire_operating_environment.css",
+    "frontend/command_center/modern/claire_operating_environment.js",
+    "frontend/command_center/modern/claire_overlap_fix.css",
+    "frontend/command_center/modern/claire_search_relocation.css",
+    "frontend/command_center/modern/claire_single_screen_operator.css",
+    "frontend/command_center/modern/claire_single_screen_operator.js",
+    "frontend/command_center/modern/claire_strategic_cockpit.css",
+    "frontend/command_center/modern/claire_strategic_cockpit.js",
+    "frontend/command_center/modern/claire_workspace_stack_fix.css",
+    "frontend/command_center/modern/claire_workspace_stack_fix.js",
+    "frontend/command_center/modern/internet_operations_dashboard.html",
+    "frontend/command_center/modern/operator_dashboard.css",
+    "frontend/command_center/modern/operator_dashboard.js",
+    "frontend/command_center/modern/product_dashboard.css",
+    "frontend/command_center/modern/product_dashboard.js",
+    "frontend/internet_operations_dashboard/internet_operations_dashboard.html"
+  ]
+}

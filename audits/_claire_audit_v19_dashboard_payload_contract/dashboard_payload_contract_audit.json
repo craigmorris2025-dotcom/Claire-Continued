@@ -1,0 +1,5442 @@
+{
+  "audit": "Dashboard Payload Contract Audit / No Feature Build",
+  "contract_gap_analysis": {
+    "capability_gaps": {
+      "dashboard_contracts": {
+        "coverage_ratio": 0.625,
+        "missing_dashboard_tokens": [
+          "payload",
+          "display_state",
+          "operator_status"
+        ]
+      },
+      "operator_review": {
+        "coverage_ratio": 0.222,
+        "missing_dashboard_tokens": [
+          "queue",
+          "approve",
+          "reject",
+          "audit",
+          "read_only",
+          "execution_enabled",
+          "mutation"
+        ]
+      },
+      "pipeline_runtime": {
+        "coverage_ratio": 1.0,
+        "missing_dashboard_tokens": []
+      },
+      "stage_runtime": {
+        "coverage_ratio": 0.909,
+        "missing_dashboard_tokens": [
+          "signal_ingestion"
+        ]
+      },
+      "web_connectivity": {
+        "coverage_ratio": 0.9,
+        "missing_dashboard_tokens": [
+          "allowlist"
+        ]
+      }
+    },
+    "fetch_endpoints": [],
+    "fetch_endpoints_without_matching_route": [],
+    "output_key_mentions": {
+      "data/dashboard/operator_dashboard_state.json": {
+        "dashboard_mentions_ratio": 0.812,
+        "keys_not_mentioned_by_dashboard": [
+          "contract_name",
+          "contract_version",
+          "generated_at"
+        ],
+        "top_level_keys": [
+          "actions",
+          "autodesign",
+          "backend",
+          "buildability",
+          "contract_name",
+          "contract_version",
+          "design_portal",
+          "generated_at",
+          "internet",
+          "mission",
+          "proof",
+          "route_gate",
+          "scorecards",
+          "source",
+          "surfaces",
+          "updates"
+        ]
+      },
+      "data/internet_live_probe/last_live_probe_result.json": {
+        "dashboard_mentions_ratio": 0.714,
+        "keys_not_mentioned_by_dashboard": [
+          "generated_at",
+          "required_confirm_text"
+        ],
+        "top_level_keys": [
+          "executed",
+          "generated_at",
+          "query",
+          "reason",
+          "required_confirm_text",
+          "status",
+          "version"
+        ]
+      },
+      "data/runtime/dashboard_runtime_truth.json": {
+        "dashboard_mentions_ratio": 0.7,
+        "keys_not_mentioned_by_dashboard": [
+          "contract_version",
+          "generated_at",
+          "raw_keys"
+        ],
+        "top_level_keys": [
+          "contract_version",
+          "generated_at",
+          "missing",
+          "mission",
+          "proof",
+          "raw_keys",
+          "readiness",
+          "route",
+          "source",
+          "surfaces"
+        ]
+      },
+      "data/runtime/runtime_truth_canonical.json": {
+        "dashboard_mentions_ratio": 0.7,
+        "keys_not_mentioned_by_dashboard": [
+          "contract_version",
+          "generated_at",
+          "raw_keys"
+        ],
+        "top_level_keys": [
+          "contract_version",
+          "generated_at",
+          "missing",
+          "mission",
+          "proof",
+          "raw_keys",
+          "readiness",
+          "route",
+          "source",
+          "surfaces"
+        ]
+      },
+      "data/runtime_truth/runtime_truth_ledger.json": {
+        "dashboard_mentions_ratio": 0.0,
+        "keys_not_mentioned_by_dashboard": [
+          "records"
+        ],
+        "top_level_keys": [
+          "records"
+        ]
+      },
+      "data/search/search_bar_session_log.json": {
+        "dashboard_mentions_ratio": 0.5,
+        "keys_not_mentioned_by_dashboard": [
+          "sessions"
+        ],
+        "top_level_keys": [
+          "sessions",
+          "version"
+        ]
+      }
+    },
+    "route_endpoints": [
+      "/",
+      "/acquirers",
+      "/acquirers/{ticker}",
+      "/api/dashboard/state",
+      "/api/platform/current",
+      "/api/platform/resolve",
+      "/api/platform/resolve/{component}",
+      "/api/platform/status",
+      "/api/platform/target",
+      "/autodesign/handoff",
+      "/autodesign/handoff/rebuild",
+      "/autodesign/handoff/summary",
+      "/buttons",
+      "/campaigns/{campaign_id}/refresh",
+      "/capabilities",
+      "/cleanup/archive-approval",
+      "/cleanup/archive-approval/rebuild",
+      "/cleanup/archive-approval/summary",
+      "/cleanup/archive-plan",
+      "/cleanup/archive/execute-approved",
+      "/cleanup/archive/status",
+      "/cleanup/proof",
+      "/cleanup/proof/rebuild",
+      "/cleanup/proof/summary",
+      "/cleanup/status",
+      "/command",
+      "/dashboard",
+      "/dashboard/runtime-truth",
+      "/dashboard/state",
+      "/design-portal/output",
+      "/design-portal/output/rebuild",
+      "/design-portal/output/summary",
+      "/design-portal/validation",
+      "/design/autodesign/handoff",
+      "/design/portal/output",
+      "/desktop/launch/status",
+      "/desktop/package-manifest",
+      "/desktop/startup",
+      "/desktop/startup/rebuild",
+      "/desktop/startup/summary",
+      "/discovery/route-audit",
+      "/engines",
+      "/enrich",
+      "/evaluate",
+      "/events",
+      "/execute",
+      "/failures",
+      "/fetch",
+      "/first-use/latest",
+      "/first-use/manifest",
+      "/first-use/run",
+      "/health",
+      "/history",
+      "/history/{run_id}",
+      "/internet",
+      "/internet/evidence",
+      "/internet/evidence-promotion",
+      "/internet/evidence-promotion/promote-approved",
+      "/internet/evidence-promotion/rebuild",
+      "/internet/evidence-promotion/status",
+      "/internet/evidence-promotion/summary",
+      "/internet/evidence/{evidence_id}",
+      "/internet/live-probe/adapter/status",
+      "/internet/live-probe/contract",
+      "/internet/live-probe/last",
+      "/internet/live-probe/run",
+      "/internet/live-probe/run-adapter",
+      "/internet/live-probe/run-confirmed",
+      "/internet/live-probe/status",
+      "/internet/operations/status",
+      "/internet/provider-gate",
+      "/internet/provider-gate/rebuild",
+      "/internet/provider-gate/summary",
+      "/internet/readiness",
+      "/internet/readiness/rebuild",
+      "/internet/readiness/summary",
+      "/internet/search/provider/status",
+      "/live",
+      "/lock",
+      "/modes",
+      "/operator/command/parse",
+      "/operator/dashboard/refresh",
+      "/operator/dashboard/state",
+      "/operator/dashboard/summary",
+      "/operator/search",
+      "/operator/search/capabilities",
+      "/operator/search/layer",
+      "/operator/search/live",
+      "/operator/search/query",
+      "/operator/search/run",
+      "/operator/search/smoke/google",
+      "/operator/search/web",
+      "/operator/search/web/run-governed-probe",
+      "/operator/search/web/status",
+      "/pipeline/evaluate",
+      "/platform/freeze/status",
+      "/platform/launch-candidate",
+      "/platform/launch-candidate/freeze",
+      "/platform/launch-candidate/summary",
+      "/platform/launch-hardening",
+      "/platform/launch-hardening/rebuild",
+      "/platform/launch-hardening/summary",
+      "/platform/launch/status",
+      "/platform/stop-go",
+      "/probe",
+      "/profiles",
+      "/proof/e2e",
+      "/proof/e2e/rebuild",
+      "/proof/e2e/summary",
+      "/proof/manual-browser-swagger",
+      "/proof/manual-browser-swagger/checklist",
+      "/proof/manual-browser-swagger/rebuild",
+      "/proof/manual-browser-swagger/summary",
+      "/proof/platform-smoke",
+      "/proof/platform-smoke/rebuild",
+      "/proof/platform-smoke/summary",
+      "/quarantine/{domain}",
+      "/read",
+      "/records",
+      "/release/{domain}",
+      "/reports",
+      "/routes/audit",
+      "/routes/audit/rebuild",
+      "/routes/audit/summary",
+      "/run",
+      "/run-due",
+      "/runs",
+      "/runs/rescan",
+      "/runs/{run_id}",
+      "/runs/{run_id}/files",
+      "/runs/{run_id}/files/{filename}",
+      "/runtime/state",
+      "/runtime/truth",
+      "/runtime/truth/rebuild",
+      "/schedule",
+      "/scheduler/run-due",
+      "/schedules",
+      "/search/dashboard-smoke",
+      "/search/visible-result-verification",
+      "/smoke/google",
+      "/snapshot",
+      "/stats",
+      "/status",
+      "/summary",
+      "/system/stop-go",
+      "/update/check",
+      "/update/install",
+      "/update/prepare",
+      "/updates/automatic/status",
+      "/updates/governance/lock",
+      "/updates/governance/status",
+      "/updates/regression-lock",
+      "/updates/regression-lock/rebuild",
+      "/updates/regression-lock/summary",
+      "/updates/rollback-plan",
+      "/updates/rollback-plan/create",
+      "/updates/rollback-plan/summary",
+      "/updates/rollback/status",
+      "/updates/runner-gate",
+      "/updates/runner-gate/rebuild",
+      "/updates/runner-gate/summary",
+      "/updates/staging",
+      "/updates/staging/create",
+      "/updates/staging/summary",
+      "/validation/buildability",
+      "/validation/buildability/rebuild",
+      "/validation/buildability/summary",
+      "/verify",
+      "/weight",
+      "/weight-batch",
+      "/{campaign_id}/refresh",
+      "/{campaign_id}/reports"
+    ],
+    "routes_not_fetched_by_dashboard_sample": [
+      "/",
+      "/acquirers",
+      "/acquirers/{ticker}",
+      "/api/dashboard/state",
+      "/api/platform/current",
+      "/api/platform/resolve",
+      "/api/platform/resolve/{component}",
+      "/api/platform/status",
+      "/api/platform/target",
+      "/autodesign/handoff",
+      "/autodesign/handoff/rebuild",
+      "/autodesign/handoff/summary",
+      "/buttons",
+      "/campaigns/{campaign_id}/refresh",
+      "/capabilities",
+      "/cleanup/archive-approval",
+      "/cleanup/archive-approval/rebuild",
+      "/cleanup/archive-approval/summary",
+      "/cleanup/archive-plan",
+      "/cleanup/archive/execute-approved",
+      "/cleanup/archive/status",
+      "/cleanup/proof",
+      "/cleanup/proof/rebuild",
+      "/cleanup/proof/summary",
+      "/cleanup/status",
+      "/command",
+      "/dashboard",
+      "/dashboard/runtime-truth",
+      "/dashboard/state",
+      "/design-portal/output",
+      "/design-portal/output/rebuild",
+      "/design-portal/output/summary",
+      "/design-portal/validation",
+      "/design/autodesign/handoff",
+      "/design/portal/output",
+      "/desktop/launch/status",
+      "/desktop/package-manifest",
+      "/desktop/startup",
+      "/desktop/startup/rebuild",
+      "/desktop/startup/summary",
+      "/discovery/route-audit",
+      "/engines",
+      "/enrich",
+      "/evaluate",
+      "/events",
+      "/execute",
+      "/failures",
+      "/fetch",
+      "/first-use/latest",
+      "/first-use/manifest",
+      "/first-use/run",
+      "/health",
+      "/history",
+      "/history/{run_id}",
+      "/internet",
+      "/internet/evidence",
+      "/internet/evidence-promotion",
+      "/internet/evidence-promotion/promote-approved",
+      "/internet/evidence-promotion/rebuild",
+      "/internet/evidence-promotion/status",
+      "/internet/evidence-promotion/summary",
+      "/internet/evidence/{evidence_id}",
+      "/internet/live-probe/adapter/status",
+      "/internet/live-probe/contract",
+      "/internet/live-probe/last",
+      "/internet/live-probe/run",
+      "/internet/live-probe/run-adapter",
+      "/internet/live-probe/run-confirmed",
+      "/internet/live-probe/status",
+      "/internet/operations/status",
+      "/internet/provider-gate",
+      "/internet/provider-gate/rebuild",
+      "/internet/provider-gate/summary",
+      "/internet/readiness",
+      "/internet/readiness/rebuild",
+      "/internet/readiness/summary",
+      "/internet/search/provider/status",
+      "/live",
+      "/lock",
+      "/modes",
+      "/operator/command/parse",
+      "/operator/dashboard/refresh",
+      "/operator/dashboard/state",
+      "/operator/dashboard/summary",
+      "/operator/search",
+      "/operator/search/capabilities",
+      "/operator/search/layer",
+      "/operator/search/live",
+      "/operator/search/query",
+      "/operator/search/run",
+      "/operator/search/smoke/google",
+      "/operator/search/web",
+      "/operator/search/web/run-governed-probe",
+      "/operator/search/web/status",
+      "/pipeline/evaluate",
+      "/platform/freeze/status",
+      "/platform/launch-candidate",
+      "/platform/launch-candidate/freeze",
+      "/platform/launch-candidate/summary",
+      "/platform/launch-hardening",
+      "/platform/launch-hardening/rebuild",
+      "/platform/launch-hardening/summary",
+      "/platform/launch/status",
+      "/platform/stop-go",
+      "/probe",
+      "/profiles",
+      "/proof/e2e",
+      "/proof/e2e/rebuild",
+      "/proof/e2e/summary",
+      "/proof/manual-browser-swagger",
+      "/proof/manual-browser-swagger/checklist",
+      "/proof/manual-browser-swagger/rebuild",
+      "/proof/manual-browser-swagger/summary",
+      "/proof/platform-smoke",
+      "/proof/platform-smoke/rebuild",
+      "/proof/platform-smoke/summary",
+      "/quarantine/{domain}",
+      "/read",
+      "/records",
+      "/release/{domain}",
+      "/reports",
+      "/routes/audit",
+      "/routes/audit/rebuild",
+      "/routes/audit/summary",
+      "/run",
+      "/run-due",
+      "/runs",
+      "/runs/rescan",
+      "/runs/{run_id}",
+      "/runs/{run_id}/files",
+      "/runs/{run_id}/files/{filename}",
+      "/runtime/state",
+      "/runtime/truth",
+      "/runtime/truth/rebuild",
+      "/schedule",
+      "/scheduler/run-due",
+      "/schedules",
+      "/search/dashboard-smoke",
+      "/search/visible-result-verification",
+      "/smoke/google",
+      "/snapshot",
+      "/stats",
+      "/status",
+      "/summary",
+      "/system/stop-go",
+      "/update/check",
+      "/update/install",
+      "/update/prepare",
+      "/updates/automatic/status",
+      "/updates/governance/lock",
+      "/updates/governance/status",
+      "/updates/regression-lock",
+      "/updates/regression-lock/rebuild",
+      "/updates/regression-lock/summary",
+      "/updates/rollback-plan",
+      "/updates/rollback-plan/create",
+      "/updates/rollback-plan/summary",
+      "/updates/rollback/status",
+      "/updates/runner-gate",
+      "/updates/runner-gate/rebuild",
+      "/updates/runner-gate/summary",
+      "/updates/staging",
+      "/updates/staging/create",
+      "/updates/staging/summary",
+      "/validation/buildability",
+      "/validation/buildability/rebuild",
+      "/validation/buildability/summary",
+      "/verify",
+      "/weight",
+      "/weight-batch",
+      "/{campaign_id}/refresh",
+      "/{campaign_id}/reports"
+    ]
+  },
+  "dashboard": {
+    "frontend/command_center/modern/claire_single_screen_operator.css": {
+      "exists": true,
+      "fetch_endpoints": [],
+      "keyword_hits": {
+        "dashboard_contracts": 0,
+        "operator_review": 0,
+        "pipeline_runtime": 3,
+        "stage_runtime": 0,
+        "web_connectivity": 1
+      },
+      "mentions_backend_offline": false,
+      "mentions_failed_to_fetch": false,
+      "size_bytes": 7533
+    },
+    "frontend/command_center/modern/claire_single_screen_operator.js": {
+      "exists": true,
+      "fetch_endpoints": [],
+      "keyword_hits": {
+        "dashboard_contracts": 2,
+        "operator_review": 2,
+        "pipeline_runtime": 6,
+        "stage_runtime": 10,
+        "web_connectivity": 7
+      },
+      "mentions_backend_offline": false,
+      "mentions_failed_to_fetch": false,
+      "size_bytes": 14497
+    },
+    "frontend/command_center/modern/claire_workspace_agent_dashboard.css": {
+      "exists": true,
+      "fetch_endpoints": [],
+      "keyword_hits": {
+        "dashboard_contracts": 2,
+        "operator_review": 0,
+        "pipeline_runtime": 1,
+        "stage_runtime": 0,
+        "web_connectivity": 1
+      },
+      "mentions_backend_offline": false,
+      "mentions_failed_to_fetch": false,
+      "size_bytes": 4900
+    },
+    "frontend/command_center/modern/claire_workspace_agent_dashboard.js": {
+      "exists": true,
+      "fetch_endpoints": [],
+      "keyword_hits": {
+        "dashboard_contracts": 4,
+        "operator_review": 0,
+        "pipeline_runtime": 4,
+        "stage_runtime": 9,
+        "web_connectivity": 3
+      },
+      "mentions_backend_offline": true,
+      "mentions_failed_to_fetch": false,
+      "size_bytes": 11322
+    },
+    "frontend/command_center/modern/index.html": {
+      "exists": true,
+      "fetch_endpoints": [],
+      "keyword_hits": {
+        "dashboard_contracts": 5,
+        "operator_review": 2,
+        "pipeline_runtime": 6,
+        "stage_runtime": 7,
+        "web_connectivity": 8
+      },
+      "mentions_backend_offline": true,
+      "mentions_failed_to_fetch": false,
+      "size_bytes": 19650
+    },
+    "frontend/command_center/modern/operator_dashboard.js": {
+      "exists": true,
+      "fetch_endpoints": [],
+      "keyword_hits": {
+        "dashboard_contracts": 1,
+        "operator_review": 1,
+        "pipeline_runtime": 3,
+        "stage_runtime": 0,
+        "web_connectivity": 8
+      },
+      "mentions_backend_offline": false,
+      "mentions_failed_to_fetch": false,
+      "size_bytes": 14699
+    }
+  },
+  "generated_at": "2026-05-10T19:51:18.438996Z",
+  "outputs": {
+    "critical_outputs": {
+      "data/dashboard/operator_dashboard_state.json": {
+        "exists": true,
+        "record_count": null,
+        "size_bytes": 20493,
+        "status": "loaded",
+        "top_level_keys": [
+          "actions",
+          "autodesign",
+          "backend",
+          "buildability",
+          "contract_name",
+          "contract_version",
+          "design_portal",
+          "generated_at",
+          "internet",
+          "mission",
+          "proof",
+          "route_gate",
+          "scorecards",
+          "source",
+          "surfaces",
+          "updates"
+        ]
+      },
+      "data/internet_evidence/promoted_evidence_store.json": {
+        "exists": false,
+        "record_count": null,
+        "size_bytes": 0,
+        "status": "missing",
+        "top_level_keys": []
+      },
+      "data/internet_live_probe/last_live_probe_result.json": {
+        "exists": true,
+        "record_count": null,
+        "size_bytes": 263,
+        "status": "loaded",
+        "top_level_keys": [
+          "executed",
+          "generated_at",
+          "query",
+          "reason",
+          "required_confirm_text",
+          "status",
+          "version"
+        ]
+      },
+      "data/runtime/core_run_output.json": {
+        "exists": false,
+        "record_count": null,
+        "size_bytes": 0,
+        "status": "missing",
+        "top_level_keys": []
+      },
+      "data/runtime/dashboard_runtime_truth.json": {
+        "exists": true,
+        "record_count": null,
+        "size_bytes": 1223064,
+        "status": "loaded",
+        "top_level_keys": [
+          "contract_version",
+          "generated_at",
+          "missing",
+          "mission",
+          "proof",
+          "raw_keys",
+          "readiness",
+          "route",
+          "source",
+          "surfaces"
+        ]
+      },
+      "data/runtime/runtime_truth_canonical.json": {
+        "exists": true,
+        "record_count": null,
+        "size_bytes": 1223064,
+        "status": "loaded",
+        "top_level_keys": [
+          "contract_version",
+          "generated_at",
+          "missing",
+          "mission",
+          "proof",
+          "raw_keys",
+          "readiness",
+          "route",
+          "source",
+          "surfaces"
+        ]
+      },
+      "data/runtime_truth/runtime_truth_ledger.json": {
+        "exists": true,
+        "record_count": 0,
+        "size_bytes": 14,
+        "status": "loaded",
+        "top_level_keys": [
+          "records"
+        ]
+      },
+      "data/search/governed_web_review_queue.json": {
+        "exists": false,
+        "record_count": null,
+        "size_bytes": 0,
+        "status": "missing",
+        "top_level_keys": []
+      },
+      "data/search/search_bar_session_log.json": {
+        "exists": true,
+        "record_count": null,
+        "size_bytes": 6741,
+        "status": "loaded",
+        "top_level_keys": [
+          "sessions",
+          "version"
+        ]
+      },
+      "output/core_run_output.json": {
+        "exists": false,
+        "record_count": null,
+        "size_bytes": 0,
+        "status": "missing",
+        "top_level_keys": []
+      }
+    },
+    "discovered_outputs": [
+      "audits/v17_63_active_state_proof_20260509_132540/runtime_truth_contract_scan.json",
+      "data/build_manifests/v17.59_runtime_truth_manifest.json",
+      "data/build_manifests/v17_65_runtime_truth_contract_repair_manifest.json",
+      "data/dashboard/operator_dashboard_state.json",
+      "data/dashboard/search_command_bar_payload.json",
+      "data/runtime/dashboard_runtime_truth.json",
+      "data/runtime/latest_core_run_output_pointer.json",
+      "data/runtime/live_runtime_dashboard_state.json",
+      "data/runtime/runtime_truth_canonical.json",
+      "data/runtime/runtime_truth_repair_report.json",
+      "data/runtime/v17_65_runtime_truth_validation.json",
+      "data/runtime_truth/runtime_truth_consumption_report.json",
+      "data/runtime_truth/runtime_truth_ledger.json",
+      "data/runtime_truth/runtime_truth_rollback_log.json",
+      "exports/claire_run_20260502_103041_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260502_191242_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260502_191420_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260502_191539_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_053833_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_053833_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_053834_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_053834_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_053835_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_053835_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_053836_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_053836_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063030_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063030_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063031_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063031_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063032_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063032_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063033_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063033_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063247_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063248_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063248_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063249_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063249_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063250_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063250_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063312_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063312_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063313_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063313_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063314_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063314_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063314_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063315_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063432_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063433_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063433_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063434_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063434_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063522_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063522_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063523_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063523_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063524_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063524_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063525_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063525_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063725_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063725_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063726_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063726_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063727_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063727_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063750_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063750_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063751_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063751_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063752_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_063752_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072028_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072028_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072029_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072029_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072030_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072030_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072701_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072702_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072702_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072703_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072703_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_072704_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_073605_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_073606_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_073606_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_073607_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_073607_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_073608_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_083155_healthcare_operations_healthcare_operations_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_084710_healthcare_operations_healthcare_operations_intelligence_run_41fabee3cb0d/core_run_output.json",
+      "exports/claire_run_20260505_085337_healthcare_operations_healthcare_operations_intelligence_run_8fdc6d9d5dd9/core_run_output.json",
+      "exports/claire_run_20260505_090143_healthcare_operations_healthcare_operations_intelligence_run_0e030d0401aa/core_run_output.json",
+      "exports/claire_run_20260505_091058_healthcare_operations_healthcare_operations_intelligence_run_28ca87df800d/core_run_output.json",
+      "exports/claire_run_20260505_094015_healthcare_operations_healthcare_operations_intelligence_run_e8f3dfb1b6a6/core_run_output.json",
+      "exports/claire_run_20260505_101520_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101520_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101521_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101521_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101522_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101522_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101523_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101523_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101645_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101646_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101646_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101647_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101647_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_101648_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_104953_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_104953_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_104954_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_104954_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_104955_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_104955_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_104956_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_104956_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_114835_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_114836_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_114836_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_114837_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_114837_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_114838_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_114838_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_114839_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_115555_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_115555_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_115556_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_115556_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_115557_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_115557_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_115558_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_122709_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_122709_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_122710_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_122710_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_122711_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_122711_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_122712_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_122712_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_122935_financial_market_intelligence_financial_signal_intelligence_run_51e35248d8d7/core_run_output.json",
+      "exports/claire_run_20260505_123218_general_intelligence_opportunity_intelligence_run_03454fadd8e6/core_run_output.json",
+      "exports/claire_run_20260505_131858_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_131932_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_131932_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_131933_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_131933_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_131934_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_132031_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_132044_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_132044_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_132045_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_132045_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_132330_defense_autonomy_secure_autonomous_mission_intelligence_run_477830422e8f/core_run_output.json",
+      "exports/claire_run_20260505_135130_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260505_135240_climate_insurance_climate_insurance_risk_intelligence_run_cfe7e90abcda/core_run_output.json",
+      "exports/claire_run_20260505_135428_climate_insurance_climate_insurance_risk_intelligence_run_5599c9c6f654/core_run_output.json",
+      "exports/claire_run_20260505_140852_climate_insurance_climate_insurance_risk_intelligence_run_bd1375dc7343/core_run_output.json",
+      "exports/claire_run_20260505_141036_climate_insurance_climate_insurance_risk_intelligence_run_e2cb2d338448/core_run_output.json",
+      "exports/claire_run_20260505_143801_climate_insurance_climate_insurance_risk_intelligence_run_b8ddd09eb522/core_run_output.json",
+      "exports/claire_run_20260505_143844_climate_insurance_climate_insurance_risk_intelligence_run_6d3a19ed1ecd/core_run_output.json",
+      "exports/claire_run_20260505_144202_climate_insurance_climate_insurance_risk_intelligence_run_96631e689668/core_run_output.json",
+      "exports/claire_run_20260505_144241_climate_insurance_climate_insurance_risk_intelligence_run_f810c79f396b/core_run_output.json",
+      "exports/claire_run_20260505_144653_climate_insurance_climate_insurance_risk_intelligence_run_08cc93ddf8bd/core_run_output.json",
+      "exports/claire_run_20260505_145417_climate_insurance_climate_insurance_risk_intelligence_run_48571e679c40/core_run_output.json",
+      "exports/claire_run_20260505_145755_general_intelligence_opportunity_intelligence_run_10a7e54f3827/core_run_output.json",
+      "exports/claire_run_20260505_150107_general_intelligence_opportunity_intelligence_run_df8bd99a2fa3/core_run_output.json",
+      "exports/claire_run_20260505_154739_climate_insurance_climate_insurance_risk_intelligence_run_167100f1ee76/core_run_output.json",
+      "exports/claire_run_20260505_155651_climate_insurance_climate_insurance_risk_intelligence_run_2f0874d53d61/core_run_output.json",
+      "exports/claire_run_20260505_155740_climate_insurance_climate_insurance_risk_intelligence_run_41ca10fc63a1/core_run_output.json",
+      "exports/claire_run_20260505_160234_climate_insurance_climate_insurance_risk_intelligence_run_af2cf0877ac3/core_run_output.json",
+      "exports/claire_run_20260506_042148_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_042148_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_042149_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_042149_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_042150_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_042150_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_042151_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_042151_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_050552_financial_market_intelligence_financial_signal_intelligence_run_63733f66ad15/core_run_output.json",
+      "exports/claire_run_20260506_092221_financial_market_intelligence_financial_signal_intelligence_run_a23bdc6eed2b/core_run_output.json",
+      "exports/claire_run_20260506_094325_financial_market_intelligence_financial_signal_intelligence_run_2b81d279a7cc/core_run_output.json",
+      "exports/claire_run_20260506_094341_financial_market_intelligence_financial_signal_intelligence_run_c60c673eff86/core_run_output.json",
+      "exports/claire_run_20260506_101836_financial_market_intelligence_financial_signal_intelligence_run_bf296470c75d/core_run_output.json",
+      "exports/claire_run_20260506_110612_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110613_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110613_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110614_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110614_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110615_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110615_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110616_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110803_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110803_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110804_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110804_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110805_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110805_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110806_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110806_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_110807_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_115643_financial_market_intelligence_financial_signal_intelligence_run_c8e2ec0787c7/core_run_output.json",
+      "exports/claire_run_20260506_115747_financial_market_intelligence_financial_signal_intelligence_run_930b1801c38c/core_run_output.json",
+      "exports/claire_run_20260506_133349_climate_insurance_climate_insurance_risk_intelligence_run_b1cb210f362a/core_run_output.json",
+      "exports/claire_run_20260506_144537_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_144538_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_144538_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_144539_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_144539_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_144540_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260506_144947_defense_autonomy_secure_autonomous_mission_intelligence_run_521157bcfd46/core_run_output.json",
+      "exports/claire_run_20260506_150147_industrial_supply_chain_industrial_resilience_intelligence_run_2c7721469525/core_run_output.json",
+      "exports/claire_run_20260506_150233_industrial_supply_chain_industrial_resilience_intelligence_run_e90a01d50e65/core_run_output.json",
+      "exports/claire_run_20260506_151648_general_intelligence_opportunity_intelligence_run_3cb27ae080b5/core_run_output.json",
+      "exports/claire_run_20260506_152156_general_intelligence_opportunity_intelligence_run_2390a6f3bd16/core_run_output.json",
+      "exports/claire_run_20260506_154212_general_intelligence_opportunity_intelligence_run_a4e4ee7f99ac/core_run_output.json",
+      "exports/claire_run_20260506_160115_general_intelligence_opportunity_intelligence_run_9b4c828f1fc8/core_run_output.json",
+      "exports/claire_run_20260506_162243_general_intelligence_opportunity_intelligence_run_01088a69ccfa/core_run_output.json",
+      "exports/claire_run_20260507_021344_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_021345_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_021345_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_021346_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_021346_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_021347_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_021347_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_021348_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_021348_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_021349_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_021349_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_022651_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_022651_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_022652_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_022652_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_022653_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_022653_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_022654_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_022654_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_022655_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_022655_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024104_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024104_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024105_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024105_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024106_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024106_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024107_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024107_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024108_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024108_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_024109_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042816_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042816_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042817_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042817_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042818_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042818_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042819_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042826_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042827_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042827_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042828_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042828_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_042829_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_061357_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_061358_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_061358_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_061359_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_061359_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_061400_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_061400_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_061401_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_061402_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_062622_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_062623_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_062623_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_062624_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_062624_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_062625_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_062625_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_062626_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_062627_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_062627_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064704_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064706_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064706_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064707_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064707_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064708_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064708_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064828_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064830_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064830_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064831_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064831_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064832_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064832_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064833_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064907_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064909_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064909_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064910_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064910_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064911_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064911_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064912_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_064912_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_065220_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_065222_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_065222_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_065223_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_065223_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_065224_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_065224_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260507_065225_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260508_152705_general_intelligence_opportunity_intelligence_run_b240cd069be9/core_run_output.json",
+      "exports/claire_run_20260509_013245_general_intelligence_opportunity_intelligence_run_94428f374e3b/core_run_output.json",
+      "exports/claire_run_20260509_013257_general_intelligence_opportunity_intelligence_run_7afcb26c93d2/core_run_output.json",
+      "exports/claire_run_20260509_014636_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014639_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014640_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014640_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014641_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014641_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014642_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014642_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014653_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014658_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014659_general_intelligence_opportunity_intelligence/core_run_output.json",
+      "exports/claire_run_20260509_014900_general_intelligence_opportunity_intelligence_run_60d4c2b56d3a/core_run_output.json",
+      "exports/claire_run_20260509_015006_general_intelligence_opportunity_intelligence_run_aa8394040294/core_run_output.json",
+      "exports/claire_run_20260509_015238_general_intelligence_opportunity_intelligence_run_8dcef5d09da4/core_run_output.json",
+      "exports/claire_run_20260509_015257_general_intelligence_opportunity_intelligence_run_754ed93fa678/core_run_output.json",
+      "exports/claire_run_20260509_020835_general_intelligence_opportunity_intelligence_run_6e8a0d3dae1c/core_run_output.json",
+      "exports/claire_run_20260509_024722_general_intelligence_opportunity_intelligence_run_6cd70e41ba87/core_run_output.json",
+      "exports/claire_run_20260509_024745_general_intelligence_opportunity_intelligence_run_d2b8dda6048e/core_run_output.json",
+      "exports/claire_run_20260509_051848_general_intelligence_opportunity_intelligence_run_740ab84ba675/core_run_output.json",
+      "exports/claire_run_20260509_051915_general_intelligence_opportunity_intelligence_run_8a8d667501ad/core_run_output.json",
+      "exports/claire_run_20260509_052014_general_intelligence_opportunity_intelligence_run_82edc03c4f91/core_run_output.json",
+      "exports/claire_run_20260509_052620_general_intelligence_opportunity_intelligence_run_5283cb98b021/core_run_output.json",
+      "exports/claire_run_20260509_052700_general_intelligence_opportunity_intelligence_run_c46919ec1918/core_run_output.json",
+      "exports/claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb/core_run_output.json",
+      "frontend/command_center/modern/runtime_truth_contract.json",
+      "frontend/command_center/modern/runtime_truth_status.json"
+    ]
+  },
+  "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
+  "recommendations": [
+    "68 Python syntax failure(s) detected. Backend cannot be considered stable.",
+    "Dashboard appears under-covered for: operator_review",
+    "Do not add new runtime/web/pipeline feature builds until dashboard payload contract mismatch is resolved.",
+    "Repair backend syntax/import startup first if syntax failures exist.",
+    "Create one canonical dashboard payload API returning runtime summary, stage status, route decision, evidence summary, web/search state, quality gates, and operator actions.",
+    "Refactor current dashboard into contract-driven panels instead of adding more disconnected cards.",
+    "Only after dashboard contract alignment passes should enterprise Dashboard v2 begin."
+  ],
+  "routes": {
+    "include_count": 62,
+    "includes": [
+      {
+        "include": "export_browser_router",
+        "path": "backend/routes/backend_export_browser_route.py"
+      },
+      {
+        "include": "pipeline_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "dashboard_alignment_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "runtime_truth_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "operator_dashboard_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "route_audit_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "autodesign_handoff_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "design_portal_output_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "buildability_validation_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "internet_readiness_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "update_pack_staging_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "rollback_update_plan_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "automatic_update_runner_gate_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "update_governance_regression_lock_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "full_e2e_proof_pack_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "operator_search_command_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "platform_endpoint_smoke_proof_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "platform_launch_hardening_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "desktop_startup_reliability_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "manual_browser_swagger_proof_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "launch_candidate_freeze_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "cleanup_proof_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "archive_approval_gate_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "internet_provider_gate_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "governed_live_probe_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "evidence_promotion_gate_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "governed_dashboard_live_search_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "real_provider_operator_probe_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "_v18_72_2_live_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "_v18_72_2_provider_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "_v18_73_1_operator_compat_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "v19_25_search_execution_router",
+        "path": "claire/app.py"
+      },
+      {
+        "include": "commands_router, prefix=\"/api\"",
+        "path": "claire/api/router.py"
+      },
+      {
+        "include": "update_router, prefix=\"/api\"",
+        "path": "claire/api/router.py"
+      },
+      {
+        "include": "router",
+        "path": "claire/api/server.py"
+      },
+      {
+        "include": "router",
+        "path": "claire/governed_web/dashboard_live_search_route_mount_adapter.py"
+      },
+      {
+        "include": "router",
+        "path": "claire/governed_web/live_search_active_app_mount_gate.py"
+      },
+      {
+        "include": "router",
+        "path": "claire/governed_web/operator_probe_active_app_mount.py"
+      },
+      {
+        "include": "create_real_provider_operator_probe_router(",
+        "path": "claire/governed_web/real_provider_operator_probe_route.py"
+      },
+      {
+        "include": "proxy_router, prefix=\"\", tags=[\"Proxy\"]",
+        "path": "claire/platform/resolver.py"
+      },
+      {
+        "include": "proxy_router, prefix=\"\", tags=[\"Proxy\"]",
+        "path": "claire/platform/resolver.py"
+      },
+      {
+        "include": "platform_router, prefix=\"\", tags=[\"Platform\"]",
+        "path": "claire/platform/resolver.py"
+      },
+      {
+        "include": "router",
+        "path": "claire/search_bar/governed_web_simulation_fastapi_route.py"
+      },
+      {
+        "include": "self, router: Any",
+        "path": "claire/search_bar/governed_web_simulation_route_mount_verifier.py"
+      },
+      {
+        "include": "self, router",
+        "path": "tests/test_v18_10_governed_web_simulation_fastapi_route_registration.py"
+      },
+      {
+        "include": "self, router",
+        "path": "tests/test_v18_11_1_governed_web_simulation_route_mount_verifier_repair.py"
+      },
+      {
+        "include": "self, router",
+        "path": "tests/test_v18_11_governed_web_simulation_route_mount_verifier.py"
+      },
+      {
+        "include": "object(",
+        "path": "tests/test_v18_11_governed_web_simulation_route_mount_verifier.py"
+      },
+      {
+        "include": "self, router",
+        "path": "tests/test_v18_58_dashboard_live_search_route_mount_adapter.py"
+      },
+      {
+        "include": "self, router",
+        "path": "tests/test_v18_58_dashboard_live_search_route_mount_adapter.py"
+      },
+      {
+        "include": "self, router",
+        "path": "tests/test_v18_62_live_search_endpoint_mounted_into_active_app_gate.py"
+      },
+      {
+        "include": "self, router",
+        "path": "tests/test_v18_69_operator_probe_route_mount_into_active_app.py"
+      },
+      {
+        "include": "self, router",
+        "path": "tests/test_v18_70_consolidated_web_activation_packs.py"
+      },
+      {
+        "include": "self, router",
+        "path": "tests/test_v18_71_active_app_final_web_activation_mount_verification.py"
+      },
+      {
+        "include": "api_routes.router",
+        "path": "tests/dynamic_source_trust/test_dynamic_source_trust_api.py"
+      },
+      {
+        "include": "api_routes.router",
+        "path": "tests/governed_campaign_scheduler/test_governed_campaign_scheduler_api.py"
+      },
+      {
+        "include": "api_routes.router",
+        "path": "tests/internet_activation/test_internet_activation_api.py"
+      },
+      {
+        "include": "api_routes.router",
+        "path": "tests/internet_operations_dashboard/test_internet_operations_dashboard_api.py"
+      },
+      {
+        "include": "api_routes.router",
+        "path": "tests/internet_operations_dashboard/test_internet_operations_dashboard_api.py"
+      },
+      {
+        "include": "api_routes.router",
+        "path": "tests/internet_runtime_integration/test_internet_runtime_integration_api.py"
+      },
+      {
+        "include": "api_routes.router",
+        "path": "tests/internet_runtime_stability/test_internet_runtime_stability_api.py"
+      },
+      {
+        "include": "api_routes.router",
+        "path": "tests/persistent_internet_campaigns/test_persistent_internet_campaigns_api.py"
+      }
+    ],
+    "route_count": 222,
+    "routes": [
+      {
+        "endpoint": "/summary",
+        "method": "GET",
+        "path": "backend/routes/backend_export_browser_route.py"
+      },
+      {
+        "endpoint": "/runs",
+        "method": "GET",
+        "path": "backend/routes/backend_export_browser_route.py"
+      },
+      {
+        "endpoint": "/runs/rescan",
+        "method": "POST",
+        "path": "backend/routes/backend_export_browser_route.py"
+      },
+      {
+        "endpoint": "/runs/{run_id}",
+        "method": "GET",
+        "path": "backend/routes/backend_export_browser_route.py"
+      },
+      {
+        "endpoint": "/runs/{run_id}/files",
+        "method": "GET",
+        "path": "backend/routes/backend_export_browser_route.py"
+      },
+      {
+        "endpoint": "/runs/{run_id}/files/{filename}",
+        "method": "GET",
+        "path": "backend/routes/backend_export_browser_route.py"
+      },
+      {
+        "endpoint": "/exports",
+        "method": "PREFIX",
+        "path": "backend/routes/backend_export_browser_route.py"
+      },
+      {
+        "endpoint": "/",
+        "method": "GET",
+        "path": "claire/app.py"
+      },
+      {
+        "endpoint": "/health",
+        "method": "GET",
+        "path": "claire/app.py"
+      },
+      {
+        "endpoint": "/command",
+        "method": "POST",
+        "path": "claire/api/commands.py"
+      },
+      {
+        "endpoint": "/run",
+        "method": "POST",
+        "path": "claire/api/endpoints.py"
+      },
+      {
+        "endpoint": "/smoke/google",
+        "method": "GET",
+        "path": "claire/api/governed_dashboard_live_search_routes.py"
+      },
+      {
+        "endpoint": "/live",
+        "method": "POST",
+        "path": "claire/api/governed_dashboard_live_search_routes.py"
+      },
+      {
+        "endpoint": "/live",
+        "method": "GET",
+        "path": "claire/api/governed_dashboard_live_search_routes.py"
+      },
+      {
+        "endpoint": "/api/dashboard/search",
+        "method": "PREFIX",
+        "path": "claire/api/governed_dashboard_live_search_routes.py"
+      },
+      {
+        "endpoint": "/operator/search/capabilities",
+        "method": "GET",
+        "path": "claire/api/operator_dashboard_compat_routes.py"
+      },
+      {
+        "endpoint": "/operator/dashboard/state",
+        "method": "GET",
+        "path": "claire/api/operator_dashboard_compat_routes.py"
+      },
+      {
+        "endpoint": "/operator/search/smoke/google",
+        "method": "GET",
+        "path": "claire/api/operator_dashboard_compat_routes.py"
+      },
+      {
+        "endpoint": "/operator/search",
+        "method": "GET",
+        "path": "claire/api/operator_dashboard_compat_routes.py"
+      },
+      {
+        "endpoint": "/operator/search",
+        "method": "POST",
+        "path": "claire/api/operator_dashboard_compat_routes.py"
+      },
+      {
+        "endpoint": "/operator/search/live",
+        "method": "GET",
+        "path": "claire/api/operator_dashboard_compat_routes.py"
+      },
+      {
+        "endpoint": "/operator/search/live",
+        "method": "POST",
+        "path": "claire/api/operator_dashboard_compat_routes.py"
+      },
+      {
+        "endpoint": "/operator/search/query",
+        "method": "POST",
+        "path": "claire/api/operator_dashboard_compat_routes.py"
+      },
+      {
+        "endpoint": "/operator/search/run",
+        "method": "POST",
+        "path": "claire/api/operator_dashboard_compat_routes.py"
+      },
+      {
+        "endpoint": "/status",
+        "method": "GET",
+        "path": "claire/api/real_provider_operator_probe_routes.py"
+      },
+      {
+        "endpoint": "/probe",
+        "method": "POST",
+        "path": "claire/api/real_provider_operator_probe_routes.py"
+      },
+      {
+        "endpoint": "/api/dashboard/search/provider",
+        "method": "PREFIX",
+        "path": "claire/api/real_provider_operator_probe_routes.py"
+      },
+      {
+        "endpoint": "/acquirers",
+        "method": "GET",
+        "path": "claire/api/routes_acquirers.py"
+      },
+      {
+        "endpoint": "/acquirers/{ticker}",
+        "method": "GET",
+        "path": "claire/api/routes_acquirers.py"
+      },
+      {
+        "endpoint": "/cleanup/archive-approval",
+        "method": "GET",
+        "path": "claire/api/routes_archive_approval_gate.py"
+      },
+      {
+        "endpoint": "/cleanup/archive-approval/summary",
+        "method": "GET",
+        "path": "claire/api/routes_archive_approval_gate.py"
+      },
+      {
+        "endpoint": "/cleanup/archive-approval/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_archive_approval_gate.py"
+      },
+      {
+        "endpoint": "/cleanup/archive/execute-approved",
+        "method": "POST",
+        "path": "claire/api/routes_archive_approval_gate.py"
+      },
+      {
+        "endpoint": "/cleanup/archive/status",
+        "method": "GET",
+        "path": "claire/api/routes_archive_approval_gate.py"
+      },
+      {
+        "endpoint": "/autodesign/handoff",
+        "method": "GET",
+        "path": "claire/api/routes_autodesign_handoff.py"
+      },
+      {
+        "endpoint": "/autodesign/handoff/summary",
+        "method": "GET",
+        "path": "claire/api/routes_autodesign_handoff.py"
+      },
+      {
+        "endpoint": "/autodesign/handoff/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_autodesign_handoff.py"
+      },
+      {
+        "endpoint": "/design/autodesign/handoff",
+        "method": "GET",
+        "path": "claire/api/routes_autodesign_handoff.py"
+      },
+      {
+        "endpoint": "/updates/runner-gate",
+        "method": "GET",
+        "path": "claire/api/routes_automatic_update_runner_gate.py"
+      },
+      {
+        "endpoint": "/updates/runner-gate/summary",
+        "method": "GET",
+        "path": "claire/api/routes_automatic_update_runner_gate.py"
+      },
+      {
+        "endpoint": "/updates/runner-gate/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_automatic_update_runner_gate.py"
+      },
+      {
+        "endpoint": "/updates/automatic/status",
+        "method": "GET",
+        "path": "claire/api/routes_automatic_update_runner_gate.py"
+      },
+      {
+        "endpoint": "/validation/buildability",
+        "method": "GET",
+        "path": "claire/api/routes_buildability_validation.py"
+      },
+      {
+        "endpoint": "/validation/buildability/summary",
+        "method": "GET",
+        "path": "claire/api/routes_buildability_validation.py"
+      },
+      {
+        "endpoint": "/validation/buildability/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_buildability_validation.py"
+      },
+      {
+        "endpoint": "/design-portal/validation",
+        "method": "GET",
+        "path": "claire/api/routes_buildability_validation.py"
+      },
+      {
+        "endpoint": "/cleanup/proof",
+        "method": "GET",
+        "path": "claire/api/routes_cleanup_proof.py"
+      },
+      {
+        "endpoint": "/cleanup/proof/summary",
+        "method": "GET",
+        "path": "claire/api/routes_cleanup_proof.py"
+      },
+      {
+        "endpoint": "/cleanup/proof/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_cleanup_proof.py"
+      },
+      {
+        "endpoint": "/cleanup/archive-plan",
+        "method": "GET",
+        "path": "claire/api/routes_cleanup_proof.py"
+      },
+      {
+        "endpoint": "/cleanup/status",
+        "method": "GET",
+        "path": "claire/api/routes_cleanup_proof.py"
+      },
+      {
+        "endpoint": "/command",
+        "method": "POST",
+        "path": "claire/api/routes_command.py"
+      },
+      {
+        "endpoint": "/status",
+        "method": "GET",
+        "path": "claire/api/routes_connectors.py"
+      },
+      {
+        "endpoint": "/fetch",
+        "method": "POST",
+        "path": "claire/api/routes_connectors.py"
+      },
+      {
+        "endpoint": "/connectors",
+        "method": "PREFIX",
+        "path": "claire/api/routes_connectors.py"
+      },
+      {
+        "endpoint": "/status",
+        "method": "GET",
+        "path": "claire/api/routes_dashboard_alignment.py"
+      },
+      {
+        "endpoint": "/capabilities",
+        "method": "GET",
+        "path": "claire/api/routes_dashboard_alignment.py"
+      },
+      {
+        "endpoint": "/buttons",
+        "method": "GET",
+        "path": "claire/api/routes_dashboard_alignment.py"
+      },
+      {
+        "endpoint": "/verify",
+        "method": "GET",
+        "path": "claire/api/routes_dashboard_alignment.py"
+      },
+      {
+        "endpoint": "/dashboard/alignment",
+        "method": "PREFIX",
+        "path": "claire/api/routes_dashboard_alignment.py"
+      },
+      {
+        "endpoint": "/first-use/manifest",
+        "method": "GET",
+        "path": "claire/api/routes_dashboard_e2e.py"
+      },
+      {
+        "endpoint": "/first-use/latest",
+        "method": "GET",
+        "path": "claire/api/routes_dashboard_e2e.py"
+      },
+      {
+        "endpoint": "/first-use/run",
+        "method": "POST",
+        "path": "claire/api/routes_dashboard_e2e.py"
+      },
+      {
+        "endpoint": "/dashboard/e2e",
+        "method": "PREFIX",
+        "path": "claire/api/routes_dashboard_e2e.py"
+      },
+      {
+        "endpoint": "/design-portal/output",
+        "method": "GET",
+        "path": "claire/api/routes_design_portal_output.py"
+      },
+      {
+        "endpoint": "/design-portal/output/summary",
+        "method": "GET",
+        "path": "claire/api/routes_design_portal_output.py"
+      },
+      {
+        "endpoint": "/design-portal/output/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_design_portal_output.py"
+      },
+      {
+        "endpoint": "/design/portal/output",
+        "method": "GET",
+        "path": "claire/api/routes_design_portal_output.py"
+      },
+      {
+        "endpoint": "/desktop/startup",
+        "method": "GET",
+        "path": "claire/api/routes_desktop_startup_reliability.py"
+      },
+      {
+        "endpoint": "/desktop/startup/summary",
+        "method": "GET",
+        "path": "claire/api/routes_desktop_startup_reliability.py"
+      },
+      {
+        "endpoint": "/desktop/startup/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_desktop_startup_reliability.py"
+      },
+      {
+        "endpoint": "/desktop/package-manifest",
+        "method": "GET",
+        "path": "claire/api/routes_desktop_startup_reliability.py"
+      },
+      {
+        "endpoint": "/desktop/launch/status",
+        "method": "GET",
+        "path": "claire/api/routes_desktop_startup_reliability.py"
+      },
+      {
+        "endpoint": "/internet/evidence-promotion",
+        "method": "GET",
+        "path": "claire/api/routes_evidence_promotion_gate.py"
+      },
+      {
+        "endpoint": "/internet/evidence-promotion/summary",
+        "method": "GET",
+        "path": "claire/api/routes_evidence_promotion_gate.py"
+      },
+      {
+        "endpoint": "/internet/evidence-promotion/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_evidence_promotion_gate.py"
+      },
+      {
+        "endpoint": "/internet/evidence-promotion/promote-approved",
+        "method": "POST",
+        "path": "claire/api/routes_evidence_promotion_gate.py"
+      },
+      {
+        "endpoint": "/internet/evidence-promotion/status",
+        "method": "GET",
+        "path": "claire/api/routes_evidence_promotion_gate.py"
+      },
+      {
+        "endpoint": "/proof/e2e",
+        "method": "GET",
+        "path": "claire/api/routes_full_e2e_proof_pack.py"
+      },
+      {
+        "endpoint": "/proof/e2e/summary",
+        "method": "GET",
+        "path": "claire/api/routes_full_e2e_proof_pack.py"
+      },
+      {
+        "endpoint": "/proof/e2e/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_full_e2e_proof_pack.py"
+      },
+      {
+        "endpoint": "/system/stop-go",
+        "method": "GET",
+        "path": "claire/api/routes_full_e2e_proof_pack.py"
+      },
+      {
+        "endpoint": "/internet/live-probe/status",
+        "method": "GET",
+        "path": "claire/api/routes_governed_live_probe.py"
+      },
+      {
+        "endpoint": "/internet/live-probe/contract",
+        "method": "GET",
+        "path": "claire/api/routes_governed_live_probe.py"
+      },
+      {
+        "endpoint": "/internet/live-probe/run",
+        "method": "POST",
+        "path": "claire/api/routes_governed_live_probe.py"
+      },
+      {
+        "endpoint": "/internet/live-probe/run-confirmed",
+        "method": "POST",
+        "path": "claire/api/routes_governed_live_probe.py"
+      },
+      {
+        "endpoint": "/internet/live-probe/run-adapter",
+        "method": "POST",
+        "path": "claire/api/routes_governed_live_probe.py"
+      },
+      {
+        "endpoint": "/operator/search/web/run-governed-probe",
+        "method": "POST",
+        "path": "claire/api/routes_governed_live_probe.py"
+      },
+      {
+        "endpoint": "/internet/live-probe/adapter/status",
+        "method": "GET",
+        "path": "claire/api/routes_governed_live_probe.py"
+      },
+      {
+        "endpoint": "/internet/live-probe/last",
+        "method": "GET",
+        "path": "claire/api/routes_governed_live_probe.py"
+      },
+      {
+        "endpoint": "/history",
+        "method": "GET",
+        "path": "claire/api/routes_history.py"
+      },
+      {
+        "endpoint": "/history/{run_id}",
+        "method": "GET",
+        "path": "claire/api/routes_history.py"
+      },
+      {
+        "endpoint": "/stats",
+        "method": "GET",
+        "path": "claire/api/routes_history.py"
+      },
+      {
+        "endpoint": "/internet/provider-gate",
+        "method": "GET",
+        "path": "claire/api/routes_internet_provider_gate.py"
+      },
+      {
+        "endpoint": "/internet/provider-gate/summary",
+        "method": "GET",
+        "path": "claire/api/routes_internet_provider_gate.py"
+      },
+      {
+        "endpoint": "/internet/provider-gate/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_internet_provider_gate.py"
+      },
+      {
+        "endpoint": "/internet/search/provider/status",
+        "method": "GET",
+        "path": "claire/api/routes_internet_provider_gate.py"
+      },
+      {
+        "endpoint": "/internet/readiness",
+        "method": "GET",
+        "path": "claire/api/routes_internet_readiness.py"
+      },
+      {
+        "endpoint": "/internet/readiness/summary",
+        "method": "GET",
+        "path": "claire/api/routes_internet_readiness.py"
+      },
+      {
+        "endpoint": "/internet/readiness/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_internet_readiness.py"
+      },
+      {
+        "endpoint": "/internet/operations/status",
+        "method": "GET",
+        "path": "claire/api/routes_internet_readiness.py"
+      },
+      {
+        "endpoint": "/platform/launch-candidate",
+        "method": "GET",
+        "path": "claire/api/routes_launch_candidate_freeze.py"
+      },
+      {
+        "endpoint": "/platform/launch-candidate/summary",
+        "method": "GET",
+        "path": "claire/api/routes_launch_candidate_freeze.py"
+      },
+      {
+        "endpoint": "/platform/launch-candidate/freeze",
+        "method": "POST",
+        "path": "claire/api/routes_launch_candidate_freeze.py"
+      },
+      {
+        "endpoint": "/platform/freeze/status",
+        "method": "GET",
+        "path": "claire/api/routes_launch_candidate_freeze.py"
+      },
+      {
+        "endpoint": "/search/dashboard-smoke",
+        "method": "GET",
+        "path": "claire/api/routes_live_search_dashboard_smoke.py"
+      },
+      {
+        "endpoint": "/governed-web",
+        "method": "PREFIX",
+        "path": "claire/api/routes_live_search_dashboard_smoke.py"
+      },
+      {
+        "endpoint": "/proof/manual-browser-swagger",
+        "method": "GET",
+        "path": "claire/api/routes_manual_browser_swagger_proof.py"
+      },
+      {
+        "endpoint": "/proof/manual-browser-swagger/summary",
+        "method": "GET",
+        "path": "claire/api/routes_manual_browser_swagger_proof.py"
+      },
+      {
+        "endpoint": "/proof/manual-browser-swagger/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_manual_browser_swagger_proof.py"
+      },
+      {
+        "endpoint": "/proof/manual-browser-swagger/checklist",
+        "method": "GET",
+        "path": "claire/api/routes_manual_browser_swagger_proof.py"
+      },
+      {
+        "endpoint": "/operator/dashboard/state",
+        "method": "GET",
+        "path": "claire/api/routes_operator_dashboard.py"
+      },
+      {
+        "endpoint": "/dashboard/state",
+        "method": "GET",
+        "path": "claire/api/routes_operator_dashboard.py"
+      },
+      {
+        "endpoint": "/api/dashboard/state",
+        "method": "GET",
+        "path": "claire/api/routes_operator_dashboard.py"
+      },
+      {
+        "endpoint": "/operator/dashboard/summary",
+        "method": "GET",
+        "path": "claire/api/routes_operator_dashboard.py"
+      },
+      {
+        "endpoint": "/operator/dashboard/refresh",
+        "method": "POST",
+        "path": "claire/api/routes_operator_dashboard.py"
+      },
+      {
+        "endpoint": "/operator/search/capabilities",
+        "method": "GET",
+        "path": "claire/api/routes_operator_search_command.py"
+      },
+      {
+        "endpoint": "/operator/search/query",
+        "method": "POST",
+        "path": "claire/api/routes_operator_search_command.py"
+      },
+      {
+        "endpoint": "/operator/command/parse",
+        "method": "POST",
+        "path": "claire/api/routes_operator_search_command.py"
+      },
+      {
+        "endpoint": "/operator/search/web/status",
+        "method": "GET",
+        "path": "claire/api/routes_operator_search_command.py"
+      },
+      {
+        "endpoint": "/operator/search/web",
+        "method": "POST",
+        "path": "claire/api/routes_operator_search_command.py"
+      },
+      {
+        "endpoint": "/operator/search/layer",
+        "method": "GET",
+        "path": "claire/api/routes_operator_search_command.py"
+      },
+      {
+        "endpoint": "/pipeline/evaluate",
+        "method": "POST",
+        "path": "claire/api/routes_pipeline.py"
+      },
+      {
+        "endpoint": "/evaluate",
+        "method": "POST",
+        "path": "claire/api/routes_pipeline.py"
+      },
+      {
+        "endpoint": "/api/platform/status",
+        "method": "GET",
+        "path": "claire/api/routes_platform.py"
+      },
+      {
+        "endpoint": "/api/platform/target",
+        "method": "GET",
+        "path": "claire/api/routes_platform.py"
+      },
+      {
+        "endpoint": "/api/platform/current",
+        "method": "GET",
+        "path": "claire/api/routes_platform.py"
+      },
+      {
+        "endpoint": "/api/platform/resolve",
+        "method": "POST",
+        "path": "claire/api/routes_platform.py"
+      },
+      {
+        "endpoint": "/api/platform/resolve/{component}",
+        "method": "POST",
+        "path": "claire/api/routes_platform.py"
+      },
+      {
+        "endpoint": "/proof/platform-smoke",
+        "method": "GET",
+        "path": "claire/api/routes_platform_endpoint_smoke_proof.py"
+      },
+      {
+        "endpoint": "/proof/platform-smoke/summary",
+        "method": "GET",
+        "path": "claire/api/routes_platform_endpoint_smoke_proof.py"
+      },
+      {
+        "endpoint": "/proof/platform-smoke/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_platform_endpoint_smoke_proof.py"
+      },
+      {
+        "endpoint": "/platform/stop-go",
+        "method": "GET",
+        "path": "claire/api/routes_platform_endpoint_smoke_proof.py"
+      },
+      {
+        "endpoint": "/platform/launch-hardening",
+        "method": "GET",
+        "path": "claire/api/routes_platform_launch_hardening.py"
+      },
+      {
+        "endpoint": "/platform/launch-hardening/summary",
+        "method": "GET",
+        "path": "claire/api/routes_platform_launch_hardening.py"
+      },
+      {
+        "endpoint": "/platform/launch-hardening/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_platform_launch_hardening.py"
+      },
+      {
+        "endpoint": "/platform/launch/status",
+        "method": "GET",
+        "path": "claire/api/routes_platform_launch_hardening.py"
+      },
+      {
+        "endpoint": "/history",
+        "method": "GET",
+        "path": "claire/api/routes_proxy.py"
+      },
+      {
+        "endpoint": "/history/{run_id}",
+        "method": "GET",
+        "path": "claire/api/routes_proxy.py"
+      },
+      {
+        "endpoint": "/stats",
+        "method": "GET",
+        "path": "claire/api/routes_proxy.py"
+      },
+      {
+        "endpoint": "/updates/rollback-plan",
+        "method": "GET",
+        "path": "claire/api/routes_rollback_update_plan.py"
+      },
+      {
+        "endpoint": "/updates/rollback-plan/summary",
+        "method": "GET",
+        "path": "claire/api/routes_rollback_update_plan.py"
+      },
+      {
+        "endpoint": "/updates/rollback-plan/create",
+        "method": "POST",
+        "path": "claire/api/routes_rollback_update_plan.py"
+      },
+      {
+        "endpoint": "/updates/rollback/status",
+        "method": "GET",
+        "path": "claire/api/routes_rollback_update_plan.py"
+      },
+      {
+        "endpoint": "/routes/audit",
+        "method": "GET",
+        "path": "claire/api/routes_route_audit.py"
+      },
+      {
+        "endpoint": "/routes/audit/summary",
+        "method": "GET",
+        "path": "claire/api/routes_route_audit.py"
+      },
+      {
+        "endpoint": "/routes/audit/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_route_audit.py"
+      },
+      {
+        "endpoint": "/discovery/route-audit",
+        "method": "GET",
+        "path": "claire/api/routes_route_audit.py"
+      },
+      {
+        "endpoint": "/runtime/truth",
+        "method": "GET",
+        "path": "claire/api/routes_runtime_truth.py"
+      },
+      {
+        "endpoint": "/runtime/state",
+        "method": "GET",
+        "path": "claire/api/routes_runtime_truth.py"
+      },
+      {
+        "endpoint": "/runtime/truth/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_runtime_truth.py"
+      },
+      {
+        "endpoint": "/dashboard/runtime-truth",
+        "method": "GET",
+        "path": "claire/api/routes_runtime_truth.py"
+      },
+      {
+        "endpoint": "/health",
+        "method": "GET",
+        "path": "claire/api/routes_system.py"
+      },
+      {
+        "endpoint": "/modes",
+        "method": "GET",
+        "path": "claire/api/routes_system.py"
+      },
+      {
+        "endpoint": "/engines",
+        "method": "GET",
+        "path": "claire/api/routes_system.py"
+      },
+      {
+        "endpoint": "/update/check",
+        "method": "GET",
+        "path": "claire/api/routes_update.py"
+      },
+      {
+        "endpoint": "/update/prepare",
+        "method": "POST",
+        "path": "claire/api/routes_update.py"
+      },
+      {
+        "endpoint": "/update/install",
+        "method": "POST",
+        "path": "claire/api/routes_update.py"
+      },
+      {
+        "endpoint": "/updates/regression-lock",
+        "method": "GET",
+        "path": "claire/api/routes_update_governance_regression_lock.py"
+      },
+      {
+        "endpoint": "/updates/regression-lock/summary",
+        "method": "GET",
+        "path": "claire/api/routes_update_governance_regression_lock.py"
+      },
+      {
+        "endpoint": "/updates/regression-lock/rebuild",
+        "method": "POST",
+        "path": "claire/api/routes_update_governance_regression_lock.py"
+      },
+      {
+        "endpoint": "/updates/governance/lock",
+        "method": "GET",
+        "path": "claire/api/routes_update_governance_regression_lock.py"
+      },
+      {
+        "endpoint": "/updates/staging",
+        "method": "GET",
+        "path": "claire/api/routes_update_pack_staging.py"
+      },
+      {
+        "endpoint": "/updates/staging/summary",
+        "method": "GET",
+        "path": "claire/api/routes_update_pack_staging.py"
+      },
+      {
+        "endpoint": "/updates/staging/create",
+        "method": "POST",
+        "path": "claire/api/routes_update_pack_staging.py"
+      },
+      {
+        "endpoint": "/updates/governance/status",
+        "method": "GET",
+        "path": "claire/api/routes_update_pack_staging.py"
+      },
+      {
+        "endpoint": "/execute",
+        "method": "POST",
+        "path": "claire/api/routes_v19_25_search_execution.py"
+      },
+      {
+        "endpoint": "/health",
+        "method": "GET",
+        "path": "claire/api/routes_v19_25_search_execution.py"
+      },
+      {
+        "endpoint": "/runtime/search",
+        "method": "PREFIX",
+        "path": "claire/api/routes_v19_25_search_execution.py"
+      },
+      {
+        "endpoint": "/search/visible-result-verification",
+        "method": "GET",
+        "path": "claire/api/routes_visible_query_result_verification.py"
+      },
+      {
+        "endpoint": "/governed-web",
+        "method": "PREFIX",
+        "path": "claire/api/routes_visible_query_result_verification.py"
+      },
+      {
+        "endpoint": "/read",
+        "method": "GET",
+        "path": "claire/api/runtime_truth_read_api.py"
+      },
+      {
+        "endpoint": "/records",
+        "method": "GET",
+        "path": "claire/api/runtime_truth_read_api.py"
+      },
+      {
+        "endpoint": "/runtime-truth",
+        "method": "PREFIX",
+        "path": "claire/api/runtime_truth_read_api.py"
+      },
+      {
+        "endpoint": "/dashboard",
+        "method": "POST",
+        "path": "claire/api/search_bar_dashboard_api.py"
+      },
+      {
+        "endpoint": "/status",
+        "method": "GET",
+        "path": "claire/api/search_bar_dashboard_api.py"
+      },
+      {
+        "endpoint": "/search-bar",
+        "method": "PREFIX",
+        "path": "claire/api/search_bar_dashboard_api.py"
+      },
+      {
+        "endpoint": "/",
+        "method": "GET",
+        "path": "claire/api/server.py"
+      },
+      {
+        "endpoint": "/events",
+        "method": "POST",
+        "path": "claire/dynamic_source_trust/api_routes.py"
+      },
+      {
+        "endpoint": "/weight",
+        "method": "POST",
+        "path": "claire/dynamic_source_trust/api_routes.py"
+      },
+      {
+        "endpoint": "/weight-batch",
+        "method": "POST",
+        "path": "claire/dynamic_source_trust/api_routes.py"
+      },
+      {
+        "endpoint": "/quarantine/{domain}",
+        "method": "POST",
+        "path": "claire/dynamic_source_trust/api_routes.py"
+      },
+      {
+        "endpoint": "/release/{domain}",
+        "method": "POST",
+        "path": "claire/dynamic_source_trust/api_routes.py"
+      },
+      {
+        "endpoint": "/profiles",
+        "method": "GET",
+        "path": "claire/dynamic_source_trust/api_routes.py"
+      },
+      {
+        "endpoint": "/events",
+        "method": "GET",
+        "path": "claire/dynamic_source_trust/api_routes.py"
+      },
+      {
+        "endpoint": "/internet/source-trust",
+        "method": "PREFIX",
+        "path": "claire/dynamic_source_trust/api_routes.py"
+      },
+      {
+        "endpoint": "/schedule",
+        "method": "POST",
+        "path": "claire/governed_campaign_scheduler/api_routes.py"
+      },
+      {
+        "endpoint": "/schedules",
+        "method": "GET",
+        "path": "claire/governed_campaign_scheduler/api_routes.py"
+      },
+      {
+        "endpoint": "/run-due",
+        "method": "POST",
+        "path": "claire/governed_campaign_scheduler/api_routes.py"
+      },
+      {
+        "endpoint": "/reports",
+        "method": "GET",
+        "path": "claire/governed_campaign_scheduler/api_routes.py"
+      },
+      {
+        "endpoint": "/lock",
+        "method": "GET",
+        "path": "claire/governed_campaign_scheduler/api_routes.py"
+      },
+      {
+        "endpoint": "/internet/scheduler",
+        "method": "PREFIX",
+        "path": "claire/governed_campaign_scheduler/api_routes.py"
+      },
+      {
+        "endpoint": "/status",
+        "method": "GET",
+        "path": "claire/governed_web/real_provider_operator_probe_route.py"
+      },
+      {
+        "endpoint": "/probe",
+        "method": "POST",
+        "path": "claire/governed_web/real_provider_operator_probe_route.py"
+      },
+      {
+        "endpoint": "/api/dashboard/search/provider",
+        "method": "PREFIX",
+        "path": "claire/governed_web/real_provider_operator_probe_route.py"
+      },
+      {
+        "endpoint": "/internet",
+        "method": "POST",
+        "path": "claire/internet_activation/api_routes.py"
+      },
+      {
+        "endpoint": "/internet/evidence",
+        "method": "GET",
+        "path": "claire/internet_activation/api_routes.py"
+      },
+      {
+        "endpoint": "/internet/evidence/{evidence_id}",
+        "method": "GET",
+        "path": "claire/internet_activation/api_routes.py"
+      },
+      {
+        "endpoint": "/research",
+        "method": "PREFIX",
+        "path": "claire/internet_activation/api_routes.py"
+      },
+      {
+        "endpoint": "/snapshot",
+        "method": "GET",
+        "path": "claire/internet_operations_dashboard/api_routes.py"
+      },
+      {
+        "endpoint": "/run-due",
+        "method": "POST",
+        "path": "claire/internet_operations_dashboard/api_routes.py"
+      },
+      {
+        "endpoint": "/campaigns/{campaign_id}/refresh",
+        "method": "POST",
+        "path": "claire/internet_operations_dashboard/api_routes.py"
+      },
+      {
+        "endpoint": "/dashboard",
+        "method": "GET",
+        "path": "claire/internet_operations_dashboard/api_routes.py"
+      },
+      {
+        "endpoint": "/internet/ops",
+        "method": "PREFIX",
+        "path": "claire/internet_operations_dashboard/api_routes.py"
+      },
+      {
+        "endpoint": "/enrich",
+        "method": "POST",
+        "path": "claire/internet_runtime_integration/api_routes.py"
+      },
+      {
+        "endpoint": "/dashboard",
+        "method": "POST",
+        "path": "claire/internet_runtime_integration/api_routes.py"
+      },
+      {
+        "endpoint": "/runtime/internet",
+        "method": "PREFIX",
+        "path": "claire/internet_runtime_integration/api_routes.py"
+      },
+      {
+        "endpoint": "/health",
+        "method": "GET",
+        "path": "claire/internet_runtime_stability/api_routes.py"
+      },
+      {
+        "endpoint": "/campaigns/{campaign_id}/refresh",
+        "method": "POST",
+        "path": "claire/internet_runtime_stability/api_routes.py"
+      },
+      {
+        "endpoint": "/scheduler/run-due",
+        "method": "POST",
+        "path": "claire/internet_runtime_stability/api_routes.py"
+      },
+      {
+        "endpoint": "/failures",
+        "method": "GET",
+        "path": "claire/internet_runtime_stability/api_routes.py"
+      },
+      {
+        "endpoint": "/reports",
+        "method": "GET",
+        "path": "claire/internet_runtime_stability/api_routes.py"
+      },
+      {
+        "endpoint": "/internet/stability",
+        "method": "PREFIX",
+        "path": "claire/internet_runtime_stability/api_routes.py"
+      },
+      {
+        "endpoint": "/{campaign_id}/refresh",
+        "method": "POST",
+        "path": "claire/persistent_internet_campaigns/api_routes.py"
+      },
+      {
+        "endpoint": "/{campaign_id}/reports",
+        "method": "GET",
+        "path": "claire/persistent_internet_campaigns/api_routes.py"
+      },
+      {
+        "endpoint": "/internet/campaigns",
+        "method": "PREFIX",
+        "path": "claire/persistent_internet_campaigns/api_routes.py"
+      },
+      {
+        "endpoint": "/api/platform/status",
+        "method": "GET",
+        "path": "claire/platform/resolver.py"
+      },
+      {
+        "endpoint": "/api/platform/target",
+        "method": "GET",
+        "path": "claire/platform/resolver.py"
+      },
+      {
+        "endpoint": "/api/platform/current",
+        "method": "GET",
+        "path": "claire/platform/resolver.py"
+      },
+      {
+        "endpoint": "/api/platform/resolve",
+        "method": "POST",
+        "path": "claire/platform/resolver.py"
+      },
+      {
+        "endpoint": "/api/platform/resolve/{component}",
+        "method": "POST",
+        "path": "claire/platform/resolver.py"
+      },
+      {
+        "endpoint": "",
+        "method": "PREFIX",
+        "path": "claire/search_bar/governed_web_simulation_fastapi_route.py"
+      }
+    ]
+  },
+  "stop_go": "STOP",
+  "syntax_failures": [
+    {
+      "line": 347,
+      "message": "expected 'except' or 'finally' block",
+      "offset": 0,
+      "path": "claire/app.py",
+      "text": "app.include_router(v19_25_search_execution_router)"
+    },
+    {
+      "line": 50,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/autonomous/governance/autonomous_action_policy.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/autonomous/governance/escalation_boundary.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 42,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/autonomous/governance/human_review_gate.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 43,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/autonomous/governance/self_change_permission_model.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/proof/build_sequence_validator.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/proof/deployment_model_validator.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 46,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/proof/implementation_cost_model.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 46,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/renderers/architecture_graph_formatter.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 33,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/renderers/blueprint_summary_formatter.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/renderers/dependency_graph_formatter.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/design/renderers/design_export_formatter.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 58,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/recursive/longitudinal/learning_signal_extractor.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 43,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/recursive/longitudinal/run_pattern_miner.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/recursive/longitudinal/strategy_memory_synthesizer.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/recursive/longitudinal/thesis_evolution_tracker.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/citation_lineage_engine.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 33,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/claim_verifier.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 61,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/evidence_conflict_resolver.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 35,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/governed_live_research.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/research_packet_builder.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/research/live/source_verification_engine.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 33,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/compatibility_engine.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 38,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/component_matcher.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 37,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/enterprise_stack_recommender.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 42,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/integration_complexity.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 49,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/model_governance_assessor.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 45,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/technology/technology_catalog.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 52,
+      "message": "unmatched ']'",
+      "offset": 16,
+      "path": "claire/validation/benchmarks/benchmark_dataset_loader.py",
+      "text": "def Dataset]:"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/benchmark_reporter.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/false_negative_analyzer.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 42,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/false_positive_analyzer.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/outcome_label_manager.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/regime_backtester.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "claire/validation/benchmarks/signal_backtester.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 52,
+      "message": "unmatched ']'",
+      "offset": 16,
+      "path": "quarantine_legacy_placeholders/benchmarks/benchmark_dataset_loader.py",
+      "text": "def Dataset]:"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/benchmark_reporter.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/false_negative_analyzer.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 42,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/false_positive_analyzer.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/outcome_label_manager.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/regime_backtester.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/benchmarks/signal_backtester.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 46,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/final_remaining/architecture_graph_formatter.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 33,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/final_remaining/blueprint_summary_formatter.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/final_remaining/dependency_graph_formatter.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/final_remaining/design_export_formatter.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "expected '('",
+      "offset": 14,
+      "path": "quarantine_legacy_placeholders/final_remaining/uptime_monitor.py",
+      "text": "def mean time to recovery(self, *args, **kwargs):"
+    },
+    {
+      "line": 50,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/governance/autonomous_action_policy.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/governance/escalation_boundary.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 42,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/governance/human_review_gate.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 43,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/governance/self_change_permission_model.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/citation_lineage_engine.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 33,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/claim_verifier.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 61,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/evidence_conflict_resolver.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 35,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/governed_live_research.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/research_packet_builder.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/live/source_verification_engine.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 58,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/longitudinal/learning_signal_extractor.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 43,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/longitudinal/run_pattern_miner.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/longitudinal/strategy_memory_synthesizer.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/longitudinal/thesis_evolution_tracker.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 34,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/proof/build_sequence_validator.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 41,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/proof/deployment_model_validator.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 46,
+      "message": "invalid syntax",
+      "offset": 9,
+      "path": "quarantine_legacy_placeholders/proof/implementation_cost_model.py",
+      "text": "raise NotImplementedError"
+    },
+    {
+      "line": 1,
+      "message": "invalid non-printable character U+FEFF",
+      "offset": 1,
+      "path": "tests/regression/test_runtime_cleanroom.py",
+      "text": "﻿from pathlib import Path"
+    },
+    {
+      "line": 1,
+      "message": "invalid non-printable character U+FEFF",
+      "offset": 1,
+      "path": "tests/regression/test_runtime_smoke.py",
+      "text": "﻿from tools.active_runtime_check import main as runtime_check_main"
+    },
+    {
+      "line": 1,
+      "message": "invalid non-printable character U+FEFF",
+      "offset": 1,
+      "path": "tools/master_control_layer_builder.py",
+      "text": "﻿#!/usr/bin/env python3"
+    },
+    {
+      "line": 71,
+      "message": "unterminated string literal (detected at line 71)",
+      "offset": 11,
+      "path": "tools/pytest_consistency_audit.py",
+      "text": "print(f\""
+    }
+  ],
+  "version": "v19-dashboard-payload-contract-audit",
+  "versions": {
+    "installer_count": 1,
+    "installers": [
+      {
+        "path": "install_claire_v19_dashboard_payload_contract_audit.py",
+        "versions": []
+      }
+    ],
+    "test_count": 319,
+    "tests": [
+      {
+        "path": "tests/conftest.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_acquisition_stages.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/test_analysis_stages.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/test_api.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_breakthrough_stages.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/test_contract.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_engines.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_feasibility_stages.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/test_memory_system.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/test_pipeline.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_portfolio_stages.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/test_scoring.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_48_deployment_production_hardening.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_49_launch_regression_lock.py",
+        "versions": [
+          "v17.49"
+        ]
+      },
+      {
+        "path": "tests/test_v17_50_dashboard_runtime_alignment.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_51_dashboard_e2e_use_test.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_52_1_launcher_rewire.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_52_modern_operator_dashboard.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_53_product_dashboard_experience_layer.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_54_persistent_workspace_operational_flow.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_55_live_intelligence_feed_narrative_flow.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_64_1_functional_operator_dashboard_wiring.py",
+        "versions": [
+          "v17.64.1"
+        ]
+      },
+      {
+        "path": "tests/test_v17_64_dashboard_single_cockpit.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_65_runtime_truth_contract_repair.py",
+        "versions": [
+          "v17.65"
+        ]
+      },
+      {
+        "path": "tests/test_v17_66_discovery_breakthrough_innovation_route_audit.py",
+        "versions": [
+          "v17.66"
+        ]
+      },
+      {
+        "path": "tests/test_v17_67_autodesign_handoff_contract.py",
+        "versions": [
+          "v17.67"
+        ]
+      },
+      {
+        "path": "tests/test_v17_68_design_portal_output_contract.py",
+        "versions": [
+          "v17.68"
+        ]
+      },
+      {
+        "path": "tests/test_v17_69_buildability_validation_stack.py",
+        "versions": [
+          "v17.69"
+        ]
+      },
+      {
+        "path": "tests/test_v17_70_internet_readiness_verification.py",
+        "versions": [
+          "v17.70"
+        ]
+      },
+      {
+        "path": "tests/test_v17_71_governed_update_pack_staging.py",
+        "versions": [
+          "v17.71"
+        ]
+      },
+      {
+        "path": "tests/test_v17_72_rollback_aware_update_plan_contract.py",
+        "versions": [
+          "v17.72"
+        ]
+      },
+      {
+        "path": "tests/test_v17_73_automatic_update_runner_gate.py",
+        "versions": [
+          "v17.73"
+        ]
+      },
+      {
+        "path": "tests/test_v17_74_update_governance_regression_lock.py",
+        "versions": [
+          "v17.74"
+        ]
+      },
+      {
+        "path": "tests/test_v17_75_1_dashboard_backend_bridge_repair.py",
+        "versions": [
+          "v17.75.1"
+        ]
+      },
+      {
+        "path": "tests/test_v17_75_2_workspace_dashboard_search_command_prep.py",
+        "versions": [
+          "v17.75.2"
+        ]
+      },
+      {
+        "path": "tests/test_v17_75_full_end_to_end_proof_pack.py",
+        "versions": [
+          "v17.75"
+        ]
+      },
+      {
+        "path": "tests/test_v17_76_platform_endpoint_smoke_proof.py",
+        "versions": [
+          "v17.76"
+        ]
+      },
+      {
+        "path": "tests/test_v17_77_platform_launch_hardening.py",
+        "versions": [
+          "v17.77"
+        ]
+      },
+      {
+        "path": "tests/test_v17_78_desktop_packaging_startup_reliability.py",
+        "versions": [
+          "v17.78"
+        ]
+      },
+      {
+        "path": "tests/test_v17_79_manual_browser_swagger_proof_binder.py",
+        "versions": [
+          "v17.79"
+        ]
+      },
+      {
+        "path": "tests/test_v17_80_launch_candidate_freeze.py",
+        "versions": [
+          "v17.80"
+        ]
+      },
+      {
+        "path": "tests/test_v17_81_cleanup_proof_before_archive_delete.py",
+        "versions": [
+          "v17.81"
+        ]
+      },
+      {
+        "path": "tests/test_v17_82_archive_approval_gate.py",
+        "versions": [
+          "v17.82"
+        ]
+      },
+      {
+        "path": "tests/test_v17_83_internet_provider_configuration_gate.py",
+        "versions": [
+          "v17.83"
+        ]
+      },
+      {
+        "path": "tests/test_v17_84_1_live_probe_body_compatibility_repair.py",
+        "versions": [
+          "v17.84.1"
+        ]
+      },
+      {
+        "path": "tests/test_v17_84_governed_single_query_live_search_probe.py",
+        "versions": [
+          "v17.84"
+        ]
+      },
+      {
+        "path": "tests/test_v17_85_governed_web_evidence_promotion_gate.py",
+        "versions": [
+          "v17.85"
+        ]
+      },
+      {
+        "path": "tests/test_v17_86_reviewed_evidence_to_runtime_truth_ingestion_gate.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_87_runtime_truth_consumption_firewall.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_88_runtime_truth_read_api_adapter.py",
+        "versions": [
+          "v17.88"
+        ]
+      },
+      {
+        "path": "tests/test_v17_89_runtime_truth_search_adapter.py",
+        "versions": [
+          "v17.89.1"
+        ]
+      },
+      {
+        "path": "tests/test_v17_90_search_bar_mode_router.py",
+        "versions": [
+          "v17.90"
+        ]
+      },
+      {
+        "path": "tests/test_v17_91_search_bar_governance_layer.py",
+        "versions": [
+          "v17.91"
+        ]
+      },
+      {
+        "path": "tests/test_v17_92_search_bar_session_state.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_93_search_bar_runtime_bridge.py",
+        "versions": [
+          "v17.93"
+        ]
+      },
+      {
+        "path": "tests/test_v17_94_search_bar_capability_registry.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v17_95_search_bar_runtime_policy_layer.py",
+        "versions": [
+          "v17.95"
+        ]
+      },
+      {
+        "path": "tests/test_v17_96_search_bar_dashboard_contract.py",
+        "versions": [
+          "v17.96.1"
+        ]
+      },
+      {
+        "path": "tests/test_v17_97_search_bar_dashboard_api_adapter.py",
+        "versions": [
+          "v17.97"
+        ]
+      },
+      {
+        "path": "tests/test_v17_98_search_bar_unified_context_layer.py",
+        "versions": [
+          "v17.98"
+        ]
+      },
+      {
+        "path": "tests/test_v17_99_search_bar_operator_surface.py",
+        "versions": [
+          "v17.99"
+        ]
+      },
+      {
+        "path": "tests/test_v18_00_search_bar_system_state_gateway.py",
+        "versions": [
+          "v18.00"
+        ]
+      },
+      {
+        "path": "tests/test_v18_01_search_bar_governed_web_stub.py",
+        "versions": [
+          "v18.01"
+        ]
+      },
+      {
+        "path": "tests/test_v18_02_search_bar_governed_web_review_queue.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_03_search_bar_governed_web_review_controls.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_04_search_bar_governed_execution_gate.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_05_governed_web_execution_simulation_layer.py",
+        "versions": [
+          "v18.05"
+        ]
+      },
+      {
+        "path": "tests/test_v18_06_governed_web_execution_simulation_audit_trail.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_07_governed_web_simulation_result_viewer_contract.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_08_governed_web_simulation_dashboard_api_contract.py",
+        "versions": [
+          "v18.08"
+        ]
+      },
+      {
+        "path": "tests/test_v18_09_governed_web_simulation_dashboard_route_adapter.py",
+        "versions": [
+          "v18.09"
+        ]
+      },
+      {
+        "path": "tests/test_v18_10_governed_web_simulation_fastapi_route_registration.py",
+        "versions": [
+          "v18.10"
+        ]
+      },
+      {
+        "path": "tests/test_v18_11_1_governed_web_simulation_route_mount_verifier_repair.py",
+        "versions": [
+          "v18.11.1"
+        ]
+      },
+      {
+        "path": "tests/test_v18_11_governed_web_simulation_route_mount_verifier.py",
+        "versions": [
+          "v18.11",
+          "v18.11.1"
+        ]
+      },
+      {
+        "path": "tests/test_v18_12_governed_web_provider_readiness_contract.py",
+        "versions": [
+          "v18.12"
+        ]
+      },
+      {
+        "path": "tests/test_v18_13_governed_web_allowlist_registry.py",
+        "versions": [
+          "v18.13"
+        ]
+      },
+      {
+        "path": "tests/test_v18_14_governed_web_rate_limit_policy.py",
+        "versions": [
+          "v18.14"
+        ]
+      },
+      {
+        "path": "tests/test_v18_15_governed_web_source_trust_policy.py",
+        "versions": [
+          "v18.15"
+        ]
+      },
+      {
+        "path": "tests/test_v18_16_governed_web_read_only_dry_run_gate.py",
+        "versions": [
+          "v18.16"
+        ]
+      },
+      {
+        "path": "tests/test_v18_17_1_governed_web_read_only_dry_run_simulator_repair.py",
+        "versions": [
+          "v18.17.1"
+        ]
+      },
+      {
+        "path": "tests/test_v18_17_governed_web_read_only_dry_run_simulator.py",
+        "versions": [
+          "v18.17",
+          "v18.17.1"
+        ]
+      },
+      {
+        "path": "tests/test_v18_18_governed_web_read_only_live_adapter_boundary.py",
+        "versions": [
+          "v18.18"
+        ]
+      },
+      {
+        "path": "tests/test_v18_19_controlled_read_only_live_connectivity_handshake_stub.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_20_controlled_live_connectivity_handshake_review_record.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_21_accelerated_governed_web_search_request_envelope.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_22_governed_web_provider_adapter_preview_bridge.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_23_controlled_read_only_live_attempt_planner.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_24_controlled_network_probe_adapter_shell.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_25_controlled_probe_execution_gate.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_26_pre_live_probe_authorization_audit.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_27_1_read_only_probe_executor_null_transport_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_27_2_null_transport_empty_query_order_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_28_read_only_transport_selection_gate.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_29_real_http_transport_dry_activation_shell.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_30_first_live_probe_permission_switch.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_31_first_controlled_read_only_live_probe_executor.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_32_first_real_controlled_head_handshake.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_33_controlled_head_transport_executor_manual_enable.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_34_real_head_probe_review_result_capture.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_35_controlled_get_metadata_only_probe.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_36_controlled_get_limited_body_fetch.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_37_search_result_parser_contract.py",
+        "versions": [
+          "v18.37"
+        ]
+      },
+      {
+        "path": "tests/test_v18_38_dashboard_search_api_adapter.py",
+        "versions": [
+          "v18.38"
+        ]
+      },
+      {
+        "path": "tests/test_v18_39_search_bar_live_web_ui_wiring.py",
+        "versions": [
+          "v18.39"
+        ]
+      },
+      {
+        "path": "tests/test_v18_40_governance_error_state_hardening.py",
+        "versions": [
+          "v18.40"
+        ]
+      },
+      {
+        "path": "tests/test_v18_41_governed_live_search_orchestrator_foundation.py",
+        "versions": [
+          "v18.41"
+        ]
+      },
+      {
+        "path": "tests/test_v18_42_real_live_search_session_lifecycle.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_43_governed_multi_result_aggregation.py",
+        "versions": [
+          "v18.43"
+        ]
+      },
+      {
+        "path": "tests/test_v18_44_search_trust_scoring_normalization.py",
+        "versions": [
+          "v18.44"
+        ]
+      },
+      {
+        "path": "tests/test_v18_45_live_dashboard_result_rendering_contract.py",
+        "versions": [
+          "v18.45"
+        ]
+      },
+      {
+        "path": "tests/test_v18_46_real_controlled_internet_search_provider_adapter.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_47_controlled_search_retry_timeout_governance.py",
+        "versions": [
+          "v18.47"
+        ]
+      },
+      {
+        "path": "tests/test_v18_48_safe_concurrent_probe_governance.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_49_1_evidence_basket_import_path_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_49_governed_search_evidence_basket.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_50_first_fully_governed_end_to_end_live_search_flow.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_51_1_search_session_persistence_policy_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_51_2_search_session_persistence_api_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_51_3_persistence_policy_decision_code_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_51_4_search_session_persistence_export_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_51_5_persistence_payload_guard_ledger_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_51_6_search_session_persistence_consolidated_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_51_governed_search_session_persistence_layer.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_52_governed_provider_health_registry.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_53_live_search_dashboard_smoke_test.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_54_first_visible_query_result_verification.py",
+        "versions": [
+          "v18.54"
+        ]
+      },
+      {
+        "path": "tests/test_v18_55_2_dashboard_result_binding_init_repair_installer_fix.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_55_dashboard_search_bar_real_result_binding.py",
+        "versions": [
+          "v18.55"
+        ]
+      },
+      {
+        "path": "tests/test_v18_56_live_search_dashboard_query_execution_bridge.py",
+        "versions": [
+          "v18.56"
+        ]
+      },
+      {
+        "path": "tests/test_v18_57_dashboard_search_endpoint_result_return_contract.py",
+        "versions": [
+          "v18.57"
+        ]
+      },
+      {
+        "path": "tests/test_v18_58_dashboard_live_search_route_mount_adapter.py",
+        "versions": [
+          "v18.58"
+        ]
+      },
+      {
+        "path": "tests/test_v18_59_dashboard_live_search_ui_fetch_binding.py",
+        "versions": [
+          "v18.59"
+        ]
+      },
+      {
+        "path": "tests/test_v18_60_1_dashboard_search_html_idempotency_test_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_60_dashboard_search_bar_html_integration_gate.py",
+        "versions": [
+          "v18.60"
+        ]
+      },
+      {
+        "path": "tests/test_v18_61_1_mounted_live_search_post_blocking_smoke_repair.py",
+        "versions": [
+          "v18.61.1"
+        ]
+      },
+      {
+        "path": "tests/test_v18_61_mounted_live_search_endpoint_smoke_test.py",
+        "versions": [
+          "v18.61"
+        ]
+      },
+      {
+        "path": "tests/test_v18_62_live_search_endpoint_mounted_into_active_app_gate.py",
+        "versions": [
+          "v18.62"
+        ]
+      },
+      {
+        "path": "tests/test_v18_63_1_active_app_mounted_route_verification_assertion_repair.py",
+        "versions": [
+          "v18.63.1"
+        ]
+      },
+      {
+        "path": "tests/test_v18_63_active_app_mounted_route_verification.py",
+        "versions": [
+          "v18.63"
+        ]
+      },
+      {
+        "path": "tests/test_v18_64_dashboard_to_endpoint_fetch_proof.py",
+        "versions": [
+          "v18.64"
+        ]
+      },
+      {
+        "path": "tests/test_v18_65_first_active_dashboard_google_result_proof.py",
+        "versions": [
+          "v18.65"
+        ]
+      },
+      {
+        "path": "tests/test_v18_66_accelerated_governed_live_web_activation_pack.py",
+        "versions": [
+          "v18.66"
+        ]
+      },
+      {
+        "path": "tests/test_v18_67_real_controlled_provider_result_proof.py",
+        "versions": [
+          "v18.67"
+        ]
+      },
+      {
+        "path": "tests/test_v18_68_1_operator_probe_route_smoke_assertion_repair.py",
+        "versions": [
+          "v18.68.1"
+        ]
+      },
+      {
+        "path": "tests/test_v18_68_real_provider_operator_probe_route.py",
+        "versions": [
+          "v18.68"
+        ]
+      },
+      {
+        "path": "tests/test_v18_69_operator_probe_route_mount_into_active_app.py",
+        "versions": [
+          "v18.69"
+        ]
+      },
+      {
+        "path": "tests/test_v18_70_consolidated_web_activation_packs.py",
+        "versions": [
+          "v18.70"
+        ]
+      },
+      {
+        "path": "tests/test_v18_71_active_app_final_web_activation_mount_verification.py",
+        "versions": [
+          "v18.71"
+        ]
+      },
+      {
+        "path": "tests/test_v18_72_1_active_launcher_web_mount_patch_repair.py",
+        "versions": [
+          "v18.72"
+        ]
+      },
+      {
+        "path": "tests/test_v18_72_2_active_launcher_web_route_module_wrapper_repair.py",
+        "versions": [
+          "v18.72.2"
+        ]
+      },
+      {
+        "path": "tests/test_v18_72_active_launcher_runtime_web_route_mount_patch.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v18_73_1_operator_dashboard_compat_endpoint_repair.py",
+        "versions": [
+          "v18.73.1"
+        ]
+      },
+      {
+        "path": "tests/test_v18_73_2_dashboard_search_provider_probe_separation_repair.py",
+        "versions": [
+          "v18.73.2"
+        ]
+      },
+      {
+        "path": "tests/test_v18_73_root_consolidation_single_dashboard_launcher.py",
+        "versions": [
+          "v18.73"
+        ]
+      },
+      {
+        "path": "tests/test_v18_74_dashboard_live_web_search_final_binding_result_card_proof.py",
+        "versions": [
+          "v18.74"
+        ]
+      },
+      {
+        "path": "tests/test_v18_75_dashboard_search_result_card_renderer_lock.py",
+        "versions": [
+          "v18.75"
+        ]
+      },
+      {
+        "path": "tests/test_v18_76_dashboard_current_state_banner_smoke_report.py",
+        "versions": [
+          "v18.76"
+        ]
+      },
+      {
+        "path": "tests/test_v18_77_normal_search_manual_probe_route_guard.py",
+        "versions": [
+          "v18.77"
+        ]
+      },
+      {
+        "path": "tests/test_v18_78_google_result_card_regression_proof.py",
+        "versions": [
+          "v18.78"
+        ]
+      },
+      {
+        "path": "tests/test_v18_79_dashboard_pack_status_registry.py",
+        "versions": [
+          "v18.79"
+        ]
+      },
+      {
+        "path": "tests/test_v18_80_to_v18_84_dashboard_live_search_pack.py",
+        "versions": [
+          "v18.80",
+          "v18.81",
+          "v18.82",
+          "v18.83",
+          "v18.84"
+        ]
+      },
+      {
+        "path": "tests/test_v18_85_to_v18_89_dashboard_runtime_governed_search_pack.py",
+        "versions": [
+          "v18.85",
+          "v18.89"
+        ]
+      },
+      {
+        "path": "tests/test_v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack.py",
+        "versions": [
+          "v18.90",
+          "v18.94"
+        ]
+      },
+      {
+        "path": "tests/test_v18_95_to_v18_99_primary_pipeline_connection_desired_output_contract_pack.py",
+        "versions": [
+          "v18.95",
+          "v18.99"
+        ]
+      },
+      {
+        "path": "tests/test_v19_00_to_v19_04_actual_run_output_dashboard_binding_pack.py",
+        "versions": [
+          "v19.00",
+          "v19.04"
+        ]
+      },
+      {
+        "path": "tests/test_v19_05_to_v19_09_route_aware_autonomous_execution_proof_pack.py",
+        "versions": [
+          "v19.05",
+          "v19.09"
+        ]
+      },
+      {
+        "path": "tests/test_v19_10_to_v19_14_live_web_evidence_pipeline_ingestion_pack.py",
+        "versions": [
+          "v19.10",
+          "v19.14"
+        ]
+      },
+      {
+        "path": "tests/test_v19_15_to_v19_19_pipeline_result_quality_blocked_state_pack.py",
+        "versions": [
+          "v19.15",
+          "v19.19"
+        ]
+      },
+      {
+        "path": "tests/test_v19_20_to_v19_24_dashboard_sophistication_no_restructure_pack.py",
+        "versions": [
+          "v19.20",
+          "v19.24"
+        ]
+      },
+      {
+        "path": "tests/test_v19_25_end_to_end_search_execution_contract.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v19_26_to_v19_31_web_to_pipeline_launch_candidate.py",
+        "versions": [
+          "v19.26",
+          "v19.31"
+        ]
+      },
+      {
+        "path": "tests/test_v19_32_to_v19_36_runtime_quality_proof_pack.py",
+        "versions": [
+          "v19.32",
+          "v19.36",
+          "v19.37",
+          "v19.41"
+        ]
+      },
+      {
+        "path": "tests/test_v19_37_to_v19_41_governed_runtime_expansion_pack.py",
+        "versions": [
+          "v19.37",
+          "v19.40",
+          "v19.41"
+        ]
+      },
+      {
+        "path": "tests/test_v19_42_to_v19_51_1_route_priority_repair.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v19_42_to_v19_51_web_pipeline_stabilization_pack.py",
+        "versions": []
+      },
+      {
+        "path": "tests/test_v19_52_to_v19_61_autonomous_runtime_escalation_pack.py",
+        "versions": [
+          "v19.52",
+          "v19.61"
+        ]
+      },
+      {
+        "path": "tests/test_validation_system.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/_test_runtime_rules_placeholder.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/_test_signal_stages_placeholder.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/__init__.py",
+        "versions": []
+      },
+      {
+        "path": "tests/autonomous_research_ecosystem/test_autonomous_research_ecosystem.py",
+        "versions": []
+      },
+      {
+        "path": "tests/autonomy/test_v16_90_autonomous_loop_regression.py",
+        "versions": []
+      },
+      {
+        "path": "tests/consistency/test_baseline_runner_policy.py",
+        "versions": []
+      },
+      {
+        "path": "tests/consistency/test_current_system_operational_proof_policy.py",
+        "versions": []
+      },
+      {
+        "path": "tests/consistency/test_operational_proof_imports.py",
+        "versions": []
+      },
+      {
+        "path": "tests/consistency/__init__.py",
+        "versions": []
+      },
+      {
+        "path": "tests/continuous_autonomous_intelligence/test_continuous_autonomous_intelligence.py",
+        "versions": []
+      },
+      {
+        "path": "tests/dashboard/test_command_center_assets.py",
+        "versions": []
+      },
+      {
+        "path": "tests/dashboard/test_dashboard_state_builder.py",
+        "versions": []
+      },
+      {
+        "path": "tests/dashboard/test_render_contract.py",
+        "versions": []
+      },
+      {
+        "path": "tests/data_readiness/test_data_lineage.py",
+        "versions": []
+      },
+      {
+        "path": "tests/data_readiness/test_data_quality.py",
+        "versions": []
+      },
+      {
+        "path": "tests/data_readiness/test_data_readiness_core.py",
+        "versions": []
+      },
+      {
+        "path": "tests/data_readiness/test_historical_benchmarks.py",
+        "versions": []
+      },
+      {
+        "path": "tests/data_readiness/test_outcome_labels.py",
+        "versions": []
+      },
+      {
+        "path": "tests/data_readiness/test_workflow_telemetry.py",
+        "versions": []
+      },
+      {
+        "path": "tests/demo/test_v16_60_demo_proof_regression.py",
+        "versions": [
+          "v16.60"
+        ]
+      },
+      {
+        "path": "tests/demo_pilot_scenarios/test_demo_pilot_scenarios.py",
+        "versions": []
+      },
+      {
+        "path": "tests/deployment_hardening/test_deployment_hardening.py",
+        "versions": []
+      },
+      {
+        "path": "tests/discovery/test_v16_95_strategic_discovery_regression.py",
+        "versions": []
+      },
+      {
+        "path": "tests/distributed_production_runtime/test_distributed_production_runtime.py",
+        "versions": []
+      },
+      {
+        "path": "tests/dynamic_source_trust/test_dynamic_source_trust.py",
+        "versions": []
+      },
+      {
+        "path": "tests/dynamic_source_trust/test_dynamic_source_trust_api.py",
+        "versions": []
+      },
+      {
+        "path": "tests/e2e/test_autonomy_governance.py",
+        "versions": []
+      },
+      {
+        "path": "tests/e2e/test_benchmark_backtest_flow.py",
+        "versions": []
+      },
+      {
+        "path": "tests/e2e/test_export_completion_binder.py",
+        "versions": []
+      },
+      {
+        "path": "tests/e2e/test_full_completion_run.py",
+        "versions": []
+      },
+      {
+        "path": "tests/e2e/test_live_research_ingestion.py",
+        "versions": []
+      },
+      {
+        "path": "tests/e2e/test_market_validation_flow.py",
+        "versions": []
+      },
+      {
+        "path": "tests/e2e/test_production_readiness.py",
+        "versions": []
+      },
+      {
+        "path": "tests/e2e/test_recursive_learning_flow.py",
+        "versions": []
+      },
+      {
+        "path": "tests/enterprise/test_v16_80_enterprise_hardening_regression.py",
+        "versions": []
+      },
+      {
+        "path": "tests/enterprise_orchestration/test_enterprise_orchestration.py",
+        "versions": []
+      },
+      {
+        "path": "tests/evidence_ops/test_evidence_replay.py",
+        "versions": []
+      },
+      {
+        "path": "tests/evidence_ops/test_governed_ingestion.py",
+        "versions": []
+      },
+      {
+        "path": "tests/evidence_ops/test_operational_evidence_core.py",
+        "versions": []
+      },
+      {
+        "path": "tests/evidence_ops/test_source_trust.py",
+        "versions": []
+      },
+      {
+        "path": "tests/evidence_ops/test_telemetry_feedback.py",
+        "versions": []
+      },
+      {
+        "path": "tests/evidence_population/test_evidence_population.py",
+        "versions": []
+      },
+      {
+        "path": "tests/external_review_readiness/test_external_review_readiness.py",
+        "versions": []
+      },
+      {
+        "path": "tests/final_stability/test_final_stability.py",
+        "versions": []
+      },
+      {
+        "path": "tests/governed_campaign_scheduler/test_governed_campaign_scheduler.py",
+        "versions": []
+      },
+      {
+        "path": "tests/governed_campaign_scheduler/test_governed_campaign_scheduler_api.py",
+        "versions": []
+      },
+      {
+        "path": "tests/governed_internet_connectivity/test_governed_internet_connectivity.py",
+        "versions": []
+      },
+      {
+        "path": "tests/install_safety/test_current_state_cleaner.py",
+        "versions": []
+      },
+      {
+        "path": "tests/install_safety/test_simple_manifest_installer.py",
+        "versions": []
+      },
+      {
+        "path": "tests/internet_activation/test_internet_activation.py",
+        "versions": []
+      },
+      {
+        "path": "tests/internet_activation/test_internet_activation_api.py",
+        "versions": [
+          "v17.41"
+        ]
+      },
+      {
+        "path": "tests/internet_operations_dashboard/test_internet_operations_dashboard.py",
+        "versions": []
+      },
+      {
+        "path": "tests/internet_operations_dashboard/test_internet_operations_dashboard_api.py",
+        "versions": []
+      },
+      {
+        "path": "tests/internet_runtime_integration/test_internet_runtime_integration.py",
+        "versions": [
+          "v17.41"
+        ]
+      },
+      {
+        "path": "tests/internet_runtime_integration/test_internet_runtime_integration_api.py",
+        "versions": []
+      },
+      {
+        "path": "tests/internet_runtime_stability/test_internet_runtime_stability.py",
+        "versions": []
+      },
+      {
+        "path": "tests/internet_runtime_stability/test_internet_runtime_stability_api.py",
+        "versions": []
+      },
+      {
+        "path": "tests/ip_transfer_package/test_ip_transfer_package.py",
+        "versions": []
+      },
+      {
+        "path": "tests/live/test_v16_65_live_intelligence_regression.py",
+        "versions": []
+      },
+      {
+        "path": "tests/live_connectivity/test_live_connectivity.py",
+        "versions": []
+      },
+      {
+        "path": "tests/live_ops/test_live_benchmark_growth.py",
+        "versions": []
+      },
+      {
+        "path": "tests/live_ops/test_live_replay_drift.py",
+        "versions": []
+      },
+      {
+        "path": "tests/live_ops/test_live_source_pilot.py",
+        "versions": []
+      },
+      {
+        "path": "tests/live_ops/test_roi_proof.py",
+        "versions": []
+      },
+      {
+        "path": "tests/live_ops/test_workflow_instrumentation.py",
+        "versions": []
+      },
+      {
+        "path": "tests/maturity/test_enterprise_readiness.py",
+        "versions": []
+      },
+      {
+        "path": "tests/maturity/test_feasibility_hardening.py",
+        "versions": []
+      },
+      {
+        "path": "tests/maturity/test_live_data_readiness.py",
+        "versions": []
+      },
+      {
+        "path": "tests/maturity/test_productization_strengthening.py",
+        "versions": []
+      },
+      {
+        "path": "tests/maturity/test_recursive_intelligence.py",
+        "versions": []
+      },
+      {
+        "path": "tests/maturity/test_recursive_transformation_scaffold.py",
+        "versions": []
+      },
+      {
+        "path": "tests/memory/test_v16_70_continuity_regression.py",
+        "versions": []
+      },
+      {
+        "path": "tests/online_ops_endgame/test_online_ops_endgame.py",
+        "versions": []
+      },
+      {
+        "path": "tests/operational_proof/test_benchmark_replay_accumulator.py",
+        "versions": []
+      },
+      {
+        "path": "tests/operational_proof/test_confidence_calibration_reporter.py",
+        "versions": []
+      },
+      {
+        "path": "tests/operational_proof/test_drift_false_positive_tracker.py",
+        "versions": []
+      },
+      {
+        "path": "tests/operational_proof/test_governance_deployment_lock.py",
+        "versions": []
+      },
+      {
+        "path": "tests/operational_proof/test_operational_proof_plateau.py",
+        "versions": []
+      },
+      {
+        "path": "tests/operational_proof/test_operator_review_capture.py",
+        "versions": []
+      },
+      {
+        "path": "tests/operational_proof/test_outcome_label_adjudicator.py",
+        "versions": []
+      },
+      {
+        "path": "tests/operational_proof/test_pilot_readiness_gate.py",
+        "versions": []
+      },
+      {
+        "path": "tests/ops_closeout/test_ops_closeout.py",
+        "versions": []
+      },
+      {
+        "path": "tests/orchestration/test_v16_85_orchestration_regression.py",
+        "versions": []
+      },
+      {
+        "path": "tests/package_update_governance/test_package_update_governance.py",
+        "versions": []
+      },
+      {
+        "path": "tests/persistent_internet_campaigns/test_persistent_internet_campaigns.py",
+        "versions": []
+      },
+      {
+        "path": "tests/persistent_internet_campaigns/test_persistent_internet_campaigns_api.py",
+        "versions": []
+      },
+      {
+        "path": "tests/pilot/test_v16_75_pilot_buyer_readiness_regression.py",
+        "versions": []
+      },
+      {
+        "path": "tests/pilot_operations/test_pilot_operations.py",
+        "versions": []
+      },
+      {
+        "path": "tests/placeholder_disabled/test_acquisition_stages.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/placeholder_disabled/test_analysis_stages.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/placeholder_disabled/test_baseline_runner.py",
+        "versions": []
+      },
+      {
+        "path": "tests/placeholder_disabled/test_breakthrough_stages.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/placeholder_disabled/test_feasibility_stages.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/placeholder_disabled/test_memory_system.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/placeholder_disabled/test_portfolio_stages.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/placeholder_disabled/test_validation_system.py",
+        "versions": [
+          "v5.90.2"
+        ]
+      },
+      {
+        "path": "tests/real_governed_live_connectivity/test_real_governed_live_connectivity.py",
+        "versions": []
+      },
+      {
+        "path": "tests/recursive_platform_maturity/test_recursive_platform_maturity.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/run_lifecycle_smoke.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_api_unified_routes.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_autonomous_install_validator.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_baseline_runner.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_core_lifecycle.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_core_runtime_lock.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_current_state_regression.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_dashboard_contract_stability.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_final_v10_completion_contract.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_forward_install_guard.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_install_governance_dashboard.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_lifecycle_quality_scorer.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_lifecycle_regression.py",
+        "versions": [
+          "v5.28"
+        ]
+      },
+      {
+        "path": "tests/regression/test_live_runtime_control_center.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_live_runtime_dashboard.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_live_source_catalog.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_master_control_layer.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_no_verified_capability_loss.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_orphan_dormant_module_detector.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_portfolio_breakthrough_routing.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_recovery_rollback_selector.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_route_activity_monitor.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_runtime_cleanroom.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_runtime_contract_stability.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_runtime_intelligence_layer.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_runtime_manifest_system.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_runtime_recovery_engine.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_runtime_smoke.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_runtime_state_engine.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_safe_archive_recommender.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_signal_governance.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_stage_threshold_provenance.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_trend_thesis_intelligence.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_unified_runtime_dashboard.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/test_update_rollback_proof.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/__init__.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/fixtures/lifecycle_inputs.py",
+        "versions": []
+      },
+      {
+        "path": "tests/regression/fixtures/__init__.py",
+        "versions": []
+      },
+      {
+        "path": "tests/runtime/test_v16_50_command_layer_regression.py",
+        "versions": []
+      },
+      {
+        "path": "tests/runtime/test_v16_55_command_activation_regression.py",
+        "versions": []
+      },
+      {
+        "path": "tests/strategic_decision_intelligence/test_strategic_decision_intelligence.py",
+        "versions": []
+      },
+      {
+        "path": "tests/valuation_demo_binder/test_valuation_demo_binder.py",
+        "versions": []
+      },
+      {
+        "path": "_claire_archives/v18_85_to_v18_89_dashboard_runtime_governed_search_pack/tests/test_v18_85_to_v18_89_dashboard_runtime_governed_search_pack.py",
+        "versions": [
+          "v18.85",
+          "v18.89"
+        ]
+      },
+      {
+        "path": "_claire_archives/v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack/tests/test_v18_90_to_v18_94_dashboard_currency_runtime_output_order_lock_pack.py",
+        "versions": [
+          "v18.90",
+          "v18.94"
+        ]
+      }
+    ],
+    "unique_versions": [
+      "v1.0",
+      "v3.11.9",
+      "v3.13.13",
+      "v4.0",
+      "v4.1",
+      "v4.2",
+      "v4.2.1",
+      "v5.0",
+      "v5.19",
+      "v5.20",
+      "v5.21",
+      "v5.24",
+      "v5.25",
+      "v5.26",
+      "v5.28",
+      "v5.29",
+      "v5.32",
+      "v5.33",
+      "v5.34",
+      "v5.39",
+      "v5.40",
+      "v5.41",
+      "v5.42",
+      "v5.43",
+      "v5.44",
+      "v5.45",
+      "v5.46",
+      "v5.47",
+      "v5.48",
+      "v5.49",
+      "v5.50",
+      "v5.51",
+      "v5.52",
+      "v5.54",
+      "v5.59",
+      "v5.60",
+      "v5.61",
+      "v5.62",
+      "v5.64",
+      "v5.65",
+      "v5.67",
+      "v5.68",
+      "v5.69",
+      "v5.71",
+      "v5.72",
+      "v5.73",
+      "v5.74",
+      "v5.75",
+      "v5.76",
+      "v5.77",
+      "v5.78",
+      "v5.79",
+      "v5.80",
+      "v5.81",
+      "v5.82",
+      "v5.83",
+      "v5.84",
+      "v5.89",
+      "v5.89.5",
+      "v5.89.6",
+      "v5.89.7",
+      "v5.89.8",
+      "v5.89.9",
+      "v5.90",
+      "v5.90.2",
+      "v5.91",
+      "v5.91.0",
+      "v5.92",
+      "v5.92.0",
+      "v5.93",
+      "v5.93.0",
+      "v5.94",
+      "v5.94.0",
+      "v5.95",
+      "v5.95.0",
+      "v5.96",
+      "v5.96.0",
+      "v5.97",
+      "v5.98",
+      "v5.98.1",
+      "v5.99",
+      "v5.99.0",
+      "v6.0",
+      "v6.1.0",
+      "v6.1.1",
+      "v6.1.2",
+      "v6.2",
+      "v6.2.0",
+      "v6.3.0",
+      "v6.4.0",
+      "v7.0",
+      "v10.0.0",
+      "v10.2",
+      "v10.2.0",
+      "v10.3.0",
+      "v10.3.1",
+      "v10.3.2",
+      "v10.3.3",
+      "v10.3.9",
+      "v10.4",
+      "v10.4.0",
+      "v10.4.1",
+      "v10.4.2",
+      "v10.4.3",
+      "v10.4.4",
+      "v10.4.5",
+      "v10.4.6",
+      "v10.4.7",
+      "v10.4.8",
+      "v10.4.9",
+      "v10.5",
+      "v10.6",
+      "v10.7",
+      "v10.8",
+      "v10.9",
+      "v10.10",
+      "v10.11",
+      "v10.12",
+      "v10.453885",
+      "v11.0",
+      "v11.1",
+      "v11.2",
+      "v11.3",
+      "v11.4",
+      "v11.5",
+      "v11.6",
+      "v11.7",
+      "v11.8",
+      "v11.9",
+      "v11.10",
+      "v11.11",
+      "v11.12",
+      "v11.13",
+      "v11.14",
+      "v11.15",
+      "v11.16",
+      "v11.17",
+      "v11.18",
+      "v11.19",
+      "v11.20",
+      "v11.21",
+      "v11.22",
+      "v11.23",
+      "v11.24",
+      "v11.25",
+      "v11.26",
+      "v11.42",
+      "v11.43",
+      "v11.44",
+      "v11.45",
+      "v11.46",
+      "v11.47",
+      "v11.48",
+      "v11.49",
+      "v11.50",
+      "v11.50.1",
+      "v11.50.2",
+      "v11.51",
+      "v11.57",
+      "v11.58",
+      "v11.64",
+      "v11.65",
+      "v11.70",
+      "v11.71",
+      "v11.76",
+      "v11.77",
+      "v11.82",
+      "v11.83",
+      "v11.90",
+      "v11.91",
+      "v11.95",
+      "v11.96",
+      "v11.108336",
+      "v12.00",
+      "v12.01",
+      "v12.05",
+      "v12.301802",
+      "v15.090053",
+      "v15.751423",
+      "v16.0",
+      "v16.5",
+      "v16.6",
+      "v16.10",
+      "v16.11",
+      "v16.20",
+      "v16.21",
+      "v16.25",
+      "v16.26",
+      "v16.27",
+      "v16.28",
+      "v16.29",
+      "v16.30",
+      "v16.31",
+      "v16.32",
+      "v16.33",
+      "v16.34",
+      "v16.35",
+      "v16.36",
+      "v16.37",
+      "v16.38",
+      "v16.39",
+      "v16.40",
+      "v16.41",
+      "v16.42",
+      "v16.43",
+      "v16.44",
+      "v16.45",
+      "v16.58",
+      "v16.60",
+      "v16.63",
+      "v16.66",
+      "v16.69",
+      "v16.81",
+      "v16.86",
+      "v16.96",
+      "v16.97",
+      "v16.98",
+      "v16.99",
+      "v17.00",
+      "v17.01",
+      "v17.02",
+      "v17.03",
+      "v17.04",
+      "v17.05",
+      "v17.06",
+      "v17.07",
+      "v17.08",
+      "v17.09",
+      "v17.10",
+      "v17.11",
+      "v17.12",
+      "v17.13",
+      "v17.14",
+      "v17.15",
+      "v17.16",
+      "v17.17",
+      "v17.18",
+      "v17.19",
+      "v17.20",
+      "v17.21",
+      "v17.22",
+      "v17.23",
+      "v17.24",
+      "v17.25",
+      "v17.26",
+      "v17.27",
+      "v17.28",
+      "v17.29",
+      "v17.30",
+      "v17.31",
+      "v17.32",
+      "v17.33",
+      "v17.34",
+      "v17.35",
+      "v17.36",
+      "v17.37",
+      "v17.38",
+      "v17.39",
+      "v17.40",
+      "v17.41",
+      "v17.42",
+      "v17.43",
+      "v17.44",
+      "v17.45",
+      "v17.46",
+      "v17.47",
+      "v17.48",
+      "v17.49",
+      "v17.50",
+      "v17.51",
+      "v17.52",
+      "v17.52.1",
+      "v17.53",
+      "v17.54",
+      "v17.55",
+      "v17.56",
+      "v17.57",
+      "v17.58",
+      "v17.58.1",
+      "v17.59",
+      "v17.60",
+      "v17.61",
+      "v17.62",
+      "v17.62.1",
+      "v17.62.2",
+      "v17.62.3",
+      "v17.62.4",
+      "v17.62.5",
+      "v17.62.6",
+      "v17.62.7",
+      "v17.62.8",
+      "v17.62.9",
+      "v17.63",
+      "v17.64",
+      "v17.64.1",
+      "v17.65",
+      "v17.66",
+      "v17.67",
+      "v17.68",
+      "v17.69",
+      "v17.70",
+      "v17.71",
+      "v17.72",
+      "v17.73",
+      "v17.74",
+      "v17.75",
+      "v17.75.1",
+      "v17.75.2",
+      "v17.76",
+      "v17.77",
+      "v17.78",
+      "v17.79",
+      "v17.80",
+      "v17.81",
+      "v17.82",
+      "v17.83",
+      "v17.84",
+      "v17.84.1",
+      "v17.85",
+      "v17.86",
+      "v17.87",
+      "v17.87.1",
+      "v17.88",
+      "v17.89",
+      "v17.89.1",
+      "v17.90",
+      "v17.91",
+      "v17.92",
+      "v17.93",
+      "v17.94",
+      "v17.95",
+      "v17.96",
+      "v17.96.1",
+      "v17.97",
+      "v17.98",
+      "v17.99",
+      "v17.975376",
+      "v18.00",
+      "v18.01",
+      "v18.02",
+      "v18.03",
+      "v18.04",
+      "v18.05",
+      "v18.06",
+      "v18.07",
+      "v18.08",
+      "v18.09",
+      "v18.10",
+      "v18.11",
+      "v18.11.1",
+      "v18.12",
+      "v18.13",
+      "v18.14",
+      "v18.15",
+      "v18.16",
+      "v18.17",
+      "v18.17.1",
+      "v18.18",
+      "v18.19",
+      "v18.20",
+      "v18.21",
+      "v18.22",
+      "v18.23",
+      "v18.24",
+      "v18.25",
+      "v18.26",
+      "v18.27",
+      "v18.27.1",
+      "v18.27.2",
+      "v18.28",
+      "v18.29",
+      "v18.30",
+      "v18.31",
+      "v18.32",
+      "v18.33",
+      "v18.37",
+      "v18.38",
+      "v18.39",
+      "v18.40",
+      "v18.41",
+      "v18.42",
+      "v18.43",
+      "v18.44",
+      "v18.45",
+      "v18.46",
+      "v18.47",
+      "v18.48",
+      "v18.49",
+      "v18.49.1",
+      "v18.50",
+      "v18.51",
+      "v18.51.1",
+      "v18.51.2",
+      "v18.51.4",
+      "v18.51.5",
+      "v18.51.6",
+      "v18.52",
+      "v18.53",
+      "v18.54",
+      "v18.55",
+      "v18.55.1",
+      "v18.55.2",
+      "v18.56",
+      "v18.57",
+      "v18.58",
+      "v18.59",
+      "v18.60",
+      "v18.60.1",
+      "v18.61",
+      "v18.61.1",
+      "v18.62",
+      "v18.63",
+      "v18.63.1",
+      "v18.64",
+      "v18.65",
+      "v18.66",
+      "v18.67",
+      "v18.68",
+      "v18.68.1",
+      "v18.69",
+      "v18.70",
+      "v18.71",
+      "v18.72",
+      "v18.72.1",
+      "v18.72.2",
+      "v18.73",
+      "v18.73.1",
+      "v18.73.2",
+      "v18.74",
+      "v18.75",
+      "v18.76",
+      "v18.77",
+      "v18.78",
+      "v18.79",
+      "v18.80",
+      "v18.81",
+      "v18.82",
+      "v18.83",
+      "v18.84",
+      "v18.85",
+      "v18.89",
+      "v18.90",
+      "v18.94",
+      "v18.95",
+      "v18.99",
+      "v19.00",
+      "v19.04",
+      "v19.05",
+      "v19.09",
+      "v19.10",
+      "v19.14",
+      "v19.15",
+      "v19.19",
+      "v19.20",
+      "v19.24",
+      "v19.25",
+      "v19.25.1",
+      "v19.25.2",
+      "v19.26",
+      "v19.29",
+      "v19.31",
+      "v19.32",
+      "v19.36",
+      "v19.37",
+      "v19.40",
+      "v19.41",
+      "v19.42",
+      "v19.51",
+      "v19.51.1",
+      "v19.52",
+      "v19.53",
+      "v19.54",
+      "v19.55",
+      "v19.56",
+      "v19.57",
+      "v19.58",
+      "v19.59",
+      "v19.60",
+      "v19.61"
+    ],
+    "version_mentions": {
+      "v1.0": 1,
+      "v10.0.0": 1,
+      "v10.10": 1,
+      "v10.11": 1,
+      "v10.12": 1,
+      "v10.2": 1,
+      "v10.2.0": 1,
+      "v10.3.0": 78,
+      "v10.3.1": 41,
+      "v10.3.2": 24,
+      "v10.3.3": 1,
+      "v10.3.9": 2,
+      "v10.4": 1,
+      "v10.4.0": 1,
+      "v10.4.1": 1,
+      "v10.4.2": 1,
+      "v10.4.3": 1,
+      "v10.4.4": 2,
+      "v10.4.5": 2,
+      "v10.4.6": 1,
+      "v10.4.7": 1,
+      "v10.4.8": 1,
+      "v10.4.9": 2,
+      "v10.453885": 1,
+      "v10.5": 1,
+      "v10.6": 1,
+      "v10.7": 1,
+      "v10.8": 1,
+      "v10.9": 2,
+      "v11.0": 2,
+      "v11.1": 3,
+      "v11.10": 1,
+      "v11.108336": 1,
+      "v11.11": 1,
+      "v11.12": 1,
+      "v11.13": 2,
+      "v11.14": 2,
+      "v11.15": 1,
+      "v11.16": 1,
+      "v11.17": 1,
+      "v11.18": 1,
+      "v11.19": 2,
+      "v11.2": 2,
+      "v11.20": 2,
+      "v11.21": 1,
+      "v11.22": 1,
+      "v11.23": 1,
+      "v11.24": 1,
+      "v11.25": 1,
+      "v11.26": 2,
+      "v11.3": 2,
+      "v11.4": 2,
+      "v11.42": 1,
+      "v11.43": 5,
+      "v11.44": 1,
+      "v11.45": 1,
+      "v11.46": 1,
+      "v11.47": 1,
+      "v11.48": 1,
+      "v11.49": 1,
+      "v11.5": 2,
+      "v11.50": 5,
+      "v11.50.1": 3,
+      "v11.50.2": 3,
+      "v11.51": 3,
+      "v11.57": 3,
+      "v11.58": 3,
+      "v11.6": 2,
+      "v11.64": 3,
+      "v11.65": 3,
+      "v11.7": 3,
+      "v11.70": 3,
+      "v11.71": 3,
+      "v11.76": 3,
+      "v11.77": 3,
+      "v11.8": 2,
+      "v11.82": 3,
+      "v11.83": 4,
+      "v11.9": 2,
+      "v11.90": 4,
+      "v11.91": 3,
+      "v11.95": 3,
+      "v11.96": 3,
+      "v12.00": 3,
+      "v12.01": 3,
+      "v12.05": 3,
+      "v12.301802": 1,
+      "v15.090053": 1,
+      "v15.751423": 1,
+      "v16.0": 4,
+      "v16.10": 3,
+      "v16.11": 3,
+      "v16.20": 3,
+      "v16.21": 3,
+      "v16.25": 3,
+      "v16.26": 11,
+      "v16.27": 11,
+      "v16.28": 20,
+      "v16.29": 18,
+      "v16.30": 14,
+      "v16.31": 14,
+      "v16.32": 12,
+      "v16.33": 13,
+      "v16.34": 12,
+      "v16.35": 13,
+      "v16.36": 13,
+      "v16.37": 13,
+      "v16.38": 13,
+      "v16.39": 13,
+      "v16.40": 13,
+      "v16.41": 12,
+      "v16.42": 13,
+      "v16.43": 13,
+      "v16.44": 13,
+      "v16.45": 12,
+      "v16.5": 3,
+      "v16.58": 1,
+      "v16.6": 3,
+      "v16.60": 4,
+      "v16.63": 1,
+      "v16.66": 1,
+      "v16.69": 1,
+      "v16.81": 1,
+      "v16.86": 1,
+      "v16.96": 4,
+      "v16.97": 2,
+      "v16.98": 2,
+      "v16.99": 2,
+      "v17.00": 5,
+      "v17.01": 4,
+      "v17.02": 2,
+      "v17.03": 2,
+      "v17.04": 2,
+      "v17.05": 2,
+      "v17.06": 2,
+      "v17.07": 2,
+      "v17.08": 2,
+      "v17.09": 2,
+      "v17.10": 5,
+      "v17.11": 4,
+      "v17.12": 2,
+      "v17.13": 2,
+      "v17.14": 2,
+      "v17.15": 2,
+      "v17.16": 2,
+      "v17.17": 2,
+      "v17.18": 2,
+      "v17.19": 2,
+      "v17.20": 5,
+      "v17.21": 4,
+      "v17.22": 2,
+      "v17.23": 2,
+      "v17.24": 2,
+      "v17.25": 2,
+      "v17.26": 2,
+      "v17.27": 2,
+      "v17.28": 2,
+      "v17.29": 2,
+      "v17.30": 5,
+      "v17.31": 4,
+      "v17.32": 2,
+      "v17.33": 2,
+      "v17.34": 2,
+      "v17.35": 2,
+      "v17.36": 2,
+      "v17.37": 2,
+      "v17.38": 2,
+      "v17.39": 2,
+      "v17.40": 5,
+      "v17.41": 11,
+      "v17.42": 7,
+      "v17.43": 9,
+      "v17.44": 6,
+      "v17.45": 6,
+      "v17.46": 8,
+      "v17.47": 8,
+      "v17.48": 15,
+      "v17.49": 15,
+      "v17.50": 11,
+      "v17.51": 3,
+      "v17.52": 6,
+      "v17.52.1": 6,
+      "v17.53": 1,
+      "v17.54": 5,
+      "v17.55": 6,
+      "v17.56": 11,
+      "v17.57": 22,
+      "v17.58": 22,
+      "v17.58.1": 13,
+      "v17.59": 24,
+      "v17.60": 17,
+      "v17.61": 17,
+      "v17.62": 20,
+      "v17.62.1": 10,
+      "v17.62.2": 9,
+      "v17.62.3": 10,
+      "v17.62.4": 10,
+      "v17.62.5": 8,
+      "v17.62.6": 9,
+      "v17.62.7": 5,
+      "v17.62.8": 5,
+      "v17.62.9": 7,
+      "v17.63": 4,
+      "v17.64": 12,
+      "v17.64.1": 28,
+      "v17.65": 15,
+      "v17.66": 12,
+      "v17.67": 14,
+      "v17.68": 16,
+      "v17.69": 18,
+      "v17.70": 18,
+      "v17.71": 25,
+      "v17.72": 29,
+      "v17.73": 24,
+      "v17.74": 41,
+      "v17.75": 34,
+      "v17.75.1": 24,
+      "v17.75.2": 10,
+      "v17.76": 12,
+      "v17.77": 12,
+      "v17.78": 19,
+      "v17.79": 22,
+      "v17.80": 22,
+      "v17.81": 23,
+      "v17.82": 23,
+      "v17.83": 30,
+      "v17.84": 17,
+      "v17.84.1": 5,
+      "v17.85": 14,
+      "v17.86": 3,
+      "v17.87": 4,
+      "v17.87.1": 2,
+      "v17.88": 4,
+      "v17.89": 4,
+      "v17.89.1": 4,
+      "v17.90": 4,
+      "v17.91": 4,
+      "v17.92": 4,
+      "v17.93": 4,
+      "v17.94": 3,
+      "v17.95": 4,
+      "v17.96": 2,
+      "v17.96.1": 4,
+      "v17.97": 4,
+      "v17.975376": 1,
+      "v17.98": 4,
+      "v17.99": 4,
+      "v18.00": 4,
+      "v18.01": 4,
+      "v18.02": 3,
+      "v18.03": 3,
+      "v18.04": 3,
+      "v18.05": 5,
+      "v18.06": 3,
+      "v18.07": 3,
+      "v18.08": 5,
+      "v18.09": 5,
+      "v18.10": 5,
+      "v18.11": 6,
+      "v18.11.1": 6,
+      "v18.12": 5,
+      "v18.13": 5,
+      "v18.14": 5,
+      "v18.15": 5,
+      "v18.16": 5,
+      "v18.17": 6,
+      "v18.17.1": 6,
+      "v18.18": 5,
+      "v18.19": 4,
+      "v18.20": 3,
+      "v18.21": 3,
+      "v18.22": 3,
+      "v18.23": 3,
+      "v18.24": 3,
+      "v18.25": 3,
+      "v18.26": 3,
+      "v18.27": 1,
+      "v18.27.1": 3,
+      "v18.27.2": 3,
+      "v18.28": 3,
+      "v18.29": 3,
+      "v18.30": 3,
+      "v18.31": 3,
+      "v18.32": 3,
+      "v18.33": 3,
+      "v18.37": 3,
+      "v18.38": 3,
+      "v18.39": 3,
+      "v18.40": 3,
+      "v18.41": 3,
+      "v18.42": 2,
+      "v18.43": 3,
+      "v18.44": 3,
+      "v18.45": 3,
+      "v18.46": 2,
+      "v18.47": 3,
+      "v18.48": 2,
+      "v18.49": 4,
+      "v18.49.1": 2,
+      "v18.50": 2,
+      "v18.51": 2,
+      "v18.51.1": 1,
+      "v18.51.2": 1,
+      "v18.51.4": 1,
+      "v18.51.5": 1,
+      "v18.51.6": 2,
+      "v18.52": 3,
+      "v18.53": 5,
+      "v18.54": 5,
+      "v18.55": 4,
+      "v18.55.1": 1,
+      "v18.55.2": 1,
+      "v18.56": 4,
+      "v18.57": 4,
+      "v18.58": 4,
+      "v18.59": 5,
+      "v18.60": 5,
+      "v18.60.1": 1,
+      "v18.61": 4,
+      "v18.61.1": 3,
+      "v18.62": 4,
+      "v18.63": 5,
+      "v18.63.1": 3,
+      "v18.64": 6,
+      "v18.65": 5,
+      "v18.66": 4,
+      "v18.67": 4,
+      "v18.68": 5,
+      "v18.68.1": 3,
+      "v18.69": 4,
+      "v18.70": 4,
+      "v18.71": 4,
+      "v18.72": 4,
+      "v18.72.1": 1,
+      "v18.72.2": 5,
+      "v18.73": 4,
+      "v18.73.1": 5,
+      "v18.73.2": 5,
+      "v18.74": 18,
+      "v18.75": 21,
+      "v18.76": 19,
+      "v18.77": 17,
+      "v18.78": 15,
+      "v18.79": 13,
+      "v18.80": 4,
+      "v18.81": 2,
+      "v18.82": 2,
+      "v18.83": 2,
+      "v18.84": 4,
+      "v18.85": 14,
+      "v18.89": 14,
+      "v18.90": 15,
+      "v18.94": 15,
+      "v18.95": 11,
+      "v18.99": 11,
+      "v19.00": 9,
+      "v19.04": 9,
+      "v19.05": 8,
+      "v19.09": 8,
+      "v19.10": 7,
+      "v19.14": 7,
+      "v19.15": 6,
+      "v19.19": 6,
+      "v19.20": 5,
+      "v19.24": 5,
+      "v19.25": 4,
+      "v19.25.1": 1,
+      "v19.25.2": 1,
+      "v19.26": 4,
+      "v19.29": 1,
+      "v19.31": 3,
+      "v19.32": 2,
+      "v19.36": 2,
+      "v19.37": 6,
+      "v19.40": 2,
+      "v19.41": 6,
+      "v19.42": 2,
+      "v19.51": 2,
+      "v19.51.1": 2,
+      "v19.52": 2,
+      "v19.53": 1,
+      "v19.54": 1,
+      "v19.55": 1,
+      "v19.56": 1,
+      "v19.57": 1,
+      "v19.58": 1,
+      "v19.59": 1,
+      "v19.60": 1,
+      "v19.61": 2,
+      "v3.11.9": 2,
+      "v3.13.13": 2,
+      "v4.0": 1,
+      "v4.1": 2,
+      "v4.2": 1,
+      "v4.2.1": 1,
+      "v5.0": 1,
+      "v5.19": 5,
+      "v5.20": 2,
+      "v5.21": 1,
+      "v5.24": 1,
+      "v5.25": 1,
+      "v5.26": 1,
+      "v5.28": 5,
+      "v5.29": 1506,
+      "v5.32": 1,
+      "v5.33": 2,
+      "v5.34": 2,
+      "v5.39": 2,
+      "v5.40": 3,
+      "v5.41": 6,
+      "v5.42": 5,
+      "v5.43": 5,
+      "v5.44": 3,
+      "v5.45": 2,
+      "v5.46": 5,
+      "v5.47": 5,
+      "v5.48": 9,
+      "v5.49": 2,
+      "v5.50": 2,
+      "v5.51": 1,
+      "v5.52": 2,
+      "v5.54": 2,
+      "v5.59": 1,
+      "v5.60": 1,
+      "v5.61": 1,
+      "v5.62": 1,
+      "v5.64": 1,
+      "v5.65": 3,
+      "v5.67": 1,
+      "v5.68": 1,
+      "v5.69": 1,
+      "v5.71": 1,
+      "v5.72": 2,
+      "v5.73": 1,
+      "v5.74": 1,
+      "v5.75": 1,
+      "v5.76": 1,
+      "v5.77": 1,
+      "v5.78": 1,
+      "v5.79": 1,
+      "v5.80": 1,
+      "v5.81": 1,
+      "v5.82": 1,
+      "v5.83": 1,
+      "v5.84": 2,
+      "v5.89": 2,
+      "v5.89.5": 7,
+      "v5.89.6": 5,
+      "v5.89.7": 743,
+      "v5.89.8": 9,
+      "v5.89.9": 675,
+      "v5.90": 12,
+      "v5.90.2": 134,
+      "v5.91": 1,
+      "v5.91.0": 1,
+      "v5.92": 1,
+      "v5.92.0": 1,
+      "v5.93": 1,
+      "v5.93.0": 1,
+      "v5.94": 1,
+      "v5.94.0": 1,
+      "v5.95": 1,
+      "v5.95.0": 1,
+      "v5.96": 1,
+      "v5.96.0": 1,
+      "v5.97": 1,
+      "v5.98": 2,
+      "v5.98.1": 1,
+      "v5.99": 4,
+      "v5.99.0": 1,
+      "v6.0": 1,
+      "v6.1.0": 4,
+      "v6.1.1": 1,
+      "v6.1.2": 1,
+      "v6.2": 1,
+      "v6.2.0": 1,
+      "v6.3.0": 1,
+      "v6.4.0": 1,
+      "v7.0": 2
+    }
+  }
+}

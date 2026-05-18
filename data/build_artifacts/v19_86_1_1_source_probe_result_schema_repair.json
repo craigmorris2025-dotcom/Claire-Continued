@@ -1,0 +1,15 @@
+{
+  "version": "v19.86.1.1",
+  "build": "Source Probe Result Schema Repair",
+  "installed_at": "2026-05-12T16:48:51.507488+00:00",
+  "fix": "Avoid unhashable list TypeError during probe required-field validation.",
+  "files_written": [
+    "tools/source_probe_result_schema.py",
+    "tests/test_v19_86_1_source_probe_result_schema.py",
+    "data/build_artifacts/v19_86_1_1_source_probe_result_schema_repair.json"
+  ],
+  "commands": [
+    "python tools/source_probe_result_schema.py",
+    "pytest tests/test_v19_86_1_source_probe_result_schema.py -q"
+  ]
+}

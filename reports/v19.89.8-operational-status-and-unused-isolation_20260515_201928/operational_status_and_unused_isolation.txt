@@ -1,0 +1,45 @@
+Claire Operational Status + Unused File Isolation
+Version: v19.89.8-operational-status-and-unused-isolation
+Root: C:\Users\craig\OneDrive\Desktop\Claire
+
+MODE: diagnostic-only. No files moved, deleted, or patched.
+
+OPERATIONAL STATE
+- pytest collection ok: True
+- full pytest ok: False
+- create_app ok: False
+- routes count: None
+- /api/workflow/counts mounted: False
+- /api/workflow/monitoring mounted: False
+
+CLASSIFICATION COUNTS
+- archive_ignore_not_active: 475
+- keep_active_or_support: 1798
+- keep_active_runtime_reachable: 141
+- keep_dashboard: 371
+- keep_recent_reports_or_archive_later: 73
+- keep_runtime_data_until_contract_review: 22445
+- keep_validation: 173
+- safe_unused_candidate: 936
+- uncertain_review: 71
+
+WHAT MUST REMAIN NOW
+- top-level claire/ package
+- frontend/ cockpit/dashboard
+- tests/ until cleanup is fully proven
+- runtime/data/output/exports until contracts are mapped
+- main.py, pyproject.toml, pytest.ini, requirements.txt, version.json
+
+WHAT CAN BE REMOVED LATER
+- only files listed in unused_candidates.json after system is running and pytest is green
+- uncertain_requires_review.json must be manually reviewed first
+
+REPORT FILES
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-operational-status-and-unused-isolation_20260515_201928\operational_status_and_unused_isolation.json
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-operational-status-and-unused-isolation_20260515_201928\active_system_map.json
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-operational-status-and-unused-isolation_20260515_201928\do_not_remove.json
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-operational-status-and-unused-isolation_20260515_201928\unused_candidates.json
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-operational-status-and-unused-isolation_20260515_201928\uncertain_requires_review.json
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-operational-status-and-unused-isolation_20260515_201928\current_tree_classified.txt
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-operational-status-and-unused-isolation_20260515_201928\pytest_status.txt
+- C:\Users\craig\OneDrive\Desktop\Claire\reports\v19.89.8-operational-status-and-unused-isolation_20260515_201928\runtime_routes.json

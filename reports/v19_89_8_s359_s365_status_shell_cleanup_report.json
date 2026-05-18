@@ -1,0 +1,47 @@
+{
+  "installer": "install_claire_v19_89_8_s359_s365_status_shell_cleanup_expansion_dock_removal.py",
+  "started_at": "2026-05-16T13:00:58.076685Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "files": [
+    {
+      "path": "claire/api/dashboard_status_shell_cleanup_s359_s365.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "tests/test_s359_s365_dashboard_status_shell_cleanup.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s359_s365_hide_expansion_dock.css",
+      "written": true
+    },
+    {
+      "path": "frontend/cockpit/consolidated/s359_s365_expansion_dock_cleanup.js",
+      "written": true
+    }
+  ],
+  "patches": [
+    {
+      "path": "frontend\\cockpit\\shell\\cockpit_shell.html",
+      "exists": true,
+      "patched": true,
+      "marker": "BEGIN CLAIRE_S359_S365_EXPANSION_DOCK_REMOVAL"
+    },
+    {
+      "path": "claire\\app.py",
+      "exists": true,
+      "patched": true,
+      "marker": "BEGIN CLAIRE_S359_S365_STATUS_SHELL_CLEANUP_ROUTES"
+    }
+  ],
+  "backups": {
+    "claire/api/dashboard_status_shell_cleanup_s359_s365.py": null,
+    "tests/test_s359_s365_dashboard_status_shell_cleanup.py": null,
+    "frontend/cockpit/consolidated/s359_s365_hide_expansion_dock.css": null,
+    "frontend/cockpit/consolidated/s359_s365_expansion_dock_cleanup.js": null
+  },
+  "finished_at": "2026-05-16T13:00:58.278425Z"
+}

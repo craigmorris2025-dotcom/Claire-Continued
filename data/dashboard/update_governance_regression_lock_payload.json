@@ -1,0 +1,39 @@
+{
+  "automatic_updates_enabled": false,
+  "blockers": [],
+  "execution_enabled": false,
+  "generated_at": "2026-05-13T11:18:57.633156Z",
+  "input_sources": {
+    "internet_readiness": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json",
+      "status": "loaded"
+    },
+    "rollback_index": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json",
+      "status": "loaded"
+    },
+    "runner_gate": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/automatic_update_runner_gate.json",
+      "status": "loaded"
+    },
+    "staging_index": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json",
+      "status": "loaded"
+    }
+  },
+  "regression_lock_active": true,
+  "regression_rules": {
+    "automatic_updates_remain_disabled": true,
+    "internet_live_execution_remains_disabled": true,
+    "no_background_execution": true,
+    "no_hidden_updates": true,
+    "no_uncontrolled_self_modification": true,
+    "no_update_execution_without_operator_review": true,
+    "no_update_execution_without_rollback": true,
+    "no_update_execution_without_source_trust": true,
+    "no_update_execution_without_validation": true
+  },
+  "status": "locked_passed",
+  "version": "v17.74",
+  "warnings": []
+}

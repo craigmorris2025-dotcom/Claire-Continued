@@ -1,0 +1,41 @@
+{
+  "backups": [],
+  "cockpit_operator_payload": {
+    "backend_owned_truth": true,
+    "dashboard_presentation_only": true,
+    "operation_buttons_expected_after_s929_s956": true,
+    "operator_cockpit_expected": true,
+    "payload_validation_only": true
+  },
+  "dashboard_browser": {
+    "browser_execution_enabled": false,
+    "launch_policy": "manual_operator_only",
+    "os_browser_launch_allowed_in_tests": false,
+    "pytest_browser_launch_performed": false,
+    "route": "/",
+    "url": "http://127.0.0.1:8000/"
+  },
+  "files_written": [
+    "tests\\test_s475_r8_cockpit_operator_payload.py",
+    "reports\\s475_r8_cockpit_operator_payload_report.json",
+    "reports\\s929_s956_s475_browser_test_repair_report.json"
+  ],
+  "installed_at_utc": "2026-05-17T05:24:57.398168+00:00",
+  "original_failure_class": "OSError / WinError 1055 during old dashboard browser test",
+  "preserved_blocks": {
+    "automatic_updates_enabled": false,
+    "autonomous_crawling_enabled": false,
+    "body_read_allowed": false,
+    "browser_execution_enabled": false,
+    "command_execution_enabled": false,
+    "live_web_execution_enabled": false,
+    "network_request_performed": false,
+    "package_download_performed": false,
+    "package_install_performed": false,
+    "runtime_mutation_enabled": false,
+    "runtime_truth_mutation_enabled": false
+  },
+  "reason": "Pytest must validate the cockpit browser launch payload without invoking an OS/browser launch path.",
+  "stage": "S475-R8-browser-test-repair",
+  "status": "browser_launch_disabled_in_tests"
+}

@@ -1,0 +1,244 @@
+(function () {
+  "use strict";
+
+  const API = "/api/cockpit/convergence/payload";
+  const ROOT_ID = "claire-s901-s928-convergence-root";
+  const ACTIONS_ROOT_ID = "claire-s901-s928-actions-root";
+  const EVIDENCE_ROOT_ID = "claire-s901-s928-evidence-root";
+  const WEB_ROOT_ID = "claire-s901-s928-web-root";
+  const SYSTEM_ROOT_ID = "claire-s901-s928-system-root";
+
+  function el(tag, attrs, text) {
+    const node = document.createElement(tag);
+    if (attrs) {
+      Object.entries(attrs).forEach(([key, value]) => {
+        if (key === "class") node.className = value;
+        else if (key === "html") node.innerHTML = value;
+        else node.setAttribute(key, value);
+      });
+    }
+    if (text !== undefined && text !== null) node.textContent = text;
+    return node;
+  }
+
+  function safeText(value, fallback) {
+    if (value === undefined || value === null || value === "") return fallback || "";
+    return String(value);
+  }
+
+  function card(title, kicker, body, status) {
+    const node = el("article", { class: "claire-sync-card" });
+    if (kicker) node.appendChild(el("div", { class: "claire-sync-kicker" }, kicker));
+    node.appendChild(el("h3", {}, title));
+    if (body) node.appendChild(el("p", {}, body));
+    if (status) node.appendChild(el("span", { class: "claire-sync-pill" }, status));
+    return node;
+  }
+
+  function cardGrid(items, mapper) {
+    const grid = el("div", { class: "claire-sync-grid" });
+    items.forEach((item) => grid.appendChild(mapper(item)));
+    return grid;
+  }
+
+  function findVisibleHeading(pattern) {
+    const headings = Array.from(document.querySelectorAll("h1,h2,h3"));
+    return headings.find((heading) => {
+      const text = (heading.textContent || "").trim();
+      const rect = heading.getBoundingClientRect();
+      return pattern.test(text) && rect.width >= 0 && rect.height >= 0;
+    });
+  }
+
+  function nearestContentContainer(heading) {
+    if (!heading) return document.querySelector("main") || document.querySelector("#app") || document.body;
+    return heading.parentElement || document.querySelector("main") || document.body;
+  }
+
+  function upsertAfterHeading(id, headingPattern) {
+    const heading = findVisibleHeading(headingPattern);
+    const container = nearestContentContainer(heading);
+    let root = document.getElementById(id);
+    if (!root) {
+      root = el("section", { id, class: "claire-sync-panel" });
+      if (heading && heading.nextSibling) heading.parentNode.insertBefore(root, heading.nextSibling);
+      else container.appendChild(root);
+    }
+    return root;
+  }
+
+  function setTopActionCount(payload) {
+    const count = payload && payload.actions ? payload.actions.length : 0;
+    const candidates = Array.from(document.querySelectorAll("*")).filter((node) => {
+      const text = (node.textContent || "").trim();
+      return /^Actions:\s*\d+$/i.test(text);
+    });
+    candidates.forEach((node) => {
+      node.textContent = "Actions: " + count;
+    });
+  }
+
+  function renderOverview(payload) {
+    const root = document.getElementById(ROOT_ID) || upsertAfterHeading(ROOT_ID, /Claire Operator Cockpit|Overview/i);
+    const summary = payload.convergence_summary || {};
+    root.innerHTML = "";
+    root.appendChild(el("div", { class: "claire-sync-kicker" }, "DASHBOARD SYNCHRONIZATION"));
+    root.appendChild(el("h2", {}, "S901-S928 cockpit convergence ready"));
+    root.appendChild(el("p", {}, "Cockpit is synchronized to the web/source/search/body-read/source-ingestion runway while execution authorities remain blocked."));
+    const metrics = [
+      ["Highest stage", payload.highest_stage],
+      ["Payload owners", summary.payload_owner_count],
+      ["Governed actions", summary.governed_action_count],
+      ["Evidence cards", summary.evidence_card_count],
+      ["Dangerous authority", "blocked"],
+    ];
+    const grid = el("div", { class: "claire-sync-metrics" });
+    metrics.forEach(([label, value]) => {
+      const m = el("div", { class: "claire-sync-metric" });
+      m.appendChild(el("span", {}, label));
+      m.appendChild(el("strong", {}, safeText(value, "—")));
+      grid.appendChild(m);
+    });
+    root.appendChild(grid);
+  }
+
+  function renderGovernedWeb(payload) {
+    const root = upsertAfterHeading(WEB_ROOT_ID, /Governed Web Workflow|Governed Web/i);
+    root.innerHTML = "";
+    root.appendChild(el("div", { class: "claire-sync-kicker" }, "SYNCHRONIZED GOVERNED WEB"));
+    root.appendChild(el("h2", {}, "Current source/search runway"));
+    root.appendChild(cardGrid(payload.governed_web_cards || [], (item) => (
+      card(item.title || item.id, item.stage_range, item.summary, item.execution || item.status)
+    )));
+  }
+
+  function renderEvidence(payload) {
+    const root = upsertAfterHeading(EVIDENCE_ROOT_ID, /Evidence & Review|Evidence/i);
+    root.innerHTML = "";
+    root.appendChild(el("div", { class: "claire-sync-kicker" }, "NORMALIZED EVIDENCE VIEW"));
+    root.appendChild(el("h2", {}, "Evidence cards before raw JSON"));
+    root.appendChild(cardGrid(payload.evidence_cards || [], (item) => (
+      card(item.title || item.id, item.stage_range, item.summary, item.state)
+    )));
+  }
+
+  function renderActions(payload) {
+    const root = upsertAfterHeading(ACTIONS_ROOT_ID, /Governed Actions|Actions/i);
+    root.innerHTML = "";
+    const actions = payload.actions || [];
+    root.appendChild(el("div", { class: "claire-sync-kicker" }, "GOVERNED ACTION REGISTRY"));
+    root.appendChild(el("h2", {}, actions.length + " governed actions registered"));
+    root.appendChild(el("p", {}, "Actions are visible for operator review but remain non-executable unless a later gate explicitly enables them."));
+    root.appendChild(cardGrid(actions, (item) => (
+      card(item.title || item.key, item.source + " · " + item.action_type, item.reason, item.state)
+    )));
+
+    Array.from(document.querySelectorAll("*")).forEach((node) => {
+      if ((node.textContent || "").trim() === "No governed actions registered.") {
+        node.textContent = actions.length + " governed actions registered by S901-S928 synchronization.";
+      }
+    });
+  }
+
+  function renderSystem(payload) {
+    const root = upsertAfterHeading(SYSTEM_ROOT_ID, /System|Status/i);
+    root.innerHTML = "";
+    root.appendChild(el("div", { class: "claire-sync-kicker" }, "SYSTEM SYNC STATUS"));
+    root.appendChild(el("h2", {}, "S901-S928 synchronized status"));
+    const status = [
+      ["Version", payload.version],
+      ["Phase", payload.phase],
+      ["Status", payload.status],
+      ["Readiness", payload.readiness],
+      ["Backend owns truth", payload.backend_owns_truth ? "true" : "false"],
+      ["Cockpit presentation only", payload.cockpit_presentation_only ? "true" : "false"],
+      ["Live web", payload.blocked_capabilities && payload.blocked_capabilities.live_web_execution_enabled ? "enabled" : "blocked"],
+      ["Body read", payload.blocked_capabilities && payload.blocked_capabilities.body_read_allowed ? "enabled" : "blocked"],
+      ["Runtime mutation", payload.blocked_capabilities && payload.blocked_capabilities.runtime_mutation_enabled ? "enabled" : "blocked"],
+    ];
+    const grid = el("div", { class: "claire-sync-metrics" });
+    status.forEach(([label, value]) => {
+      const m = el("div", { class: "claire-sync-metric" });
+      m.appendChild(el("span", {}, label));
+      m.appendChild(el("strong", {}, safeText(value, "—")));
+      grid.appendChild(m);
+    });
+    root.appendChild(grid);
+  }
+
+  async function refreshConvergence() {
+    try {
+      const response = await fetch(API, { cache: "no-store" });
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      const payload = await response.json();
+      window.ClaireS901S928ConvergencePayload = payload;
+      setTopActionCount(payload);
+      renderOverview(payload);
+      renderGovernedWeb(payload);
+      renderEvidence(payload);
+      renderActions(payload);
+      renderSystem(payload);
+    } catch (error) {
+      const root = document.getElementById(ROOT_ID) || upsertAfterHeading(ROOT_ID, /Claire Operator Cockpit|Overview|System|Actions|Governed Web|Evidence/i);
+      root.innerHTML = "";
+      root.appendChild(el("div", { class: "claire-sync-kicker" }, "DASHBOARD SYNCHRONIZATION"));
+      root.appendChild(el("h2", {}, "S901-S928 convergence payload unavailable"));
+      root.appendChild(el("p", {}, "The cockpit asset loaded, but the backend convergence endpoint did not respond: " + error.message));
+    }
+  }
+
+  function installObservers() {
+    document.addEventListener("click", function () {
+      window.setTimeout(refreshConvergence, 150);
+      window.setTimeout(refreshConvergence, 500);
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") window.setTimeout(refreshConvergence, 150);
+    });
+  }
+
+  window.ClaireCockpitConvergence = {
+    refresh: refreshConvergence,
+    endpoint: API,
+    phase: "S901-S928"
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      refreshConvergence();
+      installObservers();
+    });
+  } else {
+    refreshConvergence();
+    installObservers();
+  }
+})();
+
+/* CLAIRE_S985_S1012_JS_FORCE_MOUNT: force visible cockpit operation controls into active JS-rendered shell. */
+(function () {
+  function loadClaireS985S1012ControlSurface() {
+    if (window.__CLAIRE_S985_S1012_CONTROL_SURFACE_LOADING__) return;
+    window.__CLAIRE_S985_S1012_CONTROL_SURFACE_LOADING__ = true;
+    if (!document.querySelector('link[data-claire-s985-s1012="active-control-surface"]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/api/cockpit/control-surface/assets/css';
+      link.setAttribute('data-claire-s985-s1012', 'active-control-surface');
+      document.head.appendChild(link);
+    }
+    if (!document.querySelector('script[data-claire-s985-s1012="active-control-surface"]')) {
+      var script = document.createElement('script');
+      script.src = '/api/cockpit/control-surface/assets/js';
+      script.defer = true;
+      script.setAttribute('data-claire-s985-s1012', 'active-control-surface');
+      document.body.appendChild(script);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadClaireS985S1012ControlSurface);
+  } else {
+    loadClaireS985S1012ControlSurface();
+  }
+  setTimeout(loadClaireS985S1012ControlSurface, 800);
+  setTimeout(loadClaireS985S1012ControlSurface, 2000);
+})();

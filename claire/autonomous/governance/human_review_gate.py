@@ -1,79 +1,46 @@
 """
-Gates requiring human review before execution
-=============================================
-ACS2-Claire / Syntalion
+Claire Syntalion structural placeholder repair.
 
-Module: src.claire.autonomous.governance.human_review_gate
-Role: Gates requiring human review before execution
+This module was syntactically invalid and was neutralized by
+v19 Structural Repair Pack 1.1 so project-wide syntax checks and backend startup
+can proceed.
+
+This is not a production implementation.
+
+Original syntax error:
+- line: 42
+- message: invalid syntax
+- text: raise NotImplementedError
 """
 
-import json
-import logging
-from datetime import datetime
-from pathlib import Path
-from dataclasses import dataclass, field
-from typing import Any, Optional
-from enum import Enum
+from __future__ import annotations
 
-logger = logging.getLogger(__name__)
-
-
-class ReviewStatus(Enum):
-    PENDING = "pending"
-    APPROVED = "approved"
-    REJECTED = "rejected"
-    EXPIRED = "expired"
-    WITHDRAWN = "withdrawn"
+from typing import Any
 
 
 class HumanReviewGate:
-    """
-    Gates requiring human review before execution
+    """Non-executing placeholder pending real implementation."""
 
-    Integrates with escalation boundary for automatic gate triggering..
-    """
+    implemented = False
+    structural_placeholder = True
 
-    def __init__(self):
-        self.logger = logging.getLogger(self.__class__.__name__)
-        self.logger.info(f"{self.__class__.__name__} initialized")
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        self.args = args
+        self.kwargs = kwargs
 
-    def submit_for_review(action:
-        """Returns Any."""
-        raise NotImplementedError
+    def run(self, *args: Any, **kwargs: Any) -> dict[str, Any]:
+        return build_placeholder_status()
 
-    def context):
-        """Returns ReviewRequest."""
-        raise NotImplementedError
 
-    def check_review_status(request_id):
-        """Returns ReviewStatus."""
-        raise NotImplementedError
+def build_placeholder_status() -> dict[str, Any]:
+    return {
+        "status": "not_implemented",
+        "module": __name__,
+        "structural_placeholder": True,
+        "implemented": False,
+        "message": "Placeholder repaired for syntax stability only.",
+    }
 
-    def approve_action(request_id:
-        """Returns Any."""
-        raise NotImplementedError
 
-    def reviewer):
-        """Returns ApprovalResult."""
-        raise NotImplementedError
-
-    def reject_action(request_id:
-        """Returns Any."""
-        raise NotImplementedError
-
-    def reviewer:
-        """Returns Any."""
-        raise NotImplementedError
-
-    def reason):
-        """Returns RejectionResult."""
-        raise NotImplementedError
-
-    def list_pending_reviews():
-        """Returns list[ReviewRequest]."""
-        raise NotImplementedError
-
-    def export_review_log():
-        """Returns dict."""
-        raise NotImplementedError
-
+def run(*args: Any, **kwargs: Any) -> dict[str, Any]:
+    return build_placeholder_status()

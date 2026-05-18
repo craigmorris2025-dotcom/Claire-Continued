@@ -1,0 +1,249 @@
+{
+  "actions": [
+    {
+      "action": "demote_duplicate_owners",
+      "canonical_owner": "backend.enterprise_cockpit_payload_bridge",
+      "cockpit_role": "presentation_only",
+      "failure": "duplicate_route_owner",
+      "key": "GET /dashboard/payload",
+      "method": "GET",
+      "next_build_target": "v19.84.7",
+      "owner_count": 3,
+      "owners_seen": [
+        {
+          "endpoint": "claire.api.dashboard_payload_bridge.get_dashboard_payload",
+          "methods": [
+            "GET"
+          ],
+          "name": "get_dashboard_payload",
+          "path": "/dashboard/payload",
+          "route_class": "APIRoute"
+        },
+        {
+          "endpoint": "claire.api.routes_enterprise_cockpit_payload.dashboard_payload",
+          "methods": [
+            "GET"
+          ],
+          "name": "dashboard_payload",
+          "path": "/dashboard/payload",
+          "route_class": "APIRoute"
+        },
+        {
+          "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_dashboard_payload",
+          "methods": [
+            "GET"
+          ],
+          "name": "authored_dashboard_payload",
+          "path": "/dashboard/payload",
+          "route_class": "APIRoute"
+        }
+      ],
+      "required_change": "Keep one canonical backend owner. Convert all noncanonical owners to delegated helpers, rename duplicate paths, or remove their router mount from create_app.",
+      "route": "/dashboard/payload",
+      "safety_rule": "Do not change payload schema or cockpit fetch route.",
+      "truth_owner": "backend"
+    },
+    {
+      "action": "demote_duplicate_owners",
+      "canonical_owner": "backend.enterprise_cockpit_payload_status",
+      "cockpit_role": "presentation_only",
+      "failure": "duplicate_route_owner",
+      "key": "GET /dashboard/payload/status",
+      "method": "GET",
+      "next_build_target": "v19.84.7",
+      "owner_count": 3,
+      "owners_seen": [
+        {
+          "endpoint": "claire.api.dashboard_payload_bridge.get_dashboard_payload_status",
+          "methods": [
+            "GET"
+          ],
+          "name": "get_dashboard_payload_status",
+          "path": "/dashboard/payload/status",
+          "route_class": "APIRoute"
+        },
+        {
+          "endpoint": "claire.api.routes_enterprise_cockpit_payload.dashboard_payload_status",
+          "methods": [
+            "GET"
+          ],
+          "name": "dashboard_payload_status",
+          "path": "/dashboard/payload/status",
+          "route_class": "APIRoute"
+        },
+        {
+          "endpoint": "claire.routes.authored_cockpit_payload_binding_routes.dashboard_payload_status",
+          "methods": [
+            "GET"
+          ],
+          "name": "dashboard_payload_status",
+          "path": "/dashboard/payload/status",
+          "route_class": "APIRoute"
+        }
+      ],
+      "required_change": "Keep one canonical backend owner. Convert all noncanonical owners to delegated helpers, rename duplicate paths, or remove their router mount from create_app.",
+      "route": "/dashboard/payload/status",
+      "safety_rule": "Do not change payload schema or cockpit fetch route.",
+      "truth_owner": "backend"
+    },
+    {
+      "action": "demote_duplicate_owners",
+      "canonical_owner": "backend.enterprise_runtime_runs_backend",
+      "cockpit_role": "operator_command",
+      "failure": "duplicate_route_owner",
+      "key": "POST /runs/start",
+      "method": "POST",
+      "next_build_target": "v19.84.7",
+      "owner_count": 2,
+      "owners_seen": [
+        {
+          "endpoint": "claire.api.routes_enterprise_runs.start_run",
+          "methods": [
+            "POST"
+          ],
+          "name": "start_run",
+          "path": "/runs/start",
+          "route_class": "APIRoute"
+        },
+        {
+          "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_start_run",
+          "methods": [
+            "POST"
+          ],
+          "name": "authored_start_run",
+          "path": "/runs/start",
+          "route_class": "APIRoute"
+        }
+      ],
+      "required_change": "Keep one canonical backend owner. Convert all noncanonical owners to delegated helpers, rename duplicate paths, or remove their router mount from create_app.",
+      "route": "/runs/start",
+      "safety_rule": "Do not change payload schema or cockpit fetch route.",
+      "truth_owner": "backend"
+    },
+    {
+      "action": "demote_duplicate_owners",
+      "canonical_owner": "backend.continuous_intelligence_review_queue",
+      "cockpit_role": "presentation_only",
+      "failure": "duplicate_route_owner",
+      "key": "GET /runtime/continuous/review-queue",
+      "method": "GET",
+      "next_build_target": "v19.84.7",
+      "owner_count": 2,
+      "owners_seen": [
+        {
+          "endpoint": "claire.api.routes_continuous_runtime.continuous_review_queue",
+          "methods": [
+            "GET"
+          ],
+          "name": "continuous_review_queue",
+          "path": "/runtime/continuous/review-queue",
+          "route_class": "APIRoute"
+        },
+        {
+          "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_review_queue",
+          "methods": [
+            "GET"
+          ],
+          "name": "authored_review_queue",
+          "path": "/runtime/continuous/review-queue",
+          "route_class": "APIRoute"
+        }
+      ],
+      "required_change": "Keep one canonical backend owner. Convert all noncanonical owners to delegated helpers, rename duplicate paths, or remove their router mount from create_app.",
+      "route": "/runtime/continuous/review-queue",
+      "safety_rule": "Do not change payload schema or cockpit fetch route.",
+      "truth_owner": "backend"
+    },
+    {
+      "action": "demote_duplicate_owners",
+      "canonical_owner": "backend.continuous_intelligence_runtime_status",
+      "cockpit_role": "presentation_only",
+      "failure": "duplicate_route_owner",
+      "key": "GET /runtime/continuous/status",
+      "method": "GET",
+      "next_build_target": "v19.84.7",
+      "owner_count": 2,
+      "owners_seen": [
+        {
+          "endpoint": "claire.api.routes_continuous_runtime.continuous_status",
+          "methods": [
+            "GET"
+          ],
+          "name": "continuous_status",
+          "path": "/runtime/continuous/status",
+          "route_class": "APIRoute"
+        },
+        {
+          "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_continuous_status",
+          "methods": [
+            "GET"
+          ],
+          "name": "authored_continuous_status",
+          "path": "/runtime/continuous/status",
+          "route_class": "APIRoute"
+        }
+      ],
+      "required_change": "Keep one canonical backend owner. Convert all noncanonical owners to delegated helpers, rename duplicate paths, or remove their router mount from create_app.",
+      "route": "/runtime/continuous/status",
+      "safety_rule": "Do not change payload schema or cockpit fetch route.",
+      "truth_owner": "backend"
+    },
+    {
+      "action": "demote_duplicate_owners",
+      "canonical_owner": "backend.source_universe_backend",
+      "cockpit_role": "presentation_only",
+      "failure": "duplicate_route_owner",
+      "key": "GET /universes",
+      "method": "GET",
+      "next_build_target": "v19.84.7",
+      "owner_count": 2,
+      "owners_seen": [
+        {
+          "endpoint": "claire.api.routes_source_universes.universes",
+          "methods": [
+            "GET"
+          ],
+          "name": "universes",
+          "path": "/universes",
+          "route_class": "APIRoute"
+        },
+        {
+          "endpoint": "claire.routes.authored_cockpit_compat_routes.authored_universes",
+          "methods": [
+            "GET"
+          ],
+          "name": "authored_universes",
+          "path": "/universes",
+          "route_class": "APIRoute"
+        }
+      ],
+      "required_change": "Keep one canonical backend owner. Convert all noncanonical owners to delegated helpers, rename duplicate paths, or remove their router mount from create_app.",
+      "route": "/universes",
+      "safety_rule": "Do not change payload schema or cockpit fetch route.",
+      "truth_owner": "backend"
+    }
+  ],
+  "backend_owns_truth": true,
+  "build": "Critical Route Consolidation Plan",
+  "cockpit_owns_presentation_only": true,
+  "generated_at": "2026-05-13T11:22:15.629711+00:00",
+  "inputs": {
+    "duplicate_route_report": "audits\\v19_84_5_duplicate_route_fail_test\\duplicate_route_fail_test_report.json",
+    "duplicate_route_report_present": true,
+    "registry": "data\\runtime_authority\\canonical_route_owner_registry.json",
+    "registry_present": true
+  },
+  "next_build": "v19.84.7 Critical Route Owner Demotion",
+  "passing": [],
+  "read_only": true,
+  "recommendation": "Do not proceed to cockpit binding lock until critical route failures are resolved.",
+  "status": "consolidation_required",
+  "summary": {
+    "critical_route_count": 6,
+    "duplicate_failures": 6,
+    "failing_critical_routes": 6,
+    "missing_failures": 0,
+    "passing_critical_routes": 0
+  },
+  "version": "v19.84.6"
+}

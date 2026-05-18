@@ -1,0 +1,14 @@
+{
+  "imports": {
+    "claire.api.dashboard_payload_bridge": true,
+    "claire.api.governed_operational_session_orchestration": true,
+    "claire.api.operator_read_only_router": true,
+    "claire.api.operator_route_harness": true,
+    "claire.api.operator_router_include_adapter": true,
+    "claire.api.s43_app_integration_probe": true
+  },
+  "routes": {
+    "/dashboard/payload": 1,
+    "/operator/runtime/status": 1
+  }
+}

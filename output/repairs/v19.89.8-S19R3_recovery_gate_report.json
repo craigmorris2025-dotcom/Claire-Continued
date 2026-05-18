@@ -1,0 +1,80 @@
+{
+  "version": "v19.89.8-S19R3",
+  "checked_at_utc": "2026-05-14T02:53:36.541629+00:00",
+  "status": "FAIL",
+  "failed_count": 1,
+  "checks": [
+    {
+      "name": "compile claire/app.py",
+      "ok": true,
+      "detail": "compile_ok"
+    },
+    {
+      "name": "file main.py",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "file claire/app.py",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "file frontend/cockpit/assets/js/governed_runtime_timeline.js",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "file frontend/cockpit/assets/js/governed_route_activity_overlay.js",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "file frontend/cockpit/assets/css/governed_route_activity_overlay.css",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "import claire.api.governed_runtime_timeline",
+      "ok": false,
+      "detail": "SyntaxError('from __future__ imports must occur at the beginning of the file', ('C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\\\\claire\\\\api\\\\governed_runtime_timeline.py', 7, 1, 'from __future__ import annotations\\n', 7, 35))"
+    },
+    {
+      "name": "import claire.api.governed_timeline_classification",
+      "ok": true,
+      "detail": "import_ok"
+    },
+    {
+      "name": "import claire.api.canonical_cockpit_surface_registry",
+      "ok": true,
+      "detail": "import_ok"
+    },
+    {
+      "name": "import claire.api.canonical_cockpit_surface_health",
+      "ok": true,
+      "detail": "import_ok"
+    },
+    {
+      "name": "import claire.api.governed_route_activity_overlay",
+      "ok": true,
+      "detail": "import_ok"
+    }
+  ],
+  "next_if_pass": [
+    "python main.py",
+    "open http://127.0.0.1:8000/docs",
+    "open http://127.0.0.1:8000/dashboard/payload",
+    "run S19 pytest target"
+  ],
+  "next_if_fail": [
+    "stop feature builds",
+    "repair the listed compile/import/file failure first"
+  ],
+  "authority_preserved": {
+    "backend_owns_truth": true,
+    "cockpit_presentation_only": true,
+    "runtime_authority": "blocked",
+    "fail_closed_governance": true,
+    "autonomous_execution_expansion": false
+  }
+}

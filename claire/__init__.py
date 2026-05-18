@@ -1,1 +1,1 @@
-"""Auto-generated package init."""
+"""Claire Syntalion root package."""

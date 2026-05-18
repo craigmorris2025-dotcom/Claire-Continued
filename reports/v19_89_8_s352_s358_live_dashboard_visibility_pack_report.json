@@ -1,0 +1,31 @@
+{
+  "installer": "install_claire_v19_89_8_s352_s358_live_dashboard_visibility_pack.py",
+  "started_at": "2026-05-16T05:32:41.276826Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "files": [
+    {
+      "path": "claire/api/dashboard_live_visibility_smoke_s352_s358.py",
+      "written": true,
+      "compiled": true
+    },
+    {
+      "path": "tests/test_s352_s358_dashboard_live_visibility_smoke.py",
+      "written": true,
+      "compiled": true
+    }
+  ],
+  "backups": {
+    "claire/api/dashboard_live_visibility_smoke_s352_s358.py": null,
+    "tests/test_s352_s358_dashboard_live_visibility_smoke.py": null
+  },
+  "patches": [
+    {
+      "path": "claire\\app.py",
+      "exists": true,
+      "patched": true,
+      "marker": "BEGIN CLAIRE_S338_S358"
+    }
+  ],
+  "finished_at": "2026-05-16T05:32:41.315421Z"
+}

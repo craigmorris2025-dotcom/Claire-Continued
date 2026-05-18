@@ -1,0 +1,19 @@
+{
+  "version": "v18.20",
+  "name": "Controlled Live Connectivity Handshake Review Record",
+  "files": [
+    "SEARCH_BAR_CONTROLLED_LIVE_CONNECTIVITY_HANDSHAKE_REVIEW_RECORD.bat",
+    "claire/governance/governed_web/live_connectivity_handshake_review_record.py",
+    "tests/test_v18_20_controlled_live_connectivity_handshake_review_record.py"
+  ],
+  "invariants": {
+    "review_record_created": true,
+    "approval_is_not_execution": true,
+    "execution_performed": false,
+    "network_call_performed": false,
+    "runtime_truth_mutated": false,
+    "automatic_update_performed": false,
+    "review_gated": true,
+    "fail_closed": true
+  }
+}

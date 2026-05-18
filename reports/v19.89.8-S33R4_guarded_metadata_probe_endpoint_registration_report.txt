@@ -1,0 +1,27 @@
+Claire Syntalion v19.89.8-S33R4 guarded metadata probe endpoint registration
+Started: 2026-05-14T10:28:02
+Project root: C:\Users\craig\OneDrive\Desktop\Claire
+Backup created: C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S33R4\governed_payload_reconciliation.py
+Backup created: C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S33R4\app.py
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -c from fastapi.testclient import TestClient; from claire.app import create_app; c=TestClient(create_app()); r=c.get('/dashboard/payload'); print(r.status_code); d=r.json(); print('operator_triggered_metadata_probe_endpoint' in d)
+200
+True
+exit_code=0
+Wrote guarded route module: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\guarded_metadata_probe_endpoint_routes.py
+Patched app route include: C:\Users\craig\OneDrive\Desktop\Claire\claire\app.py
+Patched reconciliation before return composed line 241.
+Updated reconciliation module: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_payload_reconciliation.py
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m py_compile C:\Users\craig\OneDrive\Desktop\Claire\claire\api\guarded_metadata_probe_endpoint_routes.py
+exit_code=0
+
+$ C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m py_compile C:\Users\craig\OneDrive\Desktop\Claire\claire\app.py
+Sorry: IndentationError: unexpected indent (app.py, line 157)
+exit_code=1
+ERROR: Command failed: C:\Users\craig\AppData\Local\Programs\Python\Python311\python.exe -m py_compile C:\Users\craig\OneDrive\Desktop\Claire\claire\app.py
+Restored C:\Users\craig\OneDrive\Desktop\Claire\claire\api\governed_payload_reconciliation.py from C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S33R4\governed_payload_reconciliation.py
+Removed newly-created file after rollback: C:\Users\craig\OneDrive\Desktop\Claire\claire\api\guarded_metadata_probe_endpoint_routes.py
+Restored C:\Users\craig\OneDrive\Desktop\Claire\claire\app.py from C:\Users\craig\OneDrive\Desktop\Claire\backups\v19.89.8-S33R4\app.py
+
+S33R4 RESULT: FAILED AND ROLLED BACK

@@ -1,0 +1,29 @@
+{
+  "version": "v19.89.5",
+  "build": "Runtime Execution Contract Surface",
+  "installed_at": "2026-05-13T19:47:26.904795+00:00",
+  "intent": "Expose runtime execution contract truth without starting or faking autonomous execution.",
+  "files": {
+    "backend_route_module": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\operator_runtime_execution_routes.py",
+    "app_file_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+    "frontend_js": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\claire_runtime_execution_surface.js",
+    "frontend_css": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\claire_runtime_execution_surface.css",
+    "cockpit_html_patched": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\frontend\\cockpit\\shell\\cockpit_shell.html",
+    "version_json": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\version.json"
+  },
+  "new_endpoints": [
+    "/system/runtime-execution",
+    "/system/runtime-execution/summary",
+    "/system/runtime-execution/stages"
+  ],
+  "preserved": [
+    "launcher restored and stable",
+    "backend owns truth",
+    "cockpit presentation only",
+    "runtime truth over UI assumptions",
+    "fail-closed governance",
+    "no blind dashboard redesign",
+    "no fake placeholder architecture"
+  ],
+  "next_phase": "review queue/runtime state wiring and lifecycle execution surfaces"
+}

@@ -1,0 +1,16 @@
+{
+  "version": "v18.73.2",
+  "name": "Dashboard Search vs Provider Probe Separation Repair",
+  "scope": [
+    "add a clear primary Governed Live Web Search panel for normal web search",
+    "route primary search to /api/dashboard/search/live",
+    "keep Provider Probe as advanced/manual explicit operator test",
+    "add provider probe explanatory text",
+    "install primary dashboard search JS binding",
+    "verify normal search returns Google",
+    "verify provider probe remains guarded unless explicit enable is used"
+  ],
+  "validation": [
+    "python -m pytest tests/test_v18_73_2_dashboard_search_provider_probe_separation_repair.py -q"
+  ]
+}

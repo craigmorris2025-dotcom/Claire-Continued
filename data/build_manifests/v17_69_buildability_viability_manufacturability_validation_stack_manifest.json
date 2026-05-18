@@ -1,0 +1,55 @@
+{
+  "backup_dir": "backups/v17_69_buildability_validation_stack/20260509_185332",
+  "build_name": "Buildability / Viability / Manufacturability Validation Stack",
+  "files_written": [
+    "claire/validation_stack/buildability_validation_stack.py",
+    "claire/api/routes_buildability_validation.py",
+    "tests/test_v17_69_buildability_validation_stack.py",
+    "docs/validation/v17.69_buildability_viability_manufacturability_validation_stack.md",
+    "data/validation/buildability_viability_manufacturability_validation.json",
+    "data/dashboard/buildability_validation_payload.json",
+    "data/validation/v17_69_buildability_validation_result.json"
+  ],
+  "installed_at": "2026-05-09T23:53:36.657337Z",
+  "next": [
+    "v17.70 Internet Readiness Verification",
+    "v17.71-v17.74 Governed update-pack staging and rollback-aware automatic update preparation",
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "route_mount": {
+    "path": "claire/app.py",
+    "status": "mounted"
+  },
+  "validation": {
+    "blockers": [],
+    "errors": [],
+    "mount_report": {
+      "path": "claire/app.py",
+      "status": "mounted"
+    },
+    "operator_dashboard_state": {
+      "contract_version": "v17.64.1",
+      "source": {
+        "invalid_candidate_count": 0,
+        "invalid_candidates_sample": [],
+        "raw_available": true,
+        "selected_runtime_truth": "exports\\claire_run_20260509_160617_financial_market_intelligence_financial_signal_intelligence_run_195774b13fcb\\core_run_output.json"
+      },
+      "status": "rebuilt"
+    },
+    "readiness": {
+      "build_ready": false,
+      "package_ready": false,
+      "requires_internet_readiness_before_live_updates": true,
+      "requires_operator_review": true,
+      "requires_update_governance_before_automatic_updates": true
+    },
+    "status": "passed",
+    "validation_status": "warning",
+    "warnings": [
+      "invention_route_requires_higher_feasibility_threshold",
+      "package_not_ready_for_final_package"
+    ]
+  },
+  "version": "v17.69"
+}

@@ -1,0 +1,57 @@
+.claire-controlled-update-validation-plan-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+  margin: 14px 0;
+  background: rgba(7, 13, 24, 0.84);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+.claire-validation-plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.claire-validation-plan-header small,
+.claire-controlled-update-validation-plan-panel footer {
+  opacity: 0.7;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.claire-validation-plan-body {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.claire-validation-plan-card {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.claire-validation-card-topline,
+.claire-validation-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.claire-validation-card-topline span,
+.claire-validation-badges span {
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+}
+
+.claire-validation-plan-card li {
+  line-height: 1.5;
+  margin: 6px 0;
+}

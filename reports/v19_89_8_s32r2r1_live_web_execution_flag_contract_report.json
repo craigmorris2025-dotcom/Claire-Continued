@@ -1,0 +1,80 @@
+{
+  "installer": "install_claire_v19_89_8_s32r2r1_live_web_execution_enabled_contract.py",
+  "started_at": "2026-05-16T17:36:46.474627Z",
+  "pytest_inside_installer": false,
+  "ok": true,
+  "issue": "payload missing live_web_execution_enabled; test expects payload['live_web_execution_enabled'] is False",
+  "test_path": "tests\\test_s32r2r1_ast_bridge_web_safety_payload.py",
+  "test_import_modules": [
+    "claire.api.governed_web_safety_activation"
+  ],
+  "candidate_paths": [
+    "claire\\api\\dashboard_payload_bridge.py",
+    "claire\\api\\governed_web_safety_activation.py",
+    "claire\\api\\s35_post_install_payload_verifier.py",
+    "claire\\api\\s49_governed_web_evidence_panels.py",
+    "claire\\api\\s58_governed_web_provider_readiness.py",
+    "claire\\api\\s64_route_execution_payload_bridge.py",
+    "claire\\api\\s78_s84_governed_web_vertical_slice.py",
+    "claire\\app.py"
+  ],
+  "patched": [
+    {
+      "path": "claire\\api\\dashboard_payload_bridge.py",
+      "patched": true
+    },
+    {
+      "path": "claire\\api\\governed_web_safety_activation.py",
+      "patched": true
+    },
+    {
+      "path": "claire\\api\\s35_post_install_payload_verifier.py",
+      "patched": true
+    },
+    {
+      "path": "claire\\api\\s49_governed_web_evidence_panels.py",
+      "patched": true
+    },
+    {
+      "path": "claire\\api\\s58_governed_web_provider_readiness.py",
+      "patched": true
+    },
+    {
+      "path": "claire\\api\\s64_route_execution_payload_bridge.py",
+      "patched": true
+    },
+    {
+      "path": "claire\\api\\s78_s84_governed_web_vertical_slice.py",
+      "patched": true
+    },
+    {
+      "path": "claire\\app.py",
+      "patched": true
+    }
+  ],
+  "pycache_removed": [
+    "claire\\api\\__pycache__\\dashboard_payload_bridge.cpython-311.pyc",
+    "claire\\api\\__pycache__\\governed_web_safety_activation.cpython-311.pyc",
+    "claire\\api\\__pycache__\\s35_post_install_payload_verifier.cpython-311.pyc",
+    "claire\\api\\__pycache__\\s49_governed_web_evidence_panels.cpython-311.pyc",
+    "claire\\api\\__pycache__\\s58_governed_web_provider_readiness.cpython-311.pyc",
+    "claire\\api\\__pycache__\\s64_route_execution_payload_bridge.cpython-311.pyc",
+    "claire\\api\\__pycache__\\s78_s84_governed_web_vertical_slice.cpython-311.pyc",
+    "claire\\__pycache__\\app.cpython-311.pyc"
+  ],
+  "compiled": [
+    "claire\\api\\dashboard_payload_bridge.py",
+    "claire\\api\\governed_web_safety_activation.py",
+    "claire\\api\\s35_post_install_payload_verifier.py",
+    "claire\\api\\s49_governed_web_evidence_panels.py",
+    "claire\\api\\s58_governed_web_provider_readiness.py",
+    "claire\\api\\s64_route_execution_payload_bridge.py",
+    "claire\\api\\s78_s84_governed_web_vertical_slice.py",
+    "claire\\app.py"
+  ],
+  "subprocess_validation_returncode": 0,
+  "subprocess_validation_stdout": "S32R2R1 live_web_execution_enabled validation passed\n",
+  "subprocess_validation_stderr": "",
+  "fixed": "Dashboard/web safety payload now exposes live_web_execution_enabled=False.",
+  "finished_at": "2026-05-16T17:36:47.686098Z"
+}

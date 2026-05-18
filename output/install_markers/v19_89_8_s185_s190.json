@@ -1,0 +1,17 @@
+{
+  "version": "v19.89.8",
+  "pack": "S185-S190",
+  "description": "Visual Cockpit Controls + Monitoring Backend",
+  "authority": {
+    "runtime_truth_write_blocked": true,
+    "runtime_mutation_blocked": true,
+    "automatic_updates_blocked": true,
+    "autonomous_execution_blocked": true,
+    "continuous_crawling_blocked": true
+  },
+  "files_written": [
+    "claire/api/cockpit_visual_controls.py",
+    "tests/test_cockpit_visual_controls_s185_s190.py",
+    "docs/CLAIRE_v19_89_8_S185_S190_COCKPIT_CONTROL_PACK.md"
+  ]
+}

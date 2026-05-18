@@ -1,0 +1,19 @@
+{
+  "version": "v19.89.8-S212-S218",
+  "installed_at": "2026-05-15T16:06:02.073667+00:00",
+  "stage_pack": "S212-S218",
+  "purpose": "Dashboard-consumable governed operational payload adapter and blocked capability matrix.",
+  "files": [
+    "claire/api/governed_operational_payload_adapter.py",
+    "claire/api/governed_dashboard_card_contracts.py",
+    "claire/api/governed_cockpit_status_rollup.py",
+    "claire/api/governed_blocked_capability_matrix.py",
+    "tests/test_s212_s218_operational_payload_adapter.py",
+    "tests/test_s212_s218_dashboard_card_contracts.py",
+    "tests/test_s212_s218_status_and_blocked_matrix.py"
+  ],
+  "recommended_commands": [
+    "pytest tests/test_s212_s218_operational_payload_adapter.py tests/test_s212_s218_dashboard_card_contracts.py tests/test_s212_s218_status_and_blocked_matrix.py -q",
+    "pytest"
+  ]
+}

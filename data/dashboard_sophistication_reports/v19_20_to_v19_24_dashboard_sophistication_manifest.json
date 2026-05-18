@@ -1,0 +1,10 @@
+{
+  "archive_before_modify": true,
+  "dashboards_patched": [
+    "frontend\\command_center\\modern\\index.html"
+  ],
+  "delete_policy": "delete_nothing",
+  "pack_name": "Dashboard Sophistication Pass without Full Restructure Pack",
+  "pack_version": "v19.20-v19.24",
+  "pytest_command": "python -m pytest tests/test_v19_20_to_v19_24_dashboard_sophistication_no_restructure_pack.py -q"
+}

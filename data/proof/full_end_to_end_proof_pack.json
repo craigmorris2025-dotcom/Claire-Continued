@@ -1,0 +1,316 @@
+{
+  "contract_name": "Full End-to-End Proof Pack",
+  "core_outputs": {
+    "active_dashboard": {
+      "exists": true,
+      "is_file": true,
+      "path": "frontend/command_center/modern/index.html",
+      "size_bytes": 20052
+    },
+    "autodesign_handoff": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/autodesign/autodesign_handoff_contract.json",
+      "size_bytes": 405424
+    },
+    "buildability_validation": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/validation/buildability_viability_manufacturability_validation.json",
+      "size_bytes": 5468
+    },
+    "dashboard_runtime_truth": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/runtime/dashboard_runtime_truth.json",
+      "size_bytes": 1223058
+    },
+    "design_portal_output": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/design_portal/design_portal_output_contract.json",
+      "size_bytes": 232562
+    },
+    "internet_readiness": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/internet_readiness/internet_readiness_verification.json",
+      "size_bytes": 24866
+    },
+    "launcher": {
+      "exists": true,
+      "is_file": true,
+      "path": "LAUNCH_CLAIRE.bat",
+      "size_bytes": 1794
+    },
+    "operator_dashboard_state": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/dashboard/operator_dashboard_state.json",
+      "size_bytes": 20495
+    },
+    "regression_lock": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/update_packs/update_governance_regression_lock.json",
+      "size_bytes": 3537
+    },
+    "rollback_plan_index": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/update_packs/rollback_plan_index.json",
+      "size_bytes": 17825
+    },
+    "route_audit": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/routes/discovery_breakthrough_innovation_route_audit.json",
+      "size_bytes": 4181
+    },
+    "runner_gate": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/update_packs/automatic_update_runner_gate.json",
+      "size_bytes": 4699
+    },
+    "runtime_truth_canonical": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/runtime/runtime_truth_canonical.json",
+      "size_bytes": 1223058
+    },
+    "update_pack_staging": {
+      "exists": true,
+      "is_file": true,
+      "path": "data/update_packs/update_pack_staging_index.json",
+      "size_bytes": 18014
+    }
+  },
+  "domains": {
+    "autodesign_handoff": {
+      "handoff_exists": true,
+      "handoff_status": "already_satisfied",
+      "invention_required": true,
+      "status": "passed",
+      "validation_report_passed": true
+    },
+    "buildability_validation": {
+      "blockers": [],
+      "stack_status": "warning",
+      "status": "passed",
+      "validation_exists": true,
+      "validation_report_passed": true,
+      "warnings": [
+        "invention_route_requires_higher_feasibility_threshold",
+        "package_not_ready_for_final_package"
+      ]
+    },
+    "dashboard_functionality": {
+      "api_wired": true,
+      "dashboard_exists": true,
+      "missing_surfaces": [],
+      "status": "passed",
+      "validation_report_passed": true
+    },
+    "design_portal": {
+      "design_portal_exists": true,
+      "design_portal_status": "contract_ready",
+      "status": "passed",
+      "validation_report_passed": true
+    },
+    "internet_readiness": {
+      "automatic_updates_enabled": false,
+      "blockers": [],
+      "internet_status": "warning",
+      "live_internet_enabled": false,
+      "readiness_exists": true,
+      "static_readiness": true,
+      "status": "passed",
+      "validation_report_passed": true,
+      "warnings": [
+        "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+      ]
+    },
+    "route_integrity": {
+      "invention_required": true,
+      "missing_rule_flags": [],
+      "route_family": "autodesign",
+      "route_status": "passed",
+      "status": "passed",
+      "validation_report_passed": true
+    },
+    "runtime_truth": {
+      "canonical_exists": true,
+      "dashboard_truth_exists": true,
+      "status": "passed",
+      "validation_report_passed": true
+    },
+    "safety_locks": {
+      "checks": {
+        "automatic_updates_disabled": true,
+        "live_internet_disabled": true,
+        "regression_lock_active": true,
+        "runner_background_disabled": true,
+        "runner_does_not_execute": true,
+        "runner_execution_disabled": true
+      },
+      "status": "passed"
+    },
+    "update_governance": {
+      "false_checks": {
+        "lock_active": true,
+        "rollback_automatic": true,
+        "rollback_execution": true,
+        "runner_automatic": true,
+        "runner_background": true,
+        "runner_execution": true,
+        "staging_automatic": true,
+        "staging_execution": true
+      },
+      "gate_status": "gate_ready_but_execution_disabled",
+      "lock_status": "locked_passed",
+      "outputs_exist": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "rollback_plan_count": 1,
+      "staging_pack_count": 1,
+      "status": "passed",
+      "validation_reports_passed": {
+        "regression_lock": true,
+        "rollback": true,
+        "runner_gate": true,
+        "staging": true
+      }
+    }
+  },
+  "endpoint_inventory": [
+    "/operator/dashboard/state",
+    "/dashboard/state",
+    "/runtime/truth",
+    "/runtime/state",
+    "/routes/audit",
+    "/routes/audit/summary",
+    "/autodesign/handoff",
+    "/autodesign/handoff/summary",
+    "/design-portal/output",
+    "/design-portal/output/summary",
+    "/validation/buildability",
+    "/validation/buildability/summary",
+    "/internet/readiness",
+    "/internet/readiness/summary",
+    "/updates/staging",
+    "/updates/rollback-plan",
+    "/updates/runner-gate",
+    "/updates/regression-lock"
+  ],
+  "generated_at": "2026-05-13T11:18:57.897156Z",
+  "governance": {
+    "autodesign_design_portal_first_class": true,
+    "automatic_updates_disabled": true,
+    "discovery_breakthrough_innovation_first_class": true,
+    "live_internet_disabled_until_review": true,
+    "missing_outputs_remain_visible": true,
+    "no_background_execution": true,
+    "no_fake_data": true,
+    "no_hidden_updates": true,
+    "operator_review_required": true
+  },
+  "input_sources": {
+    "autodesign_handoff": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/autodesign/v17_67_autodesign_handoff_validation.json",
+      "status": "loaded"
+    },
+    "automatic_update_runner_gate": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/v17_73_automatic_update_runner_gate_validation_result.json",
+      "status": "loaded"
+    },
+    "buildability_validation": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/validation/v17_69_buildability_validation_result.json",
+      "status": "loaded"
+    },
+    "dashboard_wiring": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/dashboard/v17_64_1_functional_dashboard_validation.json",
+      "status": "loaded"
+    },
+    "design_portal": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/v17_68_design_portal_output_validation.json",
+      "status": "loaded"
+    },
+    "internet_readiness": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/v17_70_internet_readiness_validation_result.json",
+      "status": "loaded"
+    },
+    "rollback_update_plan": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/v17_72_rollback_update_plan_validation_result.json",
+      "status": "loaded"
+    },
+    "route_audit": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/routes/v17_66_route_audit_validation.json",
+      "status": "loaded"
+    },
+    "runtime_truth": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/v17_65_runtime_truth_validation.json",
+      "status": "loaded"
+    },
+    "update_governance_regression_lock": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/v17_74_update_governance_regression_lock_validation_result.json",
+      "status": "loaded"
+    },
+    "update_pack_staging": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/v17_71_update_pack_staging_validation_result.json",
+      "status": "loaded"
+    }
+  },
+  "launch_readiness": {
+    "automatic_updates_enabled": false,
+    "automatic_updates_ready": false,
+    "background_execution_enabled": false,
+    "dashboard_ready_for_manual_review": true,
+    "internet_static_readiness_reviewable": true,
+    "live_internet_enabled": false,
+    "route_contract_ready_for_manual_review": true,
+    "runtime_truth_ready_for_manual_review": true
+  },
+  "next": [
+    "Manual review of v17.75 proof pack",
+    "Fix any STOP domains",
+    "If proof pack is GO_WITH_WARNINGS or GO_TO_MANUAL_REVIEW, test backend endpoints in Swagger",
+    "Only after manual endpoint proof should automatic update execution be considered in a later gated build"
+  ],
+  "proof_domains": [
+    "dashboard_functionality",
+    "runtime_truth",
+    "route_integrity",
+    "autodesign_handoff",
+    "design_portal",
+    "buildability_validation",
+    "internet_readiness",
+    "update_governance",
+    "safety_locks"
+  ],
+  "status": "GO_WITH_WARNINGS",
+  "stop_go": {
+    "blocked_domains": [],
+    "recommendation": "Proceed only to manual review. Do not enable automatic updates.",
+    "status": "GO_WITH_WARNINGS",
+    "warnings": [
+      {
+        "domain": "buildability_validation",
+        "warnings": [
+          "invention_route_requires_higher_feasibility_threshold",
+          "package_not_ready_for_final_package"
+        ]
+      },
+      {
+        "domain": "internet_readiness",
+        "warnings": [
+          "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+        ]
+      }
+    ]
+  },
+  "version": "v17.75"
+}

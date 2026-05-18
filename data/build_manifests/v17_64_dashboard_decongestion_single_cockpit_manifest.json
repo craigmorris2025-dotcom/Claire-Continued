@@ -1,0 +1,26 @@
+{
+  "backup_dir": "backups/v17_64_dashboard_decongestion_single_cockpit/20260509_133316",
+  "build_name": "Dashboard Decongestion + Single Cockpit",
+  "files_written": [
+    "frontend/command_center/modern/index.html",
+    "frontend/command_center/modern/claire_single_screen_operator.css",
+    "frontend/command_center/modern/claire_single_screen_operator.js",
+    "LAUNCH_CLAIRE.bat",
+    "tests/test_v17_64_dashboard_single_cockpit.py",
+    "docs/dashboard/v17.64_dashboard_decongestion_single_cockpit.md",
+    "frontend/command_center/modern/dashboard_source_of_truth_v17_64.json",
+    "frontend/command_center/modern/inactive_dashboard_assets_do_not_delete.json",
+    "data/dashboard/v17_64_dashboard_validation.json"
+  ],
+  "installed_at": "2026-05-09T18:33:16.578924Z",
+  "validation": {
+    "active_assets": [
+      "frontend/command_center/modern/claire_single_screen_operator.css",
+      "frontend/command_center/modern/claire_single_screen_operator.js"
+    ],
+    "active_dashboard": "frontend/command_center/modern/index.html",
+    "errors": [],
+    "status": "passed"
+  },
+  "version": "v17.64"
+}
