@@ -1,22 +1,22 @@
 @echo off
 setlocal
-title Claire Syntalion - Dashboard V5 Launcher
+title Claire Syntalion - Operational Dashboard Launcher
 
 set "CLAIRE_ROOT=%~dp0"
 set "CLAIRE_HOST=127.0.0.1"
 set "CLAIRE_PORT=8000"
-set "CLAIRE_URL=http://%CLAIRE_HOST%:%CLAIRE_PORT%/dashboard/v5"
+set "CLAIRE_URL=http://%CLAIRE_HOST%:%CLAIRE_PORT%/dashboard"
 
 cd /d "%CLAIRE_ROOT%"
 
 echo.
 echo ============================================================
-echo  Claire Syntalion - Command Center V5 Launcher
+echo  Claire Syntalion - Operational Command Center Launcher
 echo ============================================================
 echo.
 echo Backend owns truth. Cockpit presentation only.
 echo Runtime authority remains blocked.
-echo Opening normalized future-compatible dashboard.
+echo Opening backend-owned operational cockpit dashboard.
 echo.
 
 if exist "%CLAIRE_ROOT%.venv\Scripts\python.exe" (
