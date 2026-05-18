@@ -27,6 +27,50 @@ h1, h2 { margin: 0; line-height: 1.04; } h1 { font-size: clamp(2.2rem, 4.2vw, 5.
 .readiness-grid span, .domain-chip, .tag { color: var(--muted); background: rgba(5, 9, 20, .64); border: 1px solid var(--line); border-radius: 999px; padding: 7px 10px; font-size: .78rem; font-weight: 780; }
 .readiness-grid span[data-state="ok"] { color: var(--green); border-color: rgba(112, 242, 164, .32); }
 .readiness-grid span[data-state="blocked"] { color: var(--amber); border-color: rgba(255, 209, 102, .32); }
+.operator-cockpit-surface { border: 1px solid var(--line2); background: linear-gradient(180deg, rgba(17,31,52,.96), rgba(6,13,25,.96)); border-radius: 24px; padding: 18px; box-shadow: var(--shadow); margin-bottom: 14px; }
+.cockpit-topline { display: flex; justify-content: space-between; gap: 18px; align-items: start; border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 14px; }
+.cockpit-topline h2 { font-size: 1.8rem; }
+.cockpit-topline p:last-child { color: var(--muted); max-width: 760px; line-height: 1.45; margin: 8px 0 0; }
+.cockpit-authority-lock { min-width: 190px; border: 1px solid rgba(255,209,102,.36); border-radius: 16px; background: rgba(255,209,102,.08); padding: 12px; text-align: right; }
+.cockpit-authority-lock span { color: var(--muted); display: block; font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; }
+.cockpit-authority-lock strong { color: var(--amber); display: block; margin-top: 5px; }
+.cockpit-status-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+.cockpit-status-strip article { border: 1px solid var(--line); border-radius: 16px; background: rgba(4,10,18,.48); padding: 13px; min-height: 118px; }
+.cockpit-status-strip span { display: block; color: var(--muted); text-transform: uppercase; letter-spacing: .11em; font-size: .7rem; font-weight: 850; }
+.cockpit-status-strip strong { display: block; margin: 10px 0 7px; font-size: 1.35rem; color: var(--text); }
+.cockpit-status-strip p { margin: 0; color: var(--muted); line-height: 1.35; font-size: .84rem; }
+.cockpit-status-strip article[data-state="ready"] { border-color: rgba(112,242,164,.38); }
+.cockpit-status-strip article[data-state="blocked"] { border-color: rgba(255,105,120,.38); }
+.cockpit-status-strip article[data-state="degraded"] { border-color: rgba(255,209,102,.38); }
+.cockpit-status-strip article[data-state="ready"] strong { color: var(--green); }
+.cockpit-status-strip article[data-state="blocked"] strong { color: var(--red); }
+.cockpit-status-strip article[data-state="degraded"] strong { color: var(--amber); }
+.cockpit-workspace { display: grid; grid-template-columns: 1.05fr .95fr 1.35fr; gap: 12px; align-items: stretch; }
+.cockpit-panel { border: 1px solid var(--line); background: rgba(5,9,20,.48); border-radius: 18px; padding: 14px; min-height: 360px; }
+.operator-action-list { display: grid; gap: 9px; }
+.operator-action-list button { text-align: left; border: 1px solid var(--line); background: rgba(105,214,255,.08); color: var(--text); border-radius: 14px; padding: 12px; cursor: pointer; }
+.operator-action-list button:hover, .operator-action-list button.is-active { border-color: var(--line2); background: rgba(105,214,255,.15); }
+.operator-action-list strong, .decision-queue strong { display: block; margin-bottom: 5px; }
+.operator-action-list span, .decision-queue span, .operator-result p { color: var(--muted); line-height: 1.35; }
+.decision-queue { display: grid; gap: 9px; }
+.decision-queue article { border: 1px solid var(--line); background: rgba(4,10,18,.52); border-radius: 14px; padding: 12px; }
+.decision-queue b { display: inline-block; margin-top: 10px; color: var(--amber); text-transform: uppercase; letter-spacing: .1em; font-size: .68rem; }
+.operator-result { min-height: 260px; border: 1px solid var(--line); border-radius: 16px; background: rgba(4,10,18,.58); padding: 14px; overflow: auto; }
+.operator-result-summary { display: grid; gap: 10px; }
+.operator-result-summary header { display: flex; justify-content: space-between; gap: 10px; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+.operator-result-summary code { color: var(--blue); overflow-wrap: anywhere; }
+.operator-result-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.operator-result-grid article { border: 1px solid var(--line); background: rgba(13,23,38,.72); border-radius: 12px; padding: 10px; }
+.operator-result-grid span { display: block; color: var(--muted); font-size: .74rem; text-transform: uppercase; letter-spacing: .1em; }
+.operator-result-grid strong { display: block; margin-top: 5px; overflow-wrap: anywhere; }
+.operator-json-details summary { cursor: pointer; color: var(--blue); margin: 10px 0; }
+.diagnostics-access { display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 1px solid var(--line); background: rgba(13,23,38,.62); border-radius: 18px; padding: 14px; margin: 0 0 14px; }
+.diagnostics-access button { border: 1px solid var(--line2); border-radius: 14px; background: rgba(105,214,255,.09); color: var(--text); padding: 10px 14px; cursor: pointer; font-weight: 800; }
+.diagnostics-access h2 { margin: 0; }
+body:not(.show-diagnostics) .domain-filter-bar,
+body:not(.show-diagnostics) .main-grid,
+body:not(.show-diagnostics) .portal-tabs,
+body:not(.show-diagnostics) .portal-stack { display: none; }
 .dashboard-summary { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-bottom: 14px; }
 .dashboard-summary article { border: 1px solid var(--line); background: rgba(13,23,38,.72); border-radius: 19px; padding: 15px; }
 .dashboard-summary strong { display: block; color: var(--blue); font-size: 1.7rem; } .dashboard-summary span { color: var(--muted); }
@@ -57,5 +101,5 @@ pre { white-space: pre-wrap; word-break: break-word; background: rgba(0,0,0,.28)
 .portal-output, .portal-actions { border: 1px solid var(--line); background: rgba(4,10,18,.54); border-radius: 16px; padding: 14px; min-height: 220px; color: var(--muted); }
 .portal-action-button { display: block; width: 100%; margin-bottom: 8px; padding: 10px; border-radius: 12px; border: 1px solid var(--line); background: rgba(105,214,255,.07); color: var(--text); text-align: left; cursor: pointer; }
 .portal-action-button:hover { border-color: var(--line2); }
-@media (max-width: 1250px) { .hero, .main-grid, .portal-layout { grid-template-columns: 1fr; } .portal-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); } .dashboard-summary, .operational-board { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-@media (max-width: 760px) { .dashboard-v3 { width: min(100vw - 16px, 100%); } .command-row, .portal-tabs, .dashboard-summary, .operational-board { grid-template-columns: 1fr; } }
+@media (max-width: 1250px) { .hero, .main-grid, .portal-layout, .cockpit-workspace { grid-template-columns: 1fr; } .portal-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); } .dashboard-summary, .operational-board, .cockpit-status-strip { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 760px) { .dashboard-v3 { width: min(100vw - 16px, 100%); } .command-row, .portal-tabs, .dashboard-summary, .operational-board, .cockpit-status-strip { grid-template-columns: 1fr; } .cockpit-topline, .diagnostics-access { display: block; } .cockpit-authority-lock { text-align: left; margin-top: 12px; } }

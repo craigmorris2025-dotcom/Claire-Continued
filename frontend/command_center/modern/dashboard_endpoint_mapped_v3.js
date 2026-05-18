@@ -11,6 +11,13 @@
   }
   function safeJson(value) { try { return JSON.stringify(value, null, 2); } catch (error) { return String(value); } }
   function setReady(key, text, stateName) { const el = document.querySelector(`[data-ready="${key}"]`); if (el) { el.textContent = text; el.dataset.state = stateName || "unknown"; } }
+  function textValue(value, fallback) {
+    if (value == null || value === "") return fallback || "unknown";
+    if (typeof value === "boolean") return value ? "yes" : "no";
+    if (Array.isArray(value)) return value.length ? value.join(", ") : fallback || "none";
+    if (typeof value === "object") return value.status || value.state || value.mode || fallback || "available";
+    return String(value);
+  }
 
   async function fetchJson(path) {
     const response = await fetch(path, { method: "GET", headers: { "Accept": "application/json" }, cache: "no-store" });
@@ -141,6 +148,68 @@
     if (card) card.dataset.state = stateName || "degraded";
   }
 
+  function setCockpitCard(key, status, detail, stateName) {
+    const card = document.querySelector(`[data-cockpit-status-card="${key}"]`);
+    if (!card) return;
+    const strong = card.querySelector("strong");
+    const copy = card.querySelector("p");
+    if (strong) strong.textContent = status || "Unknown";
+    if (copy) copy.textContent = detail || "";
+    card.dataset.state = stateName || "degraded";
+  }
+
+  function cockpitSummary(endpoint, status, payload) {
+    const authority = payload && payload.authority ? payload.authority : {};
+    const lifecycle = payload && (payload.lifecycle || payload.runtime || payload.runtime_spine || {});
+    const cards = [
+      ["Status", payload && (payload.status || payload.state || payload.runtime_state)],
+      ["Mode", payload && (payload.mode || authority.mode || payload.execution_mode)],
+      ["Operator review", payload && (payload.operator_approval_required || payload.operator_review_required || authority.operator_approval_required)],
+      ["Runtime mutation", authority.runtime_mutation || payload && payload.runtime_truth_mutated],
+      ["Live web", authority.live_web_execution || payload && payload.live_web_execution_status],
+      ["Lifecycle", lifecycle.stage_count || lifecycle.status || lifecycle.current_stage],
+    ];
+    return [
+      '<div class="operator-result-summary">',
+      "<header>",
+      "<div><strong>Governed backend result</strong><br><code>GET " + escapeHtml(endpoint) + "</code></div>",
+      '<span class="tag ' + (status >= 200 && status < 300 ? "tag--get" : "tag--blocked") + '">status ' + escapeHtml(status) + "</span>",
+      "</header>",
+      '<div class="operator-result-grid">',
+      cards.map(([label, value]) => "<article><span>" + escapeHtml(label) + "</span><strong>" + escapeHtml(textValue(value, "not reported")) + "</strong></article>").join(""),
+      "</div>",
+      "<p>Review-only fetch complete. Command execution, body reads, automatic updates, and runtime mutation remain blocked unless a governed approval path explicitly unlocks them.</p>",
+      '<details class="operator-json-details"><summary>Raw payload</summary><pre>' + escapeHtml(safeJson(payload)) + "</pre></details>",
+      "</div>"
+    ].join("");
+  }
+
+  async function runCockpitAction(endpoint, button) {
+    const pane = document.querySelector("[data-operator-result]");
+    if (!pane) return;
+    document.querySelectorAll("[data-cockpit-fetch]").forEach((el) => el.classList.toggle("is-active", el === button));
+    pane.innerHTML = "<strong>Loading governed result...</strong><p>Fetching " + escapeHtml(endpoint) + " with review-only authority.</p>";
+    try {
+      const result = await fetchJson(endpoint);
+      pane.innerHTML = cockpitSummary(endpoint, result.status, result.payload);
+    } catch (error) {
+      pane.innerHTML = '<strong>Action review unavailable.</strong><p>' + escapeHtml(String(error && error.message ? error.message : error)) + "</p>";
+    }
+  }
+
+  function wireCockpit() {
+    document.querySelectorAll("[data-cockpit-fetch]").forEach((button) => {
+      button.addEventListener("click", () => runCockpitAction(button.dataset.cockpitFetch, button));
+    });
+    const toggle = document.getElementById("toggle-diagnostics");
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("show-diagnostics");
+        toggle.textContent = document.body.classList.contains("show-diagnostics") ? "Hide diagnostics" : "Show diagnostics";
+      });
+    }
+  }
+
   function appendRouteIntegrity(payload) {
     const out = document.getElementById("portal-diagnostics-output") || $("#result-pane");
     if (!out || !payload) return;
@@ -200,10 +269,17 @@
         `${(payload.blockers || []).length} blockers; ${pollution.pollution_file_count || 0} pollution files tracked.`,
         payload.status === "ready" ? "ready" : "degraded"
       );
+      setCockpitCard(
+        "system",
+        payload.status || "unknown",
+        `${(payload.blockers || []).length} blockers; ${pollution.pollution_file_count || 0} tracked files.`,
+        payload.status === "ready" ? "ready" : "degraded"
+      );
       renderSystemReadiness(payload);
     } catch (error) {
       setReady("file-readiness", "Files: unavailable", "blocked");
       setOpsCard("system", "unavailable", "File readiness endpoint did not respond.", "blocked");
+      setCockpitCard("system", "unavailable", "File readiness endpoint did not respond.", "blocked");
     }
     try {
       const integrity = await fetchJson("/api/system/route-integrity");
@@ -215,10 +291,17 @@
         `${payload.route_count || 0} routes; ${payload.duplicate_route_count || 0} duplicate owners; payload owner locked: ${payload.dashboard_payload && payload.dashboard_payload.canonical_payload_locked ? "yes" : "no"}.`,
         payload.status === "ready" ? "ready" : "degraded"
       );
+      setCockpitCard(
+        "runtime",
+        payload.status || "unknown",
+        `${payload.route_count || 0} routes mapped; duplicate owners ${payload.duplicate_route_count || 0}.`,
+        payload.status === "ready" ? "ready" : "degraded"
+      );
       appendRouteIntegrity(payload);
     } catch (error) {
       setReady("route-integrity", "Routes: unavailable", "blocked");
       setOpsCard("route", "unavailable", "Route integrity endpoint did not respond.", "blocked");
+      setCockpitCard("runtime", "unavailable", "Route integrity endpoint did not respond.", "blocked");
     }
     try {
       const live = await fetchJson("/api/governed/live-probe/status");
@@ -229,8 +312,15 @@
         `Ready: ${payload.ready ? "yes" : "no"}; method: ${payload.method_allowed || "blocked"}; body reads: ${payload.body_read_allowed ? "allowed" : "blocked"}.`,
         payload.ready ? "degraded" : "blocked"
       );
+      setCockpitCard(
+        "authority",
+        payload.ready ? "gated" : "locked",
+        `Live probe ${payload.status || "registered"}; body reads ${payload.body_read_allowed ? "allowed" : "blocked"}.`,
+        payload.ready ? "degraded" : "blocked"
+      );
     } catch (error) {
       setOpsCard("live", "unavailable", "Governed live-probe status did not respond.", "blocked");
+      setCockpitCard("authority", "locked", "Governed live-probe status unavailable; unsafe authority remains blocked.", "blocked");
     }
     try {
       const payloadResult = await fetchJson("/dashboard/payload");
@@ -242,12 +332,19 @@
         `Backend owns truth: ${payload.backend_owns_truth ? "yes" : "no"}; lifecycle stages: ${(payload.lifecycle_stages || []).length || (payload.lifecycle && payload.lifecycle.stage_count) || 0}; live web: ${authority.live_web_execution || payload.live_web_execution_status || "blocked"}.`,
         payloadResult.ok && payload.backend_owns_truth ? "ready" : "degraded"
       );
+      setCockpitCard(
+        "evidence",
+        payload.status || "available",
+        `Backend truth ${payload.backend_owns_truth ? "owned" : "unverified"}; live web ${authority.live_web_execution || payload.live_web_execution_status || "blocked"}.`,
+        payloadResult.ok && payload.backend_owns_truth ? "ready" : "degraded"
+      );
     } catch (error) {
       setOpsCard("payload", "unavailable", "Dashboard payload did not respond.", "blocked");
+      setCockpitCard("evidence", "unavailable", "Dashboard payload did not respond.", "blocked");
     }
     setReady("dashboard", "Dashboard route: V3 active", "ok");
   }
 
-  document.addEventListener("DOMContentLoaded", () => { wireFilters(); wirePortals(); wireCommand(); renderEndpoints(); renderPortals(); bootstrapStatus(); });
+  document.addEventListener("DOMContentLoaded", () => { wireFilters(); wirePortals(); wireCommand(); wireCockpit(); renderEndpoints(); renderPortals(); bootstrapStatus(); });
   window.ClaireDashboardV3 = { endpointMap, state, renderEndpoints, runEndpoint, renderPortals };
 })();

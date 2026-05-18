@@ -35,6 +35,11 @@ def test_s1501_dashboard_v3_files_exist_and_have_required_surfaces():
     assert DASHBOARD_MARKER in index
     for token in [
         "Permanent Claire command / search bar",
+        "Operator cockpit",
+        "Mission Control",
+        "Command Queue",
+        "Decision Queue",
+        "Action Review",
         "Endpoint Browser",
         "Result Pane",
         "Lifecycle Portal",
@@ -50,6 +55,9 @@ def test_s1501_dashboard_v3_files_exist_and_have_required_surfaces():
     ]:
         assert token in html
     assert "window.ClaireDashboardV3" in js
+    assert "wireCockpit" in js
+    assert "data-cockpit-fetch" in html
+    assert "body:not(.show-diagnostics) .main-grid" in css
     assert ".dashboard-v3" in css
 
 

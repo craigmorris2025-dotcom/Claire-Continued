@@ -49,6 +49,81 @@
       </div>
     </section>
 
+    <section class="operator-cockpit-surface" data-operator-cockpit="primary">
+      <div class="cockpit-topline">
+        <div>
+          <p class="eyebrow">Operator cockpit</p>
+          <h2>Mission Control</h2>
+          <p>Review system state, choose a governed action, and inspect the backend result without dropping into route inventory.</p>
+        </div>
+        <div class="cockpit-authority-lock">
+          <span>Review mode</span>
+          <strong>Execution locked</strong>
+        </div>
+      </div>
+
+      <div class="cockpit-status-strip" aria-label="Current operating state">
+        <article data-cockpit-status-card="system"><span>System</span><strong>Checking</strong><p>Loading readiness.</p></article>
+        <article data-cockpit-status-card="runtime"><span>Runtime</span><strong>Checking</strong><p>Loading lifecycle state.</p></article>
+        <article data-cockpit-status-card="evidence"><span>Evidence</span><strong>Checking</strong><p>Loading governed evidence.</p></article>
+        <article data-cockpit-status-card="authority"><span>Authority</span><strong>Locked</strong><p>Unsafe actions blocked.</p></article>
+      </div>
+
+      <div class="cockpit-workspace">
+        <section class="cockpit-panel cockpit-panel--actions">
+          <div class="panel-heading">
+            <p class="eyebrow">Next operator actions</p>
+            <h2>Command Queue</h2>
+          </div>
+          <div class="operator-action-list" data-operator-action-list>
+            <button type="button" data-cockpit-fetch="/dashboard/payload">
+              <strong>Load cockpit brief</strong>
+              <span>Current lifecycle, authority, dashboard payload, and backend-owned truth.</span>
+            </button>
+            <button type="button" data-cockpit-fetch="/dashboard/actions/summary">
+              <strong>Review action registry</strong>
+              <span>Available operator actions and why execution remains review-only.</span>
+            </button>
+            <button type="button" data-cockpit-fetch="/api/cockpit/operational-status">
+              <strong>Check operational status</strong>
+              <span>Health, cockpit readiness, and current activation boundary.</span>
+            </button>
+            <button type="button" data-cockpit-fetch="/api/evidence/governed/payload">
+              <strong>Review evidence queue</strong>
+              <span>Evidence, quarantine, promotion preview, and source decisions.</span>
+            </button>
+            <button type="button" data-cockpit-fetch="/api/governed/runtime-spine">
+              <strong>Inspect runtime spine</strong>
+              <span>Lifecycle routing, stage state, and authority map.</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="cockpit-panel cockpit-panel--review">
+          <div class="panel-heading">
+            <p class="eyebrow">Review desk</p>
+            <h2>Decision Queue</h2>
+          </div>
+          <div class="decision-queue" data-decision-queue>
+            <article><strong>Runtime promotion</strong><span>Operator approval required before any mutation.</span><b>blocked</b></article>
+            <article><strong>Live web probe</strong><span>Metadata-only boundary registered; body reads blocked.</span><b>gated</b></article>
+            <article><strong>System cleanup</strong><span>File readiness degraded; pollution is tracked for review.</span><b>review</b></article>
+          </div>
+        </section>
+
+        <section class="cockpit-panel cockpit-panel--result">
+          <div class="panel-heading">
+            <p class="eyebrow">Operator result</p>
+            <h2>Action Review</h2>
+          </div>
+          <div class="operator-result" data-operator-result aria-live="polite">
+            <strong>Select a command queue action.</strong>
+            <p>Claire will fetch the governed backend result and summarize the parts an operator needs to decide what happens next.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
     <section class="claire-active-control-map" aria-label="Dashboard active control map">
       <div class="claire-active-control-header">
         <div>
@@ -63,6 +138,14 @@
         <strong>Select a control to fetch its backend result.</strong>
         <p>Each button uses GET and renders the response here while unsafe authority remains blocked.</p>
       </div>
+    </section>
+
+    <section class="diagnostics-access">
+      <div>
+        <p class="eyebrow">Diagnostics</p>
+        <h2>Endpoint map and raw payloads</h2>
+      </div>
+      <button type="button" id="toggle-diagnostics">Show diagnostics</button>
     </section>
 
     <section class="operational-board" data-operational-board="backend-owned">
