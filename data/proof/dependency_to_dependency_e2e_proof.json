@@ -1,0 +1,639 @@
+{
+  "blocked_edges": [],
+  "blocked_steps": [],
+  "boundaries": {
+    "automatic_update_apply_enabled": false,
+    "cad_export_enabled": false,
+    "compatibility_aliases_allowed_until_frontend_cleanup": true,
+    "live_external_provider_success_required": false
+  },
+  "causal_engine_intake": {
+    "active_runtime_mutation": false,
+    "reason": "Causal and emergence contracts are mounted for assessment; deeper causal runtime integration remains downstream of route and endpoint proof lock.",
+    "status": "contract_ready_runtime_mutation_blocked"
+  },
+  "chain_name": "Dependency-to-Dependency End-to-End Proof Lock",
+  "generated_at": "2026-05-24T01:01:43.195113Z",
+  "handoff_edges": [
+    {
+      "from": "dashboard_state",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "active_control_map"
+    },
+    {
+      "from": "active_control_map",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "runtime_status"
+    },
+    {
+      "from": "runtime_status",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "provider_readiness"
+    },
+    {
+      "from": "provider_readiness",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "governed_search_plan"
+    },
+    {
+      "from": "governed_search_plan",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "evidence_quarantine"
+    },
+    {
+      "from": "evidence_quarantine",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "pipeline_evaluate"
+    },
+    {
+      "from": "pipeline_evaluate",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "portfolio_artifact"
+    },
+    {
+      "from": "portfolio_artifact",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "design_portal_contract"
+    },
+    {
+      "from": "design_portal_contract",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "cad_intent"
+    },
+    {
+      "from": "cad_intent",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "update_governance"
+    },
+    {
+      "from": "update_governance",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "endpoint_reconciliation"
+    },
+    {
+      "from": "endpoint_reconciliation",
+      "source_passed": true,
+      "status": "passed",
+      "target_passed": true,
+      "to": "industry_standard_package"
+    }
+  ],
+  "mounted_missing": [],
+  "mounted_route_count": 350,
+  "passed_step_count": 13,
+  "schema_version": "claire.dependency_chain_proof.v1",
+  "status": "clean_e2e_review_proof",
+  "step_count": 13,
+  "steps": [
+    {
+      "endpoint": "/api/dashboard/state",
+      "handoff_fields": [
+        "system_wiring",
+        "records",
+        "active_control_map"
+      ],
+      "http_status": 200,
+      "id": "dashboard_state",
+      "label": "Dashboard state",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.dashboard.cockpit_dashboard_state",
+      "payload_keys": [
+        "active_control_map",
+        "active_intelligence_mode",
+        "command_history",
+        "command_plan",
+        "current_run_truth",
+        "deltas",
+        "dependency_chain_proof",
+        "design_artifact_package",
+        "design_portal_workbench",
+        "emergence_engine",
+        "endpoint_reconciliation",
+        "endpoint_standard_settings",
+        "first_run_readiness",
+        "generated_at",
+        "intelligence_modes",
+        "internet_provider_diagnostics",
+        "latest_hybrid_result",
+        "lifecycle",
+        "live_sources",
+        "manifest",
+        "metrics",
+        "operational_conditions",
+        "pipeline_activation",
+        "platform_completion",
+        "post_run_handoff",
+        "project_file_bindings",
+        "queues",
+        "records",
+        "runtime",
+        "schema_version",
+        "search_lanes",
+        "sections",
+        "simulated_values_present",
+        "sources",
+        "status",
+        "strategic_world",
+        "surface_completion",
+        "system_wiring",
+        "technology_base",
+        "truth",
+        "update_governance_panel",
+        "update_logic_status"
+      ],
+      "payload_status": "ready",
+      "requires": [],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/api/dashboard/active-control-map",
+      "handoff_fields": [
+        "controls",
+        "primary_endpoint",
+        "secondary_endpoints"
+      ],
+      "http_status": 200,
+      "id": "active_control_map",
+      "label": "Active control map",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.dashboard_active_control_map",
+      "payload_keys": [
+        "authority",
+        "bound_from_audit",
+        "categories",
+        "control_count",
+        "controls",
+        "frontend_contract",
+        "generated_at",
+        "ok",
+        "purpose",
+        "status",
+        "version"
+      ],
+      "payload_status": "ready",
+      "requires": [
+        "dashboard_state"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/runtime/status",
+      "handoff_fields": [
+        "runtime",
+        "truth",
+        "queues"
+      ],
+      "http_status": 200,
+      "id": "runtime_status",
+      "label": "Runtime status",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.operator_cockpit_runtime",
+      "payload_keys": [
+        "deltas",
+        "generated_at",
+        "manifest",
+        "queues",
+        "runtime",
+        "schema_version",
+        "sources",
+        "status",
+        "truth"
+      ],
+      "payload_status": "ready",
+      "requires": [
+        "active_control_map"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/api/search/providers/status",
+      "handoff_fields": [
+        "provider_count",
+        "execution_allowed",
+        "blocked_capabilities"
+      ],
+      "http_status": 200,
+      "id": "provider_readiness",
+      "label": "Provider readiness",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.governed_provider_readiness_routes",
+      "payload_keys": [
+        "automatic_updates_enabled",
+        "blocked_flags",
+        "body_read_allowed",
+        "execution_allowed",
+        "generated_at",
+        "network_allowed",
+        "provider_count",
+        "readiness",
+        "runtime_mutation_enabled",
+        "status",
+        "version"
+      ],
+      "payload_status": "governed_provider_readiness_visible",
+      "requires": [
+        "runtime_status"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/api/search/governed/query/payload",
+      "handoff_fields": [
+        "query_contract",
+        "cards",
+        "actions",
+        "policy"
+      ],
+      "http_status": 200,
+      "id": "governed_search_plan",
+      "label": "Governed search plan",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.governed_query_compiler_routes",
+      "payload_keys": [
+        "actions",
+        "authority",
+        "cards",
+        "gate",
+        "generated_at",
+        "phase",
+        "plan",
+        "policy",
+        "status",
+        "system"
+      ],
+      "payload_status": "query_compiler_ready",
+      "requires": [
+        "provider_readiness"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/api/evidence/quarantine/payload",
+      "handoff_fields": [
+        "quarantine",
+        "review_queue",
+        "actions"
+      ],
+      "http_status": 200,
+      "id": "evidence_quarantine",
+      "label": "Evidence quarantine",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.governed_quarantine_evidence_routes",
+      "payload_keys": [
+        "actions",
+        "cards",
+        "headline",
+        "phase",
+        "policy",
+        "review_queue",
+        "status",
+        "store",
+        "summary",
+        "surface"
+      ],
+      "payload_status": {
+        "blocked_capabilities": {
+          "automatic_updates_enabled": false,
+          "autonomous_crawling_enabled": false,
+          "body_read_allowed": false,
+          "browser_execution_enabled": false,
+          "command_execution_enabled": false,
+          "live_web_execution_enabled": false,
+          "network_request_performed": false,
+          "package_download_performed": false,
+          "package_install_performed": false,
+          "runtime_mutation_enabled": false,
+          "search_provider_execution_enabled": false
+        },
+        "cockpit_cards_ready": true,
+        "phase": "S639-S645",
+        "quarantine_store_ready": true,
+        "record_count": 3,
+        "review_queue_ready": true,
+        "status": "passive_quarantine_ready"
+      },
+      "requires": [
+        "governed_search_plan"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/evaluate",
+      "handoff_fields": [
+        "run_id",
+        "route_selected",
+        "scores",
+        "post_run_handoff"
+      ],
+      "http_status": 200,
+      "id": "pipeline_evaluate",
+      "label": "Pipeline evaluate",
+      "method": "POST",
+      "missing_required_fields": [],
+      "owner": "claire.api.routes_pipeline",
+      "payload_keys": [
+        "acquirer_matches",
+        "breakthrough_classification",
+        "breakthrough_synthesis",
+        "business_model",
+        "confidence",
+        "connector_sources",
+        "core_completion_gate",
+        "core_lifecycle",
+        "core_lifecycle_stages",
+        "core_lifecycle_summary",
+        "core_output",
+        "deal_exit_modeling",
+        "decision_classification",
+        "design_output",
+        "design_portal",
+        "domain",
+        "domain_scores",
+        "emergence_engine",
+        "engine_details",
+        "evidence_chain",
+        "executed_at",
+        "export_package",
+        "export_writer",
+        "governed_signals",
+        "intent_id",
+        "keywords",
+        "knowledge_ingestion",
+        "lifecycle",
+        "lifecycle_memory_feedback",
+        "lifecycle_stages",
+        "lifecycle_summary",
+        "market_formation",
+        "market_gap",
+        "memory",
+        "moat",
+        "mode",
+        "opportunity_discovery",
+        "phase_log",
+        "portfolio_binder",
+        "portfolio_optimization",
+        "productization_path",
+        "proof",
+        "proof_package",
+        "risk_regulation",
+        "route_selected",
+        "run_id",
+        "run_quality",
+        "runtime_proof",
+        "runtime_trace",
+        "scores",
+        "signal_extraction",
+        "signal_trace",
+        "source_authority",
+        "source_boundary",
+        "source_provenance",
+        "status",
+        "strategic_positioning",
+        "syntalion_ready",
+        "system_design",
+        "technical_feasibility"
+      ],
+      "payload_status": "success",
+      "requires": [
+        "evidence_quarantine"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/api/portfolio/artifacts/latest",
+      "handoff_fields": [
+        "metadata",
+        "artifact_routes",
+        "final_package_requirements"
+      ],
+      "http_status": 200,
+      "id": "portfolio_artifact",
+      "label": "Portfolio artifact",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.portfolio_artifacts",
+      "payload_keys": [
+        "acquirer_matches",
+        "artifact_id",
+        "artifact_type",
+        "automatic_update_performed",
+        "body_read_performed",
+        "breakthrough_evaluation",
+        "business_portfolio",
+        "created_at",
+        "design_gate",
+        "download_available",
+        "final_package",
+        "portfolio",
+        "portfolio_type",
+        "quality_gate",
+        "review_required",
+        "route_selected",
+        "routes",
+        "run_id",
+        "runtime_truth_write",
+        "schema_version",
+        "signals",
+        "status",
+        "strategic_world",
+        "summary",
+        "thesis",
+        "title",
+        "trend"
+      ],
+      "payload_status": "operator_review_ready",
+      "requires": [
+        "pipeline_evaluate"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/design-portal/contract",
+      "handoff_fields": [
+        "output",
+        "package_readiness",
+        "cad_intent_endpoint"
+      ],
+      "http_status": 200,
+      "id": "design_portal_contract",
+      "label": "Design Portal contract",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.routes_design_portal_output",
+      "payload_keys": [
+        "cad_export_enabled",
+        "cad_intent_endpoint",
+        "contract_name",
+        "output",
+        "package_readiness",
+        "required_sections",
+        "schema_version",
+        "status"
+      ],
+      "payload_status": "contract_ready",
+      "requires": [
+        "portfolio_artifact"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/cad/intent",
+      "handoff_fields": [
+        "design_contract_endpoint",
+        "cad_export_enabled",
+        "operator_review_required"
+      ],
+      "http_status": 200,
+      "id": "cad_intent",
+      "label": "CAD intent",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.routes_design_portal_output",
+      "payload_keys": [
+        "cad_artifact_endpoint",
+        "cad_export_enabled",
+        "cad_export_endpoint",
+        "design_contract_endpoint",
+        "design_portal_status",
+        "install_required",
+        "intent",
+        "operator_review_required",
+        "schema_version",
+        "status"
+      ],
+      "payload_status": "intent_review_ready",
+      "requires": [
+        "design_portal_contract"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/api/update-governance/open-web/panel",
+      "handoff_fields": [
+        "available_updates",
+        "install_workflow",
+        "approval_workflow"
+      ],
+      "http_status": 200,
+      "id": "update_governance",
+      "label": "Update governance",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.routes_open_web_update_governance",
+      "payload_keys": [
+        "approval_workflow",
+        "available_update_count",
+        "available_updates",
+        "generated_at",
+        "install_workflow",
+        "panel_key",
+        "rollback",
+        "schema_version",
+        "security_posture",
+        "status",
+        "title",
+        "trust_scores",
+        "version_diffs"
+      ],
+      "payload_status": "ready",
+      "requires": [
+        "cad_intent"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/api/system/endpoint-reconciliation",
+      "handoff_fields": [
+        "status",
+        "compatibility_alias_count",
+        "unresolved_count"
+      ],
+      "http_status": 200,
+      "id": "endpoint_reconciliation",
+      "label": "Endpoint reconciliation",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.routes_endpoint_reconciliation_report",
+      "payload_keys": [
+        "aliases",
+        "compatibility_alias_count",
+        "frontend_call_count",
+        "frontend_calls",
+        "generated_at",
+        "mounted_route_count",
+        "next_rule",
+        "schema_version",
+        "status",
+        "unresolved",
+        "unresolved_count"
+      ],
+      "payload_status": "clean",
+      "requires": [
+        "update_governance"
+      ],
+      "status": "passed"
+    },
+    {
+      "endpoint": "/api/system/industry-standard-endpoint-package",
+      "handoff_fields": [
+        "standards",
+        "endpoint_expectations",
+        "acceptance_checks"
+      ],
+      "http_status": 200,
+      "id": "industry_standard_package",
+      "label": "Industry standard endpoint package",
+      "method": "GET",
+      "missing_required_fields": [],
+      "owner": "claire.api.routes_industry_standard_endpoint_package",
+      "payload_keys": [
+        "acceptance_checks",
+        "endpoint_expectations",
+        "generated_at",
+        "mounted_route_count",
+        "mounted_routes",
+        "mutation_policy",
+        "package_name",
+        "proof_chain",
+        "purpose",
+        "schema_version",
+        "settings",
+        "standards",
+        "status"
+      ],
+      "payload_status": "ready",
+      "requires": [
+        "endpoint_reconciliation"
+      ],
+      "status": "passed"
+    }
+  ]
+}

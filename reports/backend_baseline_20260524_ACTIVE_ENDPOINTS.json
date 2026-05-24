@@ -1,0 +1,3163 @@
+{
+  "active_app": "main.py -> claire.app:create_app",
+  "endpoint_count": 350,
+  "endpoints": [
+    {
+      "endpoint": "root",
+      "include_in_schema": false,
+      "methods": [
+        "GET"
+      ],
+      "name": "root",
+      "path": "/"
+    },
+    {
+      "endpoint": "acs2_visual_command_endpoint",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "acs2_visual_command_endpoint",
+      "path": "/api/acs2/{path:path}"
+    },
+    {
+      "endpoint": "post_ask_claire",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_ask_claire",
+      "path": "/api/ask-claire"
+    },
+    {
+      "endpoint": "_claire_s1294_plateau_lock_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_audit_plateau_lock_s1294",
+      "path": "/api/audit/plateau-lock"
+    },
+    {
+      "endpoint": "_claire_s1294_risk_pattern_review_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_audit_risk_pattern_review_s1294",
+      "path": "/api/audit/risk-pattern-review"
+    },
+    {
+      "endpoint": "cockpit_body_read_gate_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_body_read_gate_actions",
+      "path": "/api/cockpit/body-read-gate/actions"
+    },
+    {
+      "endpoint": "cockpit_body_read_gate_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_body_read_gate_cards",
+      "path": "/api/cockpit/body-read-gate/cards"
+    },
+    {
+      "endpoint": "cockpit_body_read_gate_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_body_read_gate_payload",
+      "path": "/api/cockpit/body-read-gate/payload"
+    },
+    {
+      "endpoint": "cockpit_body_read_gate_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_body_read_gate_status",
+      "path": "/api/cockpit/body-read-gate/status"
+    },
+    {
+      "endpoint": "cockpit_body_read_gate_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_body_read_gate_stop_gate",
+      "path": "/api/cockpit/body-read-gate/stop-gate"
+    },
+    {
+      "endpoint": "cockpit_command_history",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_command_history",
+      "path": "/api/cockpit/command/history"
+    },
+    {
+      "endpoint": "cockpit_command_latest",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_command_latest",
+      "path": "/api/cockpit/command/latest"
+    },
+    {
+      "endpoint": "cockpit_command_plan",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "cockpit_command_plan",
+      "path": "/api/cockpit/command/plan"
+    },
+    {
+      "endpoint": "cockpit_control_surface_js_asset",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_control_surface_js_asset",
+      "path": "/api/cockpit/control-surface/assets/js"
+    },
+    {
+      "endpoint": "cockpit_control_surface_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_control_surface_payload",
+      "path": "/api/cockpit/control-surface/payload"
+    },
+    {
+      "endpoint": "cockpit_convergence_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_convergence_actions",
+      "path": "/api/cockpit/convergence/actions"
+    },
+    {
+      "endpoint": "cockpit_convergence_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_convergence_cards",
+      "path": "/api/cockpit/convergence/cards"
+    },
+    {
+      "endpoint": "cockpit_convergence_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_convergence_payload",
+      "path": "/api/cockpit/convergence/payload"
+    },
+    {
+      "endpoint": "cockpit_convergence_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_convergence_status",
+      "path": "/api/cockpit/convergence/status"
+    },
+    {
+      "endpoint": "cockpit_convergence_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_convergence_stop_gate",
+      "path": "/api/cockpit/convergence/stop-gate"
+    },
+    {
+      "endpoint": "cockpit_dashboard_sync_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_dashboard_sync_payload",
+      "path": "/api/cockpit/dashboard-sync/payload"
+    },
+    {
+      "endpoint": "get_latest_hybrid_connected_result",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_latest_hybrid_connected_result",
+      "path": "/api/cockpit/hybrid/latest"
+    },
+    {
+      "endpoint": "post_build_hybrid_connected_result",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_build_hybrid_connected_result",
+      "path": "/api/cockpit/hybrid/result"
+    },
+    {
+      "endpoint": "cockpit_metadata_search_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_metadata_search_payload",
+      "path": "/api/cockpit/metadata-search/payload"
+    },
+    {
+      "endpoint": "cockpit_operation_visuals_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_operation_visuals_payload",
+      "path": "/api/cockpit/operation-visuals/payload"
+    },
+    {
+      "endpoint": "cockpit_operations_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_operations_payload",
+      "path": "/api/cockpit/operations/payload"
+    },
+    {
+      "endpoint": "operator_experience_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_experience_actions",
+      "path": "/api/cockpit/operator-experience/actions"
+    },
+    {
+      "endpoint": "operator_experience_css_asset",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_experience_css_asset",
+      "path": "/api/cockpit/operator-experience/assets/css"
+    },
+    {
+      "endpoint": "operator_experience_js_asset",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_experience_js_asset",
+      "path": "/api/cockpit/operator-experience/assets/js"
+    },
+    {
+      "endpoint": "operator_experience_buttons",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_experience_buttons",
+      "path": "/api/cockpit/operator-experience/buttons"
+    },
+    {
+      "endpoint": "operator_experience_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_experience_cards",
+      "path": "/api/cockpit/operator-experience/cards"
+    },
+    {
+      "endpoint": "operator_experience_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_experience_payload",
+      "path": "/api/cockpit/operator-experience/payload"
+    },
+    {
+      "endpoint": "operator_experience_preview",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_experience_preview",
+      "path": "/api/cockpit/operator-experience/preview/{operation_key}"
+    },
+    {
+      "endpoint": "operator_experience_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_experience_status",
+      "path": "/api/cockpit/operator-experience/status"
+    },
+    {
+      "endpoint": "operator_experience_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_experience_stop_gate",
+      "path": "/api/cockpit/operator-experience/stop-gate"
+    },
+    {
+      "endpoint": "cockpit_search_results_payload_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_search_results_payload_alias",
+      "path": "/api/cockpit/search-results/payload"
+    },
+    {
+      "endpoint": "cockpit_search_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_search_actions",
+      "path": "/api/cockpit/search/actions"
+    },
+    {
+      "endpoint": "cockpit_search_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_search_cards",
+      "path": "/api/cockpit/search/cards"
+    },
+    {
+      "endpoint": "cockpit_search_consolidated_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_search_consolidated_payload",
+      "path": "/api/cockpit/search/consolidated-payload"
+    },
+    {
+      "endpoint": "cockpit_search_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_search_stop_gate",
+      "path": "/api/cockpit/search/stop-gate"
+    },
+    {
+      "endpoint": "cockpit_source_ingestion_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_source_ingestion_actions",
+      "path": "/api/cockpit/source-ingestion/actions"
+    },
+    {
+      "endpoint": "cockpit_source_ingestion_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_source_ingestion_cards",
+      "path": "/api/cockpit/source-ingestion/cards"
+    },
+    {
+      "endpoint": "cockpit_source_ingestion_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_source_ingestion_payload",
+      "path": "/api/cockpit/source-ingestion/payload"
+    },
+    {
+      "endpoint": "cockpit_source_ingestion_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_source_ingestion_status",
+      "path": "/api/cockpit/source-ingestion/status"
+    },
+    {
+      "endpoint": "cockpit_source_ingestion_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_source_ingestion_stop_gate",
+      "path": "/api/cockpit/source-ingestion/stop-gate"
+    },
+    {
+      "endpoint": "get_surface_health",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_surface_health",
+      "path": "/api/cockpit/surface-health"
+    },
+    {
+      "endpoint": "get_surface_health_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_surface_health_status",
+      "path": "/api/cockpit/surface-health/status"
+    },
+    {
+      "endpoint": "get_surface_registry",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_surface_registry",
+      "path": "/api/cockpit/surface-registry"
+    },
+    {
+      "endpoint": "get_surface_registry_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_surface_registry_status",
+      "path": "/api/cockpit/surface-registry/status"
+    },
+    {
+      "endpoint": "cockpit_web_search_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_web_search_actions",
+      "path": "/api/cockpit/web-search/actions"
+    },
+    {
+      "endpoint": "cockpit_web_search_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_web_search_cards",
+      "path": "/api/cockpit/web-search/cards"
+    },
+    {
+      "endpoint": "cockpit_web_search_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_web_search_payload",
+      "path": "/api/cockpit/web-search/payload"
+    },
+    {
+      "endpoint": "cockpit_web_search_readiness",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_web_search_readiness",
+      "path": "/api/cockpit/web-search/readiness"
+    },
+    {
+      "endpoint": "command_bar_operator_experience_buttons",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "command_bar_operator_experience_buttons",
+      "path": "/api/command-bar/operator-experience/buttons"
+    },
+    {
+      "endpoint": "command_bar_operator_experience_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "command_bar_operator_experience_payload",
+      "path": "/api/command-bar/operator-experience/payload"
+    },
+    {
+      "endpoint": "command_bar_operator_experience_preview",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "command_bar_operator_experience_preview",
+      "path": "/api/command-bar/operator-experience/preview/{operation_key}"
+    },
+    {
+      "endpoint": "api_dashboard_actions_preview",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_actions_preview",
+      "path": "/api/dashboard/actions/preview/{action_key}"
+    },
+    {
+      "endpoint": "api_dashboard_actions_registry",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_actions_registry",
+      "path": "/api/dashboard/actions/registry"
+    },
+    {
+      "endpoint": "api_dashboard_actions_result",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_actions_result",
+      "path": "/api/dashboard/actions/result/{action_key}"
+    },
+    {
+      "endpoint": "api_dashboard_actions_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_actions_summary",
+      "path": "/api/dashboard/actions/summary"
+    },
+    {
+      "endpoint": "_claire_s1323_active_control_map_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_active_control_map_s1323",
+      "path": "/api/dashboard/active-control-map"
+    },
+    {
+      "endpoint": "api_dashboard_operator_action_result",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_operator_action_result",
+      "path": "/api/dashboard/operator-action/result/{action_key}"
+    },
+    {
+      "endpoint": "api_dashboard_operator_console_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_operator_console_actions",
+      "path": "/api/dashboard/operator-console/actions"
+    },
+    {
+      "endpoint": "api_dashboard_operator_console_contract",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_operator_console_contract",
+      "path": "/api/dashboard/operator-console/contract"
+    },
+    {
+      "endpoint": "api_dashboard_operator_console_preview",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_operator_console_preview",
+      "path": "/api/dashboard/operator-console/preview/{action_key}"
+    },
+    {
+      "endpoint": "api_dashboard_operator_console_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_operator_console_summary",
+      "path": "/api/dashboard/operator-console/summary"
+    },
+    {
+      "endpoint": "dashboard_search_provider_status_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_search_provider_status_alias",
+      "path": "/api/dashboard/search/provider/status"
+    },
+    {
+      "endpoint": "api_cockpit_dashboard_state",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_cockpit_dashboard_state",
+      "path": "/api/dashboard/state"
+    },
+    {
+      "endpoint": "api_dashboard_status_harmonized",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_status_harmonized",
+      "path": "/api/dashboard/status/harmonized"
+    },
+    {
+      "endpoint": "api_dashboard_visibility_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_dashboard_visibility_summary",
+      "path": "/api/dashboard/visibility/summary"
+    },
+    {
+      "endpoint": "emergence_causal_assess",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "emergence_causal_assess",
+      "path": "/api/emergence/causal-assess"
+    },
+    {
+      "endpoint": "emergence_causal_contract",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "emergence_causal_contract",
+      "path": "/api/emergence/causal-contract"
+    },
+    {
+      "endpoint": "evidence_governed_actions_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_governed_actions_alias",
+      "path": "/api/evidence/governed/actions"
+    },
+    {
+      "endpoint": "evidence_governed_cards_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_governed_cards_alias",
+      "path": "/api/evidence/governed/cards"
+    },
+    {
+      "endpoint": "evidence_governed_status_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_governed_status_alias",
+      "path": "/api/evidence/governed/status"
+    },
+    {
+      "endpoint": "evidence_quarantine_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_quarantine_actions",
+      "path": "/api/evidence/quarantine/actions"
+    },
+    {
+      "endpoint": "evidence_quarantine_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_quarantine_cards",
+      "path": "/api/evidence/quarantine/cards"
+    },
+    {
+      "endpoint": "evidence_quarantine_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_quarantine_payload",
+      "path": "/api/evidence/quarantine/payload"
+    },
+    {
+      "endpoint": "evidence_quarantine_policy",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_quarantine_policy",
+      "path": "/api/evidence/quarantine/policy"
+    },
+    {
+      "endpoint": "evidence_quarantine_review_queue",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_quarantine_review_queue",
+      "path": "/api/evidence/quarantine/review-queue"
+    },
+    {
+      "endpoint": "evidence_quarantine_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_quarantine_status",
+      "path": "/api/evidence/quarantine/status"
+    },
+    {
+      "endpoint": "evidence_quarantine_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_quarantine_stop_gate",
+      "path": "/api/evidence/quarantine/stop-gate"
+    },
+    {
+      "endpoint": "evidence_quarantine_store",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_quarantine_store",
+      "path": "/api/evidence/quarantine/store"
+    },
+    {
+      "endpoint": "evidence_source_intake",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_source_intake",
+      "path": "/api/evidence/source/intake"
+    },
+    {
+      "endpoint": "governed_live_probe_head",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "governed_live_probe_head",
+      "path": "/api/governed/live-probe/head"
+    },
+    {
+      "endpoint": "governed_live_probe_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "governed_live_probe_status",
+      "path": "/api/governed/live-probe/status"
+    },
+    {
+      "endpoint": "api_governed_runtime_spine",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_governed_runtime_spine",
+      "path": "/api/governed/runtime-spine"
+    },
+    {
+      "endpoint": "api_intelligence_modes",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_intelligence_modes",
+      "path": "/api/intelligence/modes"
+    },
+    {
+      "endpoint": "internet_dashboard_sync_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "internet_dashboard_sync_payload",
+      "path": "/api/internet/dashboard-sync/payload"
+    },
+    {
+      "endpoint": "internet_fetch_controlled_alias",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_fetch_controlled_alias",
+      "path": "/api/internet/fetch/controlled"
+    },
+    {
+      "endpoint": "internet_fetch_controlled_status_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "internet_fetch_controlled_status_alias",
+      "path": "/api/internet/fetch/controlled/status"
+    },
+    {
+      "endpoint": "internet_live_metadata_run_alias",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_live_metadata_run_alias",
+      "path": "/api/internet/live-metadata/run"
+    },
+    {
+      "endpoint": "internet_live_metadata_run_status_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "internet_live_metadata_run_status_alias",
+      "path": "/api/internet/live-metadata/run/status"
+    },
+    {
+      "endpoint": "internet_live_toggle_preflight_alias",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_live_toggle_preflight_alias",
+      "path": "/api/internet/live-toggle/preflight"
+    },
+    {
+      "endpoint": "internet_operator_experience_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "internet_operator_experience_payload",
+      "path": "/api/internet/operator-experience/payload"
+    },
+    {
+      "endpoint": "internet_proposals_export_alias",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_proposals_export_alias",
+      "path": "/api/internet/proposals/export"
+    },
+    {
+      "endpoint": "internet_proposals_review_alias",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_proposals_review_alias",
+      "path": "/api/internet/proposals/review"
+    },
+    {
+      "endpoint": "internet_proposals_status_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "internet_proposals_status_alias",
+      "path": "/api/internet/proposals/status"
+    },
+    {
+      "endpoint": "internet_provider_probe_alias",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_provider_probe_alias",
+      "path": "/api/internet/provider/probe"
+    },
+    {
+      "endpoint": "internet_s1040_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "internet_s1040_stop_gate",
+      "path": "/api/internet/s1040-stop-gate"
+    },
+    {
+      "endpoint": "internet_s928_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "internet_s928_stop_gate",
+      "path": "/api/internet/s928-stop-gate"
+    },
+    {
+      "endpoint": "center_route_contract",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "center_route_contract",
+      "path": "/api/lifecycle/center-route-contract"
+    },
+    {
+      "endpoint": "lifecycle_route_contracts",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "lifecycle_route_contracts",
+      "path": "/api/lifecycle/route-contracts"
+    },
+    {
+      "endpoint": "lifecycle_select_route",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "lifecycle_select_route",
+      "path": "/api/lifecycle/select-route"
+    },
+    {
+      "endpoint": "api_lifecycle_stage_registry",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_lifecycle_stage_registry",
+      "path": "/api/lifecycle/stage-registry"
+    },
+    {
+      "endpoint": "api_lifecycle_threshold_provenance",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_lifecycle_threshold_provenance",
+      "path": "/api/lifecycle/threshold-provenance"
+    },
+    {
+      "endpoint": "api_operational_control_plane",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_operational_control_plane",
+      "path": "/api/operational/control-plane"
+    },
+    {
+      "endpoint": "api_operational_readiness",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_operational_readiness",
+      "path": "/api/operational/readiness"
+    },
+    {
+      "endpoint": "api_operational_route_health",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_operational_route_health",
+      "path": "/api/operational/route-health"
+    },
+    {
+      "endpoint": "pipeline_activation",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "pipeline_activation",
+      "path": "/api/pipelines/activation"
+    },
+    {
+      "endpoint": "get_platform_browser_render",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_platform_browser_render",
+      "path": "/api/platform/browser/render"
+    },
+    {
+      "endpoint": "platform_dashboard_config",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "platform_dashboard_config",
+      "path": "/api/platform/dashboard-config"
+    },
+    {
+      "endpoint": "api_platform_update_plan",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_platform_update_plan",
+      "path": "/api/platform/update/plan"
+    },
+    {
+      "endpoint": "get_latest_portfolio_artifact",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_latest_portfolio_artifact",
+      "path": "/api/portfolio/artifacts/latest"
+    },
+    {
+      "endpoint": "get_portfolio_artifact",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_portfolio_artifact",
+      "path": "/api/portfolio/artifacts/{run_id}"
+    },
+    {
+      "endpoint": "post_promote_connected_metadata_to_evidence",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_promote_connected_metadata_to_evidence",
+      "path": "/api/search/evidence/promote"
+    },
+    {
+      "endpoint": "search_evidence_quarantine_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_evidence_quarantine_cards",
+      "path": "/api/search/evidence/quarantine/cards"
+    },
+    {
+      "endpoint": "search_governed_actions_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_governed_actions_alias",
+      "path": "/api/search/governed/actions"
+    },
+    {
+      "endpoint": "search_governed_plans_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_governed_plans_alias",
+      "path": "/api/search/governed/plans"
+    },
+    {
+      "endpoint": "get_governed_query_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_governed_query_actions",
+      "path": "/api/search/governed/query/actions"
+    },
+    {
+      "endpoint": "get_governed_query_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_governed_query_cards",
+      "path": "/api/search/governed/query/cards"
+    },
+    {
+      "endpoint": "search_governed_query_compile",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_governed_query_compile",
+      "path": "/api/search/governed/query/compile"
+    },
+    {
+      "endpoint": "search_governed_query_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_governed_query_payload",
+      "path": "/api/search/governed/query/payload"
+    },
+    {
+      "endpoint": "get_governed_query_policy",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_governed_query_policy",
+      "path": "/api/search/governed/query/policy"
+    },
+    {
+      "endpoint": "get_governed_query_sample",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_governed_query_sample",
+      "path": "/api/search/governed/query/sample"
+    },
+    {
+      "endpoint": "get_governed_query_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_governed_query_status",
+      "path": "/api/search/governed/query/status"
+    },
+    {
+      "endpoint": "get_search_lane_config",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_search_lane_config",
+      "path": "/api/search/lane-config"
+    },
+    {
+      "endpoint": "search_metadata_adapter_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_metadata_adapter_payload",
+      "path": "/api/search/metadata/adapter/payload"
+    },
+    {
+      "endpoint": "search_metadata_payload_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_metadata_payload_alias",
+      "path": "/api/search/metadata/payload"
+    },
+    {
+      "endpoint": "search_metadata_probe_manual_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_metadata_probe_manual_payload",
+      "path": "/api/search/metadata/probe/manual/payload"
+    },
+    {
+      "endpoint": "search_metadata_probe_manual_preflight",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_metadata_probe_manual_preflight",
+      "path": "/api/search/metadata/probe/manual/preflight"
+    },
+    {
+      "endpoint": "search_metadata_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_metadata_status",
+      "path": "/api/search/metadata/status"
+    },
+    {
+      "endpoint": "search_provider_manual_probe_preflight",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_provider_manual_probe_preflight",
+      "path": "/api/search/provider/manual-probe/preflight"
+    },
+    {
+      "endpoint": "post_connected_search_provider_query",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_connected_search_provider_query",
+      "path": "/api/search/provider/query"
+    },
+    {
+      "endpoint": "get_connected_search_provider_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_connected_search_provider_status",
+      "path": "/api/search/provider/status"
+    },
+    {
+      "endpoint": "get_provider_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_provider_actions",
+      "path": "/api/search/providers/actions"
+    },
+    {
+      "endpoint": "search_providers_capability_map",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_map",
+      "path": "/api/search/providers/capability-map"
+    },
+    {
+      "endpoint": "search_providers_capability_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_actions",
+      "path": "/api/search/providers/capability/actions"
+    },
+    {
+      "endpoint": "search_providers_capability_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_cards",
+      "path": "/api/search/providers/capability/cards"
+    },
+    {
+      "endpoint": "search_providers_capability_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_payload",
+      "path": "/api/search/providers/capability/payload"
+    },
+    {
+      "endpoint": "search_providers_capability_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_status",
+      "path": "/api/search/providers/capability/status"
+    },
+    {
+      "endpoint": "search_providers_capability_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_stop_gate",
+      "path": "/api/search/providers/capability/stop-gate"
+    },
+    {
+      "endpoint": "get_provider_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_provider_cards",
+      "path": "/api/search/providers/cards"
+    },
+    {
+      "endpoint": "search_providers_configuration_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_configuration_payload",
+      "path": "/api/search/providers/configuration/payload"
+    },
+    {
+      "endpoint": "get_provider_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_provider_payload",
+      "path": "/api/search/providers/payload"
+    },
+    {
+      "endpoint": "get_provider_policy",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_provider_policy",
+      "path": "/api/search/providers/policy"
+    },
+    {
+      "endpoint": "get_provider_readiness",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_provider_readiness",
+      "path": "/api/search/providers/readiness"
+    },
+    {
+      "endpoint": "get_provider_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_provider_status",
+      "path": "/api/search/providers/status"
+    },
+    {
+      "endpoint": "get_provider_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_provider_stop_gate",
+      "path": "/api/search/providers/stop-gate"
+    },
+    {
+      "endpoint": "search_readiness_audit",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_readiness_audit",
+      "path": "/api/search/readiness/audit"
+    },
+    {
+      "endpoint": "search_readiness_preflight_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "search_readiness_preflight_alias",
+      "path": "/api/search/readiness/preflight"
+    },
+    {
+      "endpoint": "api_source_lineage_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_source_lineage_status",
+      "path": "/api/source-lineage/status"
+    },
+    {
+      "endpoint": "read_source_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "read_source_actions",
+      "path": "/api/sources/actions"
+    },
+    {
+      "endpoint": "read_source_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "read_source_cards",
+      "path": "/api/sources/cards"
+    },
+    {
+      "endpoint": "sources_evidence_quarantine_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_evidence_quarantine_payload",
+      "path": "/api/sources/evidence/quarantine/payload"
+    },
+    {
+      "endpoint": "sources_gaps_payload_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_gaps_payload_alias",
+      "path": "/api/sources/gaps/payload"
+    },
+    {
+      "endpoint": "read_source_policy",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "read_source_policy",
+      "path": "/api/sources/policy"
+    },
+    {
+      "endpoint": "sources_policy_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_actions",
+      "path": "/api/sources/policy/actions"
+    },
+    {
+      "endpoint": "sources_policy_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_cards",
+      "path": "/api/sources/policy/cards"
+    },
+    {
+      "endpoint": "sources_policy_controls",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_controls",
+      "path": "/api/sources/policy/controls"
+    },
+    {
+      "endpoint": "sources_policy_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_payload",
+      "path": "/api/sources/policy/payload"
+    },
+    {
+      "endpoint": "sources_policy_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_status",
+      "path": "/api/sources/policy/status"
+    },
+    {
+      "endpoint": "sources_policy_stop_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_stop_gate",
+      "path": "/api/sources/policy/stop-gate"
+    },
+    {
+      "endpoint": "get_source_provider_actions_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_source_provider_actions_alias",
+      "path": "/api/sources/providers/actions"
+    },
+    {
+      "endpoint": "get_source_provider_cards_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_source_provider_cards_alias",
+      "path": "/api/sources/providers/cards"
+    },
+    {
+      "endpoint": "get_source_provider_readiness_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_source_provider_readiness_alias",
+      "path": "/api/sources/providers/readiness"
+    },
+    {
+      "endpoint": "read_source_registry",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "read_source_registry",
+      "path": "/api/sources/registry"
+    },
+    {
+      "endpoint": "read_source_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "read_source_status",
+      "path": "/api/sources/status"
+    },
+    {
+      "endpoint": "strategic_world_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "strategic_world_status",
+      "path": "/api/strategic-world/status"
+    },
+    {
+      "endpoint": "get_dependency_chain_proof",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dependency_chain_proof",
+      "path": "/api/system/dependency-chain-proof"
+    },
+    {
+      "endpoint": "get_endpoint_reconciliation",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_endpoint_reconciliation",
+      "path": "/api/system/endpoint-reconciliation"
+    },
+    {
+      "endpoint": "get_endpoint_standard_settings",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_endpoint_standard_settings",
+      "path": "/api/system/endpoint-standard-settings"
+    },
+    {
+      "endpoint": "get_system_file_readiness",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_system_file_readiness",
+      "path": "/api/system/file-readiness"
+    },
+    {
+      "endpoint": "get_industry_standard_endpoint_package",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_industry_standard_endpoint_package",
+      "path": "/api/system/industry-standard-endpoint-package"
+    },
+    {
+      "endpoint": "get_route_integrity",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_route_integrity",
+      "path": "/api/system/route-integrity"
+    },
+    {
+      "endpoint": "technology_base",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "technology_base",
+      "path": "/api/technology/base"
+    },
+    {
+      "endpoint": "technology_intelligence",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "technology_intelligence",
+      "path": "/api/technology/intelligence"
+    },
+    {
+      "endpoint": "technology_reemergence_classify",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "technology_reemergence_classify",
+      "path": "/api/technology/reemergence-classify"
+    },
+    {
+      "endpoint": "technology_reemergence_taxonomy",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "technology_reemergence_taxonomy",
+      "path": "/api/technology/reemergence-taxonomy"
+    },
+    {
+      "endpoint": "technology_search",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "technology_search",
+      "path": "/api/technology/search"
+    },
+    {
+      "endpoint": "open_web_update_approve",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_approve",
+      "path": "/api/update-governance/open-web/approve"
+    },
+    {
+      "endpoint": "open_web_update_install_apply",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_install_apply",
+      "path": "/api/update-governance/open-web/install/apply"
+    },
+    {
+      "endpoint": "open_web_update_install_stage",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_install_stage",
+      "path": "/api/update-governance/open-web/install/stage"
+    },
+    {
+      "endpoint": "open_web_update_install_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "open_web_update_install_status",
+      "path": "/api/update-governance/open-web/install/status/{update_id}"
+    },
+    {
+      "endpoint": "open_web_update_governance_panel",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "open_web_update_governance_panel",
+      "path": "/api/update-governance/open-web/panel"
+    },
+    {
+      "endpoint": "open_web_update_governance_readiness",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "open_web_update_governance_readiness",
+      "path": "/api/update-governance/open-web/readiness"
+    },
+    {
+      "endpoint": "open_web_update_request",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_request",
+      "path": "/api/update-governance/open-web/request"
+    },
+    {
+      "endpoint": "open_web_update_rollback_plan",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_rollback_plan",
+      "path": "/api/update-governance/open-web/rollback/plan"
+    },
+    {
+      "endpoint": "open_web_update_self_analysis",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_self_analysis",
+      "path": "/api/update-governance/open-web/self-analysis"
+    },
+    {
+      "endpoint": "api_update_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "api_update_status",
+      "path": "/api/update/status"
+    },
+    {
+      "endpoint": "web_body_read_authorization_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "web_body_read_authorization_actions",
+      "path": "/api/web/body-read/authorization/actions"
+    },
+    {
+      "endpoint": "web_body_read_authorization_cards",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "web_body_read_authorization_cards",
+      "path": "/api/web/body-read/authorization/cards"
+    },
+    {
+      "endpoint": "web_body_read_authorization_payload",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "web_body_read_authorization_payload",
+      "path": "/api/web/body-read/authorization/payload"
+    },
+    {
+      "endpoint": "web_body_read_execution_envelope_payload",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "web_body_read_execution_envelope_payload",
+      "path": "/api/web/body-read/execution-envelope/payload"
+    },
+    {
+      "endpoint": "web_body_read_risk_classifier",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "web_body_read_risk_classifier",
+      "path": "/api/web/body-read/risk-classifier"
+    },
+    {
+      "endpoint": "web_body_read_sanitizer_classify",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "web_body_read_sanitizer_classify",
+      "path": "/api/web/body-read/sanitizer/classify"
+    },
+    {
+      "endpoint": "get_authority_locks",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_authority_locks",
+      "path": "/api/workflow/authority-locks"
+    },
+    {
+      "endpoint": "propose_bounded_job",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "propose_bounded_job",
+      "path": "/api/workflow/bounded-job"
+    },
+    {
+      "endpoint": "get_workflow_counts",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_workflow_counts",
+      "path": "/api/workflow/counts"
+    },
+    {
+      "endpoint": "write_export_artifact",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "write_export_artifact",
+      "path": "/api/workflow/export"
+    },
+    {
+      "endpoint": "get_monitoring_panel",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_monitoring_panel",
+      "path": "/api/workflow/monitoring"
+    },
+    {
+      "endpoint": "propose_review_decision",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "propose_review_decision",
+      "path": "/api/workflow/review-decision"
+    },
+    {
+      "endpoint": "get_review_queue",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_review_queue",
+      "path": "/api/workflow/review-queue"
+    },
+    {
+      "endpoint": "get_autodesign_handoff",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_autodesign_handoff",
+      "path": "/autodesign/handoff"
+    },
+    {
+      "endpoint": "rebuild_autodesign_handoff",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "rebuild_autodesign_handoff",
+      "path": "/autodesign/handoff/rebuild"
+    },
+    {
+      "endpoint": "get_autodesign_handoff_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_autodesign_handoff_summary",
+      "path": "/autodesign/handoff/summary"
+    },
+    {
+      "endpoint": "get_cad_intent",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_cad_intent",
+      "path": "/cad/intent"
+    },
+    {
+      "endpoint": "canonical_dashboard_root_css",
+      "include_in_schema": false,
+      "methods": [
+        "GET"
+      ],
+      "name": "canonical_dashboard_root_css",
+      "path": "/claire_dashboard.css"
+    },
+    {
+      "endpoint": "canonical_dashboard_root_js",
+      "include_in_schema": false,
+      "methods": [
+        "GET"
+      ],
+      "name": "canonical_dashboard_root_js",
+      "path": "/claire_dashboard.js"
+    },
+    {
+      "endpoint": "canonical_dashboard",
+      "include_in_schema": false,
+      "methods": [
+        "GET"
+      ],
+      "name": "canonical_dashboard",
+      "path": "/dashboard"
+    },
+    {
+      "endpoint": "dashboard_actions_preview",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_actions_preview",
+      "path": "/dashboard/actions/preview/{action_key}"
+    },
+    {
+      "endpoint": "dashboard_actions_registry",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_actions_registry",
+      "path": "/dashboard/actions/registry"
+    },
+    {
+      "endpoint": "dashboard_actions_result",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_actions_result",
+      "path": "/dashboard/actions/result/{action_key}"
+    },
+    {
+      "endpoint": "dashboard_actions_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_actions_summary",
+      "path": "/dashboard/actions/summary"
+    },
+    {
+      "endpoint": "_claire_s1323_active_control_map_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_active_control_map_s1323",
+      "path": "/dashboard/active-control-map"
+    },
+    {
+      "endpoint": "canonical_dashboard_asset",
+      "include_in_schema": false,
+      "methods": [
+        "GET"
+      ],
+      "name": "canonical_dashboard_asset",
+      "path": "/dashboard/assets/{asset_name}"
+    },
+    {
+      "endpoint": "_claire_s1294_plateau_lock_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_audit_plateau_lock_s1294",
+      "path": "/dashboard/audit/plateau-lock"
+    },
+    {
+      "endpoint": "_claire_s1294_risk_pattern_review_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_audit_risk_pattern_review_s1294",
+      "path": "/dashboard/audit/risk-pattern-review"
+    },
+    {
+      "endpoint": "local_dashboard_alias",
+      "include_in_schema": false,
+      "methods": [
+        "GET"
+      ],
+      "name": "local_dashboard_alias",
+      "path": "/dashboard/local"
+    },
+    {
+      "endpoint": "dashboard_operator_action_result",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_operator_action_result",
+      "path": "/dashboard/operator-action/result/{action_key}"
+    },
+    {
+      "endpoint": "dashboard_operator_console_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_operator_console_actions",
+      "path": "/dashboard/operator-console/actions"
+    },
+    {
+      "endpoint": "dashboard_operator_console_contract",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_operator_console_contract",
+      "path": "/dashboard/operator-console/contract"
+    },
+    {
+      "endpoint": "dashboard_operator_console_preview",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_operator_console_preview",
+      "path": "/dashboard/operator-console/preview/{action_key}"
+    },
+    {
+      "endpoint": "dashboard_operator_console_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_operator_console_summary",
+      "path": "/dashboard/operator-console/summary"
+    },
+    {
+      "endpoint": "dashboard_payload",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_payload",
+      "path": "/dashboard/payload"
+    },
+    {
+      "endpoint": "dashboard_payload_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_payload_status",
+      "path": "/dashboard/payload/status"
+    },
+    {
+      "endpoint": "get_dashboard_runtime_truth",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dashboard_runtime_truth",
+      "path": "/dashboard/runtime-truth"
+    },
+    {
+      "endpoint": "cockpit_dashboard_state",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_dashboard_state",
+      "path": "/dashboard/state"
+    },
+    {
+      "endpoint": "dashboard_status_harmonized",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_status_harmonized",
+      "path": "/dashboard/status/harmonized"
+    },
+    {
+      "endpoint": "get_dashboard_endpoint_reconciliation",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dashboard_endpoint_reconciliation",
+      "path": "/dashboard/system/endpoint-reconciliation"
+    },
+    {
+      "endpoint": "get_dashboard_file_readiness",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dashboard_file_readiness",
+      "path": "/dashboard/system/file-readiness"
+    },
+    {
+      "endpoint": "get_dashboard_industry_standard_endpoint_package",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dashboard_industry_standard_endpoint_package",
+      "path": "/dashboard/system/industry-standard-endpoint-package"
+    },
+    {
+      "endpoint": "get_dashboard_route_integrity",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dashboard_route_integrity",
+      "path": "/dashboard/system/route-integrity"
+    },
+    {
+      "endpoint": "dashboard_open_web_update_governance_panel",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_open_web_update_governance_panel",
+      "path": "/dashboard/update-governance/panel"
+    },
+    {
+      "endpoint": "dashboard_visibility_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_visibility_summary",
+      "path": "/dashboard/visibility/summary"
+    },
+    {
+      "endpoint": "build_design_portal_from_run",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "build_design_portal_from_run",
+      "path": "/design-portal/build-from-run"
+    },
+    {
+      "endpoint": "get_design_portal_contract",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_design_portal_contract",
+      "path": "/design-portal/contract"
+    },
+    {
+      "endpoint": "get_design_portal_output",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_design_portal_output",
+      "path": "/design-portal/output"
+    },
+    {
+      "endpoint": "rebuild_design_portal_output",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "rebuild_design_portal_output",
+      "path": "/design-portal/output/rebuild"
+    },
+    {
+      "endpoint": "get_design_portal_output_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_design_portal_output_summary",
+      "path": "/design-portal/output/summary"
+    },
+    {
+      "endpoint": "get_design_portal_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_design_portal_status",
+      "path": "/design-portal/status"
+    },
+    {
+      "endpoint": "get_design_portal_validation",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_design_portal_validation",
+      "path": "/design-portal/validation"
+    },
+    {
+      "endpoint": "get_design_autodesign_handoff",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_design_autodesign_handoff",
+      "path": "/design/autodesign/handoff"
+    },
+    {
+      "endpoint": "get_design_portal_output_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_design_portal_output_alias",
+      "path": "/design/portal/output"
+    },
+    {
+      "endpoint": "get_discovery_route_audit",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_discovery_route_audit",
+      "path": "/discovery/route-audit"
+    },
+    {
+      "endpoint": "swagger_ui_html",
+      "include_in_schema": false,
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "swagger_ui_html",
+      "path": "/docs"
+    },
+    {
+      "endpoint": "swagger_ui_redirect",
+      "include_in_schema": false,
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "swagger_ui_redirect",
+      "path": "/docs/oauth2-redirect"
+    },
+    {
+      "endpoint": "evaluate",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "evaluate",
+      "path": "/evaluate"
+    },
+    {
+      "endpoint": "favicon",
+      "include_in_schema": false,
+      "methods": [
+        "GET"
+      ],
+      "name": "favicon",
+      "path": "/favicon.ico"
+    },
+    {
+      "endpoint": "governed_actions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "governed_actions",
+      "path": "/governed/actions"
+    },
+    {
+      "endpoint": "governed_decisions",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "governed_decisions",
+      "path": "/governed/decisions"
+    },
+    {
+      "endpoint": "governed_reviews",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "governed_reviews",
+      "path": "/governed/reviews"
+    },
+    {
+      "endpoint": "health",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "health",
+      "path": "/health"
+    },
+    {
+      "endpoint": "get_live_probe_adapter_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_live_probe_adapter_status",
+      "path": "/internet/live-probe/adapter/status"
+    },
+    {
+      "endpoint": "get_live_probe_contract",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_live_probe_contract",
+      "path": "/internet/live-probe/contract"
+    },
+    {
+      "endpoint": "get_live_probe_last",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_live_probe_last",
+      "path": "/internet/live-probe/last"
+    },
+    {
+      "endpoint": "post_live_probe_run",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_live_probe_run",
+      "path": "/internet/live-probe/run"
+    },
+    {
+      "endpoint": "post_live_probe_run_adapter",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_live_probe_run_adapter",
+      "path": "/internet/live-probe/run-adapter"
+    },
+    {
+      "endpoint": "post_live_probe_run_confirmed",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_live_probe_run_confirmed",
+      "path": "/internet/live-probe/run-confirmed"
+    },
+    {
+      "endpoint": "get_live_probe_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_live_probe_status",
+      "path": "/internet/live-probe/status"
+    },
+    {
+      "endpoint": "get_internet_operations_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_internet_operations_status",
+      "path": "/internet/operations/status"
+    },
+    {
+      "endpoint": "get_internet_readiness",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_internet_readiness",
+      "path": "/internet/readiness"
+    },
+    {
+      "endpoint": "rebuild_internet_readiness",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "rebuild_internet_readiness",
+      "path": "/internet/readiness/rebuild"
+    },
+    {
+      "endpoint": "get_internet_readiness_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_internet_readiness_summary",
+      "path": "/internet/readiness/summary"
+    },
+    {
+      "endpoint": "openapi",
+      "include_in_schema": false,
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "openapi",
+      "path": "/openapi.json"
+    },
+    {
+      "endpoint": "post_operator_command_parse",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_operator_command_parse",
+      "path": "/operator/command/parse"
+    },
+    {
+      "endpoint": "operator_cockpit_dashboard_state",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_cockpit_dashboard_state",
+      "path": "/operator/dashboard/state"
+    },
+    {
+      "endpoint": "get_operator_search_capabilities",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_operator_search_capabilities",
+      "path": "/operator/search/capabilities"
+    },
+    {
+      "endpoint": "get_operator_search_layer",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_operator_search_layer",
+      "path": "/operator/search/layer"
+    },
+    {
+      "endpoint": "post_operator_search_query",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_operator_search_query",
+      "path": "/operator/search/query"
+    },
+    {
+      "endpoint": "post_operator_web_search",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_operator_web_search",
+      "path": "/operator/search/web"
+    },
+    {
+      "endpoint": "post_operator_search_web_run_governed_probe",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "post_operator_search_web_run_governed_probe",
+      "path": "/operator/search/web/run-governed-probe"
+    },
+    {
+      "endpoint": "get_operator_web_search_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_operator_web_search_status",
+      "path": "/operator/search/web/status"
+    },
+    {
+      "endpoint": "operator_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_status",
+      "path": "/operator/status"
+    },
+    {
+      "endpoint": "evaluate",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "evaluate",
+      "path": "/pipeline/evaluate"
+    },
+    {
+      "endpoint": "get_platform_stop_go",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_platform_stop_go",
+      "path": "/platform/stop-go"
+    },
+    {
+      "endpoint": "download_latest_portfolio_artifact",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "download_latest_portfolio_artifact",
+      "path": "/portfolio/artifacts/latest/download"
+    },
+    {
+      "endpoint": "view_latest_portfolio_artifact",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "view_latest_portfolio_artifact",
+      "path": "/portfolio/artifacts/latest/view"
+    },
+    {
+      "endpoint": "download_portfolio_artifact",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "download_portfolio_artifact",
+      "path": "/portfolio/artifacts/{run_id}/download"
+    },
+    {
+      "endpoint": "view_portfolio_artifact",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "view_portfolio_artifact",
+      "path": "/portfolio/artifacts/{run_id}/view"
+    },
+    {
+      "endpoint": "get_dependency_chain_proof_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dependency_chain_proof_alias",
+      "path": "/proof/dependency-chain"
+    },
+    {
+      "endpoint": "get_full_e2e_proof_pack",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_full_e2e_proof_pack",
+      "path": "/proof/e2e"
+    },
+    {
+      "endpoint": "rebuild_full_e2e_proof_pack",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "rebuild_full_e2e_proof_pack",
+      "path": "/proof/e2e/rebuild"
+    },
+    {
+      "endpoint": "get_full_e2e_proof_pack_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_full_e2e_proof_pack_summary",
+      "path": "/proof/e2e/summary"
+    },
+    {
+      "endpoint": "get_platform_endpoint_smoke_proof",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_platform_endpoint_smoke_proof",
+      "path": "/proof/platform-smoke"
+    },
+    {
+      "endpoint": "rebuild_platform_endpoint_smoke_proof",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "rebuild_platform_endpoint_smoke_proof",
+      "path": "/proof/platform-smoke/rebuild"
+    },
+    {
+      "endpoint": "get_platform_endpoint_smoke_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_platform_endpoint_smoke_summary",
+      "path": "/proof/platform-smoke/summary"
+    },
+    {
+      "endpoint": "redoc_html",
+      "include_in_schema": false,
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "name": "redoc_html",
+      "path": "/redoc"
+    },
+    {
+      "endpoint": "get_route_audit",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_route_audit",
+      "path": "/routes/audit"
+    },
+    {
+      "endpoint": "rebuild_route_audit",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "rebuild_route_audit",
+      "path": "/routes/audit/rebuild"
+    },
+    {
+      "endpoint": "get_route_audit_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_route_audit_summary",
+      "path": "/routes/audit/summary"
+    },
+    {
+      "endpoint": "runtime_approve",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_approve",
+      "path": "/runtime/approve"
+    },
+    {
+      "endpoint": "continuous_cycles",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "continuous_cycles",
+      "path": "/runtime/continuous/cycles"
+    },
+    {
+      "endpoint": "continuous_pause",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "continuous_pause",
+      "path": "/runtime/continuous/pause"
+    },
+    {
+      "endpoint": "continuous_review_queue",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "continuous_review_queue",
+      "path": "/runtime/continuous/review-queue"
+    },
+    {
+      "endpoint": "continuous_scheduler_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "continuous_scheduler_status",
+      "path": "/runtime/continuous/scheduler/status"
+    },
+    {
+      "endpoint": "continuous_scheduler_tick",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "continuous_scheduler_tick",
+      "path": "/runtime/continuous/scheduler/tick"
+    },
+    {
+      "endpoint": "continuous_start",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "continuous_start",
+      "path": "/runtime/continuous/start"
+    },
+    {
+      "endpoint": "continuous_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "continuous_status",
+      "path": "/runtime/continuous/status"
+    },
+    {
+      "endpoint": "runtime_freeze",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_freeze",
+      "path": "/runtime/freeze"
+    },
+    {
+      "endpoint": "runtime_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_gate",
+      "path": "/runtime/gate"
+    },
+    {
+      "endpoint": "runtime_gate_trigger",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_gate_trigger",
+      "path": "/runtime/gate/trigger"
+    },
+    {
+      "endpoint": "runtime_loop",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_loop",
+      "path": "/runtime/loop"
+    },
+    {
+      "endpoint": "runtime_manifest",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_manifest",
+      "path": "/runtime/manifest"
+    },
+    {
+      "endpoint": "runtime_next",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_next",
+      "path": "/runtime/next"
+    },
+    {
+      "endpoint": "runtime_reject",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_reject",
+      "path": "/runtime/reject"
+    },
+    {
+      "endpoint": "runtime_replay",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_replay",
+      "path": "/runtime/replay"
+    },
+    {
+      "endpoint": "runtime_reset",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_reset",
+      "path": "/runtime/reset"
+    },
+    {
+      "endpoint": "runtime_safe_mode",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_safe_mode",
+      "path": "/runtime/safe_mode"
+    },
+    {
+      "endpoint": "runtime_start",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_start",
+      "path": "/runtime/start"
+    },
+    {
+      "endpoint": "get_runtime_state",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_runtime_state",
+      "path": "/runtime/state"
+    },
+    {
+      "endpoint": "runtime_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_status",
+      "path": "/runtime/status"
+    },
+    {
+      "endpoint": "runtime_stop",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_stop",
+      "path": "/runtime/stop"
+    },
+    {
+      "endpoint": "runtime_truth",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_truth",
+      "path": "/runtime/truth"
+    },
+    {
+      "endpoint": "rebuild_runtime_truth",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "rebuild_runtime_truth",
+      "path": "/runtime/truth/rebuild"
+    },
+    {
+      "endpoint": "runtime_truth_refresh",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_truth_refresh",
+      "path": "/runtime/truth/refresh"
+    },
+    {
+      "endpoint": "cockpit_fetch_map",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map",
+      "path": "/system/cockpit-fetch-map"
+    },
+    {
+      "endpoint": "cockpit_fetch_map_approved",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_approved",
+      "path": "/system/cockpit-fetch-map/approved"
+    },
+    {
+      "endpoint": "cockpit_fetch_map_audit",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_audit",
+      "path": "/system/cockpit-fetch-map/audit"
+    },
+    {
+      "endpoint": "cockpit_fetch_map_registration_proof",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_registration_proof",
+      "path": "/system/cockpit-fetch-map/registration-proof"
+    },
+    {
+      "endpoint": "cockpit_fetch_map_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_summary",
+      "path": "/system/cockpit-fetch-map/summary"
+    },
+    {
+      "endpoint": "active_cockpit_truth",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "active_cockpit_truth",
+      "path": "/system/cockpit-truth"
+    },
+    {
+      "endpoint": "active_route_truth",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "active_route_truth",
+      "path": "/system/route-truth"
+    },
+    {
+      "endpoint": "active_required_route_truth",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "active_required_route_truth",
+      "path": "/system/route-truth/required"
+    },
+    {
+      "endpoint": "runtime_execution_summary_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_execution_summary_alias",
+      "path": "/system/runtime-execution/summary"
+    },
+    {
+      "endpoint": "runtime_propagation_summary_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_propagation_summary_alias",
+      "path": "/system/runtime-propagation/summary"
+    },
+    {
+      "endpoint": "runtime_state_summary_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_state_summary_alias",
+      "path": "/system/runtime-state/summary"
+    },
+    {
+      "endpoint": "get_stop_go_report",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_stop_go_report",
+      "path": "/system/stop-go"
+    },
+    {
+      "endpoint": "universes",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "universes",
+      "path": "/universes"
+    },
+    {
+      "endpoint": "universe",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "universe",
+      "path": "/universes/{universe_id}"
+    },
+    {
+      "endpoint": "probe_universe",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "probe_universe",
+      "path": "/universes/{universe_id}/probe"
+    },
+    {
+      "endpoint": "get_automatic_update_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_automatic_update_status",
+      "path": "/updates/automatic/status"
+    },
+    {
+      "endpoint": "get_update_governance_lock_alias",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_update_governance_lock_alias",
+      "path": "/updates/governance/lock"
+    },
+    {
+      "endpoint": "get_update_governance_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_update_governance_status",
+      "path": "/updates/governance/status"
+    },
+    {
+      "endpoint": "get_update_governance_regression_lock",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_update_governance_regression_lock",
+      "path": "/updates/regression-lock"
+    },
+    {
+      "endpoint": "rebuild_update_governance_regression_lock",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "rebuild_update_governance_regression_lock",
+      "path": "/updates/regression-lock/rebuild"
+    },
+    {
+      "endpoint": "get_update_governance_regression_lock_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_update_governance_regression_lock_summary",
+      "path": "/updates/regression-lock/summary"
+    },
+    {
+      "endpoint": "get_rollback_update_plan",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_rollback_update_plan",
+      "path": "/updates/rollback-plan"
+    },
+    {
+      "endpoint": "create_rollback_update_plan",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "create_rollback_update_plan",
+      "path": "/updates/rollback-plan/create"
+    },
+    {
+      "endpoint": "get_rollback_update_plan_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_rollback_update_plan_summary",
+      "path": "/updates/rollback-plan/summary"
+    },
+    {
+      "endpoint": "get_rollback_status",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_rollback_status",
+      "path": "/updates/rollback/status"
+    },
+    {
+      "endpoint": "get_automatic_update_runner_gate",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_automatic_update_runner_gate",
+      "path": "/updates/runner-gate"
+    },
+    {
+      "endpoint": "rebuild_automatic_update_runner_gate",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "rebuild_automatic_update_runner_gate",
+      "path": "/updates/runner-gate/rebuild"
+    },
+    {
+      "endpoint": "get_automatic_update_runner_gate_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_automatic_update_runner_gate_summary",
+      "path": "/updates/runner-gate/summary"
+    },
+    {
+      "endpoint": "get_update_pack_staging",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_update_pack_staging",
+      "path": "/updates/staging"
+    },
+    {
+      "endpoint": "create_update_pack_staging",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "create_update_pack_staging",
+      "path": "/updates/staging/create"
+    },
+    {
+      "endpoint": "get_update_pack_staging_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_update_pack_staging_summary",
+      "path": "/updates/staging/summary"
+    },
+    {
+      "endpoint": "get_buildability_validation",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_buildability_validation",
+      "path": "/validation/buildability"
+    },
+    {
+      "endpoint": "rebuild_buildability_validation",
+      "include_in_schema": true,
+      "methods": [
+        "POST"
+      ],
+      "name": "rebuild_buildability_validation",
+      "path": "/validation/buildability/rebuild"
+    },
+    {
+      "endpoint": "get_buildability_validation_summary",
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
+      "name": "get_buildability_validation_summary",
+      "path": "/validation/buildability/summary"
+    }
+  ],
+  "generated_at": "2026-05-24T00:45:37.365981Z",
+  "route_count": 350,
+  "schema_version": "claire.active_endpoints.baseline.v1"
+}

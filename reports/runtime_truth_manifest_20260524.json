@@ -1,0 +1,30 @@
+{
+  "active_app": "main.py -> claire.app:create_app",
+  "acs2_status": "ACS2 trigger-score-route execution map",
+  "cad_export_enabled": false,
+  "cad_intent_status": "intent_review_ready",
+  "dashboard": "/dashboard",
+  "dashboard_state": "/api/dashboard/state",
+  "date": "2026-05-24",
+  "dependency_proof_status": "clean_e2e_review_proof",
+  "design_portal_status": "contract_ready",
+  "endpoint_reconciliation": {
+    "active": 65,
+    "duplicate": 7,
+    "missing": 0,
+    "remove": 93,
+    "stale_alias": 22
+  },
+  "frontend_caller_entries": 457,
+  "route_count": 350,
+  "runtime_truth_manifest": "endpoint-proof-lock",
+  "standards_next": [
+    "NIST",
+    "ISO",
+    "OWASP",
+    "SBOM",
+    "observability",
+    "install verification"
+  ],
+  "tag_recommendation": "v0.9-endpoint-proof-lock"
+}
