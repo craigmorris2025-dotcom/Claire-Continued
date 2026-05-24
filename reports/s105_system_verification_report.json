@@ -1,6 +1,6 @@
 {
   "forward_motion_allowed": true,
-  "generated_at": "2026-05-18T22:35:55.649757+00:00",
+  "generated_at": "2026-05-24T22:33:33.488259+00:00",
   "next_allowed_phase": "S106 canonical runtime spine map",
   "ok": true,
   "report_version": "v19.89.8-S105-CHECK",
@@ -18,7 +18,7 @@
         "runtime_truth_mutation_blocked": true,
         "runtime_truth_write_blocked": true
       },
-      "export_count": 78,
+      "export_count": 318,
       "export_dir_exists": true,
       "ok": true,
       "proof_status": "ready",
@@ -29,10 +29,10 @@
       "ok": true,
       "results": [
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\app.py",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\app.py",
           "has_app": true,
           "has_create_app": true,
-          "module": "claire.app",
+          "module": "runtime_core.app",
           "ok": true
         },
         {
@@ -121,48 +121,48 @@
       "files": [
         {
           "exists": true,
-          "path": "claire/api/governed_discovery_candidates.py",
+          "path": "runtime_core/api/governed_discovery_candidates.py",
           "size_bytes": 7548
         },
         {
           "exists": true,
-          "path": "claire/api/governed_useful_outputs.py",
+          "path": "runtime_core/api/governed_useful_outputs.py",
           "size_bytes": 2714
         },
         {
           "exists": true,
-          "path": "claire/api/governed_review_queue.py",
-          "size_bytes": 7614
+          "path": "runtime_core/api/governed_review_queue.py",
+          "size_bytes": 8338
         },
         {
           "exists": true,
-          "path": "claire/api/governed_reviewed_exports.py",
+          "path": "runtime_core/api/governed_reviewed_exports.py",
           "size_bytes": 2770
         },
         {
           "exists": true,
-          "path": "claire/api/governed_route_repeat.py",
-          "size_bytes": 1344
+          "path": "runtime_core/api/governed_route_repeat.py",
+          "size_bytes": 1362
         },
         {
           "exists": true,
-          "path": "claire/api/governed_demo_run.py",
-          "size_bytes": 3955
+          "path": "runtime_core/api/governed_demo_run.py",
+          "size_bytes": 3985
         },
         {
           "exists": true,
-          "path": "claire/api/governed_s85_s91_payload.py",
-          "size_bytes": 1638
+          "path": "runtime_core/api/governed_s85_s91_payload.py",
+          "size_bytes": 1644
         },
         {
           "exists": true,
-          "path": "claire/api/governed_s92_s98_cockpit_contracts.py",
-          "size_bytes": 9233
+          "path": "runtime_core/api/governed_s92_s98_cockpit_contracts.py",
+          "size_bytes": 9263
         },
         {
           "exists": true,
-          "path": "claire/api/governed_s99_s105_routes.py",
-          "size_bytes": 6822
+          "path": "runtime_core/api/governed_s99_s105_routes.py",
+          "size_bytes": 6828
         }
       ],
       "ok": true,
@@ -202,53 +202,53 @@
     "imports": {
       "imports": [
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\__init__.py",
-          "module": "claire",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\__init__.py",
+          "module": "runtime_core",
           "ok": true
         },
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_discovery_candidates.py",
-          "module": "claire.api.governed_discovery_candidates",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\api\\governed_discovery_candidates.py",
+          "module": "runtime_core.api.governed_discovery_candidates",
           "ok": true
         },
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_useful_outputs.py",
-          "module": "claire.api.governed_useful_outputs",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\api\\governed_useful_outputs.py",
+          "module": "runtime_core.api.governed_useful_outputs",
           "ok": true
         },
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_review_queue.py",
-          "module": "claire.api.governed_review_queue",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\api\\governed_review_queue.py",
+          "module": "runtime_core.api.governed_review_queue",
           "ok": true
         },
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_reviewed_exports.py",
-          "module": "claire.api.governed_reviewed_exports",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\api\\governed_reviewed_exports.py",
+          "module": "runtime_core.api.governed_reviewed_exports",
           "ok": true
         },
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_route_repeat.py",
-          "module": "claire.api.governed_route_repeat",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\api\\governed_route_repeat.py",
+          "module": "runtime_core.api.governed_route_repeat",
           "ok": true
         },
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_demo_run.py",
-          "module": "claire.api.governed_demo_run",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\api\\governed_demo_run.py",
+          "module": "runtime_core.api.governed_demo_run",
           "ok": true
         },
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_s85_s91_payload.py",
-          "module": "claire.api.governed_s85_s91_payload",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\api\\governed_s85_s91_payload.py",
+          "module": "runtime_core.api.governed_s85_s91_payload",
           "ok": true
         },
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_s92_s98_cockpit_contracts.py",
-          "module": "claire.api.governed_s92_s98_cockpit_contracts",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\api\\governed_s92_s98_cockpit_contracts.py",
+          "module": "runtime_core.api.governed_s92_s98_cockpit_contracts",
           "ok": true
         },
         {
-          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\claire\\api\\governed_s99_s105_routes.py",
-          "module": "claire.api.governed_s99_s105_routes",
+          "file": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime_core\\api\\governed_s99_s105_routes.py",
+          "module": "runtime_core.api.governed_s99_s105_routes",
           "ok": true
         }
       ],

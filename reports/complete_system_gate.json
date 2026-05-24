@@ -1,6 +1,6 @@
 {
   "gate": "claire_complete_system_gate",
-  "generated_at": "2026-05-18T22:35:37.487448+00:00",
+  "generated_at": "2026-05-21T20:36:39.716853+00:00",
   "status": "complete",
   "completion_percent": 100,
   "scores": {
@@ -74,6 +74,11 @@
       "status_code": 200,
       "ok": true
     },
+    "/dashboard": {
+      "mounted": true,
+      "status_code": 200,
+      "ok": true
+    },
     "/dashboard/payload": {
       "mounted": true,
       "status_code": 200,
@@ -84,62 +89,22 @@
       "status_code": 200,
       "ok": true
     },
-    "/api/dashboard/v4/payload": {
+    "/api/operational/control-plane": {
       "mounted": true,
       "status_code": 200,
       "ok": true
     },
-    "/dashboard/v4/payload": {
+    "/api/operational/route-health": {
       "mounted": true,
       "status_code": 200,
       "ok": true
     },
-    "/dashboard/v4": {
+    "/api/governed/runtime-spine": {
       "mounted": true,
       "status_code": 200,
       "ok": true
     },
-    "/dashboard/operator-v4": {
-      "mounted": true,
-      "status_code": 200,
-      "ok": true
-    },
-    "/dashboard/v4/assets/dashboard_v4.css": {
-      "mounted": true,
-      "status_code": 200,
-      "ok": true
-    },
-    "/dashboard/v4/assets/dashboard_v4.js": {
-      "mounted": true,
-      "status_code": 200,
-      "ok": true
-    },
-    "/api/dashboard/v5/payload": {
-      "mounted": true,
-      "status_code": 200,
-      "ok": true
-    },
-    "/dashboard/v5/payload": {
-      "mounted": true,
-      "status_code": 200,
-      "ok": true
-    },
-    "/dashboard/v5": {
-      "mounted": true,
-      "status_code": 200,
-      "ok": true
-    },
-    "/dashboard/final-user": {
-      "mounted": true,
-      "status_code": 200,
-      "ok": true
-    },
-    "/dashboard/v5/assets/dashboard_v5.css": {
-      "mounted": true,
-      "status_code": 200,
-      "ok": true
-    },
-    "/dashboard/v5/assets/dashboard_v5.js": {
+    "/api/cockpit/command/latest": {
       "mounted": true,
       "status_code": 200,
       "ok": true
