@@ -10,6 +10,10 @@ Active routes:
 - `GET /dashboard/system/standards-control-map`
 - `GET /api/system/industry-standard-endpoint-package`
 
+Machine manifest:
+
+- `reports/v1_0_standards_control_map_20260524.json`
+
 | framework | route | control | test | governance gate | runtime behavior |
 |---|---|---|---|---|---|
 | NIST AI RMF | `/api/emergence/causal-assess` | governed causal and emergence assessment | `tests/test_causal_emergence_contract_intake.py` | manual promotion required; runtime truth mutation blocked | route-vector assessment without route-truth mutation |

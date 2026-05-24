@@ -1,0 +1,28 @@
+{
+  "cad_artifact_endpoint": null,
+  "cad_export_enabled": false,
+  "cad_export_endpoint": null,
+  "cad_intent_endpoint": "/cad/intent",
+  "design_contract_endpoint": "/design-portal/contract",
+  "design_portal_status": "contract_ready",
+  "implementation_ready": false,
+  "operator_review_required": true,
+  "required_before_export": [
+    "accepted_design_portal_contract",
+    "validated_blueprint_package",
+    "operator_export_approval",
+    "cad_adapter_owner",
+    "artifact_retrieval_contract"
+  ],
+  "runtime_mutation_performed": false,
+  "schema_version": "claire.cad.export_contract.v1",
+  "status": "contract_prepared_export_disabled",
+  "supported_future_formats": [
+    "STEP",
+    "STL",
+    "OBJ",
+    "GLB",
+    "GLTF",
+    "DXF"
+  ]
+}

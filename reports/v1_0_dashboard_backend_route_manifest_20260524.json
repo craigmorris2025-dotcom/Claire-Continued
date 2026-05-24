@@ -1,0 +1,221 @@
+{
+  "active_control_endpoint": "/api/dashboard/active-control-map",
+  "control_count": 19,
+  "controls": [
+    {
+      "authority": null,
+      "control_id": "system_health_plateau",
+      "label": "System Health & Plateau Lock",
+      "primary_endpoint": "/api/audit/plateau-lock",
+      "secondary_endpoints": [
+        "/health",
+        "/dashboard/audit/plateau-lock"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "dashboard_payload",
+      "label": "Dashboard Payload",
+      "primary_endpoint": "/dashboard/payload",
+      "secondary_endpoints": [
+        "/dashboard/payload/status"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "dashboard_actions",
+      "label": "Dashboard Actions",
+      "primary_endpoint": "/dashboard/actions/registry",
+      "secondary_endpoints": [
+        "/dashboard/actions/summary",
+        "/dashboard/actions/preview/plan_search",
+        "/dashboard/actions/result/plan_search"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "operator_console",
+      "label": "Operator Console",
+      "primary_endpoint": "/dashboard/operator-console/actions",
+      "secondary_endpoints": [
+        "/dashboard/operator-console/contract",
+        "/dashboard/operator-console/summary",
+        "/dashboard/operator-console/preview/plan_search",
+        "/dashboard/operator-action/result/plan_search"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "cockpit_operations",
+      "label": "Cockpit Operations",
+      "primary_endpoint": "/api/cockpit/operations/payload",
+      "secondary_endpoints": [
+        "/api/cockpit/control-surface/payload",
+        "/api/cockpit/operation-visuals/payload",
+        "/api/cockpit/operator-experience/payload",
+        "/api/cockpit/operational-proof"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "command_bar",
+      "label": "Command Bar Operations",
+      "primary_endpoint": "/api/cockpit/command/latest",
+      "secondary_endpoints": [
+        "/api/cockpit/command/history",
+        "/api/cockpit/command/plan"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "governed_search",
+      "label": "Governed Search",
+      "primary_endpoint": "/api/search/governed/query/payload",
+      "secondary_endpoints": [
+        "/api/search/governed/query/cards",
+        "/api/search/governed/query/actions",
+        "/api/cockpit/search/consolidated-payload",
+        "/api/evidence/quarantine/status"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "provider_readiness",
+      "label": "Provider Readiness",
+      "primary_endpoint": "/api/search/providers/capability/payload",
+      "secondary_endpoints": [
+        "/api/search/providers/capability/status",
+        "/api/search/providers/configuration/payload",
+        "/api/search/provider/manual-probe/preflight",
+        "/api/search/providers/capability/stop-gate"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "metadata_live_probe",
+      "label": "Metadata / Live Probe Boundary",
+      "primary_endpoint": "/api/search/metadata/adapter/payload",
+      "secondary_endpoints": [
+        "/api/search/metadata/adapter/boundary",
+        "/api/search/metadata/probe/manual/status",
+        "/api/governed/live-probe/status",
+        "/api/cockpit/metadata-search/payload"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "evidence_review",
+      "label": "Evidence Review",
+      "primary_endpoint": "/api/evidence/quarantine/status",
+      "secondary_endpoints": [
+        "/api/evidence/source/intake",
+        "/api/evidence/quarantine/review-queue",
+        "/api/evidence/quarantine/actions",
+        "/api/evidence/quarantine/policy"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "source_registry_policy",
+      "label": "Source Registry & Policy",
+      "primary_endpoint": "/api/sources/policy/payload",
+      "secondary_endpoints": [
+        "/api/sources/policy/status",
+        "/api/sources/policy/controls",
+        "/api/evidence/source/intake"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "body_read_gates",
+      "label": "Body-Read Gates",
+      "primary_endpoint": "/api/cockpit/body-read-gate/status",
+      "secondary_endpoints": [
+        "/api/web/body-read/authorization/payload",
+        "/api/cockpit/body-read-gate/payload",
+        "/api/cockpit/body-read-gate/stop-gate"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "runtime_spine_lifecycle",
+      "label": "Runtime Spine & Lifecycle",
+      "primary_endpoint": "/runtime/status",
+      "secondary_endpoints": [
+        "/runtime/state",
+        "/runtime/continuous/status",
+        "/dashboard/runtime-truth"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "update_truth_promotion",
+      "label": "Update & Runtime Truth Preview",
+      "primary_endpoint": "/api/update-governance/open-web/panel",
+      "secondary_endpoints": [
+        "/api/platform/update/plan",
+        "/api/update-governance/open-web/readiness",
+        "/api/update-governance/open-web/install/status/live_portfolio_proof_update_probe",
+        "/dashboard/update-governance/panel"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "endpoint_standard_package",
+      "label": "Endpoint Standards Package",
+      "primary_endpoint": "/api/system/industry-standard-endpoint-package",
+      "secondary_endpoints": [
+        "/api/system/endpoint-standard-settings",
+        "/dashboard/system/industry-standard-endpoint-package",
+        "/openapi.json"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "endpoint_reconciliation",
+      "label": "Endpoint Reconciliation",
+      "primary_endpoint": "/api/system/endpoint-reconciliation",
+      "secondary_endpoints": [
+        "/dashboard/system/endpoint-reconciliation",
+        "/api/system/industry-standard-endpoint-package"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "dependency_chain_proof",
+      "label": "Dependency Chain Proof",
+      "primary_endpoint": "/api/system/dependency-chain-proof",
+      "secondary_endpoints": [
+        "/proof/dependency-chain",
+        "/api/system/endpoint-reconciliation",
+        "/api/system/industry-standard-endpoint-package"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "design_cad_contract",
+      "label": "Design / CAD Contract",
+      "primary_endpoint": "/design-portal/status",
+      "secondary_endpoints": [
+        "/design-portal/contract",
+        "/design-portal/output",
+        "/cad/intent"
+      ]
+    },
+    {
+      "authority": null,
+      "control_id": "live_intelligence_catalog",
+      "label": "Live Intelligence & Catalog",
+      "primary_endpoint": "/runtime/continuous/status",
+      "secondary_endpoints": [
+        "/runtime/continuous/cycles",
+        "/runtime/continuous/review-queue"
+      ]
+    }
+  ],
+  "dashboard_may_render_only": true,
+  "dashboard_route": "/dashboard",
+  "dashboard_state_endpoint": "/api/dashboard/state",
+  "schema_version": "claire.v1.dashboard_backend_route_manifest.v1",
+  "status": "ready"
+}

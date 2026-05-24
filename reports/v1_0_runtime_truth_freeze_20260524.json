@@ -1,0 +1,37 @@
+{
+  "active_app": "main.py -> claire.app:create_app",
+  "cad_export_contract_status": "contract_prepared_export_disabled",
+  "cad_export_enabled": false,
+  "cad_intent_status": "intent_review_ready",
+  "commit_bound_by_tag": true,
+  "contract_surfaces_frozen": true,
+  "dashboard_integration_frozen": true,
+  "date": "2026-05-24",
+  "dependency_proof_status": "clean_e2e_review_proof",
+  "design_portal_status": "contract_ready",
+  "endpoint_reconciliation_status": "clean",
+  "frontend_fetch_caller_entries": 458,
+  "frontend_unique_endpoint_count": 188,
+  "full_pytest_report": "reports/v1_0_hardening_full_pytest_20260524.txt",
+  "full_pytest_status": "passed",
+  "proof_boundaries": {
+    "automatic_update_apply_without_owner_gate": "blocked",
+    "autonomous_live_web_execution": "blocked",
+    "cad_export_implementation": "blocked",
+    "runtime_truth_mutation": "blocked"
+  },
+  "reconciliation_counts": {
+    "active": 66,
+    "duplicate": 7,
+    "missing": 0,
+    "remove": 93,
+    "stale_alias": 22
+  },
+  "route_count": 353,
+  "runtime_behavior_frozen": true,
+  "runtime_status": "ready",
+  "schema_version": "claire.v1.runtime_truth_freeze.v1",
+  "standards_control_map_status": "ready",
+  "status": "frozen",
+  "tag": "v1.0"
+}

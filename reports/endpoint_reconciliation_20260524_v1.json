@@ -1,0 +1,1895 @@
+{
+  "active_endpoint_file": "reports/v1_0_active_endpoints_20260524.json",
+  "active_route_count": 353,
+  "frontend_map_file": "reports/frontend_fetch_map_20260524_v1.json",
+  "rows": [
+    {
+      "alias_target": "/api/cockpit/body-read-gate/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/cockpit/body-read-gate/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_body_read_gate.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/command/plan",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/api/cockpit/command/plan",
+      "notes": "canonical endpoint is active but stale aliases also remain in frontend",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "duplicate"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 14,
+      "frontend_path": "/api/cockpit/control-surface/assets/css",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/active_authority_probe.html, frontend/cockpit/assets/claire_cockpit_control_surface_force_mount.js, frontend/cockpit/assets/claire_cockpit_operation_controls.js, frontend/cockpit/assets/claire_cockpit_operation_visual_controls.js, frontend/cockpit/assets/claire_cockpit_web_search_convergence.js",
+      "owner_file_count": 14,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/cockpit/control-surface/assets/js",
+      "backend_match": true,
+      "caller_count": 14,
+      "frontend_path": "/api/cockpit/control-surface/assets/js",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/active_authority_probe.html, frontend/cockpit/assets/claire_cockpit_control_surface_force_mount.js, frontend/cockpit/assets/claire_cockpit_operation_controls.js, frontend/cockpit/assets/claire_cockpit_operation_visual_controls.js, frontend/cockpit/assets/claire_cockpit_web_search_convergence.js",
+      "owner_file_count": 14,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/control-surface/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/cockpit/control-surface/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_cockpit_control_surface_force_mount.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/cockpit/control-surface/preview/",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/assets/claire_cockpit_control_surface_force_mount.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/cockpit/convergence/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/cockpit/convergence/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_cockpit_web_search_convergence.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/metadata-search/payload",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/api/cockpit/metadata-search/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_metadata_activation_preflight.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/operation-visuals/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/cockpit/operation-visuals/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_cockpit_operation_visual_controls.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/cockpit/operation-visuals/preview/",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/assets/claire_cockpit_operation_visual_controls.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/cockpit/operations/payload",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/api/cockpit/operations/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_cockpit_operation_controls.js, frontend/cockpit/assets/claire_cockpit_operation_visual_controls.js",
+      "owner_file_count": 2,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/operator-experience/assets/css",
+      "backend_match": true,
+      "caller_count": 23,
+      "frontend_path": "/api/cockpit/operator-experience/assets/css",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_cockpit_control_surface_force_mount.js, frontend/cockpit/assets/claire_cockpit_operation_controls.js, frontend/cockpit/assets/claire_cockpit_operation_visual_controls.js, frontend/cockpit/assets/claire_cockpit_web_search_convergence.js, frontend/cockpit/assets/claire_governed_body_read_gate.js",
+      "owner_file_count": 23,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/operator-experience/assets/js",
+      "backend_match": true,
+      "caller_count": 23,
+      "frontend_path": "/api/cockpit/operator-experience/assets/js",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_cockpit_control_surface_force_mount.js, frontend/cockpit/assets/claire_cockpit_operation_controls.js, frontend/cockpit/assets/claire_cockpit_operation_visual_controls.js, frontend/cockpit/assets/claire_cockpit_web_search_convergence.js, frontend/cockpit/assets/claire_governed_body_read_gate.js",
+      "owner_file_count": 23,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/operator-experience/payload",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/api/cockpit/operator-experience/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_operator_experience_console.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/evidence/quarantine/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/cockpit/search-results/payload",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/assets/claire_governed_search_result_review.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/api/cockpit/search/consolidated-payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/cockpit/search/consolidated-payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_controlled_metadata_search.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/source-ingestion/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/cockpit/source-ingestion/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_body_read_to_source_ingestion.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/web-search/actions",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/cockpit/web-search/actions",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_web_search_body_read_planning.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/web-search/cards",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/cockpit/web-search/cards",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_web_search_body_read_planning.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/web-search/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/cockpit/web-search/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_web_search_body_read_planning.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/cockpit/command/plan",
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/command",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/js/api.js, frontend/js/claire_canonical_fetch_client.js",
+      "owner_file_count": 2,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/commands",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/core-run-output/latest",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_operating_environment.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/dashboard/",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_file_origin_canonical_api_bridge.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/dashboard/active-control-map",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/api/dashboard/active-control-map",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/dashboard/payload",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shared/canonical_payload_adapter.js, frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.js",
+      "owner_file_count": 2,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/dashboard/payload/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shared/canonical_payload_adapter.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 4,
+      "frontend_path": "/api/dashboard/search/live",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/assets/js/claire_v18_74_dashboard_live_web_search_final_binding.js, frontend/command_center/modern/dashboard_primary_web_search_binding.js, frontend/command_center/modern/governed_live_search_ui_binding.js",
+      "owner_file_count": 3,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/dashboard/search/provider/probe",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/governed_provider_probe_ui_binding.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/search/providers/status",
+      "backend_match": true,
+      "caller_count": 3,
+      "frontend_path": "/api/dashboard/search/provider/status",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/modern/claire_cockpit_shell.js, frontend/command_center/modern/assets/js/claire_v18_74_dashboard_live_web_search_final_binding.js, frontend/command_center/modern/governed_provider_probe_ui_binding.js",
+      "owner_file_count": 3,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/dashboard/search/smoke/google",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/assets/js/claire_v18_74_dashboard_live_web_search_final_binding.js, frontend/command_center/modern/dashboard_primary_web_search_binding.js",
+      "owner_file_count": 2,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/dashboard/state",
+      "backend_match": true,
+      "caller_count": 4,
+      "frontend_path": "/api/dashboard/state",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js, frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 2,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/dashboard/system-status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/dashboard/v4/payload",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/operator_dashboard/v4/dashboard_v4.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/dashboard/v5/payload",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/operator_dashboard/v5/dashboard_v5.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/desktop-app/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/enhanced-interface/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/evaluate/async",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/evidence/quarantine/actions",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/evidence/governed/actions",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/assets/claire_governed_evidence_cards.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/api/evidence/quarantine/cards",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/evidence/governed/cards",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/assets/claire_governed_evidence_cards.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/api/evidence/quarantine/status",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/evidence/governed/status",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/assets/claire_governed_evidence_cards.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/api/evidence/quarantine/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/evidence/quarantine/payload",
+      "notes": "canonical endpoint is active but stale aliases also remain in frontend",
+      "owner_file": "frontend/cockpit/assets/claire_governed_quarantine_and_metadata_results.js",
+      "owner_file_count": 1,
+      "status": "duplicate"
+    },
+    {
+      "alias_target": "/api/evidence/source/intake",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/evidence/source/intake",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_search_intake_and_query_compiler.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/activation-check",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/activation-status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/audit",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/live-orchestration/run",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/live-orchestration/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/live-source-catalog/health-check",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/live-source-catalog/resolve",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/live-source-catalog/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/offline-universe/resolve",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/offline-universe/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/public-company-live/scan",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/public-company-live/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/public-company-sources",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/feeds/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/governance/audit",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/governance/evaluate",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/governed/live-probe/status",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/governed/live-probe/status",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/health",
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/health",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/internet/live-probe/run",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/internet/fetch/controlled",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/shell/assets/claire_modern_cockpit.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/internet/live-probe/run",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/internet/live-metadata/run",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/shell/assets/claire_modern_cockpit.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/internet/live-probe/status",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/internet/live-toggle/preflight",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/shell/assets/claire_modern_cockpit.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/api/update-governance/open-web/panel",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/internet/proposals/export",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/shell/assets/claire_modern_cockpit.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/api/update-governance/open-web/request",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/internet/proposals/review",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/shell/assets/claire_modern_cockpit.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/operator/search/web/run-governed-probe",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/internet/provider/probe",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/shell/assets/claire_modern_cockpit.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/launch/regression-lock",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/lifecycle/stage-registry",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/lifecycle/stage-registry",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/lifecycle/threshold-provenance",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/lifecycle/threshold-provenance",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/live-intelligence/history",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/monitor/MonitorSurface.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/live-intelligence/latest",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/monitor/MonitorSurface.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/live-intelligence/monitor/run",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/live-intelligence/scan-plan",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/monitor/MonitorSurface.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/live-intelligence/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js, frontend/monitor/MonitorSurface.js",
+      "owner_file_count": 2,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/modes/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/opportunities/generate",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/opportunities/run-candidate",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/opportunities/search-needed-solutions",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/platform/resolve",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/js/claire_canonical_fetch_client.js, frontend/js/platform.js",
+      "owner_file_count": 2,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/platform/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/js/claire_canonical_fetch_client.js, frontend/js/platform.js",
+      "owner_file_count": 2,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/portable/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/rescan",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/research/evidence",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/research/evidence/add",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/research/evidence/clear",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/research/evidence/pipeline-input",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/research/search",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/research/send-to-pipeline",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/runs",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/runtime/latest",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_operating_environment.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/runtime/state",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/search/governed/query/actions",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/governed/actions",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/assets/claire_governed_search_plan.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/api/search/governed/query/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/governed/plans",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/assets/claire_governed_search_plan.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/api/search/governed/query/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/governed/query/payload",
+      "notes": "canonical endpoint is active but stale aliases also remain in frontend",
+      "owner_file": "frontend/cockpit/assets/claire_governed_search_intake_and_query_compiler.js",
+      "owner_file_count": 1,
+      "status": "duplicate"
+    },
+    {
+      "alias_target": "/api/search/metadata/adapter/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/metadata/adapter/payload",
+      "notes": "canonical endpoint is active but stale aliases also remain in frontend",
+      "owner_file": "frontend/cockpit/assets/claire_governed_metadata_activation_preflight.js",
+      "owner_file_count": 1,
+      "status": "duplicate"
+    },
+    {
+      "alias_target": "/api/search/metadata/adapter/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/metadata/payload",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/assets/claire_governed_quarantine_and_metadata_results.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/api/search/metadata/probe/manual/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/metadata/probe/manual/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_metadata_activation_preflight.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/search/provider/query",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/provider/query",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/search/providers/actions",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/providers/actions",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_provider_readiness.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/search/providers/capability/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/providers/capability/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_provider_capability_and_source_policy.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/search/providers/cards",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/providers/cards",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_provider_readiness.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/search/providers/configuration/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/providers/configuration/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_metadata_activation_preflight.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/search/providers/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/providers/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_provider_readiness.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/search/providers/status",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/providers/status",
+      "notes": "canonical endpoint is active but stale aliases also remain in frontend",
+      "owner_file": "frontend/cockpit/assets/claire_governed_provider_readiness.js",
+      "owner_file_count": 1,
+      "status": "duplicate"
+    },
+    {
+      "alias_target": "/api/search/readiness/audit",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/search/readiness/preflight",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/assets/claire_governed_metadata_activation_preflight.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/api/signals/normalized",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/discover/DiscoverPipeline.js, frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 2,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/sources/actions",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/sources/actions",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_source_registry.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/sources/policy/payload",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/sources/policy/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_provider_capability_and_source_policy.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/sources/registry",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/sources/registry",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/claire_governed_source_registry.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/system/dependency-chain-proof",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/system/dependency-chain-proof",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/system/endpoint-reconciliation",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/system/endpoint-reconciliation",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/system/file-readiness",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/system/file-readiness",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/system/industry-standard-endpoint-package",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/system/industry-standard-endpoint-package",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/system/route-integrity",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/system/route-integrity",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/update-governance/open-web/approve",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/update-governance/open-web/approve",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/update-governance/open-web/install/apply",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/update-governance/open-web/install/apply",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/update-governance/open-web/install/stage",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/update-governance/open-web/install/stage",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/update/status",
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/update/check",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/js/update_ui.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/update/install",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/js/update_ui.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/platform/update/plan",
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/update/prepare",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/js/update_ui.js",
+      "owner_file_count": 1,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/updater/dashboard-status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/updater/install",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/updater/preview",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/export_dashboard/dashboard.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/api/validation/authority",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/api/workflow/bounded-job",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/workflow/bounded-job",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/safe_workflow_panel.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/workflow/counts",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/workflow/counts",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/safe_workflow_panel.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/workflow/export",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/workflow/export",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/safe_workflow_panel.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/workflow/monitoring",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/workflow/monitoring",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/safe_workflow_panel.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/workflow/review-decision",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/workflow/review-decision",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/safe_workflow_panel.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/api/workflow/review-queue",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/api/workflow/review-queue",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/safe_workflow_panel.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/cad/export-contract",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/cad/export-contract",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/dashboard/actions/registry",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/dashboard/actions/registry",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/consolidated/s422_s428_dashboard_action_wiring.js, frontend/cockpit/shell/assets/claire_modern_cockpit.js",
+      "owner_file_count": 2,
+      "status": "active"
+    },
+    {
+      "alias_target": "/dashboard/actions/summary",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/dashboard/actions/summary",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/consolidated/s422_s428_dashboard_action_wiring.js, frontend/cockpit/shell/assets/claire_modern_cockpit.js",
+      "owner_file_count": 2,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/dashboard/alignment/buttons",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/claire_dashboard_actions.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/dashboard/alignment/capabilities",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/claire_dashboard_actions.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/dashboard/alignment/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/claire_dashboard_actions.js, frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 2,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/dashboard/local",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/dashboard/local",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/index.html",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/dashboard/operator-console/contract",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/dashboard/operator-console/contract",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/dashboard_operator_console_contract.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/dashboard/payload",
+      "backend_match": true,
+      "caller_count": 52,
+      "frontend_path": "/dashboard/payload",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/enterprise_cockpit_workspace_shell.js, frontend/cockpit/assets/js/canonical_browser_session_persistence.js, frontend/cockpit/assets/js/continuous_browser_runtime_loop.js, frontend/cockpit/assets/js/continuous_runtime_presence.js, frontend/cockpit/assets/js/governed_evidence_basket.js",
+      "owner_file_count": 36,
+      "status": "active"
+    },
+    {
+      "alias_target": "/dashboard/payload/status",
+      "backend_match": true,
+      "caller_count": 25,
+      "frontend_path": "/dashboard/payload/status",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/enterprise_cockpit_workspace_shell.js, frontend/cockpit/modern/claire_cockpit_shell.js, frontend/cockpit/shared/canonical_payload_adapter.js, frontend/cockpit/shared/payload_adapter.js, frontend/cockpit/shared/payload_route_guard.js",
+      "owner_file_count": 23,
+      "status": "active"
+    },
+    {
+      "alias_target": "/dashboard/state",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/dashboard/state",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/dashboard/status/harmonized",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/dashboard/status/harmonized",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/shell/assets/claire_modern_cockpit.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/dashboard/v4/assets/dashboard_v4.css",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/operator_dashboard/v4/index.html",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/dashboard/v4/assets/dashboard_v4.js",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/operator_dashboard/v4/index.html",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/dashboard/v5/assets/dashboard_v5.css",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/operator_dashboard/v5/index.html",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/dashboard/v5/assets/dashboard_v5.js",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/operator_dashboard/v5/index.html",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/dashboard/visibility/summary",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/dashboard/visibility/summary",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/shell/assets/claire_modern_cockpit.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/evaluate",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/evaluate",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.html",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/internet/campaigns",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/internet/campaigns/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/internet/operations/dashboard",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/internet/operations/status",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/internet/operations/status",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/internet/ops/dashboard",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/internet/source-trust",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/internet/source-trust/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/operator/status",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/operator/status",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/portfolio/artifacts/latest/view",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/portfolio/artifacts/latest/view",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/runtime/continuous/pause",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/runtime/continuous/pause",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/enterprise_cockpit_continuous_runtime.js, frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.js",
+      "owner_file_count": 2,
+      "status": "active"
+    },
+    {
+      "alias_target": "/runtime/continuous/review-queue",
+      "backend_match": true,
+      "caller_count": 8,
+      "frontend_path": "/runtime/continuous/review-queue",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/enterprise_cockpit_continuous_runtime.js, frontend/cockpit/assets/enterprise_cockpit_workspace_shell.js, frontend/cockpit/shared/canonical_payload_adapter.js, frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.js, frontend/cockpit/shell/assets/claire_discovery_candidate_surface.js",
+      "owner_file_count": 8,
+      "status": "active"
+    },
+    {
+      "alias_target": "/runtime/continuous/start",
+      "backend_match": true,
+      "caller_count": 6,
+      "frontend_path": "/runtime/continuous/start",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/assets/enterprise_cockpit_continuous_runtime.js, frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.js, frontend/command_center/modern/claire_dashboard.html, frontend/command_center/modern/claire_dashboard.js",
+      "owner_file_count": 4,
+      "status": "active"
+    },
+    {
+      "alias_target": "/runtime/continuous/status",
+      "backend_match": true,
+      "caller_count": 6,
+      "frontend_path": "/runtime/continuous/status",
+      "notes": "canonical endpoint is active but stale aliases also remain in frontend",
+      "owner_file": "frontend/cockpit/assets/enterprise_cockpit_continuous_runtime.js, frontend/cockpit/assets/enterprise_cockpit_workspace_shell.js, frontend/cockpit/shared/canonical_payload_adapter.js, frontend/cockpit/shell/assets/claire_authored_enterprise_cockpit_shell.js, frontend/cockpit/shell/claire_canonical_fetch_map_lock.js",
+      "owner_file_count": 6,
+      "status": "duplicate"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/runtime/latest",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/command_center/modern/claire_operating_environment.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/runtime/state",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/runtime/state",
+      "notes": "canonical endpoint is active but stale aliases also remain in frontend",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "duplicate"
+    },
+    {
+      "alias_target": "/runtime/truth",
+      "backend_match": true,
+      "caller_count": 1,
+      "frontend_path": "/runtime/truth",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/command_center/modern/claire_single_screen_operator.js",
+      "owner_file_count": 1,
+      "status": "active"
+    },
+    {
+      "alias_target": "/system/cockpit-fetch-map",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/system/cockpit-fetch-map",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_cockpit_runtime_surface.js",
+      "owner_file_count": 2,
+      "status": "active"
+    },
+    {
+      "alias_target": "/system/cockpit-fetch-map/summary",
+      "backend_match": true,
+      "caller_count": 13,
+      "frontend_path": "/system/cockpit-fetch-map/summary",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_cockpit_authority_loader.js, frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_canonical_runtime_telemetry_layer.js, frontend/cockpit/shell/claire_canonical_sidebar_system_synchronization.js, frontend/cockpit/shell/claire_canonical_surface_wiring_pass.js",
+      "owner_file_count": 12,
+      "status": "active"
+    },
+    {
+      "alias_target": "/system/cockpit-truth",
+      "backend_match": true,
+      "caller_count": 2,
+      "frontend_path": "/system/cockpit-truth",
+      "notes": "frontend path directly matches active backend endpoint",
+      "owner_file": "frontend/cockpit/shared/canonical_payload_adapter.js, frontend/cockpit/shell/assets/claire_active_route_truth_panel.js",
+      "owner_file_count": 2,
+      "status": "active"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 11,
+      "frontend_path": "/system/duplicate-route-fail-test/summary",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_cockpit_authority_loader.js, frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_canonical_surface_wiring_pass.js, frontend/cockpit/shell/claire_file_origin_canonical_api_bridge.js, frontend/cockpit/shell/claire_live_payload_data_fill.js",
+      "owner_file_count": 11,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/system/operator-controls",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_operator_control_contracts.js, frontend/cockpit/shell/claire_safe_operator_action_console.js",
+      "owner_file_count": 2,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 3,
+      "frontend_path": "/system/operator-controls/summary",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_operator_control_contracts.js, frontend/cockpit/shell/claire_safe_operator_action_console.js",
+      "owner_file_count": 3,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/system/operator-controls/unavailable",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_operator_control_contracts.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/system/operator-events",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_operator_event_trail.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/system/operator-events/record",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_operator_event_trail.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/system/operator-events/summary",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_operator_event_trail.js",
+      "owner_file_count": 2,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/system/operator-surfaces",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_operator_surface_map.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/system/operator-surfaces/missing",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_operator_surface_map.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/system/operator-surfaces/summary",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_operator_surface_map.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/system/project-connection/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_cockpit_runtime_surface.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/system/project-inventory",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_project_inventory_surface.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 2,
+      "frontend_path": "/system/project-inventory/summary",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_project_inventory_surface.js",
+      "owner_file_count": 2,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 9,
+      "frontend_path": "/system/review-queue/summary",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_cockpit_authority_loader.js, frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_canonical_surface_wiring_pass.js, frontend/cockpit/shell/claire_file_origin_canonical_api_bridge.js, frontend/cockpit/shell/claire_live_payload_data_fill.js",
+      "owner_file_count": 8,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 11,
+      "frontend_path": "/system/route-owner-registry/summary",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_cockpit_authority_loader.js, frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_canonical_surface_wiring_pass.js, frontend/cockpit/shell/claire_file_origin_canonical_api_bridge.js, frontend/cockpit/shell/claire_live_payload_data_fill.js",
+      "owner_file_count": 11,
+      "status": "remove"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/system/runtime-execution/stages",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_runtime_execution_surface.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    },
+    {
+      "alias_target": "/runtime/status",
+      "backend_match": true,
+      "caller_count": 12,
+      "frontend_path": "/system/runtime-execution/summary",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_cockpit_authority_loader.js, frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_canonical_runtime_event_stream.js, frontend/cockpit/shell/claire_canonical_runtime_telemetry_layer.js, frontend/cockpit/shell/claire_canonical_surface_wiring_pass.js",
+      "owner_file_count": 11,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/runtime/continuous/status",
+      "backend_match": true,
+      "caller_count": 7,
+      "frontend_path": "/system/runtime-propagation/summary",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_cockpit_authority_loader.js, frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_canonical_surface_wiring_pass.js, frontend/cockpit/shell/claire_file_origin_canonical_api_bridge.js, frontend/cockpit/shell/claire_live_payload_data_fill.js",
+      "owner_file_count": 7,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": "/runtime/state",
+      "backend_match": true,
+      "caller_count": 15,
+      "frontend_path": "/system/runtime-state/summary",
+      "notes": "compatibility alias forwards to canonical backend owner",
+      "owner_file": "frontend/cockpit/shell/claire_canonical_cockpit_authority_loader.js, frontend/cockpit/shell/claire_canonical_cockpit_operational_cohesion.js, frontend/cockpit/shell/claire_canonical_fetch_map_lock.js, frontend/cockpit/shell/claire_canonical_runtime_event_stream.js, frontend/cockpit/shell/claire_canonical_runtime_telemetry_layer.js",
+      "owner_file_count": 13,
+      "status": "stale_alias"
+    },
+    {
+      "alias_target": null,
+      "backend_match": false,
+      "caller_count": 1,
+      "frontend_path": "/system/source-surface/status",
+      "notes": "inactive/legacy frontend surface; not loaded by canonical dashboard",
+      "owner_file": "frontend/cockpit/shell/claire_project_inventory_surface.js",
+      "owner_file_count": 1,
+      "status": "remove"
+    }
+  ],
+  "schema_version": "claire.endpoint_reconciliation_lock.v1",
+  "status_counts": {
+    "active": 66,
+    "duplicate": 7,
+    "remove": 93,
+    "stale_alias": 22
+  },
+  "unique_frontend_endpoint_count": 188
+}

@@ -6,7 +6,7 @@ Verified date: 2026-05-24
 
 - Active entry: `main.py` -> `claire.app:create_app`
 - Route mode: `canonical_route_manifest`
-- Active mounted routes: `350`
+- Active mounted routes: `353`
 - Canonical dashboard: `/dashboard`
 - Canonical dashboard state: `GET /api/dashboard/state`
 - Canonical dashboard assets: `frontend/command_center/modern/claire_dashboard.html`, `claire_dashboard.js`, and `claire_dashboard.css`
@@ -62,4 +62,4 @@ The remaining full-proof warnings are not missing-route blockers. They disclose 
 
 ## Current Next Target
 
-Attach standards and install-verification overlays only after this endpoint proof lock remains clean. Repo cleanup should use the reconciliation table so inactive frontend surfaces are removed intentionally instead of treated as missing backend truth.
+Freeze v1.0 only after the full-suite proof, regenerated manifests, refreshed architecture docs, and runtime truth freeze artifacts remain aligned. Standards overlays, safe cleanup, Design Portal CAD export contract, product narrative, and Proteus identity are now additive layers above the v0.9 proof lock.

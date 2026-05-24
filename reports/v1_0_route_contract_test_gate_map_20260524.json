@@ -1,0 +1,283 @@
+{
+  "pipeline_count": 14,
+  "routes": [
+    {
+      "failure_state": "untrusted_or_incomplete_source_packet",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "normalized source packet",
+      "owner_file": "claire.engines.knowledge_ingestion_engine",
+      "pipeline": "knowledge_ingestion",
+      "route": "portfolio",
+      "score": [
+        "source_trust",
+        "ingestion_completeness",
+        "traceability"
+      ],
+      "sequence": [
+        1,
+        2,
+        3
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "source_packet_received"
+    },
+    {
+      "failure_state": "signal_below_threshold",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "ranked signal set",
+      "owner_file": "claire.engines.signal_extraction_engine",
+      "pipeline": "signal_extraction",
+      "route": "portfolio",
+      "score": [
+        "signal_strength",
+        "source_trust",
+        "entity_confidence"
+      ],
+      "sequence": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "normalized_source_packet"
+    },
+    {
+      "failure_state": "market_context_too_weak",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "market formation thesis",
+      "owner_file": "claire.engines.market_formation_engine",
+      "pipeline": "market_formation",
+      "route": "portfolio",
+      "score": [
+        "market_pressure",
+        "adoption_velocity",
+        "category_clarity"
+      ],
+      "sequence": [
+        8,
+        9,
+        10
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "trend_cluster_detected"
+    },
+    {
+      "failure_state": "gap_not_actionable",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "qualified gap contract",
+      "owner_file": "claire.engines.market_gap_engine",
+      "pipeline": "market_gap",
+      "route": "breakthrough",
+      "score": [
+        "gap_validity",
+        "gap_severity",
+        "portfolio_relevance"
+      ],
+      "sequence": [
+        11,
+        12
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "qualified_market_thesis"
+    },
+    {
+      "failure_state": "portfolio_only_signal",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "breakthrough classification",
+      "owner_file": "claire.engines.breakthrough_synthesis_engine",
+      "pipeline": "breakthrough_synthesis",
+      "route": "breakthrough",
+      "score": [
+        "breakthrough_threshold",
+        "novelty",
+        "advancement_path_confidence"
+      ],
+      "sequence": [
+        13,
+        14,
+        15
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "qualified_gap_contract"
+    },
+    {
+      "failure_state": "technical_evidence_insufficient",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "technology intelligence contract",
+      "owner_file": "claire.technology.technology_intelligence",
+      "pipeline": "technology_intelligence",
+      "route": "tech_design_build",
+      "score": [
+        "technology_signal",
+        "readiness_level",
+        "dependency_confidence"
+      ],
+      "sequence": [
+        15,
+        16,
+        17
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "technical_breakthrough_classification"
+    },
+    {
+      "failure_state": "design_route_blocked",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "technical feasibility proof",
+      "owner_file": "claire.engines.technical_feasibility_engine",
+      "pipeline": "technical_feasibility",
+      "route": "tech_design_build",
+      "score": [
+        "buildability_readiness",
+        "viability",
+        "manufacturability"
+      ],
+      "sequence": [
+        18,
+        19,
+        20,
+        21
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "technology_intelligence_contract"
+    },
+    {
+      "failure_state": "blueprint_not_ready",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "design portal contract",
+      "owner_file": "claire.engines.system_design_engine",
+      "pipeline": "system_design",
+      "route": "tech_design_build",
+      "score": [
+        "design_route_readiness",
+        "dependency_risk",
+        "implementation_confidence"
+      ],
+      "sequence": [
+        21,
+        22
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "technical_feasibility_proof"
+    },
+    {
+      "failure_state": "cad_intent_unavailable",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "autodesign handoff and CAD intent",
+      "owner_file": "claire.engines.auto_design",
+      "pipeline": "auto_design",
+      "route": "tech_design_build",
+      "score": [
+        "handoff_completeness",
+        "cad_intent_readiness",
+        "traceability"
+      ],
+      "sequence": [
+        22
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "design_portal_contract"
+    },
+    {
+      "failure_state": "generic_portfolio_output",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "portfolio artifact",
+      "owner_file": "claire.portfolio.optimization_engine",
+      "pipeline": "portfolio_optimization",
+      "route": "portfolio",
+      "score": [
+        "trend_strength",
+        "thesis_quality",
+        "portfolio_relevance",
+        "risk_exposure"
+      ],
+      "sequence": [
+        23,
+        26,
+        27
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "portfolio_signal_family"
+    },
+    {
+      "failure_state": "no_buyer_fit",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "acquirer match set",
+      "owner_file": "claire.engines.acquirer_matching",
+      "pipeline": "acquirer_matching",
+      "route": "acquisition",
+      "score": [
+        "moat",
+        "value_capture",
+        "acquirer_fit"
+      ],
+      "sequence": [
+        28,
+        29
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "acquisition_signal_family"
+    },
+    {
+      "failure_state": "unclear_productization_path",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "productization path",
+      "owner_file": "claire.engines.productization_path_engine",
+      "pipeline": "productization_path",
+      "route": "portfolio",
+      "score": [
+        "productization_fit",
+        "delivery_confidence",
+        "operator_value"
+      ],
+      "sequence": [
+        27,
+        30
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "route_output_ready"
+    },
+    {
+      "failure_state": "deal_logic_unproven",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "deal exit model",
+      "owner_file": "claire.engines.deal_exit_modeling_engine",
+      "pipeline": "deal_exit_modeling",
+      "route": "acquisition",
+      "score": [
+        "deal_fit",
+        "exit_value",
+        "strategic_urgency"
+      ],
+      "sequence": [
+        29,
+        30
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "acquirer_match_set"
+    },
+    {
+      "failure_state": "package_blocked_until_traceable",
+      "governance_gate": "ACS2 trigger-score-route map; dashboard render only; runtime truth mutation blocked",
+      "output": "final package and recursive memory candidate",
+      "owner_file": "claire.engines.export_package_engine",
+      "pipeline": "export_package",
+      "route": "recursive_memory",
+      "score": [
+        "output_quality",
+        "traceability",
+        "replayability"
+      ],
+      "sequence": [
+        30,
+        "memory",
+        "replay"
+      ],
+      "test": "tests/test_pipeline_activation_registry.py",
+      "trigger": "route_quality_gate_passed"
+    }
+  ],
+  "schema_version": "claire.v1.route_contract_test_gate_map.v1",
+  "status": "ready"
+}

@@ -13,6 +13,10 @@ Active contract surfaces:
 - `GET /cad/intent`
 - `GET /cad/export-contract`
 
+Machine manifest:
+
+- `reports/v1_0_cad_export_contract_20260524.json`
+
 Current state:
 
 - Design Portal is contract-ready.

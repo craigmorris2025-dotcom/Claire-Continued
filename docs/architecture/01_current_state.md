@@ -10,11 +10,19 @@ Baseline artifacts:
 - Final endpoint dump: `reports/backend_final_20260524_ACTIVE_ENDPOINTS.json`
 - Frontend fetch map: `reports/frontend_fetch_map_20260524.txt`
 - Endpoint reconciliation: `reports/endpoint_reconciliation_20260524.md`
+- v1.0 full pytest: `reports/v1_0_hardening_full_pytest_20260524.txt`
+- v1.0 active endpoints: `reports/v1_0_active_endpoints_20260524.json`
+- v1.0 runtime behavior: `reports/v1_0_runtime_behavior_manifest_20260524.json`
+- v1.0 runtime truth freeze: `reports/v1_0_runtime_truth_freeze_20260524.json`
+- v1.0 route/test/gate map: `reports/v1_0_route_contract_test_gate_map_20260524.json`
+- v1.0 standards map: `reports/v1_0_standards_control_map_20260524.json`
+- v1.0 CAD export contract: `reports/v1_0_cad_export_contract_20260524.json`
+- v1.0 dashboard/backend route map: `reports/v1_0_dashboard_backend_route_manifest_20260524.json`
 
 Runtime truth:
 
 - active app: `main.py -> claire.app:create_app`
-- route count: `350`
+- route count: `353`
 - dashboard: `GET /dashboard`
 - dashboard state: `GET /api/dashboard/state`
 - active control map: `GET /api/dashboard/active-control-map`
@@ -23,7 +31,7 @@ Runtime truth:
 
 Endpoint reconciliation:
 
-- `active`: 65
+- `active`: 66
 - `stale_alias`: 22
 - `duplicate`: 7
 - `remove`: 93
@@ -36,6 +44,7 @@ Design and CAD:
 - `GET /design-portal/output`: mounted
 - `POST /design-portal/build-from-run`: mounted
 - `GET /cad/intent`: `intent_review_ready`
+- `GET /cad/export-contract`: `contract_prepared_export_disabled`
 - CAD export: disabled
 
 ACS2:
@@ -58,3 +67,4 @@ Verification:
 - operator-experience tests passed
 - ACS2 trigger-score-route tests passed
 - full pytest passed with only existing `datetime.utcnow()` deprecation warnings
+- v1.0 full-system pytest passed with the same known deprecation warnings
