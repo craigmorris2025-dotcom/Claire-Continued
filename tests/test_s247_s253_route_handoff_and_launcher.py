@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.cockpit_launcher_handoff_metadata import get_launcher_handoff_metadata
-from claire.api.cockpit_route_handoff_manifest import get_cockpit_route_handoff_manifest
+from runtime_core.api.cockpit_launcher_handoff_metadata import get_launcher_handoff_metadata
+from runtime_core.api.cockpit_route_handoff_manifest import get_cockpit_route_handoff_manifest
 
 
 ROOT = Path(__file__).resolve().parents[1]

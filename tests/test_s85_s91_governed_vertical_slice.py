@@ -3,13 +3,13 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from claire.api.governed_discovery_candidates import build_discovery_candidate, build_route_discovery_candidates
-from claire.api.governed_useful_outputs import build_useful_output_candidate
-from claire.api.governed_review_queue import decide_review_item, enqueue_for_review, list_review_queue
-from claire.api.governed_reviewed_exports import export_reviewed_output
-from claire.api.governed_route_repeat import build_route_repeat_payload
-from claire.api.governed_demo_run import build_demo_contract, build_demo_readiness_proof
-from claire.api.governed_s85_s91_payload import build_s85_s91_payload
+from runtime_core.api.governed_discovery_candidates import build_discovery_candidate, build_route_discovery_candidates
+from runtime_core.api.governed_useful_outputs import build_useful_output_candidate
+from runtime_core.api.governed_review_queue import decide_review_item, enqueue_for_review, list_review_queue
+from runtime_core.api.governed_reviewed_exports import export_reviewed_output
+from runtime_core.api.governed_route_repeat import build_route_repeat_payload
+from runtime_core.api.governed_demo_run import build_demo_contract, build_demo_readiness_proof
+from runtime_core.api.governed_s85_s91_payload import build_s85_s91_payload
 
 def sample_evidence():
     return {

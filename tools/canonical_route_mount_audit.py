@@ -50,13 +50,13 @@ def load_app() -> Any:
     ensure_import_path()
     errors: List[str] = []
     try:
-        module = importlib.import_module("claire.app")
+        module = importlib.import_module("runtime_core.app")
         if hasattr(module, "create_app"):
             return module.create_app()
         if hasattr(module, "app"):
             return module.app
     except Exception as exc:
-        errors.append(f"claire.app failed: {exc!r}")
+        errors.append(f"runtime_core.app failed: {exc!r}")
     try:
         module = importlib.import_module("main")
         if hasattr(module, "app"):
@@ -231,7 +231,7 @@ def write_markdown(report: Dict[str, Any]) -> str:
     lines.append("## Recommendations")
     lines.append("")
     for item in report["recommendations"]:
-        lines.append(f"- **{item['priority']}** `{item['area']}` `{item.get('route', '')}` — {item['recommendation']}")
+        lines.append(f"- **{item['priority']}** `{item['area']}` `{item.get('route', '')}` â€” {item['recommendation']}")
     lines.append("")
     lines.append("## Next Build")
     lines.append("")

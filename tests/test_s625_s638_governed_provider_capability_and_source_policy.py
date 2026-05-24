@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s625_provider_capability_map_preserves_execution_blocks():
-    module = importlib.import_module("claire.governance.governed_provider_capability_map")
+    module = importlib.import_module("runtime_core.governance.governed_provider_capability_map")
     payload = module.get_provider_capability_map()
 
     assert payload["status"] == "provider_capability_map_ready"
@@ -25,7 +25,7 @@ def test_s625_provider_capability_map_preserves_execution_blocks():
 
 
 def test_s631_provider_cards_and_actions_are_cockpit_ready_not_executable():
-    module = importlib.import_module("claire.governance.governed_provider_capability_map")
+    module = importlib.import_module("runtime_core.governance.governed_provider_capability_map")
     cards = module.build_provider_capability_cards()
     actions = module.build_provider_capability_actions()
 
@@ -38,7 +38,7 @@ def test_s631_provider_cards_and_actions_are_cockpit_ready_not_executable():
 
 
 def test_s632_source_policy_controls_are_visible_but_do_not_unlock_authority():
-    module = importlib.import_module("claire.governance.governed_source_policy_controls")
+    module = importlib.import_module("runtime_core.governance.governed_source_policy_controls")
     payload = module.get_source_policy_controls()
 
     assert payload["status"] == "source_policy_controls_ready"
@@ -52,7 +52,7 @@ def test_s632_source_policy_controls_are_visible_but_do_not_unlock_authority():
 
 
 def test_s638_source_policy_cards_actions_and_stop_gate():
-    module = importlib.import_module("claire.governance.governed_source_policy_controls")
+    module = importlib.import_module("runtime_core.governance.governed_source_policy_controls")
     cards = module.build_source_policy_cards()
     actions = module.build_source_policy_actions()
     stop_gate = module.get_source_policy_stop_gate()
@@ -67,7 +67,7 @@ def test_s638_source_policy_cards_actions_and_stop_gate():
 
 
 def test_s625_s638_routes_are_registered_on_create_app():
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     client = TestClient(app_module.create_app())
 
     routes = [

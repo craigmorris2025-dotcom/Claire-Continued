@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from claire.app import create_app
+from runtime_core.app import create_app
 
 
 def build_active_endpoint_payload() -> dict[str, object]:
@@ -30,7 +30,7 @@ def build_active_endpoint_payload() -> dict[str, object]:
         )
     return {
         "schema_version": "claire.active_endpoints.v1",
-        "active_app": "main.py -> claire.app:create_app",
+        "active_app": "main.py -> runtime_core.app:create_app",
         "route_count": len(endpoints),
         "endpoint_count": len(endpoints),
         "endpoints": sorted(endpoints, key=lambda item: (str(item["path"]), str(item["methods"]))),

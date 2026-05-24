@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s23_runtime_continuity_builds_and_preserves_authority():
-    module = importlib.import_module("claire.api.runtime_continuity_visualization")
+    module = importlib.import_module("runtime_core.api.runtime_continuity_visualization")
     payload = {
         "governed_runtime_timeline": {
             "summary": {"last_terminal_state": "portfolio_action_ready", "last_payload_freshness": "fresh"},
@@ -39,7 +39,7 @@ def test_s23_runtime_continuity_builds_and_preserves_authority():
 
 
 def test_s23_runtime_continuity_detects_degraded_route():
-    module = importlib.import_module("claire.api.runtime_continuity_visualization")
+    module = importlib.import_module("runtime_core.api.runtime_continuity_visualization")
     payload = {
         "governed_route_activity_overlay": {
             "summary": {"state_counts": {"degraded": 1}},
@@ -51,7 +51,7 @@ def test_s23_runtime_continuity_detects_degraded_route():
 
 
 def test_s23_attach_runtime_continuity_preserves_payload():
-    module = importlib.import_module("claire.api.runtime_continuity_visualization")
+    module = importlib.import_module("runtime_core.api.runtime_continuity_visualization")
     updated = module.attach_runtime_continuity({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

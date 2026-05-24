@@ -55,7 +55,7 @@ def sample_response_index():
 
 
 def test_s41r13_builds_route_plateau_index():
-    module = importlib.import_module("claire.api.governed_operator_route_plateau")
+    module = importlib.import_module("runtime_core.api.governed_operator_route_plateau")
     index = module.build_operator_route_plateau_index(sample_registry(), sample_response_index())
 
     assert index["route_count"] == 2
@@ -67,7 +67,7 @@ def test_s41r13_builds_route_plateau_index():
 
 
 def test_s41r14_missing_artifact_registry():
-    module = importlib.import_module("claire.api.governed_operator_route_plateau")
+    module = importlib.import_module("runtime_core.api.governed_operator_route_plateau")
     index = module.build_operator_route_plateau_index(sample_registry(), sample_response_index())
     missing = module.build_missing_route_artifact_registry(index)
 
@@ -78,7 +78,7 @@ def test_s41r14_missing_artifact_registry():
 
 
 def test_s41r15_plateau_verification_passes_read_only_contracts():
-    module = importlib.import_module("claire.api.governed_operator_route_plateau")
+    module = importlib.import_module("runtime_core.api.governed_operator_route_plateau")
     index = module.build_operator_route_plateau_index(sample_registry(), sample_response_index())
     missing = module.build_missing_route_artifact_registry(index)
     verification = module.verify_operator_route_plateau(index, missing)
@@ -90,7 +90,7 @@ def test_s41r15_plateau_verification_passes_read_only_contracts():
 
 
 def test_s41r16_writes_route_plateau_artifacts(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_operator_route_plateau")
+    module = importlib.import_module("runtime_core.api.governed_operator_route_plateau")
     source = tmp_path / "output" / "operator_route_contracts"
     source.mkdir(parents=True)
     (source / "operator_route_contract_registry.json").write_text(json.dumps(sample_registry()), encoding="utf-8")

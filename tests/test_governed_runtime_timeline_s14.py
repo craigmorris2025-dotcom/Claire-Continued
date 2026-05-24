@@ -4,14 +4,14 @@ import importlib
 
 
 def test_governed_runtime_timeline_module_imports():
-    module = importlib.import_module("claire.api.governed_runtime_timeline")
+    module = importlib.import_module("runtime_core.api.governed_runtime_timeline")
     assert hasattr(module, "project_governed_runtime_timeline")
     assert hasattr(module, "attach_governed_runtime_timeline")
     assert hasattr(module, "register_governed_runtime_timeline_routes")
 
 
 def test_governed_runtime_timeline_preserves_blocked_authority():
-    module = importlib.import_module("claire.api.governed_runtime_timeline")
+    module = importlib.import_module("runtime_core.api.governed_runtime_timeline")
 
     payload = {
         "runtime": {
@@ -48,7 +48,7 @@ def test_governed_runtime_timeline_preserves_blocked_authority():
 
 
 def test_attach_governed_runtime_timeline_adds_projection_without_replacing_payload():
-    module = importlib.import_module("claire.api.governed_runtime_timeline")
+    module = importlib.import_module("runtime_core.api.governed_runtime_timeline")
 
     payload = {
         "runtime": {"route": "discovery", "terminal_state": "discovery_ready"},
@@ -64,7 +64,7 @@ def test_attach_governed_runtime_timeline_adds_projection_without_replacing_payl
 
 
 def test_timeline_tracked_dimensions_are_present():
-    module = importlib.import_module("claire.api.governed_runtime_timeline")
+    module = importlib.import_module("runtime_core.api.governed_runtime_timeline")
     timeline = module.project_governed_runtime_timeline({})
 
     required = {

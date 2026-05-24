@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.bounded_web_job_record_contract import get_bounded_web_job_record_contract
-from claire.api.operator_review_queue_contract import get_review_queue_contract
+from runtime_core.api.bounded_web_job_record_contract import get_bounded_web_job_record_contract
+from runtime_core.api.operator_review_queue_contract import get_review_queue_contract
 
 
 def test_s261_s267_review_queue_contract_is_manual_and_non_mutating():

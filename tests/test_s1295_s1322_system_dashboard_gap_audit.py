@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def test_s1295_s1322_system_dashboard_gap_audit_runs_and_writes_reports():
-    from claire.audit.system_dashboard_gap_audit import build_system_dashboard_gap_audit
+    from runtime_core.audit.system_dashboard_gap_audit import build_system_dashboard_gap_audit
 
     report = build_system_dashboard_gap_audit(Path.cwd(), write_report=True)
 
@@ -17,7 +17,7 @@ def test_s1295_s1322_system_dashboard_gap_audit_runs_and_writes_reports():
 
 
 def test_s1295_s1322_gap_audit_uses_actual_create_app_routes_and_frontend_files():
-    from claire.audit.system_dashboard_gap_audit import build_system_dashboard_gap_audit
+    from runtime_core.audit.system_dashboard_gap_audit import build_system_dashboard_gap_audit
 
     report = build_system_dashboard_gap_audit(Path.cwd(), write_report=False)
     paths = {route["path"] for route in report["backend"]["routes"]}
@@ -31,7 +31,7 @@ def test_s1295_s1322_gap_audit_uses_actual_create_app_routes_and_frontend_files(
 
 
 def test_s1295_s1322_gap_audit_identifies_operation_capabilities():
-    from claire.audit.system_dashboard_gap_audit import build_system_dashboard_gap_audit
+    from runtime_core.audit.system_dashboard_gap_audit import build_system_dashboard_gap_audit
 
     report = build_system_dashboard_gap_audit(Path.cwd(), write_report=False)
     keys = {capability["key"] for capability in report["capabilities"]}
@@ -42,3 +42,6 @@ def test_s1295_s1322_gap_audit_identifies_operation_capabilities():
     assert "evidence_review" in keys
     assert "runtime_spine_lifecycle" in keys
     assert "body_read_gates" in keys
+    assert report["summary"]["dashboard_operational_binding_score"] == 100.0
+    assert report["summary"]["lagging_required_capability_count"] == 0
+    assert report["summary"]["audit_status"] == "dashboard_operationally_bound"

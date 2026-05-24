@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.governed_s39_promotion_plateau_index import build_s39_plateau_artifacts
+from runtime_core.api.governed_s39_promotion_plateau_index import build_s39_plateau_artifacts
 
 
 def main() -> int:

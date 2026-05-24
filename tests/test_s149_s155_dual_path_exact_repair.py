@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 def test_s149_s155_import_origin_and_exact_assertions(tmp_path):
-    module = importlib.import_module("claire.api.governed_cockpit_payload_visibility_s149_s155")
+    module = importlib.import_module("runtime_core.api.governed_cockpit_payload_visibility_s149_s155")
     origin = Path(module.__file__).as_posix()
 
     assert origin.endswith("governed_cockpit_payload_visibility_s149_s155.py")

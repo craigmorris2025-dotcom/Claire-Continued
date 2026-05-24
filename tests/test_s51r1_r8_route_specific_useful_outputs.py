@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s51r1_route_specific_useful_output_surfaces_are_ready():
-    module = importlib.import_module("claire.api.s51_route_specific_useful_outputs")
+    module = importlib.import_module("runtime_core.api.s51_route_specific_useful_outputs")
     payload = module.build_route_specific_useful_output_surfaces()
 
     assert payload["version"] == "v19.89.8-S51R1-R8"
@@ -31,7 +31,7 @@ def test_s51r1_route_specific_useful_output_surfaces_are_ready():
 
 
 def test_s51r5_output_previews_have_sections_and_review_state():
-    module = importlib.import_module("claire.api.s51_route_specific_useful_outputs")
+    module = importlib.import_module("runtime_core.api.s51_route_specific_useful_outputs")
     previews = module.build_all_route_output_previews()
 
     assert previews["status"] == "all_route_output_previews_ready"
@@ -46,7 +46,7 @@ def test_s51r5_output_previews_have_sections_and_review_state():
 
 
 def test_s51r8_plateau_report_ready():
-    module = importlib.import_module("claire.api.s51_route_specific_useful_outputs")
+    module = importlib.import_module("runtime_core.api.s51_route_specific_useful_outputs")
     report = module.build_s51r1_r8_plateau_report()
 
     assert report["status"] == "s51r1_r8_ready"

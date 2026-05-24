@@ -1,5 +1,5 @@
 from __future__ import annotations
-from claire.api.dashboard_governed_web_workflow_s443_s449 import *
+from runtime_core.api.dashboard_governed_web_workflow_s443_s449 import *
 def test_s443_workflow_has_six_steps(): assert build_s443_workflow_lane_contract()["step_count"]==6
 def test_s444_source_input_manual(): assert build_s444_source_input_contract()["source_input"]["manual_operator_entry"] is True
 def test_s445_endpoint_map_complete(): 

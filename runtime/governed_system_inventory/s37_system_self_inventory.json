@@ -3,11 +3,11 @@
   "autonomous_execution_allowed": false,
   "expected_surfaces": {
     "app": {
-      "exists": true,
+      "exists": false,
       "path": "claire/app.py"
     },
     "dashboard_payload_bridge": {
-      "exists": true,
+      "exists": false,
       "path": "claire/api/dashboard_payload_bridge.py"
     },
     "first_live_plateau": {
@@ -27,7 +27,7 @@
       "path": "tools/compile_s36_first_probe_report.py"
     },
     "governed_live_probe_router": {
-      "exists": true,
+      "exists": false,
       "path": "claire/api/routes/governed_live_probe.py"
     },
     "probe_quarantine_verifier": {
@@ -35,9 +35,34 @@
       "path": "tools/verify_s36_probe_quarantine.py"
     }
   },
-  "generated_at": "2026-05-18T22:37:56.317220+00:00",
+  "generated_at": "2026-05-24T22:35:44.726506+00:00",
   "live_web_execution": false,
-  "local_gaps": [],
+  "local_gaps": [
+    {
+      "category": "missing_expected_surface",
+      "path": "claire/app.py",
+      "reason": "Missing local project surface should be resolved from Claire architecture state first.",
+      "severity": "medium",
+      "summary": "Expected surface missing: app",
+      "web_research_needed": false
+    },
+    {
+      "category": "missing_expected_surface",
+      "path": "claire/api/dashboard_payload_bridge.py",
+      "reason": "Missing local project surface should be resolved from Claire architecture state first.",
+      "severity": "medium",
+      "summary": "Expected surface missing: dashboard_payload_bridge",
+      "web_research_needed": false
+    },
+    {
+      "category": "missing_expected_surface",
+      "path": "claire/api/routes/governed_live_probe.py",
+      "reason": "Missing local project surface should be resolved from Claire architecture state first.",
+      "severity": "medium",
+      "summary": "Expected surface missing: governed_live_probe_router",
+      "web_research_needed": false
+    }
+  ],
   "manual_promotion_required": true,
   "project_root": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire",
   "python_parse_status": [
@@ -64,62 +89,77 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\app.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\canonical_cockpit_fetch_map_routes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\canonical_route_owner_registry_routes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\duplicate_route_fail_test_routes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\operator_runtime_execution_routes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\plan_reconciliation_routes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\review_queue_runtime_ingestion_routes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\runtime_execution_propagation_routes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\runtime_proof_exit_policy.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\runtime_state_emitter_routes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
       "path": "claire\\__init__.py"
     },
     {
       "error": null,
       "parse_ok": true,
       "path": "frontend\\__init__.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\app.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\canonical_cockpit_fetch_map_routes.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\canonical_route_owner_registry_routes.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\duplicate_route_fail_test_routes.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\operator_runtime_execution_routes.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\plan_reconciliation_routes.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\review_queue_runtime_ingestion_routes.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\runtime_execution_propagation_routes.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\runtime_proof_exit_policy.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\runtime_state_emitter_routes.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "runtime_core\\__init__.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_acquisition_stage_outputs.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_acs2_reemergence_pattern_engine.py"
     },
     {
       "error": null,
@@ -144,7 +184,32 @@
     {
       "error": null,
       "parse_ok": true,
+      "path": "tests\\test_canonical_lifecycle_paths.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_canonical_pipeline_source_index.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_canonical_route_manifest_startup.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_causal_emergence_contract_intake.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
       "path": "tests\\test_cockpit_visual_controls_s185_s190.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_connected_search_bar_metadata.py"
     },
     {
       "error": null,
@@ -154,17 +219,37 @@
     {
       "error": null,
       "parse_ok": true,
+      "path": "tests\\test_continuous_runtime_does_work.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
       "path": "tests\\test_continuous_runtime_presence_s20.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_dashboard_v4_completion_gate.py"
+      "path": "tests\\test_dashboard_first_run_internet_update_completion.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_dashboard_v5_final_lifecycle_map.py"
+      "path": "tests\\test_dashboard_mode_operator_surface.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_dependency_chain_proof.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_design_portal_workbench.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_endpoint_reconciliation_compat.py"
     },
     {
       "error": null,
@@ -174,7 +259,12 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_final_operational_wiring.py"
+      "path": "tests\\test_first_live_activation_gate.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_full_emergence_engine_completion.py"
     },
     {
       "error": null,
@@ -234,7 +324,27 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_launcher_dashboard_v4.py"
+      "path": "tests\\test_industry_standard_endpoint_package.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_intelligence_answer_entrypoint.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_legacy_proof_routes_current_canonical.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_lifecycle_memory_signal.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_live_source_activation_chain.py"
     },
     {
       "error": null,
@@ -244,7 +354,32 @@
     {
       "error": null,
       "parse_ok": true,
+      "path": "tests\\test_open_web_update_governance.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_operational_file_cleanup_plan.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
       "path": "tests\\test_operational_file_readiness_dashboard.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_pipeline_activation_registry.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_portfolio_artifact_routing.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_post_ui_response_reference.py"
     },
     {
       "error": null,
@@ -279,7 +414,32 @@
     {
       "error": null,
       "parse_ok": true,
+      "path": "tests\\test_route_contract_intake.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
       "path": "tests\\test_runtime_continuity_visualization_s23.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_runtime_core_namespace.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_runtime_truth_canonical_routes.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_runtime_wiring_reality.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_run_quality_gate.py"
     },
     {
       "error": null,
@@ -505,11 +665,6 @@
       "error": null,
       "parse_ok": true,
       "path": "tests\\test_s156_s162_operational_cockpit_binding.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "tests\\test_s1626_s1650_dashboard_v3_legacy_contract_bridge.py"
     },
     {
       "error": null,
@@ -1114,12 +1269,12 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s450_s456_claire_intelligence_answer_contract.py"
+      "path": "tests\\test_s450_s456_intelligence_answer_contract.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s457_s463_claire_command_response_cards.py"
+      "path": "tests\\test_s457_s463_command_response_cards.py"
     },
     {
       "error": null,
@@ -1149,7 +1304,7 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s464_s470_claire_evidence_backed_answer_model.py"
+      "path": "tests\\test_s464_s470_evidence_backed_answer_model.py"
     },
     {
       "error": null,
@@ -1164,7 +1319,7 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s471_s477_claire_knowledge_base_registry.py"
+      "path": "tests\\test_s471_s477_knowledge_base_registry.py"
     },
     {
       "error": null,
@@ -1174,7 +1329,7 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s478_s484_claire_domain_answer_routes.py"
+      "path": "tests\\test_s478_s484_domain_answer_routes.py"
     },
     {
       "error": null,
@@ -1189,7 +1344,7 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s485_s491_claire_innovation_route_escalation.py"
+      "path": "tests\\test_s485_s491_innovation_route_escalation.py"
     },
     {
       "error": null,
@@ -1199,12 +1354,12 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s492_s498_claire_useful_output_package_preview.py"
+      "path": "tests\\test_s492_s498_useful_output_package_preview.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s499_s505_claire_answer_memory_replay.py"
+      "path": "tests\\test_s499_s505_answer_memory_replay.py"
     },
     {
       "error": null,
@@ -1214,7 +1369,7 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s506_s512_claire_governed_update_inspector.py"
+      "path": "tests\\test_s506_s512_governed_update_inspector.py"
     },
     {
       "error": null,
@@ -1224,7 +1379,7 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s513_s519_claire_staged_update_sandbox_contract.py"
+      "path": "tests\\test_s513_s519_staged_update_sandbox_contract.py"
     },
     {
       "error": null,
@@ -1234,12 +1389,12 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s520_s526_claire_controlled_update_validation_plan.py"
+      "path": "tests\\test_s520_s526_controlled_update_validation_plan.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s527_s533_claire_update_evidence_review_queue.py"
+      "path": "tests\\test_s527_s533_update_evidence_review_queue.py"
     },
     {
       "error": null,
@@ -1249,7 +1404,7 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s534_s540_claire_validation_result_intake.py"
+      "path": "tests\\test_s534_s540_validation_result_intake.py"
     },
     {
       "error": null,
@@ -1259,12 +1414,12 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s541_s547_claire_update_promotion_decision_packet.py"
+      "path": "tests\\test_s541_s547_update_promotion_decision_packet.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s548_s554_claire_rollback_recovery_gate.py"
+      "path": "tests\\test_s548_s554_rollback_recovery_gate.py"
     },
     {
       "error": null,
@@ -1274,7 +1429,7 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s555_s561_claire_operator_staged_update_handoff.py"
+      "path": "tests\\test_s555_s561_operator_staged_update_handoff.py"
     },
     {
       "error": null,
@@ -1284,12 +1439,12 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s562_s568_claire_update_control_cockpit_wiring.py"
+      "path": "tests\\test_s562_s568_update_control_cockpit_wiring.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "tests\\test_s569_s575_claire_governed_update_readiness_demo.py"
+      "path": "tests\\test_s569_s575_governed_update_readiness_demo.py"
     },
     {
       "error": null,
@@ -1424,6 +1579,51 @@
     {
       "error": null,
       "parse_ok": true,
+      "path": "tests\\test_signal_condition_routes.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_stage1_ingestion_boundary.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_strategic_world_layer.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_system_emergence_engine.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_system_ingestion_stabilization.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_technology_base_activation.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_twelve_gap_remediation_status.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_v1957_operator_cockpit_runtime_wiring.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tests\\test_verified_output_proof_phase.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
       "path": "tests\\__init__.py"
     },
     {
@@ -1449,12 +1649,52 @@
     {
       "error": null,
       "parse_ok": true,
+      "path": "tools\\analyze_post_ui_response_references.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\analyze_recovered_docs_main_intake.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\analyze_runtime_pipeline_state.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\assess_system_completion_readiness.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\audit_route_contract_conflicts.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
       "path": "tools\\audit_s36_route_visibility.py"
     },
     {
       "error": null,
       "parse_ok": true,
+      "path": "tools\\audit_source_authority_and_cleanup.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
       "path": "tools\\autonomous_install_validator.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\build_endpoint_reconciliation_table.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\build_verified_output_proof_binder.py"
     },
     {
       "error": null,
@@ -1470,6 +1710,11 @@
       "error": null,
       "parse_ok": true,
       "path": "tools\\canonical_runtime_reassembly_map_v19_88_0.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\check_migration_boundaries.py"
     },
     {
       "error": null,
@@ -1534,6 +1779,11 @@
     {
       "error": null,
       "parse_ok": true,
+      "path": "tools\\continuous_scheduler_tick.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
       "path": "tools\\core_runtime_lock.py"
     },
     {
@@ -1589,7 +1839,27 @@
     {
       "error": null,
       "parse_ok": true,
+      "path": "tools\\export_active_endpoints.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\export_v1_runtime_manifests.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\find_open_port.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
       "path": "tools\\forward_install_guard.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\generate_frontend_fetch_map.py"
     },
     {
       "error": null,
@@ -1684,6 +1954,11 @@
     {
       "error": null,
       "parse_ok": true,
+      "path": "tools\\register_scheduler_state.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
       "path": "tools\\review_queue_promotion_gate.py"
     },
     {
@@ -1750,6 +2025,11 @@
       "error": null,
       "parse_ok": true,
       "path": "tools\\run_claire_baseline.py"
+    },
+    {
+      "error": null,
+      "parse_ok": true,
+      "path": "tools\\run_live_portfolio_proof.py"
     },
     {
       "error": null,
@@ -2089,457 +2369,202 @@
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\acquirers\\dataset.py"
+      "path": "frontend\\assets\\__init__.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\acquirers\\matcher.py"
+      "path": "frontend\\css\\__init__.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\acquirers\\scoring.py"
+      "path": "frontend\\js\\__init__.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\acquirers\\__init__.py"
+      "path": "runtime_core\\acquirers\\dataset.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\acquisition\\acquirer_identification.py"
+      "path": "runtime_core\\acquirers\\matcher.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\acquisition\\final_package.py"
+      "path": "runtime_core\\acquirers\\scoring.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\acquisition\\fit_rationale.py"
+      "path": "runtime_core\\acquirers\\__init__.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\agi\\consensus_engine.py"
+      "path": "runtime_core\\acquisition\\acquirer_identification.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\agi\\decision_scaler.py"
+      "path": "runtime_core\\acquisition\\final_package.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\agi\\knowledge_graph.py"
+      "path": "runtime_core\\acquisition\\fit_rationale.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\agi\\reasoning_engine.py"
+      "path": "runtime_core\\agi\\consensus_engine.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\agi\\__init__.py"
+      "path": "runtime_core\\agi\\decision_scaler.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\analysis\\demand_model.py"
+      "path": "runtime_core\\agi\\knowledge_graph.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\analysis\\entity_extraction.py"
+      "path": "runtime_core\\agi\\reasoning_engine.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\analysis\\feature_extractor.py"
+      "path": "runtime_core\\agi\\__init__.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\analysis\\pattern_engine.py"
+      "path": "runtime_core\\analysis\\demand_model.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\analysis\\relationship_mapping.py"
+      "path": "runtime_core\\analysis\\entity_extraction.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\analysis\\__init__.py"
+      "path": "runtime_core\\analysis\\feature_extractor.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\allowlist_rate_limit_enforcement_proof.py"
+      "path": "runtime_core\\analysis\\pattern_engine.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\bounded_web_job_record_contract.py"
+      "path": "runtime_core\\analysis\\relationship_mapping.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\canonical_browser_session_persistence.py"
+      "path": "runtime_core\\analysis\\__init__.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\canonical_cockpit_surface_health.py"
+      "path": "runtime_core\\api\\allowlist_rate_limit_enforcement_proof.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\canonical_cockpit_surface_registry.py"
+      "path": "runtime_core\\api\\answer_memory_replay_s499_s505.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_answer_memory_replay_s499_s505.py"
+      "path": "runtime_core\\api\\bounded_web_job_record_contract.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_command_response_cards_s457_s463.py"
+      "path": "runtime_core\\api\\canonical_browser_session_persistence.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_controlled_update_validation_plan_s520_s526.py"
+      "path": "runtime_core\\api\\canonical_cockpit_surface_health.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_domain_answer_routes_s478_s484.py"
+      "path": "runtime_core\\api\\canonical_cockpit_surface_registry.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_evidence_backed_answer_model_s464_s470.py"
+      "path": "runtime_core\\api\\canonical_route_manifest.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_governed_update_inspector_s506_s512.py"
+      "path": "runtime_core\\api\\cockpit_action_card_ordering.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_governed_update_readiness_demo_s569_s575.py"
+      "path": "runtime_core\\api\\cockpit_action_intent_contract.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_innovation_route_escalation_s485_s491.py"
+      "path": "runtime_core\\api\\cockpit_action_registry.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_intelligence_answer_contract_s450_s456.py"
+      "path": "runtime_core\\api\\cockpit_card_region_binding.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_knowledge_base_registry_s471_s477.py"
+      "path": "runtime_core\\api\\cockpit_card_state_normalizer.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_operator_staged_update_handoff_s555_s561.py"
+      "path": "runtime_core\\api\\cockpit_control_surface_force_injector.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_rollback_recovery_gate_s548_s554.py"
+      "path": "runtime_core\\api\\cockpit_count_binding_metadata.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_staged_update_sandbox_contract_s513_s519.py"
+      "path": "runtime_core\\api\\cockpit_diagnostics_drawer_payload.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_update_control_cockpit_wiring_s562_s568.py"
+      "path": "runtime_core\\api\\cockpit_disabled_button_behavior.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_update_evidence_review_queue_s527_s533.py"
+      "path": "runtime_core\\api\\cockpit_dry_run_trigger_quarantine_view.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_update_promotion_decision_packet_s541_s547.py"
+      "path": "runtime_core\\api\\cockpit_endpoint_health_visibility.py"
     },
     {
       "error": null,
       "parse_ok": true,
-      "path": "claire\\api\\claire_useful_output_package_preview_s492_s498.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\claire_validation_result_intake_s534_s540.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_action_card_ordering.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_action_intent_contract.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_action_registry.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_card_region_binding.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_card_state_normalizer.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_control_surface_force_injector.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_count_binding_metadata.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_diagnostics_drawer_payload.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_disabled_button_behavior.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_dry_run_trigger_quarantine_view.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_endpoint_health_visibility.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_endpoint_probe_display_contract.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_fetch_map_contract.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_frontend_presentation_schema.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_launcher_handoff_metadata.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_live_governance_banners.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_manual_review_gate.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_metadata_probe_trigger_contract.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_monitoring_snapshot.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_operational_proof_routes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_operator_control_readiness.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_operator_next_actions.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_render_safety_contract.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_route_handoff_manifest.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_shell_payload_assembler.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_shell_state_render_contract.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_single_shell_readiness.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_state_consolidator.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_static_shell_manifest.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_validation_lanes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_visual_controls.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_warning_banner_contracts.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_workflow_binding_readiness.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_workflow_card_payloads.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\cockpit_workflow_telemetry.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\commands.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\continuous_browser_runtime_loop.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\continuous_governed_loop_contract.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\continuous_runtime_presence.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\controlled_guarded_endpoint_registration_attempt.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\controlled_metadata_probe_executor.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\controlled_read_only_provider_probe_gate.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\dashboard_actions_registry.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\dashboard_actions_registry_routes.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\dashboard_action_panel_consolidation_s331_s337.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\dashboard_action_wiring_refresh_s422_s428.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\dashboard_active_control_map.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\dashboard_contract_consolidation_s317_s323.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\dashboard_frontend_renderer_integration_s345_s351.py"
-    },
-    {
-      "error": null,
-      "parse_ok": true,
-      "path": "claire\\api\\dashboard_governed_web_workflow_s443_s449.py"
+      "path": "runtime_core\\api\\cockpit_endpoint_probe_display_contract.py"
     }
   ],
   "quarantine_required": true,
@@ -2596,6 +2621,90 @@
       ],
       "name": "health",
       "path": "/health"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "canonical_dashboard",
+      "path": "/dashboard"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "local_dashboard_alias",
+      "path": "/dashboard/local"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "canonical_dashboard_asset",
+      "path": "/dashboard/assets/{asset_name}"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "canonical_dashboard_root_css",
+      "path": "/platform_dashboard.css"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "canonical_dashboard_root_js",
+      "path": "/platform_dashboard.js"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "platform_dashboard_config",
+      "path": "/api/platform/dashboard-config"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "api_cockpit_dashboard_state",
+      "path": "/api/dashboard/state"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_dashboard_state",
+      "path": "/dashboard/state"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_cockpit_dashboard_state",
+      "path": "/operator/dashboard/state"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "cockpit_command_plan",
+      "path": "/api/cockpit/command/plan"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_command_latest",
+      "path": "/api/cockpit/command/latest"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_command_history",
+      "path": "/api/cockpit/command/history"
     },
     {
       "methods": [
@@ -2673,83 +2782,6 @@
       ],
       "name": "evaluate",
       "path": "/evaluate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_governed_proof_panel",
-      "path": "/api/governed/operator/proof-panel"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_review_queue_status",
-      "path": "/api/governed/operator/review-queue"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_review_action",
-      "path": "/api/governed/operator/review-action"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_route_demo",
-      "path": "/api/governed/operator/route-demo"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_export_manifest",
-      "path": "/api/governed/operator/export-manifest"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_card",
-      "path": "/api/governed/operator/cockpit-card"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_fetch_map",
-      "path": "/api/governed/operator/fetch-map"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_swagger_visibility_proof",
-      "path": "/api/governed/operator/swagger-proof"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_end_to_end_operator_api_demo_proof",
-      "path": "/api/governed/operator/api-demo-proof"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "api_cockpit_operational_proof",
-      "path": "/api/cockpit/operational-proof"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_operational_proof",
-      "path": "/cockpit/operational-proof"
     },
     {
       "methods": [
@@ -2839,379 +2871,330 @@
       "methods": [
         "GET"
       ],
-      "name": "get_body_read_authorization_payload",
-      "path": "/api/web/body-read/authorization/payload"
+      "name": "evidence_source_intake",
+      "path": "/api/evidence/source/intake"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_body_read_authorization_cards",
-      "path": "/api/web/body-read/authorization/cards"
+      "name": "search_governed_query_compile",
+      "path": "/api/search/governed/query/compile"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_body_read_authorization_actions",
-      "path": "/api/web/body-read/authorization/actions"
+      "name": "search_governed_query_payload",
+      "path": "/api/search/governed/query/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_map",
+      "path": "/api/search/providers/capability-map"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_cards",
+      "path": "/api/search/providers/capability/cards"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_actions",
+      "path": "/api/search/providers/capability/actions"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_status",
+      "path": "/api/search/providers/capability/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_payload",
+      "path": "/api/search/providers/capability/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_capability_stop_gate",
+      "path": "/api/search/providers/capability/stop-gate"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_controls",
+      "path": "/api/sources/policy/controls"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_cards",
+      "path": "/api/sources/policy/cards"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_actions",
+      "path": "/api/sources/policy/actions"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_status",
+      "path": "/api/sources/policy/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_payload",
+      "path": "/api/sources/policy/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_policy_stop_gate",
+      "path": "/api/sources/policy/stop-gate"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_quarantine_status",
+      "path": "/api/evidence/quarantine/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_metadata_status",
+      "path": "/api/search/metadata/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_provider_manual_probe_preflight",
+      "path": "/api/search/provider/manual-probe/preflight"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_search_consolidated_payload",
+      "path": "/api/cockpit/search/consolidated-payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_search_cards",
+      "path": "/api/cockpit/search/cards"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_search_actions",
+      "path": "/api/cockpit/search/actions"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_search_stop_gate",
+      "path": "/api/cockpit/search/stop-gate"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_readiness_audit",
+      "path": "/api/search/readiness/audit"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_providers_configuration_payload",
+      "path": "/api/search/providers/configuration/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_metadata_adapter_payload",
+      "path": "/api/search/metadata/adapter/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_metadata_probe_manual_preflight",
+      "path": "/api/search/metadata/probe/manual/preflight"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_metadata_probe_manual_payload",
+      "path": "/api/search/metadata/probe/manual/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_metadata_search_payload",
+      "path": "/api/cockpit/metadata-search/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_web_search_payload",
+      "path": "/api/cockpit/web-search/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_web_search_cards",
+      "path": "/api/cockpit/web-search/cards"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_web_search_actions",
+      "path": "/api/cockpit/web-search/actions"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "post_body_read_authorization_payload",
-      "path": "/api/web/body-read/authorization/payload"
+      "name": "web_body_read_risk_classifier",
+      "path": "/api/web/body-read/risk-classifier"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_extraction_scope_contract",
-      "path": "/api/web/body-read/extraction-scope/contract"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_extraction_scope_cards",
-      "path": "/api/web/body-read/extraction-scope/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_extraction_scope_actions",
-      "path": "/api/web/body-read/extraction-scope/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_sanitizer_payload",
-      "path": "/api/web/body-read/sanitizer/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_sanitizer_cards",
-      "path": "/api/web/body-read/sanitizer/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_sanitizer_actions",
-      "path": "/api/web/body-read/sanitizer/actions"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_sanitizer_classify",
-      "path": "/api/web/body-read/sanitizer/classify"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_gate_preflight",
-      "path": "/api/web/body-read/manual-gate/preflight"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_gate_payload",
-      "path": "/api/web/body-read/manual-gate/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_gate_cards",
-      "path": "/api/web/body-read/manual-gate/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_gate_actions",
-      "path": "/api/web/body-read/manual-gate/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_gate_status",
-      "path": "/api/web/body-read/manual-gate/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_gate_stop_gate",
-      "path": "/api/web/body-read/manual-gate/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_body_read_gate_payload",
+      "name": "cockpit_body_read_gate_payload",
       "path": "/api/cockpit/body-read-gate/payload"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_body_read_gate_cards",
+      "name": "cockpit_body_read_gate_cards",
       "path": "/api/cockpit/body-read-gate/cards"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_body_read_gate_actions",
+      "name": "cockpit_body_read_gate_actions",
       "path": "/api/cockpit/body-read-gate/actions"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_body_read_gate_status",
+      "name": "cockpit_body_read_gate_status",
       "path": "/api/cockpit/body-read-gate/status"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_body_read_gate_stop_gate",
+      "name": "cockpit_body_read_gate_stop_gate",
       "path": "/api/cockpit/body-read-gate/stop-gate"
     },
     {
       "methods": [
-        "GET"
+        "POST"
       ],
-      "name": "get_internet_body_read_gate_payload",
-      "path": "/api/internet/body-read-gate/payload"
+      "name": "web_body_read_authorization_payload",
+      "path": "/api/web/body-read/authorization/payload"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_body_read_execution_envelope_payload",
-      "path": "/api/web/body-read/execution-envelope/payload"
+      "name": "web_body_read_authorization_cards",
+      "path": "/api/web/body-read/authorization/cards"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "web_body_read_authorization_actions",
+      "path": "/api/web/body-read/authorization/actions"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "post_body_read_execution_envelope_payload",
-      "path": "/api/web/body-read/execution-envelope/payload"
+      "name": "web_body_read_sanitizer_classify",
+      "path": "/api/web/body-read/sanitizer/classify"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_body_read_execution_envelope_cards",
-      "path": "/api/web/body-read/execution-envelope/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_body_read_execution_envelope_actions",
-      "path": "/api/web/body-read/execution-envelope/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_sanitized_extraction_preview_payload",
-      "path": "/api/web/body-read/extraction-preview/payload"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_sanitized_extraction_preview_payload",
-      "path": "/api/web/body-read/extraction-preview/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_sanitized_extraction_preview_cards",
-      "path": "/api/web/body-read/extraction-preview/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_ingestion_draft",
-      "path": "/api/web/source-ingestion/draft"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_source_ingestion_draft",
-      "path": "/api/web/source-ingestion/draft"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_ingestion_cards",
-      "path": "/api/web/source-ingestion/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_ingestion_lineage",
-      "path": "/api/web/source-ingestion/lineage"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_ingestion_validate",
-      "path": "/api/web/source-ingestion/validate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_update_proposal_payload",
-      "path": "/api/web/update-proposal/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_operator_ingestion_actions",
-      "path": "/api/web/operator-ingestion/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_runtime_truth_promotion_preview",
-      "path": "/api/web/runtime-truth/promotion-preview"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_source_ingestion_payload",
+      "name": "cockpit_source_ingestion_payload",
       "path": "/api/cockpit/source-ingestion/payload"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_source_ingestion_cards",
+      "name": "cockpit_source_ingestion_cards",
       "path": "/api/cockpit/source-ingestion/cards"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_source_ingestion_actions",
+      "name": "cockpit_source_ingestion_actions",
       "path": "/api/cockpit/source-ingestion/actions"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_source_ingestion_status",
+      "name": "cockpit_source_ingestion_status",
       "path": "/api/cockpit/source-ingestion/status"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_source_ingestion_stop_gate",
+      "name": "cockpit_source_ingestion_stop_gate",
       "path": "/api/cockpit/source-ingestion/stop-gate"
     },
     {
       "methods": [
-        "GET"
+        "POST"
       ],
-      "name": "get_internet_source_ingestion_payload",
-      "path": "/api/internet/source-ingestion/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_internet_s900_stop_gate",
-      "path": "/api/internet/s900-stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_control_surface_payload",
-      "path": "/api/cockpit/control-surface/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_control_surface_buttons",
-      "path": "/api/cockpit/control-surface/buttons"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_control_surface_actions",
-      "path": "/api/cockpit/control-surface/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_control_surface_status",
-      "path": "/api/cockpit/control-surface/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_control_surface_preview",
-      "path": "/api/cockpit/control-surface/preview/{operation_key}"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_control_surface_js_asset",
-      "path": "/api/cockpit/control-surface/assets/js"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_control_surface_css_asset",
-      "path": "/api/cockpit/control-surface/assets/css"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "internet_control_surface_payload",
-      "path": "/api/internet/control-surface/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "internet_s1012_stop_gate",
-      "path": "/api/internet/s1012-stop-gate"
+      "name": "web_body_read_execution_envelope_payload",
+      "path": "/api/web/body-read/execution-envelope/payload"
     },
     {
       "methods": [
@@ -3224,83 +3207,6 @@
       "methods": [
         "GET"
       ],
-      "name": "cockpit_operations_buttons",
-      "path": "/api/cockpit/operations/buttons"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_operations_cards",
-      "path": "/api/cockpit/operations/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_operations_actions",
-      "path": "/api/cockpit/operations/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_operations_status",
-      "path": "/api/cockpit/operations/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_operations_stop_gate",
-      "path": "/api/cockpit/operations/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_operation_preview",
-      "path": "/api/cockpit/operations/preview/{operation_key}"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "command_bar_operations_payload",
-      "path": "/api/command-bar/operations/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "command_bar_operations_buttons",
-      "path": "/api/command-bar/operations/buttons"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "command_bar_submit_preview",
-      "path": "/api/command-bar/submit/preview"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "internet_operation_controls_payload",
-      "path": "/api/internet/operation-controls/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "internet_s956_stop_gate",
-      "path": "/api/internet/s956-stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
       "name": "cockpit_operation_visuals_payload",
       "path": "/api/cockpit/operation-visuals/payload"
     },
@@ -3308,57 +3214,64 @@
       "methods": [
         "GET"
       ],
-      "name": "cockpit_operation_visuals_buttons",
-      "path": "/api/cockpit/operation-visuals/buttons"
+      "name": "cockpit_control_surface_payload",
+      "path": "/api/cockpit/control-surface/payload"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "cockpit_operation_visuals_cards",
-      "path": "/api/cockpit/operation-visuals/cards"
+      "name": "cockpit_control_surface_js_asset",
+      "path": "/api/cockpit/control-surface/assets/js"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "cockpit_operation_visuals_actions",
-      "path": "/api/cockpit/operation-visuals/actions"
+      "name": "get_connected_search_provider_status",
+      "path": "/api/search/provider/status"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "cockpit_operation_visuals_status",
-      "path": "/api/cockpit/operation-visuals/status"
+      "name": "get_search_lane_config",
+      "path": "/api/search/lane-config"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "post_connected_search_provider_query",
+      "path": "/api/search/provider/query"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "cockpit_operation_visuals_stop_gate",
-      "path": "/api/cockpit/operation-visuals/stop-gate"
+      "name": "get_platform_browser_render",
+      "path": "/api/platform/browser/render"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "post_promote_connected_metadata_to_evidence",
+      "path": "/api/search/evidence/promote"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "post_build_hybrid_connected_result",
+      "path": "/api/cockpit/hybrid/result"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "cockpit_operation_visuals_preview",
-      "path": "/api/cockpit/operation-visuals/preview/{operation_key}"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "command_bar_visual_operations_payload",
-      "path": "/api/command-bar/visual-operations/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "internet_s984_operation_visual_mount",
-      "path": "/api/internet/s984-operation-visual-mount"
+      "name": "get_latest_hybrid_connected_result",
+      "path": "/api/cockpit/hybrid/latest"
     },
     {
       "methods": [
@@ -3422,552 +3335,6 @@
       ],
       "name": "internet_s928_stop_gate",
       "path": "/api/internet/s928-stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "manual_probe_preflight",
-      "path": "/api/search/provider/manual-probe/preflight"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "manual_probe_cards",
-      "path": "/api/search/provider/manual-probe/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "manual_probe_actions",
-      "path": "/api/search/provider/manual-probe/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "manual_probe_policy",
-      "path": "/api/search/provider/manual-probe/policy"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "manual_probe_status",
-      "path": "/api/search/provider/manual-probe/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "manual_probe_payload",
-      "path": "/api/search/provider/manual-probe/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "manual_probe_stop_gate",
-      "path": "/api/search/provider/manual-probe/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "internet_manual_probe_preflight",
-      "path": "/api/internet/provider/manual-probe/preflight"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_evidence_bridge_preview",
-      "path": "/api/search/evidence/bridge/preview"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_evidence_bridge_cards",
-      "path": "/api/search/evidence/bridge/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_evidence_bridge_actions",
-      "path": "/api/search/evidence/bridge/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_evidence_bridge_status",
-      "path": "/api/search/evidence/bridge/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_evidence_bridge_payload",
-      "path": "/api/search/evidence/bridge/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_evidence_bridge_stop_gate",
-      "path": "/api/search/evidence/bridge/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_lifecycle_routing_preview",
-      "path": "/api/evidence/lifecycle/routing-preview"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_lifecycle_cards",
-      "path": "/api/evidence/lifecycle/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_lifecycle_actions",
-      "path": "/api/evidence/lifecycle/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_lifecycle_status",
-      "path": "/api/evidence/lifecycle/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_lifecycle_payload",
-      "path": "/api/evidence/lifecycle/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_lifecycle_stop_gate",
-      "path": "/api/evidence/lifecycle/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_search_consolidated_payload",
-      "path": "/api/cockpit/search/consolidated-payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_search_cards",
-      "path": "/api/cockpit/search/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_search_actions",
-      "path": "/api/cockpit/search/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_search_status",
-      "path": "/api/cockpit/search/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_search_stop_gate",
-      "path": "/api/cockpit/search/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "internet_search_consolidated_payload",
-      "path": "/api/internet/search/consolidated-payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "google_smoke",
-      "path": "/api/dashboard/search/smoke/google"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "live_search",
-      "path": "/api/dashboard/search/live"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "live_search_get",
-      "path": "/api/dashboard/search/live"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_evidence_cards",
-      "path": "/api/evidence/governed/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_evidence_review",
-      "path": "/api/evidence/governed/review"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_evidence_actions",
-      "path": "/api/evidence/governed/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_evidence_policy",
-      "path": "/api/evidence/governed/policy"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_evidence_status",
-      "path": "/api/evidence/governed/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_evidence_payload",
-      "path": "/api/evidence/governed/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_readiness_audit",
-      "path": "/api/search/readiness/audit"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_readiness_preflight",
-      "path": "/api/search/readiness/preflight"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_readiness_cards",
-      "path": "/api/search/readiness/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_readiness_actions",
-      "path": "/api/search/readiness/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_readiness_payload",
-      "path": "/api/search/readiness/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_internet_search_readiness_preflight",
-      "path": "/api/internet/search/readiness/preflight"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_provider_configuration",
-      "path": "/api/search/providers/configuration"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_provider_configuration_cards",
-      "path": "/api/search/providers/configuration/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_provider_configuration_actions",
-      "path": "/api/search/providers/configuration/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_provider_configuration_status",
-      "path": "/api/search/providers/configuration/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_provider_configuration_payload",
-      "path": "/api/search/providers/configuration/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_metadata_adapter_boundary",
-      "path": "/api/search/metadata/adapter/boundary"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_metadata_adapter_preview",
-      "path": "/api/search/metadata/adapter/preview"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_validate_metadata_result",
-      "path": "/api/search/metadata/adapter/validate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_metadata_adapter_cards",
-      "path": "/api/search/metadata/adapter/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_metadata_adapter_actions",
-      "path": "/api/search/metadata/adapter/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_metadata_adapter_status",
-      "path": "/api/search/metadata/adapter/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_metadata_adapter_payload",
-      "path": "/api/search/metadata/adapter/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_metadata_probe_preflight",
-      "path": "/api/search/metadata/probe/manual/preflight"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_metadata_probe_preview",
-      "path": "/api/search/metadata/probe/manual/preview"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_metadata_probe_cards",
-      "path": "/api/search/metadata/probe/manual/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_metadata_probe_actions",
-      "path": "/api/search/metadata/probe/manual/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_metadata_probe_status",
-      "path": "/api/search/metadata/probe/manual/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_metadata_probe_payload",
-      "path": "/api/search/metadata/probe/manual/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_metadata_probe_stop_gate",
-      "path": "/api/search/metadata/probe/manual/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_internet_manual_metadata_probe_preflight",
-      "path": "/api/internet/metadata/probe/manual/preflight"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_metadata_search_payload",
-      "path": "/api/cockpit/metadata-search/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_metadata_search_cards",
-      "path": "/api/cockpit/metadata-search/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_metadata_search_actions",
-      "path": "/api/cockpit/metadata-search/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_metadata_search_status",
-      "path": "/api/cockpit/metadata-search/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_metadata_contract",
-      "path": "/api/search/metadata/contract"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_metadata_sample_results",
-      "path": "/api/search/metadata/results/sample"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_metadata_cards",
-      "path": "/api/search/metadata/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_metadata_actions",
-      "path": "/api/search/metadata/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_metadata_policy",
-      "path": "/api/search/metadata/policy"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_metadata_status",
-      "path": "/api/search/metadata/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_metadata_payload",
-      "path": "/api/search/metadata/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_metadata_stop_gate",
-      "path": "/api/search/metadata/stop-gate"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "search_metadata_validate",
-      "path": "/api/search/metadata/validate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "internet_metadata_result_contract",
-      "path": "/api/internet/metadata/result-contract"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "internet_metadata_payload",
-      "path": "/api/internet/metadata/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "governed_session_status",
-      "path": "/governed/operational-session/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "governed_operational_session_orchestration_status",
-      "path": "/api/governed/session-orchestration/status"
     },
     {
       "methods": [
@@ -4071,78 +3438,99 @@
       "methods": [
         "GET"
       ],
-      "name": "governed_payload_reconciliation_status",
-      "path": "/governed/payload/reconciliation"
+      "name": "get_governed_query_sample",
+      "path": "/api/search/governed/query/sample"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "provider_capability_map",
-      "path": "/api/search/providers/capability-map"
+      "name": "get_governed_query_cards",
+      "path": "/api/search/governed/query/cards"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "provider_capability_cards",
-      "path": "/api/search/providers/capability/cards"
+      "name": "get_governed_query_actions",
+      "path": "/api/search/governed/query/actions"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "provider_capability_actions",
-      "path": "/api/search/providers/capability/actions"
+      "name": "get_governed_query_policy",
+      "path": "/api/search/governed/query/policy"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "provider_capability_policy",
-      "path": "/api/search/providers/capability/policy"
+      "name": "get_governed_query_status",
+      "path": "/api/search/governed/query/status"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "provider_capability_status",
-      "path": "/api/search/providers/capability/status"
+      "name": "evidence_quarantine_store",
+      "path": "/api/evidence/quarantine/store"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "provider_capability_payload",
-      "path": "/api/search/providers/capability/payload"
+      "name": "evidence_quarantine_cards",
+      "path": "/api/evidence/quarantine/cards"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "provider_capability_stop_gate",
-      "path": "/api/search/providers/capability/stop-gate"
+      "name": "evidence_quarantine_review_queue",
+      "path": "/api/evidence/quarantine/review-queue"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "source_provider_capability_map_alias",
-      "path": "/api/sources/providers/capability-map"
+      "name": "evidence_quarantine_actions",
+      "path": "/api/evidence/quarantine/actions"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "source_provider_capability_cards_alias",
-      "path": "/api/sources/providers/capability/cards"
+      "name": "evidence_quarantine_policy",
+      "path": "/api/evidence/quarantine/policy"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "source_provider_capability_actions_alias",
-      "path": "/api/sources/providers/capability/actions"
+      "name": "evidence_quarantine_payload",
+      "path": "/api/evidence/quarantine/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_quarantine_stop_gate",
+      "path": "/api/evidence/quarantine/stop-gate"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_evidence_quarantine_payload",
+      "path": "/api/sources/evidence/quarantine/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_evidence_quarantine_cards",
+      "path": "/api/search/evidence/quarantine/cards"
     },
     {
       "methods": [
@@ -4218,552 +3606,6 @@
       "methods": [
         "GET"
       ],
-      "name": "evidence_quarantine_store",
-      "path": "/api/evidence/quarantine/store"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_quarantine_cards",
-      "path": "/api/evidence/quarantine/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_quarantine_review_queue",
-      "path": "/api/evidence/quarantine/review-queue"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_quarantine_actions",
-      "path": "/api/evidence/quarantine/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_quarantine_policy",
-      "path": "/api/evidence/quarantine/policy"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_quarantine_status",
-      "path": "/api/evidence/quarantine/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_quarantine_payload",
-      "path": "/api/evidence/quarantine/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "evidence_quarantine_stop_gate",
-      "path": "/api/evidence/quarantine/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "sources_evidence_quarantine_payload",
-      "path": "/api/sources/evidence/quarantine/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_evidence_quarantine_cards",
-      "path": "/api/search/evidence/quarantine/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_governed_query_compile",
-      "path": "/api/search/governed/query/compile"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_governed_query_sample",
-      "path": "/api/search/governed/query/sample"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_governed_query_cards",
-      "path": "/api/search/governed/query/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_governed_query_actions",
-      "path": "/api/search/governed/query/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_governed_query_policy",
-      "path": "/api/search/governed/query/policy"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_governed_query_status",
-      "path": "/api/search/governed/query/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_governed_query_payload",
-      "path": "/api/search/governed/query/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_runtime_spine",
-      "path": "/api/governed/runtime-spine"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_authority_map",
-      "path": "/api/governed/runtime-spine/authority-map"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_evidence_bridge",
-      "path": "/api/governed/runtime-spine/evidence-bridge"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_spine_fetch_map",
-      "path": "/api/governed/runtime-spine/fetch-map"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_operator_control",
-      "path": "/api/governed/runtime-spine/operator-control"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_control",
-      "path": "/api/governed/runtime-spine/search-control"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_dashboard_managed_demo",
-      "path": "/api/governed/runtime-spine/dashboard-demo"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_search_plans",
-      "path": "/api/search/governed/plans"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_search_sample",
-      "path": "/api/search/governed/plans/sample"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_search_cards",
-      "path": "/api/search/governed/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_search_actions",
-      "path": "/api/search/governed/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_search_policy",
-      "path": "/api/search/governed/policy"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "read_governed_search_status",
-      "path": "/api/search/governed/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_result_quarantine_store",
-      "path": "/api/search/results/quarantine/store"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_search_result_quarantine_store",
-      "path": "/api/search/results/quarantine/store"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_result_quarantine_cards",
-      "path": "/api/search/results/quarantine/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_result_quarantine_status",
-      "path": "/api/search/results/quarantine/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_result_quarantine_payload",
-      "path": "/api/search/results/quarantine/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_result_evidence_cards",
-      "path": "/api/search/results/normalize/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_result_evidence_payload",
-      "path": "/api/search/results/normalize/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_result_evidence_status",
-      "path": "/api/search/results/normalize/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_confidence_cards",
-      "path": "/api/search/source-confidence/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_confidence_payload",
-      "path": "/api/search/source-confidence/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_confidence_status",
-      "path": "/api/search/source-confidence/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_operator_review_actions",
-      "path": "/api/search/operator-review/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_operator_review_payload",
-      "path": "/api/search/operator-review/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_operator_review_status",
-      "path": "/api/search/operator-review/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_search_results_payload",
-      "path": "/api/cockpit/search-results/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_search_results_cards",
-      "path": "/api/cockpit/search-results/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_search_results_actions",
-      "path": "/api/cockpit/search-results/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_search_results_status",
-      "path": "/api/cockpit/search-results/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cockpit_search_results_stop_gate",
-      "path": "/api/cockpit/search-results/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_internet_search_results_payload_alias",
-      "path": "/api/internet/search-results/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_evidence_intake",
-      "path": "/api/evidence/source/intake"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_evidence_intake_cards",
-      "path": "/api/evidence/source/intake/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_evidence_intake_actions",
-      "path": "/api/evidence/source/intake/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_evidence_intake_policy",
-      "path": "/api/evidence/source/intake/policy"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_evidence_intake_status",
-      "path": "/api/evidence/source/intake/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_evidence_intake_stop_gate",
-      "path": "/api/evidence/source/intake/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_gap_matrix",
-      "path": "/api/sources/gaps/matrix"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_gap_cards",
-      "path": "/api/sources/gaps/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_gap_actions",
-      "path": "/api/sources/gaps/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_gap_policy",
-      "path": "/api/sources/gaps/policy"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_gap_status",
-      "path": "/api/sources/gaps/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_gap_payload",
-      "path": "/api/sources/gaps/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_source_gap_stop_gate",
-      "path": "/api/sources/gaps/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_scope_plans",
-      "path": "/api/search/scope/plans"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_scope_cards",
-      "path": "/api/search/scope/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_scope_actions",
-      "path": "/api/search/scope/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_scope_status",
-      "path": "/api/search/scope/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_search_scope_payload",
-      "path": "/api/search/scope/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "source_policy_controls",
-      "path": "/api/sources/policy/controls"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "source_policy_cards",
-      "path": "/api/sources/policy/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "source_policy_actions",
-      "path": "/api/sources/policy/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "source_policy_rules",
-      "path": "/api/sources/policy/rules"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "source_policy_status",
-      "path": "/api/sources/policy/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "source_policy_payload",
-      "path": "/api/sources/policy/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "source_policy_stop_gate",
-      "path": "/api/sources/policy/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_policy_controls_alias",
-      "path": "/api/search/policy/controls"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_policy_cards_alias",
-      "path": "/api/search/policy/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "search_policy_actions_alias",
-      "path": "/api/search/policy/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
       "name": "read_source_registry",
       "path": "/api/sources/registry"
     },
@@ -4799,211 +3641,288 @@
       "methods": [
         "GET"
       ],
-      "name": "get_evidence_basket_promotion_preview",
-      "path": "/api/evidence/basket/promotion-preview"
+      "name": "get_design_portal_output",
+      "path": "/design-portal/output"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_evidence_basket_promotion_preview_cards",
-      "path": "/api/evidence/basket/promotion-preview/cards"
+      "name": "get_design_portal_status",
+      "path": "/design-portal/status"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_evidence_basket_promotion_preview_actions",
-      "path": "/api/evidence/basket/promotion-preview/actions"
+      "name": "get_design_portal_contract",
+      "path": "/design-portal/contract"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_evidence_basket_promotion_preview_status",
-      "path": "/api/evidence/basket/promotion-preview/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_controlled_metadata_search_proof_payload",
-      "path": "/api/search/metadata/controlled-proof/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_controlled_metadata_search_proof_cards",
-      "path": "/api/search/metadata/controlled-proof/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_controlled_metadata_search_proof_actions",
-      "path": "/api/search/metadata/controlled-proof/actions"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_controlled_metadata_search_proof_status",
-      "path": "/api/search/metadata/controlled-proof/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_controlled_metadata_search_proof_stop_gate",
-      "path": "/api/search/metadata/controlled-proof/stop-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_body_read_safety_plan",
-      "path": "/api/web/body-read/safety-plan"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_body_read_safety_cards",
-      "path": "/api/web/body-read/safety/cards"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_body_read_safety_status",
-      "path": "/api/web/body-read/safety/status"
+      "name": "get_design_portal_output_summary",
+      "path": "/design-portal/output/summary"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "post_body_read_risk_classifier",
-      "path": "/api/web/body-read/risk-classifier"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_body_read_request_packet",
-      "path": "/api/web/body-read/request-packet"
+      "name": "rebuild_design_portal_output",
+      "path": "/design-portal/output/rebuild"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "post_body_read_request_packet",
-      "path": "/api/web/body-read/request-packet"
+      "name": "build_design_portal_from_run",
+      "path": "/design-portal/build-from-run"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_body_read_preflight_payload",
-      "path": "/api/web/body-read/preflight/payload"
+      "name": "get_design_portal_output_alias",
+      "path": "/design/portal/output"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_body_read_preflight_cards",
-      "path": "/api/web/body-read/preflight/cards"
+      "name": "get_cad_intent",
+      "path": "/cad/intent"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_body_read_preflight_actions",
-      "path": "/api/web/body-read/preflight/actions"
+      "name": "get_cad_export_contract",
+      "path": "/cad/export-contract"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_body_read_preflight_status",
-      "path": "/api/web/body-read/preflight/status"
+      "name": "get_dependency_chain_proof",
+      "path": "/api/system/dependency-chain-proof"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_body_read_preflight_stop_gate",
-      "path": "/api/web/body-read/preflight/stop-gate"
+      "name": "get_dependency_chain_proof_alias",
+      "path": "/proof/dependency-chain"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_web_search_payload",
-      "path": "/api/cockpit/web-search/payload"
+      "name": "runtime_state_summary_alias",
+      "path": "/system/runtime-state/summary"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_web_search_cards",
-      "path": "/api/cockpit/web-search/cards"
+      "name": "runtime_execution_summary_alias",
+      "path": "/system/runtime-execution/summary"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_web_search_actions",
-      "path": "/api/cockpit/web-search/actions"
+      "name": "runtime_propagation_summary_alias",
+      "path": "/system/runtime-propagation/summary"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_web_search_status",
-      "path": "/api/cockpit/web-search/status"
+      "name": "dashboard_search_provider_status_alias",
+      "path": "/api/dashboard/search/provider/status"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_cockpit_web_search_stop_gate",
-      "path": "/api/cockpit/web-search/stop-gate"
+      "name": "evidence_governed_status_alias",
+      "path": "/api/evidence/governed/status"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_internet_controlled_metadata_proof_payload",
-      "path": "/api/internet/controlled-metadata-proof/payload"
+      "name": "evidence_governed_cards_alias",
+      "path": "/api/evidence/governed/cards"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "evidence_governed_actions_alias",
+      "path": "/api/evidence/governed/actions"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_governed_plans_alias",
+      "path": "/api/search/governed/plans"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_governed_actions_alias",
+      "path": "/api/search/governed/actions"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_readiness_preflight_alias",
+      "path": "/api/search/readiness/preflight"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "search_metadata_payload_alias",
+      "path": "/api/search/metadata/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_search_results_payload_alias",
+      "path": "/api/cockpit/search-results/payload"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "sources_gaps_payload_alias",
+      "path": "/api/sources/gaps/payload"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "run_guarded_metadata_probe",
-      "path": "/api/governed-web/metadata-probe"
+      "name": "internet_live_toggle_preflight_alias",
+      "path": "/api/internet/live-toggle/preflight"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_provider_probe_alias",
+      "path": "/api/internet/provider/probe"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_fetch_controlled_alias",
+      "path": "/api/internet/fetch/controlled"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "live_intelligence_status",
-      "path": "/api/live-intelligence/status"
+      "name": "internet_fetch_controlled_status_alias",
+      "path": "/api/internet/fetch/controlled/status"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_live_metadata_run_alias",
+      "path": "/api/internet/live-metadata/run"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "live_source_catalog_status",
-      "path": "/api/feeds/live-source-catalog/status"
+      "name": "internet_live_metadata_run_status_alias",
+      "path": "/api/internet/live-metadata/run/status"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_proposals_review_alias",
+      "path": "/api/internet/proposals/review"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "internet_proposals_export_alias",
+      "path": "/api/internet/proposals/export"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "live_source_catalog_health",
-      "path": "/api/feeds/live-source-catalog/health"
+      "name": "internet_proposals_status_alias",
+      "path": "/api/internet/proposals/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_endpoint_reconciliation",
+      "path": "/api/system/endpoint-reconciliation"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dashboard_endpoint_reconciliation",
+      "path": "/dashboard/system/endpoint-reconciliation"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_industry_standard_endpoint_package",
+      "path": "/api/system/industry-standard-endpoint-package"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dashboard_industry_standard_endpoint_package",
+      "path": "/dashboard/system/industry-standard-endpoint-package"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_endpoint_standard_settings",
+      "path": "/api/system/endpoint-standard-settings"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_standards_control_map",
+      "path": "/api/system/standards-control-map"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_dashboard_standards_control_map",
+      "path": "/dashboard/system/standards-control-map"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "post_ask_claire",
+      "path": "/api/ask-claire"
     },
     {
       "methods": [
@@ -5037,13 +3956,6 @@
       "methods": [
         "GET"
       ],
-      "name": "operational_proof_status",
-      "path": "/api/operational-proof/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
       "name": "dashboard_operator_action_result",
       "path": "/dashboard/operator-action/result/{action_key}"
     },
@@ -5072,176 +3984,190 @@
       "methods": [
         "GET"
       ],
-      "name": "operator_search_capabilities",
-      "path": "/operator/search/capabilities"
+      "name": "runtime_status",
+      "path": "/runtime/status"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "operator_dashboard_state",
-      "path": "/operator/dashboard/state"
+      "name": "runtime_loop",
+      "path": "/runtime/loop"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "operator_search_smoke_google",
-      "path": "/operator/search/smoke/google"
+      "name": "runtime_next",
+      "path": "/runtime/next"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "operator_search_get",
-      "path": "/operator/search"
+      "name": "runtime_truth",
+      "path": "/runtime/truth"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_gate",
+      "path": "/runtime/gate"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "runtime_manifest",
+      "path": "/runtime/manifest"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "operator_status",
+      "path": "/operator/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "governed_actions",
+      "path": "/governed/actions"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "governed_decisions",
+      "path": "/governed/decisions"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "governed_reviews",
+      "path": "/governed/reviews"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "operator_search_post",
-      "path": "/operator/search"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "operator_search_live_get",
-      "path": "/operator/search/live"
+      "name": "runtime_start",
+      "path": "/runtime/start"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "operator_search_live_post",
-      "path": "/operator/search/live"
+      "name": "runtime_stop",
+      "path": "/runtime/stop"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "operator_search_query_post",
-      "path": "/operator/search/query"
+      "name": "runtime_approve",
+      "path": "/runtime/approve"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "operator_search_run_post",
-      "path": "/operator/search/run"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "operator_payload",
-      "path": "/operator/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "operator_payload_status",
-      "path": "/operator/payload/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "operator_runtime_status",
-      "path": "/operator/runtime/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "operator_evidence_review",
-      "path": "/operator/evidence/review"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "operator_evidence_status",
-      "path": "/operator/evidence/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "operator_review_status",
-      "path": "/operator/review/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "operator_routes_status",
-      "path": "/operator/routes/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "operator_routes",
-      "path": "/operator/routes"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "operator_alerts",
-      "path": "/operator/alerts"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "provider_probe_status",
-      "path": "/api/dashboard/search/provider/status"
+      "name": "runtime_reject",
+      "path": "/runtime/reject"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "provider_probe",
-      "path": "/api/dashboard/search/provider/probe"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_archive_approval_gate",
-      "path": "/cleanup/archive-approval"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_archive_approval_summary",
-      "path": "/cleanup/archive-approval/summary"
+      "name": "runtime_truth_refresh",
+      "path": "/runtime/truth/refresh"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "rebuild_archive_approval_gate",
-      "path": "/cleanup/archive-approval/rebuild"
+      "name": "runtime_gate_trigger",
+      "path": "/runtime/gate/trigger"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "execute_archive_approved",
-      "path": "/cleanup/archive/execute-approved"
+      "name": "runtime_safe_mode",
+      "path": "/runtime/safe_mode"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_freeze",
+      "path": "/runtime/freeze"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_reset",
+      "path": "/runtime/reset"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "runtime_replay",
+      "path": "/runtime/replay"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_archive_status",
-      "path": "/cleanup/archive/status"
+      "name": "pipeline_activation",
+      "path": "/api/pipelines/activation"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_latest_portfolio_artifact",
+      "path": "/api/portfolio/artifacts/latest"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_portfolio_artifact",
+      "path": "/api/portfolio/artifacts/{run_id}"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "view_latest_portfolio_artifact",
+      "path": "/portfolio/artifacts/latest/view"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "view_portfolio_artifact",
+      "path": "/portfolio/artifacts/{run_id}/view"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "download_latest_portfolio_artifact",
+      "path": "/portfolio/artifacts/latest/download"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "download_portfolio_artifact",
+      "path": "/portfolio/artifacts/{run_id}/download"
     },
     {
       "methods": [
@@ -5331,78 +4257,22 @@
       "methods": [
         "GET"
       ],
-      "name": "get_cleanup_proof",
-      "path": "/cleanup/proof"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cleanup_proof_summary",
-      "path": "/cleanup/proof/summary"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "rebuild_cleanup_proof",
-      "path": "/cleanup/proof/rebuild"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cleanup_archive_plan",
-      "path": "/cleanup/archive-plan"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_cleanup_status",
-      "path": "/cleanup/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "api_cockpit_operational_status",
-      "path": "/api/cockpit/operational-status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "cockpit_operational_status",
-      "path": "/cockpit/operational-status"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "command_endpoint",
-      "path": "/command"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "connector_status",
-      "path": "/connectors/status"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "connector_fetch",
-      "path": "/connectors/fetch"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
       "name": "continuous_status",
       "path": "/runtime/continuous/status"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "continuous_scheduler_status",
+      "path": "/runtime/continuous/scheduler/status"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "continuous_scheduler_tick",
+      "path": "/runtime/continuous/scheduler/tick"
     },
     {
       "methods": [
@@ -5431,286 +4301,6 @@
       ],
       "name": "continuous_review_queue",
       "path": "/runtime/continuous/review-queue"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_alignment_status",
-      "path": "/dashboard/alignment/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_alignment_capabilities",
-      "path": "/dashboard/alignment/capabilities"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_alignment_buttons",
-      "path": "/dashboard/alignment/buttons"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_alignment_verify",
-      "path": "/dashboard/alignment/verify"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_dashboard_e2e_manifest",
-      "path": "/dashboard/e2e/first-use/manifest"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_dashboard_e2e_latest",
-      "path": "/dashboard/e2e/first-use/latest"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_dashboard_e2e_run",
-      "path": "/dashboard/e2e/first-use/run"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "api_dashboard_v4_payload",
-      "path": "/api/dashboard/v4/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_v4_payload",
-      "path": "/dashboard/v4/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_v4",
-      "path": "/dashboard/operator-v4"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_v4",
-      "path": "/dashboard/v4"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_v4_asset",
-      "path": "/dashboard/v4/assets/{asset_name}"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "api_dashboard_v5_payload",
-      "path": "/api/dashboard/v5/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_v5_payload",
-      "path": "/dashboard/v5/payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_v5",
-      "path": "/dashboard/final-user"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_v5",
-      "path": "/dashboard/v5"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_v5_asset",
-      "path": "/dashboard/v5/assets/{asset_name}"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_design_portal_output",
-      "path": "/design-portal/output"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_design_portal_output_summary",
-      "path": "/design-portal/output/summary"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "rebuild_design_portal_output",
-      "path": "/design-portal/output/rebuild"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_design_portal_output_alias",
-      "path": "/design/portal/output"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_desktop_startup_reliability",
-      "path": "/desktop/startup"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_desktop_startup_reliability_summary",
-      "path": "/desktop/startup/summary"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "rebuild_desktop_startup_reliability",
-      "path": "/desktop/startup/rebuild"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_desktop_package_manifest",
-      "path": "/desktop/package-manifest"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_desktop_launch_status",
-      "path": "/desktop/launch/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_payload",
-      "path": "/api/cockpit/enterprise-payload"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "dashboard_payload_status",
-      "path": "/api/cockpit/enterprise-payload/status"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "start_run",
-      "path": "/runs/start"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_latest_run",
-      "path": "/runs/latest"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_run_status",
-      "path": "/runs/{run_id}/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_run_lifecycle",
-      "path": "/runs/{run_id}/lifecycle"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_run_gates",
-      "path": "/runs/{run_id}/gates"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_run_missing_evidence",
-      "path": "/runs/{run_id}/missing-evidence"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "enrich_run",
-      "path": "/runs/{run_id}/enrich"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_evidence_promotion_gate",
-      "path": "/internet/evidence-promotion"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_evidence_promotion_summary",
-      "path": "/internet/evidence-promotion/summary"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "rebuild_evidence_promotion_gate",
-      "path": "/internet/evidence-promotion/rebuild"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_promote_approved_evidence",
-      "path": "/internet/evidence-promotion/promote-approved"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_evidence_promotion_status",
-      "path": "/internet/evidence-promotion/status"
     },
     {
       "methods": [
@@ -5800,34 +4390,6 @@
       "methods": [
         "GET"
       ],
-      "name": "get_internet_provider_gate",
-      "path": "/internet/provider-gate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_internet_provider_gate_summary",
-      "path": "/internet/provider-gate/summary"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "rebuild_internet_provider_gate",
-      "path": "/internet/provider-gate/rebuild"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_internet_search_provider_status",
-      "path": "/internet/search/provider/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
       "name": "get_internet_readiness",
       "path": "/internet/readiness"
     },
@@ -5856,64 +4418,148 @@
       "methods": [
         "GET"
       ],
-      "name": "get_launch_candidate_freeze",
-      "path": "/platform/launch-candidate"
+      "name": "center_route_contract",
+      "path": "/api/lifecycle/center-route-contract"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_launch_candidate_freeze_summary",
-      "path": "/platform/launch-candidate/summary"
+      "name": "lifecycle_route_contracts",
+      "path": "/api/lifecycle/route-contracts"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "freeze_launch_candidate",
-      "path": "/platform/launch-candidate/freeze"
+      "name": "lifecycle_select_route",
+      "path": "/api/lifecycle/select-route"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_platform_freeze_status",
-      "path": "/platform/freeze/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "governed_live_search_dashboard_smoke",
-      "path": "/governed-web/search/dashboard-smoke"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_browser_swagger_proof_binder",
-      "path": "/proof/manual-browser-swagger"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_manual_browser_swagger_proof_summary",
-      "path": "/proof/manual-browser-swagger/summary"
+      "name": "emergence_causal_contract",
+      "path": "/api/emergence/causal-contract"
     },
     {
       "methods": [
         "POST"
       ],
-      "name": "rebuild_manual_browser_swagger_proof_binder",
-      "path": "/proof/manual-browser-swagger/rebuild"
+      "name": "emergence_causal_assess",
+      "path": "/api/emergence/causal-assess"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "get_manual_browser_swagger_checklist",
-      "path": "/proof/manual-browser-swagger/checklist"
+      "name": "get_operator_search_capabilities",
+      "path": "/operator/search/capabilities"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "post_operator_search_query",
+      "path": "/operator/search/query"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "post_operator_command_parse",
+      "path": "/operator/command/parse"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_operator_web_search_status",
+      "path": "/operator/search/web/status"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "post_operator_web_search",
+      "path": "/operator/search/web"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "get_operator_search_layer",
+      "path": "/operator/search/layer"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "open_web_update_governance_readiness",
+      "path": "/api/update-governance/open-web/readiness"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "open_web_update_governance_panel",
+      "path": "/api/update-governance/open-web/panel"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "dashboard_open_web_update_governance_panel",
+      "path": "/dashboard/update-governance/panel"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "open_web_update_install_status",
+      "path": "/api/update-governance/open-web/install/status/{update_id}"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_self_analysis",
+      "path": "/api/update-governance/open-web/self-analysis"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_request",
+      "path": "/api/update-governance/open-web/request"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_approve",
+      "path": "/api/update-governance/open-web/approve"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_install_stage",
+      "path": "/api/update-governance/open-web/install/stage"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_install_apply",
+      "path": "/api/update-governance/open-web/install/apply"
+    },
+    {
+      "methods": [
+        "POST"
+      ],
+      "name": "open_web_update_rollback_plan",
+      "path": "/api/update-governance/open-web/rollback/plan"
     },
     {
       "methods": [
@@ -5954,6 +4600,27 @@
       "methods": [
         "GET"
       ],
+      "name": "api_intelligence_modes",
+      "path": "/api/intelligence/modes"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "api_operational_readiness",
+      "path": "/api/operational/readiness"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "api_governed_runtime_spine",
+      "path": "/api/governed/runtime-spine"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
       "name": "api_update_status",
       "path": "/api/update/status"
     },
@@ -5963,104 +4630,6 @@
       ],
       "name": "api_platform_update_plan",
       "path": "/api/platform/update/plan"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_dashboard_state",
-      "path": "/dashboard/state"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_api_dashboard_state",
-      "path": "/api/dashboard/state"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_operator_dashboard_summary",
-      "path": "/operator/dashboard/summary"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "refresh_operator_dashboard_state",
-      "path": "/operator/dashboard/refresh"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_operator_command_parse",
-      "path": "/operator/command/parse"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_operator_web_search_status",
-      "path": "/operator/search/web/status"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "post_operator_web_search",
-      "path": "/operator/search/web"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_operator_search_layer",
-      "path": "/operator/search/layer"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "evaluate",
-      "path": "/pipeline/evaluate"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "platform_status",
-      "path": "/api/platform/status"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "platform_target",
-      "path": "/api/platform/target"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "platform_current",
-      "path": "/api/platform/current"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "platform_resolve",
-      "path": "/api/platform/resolve"
-    },
-    {
-      "methods": [
-        "POST"
-      ],
-      "name": "platform_resolve_one",
-      "path": "/api/platform/resolve/{component}"
     },
     {
       "methods": [
@@ -6092,31 +4661,10 @@
     },
     {
       "methods": [
-        "GET"
-      ],
-      "name": "get_platform_launch_hardening",
-      "path": "/platform/launch-hardening"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_platform_launch_hardening_summary",
-      "path": "/platform/launch-hardening/summary"
-    },
-    {
-      "methods": [
         "POST"
       ],
-      "name": "rebuild_platform_launch_hardening",
-      "path": "/platform/launch-hardening/rebuild"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_platform_launch_status",
-      "path": "/platform/launch/status"
+      "name": "evaluate",
+      "path": "/pipeline/evaluate"
     },
     {
       "methods": [
@@ -6173,13 +4721,6 @@
       ],
       "name": "get_discovery_route_audit",
       "path": "/discovery/route-audit"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "get_runtime_truth",
-      "path": "/runtime/truth"
     },
     {
       "methods": [
@@ -6281,52 +4822,52 @@
     },
     {
       "methods": [
-        "POST"
+        "GET"
       ],
-      "name": "create_search_execution",
-      "path": "/runtime/search/execute"
+      "name": "strategic_world_status",
+      "path": "/api/strategic-world/status"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "search_execution_health",
-      "path": "/runtime/search/health"
+      "name": "technology_base",
+      "path": "/api/technology/base"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "governed_visible_query_result_verification",
-      "path": "/governed-web/search/visible-result-verification"
+      "name": "technology_search",
+      "path": "/api/technology/search"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "read_runtime_truth",
-      "path": "/runtime-truth/read"
+      "name": "technology_intelligence",
+      "path": "/api/technology/intelligence"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "read_runtime_truth_records",
-      "path": "/runtime-truth/records"
+      "name": "technology_reemergence_taxonomy",
+      "path": "/api/technology/reemergence-taxonomy"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "governed_session_status",
-      "path": "/governed/operations/session/status"
+      "name": "technology_reemergence_classify",
+      "path": "/api/technology/reemergence-classify"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "review_export_fetch_capsule_status",
-      "path": "/operator/s37/review-export-fetch-capsule/status"
+      "name": "acs2_visual_command_endpoint",
+      "path": "/api/acs2/{path:path}"
     },
     {
       "methods": [
@@ -6379,17 +4920,59 @@
     },
     {
       "methods": [
-        "POST"
+        "GET"
       ],
-      "name": "search_bar_dashboard_submit",
-      "path": "/search-bar/dashboard"
+      "name": "cockpit_fetch_map",
+      "path": "/system/cockpit-fetch-map"
     },
     {
       "methods": [
         "GET"
       ],
-      "name": "search_bar_dashboard_status",
-      "path": "/search-bar/status"
+      "name": "cockpit_fetch_map_summary",
+      "path": "/system/cockpit-fetch-map/summary"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_audit",
+      "path": "/system/cockpit-fetch-map/audit"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_approved",
+      "path": "/system/cockpit-fetch-map/approved"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "cockpit_fetch_map_registration_proof",
+      "path": "/system/cockpit-fetch-map/registration-proof"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "active_route_truth",
+      "path": "/system/route-truth"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "active_required_route_truth",
+      "path": "/system/route-truth/required"
+    },
+    {
+      "methods": [
+        "GET"
+      ],
+      "name": "active_cockpit_truth",
+      "path": "/system/cockpit-truth"
     },
     {
       "methods": [
@@ -6460,80 +5043,17 @@
       ],
       "name": "dashboard_active_control_map_s1323",
       "path": "/dashboard/active-control-map"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "_claire_serve_dashboard_v3",
-      "path": "/dashboard"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "_claire_serve_dashboard_v3",
-      "path": "/dashboard/final"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "_claire_serve_dashboard_v3",
-      "path": "/dashboard/v3"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "_claire_serve_dashboard_v3",
-      "path": "/operator-dashboard"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "_claire_serve_dashboard_v3",
-      "path": "/operator-cockpit"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "_claire_serve_dashboard_v3",
-      "path": "/command-center"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "_claire_serve_dashboard_endpoint_map",
-      "path": "/dashboard/endpoint-map"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "_claire_serve_dashboard_v3_asset",
-      "path": "/dashboard/v3/assets/{asset_name}"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "name": "_claire_serve_cockpit_asset",
-      "path": "/cockpit/assets/{kind}/{asset_name}"
     }
   ],
   "runtime_truth_mutation_allowed": false,
   "scope": "local_self_inventory_only",
   "summary": {
     "expected_surfaces": 8,
-    "local_gaps": 0,
-    "missing_expected_surfaces": 0,
+    "local_gaps": 3,
+    "missing_expected_surfaces": 3,
     "parse_failures": 0,
     "python_files_scanned": 500,
-    "routes_collected": 568
+    "routes_collected": 353
   },
   "version": "v19.89.8-S37R1-R4-self-inventory-need-classifier"
 }

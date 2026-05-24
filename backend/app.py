@@ -4,8 +4,8 @@ from fastapi import FastAPI
 
 
 def create_backend_app() -> FastAPI:
-    """Return the canonical Claire FastAPI app through the backend boundary."""
-    from claire.app import create_app
+    """Return the canonical FastAPI app through the backend boundary."""
+    from runtime_core.app import create_app
 
     return create_app()
 

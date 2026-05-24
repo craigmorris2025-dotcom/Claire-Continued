@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.internet_live_metadata_quarantine_s401_s407 import (
+from runtime_core.api.internet_live_metadata_quarantine_s401_s407 import (
     build_controlled_live_metadata_quarantine_evidence_s401_s407,
     build_s401_live_metadata_fetch_authority,
     build_s402_metadata_quarantine_record,
@@ -57,7 +57,7 @@ def test_s405_dashboard_summary_blocks_mutation():
 
 
 def test_s406_routes_work(tmp_path, monkeypatch):
-    import claire.api.internet_live_metadata_quarantine_s401_s407 as module
+    import runtime_core.api.internet_live_metadata_quarantine_s401_s407 as module
 
     monkeypatch.setattr(module, "LIVE_METADATA_DIR", tmp_path)
     app = FastAPI()
@@ -72,7 +72,7 @@ def test_s406_routes_work(tmp_path, monkeypatch):
 
 
 def test_s407_stop_gate_passes(tmp_path, monkeypatch):
-    import claire.api.internet_live_metadata_quarantine_s401_s407 as module
+    import runtime_core.api.internet_live_metadata_quarantine_s401_s407 as module
 
     monkeypatch.setattr(module, "LIVE_METADATA_DIR", tmp_path / "live_metadata")
     payload = build_s407_stop_gate(report_dir=tmp_path)

@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s27_cohesion_builds_and_preserves_authority():
-    module = importlib.import_module("claire.api.multi_panel_runtime_cohesion")
+    module = importlib.import_module("runtime_core.api.multi_panel_runtime_cohesion")
     payload = {
         "governed_runtime_timeline": {"authority": {"runtime_authority": "blocked", "autonomous_execution_expansion": False}},
         "governed_route_activity_overlay": {"authority": {"runtime_authority": "blocked", "autonomous_execution_expansion": False}},
@@ -35,7 +35,7 @@ def test_s27_cohesion_builds_and_preserves_authority():
 
 
 def test_s27_cohesion_detects_missing_panels():
-    module = importlib.import_module("claire.api.multi_panel_runtime_cohesion")
+    module = importlib.import_module("runtime_core.api.multi_panel_runtime_cohesion")
     cohesion = module.build_multi_panel_runtime_cohesion({})
 
     assert cohesion["cohesion_state"] == "partial"
@@ -43,7 +43,7 @@ def test_s27_cohesion_detects_missing_panels():
 
 
 def test_s27_cohesion_detects_authority_drift():
-    module = importlib.import_module("claire.api.multi_panel_runtime_cohesion")
+    module = importlib.import_module("runtime_core.api.multi_panel_runtime_cohesion")
     payload = {
         "governed_runtime_timeline": {"authority": {"runtime_authority": "enabled", "autonomous_execution_expansion": False}},
     }
@@ -55,7 +55,7 @@ def test_s27_cohesion_detects_authority_drift():
 
 
 def test_s27_attach_cohesion_preserves_payload():
-    module = importlib.import_module("claire.api.multi_panel_runtime_cohesion")
+    module = importlib.import_module("runtime_core.api.multi_panel_runtime_cohesion")
     updated = module.attach_multi_panel_runtime_cohesion({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

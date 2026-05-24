@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s19_overlay_builds_and_preserves_authority():
-    module = importlib.import_module("claire.api.governed_route_activity_overlay")
+    module = importlib.import_module("runtime_core.api.governed_route_activity_overlay")
     overlay = module.build_governed_route_activity_overlay({})
 
     assert overlay["version"] == "v19.89.8-S19"
@@ -21,9 +21,9 @@ def test_s19_overlay_builds_and_preserves_authority():
 
 
 def test_s19_overlay_uses_registry_surface_ownership():
-    registry_module = importlib.import_module("claire.api.canonical_cockpit_surface_registry")
-    health_module = importlib.import_module("claire.api.canonical_cockpit_surface_health")
-    overlay_module = importlib.import_module("claire.api.governed_route_activity_overlay")
+    registry_module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_registry")
+    health_module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_health")
+    overlay_module = importlib.import_module("runtime_core.api.governed_route_activity_overlay")
 
     registry = registry_module.build_cockpit_surface_registry()
     health = health_module.evaluate_surface_registry_health(registry)

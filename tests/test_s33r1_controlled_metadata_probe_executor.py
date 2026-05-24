@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
-from claire.api.controlled_metadata_probe_executor import build_controlled_metadata_probe_executor_status
+from runtime_core.app import create_app
+from runtime_core.api.controlled_metadata_probe_executor import build_controlled_metadata_probe_executor_status
 
 def test_s33r1_executor_status_is_fail_closed_no_network():
     status = build_controlled_metadata_probe_executor_status()

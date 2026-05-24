@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.cockpit_endpoint_probe_display_contract import get_endpoint_probe_display_contract
-from claire.api.cockpit_shell_state_render_contract import get_shell_state_render_contract
+from runtime_core.api.cockpit_endpoint_probe_display_contract import get_endpoint_probe_display_contract
+from runtime_core.api.cockpit_shell_state_render_contract import get_shell_state_render_contract
 
 
 def test_s247_s253_endpoint_probe_display_contract_is_get_only_and_fail_closed():

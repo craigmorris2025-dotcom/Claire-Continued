@@ -4,7 +4,7 @@ from fastapi.testclient import TestClient
 
 
 def test_dashboard_payload_exposes_uploaded_docs_end_state_alignment():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     client = TestClient(create_app())
     payload = client.get("/dashboard/payload").json()

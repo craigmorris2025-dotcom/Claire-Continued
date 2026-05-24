@@ -23,7 +23,7 @@ def main() -> int:
     _bootstrap(project_root)
 
     try:
-        from claire.dashboard_intelligence.local_index import build_dashboard_intelligence_index
+        from runtime_core.dashboard_intelligence.local_index import build_dashboard_intelligence_index
     except Exception as exc:
         print(f"[Claire v17.62] Import error: {exc}", file=sys.stderr)
         return 2

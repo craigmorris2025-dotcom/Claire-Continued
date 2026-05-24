@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.operator_workflow_route_handlers import (
+from runtime_core.api.operator_workflow_route_handlers import (
     get_mount_ready_operator_workflow_handlers,
     read_bounded_jobs_handler,
     read_review_queue_handler,

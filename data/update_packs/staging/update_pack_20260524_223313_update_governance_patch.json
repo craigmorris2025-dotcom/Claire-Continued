@@ -1,0 +1,111 @@
+{
+  "contract_name": "Governed Update Pack Staging",
+  "execution_gate": {
+    "automatic_execution_enabled": false,
+    "blockers": [
+      "internet_readiness_blocked"
+    ],
+    "execution_enabled": false,
+    "reason": "v17.71 stages update packs only. Execution is reserved for v17.72-v17.74 gates.",
+    "warnings": []
+  },
+  "file_operations": {
+    "all_operations_require_hash": true,
+    "allowed_operations": [
+      "write_new_file",
+      "replace_file_with_backup",
+      "append_guarded_mount",
+      "write_report"
+    ],
+    "forbidden_operations": [
+      "delete_without_archive",
+      "modify_protected_runtime_without_validation",
+      "enable_background_updates",
+      "execute_external_code"
+    ],
+    "operations": []
+  },
+  "generated_at": "2026-05-24T22:33:13.111262Z",
+  "governance": {
+    "no_hidden_updates": true,
+    "no_uncontrolled_self_modification": true,
+    "operator_review_required": true,
+    "rollback_required": true,
+    "source_trust_required": true,
+    "staging_only": true,
+    "validation_required": true
+  },
+  "operator_review": {
+    "approval_status": "not_approved",
+    "required": true,
+    "review_fields": [
+      "pack_id",
+      "pack_type",
+      "source_authority",
+      "scope",
+      "file_operations",
+      "validation_plan",
+      "rollback_plan",
+      "execution_gate"
+    ]
+  },
+  "pack_hash": "5b1e5e1806bda64bac549eb023bc93b8a087d99a7c22940420329672e4bff7fe",
+  "pack_identity": {
+    "automatic_update": false,
+    "execute_now": false,
+    "pack_id": "update_pack_20260524_223313_update_governance_patch",
+    "pack_type": "update_governance_patch",
+    "stage_only": true,
+    "status": "blocked"
+  },
+  "rollback_plan": {
+    "backup_required_before_replace": true,
+    "required": true,
+    "restore_command_required": true,
+    "rollback_manifest_required": true,
+    "rollback_test_required": true
+  },
+  "scope": {
+    "allowed_pack_types": [
+      "runtime_truth_patch",
+      "dashboard_contract_patch",
+      "route_contract_patch",
+      "internet_source_policy_patch",
+      "update_governance_patch"
+    ],
+    "description": "Governed update pack staging contract. This pack defines what could be updated, not execution.",
+    "protected_paths": [
+      "claire/app.py",
+      "claire/api/routes_pipeline.py",
+      "claire/orchestrator/pipeline_v4.py",
+      "claire/runtime_truth/runtime_truth_contract_repair.py",
+      "frontend/command_center/modern/index.html",
+      "LAUNCH_PLATFORM.bat",
+      "pyproject.toml",
+      "requirements.txt"
+    ],
+    "requires_operator_scope_approval": true
+  },
+  "source_authority": {
+    "allowlist_required": true,
+    "approved_sources_required": true,
+    "internet_readiness_source": "data/internet_readiness/internet_readiness_verification.json",
+    "internet_readiness_status": "blocked",
+    "quarantine_unknown_sources": true,
+    "source_trust_required": true
+  },
+  "validation_plan": {
+    "current_build_validation_source": "data/validation/buildability_viability_manufacturability_validation.json",
+    "current_build_validation_status": "warning",
+    "required_before_execution": [
+      "syntax_check",
+      "targeted_pytest",
+      "route_smoke_test",
+      "dashboard_contract_check",
+      "runtime_truth_rebuild",
+      "rollback_manifest_check"
+    ],
+    "validation_gauntlet_required": true
+  },
+  "version": "v17.71"
+}

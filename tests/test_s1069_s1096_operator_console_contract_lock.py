@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 
 
 def test_s1069_s1096_operator_console_contract_module_is_ready_and_blocked():
-    module = importlib.import_module("claire.api.dashboard_operator_console_contract")
+    module = importlib.import_module("runtime_core.api.dashboard_operator_console_contract")
     contract = module.build_operator_console_contract()
 
     assert contract["status"] == "ready"
@@ -27,7 +27,7 @@ def test_s1069_s1096_operator_console_contract_module_is_ready_and_blocked():
 
 
 def test_s1069_s1096_operator_console_routes_mount_through_create_app():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     client = TestClient(create_app())
 

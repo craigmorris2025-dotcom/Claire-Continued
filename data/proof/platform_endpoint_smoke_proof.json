@@ -8,56 +8,77 @@
     "autodesign": {
       "endpoints": [
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.67\",\"contract_name\":\"AutoDesign Handoff Contract\",\"generated_at\":\"2026-05-24T22:33:05.006263Z\",\"source\":{\"runtime_truth\":{\"selected\":\"data/runtime/runtime_truth_canonical.json\",\"attempts\":[{\"path\":\"data/runtime/runtime_truth_canonical.json\",\"status\":\"loaded\"}]},\"route_audit\":{\"selected\":\"data/routes/discovery_breakthrough_innovation_route_audit.json\",\"attempts\":[{\"path\":\"data/routes/discovery_breakthrough_innovation_route_audit.json\",\"status\":\"loaded\"}]}},\"route\":{\"selected\":\"solution_design\",\"family\":\"autodesign\",\"invention_required\":true,\"handoff_status\":\"already_satisfied\"},\"handoff_inputs\":{\"signal_basis\":{\"name\":\"signal_basis\",\"status\":\"present\",\"available\":true,\"summary",
           "domain": "autodesign",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "autodesign_request",
+            "contract_name",
+            "existing_outputs",
+            "failures",
+            "generated_at",
+            "governance",
+            "handoff_inputs",
+            "missing_required_inputs",
+            "next",
+            "required_design_output_contract",
+            "route",
+            "source",
+            "version",
+            "warnings"
           ],
           "method": "GET",
           "name": "autodesign_handoff",
           "path": "/autodesign/handoff",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.67\",\"generated_at\":\"2026-05-24T22:33:05.062256Z\",\"route\":{\"selected\":\"solution_design\",\"family\":\"autodesign\",\"invention_required\":true,\"handoff_status\":\"already_satisfied\"},\"status\":\"already_satisfied\",\"required\":true,\"missing_required_inputs\":[],\"warnings\":[]}",
           "domain": "autodesign",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "generated_at",
+            "missing_required_inputs",
+            "required",
+            "route",
+            "status",
+            "version",
+            "warnings"
           ],
           "method": "GET",
           "name": "autodesign_handoff_summary",
           "path": "/autodesign/handoff/summary",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         }
       ],
-      "failed": 2,
+      "failed": 0,
       "optional_failed": 0,
-      "passed": 0,
+      "passed": 2,
       "required": 2,
-      "status": "blocked"
+      "status": "passed"
     },
     "core": {
       "endpoints": [
         {
-          "body_preview": "{\"status\":\"ok\",\"mode\":\"recovery\"}",
+          "body_preview": "{\"ok\":true,\"status\":\"ok\",\"service\":\"Governed Intelligence Platform\",\"version\":\"v19.89.8-dashboard-actions-s36-contract-repair-r6\"}",
           "domain": "core",
           "error": null,
           "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "mode",
-            "status"
+            "ok",
+            "service",
+            "status",
+            "version"
           ],
           "method": "GET",
           "name": "root",
@@ -66,14 +87,16 @@
           "status": "passed"
         },
         {
-          "body_preview": "{\"status\":\"healthy\"}",
+          "body_preview": "{\"ok\":true,\"status\":\"ok\",\"version\":\"v19.89.8-dashboard-actions-s36-contract-repair-r6\"}",
           "domain": "core",
           "error": null,
           "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "status"
+            "ok",
+            "status",
+            "version"
           ],
           "method": "GET",
           "name": "health",
@@ -91,23 +114,53 @@
     "dashboard": {
       "endpoints": [
         {
-          "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"status\":\"dashboard_state_ready\",\"created_at\":\"2026-05-13T11:18:58.086156Z\",\"backend_search_available\":true,\"backend_search_status\":\"ready\",\"provider_probe_status\":\"mounted_guarded\",\"operator_probe_ready\":false,\"manual_enable_required\":true,\"routes\":{\"search_capabilities\":\"/operator/search/capabilities\",\"dashboard_state\":\"/operator/dashboard/state\",\"compat_search\":\"/operator/search\",\"compat_live_search\":\"/operator/search/live\",\"canonical_live_search\":\"/api/dashboard/search/live\",\"canonical_google_smoke\":\"/api/dashboard/search/smoke/google\",\"provider_status\":\"/api/dashboard/search/provider/status\",\"provider_probe\":\"/api/",
+          "body_preview": "{\"schema_version\":\"v19.89.8_cockpit_dashboard_state\",\"status\":\"ready\",\"generated_at\":\"2026-05-24T22:33:04.132256+00:00\",\"simulated_values_present\":false,\"sources\":{\"runtime\":\"/operator/status\",\"lifecycle\":\"data/continuous_runtime/current_run.json\",\"portfolio\":\"data/continuous_runtime/portfolio_candidates.json\",\"breakthrough\":\"data/continuous_runtime/breakthrough_candidates.json\",\"discovery\":\"data/continuous_runtime/discovery_candidates.json\",\"design\":\"data/continuous_runtime/design_candidates.json\",\"package\":\"data/continuous_runtime/package_candidates.json\",\"source_universes\":\"data/source_universes/universe_index.json\",\"live_sources\":\"data/live_sources/source_health_snapshot.json\",\"live_inte",
           "domain": "dashboard",
           "error": null,
           "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "backend_search_available",
-            "backend_search_status",
-            "contract_version",
-            "created_at",
-            "governance",
-            "manual_enable_required",
-            "operator_probe_ready",
-            "provider_probe_status",
-            "routes",
-            "status"
+            "active_control_map",
+            "active_intelligence_mode",
+            "command_history",
+            "command_plan",
+            "current_run_truth",
+            "deltas",
+            "dependency_chain_proof",
+            "design_artifact_package",
+            "design_portal_workbench",
+            "emergence_engine",
+            "endpoint_reconciliation",
+            "endpoint_standard_settings",
+            "first_run_readiness",
+            "generated_at",
+            "intelligence_modes",
+            "internet_provider_diagnostics",
+            "latest_hybrid_result",
+            "lifecycle",
+            "live_sources",
+            "manifest",
+            "metrics",
+            "operational_conditions",
+            "pipeline_activation",
+            "platform_completion",
+            "post_run_handoff",
+            "project_file_bindings",
+            "queues",
+            "records",
+            "runtime",
+            "schema_version",
+            "search_lanes",
+            "sections",
+            "simulated_values_present",
+            "sources",
+            "status",
+            "strategic_world",
+            "surface_completion",
+            "system_wiring",
+            "technology_base",
+            "truth"
           ],
           "method": "GET",
           "name": "operator_dashboard_state",
@@ -116,267 +169,394 @@
           "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"schema_version\":\"v19.89.8_cockpit_dashboard_state\",\"status\":\"ready\",\"generated_at\":\"2026-05-24T22:33:04.548263+00:00\",\"simulated_values_present\":false,\"sources\":{\"runtime\":\"/operator/status\",\"lifecycle\":\"data/continuous_runtime/current_run.json\",\"portfolio\":\"data/continuous_runtime/portfolio_candidates.json\",\"breakthrough\":\"data/continuous_runtime/breakthrough_candidates.json\",\"discovery\":\"data/continuous_runtime/discovery_candidates.json\",\"design\":\"data/continuous_runtime/design_candidates.json\",\"package\":\"data/continuous_runtime/package_candidates.json\",\"source_universes\":\"data/source_universes/universe_index.json\",\"live_sources\":\"data/live_sources/source_health_snapshot.json\",\"live_inte",
           "domain": "dashboard",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "active_control_map",
+            "active_intelligence_mode",
+            "command_history",
+            "command_plan",
+            "current_run_truth",
+            "deltas",
+            "dependency_chain_proof",
+            "design_artifact_package",
+            "design_portal_workbench",
+            "emergence_engine",
+            "endpoint_reconciliation",
+            "endpoint_standard_settings",
+            "first_run_readiness",
+            "generated_at",
+            "intelligence_modes",
+            "internet_provider_diagnostics",
+            "latest_hybrid_result",
+            "lifecycle",
+            "live_sources",
+            "manifest",
+            "metrics",
+            "operational_conditions",
+            "pipeline_activation",
+            "platform_completion",
+            "post_run_handoff",
+            "project_file_bindings",
+            "queues",
+            "records",
+            "runtime",
+            "schema_version",
+            "search_lanes",
+            "sections",
+            "simulated_values_present",
+            "sources",
+            "status",
+            "strategic_world",
+            "surface_completion",
+            "system_wiring",
+            "technology_base",
+            "truth"
           ],
           "method": "GET",
           "name": "dashboard_state",
           "path": "/dashboard/state",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         }
       ],
-      "failed": 1,
+      "failed": 0,
       "optional_failed": 0,
-      "passed": 1,
+      "passed": 2,
       "required": 2,
-      "status": "blocked"
+      "status": "passed"
     },
     "design_portal": {
       "endpoints": [
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.68\",\"contract_name\":\"Design Portal Output Contract\",\"generated_at\":\"2026-05-24T22:33:05.088258Z\",\"status\":\"contract_ready\",\"route\":{\"selected\":\"solution_design\",\"family\":\"autodesign\",\"invention_required\":true,\"handoff_status\":\"already_satisfied\"},\"sources\":{\"runtime_truth\":{\"path\":\"data/runtime/runtime_truth_canonical.json\",\"status\":\"loaded\"},\"route_audit\":{\"path\":\"data/routes/discovery_breakthrough_innovation_route_audit.json\",\"status\":\"loaded\"},\"autodesign_handoff\":{\"path\":\"data/autodesign/autodesign_handoff_contract.json\",\"status\":\"loaded\"}},\"sections\":{\"architecture_summary\":{\"status\":\"ready_for_review\",\"problem_statement\":\"{\\\"confidence\\\": \\\"0.6681000400745148\\\", \\\"oppor",
           "domain": "design_portal",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "contract_name",
+            "failures",
+            "generated_at",
+            "governance",
+            "next",
+            "required_output_sections",
+            "route",
+            "section_status",
+            "sections",
+            "sources",
+            "status",
+            "version",
+            "warnings"
           ],
           "method": "GET",
           "name": "design_portal_output",
           "path": "/design-portal/output",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.68\",\"generated_at\":\"2026-05-24T22:33:05.137256Z\",\"status\":\"contract_ready\",\"route\":{\"selected\":\"solution_design\",\"family\":\"autodesign\",\"invention_required\":true,\"handoff_status\":\"already_satisfied\"},\"section_status\":{\"architecture_summary\":\"ready_for_review\",\"blueprint_summary\":\"contract_defined\",\"component_map\":\"pending_detail\",\"dependency_map\":\"present\",\"technology_stack\":\"present\",\"implementation_plan\":\"contract_defined\",\"buildability_requirements\":\"required\",\"validation_requirements\":\"required\",\"risks\":\"active\",\"evidence_trace\":\"present\",\"package_readiness\":\"contract_ready_for_validation\"},\"warnings\":[],\"failures\":[],\"package_readiness\":{\"status\":\"contract_ready_for_valid",
           "domain": "design_portal",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "failures",
+            "generated_at",
+            "package_readiness",
+            "route",
+            "section_status",
+            "status",
+            "version",
+            "warnings"
           ],
           "method": "GET",
           "name": "design_portal_output_summary",
           "path": "/design-portal/output/summary",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         }
       ],
-      "failed": 2,
+      "failed": 0,
       "optional_failed": 0,
-      "passed": 0,
+      "passed": 2,
       "required": 2,
-      "status": "blocked"
+      "status": "passed"
     },
     "internet": {
       "endpoints": [
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.70\",\"contract_name\":\"Internet Readiness Verification\",\"generated_at\":\"2026-05-24T22:33:09.119256Z\",\"status\":\"blocked\",\"mode\":\"static_verification_no_internet_calls\",\"internet_layers\":{\"internet_activation\":{\"status\":\"present\",\"present\":[\"data/internet_activation/internet_activation_manifest.json\"],\"missing\":[\"claire/internet_activation/config.py\",\"claire/internet_activation/service.py\"],\"score\":1,\"out_of\":3},\"internet_runtime_integration\":{\"status\":\"present\",\"present\":[\"data/internet_runtime_integration/internet_runtime_integration_manifest.json\"],\"missing\":[\"claire/internet_runtime_integration/bridge.py\",\"claire/internet_runtime_integration/dashboard_payload.py\",\"claire/inte",
           "domain": "internet",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "blockers",
+            "contract_name",
+            "environment",
+            "generated_at",
+            "governance",
+            "governance_signals",
+            "internet_layers",
+            "mode",
+            "next",
+            "readiness",
+            "scheduler",
+            "status",
+            "update_governance",
+            "version",
+            "warnings"
           ],
           "method": "GET",
           "name": "internet_readiness",
           "path": "/internet/readiness",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.70\",\"generated_at\":\"2026-05-24T22:33:12.987261Z\",\"status\":\"blocked\",\"mode\":\"static_verification_no_internet_calls\",\"readiness\":{\"static_internet_readiness\":false,\"live_internet_enabled\":false,\"automatic_updates_enabled\":false,\"safe_to_attempt_live_probe_after_operator_review\":false,\"safe_for_automatic_updates\":false,\"requires_v17_71_to_v17_74_update_pack_governance\":true},\"blockers\":[\"scheduler_lock_evidence_missing\"],\"warnings\":[\"Rollback governance files not found. Automatic update readiness cannot pass later without rollback proof.\",\"Update validation gauntlet files not found. Automatic update readiness cannot pass later without validation proof.\"]}",
           "domain": "internet",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "blockers",
+            "generated_at",
+            "mode",
+            "readiness",
+            "status",
+            "version",
+            "warnings"
           ],
           "method": "GET",
           "name": "internet_readiness_summary",
           "path": "/internet/readiness/summary",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         }
       ],
-      "failed": 2,
+      "failed": 0,
       "optional_failed": 0,
-      "passed": 0,
+      "passed": 2,
       "required": 2,
-      "status": "blocked"
+      "status": "passed"
     },
     "proof": {
       "endpoints": [
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.75\",\"contract_name\":\"Full End-to-End Proof Pack\",\"generated_at\":\"2026-05-24T22:33:13.186265Z\",\"status\":\"GO_WITH_WARNINGS\",\"stop_go\":{\"status\":\"GO_WITH_WARNINGS\",\"blocked_domains\":[],\"warnings\":[{\"domain\":\"buildability_validation\",\"warnings\":[\"invention_route_requires_higher_feasibility_threshold\",\"package_not_ready_for_final_package\"]},{\"domain\":\"internet_readiness\",\"warnings\":[\"No live search provider API key detected. Static readiness can pass, but live internet use remains disabled.\"]}],\"recommendation\":\"Proceed only to manual review. Do not enable automatic updates.\"},\"input_sources\":{\"dashboard_wiring\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/dashboard/v17_64",
           "domain": "proof",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "contract_name",
+            "core_outputs",
+            "domains",
+            "endpoint_inventory",
+            "generated_at",
+            "governance",
+            "input_sources",
+            "launch_readiness",
+            "next",
+            "proof_domains",
+            "status",
+            "stop_go",
+            "version"
           ],
           "method": "GET",
           "name": "proof_e2e",
           "path": "/proof/e2e",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.75\",\"generated_at\":\"2026-05-24T22:33:13.206261Z\",\"status\":\"GO_WITH_WARNINGS\",\"stop_go\":{\"status\":\"GO_WITH_WARNINGS\",\"blocked_domains\":[],\"warnings\":[{\"domain\":\"buildability_validation\",\"warnings\":[\"invention_route_requires_higher_feasibility_threshold\",\"package_not_ready_for_final_package\"]},{\"domain\":\"internet_readiness\",\"warnings\":[\"No live search provider API key detected. Static readiness can pass, but live internet use remains disabled.\"]}],\"recommendation\":\"Proceed only to manual review. Do not enable automatic updates.\"},\"launch_readiness\":{\"dashboard_ready_for_manual_review\":true,\"runtime_truth_ready_for_manual_review\":true,\"route_contract_ready_for_manual_review\":tru",
           "domain": "proof",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "automatic_updates_enabled",
+            "domain_status",
+            "generated_at",
+            "launch_readiness",
+            "live_internet_enabled",
+            "status",
+            "stop_go",
+            "version"
           ],
           "method": "GET",
           "name": "proof_e2e_summary",
           "path": "/proof/e2e/summary",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.75\",\"generated_at\":\"2026-05-24T22:33:13.221262Z\",\"status\":\"GO_WITH_WARNINGS\",\"stop_go\":{\"status\":\"GO_WITH_WARNINGS\",\"blocked_domains\":[],\"warnings\":[{\"domain\":\"buildability_validation\",\"warnings\":[\"invention_route_requires_higher_feasibility_threshold\",\"package_not_ready_for_final_package\"]},{\"domain\":\"internet_readiness\",\"warnings\":[\"No live search provider API key detected. Static readiness can pass, but live internet use remains disabled.\"]}],\"recommendation\":\"Proceed only to manual review. Do not enable automatic updates.\"},\"launch_readiness\":{\"dashboard_ready_for_manual_review\":true,\"runtime_truth_ready_for_manual_review\":true,\"route_contract_ready_for_manual_review\":tru",
           "domain": "proof",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "automatic_updates_enabled",
+            "domain_status",
+            "generated_at",
+            "launch_readiness",
+            "live_internet_enabled",
+            "status",
+            "stop_go",
+            "version"
           ],
           "method": "GET",
           "name": "system_stop_go",
           "path": "/system/stop-go",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         }
       ],
-      "failed": 3,
+      "failed": 0,
       "optional_failed": 0,
-      "passed": 0,
+      "passed": 3,
       "required": 3,
-      "status": "blocked"
+      "status": "passed"
     },
     "routes": {
       "endpoints": [
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.66\",\"audit_name\":\"Discovery / Breakthrough / Innovation Route Audit\",\"generated_at\":\"2026-05-24T22:33:04.964255Z\",\"source\":{\"selected\":\"data/runtime/runtime_truth_canonical.json\",\"attempts\":[{\"path\":\"data/runtime/runtime_truth_canonical.json\",\"status\":\"loaded\"}]},\"contract\":{\"status\":\"passed\",\"selected_route\":\"solution_design\",\"terminal_state\":\"complete\",\"route_family\":\"autodesign\",\"invention_required\":true,\"required_surfaces\":[\"discovery\",\"breakthrough\",\"advancement_path\",\"autodesign\",\"design_portal\",\"technology_intelligence\"],\"missing_required_surfaces\":[],\"first_class_surfaces\":{\"signal_basis\":{\"surface\":\"signal_basis\",\"status\":\"present\",\"available\":true,\"source\":\"surfaces",
           "domain": "routes",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "audit_name",
+            "contract",
+            "generated_at",
+            "next",
+            "route_rule",
+            "source",
+            "version"
           ],
           "method": "GET",
           "name": "route_audit",
           "path": "/routes/audit",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.66\",\"generated_at\":\"2026-05-24T22:33:04.985259Z\",\"status\":\"passed\",\"route\":\"solution_design\",\"route_family\":\"autodesign\",\"invention_required\":true,\"missing_required_surfaces\":[],\"warnings\":[],\"failures\":[]}",
           "domain": "routes",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "failures",
+            "generated_at",
+            "invention_required",
+            "missing_required_surfaces",
+            "route",
+            "route_family",
+            "status",
+            "version",
+            "warnings"
           ],
           "method": "GET",
           "name": "route_audit_summary",
           "path": "/routes/audit/summary",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         }
       ],
-      "failed": 2,
+      "failed": 0,
       "optional_failed": 0,
-      "passed": 0,
+      "passed": 2,
       "required": 2,
-      "status": "blocked"
+      "status": "passed"
     },
     "runtime_truth": {
       "endpoints": [
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"state\":{\"version\":\"v19.84.1\",\"runtime_name\":\"Claire Syntalion Runtime Truth\",\"state\":\"idle\",\"mode\":\"deterministic\",\"app_boots\":true,\"active_route\":null,\"terminal_state\":\"no_active_run\",\"governance_state\":\"ready\",\"continuous_runtime\":{\"status\":\"not_started\",\"implemented\":false},\"web_governance\":{\"provider_status\":\"unverified\",\"live_available\":false,\"fail_closed\":true},\"lifecycle\":{\"stage_count\":30,\"selected_route_stages\":[],\"skipped_by_route\":[]},\"latest_output_summary\":null,\"errors\":[],\"updated_at\":\"2026-05-12T11:27:47.640895+00:00\"},\"report\":{\"automatic_updates_enabled\":false,\"autonomous_agent_execution_enabled\":false,\"blocked_count\":0,\"blocked_records\":[],\"eligible_count\":0,\"eligible_rec",
           "domain": "runtime_truth",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "report",
+            "runtime_truth_mutation_enabled",
+            "state"
           ],
           "method": "GET",
           "name": "runtime_truth",
           "path": "/runtime/truth",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"contract_version\":\"v17.65\",\"generated_at\":\"2026-05-24T22:33:04.950258Z\",\"source\":{\"invalid_candidate_count\":0,\"invalid_candidates_sample\":[],\"raw_available\":true,\"selected_runtime_truth\":\"exports/claire_run_20260505_063434_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json\",\"top_candidates\":[{\"path\":\"exports/claire_run_20260505_063434_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json\",\"score\":217,\"size_bytes\":1185287},{\"path\":\"exports/claire_run_20260505_063434_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json\",\"score\":217,\"size_bytes\":1181619},{\"path\":\"exports/claire_run_20260505_063524_climate_insurance_climate_i",
           "domain": "runtime_truth",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "contract_version",
+            "generated_at",
+            "missing",
+            "mission",
+            "readiness",
+            "route",
+            "source"
           ],
           "method": "GET",
           "name": "runtime_state",
           "path": "/runtime/state",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         }
       ],
-      "failed": 2,
+      "failed": 0,
       "optional_failed": 0,
-      "passed": 0,
+      "passed": 2,
       "required": 2,
-      "status": "blocked"
+      "status": "passed"
     },
     "search": {
       "endpoints": [
         {
-          "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"status\":\"capabilities_ready\",\"created_at\":\"2026-05-13T11:18:58.090155Z\",\"backend_search_available\":true,\"visible_dashboard_filtering_available\":true,\"manual_enable_required\":true,\"capabilities\":[{\"id\":\"governed_live_web_search\",\"label\":\"Governed Live Web Search\",\"status\":\"ready\",\"canonical_endpoint\":\"/api/dashboard/search/live\",\"compatibility_endpoint\":\"/operator/search\",\"methods\":[\"GET\",\"POST\"]},{\"id\":\"provider_probe_status\",\"label\":\"Governed Provider Probe Status\",\"status\":\"ready\",\"canonical_endpoint\":\"/api/dashboard/search/provider/status\",\"compatibility_endpoint\":\"/operator/dashboard/state\",\"methods\":[\"GET\"]}],\"gov",
+          "body_preview": "{\"version\":\"v17.75.2\",\"contract_name\":\"Workspace Dashboard + Web Search + Agent Command Bar Preparation\",\"generated_at\":\"2026-05-24T22:33:04.604265Z\",\"search_bar\":{\"permanent\":true,\"role\":\"normal web search + governed research + runtime search + future AI-agent command surface\",\"placeholder\":\"Search web, ask Claire, run command, or find system output...\",\"must_not_be_removed\":true},\"modes\":{\"normal_web_search\":{\"label\":\"Normal Web Search\",\"prepared\":true,\"enabled\":false,\"reason\":\"Prepared as a normal search-engine mode, but live search remains gated until governed provider and internet readiness are verified.\"},\"governed_research_search\":{\"label\":\"Governed Research Search\",\"prepared\":true,\"e",
           "domain": "search",
           "error": null,
           "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "backend_search_available",
-            "capabilities",
-            "contract_version",
-            "created_at",
-            "governance",
-            "manual_enable_required",
-            "status",
-            "visible_dashboard_filtering_available"
+            "contract_name",
+            "generated_at",
+            "live_web_conditions",
+            "modes",
+            "prepared_commands",
+            "search_bar",
+            "unsafe_actions_disabled",
+            "version",
+            "workspace_targets"
           ],
           "method": "GET",
           "name": "operator_search_capabilities",
@@ -385,7 +565,7 @@
           "status": "passed"
         },
         {
-          "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"endpoint_status\":\"endpoint_response_ready\",\"status\":\"no_results\",\"reason\":\"no_governed_result_for_query\",\"created_at\":\"2026-05-13T11:18:58.093157Z\",\"query\":\"runtime\",\"manual_enable\":true,\"visible_result_count\":0,\"result_cards\":[],\"compatibility_paths\":[\"/operator/search\",\"/operator/search/live\",\"/operator/search/query\",\"/operator/search/run\",\"/operator/search/smoke/google\"],\"canonical_paths\":[\"/api/dashboard/search/live\",\"/api/dashboard/search/smoke/google\"],\"governance\":{\"review_required\":true,\"runtime_truth_mutated\":false,\"autonomous_execution\":false,\"automatic_updates\":false,\"uncontrolled_browsing\":false,\"fail_close",
+          "body_preview": "{\"version\":\"v17.75.2\",\"generated_at\":\"2026-05-24T22:33:04.867264Z\",\"query\":\"runtime\",\"mode\":\"runtime\",\"status\":\"completed\",\"result_count\":3,\"results\":[{\"type\":\"runtime_system_result\",\"path\":\"data/continuous_runtime/review_queue.json\",\"score\":712,\"snippet\":\"\\\"Continuous intelligence cycle ingested 4 allowlisted source files. Internal system-zone candidate generation is blocked.\\\", \\\"artifact\\\": \\\"data/continuous_runtime/cycles/cycle_20260520_230615_3db6aec9.json\\\", \\\"candidate_counts\\\": { \\\"discoveries\\\": 0, \\\"breakthroughs\\\": 0, \\\"portfolios\\\": 0, \\\"designs\\\": 0, \\\"packages\\\": 0 }, \\\"top_candidate\\\": {}, \\\"operator_review_required\\\": true, \\\"runtime_truth_mutated\\\": false }, { \\\"id\\\": \\\"cycl",
           "domain": "search",
           "error": null,
           "http_status": 200,
@@ -397,18 +577,16 @@
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "canonical_paths",
-            "compatibility_paths",
-            "contract_version",
-            "created_at",
-            "endpoint_status",
-            "governance",
-            "manual_enable",
+            "agent_command_prepared",
+            "generated_at",
+            "mode",
             "query",
-            "reason",
-            "result_cards",
+            "result_count",
+            "results",
             "status",
-            "visible_result_count"
+            "version",
+            "web_search_available",
+            "web_search_prepared"
           ],
           "method": "POST",
           "name": "operator_search_query",
@@ -417,157 +595,218 @@
           "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.75.2\",\"generated_at\":\"2026-05-24T22:33:04.891258Z\",\"command\":{\"recognized\":true,\"query\":\"open autodesign\",\"intent\":\"open autodesign\",\"plan\":{\"action\":\"open_workspace\",\"workspace\":\"autodesign\",\"endpoint\":\"/autodesign/handoff\"},\"execution_enabled\":false,\"automatic_execution_enabled\":false,\"requires_user_click\":true},\"execution_enabled\":false,\"automatic_execution_enabled\":false,\"background_execution_enabled\":false}",
           "domain": "search",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json": {
             "query": "open autodesign"
           },
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "automatic_execution_enabled",
+            "background_execution_enabled",
+            "command",
+            "execution_enabled",
+            "generated_at",
+            "version"
           ],
           "method": "POST",
           "name": "operator_command_parse",
           "path": "/operator/command/parse",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         }
       ],
-      "failed": 1,
+      "failed": 0,
       "optional_failed": 0,
-      "passed": 2,
+      "passed": 3,
       "required": 3,
-      "status": "blocked"
+      "status": "passed"
     },
     "updates": {
       "endpoints": [
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.71\",\"contract_name\":\"Governed Update Pack Staging\",\"generated_at\":\"2026-05-24T22:33:13.113265Z\",\"staging_dir\":\"data/update_packs/staging\",\"sources\":{\"internet_readiness\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json\",\"status\":\"loaded\"},\"build_validation\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/validation/buildability_viability_manufacturability_validation.json\",\"status\":\"loaded\"},\"runtime_truth\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json\",\"status\":\"loaded\"}},\"protected_paths\":{\"present\":[\"frontend/command_center/modern/index.html\",\"LAUNCH_PLATFORM.bat\",\"p",
           "domain": "updates",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "contract_name",
+            "generated_at",
+            "governance",
+            "latest_pack",
+            "next",
+            "packs",
+            "protected_paths",
+            "sources",
+            "staging_dir",
+            "version"
           ],
           "method": "GET",
           "name": "update_staging",
           "path": "/updates/staging",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.72\",\"contract_name\":\"Rollback-Aware Update Plan Contract\",\"generated_at\":\"2026-05-24T22:33:13.140264Z\",\"rollback_dir\":\"data/update_packs/rollback_plans\",\"plans\":[{\"automatic_execution_enabled\":false,\"created_at\":\"2026-05-10T00:01:43.735252Z\",\"execution_enabled\":false,\"linked_pack_id\":\"update_pack_20260509_235947_update_governance_patch\",\"path\":\"data/update_packs/rollback_plans/rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch.json\",\"plan_id\":\"rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch\",\"status\":\"rollback_plan_ready\"},{\"automatic_execution_enabled\":false,\"created_at\":\"2026-05-10T00:01:52.327041Z\",\"execution",
           "domain": "updates",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "contract_name",
+            "generated_at",
+            "governance",
+            "latest_plan",
+            "next",
+            "plans",
+            "rollback_dir",
+            "version"
           ],
           "method": "GET",
           "name": "rollback_plan",
           "path": "/updates/rollback-plan",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.73\",\"contract_name\":\"Automatic Update Runner Gate\",\"generated_at\":\"2026-05-24T22:33:13.156279Z\",\"sources\":{\"staging_index\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json\",\"status\":\"loaded\"},\"rollback_index\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json\",\"status\":\"loaded\"},\"internet_readiness\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json\",\"status\":\"loaded\"}},\"linked_update_pack\":{\"automatic_execution_enabled\":false,\"created_at\":\"2026-05-24T22:33:13.111262Z\",\"execution_enabled\":false,\"pack_hash\":\"5b1e5e1806bda64bac549eb02",
           "domain": "updates",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "blocked_operations",
+            "checks",
+            "contract_name",
+            "gate_state",
+            "generated_at",
+            "governance",
+            "linked_rollback_plan",
+            "linked_update_pack",
+            "next",
+            "runner_contract",
+            "sources",
+            "version"
           ],
           "method": "GET",
           "name": "runner_gate",
           "path": "/updates/runner-gate",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.74\",\"contract_name\":\"Update Governance Regression Lock\",\"generated_at\":\"2026-05-24T22:33:13.171266Z\",\"input_sources\":{\"staging_index\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json\",\"status\":\"loaded\"},\"rollback_index\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json\",\"status\":\"loaded\"},\"runner_gate\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/automatic_update_runner_gate.json\",\"status\":\"loaded\"},\"internet_readiness\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json\",\"status\":\"loaded\"}},\"lock_state\":{\"statu",
           "domain": "updates",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "contract_name",
+            "forbidden_execution_flags",
+            "generated_at",
+            "input_sources",
+            "lock_state",
+            "locked_endpoints",
+            "next",
+            "regression_rules",
+            "required_governance_flags",
+            "version"
           ],
           "method": "GET",
           "name": "regression_lock",
           "path": "/updates/regression-lock",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         }
       ],
-      "failed": 4,
+      "failed": 0,
       "optional_failed": 0,
-      "passed": 0,
+      "passed": 4,
       "required": 4,
-      "status": "blocked"
+      "status": "passed"
     },
     "validation": {
       "endpoints": [
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.69\",\"contract_name\":\"Buildability / Viability / Manufacturability Validation Stack\",\"generated_at\":\"2026-05-24T22:33:05.164256Z\",\"status\":\"warning\",\"sources\":{\"design_portal\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/design_portal_output_contract.json\",\"status\":\"loaded\"},\"autodesign_handoff\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/autodesign/autodesign_handoff_contract.json\",\"status\":\"loaded\"},\"runtime_truth\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json\",\"status\":\"loaded\"},\"route_audit\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/routes/discovery_breakthrough_innovation_route_audit.jso",
           "domain": "validation",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "blockers",
+            "contract_name",
+            "design_input",
+            "dimensions",
+            "generated_at",
+            "governance",
+            "next",
+            "readiness",
+            "route",
+            "sources",
+            "status",
+            "version",
+            "warnings"
           ],
           "method": "GET",
           "name": "buildability_validation",
           "path": "/validation/buildability",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         },
         {
-          "body_preview": "{\"detail\":\"Not Found\"}",
+          "body_preview": "{\"version\":\"v17.69\",\"generated_at\":\"2026-05-24T22:33:05.190256Z\",\"status\":\"warning\",\"route\":{\"family\":\"autodesign\",\"handoff_status\":\"already_satisfied\",\"invention_required\":true,\"selected\":\"solution_design\"},\"readiness\":{\"build_ready\":false,\"package_ready\":false,\"requires_operator_review\":true,\"requires_internet_readiness_before_live_updates\":true,\"requires_update_governance_before_automatic_updates\":true},\"blockers\":[],\"warnings\":[\"invention_route_requires_higher_feasibility_threshold\",\"package_not_ready_for_final_package\"]}",
           "domain": "validation",
-          "error": "Endpoint did not return 2xx JSON.",
-          "http_status": 404,
+          "error": null,
+          "http_status": 200,
           "json_ok": true,
           "json_root_type": "dict",
           "keys": [
-            "detail"
+            "blockers",
+            "generated_at",
+            "readiness",
+            "route",
+            "status",
+            "version",
+            "warnings"
           ],
           "method": "GET",
           "name": "buildability_validation_summary",
           "path": "/validation/buildability/summary",
           "required": true,
-          "status": "failed"
+          "status": "passed"
         }
       ],
-      "failed": 2,
+      "failed": 0,
       "optional_failed": 0,
-      "passed": 0,
+      "passed": 2,
       "required": 2,
-      "status": "blocked"
+      "status": "passed"
     }
   },
   "endpoint_results": [
     {
-      "body_preview": "{\"status\":\"ok\",\"mode\":\"recovery\"}",
+      "body_preview": "{\"ok\":true,\"status\":\"ok\",\"service\":\"Governed Intelligence Platform\",\"version\":\"v19.89.8-dashboard-actions-s36-contract-repair-r6\"}",
       "domain": "core",
       "error": null,
       "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "mode",
-        "status"
+        "ok",
+        "service",
+        "status",
+        "version"
       ],
       "method": "GET",
       "name": "root",
@@ -576,14 +815,16 @@
       "status": "passed"
     },
     {
-      "body_preview": "{\"status\":\"healthy\"}",
+      "body_preview": "{\"ok\":true,\"status\":\"ok\",\"version\":\"v19.89.8-dashboard-actions-s36-contract-repair-r6\"}",
       "domain": "core",
       "error": null,
       "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "status"
+        "ok",
+        "status",
+        "version"
       ],
       "method": "GET",
       "name": "health",
@@ -592,23 +833,53 @@
       "status": "passed"
     },
     {
-      "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"status\":\"dashboard_state_ready\",\"created_at\":\"2026-05-13T11:18:58.086156Z\",\"backend_search_available\":true,\"backend_search_status\":\"ready\",\"provider_probe_status\":\"mounted_guarded\",\"operator_probe_ready\":false,\"manual_enable_required\":true,\"routes\":{\"search_capabilities\":\"/operator/search/capabilities\",\"dashboard_state\":\"/operator/dashboard/state\",\"compat_search\":\"/operator/search\",\"compat_live_search\":\"/operator/search/live\",\"canonical_live_search\":\"/api/dashboard/search/live\",\"canonical_google_smoke\":\"/api/dashboard/search/smoke/google\",\"provider_status\":\"/api/dashboard/search/provider/status\",\"provider_probe\":\"/api/",
+      "body_preview": "{\"schema_version\":\"v19.89.8_cockpit_dashboard_state\",\"status\":\"ready\",\"generated_at\":\"2026-05-24T22:33:04.132256+00:00\",\"simulated_values_present\":false,\"sources\":{\"runtime\":\"/operator/status\",\"lifecycle\":\"data/continuous_runtime/current_run.json\",\"portfolio\":\"data/continuous_runtime/portfolio_candidates.json\",\"breakthrough\":\"data/continuous_runtime/breakthrough_candidates.json\",\"discovery\":\"data/continuous_runtime/discovery_candidates.json\",\"design\":\"data/continuous_runtime/design_candidates.json\",\"package\":\"data/continuous_runtime/package_candidates.json\",\"source_universes\":\"data/source_universes/universe_index.json\",\"live_sources\":\"data/live_sources/source_health_snapshot.json\",\"live_inte",
       "domain": "dashboard",
       "error": null,
       "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "backend_search_available",
-        "backend_search_status",
-        "contract_version",
-        "created_at",
-        "governance",
-        "manual_enable_required",
-        "operator_probe_ready",
-        "provider_probe_status",
-        "routes",
-        "status"
+        "active_control_map",
+        "active_intelligence_mode",
+        "command_history",
+        "command_plan",
+        "current_run_truth",
+        "deltas",
+        "dependency_chain_proof",
+        "design_artifact_package",
+        "design_portal_workbench",
+        "emergence_engine",
+        "endpoint_reconciliation",
+        "endpoint_standard_settings",
+        "first_run_readiness",
+        "generated_at",
+        "intelligence_modes",
+        "internet_provider_diagnostics",
+        "latest_hybrid_result",
+        "lifecycle",
+        "live_sources",
+        "manifest",
+        "metrics",
+        "operational_conditions",
+        "pipeline_activation",
+        "platform_completion",
+        "post_run_handoff",
+        "project_file_bindings",
+        "queues",
+        "records",
+        "runtime",
+        "schema_version",
+        "search_lanes",
+        "sections",
+        "simulated_values_present",
+        "sources",
+        "status",
+        "strategic_world",
+        "surface_completion",
+        "system_wiring",
+        "technology_base",
+        "truth"
       ],
       "method": "GET",
       "name": "operator_dashboard_state",
@@ -617,37 +888,77 @@
       "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"schema_version\":\"v19.89.8_cockpit_dashboard_state\",\"status\":\"ready\",\"generated_at\":\"2026-05-24T22:33:04.548263+00:00\",\"simulated_values_present\":false,\"sources\":{\"runtime\":\"/operator/status\",\"lifecycle\":\"data/continuous_runtime/current_run.json\",\"portfolio\":\"data/continuous_runtime/portfolio_candidates.json\",\"breakthrough\":\"data/continuous_runtime/breakthrough_candidates.json\",\"discovery\":\"data/continuous_runtime/discovery_candidates.json\",\"design\":\"data/continuous_runtime/design_candidates.json\",\"package\":\"data/continuous_runtime/package_candidates.json\",\"source_universes\":\"data/source_universes/universe_index.json\",\"live_sources\":\"data/live_sources/source_health_snapshot.json\",\"live_inte",
       "domain": "dashboard",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "active_control_map",
+        "active_intelligence_mode",
+        "command_history",
+        "command_plan",
+        "current_run_truth",
+        "deltas",
+        "dependency_chain_proof",
+        "design_artifact_package",
+        "design_portal_workbench",
+        "emergence_engine",
+        "endpoint_reconciliation",
+        "endpoint_standard_settings",
+        "first_run_readiness",
+        "generated_at",
+        "intelligence_modes",
+        "internet_provider_diagnostics",
+        "latest_hybrid_result",
+        "lifecycle",
+        "live_sources",
+        "manifest",
+        "metrics",
+        "operational_conditions",
+        "pipeline_activation",
+        "platform_completion",
+        "post_run_handoff",
+        "project_file_bindings",
+        "queues",
+        "records",
+        "runtime",
+        "schema_version",
+        "search_lanes",
+        "sections",
+        "simulated_values_present",
+        "sources",
+        "status",
+        "strategic_world",
+        "surface_completion",
+        "system_wiring",
+        "technology_base",
+        "truth"
       ],
       "method": "GET",
       "name": "dashboard_state",
       "path": "/dashboard/state",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"status\":\"capabilities_ready\",\"created_at\":\"2026-05-13T11:18:58.090155Z\",\"backend_search_available\":true,\"visible_dashboard_filtering_available\":true,\"manual_enable_required\":true,\"capabilities\":[{\"id\":\"governed_live_web_search\",\"label\":\"Governed Live Web Search\",\"status\":\"ready\",\"canonical_endpoint\":\"/api/dashboard/search/live\",\"compatibility_endpoint\":\"/operator/search\",\"methods\":[\"GET\",\"POST\"]},{\"id\":\"provider_probe_status\",\"label\":\"Governed Provider Probe Status\",\"status\":\"ready\",\"canonical_endpoint\":\"/api/dashboard/search/provider/status\",\"compatibility_endpoint\":\"/operator/dashboard/state\",\"methods\":[\"GET\"]}],\"gov",
+      "body_preview": "{\"version\":\"v17.75.2\",\"contract_name\":\"Workspace Dashboard + Web Search + Agent Command Bar Preparation\",\"generated_at\":\"2026-05-24T22:33:04.604265Z\",\"search_bar\":{\"permanent\":true,\"role\":\"normal web search + governed research + runtime search + future AI-agent command surface\",\"placeholder\":\"Search web, ask Claire, run command, or find system output...\",\"must_not_be_removed\":true},\"modes\":{\"normal_web_search\":{\"label\":\"Normal Web Search\",\"prepared\":true,\"enabled\":false,\"reason\":\"Prepared as a normal search-engine mode, but live search remains gated until governed provider and internet readiness are verified.\"},\"governed_research_search\":{\"label\":\"Governed Research Search\",\"prepared\":true,\"e",
       "domain": "search",
       "error": null,
       "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "backend_search_available",
-        "capabilities",
-        "contract_version",
-        "created_at",
-        "governance",
-        "manual_enable_required",
-        "status",
-        "visible_dashboard_filtering_available"
+        "contract_name",
+        "generated_at",
+        "live_web_conditions",
+        "modes",
+        "prepared_commands",
+        "search_bar",
+        "unsafe_actions_disabled",
+        "version",
+        "workspace_targets"
       ],
       "method": "GET",
       "name": "operator_search_capabilities",
@@ -656,7 +967,7 @@
       "status": "passed"
     },
     {
-      "body_preview": "{\"contract_version\":\"v18.73.1.operator_dashboard_compat_endpoint_repair\",\"endpoint_status\":\"endpoint_response_ready\",\"status\":\"no_results\",\"reason\":\"no_governed_result_for_query\",\"created_at\":\"2026-05-13T11:18:58.093157Z\",\"query\":\"runtime\",\"manual_enable\":true,\"visible_result_count\":0,\"result_cards\":[],\"compatibility_paths\":[\"/operator/search\",\"/operator/search/live\",\"/operator/search/query\",\"/operator/search/run\",\"/operator/search/smoke/google\"],\"canonical_paths\":[\"/api/dashboard/search/live\",\"/api/dashboard/search/smoke/google\"],\"governance\":{\"review_required\":true,\"runtime_truth_mutated\":false,\"autonomous_execution\":false,\"automatic_updates\":false,\"uncontrolled_browsing\":false,\"fail_close",
+      "body_preview": "{\"version\":\"v17.75.2\",\"generated_at\":\"2026-05-24T22:33:04.867264Z\",\"query\":\"runtime\",\"mode\":\"runtime\",\"status\":\"completed\",\"result_count\":3,\"results\":[{\"type\":\"runtime_system_result\",\"path\":\"data/continuous_runtime/review_queue.json\",\"score\":712,\"snippet\":\"\\\"Continuous intelligence cycle ingested 4 allowlisted source files. Internal system-zone candidate generation is blocked.\\\", \\\"artifact\\\": \\\"data/continuous_runtime/cycles/cycle_20260520_230615_3db6aec9.json\\\", \\\"candidate_counts\\\": { \\\"discoveries\\\": 0, \\\"breakthroughs\\\": 0, \\\"portfolios\\\": 0, \\\"designs\\\": 0, \\\"packages\\\": 0 }, \\\"top_candidate\\\": {}, \\\"operator_review_required\\\": true, \\\"runtime_truth_mutated\\\": false }, { \\\"id\\\": \\\"cycl",
       "domain": "search",
       "error": null,
       "http_status": 200,
@@ -668,18 +979,16 @@
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "canonical_paths",
-        "compatibility_paths",
-        "contract_version",
-        "created_at",
-        "endpoint_status",
-        "governance",
-        "manual_enable",
+        "agent_command_prepared",
+        "generated_at",
+        "mode",
         "query",
-        "reason",
-        "result_cards",
+        "result_count",
+        "results",
         "status",
-        "visible_result_count"
+        "version",
+        "web_search_available",
+        "web_search_prepared"
       ],
       "method": "POST",
       "name": "operator_search_query",
@@ -688,330 +997,495 @@
       "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.75.2\",\"generated_at\":\"2026-05-24T22:33:04.891258Z\",\"command\":{\"recognized\":true,\"query\":\"open autodesign\",\"intent\":\"open autodesign\",\"plan\":{\"action\":\"open_workspace\",\"workspace\":\"autodesign\",\"endpoint\":\"/autodesign/handoff\"},\"execution_enabled\":false,\"automatic_execution_enabled\":false,\"requires_user_click\":true},\"execution_enabled\":false,\"automatic_execution_enabled\":false,\"background_execution_enabled\":false}",
       "domain": "search",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json": {
         "query": "open autodesign"
       },
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "automatic_execution_enabled",
+        "background_execution_enabled",
+        "command",
+        "execution_enabled",
+        "generated_at",
+        "version"
       ],
       "method": "POST",
       "name": "operator_command_parse",
       "path": "/operator/command/parse",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"state\":{\"version\":\"v19.84.1\",\"runtime_name\":\"Claire Syntalion Runtime Truth\",\"state\":\"idle\",\"mode\":\"deterministic\",\"app_boots\":true,\"active_route\":null,\"terminal_state\":\"no_active_run\",\"governance_state\":\"ready\",\"continuous_runtime\":{\"status\":\"not_started\",\"implemented\":false},\"web_governance\":{\"provider_status\":\"unverified\",\"live_available\":false,\"fail_closed\":true},\"lifecycle\":{\"stage_count\":30,\"selected_route_stages\":[],\"skipped_by_route\":[]},\"latest_output_summary\":null,\"errors\":[],\"updated_at\":\"2026-05-12T11:27:47.640895+00:00\"},\"report\":{\"automatic_updates_enabled\":false,\"autonomous_agent_execution_enabled\":false,\"blocked_count\":0,\"blocked_records\":[],\"eligible_count\":0,\"eligible_rec",
       "domain": "runtime_truth",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "report",
+        "runtime_truth_mutation_enabled",
+        "state"
       ],
       "method": "GET",
       "name": "runtime_truth",
       "path": "/runtime/truth",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"contract_version\":\"v17.65\",\"generated_at\":\"2026-05-24T22:33:04.950258Z\",\"source\":{\"invalid_candidate_count\":0,\"invalid_candidates_sample\":[],\"raw_available\":true,\"selected_runtime_truth\":\"exports/claire_run_20260505_063434_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json\",\"top_candidates\":[{\"path\":\"exports/claire_run_20260505_063434_climate_insurance_climate_insurance_risk_intelligence/core_run_output.json\",\"score\":217,\"size_bytes\":1185287},{\"path\":\"exports/claire_run_20260505_063434_defense_autonomy_secure_autonomous_mission_intelligence/core_run_output.json\",\"score\":217,\"size_bytes\":1181619},{\"path\":\"exports/claire_run_20260505_063524_climate_insurance_climate_i",
       "domain": "runtime_truth",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "contract_version",
+        "generated_at",
+        "missing",
+        "mission",
+        "readiness",
+        "route",
+        "source"
       ],
       "method": "GET",
       "name": "runtime_state",
       "path": "/runtime/state",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.66\",\"audit_name\":\"Discovery / Breakthrough / Innovation Route Audit\",\"generated_at\":\"2026-05-24T22:33:04.964255Z\",\"source\":{\"selected\":\"data/runtime/runtime_truth_canonical.json\",\"attempts\":[{\"path\":\"data/runtime/runtime_truth_canonical.json\",\"status\":\"loaded\"}]},\"contract\":{\"status\":\"passed\",\"selected_route\":\"solution_design\",\"terminal_state\":\"complete\",\"route_family\":\"autodesign\",\"invention_required\":true,\"required_surfaces\":[\"discovery\",\"breakthrough\",\"advancement_path\",\"autodesign\",\"design_portal\",\"technology_intelligence\"],\"missing_required_surfaces\":[],\"first_class_surfaces\":{\"signal_basis\":{\"surface\":\"signal_basis\",\"status\":\"present\",\"available\":true,\"source\":\"surfaces",
       "domain": "routes",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "audit_name",
+        "contract",
+        "generated_at",
+        "next",
+        "route_rule",
+        "source",
+        "version"
       ],
       "method": "GET",
       "name": "route_audit",
       "path": "/routes/audit",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.66\",\"generated_at\":\"2026-05-24T22:33:04.985259Z\",\"status\":\"passed\",\"route\":\"solution_design\",\"route_family\":\"autodesign\",\"invention_required\":true,\"missing_required_surfaces\":[],\"warnings\":[],\"failures\":[]}",
       "domain": "routes",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "failures",
+        "generated_at",
+        "invention_required",
+        "missing_required_surfaces",
+        "route",
+        "route_family",
+        "status",
+        "version",
+        "warnings"
       ],
       "method": "GET",
       "name": "route_audit_summary",
       "path": "/routes/audit/summary",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.67\",\"contract_name\":\"AutoDesign Handoff Contract\",\"generated_at\":\"2026-05-24T22:33:05.006263Z\",\"source\":{\"runtime_truth\":{\"selected\":\"data/runtime/runtime_truth_canonical.json\",\"attempts\":[{\"path\":\"data/runtime/runtime_truth_canonical.json\",\"status\":\"loaded\"}]},\"route_audit\":{\"selected\":\"data/routes/discovery_breakthrough_innovation_route_audit.json\",\"attempts\":[{\"path\":\"data/routes/discovery_breakthrough_innovation_route_audit.json\",\"status\":\"loaded\"}]}},\"route\":{\"selected\":\"solution_design\",\"family\":\"autodesign\",\"invention_required\":true,\"handoff_status\":\"already_satisfied\"},\"handoff_inputs\":{\"signal_basis\":{\"name\":\"signal_basis\",\"status\":\"present\",\"available\":true,\"summary",
       "domain": "autodesign",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "autodesign_request",
+        "contract_name",
+        "existing_outputs",
+        "failures",
+        "generated_at",
+        "governance",
+        "handoff_inputs",
+        "missing_required_inputs",
+        "next",
+        "required_design_output_contract",
+        "route",
+        "source",
+        "version",
+        "warnings"
       ],
       "method": "GET",
       "name": "autodesign_handoff",
       "path": "/autodesign/handoff",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.67\",\"generated_at\":\"2026-05-24T22:33:05.062256Z\",\"route\":{\"selected\":\"solution_design\",\"family\":\"autodesign\",\"invention_required\":true,\"handoff_status\":\"already_satisfied\"},\"status\":\"already_satisfied\",\"required\":true,\"missing_required_inputs\":[],\"warnings\":[]}",
       "domain": "autodesign",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "generated_at",
+        "missing_required_inputs",
+        "required",
+        "route",
+        "status",
+        "version",
+        "warnings"
       ],
       "method": "GET",
       "name": "autodesign_handoff_summary",
       "path": "/autodesign/handoff/summary",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.68\",\"contract_name\":\"Design Portal Output Contract\",\"generated_at\":\"2026-05-24T22:33:05.088258Z\",\"status\":\"contract_ready\",\"route\":{\"selected\":\"solution_design\",\"family\":\"autodesign\",\"invention_required\":true,\"handoff_status\":\"already_satisfied\"},\"sources\":{\"runtime_truth\":{\"path\":\"data/runtime/runtime_truth_canonical.json\",\"status\":\"loaded\"},\"route_audit\":{\"path\":\"data/routes/discovery_breakthrough_innovation_route_audit.json\",\"status\":\"loaded\"},\"autodesign_handoff\":{\"path\":\"data/autodesign/autodesign_handoff_contract.json\",\"status\":\"loaded\"}},\"sections\":{\"architecture_summary\":{\"status\":\"ready_for_review\",\"problem_statement\":\"{\\\"confidence\\\": \\\"0.6681000400745148\\\", \\\"oppor",
       "domain": "design_portal",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "contract_name",
+        "failures",
+        "generated_at",
+        "governance",
+        "next",
+        "required_output_sections",
+        "route",
+        "section_status",
+        "sections",
+        "sources",
+        "status",
+        "version",
+        "warnings"
       ],
       "method": "GET",
       "name": "design_portal_output",
       "path": "/design-portal/output",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.68\",\"generated_at\":\"2026-05-24T22:33:05.137256Z\",\"status\":\"contract_ready\",\"route\":{\"selected\":\"solution_design\",\"family\":\"autodesign\",\"invention_required\":true,\"handoff_status\":\"already_satisfied\"},\"section_status\":{\"architecture_summary\":\"ready_for_review\",\"blueprint_summary\":\"contract_defined\",\"component_map\":\"pending_detail\",\"dependency_map\":\"present\",\"technology_stack\":\"present\",\"implementation_plan\":\"contract_defined\",\"buildability_requirements\":\"required\",\"validation_requirements\":\"required\",\"risks\":\"active\",\"evidence_trace\":\"present\",\"package_readiness\":\"contract_ready_for_validation\"},\"warnings\":[],\"failures\":[],\"package_readiness\":{\"status\":\"contract_ready_for_valid",
       "domain": "design_portal",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "failures",
+        "generated_at",
+        "package_readiness",
+        "route",
+        "section_status",
+        "status",
+        "version",
+        "warnings"
       ],
       "method": "GET",
       "name": "design_portal_output_summary",
       "path": "/design-portal/output/summary",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.69\",\"contract_name\":\"Buildability / Viability / Manufacturability Validation Stack\",\"generated_at\":\"2026-05-24T22:33:05.164256Z\",\"status\":\"warning\",\"sources\":{\"design_portal\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/design_portal_output_contract.json\",\"status\":\"loaded\"},\"autodesign_handoff\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/autodesign/autodesign_handoff_contract.json\",\"status\":\"loaded\"},\"runtime_truth\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json\",\"status\":\"loaded\"},\"route_audit\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/routes/discovery_breakthrough_innovation_route_audit.jso",
       "domain": "validation",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "blockers",
+        "contract_name",
+        "design_input",
+        "dimensions",
+        "generated_at",
+        "governance",
+        "next",
+        "readiness",
+        "route",
+        "sources",
+        "status",
+        "version",
+        "warnings"
       ],
       "method": "GET",
       "name": "buildability_validation",
       "path": "/validation/buildability",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.69\",\"generated_at\":\"2026-05-24T22:33:05.190256Z\",\"status\":\"warning\",\"route\":{\"family\":\"autodesign\",\"handoff_status\":\"already_satisfied\",\"invention_required\":true,\"selected\":\"solution_design\"},\"readiness\":{\"build_ready\":false,\"package_ready\":false,\"requires_operator_review\":true,\"requires_internet_readiness_before_live_updates\":true,\"requires_update_governance_before_automatic_updates\":true},\"blockers\":[],\"warnings\":[\"invention_route_requires_higher_feasibility_threshold\",\"package_not_ready_for_final_package\"]}",
       "domain": "validation",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "blockers",
+        "generated_at",
+        "readiness",
+        "route",
+        "status",
+        "version",
+        "warnings"
       ],
       "method": "GET",
       "name": "buildability_validation_summary",
       "path": "/validation/buildability/summary",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.70\",\"contract_name\":\"Internet Readiness Verification\",\"generated_at\":\"2026-05-24T22:33:09.119256Z\",\"status\":\"blocked\",\"mode\":\"static_verification_no_internet_calls\",\"internet_layers\":{\"internet_activation\":{\"status\":\"present\",\"present\":[\"data/internet_activation/internet_activation_manifest.json\"],\"missing\":[\"claire/internet_activation/config.py\",\"claire/internet_activation/service.py\"],\"score\":1,\"out_of\":3},\"internet_runtime_integration\":{\"status\":\"present\",\"present\":[\"data/internet_runtime_integration/internet_runtime_integration_manifest.json\"],\"missing\":[\"claire/internet_runtime_integration/bridge.py\",\"claire/internet_runtime_integration/dashboard_payload.py\",\"claire/inte",
       "domain": "internet",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "blockers",
+        "contract_name",
+        "environment",
+        "generated_at",
+        "governance",
+        "governance_signals",
+        "internet_layers",
+        "mode",
+        "next",
+        "readiness",
+        "scheduler",
+        "status",
+        "update_governance",
+        "version",
+        "warnings"
       ],
       "method": "GET",
       "name": "internet_readiness",
       "path": "/internet/readiness",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.70\",\"generated_at\":\"2026-05-24T22:33:12.987261Z\",\"status\":\"blocked\",\"mode\":\"static_verification_no_internet_calls\",\"readiness\":{\"static_internet_readiness\":false,\"live_internet_enabled\":false,\"automatic_updates_enabled\":false,\"safe_to_attempt_live_probe_after_operator_review\":false,\"safe_for_automatic_updates\":false,\"requires_v17_71_to_v17_74_update_pack_governance\":true},\"blockers\":[\"scheduler_lock_evidence_missing\"],\"warnings\":[\"Rollback governance files not found. Automatic update readiness cannot pass later without rollback proof.\",\"Update validation gauntlet files not found. Automatic update readiness cannot pass later without validation proof.\"]}",
       "domain": "internet",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "blockers",
+        "generated_at",
+        "mode",
+        "readiness",
+        "status",
+        "version",
+        "warnings"
       ],
       "method": "GET",
       "name": "internet_readiness_summary",
       "path": "/internet/readiness/summary",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.71\",\"contract_name\":\"Governed Update Pack Staging\",\"generated_at\":\"2026-05-24T22:33:13.113265Z\",\"staging_dir\":\"data/update_packs/staging\",\"sources\":{\"internet_readiness\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json\",\"status\":\"loaded\"},\"build_validation\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/validation/buildability_viability_manufacturability_validation.json\",\"status\":\"loaded\"},\"runtime_truth\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/runtime/runtime_truth_canonical.json\",\"status\":\"loaded\"}},\"protected_paths\":{\"present\":[\"frontend/command_center/modern/index.html\",\"LAUNCH_PLATFORM.bat\",\"p",
       "domain": "updates",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "contract_name",
+        "generated_at",
+        "governance",
+        "latest_pack",
+        "next",
+        "packs",
+        "protected_paths",
+        "sources",
+        "staging_dir",
+        "version"
       ],
       "method": "GET",
       "name": "update_staging",
       "path": "/updates/staging",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.72\",\"contract_name\":\"Rollback-Aware Update Plan Contract\",\"generated_at\":\"2026-05-24T22:33:13.140264Z\",\"rollback_dir\":\"data/update_packs/rollback_plans\",\"plans\":[{\"automatic_execution_enabled\":false,\"created_at\":\"2026-05-10T00:01:43.735252Z\",\"execution_enabled\":false,\"linked_pack_id\":\"update_pack_20260509_235947_update_governance_patch\",\"path\":\"data/update_packs/rollback_plans/rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch.json\",\"plan_id\":\"rollback_plan_20260510_000143_update_pack_20260509_235947_update_governance_patch\",\"status\":\"rollback_plan_ready\"},{\"automatic_execution_enabled\":false,\"created_at\":\"2026-05-10T00:01:52.327041Z\",\"execution",
       "domain": "updates",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "contract_name",
+        "generated_at",
+        "governance",
+        "latest_plan",
+        "next",
+        "plans",
+        "rollback_dir",
+        "version"
       ],
       "method": "GET",
       "name": "rollback_plan",
       "path": "/updates/rollback-plan",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.73\",\"contract_name\":\"Automatic Update Runner Gate\",\"generated_at\":\"2026-05-24T22:33:13.156279Z\",\"sources\":{\"staging_index\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json\",\"status\":\"loaded\"},\"rollback_index\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json\",\"status\":\"loaded\"},\"internet_readiness\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json\",\"status\":\"loaded\"}},\"linked_update_pack\":{\"automatic_execution_enabled\":false,\"created_at\":\"2026-05-24T22:33:13.111262Z\",\"execution_enabled\":false,\"pack_hash\":\"5b1e5e1806bda64bac549eb02",
       "domain": "updates",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "blocked_operations",
+        "checks",
+        "contract_name",
+        "gate_state",
+        "generated_at",
+        "governance",
+        "linked_rollback_plan",
+        "linked_update_pack",
+        "next",
+        "runner_contract",
+        "sources",
+        "version"
       ],
       "method": "GET",
       "name": "runner_gate",
       "path": "/updates/runner-gate",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.74\",\"contract_name\":\"Update Governance Regression Lock\",\"generated_at\":\"2026-05-24T22:33:13.171266Z\",\"input_sources\":{\"staging_index\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json\",\"status\":\"loaded\"},\"rollback_index\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/rollback_plan_index.json\",\"status\":\"loaded\"},\"runner_gate\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/automatic_update_runner_gate.json\",\"status\":\"loaded\"},\"internet_readiness\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/internet_readiness/internet_readiness_verification.json\",\"status\":\"loaded\"}},\"lock_state\":{\"statu",
       "domain": "updates",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "contract_name",
+        "forbidden_execution_flags",
+        "generated_at",
+        "input_sources",
+        "lock_state",
+        "locked_endpoints",
+        "next",
+        "regression_rules",
+        "required_governance_flags",
+        "version"
       ],
       "method": "GET",
       "name": "regression_lock",
       "path": "/updates/regression-lock",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.75\",\"contract_name\":\"Full End-to-End Proof Pack\",\"generated_at\":\"2026-05-24T22:33:13.186265Z\",\"status\":\"GO_WITH_WARNINGS\",\"stop_go\":{\"status\":\"GO_WITH_WARNINGS\",\"blocked_domains\":[],\"warnings\":[{\"domain\":\"buildability_validation\",\"warnings\":[\"invention_route_requires_higher_feasibility_threshold\",\"package_not_ready_for_final_package\"]},{\"domain\":\"internet_readiness\",\"warnings\":[\"No live search provider API key detected. Static readiness can pass, but live internet use remains disabled.\"]}],\"recommendation\":\"Proceed only to manual review. Do not enable automatic updates.\"},\"input_sources\":{\"dashboard_wiring\":{\"path\":\"C:/Users/craig/OneDrive/Desktop/Claire/data/dashboard/v17_64",
       "domain": "proof",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "contract_name",
+        "core_outputs",
+        "domains",
+        "endpoint_inventory",
+        "generated_at",
+        "governance",
+        "input_sources",
+        "launch_readiness",
+        "next",
+        "proof_domains",
+        "status",
+        "stop_go",
+        "version"
       ],
       "method": "GET",
       "name": "proof_e2e",
       "path": "/proof/e2e",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.75\",\"generated_at\":\"2026-05-24T22:33:13.206261Z\",\"status\":\"GO_WITH_WARNINGS\",\"stop_go\":{\"status\":\"GO_WITH_WARNINGS\",\"blocked_domains\":[],\"warnings\":[{\"domain\":\"buildability_validation\",\"warnings\":[\"invention_route_requires_higher_feasibility_threshold\",\"package_not_ready_for_final_package\"]},{\"domain\":\"internet_readiness\",\"warnings\":[\"No live search provider API key detected. Static readiness can pass, but live internet use remains disabled.\"]}],\"recommendation\":\"Proceed only to manual review. Do not enable automatic updates.\"},\"launch_readiness\":{\"dashboard_ready_for_manual_review\":true,\"runtime_truth_ready_for_manual_review\":true,\"route_contract_ready_for_manual_review\":tru",
       "domain": "proof",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "automatic_updates_enabled",
+        "domain_status",
+        "generated_at",
+        "launch_readiness",
+        "live_internet_enabled",
+        "status",
+        "stop_go",
+        "version"
       ],
       "method": "GET",
       "name": "proof_e2e_summary",
       "path": "/proof/e2e/summary",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     },
     {
-      "body_preview": "{\"detail\":\"Not Found\"}",
+      "body_preview": "{\"version\":\"v17.75\",\"generated_at\":\"2026-05-24T22:33:13.221262Z\",\"status\":\"GO_WITH_WARNINGS\",\"stop_go\":{\"status\":\"GO_WITH_WARNINGS\",\"blocked_domains\":[],\"warnings\":[{\"domain\":\"buildability_validation\",\"warnings\":[\"invention_route_requires_higher_feasibility_threshold\",\"package_not_ready_for_final_package\"]},{\"domain\":\"internet_readiness\",\"warnings\":[\"No live search provider API key detected. Static readiness can pass, but live internet use remains disabled.\"]}],\"recommendation\":\"Proceed only to manual review. Do not enable automatic updates.\"},\"launch_readiness\":{\"dashboard_ready_for_manual_review\":true,\"runtime_truth_ready_for_manual_review\":true,\"route_contract_ready_for_manual_review\":tru",
       "domain": "proof",
-      "error": "Endpoint did not return 2xx JSON.",
-      "http_status": 404,
+      "error": null,
+      "http_status": 200,
       "json_ok": true,
       "json_root_type": "dict",
       "keys": [
-        "detail"
+        "automatic_updates_enabled",
+        "domain_status",
+        "generated_at",
+        "launch_readiness",
+        "live_internet_enabled",
+        "status",
+        "stop_go",
+        "version"
       ],
       "method": "GET",
       "name": "system_stop_go",
       "path": "/system/stop-go",
       "required": true,
-      "status": "failed"
+      "status": "passed"
     }
   ],
-  "generated_at": "2026-05-13T11:18:58.127157Z",
+  "generated_at": "2026-05-24T22:33:13.234259Z",
   "governance": {
     "automatic_updates_disabled": true,
     "live_internet_disabled": true,
@@ -1022,7 +1496,7 @@
   },
   "launch_hardening_readiness": {
     "ready_for_automatic_updates": false,
-    "ready_for_launch_hardening": false,
+    "ready_for_launch_hardening": true,
     "ready_for_live_internet": false,
     "requires_manual_browser_proof": true,
     "requires_packaging_after_smoke_pass": true,
@@ -1062,13 +1536,13 @@
       "exists": true,
       "is_file": true,
       "path": "data/proof/full_end_to_end_proof_pack.json",
-      "size_bytes": 10303
+      "size_bytes": 10351
     },
     "internet_readiness": {
       "exists": true,
       "is_file": true,
       "path": "data/internet_readiness/internet_readiness_verification.json",
-      "size_bytes": 24866
+      "size_bytes": 23474
     },
     "regression_lock": {
       "exists": true,
@@ -1080,7 +1554,7 @@
       "exists": true,
       "is_file": true,
       "path": "data/update_packs/rollback_plan_index.json",
-      "size_bytes": 17825
+      "size_bytes": 36077
     },
     "route_audit": {
       "exists": true,
@@ -1110,7 +1584,7 @@
       "exists": true,
       "is_file": true,
       "path": "data/update_packs/update_pack_staging_index.json",
-      "size_bytes": 18014
+      "size_bytes": 35595
     }
   },
   "safety": {
@@ -1132,35 +1606,13 @@
     },
     "status": "passed"
   },
-  "status": "STOP",
+  "status": "GO_TO_PLATFORM_LAUNCH_HARDENING",
   "stop_go": {
-    "blocked_domains": [
-      "dashboard",
-      "search",
-      "runtime_truth",
-      "routes",
-      "autodesign",
-      "design_portal",
-      "validation",
-      "internet",
-      "updates",
-      "proof"
-    ],
-    "blockers": [
-      "domain_blocked:autodesign",
-      "domain_blocked:dashboard",
-      "domain_blocked:design_portal",
-      "domain_blocked:internet",
-      "domain_blocked:proof",
-      "domain_blocked:routes",
-      "domain_blocked:runtime_truth",
-      "domain_blocked:search",
-      "domain_blocked:updates",
-      "domain_blocked:validation"
-    ],
+    "blocked_domains": [],
+    "blockers": [],
     "missing_files": [],
-    "recommendation": "Do not proceed to launch hardening until blocked endpoint, output, or safety domains are fixed.",
-    "status": "STOP"
+    "recommendation": "Platform endpoint smoke proof passed. Continue to launch hardening, packaging, and manual browser/Swagger proof.",
+    "status": "GO_TO_PLATFORM_LAUNCH_HARDENING"
   },
   "version": "v17.76"
 }

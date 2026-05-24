@@ -8,10 +8,10 @@ from fastapi.testclient import TestClient
 
 
 BOM_TARGETS = [
-    "claire/api/live_intelligence_status_routes.py",
-    "claire/api/live_source_catalog_routes.py",
-    "claire/feeds/source_catalogs/live_source_catalog.py",
-    "claire/feeds/source_catalogs/source_health.py",
+    "runtime_core/api/live_intelligence_status_routes.py",
+    "runtime_core/api/live_source_catalog_routes.py",
+    "runtime_core/feeds/source_catalogs/live_source_catalog.py",
+    "runtime_core/feeds/source_catalogs/source_health.py",
     "tools/active_module_registry.py",
     "tools/core_runtime_lock.py",
     "tools/live_runtime_dashboard.py",
@@ -37,7 +37,7 @@ def test_s1181_s1208_bom_targets_compile_without_nonprintable_header():
 
 
 def test_s1181_s1208_live_probe_status_unlock_allowed_false():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     client = TestClient(create_app())
     response = client.get("/api/governed/live-probe/status")
@@ -57,7 +57,7 @@ def test_s1181_s1208_live_probe_status_unlock_allowed_false():
 
 
 def test_s1181_s1208_plateau_audit_blockers_cleared():
-    from claire.audit.system_plateau_audit import run_audit
+    from runtime_core.audit.system_plateau_audit import run_audit
 
     report = run_audit(Path.cwd(), write_report=True)
     blocker_codes = {issue["code"] for issue in report.get("issues", []) if issue.get("severity") == "blocker"}

@@ -11,7 +11,7 @@ SRC = PROJECT_ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from claire.install_safety.simple_manifest_installer import install_manifest
+from runtime_core.install_safety.simple_manifest_installer import install_manifest
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Install Claire manifest-style generated installer")

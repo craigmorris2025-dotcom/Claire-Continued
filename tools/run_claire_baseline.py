@@ -6,7 +6,7 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
+from runtime_core.app import create_app
 
 
 class BaselineRunner:
@@ -54,4 +54,5 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(main())
+

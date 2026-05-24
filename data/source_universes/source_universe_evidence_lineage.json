@@ -55,6 +55,29 @@
       ],
       "evidence_role": "technology_signal",
       "label": "Technology Breakthroughs"
+    },
+    "master_system_docs": {
+      "allowed_routes": [
+        "governance",
+        "lifecycle",
+        "hybrid",
+        "connected_intelligence",
+        "update_governance",
+        "dashboard"
+      ],
+      "evidence_role": "system_authority_signal",
+      "label": "Master System Docs"
+    },
+    "auto_invention_technology_database": {
+      "allowed_routes": [
+        "discovery",
+        "breakthrough",
+        "design",
+        "validation",
+        "portfolio"
+      ],
+      "evidence_role": "technology_timeline_and_invention_signal",
+      "label": "Auto-Invention Technology Database"
     }
   },
   "version": "v19.86.0"

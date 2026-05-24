@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s44r3_rendering_contracts_are_presentation_only():
-    module = importlib.import_module("claire.api.s44_operator_payload_rendering_contracts")
+    module = importlib.import_module("runtime_core.api.s44_operator_payload_rendering_contracts")
     payload = module.build_operator_rendering_contracts()
 
     assert payload["status"] == "operator_payload_rendering_contracts_ready"
@@ -21,7 +21,7 @@ def test_s44r3_rendering_contracts_are_presentation_only():
 
 
 def test_s44r4_render_operator_payload_wraps_without_mutation():
-    module = importlib.import_module("claire.api.s44_operator_payload_rendering_contracts")
+    module = importlib.import_module("runtime_core.api.s44_operator_payload_rendering_contracts")
     rendered = module.render_operator_payload(
         "operator_runtime_status",
         {"status": "available", "sample": True},

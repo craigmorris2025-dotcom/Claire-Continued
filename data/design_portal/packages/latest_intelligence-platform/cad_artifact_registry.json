@@ -1,0 +1,48 @@
+{
+  "accepted_extensions": [
+    ".step",
+    ".stp",
+    ".iges",
+    ".igs",
+    ".stl",
+    ".obj",
+    ".glb",
+    ".gltf",
+    ".dxf"
+  ],
+  "artifact_states": [
+    "missing",
+    "imported",
+    "generated",
+    "needs_engineer_review",
+    "ready_for_blueprint_package"
+  ],
+  "artifacts": [],
+  "candidate_title": "intelligence platform",
+  "generation_policy": {
+    "cad_generated_from_runtime": false,
+    "next_required_action": "attach or generate candidate-specific CAD once the design is promoted beyond blueprint draft",
+    "reason": "CAD files require physical/mechanical/electrical design detail or imported engineer/operator assets."
+  },
+  "schema_version": "claire_cad_artifact_registry_v1",
+  "status": "registry_ready_no_cad_files_attached",
+  "viewer": {
+    "empty_state": "No CAD asset attached yet. Import or generate an asset after design review.",
+    "engineering_formats": [
+      ".step",
+      ".stp",
+      ".iges",
+      ".igs",
+      ".dxf"
+    ],
+    "primary_formats": [
+      ".glb",
+      ".gltf",
+      ".obj",
+      ".stl"
+    ],
+    "status": "ready_empty",
+    "viewer_type": "cad_3d_viewer"
+  },
+  "viewer_required": true
+}

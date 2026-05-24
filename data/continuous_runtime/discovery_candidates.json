@@ -1,5 +1,30 @@
 {
-  "items": [],
+  "status": "ready",
   "candidate_type": "discovery",
-  "updated_at": "2026-05-12T10:02:14.378969+00:00"
+  "items": [
+    {
+      "candidate_id": "discovery-45a90688",
+      "candidate_type": "discovery",
+      "title": "Allowlisted Input Boundary Lifecycle trend cluster",
+      "summary": "Allowlisted signals indicate a portfolio-relevant pattern around allowlisted input boundary lifecycle.",
+      "status": "pending_operator_review",
+      "confidence": 0.7,
+      "source_signal_ids": [
+        "signal-001",
+        "signal-002",
+        "signal-003",
+        "signal-004",
+        "signal-005",
+        "signal-006"
+      ],
+      "route": "portfolio_creation_optimization",
+      "advancement_route": "breakthrough_design",
+      "runtime_truth_write": "blocked"
+    }
+  ],
+  "count": 1,
+  "source": "allowlisted_input_boundary",
+  "operator_review_required": true,
+  "runtime_truth_mutated": false,
+  "updated_at": "2026-05-24T22:33:25.658264+00:00"
 }

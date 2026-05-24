@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.cockpit_monitoring_snapshot import get_monitoring_snapshot
-from claire.api.cockpit_operator_control_readiness import get_operator_control_readiness
+from runtime_core.api.cockpit_monitoring_snapshot import get_monitoring_snapshot
+from runtime_core.api.cockpit_operator_control_readiness import get_operator_control_readiness
 
 
 def test_s191_s197_operator_controls_are_contract_ready_without_unsafe_authority():

@@ -1,10 +1,10 @@
 # Claire v17.84 Governed Single-Query Live Search Probe
 
-Generated: 2026-05-13T11:20:33.043036Z
+Generated: 2026-05-24T22:33:00.941262Z
 
-Status: **BLOCKED_PROVIDER_NOT_READY**
+Status: **READY_FOR_OPERATOR_CONFIRMED_SINGLE_QUERY_PROBE**
 
-Recommendation: Configure CLAIRE_SEARCH_PROVIDER and its API key locally, then rerun v17.83/v17.84 gates.
+Recommendation: Live probe is prepared. Run only one operator-confirmed query. Results are evidence-captured and unknown domains are quarantined.
 
 ## Hard Rules
 
@@ -21,13 +21,9 @@ Recommendation: Configure CLAIRE_SEARCH_PROVIDER and its API key locally, then r
 
 ## Provider
 
-- Provider: `none`
-- Known: `False`
-- Key present: `False`
-
-## Blockers
-
-- no_provider_selected
+- Provider: `tavily`
+- Known: `True`
+- Key present: `True`
 
 ## Swagger test body
 

@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.internet_live_provider_authority_s387_s393 import (
+from runtime_core.api.internet_live_provider_authority_s387_s393 import (
     build_controlled_live_provider_authority_s387_s393,
     build_s387_live_provider_authority_contract,
     build_s388_live_toggle_reader,
@@ -27,7 +27,7 @@ def test_s387_live_provider_authority_is_fail_closed():
 
 def test_s388_toggle_defaults_closed_and_can_enable():
     closed = build_s388_live_toggle_reader(env={})
-    enabled = build_s388_live_toggle_reader(env={"CLAIRE_ALLOW_CONTROLLED_LIVE_PROVIDER": "true"})
+    enabled = build_s388_live_toggle_reader(env={"PLATFORM_ALLOW_CONTROLLED_LIVE_PROVIDER": "true"})
     assert closed["stage_version"] == "S388"
     assert closed["toggle"]["controlled_live_provider_allowed"] is False
     assert enabled["toggle"]["controlled_live_provider_allowed"] is True

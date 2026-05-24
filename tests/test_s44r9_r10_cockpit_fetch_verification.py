@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s44r9_fetch_verification_reaches_all_contract_paths():
-    module = importlib.import_module("claire.api.s44_cockpit_fetch_verification")
+    module = importlib.import_module("runtime_core.api.s44_cockpit_fetch_verification")
     report = module.verify_cockpit_fetch_contract_responses()
 
     assert report["version"] == "v19.89.8-S44R9-R16"
@@ -27,7 +27,7 @@ def test_s44r9_fetch_verification_reaches_all_contract_paths():
 
 
 def test_s44r10_fetch_verification_summary_is_clean():
-    module = importlib.import_module("claire.api.s44_cockpit_fetch_verification")
+    module = importlib.import_module("runtime_core.api.s44_cockpit_fetch_verification")
     summary = module.build_cockpit_fetch_verification_summary()
 
     assert summary["status"] == "all_fetch_contracts_available"

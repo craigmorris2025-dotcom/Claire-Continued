@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_payload_bridge_live_patch_s142_s148 import (
+from runtime_core.api.governed_payload_bridge_live_patch_s142_s148 import (
     apply_governed_payload_bridge_live_patch,
     build_governed_payload_bridge_live_patch_s142_s148,
     build_s142_s148_live_payload_visibility,

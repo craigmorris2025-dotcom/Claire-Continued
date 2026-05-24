@@ -16,12 +16,12 @@ Status: `ready`
 
 ## Critical Endpoints
 - GET /api/dashboard/state (dashboard_truth): claire.dashboard.cockpit_dashboard_state
-- GET /api/dashboard/active-control-map (active_controls): claire.api.dashboard_active_control_map
-- GET /api/search/providers/status (provider_readiness): claire.api.governed_provider_readiness_routes
-- POST /internet/live-probe/run (governed_live_probe): claire.api.routes_governed_live_probe
-- POST /api/update-governance/open-web/install/stage (update_governance): claire.api.routes_open_web_update_governance
-- POST /api/update-governance/open-web/install/apply (update_governance): claire.api.routes_open_web_update_governance
-- POST /evaluate (pipeline_evaluate): claire.api.routes_pipeline
-- GET /design-portal/status (design_portal): claire.api.routes_design_portal_output
-- GET /design-portal/contract (design_portal): claire.api.routes_design_portal_output
-- GET /cad/intent (cad_intent): claire.api.routes_design_portal_output
+- GET /api/dashboard/active-control-map (active_controls): runtime_core.api.dashboard_active_control_map
+- GET /api/search/providers/status (provider_readiness): runtime_core.api.governed_provider_readiness_routes
+- POST /internet/live-probe/run (governed_live_probe): runtime_core.api.routes_governed_live_probe
+- POST /api/update-governance/open-web/install/stage (update_governance): runtime_core.api.routes_open_web_update_governance
+- POST /api/update-governance/open-web/install/apply (update_governance): runtime_core.api.routes_open_web_update_governance
+- POST /evaluate (pipeline_evaluate): runtime_core.api.routes_pipeline
+- GET /design-portal/status (design_portal): runtime_core.api.routes_design_portal_output
+- GET /design-portal/contract (design_portal): runtime_core.api.routes_design_portal_output
+- GET /cad/intent (cad_intent): runtime_core.api.routes_design_portal_output

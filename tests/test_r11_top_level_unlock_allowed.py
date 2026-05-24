@@ -5,8 +5,8 @@ from fastapi.testclient import TestClient
 
 
 def test_r11_top_level_unlock_allowed_contracts():
-    from claire.api.dashboard_actions_registry_routes import build_dashboard_actions_registry
-    from claire.app import create_app
+    from runtime_core.api.dashboard_actions_registry_routes import build_dashboard_actions_registry
+    from runtime_core.app import create_app
 
     registry = build_dashboard_actions_registry()
     assert registry["unlock_allowed"] is False

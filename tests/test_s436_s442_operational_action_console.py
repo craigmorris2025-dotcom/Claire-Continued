@@ -1,5 +1,5 @@
 from __future__ import annotations
-from claire.api.dashboard_operational_action_console_s436_s442 import *
+from runtime_core.api.dashboard_operational_action_console_s436_s442 import *
 def test_s436_console_has_result_drawer(): assert build_s436_action_console_contract()["console"]["result_drawer"] is True
 def test_s437_bindings_complete(): 
     p=build_s437_action_endpoint_binding_contract(); assert p["binding_count"]>=6 and p["bindings"]["first_metadata_probe"]=="/api/internet/live-metadata/run"

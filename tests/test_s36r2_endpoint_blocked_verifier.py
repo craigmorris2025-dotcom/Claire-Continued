@@ -13,17 +13,17 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def _module():
-    return importlib.import_module("claire.api.routes.governed_live_probe")
+    return importlib.import_module("runtime_core.api.routes.governed_live_probe")
 
 
 def test_s36r2_status_contract_is_blocked_by_default(monkeypatch):
     module = _module()
     for key in [
-        "CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE",
-        "CLAIRE_ALLOW_HEAD_ONLY_PROBE",
-        "CLAIRE_ALLOW_RESPONSE_BODY_READ",
-        "CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION",
-        "CLAIRE_ALLOW_AUTONOMOUS_EXECUTION",
+        "PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE",
+        "PLATFORM_ALLOW_HEAD_ONLY_PROBE",
+        "PLATFORM_ALLOW_RESPONSE_BODY_READ",
+        "PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION",
+        "PLATFORM_ALLOW_AUTONOMOUS_EXECUTION",
     ]:
         monkeypatch.delenv(key, raising=False)
 
@@ -43,11 +43,11 @@ def test_s36r2_status_contract_is_blocked_by_default(monkeypatch):
 def test_s36r2_probe_rejects_when_provider_gates_disabled(monkeypatch):
     module = _module()
     for key in [
-        "CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE",
-        "CLAIRE_ALLOW_HEAD_ONLY_PROBE",
-        "CLAIRE_ALLOW_RESPONSE_BODY_READ",
-        "CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION",
-        "CLAIRE_ALLOW_AUTONOMOUS_EXECUTION",
+        "PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE",
+        "PLATFORM_ALLOW_HEAD_ONLY_PROBE",
+        "PLATFORM_ALLOW_RESPONSE_BODY_READ",
+        "PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION",
+        "PLATFORM_ALLOW_AUTONOMOUS_EXECUTION",
     ]:
         monkeypatch.delenv(key, raising=False)
 
@@ -60,11 +60,11 @@ def test_s36r2_probe_rejects_when_provider_gates_disabled(monkeypatch):
 
 def test_s36r2_probe_rejects_missing_operator_ack_even_if_gates_enabled(monkeypatch):
     module = _module()
-    monkeypatch.setenv("CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
-    monkeypatch.setenv("CLAIRE_ALLOW_HEAD_ONLY_PROBE", "1")
-    monkeypatch.delenv("CLAIRE_ALLOW_RESPONSE_BODY_READ", raising=False)
-    monkeypatch.delenv("CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
-    monkeypatch.delenv("CLAIRE_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
+    monkeypatch.setenv("PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
+    monkeypatch.setenv("PLATFORM_ALLOW_HEAD_ONLY_PROBE", "1")
+    monkeypatch.delenv("PLATFORM_ALLOW_RESPONSE_BODY_READ", raising=False)
+    monkeypatch.delenv("PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
+    monkeypatch.delenv("PLATFORM_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
 
     payload = module.HeadProbeRequest(url="https://example.com", operator_ack=False, one_shot=True)
     with pytest.raises(HTTPException) as exc:
@@ -75,11 +75,11 @@ def test_s36r2_probe_rejects_missing_operator_ack_even_if_gates_enabled(monkeypa
 
 def test_s36r2_probe_rejects_body_read_authority(monkeypatch):
     module = _module()
-    monkeypatch.setenv("CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
-    monkeypatch.setenv("CLAIRE_ALLOW_HEAD_ONLY_PROBE", "1")
-    monkeypatch.setenv("CLAIRE_ALLOW_RESPONSE_BODY_READ", "1")
-    monkeypatch.delenv("CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
-    monkeypatch.delenv("CLAIRE_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
+    monkeypatch.setenv("PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
+    monkeypatch.setenv("PLATFORM_ALLOW_HEAD_ONLY_PROBE", "1")
+    monkeypatch.setenv("PLATFORM_ALLOW_RESPONSE_BODY_READ", "1")
+    monkeypatch.delenv("PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
+    monkeypatch.delenv("PLATFORM_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
 
     payload = module.HeadProbeRequest(url="https://example.com", operator_ack=True, one_shot=True)
     with pytest.raises(HTTPException) as exc:
@@ -90,11 +90,11 @@ def test_s36r2_probe_rejects_body_read_authority(monkeypatch):
 
 def test_s36r2_probe_rejects_runtime_mutation_authority(monkeypatch):
     module = _module()
-    monkeypatch.setenv("CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
-    monkeypatch.setenv("CLAIRE_ALLOW_HEAD_ONLY_PROBE", "1")
-    monkeypatch.delenv("CLAIRE_ALLOW_RESPONSE_BODY_READ", raising=False)
-    monkeypatch.setenv("CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION", "1")
-    monkeypatch.delenv("CLAIRE_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
+    monkeypatch.setenv("PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
+    monkeypatch.setenv("PLATFORM_ALLOW_HEAD_ONLY_PROBE", "1")
+    monkeypatch.delenv("PLATFORM_ALLOW_RESPONSE_BODY_READ", raising=False)
+    monkeypatch.setenv("PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION", "1")
+    monkeypatch.delenv("PLATFORM_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
 
     payload = module.HeadProbeRequest(url="https://example.com", operator_ack=True, one_shot=True)
     with pytest.raises(HTTPException) as exc:
@@ -105,11 +105,11 @@ def test_s36r2_probe_rejects_runtime_mutation_authority(monkeypatch):
 
 def test_s36r2_probe_rejects_autonomous_execution_authority(monkeypatch):
     module = _module()
-    monkeypatch.setenv("CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
-    monkeypatch.setenv("CLAIRE_ALLOW_HEAD_ONLY_PROBE", "1")
-    monkeypatch.delenv("CLAIRE_ALLOW_RESPONSE_BODY_READ", raising=False)
-    monkeypatch.delenv("CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
-    monkeypatch.setenv("CLAIRE_ALLOW_AUTONOMOUS_EXECUTION", "1")
+    monkeypatch.setenv("PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
+    monkeypatch.setenv("PLATFORM_ALLOW_HEAD_ONLY_PROBE", "1")
+    monkeypatch.delenv("PLATFORM_ALLOW_RESPONSE_BODY_READ", raising=False)
+    monkeypatch.delenv("PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
+    monkeypatch.setenv("PLATFORM_ALLOW_AUTONOMOUS_EXECUTION", "1")
 
     payload = module.HeadProbeRequest(url="https://example.com", operator_ack=True, one_shot=True)
     with pytest.raises(HTTPException) as exc:
@@ -120,11 +120,11 @@ def test_s36r2_probe_rejects_autonomous_execution_authority(monkeypatch):
 
 def test_s36r2_gates_pass_only_for_operator_one_shot_head_metadata(monkeypatch):
     module = _module()
-    monkeypatch.setenv("CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
-    monkeypatch.setenv("CLAIRE_ALLOW_HEAD_ONLY_PROBE", "1")
-    monkeypatch.delenv("CLAIRE_ALLOW_RESPONSE_BODY_READ", raising=False)
-    monkeypatch.delenv("CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
-    monkeypatch.delenv("CLAIRE_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
+    monkeypatch.setenv("PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
+    monkeypatch.setenv("PLATFORM_ALLOW_HEAD_ONLY_PROBE", "1")
+    monkeypatch.delenv("PLATFORM_ALLOW_RESPONSE_BODY_READ", raising=False)
+    monkeypatch.delenv("PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
+    monkeypatch.delenv("PLATFORM_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
 
     payload = module.HeadProbeRequest(url="https://example.com", operator_ack=True, one_shot=True)
     assert module._assert_execution_allowed(payload) is None

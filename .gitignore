@@ -8,6 +8,7 @@ venv/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
+.cache/
 
 # Environment
 .env
@@ -18,6 +19,11 @@ logs/
 exports/
 data/cache/
 data/backups/
+data/runs/
+data/memory/runs/
+data/continuous_runtime/runs/
+data/continuous_runtime/cycles/
+data/continuous_runtime/artifacts/
 
 # Node
 node_modules/

@@ -17,7 +17,7 @@ from typing import Any, Dict, List
 def find_project_root(start: Path | None = None) -> Path:
     start = (start or Path(__file__).resolve()).resolve()
     for candidate in [start] + list(start.parents):
-        if (candidate / "main.py").exists() and (candidate / "src" / "claire").exists():
+        if (candidate / "main.py").exists() and (candidate / "claire").exists():
             return candidate
     raise SystemExit("Could not detect Claire project root.")
 
@@ -32,8 +32,9 @@ class PortableLauncher:
         python = self.select_python()
         checks = {
             "project_root": self.root.exists(),
-            "dashboard_server": (self.root / "tools" / "serve_export_dashboard.py").exists(),
-            "dashboard_html": (self.root / "src" / "frontend" / "export_dashboard" / "index.html").exists(),
+            "fastapi_entrypoint": (self.root / "main.py").exists(),
+            "dashboard_config": (self.root / "data" / "platform" / "dashboard_config.json").exists(),
+            "local_dashboard_html": (self.root / "frontend" / "command_center" / "modern" / "platform_dashboard.html").exists(),
             "baseline_runner": (self.root / "tools" / "run_claire_baseline.py").exists(),
             "local_venv_python": (self.root / ".venv" / "Scripts" / "python.exe").exists(),
             "selected_python_available": bool(python),
@@ -45,7 +46,7 @@ class PortableLauncher:
             "selected_python": python,
             "live_requested": live,
             "app_shell_requested": app,
-            "live_env": "CLAIRE_ENABLE_LIVE_FEEDS=1" if live else "disabled",
+            "live_env": "PLATFORM_ENABLE_LIVE_FEEDS=1" if live else "disabled",
             "checks": checks,
             "recommended_command": "START_CLAIRE_LIVE.bat" if live else "START_CLAIRE_PORTABLE.bat",
         }
@@ -77,32 +78,36 @@ class PortableLauncher:
                 return baseline_code
 
         selected_port = self.find_open_port(host, port)
-        url = f"http://{host}:{selected_port}"
+        local_url = f"http://{host}:{selected_port}"
+        url = f"{local_url}/dashboard"
         args = self._python_command(python) + [
-            str(self.root / "tools" / "serve_export_dashboard.py"),
+            "-B",
+            "-m",
+            "uvicorn",
+            "main:app",
             "--host",
             host,
             "--port",
             str(selected_port),
-            "--no-open",
         ]
         env = os.environ.copy()
-        env["PYTHONPATH"] = str(self.root / "src") + os.pathsep + str(self.root) + os.pathsep + env.get("PYTHONPATH", "")
+        env["PYTHONPATH"] = str(self.root) + os.pathsep + env.get("PYTHONPATH", "")
         if live:
-            env["CLAIRE_ENABLE_LIVE_FEEDS"] = "1"
-            env["CLAIRE_DESKTOP_LIVE"] = "1"
+            env["PLATFORM_ENABLE_LIVE_FEEDS"] = "1"
+            env["PLATFORM_DESKTOP_LIVE"] = "1"
         if app:
-            env["CLAIRE_APP_SHELL"] = "1"
+            env["PLATFORM_APP_SHELL"] = "1"
         print("Claire Portable Launcher")
         print("=======================")
         print(f"Root:   {self.root}")
         print(f"Python: {python}")
         print(f"URL:    {url}")
+        print(f"Local:  {local_url}/dashboard/local")
         print(f"Live:   {'enabled' if live else 'disabled'}")
         print(f"Shell:  {'app-like' if app else 'browser'}")
         print("")
         process = subprocess.Popen(args, cwd=str(self.root), env=env)
-        if self.wait_for_health(url):
+        if self.wait_for_health(local_url):
             print("Claire dashboard is ready.")
             if not no_open:
                 webbrowser.open(url)
@@ -144,7 +149,7 @@ class PortableLauncher:
     def _run_python(self, python: str, args: List[str]) -> int:
         command = self._python_command(python) + args
         env = os.environ.copy()
-        env["PYTHONPATH"] = str(self.root / "src") + os.pathsep + str(self.root) + os.pathsep + env.get("PYTHONPATH", "")
+        env["PYTHONPATH"] = str(self.root) + os.pathsep + env.get("PYTHONPATH", "")
         return subprocess.call(command, cwd=str(self.root), env=env)
 
     def _python_command(self, python: str) -> List[str]:

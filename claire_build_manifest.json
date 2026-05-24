@@ -1,6 +1,44 @@
 {
   "builds": [
     {
+      "range": "v19.90-system-consolidation",
+      "name": "System-Wide Root Consolidation Pack",
+      "purpose": "Updates root contracts, dashboard settings, endpoint reconciliation, dependency-chain proof, update governance install surfaces, and industry standard endpoint package after repeated runtime upgrades.",
+      "files": [
+        "README.md",
+        "docs/architecture.md",
+        "docs/api_reference.md",
+        "docs/architecture/current_verified_state.md",
+        "claire/api/routes_endpoint_reconciliation_compat.py",
+        "claire/api/routes_dependency_chain_proof.py",
+        "claire/api/routes_industry_standard_endpoint_package.py",
+        "claire/api/canonical_route_manifest.py",
+        "claire/lifecycle/route_contracts.py",
+        "claire/api/routes_lifecycle_route_contracts.py",
+        "claire/emergence/causal_contracts.py",
+        "claire/api/routes_emergence_causal_contracts.py",
+        "claire/technology/reemergence_pattern_engine.py",
+        "claire/api/technology_base_routes.py",
+        "frontend/command_center/modern/claire_dashboard.js",
+        "tests/test_endpoint_reconciliation_compat.py",
+        "tests/test_dependency_chain_proof.py",
+        "tests/test_industry_standard_endpoint_package.py"
+      ],
+      "verified_state": {
+        "active_route_count": 350,
+        "active_control_count": 19,
+        "lifecycle_route_contract_count": 5,
+        "causal_contract_source_file_count": 26,
+        "reemergence_category_count": 8,
+        "reemergence_signal_family_count": 7,
+        "reemergence_pattern_count": 12,
+        "endpoint_reconciliation": "clean",
+        "dependency_chain": "clean_e2e_review_proof",
+        "platform_smoke": "GO_TO_PLATFORM_LAUNCH_HARDENING",
+        "full_e2e": "GO_WITH_WARNINGS"
+      }
+    },
+    {
       "range": "v19.42-v19.51",
       "name": "Web Pipeline Stabilization Pack",
       "purpose": "10-build acceleration pack proving governed web-to-pipeline runtime stabilization after v19.37-v19.41.",
@@ -19,5 +57,5 @@
       ]
     }
   ],
-  "latest_pack": "v19.42-v19.51.1 Route Priority Repair"
+  "latest_pack": "v19.90-system-consolidation System-Wide Root Consolidation Pack"
 }

@@ -10,9 +10,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
-from claire.api.industry_standard_endpoint_package import build_standards_control_map
-from claire.pipeline.activation_registry import build_pipeline_activation_registry
+from runtime_core.app import create_app
+from runtime_core.api.industry_standard_endpoint_package import build_standards_control_map
+from runtime_core.pipeline.activation_registry import build_pipeline_activation_registry
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -39,7 +39,7 @@ def active_endpoints(app: Any) -> dict[str, Any]:
         )
     return {
         "schema_version": "claire.v1.active_endpoints.v1",
-        "active_app": "main.py -> claire.app:create_app",
+        "active_app": "main.py -> runtime_core.app:create_app",
         "route_count": len(rows),
         "endpoints": sorted(rows, key=lambda item: (item["path"], ",".join(item["methods"]))),
     }

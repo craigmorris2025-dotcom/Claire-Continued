@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.dashboard_operator_cockpit_layout_s324_s330 import (
+from runtime_core.api.dashboard_operator_cockpit_layout_s324_s330 import (
     build_operator_cockpit_layout_consolidation_s324_s330,
     build_s324_single_cockpit_layout_contract,
     build_s325_top_command_search_bar_contract,

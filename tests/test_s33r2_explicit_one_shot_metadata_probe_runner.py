@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
-from claire.api.explicit_one_shot_metadata_probe_runner import build_explicit_one_shot_metadata_probe_runner_status
+from runtime_core.app import create_app
+from runtime_core.api.explicit_one_shot_metadata_probe_runner import build_explicit_one_shot_metadata_probe_runner_status
 
 def test_s33r2_runner_status_is_fail_closed_no_network():
     status = build_explicit_one_shot_metadata_probe_runner_status()

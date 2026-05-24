@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_readonly_cockpit_integration_s121_s127 import (
+from runtime_core.api.governed_readonly_cockpit_integration_s121_s127 import (
     build_runtime_spine_cockpit_panel,
     build_review_export_cockpit_panel,
     build_governed_search_cockpit_panel,

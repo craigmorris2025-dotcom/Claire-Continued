@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
-from claire.api.operator_triggered_metadata_probe_endpoint import build_operator_triggered_metadata_probe_endpoint_status
+from runtime_core.app import create_app
+from runtime_core.api.operator_triggered_metadata_probe_endpoint import build_operator_triggered_metadata_probe_endpoint_status
 
 def test_s33r3_endpoint_status_is_boundary_only_no_network():
     status = build_operator_triggered_metadata_probe_endpoint_status()

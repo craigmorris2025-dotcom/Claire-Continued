@@ -20,7 +20,7 @@ def make_payload(root: Path) -> None:
 
 
 def test_s42r13_discovery_is_non_invasive():
-    module = importlib.import_module("claire.api.operator_router_include_adapter")
+    module = importlib.import_module("runtime_core.api.operator_router_include_adapter")
     report = module.discover_app_factory()
 
     assert report["app_py_patch_required"] is False
@@ -31,7 +31,7 @@ def test_s42r13_discovery_is_non_invasive():
 
 
 def test_s42r14_include_adapter_mounts_routes_without_patch(tmp_path: Path):
-    module = importlib.import_module("claire.api.operator_router_include_adapter")
+    module = importlib.import_module("runtime_core.api.operator_router_include_adapter")
     make_payload(tmp_path)
 
     app = FastAPI()
@@ -52,7 +52,7 @@ def test_s42r14_include_adapter_mounts_routes_without_patch(tmp_path: Path):
 
 
 def test_s42r15_include_adapter_is_idempotent(tmp_path: Path):
-    module = importlib.import_module("claire.api.operator_router_include_adapter")
+    module = importlib.import_module("runtime_core.api.operator_router_include_adapter")
     app = FastAPI()
 
     module.include_operator_router_non_invasive(app, root=tmp_path)
@@ -63,7 +63,7 @@ def test_s42r15_include_adapter_is_idempotent(tmp_path: Path):
 
 
 def test_s42r16_to_r20_manifest_and_verification(tmp_path: Path):
-    module = importlib.import_module("claire.api.operator_router_include_adapter")
+    module = importlib.import_module("runtime_core.api.operator_router_include_adapter")
     discovery = module.discover_app_factory()
     manifest = module.build_router_include_adapter_manifest(discovery)
     verification = module.verify_router_include_adapter(discovery, manifest)

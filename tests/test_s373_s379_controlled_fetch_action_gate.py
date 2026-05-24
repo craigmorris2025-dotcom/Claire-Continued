@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.internet_controlled_fetch_action_s373_s379 import (
+from runtime_core.api.internet_controlled_fetch_action_s373_s379 import (
     build_controlled_fetch_quarantine_action_gate_s373_s379,
     build_s373_controlled_fetch_action_authority,
     build_s374_fetch_request_validation_contract,

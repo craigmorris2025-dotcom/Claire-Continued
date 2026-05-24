@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_cockpit_payload_visibility_s149_s155 import (
+from runtime_core.api.governed_cockpit_payload_visibility_s149_s155 import (
     build_existing_payload_nonbreak_probe,
     build_governed_cockpit_payload_visibility_s149_s155,
     build_live_payload_visibility_probe,

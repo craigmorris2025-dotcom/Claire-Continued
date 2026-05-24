@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 
-from claire.api.governed_cockpit_stop_gate_s112r1 import write_cockpit_artifact_stop_gate_report
+from runtime_core.api.governed_cockpit_stop_gate_s112r1 import write_cockpit_artifact_stop_gate_report
 
 def main() -> int:
     result = write_cockpit_artifact_stop_gate_report()

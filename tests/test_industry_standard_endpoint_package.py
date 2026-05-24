@@ -4,8 +4,8 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
-from claire.api.industry_standard_endpoint_package import (
+from runtime_core.app import create_app
+from runtime_core.api.industry_standard_endpoint_package import (
     build_industry_standard_endpoint_package,
 )
 

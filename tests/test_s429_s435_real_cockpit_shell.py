@@ -1,5 +1,5 @@
 from __future__ import annotations
-from claire.api.dashboard_real_cockpit_shell_s429_s435 import *
+from runtime_core.api.dashboard_real_cockpit_shell_s429_s435 import *
 
 def test_s429_shell_contract_replaces_surface_wall():
     p=build_s429_real_cockpit_shell_contract()

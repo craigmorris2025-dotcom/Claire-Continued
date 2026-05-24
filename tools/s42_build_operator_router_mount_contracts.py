@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.governed_operator_router_mount_contracts import write_operator_router_mount_contracts
+from runtime_core.api.governed_operator_router_mount_contracts import write_operator_router_mount_contracts
 
 
 def main() -> int:

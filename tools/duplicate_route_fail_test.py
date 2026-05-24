@@ -43,13 +43,13 @@ def load_app() -> Any:
     errors: List[str] = []
 
     try:
-        module = importlib.import_module("claire.app")
+        module = importlib.import_module("runtime_core.app")
         if hasattr(module, "create_app"):
             return module.create_app()
         if hasattr(module, "app"):
             return module.app
     except Exception as exc:
-        errors.append(f"claire.app failed: {exc!r}")
+        errors.append(f"runtime_core.app failed: {exc!r}")
 
     try:
         module = importlib.import_module("main")
@@ -175,7 +175,7 @@ def write_markdown(report: Dict[str, Any]) -> str:
     lines.append("")
     if report["evaluation"]["failures"]:
         for failure in report["evaluation"]["failures"]:
-            lines.append(f"- `{failure['key']}` — `{failure['failure']}` owner_count=`{failure['owner_count']}`")
+            lines.append(f"- `{failure['key']}` â€” `{failure['failure']}` owner_count=`{failure['owner_count']}`")
             for owner in failure.get("owners", []):
                 lines.append(f"  - `{owner.get('endpoint', '')}`")
     else:
@@ -184,7 +184,7 @@ def write_markdown(report: Dict[str, Any]) -> str:
     lines.append("## Passing Critical Routes")
     lines.append("")
     for item in report["evaluation"]["passing"]:
-        lines.append(f"- `{item['key']}` → `{item['owner'].get('endpoint', '')}`")
+        lines.append(f"- `{item['key']}` â†’ `{item['owner'].get('endpoint', '')}`")
     lines.append("")
     lines.append("## Next Build")
     lines.append("")

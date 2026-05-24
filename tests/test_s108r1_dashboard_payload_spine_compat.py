@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_dashboard_payload_spine_compat_s108r1 import (
+from runtime_core.api.governed_dashboard_payload_spine_compat_s108r1 import (
     discover_dashboard_payload_surfaces,
     build_spine_dashboard_read_model,
     build_dashboard_payload_compatibility_report,

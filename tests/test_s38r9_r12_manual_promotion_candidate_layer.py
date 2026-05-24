@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from claire.api.governed_manual_promotion_candidates import (
+from runtime_core.api.governed_manual_promotion_candidates import (
     LOCKED_AUTHORITY,
     build_evidence_review_manifest,
     score_promotion_candidate,

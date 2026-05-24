@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s44r1_fetch_contracts_are_backend_truth_read_only():
-    module = importlib.import_module("claire.api.s44_cockpit_fetch_contracts")
+    module = importlib.import_module("runtime_core.api.s44_cockpit_fetch_contracts")
     payload = module.build_cockpit_fetch_contracts()
 
     assert payload["version"] == "v19.89.8-S44R1-R8"
@@ -24,7 +24,7 @@ def test_s44r1_fetch_contracts_are_backend_truth_read_only():
 
 
 def test_s44r2_fetch_contracts_verify_cleanly():
-    module = importlib.import_module("claire.api.s44_cockpit_fetch_contracts")
+    module = importlib.import_module("runtime_core.api.s44_cockpit_fetch_contracts")
     verification = module.verify_cockpit_fetch_contracts()
 
     assert verification["verification_ok"] is True

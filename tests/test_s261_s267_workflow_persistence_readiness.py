@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.workflow_persistence_readiness import get_workflow_persistence_readiness
+from runtime_core.api.workflow_persistence_readiness import get_workflow_persistence_readiness
 
 
 def test_s261_s267_workflow_persistence_ready_for_storage_but_not_daily_use_complete():

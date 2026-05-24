@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s184_cockpit_action_registry_exists_and_preserves_locks():
-    mod = importlib.import_module("claire.api.cockpit_action_registry")
+    mod = importlib.import_module("runtime_core.api.cockpit_action_registry")
     registry = mod.get_cockpit_action_registry()
 
     assert registry["version"] == "v19.89.8-S184"
@@ -22,7 +22,7 @@ def test_s184_cockpit_action_registry_exists_and_preserves_locks():
 
 
 def test_s184_allowed_actions_are_backend_contracts_not_frontend_assumptions():
-    mod = importlib.import_module("claire.api.cockpit_action_registry")
+    mod = importlib.import_module("runtime_core.api.cockpit_action_registry")
     registry = mod.get_cockpit_action_registry()
     ids = set(registry["actions_by_id"])
 
@@ -44,7 +44,7 @@ def test_s184_allowed_actions_are_backend_contracts_not_frontend_assumptions():
 
 
 def test_s184_unsafe_actions_remain_blocked():
-    mod = importlib.import_module("claire.api.cockpit_action_registry")
+    mod = importlib.import_module("runtime_core.api.cockpit_action_registry")
     registry = mod.get_cockpit_action_registry()
 
     for action in registry["actions"]:

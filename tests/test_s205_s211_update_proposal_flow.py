@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_update_proposal_flow import get_update_proposal_flow
+from runtime_core.api.governed_update_proposal_flow import get_update_proposal_flow
 
 
 def test_s205_s211_update_proposal_flow_blocks_runtime_update_execution():

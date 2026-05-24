@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s45r11_panel_data_mounting_contracts_are_read_only():
-    module = importlib.import_module("claire.api.s45_panel_data_mounting")
+    module = importlib.import_module("runtime_core.api.s45_panel_data_mounting")
     contracts = module.build_panel_data_mounting_contracts()
 
     assert contracts["version"] == "v19.89.8-S45R9-R16"
@@ -22,7 +22,7 @@ def test_s45r11_panel_data_mounting_contracts_are_read_only():
 
 
 def test_s45r13_panel_data_mount_probe_reaches_read_only_routes():
-    module = importlib.import_module("claire.api.s45_panel_data_mounting")
+    module = importlib.import_module("runtime_core.api.s45_panel_data_mounting")
     probe = module.probe_panel_data_mounts()
 
     assert probe["status"] == "panel_data_mount_probe_ready"
@@ -43,7 +43,7 @@ def test_s45r13_panel_data_mount_probe_reaches_read_only_routes():
 
 
 def test_s45r15_r16_plateau_report_is_ready():
-    module = importlib.import_module("claire.api.s45_panel_data_mounting")
+    module = importlib.import_module("runtime_core.api.s45_panel_data_mounting")
     report = module.build_s45r9_r16_plateau_report()
 
     assert report["version"] == "v19.89.8-S45R9-R16"

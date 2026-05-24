@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 
 
 def test_s1097_s1124_status_visibility_alias_module_is_read_only_and_ready():
-    module = importlib.import_module("claire.api.dashboard_status_visibility_aliases")
+    module = importlib.import_module("runtime_core.api.dashboard_status_visibility_aliases")
 
     visibility = module.build_dashboard_visibility_summary()
     status = module.build_dashboard_status_harmonized()
@@ -29,7 +29,7 @@ def test_s1097_s1124_status_visibility_alias_module_is_read_only_and_ready():
 
 
 def test_s1097_s1124_create_app_serves_status_visibility_aliases():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     client = TestClient(create_app())
 

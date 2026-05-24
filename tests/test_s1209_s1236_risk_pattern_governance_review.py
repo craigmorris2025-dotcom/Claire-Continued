@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def test_s1209_s1236_risk_pattern_review_classifies_all_current_warning_files():
-    from claire.audit.risk_pattern_governance_review import build_risk_pattern_review, reviewed_risk_files
+    from runtime_core.audit.risk_pattern_governance_review import build_risk_pattern_review, reviewed_risk_files
 
     report = build_risk_pattern_review()
     files = reviewed_risk_files()
@@ -17,27 +17,27 @@ def test_s1209_s1236_risk_pattern_review_classifies_all_current_warning_files():
     assert report["policy"]["no_runtime_mutation_added"] is True
 
     expected = {
-        "claire/api/internet_controlled_live_probe_s394_s400.py",
-        "claire/audit/system_plateau_audit.py",
-        "claire/connectors/web_fetcher.py",
-        "claire/desktop/startup_reliability.py",
-        "claire/enterprise/dependency_governance_snapshot.py",
-        "claire/governance/governed_web/controlled_head_transport_executor.py",
-        "claire/install_safety/simple_manifest_installer.py",
-        "claire/internet/governed_live_probe.py",
-        "claire/package_update_governance/dependency_snapshot.py",
-        "claire/package_update_governance/pip_audit_runner.py",
-        "claire/platform/launch_hardening.py",
-        "claire/platform/manifest.py",
-        "claire/platform/resolver.py",
-        "claire/real_governed_live_connectivity/http_client_adapter.py",
+        "runtime_core/api/internet_controlled_live_probe_s394_s400.py",
+        "runtime_core/audit/system_plateau_audit.py",
+        "runtime_core/connectors/web_fetcher.py",
+        "runtime_core/desktop/startup_reliability.py",
+        "runtime_core/enterprise/dependency_governance_snapshot.py",
+        "runtime_core/governance/governed_web/controlled_head_transport_executor.py",
+        "runtime_core/install_safety/simple_manifest_installer.py",
+        "runtime_core/internet/governed_live_probe.py",
+        "runtime_core/package_update_governance/dependency_snapshot.py",
+        "runtime_core/package_update_governance/pip_audit_runner.py",
+        "runtime_core/platform/launch_hardening.py",
+        "runtime_core/platform/manifest.py",
+        "runtime_core/platform/resolver.py",
+        "runtime_core/real_governed_live_connectivity/http_client_adapter.py",
     }
     assert expected.issubset(files)
 
 
 def test_s1209_s1236_risk_review_matches_plateau_warning_scope_without_blockers():
-    from claire.audit.risk_pattern_governance_review import reviewed_risk_files
-    from claire.audit.system_plateau_audit import run_audit
+    from runtime_core.audit.risk_pattern_governance_review import reviewed_risk_files
+    from runtime_core.audit.system_plateau_audit import run_audit
 
     audit = run_audit(Path.cwd(), write_report=True)
     blockers = [issue for issue in audit.get("issues", []) if issue.get("severity") == "blocker"]
@@ -56,7 +56,7 @@ def test_s1209_s1236_risk_review_matches_plateau_warning_scope_without_blockers(
 
 
 def test_s1209_s1236_risk_review_routes_mount_through_create_app():
-    from claire.app import create_app
+    from runtime_core.app import create_app
     from fastapi.testclient import TestClient
 
     client = TestClient(create_app())

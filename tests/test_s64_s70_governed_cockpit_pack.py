@@ -2,13 +2,13 @@ from __future__ import annotations
 import importlib
 
 MODULES = [
-    ("claire.api.s64_route_execution_payload_bridge", "build_s64r1_r8_plateau_report"),
-    ("claire.api.s65_runtime_output_rendering", "build_s65r1_r8_plateau_report"),
-    ("claire.api.s66_cockpit_evidence_rendering", "build_s66r1_r8_plateau_report"),
-    ("claire.api.s67_operator_review_dashboard", "build_s67r1_r8_plateau_report"),
-    ("claire.api.s68_dashboard_navigation_stabilization", "build_s68r1_r8_plateau_report"),
-    ("claire.api.s69_cockpit_loading_reconciliation", "build_s69r1_r8_plateau_report"),
-    ("claire.api.s70_modern_governed_cockpit_proof", "build_s70r1_r8_plateau_report"),
+    ("runtime_core.api.s64_route_execution_payload_bridge", "build_s64r1_r8_plateau_report"),
+    ("runtime_core.api.s65_runtime_output_rendering", "build_s65r1_r8_plateau_report"),
+    ("runtime_core.api.s66_cockpit_evidence_rendering", "build_s66r1_r8_plateau_report"),
+    ("runtime_core.api.s67_operator_review_dashboard", "build_s67r1_r8_plateau_report"),
+    ("runtime_core.api.s68_dashboard_navigation_stabilization", "build_s68r1_r8_plateau_report"),
+    ("runtime_core.api.s69_cockpit_loading_reconciliation", "build_s69r1_r8_plateau_report"),
+    ("runtime_core.api.s70_modern_governed_cockpit_proof", "build_s70r1_r8_plateau_report"),
 ]
 
 def test_s64_s70_all_ready_and_safe():

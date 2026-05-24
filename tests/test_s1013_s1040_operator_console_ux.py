@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
 def test_operator_experience_payload_is_user_facing_and_blocked():
-    module = importlib.import_module("claire.governance.governed_operator_experience_console")
+    module = importlib.import_module("runtime_core.governance.governed_operator_experience_console")
     payload = module.build_operator_experience_payload()
     assert payload["status"] == "ready"
     assert payload["button_count"] >= 10
@@ -19,7 +19,7 @@ def test_operator_experience_payload_is_user_facing_and_blocked():
     assert payload["visual_contract"]["show_user_action_labels"] is True
 
 def test_operator_experience_routes_are_mountable():
-    routes = importlib.import_module("claire.api.governed_operator_experience_routes")
+    routes = importlib.import_module("runtime_core.api.governed_operator_experience_routes")
     app = FastAPI()
     app.include_router(routes.router)
     client = TestClient(app)
@@ -44,7 +44,7 @@ def test_operator_experience_assets_exist_and_remove_dev_labels():
     assert "claire-operator-primary-button" in css
 
 def test_optional_create_app_still_imports():
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     if hasattr(app_module, "create_app"):
         app = app_module.create_app()
         assert app is not None

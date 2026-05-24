@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s36_router_module_imports_and_exposes_contract():
-    module = importlib.import_module("claire.api.routes.governed_live_probe")
+    module = importlib.import_module("runtime_core.api.routes.governed_live_probe")
     status = module.governed_live_probe_status()
     assert status["registered"] is True
     assert status["method_allowed"] == "HEAD"
@@ -21,7 +21,7 @@ def test_s36_router_module_imports_and_exposes_contract():
 
 
 def test_s36_router_does_not_read_response_body():
-    source = (ROOT / "claire" / "api" / "routes" / "governed_live_probe.py").read_text(encoding="utf-8")
+    source = (ROOT / "runtime_core" / "api" / "routes" / "governed_live_probe.py").read_text(encoding="utf-8")
     tree = ast.parse(source)
     forbidden = []
     for node in ast.walk(tree):

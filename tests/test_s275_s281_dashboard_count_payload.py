@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.operator_workflow_dashboard_count_payload import build_dashboard_live_count_payload
-from claire.api.operator_workflow_route_readiness import get_operator_workflow_route_readiness
+from runtime_core.api.operator_workflow_dashboard_count_payload import build_dashboard_live_count_payload
+from runtime_core.api.operator_workflow_route_readiness import get_operator_workflow_route_readiness
 
 
 def test_s275_s281_dashboard_live_count_payload_is_ready_and_non_mutating():

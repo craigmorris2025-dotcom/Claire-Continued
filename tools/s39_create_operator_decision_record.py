@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.governed_promotion_review_gate import create_operator_decision_record
+from runtime_core.api.governed_promotion_review_gate import create_operator_decision_record
 
 
 def main() -> int:

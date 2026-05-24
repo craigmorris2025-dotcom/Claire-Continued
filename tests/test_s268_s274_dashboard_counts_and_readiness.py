@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.operator_workflow_dashboard_counts import get_operator_dashboard_counts
-from claire.api.operator_workflow_storage_readiness import get_operator_workflow_storage_readiness
+from runtime_core.api.operator_workflow_dashboard_counts import get_operator_dashboard_counts
+from runtime_core.api.operator_workflow_storage_readiness import get_operator_workflow_storage_readiness
 
 
 def test_s268_s274_dashboard_counts_are_available_without_runtime_truth_write():

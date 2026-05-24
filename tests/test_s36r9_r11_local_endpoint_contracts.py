@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def _client():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     return TestClient(create_app())
 
@@ -32,11 +32,11 @@ def test_s36r9_status_endpoint_visible_and_safe():
 
 def test_s36r10_post_head_endpoint_blocked_by_default(monkeypatch):
     for key in [
-        "CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE",
-        "CLAIRE_ALLOW_HEAD_ONLY_PROBE",
-        "CLAIRE_ALLOW_RESPONSE_BODY_READ",
-        "CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION",
-        "CLAIRE_ALLOW_AUTONOMOUS_EXECUTION",
+        "PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE",
+        "PLATFORM_ALLOW_HEAD_ONLY_PROBE",
+        "PLATFORM_ALLOW_RESPONSE_BODY_READ",
+        "PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION",
+        "PLATFORM_ALLOW_AUTONOMOUS_EXECUTION",
     ]:
         monkeypatch.delenv(key, raising=False)
 
@@ -54,11 +54,11 @@ def test_s36r10_post_head_endpoint_blocked_by_default(monkeypatch):
 
 
 def test_s36r10_post_head_endpoint_requires_operator_ack(monkeypatch):
-    monkeypatch.setenv("CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
-    monkeypatch.setenv("CLAIRE_ALLOW_HEAD_ONLY_PROBE", "1")
-    monkeypatch.delenv("CLAIRE_ALLOW_RESPONSE_BODY_READ", raising=False)
-    monkeypatch.delenv("CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
-    monkeypatch.delenv("CLAIRE_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
+    monkeypatch.setenv("PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
+    monkeypatch.setenv("PLATFORM_ALLOW_HEAD_ONLY_PROBE", "1")
+    monkeypatch.delenv("PLATFORM_ALLOW_RESPONSE_BODY_READ", raising=False)
+    monkeypatch.delenv("PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
+    monkeypatch.delenv("PLATFORM_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
 
     client = _client()
     response = client.post(
@@ -74,11 +74,11 @@ def test_s36r10_post_head_endpoint_requires_operator_ack(monkeypatch):
 
 
 def test_s36r10_post_head_endpoint_rejects_non_one_shot(monkeypatch):
-    monkeypatch.setenv("CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
-    monkeypatch.setenv("CLAIRE_ALLOW_HEAD_ONLY_PROBE", "1")
-    monkeypatch.delenv("CLAIRE_ALLOW_RESPONSE_BODY_READ", raising=False)
-    monkeypatch.delenv("CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
-    monkeypatch.delenv("CLAIRE_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
+    monkeypatch.setenv("PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE", "1")
+    monkeypatch.setenv("PLATFORM_ALLOW_HEAD_ONLY_PROBE", "1")
+    monkeypatch.delenv("PLATFORM_ALLOW_RESPONSE_BODY_READ", raising=False)
+    monkeypatch.delenv("PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION", raising=False)
+    monkeypatch.delenv("PLATFORM_ALLOW_AUTONOMOUS_EXECUTION", raising=False)
 
     client = _client()
     response = client.post(
@@ -102,8 +102,8 @@ def test_s36r11_operator_probe_pack_files_exist():
     op_source = op.read_text(encoding="utf-8")
     assert "--operator-ack" in op_source
     assert 'choices=["YES"]' in op_source
-    assert "CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE" in op_source
-    assert "CLAIRE_ALLOW_HEAD_ONLY_PROBE" in op_source
+    assert "PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE" in op_source
+    assert "PLATFORM_ALLOW_HEAD_ONLY_PROBE" in op_source
 
     verify_source = verify.read_text(encoding="utf-8")
     assert "last_single_head_probe_manifest.json" in verify_source

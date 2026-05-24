@@ -1,0 +1,743 @@
+{
+  "event_count": 25,
+  "events": [
+    {
+      "action_id": "prepare_cad_viewer",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:15:04.945573+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/run-139bb4848336_general-intelligence-opportunity-compliance-governed-portfolio-candidate",
+      "result": {
+        "registry": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/run-139bb4848336_general-intelligence-opportunity-compliance-governed-portfolio-candidate/cad_artifact_registry.json",
+        "viewer": {
+          "empty_state": "No CAD asset attached yet. Import or generate an asset after design review.",
+          "engineering_formats": [
+            ".step",
+            ".stp",
+            ".iges",
+            ".igs",
+            ".dxf"
+          ],
+          "primary_formats": [
+            ".glb",
+            ".gltf",
+            ".obj",
+            ".stl"
+          ],
+          "status": "ready_waiting_for_asset",
+          "viewer_type": "cad_3d_viewer"
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "prepare_video_viewer",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:15:04.965574+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/run-139bb4848336_general-intelligence-opportunity-compliance-governed-portfolio-candidate",
+      "result": {
+        "registry": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/run-139bb4848336_general-intelligence-opportunity-compliance-governed-portfolio-candidate/video_simulation_registry.json",
+        "viewer": {
+          "empty_state": "No video or simulation asset attached yet. Generate a demo, simulation, or workflow recording after design review.",
+          "primary_formats": [
+            ".mp4",
+            ".webm"
+          ],
+          "secondary_formats": [
+            ".mov",
+            ".mkv"
+          ],
+          "status": "ready_waiting_for_asset",
+          "viewer_type": "video_simulation_viewer"
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "prepare_asset_import_slots",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:15:04.992573+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/run-139bb4848336_general-intelligence-opportunity-compliance-governed-portfolio-candidate",
+      "result": {
+        "cad_import_slots_ready": true,
+        "video_import_slots_ready": true
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "validate_design_route",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:15:05.004572+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/run-139bb4848336_general-intelligence-opportunity-compliance-governed-portfolio-candidate",
+      "result": {
+        "validation_chain": {
+          "checks": [
+            {
+              "id": "discovery_candidate",
+              "label": "Discovery or breakthrough candidate",
+              "passed": true
+            },
+            {
+              "id": "auto_design",
+              "label": "Automatic design state",
+              "passed": true
+            },
+            {
+              "id": "materials_manifest",
+              "label": "Materials/components/code manifest",
+              "passed": true
+            },
+            {
+              "id": "blueprint_package",
+              "label": "Blueprint/spec package",
+              "passed": true
+            },
+            {
+              "id": "portfolio_route",
+              "label": "Portfolio route handoff",
+              "passed": true
+            },
+            {
+              "id": "acquirer_route",
+              "label": "Acquirer matching handoff",
+              "passed": true
+            },
+            {
+              "id": "final_package_route",
+              "label": "Final package handoff",
+              "passed": true
+            }
+          ],
+          "completion_percent": 100.0,
+          "passed": 7,
+          "status": "validated",
+          "total": 7
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "route_validated"
+    },
+    {
+      "action_id": "promote_design_package",
+      "blocked": true,
+      "generated_at": "2026-05-24T19:15:05.016576+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/run-139bb4848336_general-intelligence-opportunity-compliance-governed-portfolio-candidate",
+      "result": {
+        "live_evidence": {
+          "body_read_performed": false,
+          "evidence_store": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_evidence/promoted_metadata_evidence_store.json",
+          "metadata_evidence_count": 0,
+          "providers": [],
+          "runtime_truth_mutation": false,
+          "status": "missing_promoted_live_metadata_evidence"
+        },
+        "reason": "promotion_requires_live_evidence_and_explicit_operator_promotion_gate",
+        "review_recorded": true
+      },
+      "runtime_truth_mutation": false,
+      "status": "blocked"
+    },
+    {
+      "action_id": "prepare_cad_viewer",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:21:07.436976+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-191535-094b8ed1_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "registry": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-191535-094b8ed1_portfolio-thesis-allowlisted-input-boundary-lifecycle/cad_artifact_registry.json",
+        "viewer": {
+          "empty_state": "No CAD asset attached yet. Import or generate an asset after design review.",
+          "engineering_formats": [
+            ".step",
+            ".stp",
+            ".iges",
+            ".igs",
+            ".dxf"
+          ],
+          "primary_formats": [
+            ".glb",
+            ".gltf",
+            ".obj",
+            ".stl"
+          ],
+          "status": "ready_waiting_for_asset",
+          "viewer_type": "cad_3d_viewer"
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "prepare_video_viewer",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:21:07.456975+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-191535-094b8ed1_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "registry": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-191535-094b8ed1_portfolio-thesis-allowlisted-input-boundary-lifecycle/video_simulation_registry.json",
+        "viewer": {
+          "empty_state": "No video or simulation asset attached yet. Generate a demo, simulation, or workflow recording after design review.",
+          "primary_formats": [
+            ".mp4",
+            ".webm"
+          ],
+          "secondary_formats": [
+            ".mov",
+            ".mkv"
+          ],
+          "status": "ready_waiting_for_asset",
+          "viewer_type": "video_simulation_viewer"
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "prepare_asset_import_slots",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:21:07.487976+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-191535-094b8ed1_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "cad_import_slots_ready": true,
+        "video_import_slots_ready": true
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "validate_design_route",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:21:07.498977+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-191535-094b8ed1_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "validation_chain": {
+          "checks": [
+            {
+              "id": "discovery_candidate",
+              "label": "Discovery or breakthrough candidate",
+              "passed": true
+            },
+            {
+              "id": "auto_design",
+              "label": "Automatic design state",
+              "passed": true
+            },
+            {
+              "id": "materials_manifest",
+              "label": "Materials/components/code manifest",
+              "passed": true
+            },
+            {
+              "id": "blueprint_package",
+              "label": "Blueprint/spec package",
+              "passed": true
+            },
+            {
+              "id": "portfolio_route",
+              "label": "Portfolio route handoff",
+              "passed": true
+            },
+            {
+              "id": "acquirer_route",
+              "label": "Acquirer matching handoff",
+              "passed": true
+            },
+            {
+              "id": "final_package_route",
+              "label": "Final package handoff",
+              "passed": true
+            }
+          ],
+          "completion_percent": 100.0,
+          "passed": 7,
+          "status": "validated",
+          "total": 7
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "route_validated"
+    },
+    {
+      "action_id": "promote_design_package",
+      "blocked": true,
+      "generated_at": "2026-05-24T19:21:07.510977+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-191535-094b8ed1_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "live_evidence": {
+          "body_read_performed": false,
+          "evidence_store": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_evidence/promoted_metadata_evidence_store.json",
+          "metadata_evidence_count": 0,
+          "providers": [],
+          "runtime_truth_mutation": false,
+          "status": "missing_promoted_live_metadata_evidence"
+        },
+        "reason": "promotion_requires_live_evidence_and_explicit_operator_promotion_gate",
+        "review_recorded": true
+      },
+      "runtime_truth_mutation": false,
+      "status": "blocked"
+    },
+    {
+      "action_id": "prepare_cad_viewer",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:30:06.087311+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-192730-188ec12e_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "registry": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-192730-188ec12e_portfolio-thesis-allowlisted-input-boundary-lifecycle/cad_artifact_registry.json",
+        "viewer": {
+          "empty_state": "No CAD asset attached yet. Import or generate an asset after design review.",
+          "engineering_formats": [
+            ".step",
+            ".stp",
+            ".iges",
+            ".igs",
+            ".dxf"
+          ],
+          "primary_formats": [
+            ".glb",
+            ".gltf",
+            ".obj",
+            ".stl"
+          ],
+          "status": "ready_waiting_for_asset",
+          "viewer_type": "cad_3d_viewer"
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "prepare_video_viewer",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:30:06.108310+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-192730-188ec12e_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "registry": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-192730-188ec12e_portfolio-thesis-allowlisted-input-boundary-lifecycle/video_simulation_registry.json",
+        "viewer": {
+          "empty_state": "No video or simulation asset attached yet. Generate a demo, simulation, or workflow recording after design review.",
+          "primary_formats": [
+            ".mp4",
+            ".webm"
+          ],
+          "secondary_formats": [
+            ".mov",
+            ".mkv"
+          ],
+          "status": "ready_waiting_for_asset",
+          "viewer_type": "video_simulation_viewer"
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "prepare_asset_import_slots",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:30:06.123314+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-192730-188ec12e_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "cad_import_slots_ready": true,
+        "video_import_slots_ready": true
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "validate_design_route",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:30:06.134309+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-192730-188ec12e_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "validation_chain": {
+          "checks": [
+            {
+              "id": "discovery_candidate",
+              "label": "Discovery or breakthrough candidate",
+              "passed": true
+            },
+            {
+              "id": "auto_design",
+              "label": "Automatic design state",
+              "passed": true
+            },
+            {
+              "id": "materials_manifest",
+              "label": "Materials/components/code manifest",
+              "passed": true
+            },
+            {
+              "id": "blueprint_package",
+              "label": "Blueprint/spec package",
+              "passed": true
+            },
+            {
+              "id": "portfolio_route",
+              "label": "Portfolio route handoff",
+              "passed": true
+            },
+            {
+              "id": "acquirer_route",
+              "label": "Acquirer matching handoff",
+              "passed": true
+            },
+            {
+              "id": "final_package_route",
+              "label": "Final package handoff",
+              "passed": true
+            }
+          ],
+          "completion_percent": 100.0,
+          "passed": 7,
+          "status": "validated",
+          "total": 7
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "route_validated"
+    },
+    {
+      "action_id": "promote_design_package",
+      "blocked": true,
+      "generated_at": "2026-05-24T19:30:06.147310+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-192730-188ec12e_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "live_evidence": {
+          "body_read_performed": false,
+          "evidence_store": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_evidence/promoted_metadata_evidence_store.json",
+          "metadata_evidence_count": 0,
+          "providers": [],
+          "runtime_truth_mutation": false,
+          "status": "missing_promoted_live_metadata_evidence"
+        },
+        "reason": "promotion_requires_live_evidence_and_explicit_operator_promotion_gate",
+        "review_recorded": true
+      },
+      "runtime_truth_mutation": false,
+      "status": "blocked"
+    },
+    {
+      "action_id": "prepare_cad_viewer",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:35:36.976142+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193037-6d648c66_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "registry": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193037-6d648c66_portfolio-thesis-allowlisted-input-boundary-lifecycle/cad_artifact_registry.json",
+        "viewer": {
+          "empty_state": "No CAD asset attached yet. Import or generate an asset after design review.",
+          "engineering_formats": [
+            ".step",
+            ".stp",
+            ".iges",
+            ".igs",
+            ".dxf"
+          ],
+          "primary_formats": [
+            ".glb",
+            ".gltf",
+            ".obj",
+            ".stl"
+          ],
+          "status": "ready_waiting_for_asset",
+          "viewer_type": "cad_3d_viewer"
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "prepare_video_viewer",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:35:36.997142+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193037-6d648c66_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "registry": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193037-6d648c66_portfolio-thesis-allowlisted-input-boundary-lifecycle/video_simulation_registry.json",
+        "viewer": {
+          "empty_state": "No video or simulation asset attached yet. Generate a demo, simulation, or workflow recording after design review.",
+          "primary_formats": [
+            ".mp4",
+            ".webm"
+          ],
+          "secondary_formats": [
+            ".mov",
+            ".mkv"
+          ],
+          "status": "ready_waiting_for_asset",
+          "viewer_type": "video_simulation_viewer"
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "prepare_asset_import_slots",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:35:37.028141+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193037-6d648c66_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "cad_import_slots_ready": true,
+        "video_import_slots_ready": true
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "validate_design_route",
+      "blocked": false,
+      "generated_at": "2026-05-24T19:35:37.042142+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193037-6d648c66_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "validation_chain": {
+          "checks": [
+            {
+              "id": "discovery_candidate",
+              "label": "Discovery or breakthrough candidate",
+              "passed": true
+            },
+            {
+              "id": "auto_design",
+              "label": "Automatic design state",
+              "passed": true
+            },
+            {
+              "id": "materials_manifest",
+              "label": "Materials/components/code manifest",
+              "passed": true
+            },
+            {
+              "id": "blueprint_package",
+              "label": "Blueprint/spec package",
+              "passed": true
+            },
+            {
+              "id": "portfolio_route",
+              "label": "Portfolio route handoff",
+              "passed": true
+            },
+            {
+              "id": "acquirer_route",
+              "label": "Acquirer matching handoff",
+              "passed": true
+            },
+            {
+              "id": "final_package_route",
+              "label": "Final package handoff",
+              "passed": true
+            }
+          ],
+          "completion_percent": 100.0,
+          "passed": 7,
+          "status": "validated",
+          "total": 7
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "route_validated"
+    },
+    {
+      "action_id": "promote_design_package",
+      "blocked": true,
+      "generated_at": "2026-05-24T19:35:37.055142+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193037-6d648c66_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "live_evidence": {
+          "body_read_performed": false,
+          "evidence_store": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_evidence/promoted_metadata_evidence_store.json",
+          "metadata_evidence_count": 0,
+          "providers": [],
+          "runtime_truth_mutation": false,
+          "status": "missing_promoted_live_metadata_evidence"
+        },
+        "reason": "promotion_requires_live_evidence_and_explicit_operator_promotion_gate",
+        "review_recorded": true
+      },
+      "runtime_truth_mutation": false,
+      "status": "blocked"
+    },
+    {
+      "action_id": "prepare_cad_viewer",
+      "blocked": false,
+      "generated_at": "2026-05-24T22:32:59.264262+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193602-40d4ae1a_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "registry": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193602-40d4ae1a_portfolio-thesis-allowlisted-input-boundary-lifecycle/cad_artifact_registry.json",
+        "viewer": {
+          "empty_state": "No CAD asset attached yet. Import or generate an asset after design review.",
+          "engineering_formats": [
+            ".step",
+            ".stp",
+            ".iges",
+            ".igs",
+            ".dxf"
+          ],
+          "primary_formats": [
+            ".glb",
+            ".gltf",
+            ".obj",
+            ".stl"
+          ],
+          "status": "ready_waiting_for_asset",
+          "viewer_type": "cad_3d_viewer"
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "prepare_video_viewer",
+      "blocked": false,
+      "generated_at": "2026-05-24T22:32:59.280258+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193602-40d4ae1a_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "registry": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193602-40d4ae1a_portfolio-thesis-allowlisted-input-boundary-lifecycle/video_simulation_registry.json",
+        "viewer": {
+          "empty_state": "No video or simulation asset attached yet. Generate a demo, simulation, or workflow recording after design review.",
+          "primary_formats": [
+            ".mp4",
+            ".webm"
+          ],
+          "secondary_formats": [
+            ".mov",
+            ".mkv"
+          ],
+          "status": "ready_waiting_for_asset",
+          "viewer_type": "video_simulation_viewer"
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "prepare_asset_import_slots",
+      "blocked": false,
+      "generated_at": "2026-05-24T22:32:59.312256+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193602-40d4ae1a_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "cad_import_slots_ready": true,
+        "video_import_slots_ready": true
+      },
+      "runtime_truth_mutation": false,
+      "status": "recorded"
+    },
+    {
+      "action_id": "validate_design_route",
+      "blocked": false,
+      "generated_at": "2026-05-24T22:32:59.326264+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193602-40d4ae1a_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "validation_chain": {
+          "checks": [
+            {
+              "id": "discovery_candidate",
+              "label": "Discovery or breakthrough candidate",
+              "passed": true
+            },
+            {
+              "id": "auto_design",
+              "label": "Automatic design state",
+              "passed": true
+            },
+            {
+              "id": "materials_manifest",
+              "label": "Materials/components/code manifest",
+              "passed": true
+            },
+            {
+              "id": "blueprint_package",
+              "label": "Blueprint/spec package",
+              "passed": true
+            },
+            {
+              "id": "portfolio_route",
+              "label": "Portfolio route handoff",
+              "passed": true
+            },
+            {
+              "id": "acquirer_route",
+              "label": "Acquirer matching handoff",
+              "passed": true
+            },
+            {
+              "id": "final_package_route",
+              "label": "Final package handoff",
+              "passed": true
+            }
+          ],
+          "completion_percent": 100.0,
+          "passed": 7,
+          "status": "validated",
+          "total": 7
+        }
+      },
+      "runtime_truth_mutation": false,
+      "status": "route_validated"
+    },
+    {
+      "action_id": "promote_design_package",
+      "blocked": true,
+      "generated_at": "2026-05-24T22:32:59.339263+00:00",
+      "operator_note": "",
+      "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193602-40d4ae1a_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+      "result": {
+        "live_evidence": {
+          "body_read_performed": false,
+          "evidence_store": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_evidence/promoted_metadata_evidence_store.json",
+          "metadata_evidence_count": 0,
+          "providers": [],
+          "runtime_truth_mutation": false,
+          "status": "missing_promoted_live_metadata_evidence"
+        },
+        "reason": "promotion_requires_live_evidence_and_explicit_operator_promotion_gate",
+        "review_recorded": true
+      },
+      "runtime_truth_mutation": false,
+      "status": "blocked"
+    }
+  ],
+  "latest_action": {
+    "action_id": "promote_design_package",
+    "blocked": true,
+    "generated_at": "2026-05-24T22:32:59.339263+00:00",
+    "operator_note": "",
+    "package_dir": "C:/Users/craig/OneDrive/Desktop/Claire/data/design_portal/packages/cycle-20260524-193602-40d4ae1a_portfolio-thesis-allowlisted-input-boundary-lifecycle",
+    "result": {
+      "live_evidence": {
+        "body_read_performed": false,
+        "evidence_store": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_evidence/promoted_metadata_evidence_store.json",
+        "metadata_evidence_count": 0,
+        "providers": [],
+        "runtime_truth_mutation": false,
+        "status": "missing_promoted_live_metadata_evidence"
+      },
+      "reason": "promotion_requires_live_evidence_and_explicit_operator_promotion_gate",
+      "review_recorded": true
+    },
+    "runtime_truth_mutation": false,
+    "status": "blocked"
+  },
+  "schema_version": "claire_design_portal_action_log_v1",
+  "status": "ready"
+}

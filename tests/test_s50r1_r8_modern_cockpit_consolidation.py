@@ -15,7 +15,7 @@ WEB_JS = MODERN_ROOT / "claire_governed_web_panels.js"
 
 
 def test_s50r1_consolidation_manifest_ready():
-    module = importlib.import_module("claire.api.s50_modern_cockpit_consolidation")
+    module = importlib.import_module("runtime_core.api.s50_modern_cockpit_consolidation")
     manifest = module.build_modern_cockpit_consolidation_manifest()
 
     assert manifest["version"] == "v19.89.8-S50R1-R8"
@@ -36,7 +36,7 @@ def test_s50r1_consolidation_manifest_ready():
 
 
 def test_s50r4_consolidation_manifest_verifies_cleanly():
-    module = importlib.import_module("claire.api.s50_modern_cockpit_consolidation")
+    module = importlib.import_module("runtime_core.api.s50_modern_cockpit_consolidation")
     verification = module.verify_modern_cockpit_consolidation_manifest()
 
     assert verification["verification_ok"] is True
@@ -45,7 +45,7 @@ def test_s50r4_consolidation_manifest_verifies_cleanly():
 
 
 def test_s50r5_demo_readiness_snapshot_is_honest_about_remaining_gap():
-    module = importlib.import_module("claire.api.s50_modern_cockpit_consolidation")
+    module = importlib.import_module("runtime_core.api.s50_modern_cockpit_consolidation")
     snapshot = module.build_demo_readiness_snapshot()
 
     assert snapshot["status"] == "demo_readiness_snapshot_ready"
@@ -81,7 +81,7 @@ def test_s50r6_frontend_consolidated_assets_exist_and_are_safe():
 
 
 def test_s50r8_plateau_report_points_to_useful_outputs():
-    module = importlib.import_module("claire.api.s50_modern_cockpit_consolidation")
+    module = importlib.import_module("runtime_core.api.s50_modern_cockpit_consolidation")
     report = module.build_s50r1_r8_plateau_report()
 
     assert report["status"] == "s50r1_r8_ready"

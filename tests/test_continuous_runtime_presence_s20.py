@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s20_presence_builds_from_payload_and_preserves_authority():
-    module = importlib.import_module("claire.api.continuous_runtime_presence")
+    module = importlib.import_module("runtime_core.api.continuous_runtime_presence")
 
     payload = {
         "governed_runtime_timeline": {
@@ -40,7 +40,7 @@ def test_s20_presence_builds_from_payload_and_preserves_authority():
 
 
 def test_s20_presence_detects_degraded_state():
-    module = importlib.import_module("claire.api.continuous_runtime_presence")
+    module = importlib.import_module("runtime_core.api.continuous_runtime_presence")
     payload = {
         "governed_route_activity_overlay": {
             "summary": {"state_counts": {"degraded": 1}}
@@ -55,7 +55,7 @@ def test_s20_presence_detects_degraded_state():
 
 
 def test_s20_attach_presence_preserves_payload():
-    module = importlib.import_module("claire.api.continuous_runtime_presence")
+    module = importlib.import_module("runtime_core.api.continuous_runtime_presence")
     updated = module.attach_continuous_runtime_presence({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

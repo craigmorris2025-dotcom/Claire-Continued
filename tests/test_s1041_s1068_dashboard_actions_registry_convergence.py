@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 
 
 def test_dashboard_actions_routes_exist_without_enabling_execution():
-    from claire.api.dashboard_actions_registry_routes import router
+    from runtime_core.api.dashboard_actions_registry_routes import router
 
     app = FastAPI()
     app.include_router(router)
@@ -41,7 +41,7 @@ def test_dashboard_actions_routes_exist_without_enabling_execution():
 
 
 def test_create_app_serves_dashboard_action_endpoints_when_available():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     app = create_app()
     client = TestClient(app)
@@ -58,7 +58,7 @@ def test_create_app_serves_dashboard_action_endpoints_when_available():
 
 
 def test_dashboard_actions_registry_has_operator_ready_labels_not_only_stage_codes():
-    from claire.api.dashboard_actions_registry_routes import build_dashboard_actions_registry
+    from runtime_core.api.dashboard_actions_registry_routes import build_dashboard_actions_registry
 
     payload = build_dashboard_actions_registry()
     labels = {action["label"] for action in payload["actions"]}

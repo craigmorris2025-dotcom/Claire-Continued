@@ -4,8 +4,8 @@ import importlib
 
 
 def test_s18_health_evaluates_clean_registry_as_healthy():
-    registry_module = importlib.import_module("claire.api.canonical_cockpit_surface_registry")
-    health_module = importlib.import_module("claire.api.canonical_cockpit_surface_health")
+    registry_module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_registry")
+    health_module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_health")
 
     registry = registry_module.build_cockpit_surface_registry()
     health = health_module.evaluate_surface_registry_health(registry)
@@ -20,7 +20,7 @@ def test_s18_health_evaluates_clean_registry_as_healthy():
 
 
 def test_s18_detects_runtime_authority_drift():
-    health_module = importlib.import_module("claire.api.canonical_cockpit_surface_health")
+    health_module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_health")
 
     registry = {
         "surfaces": [
@@ -46,7 +46,7 @@ def test_s18_detects_runtime_authority_drift():
 
 
 def test_s18_detects_duplicate_surface_ids():
-    health_module = importlib.import_module("claire.api.canonical_cockpit_surface_health")
+    health_module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_health")
 
     base = {
         "surface_id": "duplicate",
@@ -69,8 +69,8 @@ def test_s18_detects_duplicate_surface_ids():
 
 
 def test_s18_attach_surface_health_preserves_payload():
-    registry_module = importlib.import_module("claire.api.canonical_cockpit_surface_registry")
-    health_module = importlib.import_module("claire.api.canonical_cockpit_surface_health")
+    registry_module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_registry")
+    health_module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_health")
 
     payload = {
         "existing": "preserved",

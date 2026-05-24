@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s15_classifies_degradation():
-    module = importlib.import_module("claire.api.governed_timeline_classification")
+    module = importlib.import_module("runtime_core.api.governed_timeline_classification")
     event = {
         "type": "synchronization_change",
         "field": "connection_state",
@@ -19,7 +19,7 @@ def test_s15_classifies_degradation():
 
 
 def test_s15_classifies_recovery():
-    module = importlib.import_module("claire.api.governed_timeline_classification")
+    module = importlib.import_module("runtime_core.api.governed_timeline_classification")
     event = {
         "type": "payload_freshness_change",
         "field": "freshness",
@@ -32,7 +32,7 @@ def test_s15_classifies_recovery():
 
 
 def test_s15_classifies_runtime_transition():
-    module = importlib.import_module("claire.api.governed_timeline_classification")
+    module = importlib.import_module("runtime_core.api.governed_timeline_classification")
     event = {
         "type": "runtime_state_transition",
         "field": "terminal_state",
@@ -44,7 +44,7 @@ def test_s15_classifies_runtime_transition():
 
 
 def test_s15_attach_classification_preserves_blocked_authority():
-    module = importlib.import_module("claire.api.governed_timeline_classification")
+    module = importlib.import_module("runtime_core.api.governed_timeline_classification")
     payload = {
         "governed_runtime_timeline": {
             "authority": {"runtime_authority": "blocked"},

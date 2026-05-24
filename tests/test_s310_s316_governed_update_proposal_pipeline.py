@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_update_proposal_pipeline_s310_s316 import (
+from runtime_core.api.governed_update_proposal_pipeline_s310_s316 import (
     build_governed_update_proposal_pipeline_s310_s316,
     build_s310_update_candidate_detector,
     build_s311_update_proposal_builder,

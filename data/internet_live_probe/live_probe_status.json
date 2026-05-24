@@ -1,16 +1,16 @@
 {
   "automatic_execution_enabled": false,
   "background_execution_enabled": false,
-  "generated_at": "2026-05-13T11:20:33.043036Z",
-  "live_probe_enabled_for_confirmed_request": false,
+  "generated_at": "2026-05-24T22:33:00.941262Z",
+  "live_probe_enabled_for_confirmed_request": true,
   "provider": {
-    "key_name": "",
-    "key_present": false,
-    "key_redacted": "",
-    "known": false,
-    "provider": "none"
+    "key_name": "TAVILY_API_KEY",
+    "key_present": true,
+    "key_redacted": "tv***mO",
+    "known": true,
+    "provider": "tavily"
   },
-  "recommendation": "Configure CLAIRE_SEARCH_PROVIDER and its API key locally, then rerun v17.83/v17.84 gates.",
-  "status": "BLOCKED_PROVIDER_NOT_READY",
+  "recommendation": "Live probe is prepared. Run only one operator-confirmed query. Results are evidence-captured and unknown domains are quarantined.",
+  "status": "READY_FOR_OPERATOR_CONFIRMED_SINGLE_QUERY_PROBE",
   "version": "v17.84"
 }

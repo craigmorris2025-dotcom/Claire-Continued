@@ -66,8 +66,8 @@ def ensure_import_path() -> None:
 def load_create_app() -> tuple[Any | None, str, str]:
     ensure_import_path()
     candidates = [
-        ("claire.app", "create_app"),
-        ("src.claire.app", "create_app"),
+        ("runtime_core.app", "create_app"),
+        ("src.runtime_core.app", "create_app"),
         ("main", "app"),
     ]
 

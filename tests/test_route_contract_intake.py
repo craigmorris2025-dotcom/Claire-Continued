@@ -6,14 +6,14 @@ from fastapi.testclient import TestClient
 
 
 def test_center_route_contract_selects_operator_route_families():
-    from claire.lifecycle.canonical_paths import (
+    from runtime_core.lifecycle.canonical_paths import (
         ACQUISITION_ROUTE,
         BREAKTHROUGH_DESIGN_ROUTE,
         BREAKTHROUGH_ESCALATION_ROUTE,
         EXISTING_SYSTEM_REPLACEMENT_ROUTE,
         PORTFOLIO_ROUTE,
     )
-    from claire.lifecycle.route_contracts import select_route_by_center_contract
+    from runtime_core.lifecycle.route_contracts import select_route_by_center_contract
 
     assert select_route_by_center_contract({})["selected_route"] == PORTFOLIO_ROUTE
     assert (
@@ -49,7 +49,7 @@ def test_center_route_contract_selects_operator_route_families():
 
 
 def test_route_contracts_capture_all_operator_route_blocks():
-    from claire.lifecycle.route_contracts import build_route_contracts
+    from runtime_core.lifecycle.route_contracts import build_route_contracts
 
     payload = build_route_contracts()
 
@@ -68,8 +68,8 @@ def test_route_contracts_capture_all_operator_route_blocks():
 
 
 def test_lifecycle_runner_uses_center_route_contract_when_breakthrough_present():
-    from claire.lifecycle.canonical_paths import ACQUISITION_ROUTE, BREAKTHROUGH_DESIGN_ROUTE, PORTFOLIO_ROUTE
-    from claire.lifecycle.lifecycle_runner import CoreLifecycleRunner
+    from runtime_core.lifecycle.canonical_paths import ACQUISITION_ROUTE, BREAKTHROUGH_DESIGN_ROUTE, PORTFOLIO_ROUTE
+    from runtime_core.lifecycle.lifecycle_runner import CoreLifecycleRunner
 
     runner = CoreLifecycleRunner()
 
@@ -79,7 +79,7 @@ def test_lifecycle_runner_uses_center_route_contract_when_breakthrough_present()
 
 
 def test_lifecycle_route_contract_routes_are_mounted():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     client = TestClient(create_app())
 

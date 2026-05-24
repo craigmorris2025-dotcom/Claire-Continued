@@ -19,7 +19,7 @@ def sample_payload():
 
 
 def test_s41r1_operator_state_snapshot_is_backend_authoritative():
-    module = importlib.import_module("claire.api.governed_operator_runtime_snapshots")
+    module = importlib.import_module("runtime_core.api.governed_operator_runtime_snapshots")
     snapshot = module.build_operator_state_snapshot(sample_payload())
 
     assert snapshot["backend_owns_truth"] is True
@@ -33,7 +33,7 @@ def test_s41r1_operator_state_snapshot_is_backend_authoritative():
 
 
 def test_s41r2_bounded_runtime_summary_is_read_only():
-    module = importlib.import_module("claire.api.governed_operator_runtime_snapshots")
+    module = importlib.import_module("runtime_core.api.governed_operator_runtime_snapshots")
     snapshot = module.build_operator_state_snapshot(sample_payload())
     summary = module.build_bounded_runtime_summary(snapshot)
 
@@ -46,7 +46,7 @@ def test_s41r2_bounded_runtime_summary_is_read_only():
 
 
 def test_s41r3_snapshot_lineage_preserves_source_chain():
-    module = importlib.import_module("claire.api.governed_operator_runtime_snapshots")
+    module = importlib.import_module("runtime_core.api.governed_operator_runtime_snapshots")
     payload = sample_payload()
     snapshot = module.build_operator_state_snapshot(payload)
     summary = module.build_bounded_runtime_summary(snapshot)
@@ -60,7 +60,7 @@ def test_s41r3_snapshot_lineage_preserves_source_chain():
 
 
 def test_s41r4_verification_and_file_write(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_operator_runtime_snapshots")
+    module = importlib.import_module("runtime_core.api.governed_operator_runtime_snapshots")
     source_dir = tmp_path / "output" / "unified_operator_payload"
     source_dir.mkdir(parents=True)
     (source_dir / "unified_backend_operator_payload.json").write_text(json.dumps(sample_payload()), encoding="utf-8")

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.internet_operation_readiness_snapshot import get_internet_operation_readiness_snapshot
+from runtime_core.api.internet_operation_readiness_snapshot import get_internet_operation_readiness_snapshot
 
 
 def test_s205_s211_internet_operation_readiness_snapshot_preserves_locks():

@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from claire.api.governed_readonly_cockpit_integration_s121_s127 import build_s121_s127_stop_gate
+from runtime_core.api.governed_readonly_cockpit_integration_s121_s127 import build_s121_s127_stop_gate
 
 def main() -> int:
     report = build_s121_s127_stop_gate(

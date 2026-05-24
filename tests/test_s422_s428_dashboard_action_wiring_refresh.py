@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.dashboard_action_wiring_refresh_s422_s428 import (
+from runtime_core.api.dashboard_action_wiring_refresh_s422_s428 import (
     build_dashboard_action_wiring_refresh_s422_s428,
     build_s422_dashboard_action_endpoint_registry,
     build_s423_frontend_action_binding_manifest,

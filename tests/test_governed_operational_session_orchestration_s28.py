@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s28_orchestration_builds_review_state_and_preserves_authority():
-    module = importlib.import_module("claire.api.governed_operational_session_orchestration")
+    module = importlib.import_module("runtime_core.api.governed_operational_session_orchestration")
     payload = {
         "multi_panel_runtime_cohesion": {
             "cohesion_state": "cohesive",
@@ -48,7 +48,7 @@ def test_s28_orchestration_builds_review_state_and_preserves_authority():
 
 
 def test_s28_orchestration_blocks_on_authority_drift():
-    module = importlib.import_module("claire.api.governed_operational_session_orchestration")
+    module = importlib.import_module("runtime_core.api.governed_operational_session_orchestration")
     orchestration = module.build_operational_session_orchestration({
         "multi_panel_runtime_cohesion": {
             "summary": {"missing_total": 0, "drift_total": 1}
@@ -59,7 +59,7 @@ def test_s28_orchestration_blocks_on_authority_drift():
 
 
 def test_s28_orchestration_partial_on_missing_panels():
-    module = importlib.import_module("claire.api.governed_operational_session_orchestration")
+    module = importlib.import_module("runtime_core.api.governed_operational_session_orchestration")
     orchestration = module.build_operational_session_orchestration({
         "multi_panel_runtime_cohesion": {
             "summary": {"missing_total": 2, "drift_total": 0}
@@ -70,7 +70,7 @@ def test_s28_orchestration_partial_on_missing_panels():
 
 
 def test_s28_attach_orchestration_preserves_payload():
-    module = importlib.import_module("claire.api.governed_operational_session_orchestration")
+    module = importlib.import_module("runtime_core.api.governed_operational_session_orchestration")
     updated = module.attach_operational_session_orchestration({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

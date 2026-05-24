@@ -43,8 +43,8 @@ def _queue_id(args: argparse.Namespace, payload: dict, unknown: list[str]) -> st
         payload.get("approval_queue_id"),
         payload.get("review_queue_id"),
         payload.get("manual_approval_queue_id"),
-        os.environ.get("CLAIRE_S37_QUEUE_ID"),
-        os.environ.get("CLAIRE_QUEUE_ID"),
+        os.environ.get("PLATFORM_S37_QUEUE_ID"),
+        os.environ.get("PLATFORM_QUEUE_ID"),
     ]
 
     approval = payload.get("manual_approval") or payload.get("approval") or {}

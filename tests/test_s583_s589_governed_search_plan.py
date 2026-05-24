@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def test_s583_s589_search_plan_payload_preserves_all_blocks():
-    from claire.governance.governed_search_plan import get_governed_search_plan_payload
+    from runtime_core.governance.governed_search_plan import get_governed_search_plan_payload
 
     payload = get_governed_search_plan_payload()
     assert payload["version"] == "v19.89.8-S583-S589"
@@ -27,7 +27,7 @@ def test_s583_s589_search_plan_payload_preserves_all_blocks():
 
 
 def test_s583_s589_query_intent_risk_and_scope_are_visible():
-    from claire.governance.governed_search_plan import build_search_plan
+    from runtime_core.governance.governed_search_plan import build_search_plan
 
     technical = build_search_plan("Check FastAPI docs for Pydantic compatibility")
     assert technical["intent"] == "technical_research"
@@ -46,7 +46,7 @@ def test_s583_s589_query_intent_risk_and_scope_are_visible():
 
 
 def test_s583_s589_cards_actions_and_evidence_are_cockpit_ready_but_blocked():
-    from claire.governance.governed_search_plan import get_governed_search_plan_payload
+    from runtime_core.governance.governed_search_plan import get_governed_search_plan_payload
 
     payload = get_governed_search_plan_payload()
     assert payload["search_plan_cards"]
@@ -60,7 +60,7 @@ def test_s583_s589_cards_actions_and_evidence_are_cockpit_ready_but_blocked():
 
 
 def test_s583_s589_api_route_functions_return_governed_search_payloads():
-    from claire.api.governed_search_plan_routes import (
+    from runtime_core.api.governed_search_plan_routes import (
         read_governed_search_actions,
         read_governed_search_cards,
         read_governed_search_plans,

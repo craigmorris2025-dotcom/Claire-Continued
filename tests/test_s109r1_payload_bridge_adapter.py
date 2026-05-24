@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_payload_bridge_adapter_s109r1 import (
+from runtime_core.api.governed_payload_bridge_adapter_s109r1 import (
     build_runtime_spine_payload_panel,
     build_runtime_spine_payload_bridge,
     validate_runtime_spine_payload_bridge,

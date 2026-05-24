@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.dashboard_status_shell_cleanup_s359_s365 import (
+from runtime_core.api.dashboard_status_shell_cleanup_s359_s365 import (
     build_dashboard_status_shell_cleanup_s359_s365,
     build_s359_dashboard_status_version_harmonization,
     build_s360_expansion_dock_disable_contract,

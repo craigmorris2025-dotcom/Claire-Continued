@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s28_session_orchestration_preserves_blocked_authority():
-    module = importlib.import_module("claire.api.governed_operational_session_orchestration")
+    module = importlib.import_module("runtime_core.api.governed_operational_session_orchestration")
 
     result = module.build_governed_operational_session_orchestration({})
 
@@ -19,7 +19,7 @@ def test_s28_session_orchestration_preserves_blocked_authority():
 
 
 def test_s28_detects_stale_and_degraded_session_visibility():
-    module = importlib.import_module("claire.api.governed_operational_session_orchestration")
+    module = importlib.import_module("runtime_core.api.governed_operational_session_orchestration")
 
     result = module.build_governed_operational_session_orchestration(
         {
@@ -42,7 +42,7 @@ def test_s28_detects_stale_and_degraded_session_visibility():
 
 
 def test_s28_route_module_imports_without_app_factory_patch():
-    module = importlib.import_module("claire.api.governed_operational_session_orchestration_routes")
+    module = importlib.import_module("runtime_core.api.governed_operational_session_orchestration_routes")
 
     assert hasattr(module, "router")
     assert module.router.prefix == "/api/governed/session-orchestration"

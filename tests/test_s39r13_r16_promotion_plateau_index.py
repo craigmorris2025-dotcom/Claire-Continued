@@ -44,7 +44,7 @@ def decision_rows():
 
 
 def test_s39r13_builds_package_index_without_authority():
-    module = importlib.import_module("claire.api.governed_s39_promotion_plateau_index")
+    module = importlib.import_module("runtime_core.api.governed_s39_promotion_plateau_index")
     index = module.build_promotion_package_index(readiness_rows(), decision_rows())
 
     assert index["candidate_count"] == 2
@@ -56,7 +56,7 @@ def test_s39r13_builds_package_index_without_authority():
 
 
 def test_s39r14_blocked_candidate_registry():
-    module = importlib.import_module("claire.api.governed_s39_promotion_plateau_index")
+    module = importlib.import_module("runtime_core.api.governed_s39_promotion_plateau_index")
     registry = module.build_blocked_candidate_registry(readiness_rows())
 
     assert registry["blocked_count"] == 1
@@ -66,7 +66,7 @@ def test_s39r14_blocked_candidate_registry():
 
 
 def test_s39r15_replay_verifier_matches_index():
-    module = importlib.import_module("claire.api.governed_s39_promotion_plateau_index")
+    module = importlib.import_module("runtime_core.api.governed_s39_promotion_plateau_index")
     index = module.build_promotion_package_index(readiness_rows(), decision_rows())
     replay = module.verify_promotion_replay(index, readiness_rows(), decision_rows())
 
@@ -76,7 +76,7 @@ def test_s39r15_replay_verifier_matches_index():
 
 
 def test_s39r16_writes_plateau_artifacts(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_s39_promotion_plateau_index")
+    module = importlib.import_module("runtime_core.api.governed_s39_promotion_plateau_index")
     readiness_path = tmp_path / "promotion_readiness_ledger.jsonl"
     decision_path = tmp_path / "operator_decision_ledger.jsonl"
 

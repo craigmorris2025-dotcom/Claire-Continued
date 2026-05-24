@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
-from claire.api.governed_web_safety_activation import build_governed_web_safety_activation
+from runtime_core.app import create_app
+from runtime_core.api.governed_web_safety_activation import build_governed_web_safety_activation
 
 
 def test_s32r2r1_safety_module_does_not_perform_network():

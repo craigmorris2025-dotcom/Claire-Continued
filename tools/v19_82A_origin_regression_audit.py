@@ -152,7 +152,7 @@ def run_audit(project_root: Path | None = None) -> dict:
     key_paths = {
         "version_json": root / "version.json",
         "main_py": root / "main.py",
-        "launcher": root / "LAUNCH_CLAIRE.bat",
+        "launcher": root / "LAUNCH_PLATFORM.bat",
         "backend_app": root / "claire" / "app.py",
         "payload_bridge": root / "claire" / "api" / "dashboard_payload_bridge.py",
         "new_cockpit": root / "frontend" / "cockpit" / "shell" / "cockpit_shell.html",
@@ -189,7 +189,7 @@ def run_audit(project_root: Path | None = None) -> dict:
     if not path_status["main_py"]:
         hard_blockers.append("Missing main.py")
     if not path_status["launcher"]:
-        hard_blockers.append("Missing LAUNCH_CLAIRE.bat")
+        hard_blockers.append("Missing LAUNCH_PLATFORM.bat")
     if not path_status["new_cockpit"]:
         hard_blockers.append("Missing new cockpit shell")
     if not path_status["payload_bridge"]:

@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_review_queue import enqueue_for_review
-from claire.api.governed_discovery_candidates import build_discovery_candidate
-from claire.api.governed_useful_outputs import build_useful_output_candidate
-from claire.api.governed_s92_s98_cockpit_contracts import (
+from runtime_core.api.governed_review_queue import enqueue_for_review
+from runtime_core.api.governed_discovery_candidates import build_discovery_candidate
+from runtime_core.api.governed_useful_outputs import build_useful_output_candidate
+from runtime_core.api.governed_s92_s98_cockpit_contracts import (
     build_canonical_s85_s91_panel,
     build_review_queue_status,
     build_cockpit_evidence_output_card,

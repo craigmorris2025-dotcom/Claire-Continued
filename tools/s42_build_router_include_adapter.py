@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.operator_router_include_adapter import write_router_include_adapter_artifacts
+from runtime_core.api.operator_router_include_adapter import write_router_include_adapter_artifacts
 
 
 def main() -> int:

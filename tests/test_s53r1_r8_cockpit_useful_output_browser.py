@@ -10,7 +10,7 @@ CSS = ROOT / "frontend" / "cockpit" / "modern_shell" / "claire_useful_output_bro
 
 
 def test_s53r1_cockpit_useful_output_browser_cards_ready():
-    module = importlib.import_module("claire.api.s53_cockpit_useful_output_browser")
+    module = importlib.import_module("runtime_core.api.s53_cockpit_useful_output_browser")
     browser = module.build_cockpit_useful_output_browser()
 
     assert browser["version"] == "v19.89.8-S53R1-R8"
@@ -28,7 +28,7 @@ def test_s53r1_cockpit_useful_output_browser_cards_ready():
 
 
 def test_s53r5_output_export_registry_is_manual_review_only():
-    module = importlib.import_module("claire.api.s53_cockpit_useful_output_browser")
+    module = importlib.import_module("runtime_core.api.s53_cockpit_useful_output_browser")
     registry = module.build_output_export_registry()
 
     assert registry["status"] == "output_export_registry_ready"
@@ -59,7 +59,7 @@ def test_s53r6_frontend_useful_output_assets_exist_and_are_safe():
 
 
 def test_s53r8_plateau_report_ready():
-    module = importlib.import_module("claire.api.s53_cockpit_useful_output_browser")
+    module = importlib.import_module("runtime_core.api.s53_cockpit_useful_output_browser")
     report = module.build_s53r1_r8_plateau_report()
 
     assert report["status"] == "s53r1_r8_ready"

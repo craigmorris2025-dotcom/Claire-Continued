@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_runtime_registry_discovery_s107r1 import (
+from runtime_core.api.governed_runtime_registry_discovery_s107r1 import (
     discover_existing_registry_surfaces,
     build_safe_attachment_plan,
     build_registry_discovery_report,

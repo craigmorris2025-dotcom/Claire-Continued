@@ -6,12 +6,12 @@ from fastapi.testclient import TestClient
 
 
 def _client() -> TestClient:
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     return TestClient(app_module.create_app())
 
 
 def test_s779_s792_authorization_model_never_grants_body_read():
-    module = importlib.import_module("claire.governance.governed_body_read_authorization")
+    module = importlib.import_module("runtime_core.governance.governed_body_read_authorization")
     payload = module.build_authorization_payload()
     assert payload["stage_range"] == "S779-S792"
     assert payload["terminal_state"] == "body_read_authorization_model_ready_body_reads_blocked"
@@ -23,7 +23,7 @@ def test_s779_s792_authorization_model_never_grants_body_read():
 
 
 def test_s793_s806_extraction_contract_blocks_body_required_fields():
-    module = importlib.import_module("claire.governance.governed_extraction_scope_contract")
+    module = importlib.import_module("runtime_core.governance.governed_extraction_scope_contract")
     payload = module.build_extraction_scope_contract()
     assert payload["stage_range"] == "S793-S806"
     assert payload["terminal_state"] == "extraction_scope_contract_ready_body_fields_blocked"
@@ -34,7 +34,7 @@ def test_s793_s806_extraction_contract_blocks_body_required_fields():
 
 
 def test_s807_s820_sanitizer_plan_is_not_execution():
-    module = importlib.import_module("claire.governance.governed_content_safety_sanitizer")
+    module = importlib.import_module("runtime_core.governance.governed_content_safety_sanitizer")
     payload = module.build_sanitizer_payload("text/html", "official_docs")
     assert payload["stage_range"] == "S807-S820"
     assert payload["terminal_state"] == "content_sanitizer_plan_ready_execution_blocked"
@@ -48,7 +48,7 @@ def test_s807_s820_sanitizer_plan_is_not_execution():
 
 
 def test_s821_s834_manual_gate_payload_stops_before_execution():
-    module = importlib.import_module("claire.governance.governed_manual_body_read_gate")
+    module = importlib.import_module("runtime_core.governance.governed_manual_body_read_gate")
     payload = module.build_manual_body_read_gate_payload()
     assert payload["stage_range"] == "S779-S834"
     assert payload["terminal_state"] == "manual_body_read_gate_ready_execution_blocked"
@@ -119,7 +119,7 @@ def test_s779_s834_posted_authorization_and_sanitizer_stay_blocked():
 
 
 def test_s779_s834_router_exposes_expected_paths():
-    routes = importlib.import_module("claire.api.governed_body_read_gate_routes")
+    routes = importlib.import_module("runtime_core.api.governed_body_read_gate_routes")
     paths = {route.path for route in routes.router.routes}
     expected = {
         "/api/web/body-read/authorization/payload",

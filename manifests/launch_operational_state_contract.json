@@ -1,17 +1,53 @@
 {
   "lock_version": "v17.49",
+  "last_verified": "2026-05-23",
+  "active_app": "main.py -> claire.app:create_app",
+  "active_route_count": 350,
+  "canonical_dashboard": "/dashboard",
+  "canonical_dashboard_state": "/api/dashboard/state",
+  "active_control_map": {
+    "endpoint": "/api/dashboard/active-control-map",
+    "control_count": 19
+  },
+  "proof_state": {
+    "endpoint_reconciliation": "clean",
+    "dependency_chain": "clean_e2e_review_proof",
+    "platform_smoke": "GO_TO_PLATFORM_LAUNCH_HARDENING",
+    "full_e2e": "GO_WITH_WARNINGS"
+  },
   "surfaces": [
     "health_surface",
     "dashboard_surface",
     "degraded_mode_surface",
     "source_trust_surface",
-    "campaign_state_surface"
+    "campaign_state_surface",
+    "endpoint_reconciliation_surface",
+    "dependency_chain_proof_surface",
+    "industry_standard_endpoint_package_surface",
+    "update_governance_install_surface",
+    "design_cad_contract_surface",
+    "center_route_contract_surface",
+    "lifecycle_route_contract_surface",
+    "lifecycle_route_selector_surface",
+    "causal_emergence_contract_surface",
+    "causal_emergence_assessment_surface",
+    "reemergence_taxonomy_surface",
+    "reemergence_classification_surface"
   ],
   "state_requirements": {
     "main_result_never_blank": true,
     "degraded_mode_visible": true,
     "source_trust_visible": true,
     "campaign_scheduler_visible": true,
-    "rollback_state_visible": true
+    "rollback_state_visible": true,
+    "endpoint_reconciliation_clean": true,
+    "dependency_chain_clean": true,
+    "automatic_updates_blocked_by_default": true,
+    "cad_export_disabled_until_authorized": true,
+    "lifecycle_route_contracts_ready": true,
+    "reemergence_taxonomy_route_ready": true,
+    "causal_engine_contract_ready": true,
+    "causal_engine_source_file_count": 26,
+    "causal_engine_runtime_mutation_blocked": true
   }
 }

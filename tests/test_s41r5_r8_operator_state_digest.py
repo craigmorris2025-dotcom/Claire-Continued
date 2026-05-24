@@ -30,7 +30,7 @@ def sample_summary():
 
 
 def test_s41r5_builds_current_state_digest():
-    module = importlib.import_module("claire.api.governed_operator_state_digest")
+    module = importlib.import_module("runtime_core.api.governed_operator_state_digest")
     digest = module.build_current_state_digest(sample_snapshot(), sample_summary())
 
     assert digest["state"] == "partial"
@@ -42,7 +42,7 @@ def test_s41r5_builds_current_state_digest():
 
 
 def test_s41r6_builds_operator_alert_summary():
-    module = importlib.import_module("claire.api.governed_operator_state_digest")
+    module = importlib.import_module("runtime_core.api.governed_operator_state_digest")
     digest = module.build_current_state_digest(sample_snapshot(), sample_summary())
     alerts = module.build_operator_alert_summary(sample_snapshot(), digest)
 
@@ -53,7 +53,7 @@ def test_s41r6_builds_operator_alert_summary():
 
 
 def test_s41r7_replay_index_and_readiness_are_locked():
-    module = importlib.import_module("claire.api.governed_operator_state_digest")
+    module = importlib.import_module("runtime_core.api.governed_operator_state_digest")
     digest = module.build_current_state_digest(sample_snapshot(), sample_summary())
     alerts = module.build_operator_alert_summary(sample_snapshot(), digest)
     replay = module.build_snapshot_replay_index(sample_snapshot(), sample_summary(), digest, alerts)
@@ -66,7 +66,7 @@ def test_s41r7_replay_index_and_readiness_are_locked():
 
 
 def test_s41r8_writes_and_verifies_digest_artifacts(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_operator_state_digest")
+    module = importlib.import_module("runtime_core.api.governed_operator_state_digest")
     source = tmp_path / "output" / "operator_runtime_snapshots"
     source.mkdir(parents=True)
     (source / "operator_state_snapshot.json").write_text(json.dumps(sample_snapshot()), encoding="utf-8")

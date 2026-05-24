@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 JS = ROOT / "frontend" / "cockpit" / "modern_shell" / "claire_output_package_browser.js"
 
 def test_s56r1_package_manifest_is_review_only():
-    module = importlib.import_module("claire.api.s56_output_package_export_manifest")
+    module = importlib.import_module("runtime_core.api.s56_output_package_export_manifest")
     manifest = module.build_output_package_export_manifest()
     assert manifest["version"] == "v19.89.8-S56R1-R8"
     assert manifest["status"] == "output_package_export_manifest_ready"
@@ -22,7 +22,7 @@ def test_s56r1_package_manifest_is_review_only():
         assert "json" in package["allowed_formats"]
 
 def test_s56r5_review_bundles_are_operator_visible_without_auto_submit():
-    module = importlib.import_module("claire.api.s56_output_package_export_manifest")
+    module = importlib.import_module("runtime_core.api.s56_output_package_export_manifest")
     manifest = module.build_review_bundle_readiness_manifest()
     assert manifest["status"] == "review_bundle_readiness_manifest_ready"
     assert manifest["bundle_count"] == 7
@@ -44,7 +44,7 @@ def test_s56r6_frontend_output_package_asset_is_safe():
     assert "manualPromotionRequired: true" in text
 
 def test_s56r8_plateau_report_ready():
-    module = importlib.import_module("claire.api.s56_output_package_export_manifest")
+    module = importlib.import_module("runtime_core.api.s56_output_package_export_manifest")
     report = module.build_s56r1_r8_plateau_report()
     assert report["status"] == "s56r1_r8_ready"
     assert report["ready"] is True

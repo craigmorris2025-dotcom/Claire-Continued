@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def test_s590_s596_evidence_payload_preserves_all_blocks():
-    from claire.governance.governed_evidence_cards import get_governed_evidence_payload
+    from runtime_core.governance.governed_evidence_cards import get_governed_evidence_payload
 
     payload = get_governed_evidence_payload()
     assert payload["version"] == "v19.89.8-S590-S596"
@@ -27,7 +27,7 @@ def test_s590_s596_evidence_payload_preserves_all_blocks():
 
 
 def test_s590_s596_evidence_cards_are_normalized_for_cockpit_review():
-    from claire.governance.governed_evidence_cards import build_evidence_cards
+    from runtime_core.governance.governed_evidence_cards import build_evidence_cards
 
     cards = build_evidence_cards()
     assert cards
@@ -51,7 +51,7 @@ def test_s590_s596_evidence_cards_are_normalized_for_cockpit_review():
 
 
 def test_s590_s596_review_queue_and_actions_are_visible_but_not_executable():
-    from claire.governance.governed_evidence_cards import (
+    from runtime_core.governance.governed_evidence_cards import (
         build_evidence_cards,
         build_governed_actions,
         build_review_queue,
@@ -73,7 +73,7 @@ def test_s590_s596_review_queue_and_actions_are_visible_but_not_executable():
 
 
 def test_s590_s596_api_route_functions_return_evidence_surfaces():
-    from claire.api.governed_evidence_card_routes import (
+    from runtime_core.api.governed_evidence_card_routes import (
         read_governed_evidence_actions,
         read_governed_evidence_cards,
         read_governed_evidence_payload,

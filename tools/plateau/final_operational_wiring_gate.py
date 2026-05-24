@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from claire.app import create_app
+from runtime_core.app import create_app
+from runtime_core.dashboard.final_dashboard_payload import build_final_dashboard_payload
 
 
 def _utc_now() -> str:
@@ -27,7 +28,7 @@ def run_gate() -> dict[str, Any]:
     app = create_app()
     client = TestClient(app)
     operational = client.get("/api/operational/control-plane").json()
-    v5 = client.get("/api/dashboard/v5/payload").json()
+    v5 = build_final_dashboard_payload(routes=app.routes)
 
     endpoint_checks = {}
     for action in operational.get("actions", []):

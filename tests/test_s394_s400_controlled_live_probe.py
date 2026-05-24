@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.internet_controlled_live_probe_s394_s400 import (
+from runtime_core.api.internet_controlled_live_probe_s394_s400 import (
     build_controlled_live_probe_executor_s394_s400,
     build_s394_probe_executor_authority,
     build_s395_probe_request_validation,

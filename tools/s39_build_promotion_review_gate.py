@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from claire.api.governed_promotion_review_gate import build_promotion_review_gate
+from runtime_core.api.governed_promotion_review_gate import build_promotion_review_gate
 
 
 def main() -> int:

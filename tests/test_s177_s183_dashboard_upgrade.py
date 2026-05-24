@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_dashboard_upgrade_s177_s183 import (
+from runtime_core.api.governed_dashboard_upgrade_s177_s183 import (
     build_dashboard_core_control_map,
     build_safe_web_update_readiness_contract,
     build_bounded_crawl_job_contract,

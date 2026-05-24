@@ -26,11 +26,11 @@ def test_s36r22_1_operator_script_still_requires_ack_and_one_shot():
 
 def test_s36r22_1_operator_script_preserves_safety_gates():
     source = (ROOT / "tools" / "run_s36_single_head_probe.py").read_text(encoding="utf-8")
-    assert 'CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE"] = "1"' in source
-    assert 'CLAIRE_ALLOW_HEAD_ONLY_PROBE"] = "1"' in source
-    assert "CLAIRE_ALLOW_RESPONSE_BODY_READ" in source
-    assert "CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION" in source
-    assert "CLAIRE_ALLOW_AUTONOMOUS_EXECUTION" in source
+    assert 'PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE"] = "1"' in source
+    assert 'PLATFORM_ALLOW_HEAD_ONLY_PROBE"] = "1"' in source
+    assert "PLATFORM_ALLOW_RESPONSE_BODY_READ" in source
+    assert "PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION" in source
+    assert "PLATFORM_ALLOW_AUTONOMOUS_EXECUTION" in source
 
 
 def test_s36r22_1_operator_script_no_browser_or_body_read():

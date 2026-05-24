@@ -4,12 +4,12 @@ from fastapi.testclient import TestClient
 
 
 def _client() -> TestClient:
-    from claire.app import create_app
+    from runtime_core.app import create_app
     return TestClient(create_app())
 
 
 def test_readiness_audit_preserves_execution_blocks():
-    from claire.governance.governed_web_readiness_audit import build_readiness_audit
+    from runtime_core.governance.governed_web_readiness_audit import build_readiness_audit
     audit = build_readiness_audit()
     assert audit["audit_id"] == "s681_s687_search_web_readiness_audit"
     assert audit["execution_allowed"] is False
@@ -20,7 +20,7 @@ def test_readiness_audit_preserves_execution_blocks():
 
 
 def test_provider_configuration_inspection_hides_secrets_and_does_not_execute():
-    from claire.governance.governed_provider_config_inspector import inspect_provider_configurations
+    from runtime_core.governance.governed_provider_config_inspector import inspect_provider_configurations
     providers = inspect_provider_configurations()
     assert providers
     assert all(provider["secrets_exposed"] is False for provider in providers)
@@ -30,7 +30,7 @@ def test_provider_configuration_inspection_hides_secrets_and_does_not_execute():
 
 
 def test_metadata_adapter_boundary_rejects_body_fields():
-    from claire.governance.governed_metadata_adapter_boundary import build_metadata_adapter_boundary, normalize_metadata_preview, validate_metadata_result
+    from runtime_core.governance.governed_metadata_adapter_boundary import build_metadata_adapter_boundary, normalize_metadata_preview, validate_metadata_result
     boundary = build_metadata_adapter_boundary()
     assert boundary["status"] == "adapter_boundary_ready_execution_blocked"
     assert boundary["body_read_allowed"] is False
@@ -44,7 +44,7 @@ def test_metadata_adapter_boundary_rejects_body_fields():
 
 
 def test_manual_metadata_probe_is_preview_only_no_network():
-    from claire.governance.governed_manual_metadata_probe_gate import build_manual_metadata_probe_payload, build_s708_stop_gate
+    from runtime_core.governance.governed_manual_metadata_probe_gate import build_manual_metadata_probe_payload, build_s708_stop_gate
     payload = build_manual_metadata_probe_payload("Claire source search")
     assert payload["preflight"]["execution_allowed"] is False
     assert payload["preflight"]["provider_execution_allowed"] is False
@@ -78,7 +78,7 @@ def test_routes_expose_s681_s708_payloads():
 
 
 def test_route_registration_exists_in_create_app():
-    from claire.app import create_app
+    from runtime_core.app import create_app
     app = create_app()
     paths = {getattr(route, "path", None) for route in app.routes}
     assert "/api/cockpit/metadata-search/payload" in paths

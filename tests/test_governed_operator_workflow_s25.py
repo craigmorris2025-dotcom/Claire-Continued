@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s25_operator_workflow_builds_review_queue_and_preserves_authority():
-    module = importlib.import_module("claire.api.governed_operator_workflow")
+    module = importlib.import_module("runtime_core.api.governed_operator_workflow")
     payload = {
         "governed_evidence_basket": {"summary": {"evidence_total": 3}},
         "governed_search_session": {"session_controls": {"manual_review_required": True}},
@@ -27,7 +27,7 @@ def test_s25_operator_workflow_builds_review_queue_and_preserves_authority():
 
 
 def test_s25_operator_workflow_default_search_review_state():
-    module = importlib.import_module("claire.api.governed_operator_workflow")
+    module = importlib.import_module("runtime_core.api.governed_operator_workflow")
     workflow = module.build_governed_operator_workflow({})
 
     assert workflow["items"][0]["workflow_id"] == "search_review"
@@ -36,7 +36,7 @@ def test_s25_operator_workflow_default_search_review_state():
 
 
 def test_s25_attach_operator_workflow_preserves_payload():
-    module = importlib.import_module("claire.api.governed_operator_workflow")
+    module = importlib.import_module("runtime_core.api.governed_operator_workflow")
     updated = module.attach_governed_operator_workflow({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

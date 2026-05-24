@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 def test_s985_control_surface_payload_has_visible_buttons_and_blocks():
-    module = importlib.import_module("claire.governance.governed_cockpit_control_surface_force_mount")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_control_surface_force_mount")
     payload = module.get_cockpit_control_surface_payload()
     assert payload["stage"] == "S985-S1012"
     assert payload["status"] == "control_surface_ready"
@@ -19,7 +19,7 @@ def test_s985_control_surface_payload_has_visible_buttons_and_blocks():
 
 
 def test_s985_preview_operation_is_preview_only():
-    module = importlib.import_module("claire.governance.governed_cockpit_control_surface_force_mount")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_control_surface_force_mount")
     preview = module.preview_operation("compile_search_plan")
     assert preview["status"] == "preview_packet_ready"
     assert preview["execution_enabled"] is False
@@ -32,7 +32,7 @@ def test_s985_preview_operation_is_preview_only():
 def test_s985_routes_expose_assets_and_payload_on_local_app():
     from fastapi import FastAPI
     from fastapi.testclient import TestClient
-    from claire.api.governed_cockpit_control_surface_force_routes import router
+    from runtime_core.api.governed_cockpit_control_surface_force_routes import router
 
     app = FastAPI()
     app.include_router(router)
@@ -49,7 +49,7 @@ def test_s985_routes_expose_assets_and_payload_on_local_app():
 
 
 def test_s985_create_app_registers_control_surface_route_when_available():
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     app = app_module.create_app()
     route_paths = {getattr(route, "path", "") for route in app.routes}
     assert "/api/cockpit/control-surface/payload" in route_paths

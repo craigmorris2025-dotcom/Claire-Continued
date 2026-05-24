@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from claire.api.governed_live_fetch_validation_s170_s176 import build_s170_s176_stop_gate
+from runtime_core.api.governed_live_fetch_validation_s170_s176 import build_s170_s176_stop_gate
 
 def main() -> int:
     report = build_s170_s176_stop_gate(

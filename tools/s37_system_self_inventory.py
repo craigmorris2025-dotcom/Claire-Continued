@@ -44,7 +44,7 @@ def _collect_python_parse_status(limit: int = 500) -> list[dict]:
 def _collect_routes() -> list[dict]:
     routes = []
     try:
-        from claire.app import create_app
+        from runtime_core.app import create_app
         app = create_app()
         for route in getattr(app, "routes", []):
             routes.append({

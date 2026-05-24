@@ -14,10 +14,10 @@
     "runtime_truth_over_ui_assumptions": true
   },
   "automatic_updates_blocked": true,
-  "build": "Canonical Cockpit Fetch Map Lock",
-  "current_phase": "authority_lock_recovery_cockpit_fetch_map_lock",
-  "lane": "v19.87.x",
-  "last_build": "S184 cockpit action registry",
+  "build": "System-Wide Root Consolidation Pack",
+  "current_phase": "cleanup_optimization_consolidation_dependency_chain_lock",
+  "lane": "v19.90.x",
+  "last_build": "S185-S190 plus endpoint reconciliation, dependency proof, standards package, and update governance install controls",
   "manual_promotion_required": true,
   "notes": [
     "Bound cockpit status truth to mounted canonical routes.",
@@ -29,11 +29,26 @@
     "Added backend-owned operator surface coverage map and cockpit panel to identify existing capability before deep dashboard wiring.",
     "Added backend-owned operator control contract map and cockpit panel to show which controls are backed by live routes.",
     "Added contract-driven safe operator action console; read actions direct, write/start actions protected.",
-    "Added backend-owned operator event trail and cockpit action proof surface."
+    "Added backend-owned operator event trail and cockpit action proof surface.",
+    "Mounted endpoint reconciliation compatibility aliases and clean reconciliation report.",
+    "Added dependency-to-dependency end-to-end proof across dashboard, runtime, providers, pipeline, outputs, update governance, reconciliation, and standards.",
+    "Added industry standard endpoint package and dashboard settings surface.",
+    "Updated root README, architecture, API reference, verified-state, launch contracts, and build manifest to current runtime truth.",
+    "Attached operator category/timeline notes as a route-ready re-emergence taxonomy with 8 primary categories, 7 signal families, and 12 pattern types.",
+    "Attached operator route files as center route contract, five lifecycle route gates, and non-mutating route selector endpoints."
   ],
-  "phase": "visual_cockpit_controls_and_monitoring_backend",
+  "phase": "system_root_consolidation_and_dependency_chain_proof",
+  "proof_state": {
+    "active_route_count": 348,
+    "active_control_count": 19,
+    "lifecycle_route_contract_count": 5,
+    "endpoint_reconciliation": "clean",
+    "dependency_chain": "clean_e2e_review_proof",
+    "platform_smoke": "GO_TO_PLATFORM_LAUNCH_HARDENING",
+    "full_e2e": "GO_WITH_WARNINGS"
+  },
   "runtime_truth_mutation_blocked": true,
-  "updated_at": "2026-05-14T19:00:08.249907+00:00",
-  "updated_utc": "2026-05-13T19:38:15.869800+00:00",
-  "version": "v19.89.8-S184"
+  "updated_at": "2026-05-23T16:03:00-05:00",
+  "updated_utc": "2026-05-23T21:03:00+00:00",
+  "version": "v19.90.0-system-consolidation"
 }

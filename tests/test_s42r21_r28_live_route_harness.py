@@ -28,7 +28,7 @@ def make_artifacts(root: Path) -> None:
 
 
 def test_s42r21_builds_isolated_test_app(tmp_path: Path):
-    module = importlib.import_module("claire.api.operator_route_harness")
+    module = importlib.import_module("runtime_core.api.operator_route_harness")
     app = module.build_isolated_operator_route_test_app(tmp_path)
     paths = {route.path for route in app.routes}
 
@@ -37,7 +37,7 @@ def test_s42r21_builds_isolated_test_app(tmp_path: Path):
 
 
 def test_s42r22_to_r24_probes_routes_read_only(tmp_path: Path):
-    module = importlib.import_module("claire.api.operator_route_harness")
+    module = importlib.import_module("runtime_core.api.operator_route_harness")
     make_artifacts(tmp_path)
     report = module.probe_operator_routes_isolated(tmp_path)
 
@@ -55,7 +55,7 @@ def test_s42r22_to_r24_probes_routes_read_only(tmp_path: Path):
 
 
 def test_s42r25_to_r27_verification_and_plateau(tmp_path: Path):
-    module = importlib.import_module("claire.api.operator_route_harness")
+    module = importlib.import_module("runtime_core.api.operator_route_harness")
     make_artifacts(tmp_path)
     report = module.probe_operator_routes_isolated(tmp_path)
     verification = module.verify_isolated_operator_route_probe(report)
@@ -69,7 +69,7 @@ def test_s42r25_to_r27_verification_and_plateau(tmp_path: Path):
 
 
 def test_s42r28_writes_harness_artifacts(tmp_path: Path):
-    module = importlib.import_module("claire.api.operator_route_harness")
+    module = importlib.import_module("runtime_core.api.operator_route_harness")
     make_artifacts(tmp_path)
     result = module.write_s42_live_route_harness(tmp_path, tmp_path / "out")
 

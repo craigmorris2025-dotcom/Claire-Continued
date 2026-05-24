@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s185_visual_controls_are_backend_owned_and_safe():
-    module = importlib.import_module("claire.api.cockpit_visual_controls")
+    module = importlib.import_module("runtime_core.api.cockpit_visual_controls")
     payload = module.get_visual_action_surface_contract()
 
     assert payload["stage"] == "S185"
@@ -19,7 +19,7 @@ def test_s185_visual_controls_are_backend_owned_and_safe():
 
 
 def test_s186_monitoring_backend_core_preserves_locks():
-    module = importlib.import_module("claire.api.cockpit_visual_controls")
+    module = importlib.import_module("runtime_core.api.cockpit_visual_controls")
     payload = module.get_monitoring_backend_state()
 
     assert payload["stage"] == "S186"
@@ -33,7 +33,7 @@ def test_s186_monitoring_backend_core_preserves_locks():
 
 
 def test_s187_operator_notifications_state_manual_promotion_and_locks():
-    module = importlib.import_module("claire.api.cockpit_visual_controls")
+    module = importlib.import_module("runtime_core.api.cockpit_visual_controls")
     payload = module.get_operator_notifications()
 
     ids = {n["notification_id"] for n in payload["notifications"]}
@@ -42,7 +42,7 @@ def test_s187_operator_notifications_state_manual_promotion_and_locks():
 
 
 def test_s188_panel_wiring_requires_consolidated_cockpit_surfaces():
-    module = importlib.import_module("claire.api.cockpit_visual_controls")
+    module = importlib.import_module("runtime_core.api.cockpit_visual_controls")
     payload = module.get_cockpit_panel_wiring_contract()
 
     panels = {p["panel_id"]: p for p in payload["panels"]}
@@ -63,7 +63,7 @@ def test_s188_panel_wiring_requires_consolidated_cockpit_surfaces():
 
 
 def test_s189_review_approval_blocks_unsafe_decisions():
-    module = importlib.import_module("claire.api.cockpit_visual_controls")
+    module = importlib.import_module("runtime_core.api.cockpit_visual_controls")
     payload = module.get_review_approval_contract()
 
     assert payload["stage"] == "S189"
@@ -79,7 +79,7 @@ def test_s189_review_approval_blocks_unsafe_decisions():
 
 
 def test_s190_operational_cockpit_plateau_reached_without_unsafe_authority():
-    module = importlib.import_module("claire.api.cockpit_visual_controls")
+    module = importlib.import_module("runtime_core.api.cockpit_visual_controls")
     payload = module.get_operational_cockpit_plateau()
 
     assert payload["stage"] == "S190"

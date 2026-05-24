@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s29_workspace_builds_review_state_and_preserves_authority():
-    module = importlib.import_module("claire.api.governed_runtime_workspace_continuity")
+    module = importlib.import_module("runtime_core.api.governed_runtime_workspace_continuity")
     payload = {
         "governed_operational_session_orchestration": {
             "session_state": "review_required",
@@ -48,7 +48,7 @@ def test_s29_workspace_builds_review_state_and_preserves_authority():
 
 
 def test_s29_workspace_blocks_on_authority_drift():
-    module = importlib.import_module("claire.api.governed_runtime_workspace_continuity")
+    module = importlib.import_module("runtime_core.api.governed_runtime_workspace_continuity")
     workspace = module.build_runtime_workspace_continuity({
         "multi_panel_runtime_cohesion": {"summary": {"missing_total": 0, "drift_total": 1}}
     })
@@ -56,7 +56,7 @@ def test_s29_workspace_blocks_on_authority_drift():
 
 
 def test_s29_workspace_partial_on_missing_panels():
-    module = importlib.import_module("claire.api.governed_runtime_workspace_continuity")
+    module = importlib.import_module("runtime_core.api.governed_runtime_workspace_continuity")
     workspace = module.build_runtime_workspace_continuity({
         "multi_panel_runtime_cohesion": {"summary": {"missing_total": 2, "drift_total": 0}}
     })
@@ -64,7 +64,7 @@ def test_s29_workspace_partial_on_missing_panels():
 
 
 def test_s29_attach_workspace_preserves_payload():
-    module = importlib.import_module("claire.api.governed_runtime_workspace_continuity")
+    module = importlib.import_module("runtime_core.api.governed_runtime_workspace_continuity")
     updated = module.attach_runtime_workspace_continuity({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

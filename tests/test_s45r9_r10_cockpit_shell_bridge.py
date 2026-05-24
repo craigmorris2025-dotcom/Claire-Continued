@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s45r9_shell_bridge_manifest_mounts_operator_panels():
-    module = importlib.import_module("claire.api.s45_cockpit_shell_bridge")
+    module = importlib.import_module("runtime_core.api.s45_cockpit_shell_bridge")
     manifest = module.build_cockpit_shell_bridge_manifest()
 
     assert manifest["version"] == "v19.89.8-S45R9-R16"
@@ -24,7 +24,7 @@ def test_s45r9_shell_bridge_manifest_mounts_operator_panels():
 
 
 def test_s45r10_shell_bridge_manifest_verifies_cleanly():
-    module = importlib.import_module("claire.api.s45_cockpit_shell_bridge")
+    module = importlib.import_module("runtime_core.api.s45_cockpit_shell_bridge")
     verification = module.verify_cockpit_shell_bridge_manifest()
 
     assert verification["verification_ok"] is True

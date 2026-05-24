@@ -1,7 +1,7 @@
 {
   "automatic_updates_enabled": false,
   "execution_enabled": false,
-  "generated_at": "2026-05-13T11:18:57.536163Z",
+  "generated_at": "2026-05-24T22:33:13.113265Z",
   "governance": {
     "automatic_execution_enabled": false,
     "execution_enabled": false,
@@ -12,29 +12,30 @@
   },
   "latest_pack": {
     "automatic_execution_enabled": false,
-    "created_at": "2026-05-13T11:18:57.528157Z",
+    "created_at": "2026-05-24T22:33:13.111262Z",
     "execution_enabled": false,
-    "pack_hash": "5be1dff4dc44c99e344eb41b90fcde616278af2e37bf0021468a85cb874332d6",
-    "pack_id": "update_pack_20260513_111857_update_governance_patch",
+    "pack_hash": "5b1e5e1806bda64bac549eb023bc93b8a087d99a7c22940420329672e4bff7fe",
+    "pack_id": "update_pack_20260524_223313_update_governance_patch",
     "pack_type": "update_governance_patch",
-    "path": "data/update_packs/staging/update_pack_20260513_111857_update_governance_patch.json",
-    "status": "warning"
+    "path": "data/update_packs/staging/update_pack_20260524_223313_update_governance_patch.json",
+    "status": "blocked"
   },
-  "pack_count": 33,
+  "pack_count": 69,
   "protected_paths": {
-    "missing": [],
-    "out_of": 8,
-    "present": [
+    "missing": [
       "claire/app.py",
       "claire/api/routes_pipeline.py",
       "claire/orchestrator/pipeline_v4.py",
-      "claire/runtime_truth/runtime_truth_contract_repair.py",
+      "claire/runtime_truth/runtime_truth_contract_repair.py"
+    ],
+    "out_of": 8,
+    "present": [
       "frontend/command_center/modern/index.html",
-      "LAUNCH_CLAIRE.bat",
+      "LAUNCH_PLATFORM.bat",
       "pyproject.toml",
       "requirements.txt"
     ],
-    "score": 8
+    "score": 4
   },
   "version": "v17.71"
 }

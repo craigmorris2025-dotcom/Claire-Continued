@@ -1,0 +1,265 @@
+{
+  "architecture_blueprint": {
+    "architecture_style": "modular",
+    "domain_context": "technology",
+    "market_gap_context": "general",
+    "modules": [
+      {
+        "component": "ingestion",
+        "interfaces": [
+          "raw_input",
+          "source_metadata",
+          "normalized_payload"
+        ],
+        "priority": "critical",
+        "role": "collects, validates, and normalizes source data"
+      },
+      {
+        "component": "semantic_processing",
+        "interfaces": [
+          "normalized_payload",
+          "semantic_context"
+        ],
+        "priority": "high",
+        "role": "extracts entities, domain concepts, risk signals, and opportunity context"
+      },
+      {
+        "component": "analysis_engines",
+        "interfaces": [
+          "semantic_context",
+          "signals",
+          "scores"
+        ],
+        "priority": "high",
+        "role": "evaluates trends, gaps, market formation, risk, feasibility, moat, and deal readiness"
+      },
+      {
+        "component": "decision_layer",
+        "interfaces": [
+          "scores",
+          "decision_state",
+          "readiness_flags"
+        ],
+        "priority": "critical",
+        "role": "classifies decision states, readiness, blocker status, and routing outcomes"
+      },
+      {
+        "component": "api_gateway",
+        "interfaces": [
+          "request",
+          "response",
+          "external_clients"
+        ],
+        "priority": "medium",
+        "role": "exposes system capabilities to applications and users"
+      },
+      {
+        "component": "opportunity_ranking_engine",
+        "interfaces": [
+          "signals",
+          "scores",
+          "ranked_opportunities"
+        ],
+        "priority": "high",
+        "role": "ranks opportunities by gap, trend, feasibility, and strategic value"
+      },
+      {
+        "component": "portfolio_packaging_service",
+        "interfaces": [
+          "ranked_opportunities",
+          "artifact_bundle",
+          "binder_sections"
+        ],
+        "priority": "high",
+        "role": "converts validated outputs into binder-ready artifacts"
+      }
+    ],
+    "operational_model": {
+      "mode": "centralized_service",
+      "requirements": [
+        "API-driven execution",
+        "central orchestration",
+        "structured monitoring"
+      ]
+    },
+    "recommended_services": [
+      "signal_ingestion_service",
+      "opportunity_ranking_service",
+      "design_output_service",
+      "portfolio_packaging_service",
+      "audit_service"
+    ],
+    "security_model": {
+      "level": "standard",
+      "requirements": [
+        "input validation",
+        "request logging",
+        "access control",
+        "data lineage"
+      ]
+    }
+  },
+  "blueprint_type": "invention_candidate_system_blueprint",
+  "data_flows": [
+    {
+      "from": "ingestion",
+      "payload": "validated_structured_context",
+      "to": "semantic_processing",
+      "validation": "schema_and_source_checked"
+    },
+    {
+      "from": "semantic_processing",
+      "payload": "semantic_context_and_domain_signals",
+      "to": "analysis_engines",
+      "validation": "contract_checked"
+    },
+    {
+      "from": "analysis_engines",
+      "payload": "scores_risk_states_and_recommendations",
+      "to": "decision_layer",
+      "validation": "traceable_score_bundle"
+    },
+    {
+      "from": "decision_layer",
+      "payload": "structured_response_and_artifacts",
+      "to": "api_gateway",
+      "validation": "response_contract_checked"
+    }
+  ],
+  "exports_required": [
+    "technical_specification",
+    "component_map",
+    "system_architecture_blueprint",
+    "materials_manifest",
+    "feasibility_and_buildability_report",
+    "portfolio_candidate_profile",
+    "acquirer_package_inputs"
+  ],
+  "implementation_phases": [
+    {
+      "deliverables": [
+        "domain contracts",
+        "pipeline routing",
+        "input validation",
+        "baseline scoring trace",
+        "structured result schema"
+      ],
+      "name": "Foundation",
+      "objective": "Establish contracts, ingestion, routing, traceability, and result schema.",
+      "phase": 1
+    },
+    {
+      "deliverables": [
+        "source schema",
+        "signal taxonomy",
+        "gap profile",
+        "buyer segment map"
+      ],
+      "name": "Sector Data Foundation",
+      "objective": "Establish sector data foundations and opportunity context.",
+      "phase": 2
+    },
+    {
+      "deliverables": [
+        "semantic processing",
+        "signal extraction",
+        "trend and gap analysis",
+        "market formation scoring",
+        "breakthrough detection"
+      ],
+      "name": "Core Intelligence",
+      "objective": "Implement sector-aware analysis engines and signal propagation.",
+      "phase": 3
+    },
+    {
+      "deliverables": [
+        "opportunity ranking engine",
+        "design synthesis layer",
+        "portfolio packaging service"
+      ],
+      "name": "Sector Design Layer",
+      "objective": "Generate the opportunity intelligence design layer.",
+      "phase": 4
+    },
+    {
+      "deliverables": [
+        "historical backtest",
+        "workflow validation",
+        "buyer review",
+        "risk burn-down plan"
+      ],
+      "name": "Validation",
+      "objective": "Validate feasibility, value, and workflow fit.",
+      "phase": 5
+    },
+    {
+      "deliverables": [
+        "system summary",
+        "opportunity thesis",
+        "technical appendix",
+        "strategic positioning memo",
+        "acquirer-ready overview"
+      ],
+      "name": "Portfolio Packaging",
+      "objective": "Prepare artifacts for portfolio, binder, strategic review, and buyer-specific diligence.",
+      "phase": 6
+    },
+    {
+      "deliverables": [
+        "prototype architecture",
+        "defensibility assessment",
+        "strategic urgency memo",
+        "high-conviction build recommendation"
+      ],
+      "name": "Breakthrough Acceleration",
+      "objective": "Prioritize advanced validation for the intelligence platform.",
+      "phase": 7
+    }
+  ],
+  "materials_manifest_ref": "technology_system_code_component_materials_v1",
+  "status": "draft_requires_validation",
+  "technical_specs": {
+    "capability_targets": [
+      "cross-sector opportunity intelligence",
+      "signal analysis",
+      "decision support",
+      "portfolio packaging"
+    ],
+    "core_requirements": [
+      "design synthesis",
+      "explainable scoring and design rationale",
+      "gap detection",
+      "human review controls",
+      "model monitoring and audit trail",
+      "modular service architecture",
+      "opportunity ranking",
+      "portfolio packaging",
+      "portfolio-ready artifact generation",
+      "signal ingestion",
+      "structured input-output contracts",
+      "traceable decision pipeline"
+    ],
+    "market_gap_sector": "general",
+    "needed_solution": "Validated intelligence system",
+    "performance_targets": {
+      "breakthrough_intensity": 0.0,
+      "feasibility_threshold": 0.0,
+      "portfolio_confidence": 0.0
+    },
+    "primary_domain": "technology",
+    "sector_controls": [
+      "audit logging",
+      "model monitoring",
+      "data lineage",
+      "human review gates"
+    ],
+    "solution_class": "intelligence platform",
+    "system_type": "ai_platform",
+    "validation_targets": [
+      "historical backtesting",
+      "workflow adoption",
+      "false-positive / false-negative review",
+      "buyer validation"
+    ]
+  }
+}

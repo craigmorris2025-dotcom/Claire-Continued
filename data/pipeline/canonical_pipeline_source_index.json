@@ -1,0 +1,872 @@
+{
+  "final_package_requirements": [
+    "executive_summary",
+    "signal_basis",
+    "trend_basis",
+    "thesis",
+    "gap_explanation",
+    "discovery_output",
+    "breakthrough_classification",
+    "advancement_path",
+    "invention_or_solution_if_applicable",
+    "buildability",
+    "viability",
+    "manufacturability_deployability",
+    "feasibility",
+    "design_portal_output_if_applicable",
+    "market_positioning",
+    "moat_and_differentiation",
+    "business_model_and_value_capture",
+    "competitor_analysis",
+    "portfolio_placement",
+    "acquirer_targets",
+    "acquisition_rationale",
+    "evidence",
+    "confidence",
+    "risks",
+    "next_steps"
+  ],
+  "generated_at": "2026-05-24T22:32:50+00:00",
+  "master_doc_root": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs",
+  "master_source_count": 14,
+  "master_sources": [
+    {
+      "conditions_owned": [
+        "explicit_operator_action",
+        "review_queue",
+        "mode_selection",
+        "no_auto_promotion"
+      ],
+      "exists": true,
+      "filename": "Claire Syntalion \u2014 Operator Instruction Manual.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/Claire Syntalion \u2014 Operator Instruction Manual.pdf",
+      "role": "operator_governance_manual",
+      "scoring_owned": [
+        "operator_readiness",
+        "governance_safety"
+      ],
+      "size_bytes": 529259,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "platform_identity",
+        "capability_boundaries",
+        "completed_state_definition"
+      ],
+      "exists": true,
+      "filename": "Claire_Syntalion_Unified_Platform_Definition_v1.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Claire_Syntalion_Unified_Platform_Definition_v1.pdf",
+      "role": "unified_platform_definition",
+      "scoring_owned": [
+        "platform_alignment",
+        "capability_completeness"
+      ],
+      "size_bytes": 41082,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "subsystem_contracts",
+        "runtime_contracts",
+        "end_to_end_system_behavior"
+      ],
+      "exists": true,
+      "filename": "Syntalion_ACS2 Claire AI - Complete System Documentation.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_ACS2 Claire AI - Complete System Documentation.pdf",
+      "role": "complete_system_documentation",
+      "scoring_owned": [
+        "system_completeness",
+        "contract_coverage"
+      ],
+      "size_bytes": 14871,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "local_only_execution",
+        "no_network_mode",
+        "repeatable_outputs"
+      ],
+      "exists": true,
+      "filename": "Syntalion_Claire AI Deterministic.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_Claire AI Deterministic.pdf",
+      "role": "deterministic_mode_contract",
+      "scoring_owned": [
+        "deterministic_reproducibility",
+        "local_evidence_sufficiency"
+      ],
+      "size_bytes": 6154,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "stage_order",
+        "input_output_flow",
+        "runtime_execution_rules"
+      ],
+      "exists": true,
+      "filename": "Syntalion_Claire AI Execution Flow Specification.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_Claire AI Execution Flow Specification.pdf",
+      "role": "execution_flow_specification",
+      "scoring_owned": [
+        "flow_correctness",
+        "stage_transition_quality"
+      ],
+      "size_bytes": 10282,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "run_context_schema",
+        "stage_output_schema",
+        "memory_schema",
+        "portfolio_schema"
+      ],
+      "exists": true,
+      "filename": "Syntalion_Claire AI Full Data Model Map.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_Claire AI Full Data Model Map.pdf",
+      "role": "full_data_model_map",
+      "scoring_owned": [
+        "schema_completeness",
+        "data_lineage_quality"
+      ],
+      "size_bytes": 7480,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "runtime_truth_firewall",
+        "review_required",
+        "source_governance",
+        "safe_failure"
+      ],
+      "exists": true,
+      "filename": "Syntalion_Claire AI Governance And Safety Documentation.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_Claire AI Governance And Safety Documentation.pdf",
+      "role": "governance_and_safety_contract",
+      "scoring_owned": [
+        "governance_score",
+        "safety_score",
+        "evidence_sufficiency"
+      ],
+      "size_bytes": 9395,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "local_plus_connected_evidence",
+        "promotion_required",
+        "metadata_quarantine"
+      ],
+      "exists": true,
+      "filename": "Syntalion_Claire AI Hybrid Mode.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_Claire AI Hybrid Mode.pdf",
+      "role": "hybrid_mode_contract",
+      "scoring_owned": [
+        "hybrid_confidence",
+        "source_agreement"
+      ],
+      "size_bytes": 8069,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "deterministic_to_connected",
+        "connected_to_hybrid",
+        "mode_authority"
+      ],
+      "exists": true,
+      "filename": "Syntalion_Claire AI Mode Switching Architecture.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_Claire AI Mode Switching Architecture.pdf",
+      "role": "mode_switching_architecture",
+      "scoring_owned": [
+        "mode_readiness",
+        "mode_transition_safety"
+      ],
+      "size_bytes": 7764,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "module_ownership",
+        "route_mounting",
+        "code_organization"
+      ],
+      "exists": true,
+      "filename": "Syntalion_Claire AI Repo Structure And Code Skeletons.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_Claire AI Repo Structure And Code Skeletons.pdf",
+      "role": "repo_structure_and_code_skeletons",
+      "scoring_owned": [
+        "implementation_alignment",
+        "module_coverage"
+      ],
+      "size_bytes": 6115,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "dependency_order",
+        "subsystem_inputs_outputs",
+        "blocked_dependency_detection"
+      ],
+      "exists": true,
+      "filename": "Syntalion_Claire AI Subsystem Dependency Graph.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_Claire AI Subsystem Dependency Graph.pdf",
+      "role": "subsystem_dependency_graph",
+      "scoring_owned": [
+        "dependency_health",
+        "route_wiring_completeness"
+      ],
+      "size_bytes": 7889,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "provider_gate",
+        "source_allowlist",
+        "connected_search",
+        "quarantine"
+      ],
+      "exists": true,
+      "filename": "Syntalion_Claire Connected Intelligence Mode.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_Claire Connected Intelligence Mode.pdf",
+      "role": "connected_intelligence_mode_contract",
+      "scoring_owned": [
+        "connected_readiness",
+        "provider_trust",
+        "source_quality"
+      ],
+      "size_bytes": 7705,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "operator_reference",
+        "system_narrative",
+        "platform_scope"
+      ],
+      "exists": true,
+      "filename": "Syntalion_Claire System Book.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_Claire System Book.pdf",
+      "role": "system_book",
+      "scoring_owned": [
+        "system_alignment"
+      ],
+      "size_bytes": 22765,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "autonomous_innovation_scope",
+        "design_generation_scope",
+        "acquisition_readiness_scope"
+      ],
+      "exists": true,
+      "filename": "Syntalion_The Complete ACS2-Claire AI Platform Revolutionary Autonomous Innovation System.pdf",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/Master docs/Syntalion_The Complete ACS2-Claire AI Platform Revolutionary Autonomous Innovation System.pdf",
+      "role": "acs2_claire_platform_vision",
+      "scoring_owned": [
+        "innovation_route_alignment",
+        "endgame_readiness"
+      ],
+      "size_bytes": 64405,
+      "stage_scope": "all"
+    }
+  ],
+  "missing": [],
+  "operator_manual": {
+    "conditions_owned": [
+      "explicit_operator_action",
+      "review_queue",
+      "mode_selection",
+      "no_auto_promotion"
+    ],
+    "exists": true,
+    "filename": "Claire Syntalion \u2014 Operator Instruction Manual.pdf",
+    "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/Claire Syntalion \u2014 Operator Instruction Manual.pdf",
+    "role": "operator_governance_manual",
+    "scoring_owned": [
+      "operator_readiness",
+      "governance_safety"
+    ],
+    "size_bytes": 529259,
+    "stage_scope": "all"
+  },
+  "operator_rules": {
+    "dashboard_is_governance_surface": true,
+    "internal_manual_not_for_external_distribution": true,
+    "nothing_auto_promotes": true,
+    "review_queue_required": true,
+    "runtime_truth_write_requires_promotion": true
+  },
+  "route_contracts": {
+    "acquisition_package_path": {
+      "must_produce": [
+        "market_positioning",
+        "business_model",
+        "portfolio_creation",
+        "acquirer_identification",
+        "acquisition_fit",
+        "final_package"
+      ],
+      "required_sources": [
+        "Full Breakthrough-to-Acquisition Package Pipeline.txt",
+        "trend 3 acquisition.txt"
+      ],
+      "required_stage_outputs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "breakthrough_design_path": {
+      "must_produce": [
+        "gap_detection",
+        "breakthrough_classification",
+        "design_portal_output",
+        "blueprints_specs"
+      ],
+      "required_sources": [
+        "trend to breakthrough.txt",
+        "breakthrough escalation.txt",
+        "Breakthrough categories.txt"
+      ],
+      "required_stage_outputs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    "existing_system_replacement_path": {
+      "must_produce": [
+        "existing_system_decomposition",
+        "gap_detection",
+        "solution_generation",
+        "design_portal_output",
+        "superior_system_design",
+        "market_positioning",
+        "portfolio_creation",
+        "acquirer_identification",
+        "acquisition_fit",
+        "final_package"
+      ],
+      "required_sources": [
+        "Existing System Ingestion  Replacement Pipeline.txt",
+        "Final Endgame Pipeline.txt",
+        "Full Breakthrough-to-Acquisition Package Pipeline.txt",
+        "Core Pipeline Architecture.txt"
+      ],
+      "required_stage_outputs": [
+        "existing_system_ingestion",
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        "existing_system_decomposition",
+        "superior_system_design"
+      ]
+    },
+    "governed_update_path": {
+      "must_produce": [
+        "proposal_only_update_request",
+        "audit_event",
+        "no_auto_apply"
+      ],
+      "required_sources": [
+        "Claire Enterprise Online Update Governance System.txt",
+        "Governance  Fail-Safe Pipeline.txt"
+      ],
+      "required_stage_outputs": [
+        "provider_trust",
+        "signature_verification",
+        "rollback",
+        "manual_approval"
+      ]
+    },
+    "portfolio_normal_path": {
+      "must_produce": [
+        "updated_portfolio_thesis",
+        "risk_exposure_notes",
+        "action_recommendations"
+      ],
+      "required_sources": [
+        "portfolio and optimization.txt",
+        "trends 2 portfolio.txt",
+        "Core Pipeline Architecture.txt"
+      ],
+      "required_stage_outputs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        23,
+        26,
+        27
+      ]
+    }
+  },
+  "schema_version": "claire.canonical_pipeline_sources.v1",
+  "source_count": 20,
+  "source_root": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines",
+  "source_roots": [
+    "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines",
+    "C:/Users/craig/OneDrive/Desktop"
+  ],
+  "sources": [
+    {
+      "conditions_owned": [
+        "stage_contracts",
+        "evidence",
+        "replay",
+        "lifecycle_memory",
+        "recursive_self_ingestion"
+      ],
+      "exists": true,
+      "filename": "Lifecycle Spine.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/5. Lifecycle Spine.txt",
+      "role": "canonical_lifecycle_order",
+      "sample": "lifecycle spine \u2192 stage contracts \u2192 signal governance \u2192 trend discovery \u2192 portfolio path \u2192 breakthrough classification \u2192 advancement routing \u2192 validation \u2192 package construction \u2192 evidence/replay \u2192 lifecycle memory \u2192 recursive self-ingestion",
+      "scoring_owned": [
+        "stage_confidence",
+        "stage_quality",
+        "reuse_potential",
+        "learning_value"
+      ],
+      "size_bytes": 273,
+      "stage_scope": "1-30"
+    },
+    {
+      "conditions_owned": [
+        "signal_governance",
+        "trend_discovery",
+        "thesis_formation",
+        "portfolio_normal_path",
+        "breakthrough_gate"
+      ],
+      "exists": true,
+      "filename": "Core Pipeline Architecture.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/6. Core Pipeline Architecture.txt",
+      "role": "core_runtime_architecture",
+      "sample": "Core Pipeline Architecture External Signals + Market Data + Company Data + Sector Data + Existing Portfolios + Prior Claire Outputs + Existing Systems \u2193 Signal Governance \u2193 Trend Discovery \u2193 Thesis Formation \u2193 Portfolio Creation / Optimization \u2193 Breakthrough Escalation Gate \u2193 Breakthrough Classification \u2193 Advancement Path Selection \u2193 Correct Route: - portfolio action - acquisition strategy - business model redesign - operational redesign - market positioning - invention / design portal - system replacement - final package \u2193 Lifecycle Memory \u2193 Recursive Self-Ingestion \u2193 Stronger Future Runs",
+      "scoring_owned": [
+        "trend_strength",
+        "route_readiness",
+        "recursive_improvement"
+      ],
+      "size_bytes": 743,
+      "stage_scope": "signal_to_recursive_memory"
+    },
+    {
+      "conditions_owned": [
+        "portfolio_path",
+        "breakthrough_design_path",
+        "acquisition_path",
+        "final_package_path"
+      ],
+      "exists": true,
+      "filename": "Branching Master Pipeline.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/3. Branching Master Pipeline.txt",
+      "role": "route_branching_master",
+      "sample": "1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 6 Entity Extraction \u2192 7 Relationship Mapping \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510 \u2502 \u2502 \u25bc \u25bc MARKET / PORTFOLIO PATH BREAKTHROUGH / DESIGN PATH 23 Market Positioning 11 Gap Detection \u2192 26 Competitor Analysis \u2192 12 Gap Qualification \u2192 27 Portfolio Creation / Optimization \u2192 13 Discovery Generation \u2192 Portfolio Action \u2192 14 Breakthrough Identification \u2192 15 Technological Advancement Identification \u2192 16 Auto Invention \u2192 17 Solution Structuring \u2192 18 Buildability Assessment \u2192 19 Viability Assessment \u2192 20 Manufacturability Assessment \u2192 21 Feasibility Validation \u2192 22 Design Portal Output / Blueprints / Specs \u2192 23 Market Positioning \u2192 24 Moat & Differentiation \u2192 25 Business Model & Value Capt",
+      "scoring_owned": [
+        "route_selection",
+        "path_justification",
+        "branch_thresholds"
+      ],
+      "size_bytes": 2160,
+      "stage_scope": "1-30"
+    },
+    {
+      "conditions_owned": [
+        "portfolio_vs_breakthrough",
+        "advancement_path_selection"
+      ],
+      "exists": true,
+      "filename": "Branch Logic.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/1. Branch Logic.txt",
+      "role": "branch_condition_rules",
+      "sample": "Signals \u2192 Trend Discovery \u2192 Thesis Formation \u2192 Portfolio Action \u2198 Breakthrough Escalation \u2192 Breakthrough Type Classification \u251c\u2500 Market breakthrough \u2192 portfolio / thesis / acquisition path \u251c\u2500 Financial breakthrough \u2192 portfolio construction / optimization path \u251c\u2500 Business-model breakthrough \u2192 strategy / value capture path \u251c\u2500 Operational breakthrough \u2192 process/system design path \u251c\u2500 Regulatory breakthrough \u2192 compliance / market-entry / acquisition path \u251c\u2500 Acquisition breakthrough \u2192 acquirer targeting / package path \u2514\u2500 Technological breakthrough \u2192 invention / design portal / blueprint path",
+      "scoring_owned": [
+        "branch_decision_confidence"
+      ],
+      "size_bytes": 716,
+      "stage_scope": "10-15"
+    },
+    {
+      "conditions_owned": [
+        "portfolio_action",
+        "risk_exposure_notes",
+        "action_recommendations"
+      ],
+      "exists": true,
+      "filename": "portfolio and optimization.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/16. portfolio and optimization.txt",
+      "role": "portfolio_optimization_path",
+      "sample": "Existing Portfolio + 1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u2192 23 Market Positioning \u2192 26 Competitor Analysis \u2192 27 Portfolio Creation / Portfolio Optimization \u2192 Updated Portfolio Thesis \u2192 Risk / Exposure Notes \u2192 Action Recommendations",
+      "scoring_owned": [
+        "portfolio_score",
+        "risk_adjusted_opportunity",
+        "portfolio_fit"
+      ],
+      "size_bytes": 435,
+      "stage_scope": "1-10,23,26,27"
+    },
+    {
+      "conditions_owned": [
+        "trend_to_portfolio",
+        "market_positioning",
+        "competitor_analysis"
+      ],
+      "exists": true,
+      "filename": "trends 2 portfolio.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/9. trends 2 portfolio.txt",
+      "role": "trend_to_portfolio_path",
+      "sample": "1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u2192 Trend Strength Scoring \u2192 Thesis Formation \u2192 23 Market Positioning \u2192 26 Competitor Analysis \u2192 27 Portfolio Creation \u2192 Portfolio Weighting \u2192 Portfolio Risk Notes \u2192 Portfolio Opportunity Map",
+      "scoring_owned": [
+        "trend_strength",
+        "portfolio_readiness"
+      ],
+      "size_bytes": 435,
+      "stage_scope": "1-10,23,26,27"
+    },
+    {
+      "conditions_owned": [
+        "gap_detection",
+        "gap_qualification",
+        "discovery_generation",
+        "breakthrough_identification",
+        "design_portal_output"
+      ],
+      "exists": true,
+      "filename": "trend to breakthrough.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/10. trend to breakthrough.txt",
+      "role": "trend_to_breakthrough_path",
+      "sample": "1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u2192 11 Gap Detection \u2192 12 Gap Qualification \u2192 13 Discovery Generation \u2192 14 Breakthrough Identification \u2192 15 Technological Advancement Identification \u2192 16 Auto Invention \u2192 17 Solution Structuring \u2192 18 Buildability Assessment \u2192 19 Viability Assessment \u2192 20 Manufacturability Assessment \u2192 21 Feasibility Validation \u2192 22 Design Portal Output / Blueprints / Specs",
+      "scoring_owned": [
+        "breakthrough_score",
+        "buildability_score",
+        "viability_score",
+        "manufacturability_score",
+        "feasibility_score"
+      ],
+      "size_bytes": 614,
+      "stage_scope": "1-22"
+    },
+    {
+      "conditions_owned": [
+        "non_obvious_advancement",
+        "escalation_threshold",
+        "design_or_solution_requirement"
+      ],
+      "exists": true,
+      "filename": "breakthrough escalation.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/12. breakthrough escalation.txt",
+      "role": "breakthrough_escalation_gate",
+      "sample": "1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u2192 11 Gap Detection \u2192 12 Gap Qualification \u2192 13 Discovery Generation \u2192 14 Breakthrough Identification \u2192 Breakthrough Gate \u251c\u2500 If NOT breakthrough-level: \u2502 \u2192 23 Market Positioning \u2502 \u2192 27 Portfolio Creation / Optimization \u2502 \u2514\u2500 If breakthrough-level: \u2192 15 Technological Advancement Identification \u2192 16 Auto Invention \u2192 17 Solution Structuring \u2192 18 Buildability Assessment \u2192 19 Viability Assessment \u2192 20 Manufacturability Assessment \u2192 21 Feasibility Validation \u2192 22 Design Portal Output / Blueprints / Specs \u2192 23 Market Positioning \u2192 24 Moat & Differentiation \u2192 25 Business Model & Value Capture \u2192 26 Competitor Analysis \u2192 27 Portfolio Creation \u2192 28 Acquirer Identification \u2192 29 Acquisition Fit & Rational",
+      "scoring_owned": [
+        "breakthrough_threshold",
+        "novelty",
+        "strategic_advancement"
+      ],
+      "size_bytes": 1188,
+      "stage_scope": "11-22"
+    },
+    {
+      "conditions_owned": [
+        "primary_breakthrough_type",
+        "secondary_breakthrough_types",
+        "non_technology_breakthroughs_allowed"
+      ],
+      "exists": true,
+      "filename": "Breakthrough categories.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/8. Breakthrough categories.txt",
+      "role": "breakthrough_classification_taxonomy",
+      "sample": "Breakthrough Identification & Classification A breakthrough may be classified as one or more of: - Technological Breakthrough - Scientific Breakthrough - Software / Platform Breakthrough - AI / Machine Learning Breakthrough - Data / Information Breakthrough - Signal Detection Breakthrough - Trend Discovery Breakthrough - Market Timing Breakthrough - Market Structure Breakthrough - Gap Discovery Breakthrough - Portfolio Construction Breakthrough - Portfolio Optimization Breakthrough - Financial Breakthrough - Risk / Hedging Breakthrough - Business Model Breakthrough - Value Capture Breakthrough - Distribution Breakthrough - Customer / Demand Breakthrough - Operational Breakthrough - Process Breakthrough - Manufacturing Breakthrough - Supply Chain Breakthrough - Infrastructure Breakthrough - Energy / Resource Breakthrough - Regulatory Breakthrough - Compliance Breakthrough - Legal / IP Bre",
+      "scoring_owned": [
+        "classification_confidence",
+        "route_specific_breakthrough_value"
+      ],
+      "size_bytes": 2046,
+      "stage_scope": "14-15"
+    },
+    {
+      "conditions_owned": [
+        "design_portal",
+        "market_positioning",
+        "moat",
+        "business_model",
+        "portfolio_creation",
+        "acquirer_fit",
+        "final_package"
+      ],
+      "exists": true,
+      "filename": "Full Breakthrough-to-Acquisition Package Pipeline.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/13. Full Breakthrough-to-Acquisition Package Pipeline.txt",
+      "role": "full_breakthrough_to_acquisition_package",
+      "sample": "1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 6 Entity Extraction \u2192 7 Relationship Mapping \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u2192 11 Gap Detection \u2192 12 Gap Qualification \u2192 13 Discovery Generation \u2192 14 Breakthrough Identification \u2192 15 Technological Advancement Identification \u2192 16 Auto Invention \u2192 17 Solution Structuring \u2192 18 Buildability Assessment \u2192 19 Viability Assessment \u2192 20 Manufacturability Assessment \u2192 21 Feasibility Validation \u2192 22 Design Portal Output / Blueprints / Specs \u2192 23 Market Positioning \u2192 24 Moat & Differentiation \u2192 25 Business Model & Value Capture \u2192 26 Competitor Analysis \u2192 27 Portfolio Creation \u2192 28 Acquirer Identification \u2192 29 Acquisition Fit & Rationale \u2192 30 Final Package Construction",
+      "scoring_owned": [
+        "acquisition_score",
+        "package_readiness",
+        "deal_readiness"
+      ],
+      "size_bytes": 922,
+      "stage_scope": "1-30"
+    },
+    {
+      "conditions_owned": [
+        "market_positioning",
+        "portfolio_creation",
+        "acquirer_identification",
+        "acquisition_fit"
+      ],
+      "exists": true,
+      "filename": "trend 3 acquisition.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/11. trend 3 acquisition.txt",
+      "role": "trend_to_acquisition_path",
+      "sample": "1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u2192 11 Gap Detection \u2192 12 Gap Qualification \u2192 23 Market Positioning \u2192 24 Moat & Differentiation \u2192 25 Business Model & Value Capture \u2192 26 Competitor Analysis \u2192 28 Acquirer Identification \u2192 29 Acquisition Fit & Rationale \u2192 30 Final Package Construction",
+      "scoring_owned": [
+        "acquirer_fit_score",
+        "strategic_timing",
+        "buyer_gap_score"
+      ],
+      "size_bytes": 497,
+      "stage_scope": "1-10,23-30"
+    },
+    {
+      "conditions_owned": [
+        "signal_to_gap",
+        "gap_to_discovery",
+        "discovery_candidate"
+      ],
+      "exists": true,
+      "filename": "discovery first.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/7. discovery first.txt",
+      "role": "discovery_first_path",
+      "sample": "1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 6 Entity Extraction \u2192 7 Relationship Mapping \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u2192 13 Discovery Generation \u2192 11 Gap Detection \u2192 12 Gap Qualification \u2192 Decision Gate: \u251c\u2500 Market Discovery \u2502 \u2192 23 Market Positioning \u2502 \u2192 27 Portfolio Creation \u2502 \u251c\u2500 Strategic Discovery \u2502 \u2192 24 Moat & Differentiation \u2502 \u2192 25 Business Model & Value Capture \u2502 \u2192 28 Acquirer Identification \u2502 \u2514\u2500 Breakthrough Discovery \u2192 14 Breakthrough Identification \u2192 15 Technological Advancement Identification \u2192 16 Auto Invention \u2192 22 Design Portal Output \u2192 30 Final Package Construction",
+      "scoring_owned": [
+        "discovery_score",
+        "opportunity_score"
+      ],
+      "size_bytes": 898,
+      "stage_scope": "1-13"
+    },
+    {
+      "conditions_owned": [
+        "system_decomposition",
+        "weakness_detection",
+        "replacement_candidate_generation"
+      ],
+      "exists": true,
+      "filename": "Existing System Ingestion  Replacement Pipeline.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/14. Existing System Ingestion  Replacement Pipeline.txt",
+      "role": "existing_system_ingestion_replacement",
+      "sample": "Existing System Ingestion \u2192 1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 6 Entity Extraction \u2192 7 Relationship Mapping \u2192 Existing System Decomposition \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u2192 11 Gap Detection \u2192 12 Gap Qualification \u2192 13 Discovery Generation \u2192 14 Breakthrough Identification \u2192 15 Technological Advancement Identification \u2192 16 Auto Invention \u2192 17 Solution Structuring \u2192 18 Buildability Assessment \u2192 19 Viability Assessment \u2192 20 Manufacturability Assessment \u2192 21 Feasibility Validation \u2192 22 Design Portal Output / Blueprints / Specs \u2192 Superior System Design \u2192 23 Market Positioning \u2192 24 Moat & Differentiation \u2192 25 Business Model & Value Capture \u2192 26 Competitor Analysis \u2192 27 Portfolio Creation \u2192 28 Acquirer Identification \u2192 29 Acquisition Fit & Rationale \u2192 30 Final ",
+      "scoring_owned": [
+        "replacement_value",
+        "system_gap_score"
+      ],
+      "size_bytes": 1016,
+      "stage_scope": "system_ingestion_to_replacement"
+    },
+    {
+      "conditions_owned": [
+        "operator_review",
+        "no_auto_promotion",
+        "runtime_truth_firewall",
+        "failure_and_insufficient_data"
+      ],
+      "exists": true,
+      "filename": "Governance  Fail-Safe Pipeline.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/19. Governance  Fail-Safe Pipeline.txt",
+      "role": "governance_fail_safe",
+      "sample": "1 Signal Ingestion \u2192 Signal Quality Gate \u2192 2 Signal Normalization \u2192 Deduplication Gate \u2192 3 Source Validation & Weighting \u2192 Source Credibility Gate \u2192 4 Context Expansion \u2192 Context Sufficiency Gate \u2192 5 Signal Consolidation \u2192 8 Trend Discovery \u2192 Trend Strength Gate \u2192 9 Cluster Formation \u2192 Pattern Coherence Gate \u2192 10 Insight / Thesis Structuring \u2192 Thesis Quality Gate \u2192 11 Gap Detection \u2192 Gap Validity Gate \u2192 12 Gap Qualification \u2192 Gap Severity Gate \u2192 13 Discovery Generation \u2192 Discovery Evidence Gate \u2192 14 Breakthrough Identification \u2192 Breakthrough Threshold Gate \u251c\u2500 If weak: \u2502 \u2192 Portfolio-only route \u2502 \u2514\u2500 If strong: \u2192 15 Technological Advancement Identification \u2192 16 Auto Invention \u2192 18 Buildability Assessment \u2192 19 Viability Assessment \u2192 20 Manufacturability Assessment \u2192 21 Feasibility Validation \u2192 22 Design Portal Output \u2192 30 Final Package Construction",
+      "scoring_owned": [
+        "governance_readiness",
+        "evidence_sufficiency"
+      ],
+      "size_bytes": 1043,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "approved_outputs_only",
+        "failed_assumption_learning",
+        "cross_run_comparison"
+      ],
+      "exists": true,
+      "filename": "Recursive Learning Pipeline.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/17. Recursive Learning Pipeline.txt",
+      "role": "recursive_learning",
+      "sample": "Completed Run Output \u2192 Lifecycle Memory Storage \u2192 Self-Ingestion \u2192 1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u2192 Pattern Comparison \u2192 Prior Breakthrough Comparison \u2192 Prior Blueprint Comparison \u2192 Prior Package Comparison \u2192 11 Gap Detection \u2192 12 Gap Qualification \u2192 13 Discovery Generation \u2192 14 Breakthrough Identification \u2192 16 Auto Invention \u2192 22 Design Portal Output \u2192 27 Portfolio Creation \u2192 30 Final Package Construction \u2192 Store Improved Output \u2192 Future Self-Ingestion",
+      "scoring_owned": [
+        "reuse_potential",
+        "learning_value"
+      ],
+      "size_bytes": 699,
+      "stage_scope": "memory"
+    },
+    {
+      "conditions_owned": [
+        "ingest_systems",
+        "decompose_weaknesses",
+        "generate_superior_systems",
+        "package_and_acquire"
+      ],
+      "exists": true,
+      "filename": "Final Endgame Pipeline.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/15. Final Endgame Pipeline.txt",
+      "role": "endgame_system_transformation",
+      "sample": "External Signals + Existing Systems + Market Data + Company Data + Prior Claire Outputs \u2193 1 Signal Ingestion \u2192 2 Signal Normalization \u2192 3 Source Validation & Weighting \u2192 4 Context Expansion \u2192 5 Signal Consolidation \u2192 6 Entity Extraction \u2192 7 Relationship Mapping \u2192 8 Trend Discovery \u2192 9 Cluster Formation \u2192 10 Insight / Thesis Structuring \u2193 Trend / Thesis Decision Gate \u2193 \u251c\u2500 Portfolio Intelligence Path \u2502 \u2192 23 Market Positioning \u2502 \u2192 26 Competitor Analysis \u2502 \u2192 27 Portfolio Creation / Optimization \u2502 \u2192 Portfolio Action \u2502 \u251c\u2500 Acquisition Intelligence Path \u2502 \u2192 24 Moat & Differentiation \u2502 \u2192 25 Business Model & Value Capture \u2502 \u2192 28 Acquirer Identification \u2502 \u2192 29 Acquisition Fit & Rationale \u2502 \u2192 30 Final Package Construction \u2502 \u2514\u2500 Breakthrough / System Transformation Path \u2192 11 Gap Detection \u2192 12 Gap Qualification \u2192 13 Discovery Generation \u2192 14 Breakthrough Identification \u2192 15 Technological Advancement I",
+      "scoring_owned": [
+        "endgame_readiness",
+        "system_transformation_value"
+      ],
+      "size_bytes": 2112,
+      "stage_scope": "v10_target"
+    },
+    {
+      "conditions_owned": [
+        "minimum_viable_run",
+        "reviewable_output",
+        "evidence_chain"
+      ],
+      "exists": true,
+      "filename": "Minimal Completed-State Pipeline.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/2. Minimal Completed-State Pipeline.txt",
+      "role": "minimum_completed_state",
+      "sample": "Signals \u2192 Governance \u2192 Trend Discovery \u2192 Thesis Formation \u2192 Portfolio Action \u2198 Breakthrough Escalation \u2192 Auto Invention \u2192 Design Portal \u2192 Feasibility \u2192 Strategy \u2192 Acquirer Mapping \u2192 Final Package \u2192 Lifecycle Memory \u2192 Recursive Self-Ingestion",
+      "scoring_owned": [
+        "completion_score"
+      ],
+      "size_bytes": 312,
+      "stage_scope": "proof"
+    },
+    {
+      "conditions_owned": [
+        "pipeline_continuity"
+      ],
+      "exists": true,
+      "filename": "pipeline.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/4. pipeline.txt",
+      "role": "general_pipeline_reference",
+      "sample": "CLAIRE 30-STAGE LIFECYCLE Signal Ingestion Signal Normalization Source Validation & Weighting Context Expansion Signal Consolidation Entity Extraction Relationship Mapping Trend Discovery Cluster Formation Insight / Thesis Structuring Gap Detection Gap Qualification Discovery Generation Breakthrough Identification & Classification Advancement Path Selection Auto Invention / Solution Generation Solution Structuring Buildability Assessment Viability Assessment Manufacturability / Deployability Assessment Feasibility Validation Design Portal Output / Blueprints / Specs Market Positioning Moat & Differentiation Business Model & Value Capture Competitor Analysis Portfolio Creation / Optimization Acquirer Identification Acquisition Fit & Rationale Final Package Construction",
+      "scoring_owned": [
+        "pipeline_consistency"
+      ],
+      "size_bytes": 808,
+      "stage_scope": "all"
+    },
+    {
+      "conditions_owned": [
+        "approved_provider",
+        "signature_verification",
+        "rollback",
+        "manual_approval"
+      ],
+      "exists": true,
+      "filename": "Claire Enterprise Online Update Governance System.txt",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/20. Claire Enterprise Online Update Governance System.txt",
+      "role": "online_update_governance",
+      "sample": "Claire Enterprise Online Update Governance System Core Principle Claire may discover, download, inspect, score, stage, and validate updates online.Claire may NOT modify active runtime code unless the update proves:1. forward architectural alignment,2. no regression of verified capabilities,3. no unsafe overwrite of protected paths,4. full rollback capability,5. validation success,6. human approval for critical changes. New Enterprise Modules to Add Create: src/claire/evolution/\u251c\u2500\u2500 __init__.py\u251c\u2500\u2500 project_identity.py\u251c\u2500\u2500 master_document_registry.py\u251c\u2500\u2500 version_timeline.py\u251c\u2500\u2500 target_state.py\u251c\u2500\u2500 capability_registry.py\u251c\u2500\u2500 verified_state_store.py\u251c\u2500\u2500 regression_guard.py\u251c\u2500\u2500 forward_motion_policy.py\u251c\u2500\u2500 evolution_memory.py\u2514\u2500\u2500 evolution_orchestrator.py Create: src/claire/platform/update_governance/\u251c\u2500\u2500 __init__.py\u251c\u2500\u2500 authority_map.py\u251c\u2500\u2500 package_inspector.py\u251c\u2500\u2500 source_trust.py\u251c\u2500\u2500 signature_verifier.py\u251c",
+      "scoring_owned": [
+        "update_safety",
+        "provider_trust"
+      ],
+      "size_bytes": 4127,
+      "stage_scope": "update_governance"
+    },
+    {
+      "conditions_owned": [
+        "system_flow_visual_reference"
+      ],
+      "exists": true,
+      "filename": "(7)Claire-Complete-Systems-Flow .html",
+      "path": "C:/Users/craig/OneDrive/Desktop/Docs Main/pipelines/(7)Claire-Complete-Systems-Flow .html",
+      "role": "complete_system_flow_visual",
+      "sample": "<!DOCTYPE html> <html lang=\"en\" data-theme=\"dark\"><head><meta name=\"referrer\" content=\"strict-origin-when-cross-origin\"><meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'nonce-required' 'strict-dynamic' https://cdn.jsdelivr.net/npm/ https://cdn.tailwindcss.com https://unpkg.com/lucide; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net/npm/ https://copilot.microsoft.com; worker-src 'self' blob:; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com/css2 https://cdn.jsdelivr.net/npm/; img-src 'self' data: blob: *.mm.bing.net th.bing.com cdn.tailwindcss.com copilot.microsoft.com *.tile.openstreetmap.org https://cdn.jsdelivr.net/npm/; font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src ",
+      "scoring_owned": [
+        "flow_completeness"
+      ],
+      "size_bytes": 233069,
+      "stage_scope": "all"
+    }
+  ],
+  "status": "ready"
+}

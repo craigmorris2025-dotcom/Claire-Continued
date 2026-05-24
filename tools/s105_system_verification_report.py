@@ -12,28 +12,28 @@ DATA = ROOT / "data"
 EXPORTS = ROOT / "exports" / "governed_outputs"
 
 REQUIRED_IMPORTS = [
-    "claire",
-    "claire.api.governed_discovery_candidates",
-    "claire.api.governed_useful_outputs",
-    "claire.api.governed_review_queue",
-    "claire.api.governed_reviewed_exports",
-    "claire.api.governed_route_repeat",
-    "claire.api.governed_demo_run",
-    "claire.api.governed_s85_s91_payload",
-    "claire.api.governed_s92_s98_cockpit_contracts",
-    "claire.api.governed_s99_s105_routes",
+    "runtime_core",
+    "runtime_core.api.governed_discovery_candidates",
+    "runtime_core.api.governed_useful_outputs",
+    "runtime_core.api.governed_review_queue",
+    "runtime_core.api.governed_reviewed_exports",
+    "runtime_core.api.governed_route_repeat",
+    "runtime_core.api.governed_demo_run",
+    "runtime_core.api.governed_s85_s91_payload",
+    "runtime_core.api.governed_s92_s98_cockpit_contracts",
+    "runtime_core.api.governed_s99_s105_routes",
 ]
 
 REQUIRED_FILES = [
-    "claire/api/governed_discovery_candidates.py",
-    "claire/api/governed_useful_outputs.py",
-    "claire/api/governed_review_queue.py",
-    "claire/api/governed_reviewed_exports.py",
-    "claire/api/governed_route_repeat.py",
-    "claire/api/governed_demo_run.py",
-    "claire/api/governed_s85_s91_payload.py",
-    "claire/api/governed_s92_s98_cockpit_contracts.py",
-    "claire/api/governed_s99_s105_routes.py",
+    "runtime_core/api/governed_discovery_candidates.py",
+    "runtime_core/api/governed_useful_outputs.py",
+    "runtime_core/api/governed_review_queue.py",
+    "runtime_core/api/governed_reviewed_exports.py",
+    "runtime_core/api/governed_route_repeat.py",
+    "runtime_core/api/governed_demo_run.py",
+    "runtime_core/api/governed_s85_s91_payload.py",
+    "runtime_core/api/governed_s92_s98_cockpit_contracts.py",
+    "runtime_core/api/governed_s99_s105_routes.py",
 ]
 
 REQUIRED_OPERATOR_ROUTES = [
@@ -80,7 +80,7 @@ def verify_imports() -> Dict[str, Any]:
     return {"ok": all(item["ok"] for item in results), "required_count": len(results), "imports": results}
 
 def verify_existing_app_can_import() -> Dict[str, Any]:
-    candidates = ["claire.app", "main"]
+    candidates = ["runtime_core.app", "main"]
     results = []
     for module_name in candidates:
         try:
@@ -100,7 +100,7 @@ def verify_fastapi_routes() -> Dict[str, Any]:
     try:
         from fastapi import FastAPI
         from fastapi.testclient import TestClient
-        from claire.api.governed_s99_s105_routes import include_governed_s99_s105_routes
+        from runtime_core.api.governed_s99_s105_routes import include_governed_s99_s105_routes
     except Exception as exc:
         return {"ok": False, "error": repr(exc), "routes": []}
 
@@ -136,7 +136,7 @@ def verify_fastapi_routes() -> Dict[str, Any]:
 
 def verify_demo_contracts() -> Dict[str, Any]:
     try:
-        from claire.api.governed_s92_s98_cockpit_contracts import (
+        from runtime_core.api.governed_s92_s98_cockpit_contracts import (
             build_end_to_end_cockpit_demo_proof,
             build_review_queue_status,
             build_export_manifest,
@@ -177,8 +177,8 @@ def verify_demo_contracts() -> Dict[str, Any]:
 
 def verify_governance_locks() -> Dict[str, Any]:
     try:
-        from claire.api.governed_s92_s98_cockpit_contracts import LOCKS as cockpit_locks
-        from claire.api.governed_s99_s105_routes import LOCKS as route_locks
+        from runtime_core.api.governed_s92_s98_cockpit_contracts import LOCKS as cockpit_locks
+        from runtime_core.api.governed_s99_s105_routes import LOCKS as route_locks
     except Exception as exc:
         return {"ok": False, "error": repr(exc), "locks": {}}
 

@@ -1,18 +1,86 @@
 {
+  "runtime": "continuous_intelligence",
   "status": "active",
-  "continuous_runtime_status": "configured_not_running",
+  "mode": "governed_24_7_discovery_monitoring",
+  "backend_owns_truth": true,
   "operator_approval_required": true,
-  "loop_running": false,
-  "runtime_truth_mutated": false,
-  "promotion_required": true,
-  "configured": true,
-  "created_at": "2026-05-12T17:38:13.712629+00:00",
-  "updated_at": "2026-05-18T22:35:40.459450+00:00",
-  "source": "data/continuous_runtime/status.json",
-  "truth_owner": "backend",
-  "runtime_state": "requested_start",
-  "message": "Continuous runtime start request recorded. Deeper executor activation remains governed by runtime implementation.",
-  "candidate_generation": "not_fabricated",
-  "last_cycle_id": "cycle_20260518_223540_c798da13",
-  "last_cycle_at": "2026-05-18T22:35:40.459450+00:00"
+  "continuous_objectives": [
+    "discover emerging trends",
+    "detect gaps",
+    "identify breakthrough candidates",
+    "identify needed solutions",
+    "identify technological solution candidates",
+    "identify portfolio opportunities",
+    "identify acquisition/package candidates",
+    "store lifecycle memory",
+    "support recursive self-ingestion"
+  ],
+  "guardrails": [
+    "no uncontrolled web mutation",
+    "no automatic active-code updates",
+    "no frontend-owned route truth",
+    "no fake discoveries",
+    "missing evidence enriches before failure",
+    "operator review required before promotion"
+  ],
+  "last_cycle_id": "cycle_20260524_223325_45a90688",
+  "last_cycle_at": "2026-05-24T22:33:25.658264+00:00",
+  "next_cycle_policy": "operator_or_scheduler_triggered",
+  "scheduler_policy": {
+    "status": "bounded_scheduler_tick_proven_not_daemonized",
+    "daemon_installed": false,
+    "task_runner_installed": true,
+    "manual_tick_endpoint": "/runtime/continuous/scheduler/tick",
+    "runtime_truth_mutation_allowed": false,
+    "operator_review_required": true,
+    "last_cycle_id": "cycle_20260523_043357_5f498ca0",
+    "last_tick_at": "2026-05-23T04:33:57.579743+00:00",
+    "task_runner_name": "ClaireContinuousRuntimeTick"
+  },
+  "artifact_paths": {
+    "breakthrough_candidates": "data/continuous_runtime/breakthrough_candidates.json",
+    "design_candidates": "data/continuous_runtime/design_candidates.json",
+    "discovery_candidates": "data/continuous_runtime/discovery_candidates.json",
+    "portfolio_candidates": "data/continuous_runtime/portfolio_candidates.json",
+    "review_queue": "data/continuous_runtime/review_queue.json",
+    "status": "data/continuous_runtime/status.json"
+  },
+  "updated_at": "2026-05-24T22:33:25.658264+00:00",
+  "candidate_generation": "allowlisted_inputs_only",
+  "continuous_runtime_status": "running",
+  "input_boundary": {
+    "status": "enforced",
+    "allowed_sources": [
+      {
+        "path": "data/continuous_runtime/lifecycle_memory.json",
+        "status": "allowed_input",
+        "record_count": 6
+      },
+      {
+        "path": "data/source_universes/universe_index.json",
+        "status": "allowed_input",
+        "record_count": 4
+      },
+      {
+        "path": "data/live/source_registry.json",
+        "status": "allowed_input",
+        "record_count": 6
+      },
+      {
+        "path": "data/live_intelligence/latest_monitor_run.json",
+        "status": "allowed_input",
+        "record_count": 5
+      }
+    ],
+    "rejected_sources": []
+  },
+  "last_candidate_counts": {
+    "discoveries": 1,
+    "breakthroughs": 1,
+    "portfolios": 1,
+    "designs": 1,
+    "packages": 1
+  },
+  "loop_running": true,
+  "runtime_state": "running"
 }

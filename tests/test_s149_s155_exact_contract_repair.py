@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_cockpit_payload_visibility_s149_s155 import (
+from runtime_core.api.governed_cockpit_payload_visibility_s149_s155 import (
     build_cockpit_live_visibility_readiness,
     build_cockpit_payload_manifest,
     build_cockpit_payload_read_contract,

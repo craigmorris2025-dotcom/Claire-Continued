@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s52r1_quality_gate_passes_all_useful_outputs():
-    module = importlib.import_module("claire.api.s52_useful_output_quality_gate")
+    module = importlib.import_module("runtime_core.api.s52_useful_output_quality_gate")
     gate = module.build_useful_output_quality_gate()
 
     assert gate["version"] == "v19.89.8-S52R1-R8"
@@ -25,7 +25,7 @@ def test_s52r1_quality_gate_passes_all_useful_outputs():
 
 
 def test_s52r5_output_proof_requirements_block_auto_promotion():
-    module = importlib.import_module("claire.api.s52_useful_output_quality_gate")
+    module = importlib.import_module("runtime_core.api.s52_useful_output_quality_gate")
     proof = module.build_output_proof_requirements()
 
     assert proof["status"] == "output_proof_requirements_ready"
@@ -40,7 +40,7 @@ def test_s52r5_output_proof_requirements_block_auto_promotion():
 
 
 def test_s52r8_plateau_report_ready():
-    module = importlib.import_module("claire.api.s52_useful_output_quality_gate")
+    module = importlib.import_module("runtime_core.api.s52_useful_output_quality_gate")
     report = module.build_s52r1_r8_plateau_report()
 
     assert report["status"] == "s52r1_r8_ready"

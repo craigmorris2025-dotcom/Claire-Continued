@@ -33,8 +33,8 @@ PROTECTED_PATHS = [
 ]
 
 PROTECTED_IMPORTS = [
-    "claire.app",
-    "claire.api.routes_pipeline",
+    "runtime_core.app",
+    "runtime_core.api.routes_pipeline",
     "claire.orchestrator.pipeline_v4",
     "claire.technology.technology_intelligence",
 ]

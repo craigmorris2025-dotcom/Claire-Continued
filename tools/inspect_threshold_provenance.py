@@ -11,8 +11,8 @@ SRC = PROJECT_ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from claire.lifecycle.stage_registry import ClaireStageRegistry
-from claire.lifecycle.threshold_provenance import ThresholdProvenance
+from runtime_core.lifecycle.stage_registry import ClaireStageRegistry
+from runtime_core.lifecycle.threshold_provenance import ThresholdProvenance
 
 
 def main() -> int:

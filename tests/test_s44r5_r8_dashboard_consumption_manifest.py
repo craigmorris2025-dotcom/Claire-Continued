@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 
 
 def test_s44r5_dashboard_consumption_manifest_is_read_only():
-    module = importlib.import_module("claire.api.s44_dashboard_consumption_manifest")
+    module = importlib.import_module("runtime_core.api.s44_dashboard_consumption_manifest")
     manifest = module.build_dashboard_consumption_manifest()
 
     assert manifest["status"] == "dashboard_consumption_manifest_ready"
@@ -24,7 +24,7 @@ def test_s44r5_dashboard_consumption_manifest_is_read_only():
 
 
 def test_s44r6_manifest_verifies_cleanly():
-    module = importlib.import_module("claire.api.s44_dashboard_consumption_manifest")
+    module = importlib.import_module("runtime_core.api.s44_dashboard_consumption_manifest")
     verification = module.verify_dashboard_consumption_manifest()
 
     assert verification["verification_ok"] is True
@@ -33,8 +33,8 @@ def test_s44r6_manifest_verifies_cleanly():
 
 
 def test_s44r7_fetch_contract_paths_are_available_on_isolated_app():
-    contracts_module = importlib.import_module("claire.api.s44_cockpit_fetch_contracts")
-    include_module = importlib.import_module("claire.api.operator_router_include_adapter")
+    contracts_module = importlib.import_module("runtime_core.api.s44_cockpit_fetch_contracts")
+    include_module = importlib.import_module("runtime_core.api.operator_router_include_adapter")
 
     app = FastAPI()
     include_module.include_operator_router_non_invasive(app)
@@ -46,7 +46,7 @@ def test_s44r7_fetch_contract_paths_are_available_on_isolated_app():
 
 
 def test_s44r8_plateau_report_points_to_next_verification_phase():
-    module = importlib.import_module("claire.api.s44_dashboard_consumption_manifest")
+    module = importlib.import_module("runtime_core.api.s44_dashboard_consumption_manifest")
     report = module.build_s44_plateau_report()
 
     assert report["status"] == "s44r1_r8_ready"

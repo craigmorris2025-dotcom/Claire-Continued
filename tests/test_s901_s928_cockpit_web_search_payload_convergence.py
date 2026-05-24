@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s901_s928_payload_preserves_all_blocks_and_reports_current_stage():
-    module = importlib.import_module("claire.governance.governed_cockpit_web_search_convergence")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_web_search_convergence")
     payload = module.build_convergence_payload()
 
     assert payload["phase"] == "S901-S928"
@@ -28,7 +28,7 @@ def test_s901_s928_payload_preserves_all_blocks_and_reports_current_stage():
 
 
 def test_s901_s928_actions_are_registered_but_non_executable():
-    module = importlib.import_module("claire.governance.governed_cockpit_web_search_convergence")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_web_search_convergence")
     actions = module.build_actions()
 
     assert len(actions) >= 7
@@ -45,7 +45,7 @@ def test_s901_s928_actions_are_registered_but_non_executable():
 
 
 def test_s901_s928_payload_owners_cover_s576_to_s900_runway():
-    module = importlib.import_module("claire.governance.governed_cockpit_web_search_convergence")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_web_search_convergence")
     payload = module.build_convergence_payload()
     owners = payload["payload_owners"]
     stage_ranges = {owner["stage_range"] for owner in owners}
@@ -58,7 +58,7 @@ def test_s901_s928_payload_owners_cover_s576_to_s900_runway():
 
 
 def test_s901_s928_cards_are_normalized_for_cockpit_tabs():
-    module = importlib.import_module("claire.governance.governed_cockpit_web_search_convergence")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_web_search_convergence")
     payload = module.build_convergence_payload()
 
     assert len(payload["governed_web_cards"]) >= 4
@@ -68,7 +68,7 @@ def test_s901_s928_cards_are_normalized_for_cockpit_tabs():
 
 
 def test_s901_s928_route_module_exposes_router():
-    routes = importlib.import_module("claire.api.governed_cockpit_web_search_convergence_routes")
+    routes = importlib.import_module("runtime_core.api.governed_cockpit_web_search_convergence_routes")
     assert hasattr(routes, "router")
     paths = {route.path for route in routes.router.routes}
     assert "/api/cockpit/convergence/payload" in paths
@@ -78,13 +78,13 @@ def test_s901_s928_route_module_exposes_router():
 
 
 def test_s901_s928_optional_app_registration_does_not_break_create_app():
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     app = app_module.create_app()
     assert app is not None
 
 
 def test_s901_s928_stop_gate_reports_safe_forward_motion():
-    module = importlib.import_module("claire.governance.governed_cockpit_web_search_convergence")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_web_search_convergence")
     gate = module.build_stop_gate()
 
     assert gate["phase"] == "S901-S928"

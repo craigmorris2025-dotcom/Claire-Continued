@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s31_topology_continuity_builds_review_state_and_preserves_authority():
-    module = importlib.import_module("claire.api.governed_operational_topology_continuity")
+    module = importlib.import_module("runtime_core.api.governed_operational_topology_continuity")
     payload = {
         "governed_multi_workspace_orchestration": {
             "topology_state": "review_required",
@@ -45,7 +45,7 @@ def test_s31_topology_continuity_builds_review_state_and_preserves_authority():
 
 
 def test_s31_topology_continuity_blocks_on_drift():
-    module = importlib.import_module("claire.api.governed_operational_topology_continuity")
+    module = importlib.import_module("runtime_core.api.governed_operational_topology_continuity")
     continuity = module.build_operational_topology_continuity({
         "governed_multi_workspace_orchestration": {"topology_state": "coordinated", "summary": {"authority_drift_total": 1}}
     })
@@ -53,7 +53,7 @@ def test_s31_topology_continuity_blocks_on_drift():
 
 
 def test_s31_topology_continuity_partial_on_missing_panels():
-    module = importlib.import_module("claire.api.governed_operational_topology_continuity")
+    module = importlib.import_module("runtime_core.api.governed_operational_topology_continuity")
     continuity = module.build_operational_topology_continuity({
         "governed_multi_workspace_orchestration": {"topology_state": "coordinated", "summary": {"missing_panel_total": 2}}
     })
@@ -61,7 +61,7 @@ def test_s31_topology_continuity_partial_on_missing_panels():
 
 
 def test_s31_attach_topology_continuity_preserves_payload():
-    module = importlib.import_module("claire.api.governed_operational_topology_continuity")
+    module = importlib.import_module("runtime_core.api.governed_operational_topology_continuity")
     updated = module.attach_operational_topology_continuity({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

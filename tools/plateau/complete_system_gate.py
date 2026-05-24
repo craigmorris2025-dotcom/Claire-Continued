@@ -12,8 +12,8 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from claire.app import create_app
-from claire.audit.plateau_completion_lock import build_plateau_completion_lock
+from runtime_core.app import create_app
+from runtime_core.audit.plateau_completion_lock import build_plateau_completion_lock
 
 
 REQUIRED_FILES = [
@@ -36,20 +36,13 @@ REQUIRED_ROUTES = [
     "/favicon.ico",
     "/health",
     "/openapi.json",
+    "/dashboard",
     "/dashboard/payload",
     "/dashboard/payload/status",
-    "/api/dashboard/v4/payload",
-    "/dashboard/v4/payload",
-    "/dashboard/v4",
-    "/dashboard/operator-v4",
-    "/dashboard/v4/assets/dashboard_v4.css",
-    "/dashboard/v4/assets/dashboard_v4.js",
-    "/api/dashboard/v5/payload",
-    "/dashboard/v5/payload",
-    "/dashboard/v5",
-    "/dashboard/final-user",
-    "/dashboard/v5/assets/dashboard_v5.css",
-    "/dashboard/v5/assets/dashboard_v5.js",
+    "/api/operational/control-plane",
+    "/api/operational/route-health",
+    "/api/governed/runtime-spine",
+    "/api/cockpit/command/latest",
 ]
 
 
@@ -83,8 +76,12 @@ def run_gate() -> dict[str, Any]:
             "ok": response.status_code == 200,
         }
 
-    payload = client.get("/api/dashboard/v4/payload").json()
-    final_payload = client.get("/api/dashboard/v5/payload").json()
+    from runtime_core.app import _dashboard_payload
+    from runtime_core.dashboard.final_dashboard_payload import build_final_dashboard_payload
+    from runtime_core.api.routes_dashboard_v4 import build_dashboard_v4_payload
+
+    payload = build_dashboard_v4_payload(_dashboard_payload())
+    final_payload = build_final_dashboard_payload(routes=app.routes)
     scores = payload.get("scores", {}) if isinstance(payload, dict) else {}
     final_scores = final_payload.get("scores", {}) if isinstance(final_payload, dict) else {}
     plateau = build_plateau_completion_lock(ROOT, write_audit_report=False)
@@ -101,9 +98,7 @@ def run_gate() -> dict[str, Any]:
         "breakthrough_escalation_route": scores.get("breakthrough_escalation_route") == 100,
         "acquisition_package_route": scores.get("acquisition_package_route") == 100,
         "dashboard_functionality": all(files.values())
-        and route_results["/dashboard/v5"]["ok"]
-        and route_results["/dashboard/v5/assets/dashboard_v5.css"]["ok"]
-        and route_results["/dashboard/v5/assets/dashboard_v5.js"]["ok"],
+        and route_results["/dashboard"]["ok"],
         "operator_functionality": len(final_payload.get("operator_workflows", [])) >= 6
         and len(final_payload.get("operator_panels", [])) >= 10
         and final_payload.get("command_surface", {}).get("default_mode") == "operate"
@@ -123,7 +118,7 @@ def run_gate() -> dict[str, Any]:
         "industry_standard_demonstrability": plateau.get("plateau_ready") is True
         and payload.get("completion_percent") == 100
         and final_payload.get("completion_percent") == 100
-        and route_results["/dashboard/v5"]["ok"],
+        and route_results["/dashboard"]["ok"],
     }
 
     final_scores = {key: _score(value) for key, value in checks.items()}

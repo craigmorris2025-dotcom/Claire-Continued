@@ -11,7 +11,7 @@ if str(ROOT) not in sys.path:
 import json
 from pathlib import Path
 
-from claire.api.governed_functional_slice_s114_s120 import build_s114_s120_stop_gate
+from runtime_core.api.governed_functional_slice_s114_s120 import build_s114_s120_stop_gate
 
 def main() -> int:
     report = build_s114_s120_stop_gate(

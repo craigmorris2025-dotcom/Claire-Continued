@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def test_s576_s582_source_registry_payload_preserves_all_blocks():
-    from claire.governance.governed_source_registry import get_source_registry_payload
+    from runtime_core.governance.governed_source_registry import get_source_registry_payload
 
     payload = get_source_registry_payload()
     assert payload["version"] == "v19.89.8-S576-S582"
@@ -28,7 +28,7 @@ def test_s576_s582_source_registry_payload_preserves_all_blocks():
 
 
 def test_s576_s582_trust_tiers_allowlist_quarantine_and_cards():
-    from claire.governance.governed_source_registry import (
+    from runtime_core.governance.governed_source_registry import (
         TRUST_TIERS,
         build_governed_source_registry_payload,
         classify_source,
@@ -55,7 +55,7 @@ def test_s576_s582_trust_tiers_allowlist_quarantine_and_cards():
 
 
 def test_s576_s582_governed_actions_are_registered_but_execution_blocked():
-    from claire.governance.governed_source_registry import get_source_actions_payload
+    from runtime_core.governance.governed_source_registry import get_source_actions_payload
 
     payload = get_source_actions_payload()
     actions = payload["governed_actions"]
@@ -70,7 +70,7 @@ def test_s576_s582_governed_actions_are_registered_but_execution_blocked():
 
 
 def test_s576_s582_api_route_functions_return_cockpit_payloads():
-    from claire.api.governed_source_registry_routes import (
+    from runtime_core.api.governed_source_registry_routes import (
         read_source_actions,
         read_source_cards,
         read_source_policy,

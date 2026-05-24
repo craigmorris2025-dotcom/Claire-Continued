@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_evidence_intake_checkpoints import get_evidence_intake_checkpoints
+from runtime_core.api.governed_evidence_intake_checkpoints import get_evidence_intake_checkpoints
 
 
 def test_s205_s211_evidence_intake_requires_quarantine_and_manual_promotion():

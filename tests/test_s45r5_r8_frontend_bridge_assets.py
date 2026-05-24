@@ -38,7 +38,7 @@ def test_s45r7_frontend_bridge_css_is_presentation_only():
 
 
 def test_s45r8_plateau_report_ready():
-    module = importlib.import_module("claire.api.s45_operator_visible_panels")
+    module = importlib.import_module("runtime_core.api.s45_operator_visible_panels")
     report = module.build_s45r1_r8_plateau_report()
 
     assert report["version"] == "v19.89.8-S45R1-R8"

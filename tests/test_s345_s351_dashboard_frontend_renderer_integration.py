@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.dashboard_frontend_renderer_integration_s345_s351 import (
+from runtime_core.api.dashboard_frontend_renderer_integration_s345_s351 import (
     build_frontend_cockpit_renderer_integration_s345_s351,
     build_s345_frontend_state_object_contract,
     build_s346_renderer_asset_manifest,

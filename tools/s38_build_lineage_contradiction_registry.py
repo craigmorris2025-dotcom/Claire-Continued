@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from claire.api.governed_manual_promotion_candidates import build_lineage_contradiction_registry
+from runtime_core.api.governed_manual_promotion_candidates import build_lineage_contradiction_registry
 
 
 def main() -> int:

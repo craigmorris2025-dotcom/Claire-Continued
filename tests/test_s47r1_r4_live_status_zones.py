@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s47r1_live_status_zones_are_visible_and_safe():
-    module = importlib.import_module("claire.api.s47_live_status_zones")
+    module = importlib.import_module("runtime_core.api.s47_live_status_zones")
     payload = module.build_live_status_zones()
 
     assert payload["version"] == "v19.89.8-S47R1-R8"
@@ -28,7 +28,7 @@ def test_s47r1_live_status_zones_are_visible_and_safe():
 
 
 def test_s47r4_live_status_zones_verify_cleanly():
-    module = importlib.import_module("claire.api.s47_live_status_zones")
+    module = importlib.import_module("runtime_core.api.s47_live_status_zones")
     verification = module.verify_live_status_zones()
 
     assert verification["verification_ok"] is True

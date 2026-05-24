@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 
 
 def test_s1125_s1152_operator_action_result_routes_are_review_only():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     client = TestClient(create_app())
 
@@ -30,19 +30,17 @@ def test_s1125_s1152_operator_action_result_routes_are_review_only():
 
 
 def test_s1125_s1152_click_bridge_assets_bind_clicks_to_get_results():
-    js = Path("frontend/command_center/modern/operator_action_click_bridge.js")
-    css = Path("frontend/command_center/modern/operator_action_click_bridge.css")
+    legacy_js = Path("frontend/command_center/modern/operator_action_click_bridge.js")
+    legacy_css = Path("frontend/command_center/modern/operator_action_click_bridge.css")
+    canonical_js = Path("frontend/command_center/modern/dashboard_operator_console_contract.js")
 
-    assert js.exists()
-    assert css.exists()
+    assert not legacy_js.exists()
+    assert not legacy_css.exists()
+    assert canonical_js.exists()
 
-    text = js.read_text(encoding="utf-8")
-    assert "document.addEventListener(\"click\"" in text
-    assert "/dashboard/operator-action/result/" in text
+    text = canonical_js.read_text(encoding="utf-8")
+    assert "/dashboard/operator-console/contract" in text
     assert "method: \"GET\"" in text
-    assert "event.preventDefault()" in text
-    assert "Web execution blocked" in text
-    assert "Body reads blocked" in text
     assert ".post(" not in text
     assert "method: \"POST\"" not in text
 
@@ -52,5 +50,8 @@ def test_s1125_s1152_active_index_mounts_click_bridge_when_present():
     assert index.exists()
 
     text = index.read_text(encoding="utf-8")
-    assert "operator_action_click_bridge.js" in text
-    assert "operator_action_click_bridge.css" in text
+    assert "/dashboard" in text
+    assert "dashboard_operator_console_contract.js" in text
+    assert "dashboard_operator_console_contract.css" in text
+    assert "operator_action_click_bridge.js" not in text
+    assert "operator_action_click_bridge.css" not in text

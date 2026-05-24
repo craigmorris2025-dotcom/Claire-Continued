@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.cockpit_diagnostics_drawer_payload import get_diagnostics_drawer_payload
+from runtime_core.api.cockpit_diagnostics_drawer_payload import get_diagnostics_drawer_payload
 
 
 def test_s219_s225_diagnostics_drawer_is_hidden_read_only_and_non_mutating():

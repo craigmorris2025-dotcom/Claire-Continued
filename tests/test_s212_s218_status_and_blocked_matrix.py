@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.governed_blocked_capability_matrix import get_blocked_capability_matrix
-from claire.api.governed_cockpit_status_rollup import get_cockpit_status_rollup
+from runtime_core.api.governed_blocked_capability_matrix import get_blocked_capability_matrix
+from runtime_core.api.governed_cockpit_status_rollup import get_cockpit_status_rollup
 
 
 def test_s212_s218_status_rollup_reports_governed_operational_readiness():

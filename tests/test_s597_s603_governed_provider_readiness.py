@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s597_provider_registry_is_visible_and_blocked():
-    module = importlib.import_module("claire.governance.governed_provider_readiness")
+    module = importlib.import_module("runtime_core.governance.governed_provider_readiness")
     registry = module.provider_registry()
     assert registry["version"].endswith("S597-S603")
     assert registry["summary"]["provider_count"] >= 4
@@ -17,7 +17,7 @@ def test_s597_provider_registry_is_visible_and_blocked():
 
 
 def test_s598_trust_tiers_and_policy_are_present():
-    module = importlib.import_module("claire.governance.governed_provider_readiness")
+    module = importlib.import_module("runtime_core.governance.governed_provider_readiness")
     policy = module.provider_policy()
     tiers = policy["trust_tiers"]
     assert "tier_1_official" in tiers
@@ -28,7 +28,7 @@ def test_s598_trust_tiers_and_policy_are_present():
 
 
 def test_s599_provider_cards_are_cockpit_ready():
-    module = importlib.import_module("claire.governance.governed_provider_readiness")
+    module = importlib.import_module("runtime_core.governance.governed_provider_readiness")
     cards = module.provider_cards()
     assert cards["card_count"] >= 4
     for card in cards["cards"]:
@@ -41,7 +41,7 @@ def test_s599_provider_cards_are_cockpit_ready():
 
 
 def test_s600_actions_are_visible_but_non_executable():
-    module = importlib.import_module("claire.governance.governed_provider_readiness")
+    module = importlib.import_module("runtime_core.governance.governed_provider_readiness")
     actions = module.provider_actions()
     assert actions["action_count"] >= 3
     for action in actions["actions"]:
@@ -52,7 +52,7 @@ def test_s600_actions_are_visible_but_non_executable():
 
 
 def test_s601_payload_and_stop_gate_preserve_blocks():
-    module = importlib.import_module("claire.governance.governed_provider_readiness")
+    module = importlib.import_module("runtime_core.governance.governed_provider_readiness")
     payload = module.provider_payload()
     stop_gate = module.build_stop_gate()
     assert payload["status"]["execution_allowed"] is False
@@ -64,7 +64,7 @@ def test_s601_payload_and_stop_gate_preserve_blocks():
 
 
 def test_s602_routes_export_provider_readiness_contract():
-    routes = importlib.import_module("claire.api.governed_provider_readiness_routes")
+    routes = importlib.import_module("runtime_core.api.governed_provider_readiness_routes")
     route_paths = {route.path for route in routes.router.routes}
     assert "/api/search/providers/readiness" in route_paths
     assert "/api/search/providers/cards" in route_paths
@@ -74,7 +74,7 @@ def test_s602_routes_export_provider_readiness_contract():
 
 
 def test_s603_optional_app_registration_does_not_break_create_app():
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     if hasattr(app_module, "create_app"):
         app = app_module.create_app()
         assert app is not None

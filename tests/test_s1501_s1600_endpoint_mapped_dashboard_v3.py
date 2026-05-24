@@ -1,108 +1,75 @@
 from __future__ import annotations
 
-import json
-import re
 from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
+from runtime_core.app import create_app
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DASHBOARD_MARKER = 'data-dashboard-v3="endpoint-mapped-final-operator-dashboard"'
-MAP = ROOT / "output" / "dashboard_endpoint_map" / "dashboard_endpoint_map_latest.json"
-HTML = ROOT / "frontend" / "command_center" / "modern" / "dashboard_endpoint_mapped_v3.html"
-INDEX = ROOT / "frontend" / "command_center" / "modern" / "index.html"
-JS = ROOT / "frontend" / "command_center" / "modern" / "dashboard_endpoint_mapped_v3.js"
-CSS = ROOT / "frontend" / "command_center" / "modern" / "dashboard_endpoint_mapped_v3.css"
+MODERN = ROOT / "frontend" / "command_center" / "modern"
 
 
-def test_s1501_endpoint_map_exists_and_covers_system():
-    data = json.loads(MAP.read_text(encoding="utf-8"))
-    assert data["build_id"] == "v19.89.8-s1501-s1600-endpoint-mapped-final-operator-dashboard-v3"
-    assert data["summary"]["endpoint_count"] >= 595
-    assert len(data["endpoints"]) == data["summary"]["endpoint_count"]
-    assert data["summary"]["method_counts"].get("GET", 0) >= 1
+def test_local_dashboard_is_platform_primary_and_local_alias_exists():
+    index = (MODERN / "index.html").read_text(encoding="utf-8")
+    html = (MODERN / "platform_dashboard.html").read_text(encoding="utf-8")
+    js = (MODERN / "platform_dashboard.js").read_text(encoding="utf-8")
+    css = (MODERN / "platform_dashboard.css").read_text(encoding="utf-8")
+
+    assert "/dashboard" in index
+    assert 'data-platform-dashboard="canonical-cockpit"' in html
+    assert 'href="/dashboard/assets/platform_dashboard.css"' in html
+    assert 'src="/dashboard/assets/platform_dashboard.js"' in html
+    assert "/operator/status" in js
+    assert "/api/system/route-integrity" in js
+    assert ".metric-grid" in css
 
 
-def test_s1501_dashboard_v3_files_exist_and_have_required_surfaces():
-    html = HTML.read_text(encoding="utf-8")
-    index = INDEX.read_text(encoding="utf-8")
-    js = JS.read_text(encoding="utf-8")
-    css = CSS.read_text(encoding="utf-8")
-    assert DASHBOARD_MARKER in html
-    assert DASHBOARD_MARKER in index
-    for token in [
-        "Permanent Claire command / search bar",
-        "Operator cockpit",
-        "Mission Control",
-        "Command Queue",
-        "Decision Queue",
-        "Action Review",
-        "Endpoint Browser",
-        "Result Pane",
-        "Lifecycle Portal",
-        "Evidence & Search Portal",
-        "Portfolio Portal",
-        "Breakthrough / Design Portal",
-        "Acquisition / Package Portal",
-        "Update Governance Portal",
-        "Q&A / Cognitive Portal",
-        "Memory / Replay Portal",
-        "Existing-System Portal",
-        "System Diagnostics",
-    ]:
-        assert token in html
-    assert "window.ClaireDashboardV3" in js
-    assert "wireCockpit" in js
-    assert "data-cockpit-fetch" in html
-    assert "body:not(.show-diagnostics) .main-grid" in css
-    assert ".dashboard-v3" in css
-
-
-def test_s1501_dashboard_route_serves_v3():
+def test_dashboard_route_serves_local_primary_and_local_alias_matches():
     client = TestClient(create_app())
-    for path in ["/dashboard", "/dashboard/final", "/dashboard/v3", "/operator-dashboard", "/operator-cockpit", "/command-center"]:
-        response = client.get(path)
-        assert response.status_code == 200, path
-        assert DASHBOARD_MARKER in response.text, path
 
-
-def test_s1501_dashboard_v3_assets_and_map_served():
-    client = TestClient(create_app())
-    for path, needle in [
-        ("/dashboard/v3/assets/dashboard_endpoint_mapped_v3.css", ".dashboard-v3"),
-        ("/dashboard/v3/assets/dashboard_endpoint_mapped_v3.js", "window.ClaireDashboardV3"),
-    ]:
-        response = client.get(path)
-        assert response.status_code == 200, path
-        assert needle in response.text, path
-    response = client.get("/dashboard/endpoint-map")
+    response = client.get("/dashboard", follow_redirects=False)
     assert response.status_code == 200
-    assert response.json()["build_id"] == "v19.89.8-s1501-s1600-endpoint-mapped-final-operator-dashboard-v3"
+    assert 'data-platform-dashboard="canonical-cockpit"' in response.text
+
+    local = client.get("/dashboard/local")
+    assert local.status_code == 200
+    assert 'data-platform-dashboard="canonical-cockpit"' in local.text
+
+    for path, needle in [
+        ("/dashboard/assets/platform_dashboard.css", ".metric-grid"),
+        ("/dashboard/assets/platform_dashboard.js", "/operator/status"),
+        ("/platform_dashboard.css", ".metric-grid"),
+        ("/platform_dashboard.js", "/operator/status"),
+    ]:
+        asset = client.get(path)
+        assert asset.status_code == 200
+        assert needle in asset.text
+
+    for path in ["/dashboard/assets/claire_dashboard.css", "/dashboard/assets/claire_dashboard.js", "/claire_dashboard.css", "/claire_dashboard.js"]:
+        assert client.get(path).status_code == 404
 
 
-def test_s1501_existing_backend_contracts_still_work():
+def test_platform_dashboard_config_exposes_local_primary_backend_contract():
     client = TestClient(create_app())
-    for path in ["/dashboard/payload", "/dashboard/payload/status", "/api/dashboard/active-control-map", "/dashboard/active-control-map"]:
-        response = client.get(path)
-        assert response.status_code == 200, path
+    response = client.get("/api/platform/dashboard-config")
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["dashboard_mode"] == "local_canonical_primary"
+    assert payload["uploaded_dashboard_url"] is None
+    assert payload["primary_dashboard_url"] == "/dashboard"
+    assert payload["local_dashboard_url"] == "/dashboard/local"
+    assert payload["backend_owns_truth"] is True
+    assert payload["cockpit_presentation_only"] is True
+    assert payload["launcher_opens_uploaded_dashboard"] is False
+    assert payload["launcher_opens_canonical_dashboard"] is True
 
 
-def test_s1501_no_unsafe_post_execution_added_to_dashboard_v3_js():
-    js = JS.read_text(encoding="utf-8")
-    forbidden = [
-        r"method\s*:\s*['\"]POST['\"]",
-        "unlockAuthority(",
-        "enableRuntimeMutation(",
-        "installPackage(",
-        "executeCommand(",
-        "startAutonomousCrawl(",
-        "enableAutomaticUpdates(",
-    ]
-    for token in forbidden:
-        if token.startswith("method"):
-            assert not re.search(token, js, re.I), token
-        else:
-            assert token not in js, token
+def test_old_dashboard_aliases_are_not_active_dashboard_routes():
+    client = TestClient(create_app())
+
+    for path in ["/dashboard/v3", "/dashboard/final", "/operator-dashboard", "/operator-cockpit", "/command-center"]:
+        response = client.get(path, follow_redirects=False)
+        assert response.status_code == 404, path

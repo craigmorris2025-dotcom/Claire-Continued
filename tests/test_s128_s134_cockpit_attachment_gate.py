@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_cockpit_attachment_gate_s128_s134 import (
+from runtime_core.api.governed_cockpit_attachment_gate_s128_s134 import (
     build_attachment_eligibility_matrix,
     build_readonly_attachment_contract,
     build_cockpit_payload_merge_preview,

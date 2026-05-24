@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s47r5_cockpit_operator_payload_aggregates_panels_and_status():
-    module = importlib.import_module("claire.api.s47_cockpit_operator_payload")
+    module = importlib.import_module("runtime_core.api.s47_cockpit_operator_payload")
     payload = module.build_cockpit_operator_payload()
 
     assert payload["version"] == "v19.89.8-S47R1-R8"
@@ -27,7 +27,7 @@ def test_s47r5_cockpit_operator_payload_aggregates_panels_and_status():
 
 
 def test_s47r6_cockpit_operator_payload_verifies_cleanly():
-    module = importlib.import_module("claire.api.s47_cockpit_operator_payload")
+    module = importlib.import_module("runtime_core.api.s47_cockpit_operator_payload")
     verification = module.verify_cockpit_operator_payload()
 
     assert verification["verification_ok"] is True
@@ -36,7 +36,7 @@ def test_s47r6_cockpit_operator_payload_verifies_cleanly():
 
 
 def test_s47r8_plateau_report_points_to_dashboard_browser():
-    module = importlib.import_module("claire.api.s47_cockpit_operator_payload")
+    module = importlib.import_module("runtime_core.api.s47_cockpit_operator_payload")
     report = module.build_s47r1_r8_plateau_report()
 
     assert report["status"] == "s47r1_r8_ready"

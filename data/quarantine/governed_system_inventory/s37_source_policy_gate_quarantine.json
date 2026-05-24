@@ -5,26 +5,13 @@
     {
       "allowed": true,
       "allowed_domains": [
-        "docs.python.org"
-      ],
-      "automatic_action_allowed": false,
-      "candidate_url": "https://docs.python.org",
-      "manual_promotion_required": true,
-      "quarantine_required": true,
-      "queue_id": "S37-WEB-NEED-001",
-      "reason": "Candidate source is within allowed official domains.",
-      "web_search_executed": false
-    },
-    {
-      "allowed": true,
-      "allowed_domains": [
         "fastapi.tiangolo.com"
       ],
       "automatic_action_allowed": false,
       "candidate_url": "https://fastapi.tiangolo.com",
       "manual_promotion_required": true,
       "quarantine_required": true,
-      "queue_id": "S37-WEB-NEED-002",
+      "queue_id": "S37-WEB-NEED-004",
       "reason": "Candidate source is within allowed official domains.",
       "web_search_executed": false
     },
@@ -35,12 +22,12 @@
       "candidate_url": "operator_target_required",
       "manual_promotion_required": true,
       "quarantine_required": true,
-      "queue_id": "S37-WEB-NEED-003",
+      "queue_id": "S37-WEB-NEED-005",
       "reason": "Candidate source is not within allowed official domains or requires operator target selection.",
       "web_search_executed": false
     }
   ],
-  "generated_at": "2026-05-18T22:37:47.174215+00:00",
+  "generated_at": "2026-05-24T22:35:36.444505+00:00",
   "live_web_execution": false,
   "manual_promotion_required": true,
   "quarantine_required": true,

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_cockpit_payload_visibility_s149_s155 import (
+from runtime_core.api.governed_cockpit_payload_visibility_s149_s155 import (
     build_existing_payload_nonbreak_probe,
     build_live_payload_visibility_probe,
     build_repeated_payload_fetch_stability_probe,
@@ -21,7 +21,7 @@ def test_s149_s155_resilient_exports_cover_current_missing_probes():
 
 
 def test_s149_s155_module_getattr_generates_safe_legacy_exports():
-    import claire.api.governed_cockpit_payload_visibility_s149_s155 as module
+    import runtime_core.api.governed_cockpit_payload_visibility_s149_s155 as module
 
     generated = module.build_some_future_legacy_probe()
     assert generated["name"] == "build_some_future_legacy_probe"

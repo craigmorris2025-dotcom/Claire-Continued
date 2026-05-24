@@ -1,89 +1,92 @@
 {
-  "blockers": [],
-  "generated_at": "2026-05-13T11:18:57.470157Z",
+  "blockers": [
+    "scheduler_lock_evidence_missing"
+  ],
+  "generated_at": "2026-05-24T22:33:12.985265Z",
   "internet_layer_scores": {
     "dynamic_source_trust": {
-      "out_of": 2,
-      "score": 2,
-      "status": "present"
-    },
-    "governed_campaign_scheduler": {
-      "out_of": 3,
-      "score": 3,
-      "status": "present"
-    },
-    "governed_connectivity": {
-      "out_of": 2,
-      "score": 2,
-      "status": "present"
-    },
-    "internet_activation": {
-      "out_of": 3,
-      "score": 3,
-      "status": "present"
-    },
-    "internet_operations_dashboard": {
-      "out_of": 2,
-      "score": 2,
-      "status": "present"
-    },
-    "internet_runtime_integration": {
-      "out_of": 4,
-      "score": 4,
-      "status": "present"
-    },
-    "internet_runtime_stability": {
-      "out_of": 3,
-      "score": 3,
-      "status": "present"
-    },
-    "live_connectivity": {
       "out_of": 2,
       "score": 1,
       "status": "present"
     },
+    "governed_campaign_scheduler": {
+      "out_of": 3,
+      "score": 1,
+      "status": "present"
+    },
+    "governed_connectivity": {
+      "out_of": 2,
+      "score": 1,
+      "status": "present"
+    },
+    "internet_activation": {
+      "out_of": 3,
+      "score": 1,
+      "status": "present"
+    },
+    "internet_operations_dashboard": {
+      "out_of": 2,
+      "score": 1,
+      "status": "present"
+    },
+    "internet_runtime_integration": {
+      "out_of": 4,
+      "score": 1,
+      "status": "present"
+    },
+    "internet_runtime_stability": {
+      "out_of": 3,
+      "score": 1,
+      "status": "present"
+    },
+    "live_connectivity": {
+      "out_of": 2,
+      "score": 0,
+      "status": "missing"
+    },
     "persistent_internet_campaigns": {
       "out_of": 2,
-      "score": 2,
+      "score": 1,
       "status": "present"
     }
   },
   "mode": "static_verification_no_internet_calls",
-  "provider_key_present": false,
+  "provider_key_present": true,
   "readiness": {
     "automatic_updates_enabled": false,
     "live_internet_enabled": false,
     "requires_v17_71_to_v17_74_update_pack_governance": true,
     "safe_for_automatic_updates": false,
     "safe_to_attempt_live_probe_after_operator_review": false,
-    "static_internet_readiness": true
+    "static_internet_readiness": false
   },
-  "status": "warning",
+  "status": "blocked",
   "unknown_domains_blocked_or_unspecified": true,
   "update_governance_scores": {
     "rollback": {
       "out_of": 2,
-      "score": 1,
-      "status": "present"
+      "score": 0,
+      "status": "missing"
     },
     "safe_installer": {
       "out_of": 1,
-      "score": 1,
-      "status": "present"
+      "score": 0,
+      "status": "missing"
     },
     "update_orchestrator": {
       "out_of": 2,
-      "score": 1,
-      "status": "present"
+      "score": 0,
+      "status": "missing"
     },
     "validation_gauntlet": {
       "out_of": 1,
-      "score": 1,
-      "status": "present"
+      "score": 0,
+      "status": "missing"
     }
   },
   "version": "v17.70",
   "warnings": [
-    "No live search provider API key detected. Static readiness can pass, but live internet use remains disabled."
+    "Rollback governance files not found. Automatic update readiness cannot pass later without rollback proof.",
+    "Update validation gauntlet files not found. Automatic update readiness cannot pass later without validation proof."
   ]
 }

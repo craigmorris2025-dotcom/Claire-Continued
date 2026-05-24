@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_s289_s295_compat_repair_restores_s149_s183_import_contracts():
-    from claire.api.governed_cockpit_payload_visibility_s149_s155 import (
+    from runtime_core.api.governed_cockpit_payload_visibility_s149_s155 import (
         build_governed_operations_visibility_contract,
         governed_operations_payload_fragment,
     )

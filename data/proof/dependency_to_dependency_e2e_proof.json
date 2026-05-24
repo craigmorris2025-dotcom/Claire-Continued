@@ -13,7 +13,7 @@
     "status": "contract_ready_runtime_mutation_blocked"
   },
   "chain_name": "Dependency-to-Dependency End-to-End Proof Lock",
-  "generated_at": "2026-05-24T01:01:43.195113Z",
+  "generated_at": "2026-05-24T22:35:21.800501Z",
   "handoff_edges": [
     {
       "from": "dashboard_state",
@@ -101,7 +101,7 @@
     }
   ],
   "mounted_missing": [],
-  "mounted_route_count": 350,
+  "mounted_route_count": 353,
   "passed_step_count": 13,
   "schema_version": "claire.dependency_chain_proof.v1",
   "status": "clean_e2e_review_proof",
@@ -119,7 +119,7 @@
       "label": "Dashboard state",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.dashboard.cockpit_dashboard_state",
+      "owner": "runtime_core.dashboard.cockpit_dashboard_state",
       "payload_keys": [
         "active_control_map",
         "active_intelligence_mode",
@@ -180,7 +180,7 @@
       "label": "Active control map",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.dashboard_active_control_map",
+      "owner": "runtime_core.api.dashboard_active_control_map",
       "payload_keys": [
         "authority",
         "bound_from_audit",
@@ -212,7 +212,7 @@
       "label": "Runtime status",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.operator_cockpit_runtime",
+      "owner": "runtime_core.api.operator_cockpit_runtime",
       "payload_keys": [
         "deltas",
         "generated_at",
@@ -242,7 +242,7 @@
       "label": "Provider readiness",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.governed_provider_readiness_routes",
+      "owner": "runtime_core.api.governed_provider_readiness_routes",
       "payload_keys": [
         "automatic_updates_enabled",
         "blocked_flags",
@@ -275,7 +275,7 @@
       "label": "Governed search plan",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.governed_query_compiler_routes",
+      "owner": "runtime_core.api.governed_query_compiler_routes",
       "payload_keys": [
         "actions",
         "authority",
@@ -306,7 +306,7 @@
       "label": "Evidence quarantine",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.governed_quarantine_evidence_routes",
+      "owner": "runtime_core.api.governed_quarantine_evidence_routes",
       "payload_keys": [
         "actions",
         "cards",
@@ -358,7 +358,7 @@
       "label": "Pipeline evaluate",
       "method": "POST",
       "missing_required_fields": [],
-      "owner": "claire.api.routes_pipeline",
+      "owner": "runtime_core.api.routes_pipeline",
       "payload_keys": [
         "acquirer_matches",
         "breakthrough_classification",
@@ -439,7 +439,7 @@
       "label": "Portfolio artifact",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.portfolio_artifacts",
+      "owner": "runtime_core.api.portfolio_artifacts",
       "payload_keys": [
         "acquirer_matches",
         "artifact_id",
@@ -487,8 +487,9 @@
       "label": "Design Portal contract",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.routes_design_portal_output",
+      "owner": "runtime_core.api.routes_design_portal_output",
       "payload_keys": [
+        "cad_export_contract_endpoint",
         "cad_export_enabled",
         "cad_intent_endpoint",
         "contract_name",
@@ -516,9 +517,10 @@
       "label": "CAD intent",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.routes_design_portal_output",
+      "owner": "runtime_core.api.routes_design_portal_output",
       "payload_keys": [
         "cad_artifact_endpoint",
+        "cad_export_contract_endpoint",
         "cad_export_enabled",
         "cad_export_endpoint",
         "design_contract_endpoint",
@@ -547,7 +549,7 @@
       "label": "Update governance",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.routes_open_web_update_governance",
+      "owner": "runtime_core.api.routes_open_web_update_governance",
       "payload_keys": [
         "approval_workflow",
         "available_update_count",
@@ -581,7 +583,7 @@
       "label": "Endpoint reconciliation",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.routes_endpoint_reconciliation_report",
+      "owner": "runtime_core.api.routes_endpoint_reconciliation_report",
       "payload_keys": [
         "aliases",
         "compatibility_alias_count",
@@ -613,7 +615,7 @@
       "label": "Industry standard endpoint package",
       "method": "GET",
       "missing_required_fields": [],
-      "owner": "claire.api.routes_industry_standard_endpoint_package",
+      "owner": "runtime_core.api.routes_industry_standard_endpoint_package",
       "payload_keys": [
         "acceptance_checks",
         "endpoint_expectations",
@@ -627,6 +629,7 @@
         "schema_version",
         "settings",
         "standards",
+        "standards_control_map",
         "status"
       ],
       "payload_status": "ready",

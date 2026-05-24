@@ -19,15 +19,24 @@
     "source_trust_required": true
   },
   "instructions": [
-    "Choose exactly one provider by setting CLAIRE_SEARCH_PROVIDER in your environment or .env.",
+    "Recommended Claire stack: CLAIRE_SEARCH_PROVIDER_STACK=brave,searchgov,duckduckgo.",
+    "Choose exactly one provider by setting CLAIRE_SEARCH_PROVIDER in your environment or .env when overriding the recommended stack.",
+    "DuckDuckGo is fallback-only and is not an enterprise/research-grade provider for internal platform results.",
+    "Set CLAIRE_ALLOW_DUCKDUCKGO_FALLBACK=1 only when the operator explicitly accepts no-key fallback metadata quality.",
+    "Set CLAIRE_ALLOW_REAL_SEARCH_PROVIDER=1 only when the operator intentionally enables provider metadata queries.",
     "Never paste API keys into ChatGPT.",
-    "This template does not enable live web execution by itself.",
-    "After provider configuration, run this gate and then a separate governed live-search probe build."
+    "This template does not enable body reads, browser execution, automatic updates, runtime truth mutation, or autonomous execution.",
+    "Provider search results enter quarantine as metadata-only research intake until manually promoted."
   ],
   "required_environment_variables": {
     "BING_SEARCH_API_KEY": "required only if CLAIRE_SEARCH_PROVIDER=bing",
     "BRAVE_SEARCH_API_KEY": "required only if CLAIRE_SEARCH_PROVIDER=brave",
-    "CLAIRE_SEARCH_PROVIDER": "one of: none, brave, bing, serpapi, tavily",
+    "CLAIRE_ALLOW_REAL_SEARCH_PROVIDER": "set to 1 only for operator-enabled metadata-only provider queries",
+    "CLAIRE_ALLOW_DUCKDUCKGO_FALLBACK": "optional; set to 1 only to allow fallback-only DuckDuckGo metadata results",
+    "CLAIRE_SEARCH_PROVIDER": "one of: none, duckduckgo, brave, searchgov, bing, serpapi, tavily",
+    "CLAIRE_SEARCH_PROVIDER_STACK": "recommended: brave,searchgov,duckduckgo",
+    "SEARCHGOV_ACCESS_KEY": "required only if using Search.gov results API",
+    "SEARCHGOV_AFFILIATE": "required only if using Search.gov results API",
     "SERPAPI_API_KEY": "required only if CLAIRE_SEARCH_PROVIDER=serpapi",
     "TAVILY_API_KEY": "required only if CLAIRE_SEARCH_PROVIDER=tavily"
   },
@@ -41,6 +50,16 @@
       "env_key": "BRAVE_SEARCH_API_KEY",
       "label": "Brave Search API",
       "official_setup_url_note": "Use your Brave Search API key; do not paste it into ChatGPT."
+    },
+    "duckduckgo": {
+      "env_key": "",
+      "label": "DuckDuckGo HTML Metadata Search",
+      "official_setup_url_note": "No API key required, but fallback-only. Keep disabled for internal enterprise-grade research unless explicitly accepted by the operator."
+    },
+    "searchgov": {
+      "env_key": "SEARCHGOV_ACCESS_KEY",
+      "label": "Search.gov / GSA Results API",
+      "official_setup_url_note": "Requires a Search.gov affiliate/site handle and access key. Use for federal/public-sector metadata lanes."
     },
     "none": {
       "env_key": "",

@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s24_browser_loop_builds_and_preserves_authority():
-    module = importlib.import_module("claire.api.continuous_browser_runtime_loop")
+    module = importlib.import_module("runtime_core.api.continuous_browser_runtime_loop")
     payload = {
         "runtime_continuity_visualization": {
             "continuity_state": "continuous",
@@ -37,7 +37,7 @@ def test_s24_browser_loop_builds_and_preserves_authority():
 
 
 def test_s24_browser_loop_detects_degraded_observation():
-    module = importlib.import_module("claire.api.continuous_browser_runtime_loop")
+    module = importlib.import_module("runtime_core.api.continuous_browser_runtime_loop")
     loop = module.build_continuous_browser_runtime_loop({
         "runtime_continuity_visualization": {"continuity_state": "degraded"},
         "continuous_runtime_presence": {"presence_state": "active"},
@@ -46,7 +46,7 @@ def test_s24_browser_loop_detects_degraded_observation():
 
 
 def test_s24_attach_browser_loop_preserves_payload():
-    module = importlib.import_module("claire.api.continuous_browser_runtime_loop")
+    module = importlib.import_module("runtime_core.api.continuous_browser_runtime_loop")
     updated = module.attach_continuous_browser_runtime_loop({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

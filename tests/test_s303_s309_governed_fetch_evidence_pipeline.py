@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_fetch_evidence_pipeline_s303_s309 import (
+from runtime_core.api.governed_fetch_evidence_pipeline_s303_s309 import (
     build_governed_fetch_evidence_pipeline_s303_s309,
     build_s303_operator_triggered_provider_probe,
     build_s304_controlled_fetch_executor,

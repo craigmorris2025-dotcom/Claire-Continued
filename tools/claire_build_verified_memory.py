@@ -26,14 +26,14 @@ def main() -> int:
     _bootstrap_project_imports(project_root)
 
     try:
-        from claire.verified_memory.io import (
+        from runtime_core.verified_memory.io import (
             find_runtime_truth,
             find_validation_report,
             load_json,
             write_json,
         )
-        from claire.verified_memory.memory_gate import build_memory_gate_report
-        from claire.verified_memory.recursive_feedback_gate import build_recursive_feedback_report
+        from runtime_core.verified_memory.memory_gate import build_memory_gate_report
+        from runtime_core.verified_memory.recursive_feedback_gate import build_recursive_feedback_report
     except Exception as exc:
         print(f"[Claire v17.61] Import error: {exc}", file=sys.stderr)
         print("[Claire v17.61] Make sure you run this from the project root after installing v17.61.", file=sys.stderr)

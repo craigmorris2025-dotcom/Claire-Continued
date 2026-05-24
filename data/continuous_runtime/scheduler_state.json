@@ -1,0 +1,23 @@
+{
+  "schema_version": "claire.continuous_runtime_scheduler_state.v1",
+  "status": "bounded_scheduler_ready",
+  "mode": "governed_24_7_discovery_monitoring",
+  "daemon_installed": false,
+  "task_runner_installed": false,
+  "heartbeat_status": "manual_or_external_runner_required",
+  "tick_endpoint": "/runtime/continuous/scheduler/tick",
+  "status_endpoint": "/runtime/continuous/scheduler/status",
+  "interval_seconds": 900,
+  "tick_count": 0,
+  "last_tick_at": null,
+  "last_cycle_id": null,
+  "last_tick_result": null,
+  "authority": {
+    "network_request_performed": false,
+    "runtime_truth_mutation_allowed": false,
+    "automatic_update_allowed": false,
+    "operator_review_required": true,
+    "documents_used_as_runtime_programming": false
+  },
+  "updated_at": "2026-05-24T22:35:21.851506+00:00"
+}

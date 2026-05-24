@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.internet_first_controlled_probe_run_s415_s421 import (
+from runtime_core.api.internet_first_controlled_probe_run_s415_s421 import (
     build_first_controlled_live_metadata_probe_run_s415_s421,
     build_s415_first_probe_run_authority,
     build_s416_probe_run_request_contract,

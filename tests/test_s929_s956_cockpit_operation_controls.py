@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
 def test_s929_s956_payload_has_operation_buttons_and_blocks_execution():
-    module = importlib.import_module("claire.governance.governed_cockpit_operation_controls")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_operation_controls")
     payload = module.build_operation_payload()
     assert payload["phase"] == "S929-S956"
     assert payload["highest_stage"] == "S956"
@@ -19,7 +19,7 @@ def test_s929_s956_payload_has_operation_buttons_and_blocks_execution():
     assert all(button["execution_enabled"] is False for button in payload["buttons"])
 
 def test_s929_s956_command_surface_exposes_primary_operation_buttons():
-    module = importlib.import_module("claire.governance.governed_cockpit_operation_controls")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_operation_controls")
     surface = module.build_command_surface()
     assert surface["status"] == "command_surface_buttons_ready"
     assert surface["button_count"] >= 10
@@ -29,7 +29,7 @@ def test_s929_s956_command_surface_exposes_primary_operation_buttons():
     assert "source_ingestion_draft" in surface["primary_buttons"]
 
 def test_s929_s956_button_preview_is_local_and_non_executing():
-    module = importlib.import_module("claire.governance.governed_cockpit_operation_controls")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_operation_controls")
     preview = module.build_button_preview("metadata_probe_preflight", supplied_command="search battery breakthroughs")
     assert preview["status"] == "preview_ready"
     assert preview["operation"]["key"] == "metadata_probe_preflight"
@@ -39,7 +39,7 @@ def test_s929_s956_button_preview_is_local_and_non_executing():
     assert preview["blocked_capabilities"]["body_read_allowed"] is False
 
 def test_s929_s956_stop_gate_preserves_dangerous_blocks():
-    module = importlib.import_module("claire.governance.governed_cockpit_operation_controls")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_operation_controls")
     gate = module.build_stop_gate()
     assert gate["phase"] == "S929-S956"
     assert gate["passed"] is True
@@ -52,7 +52,7 @@ def test_s929_s956_stop_gate_preserves_dangerous_blocks():
     assert gate["checks"]["command_execution_still_blocked"] is True
 
 def test_s929_s956_routes_return_buttons_and_preview():
-    routes = importlib.import_module("claire.api.governed_cockpit_operation_control_routes")
+    routes = importlib.import_module("runtime_core.api.governed_cockpit_operation_control_routes")
     app = FastAPI()
     app.include_router(routes.router)
     client = TestClient(app)
@@ -69,7 +69,7 @@ def test_s929_s956_routes_return_buttons_and_preview():
     assert preview_response.json()["operation"]["key"] == "query_compile"
 
 def test_s929_s956_optional_app_registration_does_not_break_create_app():
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     app = app_module.create_app()
     assert app is not None
     paths = {getattr(route, "path", "") for route in getattr(app, "routes", [])}

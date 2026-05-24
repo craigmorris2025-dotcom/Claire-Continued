@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_cockpit_integration_plan_s113r1 import (
+from runtime_core.api.governed_cockpit_integration_plan_s113r1 import (
     build_controlled_cockpit_integration_plan,
     validate_controlled_cockpit_integration_plan,
 )

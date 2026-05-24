@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s30_multi_workspace_builds_review_state_and_preserves_authority():
-    module = importlib.import_module("claire.api.governed_multi_workspace_orchestration")
+    module = importlib.import_module("runtime_core.api.governed_multi_workspace_orchestration")
     payload = {
         "governed_runtime_workspace_continuity": {
             "workspace_state": "review_required",
@@ -42,7 +42,7 @@ def test_s30_multi_workspace_builds_review_state_and_preserves_authority():
 
 
 def test_s30_multi_workspace_blocks_on_drift():
-    module = importlib.import_module("claire.api.governed_multi_workspace_orchestration")
+    module = importlib.import_module("runtime_core.api.governed_multi_workspace_orchestration")
     topology = module.build_multi_workspace_orchestration({
         "multi_panel_runtime_cohesion": {"summary": {"missing_total": 0, "drift_total": 1}}
     })
@@ -50,7 +50,7 @@ def test_s30_multi_workspace_blocks_on_drift():
 
 
 def test_s30_multi_workspace_partial_on_missing_panels():
-    module = importlib.import_module("claire.api.governed_multi_workspace_orchestration")
+    module = importlib.import_module("runtime_core.api.governed_multi_workspace_orchestration")
     topology = module.build_multi_workspace_orchestration({
         "multi_panel_runtime_cohesion": {"summary": {"missing_total": 2, "drift_total": 0}}
     })
@@ -58,7 +58,7 @@ def test_s30_multi_workspace_partial_on_missing_panels():
 
 
 def test_s30_attach_multi_workspace_preserves_payload():
-    module = importlib.import_module("claire.api.governed_multi_workspace_orchestration")
+    module = importlib.import_module("runtime_core.api.governed_multi_workspace_orchestration")
     updated = module.attach_multi_workspace_orchestration({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

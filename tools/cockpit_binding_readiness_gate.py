@@ -59,13 +59,13 @@ def load_app() -> Any:
     ensure_import_path()
     errors: List[str] = []
     try:
-        module = importlib.import_module("claire.app")
+        module = importlib.import_module("runtime_core.app")
         if hasattr(module, "create_app"):
             return module.create_app()
         if hasattr(module, "app"):
             return module.app
     except Exception as exc:
-        errors.append(f"claire.app failed: {exc!r}")
+        errors.append(f"runtime_core.app failed: {exc!r}")
 
     try:
         module = importlib.import_module("main")
@@ -261,7 +261,7 @@ def write_markdown(gate: Dict[str, Any]) -> str:
     lines.append("")
     if r["blockers"]:
         for blocker in r["blockers"]:
-            lines.append(f"- `{blocker.get('area')}` — `{blocker.get('reason')}`")
+            lines.append(f"- `{blocker.get('area')}` â€” `{blocker.get('reason')}`")
             if blocker.get("route"):
                 lines.append(f"  - Route: `{blocker.get('route')}`")
             if blocker.get("required_action"):
@@ -273,7 +273,7 @@ def write_markdown(gate: Dict[str, Any]) -> str:
     lines.append("")
     if r["warnings"]:
         for warning in r["warnings"]:
-            lines.append(f"- `{warning.get('area')}` — `{warning.get('reason')}`")
+            lines.append(f"- `{warning.get('area')}` â€” `{warning.get('reason')}`")
             if warning.get("recommended_action"):
                 lines.append(f"  - Recommended action: {warning.get('recommended_action')}")
     else:

@@ -5,12 +5,12 @@ from fastapi.testclient import TestClient
 
 
 def _client() -> TestClient:
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     return TestClient(app_module.create_app())
 
 
 def test_s835_s848_execution_envelope_models_but_blocks_body_reads():
-    module = importlib.import_module("claire.governance.governed_manual_body_read_execution_envelope")
+    module = importlib.import_module("runtime_core.governance.governed_manual_body_read_execution_envelope")
     payload = module.build_execution_envelope_payload()
     assert payload["stage_range"] == "S835-S848"
     assert payload["terminal_state"] == "manual_body_read_execution_envelope_ready_execution_blocked"
@@ -21,7 +21,7 @@ def test_s835_s848_execution_envelope_models_but_blocks_body_reads():
 
 
 def test_s849_s855_sanitized_extraction_preview_blocks_body_fields():
-    module = importlib.import_module("claire.governance.governed_sanitized_extraction_preview")
+    module = importlib.import_module("runtime_core.governance.governed_sanitized_extraction_preview")
     payload = module.build_sanitized_extraction_preview_payload()
     assert payload["stage_range"] == "S849-S855"
     assert payload["terminal_state"] == "sanitized_extraction_preview_ready_body_read_blocked"
@@ -31,7 +31,7 @@ def test_s849_s855_sanitized_extraction_preview_blocks_body_fields():
 
 
 def test_s856_s883_source_update_ingestion_drafts_do_not_execute():
-    module = importlib.import_module("claire.governance.governed_source_update_ingestion")
+    module = importlib.import_module("runtime_core.governance.governed_source_update_ingestion")
     payload = module.build_source_ingestion_payload()
     assert payload["stage_range"] == "S856-S883"
     assert payload["terminal_state"] == "source_update_ingestion_drafts_ready_execution_blocked"
@@ -42,7 +42,7 @@ def test_s856_s883_source_update_ingestion_drafts_do_not_execute():
 
 
 def test_s884_s900_promotion_preview_and_stop_gate_preserve_blocks():
-    module = importlib.import_module("claire.governance.governed_runtime_truth_promotion_preview")
+    module = importlib.import_module("runtime_core.governance.governed_runtime_truth_promotion_preview")
     promotion = module.build_runtime_truth_promotion_preview()
     assert promotion["stage_range"] == "S884-S890"
     assert promotion["summary"]["promotions_allowed"] == 0
@@ -56,7 +56,7 @@ def test_s884_s900_promotion_preview_and_stop_gate_preserve_blocks():
 
 
 def test_s835_s900_cockpit_payload_is_visible_but_non_executable():
-    module = importlib.import_module("claire.governance.governed_runtime_truth_promotion_preview")
+    module = importlib.import_module("runtime_core.governance.governed_runtime_truth_promotion_preview")
     payload = module.build_cockpit_source_ingestion_payload()
     assert payload["stage_range"] == "S835-S900"
     assert payload["terminal_state"] == "s900_source_update_ingestion_ready_execution_blocked"
@@ -99,7 +99,7 @@ def test_s835_s900_posted_unknown_envelope_stays_blocked_high_risk():
 
 
 def test_s835_s900_router_exposes_expected_paths():
-    routes = importlib.import_module("claire.api.governed_body_read_source_ingestion_routes")
+    routes = importlib.import_module("runtime_core.api.governed_body_read_source_ingestion_routes")
     paths = {route.path for route in routes.router.routes}
     expected = {"/api/web/body-read/execution-envelope/payload", "/api/web/body-read/extraction-preview/payload", "/api/web/source-ingestion/draft", "/api/web/source-ingestion/lineage", "/api/web/update-proposal/payload", "/api/web/runtime-truth/promotion-preview", "/api/cockpit/source-ingestion/payload", "/api/cockpit/source-ingestion/cards", "/api/cockpit/source-ingestion/actions", "/api/cockpit/source-ingestion/status", "/api/cockpit/source-ingestion/stop-gate", "/api/internet/source-ingestion/payload"}
     assert expected.issubset(paths)

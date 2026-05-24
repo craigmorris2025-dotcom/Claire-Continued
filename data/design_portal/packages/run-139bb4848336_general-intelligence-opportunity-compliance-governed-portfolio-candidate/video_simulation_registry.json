@@ -1,0 +1,58 @@
+{
+  "accepted_extensions": [
+    ".mp4",
+    ".webm",
+    ".mov",
+    ".mkv"
+  ],
+  "artifact_states": [
+    "missing",
+    "imported",
+    "generated",
+    "needs_operator_review",
+    "ready_for_package"
+  ],
+  "artifacts": [],
+  "candidate_title": "general intelligence: opportunity compliance governed: portfolio_candidate",
+  "generation_policy": {
+    "next_required_action": "generate or attach simulation media after blueprint draft review",
+    "reason": "Video/simulation assets require a promoted design scenario, CAD/model asset, or UI workflow recording.",
+    "video_generated_from_runtime": false
+  },
+  "schema_version": "claire_video_simulation_registry_v1",
+  "simulation_slots": [
+    {
+      "id": "function_walkthrough",
+      "label": "Function walkthrough",
+      "purpose": "show how the designed technology/system works",
+      "status": "missing"
+    },
+    {
+      "id": "runtime_demo",
+      "label": "Runtime demo",
+      "purpose": "show candidate behavior through the Claire pipeline or product workflow",
+      "status": "missing"
+    },
+    {
+      "id": "assembly_or_architecture_animation",
+      "label": "Assembly or architecture animation",
+      "purpose": "show construction, architecture, data flow, or mechanism sequence",
+      "status": "missing"
+    }
+  ],
+  "status": "registry_ready_no_video_files_attached",
+  "viewer": {
+    "empty_state": "No video or simulation asset attached yet. Generate a demo, simulation, or workflow recording after design review.",
+    "primary_formats": [
+      ".mp4",
+      ".webm"
+    ],
+    "secondary_formats": [
+      ".mov",
+      ".mkv"
+    ],
+    "status": "ready_empty",
+    "viewer_type": "video_simulation_viewer"
+  },
+  "viewer_required": true
+}

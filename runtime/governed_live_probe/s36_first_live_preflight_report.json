@@ -1,6 +1,6 @@
 {
   "body_read_failures": [],
-  "checked_at": "2026-05-18T22:37:38.236218+00:00",
+  "checked_at": "2026-05-24T22:35:29.395502+00:00",
   "compile_report_command": "python tools/compile_s36_first_probe_report.py",
   "invariants": {
     "automatic_updates_allowed": false,
@@ -23,7 +23,7 @@
   "route_visibility_passed": true,
   "route_visibility_report": {
     "app_created": true,
-    "audited_at": "2026-05-18T22:37:37.948218+00:00",
+    "audited_at": "2026-05-24T22:35:29.230502+00:00",
     "automatic_updates_allowed": false,
     "autonomous_execution_allowed": false,
     "body_reads_allowed": false,
@@ -56,7 +56,7 @@
     "returncode": 0,
     "runtime_truth_mutation_allowed": false,
     "stderr": "",
-    "stdout": "[S36-ROUTE-AUDIT] PASS\n{\n  \"app_created\": true,\n  \"audited_at\": \"2026-05-18T22:37:37.948218+00:00\",\n  \"automatic_updates_allowed\": false,\n  \"autonomous_execution_allowed\": false,\n  \"body_reads_allowed\": false,\n  \"bootstrap_root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\",\n  \"browser_execution_allowed\": false,\n  \"continuous_crawling_allowed\": false,\n  \"create_app_imported\": true,\n  \"expected_head_route\": \"/api/governed/live-probe/head\",\n  \"expected_status_route\": \"/api/governed/live-probe/status\",\n  \"found_head_route\": true,\n  \"found_status_route\": true,\n  \"manual_promotion_required\": true,\n  \"matched_routes\": [\n    {\n      \"methods\": [\n        \"GET\"\n      ],\n      \"name\": \"governed_live_probe_status\",\n      \"path\": \"/api/governed/live-probe/status\"\n    },\n    {\n      \"methods\": [\n        \"POST\"\n      ],\n      \"name\": \"governed_live_probe_head\",\n      \"path\": \"/api/governed/live-probe/head\"\n    }\n  ],\n  \"quarantine_required\": true,\n  \"runtime_truth_mutation_allowed\": false,\n  \"version\": \"v19.89.8-S36R6-R8.1-bootstrap-fix\"\n}\n",
+    "stdout": "[S36-ROUTE-AUDIT] PASS\n{\n  \"app_created\": true,\n  \"audited_at\": \"2026-05-24T22:35:29.230502+00:00\",\n  \"automatic_updates_allowed\": false,\n  \"autonomous_execution_allowed\": false,\n  \"body_reads_allowed\": false,\n  \"bootstrap_root\": \"C:\\\\Users\\\\craig\\\\OneDrive\\\\Desktop\\\\Claire\",\n  \"browser_execution_allowed\": false,\n  \"continuous_crawling_allowed\": false,\n  \"create_app_imported\": true,\n  \"expected_head_route\": \"/api/governed/live-probe/head\",\n  \"expected_status_route\": \"/api/governed/live-probe/status\",\n  \"found_head_route\": true,\n  \"found_status_route\": true,\n  \"manual_promotion_required\": true,\n  \"matched_routes\": [\n    {\n      \"methods\": [\n        \"GET\"\n      ],\n      \"name\": \"governed_live_probe_status\",\n      \"path\": \"/api/governed/live-probe/status\"\n    },\n    {\n      \"methods\": [\n        \"POST\"\n      ],\n      \"name\": \"governed_live_probe_head\",\n      \"path\": \"/api/governed/live-probe/head\"\n    }\n  ],\n  \"quarantine_required\": true,\n  \"runtime_truth_mutation_allowed\": false,\n  \"version\": \"v19.89.8-S36R6-R8.1-bootstrap-fix\"\n}\n",
     "version": "v19.89.8-S36R6-R8.1-bootstrap-fix"
   },
   "verify_command": "python tools/verify_s36_probe_quarantine.py",

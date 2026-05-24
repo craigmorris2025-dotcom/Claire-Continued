@@ -1,5 +1,8 @@
 {
   "lock_version": "v17.49",
+  "last_verified": "2026-05-23",
+  "active_app": "main.py -> claire.app:create_app",
+  "active_route_count": 350,
   "locked_contracts": [
     "runtime_contract",
     "deployment_contract",
@@ -10,12 +13,35 @@
     "orchestration_invariant_contract",
     "recovery_invariant_contract",
     "operational_state_contract",
-    "launch_regression_suite_contract"
+    "launch_regression_suite_contract",
+    "endpoint_reconciliation_contract",
+    "dependency_chain_proof_contract",
+    "industry_standard_endpoint_package_contract",
+    "update_governance_install_contract",
+    "design_cad_review_contract",
+    "center_route_contract",
+    "lifecycle_route_gate_contract",
+    "lifecycle_route_selector_contract",
+    "reemergence_taxonomy_contract",
+    "reemergence_route_intake_contract",
+    "causal_emergence_contract",
+    "causal_route_vector_contract"
   ],
   "contract_policy": {
     "breaking_changes_after_lock": "blocked_without_new_version",
     "runtime_mutation_without_manifest": "blocked",
     "ungoverned_internet_path": "blocked",
-    "unbounded_campaign_execution": "blocked"
+    "unbounded_campaign_execution": "blocked",
+    "automatic_update_apply_without_owner_gate": "blocked",
+    "cad_export_without_authority": "blocked",
+    "causal_engine_attach_before_route_and_emergence_contracts": "satisfied_by_governed_contract",
+    "causal_engine_runtime_truth_mutation": "blocked",
+    "causal_engine_route_truth_mutation": "blocked"
+  },
+  "current_proof_state": {
+    "endpoint_reconciliation": "clean",
+    "dependency_chain": "clean_e2e_review_proof",
+    "platform_smoke": "GO_TO_PLATFORM_LAUNCH_HARDENING",
+    "full_e2e": "GO_WITH_WARNINGS"
   }
 }

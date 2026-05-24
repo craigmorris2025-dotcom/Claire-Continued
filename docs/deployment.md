@@ -1,88 +1,54 @@
-# Claire Syntalion — Deployment Guide
+# Platform Deployment Guide
 
-## Quick Start
+## Canonical Runtime
 
-1. **Double-click `LAUNCH.bat`** — creates venv, installs deps, runs health checks, starts server
-2. Open http://localhost:8000/ui in your browser
+The active runtime package is `runtime_core`. The `backend` package remains only as the ASGI adapter boundary, and the legacy `claire` package is intentionally tombstoned for one release cycle.
 
-## Manual Setup
+Primary entrypoints:
 
-```bash
-# Create virtual environment
-python -m venv .venv
-.venv\Scripts\activate      # Windows
-source .venv/bin/activate   # Linux/Mac
+- Local app: `main.py`
+- ASGI adapter: `backend.app:app`
+- Runtime factory: `runtime_core.app:create_app`
+- Windows launcher: `LAUNCH_PLATFORM.bat`
+- Dashboard: `http://127.0.0.1:8000/dashboard`
 
-# Install dependencies
-pip install -r requirements.txt
+## Local Start
 
-# Run health checks
-python -m src.backend health
-
-# Start the server
-python -m src.backend serve
+```bat
+LAUNCH_PLATFORM.bat
 ```
 
-## CLI Commands
+Manual start:
 
-```bash
-python -m src.backend serve       # Start web server
-python -m src.backend health      # Run all health checks
-python -m src.backend run "text"  # Quick pipeline evaluation
-python -m src.backend history     # View run history
-python -m src.backend interactive # REPL mode
+```bat
+.venv\Scripts\python.exe -m uvicorn main:app --host 127.0.0.1 --port 8000
 ```
 
-## Environment Variables
+The platform uses `PLATFORM_*` configuration keys. Keep legacy environment keys out of active code and deployment configuration; the CI migration boundary check enforces that rule.
 
-All variables use the `CLAIRE_` prefix. See `.env.example` for defaults.
+## Staging Smoke
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| CLAIRE_ENV | development | Environment name |
-| CLAIRE_HOST | 0.0.0.0 | Server bind address |
-| CLAIRE_PORT | 8000 | Server port |
-| CLAIRE_DB_PATH | data/claire.db | SQLite database path |
-| CLAIRE_DATA_DIR | data | Data directory |
-| CLAIRE_LOG_DIR | logs | Log directory |
-| CLAIRE_OUTPUT_DIR | output | Output directory |
-| CLAIRE_DEFAULT_MODE | deterministic | Default operating mode |
-| CLAIRE_CORS_ORIGINS | * | CORS allowed origins |
+After deployment, verify these release invariants:
 
-## Docker
+- Mounted route count: `353`
+- Dashboard HTML, CSS, and JS return HTTP 200
+- Activation registry reports `14` ready pipelines
+- `/api/dashboard/state` returns a valid backend-owned payload
+- `claire` imports fail with the tombstone message and do not forward to runtime code
 
-```bash
-docker build -t claire-syntalion .
-docker run -p 8000:8000 claire-syntalion
+## Rollback
+
+Rollback target: the migration-complete tag for the release.
+
+1. Redeploy the tagged build.
+2. Restore the database/config snapshot if runtime state changed after the tag.
+3. Re-run the staging smoke checks above.
+4. If an external integration unexpectedly depends on `claire`, replace the tombstone with a temporary forwarding shim only as an emergency compatibility measure, then open a follow-up migration issue.
+
+## Verification
+
+```bat
+.venv\Scripts\python.exe -B -m pytest tests -q --tb=short
+.venv\Scripts\python.exe tools\check_migration_boundaries.py
+.venv\Scripts\python.exe -m pip check
 ```
-
-## Project Structure
-
-```
-claire-syntalion/
-├── src/backend/       # Python backend (FastAPI + CLAIRE engine)
-├── src/frontend/      # HTML/CSS/JS SPA
-├── data/              # JSON data files + SQLite DB
-├── tests/             # pytest test suite
-├── docs/              # Documentation
-├── output/            # Pipeline output files
-├── logs/              # Application logs
-├── LAUNCH.bat         # Double-click launcher (Windows)
-└── requirements.txt   # Python dependencies
-```
-
-## Running Tests
-
-```bash
-pip install pytest
-pytest tests/ -v
-```
-
-## Troubleshooting
-
-| Issue | Solution |
-|-------|----------|
-| Port 8000 in use | Set CLAIRE_PORT in .env |
-| Module not found | Ensure you activated the venv |
-| Database locked | Stop other instances |
-| 404 on /ui | Verify src/frontend/index.html exists |

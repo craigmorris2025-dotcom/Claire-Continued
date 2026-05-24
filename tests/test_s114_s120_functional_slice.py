@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_functional_slice_s114_s120 import (
+from runtime_core.api.governed_functional_slice_s114_s120 import (
     build_evidence_to_lifecycle_bridge,
     build_approved_evidence_run_contract,
     build_dashboard_operations_fetch_map,

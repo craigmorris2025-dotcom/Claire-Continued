@@ -28,7 +28,7 @@ def test_s36r6_audit_script_exists_and_has_no_live_network_execution():
 
 
 def test_s36r7_route_module_contract_still_safe():
-    module = importlib.import_module("claire.api.routes.governed_live_probe")
+    module = importlib.import_module("runtime_core.api.routes.governed_live_probe")
     status = module.governed_live_probe_status()
     assert status["operator_triggered_only"] is True
     assert status["one_shot_only"] is True

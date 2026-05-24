@@ -3,8 +3,8 @@ from __future__ import annotations
 from fastapi.testclient import TestClient
 from pathlib import Path
 
-from claire.design.portal import DesignPortal
-from claire.lifecycle.lifecycle_runner import CoreLifecycleRunner
+from runtime_core.design.portal import DesignPortal
+from runtime_core.lifecycle.lifecycle_runner import CoreLifecycleRunner
 from main import app
 
 
@@ -74,8 +74,8 @@ def test_dashboard_state_exposes_project_file_bindings():
 
 def test_canonical_dashboard_does_not_ship_obvious_demo_claims():
     root = Path(__file__).resolve().parents[1]
-    js = (root / "frontend" / "command_center" / "modern" / "claire_dashboard.js").read_text(encoding="utf-8")
-    html = (root / "frontend" / "command_center" / "modern" / "claire_dashboard.html").read_text(encoding="utf-8")
+    js = (root / "frontend" / "command_center" / "modern" / "platform_dashboard.js").read_text(encoding="utf-8")
+    html = (root / "frontend" / "command_center" / "modern" / "platform_dashboard.html").read_text(encoding="utf-8")
     combined = js + "\n" + html
 
     for phrase in [

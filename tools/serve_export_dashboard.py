@@ -15,63 +15,63 @@ PROJECT_ROOT=find_project_root(); SRC=PROJECT_ROOT/"src"
 for p in (SRC, PROJECT_ROOT):
     if str(p) not in sys.path: sys.path.insert(0,str(p))
 
-from claire.domain.contract import ContractValidator
-from claire.orchestrator.pipeline_v4 import PipelineOrchestrator
-from claire.runtime.export_browser import ExportBrowser
-from claire.runtime.run_history import RunHistory
-from claire.runtime.run_events import RUN_EVENTS
-from claire.runtime.command_catalog import OpportunityCommandCatalog
-from claire.runtime.market_universe_taxonomy import MarketUniverseTaxonomy
-from claire.runtime.search_suggestions import OpportunitySearchSuggestions
-from claire.runtime.opportunity_seed_generator import OpportunitySeedGenerator
-from claire.runtime.opportunity_candidate_store import OPPORTUNITY_CANDIDATES
-from claire.runtime.dashboard_system_status import DashboardSystemStatus
-from claire.runtime.dashboard_layout_registry import DashboardLayoutRegistry
-from claire.runtime.stale_path_audit import StalePathAudit
-from claire.runtime.production_readiness import ProductionReadiness
-from claire.runtime.plateau_candidate import PlateauCandidateReport
-from claire.runtime.desktop_service_status import DesktopServiceStatus
-from claire.runtime.portable_desktop_readiness import PortableDesktopReadiness
-from claire.runtime.desktop_app_shell import DesktopAppShell
-from claire.runtime.enhanced_interface_bridge import EnhancedInterfaceBridge
-from claire.enrichment.connected_opportunity_enricher import ConnectedOpportunityEnricher
-from claire.fusion.hybrid_opportunity_fusion import HybridOpportunityFusionEngine
-from claire.export.connected_export_artifacts import ConnectedExportArtifactWriter
-from claire.export.acquisition_export_artifacts import AcquisitionExportArtifactWriter
-from claire.lifecycle.stage_registry import ClaireStageRegistry
-from claire.lifecycle.threshold_provenance import ThresholdProvenance
-from claire.mode.switch_controller import ModeSwitchController
-from claire.mode.state_manager import ModeStateManager
-from claire.mode.isolation_layer import ModeIsolationLayer
-from claire.feeds.feed_registry import FeedRegistry
-from claire.feeds.source_catalogs.public_company_sources import PublicCompanySourceCatalog
-from claire.feeds.source_catalogs.index_universe_registry import IndexUniverseRegistry
-from claire.feeds.source_catalogs.offline_universe_resolver import OfflinePublicCompanyUniverseResolver
-from claire.feeds.source_catalogs.live_source_catalog import LiveSourceCatalog
-from claire.feeds.source_catalogs.source_health import LiveSourceHealthChecker
-from claire.feeds.public_company_live_scan import PublicCompanyLiveScan
-from claire.feeds.live_source_orchestrator import LiveSourceOrchestrator
-from claire.feeds.governed_feed_activation import GovernedFeedActivation
-from claire.feeds.signal_normalizer import FeedSignalNormalizer
-from claire.feeds.signal_registry import SIGNAL_REGISTRY
-from claire.governance.redline_classifier import RedlineClassifier
-from claire.governance.legal_audit_log import LegalAuditLog
-from claire.governance.feed_activation_policy import FeedActivationPolicy
-from claire.governance.feed_audit_log import FeedAuditLog
-from claire.updater.update_health import UpdaterHealth
-from claire.updater.dashboard_update_workflow import DashboardUpdateWorkflow
-from claire.live_intelligence.entity_registry import SourceEntityRegistry
-from claire.live_intelligence.connectors import ConnectorRunner
-from claire.live_intelligence.signal_extraction import SignalExtractionWorker
-from claire.live_intelligence.trend_clustering import TrendClusterer
-from claire.live_intelligence.gap_detection import GapDetectionEngine
-from claire.live_intelligence.solution_synthesis import SolutionSynthesisEngine
-from claire.live_intelligence.live_opportunity_monitor import LiveOpportunityMonitor
-from claire.live_intelligence.history_store import LiveIntelligenceHistoryStore
-from claire.live_intelligence.source_scan_planner import SourceScanPlanner
-from claire.live_intelligence.monitor_candidate_bridge import MonitorCandidateBridge
-from claire.scan.scan_continuation import ScanContinuationRunner
-from claire.research import ResearchService
+from runtime_core.domain.contract import ContractValidator
+from runtime_core.orchestrator.pipeline_v4 import PipelineOrchestrator
+from runtime_core.runtime.export_browser import ExportBrowser
+from runtime_core.runtime.run_history import RunHistory
+from runtime_core.runtime.run_events import RUN_EVENTS
+from runtime_core.runtime.command_catalog import OpportunityCommandCatalog
+from runtime_core.runtime.market_universe_taxonomy import MarketUniverseTaxonomy
+from runtime_core.runtime.search_suggestions import OpportunitySearchSuggestions
+from runtime_core.runtime.opportunity_seed_generator import OpportunitySeedGenerator
+from runtime_core.runtime.opportunity_candidate_store import OPPORTUNITY_CANDIDATES
+from runtime_core.runtime.dashboard_system_status import DashboardSystemStatus
+from runtime_core.runtime.dashboard_layout_registry import DashboardLayoutRegistry
+from runtime_core.runtime.stale_path_audit import StalePathAudit
+from runtime_core.runtime.production_readiness import ProductionReadiness
+from runtime_core.runtime.plateau_candidate import PlateauCandidateReport
+from runtime_core.runtime.desktop_service_status import DesktopServiceStatus
+from runtime_core.runtime.portable_desktop_readiness import PortableDesktopReadiness
+from runtime_core.runtime.desktop_app_shell import DesktopAppShell
+from runtime_core.runtime.enhanced_interface_bridge import EnhancedInterfaceBridge
+from runtime_core.enrichment.connected_opportunity_enricher import ConnectedOpportunityEnricher
+from runtime_core.fusion.hybrid_opportunity_fusion import HybridOpportunityFusionEngine
+from runtime_core.export.connected_export_artifacts import ConnectedExportArtifactWriter
+from runtime_core.export.acquisition_export_artifacts import AcquisitionExportArtifactWriter
+from runtime_core.lifecycle.stage_registry import ClaireStageRegistry
+from runtime_core.lifecycle.threshold_provenance import ThresholdProvenance
+from runtime_core.mode.switch_controller import ModeSwitchController
+from runtime_core.mode.state_manager import ModeStateManager
+from runtime_core.mode.isolation_layer import ModeIsolationLayer
+from runtime_core.feeds.feed_registry import FeedRegistry
+from runtime_core.feeds.source_catalogs.public_company_sources import PublicCompanySourceCatalog
+from runtime_core.feeds.source_catalogs.index_universe_registry import IndexUniverseRegistry
+from runtime_core.feeds.source_catalogs.offline_universe_resolver import OfflinePublicCompanyUniverseResolver
+from runtime_core.feeds.source_catalogs.live_source_catalog import LiveSourceCatalog
+from runtime_core.feeds.source_catalogs.source_health import LiveSourceHealthChecker
+from runtime_core.feeds.public_company_live_scan import PublicCompanyLiveScan
+from runtime_core.feeds.live_source_orchestrator import LiveSourceOrchestrator
+from runtime_core.feeds.governed_feed_activation import GovernedFeedActivation
+from runtime_core.feeds.signal_normalizer import FeedSignalNormalizer
+from runtime_core.feeds.signal_registry import SIGNAL_REGISTRY
+from runtime_core.governance.redline_classifier import RedlineClassifier
+from runtime_core.governance.legal_audit_log import LegalAuditLog
+from runtime_core.governance.feed_activation_policy import FeedActivationPolicy
+from runtime_core.governance.feed_audit_log import FeedAuditLog
+from runtime_core.updater.update_health import UpdaterHealth
+from runtime_core.updater.dashboard_update_workflow import DashboardUpdateWorkflow
+from runtime_core.live_intelligence.entity_registry import SourceEntityRegistry
+from runtime_core.live_intelligence.connectors import ConnectorRunner
+from runtime_core.live_intelligence.signal_extraction import SignalExtractionWorker
+from runtime_core.live_intelligence.trend_clustering import TrendClusterer
+from runtime_core.live_intelligence.gap_detection import GapDetectionEngine
+from runtime_core.live_intelligence.solution_synthesis import SolutionSynthesisEngine
+from runtime_core.live_intelligence.live_opportunity_monitor import LiveOpportunityMonitor
+from runtime_core.live_intelligence.history_store import LiveIntelligenceHistoryStore
+from runtime_core.live_intelligence.source_scan_planner import SourceScanPlanner
+from runtime_core.live_intelligence.monitor_candidate_bridge import MonitorCandidateBridge
+from runtime_core.scan.scan_continuation import ScanContinuationRunner
+from runtime_core.research import ResearchService
 
 DASHBOARD_DIR=PROJECT_ROOT/"src"/"frontend"/"export_dashboard"
 CATALOG=OpportunityCommandCatalog()
@@ -255,9 +255,9 @@ class Handler(BaseHTTPRequestHandler):
             "project_root":str(PROJECT_ROOT),
             "dashboard_dir":str(DASHBOARD_DIR),
             "portable":True,
-            "desktop_live":bool(__import__("os").environ.get("CLAIRE_DESKTOP_LIVE","").strip()=="1"),
-            "app_shell":bool(__import__("os").environ.get("CLAIRE_APP_SHELL","").strip()=="1"),
-            "live_connected_enabled":bool(__import__("os").environ.get("CLAIRE_ENABLE_LIVE_FEEDS","").strip()=="1"),
+            "desktop_live":bool(__import__("os").environ.get("PLATFORM_DESKTOP_LIVE","").strip()=="1"),
+            "app_shell":bool(__import__("os").environ.get("PLATFORM_APP_SHELL","").strip()=="1"),
+            "live_connected_enabled":bool(__import__("os").environ.get("PLATFORM_ENABLE_LIVE_FEEDS","").strip()=="1"),
             "baseline_runner":(PROJECT_ROOT/"tools"/"run_claire_baseline.py").exists(),
             "updater_status":UpdaterHealth(PROJECT_ROOT).status().get("readiness"),
         }

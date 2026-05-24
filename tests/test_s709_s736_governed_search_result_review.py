@@ -7,14 +7,14 @@ from fastapi.testclient import TestClient
 
 
 def _client() -> TestClient:
-    routes = importlib.import_module("claire.api.governed_search_result_review_routes")
+    routes = importlib.import_module("runtime_core.api.governed_search_result_review_routes")
     app = FastAPI()
     app.include_router(routes.router)
     return TestClient(app)
 
 
 def test_s709_quarantine_store_blocks_live_authority():
-    module = importlib.import_module("claire.governance.governed_search_result_quarantine")
+    module = importlib.import_module("runtime_core.governance.governed_search_result_quarantine")
     store = module.build_quarantine_store()
     assert store["stage_range"] == "S709-S715"
     assert store["summary"]["result_total"] >= 3
@@ -33,7 +33,7 @@ def test_s709_quarantine_store_blocks_live_authority():
 
 
 def test_s716_result_evidence_normalizer_creates_review_cards():
-    module = importlib.import_module("claire.governance.governed_result_evidence_normalizer")
+    module = importlib.import_module("runtime_core.governance.governed_result_evidence_normalizer")
     payload = module.build_result_evidence_payload()
     assert payload["stage_range"] == "S716-S722"
     assert payload["summary"]["evidence_card_total"] == payload["summary"]["metadata_result_total"]
@@ -43,7 +43,7 @@ def test_s716_result_evidence_normalizer_creates_review_cards():
 
 
 def test_s723_source_confidence_builds_citation_candidates_without_promoting_truth():
-    module = importlib.import_module("claire.governance.governed_source_confidence_builder")
+    module = importlib.import_module("runtime_core.governance.governed_source_confidence_builder")
     payload = module.build_source_confidence_payload()
     assert payload["stage_range"] == "S723-S729"
     assert payload["summary"]["confidence_card_total"] >= 3
@@ -53,7 +53,7 @@ def test_s723_source_confidence_builds_citation_candidates_without_promoting_tru
 
 
 def test_s730_operator_review_actions_are_visible_but_non_executable():
-    module = importlib.import_module("claire.governance.governed_operator_review_actions")
+    module = importlib.import_module("runtime_core.governance.governed_operator_review_actions")
     payload = module.build_operator_review_payload()
     assert payload["stage_range"] == "S730-S736"
     assert payload["summary"]["operator_action_total"] >= 3
@@ -107,7 +107,7 @@ def test_s709_s736_posted_metadata_is_normalized_without_network_or_body_reads()
 
 
 def test_s709_s736_router_exposes_expected_paths():
-    routes = importlib.import_module("claire.api.governed_search_result_review_routes")
+    routes = importlib.import_module("runtime_core.api.governed_search_result_review_routes")
     paths = {route.path for route in routes.router.routes}
     expected = {
         "/api/search/results/quarantine/store",

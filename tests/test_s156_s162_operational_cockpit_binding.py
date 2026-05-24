@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_operational_cockpit_binding_s156_s162 import (
+from runtime_core.api.governed_operational_cockpit_binding_s156_s162 import (
     build_surface_binding,
     build_all_surface_bindings,
     build_surface_render_contracts,

@@ -3,7 +3,7 @@ from __future__ import annotations
 import importlib
 
 def test_s55r1_snapshot_registry_is_read_only():
-    module = importlib.import_module("claire.api.s55_useful_output_replay_snapshots")
+    module = importlib.import_module("runtime_core.api.s55_useful_output_replay_snapshots")
     registry = module.build_output_replay_snapshot_registry()
     assert registry["version"] == "v19.89.8-S55R1-R8"
     assert registry["status"] == "output_replay_snapshot_registry_ready"
@@ -16,7 +16,7 @@ def test_s55r1_snapshot_registry_is_read_only():
         assert snapshot["auto_replay_enabled"] is False
 
 def test_s55r4_replay_contracts_require_manual_review():
-    module = importlib.import_module("claire.api.s55_useful_output_replay_snapshots")
+    module = importlib.import_module("runtime_core.api.s55_useful_output_replay_snapshots")
     contracts = module.build_output_replay_contracts()
     assert contracts["status"] == "output_replay_contracts_ready"
     assert contracts["contract_count"] == 7
@@ -28,7 +28,7 @@ def test_s55r4_replay_contracts_require_manual_review():
         assert contract["auto_promotion_enabled"] is False
 
 def test_s55r8_plateau_report_ready():
-    module = importlib.import_module("claire.api.s55_useful_output_replay_snapshots")
+    module = importlib.import_module("runtime_core.api.s55_useful_output_replay_snapshots")
     report = module.build_s55r1_r8_plateau_report()
     assert report["status"] == "s55r1_r8_ready"
     assert report["ready"] is True

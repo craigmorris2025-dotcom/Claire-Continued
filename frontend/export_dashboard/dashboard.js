@@ -1039,7 +1039,7 @@ async function loadPublicCompanyLiveScanStatus(){
   try{
     const x=await api('/api/feeds/public-company-live/status');
     el('publicLiveScanBadge').textContent=x.live_enabled?'enabled':'disabled';
-    el('publicLiveScanStatusBox').textContent=`Scanner: ${fmt(x.scanner)}\nLive Enabled: ${x.live_enabled?'yes':'no'}\nSafe Metadata Only: ${x.safe_metadata_only?'yes':'no'}\nRequires Feed Activation: ${x.requires_feed_activation?'yes':'no'}\nEnable: CLAIRE_ENABLE_LIVE_FEEDS=1 before starting dashboard`;
+    el('publicLiveScanStatusBox').textContent=`Scanner: ${fmt(x.scanner)}\nLive Enabled: ${x.live_enabled?'yes':'no'}\nSafe Metadata Only: ${x.safe_metadata_only?'yes':'no'}\nRequires Feed Activation: ${x.requires_feed_activation?'yes':'no'}\nEnable: PLATFORM_ENABLE_LIVE_FEEDS=1 before starting dashboard`;
     setLayer('Live',x.live_enabled?'scan enabled':'safe offline',`Public scan: ${fmt(x.scanner)}. Metadata-only: ${x.safe_metadata_only?'yes':'no'}.`);
   }catch(e){
     if(el('publicLiveScanStatusBox')) el('publicLiveScanStatusBox').textContent='Live scan status unavailable: '+e.message;

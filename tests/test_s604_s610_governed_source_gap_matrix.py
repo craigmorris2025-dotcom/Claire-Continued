@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s604_source_gap_matrix_schema_and_blocks():
-    module = importlib.import_module("claire.governance.governed_source_gap_matrix")
+    module = importlib.import_module("runtime_core.governance.governed_source_gap_matrix")
     matrix = module.source_gap_matrix()
     assert matrix["version"] == "v19.89.8-S604-S610"
     assert matrix["source_family_count"] >= 5
@@ -20,7 +20,7 @@ def test_s604_source_gap_matrix_schema_and_blocks():
 
 
 def test_s605_trust_tiers_and_gap_requirements_are_visible():
-    module = importlib.import_module("claire.governance.governed_source_gap_matrix")
+    module = importlib.import_module("runtime_core.governance.governed_source_gap_matrix")
     matrix = module.source_gap_matrix()
     assert "tier_1_official" in matrix["trust_tiers"]
     assert "tier_4_blocked" in matrix["trust_tiers"]
@@ -32,7 +32,7 @@ def test_s605_trust_tiers_and_gap_requirements_are_visible():
 
 
 def test_s606_search_scope_plans_are_planning_only():
-    module = importlib.import_module("claire.governance.governed_source_gap_matrix")
+    module = importlib.import_module("runtime_core.governance.governed_source_gap_matrix")
     plans = module.search_scope_plans()
     assert plans["plan_count"] >= 4
     assert plans["policy"]["planning_only"] is True
@@ -47,7 +47,7 @@ def test_s606_search_scope_plans_are_planning_only():
 
 
 def test_s607_cards_are_cockpit_ready_not_raw_json_first():
-    module = importlib.import_module("claire.governance.governed_source_gap_matrix")
+    module = importlib.import_module("runtime_core.governance.governed_source_gap_matrix")
     source_cards = module.source_gap_cards()
     scope_cards = module.search_scope_cards()
     assert source_cards["presentation_mode"] == "cockpit_cards_not_raw_json"
@@ -67,7 +67,7 @@ def test_s607_cards_are_cockpit_ready_not_raw_json_first():
 
 
 def test_s608_actions_begin_populating_actions_tab_but_are_non_executable():
-    module = importlib.import_module("claire.governance.governed_source_gap_matrix")
+    module = importlib.import_module("runtime_core.governance.governed_source_gap_matrix")
     actions = module.source_gap_actions()
     assert actions["action_count"] >= 4
     assert actions["all_actions_non_executable"] is True
@@ -79,7 +79,7 @@ def test_s608_actions_begin_populating_actions_tab_but_are_non_executable():
 
 
 def test_s609_payload_and_policy_preserve_no_web_update_authority():
-    module = importlib.import_module("claire.governance.governed_source_gap_matrix")
+    module = importlib.import_module("runtime_core.governance.governed_source_gap_matrix")
     payload = module.governed_source_gap_payload()
     policy = payload["policy"]
     assert payload["status"]["readiness"] == "source_search_planning_visible_execution_blocked"
@@ -91,14 +91,14 @@ def test_s609_payload_and_policy_preserve_no_web_update_authority():
 
 
 def test_s610_routes_and_optional_app_registration_do_not_break_create_app():
-    routes = importlib.import_module("claire.api.governed_source_gap_routes")
+    routes = importlib.import_module("runtime_core.api.governed_source_gap_routes")
     route_paths = {route.path for route in routes.router.routes}
     assert "/api/sources/gaps/matrix" in route_paths
     assert "/api/sources/gaps/cards" in route_paths
     assert "/api/sources/gaps/actions" in route_paths
     assert "/api/search/scope/plans" in route_paths
     assert "/api/search/scope/cards" in route_paths
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     if hasattr(app_module, "create_app"):
         app = app_module.create_app()
         assert app is not None

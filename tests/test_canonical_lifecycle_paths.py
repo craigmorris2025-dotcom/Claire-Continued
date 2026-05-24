@@ -1,5 +1,5 @@
-from claire.lifecycle.canonical_paths import route_path
-from claire.lifecycle.lifecycle_runner import CoreLifecycleRunner
+from runtime_core.lifecycle.canonical_paths import route_path
+from runtime_core.lifecycle.lifecycle_runner import CoreLifecycleRunner
 
 
 def test_portfolio_route_uses_uploaded_default_path_without_forcing_breakthrough_or_acquisition():

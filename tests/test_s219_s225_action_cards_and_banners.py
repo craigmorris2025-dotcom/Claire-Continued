@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.cockpit_action_card_ordering import get_action_card_ordering
-from claire.api.cockpit_warning_banner_contracts import get_warning_banner_contracts
+from runtime_core.api.cockpit_action_card_ordering import get_action_card_ordering
+from runtime_core.api.cockpit_warning_banner_contracts import get_warning_banner_contracts
 
 
 def test_s219_s225_action_card_ordering_prioritizes_governance_and_next_action():

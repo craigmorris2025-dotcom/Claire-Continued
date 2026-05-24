@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.governed_operator_runtime_snapshots import write_operator_runtime_snapshots
+from runtime_core.api.governed_operator_runtime_snapshots import write_operator_runtime_snapshots
 
 
 def main() -> int:

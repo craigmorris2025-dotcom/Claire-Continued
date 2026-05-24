@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi import FastAPI
 
-from claire.api.operator_read_only_router import router
-from claire.api.s43_route_lineage import build_route_lineage
+from runtime_core.api.operator_read_only_router import router
+from runtime_core.api.s43_route_lineage import build_route_lineage
 
 
 def test_route_lineage_builds_for_mounted_operator_routes():

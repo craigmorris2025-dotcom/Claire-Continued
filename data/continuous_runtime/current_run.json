@@ -1,0 +1,1769 @@
+{
+  "schema_version": "claire.continuous_lifecycle_snapshot.v1",
+  "run_id": "cycle_20260524_223325_45a90688",
+  "created_at": "2026-05-24T22:33:25.658264+00:00",
+  "status": "valid_continuous_lifecycle_snapshot",
+  "mode": "hybrid_local_allowlisted",
+  "route_selected": "breakthrough_design",
+  "advancement_path_policy_respected": true,
+  "advancement_path_decision": {
+    "schema_version": "claire.autonomous_advancement_path_decision.v1",
+    "route_selected": "breakthrough_design",
+    "advancement_path_policy_respected": true,
+    "scores": {
+      "evidence_score": 0.55,
+      "discovery_score": 0.755,
+      "gap_score": 0.525,
+      "breakthrough_score": 0.7635,
+      "buildability_score": 0.95,
+      "manufacturability_score": 0.917,
+      "technology_breakthrough_score": 0.836,
+      "reemergence_readiness_score": 0.989,
+      "signal_family_readiness_score": 0.7143
+    },
+    "thresholds": {
+      "breakthrough_design_min": 0.72,
+      "buildability_min": 0.65,
+      "manufacturability_min": 0.62
+    },
+    "conditions": {
+      "signals_present": true,
+      "promoted_evidence_count": 0,
+      "technology_terms": 2,
+      "need_terms": 5,
+      "solution_generation_required": true,
+      "design_portal_required": true,
+      "existing_system_replacement_required": false,
+      "reemergence_pattern_detected": true,
+      "reemergence_cycle_stage": "post_reemergence_or_active_adoption",
+      "ready_signal_families": [
+        "technology",
+        "distribution",
+        "regulation",
+        "behavior",
+        "infrastructure"
+      ]
+    },
+    "technology_base": {
+      "status": "operational",
+      "counts": {
+        "records": 99,
+        "current_buildable_records": 97,
+        "speculative_or_future_records": 2,
+        "deployable_matches": 11,
+        "manufacturable_matches": 12,
+        "innovation_candidates": 4,
+        "breakthrough_ready_candidates": 4,
+        "evidence_sources": 12,
+        "acquirer_categories": 12,
+        "lineage_edges": 794,
+        "lineage_families": 111,
+        "predictive_patterns": 24,
+        "reemergence_patterns": 12,
+        "signal_families": 7,
+        "root_to_current_timelines": 5
+      },
+      "top_innovation_candidate": {
+        "candidate_id": "patent_mining_gap_discovery_layer",
+        "title": "Patent-Mining Gap Discovery Layer",
+        "candidate_type": "discovery_breakthrough_candidate",
+        "innovation_type": "applied_intelligence_breakthrough",
+        "status": "buildable_now_review_required",
+        "route_recommendation": "breakthrough_design",
+        "breakthrough_score": 0.836,
+        "buildability_score": 0.95,
+        "manufacturability_score": 0.917,
+        "thesis": "Metadata-first discovery layer for patents, standards, repositories, and local source packs that identifies buildable gaps without uncontrolled web ingestion.",
+        "component_records": [
+          "transformer_architecture",
+          "timeline_arpanet_first_message_sent_from_ucla_to_stanford",
+          "retrieval_augmented_generation"
+        ],
+        "component_names": [
+          "Transformer Architecture",
+          "ARPANET first message sent from UCLA to Stanford",
+          "Retrieval-Augmented Generation"
+        ],
+        "evidence_basis": [
+          "ACS2 discovery-analysis-synthesis-validation loop",
+          "Timeline-derived current technology records",
+          "Seeded Claire runtime/governance technology records"
+        ],
+        "blocked_actions": [
+          "no autonomous runtime mutation",
+          "no live body ingestion without review",
+          "no breakthrough promotion without validation"
+        ]
+      }
+    },
+    "reemergence_pattern_engine": {
+      "status": "ready",
+      "readiness_score": 0.989,
+      "cycle_stage": "post_reemergence_or_active_adoption",
+      "route_guidance": {
+        "recommended_route": "breakthrough_design",
+        "why": "Pattern and signal readiness are strong enough to generate or validate a breakthrough candidate."
+      },
+      "detected_patterns": [
+        {
+          "pattern_id": "infrastructure_catch_up",
+          "name": "Infrastructure Catch-Up Re-Emergence",
+          "score": 0.991,
+          "primary_signal_families": [
+            "infrastructure",
+            "technology",
+            "distribution"
+          ],
+          "historical_examples": [
+            "EV charging networks",
+            "drone delivery",
+            "smart homes",
+            "IoT"
+          ]
+        },
+        {
+          "pattern_id": "platformization",
+          "name": "Platformization Re-Emergence",
+          "score": 0.921,
+          "primary_signal_families": [
+            "technology",
+            "distribution",
+            "ecosystem"
+          ],
+          "historical_examples": [
+            "GPS to smartphone GPS",
+            "MP3 players to smartphone music",
+            "PDAs to smartphones"
+          ]
+        },
+        {
+          "pattern_id": "distribution_inversion",
+          "name": "Distribution Inversion Re-Emergence",
+          "score": 0.877,
+          "primary_signal_families": [
+            "distribution",
+            "behavior",
+            "regulation"
+          ],
+          "historical_examples": [
+            "telehealth",
+            "online groceries",
+            "remote work"
+          ]
+        },
+        {
+          "pattern_id": "modality_shift",
+          "name": "Modality Shift Re-Emergence",
+          "score": 0.851,
+          "primary_signal_families": [
+            "distribution",
+            "behavior",
+            "technology"
+          ],
+          "historical_examples": [
+            "radio to podcasts",
+            "newspapers to newsletters",
+            "TV to streaming",
+            "retail to social commerce"
+          ]
+        },
+        {
+          "pattern_id": "technology_catch_up",
+          "name": "Technology Catch-Up Re-Emergence",
+          "score": 0.842,
+          "primary_signal_families": [
+            "technology",
+            "cost"
+          ],
+          "historical_examples": [
+            "EVs",
+            "VR",
+            "tablets"
+          ]
+        }
+      ],
+      "signals_to_watch": [
+        "attention_shift",
+        "behavioral_acceptance",
+        "capability_stacking",
+        "deployment_density",
+        "device_shift",
+        "distribution_access",
+        "platform_access",
+        "reliability"
+      ],
+      "pipeline_bindings": {
+        "stage_1_4": "signal intake, source governance, and family readiness scoring",
+        "stage_5_10": "timeline/ACS2 analogy matching and trend thesis formation",
+        "stage_11_15": "gap classification, re-emergence pattern scoring, route selection",
+        "stage_16_22": "auto invention/design only when pattern readiness and buildability are high",
+        "stage_23_30": "portfolio, acquisition, package, evidence review, and recursive learning"
+      }
+    },
+    "reason": "Qualified gap/discovery/technology conditions require autonomous solution generation and design routing."
+  },
+  "emergence_engine": {
+    "schema_version": "claire.system_emergence_engine.v1",
+    "status": "emergence_engine_operational",
+    "query": "allowlisted input boundary lifecycle memory source universe live registry monitor",
+    "product_completion_percent": 76.2,
+    "maturity": "active_foundation_needs_more_lived_cycles",
+    "cycle_stage": "post_reemergence_or_active_adoption",
+    "route_selected": "breakthrough_design",
+    "route_guidance": {
+      "recommended_route": "breakthrough_design",
+      "why": "Pattern and signal readiness are strong enough to generate or validate a breakthrough candidate."
+    },
+    "readiness_score": 0.989,
+    "area_scores": {
+      "acs2_pattern_mass": 1.0,
+      "signal_family_readiness": 0.0,
+      "reemergence_classification": 0.989,
+      "trend_trajectory_binding": 0.989,
+      "runtime_route_binding": 1.0,
+      "live_evidence_governance": 1.0,
+      "recursive_learning_depth": 1.0,
+      "longitudinal_memory_depth": 0.12
+    },
+    "detected_patterns": [
+      {
+        "pattern_id": "infrastructure_catch_up",
+        "name": "Infrastructure Catch-Up Re-Emergence",
+        "score": 0.991,
+        "primary_signal_families": [
+          "infrastructure",
+          "technology",
+          "distribution"
+        ]
+      },
+      {
+        "pattern_id": "platformization",
+        "name": "Platformization Re-Emergence",
+        "score": 0.921,
+        "primary_signal_families": [
+          "technology",
+          "distribution",
+          "ecosystem"
+        ]
+      },
+      {
+        "pattern_id": "distribution_inversion",
+        "name": "Distribution Inversion Re-Emergence",
+        "score": 0.877,
+        "primary_signal_families": [
+          "distribution",
+          "behavior",
+          "regulation"
+        ]
+      },
+      {
+        "pattern_id": "modality_shift",
+        "name": "Modality Shift Re-Emergence",
+        "score": 0.851,
+        "primary_signal_families": [
+          "distribution",
+          "behavior",
+          "technology"
+        ]
+      },
+      {
+        "pattern_id": "technology_catch_up",
+        "name": "Technology Catch-Up Re-Emergence",
+        "score": 0.842,
+        "primary_signal_families": [
+          "technology",
+          "cost"
+        ]
+      }
+    ],
+    "ready_signal_families": [],
+    "signals_to_watch": [
+      "attention_shift",
+      "behavioral_acceptance",
+      "capability_stacking",
+      "deployment_density",
+      "device_shift",
+      "distribution_access",
+      "platform_access",
+      "reliability"
+    ],
+    "longitudinal_learning": {
+      "run_count": 6,
+      "pattern_counts": {
+        "infrastructure_catch_up": 6,
+        "platformization": 6,
+        "distribution_inversion": 6,
+        "modality_shift": 6,
+        "technology_catch_up": 6
+      },
+      "route_counts": {
+        "breakthrough_design": 6
+      },
+      "cycle_stage_counts": {
+        "post_reemergence_or_active_adoption": 6
+      },
+      "dominant_pattern": "infrastructure_catch_up",
+      "dominant_route": "breakthrough_design"
+    },
+    "pattern_reinforcement": {
+      "status": "active",
+      "pattern_confidence": {
+        "infrastructure_catch_up": 0.5,
+        "platformization": 0.5,
+        "distribution_inversion": 0.5,
+        "modality_shift": 0.5,
+        "technology_catch_up": 0.5
+      },
+      "recordable_cycle_contract": "cycle_id, entity_id, predicted_stage, predicted_patterns, readiness_score, route_taken, outcome_label"
+    },
+    "pipeline_bindings": {
+      "stage_1_4": "signal intake, source governance, and family readiness scoring",
+      "stage_5_10": "timeline/ACS2 analogy matching and trend thesis formation",
+      "stage_11_15": "gap classification, re-emergence pattern scoring, route selection",
+      "stage_16_22": "auto invention/design only when pattern readiness and buildability are high",
+      "stage_23_30": "portfolio, acquisition, package, evidence review, and recursive learning",
+      "whole_system": "signal intake -> ACS2 analogy -> re-emergence scoring -> route selection -> invention/design/portfolio -> acquisition/package -> recursive learning"
+    },
+    "remaining_blockers_to_maturity": [
+      "insufficient_signal_family_readiness",
+      "needs_50_to_200_lived_cycles_for_mature_learning"
+    ],
+    "authority": {
+      "network_request_performed": false,
+      "runtime_truth_mutation": false,
+      "autonomous_promotion_allowed": false,
+      "operator_review_required": true,
+      "documents_used_as_runtime_programming": false
+    }
+  },
+  "source_records": [
+    {
+      "path": "data/continuous_runtime/lifecycle_memory.json",
+      "status": "allowed_input",
+      "record_count": 6
+    },
+    {
+      "path": "data/source_universes/universe_index.json",
+      "status": "allowed_input",
+      "record_count": 4
+    },
+    {
+      "path": "data/live/source_registry.json",
+      "status": "allowed_input",
+      "record_count": 6
+    },
+    {
+      "path": "data/live_intelligence/latest_monitor_run.json",
+      "status": "allowed_input",
+      "record_count": 5
+    }
+  ],
+  "signals": [
+    {
+      "signal_id": "signal-001",
+      "title": "Microsoft sec public filings signal",
+      "summary": "Public filing lens for Microsoft: risk, compliance, segment pressure, AI governance, and operating disclosures.",
+      "entity": "Microsoft",
+      "source_family": "sec_public_filings",
+      "source_type": "public_regulatory",
+      "captured_at": "2026-05-24T22:33:25.658264+00:00",
+      "provenance": {
+        "origin": "data/live_intelligence/latest_monitor_run.json",
+        "record_id": "sec_public_filing_connector_v1_msft",
+        "metadata_only": true,
+        "provider": null,
+        "trust_tier": null
+      },
+      "credibility_weight": 0.72
+    },
+    {
+      "signal_id": "signal-002",
+      "title": "Apple sec public filings signal",
+      "summary": "Public filing lens for Apple: risk, compliance, segment pressure, AI governance, and operating disclosures.",
+      "entity": "Apple",
+      "source_family": "sec_public_filings",
+      "source_type": "public_regulatory",
+      "captured_at": "2026-05-24T22:33:25.658264+00:00",
+      "provenance": {
+        "origin": "data/live_intelligence/latest_monitor_run.json",
+        "record_id": "sec_public_filing_connector_v1_aapl",
+        "metadata_only": true,
+        "provider": null,
+        "trust_tier": null
+      },
+      "credibility_weight": 0.72
+    },
+    {
+      "signal_id": "signal-003",
+      "title": "Microsoft investor relations signal",
+      "summary": "Public metadata context for Microsoft covering cloud, ai, enterprise, security.",
+      "entity": "Microsoft",
+      "source_family": "investor_relations",
+      "source_type": "public_web",
+      "captured_at": "2026-05-24T22:33:25.658264+00:00",
+      "provenance": {
+        "origin": "data/live_intelligence/latest_monitor_run.json",
+        "record_id": "investor_relations_connector_v1_msft",
+        "metadata_only": true,
+        "provider": null,
+        "trust_tier": null
+      },
+      "credibility_weight": 0.62
+    },
+    {
+      "signal_id": "signal-004",
+      "title": "Apple investor relations signal",
+      "summary": "Public metadata context for Apple covering hardware, services, privacy, supply_chain.",
+      "entity": "Apple",
+      "source_family": "investor_relations",
+      "source_type": "public_web",
+      "captured_at": "2026-05-24T22:33:25.658264+00:00",
+      "provenance": {
+        "origin": "data/live_intelligence/latest_monitor_run.json",
+        "record_id": "investor_relations_connector_v1_aapl",
+        "metadata_only": true,
+        "provider": null,
+        "trust_tier": null
+      },
+      "credibility_weight": 0.62
+    },
+    {
+      "signal_id": "signal-005",
+      "title": "Microsoft public news metadata signal",
+      "summary": "Public news metadata lens for Microsoft: market movement, product shifts, demand pressure, and competitive activity.",
+      "entity": "Microsoft",
+      "source_family": "public_news_metadata",
+      "source_type": "public_news",
+      "captured_at": "2026-05-24T22:33:25.658264+00:00",
+      "provenance": {
+        "origin": "data/live_intelligence/latest_monitor_run.json",
+        "record_id": "public_news_metadata_connector_v1_msft",
+        "metadata_only": true,
+        "provider": null,
+        "trust_tier": null
+      },
+      "credibility_weight": 0.62
+    },
+    {
+      "signal_id": "signal-006",
+      "title": "Apple public news metadata signal",
+      "summary": "Public news metadata lens for Apple: market movement, product shifts, demand pressure, and competitive activity.",
+      "entity": "Apple",
+      "source_family": "public_news_metadata",
+      "source_type": "public_news",
+      "captured_at": "2026-05-24T22:33:25.658264+00:00",
+      "provenance": {
+        "origin": "data/live_intelligence/latest_monitor_run.json",
+        "record_id": "public_news_metadata_connector_v1_aapl",
+        "metadata_only": true,
+        "provider": null,
+        "trust_tier": null
+      },
+      "credibility_weight": 0.62
+    },
+    {
+      "signal_id": "signal-007",
+      "title": "Microsoft public patent metadata signal",
+      "summary": "Public patent metadata lens for Microsoft: innovation direction, technical feasibility, defensibility, and whitespace.",
+      "entity": "Microsoft",
+      "source_family": "public_patent_metadata",
+      "source_type": "public_patent",
+      "captured_at": "2026-05-24T22:33:25.658264+00:00",
+      "provenance": {
+        "origin": "data/live_intelligence/latest_monitor_run.json",
+        "record_id": "uspto_patent_metadata_connector_v1_msft",
+        "metadata_only": true,
+        "provider": null,
+        "trust_tier": null
+      },
+      "credibility_weight": 0.62
+    },
+    {
+      "signal_id": "signal-008",
+      "title": "Apple public patent metadata signal",
+      "summary": "Public patent metadata lens for Apple: innovation direction, technical feasibility, defensibility, and whitespace.",
+      "entity": "Apple",
+      "source_family": "public_patent_metadata",
+      "source_type": "public_patent",
+      "captured_at": "2026-05-24T22:33:25.658264+00:00",
+      "provenance": {
+        "origin": "data/live_intelligence/latest_monitor_run.json",
+        "record_id": "uspto_patent_metadata_connector_v1_aapl",
+        "metadata_only": true,
+        "provider": null,
+        "trust_tier": null
+      },
+      "credibility_weight": 0.62
+    }
+  ],
+  "trend": {
+    "trend_id": "trend-45a90688",
+    "title": "Allowlisted Input Boundary Lifecycle trend cluster",
+    "summary": "Allowlisted signals indicate a portfolio-relevant pattern around allowlisted input boundary lifecycle.",
+    "keywords": [
+      "allowlisted",
+      "input",
+      "boundary",
+      "lifecycle",
+      "memory",
+      "source",
+      "universe",
+      "live",
+      "public",
+      "metadata",
+      "apple",
+      "microsoft"
+    ],
+    "evidence_signal_ids": [
+      "signal-001",
+      "signal-002",
+      "signal-003",
+      "signal-004",
+      "signal-005",
+      "signal-006"
+    ],
+    "confidence": 0.7
+  },
+  "thesis": {
+    "thesis_id": "thesis-45a90688",
+    "statement": "Portfolio intelligence should prioritize allowlisted input boundary lifecycle because multiple governed metadata signals point to buyer, compliance, or operational pressure.",
+    "confidence": 0.7,
+    "evidence_signal_ids": [
+      "signal-001",
+      "signal-002",
+      "signal-003",
+      "signal-004",
+      "signal-005",
+      "signal-006"
+    ]
+  },
+  "discovery_candidate": {
+    "candidate_id": "discovery-45a90688",
+    "candidate_type": "discovery",
+    "title": "Allowlisted Input Boundary Lifecycle trend cluster",
+    "summary": "Allowlisted signals indicate a portfolio-relevant pattern around allowlisted input boundary lifecycle.",
+    "status": "pending_operator_review",
+    "confidence": 0.7,
+    "source_signal_ids": [
+      "signal-001",
+      "signal-002",
+      "signal-003",
+      "signal-004",
+      "signal-005",
+      "signal-006"
+    ],
+    "route": "portfolio_creation_optimization",
+    "advancement_route": "breakthrough_design",
+    "runtime_truth_write": "blocked"
+  },
+  "evidence_governance": {
+    "schema_version": "claire.evidence_governance.v1",
+    "status": "evidence_governance_ready",
+    "source": "allowlisted_signal_metadata",
+    "documents_used_as_runtime_programming": false,
+    "evidence_count": 8,
+    "source_family_counts": {
+      "sec": 2,
+      "allowlisted_monitor": 4,
+      "patent": 2
+    },
+    "quality": {
+      "aggregate_score": 0.805,
+      "methodology_rigor": "metadata_lineage_verified",
+      "sample_adequacy": "sufficient",
+      "source_authority": "mixed_governed_sources"
+    },
+    "claim_verification": [
+      {
+        "claim_text": "Portfolio intelligence should prioritize allowlisted input boundary lifecycle because multiple governed metadata signals point to buyer, compliance, or operational pressure.",
+        "verdict": "verified",
+        "confidence": 0.805,
+        "supporting_refs": [
+          "signal-001",
+          "signal-002",
+          "signal-007",
+          "signal-008"
+        ],
+        "contradicting_refs": []
+      },
+      {
+        "claim_text": "Allowlisted signals indicate a portfolio-relevant pattern around allowlisted input boundary lifecycle.",
+        "verdict": "verified",
+        "confidence": 0.805,
+        "supporting_refs": [
+          "signal-001",
+          "signal-002",
+          "signal-007",
+          "signal-008"
+        ],
+        "contradicting_refs": []
+      },
+      {
+        "claim_text": "A governed portfolio package can be built from the current signal set.",
+        "verdict": "verified",
+        "confidence": 0.805,
+        "supporting_refs": [
+          "signal-001",
+          "signal-002",
+          "signal-007",
+          "signal-008"
+        ],
+        "contradicting_refs": []
+      }
+    ],
+    "citation_lineage": [
+      {
+        "signal_id": "signal-001",
+        "title": "Microsoft sec public filings signal",
+        "source_family": "sec_public_filings",
+        "quality_score": 0.92,
+        "lineage": {
+          "origin": "data/live_intelligence/latest_monitor_run.json",
+          "record_id": "sec_public_filing_connector_v1_msft",
+          "metadata_only": true,
+          "provider": null,
+          "trust_tier": null
+        }
+      },
+      {
+        "signal_id": "signal-002",
+        "title": "Apple sec public filings signal",
+        "source_family": "sec_public_filings",
+        "quality_score": 0.92,
+        "lineage": {
+          "origin": "data/live_intelligence/latest_monitor_run.json",
+          "record_id": "sec_public_filing_connector_v1_aapl",
+          "metadata_only": true,
+          "provider": null,
+          "trust_tier": null
+        }
+      },
+      {
+        "signal_id": "signal-007",
+        "title": "Microsoft public patent metadata signal",
+        "source_family": "public_patent_metadata",
+        "quality_score": 0.86,
+        "lineage": {
+          "origin": "data/live_intelligence/latest_monitor_run.json",
+          "record_id": "uspto_patent_metadata_connector_v1_msft",
+          "metadata_only": true,
+          "provider": null,
+          "trust_tier": null
+        }
+      },
+      {
+        "signal_id": "signal-008",
+        "title": "Apple public patent metadata signal",
+        "source_family": "public_patent_metadata",
+        "quality_score": 0.86,
+        "lineage": {
+          "origin": "data/live_intelligence/latest_monitor_run.json",
+          "record_id": "uspto_patent_metadata_connector_v1_aapl",
+          "metadata_only": true,
+          "provider": null,
+          "trust_tier": null
+        }
+      },
+      {
+        "signal_id": "signal-003",
+        "title": "Microsoft investor relations signal",
+        "source_family": "investor_relations",
+        "quality_score": 0.72,
+        "lineage": {
+          "origin": "data/live_intelligence/latest_monitor_run.json",
+          "record_id": "investor_relations_connector_v1_msft",
+          "metadata_only": true,
+          "provider": null,
+          "trust_tier": null
+        }
+      },
+      {
+        "signal_id": "signal-004",
+        "title": "Apple investor relations signal",
+        "source_family": "investor_relations",
+        "quality_score": 0.72,
+        "lineage": {
+          "origin": "data/live_intelligence/latest_monitor_run.json",
+          "record_id": "investor_relations_connector_v1_aapl",
+          "metadata_only": true,
+          "provider": null,
+          "trust_tier": null
+        }
+      },
+      {
+        "signal_id": "signal-005",
+        "title": "Microsoft public news metadata signal",
+        "source_family": "public_news_metadata",
+        "quality_score": 0.72,
+        "lineage": {
+          "origin": "data/live_intelligence/latest_monitor_run.json",
+          "record_id": "public_news_metadata_connector_v1_msft",
+          "metadata_only": true,
+          "provider": null,
+          "trust_tier": null
+        }
+      },
+      {
+        "signal_id": "signal-006",
+        "title": "Apple public news metadata signal",
+        "source_family": "public_news_metadata",
+        "quality_score": 0.72,
+        "lineage": {
+          "origin": "data/live_intelligence/latest_monitor_run.json",
+          "record_id": "public_news_metadata_connector_v1_aapl",
+          "metadata_only": true,
+          "provider": null,
+          "trust_tier": null
+        }
+      }
+    ],
+    "conflict_resolution": {
+      "status": "no_conflicts_detected",
+      "conflicts": []
+    },
+    "operator_review_required": true
+  },
+  "breakthrough_candidate": {
+    "candidate_id": "breakthrough-45a90688",
+    "candidate_type": "breakthrough",
+    "title": "Breakthrough classification: Allowlisted Input Boundary Lifecycle",
+    "summary": "Qualified gap/discovery/technology conditions require autonomous solution generation and design routing.",
+    "status": "pending_operator_review",
+    "threshold_met": true,
+    "primary_type": "technological_breakthrough",
+    "secondary_types": [
+      "gap_discovery_breakthrough",
+      "software_platform_breakthrough",
+      "system_architecture_breakthrough",
+      "acquisition_strategy_breakthrough"
+    ],
+    "route": "breakthrough_design",
+    "scores": {
+      "evidence_score": 0.55,
+      "discovery_score": 0.755,
+      "gap_score": 0.525,
+      "breakthrough_score": 0.7635,
+      "buildability_score": 0.95,
+      "manufacturability_score": 0.917,
+      "technology_breakthrough_score": 0.836,
+      "reemergence_readiness_score": 0.989,
+      "signal_family_readiness_score": 0.7143
+    },
+    "conditions": {
+      "signals_present": true,
+      "promoted_evidence_count": 0,
+      "technology_terms": 2,
+      "need_terms": 5,
+      "solution_generation_required": true,
+      "design_portal_required": true,
+      "existing_system_replacement_required": false,
+      "reemergence_pattern_detected": true,
+      "reemergence_cycle_stage": "post_reemergence_or_active_adoption",
+      "ready_signal_families": [
+        "technology",
+        "distribution",
+        "regulation",
+        "behavior",
+        "infrastructure"
+      ]
+    },
+    "runtime_truth_write": "blocked"
+  },
+  "solution_candidate": {
+    "candidate_id": "solution-45a90688",
+    "candidate_type": "solution",
+    "title": "Patent-Mining Gap Discovery Layer",
+    "status": "pending_operator_review",
+    "route": "breakthrough_design",
+    "source_discovery_id": "discovery-45a90688",
+    "source_portfolio_id": "portfolio-45a90688",
+    "needed_solution": "Allowlisted signals indicate a portfolio-relevant pattern around allowlisted input boundary lifecycle.",
+    "solution_thesis": "Metadata-first discovery layer for patents, standards, repositories, and local source packs that identifies buildable gaps without uncontrolled web ingestion.",
+    "functions": [
+      "ingest governed signals",
+      "detect gap and required solution",
+      "map current buildable technologies",
+      "structure components and workflows",
+      "prepare design portal output",
+      "validate buildability, viability, manufacturability, and feasibility",
+      "handoff to portfolio, acquirer, and final package"
+    ],
+    "components": [
+      "Transformer Architecture",
+      "ARPANET first message sent from UCLA to Stanford",
+      "Retrieval-Augmented Generation"
+    ],
+    "scores": {
+      "evidence_score": 0.55,
+      "discovery_score": 0.755,
+      "gap_score": 0.525,
+      "breakthrough_score": 0.7635,
+      "buildability_score": 0.95,
+      "manufacturability_score": 0.917,
+      "technology_breakthrough_score": 0.836,
+      "reemergence_readiness_score": 0.989,
+      "signal_family_readiness_score": 0.7143
+    },
+    "constraints": [
+      "no runtime truth mutation without operator promotion",
+      "no external claims without promoted live evidence",
+      "reject or revise if buildability/manufacturability/feasibility gates fail"
+    ],
+    "runtime_truth_write": "blocked"
+  },
+  "design_candidate": {
+    "candidate_id": "design-45a90688",
+    "candidate_type": "design",
+    "title": "Design package: Patent-Mining Gap Discovery Layer",
+    "status": "pending_operator_review",
+    "route": "breakthrough_design",
+    "source_solution_id": "solution-45a90688",
+    "blueprint_required": true,
+    "cad_viewer_required": true,
+    "video_viewer_required": true,
+    "buildability_score": 0.95,
+    "manufacturability_score": 0.917,
+    "feasibility_status": "feasible",
+    "runtime_truth_write": "blocked",
+    "design_proof": {
+      "schema_version": "claire.design_proof.v1",
+      "status": "design_proof_ready",
+      "source": "runtime_candidate_contracts",
+      "documents_used_as_runtime_programming": false,
+      "architecture_feasibility": {
+        "verdict": "feasible",
+        "score": 0.8258,
+        "component_count": 3,
+        "integration_points": 3,
+        "complexity_score": 0.46
+      },
+      "build_sequence": {
+        "status": "valid_order",
+        "steps": [
+          {
+            "step": 1,
+            "name": "evidence and signal contract",
+            "depends_on": []
+          },
+          {
+            "step": 2,
+            "name": "gap and solution contract",
+            "depends_on": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "name": "component architecture",
+            "depends_on": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "name": "validation and governance gates",
+            "depends_on": [
+              3
+            ]
+          },
+          {
+            "step": 5,
+            "name": "portfolio and acquirer package",
+            "depends_on": [
+              4
+            ]
+          }
+        ],
+        "parallelizable_groups": [
+          [
+            "evidence and signal contract"
+          ],
+          [
+            "component architecture",
+            "validation and governance gates"
+          ]
+        ]
+      },
+      "dependency_risk": {
+        "level": "medium",
+        "score": 0.46,
+        "single_points_of_failure": [],
+        "circular_dependencies": [],
+        "mitigation": "keep runtime truth promotion separate from candidate generation"
+      },
+      "deployment_model": {
+        "status": "valid_bounded_deployment_model",
+        "score": 0.8285,
+        "target": "governed local runtime with external scheduler",
+        "rollback": "disable scheduler tick and preserve candidate stores"
+      },
+      "implementation_cost": {
+        "effort_hours": 258,
+        "complexity_factor": 1.644,
+        "estimated_total_usd": 61502,
+        "assumption": "engineering estimate for prototype-to-production hardening"
+      },
+      "design_maturity": {
+        "level": "managed",
+        "score": 0.865,
+        "dimensions": {
+          "completeness": 0.865,
+          "testability": 0.72,
+          "maintainability": 0.54,
+          "documentation": 0.76
+        }
+      },
+      "overall_score": 0.8066,
+      "operator_review_required": true
+    },
+    "design_maturity_level": "managed"
+  },
+  "existing_system_replacement": {},
+  "portfolio_candidate": {
+    "candidate_id": "portfolio-45a90688",
+    "candidate_type": "portfolio",
+    "title": "Portfolio thesis: Allowlisted Input Boundary Lifecycle",
+    "portfolio_thesis": "Portfolio intelligence should prioritize allowlisted input boundary lifecycle because multiple governed metadata signals point to buyer, compliance, or operational pressure.",
+    "summary": "Portfolio output generated from allowlisted metadata signals and autonomous advancement routing.",
+    "status": "pending_operator_review",
+    "confidence": 0.7,
+    "keywords": [
+      "allowlisted",
+      "input",
+      "boundary",
+      "lifecycle",
+      "memory",
+      "source",
+      "universe",
+      "live",
+      "public",
+      "metadata",
+      "apple",
+      "microsoft"
+    ],
+    "route": "breakthrough_design",
+    "source_discovery_id": "discovery-45a90688",
+    "source_signal_ids": [
+      "signal-001",
+      "signal-002",
+      "signal-003",
+      "signal-004",
+      "signal-005",
+      "signal-006"
+    ],
+    "runtime_truth_write": "blocked"
+  },
+  "breakthrough_evaluation": {
+    "stage_id": 14,
+    "status": "qualified_for_design",
+    "threshold_met": true,
+    "reason": "Qualified gap/discovery/technology conditions require autonomous solution generation and design routing.",
+    "scores": {
+      "evidence_score": 0.55,
+      "discovery_score": 0.755,
+      "gap_score": 0.525,
+      "breakthrough_score": 0.7635,
+      "buildability_score": 0.95,
+      "manufacturability_score": 0.917,
+      "technology_breakthrough_score": 0.836,
+      "reemergence_readiness_score": 0.989,
+      "signal_family_readiness_score": 0.7143
+    }
+  },
+  "design_gate": {
+    "stage_id": 15,
+    "status": "selected",
+    "reason": "Autonomous advancement path selected solution generation and Design Portal routing."
+  },
+  "acquisition": {
+    "stage_28_output": {
+      "stage_id": 28,
+      "status": "completed",
+      "confidence": 0.6183,
+      "evidence": [
+        {
+          "evidence_id": "stage_28_acquirer_dataset",
+          "source": "claire.acquirers.dataset",
+          "summary": "Static strategic acquirer profiles matched against portfolio/acquisition context."
+        }
+      ],
+      "failure_reasons": [],
+      "payload": {
+        "status": "acquirer_candidates_identified",
+        "context": {
+          "domain": "technology",
+          "keywords": [
+            "portfolio",
+            "ai",
+            "should",
+            "prioritize",
+            "allowlisted",
+            "input",
+            "boundary",
+            "lifecycle",
+            "because",
+            "multiple",
+            "governed",
+            "metadata"
+          ],
+          "thesis": "Portfolio intelligence should prioritize allowlisted input boundary lifecycle because multiple governed metadata signals point to buyer, compliance, or operational pressure.",
+          "category": "portfolio",
+          "portfolio_candidate_id": "portfolio-45a90688",
+          "source_stage": "breakthrough_design"
+        },
+        "acquirer_matches": [
+          {
+            "name": "Microsoft",
+            "ticker": "MSFT",
+            "fit": 0.6183,
+            "capacity": 0.95,
+            "strategy_alignment": 0.08333333333333333,
+            "tech_alignment": 1.0,
+            "focus": [
+              "ai",
+              "cloud",
+              "platform"
+            ],
+            "acquirer_category": "strategic_technology_platform",
+            "strategic_fit_rationale": "Microsoft aligns with ai signals in the candidate context.",
+            "capability_gap_narrative": "Microsoft could use portfolio to strengthen its technology portfolio, close product or platform gaps, or accelerate an internal build-vs-buy decision.",
+            "timing_signal": "watchlist_timing_window",
+            "source": "claire.acquirers.dataset",
+            "review_state": "operator_review_required"
+          },
+          {
+            "name": "Google",
+            "ticker": "GOOGL",
+            "fit": 0.6033,
+            "capacity": 0.9,
+            "strategy_alignment": 0.08333333333333333,
+            "tech_alignment": 1.0,
+            "focus": [
+              "ai",
+              "data",
+              "search"
+            ],
+            "acquirer_category": "strategic_technology_platform",
+            "strategic_fit_rationale": "Google aligns with ai signals in the candidate context.",
+            "capability_gap_narrative": "Google could use portfolio to strengthen its technology portfolio, close product or platform gaps, or accelerate an internal build-vs-buy decision.",
+            "timing_signal": "watchlist_timing_window",
+            "source": "claire.acquirers.dataset",
+            "review_state": "operator_review_required"
+          },
+          {
+            "name": "Amazon",
+            "ticker": "AMZN",
+            "fit": 0.576,
+            "capacity": 0.92,
+            "strategy_alignment": 0.0,
+            "tech_alignment": 1.0,
+            "focus": [
+              "cloud",
+              "logistics",
+              "platform"
+            ],
+            "acquirer_category": "strategic_technology_platform",
+            "strategic_fit_rationale": "Amazon is a broad strategic acquirer candidate for the technology domain.",
+            "capability_gap_narrative": "Amazon could use portfolio to strengthen its technology portfolio, close product or platform gaps, or accelerate an internal build-vs-buy decision.",
+            "timing_signal": "watchlist_timing_window",
+            "source": "claire.acquirers.dataset",
+            "review_state": "operator_review_required"
+          }
+        ],
+        "acquirer_count": 3,
+        "evidence": [
+          {
+            "evidence_id": "stage_28_acquirer_dataset",
+            "source": "claire.acquirers.dataset",
+            "summary": "Static strategic acquirer profiles matched against portfolio/acquisition context."
+          }
+        ],
+        "runtime_truth_write": "blocked",
+        "manual_review_required": true
+      },
+      "metadata": {},
+      "timestamp": "2026-05-24T22:33:25.718256+00:00"
+    },
+    "acquirer_matches": [
+      {
+        "name": "Microsoft",
+        "ticker": "MSFT",
+        "fit": 0.6183,
+        "capacity": 0.95,
+        "strategy_alignment": 0.08333333333333333,
+        "tech_alignment": 1.0,
+        "focus": [
+          "ai",
+          "cloud",
+          "platform"
+        ],
+        "acquirer_category": "strategic_technology_platform",
+        "strategic_fit_rationale": "Microsoft aligns with ai signals in the candidate context.",
+        "capability_gap_narrative": "Microsoft could use portfolio to strengthen its technology portfolio, close product or platform gaps, or accelerate an internal build-vs-buy decision.",
+        "timing_signal": "watchlist_timing_window",
+        "source": "claire.acquirers.dataset",
+        "review_state": "operator_review_required"
+      },
+      {
+        "name": "Google",
+        "ticker": "GOOGL",
+        "fit": 0.6033,
+        "capacity": 0.9,
+        "strategy_alignment": 0.08333333333333333,
+        "tech_alignment": 1.0,
+        "focus": [
+          "ai",
+          "data",
+          "search"
+        ],
+        "acquirer_category": "strategic_technology_platform",
+        "strategic_fit_rationale": "Google aligns with ai signals in the candidate context.",
+        "capability_gap_narrative": "Google could use portfolio to strengthen its technology portfolio, close product or platform gaps, or accelerate an internal build-vs-buy decision.",
+        "timing_signal": "watchlist_timing_window",
+        "source": "claire.acquirers.dataset",
+        "review_state": "operator_review_required"
+      },
+      {
+        "name": "Amazon",
+        "ticker": "AMZN",
+        "fit": 0.576,
+        "capacity": 0.92,
+        "strategy_alignment": 0.0,
+        "tech_alignment": 1.0,
+        "focus": [
+          "cloud",
+          "logistics",
+          "platform"
+        ],
+        "acquirer_category": "strategic_technology_platform",
+        "strategic_fit_rationale": "Amazon is a broad strategic acquirer candidate for the technology domain.",
+        "capability_gap_narrative": "Amazon could use portfolio to strengthen its technology portfolio, close product or platform gaps, or accelerate an internal build-vs-buy decision.",
+        "timing_signal": "watchlist_timing_window",
+        "source": "claire.acquirers.dataset",
+        "review_state": "operator_review_required"
+      }
+    ],
+    "acquirer_count": 3
+  },
+  "final_package": {
+    "status": "review_ready",
+    "package_type": "portfolio_acquisition_brief",
+    "review_required": true,
+    "sections": [
+      "signals",
+      "trend",
+      "thesis",
+      "gap",
+      "discovery",
+      "breakthrough_classification",
+      "advancement_path",
+      "solution",
+      "design_portal_output",
+      "portfolio_candidate",
+      "acquisition",
+      "strategic_world",
+      "operator_review"
+    ],
+    "artifact": {
+      "metadata_url": "/api/portfolio/artifacts/cycle_20260524_223325_45a90688",
+      "view_url": "/portfolio/artifacts/cycle_20260524_223325_45a90688/view",
+      "download_url": "/portfolio/artifacts/cycle_20260524_223325_45a90688/download",
+      "latest_view_url": "/portfolio/artifacts/latest/view",
+      "latest_download_url": "/portfolio/artifacts/latest/download",
+      "artifact_id": "portfolio-artifact-cycle_20260524_223325_45a90688",
+      "run_id": "cycle_20260524_223325_45a90688",
+      "title": "Portfolio thesis: Allowlisted Input Boundary Lifecycle",
+      "artifact_path": "data/continuous_runtime/artifacts/portfolio/cycle_20260524_223325_45a90688/portfolio_brief.json",
+      "html_path": "data/continuous_runtime/artifacts/portfolio/cycle_20260524_223325_45a90688/portfolio_brief.html"
+    }
+  },
+  "stage_status": [
+    {
+      "stage_id": 1,
+      "status": "completed",
+      "output_key": "signal_to_thesis_spine",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 2,
+      "status": "completed",
+      "output_key": "signal_to_thesis_spine",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 3,
+      "status": "completed",
+      "output_key": "signal_to_thesis_spine",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 4,
+      "status": "completed",
+      "output_key": "signal_to_thesis_spine",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 5,
+      "status": "completed",
+      "output_key": "signal_to_thesis_spine",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 6,
+      "status": "completed",
+      "output_key": "signal_to_thesis_spine",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 7,
+      "status": "completed",
+      "output_key": "signal_to_thesis_spine",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 8,
+      "status": "completed",
+      "output_key": "signal_to_thesis_spine",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 9,
+      "status": "completed",
+      "output_key": "signal_to_thesis_spine",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 10,
+      "status": "completed",
+      "output_key": "signal_to_thesis_spine",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 11,
+      "status": "completed",
+      "output_key": "discovery_and_gap_basis",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 12,
+      "status": "completed",
+      "output_key": "discovery_and_gap_basis",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 13,
+      "status": "completed",
+      "output_key": "discovery_and_gap_basis",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 14,
+      "status": "completed",
+      "output_key": "breakthrough_classification",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 15,
+      "status": "completed",
+      "output_key": "advancement_path_selection",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 16,
+      "status": "completed",
+      "output_key": "auto_invention_solution_generation",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 17,
+      "status": "completed",
+      "output_key": "solution_structuring",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 18,
+      "status": "completed",
+      "output_key": "buildability_assessment",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 19,
+      "status": "completed",
+      "output_key": "viability_assessment",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 20,
+      "status": "completed",
+      "output_key": "manufacturability_deployability",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 21,
+      "status": "completed",
+      "output_key": "feasibility_validation",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 22,
+      "status": "completed",
+      "output_key": "design_portal_output",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 23,
+      "status": "completed",
+      "output_key": "portfolio_acquisition_package",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 24,
+      "status": "completed",
+      "output_key": "portfolio_acquisition_package",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 25,
+      "status": "completed",
+      "output_key": "portfolio_acquisition_package",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 26,
+      "status": "completed",
+      "output_key": "portfolio_acquisition_package",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 27,
+      "status": "completed",
+      "output_key": "portfolio_acquisition_package",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 28,
+      "status": "completed",
+      "output_key": "portfolio_acquisition_package",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 29,
+      "status": "completed",
+      "output_key": "portfolio_acquisition_package",
+      "confidence": 0.7,
+      "failure_reasons": []
+    },
+    {
+      "stage_id": 30,
+      "status": "completed",
+      "output_key": "portfolio_acquisition_package",
+      "confidence": 0.7,
+      "failure_reasons": []
+    }
+  ],
+  "route_insertions": [],
+  "quality_gate": {
+    "fresh_input_present": true,
+    "trend_present": true,
+    "thesis_present": true,
+    "portfolio_candidate_present": true,
+    "advancement_path_selected": true,
+    "emergence_engine_complete": true,
+    "evidence_governance_complete": true,
+    "solution_candidate_present": true,
+    "design_candidate_present": true,
+    "design_proof_complete": true,
+    "existing_system_decomposition_present": false,
+    "superior_system_design_present": false,
+    "acquisition_rationale_present": true,
+    "strategic_world_complete": true,
+    "lifecycle_memory_written": true,
+    "recursive_learning_complete": true
+  },
+  "authority": {
+    "network_request_performed": false,
+    "body_read_performed": false,
+    "runtime_truth_mutated": false,
+    "automatic_update_performed": false,
+    "operator_review_required": true,
+    "metadata_only": true
+  },
+  "strategic_world": {
+    "schema_version": "claire.strategic_world.layer.v1",
+    "status": "strategic_world_ready",
+    "generated_at": "2026-05-24T22:33:25.719257+00:00",
+    "route_selected": "breakthrough_design",
+    "domains": [
+      "market_intelligence"
+    ],
+    "keyword_basis": [
+      "public",
+      "signal",
+      "metadata",
+      "apple",
+      "microsoft",
+      "live",
+      "intelligence",
+      "news",
+      "patent",
+      "allowlisted",
+      "2026",
+      "24t2233256582640000",
+      "data",
+      "latest",
+      "monitor",
+      "runjson"
+    ],
+    "meta_emergence_policy": {
+      "status": "active",
+      "memory_run_count": 5,
+      "dominant_memory_route": "breakthrough_design",
+      "pattern_weight_overrides": {
+        "infrastructure_catch_up": 1.05,
+        "platformization": 1.05,
+        "distribution_inversion": 1.05,
+        "modality_shift": 1.05,
+        "technology_catch_up": 1.05
+      },
+      "confidence_calibration": {
+        "policy": "conservative_until_labeled_outcomes",
+        "high": -0.05,
+        "mid": -0.025
+      },
+      "runtime_truth_mutation_allowed": false
+    },
+    "world_snapshot": {
+      "timestamp": "2026-05-24T22:33:25.719257+00:00",
+      "domains": [
+        {
+          "domain": "market_intelligence",
+          "active_themes": [
+            "Infrastructure Catch-Up Re-Emergence",
+            "Platformization Re-Emergence",
+            "Distribution Inversion Re-Emergence",
+            "Modality Shift Re-Emergence",
+            "Technology Catch-Up Re-Emergence",
+            "governed evidence routing"
+          ],
+          "keyword_basis": [
+            "public",
+            "signal",
+            "metadata",
+            "apple",
+            "microsoft",
+            "live",
+            "intelligence",
+            "news"
+          ],
+          "route_selected": "breakthrough_design"
+        }
+      ],
+      "cross_domain_themes": [
+        "Infrastructure Catch-Up Re-Emergence",
+        "Platformization Re-Emergence",
+        "Distribution Inversion Re-Emergence",
+        "Modality Shift Re-Emergence",
+        "Technology Catch-Up Re-Emergence",
+        "governed evidence routing"
+      ],
+      "systemic_risks": [],
+      "systemic_opportunities": [
+        "convert detected pattern into review-ready portfolio package",
+        "attach current market and buyer evidence before external claims"
+      ]
+    },
+    "options": [
+      {
+        "id": "continue_governed_evidence_collection",
+        "label": "Continue governed evidence collection",
+        "description": "Strengthen the claim base before promotion, market valuation, or public claims.",
+        "affected_domains": [
+          "market_intelligence"
+        ],
+        "expected_impacts": {
+          "evidence": 0.35,
+          "risk_reduction": 0.28,
+          "reversibility": 0.3,
+          "readiness": 0.12,
+          "value_capture": 0.08
+        },
+        "risk_class": "low",
+        "execution_boundary": "recommendation_only"
+      },
+      {
+        "id": "prepare_design_portal_review",
+        "label": "Prepare Design Portal review",
+        "description": "Move qualified solution or replacement design into operator-reviewed blueprint, material, and feasibility checks.",
+        "affected_domains": [
+          "market_intelligence"
+        ],
+        "expected_impacts": {
+          "readiness": 0.32,
+          "evidence": 0.18,
+          "risk_reduction": 0.24,
+          "reversibility": 0.18,
+          "value_capture": 0.22
+        },
+        "risk_class": "medium",
+        "execution_boundary": "recommendation_only"
+      },
+      {
+        "id": "run_acquirer_diligence_package",
+        "label": "Run acquirer diligence package",
+        "description": "Convert strategic acquirer matches into a review-ready capability-gap and buyer-fit memo.",
+        "affected_domains": [
+          "market",
+          "market_intelligence"
+        ],
+        "expected_impacts": {
+          "readiness": 0.24,
+          "evidence": 0.2,
+          "risk_reduction": 0.12,
+          "reversibility": 0.2,
+          "value_capture": 0.34
+        },
+        "risk_class": "medium",
+        "execution_boundary": "recommendation_only"
+      }
+    ],
+    "ranked_recommendations": [
+      {
+        "option_id": "continue_governed_evidence_collection",
+        "score": 0.7275,
+        "per_stakeholder_scores": {
+          "operator": 0.2465,
+          "buyer": 0.192,
+          "governance": 0.289
+        }
+      },
+      {
+        "option_id": "prepare_design_portal_review",
+        "score": 0.698,
+        "per_stakeholder_scores": {
+          "operator": 0.238,
+          "buyer": 0.242,
+          "governance": 0.218
+        }
+      },
+      {
+        "option_id": "run_acquirer_diligence_package",
+        "score": 0.6128,
+        "per_stakeholder_scores": {
+          "operator": 0.202,
+          "buyer": 0.2388,
+          "governance": 0.172
+        }
+      }
+    ],
+    "governance": {
+      "proposal_allowed": true,
+      "proposal_reason": "Allowed to propose under charter; execution remains blocked.",
+      "requires_human_approval": false,
+      "external_execution_allowed": false,
+      "external_execution_reason": "Action execute_external_action is not permitted for role runtime",
+      "execution_boundary": "recommendation_only_no_external_action_without_operator_approval"
+    },
+    "authority": {
+      "network_request_performed": false,
+      "external_action_performed": false,
+      "runtime_truth_mutated": false,
+      "automatic_update_performed": false,
+      "operator_review_required": true
+    }
+  },
+  "portfolio_artifact": {
+    "metadata_url": "/api/portfolio/artifacts/cycle_20260524_223325_45a90688",
+    "view_url": "/portfolio/artifacts/cycle_20260524_223325_45a90688/view",
+    "download_url": "/portfolio/artifacts/cycle_20260524_223325_45a90688/download",
+    "latest_view_url": "/portfolio/artifacts/latest/view",
+    "latest_download_url": "/portfolio/artifacts/latest/download",
+    "artifact_id": "portfolio-artifact-cycle_20260524_223325_45a90688",
+    "run_id": "cycle_20260524_223325_45a90688",
+    "title": "Portfolio thesis: Allowlisted Input Boundary Lifecycle",
+    "artifact_path": "data/continuous_runtime/artifacts/portfolio/cycle_20260524_223325_45a90688/portfolio_brief.json",
+    "html_path": "data/continuous_runtime/artifacts/portfolio/cycle_20260524_223325_45a90688/portfolio_brief.html"
+  },
+  "recursive_learning": {
+    "schema_version": "claire.recursive_learning_snapshot.v1",
+    "status": "recursive_learning_ready",
+    "source": "governed_lifecycle_memory",
+    "documents_used_as_runtime_programming": false,
+    "run_count": 6,
+    "current_run_id": "cycle_20260524_223325_45a90688",
+    "current_route": "breakthrough_design",
+    "learning_signal_extraction": {
+      "signal_count": 8,
+      "current_keywords": [
+        "allowlisted",
+        "input",
+        "boundary",
+        "lifecycle",
+        "memory",
+        "source",
+        "universe",
+        "live",
+        "public",
+        "metadata",
+        "apple",
+        "microsoft"
+      ],
+      "recurring_keywords": [
+        {
+          "keyword": "allowlisted",
+          "count": 6
+        },
+        {
+          "keyword": "input",
+          "count": 6
+        },
+        {
+          "keyword": "boundary",
+          "count": 6
+        },
+        {
+          "keyword": "lifecycle",
+          "count": 6
+        },
+        {
+          "keyword": "memory",
+          "count": 6
+        },
+        {
+          "keyword": "source",
+          "count": 6
+        },
+        {
+          "keyword": "universe",
+          "count": 6
+        },
+        {
+          "keyword": "live",
+          "count": 6
+        }
+      ]
+    },
+    "run_pattern_mining": {
+      "route_counts": {
+        "breakthrough_design": 6
+      },
+      "dominant_route": "breakthrough_design",
+      "pattern_stability": 1.0,
+      "adaptive_route_credit": 1.0
+    },
+    "recurring_gap_detection": {
+      "gaps": [],
+      "gap_closure_rate": 1.0,
+      "remediation": "no recurring runtime gaps detected in current memory window"
+    },
+    "thesis_evolution": {
+      "latest_thesis": "Portfolio intelligence should prioritize allowlisted input boundary lifecycle because multiple governed metadata signals point to buyer, compliance, or operational pressure.",
+      "portfolio_title": "Portfolio thesis: Allowlisted Input Boundary Lifecycle",
+      "route_changed_from_previous": false
+    },
+    "emergence_learning": {
+      "status": "bound",
+      "readiness_score": 0.989,
+      "product_completion_percent": 66.6,
+      "cycle_stage": "post_reemergence_or_active_adoption",
+      "detected_patterns": [
+        {
+          "pattern_id": "infrastructure_catch_up",
+          "name": "Infrastructure Catch-Up Re-Emergence",
+          "score": 0.991,
+          "primary_signal_families": [
+            "infrastructure",
+            "technology",
+            "distribution"
+          ]
+        },
+        {
+          "pattern_id": "platformization",
+          "name": "Platformization Re-Emergence",
+          "score": 0.921,
+          "primary_signal_families": [
+            "technology",
+            "distribution",
+            "ecosystem"
+          ]
+        },
+        {
+          "pattern_id": "distribution_inversion",
+          "name": "Distribution Inversion Re-Emergence",
+          "score": 0.877,
+          "primary_signal_families": [
+            "distribution",
+            "behavior",
+            "regulation"
+          ]
+        },
+        {
+          "pattern_id": "modality_shift",
+          "name": "Modality Shift Re-Emergence",
+          "score": 0.851,
+          "primary_signal_families": [
+            "distribution",
+            "behavior",
+            "technology"
+          ]
+        },
+        {
+          "pattern_id": "technology_catch_up",
+          "name": "Technology Catch-Up Re-Emergence",
+          "score": 0.842,
+          "primary_signal_families": [
+            "technology",
+            "cost"
+          ]
+        }
+      ],
+      "ready_signal_families": [],
+      "next_pattern_action": "compare next cycle against detected patterns and signal family movement"
+    },
+    "recursive_quality": {
+      "score": 1.0,
+      "signal_noise_ratio": 1.0,
+      "memory_feedback_eligible": true,
+      "regression_detected": false
+    },
+    "strategy_memory": {
+      "status": "updated",
+      "focus_keywords": [
+        "allowlisted",
+        "input",
+        "boundary",
+        "lifecycle",
+        "memory"
+      ],
+      "next_learning_action": "compare next scheduled cycle against this route and proof score"
+    },
+    "operator_review_required": true
+  }
+}

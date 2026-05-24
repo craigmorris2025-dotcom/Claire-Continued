@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s21_search_session_builds_and_preserves_blocked_execution():
-    module = importlib.import_module("claire.api.governed_search_session")
+    module = importlib.import_module("runtime_core.api.governed_search_session")
     payload = {
         "governed_route_activity_overlay": {
             "summary": {"selected_route": "governed_search"},
@@ -35,7 +35,7 @@ def test_s21_search_session_builds_and_preserves_blocked_execution():
 
 
 def test_s21_search_session_detects_degraded_search_route():
-    module = importlib.import_module("claire.api.governed_search_session")
+    module = importlib.import_module("runtime_core.api.governed_search_session")
     payload = {
         "governed_route_activity_overlay": {
             "routes": [{"route": "governed_search", "state": "degraded"}]
@@ -47,7 +47,7 @@ def test_s21_search_session_detects_degraded_search_route():
 
 
 def test_s21_attach_search_session_preserves_payload():
-    module = importlib.import_module("claire.api.governed_search_session")
+    module = importlib.import_module("runtime_core.api.governed_search_session")
     updated = module.attach_governed_search_session({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_internet_update_foundation_s296_s302 import (
+from runtime_core.api.governed_internet_update_foundation_s296_s302 import (
     authority_locks,
     build_governed_internet_update_foundation_s296_s302,
     build_s296_clean_plateau_checkpoint,

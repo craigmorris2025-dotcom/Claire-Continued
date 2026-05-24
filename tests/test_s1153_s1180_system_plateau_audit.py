@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def test_s1153_s1180_plateau_audit_runs_and_writes_report():
-    from claire.audit.system_plateau_audit import run_audit
+    from runtime_core.audit.system_plateau_audit import run_audit
 
     report = run_audit(Path.cwd(), write_report=True)
 
@@ -23,7 +23,7 @@ def test_s1153_s1180_plateau_audit_runs_and_writes_report():
 
 
 def test_s1153_s1180_plateau_audit_checks_core_dashboard_routes():
-    from claire.audit.system_plateau_audit import EXPECTED_GET_ROUTES, run_audit
+    from runtime_core.audit.system_plateau_audit import EXPECTED_GET_ROUTES, run_audit
 
     report = run_audit(Path.cwd(), write_report=False)
     expected = set(EXPECTED_GET_ROUTES)

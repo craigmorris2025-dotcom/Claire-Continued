@@ -28,7 +28,7 @@ def make_artifacts(root: Path) -> None:
 
 
 def test_s43r1_discovers_primary_app_non_invasively():
-    module = importlib.import_module("claire.api.s43_app_integration_probe")
+    module = importlib.import_module("runtime_core.api.s43_app_integration_probe")
     discovery = module.discover_primary_app()
 
     assert discovery["app_py_patch_required"] is False
@@ -39,7 +39,7 @@ def test_s43r1_discovers_primary_app_non_invasively():
 
 
 def test_s43r2_to_r5_probe_mounted_routes(tmp_path: Path):
-    module = importlib.import_module("claire.api.s43_app_integration_probe")
+    module = importlib.import_module("runtime_core.api.s43_app_integration_probe")
     make_artifacts(tmp_path)
     probe = module.probe_mounted_operator_routes(tmp_path)
 
@@ -55,7 +55,7 @@ def test_s43r2_to_r5_probe_mounted_routes(tmp_path: Path):
 
 
 def test_s43r6_to_r7_verification_passes(tmp_path: Path):
-    module = importlib.import_module("claire.api.s43_app_integration_probe")
+    module = importlib.import_module("runtime_core.api.s43_app_integration_probe")
     make_artifacts(tmp_path)
     discovery = module.discover_primary_app()
     probe = module.probe_mounted_operator_routes(tmp_path)
@@ -68,7 +68,7 @@ def test_s43r6_to_r7_verification_passes(tmp_path: Path):
 
 
 def test_s43r8_writes_integration_artifacts(tmp_path: Path):
-    module = importlib.import_module("claire.api.s43_app_integration_probe")
+    module = importlib.import_module("runtime_core.api.s43_app_integration_probe")
     make_artifacts(tmp_path)
     result = module.write_s43_app_integration_probe(tmp_path, tmp_path / "out")
 

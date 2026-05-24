@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi import FastAPI
 
-from claire.api.operator_read_only_router import router
-from claire.api.s43_exposure_inventory import build_exposure_inventory
+from runtime_core.api.operator_read_only_router import router
+from runtime_core.api.s43_exposure_inventory import build_exposure_inventory
 
 
 def test_exposure_inventory_builds():

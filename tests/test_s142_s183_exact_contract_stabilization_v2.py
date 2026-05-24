@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 def test_s142_s183_exact_contract_stabilization_chain_v2():
-    from claire.api.governed_cockpit_payload_visibility_s149_s155 import (
+    from runtime_core.api.governed_cockpit_payload_visibility_s149_s155 import (
         build_cockpit_payload_read_contract,
         build_live_payload_visibility_probe,
         build_existing_payload_nonbreak_probe,
@@ -11,7 +11,7 @@ def test_s142_s183_exact_contract_stabilization_chain_v2():
         build_cockpit_live_visibility_readiness,
         build_s149_s155_stop_gate,
     )
-    from claire.api.governed_operational_cockpit_binding_s156_s162 import (
+    from runtime_core.api.governed_operational_cockpit_binding_s156_s162 import (
         build_surface_binding,
         build_all_surface_bindings,
         build_operational_cockpit_binding_preview,

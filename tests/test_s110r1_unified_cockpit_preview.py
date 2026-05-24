@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_unified_cockpit_preview_s110r1 import (
+from runtime_core.api.governed_unified_cockpit_preview_s110r1 import (
     REQUIRED_PREVIEW_PANELS,
     build_unified_cockpit_payload_preview,
     validate_unified_cockpit_payload_preview,

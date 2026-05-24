@@ -3,7 +3,7 @@ from __future__ import annotations
 
 
 def test_s149_s155_full_export_repair_contract_names():
-    from claire.api.governed_cockpit_payload_visibility_s149_s155 import (
+    from runtime_core.api.governed_cockpit_payload_visibility_s149_s155 import (
         build_dashboard_payload_visibility_contract,
         build_governed_operations_visibility_contract,
         build_live_payload_visibility_contract,

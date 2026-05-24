@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s44r13_surface_health_snapshot_is_available_and_read_only():
-    module = importlib.import_module("claire.api.s44_cockpit_surface_health_snapshot")
+    module = importlib.import_module("runtime_core.api.s44_cockpit_surface_health_snapshot")
     snapshot = module.build_cockpit_surface_health_snapshot()
 
     assert snapshot["status"] == "cockpit_surface_health_snapshot_ready"
@@ -24,7 +24,7 @@ def test_s44r13_surface_health_snapshot_is_available_and_read_only():
 
 
 def test_s44r14_surface_health_verifies_cleanly():
-    module = importlib.import_module("claire.api.s44_cockpit_surface_health_snapshot")
+    module = importlib.import_module("runtime_core.api.s44_cockpit_surface_health_snapshot")
     verification = module.verify_cockpit_surface_health_snapshot()
 
     assert verification["verification_ok"] is True
@@ -34,7 +34,7 @@ def test_s44r14_surface_health_verifies_cleanly():
 
 
 def test_s44r15_r16_plateau_report_is_ready():
-    module = importlib.import_module("claire.api.s44_cockpit_surface_health_snapshot")
+    module = importlib.import_module("runtime_core.api.s44_cockpit_surface_health_snapshot")
     report = module.build_s44r9_r16_plateau_report()
 
     assert report["version"] == "v19.89.8-S44R9-R16"

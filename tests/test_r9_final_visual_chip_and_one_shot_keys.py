@@ -5,8 +5,8 @@ from fastapi.testclient import TestClient
 
 
 def test_r9_final_visual_chip_and_one_shot_keys():
-    from claire.api.dashboard_actions_registry_routes import build_dashboard_actions_registry
-    from claire.app import create_app
+    from runtime_core.api.dashboard_actions_registry_routes import build_dashboard_actions_registry
+    from runtime_core.app import create_app
 
     registry = build_dashboard_actions_registry()
     visual = registry["visual_contract"]

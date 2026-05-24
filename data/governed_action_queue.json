@@ -1,0 +1,52 @@
+{
+  "queue_id": "governed_action_queue",
+  "status": "ready",
+  "source": "data/governed_action_queue.json",
+  "items": [
+    {
+      "id": "action_runtime_start",
+      "label": "Start governed runtime loop",
+      "status": "pending_operator_approval",
+      "risk_level": "medium",
+      "endpoint": "/runtime/start"
+    },
+    {
+      "id": "action_truth_refresh",
+      "label": "Trigger manual truth-firewall refresh",
+      "status": "pending_operator_approval",
+      "risk_level": "medium",
+      "endpoint": "/runtime/truth/refresh"
+    },
+    {
+      "id": "action_execution_gate",
+      "label": "Trigger autonomous execution gate",
+      "status": "pending_operator_approval",
+      "risk_level": "high",
+      "endpoint": "/runtime/gate/trigger"
+    }
+  ],
+  "actions": [
+    {
+      "id": "action_runtime_start",
+      "label": "Start governed runtime loop",
+      "status": "pending_operator_approval",
+      "risk_level": "medium",
+      "endpoint": "/runtime/start"
+    },
+    {
+      "id": "action_truth_refresh",
+      "label": "Trigger manual truth-firewall refresh",
+      "status": "pending_operator_approval",
+      "risk_level": "medium",
+      "endpoint": "/runtime/truth/refresh"
+    },
+    {
+      "id": "action_execution_gate",
+      "label": "Trigger autonomous execution gate",
+      "status": "pending_operator_approval",
+      "risk_level": "high",
+      "endpoint": "/runtime/gate/trigger"
+    }
+  ],
+  "updated_at": "2026-05-24T19:14:39.853560+00:00"
+}

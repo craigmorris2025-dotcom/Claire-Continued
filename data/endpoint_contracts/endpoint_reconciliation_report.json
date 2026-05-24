@@ -1,0 +1,87 @@
+{
+  "aliases": {
+    "/api/cockpit/search-results/payload": "/api/evidence/quarantine/payload",
+    "/api/command": "/api/cockpit/command/plan",
+    "/api/dashboard/search/provider/status": "/api/search/providers/status",
+    "/api/evidence/governed/actions": "/api/evidence/quarantine/actions",
+    "/api/evidence/governed/cards": "/api/evidence/quarantine/cards",
+    "/api/evidence/governed/status": "/api/evidence/quarantine/status",
+    "/api/health": "/health",
+    "/api/internet/fetch/controlled": "/internet/live-probe/run",
+    "/api/internet/live-metadata/run": "/internet/live-probe/run",
+    "/api/internet/live-toggle/preflight": "/internet/live-probe/status",
+    "/api/internet/proposals/export": "/api/update-governance/open-web/panel",
+    "/api/internet/proposals/review": "/api/update-governance/open-web/request",
+    "/api/internet/provider/probe": "/operator/search/web/run-governed-probe",
+    "/api/search/governed/actions": "/api/search/governed/query/actions",
+    "/api/search/governed/plans": "/api/search/governed/query/payload",
+    "/api/search/metadata/payload": "/api/search/metadata/adapter/payload",
+    "/api/search/readiness/preflight": "/api/search/readiness/audit",
+    "/api/sources/gaps/payload": "/api/sources/policy/payload",
+    "/api/update/check": "/api/update/status",
+    "/api/update/prepare": "/api/platform/update/plan",
+    "/system/runtime-execution/summary": "/runtime/status",
+    "/system/runtime-propagation/summary": "/runtime/continuous/status",
+    "/system/runtime-state/summary": "/runtime/state"
+  },
+  "compatibility_alias_count": 23,
+  "frontend_call_count": 4,
+  "frontend_calls": [
+    {
+      "canonical_endpoint": null,
+      "endpoint": "/health",
+      "file": "frontend/claire_dashboard_actions.js",
+      "status": "unresolved"
+    },
+    {
+      "canonical_endpoint": null,
+      "endpoint": "/api/cockpit/convergence/payload",
+      "file": "frontend/cockpit/assets/claire_cockpit_web_search_convergence.js",
+      "status": "unresolved"
+    },
+    {
+      "canonical_endpoint": null,
+      "endpoint": "/api/cockpit/body-read-gate/payload",
+      "file": "frontend/cockpit/assets/claire_governed_body_read_gate.js",
+      "status": "unresolved"
+    },
+    {
+      "canonical_endpoint": null,
+      "endpoint": "/api/cockpit/operator-experience/payload",
+      "file": "frontend/cockpit/assets/claire_operator_experience_console.js",
+      "status": "unresolved"
+    }
+  ],
+  "generated_at": "2026-05-24T22:37:46.854341Z",
+  "mounted_route_count": 0,
+  "next_rule": "Replace compatibility aliases with canonical frontend calls after dashboard stability is verified.",
+  "schema_version": "claire.endpoint_reconciliation_report.v1",
+  "status": "gaps_present",
+  "unresolved": [
+    {
+      "canonical_endpoint": null,
+      "endpoint": "/health",
+      "file": "frontend/claire_dashboard_actions.js",
+      "status": "unresolved"
+    },
+    {
+      "canonical_endpoint": null,
+      "endpoint": "/api/cockpit/convergence/payload",
+      "file": "frontend/cockpit/assets/claire_cockpit_web_search_convergence.js",
+      "status": "unresolved"
+    },
+    {
+      "canonical_endpoint": null,
+      "endpoint": "/api/cockpit/body-read-gate/payload",
+      "file": "frontend/cockpit/assets/claire_governed_body_read_gate.js",
+      "status": "unresolved"
+    },
+    {
+      "canonical_endpoint": null,
+      "endpoint": "/api/cockpit/operator-experience/payload",
+      "file": "frontend/cockpit/assets/claire_operator_experience_console.js",
+      "status": "unresolved"
+    }
+  ],
+  "unresolved_count": 4
+}

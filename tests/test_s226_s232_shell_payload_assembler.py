@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.cockpit_shell_payload_assembler import get_cockpit_shell_payload, get_shell_region_ids
+from runtime_core.api.cockpit_shell_payload_assembler import get_cockpit_shell_payload, get_shell_region_ids
 
 
 def test_s226_s232_shell_payload_has_single_consolidated_cockpit_regions():

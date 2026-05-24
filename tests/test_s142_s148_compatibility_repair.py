@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_payload_bridge_live_patch_s142_s148 import (
+from runtime_core.api.governed_payload_bridge_live_patch_s142_s148 import (
     governed_operations_payload_fragment,
     build_s142_s148_stop_gate,
 )

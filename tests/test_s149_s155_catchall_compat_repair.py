@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_s149_s155_catchall_compat_exports_all_known_missing_names():
-    from claire.api.governed_cockpit_payload_visibility_s149_s155 import (
+    from runtime_core.api.governed_cockpit_payload_visibility_s149_s155 import (
         build_governed_operations_visibility_contract,
         build_live_payload_visibility_contract,
         build_payload_status_visibility_contract,
@@ -32,7 +32,7 @@ def test_s149_s155_catchall_compat_exports_all_known_missing_names():
 
 
 def test_s149_s155_catchall_dynamic_future_visibility_name():
-    import claire.api.governed_cockpit_payload_visibility_s149_s155 as module
+    import runtime_core.api.governed_cockpit_payload_visibility_s149_s155 as module
 
     dynamic = module.build_future_unknown_payload_visibility_contract()
     assert dynamic["ok"] is True

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.cockpit_frontend_presentation_schema import (
+from runtime_core.api.cockpit_frontend_presentation_schema import (
     get_frontend_presentation_schema,
     get_region_order,
 )

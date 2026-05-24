@@ -46,7 +46,7 @@ def make_inputs(root: Path) -> None:
 
 
 def test_s40r9_builds_unified_payload(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_unified_operator_payload")
+    module = importlib.import_module("runtime_core.api.governed_unified_operator_payload")
     make_inputs(tmp_path)
     payload = module.build_unified_operator_payload(tmp_path)
 
@@ -59,7 +59,7 @@ def test_s40r9_builds_unified_payload(tmp_path: Path):
 
 
 def test_s40r10_sections_are_locked_and_ordered(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_unified_operator_payload")
+    module = importlib.import_module("runtime_core.api.governed_unified_operator_payload")
     make_inputs(tmp_path)
     payload = module.build_unified_operator_payload(tmp_path)
 
@@ -72,7 +72,7 @@ def test_s40r10_sections_are_locked_and_ordered(tmp_path: Path):
 
 
 def test_s40r11_verification_passes(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_unified_operator_payload")
+    module = importlib.import_module("runtime_core.api.governed_unified_operator_payload")
     make_inputs(tmp_path)
     payload = module.build_unified_operator_payload(tmp_path)
     report = module.verify_unified_operator_payload(payload)
@@ -84,7 +84,7 @@ def test_s40r11_verification_passes(tmp_path: Path):
 
 
 def test_s40r12_writes_unified_operator_artifacts(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_unified_operator_payload")
+    module = importlib.import_module("runtime_core.api.governed_unified_operator_payload")
     make_inputs(tmp_path)
     result = module.write_unified_operator_payload(tmp_path, tmp_path / "out")
 

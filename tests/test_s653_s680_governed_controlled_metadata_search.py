@@ -3,11 +3,11 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.governed_controlled_metadata_search_routes import router
-from claire.governance.governed_cockpit_search_consolidation import build_cockpit_source_search_consolidation
-from claire.governance.governed_manual_provider_probe import build_manual_probe_preflight
-from claire.governance.governed_search_evidence_bridge import build_search_to_evidence_bridge
-from claire.governance.governed_evidence_lifecycle_preview import build_evidence_lifecycle_routing_preview
+from runtime_core.api.governed_controlled_metadata_search_routes import router
+from runtime_core.governance.governed_cockpit_search_consolidation import build_cockpit_source_search_consolidation
+from runtime_core.governance.governed_manual_provider_probe import build_manual_probe_preflight
+from runtime_core.governance.governed_search_evidence_bridge import build_search_to_evidence_bridge
+from runtime_core.governance.governed_evidence_lifecycle_preview import build_evidence_lifecycle_routing_preview
 
 
 def _client() -> TestClient:
@@ -101,7 +101,7 @@ def test_s680_stop_gate_route_reports_next_phase_without_unlocking_web():
 
 
 def test_create_app_registers_s653_s680_router_when_app_module_exists():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     app = create_app()
     paths = {getattr(route, "path", None) for route in app.routes}

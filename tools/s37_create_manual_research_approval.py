@@ -50,8 +50,8 @@ def _queue_id(args: argparse.Namespace, payload: dict, unknown: list[str]) -> st
         approval.get("queue_id"),
         approval.get("approval_queue_id"),
         approval.get("review_queue_id"),
-        os.environ.get("CLAIRE_S37_QUEUE_ID"),
-        os.environ.get("CLAIRE_QUEUE_ID"),
+        os.environ.get("PLATFORM_S37_QUEUE_ID"),
+        os.environ.get("PLATFORM_QUEUE_ID"),
     ]
 
     for value in unknown:

@@ -12,7 +12,7 @@ CSS = ROOT / "frontend" / "cockpit" / "s45_bridge" / "s45_shell_mount.css"
 
 
 def test_s46r1_modern_cockpit_layout_contract_is_safe():
-    module = importlib.import_module("claire.api.s46_modern_cockpit_layout_contract")
+    module = importlib.import_module("runtime_core.api.s46_modern_cockpit_layout_contract")
     contract = module.build_modern_cockpit_layout_contract()
 
     assert contract["version"] == "v19.89.8-S46R1-R4"
@@ -30,7 +30,7 @@ def test_s46r1_modern_cockpit_layout_contract_is_safe():
 
 
 def test_s46r2_modern_cockpit_layout_contract_verifies_cleanly():
-    module = importlib.import_module("claire.api.s46_modern_cockpit_layout_contract")
+    module = importlib.import_module("runtime_core.api.s46_modern_cockpit_layout_contract")
     verification = module.verify_modern_cockpit_layout_contract()
 
     assert verification["verification_ok"] is True

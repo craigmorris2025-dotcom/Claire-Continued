@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s26_browser_session_builds_and_preserves_authority():
-    module = importlib.import_module("claire.api.canonical_browser_session_persistence")
+    module = importlib.import_module("runtime_core.api.canonical_browser_session_persistence")
     payload = {
         "continuous_browser_runtime_loop": {
             "loop_state": "continuous_observation",
@@ -40,7 +40,7 @@ def test_s26_browser_session_builds_and_preserves_authority():
 
 
 def test_s26_attach_browser_session_preserves_payload():
-    module = importlib.import_module("claire.api.canonical_browser_session_persistence")
+    module = importlib.import_module("runtime_core.api.canonical_browser_session_persistence")
     updated = module.attach_browser_session_persistence({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

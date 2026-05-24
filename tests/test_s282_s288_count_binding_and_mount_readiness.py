@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.cockpit_count_binding_metadata import get_cockpit_count_binding_metadata
-from claire.api.operator_workflow_mount_readiness import get_operator_workflow_mount_readiness
+from runtime_core.api.cockpit_count_binding_metadata import get_cockpit_count_binding_metadata
+from runtime_core.api.operator_workflow_mount_readiness import get_operator_workflow_mount_readiness
 
 
 def test_s282_s288_count_binding_metadata_is_dashboard_ready():

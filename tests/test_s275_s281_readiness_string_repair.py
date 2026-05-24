@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.operator_workflow_route_readiness import get_operator_workflow_route_readiness
+from runtime_core.api.operator_workflow_route_readiness import get_operator_workflow_route_readiness
 
 
 def test_s275_s281_readiness_uses_exact_monitoring_refresh_string():

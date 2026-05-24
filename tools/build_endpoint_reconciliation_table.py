@@ -9,11 +9,11 @@ from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from claire.api.endpoint_reconciliation_report import RECONCILED_ALIASES
+from runtime_core.api.endpoint_reconciliation_report import RECONCILED_ALIASES
 
 CANONICAL_FRONTEND_FILES = {
-    "frontend/command_center/modern/claire_dashboard.html",
-    "frontend/command_center/modern/claire_dashboard.js",
+    "frontend/command_center/modern/platform_dashboard.html",
+    "frontend/command_center/modern/platform_dashboard.js",
     "frontend/command_center/modern/index.html",
     "frontend/command_center/modern/dashboard_operator_console_contract.js",
 }

@@ -5,7 +5,7 @@ import importlib
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.governed_s99_s105_routes import include_governed_s99_s105_routes
+from runtime_core.api.governed_s99_s105_routes import include_governed_s99_s105_routes
 
 
 def build_client() -> TestClient:
@@ -106,6 +106,6 @@ def test_s105_end_to_end_operator_api_demo_proof():
 
 
 def test_route_module_imports_cleanly():
-    module = importlib.import_module("claire.api.governed_s99_s105_routes")
+    module = importlib.import_module("runtime_core.api.governed_s99_s105_routes")
     assert hasattr(module, "router")
     assert hasattr(module, "include_governed_s99_s105_routes")

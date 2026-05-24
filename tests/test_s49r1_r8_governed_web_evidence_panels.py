@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s49r1_governed_web_panels_are_visible_but_fail_closed():
-    module = importlib.import_module("claire.api.s49_governed_web_evidence_panels")
+    module = importlib.import_module("runtime_core.api.s49_governed_web_evidence_panels")
     manifest = module.build_governed_web_panel_manifest()
 
     assert manifest["version"] == "v19.89.8-S49R1-R8"
@@ -28,7 +28,7 @@ def test_s49r1_governed_web_panels_are_visible_but_fail_closed():
 
 
 def test_s49r5_evidence_review_panel_requires_manual_promotion():
-    module = importlib.import_module("claire.api.s49_governed_web_evidence_panels")
+    module = importlib.import_module("runtime_core.api.s49_governed_web_evidence_panels")
     manifest = module.build_evidence_review_panel_manifest()
     panel = manifest["panel"]
 
@@ -42,7 +42,7 @@ def test_s49r5_evidence_review_panel_requires_manual_promotion():
 
 
 def test_s49r8_plateau_report_ready():
-    module = importlib.import_module("claire.api.s49_governed_web_evidence_panels")
+    module = importlib.import_module("runtime_core.api.s49_governed_web_evidence_panels")
     report = module.build_s49r1_r8_plateau_report()
 
     assert report["status"] == "s49r1_r8_ready"

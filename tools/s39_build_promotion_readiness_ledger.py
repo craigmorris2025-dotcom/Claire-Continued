@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.governed_promotion_readiness_ledger import build_promotion_readiness_ledgers
+from runtime_core.api.governed_promotion_readiness_ledger import build_promotion_readiness_ledgers
 
 
 def main() -> int:

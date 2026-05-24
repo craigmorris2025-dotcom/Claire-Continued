@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.operator_route_harness import write_s42_live_route_harness
+from runtime_core.api.operator_route_harness import write_s42_live_route_harness
 
 
 def main() -> int:

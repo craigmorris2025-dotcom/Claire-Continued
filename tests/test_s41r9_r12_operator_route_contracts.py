@@ -26,7 +26,7 @@ def make_artifacts(root: Path) -> None:
 
 
 def test_s41r9_route_registry_is_read_only(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_operator_route_contracts")
+    module = importlib.import_module("runtime_core.api.governed_operator_route_contracts")
     make_artifacts(tmp_path)
     registry = module.build_operator_route_contract_registry(tmp_path)
 
@@ -42,7 +42,7 @@ def test_s41r9_route_registry_is_read_only(tmp_path: Path):
 
 
 def test_s41r10_response_index_maps_artifacts(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_operator_route_contracts")
+    module = importlib.import_module("runtime_core.api.governed_operator_route_contracts")
     make_artifacts(tmp_path)
     registry = module.build_operator_route_contract_registry(tmp_path)
     index = module.build_operator_route_response_index(tmp_path, registry)
@@ -56,7 +56,7 @@ def test_s41r10_response_index_maps_artifacts(tmp_path: Path):
 
 
 def test_s41r11_route_contract_verification_passes(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_operator_route_contracts")
+    module = importlib.import_module("runtime_core.api.governed_operator_route_contracts")
     make_artifacts(tmp_path)
     registry = module.build_operator_route_contract_registry(tmp_path)
     index = module.build_operator_route_response_index(tmp_path, registry)
@@ -68,7 +68,7 @@ def test_s41r11_route_contract_verification_passes(tmp_path: Path):
 
 
 def test_s41r12_writes_operator_route_contract_files(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_operator_route_contracts")
+    module = importlib.import_module("runtime_core.api.governed_operator_route_contracts")
     make_artifacts(tmp_path)
     result = module.write_operator_route_contracts(tmp_path, tmp_path / "out")
 

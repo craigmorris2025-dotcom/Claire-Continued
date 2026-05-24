@@ -1,0 +1,205 @@
+{
+  "component_count": 9,
+  "components": [
+    {
+      "buildability": "ready_for_operator_review",
+      "current_tech_status": "buildable_now_with_governance",
+      "id": "ingestion",
+      "interfaces": [
+        "raw_input",
+        "source_metadata",
+        "normalized_payload"
+      ],
+      "label": "Ingestion",
+      "matched_technologies": [
+        "Transformer Architecture",
+        "Blaise Pascal invents the mechanical calculator (Pascaline)",
+        "Gottfried Leibniz creates the Stepped Reckoner calculator"
+      ],
+      "needed_to_function": true,
+      "priority": "critical",
+      "role": "collects, validates, and normalizes source data"
+    },
+    {
+      "buildability": "ready_for_operator_review",
+      "current_tech_status": "buildable_now_with_governance",
+      "id": "semantic_processing",
+      "interfaces": [
+        "normalized_payload",
+        "semantic_context"
+      ],
+      "label": "Semantic Processing",
+      "matched_technologies": [
+        "Transformer Architecture",
+        "Blaise Pascal invents the mechanical calculator (Pascaline)",
+        "Gottfried Leibniz creates the Stepped Reckoner calculator"
+      ],
+      "needed_to_function": true,
+      "priority": "high",
+      "role": "extracts entities, domain concepts, risk signals, and opportunity context"
+    },
+    {
+      "buildability": "ready_for_operator_review",
+      "current_tech_status": "buildable_now_with_governance",
+      "id": "analysis_engines",
+      "interfaces": [
+        "semantic_context",
+        "signals",
+        "scores"
+      ],
+      "label": "Analysis Engines",
+      "matched_technologies": [
+        "Transformer Architecture",
+        "Blaise Pascal invents the mechanical calculator (Pascaline)",
+        "Gottfried Leibniz creates the Stepped Reckoner calculator"
+      ],
+      "needed_to_function": true,
+      "priority": "high",
+      "role": "evaluates trends, gaps, market formation, risk, feasibility, moat, and deal readiness"
+    },
+    {
+      "buildability": "ready_for_operator_review",
+      "current_tech_status": "buildable_now_with_governance",
+      "id": "decision_layer",
+      "interfaces": [
+        "scores",
+        "decision_state",
+        "readiness_flags"
+      ],
+      "label": "Decision Layer",
+      "matched_technologies": [
+        "Transformer Architecture",
+        "Blaise Pascal invents the mechanical calculator (Pascaline)",
+        "Gottfried Leibniz creates the Stepped Reckoner calculator"
+      ],
+      "needed_to_function": true,
+      "priority": "critical",
+      "role": "classifies decision states, readiness, blocker status, and routing outcomes"
+    },
+    {
+      "buildability": "ready_for_operator_review",
+      "current_tech_status": "buildable_now_with_governance",
+      "id": "api_gateway",
+      "interfaces": [
+        "request",
+        "response",
+        "external_clients"
+      ],
+      "label": "Api Gateway",
+      "matched_technologies": [
+        "Transformer Architecture",
+        "Blaise Pascal invents the mechanical calculator (Pascaline)",
+        "Gottfried Leibniz creates the Stepped Reckoner calculator"
+      ],
+      "needed_to_function": true,
+      "priority": "medium",
+      "role": "exposes system capabilities to applications and users"
+    },
+    {
+      "buildability": "ready_for_operator_review",
+      "current_tech_status": "buildable_now_with_governance",
+      "id": "opportunity_ranking_engine",
+      "interfaces": [
+        "signals",
+        "scores",
+        "ranked_opportunities"
+      ],
+      "label": "Opportunity Ranking Engine",
+      "matched_technologies": [
+        "Transformer Architecture",
+        "Blaise Pascal invents the mechanical calculator (Pascaline)",
+        "Gottfried Leibniz creates the Stepped Reckoner calculator"
+      ],
+      "needed_to_function": true,
+      "priority": "high",
+      "role": "ranks opportunities by gap, trend, feasibility, and strategic value"
+    },
+    {
+      "buildability": "ready_for_operator_review",
+      "current_tech_status": "buildable_now_with_governance",
+      "id": "portfolio_packaging_service",
+      "interfaces": [
+        "ranked_opportunities",
+        "artifact_bundle",
+        "binder_sections"
+      ],
+      "label": "Portfolio Packaging Service",
+      "matched_technologies": [
+        "Transformer Architecture",
+        "Blaise Pascal invents the mechanical calculator (Pascaline)",
+        "Gottfried Leibniz creates the Stepped Reckoner calculator"
+      ],
+      "needed_to_function": true,
+      "priority": "high",
+      "role": "converts validated outputs into binder-ready artifacts"
+    },
+    {
+      "buildability": "requires_validation",
+      "current_tech_status": "requires_component_mapping",
+      "id": "review_console",
+      "interfaces": [],
+      "label": "Review Console",
+      "matched_technologies": [
+        "Transformer Architecture",
+        "Blaise Pascal invents the mechanical calculator (Pascaline)",
+        "Gottfried Leibniz creates the Stepped Reckoner calculator"
+      ],
+      "needed_to_function": true,
+      "priority": "critical",
+      "role": "required by technical feasibility profile"
+    },
+    {
+      "buildability": "requires_validation",
+      "current_tech_status": "requires_component_mapping",
+      "id": "audit_service",
+      "interfaces": [],
+      "label": "Audit Service",
+      "matched_technologies": [
+        "Transformer Architecture",
+        "Blaise Pascal invents the mechanical calculator (Pascaline)",
+        "Gottfried Leibniz creates the Stepped Reckoner calculator"
+      ],
+      "needed_to_function": true,
+      "priority": "critical",
+      "role": "required by technical feasibility profile"
+    }
+  ],
+  "mapping_notes": [
+    "Every component is treated as needed-to-function until operator review removes or downgrades it.",
+    "Physical/hardware candidates require CAD and engineering review before final package promotion.",
+    "Software/system candidates require code/module/API mapping before final package promotion."
+  ],
+  "schema_version": "claire_design_component_map_v1",
+  "status": "component_map_ready",
+  "system_count": 4,
+  "systems": [
+    {
+      "evidence_needed": "accepted source pack or live promoted evidence",
+      "id": "evidence_ingestion_system",
+      "label": "Evidence Ingestion System",
+      "purpose": "bring source material into the design process with traceable provenance",
+      "status": "required"
+    },
+    {
+      "evidence_needed": "signal_ingestion_service, opportunity_ranking_service, design_output_service",
+      "id": "component_mapping_system",
+      "label": "Component Mapping System",
+      "purpose": "map functional requirements to current technologies and interfaces",
+      "status": "ready_for_v1"
+    },
+    {
+      "evidence_needed": "prototype validation, component fit, deployment controls",
+      "id": "feasibility_governance_system",
+      "label": "Feasibility Governance System",
+      "purpose": "separate buildable-now systems from speculative or future-state concepts",
+      "status": "not_yet_feasible"
+    },
+    {
+      "evidence_needed": "operator promotion decision",
+      "id": "blueprint_export_system",
+      "label": "Blueprint Export System",
+      "purpose": "convert reviewed design into technical specs, blueprints, and implementation phases",
+      "status": "needs_more_validation"
+    }
+  ]
+}

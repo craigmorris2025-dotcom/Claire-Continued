@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.s43_app_integration_probe import write_s43_app_integration_probe
+from runtime_core.api.s43_app_integration_probe import write_s43_app_integration_probe
 
 
 def main() -> int:

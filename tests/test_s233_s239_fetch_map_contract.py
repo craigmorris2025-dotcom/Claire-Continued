@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.cockpit_fetch_map_contract import get_cockpit_fetch_map_contract
+from runtime_core.api.cockpit_fetch_map_contract import get_cockpit_fetch_map_contract
 
 
 def test_s233_s239_fetch_map_is_read_only_and_prevents_endpoint_invention():

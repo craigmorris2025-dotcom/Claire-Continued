@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.dashboard_contract_consolidation_s317_s323 import (
+from runtime_core.api.dashboard_contract_consolidation_s317_s323 import (
     apply_s317_s323_extension_to_payload,
     build_dashboard_contract_consolidation_s317_s323,
     build_s317_canonical_payload_extension_registry,

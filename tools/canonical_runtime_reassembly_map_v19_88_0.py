@@ -191,7 +191,7 @@ def summarize(scanned: dict, probes: list[Probe], op: dict) -> dict:
         "frontend_paths_missing_live": [p for p in frontend_paths if p not in live_paths and not p.startswith("/docs")],
         "next_repair_order": [
             "If server_not_running_or_port_refused_during_audit, start python main.py and rerun the audit before repairing routes.",
-            "Lock canonical startup: main.py -> claire.app:create_app.",
+            "Lock canonical startup: main.py -> runtime_core.app:create_app.",
             "Lock one canonical router registry.",
             "Mount /health, /docs, /openapi.json.",
             "Mount /dashboard/payload/status and /dashboard/payload.",

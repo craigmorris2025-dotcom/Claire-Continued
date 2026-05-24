@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.governed_promotion_review_audit_boundary import write_review_audit_artifacts
+from runtime_core.api.governed_promotion_review_audit_boundary import write_review_audit_artifacts
 
 
 def main() -> int:

@@ -14,7 +14,7 @@
       "family": "active_controls",
       "method": "GET",
       "mounted": true,
-      "owner": "claire.api.dashboard_active_control_map",
+      "owner": "runtime_core.api.dashboard_active_control_map",
       "path": "/api/dashboard/active-control-map",
       "review_required": false
     },
@@ -23,7 +23,7 @@
       "family": "provider_readiness",
       "method": "GET",
       "mounted": true,
-      "owner": "claire.api.governed_provider_readiness_routes",
+      "owner": "runtime_core.api.governed_provider_readiness_routes",
       "path": "/api/search/providers/status",
       "review_required": false
     },
@@ -32,7 +32,7 @@
       "family": "governed_live_probe",
       "method": "POST",
       "mounted": true,
-      "owner": "claire.api.routes_governed_live_probe",
+      "owner": "runtime_core.api.routes_governed_live_probe",
       "path": "/internet/live-probe/run",
       "review_required": true
     },
@@ -41,7 +41,7 @@
       "family": "update_governance",
       "method": "POST",
       "mounted": true,
-      "owner": "claire.api.routes_open_web_update_governance",
+      "owner": "runtime_core.api.routes_open_web_update_governance",
       "path": "/api/update-governance/open-web/install/stage",
       "review_required": true
     },
@@ -50,7 +50,7 @@
       "family": "update_governance",
       "method": "POST",
       "mounted": true,
-      "owner": "claire.api.routes_open_web_update_governance",
+      "owner": "runtime_core.api.routes_open_web_update_governance",
       "path": "/api/update-governance/open-web/install/apply",
       "review_required": true
     },
@@ -59,7 +59,7 @@
       "family": "pipeline_evaluate",
       "method": "POST",
       "mounted": true,
-      "owner": "claire.api.routes_pipeline",
+      "owner": "runtime_core.api.routes_pipeline",
       "path": "/evaluate",
       "review_required": false
     },
@@ -68,7 +68,7 @@
       "family": "design_portal",
       "method": "GET",
       "mounted": true,
-      "owner": "claire.api.routes_design_portal_output",
+      "owner": "runtime_core.api.routes_design_portal_output",
       "path": "/design-portal/status",
       "review_required": false
     },
@@ -77,7 +77,7 @@
       "family": "design_portal",
       "method": "GET",
       "mounted": true,
-      "owner": "claire.api.routes_design_portal_output",
+      "owner": "runtime_core.api.routes_design_portal_output",
       "path": "/design-portal/contract",
       "review_required": false
     },
@@ -86,7 +86,7 @@
       "family": "cad_intent",
       "method": "GET",
       "mounted": true,
-      "owner": "claire.api.routes_design_portal_output",
+      "owner": "runtime_core.api.routes_design_portal_output",
       "path": "/cad/intent",
       "review_required": false
     }
@@ -94,7 +94,7 @@
   "endpoint_expectations": [
     {
       "body_policy": "no request body",
-      "caller": "frontend/command_center/modern/claire_dashboard.js",
+      "caller": "frontend/command_center/modern/platform_dashboard.js",
       "expected_status": "200 JSON",
       "family": "dashboard_truth",
       "method": "GET",
@@ -111,7 +111,7 @@
       "family": "active_controls",
       "method": "GET",
       "mutation": "none",
-      "owner": "claire.api.dashboard_active_control_map",
+      "owner": "runtime_core.api.dashboard_active_control_map",
       "path": "/api/dashboard/active-control-map",
       "readiness_gate": "visible controls expose backend endpoints",
       "review_required": false
@@ -123,7 +123,7 @@
       "family": "provider_readiness",
       "method": "GET",
       "mutation": "none",
-      "owner": "claire.api.governed_provider_readiness_routes",
+      "owner": "runtime_core.api.governed_provider_readiness_routes",
       "path": "/api/search/providers/status",
       "readiness_gate": "provider stack status returned without secrets",
       "review_required": false
@@ -135,7 +135,7 @@
       "family": "governed_live_probe",
       "method": "POST",
       "mutation": "quarantine/proof record only",
-      "owner": "claire.api.routes_governed_live_probe",
+      "owner": "runtime_core.api.routes_governed_live_probe",
       "path": "/internet/live-probe/run",
       "readiness_gate": "operator-confirmed one-shot metadata probe",
       "review_required": true
@@ -147,7 +147,7 @@
       "family": "update_governance",
       "method": "POST",
       "mutation": "stage only; no apply without approval and package payload",
-      "owner": "claire.api.routes_open_web_update_governance",
+      "owner": "runtime_core.api.routes_open_web_update_governance",
       "path": "/api/update-governance/open-web/install/stage",
       "readiness_gate": "owner approval plus package payload manifest",
       "review_required": true
@@ -159,7 +159,7 @@
       "family": "update_governance",
       "method": "POST",
       "mutation": "operator-gated package apply with rollback snapshot",
-      "owner": "claire.api.routes_open_web_update_governance",
+      "owner": "runtime_core.api.routes_open_web_update_governance",
       "path": "/api/update-governance/open-web/install/apply",
       "readiness_gate": "install_readiness == install_ready",
       "review_required": true
@@ -171,7 +171,7 @@
       "family": "pipeline_evaluate",
       "method": "POST",
       "mutation": "run output artifacts only",
-      "owner": "claire.api.routes_pipeline",
+      "owner": "runtime_core.api.routes_pipeline",
       "path": "/evaluate",
       "readiness_gate": "pipeline returns lifecycle output",
       "review_required": false
@@ -183,7 +183,7 @@
       "family": "design_portal",
       "method": "GET",
       "mutation": "none",
-      "owner": "claire.api.routes_design_portal_output",
+      "owner": "runtime_core.api.routes_design_portal_output",
       "path": "/design-portal/status",
       "readiness_gate": "contract status is visible before CAD export",
       "review_required": false
@@ -195,7 +195,7 @@
       "family": "design_portal",
       "method": "GET",
       "mutation": "none",
-      "owner": "claire.api.routes_design_portal_output",
+      "owner": "runtime_core.api.routes_design_portal_output",
       "path": "/design-portal/contract",
       "readiness_gate": "contract sections and package readiness exposed",
       "review_required": false
@@ -207,14 +207,14 @@
       "family": "cad_intent",
       "method": "GET",
       "mutation": "none",
-      "owner": "claire.api.routes_design_portal_output",
+      "owner": "runtime_core.api.routes_design_portal_output",
       "path": "/cad/intent",
       "readiness_gate": "CAD intent is reviewable; export remains later",
       "review_required": false
     }
   ],
-  "generated_at": "2026-05-24T01:10:56.791789Z",
-  "mounted_route_count": 352,
+  "generated_at": "2026-05-24T22:35:21.792502Z",
+  "mounted_route_count": 353,
   "mounted_routes": [
     {
       "include_in_schema": false,
@@ -1877,24 +1877,16 @@
       "methods": [
         "GET"
       ],
+      "name": "get_cad_export_contract",
+      "path": "/cad/export-contract"
+    },
+    {
+      "include_in_schema": true,
+      "methods": [
+        "GET"
+      ],
       "name": "get_cad_intent",
       "path": "/cad/intent"
-    },
-    {
-      "include_in_schema": false,
-      "methods": [
-        "GET"
-      ],
-      "name": "canonical_dashboard_root_css",
-      "path": "/claire_dashboard.css"
-    },
-    {
-      "include_in_schema": false,
-      "methods": [
-        "GET"
-      ],
-      "name": "canonical_dashboard_root_js",
-      "path": "/claire_dashboard.js"
     },
     {
       "include_in_schema": false,
@@ -2439,6 +2431,22 @@
       ],
       "name": "get_platform_stop_go",
       "path": "/platform/stop-go"
+    },
+    {
+      "include_in_schema": false,
+      "methods": [
+        "GET"
+      ],
+      "name": "canonical_dashboard_root_css",
+      "path": "/platform_dashboard.css"
+    },
+    {
+      "include_in_schema": false,
+      "methods": [
+        "GET"
+      ],
+      "name": "canonical_dashboard_root_js",
+      "path": "/platform_dashboard.js"
     },
     {
       "include_in_schema": true,
@@ -3059,7 +3067,7 @@
     "dashboard_endpoint": "/dashboard/system/industry-standard-endpoint-package",
     "doc_file": "docs/engineering/industry_standard_endpoint_package.md",
     "framework_control_count": 8,
-    "generated_at": "2026-05-24T01:10:56.791789Z",
+    "generated_at": "2026-05-24T22:35:21.792502Z",
     "missing_expected_paths": [],
     "mounted_expected_count": 10,
     "openapi_endpoint": "/openapi.json",
@@ -3280,7 +3288,7 @@
         "test": "tests/test_runtime_truth_canonical_routes.py"
       }
     ],
-    "generated_at": "2026-05-24T01:10:56.791789Z",
+    "generated_at": "2026-05-24T22:35:21.792502Z",
     "missing_routes": [],
     "route": "/api/system/standards-control-map",
     "schema_version": "claire.standards_control_map.v1",

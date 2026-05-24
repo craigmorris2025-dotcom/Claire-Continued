@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.governed_operator_route_plateau import write_s41_operator_route_plateau
+from runtime_core.api.governed_operator_route_plateau import write_s41_operator_route_plateau
 
 
 def main() -> int:

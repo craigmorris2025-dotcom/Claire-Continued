@@ -22,7 +22,7 @@ def _read(path: Path) -> str:
 
 
 def _no_body_read_in_router() -> tuple[bool, list[str]]:
-    router_path = ROOT / "claire" / "api" / "routes" / "governed_live_probe.py"
+    router_path = ROOT / "runtime_core" / "api" / "routes" / "governed_live_probe.py"
     if not router_path.exists():
         return False, ["governed_live_probe.py missing"]
 
@@ -66,7 +66,7 @@ def _required_files() -> tuple[bool, list[str]]:
         ROOT / "tools" / "run_s36_single_head_probe.py",
         ROOT / "tools" / "verify_s36_probe_quarantine.py",
         ROOT / "tools" / "compile_s36_first_probe_report.py",
-        ROOT / "claire" / "api" / "routes" / "governed_live_probe.py",
+        ROOT / "runtime_core" / "api" / "routes" / "governed_live_probe.py",
     ]
     missing = [str(p) for p in required if not p.exists()]
     return not missing, missing

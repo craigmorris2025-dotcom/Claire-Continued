@@ -19,14 +19,32 @@
       "TAVILY_API_KEY": {
         "present": false,
         "redacted": ""
+      },
+      "SEARCHGOV_ACCESS_KEY": {
+        "present": false,
+        "redacted": ""
+      },
+      "SEARCHGOV_AFFILIATE": {
+        "present": false,
+        "redacted": ""
       }
     },
     "provider_known": true,
-    "provider_label": "No Provider Configured",
-    "provider_note": "Runtime/system search remains available. Live web remains disabled.",
-    "required_key_name": "",
+    "provider_label": "Claire Recommended Provider Stack",
+    "provider_note": "Local recursive search remains primary. Brave is preferred when BRAVE_SEARCH_API_KEY is present; Search.gov is the government/public-sector lane when SEARCHGOV_AFFILIATE and SEARCHGOV_ACCESS_KEY are present; DuckDuckGo is fallback-only and disabled for internal enterprise/research-grade results unless explicitly enabled.",
+    "required_key_name": "BRAVE_SEARCH_API_KEY",
     "required_key_present": false,
-    "selected_provider": "none"
+    "selected_provider": "provider_stack",
+    "provider_stack": [
+      "brave",
+      "searchgov",
+      "duckduckgo"
+    ],
+    "recommended_primary_provider": "brave",
+    "recommended_government_provider": "searchgov",
+    "fallback_provider": "duckduckgo",
+    "duckduckgo_fallback_enabled": true,
+    "searchgov_access_key_present": false
   },
   "generated_at": "2026-05-13T11:20:32.970039Z",
   "governance": {
@@ -34,18 +52,22 @@
     "allowlist_or_quarantine_required": true,
     "automatic_updates_disabled": true,
     "evidence_capture_required": true,
-    "governed_research_execution_enabled": false,
-    "live_search_enabled": false,
+    "governed_research_execution_enabled": true,
+    "live_search_enabled": true,
     "no_automatic_update_execution": true,
     "no_autonomous_agent_execution": true,
     "no_fake_web_results": true,
     "no_hidden_background_browsing": true,
-    "normal_web_search_execution_enabled": false,
+    "normal_web_search_execution_enabled": true,
     "operator_visible_results_required": true,
-    "provider_configuration_gate_only": true,
+    "provider_configuration_gate_only": false,
     "rate_limits_required": true,
-    "single_query_probe_enabled": false,
-    "source_trust_required": true
+    "single_query_probe_enabled": true,
+    "source_trust_required": true,
+    "metadata_only_provider_execution": true,
+    "body_reads_allowed": false,
+    "duckduckgo_fallback_enabled": true,
+    "research_grade_provider_required": true
   },
   "limits": {
     "max_bytes_per_result": 250000,
@@ -56,9 +78,10 @@
     "require_operator_visible_results": true
   },
   "next": [
-    "Set CLAIRE_SEARCH_PROVIDER and matching API key locally if desired",
-    "Rerun this provider gate",
-    "v17.84 Governed Single-Query Live Search Probe only after provider is configured"
+    "Optional: set BRAVE_SEARCH_API_KEY for primary Brave web metadata search",
+    "Optional: set SEARCHGOV_AFFILIATE and SEARCHGOV_ACCESS_KEY for Search.gov government/public-sector lane",
+    "DuckDuckGo fallback is operator-enabled for metadata-only readiness while Brave/Search.gov remain preferred research-grade providers",
+    "Promote quarantined metadata manually before pipeline truth/memory use"
   ],
   "prior_readiness": {
     "internet_readiness": {
@@ -129,16 +152,17 @@
   },
   "provider_template_path": "data/internet_provider/provider_config_template.json",
   "quarantine_policy_path": "data/internet_provider/quarantine_policy.json",
-  "status": "PROVIDER_NOT_CONFIGURED_RUNTIME_SEARCH_ONLY",
+  "status": "fallback_metadata_provider_ready_research_grade_credentials_optional",
   "stop_go": {
     "blockers": [],
-    "governed_probe_allowed_now": false,
-    "live_search_enabled_now": false,
-    "normal_web_search_execution_enabled": false,
-    "recommendation": "Runtime/system search remains available. Configure a provider later for normal web search.",
-    "status": "PROVIDER_NOT_CONFIGURED_RUNTIME_SEARCH_ONLY",
+    "governed_probe_allowed_now": true,
+    "live_search_enabled_now": true,
+    "normal_web_search_execution_enabled": true,
+    "recommendation": "Use local recursive/system search first. DuckDuckGo fallback is operator-enabled for metadata-only live execution readiness; Brave remains preferred when keyed and Search.gov remains preferred for government/public-sector evidence. Results remain quarantined before promotion.",
+    "status": "fallback_metadata_provider_ready_research_grade_credentials_optional",
     "warnings": [
-      "no_search_provider_selected"
+      "brave_key_missing_internal_provider_execution_blocked",
+      "searchgov_credentials_missing_until_affiliate_and_access_key_are_set"
     ]
   },
   "version": "v17.83"

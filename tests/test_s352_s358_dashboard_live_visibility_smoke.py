@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.dashboard_live_visibility_smoke_s352_s358 import (
+from runtime_core.api.dashboard_live_visibility_smoke_s352_s358 import (
     build_live_dashboard_visibility_smoke_s352_s358,
     build_s352_payload_endpoint_visibility_smoke,
     build_s353_frontend_asset_visibility_smoke,

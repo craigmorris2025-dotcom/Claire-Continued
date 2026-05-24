@@ -1,6 +1,6 @@
-"""Claire backend service boundary.
+"""Backend service boundary.
 
-The active runtime still delegates to ``claire.app`` while the platform is
+The active runtime delegates through ``runtime_core.app`` while the platform is
 being cleaned and stabilized.
 """
 

@@ -3,7 +3,7 @@ from __future__ import annotations
 import importlib
 
 def test_s54r1_persistence_contract_is_manual_review_only():
-    module = importlib.import_module("claire.api.s54_useful_output_run_history")
+    module = importlib.import_module("runtime_core.api.s54_useful_output_run_history")
     payload = module.build_useful_output_persistence_contract()
     assert payload["version"] == "v19.89.8-S54R1-R8"
     assert payload["status"] == "useful_output_persistence_contract_ready"
@@ -18,7 +18,7 @@ def test_s54r1_persistence_contract_is_manual_review_only():
         assert record["auto_promotion_enabled"] is False
 
 def test_s54r4_run_history_integration_is_visible_without_mutation():
-    module = importlib.import_module("claire.api.s54_useful_output_run_history")
+    module = importlib.import_module("runtime_core.api.s54_useful_output_run_history")
     payload = module.build_run_history_integration_contract()
     assert payload["status"] == "run_history_integration_contract_ready"
     assert payload["history_item_count"] == 7
@@ -29,7 +29,7 @@ def test_s54r4_run_history_integration_is_visible_without_mutation():
         assert item["auto_update_history_enabled"] is False
 
 def test_s54r8_plateau_report_ready():
-    module = importlib.import_module("claire.api.s54_useful_output_run_history")
+    module = importlib.import_module("runtime_core.api.s54_useful_output_run_history")
     report = module.build_s54r1_r8_plateau_report()
     assert report["status"] == "s54r1_r8_ready"
     assert report["ready"] is True

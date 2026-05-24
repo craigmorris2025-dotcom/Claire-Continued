@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 
 
 def test_s957_s984_visual_payload_has_visible_buttons_and_actions():
-    module = importlib.import_module("claire.governance.governed_cockpit_operation_visuals")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_operation_visuals")
     payload = module.build_visual_payload()
     assert payload["phase"] == "S957-S984"
     assert payload["highest_stage"] == "S984"
@@ -25,7 +25,7 @@ def test_s957_s984_visual_payload_has_visible_buttons_and_actions():
 
 
 def test_s957_s984_visual_routes_return_buttons_and_preview():
-    routes = importlib.import_module("claire.api.governed_cockpit_operation_visual_routes")
+    routes = importlib.import_module("runtime_core.api.governed_cockpit_operation_visual_routes")
     app = FastAPI()
     app.include_router(routes.router)
     client = TestClient(app)
@@ -43,7 +43,7 @@ def test_s957_s984_visual_routes_return_buttons_and_preview():
 
 
 def test_s957_s984_stop_gate_preserves_all_blocks():
-    module = importlib.import_module("claire.governance.governed_cockpit_operation_visuals")
+    module = importlib.import_module("runtime_core.governance.governed_cockpit_operation_visuals")
     gate = module.build_visual_stop_gate()
     assert gate["passed"] is True
     assert gate["checks"]["visual_buttons_exist"] is True
@@ -82,7 +82,7 @@ def test_s957_s984_active_html_references_visual_control_assets_or_mount():
 
 
 def test_s957_s984_optional_app_registration_does_not_break_create_app():
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     app = app_module.create_app()
     assert app is not None
     paths = {getattr(route, "path", "") for route in getattr(app, "routes", [])}

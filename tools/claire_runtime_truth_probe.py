@@ -9,7 +9,7 @@ SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from claire.runtime_truth.runtime_truth_reader import main
+from runtime_core.runtime_truth.runtime_truth_reader import main
 
 if __name__ == "__main__":
     raise SystemExit(main(["--root", str(ROOT), *sys.argv[1:]]))

@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_s22_evidence_basket_builds_and_preserves_authority():
-    module = importlib.import_module("claire.api.governed_evidence_basket")
+    module = importlib.import_module("runtime_core.api.governed_evidence_basket")
     payload = {
         "event_stream": {"events": [{"id": "e1", "type": "runtime_state_transition"}]},
         "governed_runtime_timeline": {
@@ -30,7 +30,7 @@ def test_s22_evidence_basket_builds_and_preserves_authority():
 
 
 def test_s22_attach_evidence_basket_preserves_payload():
-    module = importlib.import_module("claire.api.governed_evidence_basket")
+    module = importlib.import_module("runtime_core.api.governed_evidence_basket")
     updated = module.attach_evidence_basket({"existing": "preserved"})
 
     assert updated["existing"] == "preserved"

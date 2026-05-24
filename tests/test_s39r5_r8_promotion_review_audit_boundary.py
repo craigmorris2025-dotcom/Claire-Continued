@@ -23,7 +23,7 @@ def sample_proposal():
 
 
 def test_s39r5_review_status_is_proposal_only():
-    module = importlib.import_module("claire.api.governed_promotion_review_audit_boundary")
+    module = importlib.import_module("runtime_core.api.governed_promotion_review_audit_boundary")
     status = module.summarize_review_status(sample_proposal())
 
     assert status["candidate_id"] == "CAND-S39-001"
@@ -34,7 +34,7 @@ def test_s39r5_review_status_is_proposal_only():
 
 
 def test_s39r6_approval_shell_has_no_promotion_effect():
-    module = importlib.import_module("claire.api.governed_promotion_review_audit_boundary")
+    module = importlib.import_module("runtime_core.api.governed_promotion_review_audit_boundary")
     shell = module.build_approval_record_shell(
         sample_proposal(),
         operator_ack="YES",
@@ -53,7 +53,7 @@ def test_s39r6_approval_shell_has_no_promotion_effect():
 
 
 def test_s39r7_audit_boundary_is_tamper_evident_and_locked():
-    module = importlib.import_module("claire.api.governed_promotion_review_audit_boundary")
+    module = importlib.import_module("runtime_core.api.governed_promotion_review_audit_boundary")
     proposal = sample_proposal()
     shell = module.build_approval_record_shell(proposal, operator_ack="YES")
     boundary = module.seal_proposal_audit_boundary(proposal, shell)
@@ -69,7 +69,7 @@ def test_s39r7_audit_boundary_is_tamper_evident_and_locked():
 
 
 def test_s39r8_writes_review_audit_files(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_promotion_review_audit_boundary")
+    module = importlib.import_module("runtime_core.api.governed_promotion_review_audit_boundary")
     files = module.write_review_audit_artifacts(
         sample_proposal(),
         tmp_path,

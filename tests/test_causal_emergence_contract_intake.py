@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 
 
 def test_causal_contract_traces_all_26_uploaded_files():
-    from claire.emergence.causal_contracts import build_causal_contract
+    from runtime_core.emergence.causal_contracts import build_causal_contract
 
     contract = build_causal_contract()
 
@@ -18,8 +18,8 @@ def test_causal_contract_traces_all_26_uploaded_files():
 
 
 def test_portfolio_conditions_activate_portfolio_route():
-    from claire.emergence.causal_contracts import assess_causal_emergence
-    from claire.lifecycle.canonical_paths import PORTFOLIO_ROUTE
+    from runtime_core.emergence.causal_contracts import assess_causal_emergence
+    from runtime_core.lifecycle.canonical_paths import PORTFOLIO_ROUTE
 
     result = assess_causal_emergence(
         {
@@ -39,8 +39,8 @@ def test_portfolio_conditions_activate_portfolio_route():
 
 
 def test_breakthrough_conditions_activate_breakthrough_route():
-    from claire.emergence.causal_contracts import assess_causal_emergence
-    from claire.lifecycle.canonical_paths import BREAKTHROUGH_ESCALATION_ROUTE
+    from runtime_core.emergence.causal_contracts import assess_causal_emergence
+    from runtime_core.lifecycle.canonical_paths import BREAKTHROUGH_ESCALATION_ROUTE
 
     result = assess_causal_emergence(
         {
@@ -62,8 +62,8 @@ def test_breakthrough_conditions_activate_breakthrough_route():
 
 
 def test_tech_design_build_conditions_activate_design_route_after_required_stage_chain():
-    from claire.emergence.causal_contracts import assess_causal_emergence
-    from claire.lifecycle.canonical_paths import BREAKTHROUGH_DESIGN_ROUTE
+    from runtime_core.emergence.causal_contracts import assess_causal_emergence
+    from runtime_core.lifecycle.canonical_paths import BREAKTHROUGH_DESIGN_ROUTE
 
     result = assess_causal_emergence(
         {
@@ -89,8 +89,8 @@ def test_tech_design_build_conditions_activate_design_route_after_required_stage
 
 
 def test_weak_breakthrough_stays_portfolio_discovery_only():
-    from claire.emergence.causal_contracts import assess_causal_emergence
-    from claire.lifecycle.canonical_paths import PORTFOLIO_ROUTE
+    from runtime_core.emergence.causal_contracts import assess_causal_emergence
+    from runtime_core.lifecycle.canonical_paths import PORTFOLIO_ROUTE
 
     result = assess_causal_emergence(
         {
@@ -111,7 +111,7 @@ def test_weak_breakthrough_stays_portfolio_discovery_only():
 
 
 def test_insufficient_data_produces_insufficient_data_not_fake_output():
-    from claire.emergence.causal_contracts import assess_causal_emergence
+    from runtime_core.emergence.causal_contracts import assess_causal_emergence
 
     result = assess_causal_emergence({})
 
@@ -121,7 +121,7 @@ def test_insufficient_data_produces_insufficient_data_not_fake_output():
 
 
 def test_multiple_valid_routes_produce_route_vector_not_random_single_route():
-    from claire.emergence.causal_contracts import assess_causal_emergence
+    from runtime_core.emergence.causal_contracts import assess_causal_emergence
 
     result = assess_causal_emergence(
         {
@@ -156,8 +156,8 @@ def test_multiple_valid_routes_produce_route_vector_not_random_single_route():
 
 
 def test_design_cad_route_does_not_activate_before_trend_discovery_breakthrough():
-    from claire.emergence.causal_contracts import assess_causal_emergence
-    from claire.lifecycle.canonical_paths import BREAKTHROUGH_DESIGN_ROUTE
+    from runtime_core.emergence.causal_contracts import assess_causal_emergence
+    from runtime_core.lifecycle.canonical_paths import BREAKTHROUGH_DESIGN_ROUTE
 
     result = assess_causal_emergence(
         {
@@ -182,7 +182,7 @@ def test_design_cad_route_does_not_activate_before_trend_discovery_breakthrough(
 
 
 def test_causal_contract_endpoints_are_mounted():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     client = TestClient(create_app())
 

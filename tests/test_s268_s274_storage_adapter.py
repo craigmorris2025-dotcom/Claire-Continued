@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.operator_workflow_storage_adapter import (
+from runtime_core.api.operator_workflow_storage_adapter import (
     append_workflow_record,
     get_storage_adapter_contract,
     get_workflow_counts,

@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s48r1_route_browser_index_is_read_only():
-    module = importlib.import_module("claire.api.s48_dashboard_route_payload_browser")
+    module = importlib.import_module("runtime_core.api.s48_dashboard_route_payload_browser")
     index = module.build_dashboard_route_browser_index()
 
     assert index["version"] == "v19.89.8-S48R1-R8"
@@ -23,7 +23,7 @@ def test_s48r1_route_browser_index_is_read_only():
 
 
 def test_s48r3_payload_browser_previews_available():
-    module = importlib.import_module("claire.api.s48_dashboard_route_payload_browser")
+    module = importlib.import_module("runtime_core.api.s48_dashboard_route_payload_browser")
     previews = module.build_dashboard_payload_browser_previews()
 
     assert previews["status"] == "dashboard_payload_browser_previews_ready"
@@ -42,7 +42,7 @@ def test_s48r3_payload_browser_previews_available():
 
 
 def test_s48r8_plateau_report_ready():
-    module = importlib.import_module("claire.api.s48_dashboard_route_payload_browser")
+    module = importlib.import_module("runtime_core.api.s48_dashboard_route_payload_browser")
     report = module.build_s48r1_r8_plateau_report()
 
     assert report["status"] == "s48r1_r8_ready"

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_dashboard_card_contracts import get_dashboard_card_contracts
+from runtime_core.api.governed_dashboard_card_contracts import get_dashboard_card_contracts
 
 
 def test_s212_s218_dashboard_cards_cover_core_operational_sections_without_unsafe_execution():

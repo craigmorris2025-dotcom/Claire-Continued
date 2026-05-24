@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_operational_payload_adapter import (
+from runtime_core.api.governed_operational_payload_adapter import (
     get_governed_operational_payload,
     list_dashboard_section_ids,
 )

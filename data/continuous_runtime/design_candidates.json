@@ -1,5 +1,118 @@
 {
-  "items": [],
+  "status": "ready",
   "candidate_type": "design",
-  "updated_at": "2026-05-12T10:02:14.380966+00:00"
+  "items": [
+    {
+      "candidate_id": "design-45a90688",
+      "candidate_type": "design",
+      "title": "Design package: Patent-Mining Gap Discovery Layer",
+      "status": "pending_operator_review",
+      "route": "breakthrough_design",
+      "source_solution_id": "solution-45a90688",
+      "blueprint_required": true,
+      "cad_viewer_required": true,
+      "video_viewer_required": true,
+      "buildability_score": 0.95,
+      "manufacturability_score": 0.917,
+      "feasibility_status": "feasible",
+      "runtime_truth_write": "blocked",
+      "design_proof": {
+        "schema_version": "claire.design_proof.v1",
+        "status": "design_proof_ready",
+        "source": "runtime_candidate_contracts",
+        "documents_used_as_runtime_programming": false,
+        "architecture_feasibility": {
+          "verdict": "feasible",
+          "score": 0.8258,
+          "component_count": 3,
+          "integration_points": 3,
+          "complexity_score": 0.46
+        },
+        "build_sequence": {
+          "status": "valid_order",
+          "steps": [
+            {
+              "step": 1,
+              "name": "evidence and signal contract",
+              "depends_on": []
+            },
+            {
+              "step": 2,
+              "name": "gap and solution contract",
+              "depends_on": [
+                1
+              ]
+            },
+            {
+              "step": 3,
+              "name": "component architecture",
+              "depends_on": [
+                2
+              ]
+            },
+            {
+              "step": 4,
+              "name": "validation and governance gates",
+              "depends_on": [
+                3
+              ]
+            },
+            {
+              "step": 5,
+              "name": "portfolio and acquirer package",
+              "depends_on": [
+                4
+              ]
+            }
+          ],
+          "parallelizable_groups": [
+            [
+              "evidence and signal contract"
+            ],
+            [
+              "component architecture",
+              "validation and governance gates"
+            ]
+          ]
+        },
+        "dependency_risk": {
+          "level": "medium",
+          "score": 0.46,
+          "single_points_of_failure": [],
+          "circular_dependencies": [],
+          "mitigation": "keep runtime truth promotion separate from candidate generation"
+        },
+        "deployment_model": {
+          "status": "valid_bounded_deployment_model",
+          "score": 0.8285,
+          "target": "governed local runtime with external scheduler",
+          "rollback": "disable scheduler tick and preserve candidate stores"
+        },
+        "implementation_cost": {
+          "effort_hours": 258,
+          "complexity_factor": 1.644,
+          "estimated_total_usd": 61502,
+          "assumption": "engineering estimate for prototype-to-production hardening"
+        },
+        "design_maturity": {
+          "level": "managed",
+          "score": 0.865,
+          "dimensions": {
+            "completeness": 0.865,
+            "testability": 0.72,
+            "maintainability": 0.54,
+            "documentation": 0.76
+          }
+        },
+        "overall_score": 0.8066,
+        "operator_review_required": true
+      },
+      "design_maturity_level": "managed"
+    }
+  ],
+  "count": 1,
+  "source": "allowlisted_input_boundary",
+  "operator_review_required": true,
+  "runtime_truth_mutated": false,
+  "updated_at": "2026-05-24T22:33:25.658264+00:00"
 }

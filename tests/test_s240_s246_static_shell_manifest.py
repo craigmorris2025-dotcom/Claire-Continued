@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.cockpit_static_shell_manifest import get_static_shell_manifest
+from runtime_core.api.cockpit_static_shell_manifest import get_static_shell_manifest
 
 
 ROOT = Path(__file__).resolve().parents[1]

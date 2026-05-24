@@ -3,8 +3,8 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.operator_read_only_router import router
-from claire.api.s43_route_contract_replay import replay_get
+from runtime_core.api.operator_read_only_router import router
+from runtime_core.api.s43_route_contract_replay import replay_get
 
 
 def test_replay_operator_runtime_status_contract():

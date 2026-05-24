@@ -46,7 +46,7 @@ def scan_routes() -> list[dict]:
 def cockpit_truth() -> dict:
     shell = ROOT / "frontend" / "cockpit" / "shell" / "cockpit_shell.html"
     js = ROOT / "frontend" / "cockpit" / "shell" / "assets" / "claire_authored_enterprise_cockpit_shell.js"
-    launcher = ROOT / "LAUNCH_CLAIRE.bat"
+    launcher = ROOT / "LAUNCH_PLATFORM.bat"
     shell_text = read(shell)
     js_text = read(js)
     launcher_text = read(launcher)

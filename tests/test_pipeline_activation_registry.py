@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 
 
 def test_pipeline_activation_registry_surfaces_existing_pipelines():
-    from claire.pipeline.activation_registry import build_pipeline_activation_registry
+    from runtime_core.pipeline.activation_registry import build_pipeline_activation_registry
 
     payload = build_pipeline_activation_registry()
     assert payload["status"] == "ready"
@@ -33,7 +33,7 @@ def test_pipeline_activation_registry_surfaces_existing_pipelines():
 
 
 def test_acs2_trigger_score_route_selector_representative_routes():
-    from claire.pipeline.activation_registry import select_pipeline_route
+    from runtime_core.pipeline.activation_registry import select_pipeline_route
 
     portfolio = select_pipeline_route(
         {"trend_strength": 0.62, "portfolio_relevance": 0.71},
@@ -57,7 +57,7 @@ def test_acs2_trigger_score_route_selector_representative_routes():
 
 
 def test_pipeline_activation_route_and_dashboard_binding():
-    from claire.app import create_app
+    from runtime_core.app import create_app
 
     client = TestClient(create_app())
     response = client.get("/api/pipelines/activation")
@@ -73,7 +73,7 @@ def test_pipeline_activation_route_and_dashboard_binding():
 
 
 def test_dashboard_exposes_pipeline_activation_registry():
-    js = Path("frontend/command_center/modern/claire_dashboard.js").read_text(encoding="utf-8")
+    js = Path("frontend/command_center/modern/platform_dashboard.js").read_text(encoding="utf-8")
 
     assert "Pipeline Activation Registry" in js
     assert "pipeline_activation" in js

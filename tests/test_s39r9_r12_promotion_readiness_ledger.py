@@ -30,7 +30,7 @@ def sample_audit_boundary():
 
 
 def test_s39r9_readiness_entry_is_non_authoritative():
-    module = importlib.import_module("claire.api.governed_promotion_readiness_ledger")
+    module = importlib.import_module("runtime_core.api.governed_promotion_readiness_ledger")
     entry = module.readiness_from_audit_boundary(sample_audit_boundary())
 
     assert entry["status"] == "candidate_review_ready"
@@ -43,7 +43,7 @@ def test_s39r9_readiness_entry_is_non_authoritative():
 
 
 def test_s39r10_readiness_blocks_bad_boundary():
-    module = importlib.import_module("claire.api.governed_promotion_readiness_ledger")
+    module = importlib.import_module("runtime_core.api.governed_promotion_readiness_ledger")
     bad = sample_audit_boundary()
     bad["runtime_truth_mutation_allowed"] = True
 
@@ -55,7 +55,7 @@ def test_s39r10_readiness_blocks_bad_boundary():
 
 
 def test_s39r11_operator_decision_is_record_only():
-    module = importlib.import_module("claire.api.governed_promotion_readiness_ledger")
+    module = importlib.import_module("runtime_core.api.governed_promotion_readiness_ledger")
     readiness = module.readiness_from_audit_boundary(sample_audit_boundary())
     decision = module.operator_decision_ledger_entry(
         readiness,
@@ -74,7 +74,7 @@ def test_s39r11_operator_decision_is_record_only():
 
 
 def test_s39r12_builds_ledgers_from_audit_boundary_dir(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_promotion_readiness_ledger")
+    module = importlib.import_module("runtime_core.api.governed_promotion_readiness_ledger")
     audit_dir = tmp_path / "audit"
     audit_dir.mkdir()
     (audit_dir / "CAND-S39-009.audit_boundary.json").write_text(

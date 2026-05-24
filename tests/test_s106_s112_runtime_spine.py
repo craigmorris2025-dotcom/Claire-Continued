@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.governed_runtime_spine_s106_s112 import (
+from runtime_core.api.governed_runtime_spine_s106_s112 import (
     build_canonical_runtime_spine,
     build_lifecycle_authority_map,
     build_evidence_to_lifecycle_bridge,
@@ -12,7 +12,7 @@ from claire.api.governed_runtime_spine_s106_s112 import (
     build_governed_search_control_read_model,
     build_dashboard_managed_demo,
 )
-from claire.api.governed_runtime_spine_routes_s106_s112 import include_governed_runtime_spine_routes
+from runtime_core.api.governed_runtime_spine_routes_s106_s112 import include_governed_runtime_spine_routes
 
 
 def test_s106_canonical_runtime_spine_is_ready():

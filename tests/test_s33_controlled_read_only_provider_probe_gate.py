@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
-from claire.api.controlled_read_only_provider_probe_gate import build_controlled_read_only_provider_probe_gate
+from runtime_core.app import create_app
+from runtime_core.api.controlled_read_only_provider_probe_gate import build_controlled_read_only_provider_probe_gate
 
 def test_s33_probe_gate_is_metadata_only_and_no_network():
     gate = build_controlled_read_only_provider_probe_gate()

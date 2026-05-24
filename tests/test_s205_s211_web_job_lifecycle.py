@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.governed_web_job_lifecycle import get_web_job_lifecycle_contract
+from runtime_core.api.governed_web_job_lifecycle import get_web_job_lifecycle_contract
 
 
 def test_s205_s211_web_job_lifecycle_is_visible_bounded_and_not_continuous():

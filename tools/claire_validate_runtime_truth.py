@@ -41,9 +41,9 @@ def main() -> int:
     _bootstrap_project_imports(project_root)
 
     try:
-        from claire.validation_authority.evidence_traceability import build_evidence_traceability_index
-        from claire.validation_authority.io import find_latest_runtime_truth, load_json, write_json
-        from claire.validation_authority.validation_authority import build_validation_report
+        from runtime_core.validation_authority.evidence_traceability import build_evidence_traceability_index
+        from runtime_core.validation_authority.io import find_latest_runtime_truth, load_json, write_json
+        from runtime_core.validation_authority.validation_authority import build_validation_report
     except Exception as exc:
         print(f"[Claire v17.60] Import error: {exc}", file=sys.stderr)
         print("[Claire v17.60] Make sure you run this from the project root after installing v17.60.", file=sys.stderr)

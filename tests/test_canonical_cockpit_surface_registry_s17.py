@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s17_registry_imports_and_builds():
-    module = importlib.import_module("claire.api.canonical_cockpit_surface_registry")
+    module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_registry")
     registry = module.build_cockpit_surface_registry()
 
     assert registry["version"] == "v19.89.8-S17"
@@ -17,7 +17,7 @@ def test_s17_registry_imports_and_builds():
 
 
 def test_s17_registry_has_no_duplicate_surface_ids():
-    module = importlib.import_module("claire.api.canonical_cockpit_surface_registry")
+    module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_registry")
     registry = module.build_cockpit_surface_registry()
 
     assert registry["summary"]["duplicate_surface_ids"] == []
@@ -26,7 +26,7 @@ def test_s17_registry_has_no_duplicate_surface_ids():
 
 
 def test_s17_registry_contains_required_operational_surfaces():
-    module = importlib.import_module("claire.api.canonical_cockpit_surface_registry")
+    module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_registry")
     registry = module.build_cockpit_surface_registry()
     surface_ids = {item["surface_id"] for item in registry["surfaces"]}
 
@@ -47,7 +47,7 @@ def test_s17_registry_contains_required_operational_surfaces():
 
 
 def test_s17_attach_registry_preserves_payload():
-    module = importlib.import_module("claire.api.canonical_cockpit_surface_registry")
+    module = importlib.import_module("runtime_core.api.canonical_cockpit_surface_registry")
     payload = {"existing": "preserved"}
     updated = module.attach_cockpit_surface_registry(payload)
 

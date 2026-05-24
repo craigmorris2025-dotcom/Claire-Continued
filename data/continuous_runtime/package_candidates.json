@@ -1,5 +1,49 @@
 {
-  "items": [],
+  "status": "ready",
   "candidate_type": "package",
-  "updated_at": "2026-05-12T12:45:27.156150+00:00"
+  "items": [
+    {
+      "candidate_id": "package-45a90688",
+      "candidate_type": "package",
+      "title": "Portfolio acquisition review package",
+      "status": "pending_operator_review",
+      "route": "breakthrough_design",
+      "source_portfolio_id": "portfolio-45a90688",
+      "sections": [
+        "signals",
+        "trend",
+        "thesis",
+        "gap",
+        "discovery",
+        "breakthrough_classification",
+        "advancement_path",
+        "solution",
+        "design_portal_output",
+        "portfolio_candidate",
+        "acquisition",
+        "strategic_world",
+        "operator_review"
+      ],
+      "artifact": {
+        "metadata_url": "/api/portfolio/artifacts/cycle_20260524_223325_45a90688",
+        "view_url": "/portfolio/artifacts/cycle_20260524_223325_45a90688/view",
+        "download_url": "/portfolio/artifacts/cycle_20260524_223325_45a90688/download",
+        "latest_view_url": "/portfolio/artifacts/latest/view",
+        "latest_download_url": "/portfolio/artifacts/latest/download",
+        "artifact_id": "portfolio-artifact-cycle_20260524_223325_45a90688",
+        "run_id": "cycle_20260524_223325_45a90688",
+        "title": "Portfolio thesis: Allowlisted Input Boundary Lifecycle",
+        "artifact_path": "data/continuous_runtime/artifacts/portfolio/cycle_20260524_223325_45a90688/portfolio_brief.json",
+        "html_path": "data/continuous_runtime/artifacts/portfolio/cycle_20260524_223325_45a90688/portfolio_brief.html"
+      },
+      "view_url": "/portfolio/artifacts/cycle_20260524_223325_45a90688/view",
+      "download_url": "/portfolio/artifacts/cycle_20260524_223325_45a90688/download",
+      "runtime_truth_write": "blocked"
+    }
+  ],
+  "count": 1,
+  "source": "allowlisted_input_boundary",
+  "operator_review_required": true,
+  "runtime_truth_mutated": false,
+  "updated_at": "2026-05-24T22:33:25.658264+00:00"
 }

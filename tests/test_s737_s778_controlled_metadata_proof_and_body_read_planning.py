@@ -6,12 +6,12 @@ from fastapi.testclient import TestClient
 
 
 def _client() -> TestClient:
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     return TestClient(app_module.create_app())
 
 
 def test_s737_s743_evidence_basket_promotion_preview_is_non_mutating():
-    module = importlib.import_module("claire.governance.governed_evidence_basket_promotion_preview")
+    module = importlib.import_module("runtime_core.governance.governed_evidence_basket_promotion_preview")
     payload = module.build_promotion_preview()
     assert payload["stage_range"] == "S737-S743"
     assert payload["terminal_state"] == "evidence_basket_promotion_preview_ready"
@@ -23,7 +23,7 @@ def test_s737_s743_evidence_basket_promotion_preview_is_non_mutating():
 
 
 def test_s744_s750_controlled_metadata_search_stop_gate_is_proof_only():
-    module = importlib.import_module("claire.governance.governed_metadata_search_stop_gate")
+    module = importlib.import_module("runtime_core.governance.governed_metadata_search_stop_gate")
     payload = module.build_metadata_search_proof()
     assert payload["stage_range"] == "S744-S750"
     assert payload["terminal_state"] == "controlled_metadata_search_proof_ready"
@@ -35,7 +35,7 @@ def test_s744_s750_controlled_metadata_search_stop_gate_is_proof_only():
 
 
 def test_s751_s764_body_read_safety_plan_keeps_body_reads_blocked():
-    module = importlib.import_module("claire.governance.governed_body_read_safety_plan")
+    module = importlib.import_module("runtime_core.governance.governed_body_read_safety_plan")
     payload = module.build_body_read_safety_plan()
     assert payload["stage_range"] == "S751-S764"
     assert payload["terminal_state"] == "body_read_planning_ready_body_reads_blocked"
@@ -47,7 +47,7 @@ def test_s751_s764_body_read_safety_plan_keeps_body_reads_blocked():
 
 
 def test_s765_s778_body_read_request_packet_and_preflight_are_non_executable():
-    module = importlib.import_module("claire.governance.governed_body_read_preflight")
+    module = importlib.import_module("runtime_core.governance.governed_body_read_preflight")
     packet = module.build_body_read_request_packet()
     assert packet["stage_range"] == "S765-S771"
     assert packet["terminal_state"] == "manual_body_read_request_packet_ready_body_reads_blocked"
@@ -108,7 +108,7 @@ def test_s737_s778_post_body_read_risk_classifier_accepts_candidates_without_rea
 
 
 def test_s737_s778_router_exposes_expected_paths():
-    routes = importlib.import_module("claire.api.governed_web_search_body_read_planning_routes")
+    routes = importlib.import_module("runtime_core.api.governed_web_search_body_read_planning_routes")
     paths = {route.path for route in routes.router.routes}
     expected = {
         "/api/evidence/basket/promotion-preview",

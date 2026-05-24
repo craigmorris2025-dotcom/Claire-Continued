@@ -5,7 +5,7 @@ import importlib
 
 
 def test_s78_s84_vertical_slice_ready_and_safe():
-    module = importlib.import_module("claire.api.s78_s84_governed_web_vertical_slice")
+    module = importlib.import_module("runtime_core.api.s78_s84_governed_web_vertical_slice")
     report = module.build_s78_s84_plateau_report()
     assert report["status"] == "s78_s84_ready"
     assert report["ready"] is True
@@ -22,7 +22,7 @@ def test_s78_s84_vertical_slice_ready_and_safe():
 
 
 def test_s79_probe_is_manual_and_dry_run_only():
-    module = importlib.import_module("claire.api.s78_s84_governed_web_vertical_slice")
+    module = importlib.import_module("runtime_core.api.s78_s84_governed_web_vertical_slice")
     dry_run = module.s79_probe_dry_run("test")
     assert dry_run["dry_run"] is True
     assert dry_run["would_execute_network"] is False
@@ -32,7 +32,7 @@ def test_s79_probe_is_manual_and_dry_run_only():
 
 
 def test_s81_to_s84_evidence_becomes_visible_but_not_promoted():
-    module = importlib.import_module("claire.api.s78_s84_governed_web_vertical_slice")
+    module = importlib.import_module("runtime_core.api.s78_s84_governed_web_vertical_slice")
     basket = module.s81_evidence_basket()
     card = module.s84_dashboard_evidence_card()
     assert basket["evidence_count"] == 1

@@ -19,7 +19,7 @@ def test_s31r_dashboard_assets_are_linked():
 
 
 def test_s31r_visibility_bridge_does_not_patch_app_factory():
-    app_file = ROOT / 'claire' / 'app.py'
+    app_file = ROOT / 'runtime_core' / 'app.py'
     assert app_file.exists()
     text = app_file.read_text(encoding='utf-8')
     assert 'v19.89.8-S31R governed optional route registration block' not in text

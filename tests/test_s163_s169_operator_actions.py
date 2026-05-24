@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_operator_actions_s163_s169 import (
+from runtime_core.api.governed_operator_actions_s163_s169 import (
     build_operator_action_contract,
     build_operator_review_action_preview,
     execute_guarded_operator_action,

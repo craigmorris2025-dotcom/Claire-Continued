@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s31r3_reconciled_payload_includes_operational_keys():
-    module = importlib.import_module("claire.api.governed_payload_reconciliation")
+    module = importlib.import_module("runtime_core.api.governed_payload_reconciliation")
     payload = module.compose_governed_payload({})
 
     required = {
@@ -30,7 +30,7 @@ def test_s31r3_reconciled_payload_includes_operational_keys():
 
 
 def test_s31r3_reconciliation_preserves_authority_blocks():
-    module = importlib.import_module("claire.api.governed_payload_reconciliation")
+    module = importlib.import_module("runtime_core.api.governed_payload_reconciliation")
     payload = module.compose_governed_payload({})
     reconciliation = payload["governed_payload_reconciliation"]
 
@@ -42,7 +42,7 @@ def test_s31r3_reconciliation_preserves_authority_blocks():
 
 
 def test_s31r3_expected_keys_list_contains_topology():
-    module = importlib.import_module("claire.api.governed_payload_reconciliation")
+    module = importlib.import_module("runtime_core.api.governed_payload_reconciliation")
     keys = module.expected_payload_keys()
 
     assert "governed_operational_topology_continuity" in keys
@@ -53,7 +53,7 @@ def test_s31r3_does_not_require_app_factory_patch():
     import pathlib
 
     root = pathlib.Path(__file__).resolve().parents[1]
-    app_file = root / "claire" / "app.py"
+    app_file = root / "runtime_core" / "app.py"
     assert app_file.exists()
     text = app_file.read_text(encoding="utf-8")
 

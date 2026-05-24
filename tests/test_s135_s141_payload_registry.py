@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_payload_registry_s135_s141 import (
+from runtime_core.api.governed_payload_registry_s135_s141 import (
     build_governed_operations_registry_entry,
     build_payload_registry_preview,
     build_existing_payload_bridge_contract,

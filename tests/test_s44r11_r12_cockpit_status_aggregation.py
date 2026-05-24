@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s44r11_status_aggregation_preserves_blocked_authority():
-    module = importlib.import_module("claire.api.s44_cockpit_status_aggregation")
+    module = importlib.import_module("runtime_core.api.s44_cockpit_status_aggregation")
     aggregation = module.build_cockpit_status_aggregation()
 
     assert aggregation["version"] == "v19.89.8-S44R9-R16"
@@ -22,7 +22,7 @@ def test_s44r11_status_aggregation_preserves_blocked_authority():
 
 
 def test_s44r12_status_tiles_are_presentation_only():
-    module = importlib.import_module("claire.api.s44_cockpit_status_aggregation")
+    module = importlib.import_module("runtime_core.api.s44_cockpit_status_aggregation")
     tiles = module.build_cockpit_status_tiles()
 
     assert tiles["status"] == "cockpit_status_tiles_ready"

@@ -2,14 +2,14 @@ from __future__ import annotations
 
 import importlib
 
-from claire.api.governed_runtime_spine_s106r1 import (
+from runtime_core.api.governed_runtime_spine_s106r1 import (
     build_runtime_spine_state,
     build_runtime_spine_contract_report,
 )
 
 
 def test_s106r1_module_imports_without_app_patch():
-    module = importlib.import_module("claire.api.governed_runtime_spine_s106r1")
+    module = importlib.import_module("runtime_core.api.governed_runtime_spine_s106r1")
     assert hasattr(module, "build_runtime_spine_state")
     assert hasattr(module, "build_runtime_spine_contract_report")
 

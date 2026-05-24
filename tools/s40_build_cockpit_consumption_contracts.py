@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.governed_cockpit_consumption_contracts import write_cockpit_consumption_contracts
+from runtime_core.api.governed_cockpit_consumption_contracts import write_cockpit_consumption_contracts
 
 
 def main() -> int:

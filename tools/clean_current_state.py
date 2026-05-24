@@ -11,7 +11,7 @@ SRC = PROJECT_ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from claire.install_safety.current_state_cleaner import clean_current_state
+from runtime_core.install_safety.current_state_cleaner import clean_current_state
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Clean Claire current test/install state")

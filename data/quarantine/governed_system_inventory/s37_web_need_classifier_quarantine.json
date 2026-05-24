@@ -1,18 +1,54 @@
 {
   "automatic_updates_allowed": false,
   "autonomous_execution_allowed": false,
-  "generated_at": "2026-05-18T22:37:56.662219+00:00",
+  "generated_at": "2026-05-24T22:35:45.048513+00:00",
   "live_web_execution": false,
   "manual_promotion_required": true,
   "needs": [
     {
-      "allowed_source_type": "official_python_docs",
       "automatic_action_allowed": false,
-      "classification": "official_docs_needed",
+      "classification": "local_repair_first",
       "manual_promotion_required": true,
-      "reason": "Validate HEAD-only metadata behavior against official docs before expanding providers.",
-      "topic": "Python stdlib http.client HEAD request behavior and header-only metadata handling",
-      "web_research_allowed": true
+      "reason": "Missing local project surface should be resolved from Claire architecture state first.",
+      "source_gap": {
+        "category": "missing_expected_surface",
+        "path": "claire/app.py",
+        "reason": "Missing local project surface should be resolved from Claire architecture state first.",
+        "severity": "medium",
+        "summary": "Expected surface missing: app",
+        "web_research_needed": false
+      },
+      "web_research_allowed": false
+    },
+    {
+      "automatic_action_allowed": false,
+      "classification": "local_repair_first",
+      "manual_promotion_required": true,
+      "reason": "Missing local project surface should be resolved from Claire architecture state first.",
+      "source_gap": {
+        "category": "missing_expected_surface",
+        "path": "claire/api/dashboard_payload_bridge.py",
+        "reason": "Missing local project surface should be resolved from Claire architecture state first.",
+        "severity": "medium",
+        "summary": "Expected surface missing: dashboard_payload_bridge",
+        "web_research_needed": false
+      },
+      "web_research_allowed": false
+    },
+    {
+      "automatic_action_allowed": false,
+      "classification": "local_repair_first",
+      "manual_promotion_required": true,
+      "reason": "Missing local project surface should be resolved from Claire architecture state first.",
+      "source_gap": {
+        "category": "missing_expected_surface",
+        "path": "claire/api/routes/governed_live_probe.py",
+        "reason": "Missing local project surface should be resolved from Claire architecture state first.",
+        "severity": "medium",
+        "summary": "Expected surface missing: governed_live_probe_router",
+        "web_research_needed": false
+      },
+      "web_research_allowed": false
     },
     {
       "allowed_source_type": "official_fastapi_docs",
@@ -37,7 +73,7 @@
   "runtime_truth_mutation_allowed": false,
   "source_inventory": "C:\\Users\\craig\\OneDrive\\Desktop\\Claire\\runtime\\governed_system_inventory\\s37_system_self_inventory.json",
   "version": "v19.89.8-S37R1-R4-self-inventory-need-classifier",
-  "web_allowed_count": 3,
-  "web_need_count": 3,
+  "web_allowed_count": 2,
+  "web_need_count": 5,
   "web_search_executed": false
 }

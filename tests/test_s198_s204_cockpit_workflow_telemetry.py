@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.cockpit_workflow_telemetry import get_workflow_telemetry_contract
+from runtime_core.api.cockpit_workflow_telemetry import get_workflow_telemetry_contract
 
 
 def test_s198_s204_workflow_telemetry_is_dashboard_ready_without_unsafe_execution():

@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.dashboard_payload_live_integration_s338_s344 import (
+from runtime_core.api.dashboard_payload_live_integration_s338_s344 import (
     build_canonical_dashboard_payload_integration_s338_s344,
     build_s338_existing_payload_reader,
     build_s339_payload_merge_owner,

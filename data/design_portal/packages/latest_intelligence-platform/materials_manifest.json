@@ -1,0 +1,250 @@
+{
+  "code_materials": [
+    {
+      "id": "pipeline_contracts",
+      "name": "Pipeline contracts",
+      "purpose": "carry candidate state across discovery, feasibility, design, portfolio, and package stages"
+    },
+    {
+      "id": "component_matcher",
+      "name": "Component matcher",
+      "purpose": "map required functions to buildable technology records and implementation interfaces"
+    },
+    {
+      "id": "blueprint_exporter",
+      "name": "Blueprint exporter",
+      "purpose": "turn approved design state into specs, diagrams, and package artifacts"
+    },
+    {
+      "id": "portfolio_router",
+      "name": "Portfolio router",
+      "purpose": "send viable designs into portfolio construction and downstream acquirer matching"
+    },
+    {
+      "id": "operator_review_gate",
+      "name": "Operator review gate",
+      "purpose": "prevent unvalidated runtime truth mutation or automatic promotion"
+    }
+  ],
+  "component_materials": [
+    {
+      "id": "ingestion",
+      "interfaces": [
+        "raw_input",
+        "source_metadata",
+        "normalized_payload"
+      ],
+      "name": "Ingestion",
+      "needed_to_function": true,
+      "priority": "critical",
+      "role": "collects, validates, and normalizes source data"
+    },
+    {
+      "id": "semantic_processing",
+      "interfaces": [
+        "normalized_payload",
+        "semantic_context"
+      ],
+      "name": "Semantic Processing",
+      "needed_to_function": true,
+      "priority": "high",
+      "role": "extracts entities, domain concepts, risk signals, and opportunity context"
+    },
+    {
+      "id": "analysis_engines",
+      "interfaces": [
+        "semantic_context",
+        "signals",
+        "scores"
+      ],
+      "name": "Analysis Engines",
+      "needed_to_function": true,
+      "priority": "high",
+      "role": "evaluates trends, gaps, market formation, risk, feasibility, moat, and deal readiness"
+    },
+    {
+      "id": "decision_layer",
+      "interfaces": [
+        "scores",
+        "decision_state",
+        "readiness_flags"
+      ],
+      "name": "Decision Layer",
+      "needed_to_function": true,
+      "priority": "critical",
+      "role": "classifies decision states, readiness, blocker status, and routing outcomes"
+    },
+    {
+      "id": "api_gateway",
+      "interfaces": [
+        "request",
+        "response",
+        "external_clients"
+      ],
+      "name": "Api Gateway",
+      "needed_to_function": true,
+      "priority": "medium",
+      "role": "exposes system capabilities to applications and users"
+    },
+    {
+      "id": "opportunity_ranking_engine",
+      "interfaces": [
+        "signals",
+        "scores",
+        "ranked_opportunities"
+      ],
+      "name": "Opportunity Ranking Engine",
+      "needed_to_function": true,
+      "priority": "high",
+      "role": "ranks opportunities by gap, trend, feasibility, and strategic value"
+    },
+    {
+      "id": "portfolio_packaging_service",
+      "interfaces": [
+        "ranked_opportunities",
+        "artifact_bundle",
+        "binder_sections"
+      ],
+      "name": "Portfolio Packaging Service",
+      "needed_to_function": true,
+      "priority": "high",
+      "role": "converts validated outputs into binder-ready artifacts"
+    },
+    {
+      "id": "review_console",
+      "interfaces": [],
+      "name": "Review Console",
+      "needed_to_function": true,
+      "priority": "critical",
+      "role": "required by technical feasibility profile"
+    },
+    {
+      "id": "audit_service",
+      "interfaces": [],
+      "name": "Audit Service",
+      "needed_to_function": true,
+      "priority": "critical",
+      "role": "required by technical feasibility profile"
+    }
+  ],
+  "deployment_materials": [
+    {
+      "id": "local_runtime",
+      "name": "Local governed runtime",
+      "status": "available"
+    },
+    {
+      "id": "dashboard_operator_surface",
+      "name": "Design Portal dashboard surface",
+      "status": "wired"
+    },
+    {
+      "id": "validation_controls",
+      "name": "Validation and deployment controls",
+      "status": "required"
+    },
+    {
+      "id": "prototype_plan",
+      "name": "Prototype plan",
+      "status": "required"
+    }
+  ],
+  "purpose": "enumerate what the candidate needs before blueprint, portfolio, acquirer, or package promotion",
+  "schema": "technology_system_code_component_materials_v1",
+  "system_materials": [
+    {
+      "evidence_needed": "accepted source pack or live promoted evidence",
+      "id": "evidence_ingestion_system",
+      "name": "Evidence Ingestion System",
+      "needed_to_operate": true,
+      "purpose": "bring source material into the design process with traceable provenance"
+    },
+    {
+      "evidence_needed": "signal_ingestion_service, opportunity_ranking_service, design_output_service",
+      "id": "component_mapping_system",
+      "name": "Component Mapping System",
+      "needed_to_operate": true,
+      "purpose": "map functional requirements to current technologies and interfaces"
+    },
+    {
+      "evidence_needed": "prototype validation, component fit, deployment controls",
+      "id": "feasibility_governance_system",
+      "name": "Feasibility Governance System",
+      "needed_to_operate": true,
+      "purpose": "separate buildable-now systems from speculative or future-state concepts"
+    },
+    {
+      "evidence_needed": "operator promotion decision",
+      "id": "blueprint_export_system",
+      "name": "Blueprint Export System",
+      "needed_to_operate": true,
+      "purpose": "convert reviewed design into technical specs, blueprints, and implementation phases"
+    }
+  ],
+  "technology_materials": [
+    {
+      "deployment": "cloud_or_local_runtime",
+      "id": "transformer_architecture",
+      "manufacturability": "software_deployable",
+      "name": "Transformer Architecture",
+      "readiness_level": 9,
+      "status": "current_buildable_reference"
+    },
+    {
+      "deployment": "current_stack_or_historical_foundation",
+      "id": "timeline_blaise_pascal_invents_the_mechanical_calculator_pascaline",
+      "manufacturability": "widely_manufacturable_or_deployable",
+      "name": "Blaise Pascal invents the mechanical calculator (Pascaline)",
+      "readiness_level": 9,
+      "status": "current_buildable_reference"
+    },
+    {
+      "deployment": "current_stack_or_historical_foundation",
+      "id": "timeline_gottfried_leibniz_creates_the_stepped_reckoner_calculator",
+      "manufacturability": "widely_manufacturable_or_deployable",
+      "name": "Gottfried Leibniz creates the Stepped Reckoner calculator",
+      "readiness_level": 9,
+      "status": "current_buildable_reference"
+    },
+    {
+      "deployment": "current_stack_or_historical_foundation",
+      "id": "timeline_charles_babbage_designs_the_difference_engine",
+      "manufacturability": "widely_manufacturable_or_deployable",
+      "name": "Charles Babbage designs the Difference Engine",
+      "readiness_level": 9,
+      "status": "current_buildable_reference"
+    },
+    {
+      "deployment": "current_stack_or_historical_foundation",
+      "id": "timeline_ada_lovelace_writes_the_first_computer_algorithm_for",
+      "manufacturability": "widely_manufacturable_or_deployable",
+      "name": "Ada Lovelace writes the first computer algorithm for",
+      "readiness_level": 9,
+      "status": "current_buildable_reference"
+    },
+    {
+      "deployment": "current_stack_or_historical_foundation",
+      "id": "timeline_transistor_invented_at_bell_labs_by_bardeen_brattain",
+      "manufacturability": "widely_manufacturable_or_deployable",
+      "name": "Transistor invented at Bell Labs by Bardeen, Brattain,",
+      "readiness_level": 9,
+      "status": "current_buildable_reference"
+    },
+    {
+      "deployment": "current_stack_or_historical_foundation",
+      "id": "timeline_claude_shannon_publishes_a_mathematical_theory_of",
+      "manufacturability": "widely_manufacturable_or_deployable",
+      "name": "Claude Shannon publishes \"A Mathematical Theory of",
+      "readiness_level": 9,
+      "status": "current_buildable_reference"
+    },
+    {
+      "deployment": "current_stack_or_historical_foundation",
+      "id": "timeline_alan_turing_publishes_computing_machinery_and",
+      "manufacturability": "widely_manufacturable_or_deployable",
+      "name": "Alan Turing publishes \"Computing Machinery and",
+      "readiness_level": 9,
+      "status": "current_buildable_reference"
+    }
+  ]
+}

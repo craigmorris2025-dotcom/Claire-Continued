@@ -1,0 +1,192 @@
+{
+  "backup_manifest": {
+    "backup_every_modified_file": true,
+    "backup_hash_required": true,
+    "backup_manifest_required": true,
+    "backup_required_before_any_replace": true,
+    "backup_root": "backups/update_pack_rollbacks/rollback_plan_20260524_193024_update_pack_20260524_193024_update_governance_patch"
+  },
+  "contract_name": "Rollback-Aware Update Plan Contract",
+  "execution_gate": {
+    "automatic_execution_enabled": false,
+    "blockers": [],
+    "execution_enabled": false,
+    "reason": "v17.72 defines rollback-aware planning only. Execution remains disabled until later gated builds.",
+    "rollback_execution_enabled": false,
+    "warnings": []
+  },
+  "generated_at": "2026-05-24T19:30:24.575311Z",
+  "governance": {
+    "execution_still_disabled": true,
+    "no_hidden_updates": true,
+    "no_unreviewed_restore": true,
+    "operator_review_required": true,
+    "rollback_required_before_update_execution": true,
+    "validation_required_after_restore": true
+  },
+  "linked_update_pack": {
+    "automatic_execution_enabled": false,
+    "execution_enabled": false,
+    "pack_hash": "7ed9cfff0e7e6b92a46679cf3127a2847333ffb14e3bf4af449aac63ea80a24d",
+    "pack_id": "update_pack_20260524_193024_update_governance_patch",
+    "pack_path": "data/update_packs/staging/update_pack_20260524_193024_update_governance_patch.json",
+    "pack_status": "blocked",
+    "pack_type": "update_governance_patch"
+  },
+  "next": [
+    "v17.73 Automatic Update Runner Gate",
+    "v17.74 Update Governance Regression Lock",
+    "v17.75 Full end-to-end proof pack"
+  ],
+  "operator_review": {
+    "approval_status": "not_approved",
+    "required": true,
+    "review_fields": [
+      "plan_identity",
+      "linked_update_pack",
+      "preflight_snapshot",
+      "backup_manifest",
+      "restore_steps",
+      "validation_after_restore",
+      "operator_review",
+      "execution_gate"
+    ],
+    "review_required_before_execution": true
+  },
+  "plan_identity": {
+    "automatic_execution_enabled": false,
+    "execute_now": false,
+    "plan_id": "rollback_plan_20260524_193024_update_pack_20260524_193024_update_governance_patch",
+    "rollback_execution_enabled": false,
+    "status": "rollback_plan_ready"
+  },
+  "preflight_snapshot": {
+    "protected_paths": [
+      {
+        "exists": false,
+        "is_file": false,
+        "must_backup_before_replace": true,
+        "path": "claire/app.py",
+        "sha256": null,
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_file": false,
+        "must_backup_before_replace": true,
+        "path": "claire/api/routes_pipeline.py",
+        "sha256": null,
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_file": false,
+        "must_backup_before_replace": true,
+        "path": "claire/orchestrator/pipeline_v4.py",
+        "sha256": null,
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_file": false,
+        "must_backup_before_replace": true,
+        "path": "claire/runtime_truth/runtime_truth_contract_repair.py",
+        "sha256": null,
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_file": false,
+        "must_backup_before_replace": true,
+        "path": "claire/dashboard/operator_dashboard_state.py",
+        "sha256": null,
+        "size_bytes": null
+      },
+      {
+        "exists": true,
+        "is_file": true,
+        "must_backup_before_replace": true,
+        "path": "frontend/command_center/modern/index.html",
+        "sha256": "65f88028ec38b10dc0bdca11e00e355dae4d5b7e60a8e319716ac885a00de8b4",
+        "size_bytes": 1082
+      },
+      {
+        "exists": true,
+        "is_file": true,
+        "must_backup_before_replace": true,
+        "path": "LAUNCH_PLATFORM.bat",
+        "sha256": "9449023768162d0b19ad037f3263a1ba557b58976bc8bc8645ed8812f2e31a78",
+        "size_bytes": 1819
+      },
+      {
+        "exists": true,
+        "is_file": true,
+        "must_backup_before_replace": true,
+        "path": "pyproject.toml",
+        "sha256": "fb4e813d146df9def67ff83b31f5fff8844fafd03b6dc0015a7ab88e87b62b15",
+        "size_bytes": 813
+      },
+      {
+        "exists": true,
+        "is_file": true,
+        "must_backup_before_replace": true,
+        "path": "requirements.txt",
+        "sha256": "014edf8ae85c7888ce03ef9eee931a141e7e977e3fb4828b4d38d17224383415",
+        "size_bytes": 1506
+      }
+    ],
+    "snapshot_required_before_execution": true,
+    "staging_index_source": {
+      "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/update_packs/update_pack_staging_index.json",
+      "status": "loaded"
+    }
+  },
+  "restore_steps": [
+    {
+      "command": "Stop any running Claire terminal/server windows before restoring files.",
+      "name": "Stop Claire runtime before restore",
+      "required": true,
+      "step": 1
+    },
+    {
+      "command": "dir backups/update_pack_rollbacks/rollback_plan_20260524_193024_update_pack_20260524_193024_update_governance_patch",
+      "name": "Verify rollback backup exists",
+      "required": true,
+      "step": 2
+    },
+    {
+      "command": "python tools/rollback_restore.py --plan rollback_plan_20260524_193024_update_pack_20260524_193024_update_governance_patch",
+      "name": "Restore files from rollback backup",
+      "required": true,
+      "status": "contract_only_tool_may_not_exist_yet",
+      "step": 3
+    },
+    {
+      "command": "python -m pytest tests/test_v17_72_rollback_aware_update_plan_contract.py -q",
+      "name": "Run rollback validation",
+      "required": true,
+      "step": 4
+    },
+    {
+      "command": "LAUNCH_PLATFORM.bat",
+      "name": "Launch dashboard after restore",
+      "required": true,
+      "step": 5
+    }
+  ],
+  "validation_after_restore": {
+    "commands": [
+      "python -m pytest tests/test_v17_72_rollback_aware_update_plan_contract.py -q",
+      "python -m pytest -q",
+      "LAUNCH_PLATFORM.bat"
+    ],
+    "manual_checks": [
+      "Dashboard opens",
+      "Runtime truth endpoint still responds",
+      "Update staging index still readable",
+      "No automatic update runner enabled"
+    ],
+    "required": true
+  },
+  "version": "v17.72"
+}

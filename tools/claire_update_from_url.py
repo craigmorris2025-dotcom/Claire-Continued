@@ -52,12 +52,12 @@ def main() -> int:
     root = Path(args.root).resolve() if args.root else find_project_root()
     ensure_import_path(root)
 
-    from claire.updater.package_downloader import PackageDownloader
-    from claire.updater.package_installer import PackageInstaller
-    from claire.updater.package_verifier import PackageVerifier
-    from claire.updater.rollback_manager import RollbackManager
-    from claire.updater.update_audit_log import UpdateAuditLog
-    from claire.updater.update_health import UpdaterHealth
+    from runtime_core.updater.package_downloader import PackageDownloader
+    from runtime_core.updater.package_installer import PackageInstaller
+    from runtime_core.updater.package_verifier import PackageVerifier
+    from runtime_core.updater.rollback_manager import RollbackManager
+    from runtime_core.updater.update_audit_log import UpdateAuditLog
+    from runtime_core.updater.update_health import UpdaterHealth
 
     audit = UpdateAuditLog(root)
     rollback_manager = RollbackManager(root)

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.cockpit_live_governance_banners import get_live_governance_banners
-from claire.api.cockpit_workflow_binding_readiness import get_workflow_binding_readiness
+from runtime_core.api.cockpit_live_governance_banners import get_live_governance_banners
+from runtime_core.api.cockpit_workflow_binding_readiness import get_workflow_binding_readiness
 
 
 def test_s254_s260_live_governance_banners_surface_core_locks():

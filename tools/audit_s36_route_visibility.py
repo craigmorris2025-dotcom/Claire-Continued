@@ -19,7 +19,7 @@ def _utc_now() -> str:
 
 def main() -> int:
     try:
-        from claire.app import create_app
+        from runtime_core.app import create_app
     except Exception as exc:
         print(f"[S36-ROUTE-AUDIT][FAILED] could not import create_app: {exc}")
         return 1

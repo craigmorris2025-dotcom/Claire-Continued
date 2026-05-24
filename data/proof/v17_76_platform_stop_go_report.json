@@ -1,31 +1,9 @@
 {
-  "blocked_domains": [
-    "dashboard",
-    "search",
-    "runtime_truth",
-    "routes",
-    "autodesign",
-    "design_portal",
-    "validation",
-    "internet",
-    "updates",
-    "proof"
-  ],
-  "blockers": [
-    "domain_blocked:autodesign",
-    "domain_blocked:dashboard",
-    "domain_blocked:design_portal",
-    "domain_blocked:internet",
-    "domain_blocked:proof",
-    "domain_blocked:routes",
-    "domain_blocked:runtime_truth",
-    "domain_blocked:search",
-    "domain_blocked:updates",
-    "domain_blocked:validation"
-  ],
-  "generated_at": "2026-05-13T11:18:58.127157Z",
+  "blocked_domains": [],
+  "blockers": [],
+  "generated_at": "2026-05-24T22:33:13.234259Z",
   "missing_files": [],
-  "recommendation": "Do not proceed to launch hardening until blocked endpoint, output, or safety domains are fixed.",
-  "status": "STOP",
+  "recommendation": "Platform endpoint smoke proof passed. Continue to launch hardening, packaging, and manual browser/Swagger proof.",
+  "status": "GO_TO_PLATFORM_LAUNCH_HARDENING",
   "version": "v17.76"
 }

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.cockpit_card_region_binding import get_card_region_binding_contract
+from runtime_core.api.cockpit_card_region_binding import get_card_region_binding_contract
 
 
 def test_s233_s239_card_region_binding_maps_required_cards_to_correct_regions():

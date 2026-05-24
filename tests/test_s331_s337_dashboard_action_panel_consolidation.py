@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.dashboard_action_panel_consolidation_s331_s337 import (
+from runtime_core.api.dashboard_action_panel_consolidation_s331_s337 import (
     build_dashboard_action_panel_consolidation_s331_s337,
     build_s331_operator_action_registry,
     build_s332_evidence_panel_contract,

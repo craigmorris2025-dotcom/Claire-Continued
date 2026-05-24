@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from claire.api.internet_live_toggle_operator_control_s408_s414 import (
+from runtime_core.api.internet_live_toggle_operator_control_s408_s414 import (
     build_operator_visible_live_toggle_s408_s414,
     build_s408_live_toggle_visibility_contract,
     build_s409_live_toggle_state,
@@ -35,7 +35,7 @@ def test_s410_operator_instruction_names_toggle():
     payload = build_s410_operator_instruction_contract()
     instruction = payload["operator_instruction"]
     assert payload["stage_version"] == "S410"
-    assert "CLAIRE_ALLOW_CONTROLLED_LIVE_PROVIDER" in instruction["enable_command_powershell"]
+    assert "PLATFORM_ALLOW_CONTROLLED_LIVE_PROVIDER" in instruction["enable_command_powershell"]
     assert instruction["do_not_enable_until_green_gate"] is True
 
 

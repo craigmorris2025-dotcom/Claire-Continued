@@ -4,8 +4,8 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
-from claire.api.dependency_chain_proof import build_dependency_chain_proof
+from runtime_core.app import create_app
+from runtime_core.api.dependency_chain_proof import build_dependency_chain_proof
 
 
 def test_dependency_chain_proof_runs_clean_against_mounted_app():
@@ -27,7 +27,7 @@ def test_dependency_chain_proof_contains_no_ambiguous_owner_handoffs():
     payload = build_dependency_chain_proof(create_app())
 
     for step in payload["steps"]:
-        assert step["owner"].startswith("claire.")
+        assert step["owner"].startswith("runtime_core.")
         assert step["endpoint"].startswith("/")
         assert step["handoff_fields"]
         assert step["status"] == "passed"
@@ -43,4 +43,3 @@ def test_dependency_chain_proof_writes_review_artifacts(tmp_path: Path):
     assert payload["status"] == "clean_e2e_review_proof"
     assert (tmp_path / "data" / "proof" / "dependency_to_dependency_e2e_proof.json").exists()
     assert (tmp_path / "docs" / "engineering" / "dependency_to_dependency_e2e_proof.md").exists()
-

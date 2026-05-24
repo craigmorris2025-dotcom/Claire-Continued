@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.cockpit_validation_lanes import get_validation_lanes
+from runtime_core.api.cockpit_validation_lanes import get_validation_lanes
 
 
 def test_s191_s197_validation_lanes_define_fast_and_full_gates():

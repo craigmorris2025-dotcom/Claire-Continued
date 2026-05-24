@@ -68,7 +68,7 @@ def test_s36r16_command_file_exists_and_contains_only_manual_commands():
 
 
 def test_s36r17_router_no_body_read_static_proof():
-    router = ROOT / "claire" / "api" / "routes" / "governed_live_probe.py"
+    router = ROOT / "runtime_core" / "api" / "routes" / "governed_live_probe.py"
     source = router.read_text(encoding="utf-8")
     tree = ast.parse(source)
     for node in ast.walk(tree):

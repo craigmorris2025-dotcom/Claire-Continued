@@ -2,13 +2,13 @@ from __future__ import annotations
 import importlib
 
 MODULES = [
-    ("claire.api.s71_governed_continuous_runtime_observation", "build_s71r1_r8_plateau_report"),
-    ("claire.api.s72_run_output_operator_review_bridge", "build_s72r1_r8_plateau_report"),
-    ("claire.api.s73_useful_run_package_composer", "build_s73r1_r8_plateau_report"),
-    ("claire.api.s74_governed_output_quality_scoring", "build_s74r1_r8_plateau_report"),
-    ("claire.api.s75_cockpit_demo_run_packet", "build_s75r1_r8_plateau_report"),
-    ("claire.api.s76_controlled_probe_arming_review", "build_s76r1_r8_plateau_report"),
-    ("claire.api.s77_provider_probe_dry_run_action", "build_s77r1_r8_plateau_report"),
+    ("runtime_core.api.s71_governed_continuous_runtime_observation", "build_s71r1_r8_plateau_report"),
+    ("runtime_core.api.s72_run_output_operator_review_bridge", "build_s72r1_r8_plateau_report"),
+    ("runtime_core.api.s73_useful_run_package_composer", "build_s73r1_r8_plateau_report"),
+    ("runtime_core.api.s74_governed_output_quality_scoring", "build_s74r1_r8_plateau_report"),
+    ("runtime_core.api.s75_cockpit_demo_run_packet", "build_s75r1_r8_plateau_report"),
+    ("runtime_core.api.s76_controlled_probe_arming_review", "build_s76r1_r8_plateau_report"),
+    ("runtime_core.api.s77_provider_probe_dry_run_action", "build_s77r1_r8_plateau_report"),
 ]
 
 def test_s71_s77_all_ready_and_authority_blocked():
@@ -28,7 +28,7 @@ def test_s71_s77_all_ready_and_authority_blocked():
         assert report["verification"]["failures"] == []
 
 def test_s75_demo_packet_visible_but_not_live_execution():
-    module = importlib.import_module("claire.api.s75_cockpit_demo_run_packet")
+    module = importlib.import_module("runtime_core.api.s75_cockpit_demo_run_packet")
     packet = module.build_cockpit_demo_run_packet()
     assert packet["demo_ready"] is True
     assert packet["has_dashboard"] is True
@@ -37,7 +37,7 @@ def test_s75_demo_packet_visible_but_not_live_execution():
     assert packet["actual_runtime_truth_write"] is False
 
 def test_s77_dry_run_never_executes_network():
-    module = importlib.import_module("claire.api.s77_provider_probe_dry_run_action")
+    module = importlib.import_module("runtime_core.api.s77_provider_probe_dry_run_action")
     action = module.build_provider_probe_dry_run_action()
     assert action["dry_run_available"] is True
     assert action["executes_network"] is False

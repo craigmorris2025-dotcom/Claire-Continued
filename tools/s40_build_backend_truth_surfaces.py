@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from claire.api.governed_backend_truth_surfaces import write_backend_truth_surface_payload
+from runtime_core.api.governed_backend_truth_surfaces import write_backend_truth_surface_payload
 
 
 def main() -> int:

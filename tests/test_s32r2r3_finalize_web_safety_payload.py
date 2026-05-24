@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from fastapi.testclient import TestClient
 
-from claire.app import create_app
+from runtime_core.app import create_app
 
 
 def test_s32r2r3_dashboard_payload_exposes_safety_activation():

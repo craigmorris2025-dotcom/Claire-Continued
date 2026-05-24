@@ -1,5 +1,5 @@
 {
-  "allowlist_enabled": false,
+  "allowlist_enabled": true,
   "created_at": "2026-05-13T11:20:32.968039Z",
   "operator_review_required_for_new_domains": true,
   "policy": "review_before_trust",
@@ -28,6 +28,84 @@
       "enabled": true,
       "notes": "Energy information and technology program source.",
       "trust_tier": "primary_public_record"
+    },
+    {
+      "domain": "nist.gov",
+      "enabled": true,
+      "notes": "Standards, AI risk, cybersecurity, measurement, and technical guidance.",
+      "trust_tier": "primary_public_record"
+    },
+    {
+      "domain": "uspto.gov",
+      "enabled": true,
+      "notes": "Official patent and trademark source for invention, novelty, and prior-art metadata.",
+      "trust_tier": "primary_public_record"
+    },
+    {
+      "domain": "wipo.int",
+      "enabled": true,
+      "notes": "International patent and IP source for patent mining and global novelty context.",
+      "trust_tier": "primary_public_record"
+    },
+    {
+      "domain": "federalregister.gov",
+      "enabled": true,
+      "notes": "Official federal rulemaking source for regulatory and update signals.",
+      "trust_tier": "primary_public_record"
+    },
+    {
+      "domain": "congress.gov",
+      "enabled": true,
+      "notes": "Official legislative source for policy and market-impact signals.",
+      "trust_tier": "primary_public_record"
+    },
+    {
+      "domain": "science.gov",
+      "enabled": true,
+      "notes": "Federal science portal for technical research discovery.",
+      "trust_tier": "primary_public_record"
+    },
+    {
+      "domain": "arxiv.org",
+      "enabled": true,
+      "notes": "Preprint research source; useful for technology scanning but requires corroboration.",
+      "trust_tier": "technical_research_review_required"
+    },
+    {
+      "domain": "ieee.org",
+      "enabled": true,
+      "notes": "Engineering and standards research source; may be paywalled and requires metadata-only review.",
+      "trust_tier": "technical_research_review_required"
+    },
+    {
+      "domain": "acm.org",
+      "enabled": true,
+      "notes": "Computing research source; may be paywalled and requires metadata-only review.",
+      "trust_tier": "technical_research_review_required"
+    },
+    {
+      "domain": "github.com",
+      "enabled": true,
+      "notes": "Repository and release metadata source for implementation/update inspection only.",
+      "trust_tier": "software_release_review_required"
+    },
+    {
+      "domain": "pypi.org",
+      "enabled": true,
+      "notes": "Python package metadata source for update inspection only.",
+      "trust_tier": "software_release_review_required"
+    },
+    {
+      "domain": "npmjs.com",
+      "enabled": true,
+      "notes": "Node package metadata source for update inspection only.",
+      "trust_tier": "software_release_review_required"
+    },
+    {
+      "domain": "openai.com",
+      "enabled": true,
+      "notes": "Official OpenAI product/API documentation and release information.",
+      "trust_tier": "official_vendor_docs"
     }
   ],
   "version": "v17.83"

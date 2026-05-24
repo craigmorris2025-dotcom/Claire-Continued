@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.export_artifact_record_contract import get_export_artifact_record_contract
-from claire.api.operator_audit_trail_contract import get_operator_audit_trail_contract
+from runtime_core.api.export_artifact_record_contract import get_export_artifact_record_contract
+from runtime_core.api.operator_audit_trail_contract import get_operator_audit_trail_contract
 
 
 def test_s261_s267_export_artifact_contract_requires_operator_approval_and_lineage():

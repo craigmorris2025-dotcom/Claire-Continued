@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi import FastAPI
 
-from claire.api.operator_read_only_router import router
-from claire.api.s43_route_visibility_registry import build_route_registry
+from runtime_core.api.operator_read_only_router import router
+from runtime_core.api.s43_route_visibility_registry import build_route_registry
 
 
 def test_route_registry_collects_mounted_routes():

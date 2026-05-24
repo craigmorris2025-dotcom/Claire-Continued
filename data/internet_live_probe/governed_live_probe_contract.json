@@ -1,21 +1,32 @@
 {
   "allowlist": {
-    "allowlist_enabled": false,
+    "allowlist_enabled": true,
     "quarantine_unknown_domains": true,
     "source": {
       "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_provider/source_allowlist_template.json",
       "status": "loaded"
     },
     "trusted_domains": [
+      "acm.org",
+      "arxiv.org",
       "bls.gov",
+      "congress.gov",
       "energy.gov",
+      "federalregister.gov",
       "federalreserve.gov",
-      "sec.gov"
+      "github.com",
+      "ieee.org",
+      "nist.gov",
+      "npmjs.com",
+      "openai.com",
+      "pypi.org",
+      "science.gov",
+      "sec.gov",
+      "uspto.gov",
+      "wipo.int"
     ]
   },
-  "blockers": [
-    "no_provider_selected"
-  ],
+  "blockers": [],
   "contract_name": "Governed Single-Query Live Search Probe",
   "execution_defaults": {
     "automatic_execution_enabled": false,
@@ -24,7 +35,7 @@
     "runtime_truth_auto_ingestion_enabled": false,
     "updates_auto_execution_enabled": false
   },
-  "generated_at": "2026-05-13T11:20:33.043036Z",
+  "generated_at": "2026-05-24T22:33:00.941262Z",
   "governance": {
     "allowlist_or_quarantine_required": true,
     "evidence_capture_required": true,
@@ -52,11 +63,11 @@
     "Do not feed results into runtime truth until a later reviewed evidence-promotion build"
   ],
   "provider": {
-    "key_name": "",
-    "key_present": false,
-    "key_redacted": "",
-    "known": false,
-    "provider": "none"
+    "key_name": "TAVILY_API_KEY",
+    "key_present": true,
+    "key_redacted": "tv***mO",
+    "known": true,
+    "provider": "tavily"
   },
   "provider_gate": {
     "environment": {
@@ -69,6 +80,14 @@
           "present": false,
           "redacted": ""
         },
+        "SEARCHGOV_ACCESS_KEY": {
+          "present": false,
+          "redacted": ""
+        },
+        "SEARCHGOV_AFFILIATE": {
+          "present": false,
+          "redacted": ""
+        },
         "SERPAPI_API_KEY": {
           "present": false,
           "redacted": ""
@@ -78,45 +97,60 @@
           "redacted": ""
         }
       },
+      "duckduckgo_fallback_enabled": true,
+      "fallback_provider": "duckduckgo",
       "provider_known": true,
-      "provider_label": "No Provider Configured",
-      "provider_note": "Runtime/system search remains available. Live web remains disabled.",
-      "required_key_name": "",
+      "provider_label": "Claire Recommended Provider Stack",
+      "provider_note": "Local recursive search remains primary. Brave is preferred when BRAVE_SEARCH_API_KEY is present; Search.gov is the government/public-sector lane when SEARCHGOV_AFFILIATE and SEARCHGOV_ACCESS_KEY are present; DuckDuckGo is fallback-only and disabled for internal enterprise/research-grade results unless explicitly enabled.",
+      "provider_stack": [
+        "brave",
+        "searchgov",
+        "duckduckgo"
+      ],
+      "recommended_government_provider": "searchgov",
+      "recommended_primary_provider": "brave",
+      "required_key_name": "BRAVE_SEARCH_API_KEY",
       "required_key_present": false,
-      "selected_provider": "none"
+      "searchgov_access_key_present": false,
+      "selected_provider": "provider_stack"
     },
     "governance": {
       "agent_execution_disabled": true,
       "allowlist_or_quarantine_required": true,
       "automatic_updates_disabled": true,
+      "body_reads_allowed": false,
+      "duckduckgo_fallback_enabled": true,
       "evidence_capture_required": true,
-      "governed_research_execution_enabled": false,
-      "live_search_enabled": false,
+      "governed_research_execution_enabled": true,
+      "live_search_enabled": true,
+      "metadata_only_provider_execution": true,
       "no_automatic_update_execution": true,
       "no_autonomous_agent_execution": true,
       "no_fake_web_results": true,
       "no_hidden_background_browsing": true,
-      "normal_web_search_execution_enabled": false,
+      "normal_web_search_execution_enabled": true,
       "operator_visible_results_required": true,
-      "provider_configuration_gate_only": true,
+      "provider_configuration_gate_only": false,
       "rate_limits_required": true,
-      "single_query_probe_enabled": false,
+      "research_grade_provider_required": true,
+      "single_query_probe_enabled": true,
       "source_trust_required": true
     },
     "source": {
       "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_provider/provider_configuration_gate.json",
       "status": "loaded"
     },
-    "status": "PROVIDER_NOT_CONFIGURED_RUNTIME_SEARCH_ONLY",
+    "status": "fallback_metadata_provider_ready_research_grade_credentials_optional",
     "stop_go": {
       "blockers": [],
-      "governed_probe_allowed_now": false,
-      "live_search_enabled_now": false,
-      "normal_web_search_execution_enabled": false,
-      "recommendation": "Runtime/system search remains available. Configure a provider later for normal web search.",
-      "status": "PROVIDER_NOT_CONFIGURED_RUNTIME_SEARCH_ONLY",
+      "governed_probe_allowed_now": true,
+      "live_search_enabled_now": true,
+      "normal_web_search_execution_enabled": true,
+      "recommendation": "Use local recursive/system search first. DuckDuckGo fallback is operator-enabled for metadata-only live execution readiness; Brave remains preferred when keyed and Search.gov remains preferred for government/public-sector evidence. Results remain quarantined before promotion.",
+      "status": "fallback_metadata_provider_ready_research_grade_credentials_optional",
       "warnings": [
-        "no_search_provider_selected"
+        "brave_key_missing_internal_provider_execution_blocked",
+        "searchgov_credentials_missing_until_affiliate_and_access_key_are_set"
       ]
     }
   },
@@ -124,9 +158,9 @@
     "path": "C:/Users/craig/OneDrive/Desktop/Claire/data/internet_provider/quarantine_policy.json",
     "status": "loaded"
   },
-  "recommendation": "Configure CLAIRE_SEARCH_PROVIDER and its API key locally, then rerun v17.83/v17.84 gates.",
+  "recommendation": "Live probe is prepared. Run only one operator-confirmed query. Results are evidence-captured and unknown domains are quarantined.",
   "required_confirm_text": "RUN GOVERNED WEB PROBE",
-  "status": "BLOCKED_PROVIDER_NOT_READY",
+  "status": "READY_FOR_OPERATOR_CONFIRMED_SINGLE_QUERY_PROBE",
   "version": "v17.84",
   "warnings": []
 }

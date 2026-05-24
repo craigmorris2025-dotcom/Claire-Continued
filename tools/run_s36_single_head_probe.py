@@ -22,17 +22,17 @@ def _utc_now() -> str:
 
 
 def _enable_operator_gates() -> None:
-    os.environ["CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE"] = "1"
-    os.environ["CLAIRE_ALLOW_HEAD_ONLY_PROBE"] = "1"
+    os.environ["PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE"] = "1"
+    os.environ["PLATFORM_ALLOW_HEAD_ONLY_PROBE"] = "1"
 
     # Explicitly force unsafe authorities off for this process.
-    os.environ.pop("CLAIRE_ALLOW_RESPONSE_BODY_READ", None)
-    os.environ.pop("CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION", None)
-    os.environ.pop("CLAIRE_ALLOW_AUTONOMOUS_EXECUTION", None)
+    os.environ.pop("PLATFORM_ALLOW_RESPONSE_BODY_READ", None)
+    os.environ.pop("PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION", None)
+    os.environ.pop("PLATFORM_ALLOW_AUTONOMOUS_EXECUTION", None)
 
 
 async def _run(url: str) -> dict:
-    from claire.api.routes.governed_live_probe import HeadProbeRequest, run_governed_head_probe
+    from runtime_core.api.routes.governed_live_probe import HeadProbeRequest, run_governed_head_probe
 
     _enable_operator_gates()
     payload = HeadProbeRequest(url=url, operator_ack=True, one_shot=True)

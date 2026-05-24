@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.operator_workflow_route_contracts import get_operator_workflow_route_contracts
+from runtime_core.api.operator_workflow_route_contracts import get_operator_workflow_route_contracts
 
 
 def test_s275_s281_operator_workflow_routes_are_safe_contracts():

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.cockpit_state_consolidator import get_consolidated_cockpit_state
+from runtime_core.api.cockpit_state_consolidator import get_consolidated_cockpit_state
 
 
 def test_s198_s204_consolidated_cockpit_has_required_layout_zones():

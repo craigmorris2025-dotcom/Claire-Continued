@@ -30,7 +30,7 @@ def make_plateau(root: Path) -> None:
 
 
 def test_s40r1_registry_locks_truth_ownership(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_backend_truth_surfaces")
+    module = importlib.import_module("runtime_core.api.governed_backend_truth_surfaces")
     registry = module.build_backend_truth_surface_registry(tmp_path)
 
     assert registry["backend_owns_truth"] is True
@@ -42,7 +42,7 @@ def test_s40r1_registry_locks_truth_ownership(tmp_path: Path):
 
 
 def test_s40r2_status_reports_surfaces_without_mutation(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_backend_truth_surfaces")
+    module = importlib.import_module("runtime_core.api.governed_backend_truth_surfaces")
     make_plateau(tmp_path)
     status = module.build_backend_truth_surface_status(tmp_path)
 
@@ -54,7 +54,7 @@ def test_s40r2_status_reports_surfaces_without_mutation(tmp_path: Path):
 
 
 def test_s40r3_payload_includes_manual_promotion_read_only(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_backend_truth_surfaces")
+    module = importlib.import_module("runtime_core.api.governed_backend_truth_surfaces")
     make_plateau(tmp_path)
     payload = module.build_backend_truth_surface_payload(tmp_path)
 
@@ -68,7 +68,7 @@ def test_s40r3_payload_includes_manual_promotion_read_only(tmp_path: Path):
 
 
 def test_s40r4_writes_backend_truth_surface_files(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_backend_truth_surfaces")
+    module = importlib.import_module("runtime_core.api.governed_backend_truth_surfaces")
     make_plateau(tmp_path)
     result = module.write_backend_truth_surface_payload(tmp_path, tmp_path / "out")
 

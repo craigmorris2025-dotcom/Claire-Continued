@@ -1,0 +1,288 @@
+{
+  "acquirer_input": {
+    "artifact_evidence": [
+      "blueprint_package.json",
+      "materials_manifest.json",
+      "cad_artifact_registry.json",
+      "video_simulation_registry.json"
+    ],
+    "strategic_fit_basis": {
+      "average_technology_readiness": 9.0,
+      "blockers": [
+        "insufficient current-technology grounding"
+      ],
+      "classification": "not_yet_feasible",
+      "current_buildable_records": 97,
+      "current_tech_compatible": false,
+      "promotion_recommendation": "hold_for_component_validation",
+      "reasons": [
+        "System design is mapped to existing runtime architecture components.",
+        "Technology base filters science-fiction records away from current buildability counts.",
+        "Live evidence must be promoted before runtime truth can treat the design as validated."
+      ],
+      "sci_fi_risk": "high",
+      "score": 0.2715,
+      "speculative_or_future_records": 2
+    },
+    "technical_diligence_basis": {
+      "architecture_readiness": {
+        "architecture_notes": "Feasibility depends on stable contracts, data quality, explainability, and workflow adoption.",
+        "level": "weak",
+        "recommended_architecture": "modular intelligence platform with ingestion, analysis, decision, review, and audit layers",
+        "required_components": [
+          "ingestion",
+          "semantic_processing",
+          "analysis_engines",
+          "decision_layer",
+          "review_console",
+          "audit_service"
+        ],
+        "score": 0.352
+      },
+      "data_readiness": {
+        "data_gaps": [
+          "outcome labels",
+          "source lineage",
+          "feedback-loop capture"
+        ],
+        "data_rights_notes": "Confirm rights to use source data, derived benchmarks, and workflow feedback.",
+        "level": "weak",
+        "required_datasets": [
+          "historical events",
+          "source metadata",
+          "user feedback",
+          "outcome labels"
+        ],
+        "score": 0.19
+      },
+      "deployment_controls": {
+        "control_level": "standard",
+        "controls": [
+          "role-based access",
+          "audit logging",
+          "human review",
+          "confidence thresholds"
+        ],
+        "deployment_mode": "controlled advisory pilot"
+      },
+      "feasibility_classification": {
+        "deployment_posture": "research_validation",
+        "prototype_recommendation": "research_before_prototype",
+        "readiness_modifier": "major_unknowns",
+        "score_used": 0.2715,
+        "state": "not_yet_feasible"
+      },
+      "implementation_complexity": {
+        "complexity_drivers": [
+          "data quality",
+          "model validation",
+          "workflow fit",
+          "integration depth"
+        ],
+        "implementation_notes": "Start with controlled advisory prototype before operational deployment.",
+        "level": "low",
+        "score": 0.228
+      },
+      "integration_readiness": {
+        "integration_points": [
+          "source systems",
+          "workflow dashboard",
+          "API layer",
+          "audit/logging service"
+        ],
+        "integration_risks": [
+          "source data availability",
+          "workflow adoption",
+          "model trust"
+        ],
+        "level": "weak",
+        "score": 0.205
+      },
+      "prototype_plan": {
+        "prototype_scope": "one high-value workflow with historical validation and user review",
+        "prototype_type": "controlled intelligence prototype",
+        "recommended_mode": "advisory_pilot",
+        "success_metrics": [
+          "accuracy",
+          "false-positive rate",
+          "workflow adoption",
+          "time savings",
+          "ROI signal"
+        ]
+      },
+      "technical_feasibility_score": {
+        "drivers": [
+          "strong buildability score"
+        ],
+        "level": "weak",
+        "score": 0.2715
+      },
+      "technical_risks": [
+        {
+          "impact": "recommendations may be technically plausible but insufficiently proven",
+          "mitigation": "run historical backtests and pilot acceptance testing",
+          "risk": "model validation gap",
+          "severity": "medium"
+        },
+        {
+          "impact": "technical success may not translate into buyer or deal readiness without measurable impact evidence",
+          "mitigation": "instrument pilot metrics before launch",
+          "risk": "ROI instrumentation gap",
+          "severity": "medium"
+        },
+        {
+          "impact": "the build may be technically possible but not technically differentiated enough for premium strategic value",
+          "mitigation": "capture proprietary data loops, integration depth, and workflow telemetry during pilot",
+          "risk": "defensibility implementation gap",
+          "severity": "medium"
+        }
+      ],
+      "validation_burden": {
+        "level": "low",
+        "minimum_evidence_pack": [
+          "backtest",
+          "pilot metrics",
+          "risk register",
+          "audit log"
+        ],
+        "score": 0.26,
+        "validation_requirements": [
+          "historical backtest",
+          "pilot acceptance test",
+          "false-positive / false-negative analysis",
+          "audit review"
+        ]
+      }
+    }
+  },
+  "candidate": {
+    "domain": "technology",
+    "route": "breakthrough_design",
+    "sector": "regulated enterprise technology",
+    "source_run_id": "cycle_20260524_191535_094b8ed1",
+    "summary": "Portfolio output generated from allowlisted metadata signals and autonomous advancement routing.",
+    "title": "Portfolio thesis: Allowlisted Input Boundary Lifecycle"
+  },
+  "downstream_route_contract": {
+    "acquirer_matching_required": true,
+    "blocked_from_runtime_truth": true,
+    "next_runtime_action": "validate design conditions before promotion",
+    "normal_path": [
+      "discovery_or_breakthrough_candidate",
+      "buildability_and_feasibility_gate",
+      "auto_design_and_materials_manifest",
+      "blueprint_and_spec_generation",
+      "portfolio_candidate_construction",
+      "acquirer_identification",
+      "acquisition_fit_rationale",
+      "final_package_construction"
+    ],
+    "package_required": true,
+    "portfolio_required": true,
+    "route": "portfolio_creation_optimization_until_design_validated",
+    "status": "route_after_validation"
+  },
+  "invention_commitment": {
+    "commit_to_build_attempt": false,
+    "conditions": {
+      "gap_filler": true,
+      "innovation_candidate": false,
+      "live_evidence_promoted": false,
+      "need_solution": true,
+      "realistic": false,
+      "viable": true
+    },
+    "runtime_policy": "automatic_design_allowed_after_conditions; truth_promotion_requires_operator_or_validated_evidence",
+    "status": "needs_more_validation",
+    "viability_score": 0.5572
+  },
+  "package_input": {
+    "manual_review_required": true,
+    "required_documents": [
+      "blueprint_package.json",
+      "materials_manifest.json",
+      "component_map.json",
+      "cad_artifact_registry.json",
+      "video_simulation_registry.json",
+      "downstream_route_handoff.json"
+    ]
+  },
+  "portfolio_input": {
+    "blueprint_package": "blueprint_package.json",
+    "component_map": "component_map.json",
+    "design_candidate": {
+      "domain": "technology",
+      "route": "breakthrough_design",
+      "sector": "regulated enterprise technology",
+      "source_run_id": "cycle_20260524_191535_094b8ed1",
+      "summary": "Portfolio output generated from allowlisted metadata signals and autonomous advancement routing.",
+      "title": "Portfolio thesis: Allowlisted Input Boundary Lifecycle"
+    },
+    "materials_manifest": "materials_manifest.json"
+  },
+  "promotion_gates": [
+    {
+      "gate": "current technology compatibility",
+      "reason": "not_yet_feasible",
+      "required_evidence": "current buildable records and feasibility score",
+      "status": "review"
+    },
+    {
+      "gate": "science fiction filter",
+      "reason": "sci_fi_risk=high",
+      "required_evidence": "speculative/future records separated from current buildability",
+      "status": "hold"
+    },
+    {
+      "gate": "live evidence promotion",
+      "reason": "local preview is not runtime truth until evidence is promoted",
+      "required_evidence": "fresh connected/hybrid validation or promoted local source pack",
+      "status": "hold"
+    }
+  ],
+  "schema_version": "claire_design_downstream_handoff_v1",
+  "status": "handoff_ready_for_review",
+  "validation_chain": {
+    "checks": [
+      {
+        "id": "discovery_candidate",
+        "label": "Discovery or breakthrough candidate",
+        "passed": true
+      },
+      {
+        "id": "auto_design",
+        "label": "Automatic design state",
+        "passed": true
+      },
+      {
+        "id": "materials_manifest",
+        "label": "Materials/components/code manifest",
+        "passed": true
+      },
+      {
+        "id": "blueprint_package",
+        "label": "Blueprint/spec package",
+        "passed": true
+      },
+      {
+        "id": "portfolio_route",
+        "label": "Portfolio route handoff",
+        "passed": true
+      },
+      {
+        "id": "acquirer_route",
+        "label": "Acquirer matching handoff",
+        "passed": true
+      },
+      {
+        "id": "final_package_route",
+        "label": "Final package handoff",
+        "passed": true
+      }
+    ],
+    "completion_percent": 100.0,
+    "passed": 7,
+    "status": "validated",
+    "total": 7
+  }
+}

@@ -1,5 +1,57 @@
 {
-  "items": [],
+  "status": "ready",
   "candidate_type": "breakthrough",
-  "updated_at": "2026-05-12T10:02:14.378969+00:00"
+  "items": [
+    {
+      "candidate_id": "breakthrough-45a90688",
+      "candidate_type": "breakthrough",
+      "title": "Breakthrough classification: Allowlisted Input Boundary Lifecycle",
+      "summary": "Qualified gap/discovery/technology conditions require autonomous solution generation and design routing.",
+      "status": "pending_operator_review",
+      "threshold_met": true,
+      "primary_type": "technological_breakthrough",
+      "secondary_types": [
+        "gap_discovery_breakthrough",
+        "software_platform_breakthrough",
+        "system_architecture_breakthrough",
+        "acquisition_strategy_breakthrough"
+      ],
+      "route": "breakthrough_design",
+      "scores": {
+        "evidence_score": 0.55,
+        "discovery_score": 0.755,
+        "gap_score": 0.525,
+        "breakthrough_score": 0.7635,
+        "buildability_score": 0.95,
+        "manufacturability_score": 0.917,
+        "technology_breakthrough_score": 0.836,
+        "reemergence_readiness_score": 0.989,
+        "signal_family_readiness_score": 0.7143
+      },
+      "conditions": {
+        "signals_present": true,
+        "promoted_evidence_count": 0,
+        "technology_terms": 2,
+        "need_terms": 5,
+        "solution_generation_required": true,
+        "design_portal_required": true,
+        "existing_system_replacement_required": false,
+        "reemergence_pattern_detected": true,
+        "reemergence_cycle_stage": "post_reemergence_or_active_adoption",
+        "ready_signal_families": [
+          "technology",
+          "distribution",
+          "regulation",
+          "behavior",
+          "infrastructure"
+        ]
+      },
+      "runtime_truth_write": "blocked"
+    }
+  ],
+  "count": 1,
+  "source": "allowlisted_input_boundary",
+  "operator_review_required": true,
+  "runtime_truth_mutated": false,
+  "updated_at": "2026-05-24T22:33:25.658264+00:00"
 }

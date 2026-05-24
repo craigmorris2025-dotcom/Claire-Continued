@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.cockpit_operator_next_actions import get_operator_next_actions
+from runtime_core.api.cockpit_operator_next_actions import get_operator_next_actions
 
 
 def test_s198_s204_operator_next_actions_enable_safe_actions_and_block_unsafe_actions():

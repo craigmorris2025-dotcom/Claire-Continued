@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.cockpit_action_intent_contract import get_action_intent_contract
-from claire.api.cockpit_workflow_card_payloads import get_workflow_card_payloads
+from runtime_core.api.cockpit_action_intent_contract import get_action_intent_contract
+from runtime_core.api.cockpit_workflow_card_payloads import get_workflow_card_payloads
 
 
 def test_s254_s260_action_intents_are_safe_and_non_mutating():

@@ -5,7 +5,7 @@ from fastapi.testclient import TestClient
 
 
 def test_s289_s295_safe_workflow_router_contract():
-    from claire.api.safe_workflow_routes import router
+    from runtime_core.api.safe_workflow_routes import router
 
     app = FastAPI()
     app.include_router(router)

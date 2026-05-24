@@ -13,7 +13,7 @@ CSS = MODERN_ROOT / "claire_modern_cockpit_shell.css"
 
 
 def test_s46r5_modern_cockpit_shell_blueprint_is_safe():
-    module = importlib.import_module("claire.api.s46_modern_cockpit_shell_blueprint")
+    module = importlib.import_module("runtime_core.api.s46_modern_cockpit_shell_blueprint")
     blueprint = module.build_modern_cockpit_shell_blueprint()
 
     assert blueprint["version"] == "v19.89.8-S46R5-R12"
@@ -32,7 +32,7 @@ def test_s46r5_modern_cockpit_shell_blueprint_is_safe():
 
 
 def test_s46r8_modern_cockpit_shell_blueprint_verifies_cleanly():
-    module = importlib.import_module("claire.api.s46_modern_cockpit_shell_blueprint")
+    module = importlib.import_module("runtime_core.api.s46_modern_cockpit_shell_blueprint")
     verification = module.verify_modern_cockpit_shell_blueprint()
 
     assert verification["verification_ok"] is True
@@ -59,7 +59,7 @@ def test_s46r9_r12_modern_shell_assets_exist_and_are_read_only():
 
 
 def test_s46r12_plateau_report_ready():
-    module = importlib.import_module("claire.api.s46_modern_cockpit_shell_blueprint")
+    module = importlib.import_module("runtime_core.api.s46_modern_cockpit_shell_blueprint")
     report = module.build_s46r5_r12_plateau_report()
 
     assert report["status"] == "s46r5_r12_ready"

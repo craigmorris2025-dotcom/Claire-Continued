@@ -4,13 +4,13 @@ from pathlib import Path
 import importlib
 
 MODULES = [
-    ("claire.api.s57_output_dashboard_mounting", "build_s57r1_r8_plateau_report", "s57r1_r8_ready"),
-    ("claire.api.s58_governed_web_provider_readiness", "build_s58r1_r8_plateau_report", "s58r1_r8_ready"),
-    ("claire.api.s59_controlled_probe_request_contracts", "build_s59r1_r8_plateau_report", "s59r1_r8_ready"),
-    ("claire.api.s60_quarantined_evidence_intake", "build_s60r1_r8_plateau_report", "s60r1_r8_ready"),
-    ("claire.api.s61_manual_promotion_workflow", "build_s61r1_r8_plateau_report", "s61r1_r8_ready"),
-    ("claire.api.s62_governed_update_readiness_boundary", "build_s62r1_r8_plateau_report", "s62r1_r8_ready"),
-    ("claire.api.s63_demonstrable_platform_readiness", "build_s63r1_r8_plateau_report", "s63r1_r8_ready"),
+    ("runtime_core.api.s57_output_dashboard_mounting", "build_s57r1_r8_plateau_report", "s57r1_r8_ready"),
+    ("runtime_core.api.s58_governed_web_provider_readiness", "build_s58r1_r8_plateau_report", "s58r1_r8_ready"),
+    ("runtime_core.api.s59_controlled_probe_request_contracts", "build_s59r1_r8_plateau_report", "s59r1_r8_ready"),
+    ("runtime_core.api.s60_quarantined_evidence_intake", "build_s60r1_r8_plateau_report", "s60r1_r8_ready"),
+    ("runtime_core.api.s61_manual_promotion_workflow", "build_s61r1_r8_plateau_report", "s61r1_r8_ready"),
+    ("runtime_core.api.s62_governed_update_readiness_boundary", "build_s62r1_r8_plateau_report", "s62r1_r8_ready"),
+    ("runtime_core.api.s63_demonstrable_platform_readiness", "build_s63r1_r8_plateau_report", "s63r1_r8_ready"),
 ]
 
 def test_s57_s63_all_plateaus_ready_and_safe():
@@ -31,7 +31,7 @@ def test_s57_s63_all_plateaus_ready_and_safe():
         assert report["verification"]["failures"] == []
 
 def test_s57_output_cards_are_mounted():
-    module = importlib.import_module("claire.api.s57_output_dashboard_mounting")
+    module = importlib.import_module("runtime_core.api.s57_output_dashboard_mounting")
     manifest = module.build_output_dashboard_mounting_manifest()
     assert manifest["card_count"] == 7
     for card in manifest["cards"]:
@@ -40,8 +40,8 @@ def test_s57_output_cards_are_mounted():
         assert card["runtime_truth_mutation_allowed"] is False
 
 def test_s58_s62_web_and_update_path_remains_blocked():
-    provider = importlib.import_module("claire.api.s58_governed_web_provider_readiness").build_provider_readiness_manifest()
-    update = importlib.import_module("claire.api.s62_governed_update_readiness_boundary").build_governed_update_readiness_boundary()
+    provider = importlib.import_module("runtime_core.api.s58_governed_web_provider_readiness").build_provider_readiness_manifest()
+    update = importlib.import_module("runtime_core.api.s62_governed_update_readiness_boundary").build_governed_update_readiness_boundary()
     for item in provider["providers"]:
         assert item["network_request_performed"] is False
         assert item["live_web_execution_enabled"] is False
@@ -52,7 +52,7 @@ def test_s58_s62_web_and_update_path_remains_blocked():
     assert update["scheduled_updates_enabled"] is False
 
 def test_s63_readiness_snapshot_is_honest_and_asset_exists():
-    module = importlib.import_module("claire.api.s63_demonstrable_platform_readiness")
+    module = importlib.import_module("runtime_core.api.s63_demonstrable_platform_readiness")
     snapshot = module.build_demonstrable_platform_readiness_snapshot()
     assert snapshot["status"] == "demonstrable_platform_readiness_snapshot_ready"
     assert snapshot["dashboard_demo_ready"] is True

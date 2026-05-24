@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_live_fetch_validation_s170_s176 import (
+from runtime_core.api.governed_live_fetch_validation_s170_s176 import (
     build_repeated_live_fetch_validation,
     build_quarantine_continuity_validation,
     build_evidence_continuity_validation,

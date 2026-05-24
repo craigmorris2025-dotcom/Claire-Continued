@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.cockpit_disabled_button_behavior import get_disabled_button_behavior_contract
-from claire.api.cockpit_endpoint_health_visibility import get_endpoint_health_visibility_contract
+from runtime_core.api.cockpit_disabled_button_behavior import get_disabled_button_behavior_contract
+from runtime_core.api.cockpit_endpoint_health_visibility import get_endpoint_health_visibility_contract
 
 
 def test_s233_s239_disabled_button_behavior_keeps_unsafe_actions_disabled_with_safe_redirects():

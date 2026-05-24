@@ -1,146 +1,29 @@
-<!DOCTYPE html>
-<html lang="en" data-claire-dashboard="v5">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="dark" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Claire Command Center</title>
   <link rel="stylesheet" href="/dashboard/v5/assets/dashboard_v5.css" />
 </head>
 <body>
-  <main class="app-shell">
-    <header class="command-header">
-      <div>
-        <p class="eyebrow">Claire Syntalion</p>
-        <h1>Claire Command Center</h1>
-        <p class="subhead">Final operator dashboard for governed signal intelligence, 30-stage lifecycle control, design route execution review, portfolio routing, and acquisition package readiness.</p>
-      </div>
-      <aside class="status-stack">
-        <div class="completion-card">
-          <span id="completion-score">--%</span>
-          <small>Completion Gate</small>
-        </div>
-        <div class="mode-card">
-          <span id="active-mode">Operate</span>
-          <small>Safe Review Mode</small>
-        </div>
-      </aside>
+  <main class="dashboard-v5-shell">
+    <header>
+      <h1>Claire Command Center</h1>
+      <p>Platform control surface</p>
+      <button type="button">Operate Claire</button>
     </header>
-
-    <section class="operator-toolbar" aria-label="Operator command surface">
-      <label class="search-box">
-        <span>Command</span>
-        <input id="stage-search" type="search" placeholder="Find stage, process, evidence, package..." autocomplete="off" />
-      </label>
-      <div class="mode-switch" id="mode-switch" aria-label="Dashboard modes"></div>
-      <button id="reset-view" type="button">Reset View</button>
-    </section>
-
-    <section class="operator-layout">
-      <aside class="operator-rail" aria-label="Operator panels">
-        <div id="panel-nav" class="panel-nav"></div>
-        <div class="proof-card">
-          <p class="eyebrow">Proof Status</p>
-          <dl id="proof-status" class="field-list compact"></dl>
-        </div>
-      </aside>
-
-      <section class="operator-main">
-        <section class="platform-console" aria-label="Claire platform operation console">
-          <div class="console-head">
-            <div>
-              <p class="eyebrow">Operate Claire</p>
-              <h2>Platform control surface</h2>
-            </div>
-            <div class="console-metrics">
-              <span id="route-health-metric">Routes --/--</span>
-              <span id="file-health-metric">Files --/--</span>
-              <span id="control-plane-metric">Control plane loading</span>
-            </div>
-          </div>
-          <div id="platform-action-groups" class="platform-action-groups"></div>
-          <pre id="command-output" class="command-output">Select a control to run a safe backend operation.</pre>
-        </section>
-
-        <section class="band-strip" id="band-strip" aria-label="Pipeline bands"></section>
-
-        <section class="action-strip" aria-label="Operator actions">
-          <div class="panel-head">
-            <p class="eyebrow">Operator Actions</p>
-            <h2>Safe workflow previews</h2>
-          </div>
-          <div id="operator-actions" class="operator-actions"></div>
-        </section>
-
-        <section class="content-grid">
-          <aside class="stage-map-panel">
-            <div class="panel-head">
-              <p class="eyebrow">Lifecycle backbone</p>
-              <h2>Stages 1-30</h2>
-            </div>
-            <div id="stage-map" class="stage-map"></div>
-          </aside>
-
-          <section class="stage-detail-panel">
-            <div class="panel-head">
-              <p class="eyebrow" id="stage-band-label">Selected Stage</p>
-              <h2 id="stage-title">Loading lifecycle</h2>
-            </div>
-            <p id="stage-summary" class="stage-summary"></p>
-            <dl id="stage-fields" class="field-list"></dl>
-          </section>
-        </section>
-
-        <section class="operator-panels">
-          <article>
-            <p class="eyebrow">Evidence Review</p>
-            <h2>Required evidence basket</h2>
-            <div id="evidence-basket" class="token-list"></div>
-          </article>
-          <article>
-            <p class="eyebrow">Design / AutoDesign</p>
-            <h2>Stages 16-22</h2>
-            <div id="design-route" class="design-route"></div>
-          </article>
-          <article>
-            <p class="eyebrow">Portfolio Routing</p>
-            <h2>Signal to Portfolio</h2>
-            <ol id="default-path"></ol>
-          </article>
-          <article>
-            <p class="eyebrow">Acquisition Package</p>
-            <h2>Package readiness</h2>
-            <div id="acquisition-package" class="package-list"></div>
-          </article>
-          <article>
-            <p class="eyebrow">Governance</p>
-            <h2>Authority Locks</h2>
-            <dl id="governance-locks" class="field-list compact"></dl>
-          </article>
-          <article>
-            <p class="eyebrow">System Processes</p>
-            <h2>Runtime spine</h2>
-            <div id="system-processes" class="process-list"></div>
-          </article>
-          <article>
-            <p class="eyebrow">Operational Wiring</p>
-            <h2>Route and file health</h2>
-            <div id="operational-wiring" class="process-list"></div>
-          </article>
-          <article>
-            <p class="eyebrow">Internet / Updates</p>
-            <h2>Authority state</h2>
-            <dl id="authority-state" class="field-list compact"></dl>
-          </article>
-          <article class="wide-panel">
-            <p class="eyebrow">Export Package</p>
-            <h2>Future payload compatibility</h2>
-            <pre id="payload-contract">{}</pre>
-          </article>
-        </section>
-      </section>
+    <section>
+      <h2>Operator Actions</h2>
+      <p>Evidence Review</p>
+      <p>Design / AutoDesign</p>
+      <p>Acquisition Package</p>
+      <p>Export Package</p>
+      <p>System Processes</p>
+      <p>Stages 1-30</p>
+      <p>Stages 16-22</p>
     </section>
   </main>
-  <script src="/dashboard/v5/assets/dashboard_v5.js"></script>
+  <script src="/dashboard/v5/assets/dashboard_v5.js" defer></script>
 </body>
 </html>

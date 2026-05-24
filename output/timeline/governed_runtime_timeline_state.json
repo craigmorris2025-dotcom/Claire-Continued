@@ -10,7 +10,7 @@
   },
   "summary": {
     "event_total": 150,
-    "last_updated_utc": "2026-05-18T22:35:41.330455+00:00",
+    "last_updated_utc": "2026-05-24T22:33:02.160263+00:00",
     "last_route": "unknown",
     "last_terminal_state": "unknown",
     "last_connection_state": "unknown",
@@ -25,8 +25,8 @@
   ],
   "events": [
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:26:57.560347+00:00",
-      "timestamp": "2026-05-18T18:26:57.560347+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T15:17:44.703830+00:00",
+      "timestamp": "2026-05-24T15:17:44.703830+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -38,8 +38,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:26:57.560347+00:00",
-      "timestamp": "2026-05-18T18:26:57.560347+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T15:17:44.703830+00:00",
+      "timestamp": "2026-05-24T15:17:44.703830+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -51,8 +51,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:26:57.560347+00:00",
-      "timestamp": "2026-05-18T18:26:57.560347+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T15:17:44.703830+00:00",
+      "timestamp": "2026-05-24T15:17:44.703830+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -64,8 +64,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:26:57.560347+00:00",
-      "timestamp": "2026-05-18T18:26:57.560347+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T15:17:44.703830+00:00",
+      "timestamp": "2026-05-24T15:17:44.703830+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -77,8 +77,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:26:57.570349+00:00",
-      "timestamp": "2026-05-18T18:26:57.570349+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T15:17:44.715831+00:00",
+      "timestamp": "2026-05-24T15:17:44.715831+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -90,8 +90,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:26:57.570349+00:00",
-      "timestamp": "2026-05-18T18:26:57.570349+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T15:17:44.715831+00:00",
+      "timestamp": "2026-05-24T15:17:44.715831+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -103,8 +103,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:29:02.143214+00:00",
-      "timestamp": "2026-05-18T18:29:02.143214+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T17:48:49.300886+00:00",
+      "timestamp": "2026-05-24T17:48:49.300886+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -116,8 +116,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:29:02.143214+00:00",
-      "timestamp": "2026-05-18T18:29:02.143214+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T17:48:49.300886+00:00",
+      "timestamp": "2026-05-24T17:48:49.300886+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -129,8 +129,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:29:02.143214+00:00",
-      "timestamp": "2026-05-18T18:29:02.143214+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T17:48:49.300886+00:00",
+      "timestamp": "2026-05-24T17:48:49.300886+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -142,8 +142,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:29:02.143214+00:00",
-      "timestamp": "2026-05-18T18:29:02.143214+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T17:48:49.300886+00:00",
+      "timestamp": "2026-05-24T17:48:49.300886+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -155,8 +155,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:29:02.143214+00:00",
-      "timestamp": "2026-05-18T18:29:02.143214+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T17:48:49.300886+00:00",
+      "timestamp": "2026-05-24T17:48:49.300886+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -168,8 +168,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:29:02.152211+00:00",
-      "timestamp": "2026-05-18T18:29:02.152211+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T17:48:49.311887+00:00",
+      "timestamp": "2026-05-24T17:48:49.311887+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -181,8 +181,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:29:02.152211+00:00",
-      "timestamp": "2026-05-18T18:29:02.152211+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T17:48:49.311887+00:00",
+      "timestamp": "2026-05-24T17:48:49.311887+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -194,8 +194,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:29:02.152211+00:00",
-      "timestamp": "2026-05-18T18:29:02.152211+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T17:48:49.311887+00:00",
+      "timestamp": "2026-05-24T17:48:49.311887+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -207,8 +207,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:29:02.152211+00:00",
-      "timestamp": "2026-05-18T18:29:02.152211+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T17:48:49.311887+00:00",
+      "timestamp": "2026-05-24T17:48:49.311887+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -220,8 +220,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:29:02.152211+00:00",
-      "timestamp": "2026-05-18T18:29:02.152211+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T17:48:49.311887+00:00",
+      "timestamp": "2026-05-24T17:48:49.311887+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -233,8 +233,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:29:02.163211+00:00",
-      "timestamp": "2026-05-18T18:29:02.163211+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T17:48:49.322887+00:00",
+      "timestamp": "2026-05-24T17:48:49.322887+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -246,8 +246,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:29:02.163211+00:00",
-      "timestamp": "2026-05-18T18:29:02.163211+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T17:48:49.322887+00:00",
+      "timestamp": "2026-05-24T17:48:49.322887+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -259,8 +259,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:32:17.045043+00:00",
-      "timestamp": "2026-05-18T18:32:17.045043+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T17:55:09.502177+00:00",
+      "timestamp": "2026-05-24T17:55:09.502177+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -272,8 +272,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:32:17.045043+00:00",
-      "timestamp": "2026-05-18T18:32:17.045043+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T17:55:09.502177+00:00",
+      "timestamp": "2026-05-24T17:55:09.502177+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -285,8 +285,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:32:17.045043+00:00",
-      "timestamp": "2026-05-18T18:32:17.045043+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T17:55:09.502177+00:00",
+      "timestamp": "2026-05-24T17:55:09.502177+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -298,8 +298,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:32:17.045043+00:00",
-      "timestamp": "2026-05-18T18:32:17.045043+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T17:55:09.502177+00:00",
+      "timestamp": "2026-05-24T17:55:09.502177+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -311,8 +311,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:32:17.045043+00:00",
-      "timestamp": "2026-05-18T18:32:17.045043+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T17:55:09.502177+00:00",
+      "timestamp": "2026-05-24T17:55:09.502177+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -324,8 +324,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:32:17.055043+00:00",
-      "timestamp": "2026-05-18T18:32:17.055043+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T17:55:09.515178+00:00",
+      "timestamp": "2026-05-24T17:55:09.515178+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -337,8 +337,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:32:17.055043+00:00",
-      "timestamp": "2026-05-18T18:32:17.055043+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T17:55:09.515178+00:00",
+      "timestamp": "2026-05-24T17:55:09.515178+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -350,8 +350,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:32:17.055043+00:00",
-      "timestamp": "2026-05-18T18:32:17.055043+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T17:55:09.515178+00:00",
+      "timestamp": "2026-05-24T17:55:09.515178+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -363,8 +363,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:32:17.055043+00:00",
-      "timestamp": "2026-05-18T18:32:17.055043+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T17:55:09.515178+00:00",
+      "timestamp": "2026-05-24T17:55:09.515178+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -376,8 +376,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:32:17.055043+00:00",
-      "timestamp": "2026-05-18T18:32:17.055043+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T17:55:09.515178+00:00",
+      "timestamp": "2026-05-24T17:55:09.515178+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -389,8 +389,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:32:17.064045+00:00",
-      "timestamp": "2026-05-18T18:32:17.064045+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T17:55:09.527180+00:00",
+      "timestamp": "2026-05-24T17:55:09.527180+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -402,8 +402,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:32:17.064045+00:00",
-      "timestamp": "2026-05-18T18:32:17.064045+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T17:55:09.527180+00:00",
+      "timestamp": "2026-05-24T17:55:09.527180+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -415,8 +415,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:34:25.502489+00:00",
-      "timestamp": "2026-05-18T18:34:25.502489+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:01:16.287443+00:00",
+      "timestamp": "2026-05-24T18:01:16.287443+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -428,8 +428,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:34:25.502489+00:00",
-      "timestamp": "2026-05-18T18:34:25.502489+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:01:16.287443+00:00",
+      "timestamp": "2026-05-24T18:01:16.287443+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -441,8 +441,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:34:25.502489+00:00",
-      "timestamp": "2026-05-18T18:34:25.502489+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T18:01:16.287443+00:00",
+      "timestamp": "2026-05-24T18:01:16.287443+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -454,8 +454,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:34:25.502489+00:00",
-      "timestamp": "2026-05-18T18:34:25.502489+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T18:01:16.287443+00:00",
+      "timestamp": "2026-05-24T18:01:16.287443+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -467,8 +467,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:34:25.502489+00:00",
-      "timestamp": "2026-05-18T18:34:25.502489+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T18:01:16.287443+00:00",
+      "timestamp": "2026-05-24T18:01:16.287443+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -480,8 +480,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:34:25.512489+00:00",
-      "timestamp": "2026-05-18T18:34:25.512489+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:01:16.298444+00:00",
+      "timestamp": "2026-05-24T18:01:16.298444+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -493,8 +493,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:34:25.512489+00:00",
-      "timestamp": "2026-05-18T18:34:25.512489+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:01:16.298444+00:00",
+      "timestamp": "2026-05-24T18:01:16.298444+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -506,8 +506,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:34:25.512489+00:00",
-      "timestamp": "2026-05-18T18:34:25.512489+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T18:01:16.298444+00:00",
+      "timestamp": "2026-05-24T18:01:16.298444+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -519,8 +519,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:34:25.512489+00:00",
-      "timestamp": "2026-05-18T18:34:25.512489+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T18:01:16.298444+00:00",
+      "timestamp": "2026-05-24T18:01:16.298444+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -532,8 +532,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:34:25.512489+00:00",
-      "timestamp": "2026-05-18T18:34:25.512489+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T18:01:16.298444+00:00",
+      "timestamp": "2026-05-24T18:01:16.298444+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -545,8 +545,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:34:25.523489+00:00",
-      "timestamp": "2026-05-18T18:34:25.523489+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:01:16.309447+00:00",
+      "timestamp": "2026-05-24T18:01:16.309447+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -558,8 +558,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:34:25.523489+00:00",
-      "timestamp": "2026-05-18T18:34:25.523489+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:01:16.309447+00:00",
+      "timestamp": "2026-05-24T18:01:16.309447+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -571,8 +571,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:36:41.033290+00:00",
-      "timestamp": "2026-05-18T18:36:41.033290+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:11:29.116845+00:00",
+      "timestamp": "2026-05-24T18:11:29.116845+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -584,8 +584,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:36:41.033290+00:00",
-      "timestamp": "2026-05-18T18:36:41.033290+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:11:29.116845+00:00",
+      "timestamp": "2026-05-24T18:11:29.116845+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -597,8 +597,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:36:41.033290+00:00",
-      "timestamp": "2026-05-18T18:36:41.033290+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T18:11:29.116845+00:00",
+      "timestamp": "2026-05-24T18:11:29.116845+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -610,8 +610,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:36:41.033290+00:00",
-      "timestamp": "2026-05-18T18:36:41.033290+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T18:11:29.116845+00:00",
+      "timestamp": "2026-05-24T18:11:29.116845+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -623,8 +623,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:36:41.033290+00:00",
-      "timestamp": "2026-05-18T18:36:41.033290+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T18:11:29.116845+00:00",
+      "timestamp": "2026-05-24T18:11:29.116845+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -636,8 +636,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:36:41.045289+00:00",
-      "timestamp": "2026-05-18T18:36:41.045289+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:11:29.126844+00:00",
+      "timestamp": "2026-05-24T18:11:29.126844+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -649,8 +649,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:36:41.045289+00:00",
-      "timestamp": "2026-05-18T18:36:41.045289+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:11:29.126844+00:00",
+      "timestamp": "2026-05-24T18:11:29.126844+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -662,8 +662,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:36:41.045289+00:00",
-      "timestamp": "2026-05-18T18:36:41.045289+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T18:11:29.126844+00:00",
+      "timestamp": "2026-05-24T18:11:29.126844+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -675,8 +675,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:36:41.045289+00:00",
-      "timestamp": "2026-05-18T18:36:41.045289+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T18:11:29.126844+00:00",
+      "timestamp": "2026-05-24T18:11:29.126844+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -688,8 +688,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:36:41.045289+00:00",
-      "timestamp": "2026-05-18T18:36:41.045289+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T18:11:29.126844+00:00",
+      "timestamp": "2026-05-24T18:11:29.126844+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -701,8 +701,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:36:41.055290+00:00",
-      "timestamp": "2026-05-18T18:36:41.055290+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:11:29.137844+00:00",
+      "timestamp": "2026-05-24T18:11:29.137844+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -714,8 +714,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:36:41.055290+00:00",
-      "timestamp": "2026-05-18T18:36:41.055290+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:11:29.137844+00:00",
+      "timestamp": "2026-05-24T18:11:29.137844+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -727,8 +727,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:38:45.985268+00:00",
-      "timestamp": "2026-05-18T18:38:45.985268+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:14:19.104180+00:00",
+      "timestamp": "2026-05-24T18:14:19.104180+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -740,8 +740,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:38:45.985268+00:00",
-      "timestamp": "2026-05-18T18:38:45.985268+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:14:19.104180+00:00",
+      "timestamp": "2026-05-24T18:14:19.104180+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -753,8 +753,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:38:45.985268+00:00",
-      "timestamp": "2026-05-18T18:38:45.985268+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T18:14:19.104180+00:00",
+      "timestamp": "2026-05-24T18:14:19.104180+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -766,8 +766,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:38:45.985268+00:00",
-      "timestamp": "2026-05-18T18:38:45.985268+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T18:14:19.104180+00:00",
+      "timestamp": "2026-05-24T18:14:19.104180+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -779,8 +779,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:38:45.985268+00:00",
-      "timestamp": "2026-05-18T18:38:45.985268+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T18:14:19.104180+00:00",
+      "timestamp": "2026-05-24T18:14:19.104180+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -792,8 +792,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:38:45.996268+00:00",
-      "timestamp": "2026-05-18T18:38:45.996268+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:14:19.115178+00:00",
+      "timestamp": "2026-05-24T18:14:19.115178+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -805,8 +805,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:38:45.996268+00:00",
-      "timestamp": "2026-05-18T18:38:45.996268+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:14:19.115178+00:00",
+      "timestamp": "2026-05-24T18:14:19.115178+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -818,8 +818,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:38:45.996268+00:00",
-      "timestamp": "2026-05-18T18:38:45.996268+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T18:14:19.115178+00:00",
+      "timestamp": "2026-05-24T18:14:19.115178+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -831,8 +831,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:38:45.996268+00:00",
-      "timestamp": "2026-05-18T18:38:45.996268+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T18:14:19.115178+00:00",
+      "timestamp": "2026-05-24T18:14:19.115178+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -844,8 +844,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:38:45.996268+00:00",
-      "timestamp": "2026-05-18T18:38:45.996268+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T18:14:19.115178+00:00",
+      "timestamp": "2026-05-24T18:14:19.115178+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -857,8 +857,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:38:46.006271+00:00",
-      "timestamp": "2026-05-18T18:38:46.006271+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:14:19.127179+00:00",
+      "timestamp": "2026-05-24T18:14:19.127179+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -870,8 +870,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:38:46.006271+00:00",
-      "timestamp": "2026-05-18T18:38:46.006271+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:14:19.127179+00:00",
+      "timestamp": "2026-05-24T18:14:19.127179+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -883,8 +883,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:58:32.555008+00:00",
-      "timestamp": "2026-05-18T18:58:32.555008+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:19:22.519027+00:00",
+      "timestamp": "2026-05-24T18:19:22.519027+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -896,8 +896,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:58:32.555008+00:00",
-      "timestamp": "2026-05-18T18:58:32.555008+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:19:22.519027+00:00",
+      "timestamp": "2026-05-24T18:19:22.519027+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -909,8 +909,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:58:32.555008+00:00",
-      "timestamp": "2026-05-18T18:58:32.555008+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T18:19:22.519027+00:00",
+      "timestamp": "2026-05-24T18:19:22.519027+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -922,8 +922,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:58:32.555008+00:00",
-      "timestamp": "2026-05-18T18:58:32.555008+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T18:19:22.519027+00:00",
+      "timestamp": "2026-05-24T18:19:22.519027+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -935,8 +935,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:58:32.555008+00:00",
-      "timestamp": "2026-05-18T18:58:32.555008+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T18:19:22.519027+00:00",
+      "timestamp": "2026-05-24T18:19:22.519027+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -948,8 +948,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:58:32.567012+00:00",
-      "timestamp": "2026-05-18T18:58:32.567012+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:19:22.529029+00:00",
+      "timestamp": "2026-05-24T18:19:22.529029+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -961,8 +961,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:58:32.567012+00:00",
-      "timestamp": "2026-05-18T18:58:32.567012+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:19:22.529029+00:00",
+      "timestamp": "2026-05-24T18:19:22.529029+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -974,8 +974,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T18:58:32.567012+00:00",
-      "timestamp": "2026-05-18T18:58:32.567012+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T18:19:22.529029+00:00",
+      "timestamp": "2026-05-24T18:19:22.529029+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -987,8 +987,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T18:58:32.567012+00:00",
-      "timestamp": "2026-05-18T18:58:32.567012+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T18:19:22.529029+00:00",
+      "timestamp": "2026-05-24T18:19:22.529029+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -1000,8 +1000,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T18:58:32.567012+00:00",
-      "timestamp": "2026-05-18T18:58:32.567012+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T18:19:22.529029+00:00",
+      "timestamp": "2026-05-24T18:19:22.529029+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -1013,8 +1013,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T18:58:32.576010+00:00",
-      "timestamp": "2026-05-18T18:58:32.577009+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:19:22.540028+00:00",
+      "timestamp": "2026-05-24T18:19:22.540028+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -1026,8 +1026,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T18:58:32.577009+00:00",
-      "timestamp": "2026-05-18T18:58:32.577009+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:19:22.540028+00:00",
+      "timestamp": "2026-05-24T18:19:22.540028+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -1039,8 +1039,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T19:11:36.070931+00:00",
-      "timestamp": "2026-05-18T19:11:36.070931+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:26:33.293191+00:00",
+      "timestamp": "2026-05-24T18:26:33.293191+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -1052,8 +1052,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T19:11:36.070931+00:00",
-      "timestamp": "2026-05-18T19:11:36.070931+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:26:33.293191+00:00",
+      "timestamp": "2026-05-24T18:26:33.293191+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -1065,8 +1065,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T19:11:36.070931+00:00",
-      "timestamp": "2026-05-18T19:11:36.070931+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T18:26:33.293191+00:00",
+      "timestamp": "2026-05-24T18:26:33.293191+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -1078,8 +1078,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T19:11:36.070931+00:00",
-      "timestamp": "2026-05-18T19:11:36.070931+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T18:26:33.293191+00:00",
+      "timestamp": "2026-05-24T18:26:33.293191+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -1091,8 +1091,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T19:11:36.070931+00:00",
-      "timestamp": "2026-05-18T19:11:36.070931+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T18:26:33.293191+00:00",
+      "timestamp": "2026-05-24T18:26:33.293191+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -1104,8 +1104,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T19:11:36.097931+00:00",
-      "timestamp": "2026-05-18T19:11:36.097931+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:26:33.304189+00:00",
+      "timestamp": "2026-05-24T18:26:33.304189+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -1117,8 +1117,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T19:11:36.097931+00:00",
-      "timestamp": "2026-05-18T19:11:36.097931+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:26:33.304189+00:00",
+      "timestamp": "2026-05-24T18:26:33.304189+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -1130,8 +1130,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T19:11:36.097931+00:00",
-      "timestamp": "2026-05-18T19:11:36.097931+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T18:26:33.304189+00:00",
+      "timestamp": "2026-05-24T18:26:33.304189+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -1143,8 +1143,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T19:11:36.097931+00:00",
-      "timestamp": "2026-05-18T19:11:36.097931+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T18:26:33.304189+00:00",
+      "timestamp": "2026-05-24T18:26:33.304189+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -1156,8 +1156,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T19:11:36.097931+00:00",
-      "timestamp": "2026-05-18T19:11:36.097931+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T18:26:33.304189+00:00",
+      "timestamp": "2026-05-24T18:26:33.304189+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -1169,8 +1169,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T19:11:36.108930+00:00",
-      "timestamp": "2026-05-18T19:11:36.108930+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T18:26:33.315191+00:00",
+      "timestamp": "2026-05-24T18:26:33.315191+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -1182,8 +1182,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T19:11:36.108930+00:00",
-      "timestamp": "2026-05-18T19:11:36.108930+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T18:26:33.315191+00:00",
+      "timestamp": "2026-05-24T18:26:33.315191+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -1195,8 +1195,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T19:24:56.940189+00:00",
-      "timestamp": "2026-05-18T19:24:56.940189+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:15:08.143573+00:00",
+      "timestamp": "2026-05-24T19:15:08.143573+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -1208,8 +1208,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T19:24:56.940189+00:00",
-      "timestamp": "2026-05-18T19:24:56.940189+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:15:08.143573+00:00",
+      "timestamp": "2026-05-24T19:15:08.143573+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -1221,8 +1221,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T19:24:56.940189+00:00",
-      "timestamp": "2026-05-18T19:24:56.940189+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T19:15:08.143573+00:00",
+      "timestamp": "2026-05-24T19:15:08.143573+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -1234,8 +1234,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T19:24:56.940189+00:00",
-      "timestamp": "2026-05-18T19:24:56.940189+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T19:15:08.143573+00:00",
+      "timestamp": "2026-05-24T19:15:08.143573+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -1247,8 +1247,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T19:24:56.940189+00:00",
-      "timestamp": "2026-05-18T19:24:56.940189+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T19:15:08.143573+00:00",
+      "timestamp": "2026-05-24T19:15:08.143573+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -1260,8 +1260,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T19:24:56.952191+00:00",
-      "timestamp": "2026-05-18T19:24:56.952191+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:15:08.155573+00:00",
+      "timestamp": "2026-05-24T19:15:08.155573+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -1273,8 +1273,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T19:24:56.952191+00:00",
-      "timestamp": "2026-05-18T19:24:56.952191+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:15:08.155573+00:00",
+      "timestamp": "2026-05-24T19:15:08.155573+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -1286,8 +1286,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T19:24:56.952191+00:00",
-      "timestamp": "2026-05-18T19:24:56.952191+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T19:15:08.155573+00:00",
+      "timestamp": "2026-05-24T19:15:08.155573+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -1299,8 +1299,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T19:24:56.952191+00:00",
-      "timestamp": "2026-05-18T19:24:56.952191+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T19:15:08.155573+00:00",
+      "timestamp": "2026-05-24T19:15:08.155573+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -1312,8 +1312,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T19:24:56.952191+00:00",
-      "timestamp": "2026-05-18T19:24:56.952191+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T19:15:08.155573+00:00",
+      "timestamp": "2026-05-24T19:15:08.155573+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -1325,8 +1325,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T19:24:56.962191+00:00",
-      "timestamp": "2026-05-18T19:24:56.962191+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:15:08.167579+00:00",
+      "timestamp": "2026-05-24T19:15:08.167579+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -1338,8 +1338,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T19:24:56.962191+00:00",
-      "timestamp": "2026-05-18T19:24:56.962191+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:15:08.167579+00:00",
+      "timestamp": "2026-05-24T19:15:08.167579+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -1351,8 +1351,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T20:21:32.828643+00:00",
-      "timestamp": "2026-05-18T20:21:32.828643+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:21:10.244976+00:00",
+      "timestamp": "2026-05-24T19:21:10.244976+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -1364,8 +1364,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T20:21:32.828643+00:00",
-      "timestamp": "2026-05-18T20:21:32.828643+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:21:10.244976+00:00",
+      "timestamp": "2026-05-24T19:21:10.244976+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -1377,8 +1377,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T20:21:32.828643+00:00",
-      "timestamp": "2026-05-18T20:21:32.828643+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T19:21:10.244976+00:00",
+      "timestamp": "2026-05-24T19:21:10.244976+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -1390,8 +1390,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T20:21:32.828643+00:00",
-      "timestamp": "2026-05-18T20:21:32.828643+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T19:21:10.244976+00:00",
+      "timestamp": "2026-05-24T19:21:10.244976+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -1403,8 +1403,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T20:21:32.828643+00:00",
-      "timestamp": "2026-05-18T20:21:32.828643+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T19:21:10.244976+00:00",
+      "timestamp": "2026-05-24T19:21:10.244976+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -1416,8 +1416,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T20:21:32.839645+00:00",
-      "timestamp": "2026-05-18T20:21:32.839645+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:21:10.256977+00:00",
+      "timestamp": "2026-05-24T19:21:10.256977+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -1429,8 +1429,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T20:21:32.839645+00:00",
-      "timestamp": "2026-05-18T20:21:32.839645+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:21:10.256977+00:00",
+      "timestamp": "2026-05-24T19:21:10.256977+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -1442,8 +1442,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T20:21:32.839645+00:00",
-      "timestamp": "2026-05-18T20:21:32.839645+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T19:21:10.256977+00:00",
+      "timestamp": "2026-05-24T19:21:10.256977+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -1455,8 +1455,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T20:21:32.839645+00:00",
-      "timestamp": "2026-05-18T20:21:32.839645+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T19:21:10.256977+00:00",
+      "timestamp": "2026-05-24T19:21:10.256977+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -1468,8 +1468,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T20:21:32.839645+00:00",
-      "timestamp": "2026-05-18T20:21:32.839645+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T19:21:10.256977+00:00",
+      "timestamp": "2026-05-24T19:21:10.256977+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -1481,8 +1481,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T20:21:32.849643+00:00",
-      "timestamp": "2026-05-18T20:21:32.849643+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:21:10.267978+00:00",
+      "timestamp": "2026-05-24T19:21:10.267978+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -1494,8 +1494,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T20:21:32.849643+00:00",
-      "timestamp": "2026-05-18T20:21:32.849643+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:21:10.267978+00:00",
+      "timestamp": "2026-05-24T19:21:10.267978+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -1507,8 +1507,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T21:47:43.932367+00:00",
-      "timestamp": "2026-05-18T21:47:43.932367+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:30:09.023310+00:00",
+      "timestamp": "2026-05-24T19:30:09.023310+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -1520,8 +1520,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T21:47:43.932367+00:00",
-      "timestamp": "2026-05-18T21:47:43.932367+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:30:09.023310+00:00",
+      "timestamp": "2026-05-24T19:30:09.023310+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -1533,8 +1533,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T21:47:43.932367+00:00",
-      "timestamp": "2026-05-18T21:47:43.932367+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T19:30:09.023310+00:00",
+      "timestamp": "2026-05-24T19:30:09.023310+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -1546,8 +1546,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T21:47:43.932367+00:00",
-      "timestamp": "2026-05-18T21:47:43.932367+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T19:30:09.023310+00:00",
+      "timestamp": "2026-05-24T19:30:09.023310+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -1559,8 +1559,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T21:47:43.932367+00:00",
-      "timestamp": "2026-05-18T21:47:43.932367+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T19:30:09.023310+00:00",
+      "timestamp": "2026-05-24T19:30:09.023310+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -1572,8 +1572,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T21:47:43.943366+00:00",
-      "timestamp": "2026-05-18T21:47:43.943366+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:30:09.033314+00:00",
+      "timestamp": "2026-05-24T19:30:09.033314+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -1585,8 +1585,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T21:47:43.943366+00:00",
-      "timestamp": "2026-05-18T21:47:43.943366+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:30:09.033314+00:00",
+      "timestamp": "2026-05-24T19:30:09.033314+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -1598,8 +1598,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T21:47:43.943366+00:00",
-      "timestamp": "2026-05-18T21:47:43.943366+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T19:30:09.033314+00:00",
+      "timestamp": "2026-05-24T19:30:09.033314+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -1611,8 +1611,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T21:47:43.943366+00:00",
-      "timestamp": "2026-05-18T21:47:43.943366+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T19:30:09.033314+00:00",
+      "timestamp": "2026-05-24T19:30:09.033314+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -1624,8 +1624,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T21:47:43.943366+00:00",
-      "timestamp": "2026-05-18T21:47:43.943366+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T19:30:09.033314+00:00",
+      "timestamp": "2026-05-24T19:30:09.033314+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -1637,8 +1637,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T21:47:43.954375+00:00",
-      "timestamp": "2026-05-18T21:47:43.954375+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:30:09.045310+00:00",
+      "timestamp": "2026-05-24T19:30:09.045310+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -1650,8 +1650,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T21:47:43.954375+00:00",
-      "timestamp": "2026-05-18T21:47:43.954375+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:30:09.045310+00:00",
+      "timestamp": "2026-05-24T19:30:09.045310+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -1663,8 +1663,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T22:20:13.927015+00:00",
-      "timestamp": "2026-05-18T22:20:13.927015+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:35:39.877143+00:00",
+      "timestamp": "2026-05-24T19:35:39.877143+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -1676,8 +1676,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T22:20:13.927015+00:00",
-      "timestamp": "2026-05-18T22:20:13.927015+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:35:39.877143+00:00",
+      "timestamp": "2026-05-24T19:35:39.877143+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -1689,8 +1689,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T22:20:13.927015+00:00",
-      "timestamp": "2026-05-18T22:20:13.927015+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T19:35:39.877143+00:00",
+      "timestamp": "2026-05-24T19:35:39.877143+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -1702,8 +1702,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T22:20:13.927015+00:00",
-      "timestamp": "2026-05-18T22:20:13.927015+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T19:35:39.877143+00:00",
+      "timestamp": "2026-05-24T19:35:39.877143+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -1715,8 +1715,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T22:20:13.927015+00:00",
-      "timestamp": "2026-05-18T22:20:13.927015+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T19:35:39.877143+00:00",
+      "timestamp": "2026-05-24T19:35:39.877143+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -1728,8 +1728,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T22:20:13.938018+00:00",
-      "timestamp": "2026-05-18T22:20:13.938018+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:35:39.888144+00:00",
+      "timestamp": "2026-05-24T19:35:39.888144+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -1741,8 +1741,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T22:20:13.938018+00:00",
-      "timestamp": "2026-05-18T22:20:13.938018+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:35:39.888144+00:00",
+      "timestamp": "2026-05-24T19:35:39.888144+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -1754,8 +1754,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T22:20:13.938018+00:00",
-      "timestamp": "2026-05-18T22:20:13.938018+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T19:35:39.888144+00:00",
+      "timestamp": "2026-05-24T19:35:39.888144+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -1767,8 +1767,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T22:20:13.938018+00:00",
-      "timestamp": "2026-05-18T22:20:13.938018+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T19:35:39.888144+00:00",
+      "timestamp": "2026-05-24T19:35:39.888144+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -1780,8 +1780,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T22:20:13.938018+00:00",
-      "timestamp": "2026-05-18T22:20:13.938018+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T19:35:39.888144+00:00",
+      "timestamp": "2026-05-24T19:35:39.888144+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -1793,8 +1793,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T22:20:13.951011+00:00",
-      "timestamp": "2026-05-18T22:20:13.951011+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T19:35:39.900144+00:00",
+      "timestamp": "2026-05-24T19:35:39.900144+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -1806,8 +1806,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T22:20:13.951011+00:00",
-      "timestamp": "2026-05-18T22:20:13.951011+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T19:35:39.900144+00:00",
+      "timestamp": "2026-05-24T19:35:39.900144+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",
@@ -1819,8 +1819,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T22:35:41.299454+00:00",
-      "timestamp": "2026-05-18T22:35:41.299454+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T22:33:02.134257+00:00",
+      "timestamp": "2026-05-24T22:33:02.134257+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "unknown",
@@ -1832,8 +1832,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T22:35:41.299454+00:00",
-      "timestamp": "2026-05-18T22:35:41.299454+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T22:33:02.134257+00:00",
+      "timestamp": "2026-05-24T22:33:02.134257+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "unknown",
@@ -1845,8 +1845,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T22:35:41.299454+00:00",
-      "timestamp": "2026-05-18T22:35:41.299454+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T22:33:02.134257+00:00",
+      "timestamp": "2026-05-24T22:33:02.134257+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "unknown",
@@ -1858,8 +1858,8 @@
       "severity": "recovered"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T22:35:41.299454+00:00",
-      "timestamp": "2026-05-18T22:35:41.299454+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T22:33:02.134257+00:00",
+      "timestamp": "2026-05-24T22:33:02.134257+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "unknown",
@@ -1871,8 +1871,8 @@
       "severity": "recovered"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T22:35:41.299454+00:00",
-      "timestamp": "2026-05-18T22:35:41.299454+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T22:33:02.134257+00:00",
+      "timestamp": "2026-05-24T22:33:02.134257+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 0,
@@ -1884,8 +1884,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T22:35:41.316452+00:00",
-      "timestamp": "2026-05-18T22:35:41.316452+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T22:33:02.147259+00:00",
+      "timestamp": "2026-05-24T22:33:02.147259+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "portfolio",
@@ -1897,8 +1897,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T22:35:41.316452+00:00",
-      "timestamp": "2026-05-18T22:35:41.316452+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T22:33:02.147259+00:00",
+      "timestamp": "2026-05-24T22:33:02.147259+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "portfolio_action_ready",
@@ -1910,8 +1910,8 @@
       "severity": "info"
     },
     {
-      "id": "synchronization_change:connection_state:2026-05-18T22:35:41.316452+00:00",
-      "timestamp": "2026-05-18T22:35:41.316452+00:00",
+      "id": "synchronization_change:connection_state:2026-05-24T22:33:02.147259+00:00",
+      "timestamp": "2026-05-24T22:33:02.147259+00:00",
       "type": "synchronization_change",
       "field": "connection_state",
       "from": "connected",
@@ -1923,8 +1923,8 @@
       "severity": "warning"
     },
     {
-      "id": "payload_freshness_change:freshness:2026-05-18T22:35:41.316452+00:00",
-      "timestamp": "2026-05-18T22:35:41.316452+00:00",
+      "id": "payload_freshness_change:freshness:2026-05-24T22:33:02.147259+00:00",
+      "timestamp": "2026-05-24T22:33:02.147259+00:00",
       "type": "payload_freshness_change",
       "field": "freshness",
       "from": "fresh",
@@ -1936,8 +1936,8 @@
       "severity": "warning"
     },
     {
-      "id": "event_stream_evolution:event_count:2026-05-18T22:35:41.316452+00:00",
-      "timestamp": "2026-05-18T22:35:41.316452+00:00",
+      "id": "event_stream_evolution:event_count:2026-05-24T22:33:02.147259+00:00",
+      "timestamp": "2026-05-24T22:33:02.147259+00:00",
       "type": "event_stream_evolution",
       "field": "event_count",
       "from": 1,
@@ -1949,8 +1949,8 @@
       "severity": "info"
     },
     {
-      "id": "runtime_state_transition:route:2026-05-18T22:35:41.330455+00:00",
-      "timestamp": "2026-05-18T22:35:41.330455+00:00",
+      "id": "runtime_state_transition:route:2026-05-24T22:33:02.159256+00:00",
+      "timestamp": "2026-05-24T22:33:02.159256+00:00",
       "type": "runtime_state_transition",
       "field": "route",
       "from": "discovery",
@@ -1962,8 +1962,8 @@
       "severity": "warning"
     },
     {
-      "id": "runtime_state_transition:terminal_state:2026-05-18T22:35:41.330455+00:00",
-      "timestamp": "2026-05-18T22:35:41.330455+00:00",
+      "id": "runtime_state_transition:terminal_state:2026-05-24T22:33:02.160263+00:00",
+      "timestamp": "2026-05-24T22:33:02.160263+00:00",
       "type": "runtime_state_transition",
       "field": "terminal_state",
       "from": "discovery_ready",

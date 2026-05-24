@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from claire.api.cockpit_single_shell_readiness import get_single_shell_readiness
+from runtime_core.api.cockpit_single_shell_readiness import get_single_shell_readiness
 
 
 def test_s226_s232_single_shell_readiness_marks_payload_ready_but_visual_work_remaining():

@@ -13,11 +13,11 @@ def test_s36r3_operator_script_exists_and_is_one_shot_only():
     source = path.read_text(encoding="utf-8")
     assert "operator_ack=True" in source
     assert "one_shot=True" in source
-    assert "CLAIRE_ALLOW_GOVERNED_LIVE_METADATA_PROBE" in source
-    assert "CLAIRE_ALLOW_HEAD_ONLY_PROBE" in source
-    assert "CLAIRE_ALLOW_RESPONSE_BODY_READ" in source
-    assert "CLAIRE_ALLOW_RUNTIME_TRUTH_MUTATION" in source
-    assert "CLAIRE_ALLOW_AUTONOMOUS_EXECUTION" in source
+    assert "PLATFORM_ALLOW_GOVERNED_LIVE_METADATA_PROBE" in source
+    assert "PLATFORM_ALLOW_HEAD_ONLY_PROBE" in source
+    assert "PLATFORM_ALLOW_RESPONSE_BODY_READ" in source
+    assert "PLATFORM_ALLOW_RUNTIME_TRUTH_MUTATION" in source
+    assert "PLATFORM_ALLOW_AUTONOMOUS_EXECUTION" in source
 
 
 def test_s36r3_operator_script_does_not_use_http_body_or_browser():

@@ -1,0 +1,223 @@
+{
+  "authority": {
+    "automatic_update_performed": false,
+    "autonomous_crawling_performed": false,
+    "body_read_allowed": false,
+    "body_read_performed": false,
+    "browser_execution_performed": false,
+    "manual_promotion_required": true,
+    "metadata_only": true,
+    "network_request_performed": true,
+    "provider_execution_performed": true,
+    "quarantine_required": true,
+    "runtime_truth_mutation": false,
+    "runtime_truth_write": "blocked"
+  },
+  "provider": {
+    "duckduckgo_fallback_allowed": true,
+    "execution_allowed": false,
+    "fallback_only_providers": [
+      "duckduckgo"
+    ],
+    "provider": "tavily",
+    "provider_errors": [],
+    "provider_known": true,
+    "provider_stack": [
+      "tavily",
+      "duckduckgo"
+    ],
+    "provider_stack_states": [
+      {
+        "execution_allowed": false,
+        "fallback_allowed": null,
+        "fallback_only": false,
+        "provider": "tavily",
+        "required_key_name": "TAVILY_API_KEY",
+        "required_key_present": false,
+        "research_grade": true
+      },
+      {
+        "execution_allowed": true,
+        "fallback_allowed": true,
+        "fallback_only": true,
+        "provider": "duckduckgo",
+        "required_key_name": "",
+        "required_key_present": true,
+        "research_grade": false
+      }
+    ],
+    "provider_used": "duckduckgo",
+    "real_provider_gate_enabled": true,
+    "recommended_stack": [
+      "brave",
+      "searchgov",
+      "duckduckgo"
+    ],
+    "required_key_name": "TAVILY_API_KEY",
+    "required_key_present": false,
+    "research_grade_provider_required": true,
+    "supported_providers": [
+      "bing",
+      "brave",
+      "duckduckgo",
+      "searchgov",
+      "serpapi",
+      "tavily"
+    ]
+  },
+  "provider_query": "AI governance Microsoft",
+  "quarantine_store": {
+    "authority": "metadata_only_quarantine",
+    "blocked_capabilities": {
+      "automatic_updates_enabled": false,
+      "autonomous_crawling_enabled": false,
+      "body_read_allowed": false,
+      "browser_execution_enabled": false,
+      "command_execution_enabled": false,
+      "live_web_execution_enabled": false,
+      "network_request_performed": false,
+      "package_download_performed": false,
+      "package_install_performed": false,
+      "runtime_mutation_enabled": false,
+      "search_provider_execution_enabled": false
+    },
+    "name": "Search Result Quarantine Store",
+    "results": [
+      {
+        "blocked_reason": null,
+        "body_read": false,
+        "captured_at": "2026-05-24T19:29:58+00:00",
+        "eligible_for_runtime_truth": false,
+        "metadata_only": true,
+        "network_request_performed": false,
+        "policy": {
+          "body_reads": "blocked",
+          "default_action": "quarantine_metadata_only",
+          "runtime_truth": "never_auto_promote",
+          "trust_tier": "tier_3_open_web"
+        },
+        "provider": "duckduckgo",
+        "quarantine_state": "quarantined_for_operator_review",
+        "rank": 1,
+        "requires_operator_review": true,
+        "result_id": "connected-meta-aaaeed28c790e5c6",
+        "review_state": "pending_operator_review",
+        "runtime_truth_mutated": false,
+        "snippet": "Metadata-only fallback result.",
+        "source_family": "open_web",
+        "title": "Fallback AI governance metadata",
+        "trust_tier": "tier_3_open_web",
+        "url": "https://example.com/ai-governance"
+      }
+    ],
+    "source_family_policies": {
+      "denied_or_unsafe": {
+        "body_reads": "blocked",
+        "default_action": "deny",
+        "runtime_truth": "never_auto_promote",
+        "trust_tier": "denied"
+      },
+      "official_docs": {
+        "body_reads": "blocked",
+        "default_action": "allow_metadata_only_when_operator_gated",
+        "runtime_truth": "never_auto_promote",
+        "trust_tier": "tier_1_official"
+      },
+      "open_web": {
+        "body_reads": "blocked",
+        "default_action": "quarantine_metadata_only",
+        "runtime_truth": "never_auto_promote",
+        "trust_tier": "tier_3_open_web"
+      },
+      "primary_market_or_regulatory": {
+        "body_reads": "blocked",
+        "default_action": "allow_metadata_only_when_operator_gated",
+        "runtime_truth": "never_auto_promote",
+        "trust_tier": "tier_1_primary"
+      },
+      "reputable_secondary": {
+        "body_reads": "blocked",
+        "default_action": "quarantine_metadata_only",
+        "runtime_truth": "never_auto_promote",
+        "trust_tier": "tier_2_secondary"
+      },
+      "unknown_or_user_supplied": {
+        "body_reads": "blocked",
+        "default_action": "quarantine_and_require_review",
+        "runtime_truth": "never_auto_promote",
+        "trust_tier": "tier_4_unknown"
+      }
+    },
+    "stage_range": "S709-S715",
+    "store_id": "governed-search-result-quarantine-s709-s715",
+    "summary": {
+      "body_reads": 0,
+      "denied_total": 0,
+      "network_requests": 0,
+      "pending_review_total": 1,
+      "quarantined_total": 1,
+      "result_total": 1,
+      "runtime_truth_mutations": 0
+    },
+    "terminal_state": "metadata_results_quarantined"
+  },
+  "query": "AI governance Microsoft",
+  "query_id": "0a216dbe0665",
+  "result_cards": [
+    {
+      "quarantine_state": "quarantined_for_operator_review",
+      "rank": 1,
+      "review_state": "pending_operator_review",
+      "snippet": "Metadata-only fallback result.",
+      "source_family": "open_web",
+      "title": "Fallback AI governance metadata",
+      "trust_tier": "tier_3_open_web",
+      "url": "https://example.com/ai-governance"
+    }
+  ],
+  "results": [
+    {
+      "blocked_reason": null,
+      "body_read": false,
+      "captured_at": "2026-05-24T19:29:58+00:00",
+      "eligible_for_runtime_truth": false,
+      "metadata_only": true,
+      "network_request_performed": false,
+      "policy": {
+        "body_reads": "blocked",
+        "default_action": "quarantine_metadata_only",
+        "runtime_truth": "never_auto_promote",
+        "trust_tier": "tier_3_open_web"
+      },
+      "provider": "duckduckgo",
+      "quarantine_state": "quarantined_for_operator_review",
+      "rank": 1,
+      "requires_operator_review": true,
+      "result_id": "connected-meta-aaaeed28c790e5c6",
+      "review_state": "pending_operator_review",
+      "runtime_truth_mutated": false,
+      "snippet": "Metadata-only fallback result.",
+      "source_family": "open_web",
+      "title": "Fallback AI governance metadata",
+      "trust_tier": "tier_3_open_web",
+      "url": "https://example.com/ai-governance"
+    }
+  ],
+  "source_activation": {
+    "eligible_source_count": 0,
+    "query": "AI governance Microsoft",
+    "query_strategy": {
+      "body_reads_allowed": false,
+      "manual_promotion_required": true,
+      "mode": "provider_metadata_query",
+      "provider_query": "AI governance Microsoft",
+      "quarantine_required": true
+    },
+    "schema_version": "claire.specified_source_activation_plan.v1",
+    "sources": [],
+    "specified_source_count": 0,
+    "status": "unspecified_source_discovery"
+  },
+  "status": "metadata_results_quarantined",
+  "version": "v19.89.8-connected-search-metadata-v1"
+}

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_cockpit_preview_export_s111r1 import (
+from runtime_core.api.governed_cockpit_preview_export_s111r1 import (
     export_cockpit_preview_artifact,
     validate_cockpit_preview_artifact,
     build_cockpit_preview_export_report,

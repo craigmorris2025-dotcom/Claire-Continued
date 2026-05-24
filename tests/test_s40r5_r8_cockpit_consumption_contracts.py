@@ -48,7 +48,7 @@ def make_truth_surfaces(root: Path) -> None:
 
 
 def test_s40r5_builds_panel_contracts(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_cockpit_consumption_contracts")
+    module = importlib.import_module("runtime_core.api.governed_cockpit_consumption_contracts")
     make_truth_surfaces(tmp_path)
     contracts = module.build_cockpit_panel_contracts(tmp_path)
 
@@ -61,7 +61,7 @@ def test_s40r5_builds_panel_contracts(tmp_path: Path):
 
 
 def test_s40r6_panel_index_is_read_only(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_cockpit_consumption_contracts")
+    module = importlib.import_module("runtime_core.api.governed_cockpit_consumption_contracts")
     make_truth_surfaces(tmp_path)
     contracts = module.build_cockpit_panel_contracts(tmp_path)
     index = module.build_cockpit_panel_index(contracts)
@@ -74,7 +74,7 @@ def test_s40r6_panel_index_is_read_only(tmp_path: Path):
 
 
 def test_s40r7_verification_passes_safe_contracts(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_cockpit_consumption_contracts")
+    module = importlib.import_module("runtime_core.api.governed_cockpit_consumption_contracts")
     make_truth_surfaces(tmp_path)
     contracts = module.build_cockpit_panel_contracts(tmp_path)
     report = module.verify_cockpit_contracts(contracts)
@@ -86,7 +86,7 @@ def test_s40r7_verification_passes_safe_contracts(tmp_path: Path):
 
 
 def test_s40r8_writes_contract_artifacts(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_cockpit_consumption_contracts")
+    module = importlib.import_module("runtime_core.api.governed_cockpit_consumption_contracts")
     make_truth_surfaces(tmp_path)
     result = module.write_cockpit_consumption_contracts(tmp_path, tmp_path / "out")
 

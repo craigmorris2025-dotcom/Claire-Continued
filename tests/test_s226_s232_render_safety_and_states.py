@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from claire.api.cockpit_card_state_normalizer import get_card_state_normalizer_contract
-from claire.api.cockpit_render_safety_contract import get_render_safety_contract
+from runtime_core.api.cockpit_card_state_normalizer import get_card_state_normalizer_contract
+from runtime_core.api.cockpit_render_safety_contract import get_render_safety_contract
 
 
 def test_s226_s232_render_safety_prevents_blank_or_unsafe_cockpit_states():

@@ -4,7 +4,7 @@ import importlib
 
 
 def test_s45r3_operator_visible_panel_bindings_are_read_only():
-    module = importlib.import_module("claire.api.s45_operator_visible_panels")
+    module = importlib.import_module("runtime_core.api.s45_operator_visible_panels")
     bindings = module.build_operator_visible_panel_bindings()
 
     assert bindings["version"] == "v19.89.8-S45R1-R8"
@@ -23,7 +23,7 @@ def test_s45r3_operator_visible_panel_bindings_are_read_only():
 
 
 def test_s45r4_operator_visible_panel_bindings_verify_cleanly():
-    module = importlib.import_module("claire.api.s45_operator_visible_panels")
+    module = importlib.import_module("runtime_core.api.s45_operator_visible_panels")
     verification = module.verify_operator_visible_panel_bindings()
 
     assert verification["verification_ok"] is True

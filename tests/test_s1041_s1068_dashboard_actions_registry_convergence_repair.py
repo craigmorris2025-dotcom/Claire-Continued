@@ -8,7 +8,7 @@ from fastapi.testclient import TestClient
 
 
 def test_r6_dashboard_action_contract_has_legacy_and_current_fields():
-    from claire.api.dashboard_actions_registry_routes import (
+    from runtime_core.api.dashboard_actions_registry_routes import (
         build_dashboard_actions,
         build_dashboard_actions_registry,
         build_dashboard_action_preview,
@@ -35,7 +35,7 @@ def test_r6_dashboard_action_contract_has_legacy_and_current_fields():
 
 
 def test_r6_create_app_s36_and_payload_contracts():
-    app_module = importlib.import_module("claire.app")
+    app_module = importlib.import_module("runtime_core.app")
     app = app_module.create_app()
     client = TestClient(app)
 
@@ -55,5 +55,5 @@ def test_r6_create_app_s36_and_payload_contracts():
     assert blocked.status_code == 403
     assert "provider gate is disabled" in blocked.text
 
-    text = Path("claire/app.py").read_text(encoding="utf-8")
-    assert text.count("Claire v19.89.8-S31R4 governed dashboard payload handoff") == 1
+    text = Path("runtime_core/app.py").read_text(encoding="utf-8")
+    assert text.count("Governed dashboard payload handoff") == 1

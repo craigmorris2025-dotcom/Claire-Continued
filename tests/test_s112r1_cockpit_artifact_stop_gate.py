@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claire.api.governed_cockpit_stop_gate_s112r1 import (
+from runtime_core.api.governed_cockpit_stop_gate_s112r1 import (
     build_cockpit_artifact_stop_gate,
     write_cockpit_artifact_stop_gate_report,
 )

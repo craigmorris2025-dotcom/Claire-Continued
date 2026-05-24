@@ -47,7 +47,7 @@ def route_plateau():
 
 
 def test_s42r5_mount_contract_is_read_only_and_ordered():
-    module = importlib.import_module("claire.api.governed_operator_router_mount_contracts")
+    module = importlib.import_module("runtime_core.api.governed_operator_router_mount_contracts")
     contract = module.build_operator_mount_contract(router_manifest(), route_plateau())
 
     assert contract["route_count"] == 7
@@ -62,7 +62,7 @@ def test_s42r5_mount_contract_is_read_only_and_ordered():
 
 
 def test_s42r6_probe_plan_is_contract_only():
-    module = importlib.import_module("claire.api.governed_operator_router_mount_contracts")
+    module = importlib.import_module("runtime_core.api.governed_operator_router_mount_contracts")
     contract = module.build_operator_mount_contract(router_manifest(), route_plateau())
     plan = module.build_operator_route_probe_plan(contract)
 
@@ -75,7 +75,7 @@ def test_s42r6_probe_plan_is_contract_only():
 
 
 def test_s42r7_readiness_and_verification_pass():
-    module = importlib.import_module("claire.api.governed_operator_router_mount_contracts")
+    module = importlib.import_module("runtime_core.api.governed_operator_router_mount_contracts")
     contract = module.build_operator_mount_contract(router_manifest(), route_plateau())
     plan = module.build_operator_route_probe_plan(contract)
     readiness = module.build_operator_router_mount_readiness(contract, plan)
@@ -88,7 +88,7 @@ def test_s42r7_readiness_and_verification_pass():
 
 
 def test_s42r8_to_r12_writes_plateau_artifacts(tmp_path: Path):
-    module = importlib.import_module("claire.api.governed_operator_router_mount_contracts")
+    module = importlib.import_module("runtime_core.api.governed_operator_router_mount_contracts")
 
     manifest_dir = tmp_path / "output" / "operator_read_only_router"
     plateau_dir = tmp_path / "output" / "operator_route_plateau"
