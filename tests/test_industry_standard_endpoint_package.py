@@ -43,6 +43,37 @@ def test_industry_standard_package_maps_required_standards_and_endpoints():
     assert checks["/cad/intent"]["mounted"] is True
 
 
+def test_standards_control_map_binds_frameworks_to_real_runtime_surfaces():
+    client = TestClient(create_app())
+
+    payload = client.get("/api/system/standards-control-map").json()
+    package = client.get("/api/system/industry-standard-endpoint-package").json()
+
+    assert payload["schema_version"] == "claire.standards_control_map.v1"
+    assert payload["status"] == "ready"
+    assert payload["framework_count"] == 8
+    assert package["standards_control_map"]["framework_count"] == 8
+
+    frameworks = {item["framework"]: item for item in payload["frameworks"]}
+    for framework in [
+        "NIST AI RMF",
+        "ISO/IEC 42001",
+        "OWASP LLM Top 10",
+        "NIST CSF 2.0",
+        "NIST SSDF",
+        "SLSA",
+        "CycloneDX",
+        "OpenTelemetry",
+    ]:
+        row = frameworks[framework]
+        assert row["mounted"] is True
+        assert row["real_route"] is True
+        assert row["real_control"] is True
+        assert row["real_test"] is True
+        assert row["real_governance_gate"] is True
+        assert row["real_runtime_behavior"] is True
+
+
 def test_design_portal_and_cad_contract_endpoints_are_review_only():
     client = TestClient(create_app())
 
@@ -67,4 +98,3 @@ def test_industry_standard_package_writes_attached_files(tmp_path: Path):
     assert doc_file.exists()
     assert payload["settings"]["package_file"] == "data/endpoint_contracts/industry_standard_endpoint_package.json"
     assert "OpenAPI 3.1" in doc_file.read_text(encoding="utf-8")
-

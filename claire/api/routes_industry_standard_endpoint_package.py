@@ -5,6 +5,7 @@ from fastapi import APIRouter, Request
 from claire.api.industry_standard_endpoint_package import (
     build_endpoint_standard_settings,
     build_industry_standard_endpoint_package,
+    build_standards_control_map,
 )
 
 
@@ -25,3 +26,12 @@ def get_dashboard_industry_standard_endpoint_package(request: Request) -> dict:
 def get_endpoint_standard_settings(request: Request) -> dict:
     return build_endpoint_standard_settings(request.app)
 
+
+@router.get("/api/system/standards-control-map")
+def get_standards_control_map(request: Request) -> dict:
+    return build_standards_control_map(request.app)
+
+
+@router.get("/dashboard/system/standards-control-map")
+def get_dashboard_standards_control_map(request: Request) -> dict:
+    return build_standards_control_map(request.app)

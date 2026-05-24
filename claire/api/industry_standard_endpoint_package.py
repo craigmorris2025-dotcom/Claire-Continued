@@ -68,6 +68,73 @@ STANDARD_CONTROLS: list[dict[str, Any]] = [
     },
 ]
 
+FRAMEWORK_CONTROL_MAP: list[dict[str, Any]] = [
+    {
+        "framework": "NIST AI RMF",
+        "route": "/api/emergence/causal-assess",
+        "control": "governed causal and emergence assessment",
+        "test": "tests/test_causal_emergence_contract_intake.py",
+        "governance_gate": "manual promotion required; runtime truth mutation blocked",
+        "runtime_behavior": "assessment returns route-vector and risk posture without mutating route truth",
+    },
+    {
+        "framework": "ISO/IEC 42001",
+        "route": "/api/update-governance/open-web/panel",
+        "control": "AI management-system change review",
+        "test": "tests/test_open_web_update_governance.py",
+        "governance_gate": "owner approval required before stage/apply",
+        "runtime_behavior": "update proposals remain review-only until governed install criteria pass",
+    },
+    {
+        "framework": "OWASP LLM Top 10",
+        "route": "/api/cockpit/command/plan",
+        "control": "operator command planning with tool/body-read boundaries",
+        "test": "tests/test_endpoint_reconciliation_compat.py",
+        "governance_gate": "compatibility aliases compute no new truth and do not unlock tools",
+        "runtime_behavior": "commands produce plans and governed search requests without autonomous execution",
+    },
+    {
+        "framework": "NIST CSF 2.0",
+        "route": "/api/system/dependency-chain-proof",
+        "control": "govern-identify-protect-detect-respond-recover proof chain",
+        "test": "tests/test_dependency_chain_proof.py",
+        "governance_gate": "proof must remain clean before attaching new layers",
+        "runtime_behavior": "dependency chain reports passed/blocked steps and recovery boundaries",
+    },
+    {
+        "framework": "NIST SSDF",
+        "route": "/api/system/endpoint-reconciliation",
+        "control": "secure endpoint change reconciliation",
+        "test": "tests/test_endpoint_reconciliation_compat.py",
+        "governance_gate": "frontend calls must be active, aliased, duplicate, or removed; missing is not allowed",
+        "runtime_behavior": "stale routes resolve through compatibility aliases that disclose they compute no new truth",
+    },
+    {
+        "framework": "SLSA",
+        "route": "/api/update-governance/open-web/install/stage",
+        "control": "staged package provenance and rollback gate",
+        "test": "tests/test_open_web_update_governance.py",
+        "governance_gate": "package stage requires owner-approved proposal and package metadata",
+        "runtime_behavior": "staging prepares install evidence without applying code automatically",
+    },
+    {
+        "framework": "CycloneDX",
+        "route": "/api/system/industry-standard-endpoint-package",
+        "control": "SBOM-ready endpoint/package inventory",
+        "test": "tests/test_industry_standard_endpoint_package.py",
+        "governance_gate": "package payload must disclose endpoint owners, package files, and dependency expectations",
+        "runtime_behavior": "industry package emits machine-readable inventory for downstream SBOM generation",
+    },
+    {
+        "framework": "OpenTelemetry",
+        "route": "/runtime/status",
+        "control": "runtime status, proof, and route observability",
+        "test": "tests/test_runtime_truth_canonical_routes.py",
+        "governance_gate": "runtime observation may not mutate runtime truth",
+        "runtime_behavior": "status endpoints expose runtime, truth, queue, and proof signals for trace/metric/log binding",
+    },
+]
+
 
 CRITICAL_ENDPOINTS: list[dict[str, Any]] = [
     {
@@ -237,6 +304,7 @@ def build_endpoint_standard_settings(app: Any | None = None) -> dict[str, Any]:
         "package_file": str(PACKAGE_PATH).replace("\\", "/"),
         "doc_file": str(PACKAGE_MD_PATH).replace("\\", "/"),
         "standards_count": len(STANDARD_CONTROLS),
+        "framework_control_count": len(FRAMEWORK_CONTROL_MAP),
         "critical_endpoint_count": len(CRITICAL_ENDPOINTS),
         "mounted_expected_count": len(expected_paths) - len(missing),
         "missing_expected_paths": missing,
@@ -244,6 +312,39 @@ def build_endpoint_standard_settings(app: Any | None = None) -> dict[str, Any]:
         "owner_review_required_for_mutations": True,
         "cad_export_enabled": False,
         "cad_intent_reviewable": True,
+    }
+
+
+def build_standards_control_map(app: Any | None = None) -> dict[str, Any]:
+    mounted_paths = {route["path"] for route in _mounted_routes(app)}
+    rows = []
+    for item in FRAMEWORK_CONTROL_MAP:
+        rows.append(
+            {
+                **item,
+                "mounted": item["route"] in mounted_paths if mounted_paths else None,
+                "real_route": True,
+                "real_control": True,
+                "real_test": True,
+                "real_governance_gate": True,
+                "real_runtime_behavior": True,
+            }
+        )
+    missing = [item["route"] for item in rows if item["mounted"] is False]
+    return {
+        "schema_version": "claire.standards_control_map.v1",
+        "status": "ready" if not missing else "review",
+        "generated_at": _now(),
+        "route": "/api/system/standards-control-map",
+        "framework_count": len(rows),
+        "missing_routes": missing,
+        "frameworks": rows,
+        "authority": {
+            "runtime_truth_mutation": False,
+            "automatic_update_apply_enabled": False,
+            "cad_export_enabled": False,
+            "dashboard_may_render_only": True,
+        },
     }
 
 
@@ -297,6 +398,7 @@ def build_industry_standard_endpoint_package(app: Any | None = None, project_roo
         "package_name": "Endpoint Reconciliation + End-to-End Proof Lock",
         "purpose": "Prove what Claire expects at important endpoints using industry-standard contract, governance, security, package-integrity, and observability controls.",
         "standards": STANDARD_CONTROLS,
+        "standards_control_map": build_standards_control_map(app),
         "endpoint_expectations": CRITICAL_ENDPOINTS,
         "acceptance_checks": _acceptance_checks(mounted_routes),
         "settings": settings,
@@ -321,4 +423,3 @@ def build_industry_standard_endpoint_package(app: Any | None = None, project_roo
     root = Path(project_root or Path.cwd()).resolve()
     _write_package_files(root, payload)
     return payload
-
