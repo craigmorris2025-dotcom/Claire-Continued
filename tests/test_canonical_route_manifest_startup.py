@@ -12,7 +12,7 @@ def test_startup_uses_canonical_route_manifest_not_api_autodiscovery():
     report = getattr(app.state, "claire_route_report", {})
 
     assert report["mode"] == "canonical_manifest"
-    assert len(app.routes) <= 352
+    assert len(app.routes) <= 353
     route_paths = {route.path for route in app.routes}
     assert "/api/sources/registry" in route_paths
     assert "/api/search/providers/status" in route_paths

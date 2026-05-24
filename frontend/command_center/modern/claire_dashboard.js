@@ -979,6 +979,7 @@ function renderDesignPortal() {
     ${sourceRow("Video viewer", artifactPackage.video_viewer_required, artifactPackage.video_viewer_required ? "required" : "off")}
     ${sourceRow("Manual review", artifactPackage.manual_review_required, artifactPackage.manual_review_required ? "required" : "off")}`;
   const viewerRows = `${sourceRow("CAD / 3D viewer", "STEP, STL, OBJ, GLB, DXF asset slot", artifactPackage.cad_viewer_required ? "ready" : "off")}
+    ${sourceRow("CAD export contract", "/cad/export-contract", "prepared / disabled")}
     ${sourceRow("Video / simulation viewer", "MP4, WEBM, MOV simulation slot", artifactPackage.video_viewer_required ? "ready" : "off")}
     ${sourceRow("Import/generation slots", "operator-attached or generated assets", "ready")}`;
   const viewerSurface = `<div class="viewer-surface-grid">

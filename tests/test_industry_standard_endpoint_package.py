@@ -80,12 +80,16 @@ def test_design_portal_and_cad_contract_endpoints_are_review_only():
     status = client.get("/design-portal/status").json()
     contract = client.get("/design-portal/contract").json()
     cad = client.get("/cad/intent").json()
+    export_contract = client.get("/cad/export-contract").json()
 
     assert status["cad_export_enabled"] is False
     assert contract["cad_export_enabled"] is False
     assert cad["cad_export_enabled"] is False
+    assert export_contract["cad_export_enabled"] is False
+    assert export_contract["implementation_ready"] is False
     assert cad["operator_review_required"] is True
     assert cad["design_contract_endpoint"] == "/design-portal/contract"
+    assert export_contract["cad_intent_endpoint"] == "/cad/intent"
 
 
 def test_industry_standard_package_writes_attached_files(tmp_path: Path):

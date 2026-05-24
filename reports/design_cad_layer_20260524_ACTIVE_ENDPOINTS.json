@@ -1,0 +1,3189 @@
+{
+  "active_app": "main.py -> claire.app:create_app",
+  "endpoint_count": 353,
+  "endpoints": [
+    {
+      "endpoint": "root",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "root",
+      "path": "/"
+    },
+    {
+      "endpoint": "acs2_visual_command_endpoint",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.technology_base_routes",
+      "name": "acs2_visual_command_endpoint",
+      "path": "/api/acs2/{path:path}"
+    },
+    {
+      "endpoint": "post_ask_claire",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.intelligence_answer_routes",
+      "name": "post_ask_claire",
+      "path": "/api/ask-claire"
+    },
+    {
+      "endpoint": "_claire_s1294_plateau_lock_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "api_audit_plateau_lock_s1294",
+      "path": "/api/audit/plateau-lock"
+    },
+    {
+      "endpoint": "_claire_s1294_risk_pattern_review_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "api_audit_risk_pattern_review_s1294",
+      "path": "/api/audit/risk-pattern-review"
+    },
+    {
+      "endpoint": "cockpit_body_read_gate_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_body_read_gate_actions",
+      "path": "/api/cockpit/body-read-gate/actions"
+    },
+    {
+      "endpoint": "cockpit_body_read_gate_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_body_read_gate_cards",
+      "path": "/api/cockpit/body-read-gate/cards"
+    },
+    {
+      "endpoint": "cockpit_body_read_gate_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_body_read_gate_payload",
+      "path": "/api/cockpit/body-read-gate/payload"
+    },
+    {
+      "endpoint": "cockpit_body_read_gate_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_body_read_gate_status",
+      "path": "/api/cockpit/body-read-gate/status"
+    },
+    {
+      "endpoint": "cockpit_body_read_gate_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_body_read_gate_stop_gate",
+      "path": "/api/cockpit/body-read-gate/stop-gate"
+    },
+    {
+      "endpoint": "cockpit_command_history",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "cockpit_command_history",
+      "path": "/api/cockpit/command/history"
+    },
+    {
+      "endpoint": "cockpit_command_latest",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "cockpit_command_latest",
+      "path": "/api/cockpit/command/latest"
+    },
+    {
+      "endpoint": "cockpit_command_plan",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.app",
+      "name": "cockpit_command_plan",
+      "path": "/api/cockpit/command/plan"
+    },
+    {
+      "endpoint": "cockpit_control_surface_js_asset",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_control_surface_js_asset",
+      "path": "/api/cockpit/control-surface/assets/js"
+    },
+    {
+      "endpoint": "cockpit_control_surface_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_control_surface_payload",
+      "path": "/api/cockpit/control-surface/payload"
+    },
+    {
+      "endpoint": "cockpit_convergence_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_cockpit_web_search_convergence_routes",
+      "name": "cockpit_convergence_actions",
+      "path": "/api/cockpit/convergence/actions"
+    },
+    {
+      "endpoint": "cockpit_convergence_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_cockpit_web_search_convergence_routes",
+      "name": "cockpit_convergence_cards",
+      "path": "/api/cockpit/convergence/cards"
+    },
+    {
+      "endpoint": "cockpit_convergence_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_cockpit_web_search_convergence_routes",
+      "name": "cockpit_convergence_payload",
+      "path": "/api/cockpit/convergence/payload"
+    },
+    {
+      "endpoint": "cockpit_convergence_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_cockpit_web_search_convergence_routes",
+      "name": "cockpit_convergence_status",
+      "path": "/api/cockpit/convergence/status"
+    },
+    {
+      "endpoint": "cockpit_convergence_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_cockpit_web_search_convergence_routes",
+      "name": "cockpit_convergence_stop_gate",
+      "path": "/api/cockpit/convergence/stop-gate"
+    },
+    {
+      "endpoint": "cockpit_dashboard_sync_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_cockpit_web_search_convergence_routes",
+      "name": "cockpit_dashboard_sync_payload",
+      "path": "/api/cockpit/dashboard-sync/payload"
+    },
+    {
+      "endpoint": "get_latest_hybrid_connected_result",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_connected_search",
+      "name": "get_latest_hybrid_connected_result",
+      "path": "/api/cockpit/hybrid/latest"
+    },
+    {
+      "endpoint": "post_build_hybrid_connected_result",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.governed_connected_search",
+      "name": "post_build_hybrid_connected_result",
+      "path": "/api/cockpit/hybrid/result"
+    },
+    {
+      "endpoint": "cockpit_metadata_search_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_metadata_search_payload",
+      "path": "/api/cockpit/metadata-search/payload"
+    },
+    {
+      "endpoint": "cockpit_operation_visuals_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_operation_visuals_payload",
+      "path": "/api/cockpit/operation-visuals/payload"
+    },
+    {
+      "endpoint": "cockpit_operations_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_operations_payload",
+      "path": "/api/cockpit/operations/payload"
+    },
+    {
+      "endpoint": "operator_experience_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "operator_experience_actions",
+      "path": "/api/cockpit/operator-experience/actions"
+    },
+    {
+      "endpoint": "operator_experience_css_asset",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "operator_experience_css_asset",
+      "path": "/api/cockpit/operator-experience/assets/css"
+    },
+    {
+      "endpoint": "operator_experience_js_asset",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "operator_experience_js_asset",
+      "path": "/api/cockpit/operator-experience/assets/js"
+    },
+    {
+      "endpoint": "operator_experience_buttons",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "operator_experience_buttons",
+      "path": "/api/cockpit/operator-experience/buttons"
+    },
+    {
+      "endpoint": "operator_experience_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "operator_experience_cards",
+      "path": "/api/cockpit/operator-experience/cards"
+    },
+    {
+      "endpoint": "operator_experience_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "operator_experience_payload",
+      "path": "/api/cockpit/operator-experience/payload"
+    },
+    {
+      "endpoint": "operator_experience_preview",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "operator_experience_preview",
+      "path": "/api/cockpit/operator-experience/preview/{operation_key}"
+    },
+    {
+      "endpoint": "operator_experience_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "operator_experience_status",
+      "path": "/api/cockpit/operator-experience/status"
+    },
+    {
+      "endpoint": "operator_experience_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "operator_experience_stop_gate",
+      "path": "/api/cockpit/operator-experience/stop-gate"
+    },
+    {
+      "endpoint": "cockpit_search_results_payload_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "cockpit_search_results_payload_alias",
+      "path": "/api/cockpit/search-results/payload"
+    },
+    {
+      "endpoint": "cockpit_search_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_search_actions",
+      "path": "/api/cockpit/search/actions"
+    },
+    {
+      "endpoint": "cockpit_search_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_search_cards",
+      "path": "/api/cockpit/search/cards"
+    },
+    {
+      "endpoint": "cockpit_search_consolidated_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_search_consolidated_payload",
+      "path": "/api/cockpit/search/consolidated-payload"
+    },
+    {
+      "endpoint": "cockpit_search_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_search_stop_gate",
+      "path": "/api/cockpit/search/stop-gate"
+    },
+    {
+      "endpoint": "cockpit_source_ingestion_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_source_ingestion_actions",
+      "path": "/api/cockpit/source-ingestion/actions"
+    },
+    {
+      "endpoint": "cockpit_source_ingestion_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_source_ingestion_cards",
+      "path": "/api/cockpit/source-ingestion/cards"
+    },
+    {
+      "endpoint": "cockpit_source_ingestion_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_source_ingestion_payload",
+      "path": "/api/cockpit/source-ingestion/payload"
+    },
+    {
+      "endpoint": "cockpit_source_ingestion_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_source_ingestion_status",
+      "path": "/api/cockpit/source-ingestion/status"
+    },
+    {
+      "endpoint": "cockpit_source_ingestion_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_source_ingestion_stop_gate",
+      "path": "/api/cockpit/source-ingestion/stop-gate"
+    },
+    {
+      "endpoint": "get_surface_health",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.canonical_cockpit_surface_health",
+      "name": "get_surface_health",
+      "path": "/api/cockpit/surface-health"
+    },
+    {
+      "endpoint": "get_surface_health_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.canonical_cockpit_surface_health",
+      "name": "get_surface_health_status",
+      "path": "/api/cockpit/surface-health/status"
+    },
+    {
+      "endpoint": "get_surface_registry",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.canonical_cockpit_surface_registry",
+      "name": "get_surface_registry",
+      "path": "/api/cockpit/surface-registry"
+    },
+    {
+      "endpoint": "get_surface_registry_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.canonical_cockpit_surface_registry",
+      "name": "get_surface_registry_status",
+      "path": "/api/cockpit/surface-registry/status"
+    },
+    {
+      "endpoint": "cockpit_web_search_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_web_search_actions",
+      "path": "/api/cockpit/web-search/actions"
+    },
+    {
+      "endpoint": "cockpit_web_search_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_web_search_cards",
+      "path": "/api/cockpit/web-search/cards"
+    },
+    {
+      "endpoint": "cockpit_web_search_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "cockpit_web_search_payload",
+      "path": "/api/cockpit/web-search/payload"
+    },
+    {
+      "endpoint": "cockpit_web_search_readiness",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_cockpit_web_search_convergence_routes",
+      "name": "cockpit_web_search_readiness",
+      "path": "/api/cockpit/web-search/readiness"
+    },
+    {
+      "endpoint": "command_bar_operator_experience_buttons",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "command_bar_operator_experience_buttons",
+      "path": "/api/command-bar/operator-experience/buttons"
+    },
+    {
+      "endpoint": "command_bar_operator_experience_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "command_bar_operator_experience_payload",
+      "path": "/api/command-bar/operator-experience/payload"
+    },
+    {
+      "endpoint": "command_bar_operator_experience_preview",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "command_bar_operator_experience_preview",
+      "path": "/api/command-bar/operator-experience/preview/{operation_key}"
+    },
+    {
+      "endpoint": "api_dashboard_actions_preview",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "api_dashboard_actions_preview",
+      "path": "/api/dashboard/actions/preview/{action_key}"
+    },
+    {
+      "endpoint": "api_dashboard_actions_registry",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "api_dashboard_actions_registry",
+      "path": "/api/dashboard/actions/registry"
+    },
+    {
+      "endpoint": "api_dashboard_actions_result",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_action_click_result_surface",
+      "name": "api_dashboard_actions_result",
+      "path": "/api/dashboard/actions/result/{action_key}"
+    },
+    {
+      "endpoint": "api_dashboard_actions_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "api_dashboard_actions_summary",
+      "path": "/api/dashboard/actions/summary"
+    },
+    {
+      "endpoint": "_claire_s1323_active_control_map_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "api_dashboard_active_control_map_s1323",
+      "path": "/api/dashboard/active-control-map"
+    },
+    {
+      "endpoint": "api_dashboard_operator_action_result",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_action_click_result_surface",
+      "name": "api_dashboard_operator_action_result",
+      "path": "/api/dashboard/operator-action/result/{action_key}"
+    },
+    {
+      "endpoint": "api_dashboard_operator_console_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_operator_console_contract",
+      "name": "api_dashboard_operator_console_actions",
+      "path": "/api/dashboard/operator-console/actions"
+    },
+    {
+      "endpoint": "api_dashboard_operator_console_contract",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_operator_console_contract",
+      "name": "api_dashboard_operator_console_contract",
+      "path": "/api/dashboard/operator-console/contract"
+    },
+    {
+      "endpoint": "api_dashboard_operator_console_preview",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_operator_console_contract",
+      "name": "api_dashboard_operator_console_preview",
+      "path": "/api/dashboard/operator-console/preview/{action_key}"
+    },
+    {
+      "endpoint": "api_dashboard_operator_console_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_operator_console_contract",
+      "name": "api_dashboard_operator_console_summary",
+      "path": "/api/dashboard/operator-console/summary"
+    },
+    {
+      "endpoint": "dashboard_search_provider_status_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "dashboard_search_provider_status_alias",
+      "path": "/api/dashboard/search/provider/status"
+    },
+    {
+      "endpoint": "api_cockpit_dashboard_state",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "api_cockpit_dashboard_state",
+      "path": "/api/dashboard/state"
+    },
+    {
+      "endpoint": "api_dashboard_status_harmonized",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_status_visibility_aliases",
+      "name": "api_dashboard_status_harmonized",
+      "path": "/api/dashboard/status/harmonized"
+    },
+    {
+      "endpoint": "api_dashboard_visibility_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_status_visibility_aliases",
+      "name": "api_dashboard_visibility_summary",
+      "path": "/api/dashboard/visibility/summary"
+    },
+    {
+      "endpoint": "emergence_causal_assess",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_emergence_causal_contracts",
+      "name": "emergence_causal_assess",
+      "path": "/api/emergence/causal-assess"
+    },
+    {
+      "endpoint": "emergence_causal_contract",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_emergence_causal_contracts",
+      "name": "emergence_causal_contract",
+      "path": "/api/emergence/causal-contract"
+    },
+    {
+      "endpoint": "evidence_governed_actions_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "evidence_governed_actions_alias",
+      "path": "/api/evidence/governed/actions"
+    },
+    {
+      "endpoint": "evidence_governed_cards_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "evidence_governed_cards_alias",
+      "path": "/api/evidence/governed/cards"
+    },
+    {
+      "endpoint": "evidence_governed_status_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "evidence_governed_status_alias",
+      "path": "/api/evidence/governed/status"
+    },
+    {
+      "endpoint": "evidence_quarantine_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_quarantine_evidence_routes",
+      "name": "evidence_quarantine_actions",
+      "path": "/api/evidence/quarantine/actions"
+    },
+    {
+      "endpoint": "evidence_quarantine_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_quarantine_evidence_routes",
+      "name": "evidence_quarantine_cards",
+      "path": "/api/evidence/quarantine/cards"
+    },
+    {
+      "endpoint": "evidence_quarantine_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_quarantine_evidence_routes",
+      "name": "evidence_quarantine_payload",
+      "path": "/api/evidence/quarantine/payload"
+    },
+    {
+      "endpoint": "evidence_quarantine_policy",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_quarantine_evidence_routes",
+      "name": "evidence_quarantine_policy",
+      "path": "/api/evidence/quarantine/policy"
+    },
+    {
+      "endpoint": "evidence_quarantine_review_queue",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_quarantine_evidence_routes",
+      "name": "evidence_quarantine_review_queue",
+      "path": "/api/evidence/quarantine/review-queue"
+    },
+    {
+      "endpoint": "evidence_quarantine_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "evidence_quarantine_status",
+      "path": "/api/evidence/quarantine/status"
+    },
+    {
+      "endpoint": "evidence_quarantine_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_quarantine_evidence_routes",
+      "name": "evidence_quarantine_stop_gate",
+      "path": "/api/evidence/quarantine/stop-gate"
+    },
+    {
+      "endpoint": "evidence_quarantine_store",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_quarantine_evidence_routes",
+      "name": "evidence_quarantine_store",
+      "path": "/api/evidence/quarantine/store"
+    },
+    {
+      "endpoint": "evidence_source_intake",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "evidence_source_intake",
+      "path": "/api/evidence/source/intake"
+    },
+    {
+      "endpoint": "governed_live_probe_head",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.app",
+      "name": "governed_live_probe_head",
+      "path": "/api/governed/live-probe/head"
+    },
+    {
+      "endpoint": "governed_live_probe_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "governed_live_probe_status",
+      "path": "/api/governed/live-probe/status"
+    },
+    {
+      "endpoint": "api_governed_runtime_spine",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operational_control_plane",
+      "name": "api_governed_runtime_spine",
+      "path": "/api/governed/runtime-spine"
+    },
+    {
+      "endpoint": "api_intelligence_modes",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operational_control_plane",
+      "name": "api_intelligence_modes",
+      "path": "/api/intelligence/modes"
+    },
+    {
+      "endpoint": "internet_dashboard_sync_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_cockpit_web_search_convergence_routes",
+      "name": "internet_dashboard_sync_payload",
+      "path": "/api/internet/dashboard-sync/payload"
+    },
+    {
+      "endpoint": "internet_fetch_controlled_alias",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "internet_fetch_controlled_alias",
+      "path": "/api/internet/fetch/controlled"
+    },
+    {
+      "endpoint": "internet_fetch_controlled_status_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "internet_fetch_controlled_status_alias",
+      "path": "/api/internet/fetch/controlled/status"
+    },
+    {
+      "endpoint": "internet_live_metadata_run_alias",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "internet_live_metadata_run_alias",
+      "path": "/api/internet/live-metadata/run"
+    },
+    {
+      "endpoint": "internet_live_metadata_run_status_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "internet_live_metadata_run_status_alias",
+      "path": "/api/internet/live-metadata/run/status"
+    },
+    {
+      "endpoint": "internet_live_toggle_preflight_alias",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "internet_live_toggle_preflight_alias",
+      "path": "/api/internet/live-toggle/preflight"
+    },
+    {
+      "endpoint": "internet_operator_experience_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "internet_operator_experience_payload",
+      "path": "/api/internet/operator-experience/payload"
+    },
+    {
+      "endpoint": "internet_proposals_export_alias",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "internet_proposals_export_alias",
+      "path": "/api/internet/proposals/export"
+    },
+    {
+      "endpoint": "internet_proposals_review_alias",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "internet_proposals_review_alias",
+      "path": "/api/internet/proposals/review"
+    },
+    {
+      "endpoint": "internet_proposals_status_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "internet_proposals_status_alias",
+      "path": "/api/internet/proposals/status"
+    },
+    {
+      "endpoint": "internet_provider_probe_alias",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "internet_provider_probe_alias",
+      "path": "/api/internet/provider/probe"
+    },
+    {
+      "endpoint": "internet_s1040_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_operator_experience_routes",
+      "name": "internet_s1040_stop_gate",
+      "path": "/api/internet/s1040-stop-gate"
+    },
+    {
+      "endpoint": "internet_s928_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_cockpit_web_search_convergence_routes",
+      "name": "internet_s928_stop_gate",
+      "path": "/api/internet/s928-stop-gate"
+    },
+    {
+      "endpoint": "center_route_contract",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_lifecycle_route_contracts",
+      "name": "center_route_contract",
+      "path": "/api/lifecycle/center-route-contract"
+    },
+    {
+      "endpoint": "lifecycle_route_contracts",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_lifecycle_route_contracts",
+      "name": "lifecycle_route_contracts",
+      "path": "/api/lifecycle/route-contracts"
+    },
+    {
+      "endpoint": "lifecycle_select_route",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_lifecycle_route_contracts",
+      "name": "lifecycle_select_route",
+      "path": "/api/lifecycle/select-route"
+    },
+    {
+      "endpoint": "api_lifecycle_stage_registry",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operational_control_plane",
+      "name": "api_lifecycle_stage_registry",
+      "path": "/api/lifecycle/stage-registry"
+    },
+    {
+      "endpoint": "api_lifecycle_threshold_provenance",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operational_control_plane",
+      "name": "api_lifecycle_threshold_provenance",
+      "path": "/api/lifecycle/threshold-provenance"
+    },
+    {
+      "endpoint": "api_operational_control_plane",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operational_control_plane",
+      "name": "api_operational_control_plane",
+      "path": "/api/operational/control-plane"
+    },
+    {
+      "endpoint": "api_operational_readiness",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operational_control_plane",
+      "name": "api_operational_readiness",
+      "path": "/api/operational/readiness"
+    },
+    {
+      "endpoint": "api_operational_route_health",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operational_control_plane",
+      "name": "api_operational_route_health",
+      "path": "/api/operational/route-health"
+    },
+    {
+      "endpoint": "pipeline_activation",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.pipeline_activation_routes",
+      "name": "pipeline_activation",
+      "path": "/api/pipelines/activation"
+    },
+    {
+      "endpoint": "get_platform_browser_render",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_connected_search",
+      "name": "get_platform_browser_render",
+      "path": "/api/platform/browser/render"
+    },
+    {
+      "endpoint": "platform_dashboard_config",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "platform_dashboard_config",
+      "path": "/api/platform/dashboard-config"
+    },
+    {
+      "endpoint": "api_platform_update_plan",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operational_control_plane",
+      "name": "api_platform_update_plan",
+      "path": "/api/platform/update/plan"
+    },
+    {
+      "endpoint": "get_latest_portfolio_artifact",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.portfolio_artifacts",
+      "name": "get_latest_portfolio_artifact",
+      "path": "/api/portfolio/artifacts/latest"
+    },
+    {
+      "endpoint": "get_portfolio_artifact",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.portfolio_artifacts",
+      "name": "get_portfolio_artifact",
+      "path": "/api/portfolio/artifacts/{run_id}"
+    },
+    {
+      "endpoint": "post_promote_connected_metadata_to_evidence",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.governed_connected_search",
+      "name": "post_promote_connected_metadata_to_evidence",
+      "path": "/api/search/evidence/promote"
+    },
+    {
+      "endpoint": "search_evidence_quarantine_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_quarantine_evidence_routes",
+      "name": "search_evidence_quarantine_cards",
+      "path": "/api/search/evidence/quarantine/cards"
+    },
+    {
+      "endpoint": "search_governed_actions_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "search_governed_actions_alias",
+      "path": "/api/search/governed/actions"
+    },
+    {
+      "endpoint": "search_governed_plans_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "search_governed_plans_alias",
+      "path": "/api/search/governed/plans"
+    },
+    {
+      "endpoint": "get_governed_query_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_query_compiler_routes",
+      "name": "get_governed_query_actions",
+      "path": "/api/search/governed/query/actions"
+    },
+    {
+      "endpoint": "get_governed_query_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_query_compiler_routes",
+      "name": "get_governed_query_cards",
+      "path": "/api/search/governed/query/cards"
+    },
+    {
+      "endpoint": "search_governed_query_compile",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_governed_query_compile",
+      "path": "/api/search/governed/query/compile"
+    },
+    {
+      "endpoint": "search_governed_query_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_governed_query_payload",
+      "path": "/api/search/governed/query/payload"
+    },
+    {
+      "endpoint": "get_governed_query_policy",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_query_compiler_routes",
+      "name": "get_governed_query_policy",
+      "path": "/api/search/governed/query/policy"
+    },
+    {
+      "endpoint": "get_governed_query_sample",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_query_compiler_routes",
+      "name": "get_governed_query_sample",
+      "path": "/api/search/governed/query/sample"
+    },
+    {
+      "endpoint": "get_governed_query_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_query_compiler_routes",
+      "name": "get_governed_query_status",
+      "path": "/api/search/governed/query/status"
+    },
+    {
+      "endpoint": "get_search_lane_config",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_connected_search",
+      "name": "get_search_lane_config",
+      "path": "/api/search/lane-config"
+    },
+    {
+      "endpoint": "search_metadata_adapter_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_metadata_adapter_payload",
+      "path": "/api/search/metadata/adapter/payload"
+    },
+    {
+      "endpoint": "search_metadata_payload_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "search_metadata_payload_alias",
+      "path": "/api/search/metadata/payload"
+    },
+    {
+      "endpoint": "search_metadata_probe_manual_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_metadata_probe_manual_payload",
+      "path": "/api/search/metadata/probe/manual/payload"
+    },
+    {
+      "endpoint": "search_metadata_probe_manual_preflight",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_metadata_probe_manual_preflight",
+      "path": "/api/search/metadata/probe/manual/preflight"
+    },
+    {
+      "endpoint": "search_metadata_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_metadata_status",
+      "path": "/api/search/metadata/status"
+    },
+    {
+      "endpoint": "search_provider_manual_probe_preflight",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_provider_manual_probe_preflight",
+      "path": "/api/search/provider/manual-probe/preflight"
+    },
+    {
+      "endpoint": "post_connected_search_provider_query",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.governed_connected_search",
+      "name": "post_connected_search_provider_query",
+      "path": "/api/search/provider/query"
+    },
+    {
+      "endpoint": "get_connected_search_provider_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_connected_search",
+      "name": "get_connected_search_provider_status",
+      "path": "/api/search/provider/status"
+    },
+    {
+      "endpoint": "get_provider_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_provider_readiness_routes",
+      "name": "get_provider_actions",
+      "path": "/api/search/providers/actions"
+    },
+    {
+      "endpoint": "search_providers_capability_map",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_providers_capability_map",
+      "path": "/api/search/providers/capability-map"
+    },
+    {
+      "endpoint": "search_providers_capability_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_providers_capability_actions",
+      "path": "/api/search/providers/capability/actions"
+    },
+    {
+      "endpoint": "search_providers_capability_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_providers_capability_cards",
+      "path": "/api/search/providers/capability/cards"
+    },
+    {
+      "endpoint": "search_providers_capability_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_providers_capability_payload",
+      "path": "/api/search/providers/capability/payload"
+    },
+    {
+      "endpoint": "search_providers_capability_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_providers_capability_status",
+      "path": "/api/search/providers/capability/status"
+    },
+    {
+      "endpoint": "search_providers_capability_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_providers_capability_stop_gate",
+      "path": "/api/search/providers/capability/stop-gate"
+    },
+    {
+      "endpoint": "get_provider_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_provider_readiness_routes",
+      "name": "get_provider_cards",
+      "path": "/api/search/providers/cards"
+    },
+    {
+      "endpoint": "search_providers_configuration_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_providers_configuration_payload",
+      "path": "/api/search/providers/configuration/payload"
+    },
+    {
+      "endpoint": "get_provider_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_provider_readiness_routes",
+      "name": "get_provider_payload",
+      "path": "/api/search/providers/payload"
+    },
+    {
+      "endpoint": "get_provider_policy",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_provider_readiness_routes",
+      "name": "get_provider_policy",
+      "path": "/api/search/providers/policy"
+    },
+    {
+      "endpoint": "get_provider_readiness",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_provider_readiness_routes",
+      "name": "get_provider_readiness",
+      "path": "/api/search/providers/readiness"
+    },
+    {
+      "endpoint": "get_provider_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_provider_readiness_routes",
+      "name": "get_provider_status",
+      "path": "/api/search/providers/status"
+    },
+    {
+      "endpoint": "get_provider_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_provider_readiness_routes",
+      "name": "get_provider_stop_gate",
+      "path": "/api/search/providers/stop-gate"
+    },
+    {
+      "endpoint": "search_readiness_audit",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "search_readiness_audit",
+      "path": "/api/search/readiness/audit"
+    },
+    {
+      "endpoint": "search_readiness_preflight_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "search_readiness_preflight_alias",
+      "path": "/api/search/readiness/preflight"
+    },
+    {
+      "endpoint": "api_source_lineage_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operational_control_plane",
+      "name": "api_source_lineage_status",
+      "path": "/api/source-lineage/status"
+    },
+    {
+      "endpoint": "read_source_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_source_registry_routes",
+      "name": "read_source_actions",
+      "path": "/api/sources/actions"
+    },
+    {
+      "endpoint": "read_source_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_source_registry_routes",
+      "name": "read_source_cards",
+      "path": "/api/sources/cards"
+    },
+    {
+      "endpoint": "sources_evidence_quarantine_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_quarantine_evidence_routes",
+      "name": "sources_evidence_quarantine_payload",
+      "path": "/api/sources/evidence/quarantine/payload"
+    },
+    {
+      "endpoint": "sources_gaps_payload_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "sources_gaps_payload_alias",
+      "path": "/api/sources/gaps/payload"
+    },
+    {
+      "endpoint": "read_source_policy",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_source_registry_routes",
+      "name": "read_source_policy",
+      "path": "/api/sources/policy"
+    },
+    {
+      "endpoint": "sources_policy_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "sources_policy_actions",
+      "path": "/api/sources/policy/actions"
+    },
+    {
+      "endpoint": "sources_policy_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "sources_policy_cards",
+      "path": "/api/sources/policy/cards"
+    },
+    {
+      "endpoint": "sources_policy_controls",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "sources_policy_controls",
+      "path": "/api/sources/policy/controls"
+    },
+    {
+      "endpoint": "sources_policy_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "sources_policy_payload",
+      "path": "/api/sources/policy/payload"
+    },
+    {
+      "endpoint": "sources_policy_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "sources_policy_status",
+      "path": "/api/sources/policy/status"
+    },
+    {
+      "endpoint": "sources_policy_stop_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "sources_policy_stop_gate",
+      "path": "/api/sources/policy/stop-gate"
+    },
+    {
+      "endpoint": "get_source_provider_actions_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_provider_readiness_routes",
+      "name": "get_source_provider_actions_alias",
+      "path": "/api/sources/providers/actions"
+    },
+    {
+      "endpoint": "get_source_provider_cards_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_provider_readiness_routes",
+      "name": "get_source_provider_cards_alias",
+      "path": "/api/sources/providers/cards"
+    },
+    {
+      "endpoint": "get_source_provider_readiness_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_provider_readiness_routes",
+      "name": "get_source_provider_readiness_alias",
+      "path": "/api/sources/providers/readiness"
+    },
+    {
+      "endpoint": "read_source_registry",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_source_registry_routes",
+      "name": "read_source_registry",
+      "path": "/api/sources/registry"
+    },
+    {
+      "endpoint": "read_source_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_source_registry_routes",
+      "name": "read_source_status",
+      "path": "/api/sources/status"
+    },
+    {
+      "endpoint": "strategic_world_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.strategic_world_routes",
+      "name": "strategic_world_status",
+      "path": "/api/strategic-world/status"
+    },
+    {
+      "endpoint": "get_dependency_chain_proof",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_dependency_chain_proof",
+      "name": "get_dependency_chain_proof",
+      "path": "/api/system/dependency-chain-proof"
+    },
+    {
+      "endpoint": "get_endpoint_reconciliation",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_report",
+      "name": "get_endpoint_reconciliation",
+      "path": "/api/system/endpoint-reconciliation"
+    },
+    {
+      "endpoint": "get_endpoint_standard_settings",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_industry_standard_endpoint_package",
+      "name": "get_endpoint_standard_settings",
+      "path": "/api/system/endpoint-standard-settings"
+    },
+    {
+      "endpoint": "get_system_file_readiness",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operational_file_readiness",
+      "name": "get_system_file_readiness",
+      "path": "/api/system/file-readiness"
+    },
+    {
+      "endpoint": "get_industry_standard_endpoint_package",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_industry_standard_endpoint_package",
+      "name": "get_industry_standard_endpoint_package",
+      "path": "/api/system/industry-standard-endpoint-package"
+    },
+    {
+      "endpoint": "get_route_integrity",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operational_file_readiness",
+      "name": "get_route_integrity",
+      "path": "/api/system/route-integrity"
+    },
+    {
+      "endpoint": "get_standards_control_map",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_industry_standard_endpoint_package",
+      "name": "get_standards_control_map",
+      "path": "/api/system/standards-control-map"
+    },
+    {
+      "endpoint": "technology_base",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.technology_base_routes",
+      "name": "technology_base",
+      "path": "/api/technology/base"
+    },
+    {
+      "endpoint": "technology_intelligence",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.technology_base_routes",
+      "name": "technology_intelligence",
+      "path": "/api/technology/intelligence"
+    },
+    {
+      "endpoint": "technology_reemergence_classify",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.technology_base_routes",
+      "name": "technology_reemergence_classify",
+      "path": "/api/technology/reemergence-classify"
+    },
+    {
+      "endpoint": "technology_reemergence_taxonomy",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.technology_base_routes",
+      "name": "technology_reemergence_taxonomy",
+      "path": "/api/technology/reemergence-taxonomy"
+    },
+    {
+      "endpoint": "technology_search",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.technology_base_routes",
+      "name": "technology_search",
+      "path": "/api/technology/search"
+    },
+    {
+      "endpoint": "open_web_update_approve",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_open_web_update_governance",
+      "name": "open_web_update_approve",
+      "path": "/api/update-governance/open-web/approve"
+    },
+    {
+      "endpoint": "open_web_update_install_apply",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_open_web_update_governance",
+      "name": "open_web_update_install_apply",
+      "path": "/api/update-governance/open-web/install/apply"
+    },
+    {
+      "endpoint": "open_web_update_install_stage",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_open_web_update_governance",
+      "name": "open_web_update_install_stage",
+      "path": "/api/update-governance/open-web/install/stage"
+    },
+    {
+      "endpoint": "open_web_update_install_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_open_web_update_governance",
+      "name": "open_web_update_install_status",
+      "path": "/api/update-governance/open-web/install/status/{update_id}"
+    },
+    {
+      "endpoint": "open_web_update_governance_panel",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_open_web_update_governance",
+      "name": "open_web_update_governance_panel",
+      "path": "/api/update-governance/open-web/panel"
+    },
+    {
+      "endpoint": "open_web_update_governance_readiness",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_open_web_update_governance",
+      "name": "open_web_update_governance_readiness",
+      "path": "/api/update-governance/open-web/readiness"
+    },
+    {
+      "endpoint": "open_web_update_request",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_open_web_update_governance",
+      "name": "open_web_update_request",
+      "path": "/api/update-governance/open-web/request"
+    },
+    {
+      "endpoint": "open_web_update_rollback_plan",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_open_web_update_governance",
+      "name": "open_web_update_rollback_plan",
+      "path": "/api/update-governance/open-web/rollback/plan"
+    },
+    {
+      "endpoint": "open_web_update_self_analysis",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_open_web_update_governance",
+      "name": "open_web_update_self_analysis",
+      "path": "/api/update-governance/open-web/self-analysis"
+    },
+    {
+      "endpoint": "api_update_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operational_control_plane",
+      "name": "api_update_status",
+      "path": "/api/update/status"
+    },
+    {
+      "endpoint": "web_body_read_authorization_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "web_body_read_authorization_actions",
+      "path": "/api/web/body-read/authorization/actions"
+    },
+    {
+      "endpoint": "web_body_read_authorization_cards",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "web_body_read_authorization_cards",
+      "path": "/api/web/body-read/authorization/cards"
+    },
+    {
+      "endpoint": "web_body_read_authorization_payload",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "web_body_read_authorization_payload",
+      "path": "/api/web/body-read/authorization/payload"
+    },
+    {
+      "endpoint": "web_body_read_execution_envelope_payload",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "web_body_read_execution_envelope_payload",
+      "path": "/api/web/body-read/execution-envelope/payload"
+    },
+    {
+      "endpoint": "web_body_read_risk_classifier",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "web_body_read_risk_classifier",
+      "path": "/api/web/body-read/risk-classifier"
+    },
+    {
+      "endpoint": "web_body_read_sanitizer_classify",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.governed_safety_routes",
+      "name": "web_body_read_sanitizer_classify",
+      "path": "/api/web/body-read/sanitizer/classify"
+    },
+    {
+      "endpoint": "get_authority_locks",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.safe_workflow_routes",
+      "name": "get_authority_locks",
+      "path": "/api/workflow/authority-locks"
+    },
+    {
+      "endpoint": "propose_bounded_job",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.safe_workflow_routes",
+      "name": "propose_bounded_job",
+      "path": "/api/workflow/bounded-job"
+    },
+    {
+      "endpoint": "get_workflow_counts",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.safe_workflow_routes",
+      "name": "get_workflow_counts",
+      "path": "/api/workflow/counts"
+    },
+    {
+      "endpoint": "write_export_artifact",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.safe_workflow_routes",
+      "name": "write_export_artifact",
+      "path": "/api/workflow/export"
+    },
+    {
+      "endpoint": "get_monitoring_panel",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.safe_workflow_routes",
+      "name": "get_monitoring_panel",
+      "path": "/api/workflow/monitoring"
+    },
+    {
+      "endpoint": "propose_review_decision",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.safe_workflow_routes",
+      "name": "propose_review_decision",
+      "path": "/api/workflow/review-decision"
+    },
+    {
+      "endpoint": "get_review_queue",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.safe_workflow_routes",
+      "name": "get_review_queue",
+      "path": "/api/workflow/review-queue"
+    },
+    {
+      "endpoint": "get_autodesign_handoff",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_autodesign_handoff",
+      "name": "get_autodesign_handoff",
+      "path": "/autodesign/handoff"
+    },
+    {
+      "endpoint": "rebuild_autodesign_handoff",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_autodesign_handoff",
+      "name": "rebuild_autodesign_handoff",
+      "path": "/autodesign/handoff/rebuild"
+    },
+    {
+      "endpoint": "get_autodesign_handoff_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_autodesign_handoff",
+      "name": "get_autodesign_handoff_summary",
+      "path": "/autodesign/handoff/summary"
+    },
+    {
+      "endpoint": "get_cad_export_contract",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_design_portal_output",
+      "name": "get_cad_export_contract",
+      "path": "/cad/export-contract"
+    },
+    {
+      "endpoint": "get_cad_intent",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_design_portal_output",
+      "name": "get_cad_intent",
+      "path": "/cad/intent"
+    },
+    {
+      "endpoint": "canonical_dashboard_root_css",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "canonical_dashboard_root_css",
+      "path": "/claire_dashboard.css"
+    },
+    {
+      "endpoint": "canonical_dashboard_root_js",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "canonical_dashboard_root_js",
+      "path": "/claire_dashboard.js"
+    },
+    {
+      "endpoint": "canonical_dashboard",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "canonical_dashboard",
+      "path": "/dashboard"
+    },
+    {
+      "endpoint": "dashboard_actions_preview",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "dashboard_actions_preview",
+      "path": "/dashboard/actions/preview/{action_key}"
+    },
+    {
+      "endpoint": "dashboard_actions_registry",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "dashboard_actions_registry",
+      "path": "/dashboard/actions/registry"
+    },
+    {
+      "endpoint": "dashboard_actions_result",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_action_click_result_surface",
+      "name": "dashboard_actions_result",
+      "path": "/dashboard/actions/result/{action_key}"
+    },
+    {
+      "endpoint": "dashboard_actions_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "dashboard_actions_summary",
+      "path": "/dashboard/actions/summary"
+    },
+    {
+      "endpoint": "_claire_s1323_active_control_map_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "dashboard_active_control_map_s1323",
+      "path": "/dashboard/active-control-map"
+    },
+    {
+      "endpoint": "canonical_dashboard_asset",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "canonical_dashboard_asset",
+      "path": "/dashboard/assets/{asset_name}"
+    },
+    {
+      "endpoint": "_claire_s1294_plateau_lock_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "dashboard_audit_plateau_lock_s1294",
+      "path": "/dashboard/audit/plateau-lock"
+    },
+    {
+      "endpoint": "_claire_s1294_risk_pattern_review_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "dashboard_audit_risk_pattern_review_s1294",
+      "path": "/dashboard/audit/risk-pattern-review"
+    },
+    {
+      "endpoint": "local_dashboard_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "local_dashboard_alias",
+      "path": "/dashboard/local"
+    },
+    {
+      "endpoint": "dashboard_operator_action_result",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_action_click_result_surface",
+      "name": "dashboard_operator_action_result",
+      "path": "/dashboard/operator-action/result/{action_key}"
+    },
+    {
+      "endpoint": "dashboard_operator_console_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_operator_console_contract",
+      "name": "dashboard_operator_console_actions",
+      "path": "/dashboard/operator-console/actions"
+    },
+    {
+      "endpoint": "dashboard_operator_console_contract",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_operator_console_contract",
+      "name": "dashboard_operator_console_contract",
+      "path": "/dashboard/operator-console/contract"
+    },
+    {
+      "endpoint": "dashboard_operator_console_preview",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_operator_console_contract",
+      "name": "dashboard_operator_console_preview",
+      "path": "/dashboard/operator-console/preview/{action_key}"
+    },
+    {
+      "endpoint": "dashboard_operator_console_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_operator_console_contract",
+      "name": "dashboard_operator_console_summary",
+      "path": "/dashboard/operator-console/summary"
+    },
+    {
+      "endpoint": "dashboard_payload",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "dashboard_payload",
+      "path": "/dashboard/payload"
+    },
+    {
+      "endpoint": "dashboard_payload_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "dashboard_payload_status",
+      "path": "/dashboard/payload/status"
+    },
+    {
+      "endpoint": "get_dashboard_runtime_truth",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_runtime_truth",
+      "name": "get_dashboard_runtime_truth",
+      "path": "/dashboard/runtime-truth"
+    },
+    {
+      "endpoint": "cockpit_dashboard_state",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "cockpit_dashboard_state",
+      "path": "/dashboard/state"
+    },
+    {
+      "endpoint": "dashboard_status_harmonized",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_status_visibility_aliases",
+      "name": "dashboard_status_harmonized",
+      "path": "/dashboard/status/harmonized"
+    },
+    {
+      "endpoint": "get_dashboard_endpoint_reconciliation",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_report",
+      "name": "get_dashboard_endpoint_reconciliation",
+      "path": "/dashboard/system/endpoint-reconciliation"
+    },
+    {
+      "endpoint": "get_dashboard_file_readiness",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operational_file_readiness",
+      "name": "get_dashboard_file_readiness",
+      "path": "/dashboard/system/file-readiness"
+    },
+    {
+      "endpoint": "get_dashboard_industry_standard_endpoint_package",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_industry_standard_endpoint_package",
+      "name": "get_dashboard_industry_standard_endpoint_package",
+      "path": "/dashboard/system/industry-standard-endpoint-package"
+    },
+    {
+      "endpoint": "get_dashboard_route_integrity",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operational_file_readiness",
+      "name": "get_dashboard_route_integrity",
+      "path": "/dashboard/system/route-integrity"
+    },
+    {
+      "endpoint": "get_dashboard_standards_control_map",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_industry_standard_endpoint_package",
+      "name": "get_dashboard_standards_control_map",
+      "path": "/dashboard/system/standards-control-map"
+    },
+    {
+      "endpoint": "dashboard_open_web_update_governance_panel",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_open_web_update_governance",
+      "name": "dashboard_open_web_update_governance_panel",
+      "path": "/dashboard/update-governance/panel"
+    },
+    {
+      "endpoint": "dashboard_visibility_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.dashboard_status_visibility_aliases",
+      "name": "dashboard_visibility_summary",
+      "path": "/dashboard/visibility/summary"
+    },
+    {
+      "endpoint": "build_design_portal_from_run",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_design_portal_output",
+      "name": "build_design_portal_from_run",
+      "path": "/design-portal/build-from-run"
+    },
+    {
+      "endpoint": "get_design_portal_contract",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_design_portal_output",
+      "name": "get_design_portal_contract",
+      "path": "/design-portal/contract"
+    },
+    {
+      "endpoint": "get_design_portal_output",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_design_portal_output",
+      "name": "get_design_portal_output",
+      "path": "/design-portal/output"
+    },
+    {
+      "endpoint": "rebuild_design_portal_output",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_design_portal_output",
+      "name": "rebuild_design_portal_output",
+      "path": "/design-portal/output/rebuild"
+    },
+    {
+      "endpoint": "get_design_portal_output_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_design_portal_output",
+      "name": "get_design_portal_output_summary",
+      "path": "/design-portal/output/summary"
+    },
+    {
+      "endpoint": "get_design_portal_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_design_portal_output",
+      "name": "get_design_portal_status",
+      "path": "/design-portal/status"
+    },
+    {
+      "endpoint": "get_design_portal_validation",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_buildability_validation",
+      "name": "get_design_portal_validation",
+      "path": "/design-portal/validation"
+    },
+    {
+      "endpoint": "get_design_autodesign_handoff",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_autodesign_handoff",
+      "name": "get_design_autodesign_handoff",
+      "path": "/design/autodesign/handoff"
+    },
+    {
+      "endpoint": "get_design_portal_output_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_design_portal_output",
+      "name": "get_design_portal_output_alias",
+      "path": "/design/portal/output"
+    },
+    {
+      "endpoint": "get_discovery_route_audit",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_route_audit",
+      "name": "get_discovery_route_audit",
+      "path": "/discovery/route-audit"
+    },
+    {
+      "endpoint": "swagger_ui_html",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "module": "fastapi.applications",
+      "name": "swagger_ui_html",
+      "path": "/docs"
+    },
+    {
+      "endpoint": "swagger_ui_redirect",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "module": "fastapi.applications",
+      "name": "swagger_ui_redirect",
+      "path": "/docs/oauth2-redirect"
+    },
+    {
+      "endpoint": "evaluate",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.app",
+      "name": "evaluate",
+      "path": "/evaluate"
+    },
+    {
+      "endpoint": "favicon",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "favicon",
+      "path": "/favicon.ico"
+    },
+    {
+      "endpoint": "governed_actions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "governed_actions",
+      "path": "/governed/actions"
+    },
+    {
+      "endpoint": "governed_decisions",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "governed_decisions",
+      "path": "/governed/decisions"
+    },
+    {
+      "endpoint": "governed_reviews",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "governed_reviews",
+      "path": "/governed/reviews"
+    },
+    {
+      "endpoint": "health",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "health",
+      "path": "/health"
+    },
+    {
+      "endpoint": "get_live_probe_adapter_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_governed_live_probe",
+      "name": "get_live_probe_adapter_status",
+      "path": "/internet/live-probe/adapter/status"
+    },
+    {
+      "endpoint": "get_live_probe_contract",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_governed_live_probe",
+      "name": "get_live_probe_contract",
+      "path": "/internet/live-probe/contract"
+    },
+    {
+      "endpoint": "get_live_probe_last",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_governed_live_probe",
+      "name": "get_live_probe_last",
+      "path": "/internet/live-probe/last"
+    },
+    {
+      "endpoint": "post_live_probe_run",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_governed_live_probe",
+      "name": "post_live_probe_run",
+      "path": "/internet/live-probe/run"
+    },
+    {
+      "endpoint": "post_live_probe_run_adapter",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_governed_live_probe",
+      "name": "post_live_probe_run_adapter",
+      "path": "/internet/live-probe/run-adapter"
+    },
+    {
+      "endpoint": "post_live_probe_run_confirmed",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_governed_live_probe",
+      "name": "post_live_probe_run_confirmed",
+      "path": "/internet/live-probe/run-confirmed"
+    },
+    {
+      "endpoint": "get_live_probe_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_governed_live_probe",
+      "name": "get_live_probe_status",
+      "path": "/internet/live-probe/status"
+    },
+    {
+      "endpoint": "get_internet_operations_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_internet_readiness",
+      "name": "get_internet_operations_status",
+      "path": "/internet/operations/status"
+    },
+    {
+      "endpoint": "get_internet_readiness",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_internet_readiness",
+      "name": "get_internet_readiness",
+      "path": "/internet/readiness"
+    },
+    {
+      "endpoint": "rebuild_internet_readiness",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_internet_readiness",
+      "name": "rebuild_internet_readiness",
+      "path": "/internet/readiness/rebuild"
+    },
+    {
+      "endpoint": "get_internet_readiness_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_internet_readiness",
+      "name": "get_internet_readiness_summary",
+      "path": "/internet/readiness/summary"
+    },
+    {
+      "endpoint": "openapi",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "module": "fastapi.applications",
+      "name": "openapi",
+      "path": "/openapi.json"
+    },
+    {
+      "endpoint": "post_operator_command_parse",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_operator_search_command",
+      "name": "post_operator_command_parse",
+      "path": "/operator/command/parse"
+    },
+    {
+      "endpoint": "operator_cockpit_dashboard_state",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.app",
+      "name": "operator_cockpit_dashboard_state",
+      "path": "/operator/dashboard/state"
+    },
+    {
+      "endpoint": "get_operator_search_capabilities",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operator_search_command",
+      "name": "get_operator_search_capabilities",
+      "path": "/operator/search/capabilities"
+    },
+    {
+      "endpoint": "get_operator_search_layer",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operator_search_command",
+      "name": "get_operator_search_layer",
+      "path": "/operator/search/layer"
+    },
+    {
+      "endpoint": "post_operator_search_query",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_operator_search_command",
+      "name": "post_operator_search_query",
+      "path": "/operator/search/query"
+    },
+    {
+      "endpoint": "post_operator_web_search",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_operator_search_command",
+      "name": "post_operator_web_search",
+      "path": "/operator/search/web"
+    },
+    {
+      "endpoint": "post_operator_search_web_run_governed_probe",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_governed_live_probe",
+      "name": "post_operator_search_web_run_governed_probe",
+      "path": "/operator/search/web/run-governed-probe"
+    },
+    {
+      "endpoint": "get_operator_web_search_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_operator_search_command",
+      "name": "get_operator_web_search_status",
+      "path": "/operator/search/web/status"
+    },
+    {
+      "endpoint": "operator_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "operator_status",
+      "path": "/operator/status"
+    },
+    {
+      "endpoint": "evaluate",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_pipeline",
+      "name": "evaluate",
+      "path": "/pipeline/evaluate"
+    },
+    {
+      "endpoint": "get_platform_stop_go",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_platform_endpoint_smoke_proof",
+      "name": "get_platform_stop_go",
+      "path": "/platform/stop-go"
+    },
+    {
+      "endpoint": "download_latest_portfolio_artifact",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.portfolio_artifacts",
+      "name": "download_latest_portfolio_artifact",
+      "path": "/portfolio/artifacts/latest/download"
+    },
+    {
+      "endpoint": "view_latest_portfolio_artifact",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.portfolio_artifacts",
+      "name": "view_latest_portfolio_artifact",
+      "path": "/portfolio/artifacts/latest/view"
+    },
+    {
+      "endpoint": "download_portfolio_artifact",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.portfolio_artifacts",
+      "name": "download_portfolio_artifact",
+      "path": "/portfolio/artifacts/{run_id}/download"
+    },
+    {
+      "endpoint": "view_portfolio_artifact",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.portfolio_artifacts",
+      "name": "view_portfolio_artifact",
+      "path": "/portfolio/artifacts/{run_id}/view"
+    },
+    {
+      "endpoint": "get_dependency_chain_proof_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_dependency_chain_proof",
+      "name": "get_dependency_chain_proof_alias",
+      "path": "/proof/dependency-chain"
+    },
+    {
+      "endpoint": "get_full_e2e_proof_pack",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_full_e2e_proof_pack",
+      "name": "get_full_e2e_proof_pack",
+      "path": "/proof/e2e"
+    },
+    {
+      "endpoint": "rebuild_full_e2e_proof_pack",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_full_e2e_proof_pack",
+      "name": "rebuild_full_e2e_proof_pack",
+      "path": "/proof/e2e/rebuild"
+    },
+    {
+      "endpoint": "get_full_e2e_proof_pack_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_full_e2e_proof_pack",
+      "name": "get_full_e2e_proof_pack_summary",
+      "path": "/proof/e2e/summary"
+    },
+    {
+      "endpoint": "get_platform_endpoint_smoke_proof",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_platform_endpoint_smoke_proof",
+      "name": "get_platform_endpoint_smoke_proof",
+      "path": "/proof/platform-smoke"
+    },
+    {
+      "endpoint": "rebuild_platform_endpoint_smoke_proof",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_platform_endpoint_smoke_proof",
+      "name": "rebuild_platform_endpoint_smoke_proof",
+      "path": "/proof/platform-smoke/rebuild"
+    },
+    {
+      "endpoint": "get_platform_endpoint_smoke_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_platform_endpoint_smoke_proof",
+      "name": "get_platform_endpoint_smoke_summary",
+      "path": "/proof/platform-smoke/summary"
+    },
+    {
+      "endpoint": "redoc_html",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "module": "fastapi.applications",
+      "name": "redoc_html",
+      "path": "/redoc"
+    },
+    {
+      "endpoint": "get_route_audit",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_route_audit",
+      "name": "get_route_audit",
+      "path": "/routes/audit"
+    },
+    {
+      "endpoint": "rebuild_route_audit",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_route_audit",
+      "name": "rebuild_route_audit",
+      "path": "/routes/audit/rebuild"
+    },
+    {
+      "endpoint": "get_route_audit_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_route_audit",
+      "name": "get_route_audit_summary",
+      "path": "/routes/audit/summary"
+    },
+    {
+      "endpoint": "runtime_approve",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_approve",
+      "path": "/runtime/approve"
+    },
+    {
+      "endpoint": "continuous_cycles",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_continuous_runtime",
+      "name": "continuous_cycles",
+      "path": "/runtime/continuous/cycles"
+    },
+    {
+      "endpoint": "continuous_pause",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_continuous_runtime",
+      "name": "continuous_pause",
+      "path": "/runtime/continuous/pause"
+    },
+    {
+      "endpoint": "continuous_review_queue",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_continuous_runtime",
+      "name": "continuous_review_queue",
+      "path": "/runtime/continuous/review-queue"
+    },
+    {
+      "endpoint": "continuous_scheduler_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_continuous_runtime",
+      "name": "continuous_scheduler_status",
+      "path": "/runtime/continuous/scheduler/status"
+    },
+    {
+      "endpoint": "continuous_scheduler_tick",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_continuous_runtime",
+      "name": "continuous_scheduler_tick",
+      "path": "/runtime/continuous/scheduler/tick"
+    },
+    {
+      "endpoint": "continuous_start",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_continuous_runtime",
+      "name": "continuous_start",
+      "path": "/runtime/continuous/start"
+    },
+    {
+      "endpoint": "continuous_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_continuous_runtime",
+      "name": "continuous_status",
+      "path": "/runtime/continuous/status"
+    },
+    {
+      "endpoint": "runtime_freeze",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_freeze",
+      "path": "/runtime/freeze"
+    },
+    {
+      "endpoint": "runtime_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_gate",
+      "path": "/runtime/gate"
+    },
+    {
+      "endpoint": "runtime_gate_trigger",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_gate_trigger",
+      "path": "/runtime/gate/trigger"
+    },
+    {
+      "endpoint": "runtime_loop",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_loop",
+      "path": "/runtime/loop"
+    },
+    {
+      "endpoint": "runtime_manifest",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_manifest",
+      "path": "/runtime/manifest"
+    },
+    {
+      "endpoint": "runtime_next",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_next",
+      "path": "/runtime/next"
+    },
+    {
+      "endpoint": "runtime_reject",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_reject",
+      "path": "/runtime/reject"
+    },
+    {
+      "endpoint": "runtime_replay",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_replay",
+      "path": "/runtime/replay"
+    },
+    {
+      "endpoint": "runtime_reset",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_reset",
+      "path": "/runtime/reset"
+    },
+    {
+      "endpoint": "runtime_safe_mode",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_safe_mode",
+      "path": "/runtime/safe_mode"
+    },
+    {
+      "endpoint": "runtime_start",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_start",
+      "path": "/runtime/start"
+    },
+    {
+      "endpoint": "get_runtime_state",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_runtime_truth",
+      "name": "get_runtime_state",
+      "path": "/runtime/state"
+    },
+    {
+      "endpoint": "runtime_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_status",
+      "path": "/runtime/status"
+    },
+    {
+      "endpoint": "runtime_stop",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_stop",
+      "path": "/runtime/stop"
+    },
+    {
+      "endpoint": "runtime_truth",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_truth",
+      "path": "/runtime/truth"
+    },
+    {
+      "endpoint": "rebuild_runtime_truth",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_runtime_truth",
+      "name": "rebuild_runtime_truth",
+      "path": "/runtime/truth/rebuild"
+    },
+    {
+      "endpoint": "runtime_truth_refresh",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.operator_cockpit_runtime",
+      "name": "runtime_truth_refresh",
+      "path": "/runtime/truth/refresh"
+    },
+    {
+      "endpoint": "cockpit_fetch_map",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.canonical_cockpit_fetch_map_routes",
+      "name": "cockpit_fetch_map",
+      "path": "/system/cockpit-fetch-map"
+    },
+    {
+      "endpoint": "cockpit_fetch_map_approved",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.canonical_cockpit_fetch_map_routes",
+      "name": "cockpit_fetch_map_approved",
+      "path": "/system/cockpit-fetch-map/approved"
+    },
+    {
+      "endpoint": "cockpit_fetch_map_audit",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.canonical_cockpit_fetch_map_routes",
+      "name": "cockpit_fetch_map_audit",
+      "path": "/system/cockpit-fetch-map/audit"
+    },
+    {
+      "endpoint": "cockpit_fetch_map_registration_proof",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.canonical_cockpit_fetch_map_routes",
+      "name": "cockpit_fetch_map_registration_proof",
+      "path": "/system/cockpit-fetch-map/registration-proof"
+    },
+    {
+      "endpoint": "cockpit_fetch_map_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.canonical_cockpit_fetch_map_routes",
+      "name": "cockpit_fetch_map_summary",
+      "path": "/system/cockpit-fetch-map/summary"
+    },
+    {
+      "endpoint": "active_cockpit_truth",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.routes.active_route_truth_routes",
+      "name": "active_cockpit_truth",
+      "path": "/system/cockpit-truth"
+    },
+    {
+      "endpoint": "active_route_truth",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.routes.active_route_truth_routes",
+      "name": "active_route_truth",
+      "path": "/system/route-truth"
+    },
+    {
+      "endpoint": "active_required_route_truth",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.routes.active_route_truth_routes",
+      "name": "active_required_route_truth",
+      "path": "/system/route-truth/required"
+    },
+    {
+      "endpoint": "runtime_execution_summary_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "runtime_execution_summary_alias",
+      "path": "/system/runtime-execution/summary"
+    },
+    {
+      "endpoint": "runtime_propagation_summary_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "runtime_propagation_summary_alias",
+      "path": "/system/runtime-propagation/summary"
+    },
+    {
+      "endpoint": "runtime_state_summary_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_endpoint_reconciliation_compat",
+      "name": "runtime_state_summary_alias",
+      "path": "/system/runtime-state/summary"
+    },
+    {
+      "endpoint": "get_stop_go_report",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_full_e2e_proof_pack",
+      "name": "get_stop_go_report",
+      "path": "/system/stop-go"
+    },
+    {
+      "endpoint": "universes",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_source_universes",
+      "name": "universes",
+      "path": "/universes"
+    },
+    {
+      "endpoint": "universe",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_source_universes",
+      "name": "universe",
+      "path": "/universes/{universe_id}"
+    },
+    {
+      "endpoint": "probe_universe",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_source_universes",
+      "name": "probe_universe",
+      "path": "/universes/{universe_id}/probe"
+    },
+    {
+      "endpoint": "get_automatic_update_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_automatic_update_runner_gate",
+      "name": "get_automatic_update_status",
+      "path": "/updates/automatic/status"
+    },
+    {
+      "endpoint": "get_update_governance_lock_alias",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_update_governance_regression_lock",
+      "name": "get_update_governance_lock_alias",
+      "path": "/updates/governance/lock"
+    },
+    {
+      "endpoint": "get_update_governance_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_update_pack_staging",
+      "name": "get_update_governance_status",
+      "path": "/updates/governance/status"
+    },
+    {
+      "endpoint": "get_update_governance_regression_lock",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_update_governance_regression_lock",
+      "name": "get_update_governance_regression_lock",
+      "path": "/updates/regression-lock"
+    },
+    {
+      "endpoint": "rebuild_update_governance_regression_lock",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_update_governance_regression_lock",
+      "name": "rebuild_update_governance_regression_lock",
+      "path": "/updates/regression-lock/rebuild"
+    },
+    {
+      "endpoint": "get_update_governance_regression_lock_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_update_governance_regression_lock",
+      "name": "get_update_governance_regression_lock_summary",
+      "path": "/updates/regression-lock/summary"
+    },
+    {
+      "endpoint": "get_rollback_update_plan",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_rollback_update_plan",
+      "name": "get_rollback_update_plan",
+      "path": "/updates/rollback-plan"
+    },
+    {
+      "endpoint": "create_rollback_update_plan",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_rollback_update_plan",
+      "name": "create_rollback_update_plan",
+      "path": "/updates/rollback-plan/create"
+    },
+    {
+      "endpoint": "get_rollback_update_plan_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_rollback_update_plan",
+      "name": "get_rollback_update_plan_summary",
+      "path": "/updates/rollback-plan/summary"
+    },
+    {
+      "endpoint": "get_rollback_status",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_rollback_update_plan",
+      "name": "get_rollback_status",
+      "path": "/updates/rollback/status"
+    },
+    {
+      "endpoint": "get_automatic_update_runner_gate",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_automatic_update_runner_gate",
+      "name": "get_automatic_update_runner_gate",
+      "path": "/updates/runner-gate"
+    },
+    {
+      "endpoint": "rebuild_automatic_update_runner_gate",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_automatic_update_runner_gate",
+      "name": "rebuild_automatic_update_runner_gate",
+      "path": "/updates/runner-gate/rebuild"
+    },
+    {
+      "endpoint": "get_automatic_update_runner_gate_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_automatic_update_runner_gate",
+      "name": "get_automatic_update_runner_gate_summary",
+      "path": "/updates/runner-gate/summary"
+    },
+    {
+      "endpoint": "get_update_pack_staging",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_update_pack_staging",
+      "name": "get_update_pack_staging",
+      "path": "/updates/staging"
+    },
+    {
+      "endpoint": "create_update_pack_staging",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_update_pack_staging",
+      "name": "create_update_pack_staging",
+      "path": "/updates/staging/create"
+    },
+    {
+      "endpoint": "get_update_pack_staging_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_update_pack_staging",
+      "name": "get_update_pack_staging_summary",
+      "path": "/updates/staging/summary"
+    },
+    {
+      "endpoint": "get_buildability_validation",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_buildability_validation",
+      "name": "get_buildability_validation",
+      "path": "/validation/buildability"
+    },
+    {
+      "endpoint": "rebuild_buildability_validation",
+      "methods": [
+        "POST"
+      ],
+      "module": "claire.api.routes_buildability_validation",
+      "name": "rebuild_buildability_validation",
+      "path": "/validation/buildability/rebuild"
+    },
+    {
+      "endpoint": "get_buildability_validation_summary",
+      "methods": [
+        "GET"
+      ],
+      "module": "claire.api.routes_buildability_validation",
+      "name": "get_buildability_validation_summary",
+      "path": "/validation/buildability/summary"
+    }
+  ],
+  "route_count": 353,
+  "schema_version": "claire.active_endpoints.v1"
+}
